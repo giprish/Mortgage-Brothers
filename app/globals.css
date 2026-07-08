@@ -1,8 +1,35 @@
 @import "tailwindcss";
 
 :root {
+  /* Theme Base Colors */
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Brand Color Tokens */
+  --color-brand-green-dark: #1a3a1a;       /* Forest green text/theme */
+  --color-brand-green-deep: #052316;       /* Deep forest green (Hero, section headers) */
+  --color-brand-green-accent: #3fb364;     /* Brighter green accent (Buttons, checks, active states) */
+  --color-brand-green-hover: #349b55;      /* Button hover green */
+  --color-brand-gold: #b89a5a;             /* Gold accent color */
+  --color-brand-light: #f5f0e8;            /* Main cream/beige background */
+  --color-brand-cream-light: #faf7f0;      /* Alternating section light background */
+  --color-brand-card-bg: #072114;          /* Dark card background */
+  
+  /* Brand Text Color Tokens */
+  --color-brand-text-dark: #3a443a;        /* Body text dark color */
+  --color-brand-text-muted: #4e5b4e;       /* Muted text color */
+  --color-brand-text-light: #c8c8b8;       /* Light/cream text for dark cards and Hero subheadings */
+  --color-brand-text-light-green: #8da684; /* Soft green text for card labels */
+
+  /* Spacing Tokens */
+  --space-section-py: 3rem;                /* Standard vertical padding for sections (48px) */
+  --space-section-py-lg: 4rem;             /* Large vertical padding for sections (64px) */
+
+  /* Typographic Size Tokens */
+  --font-size-hero-title: 40px;
+  --font-size-hero-title-lg: 54px;
+  --font-size-section-title: 28px;
+  --font-size-section-title-lg: 34px;
 }
 
 @theme inline {
@@ -10,9 +37,20 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --color-green: #1a3a1a;
-  --color-gold: #b89a5a;
-  --color-brand-light: #f5f0e8;
+  
+  /* Custom color token configurations */
+  --color-brand-green-dark: var(--color-brand-green-dark);
+  --color-brand-green-deep: var(--color-brand-green-deep);
+  --color-brand-green-accent: var(--color-brand-green-accent);
+  --color-brand-green-hover: var(--color-brand-green-hover);
+  --color-brand-gold: var(--color-brand-gold);
+  --color-brand-light: var(--color-brand-light);
+  --color-brand-cream-light: var(--color-brand-cream-light);
+  --color-brand-card-bg: var(--color-brand-card-bg);
+  --color-brand-text-dark: var(--color-brand-text-dark);
+  --color-brand-text-muted: var(--color-brand-text-muted);
+  --color-brand-text-light: var(--color-brand-text-light);
+  --color-brand-text-light-green: var(--color-brand-text-light-green);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,4 +64,47 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Custom CSS utilities for easy global component modification */
+
+/* Global Primary Button Component Class */
+@utility btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--color-brand-green-accent);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0.875rem 1.75rem;
+  border-radius: 9999px;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-brand-green-hover);
+    box-shadow: 0 10px 15px -3px rgba(63, 179, 100, 0.2);
+  }
+}
+
+/* Global Typography Utilities */
+@utility font-playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+@utility text-hero-title {
+  font-size: var(--font-size-hero-title);
+  @media (min-width: 1024px) {
+    font-size: var(--font-size-hero-title-lg);
+  }
+}
+
+@utility text-section-title {
+  font-size: var(--font-size-section-title);
+  @media (min-width: 1024px) {
+    font-size: var(--font-size-section-title-lg);
+  }
 }

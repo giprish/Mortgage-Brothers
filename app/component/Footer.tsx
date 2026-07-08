@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-[#0a160a] border-t border-[#162a16] text-[#8a9a7a] py-16 lg:py-20">
+    <footer className="w-full bg-[#061D15] border-t border-[#162a16] text-[#8a9a7a] py-16 lg:py-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         {/* Top Footer Content */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-16">
@@ -96,7 +96,7 @@ const Footer = () => {
               {["Conventional", "FHA", "VA", "Refinance"].map((item) => (
                 <li key={item}>
                   <a
-                    href={`/#${item.toLowerCase()}`}
+                    href={`/loan-programs#${item.toLowerCase()}`}
                     className="text-[#6b7c5b] hover:text-white text-[13px] transition-colors duration-200"
                   >
                     {item}

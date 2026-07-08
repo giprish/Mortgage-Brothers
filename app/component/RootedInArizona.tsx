@@ -23,7 +23,7 @@ const RootedInArizona = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-16">
             {/* Left Content */}
-            <div className="flex-1 max-w-xl">
+            <div className="flex-1 max-w-xl ">
               {/* Subtitle */}
               <p className="text-[#b89a5a] text-[12px] font-semibold tracking-[0.14em] uppercase mb-4">
                 ROOTED IN ARIZONA
@@ -61,7 +61,7 @@ const RootedInArizona = () => {
             {/* Right Stats Card */}
             <div className="w-full lg:w-[340px] flex flex-col gap-4">
               {/* Main Stat */}
-              <div className="bg-[#1a3a1a] rounded-2xl p-7 border border-[#2d4a2d]">
+              <div className="bg-[#08271B] rounded-2xl p-7 border border-[#2d4a2d]">
                 <div className="mb-1">
                   <span
                     className="text-[#50C878] text-[44px] font-semibold leading-none"

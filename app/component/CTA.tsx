@@ -2,7 +2,7 @@ import React from "react";
 
 const CTA = () => {
   return (
-    <section className="w-full bg-[#1a3a1a] relative overflow-hidden py-20 lg:py-28">
+    <section className="w-full bg-[#08271B] relative overflow-hidden py-20 lg:py-28">
       {/* Decorative background circles */}
       <div className="absolute -bottom-36 -left-36 w-[400px] h-[400px] rounded-full border border-white/10 pointer-events-none"></div>
       <div className="absolute -top-36 -right-36 w-[450px] h-[450px] rounded-full border border-white/10 pointer-events-none"></div>

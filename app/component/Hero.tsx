@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="w-full bg-[#1a3a1a] relative overflow-hidden">
+    <section className="w-full bg-[#08271B] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 lg:py-20">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-16">
           {/* Left Content */}
@@ -115,7 +115,7 @@ const Hero = () => {
           </div>
 
           {/* Right Card - Pre-Approval Snapshot */}
-          <div className="w-full lg:w-[380px] bg-[#243a24] rounded-2xl p-7 border border-[#2d4a2d]">
+          <div className="w-full lg:w-[380px] bg-[#173427] rounded-2xl p-7 border border-[#2d4a2d]">
             {/* Card Header */}
             <div className="flex items-start justify-between mb-5">
               <p className="text-[#b89a5a] text-[11px] font-semibold tracking-[0.12em] uppercase">

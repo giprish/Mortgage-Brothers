@@ -347,6 +347,8 @@ const faqData = [
 
 export default function FAQPage() {
   const [activeCategory, setActiveCategory] = useState("General");
+  const [clickedCategory, setClickedCategory] = useState<string | null>(null);
+  const [isProgrammatic, setIsProgrammatic] = useState(false);
   const [expandedIds, setExpandedIds] = useState<Record<string, boolean>>({
     "gen-1": true, // Default expand the first general item
     "loan-1": true, // Default expand the first loan program item
@@ -363,6 +365,8 @@ export default function FAQPage() {
   // Smooth scroll handler with offset for sticky navbar only (category bar is NOT sticky)
   const handleScroll = (id: string, name: string) => {
     setActiveCategory(name);
+    setClickedCategory(name);
+    setIsProgrammatic(true);
     const element = document.getElementById(id);
     if (element) {
       const offset = 90; // offset just for the main navbar
@@ -375,13 +379,26 @@ export default function FAQPage() {
         top: offsetPosition,
         behavior: "smooth",
       });
+
+      // Release lock after smooth scroll completes
+      setTimeout(() => {
+        setIsProgrammatic(false);
+      }, 1000);
     }
   };
 
   // Scroll Spy to update active category button as the user scrolls
   useEffect(() => {
     const handleScrollSpy = () => {
+      if (isProgrammatic) return; // Ignore scroll spy updates during auto-scrolls
+
       const scrollPosition = window.scrollY + 140; // offset
+
+      // If scrolled back near the top, restore the clicked category or default to first
+      if (window.scrollY < 150) {
+        setActiveCategory(clickedCategory || "General");
+        return;
+      }
 
       for (let i = 0; i < categories.length; i++) {
         const cat = categories[i];
@@ -399,7 +416,7 @@ export default function FAQPage() {
 
     window.addEventListener("scroll", handleScrollSpy);
     return () => window.removeEventListener("scroll", handleScrollSpy);
-  }, []);
+  }, [clickedCategory, isProgrammatic]);
 
   // Click outside listener to close search dropdown
   useEffect(() => {
@@ -460,6 +477,7 @@ export default function FAQPage() {
     setTimeout(() => {
       const element = document.getElementById(qId);
       if (element) {
+        setIsProgrammatic(true);
         const offset = 100; // offset to clear sticky header
         const bodyRect = document.body.getBoundingClientRect().top;
         const elementRect = element.getBoundingClientRect().top;
@@ -470,6 +488,11 @@ export default function FAQPage() {
           top: offsetPosition,
           behavior: "smooth",
         });
+
+        // Release lock after smooth scroll completes
+        setTimeout(() => {
+          setIsProgrammatic(false);
+        }, 1000);
       }
     }, 100);
   };
@@ -480,7 +503,7 @@ export default function FAQPage() {
 
       <main className="flex-grow">
         {/* FAQ Hero Section */}
-        <section className="w-full bg-[#1a3a1a] relative py-16 lg:py-24 text-center z-40">
+        <section className="w-full bg-[#08271B] relative py-16 lg:py-24 text-center z-40">
           {/* Subtle design circles wrapped to prevent overflow clipping of the dropdown */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5 pointer-events-none"></div>
