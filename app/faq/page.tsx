@@ -463,7 +463,7 @@ export default function FAQPage() {
     : [];
 
   // Handle clicking a suggestion in the dropdown
-  const handleSelectSuggestion = (qId: string, topicId: string) => {
+  const handleSelectSuggestion = (qId: string) => {
     // 1. Expand the selected question card
     setExpandedIds((prev) => ({
       ...prev,
@@ -565,7 +565,7 @@ export default function FAQPage() {
                         {searchResults.map((q) => (
                           <button
                             key={q.id}
-                            onClick={() => handleSelectSuggestion(q.id, q.topicId)}
+                            onClick={() => handleSelectSuggestion(q.id)}
                             className="w-full px-5 py-3 text-left hover:bg-[#faf6ef] transition-colors duration-150 flex items-start gap-3 border-b border-[#e8e0d0]/20 last:border-b-0 cursor-pointer"
                           >
                             {/* Search Icon */}
@@ -612,7 +612,7 @@ export default function FAQPage() {
                       ].map((item) => (
                         <button
                           key={item.id}
-                          onClick={() => handleSelectSuggestion(item.id, item.topicId)}
+                          onClick={() => handleSelectSuggestion(item.id)}
                           className="w-full px-5 py-3 text-left hover:bg-[#faf6ef] transition-colors duration-150 flex items-start gap-3 border-b border-[#e8e0d0]/20 last:border-b-0 cursor-pointer"
                         >
                           {/* Sparkle Icon */}

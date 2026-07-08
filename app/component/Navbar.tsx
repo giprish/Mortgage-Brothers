@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -9,7 +10,7 @@ const Navbar = () => {
     <nav className="w-full bg-[#f5f0e8] border-b border-[#e8e0d0]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-[72px]">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity duration-200">
+        <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity duration-200">
           <div className="flex flex-col leading-tight">
             <span className="text-[#3fb364] font-bold text-[18px] tracking-[0.08em] uppercase leading-[1.1]">
               MORTGAGE
@@ -18,40 +19,47 @@ const Navbar = () => {
               BROTHERS
             </span>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop Nav Links */}
-        <div className="hidden lg:flex items-center gap-8">
-          <a
+        <div className="hidden lg:flex items-center gap-8  px-8">
+          <Link
+            href="/"
+            className="text-[#1a3a1a] text-[15px] font-medium hover:text-[#2d5a2d] transition-colors duration-200"
+          >
+            Home
+          </Link>
+           
+          <Link
             href="/loan-programs"
             className="text-[#1a3a1a] text-[15px] font-medium hover:text-[#2d5a2d] transition-colors duration-200"
           >
             Loan Programs
-          </a>
-          <a
-            href="/#calculators"
+          </Link>
+          <Link
+            href="/calculators"
             className="text-[#1a3a1a] text-[15px] font-medium hover:text-[#2d5a2d] transition-colors duration-200"
           >
             Calculators
-          </a>
-          <a
-            href="/#about"
+          </Link>
+          <Link
+            href="/about"
             className="text-[#1a3a1a] text-[15px] font-medium hover:text-[#2d5a2d] transition-colors duration-200"
           >
             About
-          </a>
-          <a
-            href="/#reviews"
+          </Link>
+          <Link
+            href="/reviews"
             className="text-[#1a3a1a] text-[15px] font-medium hover:text-[#2d5a2d] transition-colors duration-200"
           >
             Reviews
-          </a>
-          <a
+          </Link>
+          <Link
             href="/faq"
             className="text-[#1a3a1a] text-[15px] font-medium hover:text-[#2d5a2d] transition-colors duration-200"
           >
             FAQ
-          </a>
+          </Link>
         </div>
 
         {/* Right Side - Phone + CTA */}
@@ -127,36 +135,43 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-[#f5f0e8] border-t border-[#e8e0d0] px-6 py-4 flex flex-col gap-4">
-          <a
+           <Link
+            href="/"
+            className="text-[#1a3a1a] text-[15px] font-medium py-2"
+          >
+           Home
+          </Link>
+         
+           <Link
             href="/loan-programs"
             className="text-[#1a3a1a] text-[15px] font-medium py-2"
           >
             Loan Programs
-          </a>
-          <a
-            href="/#calculators"
+          </Link>
+          <Link
+            href="/calculators"
             className="text-[#1a3a1a] text-[15px] font-medium py-2"
           >
             Calculators
-          </a>
-          <a
-            href="/#about"
+          </Link>
+          <Link
+            href="/about"
             className="text-[#1a3a1a] text-[15px] font-medium py-2"
           >
             About
-          </a>
-          <a
-            href="/#reviews"
+          </Link>
+          <Link
+            href="/reviews"
             className="text-[#1a3a1a] text-[15px] font-medium py-2"
           >
             Reviews
-          </a>
-          <a
+          </Link>
+          <Link
             href="/faq"
             className="text-[#1a3a1a] text-[15px] font-medium py-2"
           >
             FAQ
-          </a>
+          </Link>
           <a
             href="tel:6025352171"
             className="flex items-center gap-2 text-[#1a3a1a] text-[15px] font-medium py-2"
@@ -178,7 +193,7 @@ const Navbar = () => {
           </a>
           <a
             href="#get-pre-approved"
-            className="bg-[#c85a28] text-white text-[14px] font-semibold px-5 py-2.5 rounded-full text-center"
+            className="bg-[#3fb364] text-white text-[14px] font-semibold px-5 py-2.5 rounded-full text-center"
           >
             Get Pre-Approved
           </a>
