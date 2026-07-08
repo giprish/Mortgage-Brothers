@@ -16,7 +16,7 @@ const Footer = () => {
                 BROTHERS
               </span>
             </div>
-            <p className="text-[#6b7c5b] text-[13px] leading-[1.65] mb-6 max-w-[280px]">
+            <p className="text-[#a8b89a] text-[13px] leading-[1.65] mb-6 max-w-[280px]">
               Independent Arizona mortgage brokers making banks compete for your business, since day one.
             </p>
             {/* Social Icons */}
@@ -97,7 +97,7 @@ const Footer = () => {
                 <li key={item}>
                   <a
                     href={`/loan-programs#${item.toLowerCase()}`}
-                    className="text-[#6b7c5b] hover:text-white text-[13px] transition-colors duration-200"
+                    className="text-[#a8b89a] hover:text-white text-[13px] transition-colors duration-200"
                   >
                     {item}
                   </a>
@@ -122,7 +122,7 @@ const Footer = () => {
                   <li key={item}>
                     <a
                       href={href}
-                      className="text-[#6b7c5b] hover:text-white text-[13px] transition-colors duration-200"
+                      className="text-[#a8b89a] hover:text-white text-[13px] transition-colors duration-200"
                     >
                       {item}
                     </a>
@@ -137,12 +137,12 @@ const Footer = () => {
             <h4 className="text-[#3fb364] text-[12px] font-semibold tracking-[0.12em] uppercase mb-5">
               Contact
             </h4>
-            <p className="text-[#6b7c5b] text-[13px] leading-relaxed mb-4 max-w-[240px]">
+            <p className="text-[#a8b89a] text-[13px] leading-relaxed mb-4 max-w-[240px]">
               1833 E Queensborough Ave, Ste 202, Phoenix, AZ 85020
             </p>
             <a
               href="tel:6028352171"
-              className="text-[#6b7c5b] hover:text-white text-[13px] font-semibold transition-colors duration-200"
+              className="text-[#a8b89a] hover:text-white text-[13px] font-semibold transition-colors duration-200"
             >
               (602) 835-2171
             </a>
@@ -157,12 +157,12 @@ const Footer = () => {
           {/* Equal Housing Lender */}
           <div className="flex items-center gap-2 flex-shrink-0">
             {/* Equal Housing Icon */}
-            <div className="w-6 h-6 border border-[#6b7c5b] flex items-center justify-center rounded-sm p-0.5" aria-hidden="true">
+            <div className="w-6 h-6 border border-[#a8b89a] flex items-center justify-center rounded-sm p-0.5" aria-hidden="true">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="none"
-                stroke="#6b7c5b"
+                stroke="#a8b89a"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -173,14 +173,14 @@ const Footer = () => {
                 <line x1="9" y1="17" x2="15" y2="17" />
               </svg>
             </div>
-            <span className="text-[#6b7c5b] text-[11px] font-semibold uppercase tracking-wider leading-none">
+            <span className="text-[#a8b89a] text-[11px] font-semibold uppercase tracking-wider leading-none">
               Equal Housing<br />Lender
             </span>
           </div>
 
           {/* Disclaimers & Licensing */}
           <div className="flex-1 max-w-4xl lg:ml-8">
-            <p className="text-[#516143] text-[11px] leading-[1.6]">
+            <p className="text-[#8a9a7a] text-[11px] leading-[1.6]">
               Mortgage Brothers L.L.C. &bull; NMLS #1607154 &bull; AZ License #0937814 &bull; 1833 E Queensborough Ave, Suite 202, Phoenix, AZ 85020 &bull; (602) 835-2171. All loans subject to underwriter approval. &copy; 2026 Mortgage Brothers. All rights reserved.
             </p>
           </div>
