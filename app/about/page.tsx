@@ -15,6 +15,8 @@ export default function AboutPage() {
           className="w-full bg-brand-green-deep text-white py-24 lg:py-36 text-center relative overflow-hidden bg-cover bg-no-repeat bg-[65%_center] sm:bg-center"
           style={{ 
             backgroundImage: "url('/arizona-mortgage-brothers-team.jpg')",
+            backgroundSize: "cover ",
+            backgroundPosition: "center top",
           }}
          >   {/* Transparent Overlay for Text Legibility */}
           <div className="absolute inset-0 bg-[#08271B]/65 z-0"></div>

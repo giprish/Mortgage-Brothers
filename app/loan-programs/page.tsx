@@ -317,6 +317,7 @@ export default function LoanProgramsPage() {
           className="w-full bg-brand-green-deep text-white py-24 lg:py-32 text-center relative overflow-hidden bg-cover bg-no-repeat bg-center"
           style={{ 
             backgroundImage: "url('/loan-programs.jpg')", 
+            backgroundPosition: "center top",
           }}
         >
           {/* Dark Overlay for High Legibility */}

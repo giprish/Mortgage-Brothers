@@ -65,7 +65,9 @@ export default function CalculatorsPage() {
         <section 
           className="w-full bg-brand-green-deep text-white py-20 lg:py-28 text-center relative overflow-hidden bg-cover bg-no-repeat bg-center"
           style={{ 
-            backgroundImage: "url('/mortgage-calculators.jpg')", 
+            backgroundImage: "url('/mortgage-calculators.jpg')",
+            backgroundSize: "cover", 
+            backgroundPosition: "center top"
           }}
         >
           {/* Dark Overlay for Text Legibility */}
