@@ -70,7 +70,7 @@ const Reviews = () => {
           {reviews.map((rev, index) => (
             <div
               key={index}
-              className="bg-white border border-[#e8e0d0]/80 rounded-2xl p-6 lg:p-8 flex flex-col justify-between hover:shadow-lg hover:shadow-[#1a3a1a]/5 transition-all duration-300"
+              className="bg-white border border-[#e8e0d0]/80 rounded-2xl p-6 lg:p-8 flex flex-col justify-between hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#1a3a1a]/10 hover:border-brand-green-accent/40 active:scale-[0.98] active:translate-y-0 cursor-pointer transition-all duration-300"
             >
               <div>
                 {/* Stars */}

@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 
@@ -9,27 +10,39 @@ export default function AboutPage() {
     <div className="flex flex-col min-h-screen">
       <Navbar />
 
-      <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="w-full bg-brand-green-deep text-white py-16 lg:py-24 text-center relative overflow-hidden">
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      <main className="flex-grow "
+         
+      >
+        <section
+  className="relative w-full  text-white overflow-hidden text-white py-24 lg:py-36 text-center relative overflow-hidden"
+  style={{
+    backgroundImage: "url('/arizona-mortgage-brothers-team.jpg')",
+    backgroundSize: "cover",
+    backgroundPosition: "center top",
+    backgroundRepeat: "no-repeat",
+  }}
+>
+          {/* Transparent Overlay for Text Legibility */}
+          <div className="absolute inset-0 bg-[#08271B]/65 z-0"></div>
+
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
             <div className="absolute -top-36 -right-36 w-[400px] h-[400px] rounded-full border border-white/5 pointer-events-none"></div>
             <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5 pointer-events-none"></div>
           </div>
 
-          <div className="max-w-4xl mx-auto px-6 relative z-10">
+          <div className="max-w-4xl mx-auto px-6 relative z-20">
             {/* Badge */}
-            <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
+            <p className="text-brand-green-accent text-[12px] font-bold tracking-[0.18em] uppercase mb-4">
               ABOUT US
             </p>
 
             {/* Title */}
-            <h1 className="text-white text-hero-title font-playfair font-normal leading-[1.1] mb-6">
+            <h1 className="text-white text-[38px] lg:text-[54px] font-playfair font-normal leading-[1.15] mb-6">
               Arizona-owned. Family-run. Client-first.
             </h1>
 
             {/* Subtitle */}
-            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto">
+            <p className="text-brand-text-light text-[16px] lg:text-[18px] leading-[1.7] max-w-2xl mx-auto">
               {"We've spent our careers in Phoenix real estate — this isn't a call center, it's two brothers who live here too."}
             </p>
           </div>
@@ -115,7 +128,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               
               {/* Advice */}
-              <div className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm flex flex-col items-start hover:shadow-md transition-shadow duration-300">
+              <div className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm flex flex-col items-start hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/35 active:scale-[0.98] active:translate-y-0 transition-all duration-300 cursor-pointer">
                 <div className="w-12 h-12 bg-brand-cream-light text-brand-green-accent rounded-xl flex items-center justify-center mb-5 flex-shrink-0 shadow-inner">
                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -131,7 +144,7 @@ export default function AboutPage() {
               </div>
 
               {/* Local */}
-              <div className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm flex flex-col items-start hover:shadow-md transition-shadow duration-300">
+              <div className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm flex flex-col items-start hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/35 active:scale-[0.98] active:translate-y-0 transition-all duration-300 cursor-pointer">
                 <div className="w-12 h-12 bg-brand-cream-light text-brand-green-accent rounded-xl flex items-center justify-center mb-5 flex-shrink-0 shadow-inner">
                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z" />
@@ -147,7 +160,7 @@ export default function AboutPage() {
               </div>
 
               {/* Straight Talk */}
-              <div className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm flex flex-col items-start hover:shadow-md transition-shadow duration-300">
+              <div className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm flex flex-col items-start hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/35 active:scale-[0.98] active:translate-y-0 transition-all duration-300 cursor-pointer">
                 <div className="w-12 h-12 bg-brand-cream-light text-brand-green-accent rounded-xl flex items-center justify-center mb-5 flex-shrink-0 shadow-inner">
                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
@@ -162,7 +175,7 @@ export default function AboutPage() {
               </div>
 
               {/* Closings */}
-              <div className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm flex flex-col items-start hover:shadow-md transition-shadow duration-300">
+              <div className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm flex flex-col items-start hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/35 active:scale-[0.98] active:translate-y-0 transition-all duration-300 cursor-pointer">
                 <div className="w-12 h-12 bg-brand-cream-light text-brand-green-accent rounded-xl flex items-center justify-center mb-5 flex-shrink-0 shadow-inner">
                   <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <circle cx="12" cy="12" r="10" />
@@ -177,6 +190,30 @@ export default function AboutPage() {
                 </p>
               </div>
 
+            </div>
+          </div>
+        </section>
+
+        {/* Rebuilt Large Cover Banner Section */}
+        <section className="w-full bg-[#fcf9f3] py-12 border-b border-[#e8e0d0]/40">
+          <div className="max-w-5xl mx-auto px-6 lg:px-10">
+            <div className="relative h-[320px] md:h-[480px] w-full rounded-3xl overflow-hidden shadow-xl border border-[#e8e0d0]/50 group">
+              <Image
+                src="/az-mortgage-brothers.jpg"
+                alt="Arizona Mortgage Brothers - Eddie & Thomas Knoell"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-[1.015]"
+                sizes="(max-w-1024px) 100vw, 1024px"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-8 md:p-12">
+                <p className="text-brand-green-accent text-[12px] font-bold tracking-[0.15em] uppercase mb-2">
+                  THE MORTGAGE BROTHERS
+                </p>
+                <h3 className="text-white text-[24px] md:text-[32px] font-playfair font-normal leading-tight max-w-xl">
+                  Eddie Knoell & Thomas Knoell
+                </h3>
+              </div>
             </div>
           </div>
         </section>
@@ -198,12 +235,17 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               
               {/* Eddie Profile */}
-              <div className="bg-brand-cream-light rounded-2xl p-8 border border-[#e8e0d0]/40 shadow-sm flex flex-col justify-between">
+              <div className="bg-brand-cream-light rounded-2xl p-8 border border-[#e8e0d0]/40 shadow-sm flex flex-col justify-between hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/35 active:scale-[0.98] active:translate-y-0 cursor-pointer transition-all duration-300">
                 <div>
                   <div className="flex items-center gap-4 mb-6">
-                    {/* Initials Circle */}
-                    <div className="w-14 h-14 rounded-full border-2 border-brand-green-accent flex items-center justify-center text-brand-green-accent text-[18px] font-semibold bg-white flex-shrink-0 shadow-sm">
-                      EK
+                    {/* High-res Image Avatar */}
+                    <div className="relative w-16 h-16 rounded-full border-2 border-brand-green-accent overflow-hidden bg-white flex-shrink-0 shadow-sm">
+                      <Image
+                        src="/Knoell.webp"
+                        alt="Eddie Knoell"
+                        fill
+                        className="object-cover object-top"
+                      />
                     </div>
                     <div className="flex flex-col leading-snug">
                       <h3 className="text-brand-green-deep text-[18px] font-bold">
@@ -232,12 +274,17 @@ export default function AboutPage() {
               </div>
 
               {/* Thomas Profile */}
-              <div className="bg-brand-cream-light rounded-2xl p-8 border border-[#e8e0d0]/40 shadow-sm flex flex-col justify-between">
+              <div className="bg-brand-cream-light rounded-2xl p-8 border border-[#e8e0d0]/40 shadow-sm flex flex-col justify-between hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/35 active:scale-[0.98] active:translate-y-0 cursor-pointer transition-all duration-300">
                 <div>
                   <div className="flex items-center gap-4 mb-6">
-                    {/* Initials Circle */}
-                    <div className="w-14 h-14 rounded-full border-2 border-brand-green-accent flex items-center justify-center text-brand-green-accent text-[18px] font-semibold bg-white flex-shrink-0 shadow-sm">
-                      TK
+                    {/* High-res Image Avatar */}
+                    <div className="relative w-16 h-16 rounded-full border-2 border-brand-green-accent overflow-hidden bg-white flex-shrink-0 shadow-sm">
+                      <Image
+                        src="/image.png"
+                        alt="Thomas Knoell"
+                        fill
+                        className="object-cover object-top"
+                      />
                     </div>
                     <div className="flex flex-col leading-snug">
                       <h3 className="text-brand-green-deep text-[18px] font-bold">

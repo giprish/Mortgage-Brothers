@@ -2,7 +2,11 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="w-full bg-[#08271B] relative overflow-hidden">
+    <section className="w-full bg-[#08271B] relative overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{
+    backgroundImage: "url('/az-mortgage-brothers.jpg')",
+  }}
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 lg:py-20">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-16">
           {/* Left Content */}
@@ -115,9 +119,9 @@ const Hero = () => {
           </div>
 
           {/* Right Card - Pre-Approval Snapshot */}
-          <div className="w-full lg:w-[380px] bg-[#173427] rounded-2xl p-7 border border-[#2d4a2d]">
+          {/* <div className="w-full lg:w-[380px] bg-[#173427] rounded-2xl p-7 border border-[#2d4a2d]"> */}
             {/* Card Header */}
-            <div className="flex items-start justify-between mb-5">
+            {/* <div className="flex items-start justify-between mb-5">
               <p className="text-[#b89a5a] text-[11px] font-semibold tracking-[0.12em] uppercase">
                 PRE-APPROVAL SNAPSHOT
               </p>
@@ -137,10 +141,10 @@ const Hero = () => {
                   <polyline points="9 22 9 12 15 12 15 22" />
                 </svg>
               </div>
-            </div>
+            </div> */}
 
             {/* Big Number */}
-            <div className="mb-1">
+            {/* <div className="mb-1">
               <span className="text-white text-[48px] font-light leading-none">
                 ~25{" "}
               </span>
@@ -148,13 +152,13 @@ const Hero = () => {
             </div>
             <p className="text-[#8a9a7a] text-[13px] mb-6">
               Average time from application to keys.
-            </p>
+            </p> */}
 
             {/* Divider */}
-            <div className="w-full h-px bg-[#2d4a2d] mb-5"></div>
+            {/* <div className="w-full h-px bg-[#2d4a2d] mb-5"></div> */}
 
             {/* Feature List */}
-            <div className="flex flex-col gap-4">
+            {/* <div className="flex flex-col gap-4">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-[#2d4a2d] rounded-md flex items-center justify-center flex-shrink-0">
                   <svg
@@ -218,8 +222,8 @@ const Hero = () => {
                   No credit impact to start
                 </span>
               </div>
-            </div>
-          </div>
+            </div> */}
+          {/* </div>  */}
         </div>
       </div>
     </section>

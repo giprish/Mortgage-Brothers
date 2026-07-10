@@ -5,6 +5,7 @@ import RootedInArizona from "./component/RootedInArizona";
 import Brothers from "./component/Brothers";
 import Reviews from "./component/Reviews";
 import CTA from "./component/CTA";
+import PreApprovedForm from "./component/PreApprovedForm";
 import Footer from "./component/Footer";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <Brothers />
       <Reviews />
       <CTA />
+      <PreApprovedForm />
       <Footer />
     </div>
   );

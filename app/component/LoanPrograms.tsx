@@ -112,10 +112,10 @@ const LoanPrograms = () => {
           {loanCards.map((card, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl p-6 border border-[#e8e0d0] hover:border-[#b89a5a]/40 hover:shadow-lg hover:shadow-[#1a3a1a]/5 transition-all duration-300 group cursor-pointer"
+              className="bg-white rounded-xl p-6 border border-[#e8e0d0] hover:border-brand-green-accent/40 hover:shadow-xl hover:shadow-[#1a3a1a]/10 hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98] active:translate-y-0 transition-all duration-300 group cursor-pointer"
             >
               {/* Icon */}
-              <div className="w-11 h-11 bg-[#f5f0e8] rounded-lg flex items-center justify-center mb-5 group-hover:bg-[#eee8d8] transition-colors duration-300">
+              <div className="w-11 h-11 bg-[#f5f0e8] rounded-lg flex items-center justify-center mb-5 group-hover:bg-brand-green-accent/10 group-hover:scale-110 transition-all duration-300">
                 {card.icon}
               </div>
 

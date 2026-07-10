@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 
@@ -312,12 +313,24 @@ export default function LoanProgramsPage() {
     <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
-        <section className="w-full bg-brand-green-deep text-white py-16 lg:py-24 text-center relative overflow-hidden">
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <section 
+          className="w-full  bg-[#08271B]  text-white py-24 lg:py-32 text-center relative overflow-hidden"
+          style={{ 
+            backgroundImage: "url('/loan-programs.jpg')", 
+            backgroundSize: "cover", 
+            backgroundPosition: "center", 
+            backgroundRepeat: "no-repeat" 
+          }}
+        >
+          {/* Dark Overlay for High Legibility */}
+          <div className="absolute inset-0 bg-[#08271B]/75 z-0"></div>
+
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
             <div className="absolute -top-36 -right-36 w-[400px] h-[400px] rounded-full border border-white/5 pointer-events-none"></div>
             <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5 pointer-events-none"></div>
           </div>
-          <div className="max-w-4xl mx-auto px-6 relative z-10">
+          
+          <div className="max-w-4xl mx-auto px-6 relative z-20">
             <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
               LOAN PROGRAMS
             </p>
@@ -398,8 +411,8 @@ export default function LoanProgramsPage() {
                         </li>
                       ))}
                     </ul>
-                    <a
-                      href="#get-pre-approved"
+                    <Link
+                      href="/#get-pre-approved"
                       className="btn-primary hover:shadow-brand-green-accent/20 group"
                     >
                       {prog.ctaText}
@@ -418,10 +431,10 @@ export default function LoanProgramsPage() {
                         <line x1="5" y1="12" x2="19" y2="12" />
                         <polyline points="12 5 19 12 12 19" />
                       </svg>
-                    </a>
+                    </Link>
                   </div>
                   <div className="lg:col-span-5 flex lg:justify-end justify-center w-full">
-                    <div className="w-full max-w-[420px] bg-brand-card-bg text-white rounded-2xl p-6 lg:p-8 border border-white/5 shadow-xl flex flex-col justify-between">
+                    <div className="w-full max-w-[420px] bg-brand-card-bg text-white rounded-2xl p-6 lg:p-8 border border-white/5 shadow-xl flex flex-col justify-between hover:-translate-y-1 hover:scale-[1.02] hover:shadow-2xl hover:border-brand-green-accent/30 active:scale-[0.98] active:translate-y-0 cursor-pointer transition-all duration-300">
                       <div>
                         <div className="mb-6">
                           <p className="text-brand-text-light-green text-[10px] font-bold tracking-[0.12em] uppercase mb-2">

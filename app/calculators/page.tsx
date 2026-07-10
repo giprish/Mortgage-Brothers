@@ -62,14 +62,24 @@ export default function CalculatorsPage() {
 
       <main className="flex-grow">
 
-        {/* Hero Section */}
-        <section className="w-full bg-brand-green-deep text-white py-16 lg:py-24 text-center relative overflow-hidden">
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <section 
+          className="w-full  bg-brand-green-deep text-white py-24 lg:py-36 text-center relative overflow-hidden"
+          style={{ 
+            backgroundImage: "url('/mortgage-calculators.jpg')", 
+            backgroundSize: "cover", 
+            backgroundPosition: "center top",
+            backgroundRepeat: "no-repeat"
+          }}
+        >
+          {/* Dark Overlay for Text Legibility */}
+          <div className="absolute inset-0 bg-[#08271B]/75 z-0"></div>
+
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
             <div className="absolute -top-36 -right-36 w-[400px] h-[400px] rounded-full border border-white/5 pointer-events-none"></div>
             <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5 pointer-events-none"></div>
           </div>
 
-          <div className="max-w-4xl mx-auto px-6 relative z-10">
+          <div className="max-w-4xl mx-auto px-6 relative z-20">
             <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
               MORTGAGE CALCULATOR
             </p>

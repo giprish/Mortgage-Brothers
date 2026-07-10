@@ -754,7 +754,7 @@ export default function FAQPage() {
                       <div
                         key={q.id}
                         id={q.id}
-                        className="bg-white border border-[#e8e0d0]/80 rounded-2xl p-5 lg:p-6 transition-all duration-300 hover:shadow-md"
+                        className="bg-white border border-[#e8e0d0]/80 rounded-2xl p-5 lg:p-6 transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.008] hover:shadow-lg hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/30 active:scale-[0.995]"
                       >
                         <button
                           onClick={() => toggleExpand(q.id)}
