@@ -314,12 +314,9 @@ export default function LoanProgramsPage() {
       <Navbar />
       <main className="flex-grow">
         <section 
-          className="w-full  bg-[#08271B]  text-white py-24 lg:py-32 text-center relative overflow-hidden"
+          className="w-full bg-brand-green-deep text-white py-24 lg:py-32 text-center relative overflow-hidden bg-cover bg-no-repeat bg-center"
           style={{ 
-            backgroundImage: "url('/loan-programs.jpg')", 
-            backgroundSize: "cover", 
-            backgroundPosition: "center", 
-            backgroundRepeat: "no-repeat" 
+            backgroundImage: "url('/arizona_home_bg.png')", 
           }}
         >
           {/* Dark Overlay for High Legibility */}

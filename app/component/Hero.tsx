@@ -2,10 +2,11 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <section className="w-full bg-[#08271B] relative overflow-hidden bg-cover bg-center bg-no-repeat"
+    <section 
+      className="w-full bg-[#08271B] relative overflow-hidden bg-cover bg-no-repeat bg-[82%_center] sm:bg-center"
       style={{
-    backgroundImage: "url('/az-mortgage-brothers.jpg')",
-  }}
+        backgroundImage: "url('/az-mortgage-brothers.jpg')",
+      }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 lg:py-20">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-16">

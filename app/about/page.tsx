@@ -10,19 +10,13 @@ export default function AboutPage() {
     <div className="flex flex-col min-h-screen">
       <Navbar />
 
-      <main className="flex-grow "
-         
-      >
-        <section
-  className="relative w-full  text-white overflow-hidden text-white py-24 lg:py-36 text-center relative overflow-hidden"
-  style={{
-    backgroundImage: "url('/arizona-mortgage-brothers-team.jpg')",
-    backgroundSize: "cover",
-    backgroundPosition: "center top",
-    backgroundRepeat: "no-repeat",
-  }}
->
-          {/* Transparent Overlay for Text Legibility */}
+      <main className="flex-grow ">
+        <section 
+          className="w-full bg-brand-green-deep text-white py-24 lg:py-36 text-center relative overflow-hidden bg-cover bg-no-repeat bg-[65%_center] sm:bg-center"
+          style={{ 
+            backgroundImage: "url('/arizona-mortgage-brothers-team.jpg')",
+          }}
+         >   {/* Transparent Overlay for Text Legibility */}
           <div className="absolute inset-0 bg-[#08271B]/65 z-0"></div>
 
           <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">

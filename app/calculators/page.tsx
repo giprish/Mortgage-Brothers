@@ -63,12 +63,9 @@ export default function CalculatorsPage() {
       <main className="flex-grow">
 
         <section 
-          className="w-full  bg-brand-green-deep text-white py-24 lg:py-36 text-center relative overflow-hidden"
+          className="w-full bg-brand-green-deep text-white py-20 lg:py-28 text-center relative overflow-hidden bg-cover bg-no-repeat bg-center"
           style={{ 
-            backgroundImage: "url('/mortgage-calculators.jpg')", 
-            backgroundSize: "cover", 
-            backgroundPosition: "center top",
-            backgroundRepeat: "no-repeat"
+            backgroundImage: "url('/arizona_home_bg.png')", 
           }}
         >
           {/* Dark Overlay for Text Legibility */}
