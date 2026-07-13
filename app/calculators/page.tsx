@@ -4,6 +4,7 @@ import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import PreApprovedForm from "../component/PreApprovedForm";
 
 export default function CalculatorsPage() {
   const [homePrice, setHomePrice] = useState(425000);
@@ -275,7 +276,7 @@ export default function CalculatorsPage() {
                   A pre-approval gives you a verified figure, not just an estimate.
                 </p>
                 <Link
-                  href="/#get-pre-approved"
+                  href="#get-pre-approved"
                   className="btn-primary hover:shadow-brand-green-accent/20 group"
                 >
                   Get Pre-Approved
@@ -302,6 +303,7 @@ export default function CalculatorsPage() {
 
       </main>
 
+      <PreApprovedForm />
       <Footer />
     </div>
   );

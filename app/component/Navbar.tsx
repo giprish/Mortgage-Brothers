@@ -22,14 +22,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Nav Links */}
-        <div className="hidden lg:flex items-center gap-8  px-8">
-          <Link
-            href="/"
-            className="text-[#1a3a1a] text-[15px] font-medium hover:text-[#2d5a2d] transition-colors duration-200"
-          >
-            Home
-          </Link>
-           
+        <div className="hidden lg:flex items-center gap-8 px-8">
           <Link
             href="/loan-programs"
             className="text-[#1a3a1a] text-[15px] font-medium hover:text-[#2d5a2d] transition-colors duration-200"
@@ -42,6 +35,45 @@ const Navbar = () => {
           >
             Calculators
           </Link>
+
+          {/* Areas We Serve Dropdown */}
+          <div className="relative group py-2">
+            <Link
+              href="/areas-we-serve"
+              className="flex items-center gap-1.5 text-[#1a3a1a] text-[15px] font-medium hover:text-[#2d5a2d] transition-colors duration-200 cursor-pointer"
+            >
+              Areas We Serve
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="group-hover:rotate-180 transition-transform duration-200"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </Link>
+            <div className="absolute left-0 mt-2 w-48 bg-white border border-[#e8e0d0] rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <Link
+                href="/areas-we-serve"
+                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150"
+              >
+                All Service Areas
+              </Link>
+              <Link
+                href="/areas-we-serve/maricopa-county"
+                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
+              >
+                Maricopa County
+              </Link>
+            </div>
+          </div>
+
           <Link
             href="/about"
             className="text-[#1a3a1a] text-[15px] font-medium hover:text-[#2d5a2d] transition-colors duration-200"
@@ -85,7 +117,7 @@ const Navbar = () => {
           </a>
           <a
             href="#get-pre-approved"
-            className="bg-[#3fb364] hover:bg-[#349b55]  text-white text-[14px] font-semibold px-5 py-2.5 rounded-full transition-all duration-200 hover:shadow-lg"
+            className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-semibold px-5 py-2.5 rounded-full transition-all duration-200 hover:shadow-lg"
           >
             Get Pre-Approved
           </a>
@@ -135,39 +167,60 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden bg-[#f5f0e8] border-t border-[#e8e0d0] px-6 py-4 flex flex-col gap-4">
-           <Link
+          <Link
             href="/"
+            onClick={() => setMobileMenuOpen(false)}
             className="text-[#1a3a1a] text-[15px] font-medium py-2"
           >
-           Home
+            Home
           </Link>
-         
-           <Link
+          <Link
             href="/loan-programs"
+            onClick={() => setMobileMenuOpen(false)}
             className="text-[#1a3a1a] text-[15px] font-medium py-2"
           >
             Loan Programs
           </Link>
           <Link
             href="/calculators"
+            onClick={() => setMobileMenuOpen(false)}
             className="text-[#1a3a1a] text-[15px] font-medium py-2"
           >
             Calculators
           </Link>
+
+          <Link
+            href="/areas-we-serve"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-[#1a3a1a] text-[15px] font-medium py-2"
+          >
+            Areas We Serve
+          </Link>
+          <Link
+            href="/areas-we-serve/maricopa-county"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+          >
+            ↳ Maricopa County
+          </Link>
+
           <Link
             href="/about"
+            onClick={() => setMobileMenuOpen(false)}
             className="text-[#1a3a1a] text-[15px] font-medium py-2"
           >
             About
           </Link>
           <Link
             href="/reviews"
+            onClick={() => setMobileMenuOpen(false)}
             className="text-[#1a3a1a] text-[15px] font-medium py-2"
           >
             Reviews
           </Link>
           <Link
             href="/faq"
+            onClick={() => setMobileMenuOpen(false)}
             className="text-[#1a3a1a] text-[15px] font-medium py-2"
           >
             FAQ
@@ -193,6 +246,7 @@ const Navbar = () => {
           </a>
           <a
             href="#get-pre-approved"
+            onClick={() => setMobileMenuOpen(false)}
             className="bg-[#3fb364] text-white text-[14px] font-semibold px-5 py-2.5 rounded-full text-center"
           >
             Get Pre-Approved

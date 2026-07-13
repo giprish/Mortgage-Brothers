@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import PreApprovedForm from "../component/PreApprovedForm";
 
 const programsData = [
   {
@@ -410,7 +411,7 @@ export default function LoanProgramsPage() {
                       ))}
                     </ul>
                     <Link
-                      href="/#get-pre-approved"
+                      href="#get-pre-approved"
                       className="btn-primary hover:shadow-brand-green-accent/20 group"
                     >
                       {prog.ctaText}
@@ -460,6 +461,7 @@ export default function LoanProgramsPage() {
           ))}
         </div>
       </main>
+      <PreApprovedForm />
       <Footer />
     </div>
   );

@@ -112,12 +112,13 @@ const Footer = () => {
               Company
             </h4>
             <ul className="flex flex-col gap-3">
-              {["About Us", "The Team", "Reviews", "Calculators", "FAQ"].map((item) => {
+              {["About Us", "The Team", "Reviews", "Calculators", "Areas We Serve", "FAQ"].map((item) => {
                 let href = `/#${item.toLowerCase().replace(" ", "-")}`;
                 if (item === "FAQ") href = "/faq";
                 if (item === "About Us") href = "/about";
                 if (item === "Reviews") href = "/reviews";
                 if (item === "Calculators") href = "/calculators";
+                if (item === "Areas We Serve") href = "/areas-we-serve";
                 return (
                   <li key={item}>
                     <a

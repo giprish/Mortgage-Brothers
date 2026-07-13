@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import PreApprovedForm from "../component/PreApprovedForm";
 
 // FAQ categories with their target element IDs for scroll-spy
 const categories = [
@@ -843,6 +844,7 @@ export default function FAQPage() {
         </div>
       </main>
 
+      <PreApprovedForm />
       <Footer />
     </div>
   );

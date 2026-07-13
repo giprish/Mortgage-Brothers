@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import PreApprovedForm from "../component/PreApprovedForm";
 
 export default function AboutPage() {
   return (
@@ -371,6 +372,7 @@ export default function AboutPage() {
        
       </main>
 
+      <PreApprovedForm />
       <Footer />
     </div>
   );
