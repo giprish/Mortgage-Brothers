@@ -71,6 +71,12 @@ const Navbar = () => {
               >
                 Maricopa County
               </Link>
+              <Link
+                href="/areas-we-serve/maricopa-county-2"
+                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
+              >
+                Maricopa County 2
+              </Link>
             </div>
           </div>
 
@@ -202,6 +208,13 @@ const Navbar = () => {
             className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
           >
             ↳ Maricopa County
+          </Link>
+          <Link
+            href="/areas-we-serve/maricopa-county-2"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+          >
+            ↳ Maricopa County 2
           </Link>
 
           <Link
