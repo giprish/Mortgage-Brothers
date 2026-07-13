@@ -115,12 +115,12 @@ const Navbar = () => {
             </svg>
             (602) 535-2171
           </a>
-          <a
-            href="#get-pre-approved"
+          <Link
+            href="/#get-pre-approved"
             className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-semibold px-5 py-2.5 rounded-full transition-all duration-200 hover:shadow-lg"
           >
             Get Pre-Approved
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -244,13 +244,13 @@ const Navbar = () => {
             </svg>
             (602) 535-2171
           </a>
-          <a
-            href="#get-pre-approved"
+          <Link
+            href="/#get-pre-approved"
             onClick={() => setMobileMenuOpen(false)}
             className="bg-[#3fb364] text-white text-[14px] font-semibold px-5 py-2.5 rounded-full text-center"
           >
             Get Pre-Approved
-          </a>
+          </Link>
         </div>
       )}
     </nav>

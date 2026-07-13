@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
-import PreApprovedForm from "../component/PreApprovedForm";
+// import PreApprovedForm from "../component/PreApprovedForm";
 
 // Regions & Counties Data from the designs
 const regions = [
@@ -394,7 +394,7 @@ export default function AreasWeServe() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
               <Link
-                href="#get-pre-approved"
+                href="/#get-pre-approved"
                 className="w-full sm:w-auto btn-primary hover:shadow-brand-green-accent/20 group"
               >
                 Get Pre-Approved
@@ -425,7 +425,7 @@ export default function AreasWeServe() {
         </section>
       </main>
 
-      <PreApprovedForm />
+      {/* <PreApprovedForm /> */}
       <Footer />
     </div>
   );

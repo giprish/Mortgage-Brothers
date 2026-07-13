@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
-import PreApprovedForm from "../../component/PreApprovedForm";
+// import PreApprovedForm from "../../component/PreApprovedForm";
 
 const cities = [
   {
@@ -157,7 +157,7 @@ export default function MaricopaCounty() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-4">
               <Link
-                href="#get-pre-approved"
+                href="/#get-pre-approved"
                 className="w-full sm:w-auto btn-primary hover:shadow-brand-green-accent/20 group"
               >
                 Start My Pre-Approval
@@ -263,7 +263,7 @@ export default function MaricopaCounty() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
               <Link
-                href="#get-pre-approved"
+                href="/#get-pre-approved"
                 className="w-full sm:w-auto btn-primary hover:shadow-brand-green-accent/20 group"
               >
                 Get Pre-Approved
@@ -307,7 +307,7 @@ export default function MaricopaCounty() {
         </section>
       </main>
 
-      <PreApprovedForm />
+      {/* <PreApprovedForm /> */}
       <Footer />
     </div>
   );

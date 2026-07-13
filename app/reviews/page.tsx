@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
-import PreApprovedForm from "../component/PreApprovedForm";
+// import PreApprovedForm from "../component/PreApprovedForm";
 
 // Reviews dataset matching the user screenshots
 const reviewsData = [
@@ -222,7 +222,7 @@ export default function ReviewsPage() {
               Join the Arizona families who found a better way to finance their home.
             </p>
             <Link
-              href="#get-pre-approved"
+              href="/#get-pre-approved"
               className="btn-primary hover:shadow-brand-green-accent/20 group"
             >
               Get Pre-Approved
@@ -247,7 +247,7 @@ export default function ReviewsPage() {
 
       </main>
 
-      <PreApprovedForm />
+      {/* <PreApprovedForm /> */}
       <Footer />
     </div>
   );
