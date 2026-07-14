@@ -59,12 +59,12 @@ const Navbar = () => {
               </svg>
             </Link>
             <div className="absolute left-0 mt-2 w-48 bg-white border border-[#e8e0d0] rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-              <Link
+              {/* <Link
                 href="/areas-we-serve"
                 className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150"
               >
                 All Service Areas
-              </Link>
+              </Link> */}
               <Link
                 href="/areas-we-serve/directory"
                 className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
