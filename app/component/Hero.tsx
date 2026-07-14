@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -35,8 +36,8 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-wrap items-center gap-4 mb-12">
-              <a
-                href="#get-pre-approved"
+              <Link
+                href="/#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55]  text-white text-[15px] font-semibold px-7 py-3.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-[#c85a28]/20"
               >
                 Get Pre-Approved
@@ -54,7 +55,7 @@ const Hero = () => {
                   <line x1="5" y1="12" x2="19" y2="12" />
                   <polyline points="12 5 19 12 12 19" />
                 </svg>
-              </a>
+              </Link>
               <a
                 href="#talk-to-broker"
                 className="inline-flex items-center gap-2 bg-transparent border-2 border-white/30 hover:border-white/60 text-white text-[15px] font-semibold px-7 py-3.5 rounded-full transition-all duration-200"

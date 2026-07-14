@@ -1,9 +1,27 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const PreApprovedForm = () => {
   const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      if (!event.origin.includes("jotform.com")) return;
+
+      if (
+        event.data &&
+        (event.data.action === "submission-completed" ||
+          event.data === "submission-completed" ||
+          (typeof event.data === "string" && event.data.includes("submission-completed")))
+      ) {
+        window.location.href = "/";
+      }
+    };
+
+    window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
+  }, []);
 
   return (
     <section

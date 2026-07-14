@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const CTA = () => {
   return (
@@ -28,8 +29,8 @@ const CTA = () => {
 
         {/* Action Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a
-            href="#get-pre-approved"
+          <Link
+            href="/#get-pre-approved"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-250 shadow-lg shadow-[#3fb364]/20 hover:shadow-[#3fb364]/40"
           >
             Start My Pre-Approval
@@ -47,7 +48,7 @@ const CTA = () => {
               <line x1="5" y1="12" x2="19" y2="12" />
               <polyline points="12 5 19 12 12 19" />
             </svg>
-          </a>
+          </Link>
           <a
             href="#ask-question"
             className="w-full sm:w-auto inline-flex items-center justify-center bg-transparent border border-white/30 hover:border-white/60 text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200"
