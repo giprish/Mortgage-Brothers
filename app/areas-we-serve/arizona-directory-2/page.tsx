@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useRef, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
@@ -154,6 +154,42 @@ export default function ArizonaDirectory2Page() {
   const [searchQuery, setSearchQuery] = useState("");
   const [hoveredCountyMap, setHoveredCountyMap] = useState<string | null>(null);
   const [highlightedCard, setHighlightedCard] = useState<string | null>(null);
+  const [highlightedCity, setHighlightedCity] = useState<string | null>(null);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+
+  const searchContainerRef = useRef<HTMLDivElement>(null);
+
+  // Close search suggestions when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (searchContainerRef.current && !searchContainerRef.current.contains(event.target as Node)) {
+        setShowSuggestions(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Filter suggestion list based on query
+  const suggestions = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase();
+    if (!query) return [];
+
+    const matches: { type: "city" | "county"; name: string; countyName: string; countyId: string }[] = [];
+
+    countiesData.forEach((county) => {
+      if (county.name.toLowerCase().includes(query)) {
+        matches.push({ type: "county", name: county.name, countyName: county.name, countyId: county.id });
+      }
+      county.cities.forEach((city) => {
+        if (city.toLowerCase().includes(query)) {
+          matches.push({ type: "city", name: city, countyName: county.name, countyId: county.id });
+        }
+      });
+    });
+
+    return matches.slice(0, 8); // Limit to 8 suggestions
+  }, [searchQuery]);
 
   // Filter counties and cities based on search query
   const filteredCounties = useMemo(() => {
@@ -161,10 +197,7 @@ export default function ArizonaDirectory2Page() {
     if (!query) return countiesData;
 
     return countiesData.map((county) => {
-      // Check if county name matches
       const matchesCounty = county.name.toLowerCase().includes(query) || county.region.toLowerCase().includes(query);
-      
-      // Filter matching cities inside county
       const filteredCities = county.cities.filter((city) =>
         city.toLowerCase().includes(query)
       );
@@ -181,14 +214,23 @@ export default function ArizonaDirectory2Page() {
   }, [searchQuery]);
 
   // Handle map click or search click to scroll down to county card
-  const handleScrollToCounty = (countyId: string) => {
+  const handleScrollToCounty = (countyId: string, cityName?: string) => {
     setHighlightedCard(countyId);
+    setShowSuggestions(false);
+    setSearchQuery("");
     setTimeout(() => setHighlightedCard(null), 3000); // Pulse highlight card border
 
-    const element = document.getElementById(`county-card-${countyId}`);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "center" });
+    if (cityName) {
+      setHighlightedCity(cityName);
+      setTimeout(() => setHighlightedCity(null), 3000);
     }
+
+    setTimeout(() => {
+      const element = document.getElementById(`county-card-${countyId}`);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }, 100);
   };
 
   return (
@@ -213,28 +255,63 @@ export default function ArizonaDirectory2Page() {
                 From downtown Phoenix to the far edges of the state — 15 counties, 108 cities and towns, one local team.
               </p>
 
-              {/* Dynamic search query input */}
-              <div className="relative w-full max-w-md">
-                <input
-                  type="text"
-                  placeholder="Search your city or county..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-white border border-[#e8e0d0]/10 rounded-2xl px-5 py-4 pl-12 text-[15px] text-[#1a3a1a] placeholder:text-[#8a9a7a]/60 shadow-lg focus:outline-none focus:border-brand-green-accent/50 focus:ring-1 focus:ring-brand-green-accent/20 transition-all"
-                />
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#8a9a7a"
-                  strokeWidth="2.5"
-                  className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"
-                >
-                  <circle cx="11" cy="11" r="8" />
-                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                </svg>
+              {/* Dynamic search query input with Autocomplete Suggestions */}
+              <div ref={searchContainerRef} className="relative w-full max-w-md z-30">
+                <div className="relative">
+                  <input
+                    type="text"
+                    placeholder="Search your city or county..."
+                    value={searchQuery}
+                    onChange={(e) => {
+                      setSearchQuery(e.target.value);
+                      setShowSuggestions(true);
+                    }}
+                    onFocus={() => setShowSuggestions(true)}
+                    className="w-full bg-white border border-[#e8e0d0]/10 rounded-2xl px-5 py-4 pl-12 text-[15px] text-[#1a3a1a] placeholder:text-[#8a9a7a]/60 shadow-lg focus:outline-none focus:border-brand-green-accent/50 focus:ring-1 focus:ring-brand-green-accent/20 transition-all"
+                  />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#8a9a7a"
+                    strokeWidth="2.5"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"
+                  >
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                  </svg>
+                </div>
+
+                {/* Suggestions List Popover */}
+                {showSuggestions && suggestions.length > 0 && (
+                  <div className="absolute left-0 right-0 mt-2 bg-white border border-[#e8e0d0] rounded-2xl shadow-xl overflow-hidden text-left z-50">
+                    <div className="py-2">
+                      {suggestions.map((item, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => handleScrollToCounty(item.countyId, item.type === "city" ? item.name : undefined)}
+                          className="w-full px-5 py-3 hover:bg-[#fcf9f3] text-left transition-colors flex items-center justify-between cursor-pointer"
+                        >
+                          <div>
+                            <span className="text-[14px] font-semibold text-brand-green-deep">
+                              {item.name}
+                            </span>
+                            {item.type === "city" && (
+                              <span className="text-[#a89a70] text-[11px] ml-2 font-bold uppercase tracking-wider">
+                                ({item.countyName})
+                              </span>
+                            )}
+                          </div>
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-[#8a9a7a] bg-[#f5f0e8] px-2 py-0.5 rounded-md">
+                            {item.type}
+                          </span>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -573,14 +650,21 @@ export default function ArizonaDirectory2Page() {
 
                       {/* City pills list */}
                       <div className="flex flex-wrap gap-1.5 mb-6">
-                        {county.cities.map((city) => (
-                          <span
-                            key={city}
-                            className="bg-white border border-[#e8dcc6]/40 text-[#1a3a1a] text-[11.5px] font-semibold px-2.5 py-1 rounded-lg"
-                          >
-                            {city}
-                          </span>
-                        ))}
+                        {county.cities.map((city) => {
+                          const isFlashed = highlightedCity === city;
+                          return (
+                            <span
+                              key={city}
+                              className={`border text-[11.5px] font-semibold px-2.5 py-1 rounded-lg transition-all duration-300 ${
+                                isFlashed
+                                  ? "bg-[#3fb364] text-white border-transparent scale-105 animate-pulse"
+                                  : "bg-white border-[#e8dcc6]/40 text-[#1a3a1a]"
+                              }`}
+                            >
+                              {city}
+                            </span>
+                          );
+                        })}
                       </div>
                     </div>
 
