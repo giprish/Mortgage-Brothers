@@ -119,6 +119,7 @@ const Footer = () => {
                 if (item === "Reviews") href = "/reviews";
                 if (item === "Calculators") href = "/calculators";
                 if (item === "Areas We Serve") href = "/areas-we-serve";
+                if (item === "The Team") href = "/team";
                 return (
                   <li key={item}>
                     <a
