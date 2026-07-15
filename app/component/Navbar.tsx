@@ -23,12 +23,55 @@ const Navbar = () => {
 
         {/* Desktop Nav Links */}
         <div className="hidden lg:flex items-center gap-5 px-3">
-          <Link
-            href="/loan-programs"
-            className="text-[#1a3a1a] text-[14px] font-medium hover:text-[#2d5a2d] transition-colors duration-200"
-          >
-            Loan Programs
-          </Link>
+          {/* Loan Programs Dropdown */}
+          <div className="relative group py-2">
+            <Link
+              href="/loan-programs"
+              className="flex items-center gap-1.5 text-[#1a3a1a] text-[14px] font-medium hover:text-[#2d5a2d] transition-colors duration-200 cursor-pointer"
+            >
+              Loan Programs
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="group-hover:rotate-180 transition-transform duration-200"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </Link>
+            <div className="absolute left-0 mt-2 w-48 bg-white border border-[#e8e0d0] rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              {/* <Link
+                href="/loan-programs"
+                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
+              >
+                All Programs
+              </Link> */}
+              <Link
+                href="/loan-programs/fha"
+                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
+              >
+                FHA Loans
+              </Link>
+              <Link
+                href="/loan-programs-detail"
+                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
+              >
+                Loan Program Details
+              </Link>
+              {/* <Link
+                href="/loan-programs#va"
+                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
+              >
+                VA Loans
+              </Link> */}
+            </div>
+          </div>
           <Link
             href="/calculators"
             className="text-[#1a3a1a] text-[14px] font-medium hover:text-[#2d5a2d] transition-colors duration-200"
@@ -79,9 +122,9 @@ const Navbar = () => {
               </Link>
               <Link
                 href="/areas-we-serve/maricopa-county/phoenix"
-                className="block pl-8 pr-4 py-1.5 text-[13px] text-[#4e5b4e] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
+                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
               >
-                ↳ Phoenix
+                Phoenix
               </Link>
               <Link
                 href="/areas-we-serve/arizona-directory-2"
@@ -310,6 +353,13 @@ const Navbar = () => {
             Loan Programs
           </Link>
           <Link
+            href="/loan-programs/fha"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+          >
+            ↳ FHA Loans
+          </Link>
+          <Link
             href="/calculators"
             onClick={() => setMobileMenuOpen(false)}
             className="text-[#1a3a1a] text-[15px] font-medium py-2"
@@ -341,7 +391,7 @@ const Navbar = () => {
           <Link
             href="/areas-we-serve/maricopa-county/phoenix"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[13.5px] pl-8 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-4"
+            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
           >
             ↳ Phoenix
           </Link>
