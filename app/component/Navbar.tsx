@@ -125,7 +125,7 @@ const Navbar = () => {
                 href="/term-condition"
                 className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
               >
-               Term & Condition
+              Team & Careers
               </Link>
             </div>
           </div>
@@ -170,13 +170,12 @@ const Navbar = () => {
               >
                 Videos
               </Link>
-               <Link
-                href="/resources/mortgage-basics-1"
+              <Link
+                href="/resources/mortgage-basics/conventional-loan-basics"
                 className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
               >
-               Mortgage Basics 1
-              </Link> 
-              {/* <Link
+                Conventional Loans
+              </Link>              {/* <Link
                 href="/resources/fha-loans"
                 className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
               >
@@ -387,7 +386,7 @@ const Navbar = () => {
             onClick={() => setMobileMenuOpen(false)}
             className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
           >
-            ↳ Term & Condition
+            ↳ Team & Careers
           </Link>
           <Link
             href="/reviews"
@@ -417,6 +416,13 @@ const Navbar = () => {
             className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
           >
             ↳ Videos
+          </Link>
+          <Link
+            href="/resources/mortgage-basics/conventional-loan-basics"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+          >
+            ↳ Conventional Loans
           </Link>
           <Link
             href="/reviews"

@@ -244,8 +244,9 @@ export default function ResourceCategoryPage() {
 
               <div className="flex flex-col gap-6">
                 {filteredArticles.map((art) => (
-                  <div
+                  <Link
                     key={art.id}
+                    href={`/resources/${slug}/${art.id}`}
                     className="bg-white rounded-2xl border border-[#e8e0d0]/60 p-6 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 hover:shadow-md hover:border-brand-green-accent/20 transition-all duration-300 group cursor-pointer"
                   >
                     <div className="flex items-start gap-4 flex-grow">
@@ -276,7 +277,7 @@ export default function ResourceCategoryPage() {
                       </svg>
                     </div>
 
-                  </div>
+                  </Link>
                 ))}
 
                 {filteredArticles.length === 0 && (
