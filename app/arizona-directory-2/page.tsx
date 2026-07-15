@@ -2,8 +2,8 @@
 
 import React, { useState, useMemo, useRef, useEffect } from "react";
 import Link from "next/link";
-import Navbar from "../../component/Navbar";
-import Footer from "../../component/Footer";
+import Navbar from "../component/Navbar";
+import Footer from "../component/Footer";
 
 // Detailed Counties list with region, seat, cities, and path routes
 const countiesData = [

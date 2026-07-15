@@ -45,39 +45,120 @@ const Navbar = () => {
                 <polyline points="6 9 12 15 18 9" />
               </svg>
             </Link>
-            <div className="absolute left-0 mt-2 w-48 bg-white border border-[#e8e0d0] rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-              {/* <Link
-                href="/loan-programs"
-                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
-              >
-                All Programs
-              </Link> */}
-              <Link
-                href="/loan-programs/fha"
-                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
-              >
-                FHA Loans
-              </Link>
-              <Link
-                href="/loan-programs-detail"
-                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
-              >
-                Loan Program Details
-              </Link>
-              {/* <Link
-                href="/loan-programs#va"
-                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
-              >
-                VA Loans
-              </Link> */}
+            <div className="absolute left-[-12px] top-full pt-3 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
+              <div className="bg-white border border-[#e8e0d0] rounded-xl shadow-xl py-2">
+                {/* <Link
+                  href="/loan-programs"
+                  className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
+                >
+                  All Programs
+                </Link> */}
+                <Link
+                  href="/loan-programs/fha"
+                  className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
+                >
+                  FHA Loans
+                </Link>
+                <Link
+                  href="/loan-programs-detail"
+                  className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
+                >
+                  Loan Program Details
+                </Link>
+                {/* <Link
+                  href="/loan-programs#va"
+                  className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
+                >
+                  VA Loans
+                </Link> */}
+              </div>
             </div>
           </div>
-          <Link
-            href="/calculators"
-            className="text-[#1a3a1a] text-[14px] font-medium hover:text-[#2d5a2d] transition-colors duration-200"
-          >
-            Calculators
-          </Link>
+          {/* Calculators Megamenu Dropdown */}
+          <div className="relative group py-2">
+            <Link
+              href="/calculators"
+              className="flex items-center gap-1.5 text-[#1a3a1a] text-[14px] font-medium hover:text-[#2d5a2d] transition-colors duration-200 cursor-pointer"
+            >
+              Calculators
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="group-hover:rotate-180 transition-transform duration-200"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </Link>
+            
+            {/* Megamenu container */}
+            <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[720px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
+              <div className="bg-white border border-[#e8e0d0] rounded-xl shadow-xl p-6 grid grid-cols-3 gap-6 text-left">
+                {/* Column 1 */}
+                <div>
+                  <h4 className="text-[#3fb364] text-[11px] font-bold tracking-[0.12em] uppercase mb-4 pb-1.5 border-b border-[#e8e0d0]/40">
+                    BASIC CALCULATORS
+                  </h4>
+                  <div className="flex flex-col gap-2.5">
+                    <Link href="/calculators" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                      Basic Mortgage Payment
+                    </Link>
+                    <Link href="/calculators" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                      Mortgage Affordability
+                    </Link>
+                    <Link href="/calculators" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                      Refinance Calculator
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Column 2 */}
+                <div>
+                  <h4 className="text-[#3fb364] text-[11px] font-bold tracking-[0.12em] uppercase mb-4 pb-1.5 border-b border-[#e8e0d0]/40">
+                    COMPARISON TOOLS
+                  </h4>
+                  <div className="flex flex-col gap-2.5">
+                    <Link href="/calculators" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                      Rent vs. Buy Calculator
+                    </Link>
+                    <Link href="/calculators" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                      Down Payment Calculator
+                    </Link>
+                    <Link href="/calculators" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                      Debt-to-Income Ratio
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Column 3 */}
+                <div>
+                  <h4 className="text-[#3fb364] text-[11px] font-bold tracking-[0.12em] uppercase mb-4 pb-1.5 border-b border-[#e8e0d0]/40">
+                    SPECIALIZED
+                  </h4>
+                  <div className="flex flex-col gap-2.5">
+                    <Link href="/calculators" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                      Extra Payment Mortgage
+                    </Link>
+                    <Link href="/calculators" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                      FHA Loan Calculator
+                    </Link>
+                    <Link href="/calculators" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                      VA Loan Calculator
+                    </Link>
+                    <Link href="/calculators" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                      Home Purchase Closing Cost
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* Areas We Serve Dropdown */}
           <div className="relative group py-2">
@@ -101,37 +182,77 @@ const Navbar = () => {
                 <polyline points="6 9 12 15 18 9" />
               </svg>
             </Link>
-            <div className="absolute left-0 mt-2 w-48 bg-white border border-[#e8e0d0] rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-              {/* <Link
-                href="/areas-we-serve"
-                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150"
-              >
-                All Service Areas
-              </Link> */}
-              <Link
-                href="/areas-we-serve/directory"
-                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
-              >
-                Arizona Directory
-              </Link>
-              <Link
-                href="/areas-we-serve/maricopa-county"
-                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
-              >
-                Maricopa County
-              </Link>
-              <Link
-                href="/areas-we-serve/maricopa-county/phoenix"
-                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
-              >
-                Phoenix
-              </Link>
-              <Link
-                href="/areas-we-serve/arizona-directory-2"
-                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
-              >
-                Arizona Directory 2
-              </Link>
+            {/* Areas We Serve Megamenu Container */}
+            <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[840px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
+              <div className="bg-white border border-[#e8e0d0] rounded-xl shadow-xl p-6 grid grid-cols-4 gap-6 text-left">
+                {/* Column 1 */}
+                <div>
+                  <h4 className="text-[#3fb364] text-[11px] font-bold tracking-[0.12em] uppercase mb-3 pb-1 border-b border-[#e8e0d0]/40">
+                    DIRECTORIES & AREAS
+                  </h4>
+                  <div className="flex flex-col gap-1.5">
+                    <Link href="/arizona-directory" className="text-[#3fb364] text-[13px] font-bold hover:text-[#2d5a2d] transition-colors">Arizona Directory</Link>
+                    <Link href="/arizona-directory-2" className="text-[#3fb364] text-[13px] font-bold hover:text-[#2d5a2d] transition-colors">Arizona Directory 2</Link>
+                    <Link href="/areas-we-serve" className="text-[#3fb364] text-[13px] font-bold hover:text-[#2d5a2d] transition-colors">All Service Areas</Link>
+                    <Link href="/areas-we-serve/maricopa-county" className="text-[#3fb364] text-[13px] font-bold hover:text-[#2d5a2d] transition-colors">Maricopa County</Link>
+                  </div>
+                </div>
+
+                {/* Column 2 */}
+                <div>
+                  <h4 className="text-[#3fb364] text-[11px] font-bold tracking-[0.12em] uppercase mb-3 pb-1 border-b border-[#e8e0d0]/40">
+                    CITIES A-G
+                  </h4>
+                  <div className="flex flex-col gap-1.5">
+                    <Link href="/areas-we-serve/maricopa-county/phoenix" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Phoenix</Link>
+                    <Link href="/areas-we-serve/maricopa-county/scottsdale" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Scottsdale</Link>
+                    <Link href="/areas-we-serve/maricopa-county/mesa" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Mesa</Link>
+                    <Link href="/areas-we-serve/maricopa-county/chandler" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Chandler</Link>
+                    <Link href="/areas-we-serve/maricopa-county/gilbert" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Gilbert</Link>
+                    <Link href="/areas-we-serve/maricopa-county/glendale" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Glendale</Link>
+                    <Link href="/areas-we-serve/maricopa-county/tempe" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Tempe</Link>
+                    <Link href="/areas-we-serve/maricopa-county/peoria" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Peoria</Link>
+                    <Link href="/areas-we-serve/maricopa-county/surprise" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Surprise</Link>
+                    <Link href="/areas-we-serve/maricopa-county/goodyear" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Goodyear</Link>
+                  </div>
+                </div>
+
+                {/* Column 3 */}
+                <div>
+                  <h4 className="text-[#3fb364] text-[11px] font-bold tracking-[0.12em] uppercase mb-3 pb-1 border-b border-[#e8e0d0]/40">
+                    CITIES H-Q
+                  </h4>
+                  <div className="flex flex-col gap-1.5">
+                    <Link href="/areas-we-serve/maricopa-county/avondale" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Avondale</Link>
+                    <Link href="/areas-we-serve/maricopa-county/buckeye" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Buckeye</Link>
+                    <Link href="/areas-we-serve/maricopa-county/queen-creek" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Queen Creek</Link>
+                    <Link href="/areas-we-serve/maricopa-county/fountain-hills" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Fountain Hills</Link>
+                    <Link href="/areas-we-serve/maricopa-county/paradise-valley" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Paradise Valley</Link>
+                    <Link href="/areas-we-serve/maricopa-county/cave-creek" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Cave Creek</Link>
+                    <Link href="/areas-we-serve/maricopa-county/carefree" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Carefree</Link>
+                    <Link href="/areas-we-serve/maricopa-county/anthem" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Anthem</Link>
+                    <Link href="/areas-we-serve/maricopa-county/sun-city" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Sun City</Link>
+                  </div>
+                </div>
+
+                {/* Column 4 */}
+                <div>
+                  <h4 className="text-[#3fb364] text-[11px] font-bold tracking-[0.12em] uppercase mb-3 pb-1 border-b border-[#e8e0d0]/40">
+                    CITIES R-Z
+                  </h4>
+                  <div className="flex flex-col gap-1.5">
+                    <Link href="/areas-we-serve/maricopa-county/sun-city-west" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Sun City West</Link>
+                    <Link href="/areas-we-serve/maricopa-county/litchfield-park" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Litchfield Park</Link>
+                    <Link href="/areas-we-serve/maricopa-county/wickenburg" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Wickenburg</Link>
+                    <Link href="/areas-we-serve/maricopa-county/apache-junction" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Apache Junction</Link>
+                    <Link href="/areas-we-serve/maricopa-county/guadalupe" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Guadalupe</Link>
+                    <Link href="/areas-we-serve/maricopa-county/el-mirage" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">El Mirage</Link>
+                    <Link href="/areas-we-serve/maricopa-county/tolleson" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Tolleson</Link>
+                    <Link href="/areas-we-serve/maricopa-county/youngtown" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Youngtown</Link>
+                    <Link href="/areas-we-serve/maricopa-county/gila-bend" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Gila Bend</Link>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -157,19 +278,21 @@ const Navbar = () => {
                 <polyline points="6 9 12 15 18 9" />
               </svg>
             </Link>
-            <div className="absolute left-0 mt-2 w-48 bg-white border border-[#e8e0d0] rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-              <Link
-                href="/contact"
-                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
-              >
-                Contact Us
-              </Link>
-              <Link
-                href="/term-condition"
-                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
-              >
-              Team & Careers
-              </Link>
+            <div className="absolute left-[-12px] top-full pt-3 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
+              <div className="bg-white border border-[#e8e0d0] rounded-xl shadow-xl py-2">
+                <Link
+                  href="/contact"
+                  className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
+                >
+                  Contact Us
+                </Link>
+                <Link
+                  href="/term-condition"
+                  className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
+                >
+                Team & Careers
+                </Link>
+              </div>
             </div>
           </div>
           <Link
@@ -200,61 +323,63 @@ const Navbar = () => {
                 <polyline points="6 9 12 15 18 9" />
               </svg>
             </Link>
-            <div className="absolute left-0 mt-2 w-60 bg-white border border-[#e8e0d0] rounded-xl shadow-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-              <Link
-                href="/resources/mortgage-basics"
-                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
-              >
-                Mortgage Basics
-              </Link>
-              <Link
-                href="/resources/videos"
-                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
-              >
-                Videos
-              </Link>
-              <Link
-                href="/resources/mortgage-basics/conventional-loan-basics"
-                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
-              >
-                Conventional Loans
-              </Link>              {/* <Link
-                href="/resources/fha-loans"
-                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
-              >
-                FHA Loans
-              </Link>
-              <Link
-                href="/resources/real-estate-mortgages"
-                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
-              >
-                Real Estate & Mortgages
-              </Link>
-              <Link
-                href="/resources/specialty-loans"
-                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
-              >
-                Specialty Loans
-              </Link>
-              <Link
-                href="/resources/homeownership-tips"
-                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
-              >
-                Homeownership Tips
-              </Link>
-              <Link
-                href="/resources/process-guidance"
-                className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
-              >
-                Process Guidance
-              </Link>
-              <div className="border-t border-[#e8e0d0]/40 my-1"></div>
-              <Link
-                href="/resources"
-                className="block px-4 py-2 text-[14px] text-[#3fb364] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-semibold"
-              >
-                All Resources
-              </Link> */}
+            <div className="absolute left-[-12px] top-full pt-3 w-60 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
+              <div className="bg-white border border-[#e8e0d0] rounded-xl shadow-xl py-2">
+                <Link
+                  href="/resources/mortgage-basics"
+                  className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
+                >
+                  Mortgage Basics
+                </Link>
+                <Link
+                  href="/resources/videos"
+                  className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
+                >
+                  Videos
+                </Link>
+                <Link
+                  href="/resources/mortgage-basics/conventional-loan-basics"
+                  className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
+                >
+                  Conventional Loans
+                </Link>              {/* <Link
+                  href="/resources/fha-loans"
+                  className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
+                >
+                  FHA Loans
+                </Link>
+                <Link
+                  href="/resources/real-estate-mortgages"
+                  className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
+                >
+                  Real Estate & Mortgages
+                </Link>
+                <Link
+                  href="/resources/specialty-loans"
+                  className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
+                >
+                  Specialty Loans
+                </Link>
+                <Link
+                  href="/resources/homeownership-tips"
+                  className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
+                >
+                  Homeownership Tips
+                </Link>
+                <Link
+                  href="/resources/process-guidance"
+                  className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
+                >
+                  Process Guidance
+                </Link>
+                <div className="border-t border-[#e8e0d0]/40 my-1"></div>
+                <Link
+                  href="/resources"
+                  className="block px-4 py-2 text-[14px] text-[#3fb364] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-semibold"
+                >
+                  All Resources
+                </Link> */}
+              </div>
             </div>
           </div>
           <Link
@@ -366,6 +491,27 @@ const Navbar = () => {
           >
             Calculators
           </Link>
+          <Link
+            href="/calculators"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+          >
+            ↳ Basic Mortgage Payment
+          </Link>
+          <Link
+            href="/calculators"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+          >
+            ↳ Rent vs. Buy Calculator
+          </Link>
+          <Link
+            href="/calculators"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+          >
+            ↳ Extra Payment Mortgage
+          </Link>
 
           <Link
             href="/areas-we-serve"
@@ -375,11 +521,18 @@ const Navbar = () => {
             Areas We Serve
           </Link>
           <Link
-            href="/areas-we-serve/directory"
+            href="/arizona-directory"
             onClick={() => setMobileMenuOpen(false)}
             className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
           >
             ↳ Arizona Directory
+          </Link>
+          <Link
+            href="/arizona-directory-2"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+          >
+            ↳ Arizona Directory 2
           </Link>
           <Link
             href="/areas-we-serve/maricopa-county"
@@ -401,13 +554,6 @@ const Navbar = () => {
             className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
           >
             ↳ Maricopa County 2
-          </Link>
-          <Link
-            href="/areas-we-serve/arizona-directory-2"
-            onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
-          >
-            ↳ Arizona Directory 2
           </Link>
 
           <Link

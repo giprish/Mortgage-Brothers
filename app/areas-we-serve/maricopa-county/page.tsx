@@ -208,8 +208,9 @@ export default function MaricopaCounty() {
             {/* 3-Column responsive grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {cities.map((city, index) => (
-                <div
+                <Link
                   key={index}
+                  href={`/areas-we-serve/maricopa-county/${city.name.toLowerCase().replace(/\s+/g, "-")}`}
                   className="bg-[#faf7f0] rounded-2xl p-6 lg:p-7 border border-[#e8e0d0]/50 shadow-sm flex flex-col hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/30 active:scale-[0.98] active:translate-y-0 cursor-pointer transition-all duration-300"
                 >
                   {/* City Header */}
@@ -238,7 +239,7 @@ export default function MaricopaCounty() {
                   <p className="text-brand-text-muted text-[13.5px] lg:text-[14px] leading-relaxed">
                     {city.description}
                   </p>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
