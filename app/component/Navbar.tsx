@@ -106,10 +106,10 @@ const Navbar = () => {
                     BASIC CALCULATORS
                   </h4>
                   <div className="flex flex-col gap-2.5">
-                    <Link href="/calculators" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link href="/calculators/basic" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Basic Mortgage Payment
                     </Link>
-                    <Link href="/calculators" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link href="/calculators/affordability" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Mortgage Affordability
                     </Link>
                     <Link href="/calculators" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
@@ -492,11 +492,18 @@ const Navbar = () => {
             Calculators
           </Link>
           <Link
-            href="/calculators"
+            href="/calculators/basic"
             onClick={() => setMobileMenuOpen(false)}
             className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
           >
             ↳ Basic Mortgage Payment
+          </Link>
+          <Link
+            href="/calculators/affordability"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+          >
+            ↳ Mortgage Affordability
           </Link>
           <Link
             href="/calculators"
