@@ -2,8 +2,8 @@
 
 import React, { useState, useCallback } from "react";
 import Link from "next/link";
-import Navbar from "../../component/Navbar";
-import Footer from "../../component/Footer";
+import Navbar from "../component/Navbar";
+import Footer from "../component/Footer";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -33,7 +33,7 @@ interface CalcResult {
   schedule: AmortizationRow[];
 }
 
-// ─── Core Calculation Engine ──────────────────────────────────────────────────
+// ─── Core Amortization Solver ─────────────────────────────────────────────────
 
 function buildAmortization(
   homePrice: number,
@@ -103,8 +103,6 @@ function buildAmortization(
   return { homePrice, downPaymentAmt: downAmt, downPaymentPct, loanAmount, monthlyPayment, firstMonthInterest, firstMonthPrincipal, totalPrincipal, totalInterest, totalMortgagePayments, overallCost, schedule };
 }
 
-// ─── Helpers ──────────────────────────────────────────────────────────────────
-
 const fmt = (v: number) =>
   new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(v);
 
@@ -114,7 +112,7 @@ const fmtK = (v: number) => {
   return fmt(v);
 };
 
-// ─── SVG Pie Chart ────────────────────────────────────────────────────────────
+// ─── SVG Charts ───────────────────────────────────────────────────────────────
 
 function PieChart({ downAmt, loanAmount, totalInterest }: { downAmt: number; loanAmount: number; totalInterest: number }) {
   const total = downAmt + loanAmount + totalInterest;
@@ -145,8 +143,6 @@ function PieChart({ downAmt, loanAmount, totalInterest }: { downAmt: number; loa
     </svg>
   );
 }
-
-// ─── Payment Bar Chart ────────────────────────────────────────────────────────
 
 function PaymentBarChart({ schedule, monthlyPayment }: { schedule: AmortizationRow[]; monthlyPayment: number }) {
   if (schedule.length === 0) return null;
@@ -184,9 +180,9 @@ function PaymentBarChart({ schedule, monthlyPayment }: { schedule: AmortizationR
   );
 }
 
-// ─── Main Component ───────────────────────────────────────────────────────────
+// ─── Component ────────────────────────────────────────────────────────────────
 
-export default function BasicMortgageCalculator() {
+export default function BasicMortgageCalculatorPage() {
   const [homePrice, setHomePrice] = useState("425000");
   const [dpAmt, setDpAmt] = useState("85000");
   const [dpPct, setDpPct] = useState("20");
@@ -255,7 +251,7 @@ export default function BasicMortgageCalculator() {
             <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5" />
           </div>
           <div className="max-w-4xl mx-auto px-6 relative z-20">
-            <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-4">MORTGAGE TOOLS</p>
+            <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-4 font-sans">MORTGAGE TOOLS</p>
             <h1 className="text-white text-[36px] lg:text-[52px] font-playfair font-normal leading-[1.1] mb-5">
               Basic Mortgage Payment Calculator
             </h1>
@@ -265,12 +261,11 @@ export default function BasicMortgageCalculator() {
           </div>
         </section>
 
-        {/* Input Form */}
+        {/* Inputs */}
         <section className="py-12 px-6 lg:px-10 max-w-4xl mx-auto">
           <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 shadow-sm p-7 lg:p-10 flex flex-col gap-7">
             <h3 className="text-[#052316] text-[18px] font-bold pb-3 border-b border-[#e8e0d0]/40">Loan Details</h3>
 
-            {/* Home Price */}
             <div>
               <label className="text-[#052316] text-[14px] font-semibold block mb-2">Home Price</label>
               <div className="relative">
@@ -281,7 +276,6 @@ export default function BasicMortgageCalculator() {
               </div>
             </div>
 
-            {/* Down Payment — dual sync inputs */}
             <div>
               <label className="text-[#052316] text-[14px] font-semibold block mb-2">Down Payment</label>
               <div className="grid grid-cols-2 gap-4">
@@ -301,7 +295,6 @@ export default function BasicMortgageCalculator() {
               <p className="text-[11.5px] text-[#a89a70] mt-1.5 italic">Editing either field updates the other automatically.</p>
             </div>
 
-            {/* Rate & Term */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="text-[#052316] text-[14px] font-semibold block mb-2">Annual Interest Rate</label>
@@ -326,11 +319,10 @@ export default function BasicMortgageCalculator() {
                       placeholder="Custom" />
                   </div>
                 </div>
-                <p className="text-[11px] text-[#a89a70] mt-1.5 italic">1–30 years. Decimals rounded to nearest whole year.</p>
+                <p className="text-[11px] text-[#a89a70] mt-1.5 italic font-sans">1–30 years. Decimals rounded to nearest whole year.</p>
               </div>
             </div>
 
-            {/* Calculate Button */}
             <button onClick={handleCalculate}
               className="w-full bg-[#3fb364] hover:bg-[#349b55] active:scale-[0.98] text-white text-[17px] font-bold py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer flex items-center justify-center gap-3 mt-2">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -341,7 +333,7 @@ export default function BasicMortgageCalculator() {
           </div>
         </section>
 
-        {/* Placeholder */}
+        {/* Results Placeholder */}
         {!result && (
           <section className="pb-16 px-6 max-w-2xl mx-auto text-center">
             <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-10 shadow-sm">
@@ -361,7 +353,6 @@ export default function BasicMortgageCalculator() {
         {/* Results */}
         {result && (
           <section id="calc-results" className="pb-16 px-6 lg:px-10 max-w-7xl mx-auto space-y-8 animate-fadeUp">
-            {/* Summary Cards */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               {[
                 { label: "Monthly Payment", value: fmt(result.monthlyPayment), accent: true },
@@ -376,12 +367,10 @@ export default function BasicMortgageCalculator() {
               ))}
             </div>
 
-            {/* Charts Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-              {/* Left: Overview + Pie */}
               <div className="lg:col-span-5 flex flex-col gap-6">
                 <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm">
-                  <h3 className="text-[#052316] text-[16px] font-bold mb-5 pb-3 border-b border-[#e8e0d0]/40">Loan Overview</h3>
+                  <h3 className="text-[#052316] text-[16px] font-bold mb-5 pb-3 border-b border-[#e8e0d0]/40 font-sans">Loan Overview</h3>
                   <div className="flex flex-col gap-3">
                     {[
                       { label: "Home Price", value: fmt(result.homePrice) },
@@ -399,9 +388,9 @@ export default function BasicMortgageCalculator() {
                 </div>
 
                 <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm">
-                  <h3 className="text-[#052316] text-[16px] font-bold mb-4 pb-3 border-b border-[#e8e0d0]/40">Cost Breakdown</h3>
+                  <h3 className="text-[#052316] text-[16px] font-bold mb-4 pb-3 border-b border-[#e8e0d0]/40 font-sans">Cost Breakdown</h3>
                   <PieChart downAmt={result.downPaymentAmt} loanAmount={result.loanAmount} totalInterest={result.totalInterest} />
-                  <div className="flex flex-col gap-2.5 mt-5">
+                  <div className="flex flex-col gap-2.5 mt-5 font-sans">
                     {[
                       { color: "#3fb364", label: "Down Payment", value: result.downPaymentAmt },
                       { color: "#052316", label: "Principal (Financed)", value: result.loanAmount },
@@ -423,11 +412,10 @@ export default function BasicMortgageCalculator() {
                 </div>
               </div>
 
-              {/* Right: Bar Chart + Totals + CTA */}
               <div className="lg:col-span-7 flex flex-col gap-6">
                 <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm">
-                  <h3 className="text-[#052316] text-[16px] font-bold mb-2 pb-3 border-b border-[#e8e0d0]/40">Payment Over Time</h3>
-                  <div className="flex items-center gap-5 mt-3 mb-4">
+                  <h3 className="text-[#052316] text-[16px] font-bold mb-2 pb-3 border-b border-[#e8e0d0]/40 font-sans">Payment Over Time</h3>
+                  <div className="flex items-center gap-5 mt-3 mb-4 font-sans">
                     {[{ color: "#3fb364", label: "Principal" }, { color: "#b89a5a", label: "Interest" }, { color: "#052316", label: "Remaining Balance" }].map((l) => (
                       <div key={l.label} className="flex items-center gap-1.5">
                         <div className="w-3 h-3 rounded-sm" style={{ background: l.color }} />
@@ -441,7 +429,7 @@ export default function BasicMortgageCalculator() {
                 </div>
 
                 <div className="bg-[#faf7f0] rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm">
-                  <h3 className="text-[#052316] text-[16px] font-bold mb-5 pb-3 border-b border-[#e8e0d0]/40">Total Loan Cost Summary</h3>
+                  <h3 className="text-[#052316] text-[16px] font-bold mb-5 pb-3 border-b border-[#e8e0d0]/40 font-sans">Total Loan Cost Summary</h3>
                   <div className="grid grid-cols-2 gap-4">
                     {[
                       { label: "Total Principal Paid", value: fmt(result.totalPrincipal) },
@@ -450,7 +438,7 @@ export default function BasicMortgageCalculator() {
                       { label: "Down Payment", value: fmt(result.downPaymentAmt) },
                     ].map((item) => (
                       <div key={item.label} className="bg-white rounded-2xl p-4 border border-[#e8e0d0]/40">
-                        <p className="text-[11px] text-[#a89a70] font-bold uppercase tracking-wide mb-1">{item.label}</p>
+                        <p className="text-[11px] text-[#a89a70] font-bold uppercase tracking-wide mb-1 font-sans">{item.label}</p>
                         <p className="text-[18px] font-bold text-[#052316]">{item.value}</p>
                       </div>
                     ))}
@@ -474,7 +462,6 @@ export default function BasicMortgageCalculator() {
               </div>
             </div>
 
-            {/* Amortization Schedule */}
             <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 shadow-sm overflow-hidden">
               <button onClick={() => setShowSchedule((s) => !s)}
                 className="w-full flex items-center justify-between px-7 py-5 text-left cursor-pointer hover:bg-[#faf7f0] transition-colors">
@@ -502,12 +489,12 @@ export default function BasicMortgageCalculator() {
                       <tbody>
                         {schedSlice.map((row, idx) => (
                           <tr key={row.paymentNum} className={idx % 2 === 0 ? "bg-white" : "bg-[#faf7f0]"}>
-                            <td className="py-2.5 px-4 text-[#888] font-semibold">{row.paymentNum}</td>
-                            <td className="py-2.5 px-4 text-[#052316] font-medium">{fmt(row.beginBalance)}</td>
+                            <td className="py-2.5 px-4 text-[#888] font-bold">{row.paymentNum}</td>
+                            <td className="py-2.5 px-4 text-[#052316]">{fmt(row.beginBalance)}</td>
                             <td className="py-2.5 px-4 text-[#052316] font-bold">{fmt(row.payment)}</td>
-                            <td className="py-2.5 px-4 text-[#3fb364] font-medium">{fmt(row.principal)}</td>
-                            <td className="py-2.5 px-4 text-[#b89a5a] font-medium">{fmt(row.interest)}</td>
-                            <td className="py-2.5 px-4 text-[#052316] font-medium">{fmt(row.endBalance)}</td>
+                            <td className="py-2.5 px-4 text-[#3fb364]">{fmt(row.principal)}</td>
+                            <td className="py-2.5 px-4 text-[#b89a5a]">{fmt(row.interest)}</td>
+                            <td className="py-2.5 px-4 text-[#052316]">{fmt(row.endBalance)}</td>
                             <td className="py-2.5 px-4 text-[#888]">{fmt(row.cumPrincipal)}</td>
                             <td className="py-2.5 px-4 text-[#888]">{fmt(row.cumInterest)}</td>
                           </tr>

@@ -136,7 +136,7 @@ export default function CalculatorsPage() {
                   {/* Link to detailed calculator */}
                   <div className="pt-2 border-t border-[#e8e0d0]/40">
                     <p className="text-[13px] text-[#888] mb-3">Want a detailed breakdown with full amortization schedule?</p>
-                    <Link href="/calculators/basic"
+                    <Link href="/basic-mortgage-payment-calculator"
                       className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[13px] font-bold px-5 py-2.5 rounded-xl transition-all shadow-sm">
                       Open Full Calculator →
                     </Link>

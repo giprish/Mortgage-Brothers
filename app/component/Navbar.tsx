@@ -106,13 +106,13 @@ const Navbar = () => {
                     BASIC CALCULATORS
                   </h4>
                   <div className="flex flex-col gap-2.5">
-                    <Link href="/calculators/basic" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link href="/basic-mortgage-payment-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Basic Mortgage Payment
                     </Link>
-                    <Link href="/calculators/affordability" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link href="/mortgage-affordability-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Mortgage Affordability
                     </Link>
-                    <Link href="/calculators/refinance" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link href="/refinance-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Refinance Calculator
                     </Link>
                   </div>
@@ -124,7 +124,7 @@ const Navbar = () => {
                     COMPARISON TOOLS
                   </h4>
                   <div className="flex flex-col gap-2.5">
-                    <Link href="/calculators/rent-vs-buy" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link href="/rent-vs-buy-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Rent vs. Buy Calculator
                     </Link>
                     <Link href="/calculators" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
@@ -492,28 +492,28 @@ const Navbar = () => {
             Calculators
           </Link>
           <Link
-            href="/calculators/basic"
+            href="/basic-mortgage-payment-calculator"
             onClick={() => setMobileMenuOpen(false)}
             className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
           >
             ↳ Basic Mortgage Payment
           </Link>
           <Link
-            href="/calculators/affordability"
+            href="/mortgage-affordability-calculator"
             onClick={() => setMobileMenuOpen(false)}
             className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
           >
             ↳ Mortgage Affordability
           </Link>
           <Link
-            href="/calculators/refinance"
+            href="/refinance-calculator"
             onClick={() => setMobileMenuOpen(false)}
             className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
           >
             ↳ Refinance Calculator
           </Link>
           <Link
-            href="/calculators/rent-vs-buy"
+            href="/rent-vs-buy-calculator"
             onClick={() => setMobileMenuOpen(false)}
             className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
           >
