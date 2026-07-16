@@ -54,7 +54,7 @@ const Navbar = () => {
                   All Programs
                 </Link> */}
                 <Link
-                  href="/loan-programs/fha"
+                  href="/fha-loans"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   FHA Loans
@@ -321,19 +321,19 @@ const Navbar = () => {
             <div className="absolute left-[-12px] top-full pt-3 w-60 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
               <div className="bg-white border border-[#e8e0d0] rounded-xl shadow-xl py-2">
                 <Link
-                  href="/resources/mortgage-basics"
+                  href="/mortgage-basics"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Mortgage Basics
                 </Link>
                 <Link
-                  href="/resources/videos"
+                  href="/videos"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Videos
                 </Link>
                 <Link
-                  href="/resources/mortgage-basics/conventional-loan-basics"
+                  href="/mortgage-basics/conventional-loan-basics"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Conventional Loans
@@ -480,7 +480,7 @@ const Navbar = () => {
             Loan Programs
           </Link>
           <Link
-            href="/loan-programs/fha"
+            href="/fha-loans"
             onClick={() => setMobileMenuOpen(false)}
             className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
           >
@@ -645,21 +645,21 @@ const Navbar = () => {
             Resources
           </Link>
           <Link
-            href="/resources/mortgage-basics"
+            href="/mortgage-basics"
             onClick={() => setMobileMenuOpen(false)}
             className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
           >
             ↳ Mortgage Basics
           </Link>
           <Link
-            href="/resources/videos"
+            href="/videos"
             onClick={() => setMobileMenuOpen(false)}
             className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
           >
             ↳ Videos
           </Link>
           <Link
-            href="/resources/mortgage-basics/conventional-loan-basics"
+            href="/mortgage-basics/conventional-loan-basics"
             onClick={() => setMobileMenuOpen(false)}
             className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
           >
@@ -680,7 +680,8 @@ const Navbar = () => {
             ↳ FAQ
           </Link>
           <Link
-            href="/resources/fha-loans"
+            href="
+            /fha-loans"
             onClick={() => setMobileMenuOpen(false)}
             className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
           >

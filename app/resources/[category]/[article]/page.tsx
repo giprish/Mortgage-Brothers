@@ -37,7 +37,10 @@ export default function ArticleDetailPage() {
           <div className="flex items-center gap-1.5 text-[12px] text-[#8da684] font-semibold mb-6">
             <Link href="/resources" className="hover:text-[#2d5a2d] transition-colors">Resources</Link>
             <span>&gt;</span>
-            <Link href={`/resources/${categorySlug}`} className="hover:text-[#2d5a2d] transition-colors text-[#3fb364]">
+            <Link 
+              href={categorySlug === "mortgage-basics" ? "/mortgage-basics" : `/resources/${categorySlug}`} 
+              className="hover:text-[#2d5a2d] transition-colors text-[#3fb364]"
+            >
               {categoryTitle}
             </Link>
           </div>

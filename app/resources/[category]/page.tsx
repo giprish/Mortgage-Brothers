@@ -243,12 +243,16 @@ export default function ResourceCategoryPage() {
               </h2>
 
               <div className="flex flex-col gap-6">
-                {filteredArticles.map((art) => (
-                  <Link
-                    key={art.id}
-                    href={`/resources/${slug}/${art.id}`}
-                    className="bg-white rounded-2xl border border-[#e8e0d0]/60 p-6 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 hover:shadow-md hover:border-brand-green-accent/20 transition-all duration-300 group cursor-pointer"
-                  >
+                {filteredArticles.map((art) => {
+                  const articleHref = slug === "mortgage-basics"
+                    ? `/mortgage-basics/${art.id}`
+                    : `/resources/${slug}/${art.id}`;
+                  return (
+                    <Link
+                      key={art.id}
+                      href={articleHref}
+                      className="bg-white rounded-2xl border border-[#e8e0d0]/60 p-6 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 hover:shadow-md hover:border-brand-green-accent/20 transition-all duration-300 group cursor-pointer"
+                    >
                     <div className="flex items-start gap-4 flex-grow">
                       {/* Left tan striped thumbnail box */}
                       <div className="w-16 h-16 bg-[#f5f0e8] rounded-xl flex-shrink-0 relative overflow-hidden hidden sm:block">
@@ -278,7 +282,8 @@ export default function ResourceCategoryPage() {
                     </div>
 
                   </Link>
-                ))}
+                );
+              })}
 
                 {filteredArticles.length === 0 && (
                   <div className="bg-white rounded-2xl border border-[#e8e0d0]/50 p-12 text-center text-[#4e5b4e] text-[14px]">

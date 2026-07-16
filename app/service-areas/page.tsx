@@ -317,9 +317,10 @@ export default function MaricopaCounty2() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {filteredCities.map((city, index) => {
                     const initials = city.name.substring(0, 2);
-                    const isMaricopa = city.county === "Maricopa County";
-                    const slug = city.name.toLowerCase().replace(/\s+/g, "-");
-                    const href = `/service-areas/maricopa-county-az/${slug}`;
+                    const citySlug = city.name.toLowerCase().replace(/\./g, "").replace(/\s+/g, "-");
+                    const countySlug = city.county.toLowerCase().replace(/\s+/g, "-") + "-az";
+
+                    const href = `/service-areas/${countySlug}/${citySlug}`;
 
                     const cardContent = (
                       <>
@@ -356,24 +357,12 @@ export default function MaricopaCounty2() {
                       </>
                     );
 
-                    const cardClassName = `bg-white rounded-2xl p-6 border border-[#e8e0d0]/50 shadow-sm flex flex-col justify-between transition-all duration-300 min-h-[170px] ${
-                      isMaricopa
-                        ? "hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/30 active:scale-[0.98] active:translate-y-0 cursor-pointer"
-                        : "opacity-85"
-                    }`;
-
-                    if (isMaricopa) {
-                      return (
-                        <Link key={index} href={href} className={cardClassName}>
-                          {cardContent}
-                        </Link>
-                      );
-                    }
+                    const cardClassName = "bg-white rounded-2xl p-6 border border-[#e8e0d0]/50 shadow-sm flex flex-col justify-between transition-all duration-300 min-h-[170px] hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/30 active:scale-[0.98] active:translate-y-0 cursor-pointer";
 
                     return (
-                      <div key={index} className={cardClassName}>
+                      <Link key={index} href={href} className={cardClassName}>
                         {cardContent}
-                      </div>
+                      </Link>
                     );
                   })}
                 </div>
