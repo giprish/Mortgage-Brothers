@@ -267,6 +267,24 @@ const citiesLookup: Record<string, {
     skylineTitle: "Gila Bend STAGE",
     skylineSubtitle: "Butterfield Route & desert landscapes",
     neighborhoods: ["Gila Bend Town", "Butterfield Stage", "Stout's Hotel"]
+  },
+  "new-river": {
+    name: "New River",
+    description: "New River is ideal for buyers looking for spacious properties and a more rural lifestyle. We assist homeowners with land and traditional mortgage financing options.",
+    medianPrice: "$540K",
+    daysOnMarket: "45",
+    skylineTitle: "New River LANDSCAPE",
+    skylineSubtitle: "Spacious Properties & Desert Trails",
+    neighborhoods: ["New River Town", "Desert Hills", "Rural Acres"]
+  },
+  "rio-verde": {
+    name: "Rio Verde",
+    description: "Rio Verde is known for its golf communities and low-density desert living. We assist buyers with specialized financing for resort-style and retirement properties.",
+    medianPrice: "$750K",
+    daysOnMarket: "42",
+    skylineTitle: "Rio Verde GOLF",
+    skylineSubtitle: "Golf Communities & Desert Views",
+    neighborhoods: ["Rio Verde Country Club", "Tonto Foothills", "Golf Club Estates"]
   }
 };
 
@@ -330,9 +348,9 @@ export default function CityDetailPage() {
             <div className="lg:col-span-7 flex flex-col items-start">
               {/* Breadcrumbs */}
               <div className="flex items-center gap-2 text-[#8da684] text-[12px] font-semibold mb-6">
-                <Link href="/areas-we-serve" className="hover:text-white transition-colors">Areas We Serve</Link>
+                <Link href="/service-areas" className="hover:text-white transition-colors">Areas We Serve</Link>
                 <span>&gt;</span>
-                <Link href="/areas-we-serve/maricopa-county" className="hover:text-white transition-colors">Maricopa County</Link>
+                <Link href="/service-areas/maricopa-county-az" className="hover:text-white transition-colors">Maricopa County</Link>
                 <span>&gt;</span>
                 <span className="text-[#3fb364]">{cityInfo.name}</span>
               </div>

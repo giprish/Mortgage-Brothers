@@ -13,7 +13,7 @@ const countiesData = [
     region: "GREATER PHOENIX",
     seat: "Phoenix",
     cityCount: 28,
-    route: "/areas-we-serve/maricopa-county",
+    route: "/service-areas/maricopa-county-az",
     cities: [
       "Phoenix", "Scottsdale", "Mesa", "Chandler", "Gilbert", "Glendale", "Tempe", "Peoria",
       "Surprise", "Goodyear", "Avondale", "Buckeye", "Queen Creek", "Fountain Hills",
@@ -531,7 +531,7 @@ export default function ArizonaDirectory2Page() {
                     </p>
                   </div>
                   <Link
-                    href="/areas-we-serve/maricopa-county"
+                    href="/service-areas/maricopa-county-az"
                     className="text-brand-green-accent hover:text-[#2d5a2d] text-[13px] font-bold flex items-center gap-1 transition-colors group mt-2"
                   >
                     Explore county

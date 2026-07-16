@@ -355,7 +355,7 @@ export default function AreasWeServeDirectoryPage() {
                   </div>
 
                   <Link
-                    href="/areas-we-serve/maricopa-county"
+                    href="/service-areas/maricopa-county-az"
                     className="text-brand-green-accent hover:text-[#2d5a2d] text-[13.5px] font-bold flex items-center gap-1 transition-colors group mt-2"
                   >
                     Explore Maricopa County

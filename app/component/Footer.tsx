@@ -118,7 +118,7 @@ const Footer = () => {
                 if (item === "About Us") href = "/about-us";
                 if (item === "Reviews") href = "/client-mortgage-reviews";
                 if (item === "Calculators") href = "/calculators";
-                if (item === "Areas We Serve") href = "/areas-we-serve";
+                if (item === "Areas We Serve") href = "/service-areas";
                 if (item === "The Team") href = "/team";
                 return (
                   <li key={item}>

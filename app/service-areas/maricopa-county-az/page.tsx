@@ -122,7 +122,7 @@ export default function MaricopaCounty() {
         {/* Breadcrumb strip */}
         <div className="w-full bg-white border-b border-[#e8e0d0]/40 py-3.5 px-6 lg:px-10">
           <div className="max-w-7xl mx-auto flex items-center gap-2 text-[13px] font-medium text-brand-text-muted">
-            <Link href="/areas-we-serve" className="hover:text-brand-green-accent transition-colors duration-200">
+            <Link href="/service-areas" className="hover:text-brand-green-accent transition-colors duration-200">
               Areas We Serve
             </Link>
             <span className="text-gray-400">&gt;</span>
@@ -210,7 +210,7 @@ export default function MaricopaCounty() {
               {cities.map((city, index) => (
                 <Link
                   key={index}
-                  href={`/areas-we-serve/maricopa-county/${city.name.toLowerCase().replace(/\s+/g, "-")}`}
+                  href={`/service-areas/maricopa-county-az/${city.name.toLowerCase().replace(/\s+/g, "-")}`}
                   className="bg-[#faf7f0] rounded-2xl p-6 lg:p-7 border border-[#e8e0d0]/50 shadow-sm flex flex-col hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/30 active:scale-[0.98] active:translate-y-0 cursor-pointer transition-all duration-300"
                 >
                   {/* City Header */}
