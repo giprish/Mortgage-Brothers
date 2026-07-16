@@ -127,10 +127,10 @@ const Navbar = () => {
                     <Link href="/rent-vs-buy-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Rent vs. Buy Calculator
                     </Link>
-                    <Link href="/calculators" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link href="/down-payment-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Down Payment Calculator
                     </Link>
-                    <Link href="/calculators" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link href="/debt-to-income-ratio-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Debt-to-Income Ratio
                     </Link>
                   </div>
@@ -142,16 +142,16 @@ const Navbar = () => {
                     SPECIALIZED
                   </h4>
                   <div className="flex flex-col gap-2.5">
-                    <Link href="/calculators" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link href="/extra-payment-mortgage-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Extra Payment Mortgage
                     </Link>
-                    <Link href="/calculators" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link href="/fha-loan-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       FHA Loan Calculator
                     </Link>
-                    <Link href="/calculators" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link href="/va-loan-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       VA Loan Calculator
                     </Link>
-                    <Link href="/calculators" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link href="/home-purchase-closing-cost-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Home Purchase Closing Cost
                     </Link>
                   </div>
@@ -295,12 +295,7 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          <Link
-            href="/reviews"
-            className="text-[#1a3a1a] text-[14px] font-medium hover:text-[#2d5a2d] transition-colors duration-200"
-          >
-            Reviews
-          </Link>
+
           {/* Resources Dropdown */}
           <div className="relative group py-2">
             <Link
@@ -342,7 +337,19 @@ const Navbar = () => {
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Conventional Loans
-                </Link>              {/* <Link
+                </Link>
+                <Link
+                  href="/reviews"
+                  className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
+                >
+                  Reviews
+                </Link>
+                <Link
+                  href="/faq"
+                  className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
+                >
+                  FAQ
+                </Link>{/*  <Link
                   href="/resources/fha-loans"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
@@ -382,12 +389,7 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          <Link
-            href="/faq"
-            className="text-[#1a3a1a] text-[14px] font-medium hover:text-[#2d5a2d] transition-colors duration-200"
-          >
-            FAQ
-          </Link>
+
         </div>
 
         {/* Right Side - Phone + CTA */}
@@ -520,11 +522,46 @@ const Navbar = () => {
             ↳ Rent vs. Buy Calculator
           </Link>
           <Link
-            href="/calculators"
+            href="/down-payment-calculator"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+          >
+            ↳ Down Payment Calculator
+          </Link>
+          <Link
+            href="/debt-to-income-ratio-calculator"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+          >
+            ↳ Debt-to-Income Ratio
+          </Link>
+          <Link
+            href="/extra-payment-mortgage-calculator"
             onClick={() => setMobileMenuOpen(false)}
             className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
           >
             ↳ Extra Payment Mortgage
+          </Link>
+          <Link
+            href="/fha-loan-calculator"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+          >
+            ↳ FHA Loan Calculator
+          </Link>
+          <Link
+            href="/va-loan-calculator"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+          >
+            ↳ VA Loan Calculator
+          </Link>
+          <Link
+            href="/home-purchase-closing-cost-calculator"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+          >
+            ↳ Home Purchase Closing Cost
           </Link>
 
           <Link
@@ -598,13 +635,7 @@ const Navbar = () => {
           >
             ↳ Team & Careers
           </Link>
-          <Link
-            href="/reviews"
-            onClick={() => setMobileMenuOpen(false)}
-            className="text-[#1a3a1a] text-[15px] font-medium py-2"
-          >
-            Reviews
-          </Link>
+
           {/* Resources Mobile Link & Sub-items */}
           <Link
             href="/resources"
@@ -642,6 +673,13 @@ const Navbar = () => {
             ↳ Reviews
           </Link>
           <Link
+            href="/faq"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+          >
+            ↳ FAQ
+          </Link>
+          <Link
             href="/resources/fha-loans"
             onClick={() => setMobileMenuOpen(false)}
             className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
@@ -676,13 +714,7 @@ const Navbar = () => {
           >
             ↳ Process Guidance
           </Link>
-          <Link
-            href="/faq"
-            onClick={() => setMobileMenuOpen(false)}
-            className="text-[#1a3a1a] text-[15px] font-medium py-2"
-          >
-            FAQ
-          </Link>
+
           <a
             href="tel:6025352171"
             className="flex items-center gap-2 text-[#1a3a1a] text-[15px] font-medium py-2"

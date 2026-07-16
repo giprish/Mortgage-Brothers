@@ -1,0 +1,451 @@
+"use client";
+
+import React, { useState, useCallback } from "react";
+import Link from "next/link";
+import Navbar from "../component/Navbar";
+import Footer from "../component/Footer";
+
+// ─── Lookup Tables ────────────────────────────────────────────────────────────
+
+function getTitleEscrowFee(homePrice: number): number {
+  if (homePrice <= 200000) return 450;
+  if (homePrice <= 300000) return 530;
+  if (homePrice <= 400000) return 610;
+  if (homePrice <= 500000) return 690;
+  if (homePrice <= 600000) return 770;
+  if (homePrice <= 700000) return 850;
+  if (homePrice <= 800000) return 930;
+  if (homePrice <= 900000) return 1010;
+  if (homePrice <= 1000000) return 1090;
+  if (homePrice <= 1100000) return 1170;
+  if (homePrice <= 1200000) return 1250;
+  if (homePrice <= 1300000) return 1330;
+  if (homePrice <= 1400000) return 1410;
+  if (homePrice <= 1500000) return 1490;
+  if (homePrice <= 1600000) return 1570;
+  if (homePrice <= 1700000) return 1650;
+  if (homePrice <= 1800000) return 1730;
+  if (homePrice <= 1900000) return 1810;
+  if (homePrice <= 2000000) return 1890;
+  if (homePrice <= 2100000) return 1970;
+  if (homePrice <= 2200000) return 2050;
+  if (homePrice <= 2300000) return 2130;
+  if (homePrice <= 2400000) return 2210;
+  if (homePrice <= 2500000) return 2290;
+  if (homePrice <= 2600000) return 2370;
+  if (homePrice <= 2700000) return 2450;
+  if (homePrice <= 2800000) return 2530;
+  if (homePrice <= 2900000) return 2610;
+  return 2690; // Over $2,900,000 uses final band
+}
+
+function getTitleInsuranceFee(loanAmount: number): number {
+  if (loanAmount <= 200000) return 770;
+  if (loanAmount <= 300000) return 895;
+  if (loanAmount <= 400000) return 1020;
+  if (loanAmount <= 500000) return 1145;
+  if (loanAmount <= 600000) return 1270;
+  if (loanAmount <= 700000) return 1395;
+  if (loanAmount <= 800000) return 1520;
+  if (loanAmount <= 900000) return 1645;
+  if (loanAmount <= 1000000) return 1770;
+  if (loanAmount <= 1100000) return 1895;
+  if (loanAmount <= 1200000) return 2020;
+  if (loanAmount <= 1300000) return 2145;
+  if (loanAmount <= 1400000) return 2270;
+  if (loanAmount <= 1500000) return 2395;
+  if (loanAmount <= 1600000) return 2520;
+  if (loanAmount <= 1700000) return 2645;
+  if (loanAmount <= 1800000) return 2770;
+  if (loanAmount <= 1900000) return 2895;
+  if (loanAmount <= 2000000) return 3020;
+  if (loanAmount <= 2100000) return 3145;
+  if (loanAmount <= 2200000) return 3270;
+  if (loanAmount <= 2300000) return 3395;
+  if (loanAmount <= 2400000) return 3520;
+  if (loanAmount <= 2500000) return 3645;
+  if (loanAmount <= 2600000) return 3770;
+  if (loanAmount <= 2700000) return 3895;
+  if (loanAmount <= 2800000) return 4020;
+  if (loanAmount <= 2900000) return 4145;
+  return 4270; // Over $2,900,000 uses final band
+}
+
+// ─── Interfaces ──────────────────────────────────────────────────────────────
+
+interface ClosingCostResult {
+  escrowFee: number;
+  insuranceFee: number;
+  originationFee: number;
+  appraisalFee: number;
+  creditReportFee: number;
+  recordingFee: number;
+  totalClosingCosts: number;
+
+  govFeeLabel: string;
+  govFeeRate: number;
+  govFeeAmt: number;
+}
+
+// Helper to format currency
+const fmt = (v: number) =>
+  new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round(v));
+
+// ─── Calculations Solver ──────────────────────────────────────────────────────
+
+function solveClosingCosts(
+  homePrice: number,
+  loanAmount: number,
+  program: string,
+  vaStatus: string
+): ClosingCostResult {
+  const escrowFee = getTitleEscrowFee(homePrice);
+  const insuranceFee = getTitleInsuranceFee(loanAmount);
+
+  const originationFee = 1000;
+  const appraisalFee = 650;
+  const creditReportFee = 95;
+  const recordingFee = 75;
+
+  const totalClosingCosts = escrowFee + insuranceFee + originationFee + appraisalFee + creditReportFee + recordingFee;
+
+  let govFeeLabel = "";
+  let govFeeRate = 0;
+  let govFeeAmt = 0;
+
+  if (program === "fha") {
+    govFeeLabel = "FHA Upfront MIP";
+    govFeeRate = 1.75;
+    govFeeAmt = loanAmount * 0.0175;
+  } else if (program === "va") {
+    govFeeLabel = "VA Funding Fee";
+    if (vaStatus === "exempt") {
+      govFeeRate = 0;
+    } else {
+      // Inferred down payment percentage
+      const inferredDpPct = homePrice > 0 ? Math.max(0, (homePrice - loanAmount) / homePrice * 100) : 0;
+      if (inferredDpPct < 5.0) {
+        govFeeRate = vaStatus === "firstTime" ? 2.15 : 3.30;
+      } else if (inferredDpPct < 10.0) {
+        govFeeRate = 1.50;
+      } else {
+        govFeeRate = 1.25;
+      }
+    }
+    govFeeAmt = loanAmount * (govFeeRate / 100);
+  } else if (program === "usda") {
+    govFeeLabel = "USDA Upfront Guarantee Fee";
+    govFeeRate = 1.00;
+    govFeeAmt = loanAmount * 0.01;
+  }
+
+  return {
+    escrowFee,
+    insuranceFee,
+    originationFee,
+    appraisalFee,
+    creditReportFee,
+    recordingFee,
+    totalClosingCosts,
+    govFeeLabel,
+    govFeeRate,
+    govFeeAmt: Math.round(govFeeAmt)
+  };
+}
+
+// ─── Component ────────────────────────────────────────────────────────────────
+
+export default function ClosingCostCalculatorPage() {
+  const [homePrice, setHomePrice] = useState("400000");
+  const [loanAmount, setLoanAmount] = useState("320000");
+  const [program, setProgram] = useState("conventional");
+  const [vaStatus, setVaStatus] = useState("firstTime");
+
+  const [result, setResult] = useState<ClosingCostResult | null>(null);
+  const [validationWarning, setValidationWarning] = useState("");
+
+  const handleCalculate = () => {
+    const hp = parseFloat(homePrice) || 0;
+    const la = parseFloat(loanAmount) || 0;
+
+    if (hp <= 0 || la <= 0) return;
+
+    if (la > hp) {
+      setValidationWarning("⚠️ Warning: Loan Amount exceeds the Home Price. Results may reflect an atypical loan-to-value ratio.");
+    } else {
+      setValidationWarning("");
+    }
+
+    const r = solveClosingCosts(hp, la, program, vaStatus);
+    setResult(r);
+
+    setTimeout(() => {
+      document.getElementById("calc-results")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 80);
+  };
+
+  // Donut chart helper
+  const getChartSegments = (r: ClosingCostResult) => {
+    const total = r.totalClosingCosts;
+    if (total <= 0) return [];
+    return [
+      { name: "Title Escrow Fee", val: r.escrowFee, color: "#052316" },
+      { name: "Title Insurance Fee", val: r.insuranceFee, color: "#3fb364" },
+      { name: "Loan Origination Fee", val: r.originationFee, color: "#b89a5a" },
+      { name: "Appraisal Fee", val: r.appraisalFee, color: "#a89a70" },
+      { name: "Recording Fee", val: r.recordingFee, color: "#dcd6cd" },
+      { name: "Credit Report Fee", val: r.creditReportFee, color: "#888888" },
+    ];
+  };
+
+  return (
+    <div className="flex flex-col min-h-screen bg-[#fcf9f3] font-sans">
+      <Navbar />
+      <main className="flex-grow">
+
+        {/* Hero Section */}
+        <section className="w-full bg-[#052316] text-white py-16 lg:py-20 text-center relative overflow-hidden">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5 opacity-40" />
+            <div className="absolute -top-36 -right-36 w-[400px] h-[400px] rounded-full border border-white/5 opacity-40" />
+          </div>
+          <div className="max-w-4xl mx-auto px-6 relative z-10">
+            <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3 font-sans">MORTGAGE TOOLS</span>
+            <h1 className="text-white text-[38px] lg:text-[52px] font-playfair font-normal leading-[1.15] mb-6">
+              Home Purchase Closing Cost Calculator
+            </h1>
+            <p className="text-[#c8c8b8] text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto">
+              Estimate title escrow fees, title insurance premiums, and lender closing costs based on transaction details.
+            </p>
+          </div>
+        </section>
+
+        {/* Inputs */}
+        <section className="py-12 px-6 lg:px-10 max-w-5xl mx-auto font-sans">
+          <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 lg:p-8 shadow-sm flex flex-col gap-6">
+            <h3 className="text-[#052316] text-[17px] font-bold pb-3 border-b border-[#e8e0d0]/40 flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#052316]" /> Transaction Details
+            </h3>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5 font-sans">Home Price ($)</label>
+                <div className="relative">
+                  <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
+                  <input type="number" value={homePrice} onChange={(e) => setHomePrice(e.target.value)}
+                    className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
+                </div>
+              </div>
+              <div>
+                <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5 font-sans">Loan Amount ($)</label>
+                <div className="relative">
+                  <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
+                  <input type="number" value={loanAmount} onChange={(e) => setLoanAmount(e.target.value)}
+                    className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div>
+                <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Loan Program</label>
+                <select value={program} onChange={(e) => setProgram(e.target.value)}
+                  className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 px-3.5 text-[14px] font-bold text-[#052316] focus:outline-none cursor-pointer">
+                  <option value="conventional">Conventional</option>
+                  <option value="fha">FHA</option>
+                  <option value="va">VA</option>
+                  <option value="usda">USDA</option>
+                </select>
+              </div>
+
+              {program === "va" && (
+                <div>
+                  <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5 font-sans font-sans">VA Funding Fee Status</label>
+                  <select value={vaStatus} onChange={(e) => setVaStatus(e.target.value)}
+                    className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 px-3.5 text-[14px] font-bold text-[#052316] focus:outline-none cursor-pointer">
+                    <option value="firstTime">First Time Use</option>
+                    <option value="subsequent">Subsequent Use</option>
+                    <option value="exempt">VA Funding Fee Exempt</option>
+                  </select>
+                </div>
+              )}
+            </div>
+
+            <div className="mt-4 font-sans">
+              <button onClick={handleCalculate}
+                className="w-full bg-[#3fb364] hover:bg-[#349b55] active:scale-[0.98] text-white text-[16px] font-bold py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer flex items-center justify-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" />
+                </svg>
+                Calculate Estimated Closing Costs
+              </button>
+            </div>
+          </div>
+        </section>
+
+        {/* Results output section */}
+        {result && (
+          <section id="calc-results" className="pb-16 px-6 lg:px-10 max-w-5xl mx-auto space-y-8 animate-fadeUp font-sans">
+            
+            {/* Validation warning */}
+            {validationWarning && (
+              <div className="bg-yellow-50 border border-yellow-200 text-yellow-800 rounded-3xl p-5 text-[13px] font-semibold leading-relaxed">
+                {validationWarning}
+              </div>
+            )}
+
+            {/* Top overview Cards */}
+            <div className={`grid grid-cols-1 ${result.govFeeAmt > 0 ? "md:grid-cols-2" : "md:grid-cols-1"} gap-5`}>
+              <div className="bg-[#052316] text-white rounded-3xl p-6 shadow-sm flex flex-col justify-between border border-[#052316]">
+                <div>
+                  <span className="text-[#3fb364] text-[10.5px] font-bold tracking-wider uppercase">Total Estimated Closing Costs</span>
+                  <h2 className="text-[38px] font-bold mt-1.5">{fmt(result.totalClosingCosts)}</h2>
+                </div>
+                <p className="text-[12.5px] text-[#c8c8b8] mt-3 pt-2.5 border-t border-white/10">Cash required at closing for title/lender fees.</p>
+              </div>
+
+              {result.govFeeAmt > 0 && (
+                <div className="bg-white border border-[#e8e0d0]/60 rounded-3xl p-6 shadow-sm flex flex-col justify-between">
+                  <div>
+                    <span className="text-[#a89a70] text-[10.5px] font-bold tracking-wider uppercase">{result.govFeeLabel}</span>
+                    <h2 className="text-[38px] font-bold mt-1.5 text-[#052316]">{fmt(result.govFeeAmt)}</h2>
+                  </div>
+                  <p className="text-[12.5px] text-[#888] mt-3 pt-2.5 border-t border-[#e8e0d0]/30 font-sans">
+                    *Typically financed into loan balance (excluded from cash total). Rate: {result.govFeeRate}%
+                  </p>
+                </div>
+              )}
+            </div>
+
+            {/* Split breakdown details */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+              
+              {/* Fee Breakdown Table */}
+              <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm flex flex-col justify-between">
+                <div>
+                  <h3 className="text-[#052316] text-[16.5px] font-bold mb-4 pb-3 border-b border-[#e8e0d0]/40 font-sans">Fee Itemized Breakdown</h3>
+                  <div className="flex flex-col gap-3 text-[13.5px]">
+                    <div className="flex justify-between border-b border-[#e8e0d0]/20 pb-2">
+                      <span className="text-[#888]">Title Escrow Fee</span>
+                      <span className="text-[#052316] font-bold">{fmt(result.escrowFee)}</span>
+                    </div>
+                    <div className="flex justify-between border-b border-[#e8e0d0]/20 pb-2">
+                      <span className="text-[#888]">Title Insurance Fee</span>
+                      <span className="text-[#052316] font-bold">{fmt(result.insuranceFee)}</span>
+                    </div>
+                    <div className="flex justify-between border-b border-[#e8e0d0]/20 pb-2">
+                      <span className="text-[#888]">Loan Origination Fee</span>
+                      <span className="text-[#052316] font-bold">{fmt(result.originationFee)}</span>
+                    </div>
+                    <div className="flex justify-between border-b border-[#e8e0d0]/20 pb-2">
+                      <span className="text-[#888]">Appraisal Fee</span>
+                      <span className="text-[#052316] font-bold">{fmt(result.appraisalFee)}</span>
+                    </div>
+                    <div className="flex justify-between border-b border-[#e8e0d0]/20 pb-2">
+                      <span className="text-[#888]">Recording Fee</span>
+                      <span className="text-[#052316] font-bold">{fmt(result.recordingFee)}</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-[#888] font-sans">Credit Report Fee</span>
+                      <span className="text-[#052316] font-bold">{fmt(result.creditReportFee)}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-[#faf7f0] rounded-2xl p-4 border border-[#e8e0d0]/40 mt-6 flex justify-between font-bold text-[#052316] text-[14.5px]">
+                  <span>Total Cash Outlay Estimate</span>
+                  <span>{fmt(result.totalClosingCosts)}</span>
+                </div>
+              </div>
+
+              {/* Pie/Donut Chart breakdown */}
+              <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm flex flex-col justify-between items-center text-center">
+                <div className="w-full text-left">
+                  <h3 className="text-[#052316] text-[16px] font-bold pb-3 border-b border-[#e8e0d0]/40 font-sans">Cost Component Breakdown</h3>
+                </div>
+
+                <div className="relative w-40 h-40 my-6">
+                  <svg viewBox="0 0 200 200" className="w-full h-full transform -rotate-90">
+                    <circle cx="100" cy="100" r="70" fill="none" stroke="#fcf9f3" strokeWidth="16" />
+                    {/* Map segments */}
+                    {(() => {
+                      let currentOffset = 0;
+                      return getChartSegments(result).map((seg) => {
+                        const pct = (seg.val / result.totalClosingCosts) * 100;
+                        const dasharray = `${2 * Math.PI * 70 * (pct / 100)} ${2 * Math.PI * 70}`;
+                        const offset = `-${2 * Math.PI * 70 * (currentOffset / 100)}`;
+                        currentOffset += pct;
+                        return (
+                          <circle key={seg.name} cx="100" cy="100" r="70" fill="none" stroke={seg.color} strokeWidth="16"
+                            strokeDasharray={dasharray} strokeDashoffset={offset} />
+                        );
+                      });
+                    })()}
+                  </svg>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-[#888]">Total</span>
+                    <span className="text-[15.5px] font-bold text-[#052316]">{fmt(result.totalClosingCosts)}</span>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-3 text-[11px] font-sans pt-1 text-left w-full max-w-sm mx-auto">
+                  {getChartSegments(result).map((seg) => (
+                    <div key={seg.name} className="flex items-center gap-1.5">
+                      <div className="w-3 h-3 rounded-full flex-shrink-0" style={{ backgroundColor: seg.color }} />
+                      <span className="truncate text-[#4e5b4e]">{seg.name} ({((seg.val / result.totalClosingCosts) * 100).toFixed(1)}%)</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Informational Guidance Section */}
+            <div className="bg-[#faf7f0] border border-[#e8e0d0]/40 rounded-3xl p-6 text-[13.5px] leading-relaxed text-[#4e5b4e] font-sans">
+              <h4 className="font-bold text-[#052316] mb-1.5">ℹ️ Important Closing Costs Context</h4>
+              <p className="mb-2">
+                This calculator generates estimates of direct title insurance premiums, escrow service charges, lender origination fees, and typical recording charges.
+              </p>
+              <p>
+                * Upfront government loan fees (FHA Upfront MIP, VA Funding Fee, or USDA Guarantee fees) are shown separately because borrowers almost always finance these fees directly into their total loan balance rather than paying them as cash at the closing table.
+              </p>
+            </div>
+
+            {/* CTA */}
+            <div className="bg-[#052316] rounded-3xl p-6 lg:p-8 text-white shadow-md relative overflow-hidden font-sans">
+              <div className="absolute -bottom-16 -right-16 w-[200px] h-[200px] rounded-full border border-white/5 opacity-40" />
+              <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div>
+                  <h4 className="text-[18px] font-bold mb-1">Applying for a home purchase loan?</h4>
+                  <p className="text-[#c8c8b8] text-[13.5px]">Get in touch with the Knoell team for a complete review of your transaction fees.</p>
+                </div>
+                <Link href="/#get-pre-approved"
+                  className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-bold px-6 py-3 rounded-full inline-flex items-center gap-2 transition-all shadow-md whitespace-nowrap">
+                  Connect With Us →
+                </Link>
+              </div>
+            </div>
+
+          </section>
+        )}
+
+        {/* Placeholder */}
+        {!result && (
+          <section className="pb-16 px-6 lg:px-10 max-w-3xl mx-auto text-center font-sans">
+            <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-10 lg:p-14 shadow-sm">
+              <div className="w-16 h-16 rounded-2xl bg-[#3fb364]/10 flex items-center justify-center mx-auto mb-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3fb364" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <h3 className="text-[#052316] text-[20px] font-bold mb-2">Estimate Transaction Closing Costs</h3>
+              <p className="text-[#888] text-[14.5px] leading-relaxed max-w-md mx-auto font-sans">
+                Fill in your home details and pricing expectations, then click <strong>&ldquo;Calculate Estimated Closing Costs&rdquo;</strong> to view detailed metrics.
+              </p>
+            </div>
+          </section>
+        )}
+      </main>
+      <Footer />
+    </div>
+  );
+}

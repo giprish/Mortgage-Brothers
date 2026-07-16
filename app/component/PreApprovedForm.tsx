@@ -46,28 +46,27 @@ const PreApprovedForm = () => {
         </div>
 
         {/* Form Container */}
-        <div className="bg-white rounded-3xl overflow-hidden shadow-xl border border-[#e8e0d0]/50 relative min-h-[600px] md:min-h-[700px]">
-          {isLoading && (
-            <div className="absolute inset-0 bg-white flex flex-col items-center justify-center z-10 p-6">
-              {/* Spinner */}
-              <div className="w-12 h-12 border-4 border-[#3fb364]/20 border-t-[#3fb364] rounded-full animate-spin mb-4"></div>
-              <p className="text-[#4e5b4e] text-[15px] font-medium animate-pulse">
-                Loading secure application form...
-              </p>
-            </div>
-          )}
+       <div className="bg-white rounded-3xl overflow-hidden shadow-xl border border-[#e8e0d0]/50 relative h-[300px] md:h-[400px]">
+  {isLoading && (
+    <div className="absolute inset-0 bg-white flex flex-col items-center justify-center z-10 p-6">
+      <div className="w-12 h-12 border-4 border-[#3fb364]/20 border-t-[#3fb364] rounded-full animate-spin mb-4"></div>
+      <p className="text-[#4e5b4e] text-[15px] font-medium animate-pulse">
+        Loading secure application form...
+      </p>
+    </div>
+  )}
 
-          <iframe
-            id="JotFormIFrame-250065764860157"
-            title="Arizona Mortgage Pre-Approval Form"
-            src="https://form.jotform.com/250065764860157"
-            frameBorder="0"
-            scrolling="yes"
-            className="w-full min-h-[650px] md:min-h-[750px] border-none"
-            onLoad={() => setIsLoading(false)}
-            allow="geolocation; microphone; camera; fullscreen"
-          />
-        </div>
+  <iframe
+    id="JotFormIFrame-250065764860157"
+    title="Arizona Mortgage Pre-Approval Form"
+    src="https://form.jotform.com/250065764860157"
+    frameBorder="0"
+    scrolling="yes"
+    className="w-full h-full border-none"
+    onLoad={() => setIsLoading(false)}
+    allow="geolocation; microphone; camera; fullscreen"
+  />
+</div>
       </div>
     </section>
   );

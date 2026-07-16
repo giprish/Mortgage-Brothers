@@ -240,22 +240,29 @@ export default function ContactPage() {
 
             {/* Right Column: Map & Hours */}
             <div className="lg:col-span-5 flex flex-col gap-6">
-              {/* Map Placeholder Card */}
-              <div className="bg-[#f5f0e8] border border-[#e8e0d0] rounded-3xl p-8 relative overflow-hidden flex flex-col items-center justify-center min-h-[220px] text-center shadow-sm">
-                {/* Diagonal stripes */}
-                <div className="absolute inset-0 opacity-15" style={{ backgroundImage: "repeating-linear-gradient(45deg, #a89a70 0px, #a89a70 8px, transparent 8px, transparent 16px)" }}></div>
-                
-                <div className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-[#3fb364] mb-3 relative z-10">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
-                    <path fillRule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
-                  </svg>
+              {/* Interactive Map Card */}
+              <div className="bg-white border border-[#e8e0d0]/60 rounded-3xl overflow-hidden shadow-sm flex flex-col h-[280px]">
+                <iframe
+                  src="https://maps.google.com/maps?q=1599%20E%20Orangewood%20Ave,%20Ste%20200,%20Phoenix,%20AZ%2085020&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  className="w-full flex-grow border-0"
+                  allowFullScreen
+                  loading="lazy"
+                  title="Office Location Map"
+                ></iframe>
+                <div className="bg-[#faf7f0] px-6 py-4 border-t border-[#e8e0d0]/40 flex justify-between items-center text-[12px] font-sans">
+                  <div>
+                    <span className="text-[#052316] font-bold block">1599 E Orangewood Ave, Ste 200</span>
+                    <span className="text-[#8a9a7a]">Phoenix, AZ 85020</span>
+                  </div>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=1599+E+Orangewood+Ave,+Ste+200,+Phoenix,+AZ+85020"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#3fb364] font-bold hover:text-[#2d5a2d] transition-colors whitespace-nowrap ml-2"
+                  >
+                    Open in Maps →
+                  </a>
                 </div>
-                <span className="text-[#052316] text-[12px] font-bold uppercase tracking-wider block relative z-10 mb-1">
-                  MAP · 1599 E ORANGEWOOD AVE
-                </span>
-                <span className="text-[#4e5b4e] text-[13px] relative z-10">
-                  PHOENIX, AZ 85020
-                </span>
               </div>
 
               {/* Office Hours Card */}
