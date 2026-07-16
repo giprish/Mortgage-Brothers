@@ -179,13 +179,13 @@ const Navbar = () => {
                 strokeLinejoin="round"
                 className="group-hover:rotate-180 transition-transform duration-200"
               >
-                <polyline points="6 9 12 15 18 9" />
+                {/* <polyline points="6 9 12 15 18 9" /> */}
               </svg>
             </Link>
             {/* Areas We Serve Megamenu Container */}
-            <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[840px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
+            {/* <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[840px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
               <div className="bg-white border border-[#e8e0d0] rounded-xl shadow-xl p-6 grid grid-cols-4 gap-6 text-left">
-                {/* Column 1 */}
+               
                 <div>
                   <h4 className="text-[#3fb364] text-[11px] font-bold tracking-[0.12em] uppercase mb-3 pb-1 border-b border-[#e8e0d0]/40">
                     DIRECTORIES & AREAS
@@ -198,7 +198,7 @@ const Navbar = () => {
                   </div>
                 </div>
 
-                {/* Column 2 */}
+                
                 <div>
                   <h4 className="text-[#3fb364] text-[11px] font-bold tracking-[0.12em] uppercase mb-3 pb-1 border-b border-[#e8e0d0]/40">
                     CITIES A-G
@@ -217,7 +217,7 @@ const Navbar = () => {
                   </div>
                 </div>
 
-                {/* Column 3 */}
+             
                 <div>
                   <h4 className="text-[#3fb364] text-[11px] font-bold tracking-[0.12em] uppercase mb-3 pb-1 border-b border-[#e8e0d0]/40">
                     CITIES H-Q
@@ -235,7 +235,7 @@ const Navbar = () => {
                   </div>
                 </div>
 
-                {/* Column 4 */}
+               
                 <div>
                   <h4 className="text-[#3fb364] text-[11px] font-bold tracking-[0.12em] uppercase mb-3 pb-1 border-b border-[#e8e0d0]/40">
                     CITIES R-Z
@@ -253,7 +253,7 @@ const Navbar = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* About Dropdown */}
@@ -281,7 +281,7 @@ const Navbar = () => {
             <div className="absolute left-[-12px] top-full pt-3 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
               <div className="bg-white border border-[#e8e0d0] rounded-xl shadow-xl py-2">
                 <Link
-                  href="/contact"
+                  href="/contact-us"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Contact Us
@@ -339,7 +339,7 @@ const Navbar = () => {
                   Conventional Loans
                 </Link>
                 <Link
-                  href="/reviews"
+                  href="/client-mortgage-reviews"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Reviews
@@ -622,7 +622,7 @@ const Navbar = () => {
             ↳ About Us
           </Link>
           <Link
-            href="/contact"
+            href="/contact-us"
             onClick={() => setMobileMenuOpen(false)}
             className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
           >
@@ -666,7 +666,7 @@ const Navbar = () => {
             ↳ Conventional Loans
           </Link>
           <Link
-            href="/reviews"
+            href="/client-mortgage-reviews"
             onClick={() => setMobileMenuOpen(false)}
             className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
           >
