@@ -115,7 +115,7 @@ const Footer = () => {
               {["About Us", "The Team", "Reviews", "Calculators", "Areas We Serve", "FAQ"].map((item) => {
                 let href = `/#${item.toLowerCase().replace(" ", "-")}`;
                 if (item === "FAQ") href = "/faq";
-                if (item === "About Us") href = "/about";
+                if (item === "About Us") href = "/about-us";
                 if (item === "Reviews") href = "/reviews";
                 if (item === "Calculators") href = "/calculators";
                 if (item === "Areas We Serve") href = "/areas-we-serve";

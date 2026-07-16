@@ -259,7 +259,7 @@ const Navbar = () => {
           {/* About Dropdown */}
           <div className="relative group py-2">
             <Link
-              href="/about"
+              href="/about-us"
               className="flex items-center gap-1.5 text-[#1a3a1a] text-[14px] font-medium hover:text-[#2d5a2d] transition-colors duration-200 cursor-pointer"
             >
               About
@@ -608,14 +608,14 @@ const Navbar = () => {
           </Link>
 
           <Link
-            href="/about"
+            href="/about-us"
             onClick={() => setMobileMenuOpen(false)}
             className="text-[#1a3a1a] text-[15px] font-medium py-2"
           >
             About
           </Link>
           <Link
-            href="/about"
+            href="/about-us"
             onClick={() => setMobileMenuOpen(false)}
             className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
           >
