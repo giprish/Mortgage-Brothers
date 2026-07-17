@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useMemo } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import SliderInput from "../component/SliderInput";
 
 // ─── Down Payment Calculator Specification Lookup Tables ─────────────────────
 
@@ -304,71 +305,62 @@ function solvePayments(
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export default function DownPaymentCalculatorPage() {
-  const [homePrice, setHomePrice] = useState("400000");
-  const [annualIncome, setAnnualIncome] = useState("100000");
-  const [monthlyDebts, setMonthlyDebts] = useState("500");
+  const [homePrice, setHomePrice] = useState(400000);
+  const [annualIncome, setAnnualIncome] = useState(100000);
+  const [monthlyDebts, setMonthlyDebts] = useState(500);
   const [creditScore, setCreditScore] = useState("720-759");
   const [loanType, setLoanType] = useState("conventional");
-  const [interestRate, setInterestRate] = useState("6.5");
-  const [loanTerm, setLoanTerm] = useState("30");
+  const [interestRate, setInterestRate] = useState(6.5);
+  const [loanTerm, setLoanTerm] = useState(30);
 
-  const [dpVal, setDpVal] = useState("80000");
-  const [dpPct, setDpPct] = useState("20");
+  const [dpVal, setDpVal] = useState(80000);
+  const [dpPct, setDpPct] = useState(20);
   const [lastDpMode, setLastDpMode] = useState<"amt" | "pct">("pct");
 
   const [taxRateManual, setTaxRateManual] = useState("");
   const [insManual, setInsManual] = useState("");
-  const [hoa, setHoa] = useState("0");
-
-  const [result, setResult] = useState<DownPaymentResult | null>(null);
+  const [hoa, setHoa] = useState(0);
 
   // Sync inputs
-  const handleHomePriceChange = (val: string) => {
+  const handleHomePriceChange = (val: number) => {
     setHomePrice(val);
-    const hp = parseFloat(val) || 0;
-    if (hp > 0) {
+    if (val > 0) {
       if (lastDpMode === "pct") {
-        setDpVal(String(Math.round(hp * (parseFloat(dpPct) || 0) / 100)));
+        setDpVal(Math.round(val * dpPct / 100));
       } else {
-        setDpPct(((parseFloat(dpVal) || 0) / hp * 100).toFixed(2));
+        setDpPct(parseFloat(((dpVal / val) * 100).toFixed(2)));
       }
     }
   };
 
-  const handleDpAmtChange = (val: string) => {
+  const handleDpAmtChange = (val: number) => {
     setDpVal(val); setLastDpMode("amt");
-    const hp = parseFloat(homePrice) || 0;
-    if (hp > 0) setDpPct(((parseFloat(val) || 0) / hp * 100).toFixed(4));
+    if (homePrice > 0) setDpPct(parseFloat(((val / homePrice) * 100).toFixed(4)));
   };
 
-  const handleDpPctChange = (val: string) => {
+  const handleDpPctChange = (val: number) => {
     setDpPct(val); setLastDpMode("pct");
-    const hp = parseFloat(homePrice) || 0;
-    if (hp > 0) setDpVal(String(Math.round(hp * (parseFloat(val) || 0) / 100)));
+    if (homePrice > 0) setDpVal(Math.round(homePrice * val / 100));
   };
 
-  const handleCalculate = () => {
-    const hp = parseFloat(homePrice) || 0;
-    if (hp <= 0) return;
+  // Auto-calculate result
+  const result = useMemo<DownPaymentResult | null>(() => {
+    const hp = homePrice;
+    if (hp <= 0) return null;
 
     let dpAmt = lastDpMode === "pct"
-      ? hp * (parseFloat(dpPct) || 0) / 100
-      : parseFloat(dpVal) || 0;
+      ? hp * dpPct / 100
+      : dpVal;
     dpAmt = Math.max(0, Math.min(dpAmt, hp));
 
-    const income = parseFloat(annualIncome) || 0;
-    const debts = parseFloat(monthlyDebts) || 0;
-    const rate = parseFloat(interestRate) || 0;
-    const term = Math.round(parseFloat(loanTerm) || 30);
-    const hoaVal = parseFloat(hoa) || 0;
+    const income = annualIncome;
+    const debts = monthlyDebts;
+    const rate = interestRate;
+    const term = Math.round(loanTerm || 30);
+    const hoaVal = hoa;
 
-    const r = solvePayments(hp, dpAmt, parseFloat(dpPct) || 0, income, debts, creditScore, loanType, rate, term, taxRateManual, insManual, hoaVal);
-    setResult(r);
-
-    setTimeout(() => {
-      document.getElementById("calc-results")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 80);
-  };
+    return solvePayments(hp, dpAmt, dpPct, income, debts, creditScore, loanType, rate, term, taxRateManual, insManual, hoaVal);
+  }, [homePrice, dpPct, dpVal, lastDpMode, annualIncome, monthlyDebts, creditScore, loanType, interestRate, loanTerm, taxRateManual, insManual, hoa]);
 
   // Validation Warnings
   const getMinDpRequirement = () => {
@@ -378,9 +370,9 @@ export default function DownPaymentCalculatorPage() {
   };
 
   const minDp = getMinDpRequirement();
-  const currentDpPctNum = parseFloat(dpPct) || 0;
+  const currentDpPctNum = dpPct;
   const isBelowMinDp = currentDpPctNum < minDp.pct;
-  const requiredMinAmt = (parseFloat(homePrice) || 0) * (minDp.pct / 100);
+  const requiredMinAmt = homePrice * (minDp.pct / 100);
 
   // Recommendations and insights
   const largestShareText = (r: DownPaymentResult) => {
@@ -432,12 +424,12 @@ export default function DownPaymentCalculatorPage() {
 
   // Scenario check list
   const getScenarioRows = () => {
-    const hp = parseFloat(homePrice) || 0;
-    const income = parseFloat(annualIncome) || 0;
-    const debts = parseFloat(monthlyDebts) || 0;
-    const rate = parseFloat(interestRate) || 0;
-    const term = Math.round(parseFloat(loanTerm) || 30);
-    const hoaVal = parseFloat(hoa) || 0;
+    const hp = homePrice;
+    const income = annualIncome;
+    const debts = monthlyDebts;
+    const rate = interestRate;
+    const term = Math.round(loanTerm || 30);
+    const hoaVal = hoa;
 
     let checkpoints = [3, 5, 10, 15, 20, 25];
     if (loanType === "fha") checkpoints = [3.5, 5, 10, 15];
@@ -490,21 +482,22 @@ export default function DownPaymentCalculatorPage() {
                   <span className="w-2.5 h-2.5 rounded-full bg-[#052316]" /> Property Profile
                 </h3>
                 
-                <div>
-                  <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Home Price ($)</label>
-                  <div className="relative">
-                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                    <input type="number" value={homePrice} onChange={(e) => handleHomePriceChange(e.target.value)}
-                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-7 pr-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
-                  </div>
-                </div>
+                <SliderInput
+                  label="Home Price"
+                  value={homePrice}
+                  min={50000}
+                  max={2000000}
+                  step={1000}
+                  prefix="$"
+                  onChange={handleHomePriceChange}
+                />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Annual Income ($)</label>
                     <div className="relative">
                       <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={annualIncome} onChange={(e) => setAnnualIncome(e.target.value)}
+                      <input type="number" value={annualIncome} onChange={(e) => setAnnualIncome(parseFloat(e.target.value) || 0)}
                         className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-7 pr-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
                     </div>
                   </div>
@@ -512,7 +505,7 @@ export default function DownPaymentCalculatorPage() {
                     <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Monthly Debt Payments ($)</label>
                     <div className="relative">
                       <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={monthlyDebts} onChange={(e) => setMonthlyDebts(e.target.value)}
+                      <input type="number" value={monthlyDebts} onChange={(e) => setMonthlyDebts(parseFloat(e.target.value) || 0)}
                         className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-7 pr-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
                     </div>
                   </div>
@@ -550,7 +543,7 @@ export default function DownPaymentCalculatorPage() {
                   </div>
                   <div>
                     <label className="text-[#052316] text-[12px] font-semibold block mb-1.5">HOA Dues ($/mo)</label>
-                    <input type="number" value={hoa} onChange={(e) => setHoa(e.target.value)}
+                    <input type="number" value={hoa} onChange={(e) => setHoa(parseFloat(e.target.value) || 0)}
                       className="w-full bg-white border border-[#e8e0d0] rounded-xl py-2.5 px-3 text-[13px] font-bold text-[#052316] focus:outline-none" />
                   </div>
                 </div>
@@ -565,7 +558,7 @@ export default function DownPaymentCalculatorPage() {
                   <span className="w-2.5 h-2.5 rounded-full bg-[#3fb364]" /> Loan & Down Payment details
                 </h3>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Loan Type</label>
                     <select value={loanType} onChange={(e) => setLoanType(e.target.value)}
@@ -577,19 +570,21 @@ export default function DownPaymentCalculatorPage() {
                     </select>
                   </div>
                   <div>
-                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5 font-sans">Interest Rate (%)</label>
-                    <div className="relative">
-                      <input type="number" step="0.001" value={interestRate} onChange={(e) => setInterestRate(e.target.value)}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3 text-[13.5px] font-bold text-[#052316] focus:outline-none" />
-                      <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[13px]">%</span>
-                    </div>
-                  </div>
-                  <div>
                     <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Loan Term</label>
-                    <input type="number" value={loanTerm} onChange={(e) => setLoanTerm(e.target.value)}
+                    <input type="number" value={loanTerm} onChange={(e) => setLoanTerm(parseFloat(e.target.value) || 0)}
                       className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3 text-[13.5px] font-bold text-[#052316] focus:outline-none" />
                   </div>
                 </div>
+
+                <SliderInput
+                  label="Interest Rate"
+                  value={interestRate}
+                  min={0}
+                  max={15}
+                  step={0.125}
+                  suffix="%"
+                  onChange={setInterestRate}
+                />
 
                 {/* Bidirectional Down Payment */}
                 <div>
@@ -597,11 +592,11 @@ export default function DownPaymentCalculatorPage() {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="relative">
                       <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={dpVal} onChange={(e) => handleDpAmtChange(e.target.value)} onFocus={() => setLastDpMode("amt")}
+                      <input type="number" value={dpVal} onChange={(e) => handleDpAmtChange(parseFloat(e.target.value) || 0)} onFocus={() => setLastDpMode("amt")}
                         className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-7 pr-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
                     </div>
                     <div className="relative">
-                      <input type="number" step="0.01" value={dpPct} onChange={(e) => handleDpPctChange(e.target.value)} onFocus={() => setLastDpMode("pct")}
+                      <input type="number" step="0.01" value={dpPct} onChange={(e) => handleDpPctChange(parseFloat(e.target.value) || 0)} onFocus={() => setLastDpMode("pct")}
                         className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3.5 text-[14px] font-bold text-[#052316] focus:outline-none" />
                       <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">%</span>
                     </div>
@@ -617,17 +612,6 @@ export default function DownPaymentCalculatorPage() {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Calculate button */}
-          <div className="mt-8">
-            <button onClick={handleCalculate}
-              className="w-full bg-[#3fb364] hover:bg-[#349b55] active:scale-[0.98] text-white text-[16.5px] font-bold py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer flex items-center justify-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" />
-              </svg>
-              Calculate Required Savings & Payments
-            </button>
           </div>
         </section>
 
@@ -662,10 +646,80 @@ export default function DownPaymentCalculatorPage() {
               </div>
             </div>
 
-            {/* Split Breakdown section */}
+            {/* Split Breakdown section — chart left, cards right */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               
-              {/* Cost breakdown cards */}
+              {/* Visual chart & Insights (LEFT) */}
+              <div className="space-y-6">
+                
+                {/* SVG Donut Chart */}
+                <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm text-center">
+                  <h3 className="text-[#052316] text-[16px] font-bold mb-5 pb-3 border-b border-[#e8e0d0]/40 text-left">Monthly Distribution</h3>
+                  
+                  <div className="relative w-44 h-44 mx-auto mb-6">
+                    <svg viewBox="0 0 200 200" className="w-full h-full transform -rotate-90">
+                      <circle cx="100" cy="100" r="70" fill="none" stroke="#fcf9f3" strokeWidth="16" />
+                      {getDonutPaths(result).map((p, idx) => (
+                        <path key={idx} d={p.d} fill="none" stroke={p.color} strokeWidth="16" strokeLinecap="round" />
+                      ))}
+                    </svg>
+                    <div className="absolute inset-0 flex flex-col items-center justify-center">
+                      <span className="text-[10px] uppercase font-bold tracking-wider text-[#888]">Total</span>
+                      <span className="text-[17px] font-bold text-[#052316]">{fmt(result.totalMonthly)}</span>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3 text-[12px] text-left pt-2 font-sans">
+                    <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-full bg-[#052316]" /> <span>Principal & Interest ({((result.monthlyPI / result.totalMonthly) * 100).toFixed(1)}%)</span></div>
+                    <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-full bg-[#b89a5a]" /> <span>Property Taxes ({((result.monthlyTax / result.totalMonthly) * 100).toFixed(1)}%)</span></div>
+                    <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-full bg-[#3fb364]" /> <span>Home Insurance ({((result.monthlyIns / result.totalMonthly) * 100).toFixed(1)}%)</span></div>
+                    {result.monthlyFee > 0 && <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-full bg-[#000]" /> <span>PMI/MIP Fee ({((result.monthlyFee / result.totalMonthly) * 100).toFixed(1)}%)</span></div>}
+                    {result.monthlyHOA > 0 && <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-full bg-[#aaa]" /> <span>HOA Dues ({((result.monthlyHOA / result.totalMonthly) * 100).toFixed(1)}%)</span></div>}
+                  </div>
+                </div>
+
+                {/* Key Insights & Recommendations */}
+                <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm space-y-4 text-[13.5px] leading-relaxed text-[#555]">
+                  <h3 className="text-[#052316] text-[16px] font-bold pb-2 border-b border-[#e8e0d0]/40">Key Insights</h3>
+                  
+                  <div>
+                    <h4 className="text-[#052316] font-bold text-[13px] mb-1 font-sans">Monthly Payment Breakdown</h4>
+                    <p>{largestShareText(result)}</p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-[#052316] font-bold text-[13px] mb-1 font-sans">Affordability Analysis</h4>
+                    <p>
+                      Housing Cost Ratio (Front-end): <strong>{result.housingCostRatio}%</strong> (Limit 40%)
+                      <br />DTI Ratio (Back-end): <strong>{result.dtiRatio}%</strong> (Limit 48%)
+                      <br />
+                      {result.housingCostRatio <= 40 && result.dtiRatio <= 48
+                        ? "✅ Both debt ratios fall safely within target guidelines."
+                        : result.housingCostRatio > 40 && result.dtiRatio > 48
+                          ? "⚠️ Caution: Both housing expense and total debt ratios exceed recommended thresholds."
+                          : "⚠️ Warning: One of your debt-to-income ratios is currently over recommended guidelines."}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-[#052316] font-bold text-[13px] mb-1 font-sans">Recommendations</h4>
+                    <ul className="list-disc pl-4 space-y-1 mt-1 font-sans text-[13px]">
+                      {loanType === "conventional" && dpPct < 20 && (
+                        <li>Increasing your down payment to <strong>20% ({fmt(homePrice * 0.2)})</strong> will eliminate the monthly PMI, saving you <strong>{fmt(result.monthlyFee)}/mo</strong>.</li>
+                      )}
+                      {result.dtiRatio > 48 && (
+                        <li>Consider reducing recurring monthly debts or increasing down payment to reduce mortgage balance and lower DTI ratio.</li>
+                      )}
+                      {result.requiredSavings > 0 && (
+                        <li>Ensure you have additional emergency reserves in savings after closing.</li>
+                      )}
+                    </ul>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Cost breakdown cards (RIGHT) */}
               <div className="space-y-6">
                 
                 {/* Initial costs */}
@@ -723,76 +777,6 @@ export default function DownPaymentCalculatorPage() {
                 </div>
 
               </div>
-
-              {/* Visual chart & Insights */}
-              <div className="space-y-6">
-                
-                {/* SVG Donut Chart */}
-                <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm text-center">
-                  <h3 className="text-[#052316] text-[16px] font-bold mb-5 pb-3 border-b border-[#e8e0d0]/40 text-left">Monthly Distribution</h3>
-                  
-                  <div className="relative w-44 h-44 mx-auto mb-6">
-                    <svg viewBox="0 0 200 200" className="w-full h-full transform -rotate-90">
-                      <circle cx="100" cy="100" r="70" fill="none" stroke="#fcf9f3" strokeWidth="16" />
-                      {getDonutPaths(result).map((p, idx) => (
-                        <path key={idx} d={p.d} fill="none" stroke={p.color} strokeWidth="16" strokeLinecap="round" />
-                      ))}
-                    </svg>
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <span className="text-[10px] uppercase font-bold tracking-wider text-[#888]">Total</span>
-                      <span className="text-[17px] font-bold text-[#052316]">{fmt(result.totalMonthly)}</span>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-3 text-[12px] text-left pt-2 font-sans">
-                    <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-full bg-[#052316]" /> <span>Principal & Interest ({((result.monthlyPI / result.totalMonthly) * 100).toFixed(1)}%)</span></div>
-                    <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-full bg-[#b89a5a]" /> <span>Property Taxes ({((result.monthlyTax / result.totalMonthly) * 100).toFixed(1)}%)</span></div>
-                    <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-full bg-[#3fb364]" /> <span>Home Insurance ({((result.monthlyIns / result.totalMonthly) * 100).toFixed(1)}%)</span></div>
-                    {result.monthlyFee > 0 && <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-full bg-[#000]" /> <span>PMI/MIP Fee ({((result.monthlyFee / result.totalMonthly) * 100).toFixed(1)}%)</span></div>}
-                    {result.monthlyHOA > 0 && <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-full bg-[#aaa]" /> <span>HOA Dues ({((result.monthlyHOA / result.totalMonthly) * 100).toFixed(1)}%)</span></div>}
-                  </div>
-                </div>
-
-                {/* Key Insights & Recommendations */}
-                <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm space-y-4 text-[13.5px] leading-relaxed text-[#555]">
-                  <h3 className="text-[#052316] text-[16px] font-bold pb-2 border-b border-[#e8e0d0]/40">Key Insights</h3>
-                  
-                  <div>
-                    <h4 className="text-[#052316] font-bold text-[13px] mb-1 font-sans">Monthly Payment Breakdown</h4>
-                    <p>{largestShareText(result)}</p>
-                  </div>
-
-                  <div>
-                    <h4 className="text-[#052316] font-bold text-[13px] mb-1 font-sans">Affordability Analysis</h4>
-                    <p>
-                      Housing Cost Ratio (Front-end): <strong>{result.housingCostRatio}%</strong> (Limit 40%)
-                      <br />DTI Ratio (Back-end): <strong>{result.dtiRatio}%</strong> (Limit 48%)
-                      <br />
-                      {result.housingCostRatio <= 40 && result.dtiRatio <= 48
-                        ? "✅ Both debt ratios fall safely within target guidelines."
-                        : result.housingCostRatio > 40 && result.dtiRatio > 48
-                          ? "⚠️ Caution: Both housing expense and total debt ratios exceed recommended thresholds."
-                          : "⚠️ Warning: One of your debt-to-income ratios is currently over recommended guidelines."}
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className="text-[#052316] font-bold text-[13px] mb-1 font-sans">Recommendations</h4>
-                    <ul className="list-disc pl-4 space-y-1 mt-1 font-sans text-[13px]">
-                      {loanType === "conventional" && parseFloat(dpPct) < 20 && (
-                        <li>Increasing your down payment to <strong>20% ({fmt(parseFloat(homePrice) * 0.2)})</strong> will eliminate the monthly PMI, saving you <strong>{fmt(result.monthlyFee)}/mo</strong>.</li>
-                      )}
-                      {result.dtiRatio > 48 && (
-                        <li>Consider reducing recurring monthly debts or increasing down payment to reduce mortgage balance and lower DTI ratio.</li>
-                      )}
-                      {result.requiredSavings > 0 && (
-                        <li>Ensure you have additional emergency reserves in savings after closing.</li>
-                      )}
-                    </ul>
-                  </div>
-                </div>
-
-              </div>
             </div>
 
             {/* Down Payment Scenarios Comparison Table */}
@@ -813,7 +797,7 @@ export default function DownPaymentCalculatorPage() {
                   </thead>
                   <tbody>
                     {getScenarioRows().map((row) => (
-                      <tr key={row.pct} className={Math.abs(row.pct - parseFloat(dpPct)) < 0.1 ? "bg-[#3fb364]/10 font-bold" : "hover:bg-[#faf7f0] border-b border-[#e8e0d0]/20"}>
+                      <tr key={row.pct} className={Math.abs(row.pct - dpPct) < 0.1 ? "bg-[#3fb364]/10 font-bold" : "hover:bg-[#faf7f0] border-b border-[#e8e0d0]/20"}>
                         <td className="py-3 px-4 text-[#052316]">{row.pct}%</td>
                         <td className="py-3 px-4 text-[#052316]">{fmt(row.dp)}</td>
                         <td className="py-3 px-4 text-[#052316]">{fmt(row.loan)}</td>

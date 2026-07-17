@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import SliderInput from "../component/SliderInput";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -279,119 +280,107 @@ function CostComparisonChart({ series, breakEven }: { series: YearlyData[]; brea
 // ─── Component ────────────────────────────────────────────────────────────────
 
 export default function RentVsBuyCalculatorPage() {
-  const [rent, setRent] = useState("2000");
-  const [rentIncrease, setRentIncrease] = useState("3");
-  const [rentersIns, setRentersIns] = useState("180");
-  const [securityDeposit, setSecurityDeposit] = useState("2000");
+  const [rent, setRent] = useState(2000);
+  const [rentIncrease, setRentIncrease] = useState(3);
+  const [rentersIns, setRentersIns] = useState(180);
+  const [securityDeposit, setSecurityDeposit] = useState(2000);
   const [hasCustomDeposit, setHasCustomDeposit] = useState(false);
 
-  const [returnRate, setReturnRate] = useState("6");
-  const [taxRate, setTaxRate] = useState("18");
+  const [returnRate, setReturnRate] = useState(6);
+  const [taxRate, setTaxRate] = useState(18);
 
-  const [homePrice, setHomePrice] = useState("400000");
-  const [downPaymentVal, setDownPaymentVal] = useState("80000");
-  const [downPaymentPct, setDownPaymentPct] = useState("20");
+  const [homePrice, setHomePrice] = useState(400000);
+  const [downPaymentVal, setDownPaymentVal] = useState(80000);
+  const [downPaymentPct, setDownPaymentPct] = useState(20);
   const [lastDpMode, setLastDpMode] = useState<"amt" | "pct">("pct");
-  const [closingCosts, setClosingCosts] = useState("3595");
+  const [closingCosts, setClosingCosts] = useState(getDefaultClosingCosts(400000));
   const [hasCustomClosing, setHasCustomClosing] = useState(false);
-  const [interestRate, setInterestRate] = useState("6.75");
-  const [loanTerm, setLoanTerm] = useState("30");
+  const [interestRate, setInterestRate] = useState(6.75);
+  const [loanTerm, setLoanTerm] = useState(30);
   const [county, setCounty] = useState("Maricopa");
-  const [taxes, setTaxes] = useState("2400");
-  const [appreciation, setAppreciation] = useState("4");
-  const [homeIns, setHomeIns] = useState("1400");
+  const [taxes, setTaxes] = useState(2400);
+  const [appreciation, setAppreciation] = useState(4);
+  const [homeIns, setHomeIns] = useState(Math.round(400000 * 0.0035));
   const [hasCustomHomeIns, setHasCustomHomeIns] = useState(false);
-  const [maintenance, setMaintenance] = useState("333");
+  const [maintenance, setMaintenance] = useState(Math.round(400000 * 0.01 / 12));
   const [hasCustomMaintenance, setHasCustomMaintenance] = useState(false);
-  const [hoa, setHoa] = useState("0");
-  const [comparisonPeriod, setComparisonPeriod] = useState("30");
+  const [hoa, setHoa] = useState(0);
+  const [comparisonPeriod, setComparisonPeriod] = useState(30);
 
-  const [result, setResult] = useState<RentVsBuyResult | null>(null);
-
-  const handleMonthlyRentChange = (val: string) => {
+  const handleMonthlyRentChange = (val: number) => {
     setRent(val);
-    const rAmt = parseFloat(val) || 0;
-    if (!hasCustomDeposit) setSecurityDeposit(String(Math.round(rAmt)));
+    if (!hasCustomDeposit) setSecurityDeposit(Math.round(val));
   };
 
-  const handleHomePriceChange = (val: string) => {
+  const handleHomePriceChange = (val: number) => {
     setHomePrice(val);
-    const hp = parseFloat(val) || 0;
-    if (hp > 0) {
+    if (val > 0) {
       if (lastDpMode === "pct") {
-        setDownPaymentVal(String(Math.round(hp * (parseFloat(downPaymentPct) || 0) / 100)));
+        setDownPaymentVal(Math.round(val * downPaymentPct / 100));
       } else {
-        setDownPaymentPct(((parseFloat(downPaymentVal) || 0) / hp * 100).toFixed(2));
+        setDownPaymentPct(parseFloat((downPaymentVal / val * 100).toFixed(4)));
       }
-      if (!hasCustomClosing) setClosingCosts(String(getDefaultClosingCosts(hp)));
-      if (!hasCustomHomeIns) setHomeIns(String(Math.round(hp * 0.0035)));
-      if (!hasCustomMaintenance) setMaintenance(String(Math.round(hp * 0.01 / 12)));
+      if (!hasCustomClosing) setClosingCosts(getDefaultClosingCosts(val));
+      if (!hasCustomHomeIns) setHomeIns(Math.round(val * 0.0035));
+      if (!hasCustomMaintenance) setMaintenance(Math.round(val * 0.01 / 12));
     }
   };
 
-  const handleDpAmtChange = (val: string) => {
+  const handleDpAmtChange = (val: number) => {
     setDownPaymentVal(val); setLastDpMode("amt");
-    const hp = parseFloat(homePrice) || 0;
-    if (hp > 0) setDownPaymentPct(((parseFloat(val) || 0) / hp * 100).toFixed(4));
+    if (homePrice > 0) setDownPaymentPct(parseFloat((val / homePrice * 100).toFixed(4)));
   };
 
-  const handleDpPctChange = (val: string) => {
+  const handleDpPctChange = (val: number) => {
     setDownPaymentPct(val); setLastDpMode("pct");
-    const hp = parseFloat(homePrice) || 0;
-    if (hp > 0) setDownPaymentVal(String(Math.round(hp * (parseFloat(val) || 0) / 100)));
+    if (homePrice > 0) setDownPaymentVal(Math.round(homePrice * val / 100));
   };
 
-  const handleClosingCostsChange = (val: string) => {
+  const handleClosingCostsChange = (val: number) => {
     setClosingCosts(val);
     setHasCustomClosing(true);
   };
 
-  const handleHomeInsChange = (val: string) => {
+  const handleHomeInsChange = (val: number) => {
     setHomeIns(val);
     setHasCustomHomeIns(true);
   };
 
-  const handleMaintenanceChange = (val: string) => {
+  const handleMaintenanceChange = (val: number) => {
     setMaintenance(val);
     setHasCustomMaintenance(true);
   };
 
-  const handleCalculate = useCallback(() => {
-    const rRent = Math.max(1, parseFloat(rent) || 0);
-    const rInc = Math.max(0, Math.min(20, parseFloat(rentIncrease) || 0));
-    const rIns = Math.max(0, parseFloat(rentersIns) || 0);
-    const rSec = Math.max(0, parseFloat(securityDeposit) || 0);
-    const shareReturn = Math.max(0, Math.min(20, parseFloat(returnRate) || 0));
-    const shareTax = Math.max(0, Math.min(50, parseFloat(taxRate) || 0));
-    const hp = Math.max(10000, parseFloat(homePrice) || 0);
+  const result = useMemo<RentVsBuyResult | null>(() => {
+    const rRent = Math.max(1, rent);
+    const rInc = Math.max(0, Math.min(20, rentIncrease));
+    const rIns = Math.max(0, rentersIns);
+    const rSec = Math.max(0, securityDeposit);
+    const shareReturn = Math.max(0, Math.min(20, returnRate));
+    const shareTax = Math.max(0, Math.min(50, taxRate));
+    const hp = Math.max(10000, homePrice);
 
-    let dpVal = lastDpMode === "pct" ? hp * (parseFloat(downPaymentPct) || 0) / 100 : parseFloat(downPaymentVal) || 0;
+    let dpVal = lastDpMode === "pct" ? hp * downPaymentPct / 100 : downPaymentVal;
     const dpFloor = hp * 0.03;
-    if (dpVal < dpFloor) {
-      dpVal = dpFloor;
-      setDownPaymentVal(String(Math.round(dpFloor)));
-      setDownPaymentPct("3.00");
-    }
+    if (dpVal < dpFloor) dpVal = dpFloor;
     dpVal = Math.min(dpVal, hp);
 
-    const cc = Math.max(0, parseFloat(closingCosts) || 0);
-    const rate = Math.max(0.1, Math.min(20, parseFloat(interestRate) || 0));
-    let term = Math.round(parseFloat(loanTerm) || 30);
+    const cc = Math.max(0, closingCosts);
+    const rate = Math.max(0.1, Math.min(20, interestRate));
+    let term = Math.round(loanTerm);
     if (term < 1) term = 1;
     if (term > 30) term = 30;
 
-    const propTax = Math.max(0, parseFloat(taxes) || 0);
-    const appPct = Math.max(-10, Math.min(15, parseFloat(appreciation) || 0));
-    const ins = Math.max(0, parseFloat(homeIns) || 0);
-    const maint = Math.max(0, parseFloat(maintenance) || 0);
-    const hFees = Math.max(0, parseFloat(hoa) || 0);
-    let compYears = Math.round(parseFloat(comparisonPeriod) || 30);
+    const propTax = Math.max(0, taxes);
+    const appPct = Math.max(-10, Math.min(15, appreciation));
+    const ins = Math.max(0, homeIns);
+    const maint = Math.max(0, maintenance);
+    const hFees = Math.max(0, hoa);
+    let compYears = Math.round(comparisonPeriod);
     if (compYears < 1) compYears = 1;
     if (compYears > 30) compYears = 30;
 
-    const r = runRentVsBuyCalc(rRent, rInc, rIns, rSec, shareReturn, shareTax, hp, dpVal, cc, rate, term, propTax, appPct, ins, maint, hFees, compYears);
-    setResult(r);
-    setTimeout(() => document.getElementById("rent-vs-buy-results")?.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+    return runRentVsBuyCalc(rRent, rInc, rIns, rSec, shareReturn, shareTax, hp, dpVal, cc, rate, term, propTax, appPct, ins, maint, hFees, compYears);
   }, [rent, rentIncrease, rentersIns, securityDeposit, returnRate, taxRate, homePrice, downPaymentVal, downPaymentPct, lastDpMode, closingCosts, interestRate, loanTerm, taxes, appreciation, homeIns, maintenance, hoa, comparisonPeriod]);
 
   return (
@@ -428,14 +417,14 @@ export default function RentVsBuyCalculatorPage() {
                     <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Monthly Rent ($)</label>
                     <div className="relative">
                       <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={rent} onChange={(e) => handleMonthlyRentChange(e.target.value)}
+                      <input type="number" value={rent} onChange={(e) => handleMonthlyRentChange(parseFloat(e.target.value) || 0)}
                         className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-7 pr-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
                     </div>
                   </div>
                   <div>
                     <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Annual Rent Increase (%)</label>
                     <div className="relative">
-                      <input type="number" step="0.1" value={rentIncrease} onChange={(e) => setRentIncrease(e.target.value)}
+                      <input type="number" step="0.1" value={rentIncrease} onChange={(e) => setRentIncrease(parseFloat(e.target.value) || 0)}
                         className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3.5 text-[14px] font-bold text-[#052316] focus:outline-none" />
                       <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">%</span>
                     </div>
@@ -446,7 +435,7 @@ export default function RentVsBuyCalculatorPage() {
                     <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Renter&apos;s Insurance ($/yr)</label>
                     <div className="relative">
                       <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={rentersIns} onChange={(e) => setRentersIns(e.target.value)}
+                      <input type="number" value={rentersIns} onChange={(e) => setRentersIns(parseFloat(e.target.value) || 0)}
                         className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-7 pr-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
                     </div>
                   </div>
@@ -454,7 +443,7 @@ export default function RentVsBuyCalculatorPage() {
                     <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Security Deposit ($)</label>
                     <div className="relative">
                       <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={securityDeposit} onChange={(e) => setSecurityDeposit(e.target.value)}
+                      <input type="number" value={securityDeposit} onChange={(e) => setSecurityDeposit(parseFloat(e.target.value) || 0)}
                         className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-7 pr-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
                     </div>
                   </div>
@@ -469,7 +458,7 @@ export default function RentVsBuyCalculatorPage() {
                   <div>
                     <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Investment Return Rate (%)</label>
                     <div className="relative">
-                      <input type="number" step="0.1" value={returnRate} onChange={(e) => setReturnRate(e.target.value)}
+                      <input type="number" step="0.1" value={returnRate} onChange={(e) => setReturnRate(parseFloat(e.target.value) || 0)}
                         className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3.5 text-[14px] font-bold text-[#052316] focus:outline-none" />
                       <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">%</span>
                     </div>
@@ -477,7 +466,7 @@ export default function RentVsBuyCalculatorPage() {
                   <div>
                     <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Federal Tax Rate (%)</label>
                     <div className="relative">
-                      <input type="number" step="1" value={taxRate} onChange={(e) => setTaxRate(e.target.value)}
+                      <input type="number" step="1" value={taxRate} onChange={(e) => setTaxRate(parseFloat(e.target.value) || 0)}
                         className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3.5 text-[14px] font-bold text-[#052316] focus:outline-none" />
                       <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">%</span>
                     </div>
@@ -486,7 +475,7 @@ export default function RentVsBuyCalculatorPage() {
                 <div>
                   <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Comparison Timeframe</label>
                   <div className="relative">
-                    <input type="number" value={comparisonPeriod} onChange={(e) => setComparisonPeriod(e.target.value)}
+                    <input type="number" value={comparisonPeriod} onChange={(e) => setComparisonPeriod(parseFloat(e.target.value) || 0)}
                       className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3.5 text-[14px] font-bold text-[#052316] focus:outline-none" />
                     <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">years</span>
                   </div>
@@ -499,24 +488,17 @@ export default function RentVsBuyCalculatorPage() {
                 <h3 className="text-[#052316] text-[17px] font-bold pb-3 border-b border-[#e8e0d0]/40 flex items-center gap-2 font-sans">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#3fb364]" /> Buying Assumptions
                 </h3>
-                <div>
-                  <label className="text-[#052316] text-[13px] font-semibold block mb-1.5 font-sans font-sans">Home Price ($)</label>
-                  <div className="relative">
-                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                    <input type="number" value={homePrice} onChange={(e) => handleHomePriceChange(e.target.value)}
-                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-7 pr-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
-                  </div>
-                </div>
+                <SliderInput label="Home Price ($)" value={homePrice} min={50000} max={2000000} step={1000} prefix="$" onChange={handleHomePriceChange} />
                 <div>
                   <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Down Payment</label>
                   <div className="grid grid-cols-2 gap-4">
                     <div className="relative">
                       <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={downPaymentVal} onChange={(e) => handleDpAmtChange(e.target.value)} onFocus={() => setLastDpMode("amt")}
+                      <input type="number" value={downPaymentVal} onChange={(e) => handleDpAmtChange(parseFloat(e.target.value) || 0)} onFocus={() => setLastDpMode("amt")}
                         className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-7 pr-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
                     </div>
                     <div className="relative">
-                      <input type="number" step="0.01" value={downPaymentPct} onChange={(e) => handleDpPctChange(e.target.value)} onFocus={() => setLastDpMode("pct")}
+                      <input type="number" step="0.01" value={downPaymentPct} onChange={(e) => handleDpPctChange(parseFloat(e.target.value) || 0)} onFocus={() => setLastDpMode("pct")}
                         className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3.5 text-[14px] font-bold text-[#052316] focus:outline-none" />
                       <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">%</span>
                     </div>
@@ -527,40 +509,27 @@ export default function RentVsBuyCalculatorPage() {
                     <label className="text-[#052316] text-[13px] font-semibold block mb-1.5 font-sans">Closing Costs ($)</label>
                     <div className="relative">
                       <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={closingCosts} onChange={(e) => handleClosingCostsChange(e.target.value)}
+                      <input type="number" value={closingCosts} onChange={(e) => handleClosingCostsChange(parseFloat(e.target.value) || 0)}
                         className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-7 pr-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
                     </div>
                   </div>
-                  <div>
-                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5 font-sans">Interest Rate (%)</label>
-                    <div className="relative">
-                      <input type="number" step="0.05" value={interestRate} onChange={(e) => setInterestRate(e.target.value)}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3.5 text-[14px] font-bold text-[#052316] focus:outline-none" />
-                      <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">%</span>
-                    </div>
-                  </div>
+                  <SliderInput label="Interest Rate (%)" value={interestRate} min={0} max={15} step={0.125} suffix="%" onChange={(val) => setInterestRate(val)} />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans">
-                  <div><label className="text-[#052316] text-[13px] font-semibold block mb-1.5 font-sans">Loan Term (years)</label><input type="number" value={loanTerm} onChange={(e) => setLoanTerm(e.target.value)} className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3.5 text-[14px] font-bold text-[#052316] focus:outline-none" /></div>
+                  <div><label className="text-[#052316] text-[13px] font-semibold block mb-1.5 font-sans">Loan Term (years)</label><input type="number" value={loanTerm} onChange={(e) => setLoanTerm(parseFloat(e.target.value) || 0)} className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3.5 text-[14px] font-bold text-[#052316] focus:outline-none" /></div>
                   <div><label className="text-[#052316] text-[13px] font-semibold block mb-1.5 font-sans">County</label><select value={county} onChange={(e) => setCounty(e.target.value)} className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3 text-[14px] font-bold text-[#052316] focus:outline-none">{ARIZONA_COUNTIES.map(c => <option key={c} value={c}>{c} County</option>)}</select></div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans">
-                  <div><label className="text-[#052316] text-[13px] font-semibold block mb-1.5 font-sans">Annual Taxes ($)</label><input type="number" value={taxes} onChange={(e) => setTaxes(e.target.value)} className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-4 text-[14px] font-bold text-[#052316] focus:outline-none" /></div>
-                  <div><label className="text-[#052316] text-[13px] font-semibold block mb-1.5 font-sans">Home Appreciation (%)</label><input type="number" value={appreciation} onChange={(e) => setAppreciation(e.target.value)} className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-4 text-[14px] font-bold text-[#052316] focus:outline-none" /></div>
+                  <div><label className="text-[#052316] text-[13px] font-semibold block mb-1.5 font-sans">Annual Taxes ($)</label><input type="number" value={taxes} onChange={(e) => setTaxes(parseFloat(e.target.value) || 0)} className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-4 text-[14px] font-bold text-[#052316] focus:outline-none" /></div>
+                  <div><label className="text-[#052316] text-[13px] font-semibold block mb-1.5 font-sans">Home Appreciation (%)</label><input type="number" value={appreciation} onChange={(e) => setAppreciation(parseFloat(e.target.value) || 0)} className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-4 text-[14px] font-bold text-[#052316] focus:outline-none" /></div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-sans">
-                  <div><label className="text-[#052316] text-[13px] font-semibold block mb-1.5 font-sans font-sans">Annual Home Ins ($)</label><input type="number" value={homeIns} onChange={(e) => setHomeIns(e.target.value)} className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3 text-[14px] font-bold text-[#052316] focus:outline-none" /></div>
-                  <div><label className="text-[#052316] text-[13px] font-semibold block mb-1.5 font-sans font-sans">Maintenance ($/mo)</label><input type="number" value={maintenance} onChange={(e) => setMaintenance(e.target.value)} className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3 text-[14px] font-bold text-[#052316] focus:outline-none" /></div>
-                  <div><label className="text-[#052316] text-[13px] font-semibold block mb-1.5 font-sans">HOA ($/mo)</label><input type="number" value={hoa} onChange={(e) => setHoa(e.target.value)} className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3 text-[14px] font-bold text-[#052316] focus:outline-none" /></div>
+                  <div><label className="text-[#052316] text-[13px] font-semibold block mb-1.5 font-sans font-sans">Annual Home Ins ($)</label><input type="number" value={homeIns} onChange={(e) => setHomeIns(parseFloat(e.target.value) || 0)} className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3 text-[14px] font-bold text-[#052316] focus:outline-none" /></div>
+                  <div><label className="text-[#052316] text-[13px] font-semibold block mb-1.5 font-sans font-sans">Maintenance ($/mo)</label><input type="number" value={maintenance} onChange={(e) => setMaintenance(parseFloat(e.target.value) || 0)} className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3 text-[14px] font-bold text-[#052316] focus:outline-none" /></div>
+                  <div><label className="text-[#052316] text-[13px] font-semibold block mb-1.5 font-sans">HOA ($/mo)</label><input type="number" value={hoa} onChange={(e) => setHoa(parseFloat(e.target.value) || 0)} className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3 text-[14px] font-bold text-[#052316] focus:outline-none" /></div>
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="mt-8 font-sans">
-            <button onClick={handleCalculate} className="w-full bg-[#3fb364] hover:bg-[#349b55] active:scale-[0.98] text-white text-[16.5px] font-bold py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer flex items-center justify-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10" /><line x1="12" y1="20" x2="12" y2="4" /><line x1="6" y1="20" x2="6" y2="14" /></svg> Compare Renting vs. Buying Costs
-            </button>
           </div>
         </section>
 
@@ -593,8 +562,8 @@ export default function RentVsBuyCalculatorPage() {
                   <h4 className="text-[#052316] text-[16px] font-bold mb-4 pb-3 border-b border-[#e8e0d0]/40 flex items-center gap-2 font-sans"><span className="w-2.5 h-2.5 rounded-full bg-[#052316]" /> Renting Costs</h4>
                   <div className="flex flex-col gap-3">
                     <div className="flex justify-between text-[13.5px] py-1 border-b border-[#e8e0d0]/20"><span className="text-[#888]">Monthly Rent</span><span className="text-[#052316] font-bold">{fmt(result.monthlyRent)}/mo</span></div>
-                    <div className="flex justify-between text-[13.5px] py-1 border-b border-[#e8e0d0]/20"><span className="text-[#888]">Renter&apos;s Insurance</span><span className="text-[#052316] font-bold">{fmt(parseFloat(rentersIns) || 0)}/yr</span></div>
-                    <div className="flex justify-between text-[13.5px] py-1 border-b border-[#e8e0d0]/20"><span className="text-[#888]">Refundable Security Deposit</span><span className="text-[#052316] font-bold">{fmt(parseFloat(securityDeposit) || 0)}</span></div>
+                    <div className="flex justify-between text-[13.5px] py-1 border-b border-[#e8e0d0]/20"><span className="text-[#888]">Renter&apos;s Insurance</span><span className="text-[#052316] font-bold">{fmt(rentersIns)}/yr</span></div>
+                    <div className="flex justify-between text-[13.5px] py-1 border-b border-[#e8e0d0]/20"><span className="text-[#888]">Refundable Security Deposit</span><span className="text-[#052316] font-bold">{fmt(securityDeposit)}</span></div>
                   </div>
                 </div>
                 <div className="mt-6 pt-5 border-t border-[#e8e0d0]/40 bg-[#faf7f0] rounded-2xl p-4"><div className="flex justify-between text-[14px] font-bold text-[#052316]"><span>Lifetime Renting Costs</span><span>{fmt(result.totalCostRenting)}</span></div></div>

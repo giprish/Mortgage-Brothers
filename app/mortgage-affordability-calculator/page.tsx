@@ -1,9 +1,10 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useMemo } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import SliderInput from "../component/SliderInput";
 
 interface ScenarioResult {
   scenarioName: string;
@@ -38,28 +39,21 @@ const emptyResult = (name: string, dti: number, debts: number): ScenarioResult =
 });
 
 export default function MortgageAffordabilityCalculatorPage() {
-  const [grossIncome, setGrossIncome] = useState<string>("8000");
+  const [grossIncome, setGrossIncome] = useState<number>(8000);
   const [incomePeriod, setIncomePeriod] = useState<"monthly" | "annual">("monthly");
-  const [debts, setDebts] = useState<string>("500");
-  const [downPayment, setDownPayment] = useState<string>("20000");
-  const [interestRate, setInterestRate] = useState<string>("6.5");
-  const [loanTerm, setLoanTerm] = useState<string>("30");
+  const [debts, setDebts] = useState<number>(500);
+  const [downPayment, setDownPayment] = useState<number>(20000);
+  const [interestRate, setInterestRate] = useState<number>(6.5);
+  const [loanTerm, setLoanTerm] = useState<number>(30);
 
   const [propertyTaxType, setPropertyTaxType] = useState<"fixed" | "percent">("percent");
-  const [propertyTaxVal, setPropertyTaxVal] = useState<string>("1.25");
+  const [propertyTaxVal, setPropertyTaxVal] = useState<number>(1.25);
   const [insuranceType, setInsuranceType] = useState<"fixed" | "percent">("percent");
-  const [insuranceVal, setInsuranceVal] = useState<string>("0.35");
+  const [insuranceVal, setInsuranceVal] = useState<number>(0.35);
   const [pmiType, setPmiType] = useState<"fixed" | "percent" | "none">("percent");
-  const [pmiVal, setPmiVal] = useState<string>("0.5");
-
-  const [results, setResults] = useState<{
-    conservative: ScenarioResult;
-    moderate: ScenarioResult;
-    aggressive: ScenarioResult;
-  } | null>(null);
+  const [pmiVal, setPmiVal] = useState<number>(0.5);
 
   const [selectedDtiTab, setSelectedDtiTab] = useState<"conservative" | "moderate" | "aggressive">("aggressive");
-  const [showResults, setShowResults] = useState(false);
 
   const formatCurrency = (val: number) =>
     new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(val);
@@ -138,43 +132,30 @@ export default function MortgageAffordabilityCalculatorPage() {
     []
   );
 
-  const handleCalculate = () => {
-    const rawIncome = parseFloat(grossIncome) || 0;
+  const results = useMemo(() => {
+    const rawIncome = grossIncome || 0;
     const monthlyIncome = incomePeriod === "annual" ? rawIncome / 12 : rawIncome;
-    const extDebts = Math.max(0, parseFloat(debts) || 0);
-    const dp = Math.max(0, parseFloat(downPayment) || 0);
-    const rate = Math.max(0, parseFloat(interestRate) || 0);
-    let termYears = Math.round(parseFloat(loanTerm) || 30);
+    const extDebts = Math.max(0, debts || 0);
+    const dp = Math.max(0, downPayment || 0);
+    const rate = Math.max(0, interestRate || 0);
+    let termYears = Math.round(loanTerm || 30);
     if (termYears < 1) termYears = 1;
     if (termYears > 30) termYears = 30;
 
-    const taxVal = parseFloat(propertyTaxVal) || 0;
-    const insVal = parseFloat(insuranceVal) || 0;
-    const pVal = parseFloat(pmiVal) || 0;
+    const taxVal = propertyTaxVal || 0;
+    const insVal = insuranceVal || 0;
+    const pVal = pmiVal || 0;
 
     const conservative = solveScenario("Conservative", 0.30, monthlyIncome, extDebts, dp, rate, termYears, propertyTaxType, taxVal, insuranceType, insVal, pmiType, pVal);
     const moderate = solveScenario("Moderate", 0.40, monthlyIncome, extDebts, dp, rate, termYears, propertyTaxType, taxVal, insuranceType, insVal, pmiType, pVal);
     const aggressive = solveScenario("Aggressive", 0.48, monthlyIncome, extDebts, dp, rate, termYears, propertyTaxType, taxVal, insuranceType, insVal, pmiType, pVal);
 
-    setResults({ conservative, moderate, aggressive });
-    setShowResults(true);
+    return { conservative, moderate, aggressive };
+  }, [grossIncome, incomePeriod, debts, downPayment, interestRate, loanTerm, propertyTaxType, propertyTaxVal, insuranceType, insuranceVal, pmiType, pmiVal]);
 
-    setTimeout(() => {
-      document.getElementById("affordability-results")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 100);
-  };
+  const primaryResult = selectedDtiTab === "conservative" ? results.conservative : selectedDtiTab === "moderate" ? results.moderate : results.aggressive;
 
-  const primaryResult = results
-    ? selectedDtiTab === "conservative"
-      ? results.conservative
-      : selectedDtiTab === "moderate"
-        ? results.moderate
-        : results.aggressive
-    : null;
-
-  const maxScenarioHomePrice = results
-    ? Math.max(results.conservative.homePrice, results.moderate.homePrice, results.aggressive.homePrice, 1)
-    : 1;
+  const maxScenarioHomePrice = Math.max(results.conservative.homePrice, results.moderate.homePrice, results.aggressive.homePrice, 1);
 
   const barPercent = (val: number, max: number) => (max <= 0 ? 0 : Math.min(100, (val / max) * 100));
 
@@ -194,7 +175,7 @@ export default function MortgageAffordabilityCalculatorPage() {
               Mortgage Affordability Calculator
             </h1>
             <p className="text-[#c8c8b8] text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto">
-              Enter your financial details below, then hit &ldquo;Calculate&rdquo; to discover how much home you can afford under three different risk scenarios.
+              Adjust your inputs below to see your maximum home price instantly across three DTI scenarios.
             </p>
           </div>
         </section>
@@ -215,7 +196,7 @@ export default function MortgageAffordabilityCalculatorPage() {
                 </div>
                 <div className="relative">
                   <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#888] text-[15px] font-semibold">$</span>
-                  <input type="number" value={grossIncome} onChange={(e) => setGrossIncome(e.target.value)}
+                  <input type="number" value={grossIncome} onChange={(e) => setGrossIncome(parseFloat(e.target.value) || 0)}
                     className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-4 text-[15px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]"
                     placeholder="e.g. 8000" />
                 </div>
@@ -228,7 +209,7 @@ export default function MortgageAffordabilityCalculatorPage() {
                 </div>
                 <div className="relative">
                   <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#888] text-[15px] font-semibold">$</span>
-                  <input type="number" value={debts} onChange={(e) => setDebts(e.target.value)}
+                  <input type="number" value={debts} onChange={(e) => setDebts(parseFloat(e.target.value) || 0)}
                     className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-4 text-[15px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]"
                     placeholder="e.g. 500" />
                 </div>
@@ -239,21 +220,24 @@ export default function MortgageAffordabilityCalculatorPage() {
                   <label className="text-[#052316] text-[14px] font-semibold block mb-2">Down Payment ($)</label>
                   <div className="relative">
                     <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#888] text-[15px] font-semibold">$</span>
-                    <input type="number" value={downPayment} onChange={(e) => setDownPayment(e.target.value)}
+                    <input type="number" value={downPayment} onChange={(e) => setDownPayment(parseFloat(e.target.value) || 0)}
                       className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-4 text-[15px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]" />
                   </div>
                 </div>
                 <div>
-                  <label className="text-[#052316] text-[14px] font-semibold block mb-2">Interest Rate (%)</label>
-                  <div className="relative">
-                    <input type="number" step="0.125" value={interestRate} onChange={(e) => setInterestRate(e.target.value)}
-                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 px-4 text-[15px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]" />
-                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[#888] text-[15px] font-semibold">%</span>
-                  </div>
+                  <SliderInput
+                    label="Interest Rate"
+                    value={interestRate}
+                    min={0}
+                    max={15}
+                    step={0.125}
+                    suffix="%"
+                    onChange={setInterestRate}
+                  />
                 </div>
                 <div>
                   <label className="text-[#052316] text-[14px] font-semibold block mb-2">Loan Term (Years)</label>
-                  <input type="number" value={loanTerm} onChange={(e) => setLoanTerm(e.target.value)}
+                  <input type="number" value={loanTerm} onChange={(e) => setLoanTerm(parseFloat(e.target.value) || 0)}
                     className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 px-4 text-[15px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]" />
                 </div>
               </div>
@@ -274,7 +258,7 @@ export default function MortgageAffordabilityCalculatorPage() {
                     <option value="fixed">Monthly $</option>
                   </select>
                   <div className="relative flex-grow">
-                    <input type="number" step="0.01" value={propertyTaxVal} onChange={(e) => setPropertyTaxVal(e.target.value)}
+                    <input type="number" step="0.01" value={propertyTaxVal} onChange={(e) => setPropertyTaxVal(parseFloat(e.target.value) || 0)}
                       className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-4 text-[14px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]" />
                     <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[#888] text-[14px]">{propertyTaxType === "percent" ? "%" : "$"}</span>
                   </div>
@@ -293,7 +277,7 @@ export default function MortgageAffordabilityCalculatorPage() {
                     <option value="fixed">Monthly $</option>
                   </select>
                   <div className="relative flex-grow">
-                    <input type="number" step="0.01" value={insuranceVal} onChange={(e) => setInsuranceVal(e.target.value)}
+                    <input type="number" step="0.01" value={insuranceVal} onChange={(e) => setInsuranceVal(parseFloat(e.target.value) || 0)}
                       className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-4 text-[14px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]" />
                     <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[#888] text-[14px]">{insuranceType === "percent" ? "%" : "$"}</span>
                   </div>
@@ -314,7 +298,7 @@ export default function MortgageAffordabilityCalculatorPage() {
                   </select>
                   {pmiType !== "none" && (
                     <div className="relative flex-grow">
-                      <input type="number" step="0.01" value={pmiVal} onChange={(e) => setPmiVal(e.target.value)}
+                      <input type="number" step="0.01" value={pmiVal} onChange={(e) => setPmiVal(parseFloat(e.target.value) || 0)}
                         className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-4 text-[14px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]" />
                       <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[#888] text-[14px]">{pmiType === "percent" ? "%" : "$"}</span>
                     </div>
@@ -322,180 +306,153 @@ export default function MortgageAffordabilityCalculatorPage() {
                 </div>
               </div>
             </div>
-
-            <button onClick={handleCalculate}
-              className="w-full bg-[#3fb364] hover:bg-[#349b55] active:scale-[0.98] text-white text-[17px] font-bold py-4.5 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer flex items-center justify-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="4" y="2" width="16" height="20" rx="2" /><line x1="8" y1="6" x2="16" y2="6" /><line x1="8" y1="10" x2="10" y2="10" /><line x1="12" y1="10" x2="14" y2="10" /><line x1="8" y1="14" x2="10" y2="14" /><line x1="12" y1="14" x2="14" y2="14" /><line x1="8" y1="18" x2="10" y2="18" /><line x1="12" y1="18" x2="16" y2="18" />
-              </svg>
-              Calculate My Affordability
-            </button>
           </div>
         </section>
 
         {/* Results */}
-        {showResults && results && primaryResult && (
-          <section id="affordability-results" className="pb-16 px-6 lg:px-10 max-w-7xl mx-auto animate-fade-in">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              <div className="lg:col-span-7 flex flex-col gap-6">
-                <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 lg:p-8 shadow-sm">
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-6 pb-3 border-b border-[#e8e0d0]/40 font-sans">Affordability Scenarios Comparison</h3>
-                  <div className="flex flex-col gap-6">
-                    <div>
-                      <div className="flex items-center justify-between text-[13.5px] font-bold mb-2">
-                        <span className="text-[#888] uppercase tracking-wide">Conservative (30% DTI)</span>
-                        <span className="text-[#052316]">{formatCurrency(results.conservative.homePrice)}</span>
-                      </div>
-                      <div className="w-full h-3.5 rounded-full bg-[#fcf9f3] border border-[#e8e0d0]/40 overflow-hidden">
-                        <div className="h-full bg-yellow-500 rounded-full transition-all duration-700 ease-out" style={{ width: `${barPercent(results.conservative.homePrice, maxScenarioHomePrice)}%` }}></div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex items-center justify-between text-[13.5px] font-bold mb-2">
-                        <span className="text-[#888] uppercase tracking-wide">Moderate (40% DTI)</span>
-                        <span className="text-[#052316]">{formatCurrency(results.moderate.homePrice)}</span>
-                      </div>
-                      <div className="w-full h-3.5 rounded-full bg-[#fcf9f3] border border-[#e8e0d0]/40 overflow-hidden">
-                        <div className="h-full bg-blue-500 rounded-full transition-all duration-700 ease-out" style={{ width: `${barPercent(results.moderate.homePrice, maxScenarioHomePrice)}%` }}></div>
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex items-center justify-between text-[13.5px] font-bold mb-2">
-                        <span className="text-[#888] uppercase tracking-wide">Aggressive (48% DTI)</span>
-                        <span className="text-[#052316]">{formatCurrency(results.aggressive.homePrice)}</span>
-                      </div>
-                      <div className="w-full h-3.5 rounded-full bg-[#fcf9f3] border border-[#e8e0d0]/40 overflow-hidden">
-                        <div className="h-full bg-[#3fb364] rounded-full transition-all duration-700 ease-out" style={{ width: `${barPercent(results.aggressive.homePrice, maxScenarioHomePrice)}%` }}></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="bg-white p-5 rounded-2xl border border-[#e8e0d0]/40 shadow-sm">
-                    <div className="w-10 h-10 rounded-xl bg-yellow-500/10 flex items-center justify-center mb-3">
-                      <span className="text-yellow-600 text-[18px] font-bold">30%</span>
-                    </div>
-                    <h4 className="text-[#052316] text-[14px] font-bold mb-1.5 font-sans">Conservative</h4>
-                    <p className="text-[12.5px] text-[#888] leading-relaxed">Safest budget limit. Provides maximum protection against income changes and unexpected expenses.</p>
-                  </div>
-                  <div className="bg-white p-5 rounded-2xl border border-[#e8e0d0]/40 shadow-sm">
-                    <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center mb-3">
-                      <span className="text-blue-600 text-[18px] font-bold">40%</span>
-                    </div>
-                    <h4 className="text-[#052316] text-[14px] font-bold mb-1.5 font-sans">Moderate</h4>
-                    <p className="text-[12.5px] text-[#888] leading-relaxed">Standard boundary for most conventional lenders. Balanced approach between comfort and purchasing power.</p>
-                  </div>
-                  <div className="bg-white p-5 rounded-2xl border border-[#e8e0d0]/40 shadow-sm">
-                    <div className="w-10 h-10 rounded-xl bg-[#3fb364]/10 flex items-center justify-center mb-3">
-                      <span className="text-[#3fb364] text-[18px] font-bold">48%</span>
-                    </div>
-                    <h4 className="text-[#052316] text-[14px] font-bold mb-1.5 font-sans">Aggressive</h4>
-                    <p className="text-[12.5px] text-[#888] leading-relaxed">Upper threshold allowed by automated underwriting systems like Fannie Mae&apos;s Desktop Underwriter.</p>
-                  </div>
-                </div>
-
-                <div className="bg-[#052316] rounded-3xl p-6 lg:p-8 text-white relative overflow-hidden shadow-md">
-                  <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    <div className="absolute -bottom-20 -right-20 w-[200px] h-[200px] rounded-full border border-white/5 opacity-40"></div>
-                  </div>
-                  <div className="relative z-10 font-sans">
-                    <h4 className="text-[18px] font-bold mb-2">Ready for a verified pre-approval?</h4>
-                    <p className="text-[#c8c8b8] text-[13.5px] leading-relaxed mb-5">Skip the estimates. Get a fully underwritten pre-approval from the Knoell team &mdash; typically closed in just 24 days.</p>
-                    <Link href="/#get-pre-approved" className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-bold px-6 py-3 rounded-full inline-flex items-center gap-2 transition-all shadow-md">
-                      Start Pre-Approval <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
-                    </Link>
-                  </div>
-                </div>
+        <section id="affordability-results" className="pb-16 px-6 lg:px-10 max-w-7xl mx-auto animate-fade-in">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="lg:col-span-5 flex flex-col gap-6">
+              <div className="bg-white border border-[#e8e0d0]/60 rounded-2xl p-1.5 flex gap-1 shadow-sm font-sans">
+                <button onClick={() => setSelectedDtiTab("conservative")} className={`flex-1 py-3 text-[13px] font-bold rounded-xl transition-all cursor-pointer ${selectedDtiTab === "conservative" ? "bg-yellow-500 text-white shadow-sm" : "text-[#4e5b4e] hover:bg-[#fcf9f3]"}`}>30% DTI</button>
+                <button onClick={() => setSelectedDtiTab("moderate")} className={`flex-1 py-3 text-[13px] font-bold rounded-xl transition-all cursor-pointer ${selectedDtiTab === "moderate" ? "bg-blue-500 text-white shadow-sm" : "text-[#4e5b4e] hover:bg-[#fcf9f3]"}`}>40% DTI</button>
+                <button onClick={() => setSelectedDtiTab("aggressive")} className={`flex-1 py-3 text-[13px] font-bold rounded-xl transition-all cursor-pointer ${selectedDtiTab === "aggressive" ? "bg-[#3fb364] text-white shadow-sm" : "text-[#4e5b4e] hover:bg-[#fcf9f3]"}`}>48% DTI</button>
               </div>
 
-              <div className="lg:col-span-5 flex flex-col gap-6">
-                <div className="bg-white border border-[#e8e0d0]/60 rounded-2xl p-1.5 flex gap-1 shadow-sm font-sans">
-                  <button onClick={() => setSelectedDtiTab("conservative")} className={`flex-1 py-3 text-[13px] font-bold rounded-xl transition-all cursor-pointer ${selectedDtiTab === "conservative" ? "bg-yellow-500 text-white shadow-sm" : "text-[#4e5b4e] hover:bg-[#fcf9f3]"}`}>30% DTI</button>
-                  <button onClick={() => setSelectedDtiTab("moderate")} className={`flex-1 py-3 text-[13px] font-bold rounded-xl transition-all cursor-pointer ${selectedDtiTab === "moderate" ? "bg-blue-500 text-white shadow-sm" : "text-[#4e5b4e] hover:bg-[#fcf9f3]"}`}>40% DTI</button>
-                  <button onClick={() => setSelectedDtiTab("aggressive")} className={`flex-1 py-3 text-[13px] font-bold rounded-xl transition-all cursor-pointer ${selectedDtiTab === "aggressive" ? "bg-[#3fb364] text-white shadow-sm" : "text-[#4e5b4e] hover:bg-[#fcf9f3]"}`}>48% DTI</button>
+              <div className="bg-[#faf7f0] border border-[#e8e0d0]/60 rounded-3xl p-6 lg:p-8 shadow-md flex flex-col font-sans">
+                <span className="text-[#a89a70] text-[10px] font-bold tracking-[0.2em] uppercase mb-2 block">MAXIMUM AFFORDABLE HOME PRICE</span>
+                <h2 className="text-[#052316] text-[40px] lg:text-[48px] font-bold leading-none tracking-tight mb-6">{formatCurrency(primaryResult.homePrice)}</h2>
+
+                <div className="flex flex-col gap-3 pb-5 border-b border-[#e8e0d0]/60 mb-5">
+                  <div className="flex items-center justify-between text-[14px]">
+                    <span className="text-[#888]">Maximum Loan Financed</span>
+                    <span className="text-[#052316] font-bold">{formatCurrency(primaryResult.loanAmount)}</span>
+                  </div>
+                  <div className="flex items-center justify-between text-[14px]">
+                    <span className="text-[#888]">Down Payment Applied</span>
+                    <span className="text-[#052316] font-bold">{formatCurrency(downPayment)}</span>
+                  </div>
+                  <div className="flex items-center justify-between text-[14px]">
+                    <span className="text-[#888]">Down Payment %</span>
+                    <span className="text-[#052316] font-bold">{primaryResult.downPaymentPct.toFixed(2)}%</span>
+                  </div>
                 </div>
 
-                <div className="bg-[#faf7f0] border border-[#e8e0d0]/60 rounded-3xl p-6 lg:p-8 shadow-md flex flex-col font-sans">
-                  <span className="text-[#a89a70] text-[10px] font-bold tracking-[0.2em] uppercase mb-2 block">MAXIMUM AFFORDABLE HOME PRICE</span>
-                  <h2 className="text-[#052316] text-[40px] lg:text-[48px] font-bold leading-none tracking-tight mb-6">{formatCurrency(primaryResult.homePrice)}</h2>
-
-                  <div className="flex flex-col gap-3 pb-5 border-b border-[#e8e0d0]/60 mb-5">
-                    <div className="flex items-center justify-between text-[14px]">
-                      <span className="text-[#888]">Maximum Loan Financed</span>
-                      <span className="text-[#052316] font-bold">{formatCurrency(primaryResult.loanAmount)}</span>
-                    </div>
-                    <div className="flex items-center justify-between text-[14px]">
-                      <span className="text-[#888]">Down Payment Applied</span>
-                      <span className="text-[#052316] font-bold">{formatCurrency(parseFloat(downPayment) || 0)}</span>
-                    </div>
-                    <div className="flex items-center justify-between text-[14px]">
-                      <span className="text-[#888]">Down Payment %</span>
-                      <span className="text-[#052316] font-bold">{primaryResult.downPaymentPct.toFixed(2)}%</span>
-                    </div>
+                <span className="text-[#a89a70] text-[10px] font-bold tracking-[0.2em] uppercase mb-3 block">MONTHLY PAYMENT BREAKDOWN</span>
+                <div className="flex flex-col gap-3 pb-5 border-b border-[#e8e0d0]/60 mb-5">
+                  <div className="flex items-center justify-between text-[14px]">
+                    <span className="text-[#888]">Principal & Interest</span>
+                    <span className="text-[#052316] font-bold">{formatCurrency(primaryResult.monthlyPI)}</span>
                   </div>
-
-                  <span className="text-[#a89a70] text-[10px] font-bold tracking-[0.2em] uppercase mb-3 block">MONTHLY PAYMENT BREAKDOWN</span>
-                  <div className="flex flex-col gap-3 pb-5 border-b border-[#e8e0d0]/60 mb-5">
-                    <div className="flex items-center justify-between text-[14px]">
-                      <span className="text-[#888]">Principal & Interest</span>
-                      <span className="text-[#052316] font-bold">{formatCurrency(primaryResult.monthlyPI)}</span>
-                    </div>
-                    <div className="flex items-center justify-between text-[14px]">
-                      <span className="text-[#888]">Property Taxes</span>
-                      <span className="text-[#052316] font-bold">{formatCurrency(primaryResult.propertyTax)}</span>
-                    </div>
-                    <div className="flex items-center justify-between text-[14px]">
-                      <span className="text-[#888]">Homeowners Insurance</span>
-                      <span className="text-[#052316] font-bold">{formatCurrency(primaryResult.homeownersInsurance)}</span>
-                    </div>
-                    <div className="flex items-center justify-between text-[14px]">
-                      <span className="text-[#888]">PMI</span>
-                      <span className="text-[#052316] font-bold">{formatCurrency(primaryResult.monthlyPMI)}</span>
-                    </div>
-                    <div className="flex items-center justify-between text-[15px] font-bold text-[#052316] pt-1.5 border-t border-[#e8e0d0]/40">
-                      <span>Total Housing Payment</span>
-                      <span>{formatCurrency(primaryResult.totalHousingPayment)}</span>
-                    </div>
+                  <div className="flex items-center justify-between text-[14px]">
+                    <span className="text-[#888]">Property Taxes</span>
+                    <span className="text-[#052316] font-bold">{formatCurrency(primaryResult.propertyTax)}</span>
                   </div>
+                  <div className="flex items-center justify-between text-[14px]">
+                    <span className="text-[#888]">Homeowners Insurance</span>
+                    <span className="text-[#052316] font-bold">{formatCurrency(primaryResult.homeownersInsurance)}</span>
+                  </div>
+                  <div className="flex items-center justify-between text-[14px]">
+                    <span className="text-[#888]">PMI</span>
+                    <span className="text-[#052316] font-bold">{formatCurrency(primaryResult.monthlyPMI)}</span>
+                  </div>
+                  <div className="flex items-center justify-between text-[15px] font-bold text-[#052316] pt-1.5 border-t border-[#e8e0d0]/40">
+                    <span>Total Housing Payment</span>
+                    <span>{formatCurrency(primaryResult.totalHousingPayment)}</span>
+                  </div>
+                </div>
 
-                  <span className="text-[#a89a70] text-[10px] font-bold tracking-[0.2em] uppercase mb-3 block">DEBT-TO-INCOME ANALYSIS</span>
-                  <div className="flex flex-col gap-3">
-                    <div className="flex items-center justify-between text-[14px]">
-                      <span className="text-[#888]">Other Monthly Debts</span>
-                      <span className="text-[#052316] font-bold">{formatCurrency(primaryResult.existingDebts)}</span>
-                    </div>
-                    <div className="flex items-center justify-between text-[14px]">
-                      <span className="text-[#888]">Total Monthly Obligations</span>
-                      <span className="text-[#052316] font-bold">{formatCurrency(primaryResult.totalMonthlyDebt)}</span>
-                    </div>
-                    <div className="flex items-center justify-between text-[15px] font-bold pt-1.5 border-t border-[#e8e0d0]/40">
-                      <span className="text-[#052316]">Resulting DTI</span>
-                      <span className="text-[#3fb364]">{primaryResult.resultingDTI.toFixed(2)}%</span>
-                    </div>
+                <span className="text-[#a89a70] text-[10px] font-bold tracking-[0.2em] uppercase mb-3 block">DEBT-TO-INCOME ANALYSIS</span>
+                <div className="flex flex-col gap-3">
+                  <div className="flex items-center justify-between text-[14px]">
+                    <span className="text-[#888]">Other Monthly Debts</span>
+                    <span className="text-[#052316] font-bold">{formatCurrency(primaryResult.existingDebts)}</span>
+                  </div>
+                  <div className="flex items-center justify-between text-[14px]">
+                    <span className="text-[#888]">Total Monthly Obligations</span>
+                    <span className="text-[#052316] font-bold">{formatCurrency(primaryResult.totalMonthlyDebt)}</span>
+                  </div>
+                  <div className="flex items-center justify-between text-[15px] font-bold pt-1.5 border-t border-[#e8e0d0]/40">
+                    <span className="text-[#052316]">Resulting DTI</span>
+                    <span className="text-[#3fb364]">{primaryResult.resultingDTI.toFixed(2)}%</span>
                   </div>
                 </div>
               </div>
             </div>
-          </section>
-        )}
 
-        {/* Placeholder */}
-        {!showResults && (
-          <section className="pb-16 px-6 lg:px-10 max-w-3xl mx-auto text-center font-sans">
-            <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-10 lg:p-14 shadow-sm">
-              <div className="w-16 h-16 rounded-2xl bg-[#3fb364]/10 flex items-center justify-center mx-auto mb-5">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3fb364" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="4" y="2" width="16" height="20" rx="2" /><line x1="8" y1="6" x2="16" y2="6" /><line x1="8" y1="10" x2="10" y2="10" /><line x1="12" y1="10" x2="14" y2="10" /><line x1="8" y1="14" x2="10" y2="14" /><line x1="12" y1="14" x2="14" y2="14" /><line x1="8" y1="18" x2="10" y2="18" /><line x1="12" y1="18" x2="16" y2="18" />
-                </svg>
+            <div className="lg:col-span-7 flex flex-col gap-6">
+              <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 lg:p-8 shadow-sm">
+                <h3 className="text-[#052316] text-[18px] font-bold mb-6 pb-3 border-b border-[#e8e0d0]/40 font-sans">Affordability Scenarios Comparison</h3>
+                <div className="flex flex-col gap-6">
+                  <div>
+                    <div className="flex items-center justify-between text-[13.5px] font-bold mb-2">
+                      <span className="text-[#888] uppercase tracking-wide">Conservative (30% DTI)</span>
+                      <span className="text-[#052316]">{formatCurrency(results.conservative.homePrice)}</span>
+                    </div>
+                    <div className="w-full h-3.5 rounded-full bg-[#fcf9f3] border border-[#e8e0d0]/40 overflow-hidden">
+                      <div className="h-full bg-yellow-500 rounded-full transition-all duration-700 ease-out" style={{ width: `${barPercent(results.conservative.homePrice, maxScenarioHomePrice)}%` }}></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex items-center justify-between text-[13.5px] font-bold mb-2">
+                      <span className="text-[#888] uppercase tracking-wide">Moderate (40% DTI)</span>
+                      <span className="text-[#052316]">{formatCurrency(results.moderate.homePrice)}</span>
+                    </div>
+                    <div className="w-full h-3.5 rounded-full bg-[#fcf9f3] border border-[#e8e0d0]/40 overflow-hidden">
+                      <div className="h-full bg-blue-500 rounded-full transition-all duration-700 ease-out" style={{ width: `${barPercent(results.moderate.homePrice, maxScenarioHomePrice)}%` }}></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex items-center justify-between text-[13.5px] font-bold mb-2">
+                      <span className="text-[#888] uppercase tracking-wide">Aggressive (48% DTI)</span>
+                      <span className="text-[#052316]">{formatCurrency(results.aggressive.homePrice)}</span>
+                    </div>
+                    <div className="w-full h-3.5 rounded-full bg-[#fcf9f3] border border-[#e8e0d0]/40 overflow-hidden">
+                      <div className="h-full bg-[#3fb364] rounded-full transition-all duration-700 ease-out" style={{ width: `${barPercent(results.aggressive.homePrice, maxScenarioHomePrice)}%` }}></div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-[#052316] text-[20px] font-bold mb-2">Enter Your Details Above</h3>
-              <p className="text-[#888] text-[14.5px] leading-relaxed max-w-md mx-auto">
-                Fill in your financial information, then click <strong>&ldquo;Calculate My Affordability&rdquo;</strong> to see your maximum home price under three DTI scenarios.
-              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="bg-white p-5 rounded-2xl border border-[#e8e0d0]/40 shadow-sm">
+                  <div className="w-10 h-10 rounded-xl bg-yellow-500/10 flex items-center justify-center mb-3">
+                    <span className="text-yellow-600 text-[18px] font-bold">30%</span>
+                  </div>
+                  <h4 className="text-[#052316] text-[14px] font-bold mb-1.5 font-sans">Conservative</h4>
+                  <p className="text-[12.5px] text-[#888] leading-relaxed">Safest budget limit. Provides maximum protection against income changes and unexpected expenses.</p>
+                </div>
+                <div className="bg-white p-5 rounded-2xl border border-[#e8e0d0]/40 shadow-sm">
+                  <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center mb-3">
+                    <span className="text-blue-600 text-[18px] font-bold">40%</span>
+                  </div>
+                  <h4 className="text-[#052316] text-[14px] font-bold mb-1.5 font-sans">Moderate</h4>
+                  <p className="text-[12.5px] text-[#888] leading-relaxed">Standard boundary for most conventional lenders. Balanced approach between comfort and purchasing power.</p>
+                </div>
+                <div className="bg-white p-5 rounded-2xl border border-[#e8e0d0]/40 shadow-sm">
+                  <div className="w-10 h-10 rounded-xl bg-[#3fb364]/10 flex items-center justify-center mb-3">
+                    <span className="text-[#3fb364] text-[18px] font-bold">48%</span>
+                  </div>
+                  <h4 className="text-[#052316] text-[14px] font-bold mb-1.5 font-sans">Aggressive</h4>
+                  <p className="text-[12.5px] text-[#888] leading-relaxed">Upper threshold allowed by automated underwriting systems like Fannie Mae&apos;s Desktop Underwriter.</p>
+                </div>
+              </div>
+
+              <div className="bg-[#052316] rounded-3xl p-6 lg:p-8 text-white relative overflow-hidden shadow-md">
+                <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                  <div className="absolute -bottom-20 -right-20 w-[200px] h-[200px] rounded-full border border-white/5 opacity-40"></div>
+                </div>
+                <div className="relative z-10 font-sans">
+                  <h4 className="text-[18px] font-bold mb-2">Ready for a verified pre-approval?</h4>
+                  <p className="text-[#c8c8b8] text-[13.5px] leading-relaxed mb-5">Skip the estimates. Get a fully underwritten pre-approval from the Knoell team &mdash; typically closed in just 24 days.</p>
+                  <Link href="/#get-pre-approved" className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-bold px-6 py-3 rounded-full inline-flex items-center gap-2 transition-all shadow-md">
+                    Start Pre-Approval <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+                  </Link>
+                </div>
+              </div>
             </div>
-          </section>
-        )}
+          </div>
+        </section>
       </main>
 
       <style jsx>{`

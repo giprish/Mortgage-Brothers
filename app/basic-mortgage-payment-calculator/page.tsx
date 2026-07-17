@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
-
-// ─── Types ────────────────────────────────────────────────────────────────────
+import SliderInput from "../component/SliderInput";
 
 interface AmortizationRow {
   paymentNum: number;
@@ -32,8 +31,6 @@ interface CalcResult {
   overallCost: number;
   schedule: AmortizationRow[];
 }
-
-// ─── Core Amortization Solver ─────────────────────────────────────────────────
 
 function buildAmortization(
   homePrice: number,
@@ -112,8 +109,6 @@ const fmtK = (v: number) => {
   return fmt(v);
 };
 
-// ─── SVG Charts ───────────────────────────────────────────────────────────────
-
 function PieChart({ downAmt, loanAmount, totalInterest }: { downAmt: number; loanAmount: number; totalInterest: number }) {
   const total = downAmt + loanAmount + totalInterest;
   if (total <= 0) return null;
@@ -180,57 +175,51 @@ function PaymentBarChart({ schedule, monthlyPayment }: { schedule: AmortizationR
   );
 }
 
-// ─── Component ────────────────────────────────────────────────────────────────
-
 export default function BasicMortgageCalculatorPage() {
-  const [homePrice, setHomePrice] = useState("425000");
-  const [dpAmt, setDpAmt] = useState("85000");
-  const [dpPct, setDpPct] = useState("20");
+  const [homePrice, setHomePrice] = useState(425000);
+  const [dpAmt, setDpAmt] = useState(85000);
+  const [dpPct, setDpPct] = useState(20);
   const [lastDpMode, setLastDpMode] = useState<"amt" | "pct">("pct");
-  const [annualRate, setAnnualRate] = useState("6.75");
-  const [termYears, setTermYears] = useState("30");
-  const [result, setResult] = useState<CalcResult | null>(null);
+  const [annualRate, setAnnualRate] = useState(6.75);
+  const [termYears, setTermYears] = useState(30);
   const [showSchedule, setShowSchedule] = useState(false);
   const [schedPage, setSchedPage] = useState(0);
   const ROWS_PER_PAGE = 24;
 
-  const handleHomePriceChange = (val: string) => {
+  const result = useMemo<CalcResult | null>(() => {
+    const hp = homePrice;
+    if (!isFinite(hp) || hp <= 0) return null;
+    let down = lastDpMode === "pct" ? hp * (dpPct) / 100 : dpAmt;
+    down = Math.max(0, Math.min(down, hp));
+    const rate = Math.max(0, annualRate);
+    let term = Math.round(termYears);
+    if (term < 1) term = 1;
+    if (term > 30) term = 30;
+    return buildAmortization(hp, down, rate, term);
+  }, [homePrice, dpAmt, dpPct, lastDpMode, annualRate, termYears]);
+
+  const handleHomePriceChange = (val: number) => {
     setHomePrice(val);
-    const hp = parseFloat(val) || 0;
-    if (hp > 0) {
+    if (val > 0) {
       if (lastDpMode === "pct") {
-        setDpAmt((hp * (parseFloat(dpPct) || 0) / 100).toFixed(2));
+        setDpAmt(val * dpPct / 100);
       } else {
-        setDpPct(((parseFloat(dpAmt) || 0) / hp * 100).toFixed(4));
+        setDpPct((dpAmt / val) * 100);
       }
     }
   };
 
-  const handleDpAmtChange = (val: string) => {
+  const handleDpAmtChange = (val: number) => {
     setDpAmt(val); setLastDpMode("amt");
-    const hp = parseFloat(homePrice) || 0;
-    if (hp > 0) setDpPct(((parseFloat(val) || 0) / hp * 100).toFixed(4));
+    const hp = homePrice;
+    if (hp > 0) setDpPct((val / hp) * 100);
   };
 
-  const handleDpPctChange = (val: string) => {
+  const handleDpPctChange = (val: number) => {
     setDpPct(val); setLastDpMode("pct");
-    const hp = parseFloat(homePrice) || 0;
-    if (hp > 0) setDpAmt((hp * (parseFloat(val) || 0) / 100).toFixed(2));
+    const hp = homePrice;
+    if (hp > 0) setDpAmt(hp * val / 100);
   };
-
-  const handleCalculate = useCallback(() => {
-    const hp = parseFloat(homePrice);
-    if (!isFinite(hp) || hp <= 0) return;
-    let down = lastDpMode === "pct" ? hp * (parseFloat(dpPct) || 0) / 100 : parseFloat(dpAmt) || 0;
-    down = Math.max(0, Math.min(down, hp));
-    const rate = Math.max(0, parseFloat(annualRate) || 0);
-    let term = Math.round(parseFloat(termYears) || 30);
-    if (term < 1) term = 1;
-    if (term > 30) term = 30;
-    const r = buildAmortization(hp, down, rate, term);
-    setResult(r); setShowSchedule(false); setSchedPage(0);
-    setTimeout(() => document.getElementById("calc-results")?.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
-  }, [homePrice, dpAmt, dpPct, lastDpMode, annualRate, termYears]);
 
   const termOpts = [10, 15, 20, 25, 30];
   const schedSlice = result ? result.schedule.slice(schedPage * ROWS_PER_PAGE, (schedPage + 1) * ROWS_PER_PAGE) : [];
@@ -242,7 +231,6 @@ export default function BasicMortgageCalculatorPage() {
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
       <main className="flex-grow">
-        {/* Hero Banner */}
         <section className="w-full text-white py-20 lg:py-28 text-center relative overflow-hidden bg-cover bg-no-repeat bg-center"
           style={{ backgroundImage: "url('/mortgage-calculators.jpg')", backgroundPosition: "center top" }}>
           <div className="absolute inset-0 bg-[#08271B]/80 z-0" />
@@ -256,37 +244,29 @@ export default function BasicMortgageCalculatorPage() {
               Basic Mortgage Payment Calculator
             </h1>
             <p className="text-[#c8c8b8] text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto">
-              Enter your loan details and click <strong>Calculate</strong> to see your exact monthly payment, full amortization schedule, and total cost breakdown.
+              Adjust the inputs below to see your monthly payment, amortization schedule, and total cost breakdown — results update instantly.
             </p>
           </div>
         </section>
 
-        {/* Inputs */}
         <section className="py-12 px-6 lg:px-10 max-w-4xl mx-auto">
           <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 shadow-sm p-7 lg:p-10 flex flex-col gap-7">
             <h3 className="text-[#052316] text-[18px] font-bold pb-3 border-b border-[#e8e0d0]/40">Loan Details</h3>
 
-            <div>
-              <label className="text-[#052316] text-[14px] font-semibold block mb-2">Home Price</label>
-              <div className="relative">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#888] font-semibold">$</span>
-                <input type="number" value={homePrice} onChange={(e) => handleHomePriceChange(e.target.value)}
-                  className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-4 text-[15px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]"
-                  placeholder="e.g. 425000" />
-              </div>
-            </div>
+            <SliderInput label="Home Price" value={homePrice} min={50000} max={2000000} step={1000} prefix="$"
+              onChange={handleHomePriceChange} formatValue={(v) => fmt(v)} />
 
             <div>
               <label className="text-[#052316] text-[14px] font-semibold block mb-2">Down Payment</label>
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative">
                   <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#888] font-semibold">$</span>
-                  <input type="number" value={dpAmt} onChange={(e) => handleDpAmtChange(e.target.value)} onFocus={() => setLastDpMode("amt")}
+                  <input type="number" value={Math.round(dpAmt)} onChange={(e) => handleDpAmtChange(parseFloat(e.target.value) || 0)} onFocus={() => setLastDpMode("amt")}
                     className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-4 text-[15px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]"
                     placeholder="Dollar amount" />
                 </div>
                 <div className="relative">
-                  <input type="number" step="0.01" value={dpPct} onChange={(e) => handleDpPctChange(e.target.value)} onFocus={() => setLastDpMode("pct")}
+                  <input type="number" step="0.01" value={Number(dpPct.toFixed(2))} onChange={(e) => handleDpPctChange(parseFloat(e.target.value) || 0)} onFocus={() => setLastDpMode("pct")}
                     className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 px-4 text-[15px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]"
                     placeholder="Percentage" />
                   <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[#888] font-semibold">%</span>
@@ -295,45 +275,29 @@ export default function BasicMortgageCalculatorPage() {
               <p className="text-[11.5px] text-[#a89a70] mt-1.5 italic">Editing either field updates the other automatically.</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="text-[#052316] text-[14px] font-semibold block mb-2">Annual Interest Rate</label>
-                <div className="relative">
-                  <input type="number" step="0.125" value={annualRate} onChange={(e) => setAnnualRate(e.target.value)}
-                    className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 px-4 text-[15px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]" />
-                  <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[#888] font-semibold">%</span>
-                </div>
-              </div>
-              <div>
-                <label className="text-[#052316] text-[14px] font-semibold block mb-2">Loan Term</label>
-                <div className="flex gap-2 flex-wrap">
-                  {termOpts.map((yr) => (
-                    <button key={yr} onClick={() => setTermYears(String(yr))}
-                      className={`px-4 py-2.5 text-[13px] font-bold rounded-xl border-2 transition-all cursor-pointer ${termYears === String(yr) ? "bg-[#052316] text-white border-[#052316] shadow-sm" : "bg-white text-[#052316] border-[#e8e0d0] hover:border-[#052316]"}`}>
-                      {yr} yr
-                    </button>
-                  ))}
-                  <div className="relative flex-grow min-w-[80px]">
-                    <input type="number" value={termYears} onChange={(e) => setTermYears(e.target.value)}
-                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-2.5 px-4 text-[13px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]"
-                      placeholder="Custom" />
-                  </div>
-                </div>
-                <p className="text-[11px] text-[#a89a70] mt-1.5 italic font-sans">1–30 years. Decimals rounded to nearest whole year.</p>
-              </div>
-            </div>
+            <SliderInput label="Annual Interest Rate" value={annualRate} min={0} max={15} step={0.125} suffix="%"
+              onChange={(v) => setAnnualRate(v)} />
 
-            <button onClick={handleCalculate}
-              className="w-full bg-[#3fb364] hover:bg-[#349b55] active:scale-[0.98] text-white text-[17px] font-bold py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer flex items-center justify-center gap-3 mt-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" />
-              </svg>
-              Calculate Mortgage Payment
-            </button>
+            <div>
+              <label className="text-[#052316] text-[14px] font-semibold block mb-2">Loan Term</label>
+              <div className="flex gap-2 flex-wrap">
+                {termOpts.map((yr) => (
+                  <button key={yr} onClick={() => setTermYears(yr)}
+                    className={`px-4 py-2.5 text-[13px] font-bold rounded-xl border-2 transition-all cursor-pointer ${termYears === yr ? "bg-[#052316] text-white border-[#052316] shadow-sm" : "bg-white text-[#052316] border-[#e8e0d0] hover:border-[#052316]"}`}>
+                    {yr} yr
+                  </button>
+                ))}
+                <div className="relative flex-grow min-w-[80px]">
+                  <input type="number" value={termYears} onChange={(e) => setTermYears(parseFloat(e.target.value) || 30)}
+                    className="w-full bg-white border border-[#e8e0d0] rounded-xl py-2.5 px-4 text-[13px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]"
+                    placeholder="Custom" />
+                </div>
+              </div>
+              <p className="text-[11px] text-[#a89a70] mt-1.5 italic font-sans">1–30 years. Decimals rounded to nearest whole year.</p>
+            </div>
           </div>
         </section>
 
-        {/* Results Placeholder */}
         {!result && (
           <section className="pb-16 px-6 max-w-2xl mx-auto text-center">
             <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-10 shadow-sm">
@@ -342,15 +306,14 @@ export default function BasicMortgageCalculatorPage() {
                   <rect x="2" y="3" width="20" height="14" rx="2" /><line x1="8" y1="21" x2="16" y2="21" /><line x1="12" y1="17" x2="12" y2="21" />
                 </svg>
               </div>
-              <h3 className="text-[#052316] text-[18px] font-bold mb-2">Enter Your Loan Details</h3>
+              <h3 className="text-[#052316] text-[18px] font-bold mb-2">Enter a valid home price</h3>
               <p className="text-[#888] text-[14px] leading-relaxed">
-                Fill in the details above, then click <strong>&ldquo;Calculate Mortgage Payment&rdquo;</strong> to see your full breakdown.
+                Enter a home price above $0 to see your full payment breakdown.
               </p>
             </div>
           </section>
         )}
 
-        {/* Results */}
         {result && (
           <section id="calc-results" className="pb-16 px-6 lg:px-10 max-w-7xl mx-auto space-y-8 animate-fadeUp">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

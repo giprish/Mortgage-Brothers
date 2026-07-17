@@ -1,11 +1,10 @@
 "use client";
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
-
-// ─── Interfaces ──────────────────────────────────────────────────────────────
+import SliderInput from "../component/SliderInput";
 
 interface AmortizationRow {
   month: number;
@@ -38,11 +37,8 @@ interface ExtraCalcResult {
   comparisons: TermComparisonRow[];
 }
 
-// Helper to format currency
 const fmt = (v: number) =>
   new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round(v));
-
-// ─── Simulation Engine ────────────────────────────────────────────────────────
 
 function runAmortizationSimulation(
   loanAmount: number,
@@ -56,7 +52,6 @@ function runAmortizationSimulation(
   const r = interestRate / 100 / 12;
   const n = termYears * 12;
 
-  // 1. Standard baseline calculation
   let standardPayment = 0;
   if (p > 0 && n > 0) {
     if (r === 0) {
@@ -70,7 +65,6 @@ function runAmortizationSimulation(
   const standardTotalInterest = Math.max(0, (standardPayment * n) - p);
   const standardTotalPaid = p + standardTotalInterest;
 
-  // 2. Extra payment simulation
   let balance = p;
   let month = 0;
   let totalInterestPaidExtra = 0;
@@ -85,7 +79,6 @@ function runAmortizationSimulation(
       regularPrincipalThisMonth = 0;
     }
 
-    // Determine extra principal
     let extraThisMonth = addMonthly;
     if (month === lumpSumMonth && lumpSumMonth > 0) {
       extraThisMonth += lumpSum;
@@ -93,7 +86,6 @@ function runAmortizationSimulation(
 
     let totalPrincipalThisMonth = regularPrincipalThisMonth + extraThisMonth;
 
-    // Final guard
     if (totalPrincipalThisMonth >= balance) {
       totalPrincipalThisMonth = balance;
       balance = 0;
@@ -116,7 +108,6 @@ function runAmortizationSimulation(
   const interestSavings = Math.max(0, standardTotalInterest - extraTotalInterest);
   const monthsSaved = Math.max(0, n - month);
 
-  // 3. Term comparison table calculations (10, 15, 20, 30 years)
   const termOptions = [10, 15, 20, 30];
   const comparisons = termOptions.map(tYr => {
     const tN = tYr * 12;
@@ -131,7 +122,6 @@ function runAmortizationSimulation(
     }
     const tStdInterest = Math.max(0, (tStdPmt * tN) - p);
 
-    // Simulate for this term option
     let tBal = p;
     let tMonth = 0;
     let tInterestPaid = 0;
@@ -181,7 +171,6 @@ function runAmortizationSimulation(
   };
 }
 
-// Helper to convert months into Years & Months string
 function formatMonthsSaved(totalMonths: number): string {
   if (totalMonths <= 0) return "0 months";
   const yrs = Math.floor(totalMonths / 12);
@@ -191,74 +180,58 @@ function formatMonthsSaved(totalMonths: number): string {
   return `${mos} month${mos > 1 ? "s" : ""}`;
 }
 
-// Helper to calculate new payoff date based on start date
 function getNewPayoffDate(months: number): string {
   const date = new Date();
   date.setMonth(date.getMonth() + months);
   return date.toLocaleDateString("en-US", { month: "short", year: "numeric" });
 }
 
-// ─── Component ────────────────────────────────────────────────────────────────
-
 export default function ExtraPaymentMortgageCalculator() {
-  const [loanAmount, setLoanAmount] = useState("250000");
-  const [interestRate, setInterestRate] = useState("4.5");
-  const [termYears, setTermYears] = useState("30");
+  const [loanAmount, setLoanAmount] = useState(250000);
+  const [interestRate, setInterestRate] = useState(4.5);
+  const [termYears, setTermYears] = useState(30);
 
-  const [addMonthly, setAddMonthly] = useState("200");
-  const [lumpSum, setLumpSum] = useState("5000");
-  const [lumpSumMonth, setLumpSumMonth] = useState("12");
+  const [addMonthly, setAddMonthly] = useState(200);
+  const [lumpSum, setLumpSum] = useState(5000);
+  const [lumpSumMonth, setLumpSumMonth] = useState(12);
 
-  const [result, setResult] = useState<ExtraCalcResult | null>(null);
-
-  // Pagination for amortization table
   const [currentPage, setCurrentPage] = useState(0);
   const rowsPerPage = 24;
 
-  const handleCalculate = () => {
-    const p = parseFloat(loanAmount) || 0;
-    if (p <= 0) return;
-    const rate = parseFloat(interestRate) || 0;
-    let tYr = Math.round(parseFloat(termYears) || 30);
+  const result = useMemo(() => {
+    const p = Math.max(0, loanAmount);
+    if (p <= 0) return null;
+    const rate = Math.max(0, interestRate);
+    let tYr = Math.round(termYears);
     tYr = Math.max(1, Math.min(30, tYr));
-
-    const extraM = Math.max(0, parseFloat(addMonthly) || 0);
-    const lump = Math.max(0, parseFloat(lumpSum) || 0);
-    const lumpM = Math.max(0, parseInt(lumpSumMonth) || 0);
-
-    const r = runAmortizationSimulation(p, rate, tYr, extraM, lump, lumpM);
-    setResult(r);
-    setCurrentPage(0);
-
-    setTimeout(() => {
-      document.getElementById("calc-results")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 80);
-  };
+    const extraM = Math.max(0, addMonthly);
+    const lump = Math.max(0, lumpSum);
+    const lumpM = Math.max(0, lumpSumMonth);
+    return runAmortizationSimulation(p, rate, tYr, extraM, lump, lumpM);
+  }, [loanAmount, interestRate, termYears, addMonthly, lumpSum, lumpSumMonth]);
 
   const applyPreset = (preset: "minimal" | "moderate" | "aggressive") => {
     if (preset === "minimal") {
-      setAddMonthly("100");
-      setLumpSum("2000");
-      setLumpSumMonth("12");
+      setAddMonthly(100);
+      setLumpSum(2000);
+      setLumpSumMonth(12);
     } else if (preset === "moderate") {
-      setAddMonthly("200");
-      setLumpSum("5000");
-      setLumpSumMonth("12");
+      setAddMonthly(200);
+      setLumpSum(5000);
+      setLumpSumMonth(12);
     } else {
-      setAddMonthly("500");
-      setLumpSum("10000");
-      setLumpSumMonth("12");
+      setAddMonthly(500);
+      setLumpSum(10000);
+      setLumpSumMonth(12);
     }
   };
 
-  // Payment donut split
   const getDonutSplitPct = (r: ExtraCalcResult) => {
-    const extraVal = parseFloat(addMonthly) || 0;
-    const total = r.standardPayment + extraVal;
+    const total = r.standardPayment + addMonthly;
     if (total <= 0) return { standard: "100.0", extra: "0.0" };
     return {
       standard: ((r.standardPayment / total) * 100).toFixed(1),
-      extra: ((extraVal / total) * 100).toFixed(1)
+      extra: ((addMonthly / total) * 100).toFixed(1)
     };
   };
 
@@ -267,7 +240,6 @@ export default function ExtraPaymentMortgageCalculator() {
       <Navbar />
       <main className="flex-grow">
 
-        {/* Hero Section */}
         <section className="w-full bg-[#052316] text-white py-16 lg:py-20 text-center relative overflow-hidden">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5 opacity-40" />
@@ -284,38 +256,39 @@ export default function ExtraPaymentMortgageCalculator() {
           </div>
         </section>
 
-        {/* Inputs */}
         <section className="py-12 px-6 lg:px-10 max-w-6xl mx-auto font-sans">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            
-            {/* Left box: Loan details */}
+
             <div className="lg:col-span-6 flex flex-col gap-6">
               <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 lg:p-8 shadow-sm flex flex-col gap-6">
                 <h3 className="text-[#052316] text-[17px] font-bold pb-3 border-b border-[#e8e0d0]/40 flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#052316]" /> Loan Basics
                 </h3>
 
-                <div>
-                  <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5 font-sans">Original Loan Amount ($)</label>
-                  <div className="relative">
-                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                    <input type="number" value={loanAmount} onChange={(e) => setLoanAmount(e.target.value)}
-                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
-                  </div>
-                </div>
+                <SliderInput
+                  label="Original Loan Amount ($)"
+                  value={loanAmount}
+                  min={10000}
+                  max={2000000}
+                  step={1000}
+                  prefix="$"
+                  onChange={setLoanAmount}
+                />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5 font-sans">Interest Rate (%)</label>
-                    <div className="relative">
-                      <input type="number" step="0.001" value={interestRate} onChange={(e) => setInterestRate(e.target.value)}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 px-3.5 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
-                      <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">%</span>
-                    </div>
-                  </div>
+                  <SliderInput
+                    label="Interest Rate (%)"
+                    value={interestRate}
+                    min={0}
+                    max={15}
+                    step={0.125}
+                    suffix="%"
+                    formatValue={(v) => `${v}%`}
+                    onChange={setInterestRate}
+                  />
                   <div>
                     <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Loan Term</label>
-                    <select value={termYears} onChange={(e) => setTermYears(e.target.value)}
+                    <select value={termYears} onChange={(e) => setTermYears(parseInt(e.target.value))}
                       className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 px-3 text-[14px] font-bold text-[#052316] focus:outline-none cursor-pointer">
                       <option value="30">30 Years</option>
                       <option value="20">20 Years</option>
@@ -326,7 +299,6 @@ export default function ExtraPaymentMortgageCalculator() {
                 </div>
               </div>
 
-              {/* Quick Fill presets */}
               <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 lg:p-8 shadow-sm flex flex-col gap-4">
                 <h3 className="text-[#052316] text-[16px] font-bold pb-2 border-b border-[#e8e0d0]/40">Quick-Fill Extra Payment Presets</h3>
                 <div className="grid grid-cols-3 gap-3">
@@ -346,7 +318,6 @@ export default function ExtraPaymentMortgageCalculator() {
               </div>
             </div>
 
-            {/* Right box: Extra Payments fields */}
             <div className="lg:col-span-6 flex flex-col gap-6">
               <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 lg:p-8 shadow-sm flex flex-col gap-6">
                 <h3 className="text-[#052316] text-[17px] font-bold pb-3 border-b border-[#e8e0d0]/40 flex items-center gap-2">
@@ -357,7 +328,7 @@ export default function ExtraPaymentMortgageCalculator() {
                   <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5 font-sans">Additional Monthly Payment ($/mo)</label>
                   <div className="relative">
                     <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                    <input type="number" value={addMonthly} onChange={(e) => setAddMonthly(e.target.value)}
+                    <input type="number" value={addMonthly} onChange={(e) => setAddMonthly(Math.max(0, parseFloat(e.target.value) || 0))}
                       className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                   </div>
                 </div>
@@ -367,13 +338,13 @@ export default function ExtraPaymentMortgageCalculator() {
                     <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">One-Time Lump Sum ($)</label>
                     <div className="relative">
                       <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={lumpSum} onChange={(e) => setLumpSum(e.target.value)}
+                      <input type="number" value={lumpSum} onChange={(e) => setLumpSum(Math.max(0, parseFloat(e.target.value) || 0))}
                         className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-7 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                     </div>
                   </div>
                   <div>
                     <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Apply in Month #</label>
-                    <input type="number" value={lumpSumMonth} onChange={(e) => setLumpSumMonth(e.target.value)}
+                    <input type="number" value={lumpSumMonth} onChange={(e) => setLumpSumMonth(Math.max(0, parseInt(e.target.value) || 0))}
                       className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3.5 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                   </div>
                 </div>
@@ -383,24 +354,11 @@ export default function ExtraPaymentMortgageCalculator() {
               </div>
             </div>
           </div>
-
-          {/* Calculate button */}
-          <div className="mt-8 font-sans">
-            <button onClick={handleCalculate}
-              className="w-full bg-[#3fb364] hover:bg-[#349b55] active:scale-[0.98] text-white text-[16.5px] font-bold py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer flex items-center justify-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-              </svg>
-              Calculate Payoff Savings
-            </button>
-          </div>
         </section>
 
-        {/* Results output panels */}
         {result && (
           <section id="calc-results" className="pb-16 px-6 lg:px-10 max-w-6xl mx-auto space-y-8 animate-fadeUp font-sans">
-            
-            {/* Top 3 summary panels */}
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               <div className="bg-[#052316] text-white rounded-3xl p-6 shadow-sm border border-[#052316] flex flex-col justify-between">
                 <div>
@@ -431,13 +389,11 @@ export default function ExtraPaymentMortgageCalculator() {
               </div>
             </div>
 
-            {/* Split Comparison details */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              
-              {/* Payment comparison table */}
+
               <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm">
                 <h3 className="text-[#052316] text-[16px] font-bold mb-4 pb-3 border-b border-[#e8e0d0]/40 font-sans">Payment Comparison</h3>
-                
+
                 <div className="overflow-x-auto text-[13px]">
                   <table className="w-full text-left border-collapse">
                     <thead>
@@ -452,10 +408,10 @@ export default function ExtraPaymentMortgageCalculator() {
                         <td className="py-3 text-[#052316] font-semibold">Monthly Outlay</td>
                         <td className="py-3 text-[#052316]">{fmt(result.standardPayment)}</td>
                         <td className="py-3 text-[#052316] font-bold">
-                          {fmt(result.standardPayment + (parseFloat(addMonthly) || 0))}
-                          {parseFloat(lumpSum) > 0 && parseInt(lumpSumMonth) > 0 && (
+                          {fmt(result.standardPayment + addMonthly)}
+                          {lumpSum > 0 && lumpSumMonth > 0 && (
                             <span className="text-[10.5px] text-[#a89a70] font-normal block">
-                              (+{fmt(parseFloat(lumpSum))} in Mo {lumpSumMonth})
+                              (+{fmt(lumpSum)} in Mo {lumpSumMonth})
                             </span>
                           )}
                         </td>
@@ -480,7 +436,6 @@ export default function ExtraPaymentMortgageCalculator() {
                 </div>
               </div>
 
-              {/* Payment distribution chart */}
               <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm flex flex-col justify-between items-center text-center">
                 <div className="w-full text-left">
                   <h3 className="text-[#052316] text-[16px] font-bold pb-3 border-b border-[#e8e0d0]/40 font-sans">Payment Allocation (Recurring)</h3>
@@ -489,17 +444,15 @@ export default function ExtraPaymentMortgageCalculator() {
                 <div className="relative w-40 h-40 my-6">
                   <svg viewBox="0 0 200 200" className="w-full h-full transform -rotate-90">
                     <circle cx="100" cy="100" r="70" fill="none" stroke="#fcf9f3" strokeWidth="16" />
-                    {/* Standard regular payment segment */}
                     <circle cx="100" cy="100" r="70" fill="none" stroke="#052316" strokeWidth="16"
                       strokeDasharray={`${2 * Math.PI * 70 * (parseFloat(getDonutSplitPct(result).standard) / 100)} ${2 * Math.PI * 70}`} />
-                    {/* Extra payment segment */}
                     <circle cx="100" cy="100" r="70" fill="none" stroke="#3fb364" strokeWidth="16"
                       strokeDasharray={`${2 * Math.PI * 70 * (parseFloat(getDonutSplitPct(result).extra) / 100)} ${2 * Math.PI * 70}`}
                       strokeDashoffset={`-${2 * Math.PI * 70 * (parseFloat(getDonutSplitPct(result).standard) / 100)}`} />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
                     <span className="text-[10px] uppercase font-bold tracking-wider text-[#888]">Monthly Outlay</span>
-                    <span className="text-[15.5px] font-bold text-[#052316]">{fmt(result.standardPayment + (parseFloat(addMonthly) || 0))}</span>
+                    <span className="text-[15.5px] font-bold text-[#052316]">{fmt(result.standardPayment + addMonthly)}</span>
                   </div>
                 </div>
 
@@ -510,7 +463,6 @@ export default function ExtraPaymentMortgageCalculator() {
               </div>
             </div>
 
-            {/* Compare different loan terms table (Section 8) */}
             <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 shadow-sm overflow-hidden font-sans">
               <div className="px-7 py-5 border-b border-[#e8e0d0]/40">
                 <h3 className="text-[#052316] text-[16px] font-bold">Compare Different Loan Terms</h3>
@@ -528,7 +480,7 @@ export default function ExtraPaymentMortgageCalculator() {
                   </thead>
                   <tbody>
                     {result.comparisons.map((row) => (
-                      <tr key={row.termYears} className={row.termYears === parseInt(termYears) ? "bg-[#3fb364]/10 font-bold" : "hover:bg-[#faf7f0] border-b border-[#e8e0d0]/20"}>
+                      <tr key={row.termYears} className={row.termYears === termYears ? "bg-[#3fb364]/10 font-bold" : "hover:bg-[#faf7f0] border-b border-[#e8e0d0]/20"}>
                         <td className="py-3 px-4 text-[#052316]">{row.termYears} Years</td>
                         <td className="py-3 px-4 text-[#052316]">{fmt(row.standardPayment)}</td>
                         <td className="py-3 px-4 text-[#052316]">{Math.floor(row.payoffTimeMonths / 12)} yrs, {row.payoffTimeMonths % 12} mos</td>
@@ -541,7 +493,6 @@ export default function ExtraPaymentMortgageCalculator() {
               </div>
             </div>
 
-            {/* Amortization schedule table */}
             <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 shadow-sm overflow-hidden font-sans">
               <div className="px-7 py-5 border-b border-[#e8e0d0]/40 flex justify-between items-center">
                 <div>
@@ -572,7 +523,6 @@ export default function ExtraPaymentMortgageCalculator() {
                 </table>
               </div>
 
-              {/* Table Pagination */}
               {Math.ceil(result.schedule.length / rowsPerPage) > 1 && (
                 <div className="flex items-center justify-between px-7 py-4 border-t border-[#e8e0d0]/40">
                   <button onClick={() => setCurrentPage((p) => Math.max(0, p - 1))} disabled={currentPage === 0}
@@ -589,7 +539,6 @@ export default function ExtraPaymentMortgageCalculator() {
               )}
             </div>
 
-            {/* CTA */}
             <div className="bg-[#052316] rounded-3xl p-6 lg:p-8 text-white shadow-md relative overflow-hidden">
               <div className="absolute -bottom-16 -right-16 w-[200px] h-[200px] rounded-full border border-white/5 opacity-40" />
               <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 font-sans">
@@ -607,7 +556,6 @@ export default function ExtraPaymentMortgageCalculator() {
           </section>
         )}
 
-        {/* Placeholder if not calculated */}
         {!result && (
           <section className="pb-16 px-6 lg:px-10 max-w-3xl mx-auto text-center font-sans">
             <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-10 lg:p-14 shadow-sm">
@@ -616,9 +564,9 @@ export default function ExtraPaymentMortgageCalculator() {
                   <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
                 </svg>
               </div>
-              <h3 className="text-[#052316] text-[20px] font-bold mb-2">Simulate Payoff Savings</h3>
+              <h3 className="text-[#052316] text-[20px] font-bold mb-2">Enter a Loan Amount</h3>
               <p className="text-[#888] text-[14.5px] leading-relaxed max-w-md mx-auto font-sans">
-                Fill in your mortgage amount and extra payment expectations, then click <strong>&ldquo;Calculate Payoff Savings&rdquo;</strong> to view detailed metrics.
+                Set a loan amount above to see your payoff savings automatically.
               </p>
             </div>
           </section>

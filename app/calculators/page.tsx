@@ -4,6 +4,7 @@ import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import SliderInput from "../component/SliderInput";
 
 export default function CalculatorsPage() {
   const [homePrice, setHomePrice] = useState(425000);
@@ -36,10 +37,6 @@ export default function CalculatorsPage() {
   const formatCurrency = (value: number) =>
     new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(value);
 
-  const homePricePercent = ((homePrice - 100000) / (1500000 - 100000)) * 100;
-  const downPaymentPercent = (downPaymentPct / 50) * 100;
-  const interestRatePercent = ((interestRate - 2) / (12 - 2)) * 100;
-
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
@@ -60,67 +57,47 @@ export default function CalculatorsPage() {
               Know your numbers before you shop.
             </h1>
             <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto">
-              {"Adjust the sliders to see an estimated monthly payment \u2014 no signup required."}
+              Adjust the sliders or type directly into the fields to see your estimated monthly payment instantly.
             </p>
           </div>
         </section>
 
-        {/* Calculator Section */}
         <section className="w-full py-12 lg:py-16 -mt-25 relative z-20">
           <div className="max-w-5xl mx-auto px-6 lg:px-10">
             <div className="bg-white rounded-3xl shadow-xl border border-[#e8e0d0]/40 p-8 lg:p-12">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
-                {/* Left: Sliders */}
                 <div className="flex flex-col gap-8">
-                  {/* Home Price */}
+                  <SliderInput label="Home Price" value={homePrice} min={50000} max={2000000} step={1000} prefix="$"
+                    onChange={(v) => setHomePrice(v)} formatValue={(v) => formatCurrency(v)} />
+
                   <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <label className="text-brand-green-deep text-[14px] font-semibold">Home Price</label>
-                      <span className="text-brand-green-deep text-[14px] font-bold">{formatCurrency(homePrice)}</span>
+                    <div className="flex items-center justify-between mb-2">
+                      <label className="text-[#052316] text-[14px] font-semibold">Down Payment</label>
+                      <span className="text-[#052316] text-[15px] font-bold">{downPaymentPct}%</span>
                     </div>
-                    <div className="relative">
-                      <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 h-[6px] bg-[#d4d4d4] rounded-full pointer-events-none"></div>
-                      <div className="absolute top-1/2 -translate-y-1/2 left-0 h-[6px] bg-brand-green-accent rounded-full pointer-events-none" style={{ width: `${homePricePercent}%` }}></div>
-                      <input type="range" min={100000} max={1500000} step={5000} value={homePrice}
-                        onChange={(e) => setHomePrice(Number(e.target.value))}
-                        className="w-full appearance-none bg-transparent cursor-pointer relative z-10 slider-thumb" />
+                    <div className="flex items-center gap-4">
+                      <div className="relative flex-1">
+                        <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 h-[6px] bg-[#d4d4d4] rounded-full pointer-events-none"></div>
+                        <div className="absolute top-1/2 -translate-y-1/2 left-0 h-[6px] bg-[#3fb364] rounded-full pointer-events-none" style={{ width: `${(downPaymentPct / 50) * 100}%` }}></div>
+                        <input type="range" min={0} max={50} step={1} value={downPaymentPct}
+                          onChange={(e) => setDownPaymentPct(Number(e.target.value))}
+                          className="w-full appearance-none bg-transparent cursor-pointer relative z-10 slider-thumb" />
+                      </div>
+                      <div className="relative w-[130px] flex-shrink-0">
+                        <input type="number" value={downPaymentPct}
+                          onChange={(e) => setDownPaymentPct(Math.min(50, Math.max(0, Number(e.target.value))))}
+                          className="w-full bg-white border border-[#e8e0d0] rounded-xl py-2.5 pl-3 pr-8 text-[14px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]" />
+                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[#888] font-semibold">%</span>
+                      </div>
                     </div>
                   </div>
 
-                  {/* Down Payment */}
-                  <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <label className="text-brand-green-deep text-[14px] font-semibold">Down Payment</label>
-                      <span className="text-brand-green-deep text-[14px] font-bold">{downPaymentPct}%</span>
-                    </div>
-                    <div className="relative">
-                      <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 h-[6px] bg-[#d4d4d4] rounded-full pointer-events-none"></div>
-                      <div className="absolute top-1/2 -translate-y-1/2 left-0 h-[6px] bg-brand-green-accent rounded-full pointer-events-none" style={{ width: `${downPaymentPercent}%` }}></div>
-                      <input type="range" min={0} max={50} step={1} value={downPaymentPct}
-                        onChange={(e) => setDownPaymentPct(Number(e.target.value))}
-                        className="w-full appearance-none bg-transparent cursor-pointer relative z-10 slider-thumb" />
-                    </div>
-                  </div>
+                  <SliderInput label="Interest Rate" value={interestRate} min={0} max={15} step={0.125} suffix="%"
+                    onChange={(v) => setInterestRate(v)} />
 
-                  {/* Interest Rate */}
                   <div>
-                    <div className="flex items-center justify-between mb-3">
-                      <label className="text-brand-green-deep text-[14px] font-semibold">Interest Rate</label>
-                      <span className="text-brand-green-deep text-[14px] font-bold">{interestRate.toFixed(2)}%</span>
-                    </div>
-                    <div className="relative">
-                      <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 h-[6px] bg-[#d4d4d4] rounded-full pointer-events-none"></div>
-                      <div className="absolute top-1/2 -translate-y-1/2 left-0 h-[6px] bg-brand-green-accent rounded-full pointer-events-none" style={{ width: `${interestRatePercent}%` }}></div>
-                      <input type="range" min={2} max={12} step={0.05} value={interestRate}
-                        onChange={(e) => setInterestRate(Number(e.target.value))}
-                        className="w-full appearance-none bg-transparent cursor-pointer relative z-10 slider-thumb" />
-                    </div>
-                  </div>
-
-                  {/* Loan Term */}
-                  <div>
-                    <label className="text-brand-green-deep text-[14px] font-semibold block mb-3">Loan Term</label>
+                    <label className="text-[#052316] text-[14px] font-semibold block mb-3">Loan Term</label>
                     <div className="flex gap-3">
                       <button onClick={() => setLoanTerm(15)}
                         className={`flex-1 py-2.5 text-[14px] font-semibold rounded-lg border-2 transition-all duration-200 cursor-pointer ${loanTerm === 15 ? "bg-brand-green-deep text-white border-brand-green-deep shadow-md" : "bg-white text-brand-green-deep border-[#e8e0d0] hover:border-brand-green-deep"}`}>
@@ -133,7 +110,6 @@ export default function CalculatorsPage() {
                     </div>
                   </div>
 
-                  {/* Link to detailed calculator */}
                   <div className="pt-2 border-t border-[#e8e0d0]/40">
                     <p className="text-[13px] text-[#888] mb-3">Want a detailed breakdown with full amortization schedule?</p>
                     <Link href="/basic-mortgage-payment-calculator"
@@ -143,7 +119,6 @@ export default function CalculatorsPage() {
                   </div>
                 </div>
 
-                {/* Right: Live Results */}
                 <div className="flex flex-col items-start bg-[#faf7f0] rounded-2xl p-6 lg:p-8">
                   <span className="text-brand-green-accent text-[10px] font-bold tracking-[0.15em] uppercase mb-2">
                     ESTIMATED MONTHLY PAYMENT
@@ -188,12 +163,11 @@ export default function CalculatorsPage() {
             </div>
 
             <p className="text-center text-[#b89a5a] text-[12px] mt-6 italic">
-              {"Estimate only \u2014 actual payment varies with taxes, insurance, HOA dues, and final lender terms."}
+              Estimate only — actual payment varies with taxes, insurance, HOA dues, and final lender terms.
             </p>
           </div>
         </section>
 
-        {/* CTA */}
         <section className="w-full py-12 lg:py-16">
           <div className="max-w-3xl mx-auto px-6 lg:px-10">
             <div className="bg-brand-green-deep rounded-3xl p-10 lg:p-14 text-center shadow-xl relative overflow-hidden">
