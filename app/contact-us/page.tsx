@@ -40,7 +40,7 @@ export default function ContactPage() {
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
 
-      <main className="flex-grow py-16 px-6 lg:px-10">
+      <main className="flex-grow pt-[72px] py-16 px-6 lg:px-10">
         <div className="max-w-5xl mx-auto">
           {/* Header Section */}
           <div className="text-center mb-16">
@@ -239,23 +239,23 @@ export default function ContactPage() {
             </div>
 
             {/* Right Column: Map & Hours */}
-            <div className="lg:col-span-5 flex flex-col gap-6">
+           <div className="lg:col-span-5 flex flex-col gap-6">
               {/* Interactive Map Card */}
               <div className="bg-white border border-[#e8e0d0]/60 rounded-3xl overflow-hidden shadow-sm flex flex-col h-[280px]">
                 <iframe
-  src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE"
-  className="w-full h-full border-0"
-  loading="lazy"
-  allowFullScreen
-  referrerPolicy="no-referrer-when-downgrade"
-  title="Mortgage Brothers Office"
-/>
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1662.6704041934636!2d-112.04769592261503!3d33.54452047710611!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b72a8a56e5b8f%3A0x32ff520eb58d08d6!2sMortgage%20Brothers!5e0!3m2!1sen!2sin!4v1784288947157!5m2!1sen!2sin"
+                  className="w-full h-full border-0"
+                  loading="lazy"
+                  allowFullScreen
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Mortgage Brothers Office"
+                />
                 <div className="bg-[#faf7f0] px-6 py-4 border-t border-[#e8e0d0]/40 flex justify-between items-center text-[12px] font-sans">
                   <div>
                     <span className="text-[#052316] font-bold block">1599 E Orangewood Ave, Ste 200</span>
                     <span className="text-[#8a9a7a]">Phoenix, AZ 85020</span>
                   </div>
-                  <a
+                    <a
                     href="https://www.google.com/maps/place/Mortgage+Brothers/@33.545095,-112.048227,17z/data=!4m6!3m5!1s0x872b72a8a56e5b8f:0x32ff520eb58d08d6!8m2!3d33.5450949!4d-112.0482274!16s%2Fg%2F1tfp2y0l?hl=en&entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D"
                     target="_blank"
                     rel="noopener noreferrer"

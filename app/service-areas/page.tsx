@@ -191,7 +191,7 @@ export default function MaricopaCounty2() {
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
 
-      <main className="flex-grow">
+      <main className="flex-grow pt-[72px]">
         {/* Widescreen Hero Section */}
         <section className="w-full bg-[#fcf9f3] py-16 lg:py-20 text-center relative overflow-hidden">
           <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">
@@ -214,106 +214,106 @@ export default function MaricopaCounty2() {
 
         {/* Directory Filters & Grid Section */}
         <section className="w-full pb-24 px-6 lg:px-10">
-          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 items-start">
+          <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 items-start lg:items-stretch">
             
             {/* Left Sidebar Columns */}
-            <div className="w-full lg:w-[260px] flex-shrink-0 flex flex-col gap-6">
+            <div className="w-full lg:w-[260px] flex-shrink-0 flex flex-col gap-6 lg:sticky lg:top-[88px] lg:self-start">
               
-              {/* Counties Filter Panel */}
-              <div className="bg-white rounded-2xl border border-[#e8e0d0]/60 p-4 shadow-sm">
-                <p className="text-[11px] font-bold text-brand-text-muted uppercase tracking-wider mb-4 px-2">
-                  COUNTIES
-                </p>
-                <div className="flex flex-col gap-1">
-                  {sidebarCounties.map((county) => {
-                    const isActive = county.name === selectedCounty;
-                    return (
-                      <button
-                        key={county.name}
-                        onClick={() => setSelectedCounty(county.name)}
-                        className={`flex items-center justify-between text-[13.5px] font-semibold px-4 py-2.5 rounded-xl cursor-pointer transition-all duration-200 ${
-                          isActive
-                            ? "bg-[#052316] text-white shadow-md shadow-[#052316]/10"
-                            : "text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d]"
-                        }`}
-                      >
-                        <span>{county.name}</span>
-                        <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full ${isActive ? "bg-white/15 text-white" : "bg-[#f5f0e8] text-[#4e5b4e]"}`}>
-                          {county.count}
-                        </span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {/* Sidebar bottom Request Card */}
-              <div className="bg-white rounded-2xl border border-[#e8e0d0]/60 p-6 shadow-sm flex flex-col items-start gap-4">
-                <div>
-                  <h4 className="text-[#08271B] text-[15px] font-bold tracking-tight mb-1">
-                    Don&apos;t see your town?
-                  </h4>
-                  <p className="text-brand-text-muted text-[12.5px] leading-relaxed">
-                    We&apos;re licensed statewide — tell us where you&apos;re buying.
+                {/* Counties Filter Panel */}
+                <div className="bg-white rounded-2xl border border-[#e8e0d0]/60 p-4 shadow-sm">
+                  <p className="text-[11px] font-bold text-brand-text-muted uppercase tracking-wider mb-4 px-2">
+                    COUNTIES
                   </p>
+                  <div className="flex flex-col gap-1">
+                    {sidebarCounties.map((county) => {
+                      const isActive = county.name === selectedCounty;
+                      return (
+                        <button
+                          key={county.name}
+                          onClick={() => setSelectedCounty(county.name)}
+                          className={`flex items-center justify-between text-[13.5px] font-semibold px-4 py-2.5 rounded-xl cursor-pointer transition-all duration-200 ${
+                            isActive
+                              ? "bg-[#052316] text-white shadow-md shadow-[#052316]/10"
+                              : "text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d]"
+                          }`}
+                        >
+                          <span>{county.name}</span>
+                          <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full ${isActive ? "bg-white/15 text-white" : "bg-[#f5f0e8] text-[#4e5b4e]"}`}>
+                            {county.count}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
                 </div>
-                <Link
-                  href="/about#talk-to-broker"
-                  className="text-brand-green-accent hover:text-[#2d5a2d] text-[13px] font-bold flex items-center gap-1.5 transition-colors group"
-                >
-                  Request your area
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    className="group-hover:translate-x-0.5 transition-transform duration-200"
-                  >
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
-                  </svg>
-                </Link>
-              </div>
 
-            </div>
+                {/* Sidebar bottom Request Card */}
+                <div className="bg-white rounded-2xl border border-[#e8e0d0]/60 p-6 shadow-sm flex flex-col items-start gap-4">
+                  <div>
+                    <h4 className="text-[#08271B] text-[15px] font-bold tracking-tight mb-1">
+                      Don&apos;t see your town?
+                    </h4>
+                    <p className="text-brand-text-muted text-[12.5px] leading-relaxed">
+                      We&apos;re licensed statewide — tell us where you&apos;re buying.
+                    </p>
+                  </div>
+                  <Link
+                    href="/about#talk-to-broker"
+                    className="text-brand-green-accent hover:text-[#2d5a2d] text-[13px] font-bold flex items-center gap-1.5 transition-colors group"
+                  >
+                    Request your area
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      className="group-hover:translate-x-0.5 transition-transform duration-200"
+                    >
+                      <line x1="5" y1="12" x2="19" y2="12" />
+                      <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                  </Link>
+                </div>
+
+              </div>
 
             {/* Right Side City Grid Content */}
             <div className="flex-1 w-full flex flex-col gap-6">
               
-              {/* Search Bar Input */}
+                {/* Search Bar Input */}
               <div className="relative w-full">
-                <input
-                  type="text"
-                  placeholder="Search cities or counties..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-white border border-[#e8e0d0] rounded-2xl px-5 py-4 pl-12 text-[15px] text-[#1a3a1a] placeholder:text-[#8a9a7a]/60 shadow-sm focus:outline-none focus:border-brand-green-accent/50 focus:ring-1 focus:ring-brand-green-accent/20 transition-all"
-                />
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#8a9a7a"
-                  strokeWidth="2.5"
-                  className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"
-                >
-                  <circle cx="11" cy="11" r="8" />
-                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                </svg>
-              </div>
+                  <input
+                    type="text"
+                    placeholder="Search cities or counties..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full bg-white border border-[#e8e0d0] rounded-2xl px-5 py-4 pl-12 text-[15px] text-[#1a3a1a] placeholder:text-[#8a9a7a]/60 shadow-sm focus:outline-none focus:border-brand-green-accent/50 focus:ring-1 focus:ring-brand-green-accent/20 transition-all"
+                  />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#8a9a7a"
+                    strokeWidth="2.5"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none"
+                  >
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                  </svg>
+                </div>
 
-              {/* Counts indicator */}
+                {/* Counts indicator */}
               <div className="text-[13px] text-brand-text-muted font-medium mb-2 px-1">
-                Showing {filteredCities.length} of {citiesData.length} communities across {selectedCounty === "All" ? "all" : selectedCounty} counties.
-              </div>
+                  Showing {filteredCities.length} of {citiesData.length} communities across {selectedCounty === "All" ? "all" : selectedCounty} counties.
+                </div>
 
               {/* Grid of City Cards */}
-              {filteredCities.length > 0 ? (
+                {filteredCities.length > 0 ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {filteredCities.map((city, index) => {
                     const initials = city.name.substring(0, 2);
@@ -365,15 +365,15 @@ export default function MaricopaCounty2() {
                       </Link>
                     );
                   })}
-                </div>
-              ) : (
-                <div className="bg-white rounded-2xl p-12 border border-[#e8e0d0]/50 text-center text-[#8a9a7a]">
-                  <p className="text-[15px] font-medium mb-1">No matching communities found.</p>
-                  <p className="text-[13px]">Try refining your search query or choosing a different county.</p>
-                </div>
-              )}
+                  </div>
+                ) : (
+                  <div className="bg-white rounded-2xl p-12 border border-[#e8e0d0]/50 text-center text-[#8a9a7a]">
+                    <p className="text-[15px] font-medium mb-1">No matching communities found.</p>
+                    <p className="text-[13px]">Try refining your search query or choosing a different county.</p>
+                  </div>
+                )}
 
-            </div>
+              </div>
 
           </div>
         </section>
