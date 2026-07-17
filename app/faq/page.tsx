@@ -448,7 +448,7 @@ export default function FAQPage() {
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
 
-      <main className="flex-grow">
+      <main className="flex-grow pt-[72px]">
         {/* FAQ Hero Section */}
         <section className="w-full bg-[#08271B] relative py-16 lg:py-24 text-center z-40">
           {/* Subtle design circles wrapped to prevent overflow clipping of the dropdown */}

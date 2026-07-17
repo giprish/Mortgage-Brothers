@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState, useCallback, useMemo } from "react";
+import SliderInput from "../component/SliderInput";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
-import SliderInput from "../component/SliderInput";
 
 interface ScenarioResult {
   scenarioName: string;
@@ -194,12 +194,7 @@ export default function MortgageAffordabilityCalculatorPage() {
                     <button onClick={() => setIncomePeriod("annual")} className={`px-3 py-1 rounded-md transition-all cursor-pointer ${incomePeriod === "annual" ? "bg-[#052316] text-white shadow-sm" : "text-[#4e5b4e]"}`}>Annual</button>
                   </div>
                 </div>
-                <div className="relative">
-                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#888] text-[15px] font-semibold">$</span>
-                  <input type="number" value={grossIncome} onChange={(e) => setGrossIncome(parseFloat(e.target.value) || 0)}
-                    className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-4 text-[15px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]"
-                    placeholder="e.g. 8000" />
-                </div>
+                <SliderInput label="" value={grossIncome} min={0} max={100000} step={500} prefix="$" onChange={setGrossIncome} />
               </div>
 
               <div>
@@ -207,23 +202,19 @@ export default function MortgageAffordabilityCalculatorPage() {
                   <label className="text-[#052316] text-[14px] font-semibold">Monthly Debts</label>
                   <span className="text-[#a89a70] text-[11px] font-medium uppercase tracking-wider font-sans">Auto, Credit Cards, Student Loans</span>
                 </div>
-                <div className="relative">
-                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#888] text-[15px] font-semibold">$</span>
-                  <input type="number" value={debts} onChange={(e) => setDebts(parseFloat(e.target.value) || 0)}
-                    className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-4 text-[15px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]"
-                    placeholder="e.g. 500" />
-                </div>
+                <SliderInput label="" value={debts} min={0} max={20000} step={100} prefix="$" onChange={setDebts} />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                <div>
-                  <label className="text-[#052316] text-[14px] font-semibold block mb-2">Down Payment ($)</label>
-                  <div className="relative">
-                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#888] text-[15px] font-semibold">$</span>
-                    <input type="number" value={downPayment} onChange={(e) => setDownPayment(parseFloat(e.target.value) || 0)}
-                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-4 text-[15px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]" />
-                  </div>
-                </div>
+                <SliderInput
+                  label="Down Payment"
+                  value={downPayment}
+                  min={0}
+                  max={2000000}
+                  step={1000}
+                  prefix="$"
+                  onChange={setDownPayment}
+                />
                 <div>
                   <SliderInput
                     label="Interest Rate"
@@ -236,9 +227,15 @@ export default function MortgageAffordabilityCalculatorPage() {
                   />
                 </div>
                 <div>
-                  <label className="text-[#052316] text-[14px] font-semibold block mb-2">Loan Term (Years)</label>
-                  <input type="number" value={loanTerm} onChange={(e) => setLoanTerm(parseFloat(e.target.value) || 0)}
-                    className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 px-4 text-[15px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]" />
+                  <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Loan Term</label>
+                  <select value={loanTerm} onChange={(e) => setLoanTerm(Number(e.target.value))}
+                    className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3 text-[14px] font-bold text-[#052316] focus:outline-none cursor-pointer">
+                    <option value={30}>30 Years</option>
+                    <option value={25}>25 Years</option>
+                    <option value={20}>20 Years</option>
+                    <option value={15}>15 Years</option>
+                    <option value={10}>10 Years</option>
+                  </select>
                 </div>
               </div>
             </div>
@@ -257,10 +254,12 @@ export default function MortgageAffordabilityCalculatorPage() {
                     <option value="percent">Annual %</option>
                     <option value="fixed">Monthly $</option>
                   </select>
-                  <div className="relative flex-grow">
-                    <input type="number" step="0.01" value={propertyTaxVal} onChange={(e) => setPropertyTaxVal(parseFloat(e.target.value) || 0)}
-                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-4 text-[14px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]" />
-                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[#888] text-[14px]">{propertyTaxType === "percent" ? "%" : "$"}</span>
+                  <div className="flex-grow">
+                    <div className="relative">
+                      <input type="number" step="0.1" value={propertyTaxVal} onChange={(e) => setPropertyTaxVal(parseFloat(e.target.value) || 0)}
+                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
+                      <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[13px]">{propertyTaxType === "percent" ? "%" : "$"}</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -276,10 +275,12 @@ export default function MortgageAffordabilityCalculatorPage() {
                     <option value="percent">Annual %</option>
                     <option value="fixed">Monthly $</option>
                   </select>
-                  <div className="relative flex-grow">
-                    <input type="number" step="0.01" value={insuranceVal} onChange={(e) => setInsuranceVal(parseFloat(e.target.value) || 0)}
-                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-4 text-[14px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]" />
-                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[#888] text-[14px]">{insuranceType === "percent" ? "%" : "$"}</span>
+                  <div className="flex-grow">
+                    <div className="relative">
+                      <input type="number" step="0.1" value={insuranceVal} onChange={(e) => setInsuranceVal(parseFloat(e.target.value) || 0)}
+                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
+                      <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[13px]">{insuranceType === "percent" ? "%" : "$"}</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -297,11 +298,13 @@ export default function MortgageAffordabilityCalculatorPage() {
                     <option value="none">No PMI</option>
                   </select>
                   {pmiType !== "none" && (
-                    <div className="relative flex-grow">
-                      <input type="number" step="0.01" value={pmiVal} onChange={(e) => setPmiVal(parseFloat(e.target.value) || 0)}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-4 text-[14px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]" />
-                      <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[#888] text-[14px]">{pmiType === "percent" ? "%" : "$"}</span>
-                    </div>
+                      <div className="flex-grow">
+                        <div className="relative">
+                          <input type="number" step="0.1" value={pmiVal} onChange={(e) => setPmiVal(parseFloat(e.target.value) || 0)}
+                            className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
+                          <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[13px]">{pmiType === "percent" ? "%" : "$"}</span>
+                        </div>
+                      </div>
                   )}
                 </div>
               </div>

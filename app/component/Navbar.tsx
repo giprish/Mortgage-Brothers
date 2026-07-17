@@ -7,7 +7,7 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-[#f5f0e8] border-b border-[#e8e0d0]">
+    <nav className="w-full bg-[#08271B] border-b border-[#1a3a1a] fixed top-0 left-0 right-0 z-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-[72px]">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity duration-200">
@@ -27,7 +27,7 @@ const Navbar = () => {
           <div className="relative group py-2">
             <Link
               href="/loan-programs"
-              className="flex items-center gap-1.5 text-[#1a3a1a] text-[14px] font-medium hover:text-[#2d5a2d] transition-colors duration-200 cursor-pointer"
+              className="flex items-center gap-1.5 text-white text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
             >
               Loan Programs
               <svg
@@ -78,7 +78,7 @@ const Navbar = () => {
           <div className="relative group py-2">
             <Link
               href="/calculators"
-              className="flex items-center gap-1.5 text-[#1a3a1a] text-[14px] font-medium hover:text-[#2d5a2d] transition-colors duration-200 cursor-pointer"
+              className="flex items-center gap-1.5 text-white text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
             >
               Calculators
               <svg
@@ -164,7 +164,7 @@ const Navbar = () => {
           <div className="relative group py-2">
             <Link
               href="/areas-we-serve"
-              className="flex items-center gap-1.5 text-[#1a3a1a] text-[14px] font-medium hover:text-[#2d5a2d] transition-colors duration-200 cursor-pointer"
+              className="flex items-center gap-1.5 text-white text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
             >
               Areas We Serve
               <svg
@@ -260,7 +260,7 @@ const Navbar = () => {
           <div className="relative group py-2">
             <Link
               href="/about-us"
-              className="flex items-center gap-1.5 text-[#1a3a1a] text-[14px] font-medium hover:text-[#2d5a2d] transition-colors duration-200 cursor-pointer"
+              className="flex items-center gap-1.5 text-white text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
             >
               About
               <svg
@@ -300,7 +300,7 @@ const Navbar = () => {
           <div className="relative group py-2">
             <Link
               href="/resources"
-              className="flex items-center gap-1.5 text-[#1a3a1a] text-[14px] font-medium hover:text-[#2d5a2d] transition-colors duration-200 cursor-pointer"
+              className="flex items-center gap-1.5 text-white text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
             >
               Resources
               <svg
@@ -396,7 +396,7 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center gap-4">
           <a
             href="tel:6025352171"
-            className="flex items-center gap-1.5 text-[#1a3a1a] text-[14px] font-medium hover:text-[#2d5a2d] transition-colors duration-200"
+            className="flex items-center gap-1.5 text-white text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -423,7 +423,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="lg:hidden flex items-center justify-center w-10 h-10 text-[#1a3a1a]"
+          className="lg:hidden flex items-center justify-center w-10 h-10 text-white"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
@@ -464,102 +464,102 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#f5f0e8] border-t border-[#e8e0d0] px-6 py-4 flex flex-col gap-4">
+        <div className="lg:hidden bg-[#08271B] border-t border-[#1a3a1a] px-6 py-4 flex flex-col gap-4">
           <Link
             href="/"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#1a3a1a] text-[15px] font-medium py-2"
+            className="text-white text-[15px] font-medium py-2"
           >
             Home
           </Link>
           <Link
             href="/loan-programs"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#1a3a1a] text-[15px] font-medium py-2"
+            className="text-white text-[15px] font-medium py-2"
           >
             Loan Programs
           </Link>
           <Link
             href="/fha-loans"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ FHA Loans
           </Link>
           <Link
             href="/calculators"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#1a3a1a] text-[15px] font-medium py-2"
+            className="text-white text-[15px] font-medium py-2"
           >
             Calculators
           </Link>
           <Link
             href="/basic-mortgage-payment-calculator"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ Basic Mortgage Payment
           </Link>
           <Link
             href="/mortgage-affordability-calculator"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ Mortgage Affordability
           </Link>
           <Link
             href="/refinance-calculator"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ Refinance Calculator
           </Link>
           <Link
             href="/rent-vs-buy-calculator"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ Rent vs. Buy Calculator
           </Link>
           <Link
             href="/down-payment-calculator"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ Down Payment Calculator
           </Link>
           <Link
             href="/debt-to-income-ratio-calculator"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ Debt-to-Income Ratio
           </Link>
           <Link
             href="/extra-payment-mortgage-calculator"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ Extra Payment Mortgage
           </Link>
           <Link
             href="/fha-loan-calculator"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ FHA Loan Calculator
           </Link>
           <Link
             href="/va-loan-calculator"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ VA Loan Calculator
           </Link>
           <Link
             href="/home-purchase-closing-cost-calculator"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ Home Purchase Closing Cost
           </Link>
@@ -567,42 +567,42 @@ const Navbar = () => {
           <Link
             href="/areas-we-serve"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#1a3a1a] text-[15px] font-medium py-2"
+            className="text-white text-[15px] font-medium py-2"
           >
             Areas We Serve
           </Link>
           <Link
             href="/arizona-directory"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ Arizona Directory
           </Link>
           <Link
             href="/arizona-directory-2"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ Arizona Directory 2
           </Link>
           <Link
             href="/areas-we-serve/maricopa-county"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ Maricopa County
           </Link>
           <Link
             href="/areas-we-serve/maricopa-county/phoenix"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ Phoenix
           </Link>
           <Link
             href="/areas-we-serve/maricopa-county-2"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ Maricopa County 2
           </Link>
@@ -610,28 +610,28 @@ const Navbar = () => {
           <Link
             href="/about-us"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#1a3a1a] text-[15px] font-medium py-2"
+            className="text-white text-[15px] font-medium py-2"
           >
             About
           </Link>
           <Link
             href="/about-us"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ About Us
           </Link>
           <Link
             href="/contact-us"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ Contact Us
           </Link>
           <Link
             href="/term-condition"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ Team & Careers
           </Link>
@@ -640,42 +640,42 @@ const Navbar = () => {
           <Link
             href="/resources"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#1a3a1a] text-[15px] font-medium py-2"
+            className="text-white text-[15px] font-medium py-2"
           >
             Resources
           </Link>
           <Link
             href="/mortgage-basics"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ Mortgage Basics
           </Link>
           <Link
             href="/videos"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ Videos
           </Link>
           <Link
             href="/mortgage-basics/conventional-loan-basics"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ Conventional Loans
           </Link>
           <Link
             href="/client-mortgage-reviews"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ Reviews
           </Link>
           <Link
             href="/faq"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ FAQ
           </Link>
@@ -683,35 +683,35 @@ const Navbar = () => {
             href="
             /fha-loans"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ FHA Loans
           </Link>
           <Link
             href="/resources/real-estate-mortgages"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ Real Estate & Mortgages
           </Link>
           <Link
             href="/resources/specialty-loans"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ Specialty Loans
           </Link>
           <Link
             href="/resources/homeownership-tips"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ Homeownership Tips
           </Link>
           <Link
             href="/resources/process-guidance"
             onClick={() => setMobileMenuOpen(false)}
-            className="text-[#4e5b4e] text-[14px] pl-4 py-1.5 hover:text-[#2d5a2d] transition-colors font-medium border-l border-[#e8e0d0]/60 ml-2"
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ Process Guidance
           </Link>

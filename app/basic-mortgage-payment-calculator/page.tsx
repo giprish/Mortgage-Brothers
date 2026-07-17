@@ -256,23 +256,11 @@ export default function BasicMortgageCalculatorPage() {
             <SliderInput label="Home Price" value={homePrice} min={50000} max={2000000} step={1000} prefix="$"
               onChange={handleHomePriceChange} formatValue={(v) => fmt(v)} />
 
-            <div>
-              <label className="text-[#052316] text-[14px] font-semibold block mb-2">Down Payment</label>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="relative">
-                  <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#888] font-semibold">$</span>
-                  <input type="number" value={Math.round(dpAmt)} onChange={(e) => handleDpAmtChange(parseFloat(e.target.value) || 0)} onFocus={() => setLastDpMode("amt")}
-                    className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-4 text-[15px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]"
-                    placeholder="Dollar amount" />
-                </div>
-                <div className="relative">
-                  <input type="number" step="0.01" value={Number(dpPct.toFixed(2))} onChange={(e) => handleDpPctChange(parseFloat(e.target.value) || 0)} onFocus={() => setLastDpMode("pct")}
-                    className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 px-4 text-[15px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]"
-                    placeholder="Percentage" />
-                  <span className="absolute right-4 top-1/2 -translate-y-1/2 text-[#888] font-semibold">%</span>
-                </div>
-              </div>
-              <p className="text-[11.5px] text-[#a89a70] mt-1.5 italic">Editing either field updates the other automatically.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <SliderInput label="Down Payment ($)" value={dpAmt} min={0} max={2000000} step={1000} prefix="$"
+                onChange={handleDpAmtChange} />
+              <SliderInput label="Down Payment (%)" value={dpPct} min={0} max={100} step={0.5} suffix="%"
+                onChange={handleDpPctChange} />
             </div>
 
             <SliderInput label="Annual Interest Rate" value={annualRate} min={0} max={15} step={0.125} suffix="%"
@@ -287,10 +275,9 @@ export default function BasicMortgageCalculatorPage() {
                     {yr} yr
                   </button>
                 ))}
-                <div className="relative flex-grow min-w-[80px]">
+                <div className="relative flex-grow min-w-[70px]">
                   <input type="number" value={termYears} onChange={(e) => setTermYears(parseFloat(e.target.value) || 30)}
-                    className="w-full bg-white border border-[#e8e0d0] rounded-xl py-2.5 px-4 text-[13px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]"
-                    placeholder="Custom" />
+                    className="w-full bg-white border border-[#e8e0d0] rounded-xl py-2.5 px-3 text-[13px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]" />
                 </div>
               </div>
               <p className="text-[11px] text-[#a89a70] mt-1.5 italic font-sans">1–30 years. Decimals rounded to nearest whole year.</p>

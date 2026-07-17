@@ -336,20 +336,25 @@ export default function FhaLoanCalculatorPage() {
                       onChange={handleHomePriceChange}
                     />
                   </div>
-                  <div>
-                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Down Payment</label>
-                    <div className="grid grid-cols-2 gap-2">
-                      <div className="relative">
-                        <span className="absolute left-2 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[12px]">$</span>
-                        <input type="number" value={dpVal} onChange={(e) => handleDpAmtChange(parseFloat(e.target.value) || 0)} onFocus={() => setLastDpMode("amt")}
-                          className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-5 pr-1 text-[13px] font-bold text-[#052316] focus:outline-none" />
-                      </div>
-                      <div className="relative">
-                        <input type="number" step="0.01" value={dpPct} onChange={(e) => handleDpPctChange(parseFloat(e.target.value) || 0)} onFocus={() => setLastDpMode("pct")}
-                          className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-2 text-[13px] font-bold text-[#052316] focus:outline-none" />
-                        <span className="absolute right-2 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[12px]">%</span>
-                      </div>
-                    </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <SliderInput
+                      label="Down Payment ($)"
+                      value={dpVal}
+                      min={0}
+                      max={2000000}
+                      step={1000}
+                      prefix="$"
+                      onChange={handleDpAmtChange}
+                    />
+                    <SliderInput
+                      label="Down Payment (%)"
+                      value={dpPct}
+                      min={0}
+                      max={100}
+                      step={0.5}
+                      suffix="%"
+                      onChange={handleDpPctChange}
+                    />
                   </div>
                 </div>
 

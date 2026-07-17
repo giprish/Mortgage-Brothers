@@ -244,11 +244,15 @@ export default function VaLoanCalculatorPage() {
                   </select>
                 </div>
 
-                <div>
-                  <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Length of Service (months)</label>
-                  <input type="number" value={serviceMonths} onChange={(e) => setServiceMonths(Number(e.target.value))}
-                    className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 px-3.5 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
-                </div>
+                <SliderInput
+                  label="Length of Service (months)"
+                  value={serviceMonths}
+                  min={0}
+                  max={120}
+                  step={1}
+                  suffix=" months"
+                  onChange={setServiceMonths}
+                />
 
                 <div className="bg-[#faf7f0] rounded-2xl p-4 border border-[#e8e0d0]/40 mt-1 flex flex-col gap-1 text-[13px] leading-relaxed">
                   <span className="text-[10px] text-[#a89a70] uppercase font-bold tracking-wide">Eligibility Check (Informational)</span>
@@ -338,17 +342,25 @@ export default function VaLoanCalculatorPage() {
                     ))}
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="relative">
-                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[13px]">$</span>
-                      <input type="number" value={dpVal} onChange={(e) => handleDpAmtChange(Number(e.target.value))}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-7 pr-3 text-[13.5px] font-bold text-[#052316] focus:outline-none" />
-                    </div>
-                    <div className="relative">
-                      <input type="number" step="0.01" value={dpPct} onChange={(e) => handleDpPctChange(Number(e.target.value))}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3.5 text-[13.5px] font-bold text-[#052316] focus:outline-none" />
-                      <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[13px]">%</span>
-                    </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <SliderInput
+                      label="Down Payment ($)"
+                      value={dpVal}
+                      min={0}
+                      max={2000000}
+                      step={1000}
+                      prefix="$"
+                      onChange={handleDpAmtChange}
+                    />
+                    <SliderInput
+                      label="Down Payment (%)"
+                      value={dpPct}
+                      min={0}
+                      max={100}
+                      step={0.5}
+                      suffix="%"
+                      onChange={handleDpPctChange}
+                    />
                   </div>
                 </div>
               </div>

@@ -221,8 +221,8 @@ function solvePayments(
   loanType: string,
   interestRate: number,
   loanTerm: number,
-  taxRateManual: string,
-  insManual: string,
+  taxRateManual: number,
+  insManual: number,
   hoaManual: number
 ): DownPaymentResult {
   const loanAmount = Math.max(0, homePrice - dpAmt);
@@ -241,22 +241,10 @@ function solvePayments(
   }
 
   // Monthly tax
-  let monthlyTax = 0;
-  if (taxRateManual === "") {
-    const defaultTax = getTaxDefault(homePrice);
-    monthlyTax = defaultTax.amount / 12;
-  } else {
-    const rate = parseFloat(taxRateManual) || 0;
-    monthlyTax = (homePrice * (rate / 100)) / 12;
-  }
+  const monthlyTax = (homePrice * (taxRateManual / 100)) / 12;
 
   // Monthly Ins
-  let monthlyIns = 0;
-  if (insManual === "") {
-    monthlyIns = getHomeInsuranceDefault(homePrice) / 12;
-  } else {
-    monthlyIns = (parseFloat(insManual) || 0) / 12;
-  }
+  const monthlyIns = insManual / 12;
 
   const monthlyHOA = hoaManual;
 
@@ -317,8 +305,8 @@ export default function DownPaymentCalculatorPage() {
   const [dpPct, setDpPct] = useState(20);
   const [lastDpMode, setLastDpMode] = useState<"amt" | "pct">("pct");
 
-  const [taxRateManual, setTaxRateManual] = useState("");
-  const [insManual, setInsManual] = useState("");
+  const [taxRateManual, setTaxRateManual] = useState(1.25);
+  const [insManual, setInsManual] = useState(100);
   const [hoa, setHoa] = useState(0);
 
   // Sync inputs
@@ -493,22 +481,24 @@ export default function DownPaymentCalculatorPage() {
                 />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Annual Income ($)</label>
-                    <div className="relative">
-                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={annualIncome} onChange={(e) => setAnnualIncome(parseFloat(e.target.value) || 0)}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-7 pr-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Monthly Debt Payments ($)</label>
-                    <div className="relative">
-                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={monthlyDebts} onChange={(e) => setMonthlyDebts(parseFloat(e.target.value) || 0)}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-7 pr-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
-                    </div>
-                  </div>
+                  <SliderInput
+                    label="Annual Income"
+                    value={annualIncome}
+                    min={0}
+                    max={500000}
+                    step={1000}
+                    prefix="$"
+                    onChange={setAnnualIncome}
+                  />
+                  <SliderInput
+                    label="Monthly Debt Payments"
+                    value={monthlyDebts}
+                    min={0}
+                    max={20000}
+                    step={100}
+                    prefix="$"
+                    onChange={setMonthlyDebts}
+                  />
                 </div>
 
                 <div>
@@ -532,19 +522,28 @@ export default function DownPaymentCalculatorPage() {
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
-                    <label className="text-[#052316] text-[12px] font-semibold block mb-1.5">Property Tax Rate (%)</label>
-                    <input type="number" step="0.01" value={taxRateManual} onChange={(e) => setTaxRateManual(e.target.value)} placeholder="Auto-look"
-                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-2.5 px-3 text-[13px] font-bold text-[#052316] focus:outline-none" />
+                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Property Tax Rate</label>
+                    <div className="relative">
+                      <input type="number" step="0.1" value={taxRateManual} onChange={(e) => setTaxRateManual(parseFloat(e.target.value) || 0)}
+                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 px-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
+                      <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">%</span>
+                    </div>
                   </div>
                   <div>
-                    <label className="text-[#052316] text-[12px] font-semibold block mb-1.5">Home Insurance ($/yr)</label>
-                    <input type="number" value={insManual} onChange={(e) => setInsManual(e.target.value)} placeholder="Auto-look"
-                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-2.5 px-3 text-[13px] font-bold text-[#052316] focus:outline-none" />
+                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Home Insurance ($/yr)</label>
+                    <div className="relative">
+                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
+                      <input type="number" value={insManual} onChange={(e) => setInsManual(parseFloat(e.target.value) || 0)}
+                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
+                    </div>
                   </div>
                   <div>
-                    <label className="text-[#052316] text-[12px] font-semibold block mb-1.5">HOA Dues ($/mo)</label>
-                    <input type="number" value={hoa} onChange={(e) => setHoa(parseFloat(e.target.value) || 0)}
-                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-2.5 px-3 text-[13px] font-bold text-[#052316] focus:outline-none" />
+                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">HOA Dues ($/mo)</label>
+                    <div className="relative">
+                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
+                      <input type="number" value={hoa} onChange={(e) => setHoa(parseFloat(e.target.value) || 0)}
+                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -571,8 +570,14 @@ export default function DownPaymentCalculatorPage() {
                   </div>
                   <div>
                     <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Loan Term</label>
-                    <input type="number" value={loanTerm} onChange={(e) => setLoanTerm(parseFloat(e.target.value) || 0)}
-                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3 text-[13.5px] font-bold text-[#052316] focus:outline-none" />
+                    <select value={loanTerm} onChange={(e) => setLoanTerm(Number(e.target.value))}
+                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3 text-[14px] font-bold text-[#052316] focus:outline-none cursor-pointer">
+                      <option value={30}>30 Years</option>
+                      <option value={25}>25 Years</option>
+                      <option value={20}>20 Years</option>
+                      <option value={15}>15 Years</option>
+                      <option value={10}>10 Years</option>
+                    </select>
                   </div>
                 </div>
 
@@ -588,18 +593,25 @@ export default function DownPaymentCalculatorPage() {
 
                 {/* Bidirectional Down Payment */}
                 <div>
-                  <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Target Down Payment</label>
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="relative">
-                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={dpVal} onChange={(e) => handleDpAmtChange(parseFloat(e.target.value) || 0)} onFocus={() => setLastDpMode("amt")}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-7 pr-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
-                    </div>
-                    <div className="relative">
-                      <input type="number" step="0.01" value={dpPct} onChange={(e) => handleDpPctChange(parseFloat(e.target.value) || 0)} onFocus={() => setLastDpMode("pct")}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3.5 text-[14px] font-bold text-[#052316] focus:outline-none" />
-                      <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">%</span>
-                    </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <SliderInput
+                      label="Down Payment ($)"
+                      value={dpVal}
+                      min={0}
+                      max={2000000}
+                      step={1000}
+                      prefix="$"
+                      onChange={handleDpAmtChange}
+                    />
+                    <SliderInput
+                      label="Down Payment (%)"
+                      value={dpPct}
+                      min={0}
+                      max={100}
+                      step={0.5}
+                      suffix="%"
+                      onChange={handleDpPctChange}
+                    />
                   </div>
 
                   {/* Validation warning below inputs */}

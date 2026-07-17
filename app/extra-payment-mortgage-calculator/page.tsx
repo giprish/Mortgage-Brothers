@@ -324,33 +324,36 @@ export default function ExtraPaymentMortgageCalculator() {
                   <span className="w-2.5 h-2.5 rounded-full bg-[#3fb364]" /> Extra Payments Planned
                 </h3>
 
-                <div>
-                  <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5 font-sans">Additional Monthly Payment ($/mo)</label>
-                  <div className="relative">
-                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                    <input type="number" value={addMonthly} onChange={(e) => setAddMonthly(Math.max(0, parseFloat(e.target.value) || 0))}
-                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
-                  </div>
-                </div>
+                <SliderInput
+                  label="Additional Monthly Payment"
+                  value={addMonthly}
+                  min={0}
+                  max={5000}
+                  step={50}
+                  prefix="$"
+                  onChange={setAddMonthly}
+                />
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">One-Time Lump Sum ($)</label>
-                    <div className="relative">
-                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={lumpSum} onChange={(e) => setLumpSum(Math.max(0, parseFloat(e.target.value) || 0))}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-7 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Apply in Month #</label>
-                    <input type="number" value={lumpSumMonth} onChange={(e) => setLumpSumMonth(Math.max(0, parseInt(e.target.value) || 0))}
-                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3.5 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
-                  </div>
+                  <SliderInput
+                    label="One-Time Lump Sum"
+                    value={lumpSum}
+                    min={0}
+                    max={100000}
+                    step={500}
+                    prefix="$"
+                    onChange={setLumpSum}
+                  />
+                  <SliderInput
+                    label="Apply in Month #"
+                    value={lumpSumMonth}
+                    min={0}
+                    max={360}
+                    step={1}
+                    suffix=""
+                    onChange={setLumpSumMonth}
+                  />
                 </div>
-                <span className="text-[11.5px] text-[#a89a70] italic block -mt-2">
-                  *If Month is set to 0, the Lump Sum dollar amount is ignored entirely.
-                </span>
               </div>
             </div>
           </div>

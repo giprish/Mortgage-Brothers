@@ -209,20 +209,20 @@ export default function DtiCalculatorPage() {
                 </h3>
 
                 <div>
-                  <label className="text-[#052316] text-[13px] font-semibold block mb-1.5 font-sans">Primary Job Income (gross $/mo)</label>
+                  <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Primary Job Income (gross $/mo)</label>
                   <div className="relative">
                     <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                    <input type="number" value={primaryIncome} onChange={(e) => setPrimaryIncome(Number(e.target.value))}
-                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30" />
+                    <input type="number" value={primaryIncome} onChange={(e) => setPrimaryIncome(parseFloat(e.target.value) || 0)}
+                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                   </div>
                 </div>
 
                 <div>
-                  <label className="text-[#052316] text-[13px] font-semibold block mb-1.5 font-sans">Additional Income ($/mo)</label>
+                  <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Additional Income ($/mo)</label>
                   <div className="relative">
                     <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                    <input type="number" value={additionalIncome} onChange={(e) => setAdditionalIncome(Number(e.target.value))}
-                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30" />
+                    <input type="number" value={additionalIncome} onChange={(e) => setAdditionalIncome(parseFloat(e.target.value) || 0)}
+                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                   </div>
                 </div>
               </div>
@@ -235,38 +235,38 @@ export default function DtiCalculatorPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Mortgage P&I ($)</label>
+                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Mortgage / Rent Payment</label>
                     <div className="relative">
                       <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={mortgagePayment} onChange={(e) => setMortgagePayment(Number(e.target.value))}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-7 pr-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
+                      <input type="number" value={mortgagePayment} onChange={(e) => setMortgagePayment(parseFloat(e.target.value) || 0)}
+                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                     </div>
                   </div>
                   <div>
-                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Property Taxes ($)</label>
+                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Property Taxes</label>
                     <div className="relative">
                       <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={propertyTaxes} onChange={(e) => setPropertyTaxes(Number(e.target.value))}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-7 pr-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
+                      <input type="number" value={propertyTaxes} onChange={(e) => setPropertyTaxes(parseFloat(e.target.value) || 0)}
+                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                     </div>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5 font-sans font-sans font-sans font-sans">Homeowners Ins ($)</label>
+                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Homeowners Insurance</label>
                     <div className="relative">
                       <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={homeInsurance} onChange={(e) => setHomeInsurance(Number(e.target.value))}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-7 pr-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
+                      <input type="number" value={homeInsurance} onChange={(e) => setHomeInsurance(parseFloat(e.target.value) || 0)}
+                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                     </div>
                   </div>
                   <div>
-                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">HOA Fees ($)</label>
+                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">HOA Fees</label>
                     <div className="relative">
                       <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={hoaFees} onChange={(e) => setHoaFees(Number(e.target.value))}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-7 pr-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
+                      <input type="number" value={hoaFees} onChange={(e) => setHoaFees(parseFloat(e.target.value) || 0)}
+                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                     </div>
                   </div>
                 </div>
@@ -283,38 +283,38 @@ export default function DtiCalculatorPage() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Car Loans/Leases ($)</label>
+                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Car Loans (total)</label>
                     <div className="relative">
                       <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={carLoans} onChange={(e) => setCarLoans(Number(e.target.value))}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-7 pr-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
+                      <input type="number" value={carLoans} onChange={(e) => setCarLoans(parseFloat(e.target.value) || 0)}
+                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                     </div>
                   </div>
                   <div>
-                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5 font-sans font-sans font-sans">Credit Card Min ($)</label>
+                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Credit Cards (minimum)</label>
                     <div className="relative">
                       <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={creditCards} onChange={(e) => setCreditCards(Number(e.target.value))}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-7 pr-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
+                      <input type="number" value={creditCards} onChange={(e) => setCreditCards(parseFloat(e.target.value) || 0)}
+                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                     </div>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5 font-sans font-sans">Student Loans ($)</label>
+                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Student Loans (total)</label>
                     <div className="relative">
                       <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={studentLoans} onChange={(e) => setStudentLoans(Number(e.target.value))}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-7 pr-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
+                      <input type="number" value={studentLoans} onChange={(e) => setStudentLoans(parseFloat(e.target.value) || 0)}
+                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                     </div>
                   </div>
                   <div>
-                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Other Debts ($)</label>
+                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Other Monthly Debts</label>
                     <div className="relative">
                       <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={otherDebts} onChange={(e) => setOtherDebts(Number(e.target.value))}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 pl-7 pr-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
+                      <input type="number" value={otherDebts} onChange={(e) => setOtherDebts(parseFloat(e.target.value) || 0)}
+                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                     </div>
                   </div>
                 </div>
