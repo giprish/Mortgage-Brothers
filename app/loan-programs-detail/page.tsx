@@ -192,7 +192,7 @@ export default function LoanProgramsDetailPage() {
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-[#052316] text-white py-20 px-6 lg:px-10 relative overflow-hidden">
+        <section className="bg-[#052316] text-white pt-[92px] pb-20 px-6 lg:px-10 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full border border-white/5 pointer-events-none -mr-16 -mt-16"></div>
           
           <div className="max-w-5xl mx-auto text-center relative z-10">
