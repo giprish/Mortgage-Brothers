@@ -4,12 +4,14 @@ import Link from "next/link";
 const Hero = () => {
   return (
     <section 
-      className="w-full bg-[#08271B] relative overflow-hidden bg-cover bg-no-repeat bg-[82%_center] sm:bg-center"
+      className="w-full bg-[#08271B] relative overflow-hidden bg-cover bg-no-repeat min-h-[600px] lg:min-h-[700px] xl:min-h-[800px] 2xl:min-h-[900px]"
       style={{
         backgroundImage: "url('/az-mortgage-brothers.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center center",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 lg:py-20">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 lg:py-20 xl:py-24 2xl:py-28 pt-[72px] lg:pt-[100px] xl:pt-[120px] 2xl:pt-[150px]">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-16">
           {/* Left Content */}
           <div className="flex-1 max-w-xl">

@@ -28,7 +28,7 @@ const countiesData = [
     region: "SOUTHERN ARIZONA",
     seat: "Tucson",
     cityCount: 8,
-    route: "#pima",
+    route: "/service-areas/pima-county-az",
     cities: ["Tucson", "Oro Valley", "Marana", "Sahuarita", "Vail", "Green Valley", "Catalina Foothills", "South Tucson"]
   },
   {
@@ -37,7 +37,7 @@ const countiesData = [
     region: "GREATER PHOENIX",
     seat: "Florence",
     cityCount: 10,
-    route: "#pinal",
+    route: "/service-areas/pinal-county-az",
     cities: ["Casa Grande", "Maricopa", "San Tan Valley", "Florence", "Coolidge", "Eloy", "Apache Junction", "Superior", "Kearny", "Mammoth"]
   },
   {
@@ -46,7 +46,7 @@ const countiesData = [
     region: "NORTHERN ARIZONA",
     seat: "Prescott",
     cityCount: 9,
-    route: "#yavapai",
+    route: "/service-areas/yavapai-county-az",
     cities: ["Prescott", "Prescott Valley", "Sedona", "Cottonwood", "Chino Valley", "Camp Verde", "Dewey-Humboldt", "Clarkdale", "Jerome"]
   },
   {
@@ -55,7 +55,7 @@ const countiesData = [
     region: "NORTHERN ARIZONA",
     seat: "Flagstaff",
     cityCount: 6,
-    route: "#coconino",
+    route: "/service-areas/coconino-county-az",
     cities: ["Flagstaff", "Sedona", "Williams", "Page", "Fredonia", "Tusayan"]
   },
   {
@@ -64,7 +64,7 @@ const countiesData = [
     region: "NORTHERN ARIZONA",
     seat: "Holbrook",
     cityCount: 6,
-    route: "#navajo",
+    route: "/service-areas/navajo-county-az",
     cities: ["Show Low", "Pinetop-Lakeside", "Holbrook", "Taylor", "Snowflake", "Winslow"]
   },
   {
@@ -73,7 +73,7 @@ const countiesData = [
     region: "NORTHERN ARIZONA",
     seat: "St. Johns",
     cityCount: 5,
-    route: "#apache",
+    route: "/service-areas/apache-county-az",
     cities: ["St. Johns", "Eagar", "Springerville", "Chinle", "Window Rock"]
   },
   {
@@ -82,7 +82,7 @@ const countiesData = [
     region: "NORTHERN ARIZONA",
     seat: "Globe",
     cityCount: 5,
-    route: "#gila",
+    route: "/service-areas/gila-county-az",
     cities: ["Payson", "Globe", "Miami", "Star Valley", "Hayden"]
   },
   {
@@ -91,7 +91,7 @@ const countiesData = [
     region: "SOUTHERN ARIZONA",
     seat: "Bisbee",
     cityCount: 7,
-    route: "#cochise",
+    route: "/service-areas/cochise-county-az",
     cities: ["Sierra Vista", "Douglas", "Bisbee", "Benson", "Willcox", "Tombstone", "Huachuca City"]
   },
   {
@@ -100,7 +100,7 @@ const countiesData = [
     region: "SOUTHERN ARIZONA",
     seat: "Safford",
     cityCount: 3,
-    route: "#graham",
+    route: "/service-areas/graham-county-az",
     cities: ["Safford", "Thatcher", "Pima"]
   },
   {
@@ -109,7 +109,7 @@ const countiesData = [
     region: "SOUTHERN ARIZONA",
     seat: "Clifton",
     cityCount: 3,
-    route: "#greenlee",
+    route: "/service-areas/greenlee-county-az",
     cities: ["Clifton", "Duncan", "Morenci"]
   },
   {
@@ -118,7 +118,7 @@ const countiesData = [
     region: "SOUTHERN ARIZONA",
     seat: "Nogales",
     cityCount: 4,
-    route: "#santa-cruz",
+    route: "/service-areas/santa-cruz-county-az",
     cities: ["Nogales", "Rio Rico", "Tubac", "Patagonia"]
   },
   {
@@ -127,16 +127,16 @@ const countiesData = [
     region: "WESTERN ARIZONA",
     seat: "Kingman",
     cityCount: 6,
-    route: "#mohave",
+    route: "/service-areas/mohave-county-az",
     cities: ["Lake Havasu City", "Kingman", "Bullhead City", "Fort Mohave", "Golden Valley", "Colorado City"]
   },
   {
-    id: "la-paaz",
+    id: "la-paz",
     name: "La Paz County",
     region: "WESTERN ARIZONA",
     seat: "Parker",
     cityCount: 4,
-    route: "#la-paaz",
+    route: "/service-areas/la-paz-county-az",
     cities: ["Parker", "Quartzsite", "Salome", "Bouse"]
   },
   {
@@ -145,7 +145,7 @@ const countiesData = [
     region: "WESTERN ARIZONA",
     seat: "Yuma",
     cityCount: 4,
-    route: "#yuma",
+    route: "/service-areas/yuma-county-az",
     cities: ["Yuma", "San Luis", "Somerton", "Wellton"]
   }
 ];
@@ -579,9 +579,9 @@ export default function ArizonaDirectory2Page() {
                       Southern Arizona&apos;s hub, centered on Tucson and the communities around it.
                     </p>
                   </div>
-                  <button
-                    onClick={() => handleScrollToCounty("pima")}
-                    className="text-brand-green-accent hover:text-[#2d5a2d] text-[13px] font-bold flex items-center gap-1 transition-colors group mt-2 text-left cursor-pointer"
+                  <Link
+                    href="/service-areas/pima-county-az"
+                    className="text-brand-green-accent hover:text-[#2d5a2d] text-[13px] font-bold flex items-center gap-1 transition-colors group mt-2 text-left"
                   >
                     Explore county
                     <svg
@@ -597,7 +597,7 @@ export default function ArizonaDirectory2Page() {
                       <line x1="5" y1="12" x2="19" y2="12" />
                       <polyline points="12 5 19 12 12 19" />
                     </svg>
-                  </button>
+                  </Link>
                 </div>
               </div>
 
@@ -673,24 +673,15 @@ export default function ArizonaDirectory2Page() {
                       <span className="text-brand-text-muted text-[11.5px] font-bold">
                         {county.cityCount} cities
                       </span>
-                      {county.id === "maricopa" ? (
-                        <Link
-                          href={county.route}
-                          className="text-brand-green-accent hover:text-[#2d5a2d] text-[12.5px] font-bold flex items-center gap-1 transition-colors"
-                        >
-                          View county
-                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                            <polyline points="9 18 15 12 9 6" />
-                          </svg>
-                        </Link>
-                      ) : (
-                        <span className="text-brand-green-accent/60 text-[12.5px] font-bold flex items-center gap-1">
-                          View county
-                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                            <polyline points="9 18 15 12 9 6" />
-                          </svg>
-                        </span>
-                      )}
+                      <Link
+                      href={county.route}
+                      className="text-brand-green-accent hover:text-[#2d5a2d] text-[12.5px] font-bold flex items-center gap-1 transition-colors"
+                    >
+                      View county
+                      <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
+                        <polyline points="9 18 15 12 9 6" />
+                      </svg>
+                    </Link>
                     </div>
                   </div>
                 );

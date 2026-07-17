@@ -12,6 +12,7 @@ export interface CityData {
 }
 
 export const countyMap: Record<string, string> = {
+  "maricopa-county-az": "Maricopa County",
   "pima-county-az": "Pima County",
   "pinal-county-az": "Pinal County",
   "yavapai-county-az": "Yavapai County",
