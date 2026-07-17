@@ -268,43 +268,6 @@ export default function ClosingCostCalculatorPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
             
-            <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm flex flex-col justify-between">
-              <div>
-                <h3 className="text-[#052316] text-[16.5px] font-bold mb-4 pb-3 border-b border-[#e8e0d0]/40 font-sans">Fee Itemized Breakdown</h3>
-                <div className="flex flex-col gap-3 text-[13.5px]">
-                  <div className="flex justify-between border-b border-[#e8e0d0]/20 pb-2">
-                    <span className="text-[#888]">Title Escrow Fee</span>
-                    <span className="text-[#052316] font-bold">{fmt(result.escrowFee)}</span>
-                  </div>
-                  <div className="flex justify-between border-b border-[#e8e0d0]/20 pb-2">
-                    <span className="text-[#888]">Title Insurance Fee</span>
-                    <span className="text-[#052316] font-bold">{fmt(result.insuranceFee)}</span>
-                  </div>
-                  <div className="flex justify-between border-b border-[#e8e0d0]/20 pb-2">
-                    <span className="text-[#888]">Loan Origination Fee</span>
-                    <span className="text-[#052316] font-bold">{fmt(result.originationFee)}</span>
-                  </div>
-                  <div className="flex justify-between border-b border-[#e8e0d0]/20 pb-2">
-                    <span className="text-[#888]">Appraisal Fee</span>
-                    <span className="text-[#052316] font-bold">{fmt(result.appraisalFee)}</span>
-                  </div>
-                  <div className="flex justify-between border-b border-[#e8e0d0]/20 pb-2">
-                    <span className="text-[#888]">Recording Fee</span>
-                    <span className="text-[#052316] font-bold">{fmt(result.recordingFee)}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-[#888] font-sans">Credit Report Fee</span>
-                    <span className="text-[#052316] font-bold">{fmt(result.creditReportFee)}</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-[#faf7f0] rounded-2xl p-4 border border-[#e8e0d0]/40 mt-6 flex justify-between font-bold text-[#052316] text-[14.5px]">
-                <span>Total Cash Outlay Estimate</span>
-                <span>{fmt(result.totalClosingCosts)}</span>
-              </div>
-            </div>
-
             <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm flex flex-col justify-between items-center text-center">
               <div className="w-full text-left">
                 <h3 className="text-[#052316] text-[16px] font-bold pb-3 border-b border-[#e8e0d0]/40 font-sans">Cost Component Breakdown</h3>
@@ -340,6 +303,43 @@ export default function ClosingCostCalculatorPage() {
                     <span className="truncate text-[#4e5b4e]">{seg.name} ({((seg.val / result.totalClosingCosts) * 100).toFixed(1)}%)</span>
                   </div>
                 ))}
+              </div>
+            </div>
+
+            <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm flex flex-col justify-between">
+              <div>
+                <h3 className="text-[#052316] text-[16.5px] font-bold mb-4 pb-3 border-b border-[#e8e0d0]/40 font-sans">Fee Itemized Breakdown</h3>
+                <div className="flex flex-col gap-3 text-[13.5px]">
+                  <div className="flex justify-between border-b border-[#e8e0d0]/20 pb-2">
+                    <span className="text-[#888]">Title Escrow Fee</span>
+                    <span className="text-[#052316] font-bold">{fmt(result.escrowFee)}</span>
+                  </div>
+                  <div className="flex justify-between border-b border-[#e8e0d0]/20 pb-2">
+                    <span className="text-[#888]">Title Insurance Fee</span>
+                    <span className="text-[#052316] font-bold">{fmt(result.insuranceFee)}</span>
+                  </div>
+                  <div className="flex justify-between border-b border-[#e8e0d0]/20 pb-2">
+                    <span className="text-[#888]">Loan Origination Fee</span>
+                    <span className="text-[#052316] font-bold">{fmt(result.originationFee)}</span>
+                  </div>
+                  <div className="flex justify-between border-b border-[#e8e0d0]/20 pb-2">
+                    <span className="text-[#888]">Appraisal Fee</span>
+                    <span className="text-[#052316] font-bold">{fmt(result.appraisalFee)}</span>
+                  </div>
+                  <div className="flex justify-between border-b border-[#e8e0d0]/20 pb-2">
+                    <span className="text-[#888]">Recording Fee</span>
+                    <span className="text-[#052316] font-bold">{fmt(result.recordingFee)}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-[#888] font-sans">Credit Report Fee</span>
+                    <span className="text-[#052316] font-bold">{fmt(result.creditReportFee)}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-[#faf7f0] rounded-2xl p-4 border border-[#e8e0d0]/40 mt-6 flex justify-between font-bold text-[#052316] text-[14.5px]">
+                <span>Total Cash Outlay Estimate</span>
+                <span>{fmt(result.totalClosingCosts)}</span>
               </div>
             </div>
           </div>

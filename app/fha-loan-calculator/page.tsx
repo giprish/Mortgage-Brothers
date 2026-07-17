@@ -417,8 +417,33 @@ export default function FhaLoanCalculatorPage() {
                   <p className="text-[12.5px] text-[#888] mt-3 pt-2.5 border-t border-[#e8e0d0]/30">Includes 1.75% upfront MIP financed.</p>
                 </div>
               </div>
-
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm flex flex-col justify-between items-center text-center">
+                  <div className="w-full text-left">
+                    <h3 className="text-[#052316] text-[16px] font-bold pb-3 border-b border-[#e8e0d0]/40 font-sans">Monthly payment split</h3>
+                  </div>
+
+                  <div className="relative w-40 h-40 my-6">
+                    <svg viewBox="0 0 200 200" className="w-full h-full transform -rotate-90">
+                      <circle cx="100" cy="100" r="70" fill="none" stroke="#fcf9f3" strokeWidth="16" />
+                      <circle cx="100" cy="100" r="70" fill="none" stroke="#052316" strokeWidth="16"
+                        strokeDasharray={`${2 * Math.PI * 70 * (parseFloat(getDonutSplit(calcOutput.result).pi) / 100)} ${2 * Math.PI * 70}`} />
+                      <circle cx="100" cy="100" r="70" fill="none" stroke="#3fb364" strokeWidth="16"
+                        strokeDasharray={`${2 * Math.PI * 70 * (parseFloat(getDonutSplit(calcOutput.result).mip) / 100)} ${2 * Math.PI * 70}`}
+                        strokeDashoffset={`-{2 * Math.PI * 70 * (parseFloat(getDonutSplit(calcOutput.result).pi) / 100)}`} />
+                    </svg>
+                    <div className="absolute inset-0 flex flex-col items-center justify-center">
+                      <span className="text-[10px] uppercase font-bold tracking-wider text-[#888]">Monthly</span>
+                      <span className="text-[15.5px] font-bold text-[#052316]">{fmt(calcOutput.result.totalMonthlyFirstMonth)}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-6 text-[12px] font-sans pt-1">
+                    <div className="flex items-center gap-1.5"><div className="w-3.5 h-3.5 rounded bg-[#052316]" /> <span>P&I ({getDonutSplit(calcOutput.result).pi}%)</span></div>
+                    <div className="flex items-center gap-1.5"><div className="w-3.5 h-3.5 rounded bg-[#3fb364]" /> <span>FHA MIP ({getDonutSplit(calcOutput.result).mip}%)</span></div>
+                  </div>
+                </div>
 
                 <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm flex flex-col justify-between">
                   <div>
@@ -453,31 +478,6 @@ export default function FhaLoanCalculatorPage() {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm flex flex-col justify-between items-center text-center">
-                  <div className="w-full text-left">
-                    <h3 className="text-[#052316] text-[16px] font-bold pb-3 border-b border-[#e8e0d0]/40 font-sans">Monthly payment split</h3>
-                  </div>
-
-                  <div className="relative w-40 h-40 my-6">
-                    <svg viewBox="0 0 200 200" className="w-full h-full transform -rotate-90">
-                      <circle cx="100" cy="100" r="70" fill="none" stroke="#fcf9f3" strokeWidth="16" />
-                      <circle cx="100" cy="100" r="70" fill="none" stroke="#052316" strokeWidth="16"
-                        strokeDasharray={`${2 * Math.PI * 70 * (parseFloat(getDonutSplit(calcOutput.result).pi) / 100)} ${2 * Math.PI * 70}`} />
-                      <circle cx="100" cy="100" r="70" fill="none" stroke="#3fb364" strokeWidth="16"
-                        strokeDasharray={`${2 * Math.PI * 70 * (parseFloat(getDonutSplit(calcOutput.result).mip) / 100)} ${2 * Math.PI * 70}`}
-                        strokeDashoffset={`-{2 * Math.PI * 70 * (parseFloat(getDonutSplit(calcOutput.result).pi) / 100)}`} />
-                    </svg>
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <span className="text-[10px] uppercase font-bold tracking-wider text-[#888]">Monthly</span>
-                      <span className="text-[15.5px] font-bold text-[#052316]">{fmt(calcOutput.result.totalMonthlyFirstMonth)}</span>
-                    </div>
-                  </div>
-
-                  <div className="flex gap-6 text-[12px] font-sans pt-1">
-                    <div className="flex items-center gap-1.5"><div className="w-3.5 h-3.5 rounded bg-[#052316]" /> <span>P&I ({getDonutSplit(calcOutput.result).pi}%)</span></div>
-                    <div className="flex items-center gap-1.5"><div className="w-3.5 h-3.5 rounded bg-[#3fb364]" /> <span>FHA MIP ({getDonutSplit(calcOutput.result).mip}%)</span></div>
-                  </div>
-                </div>
               </div>
 
               <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 shadow-sm overflow-hidden font-sans">
