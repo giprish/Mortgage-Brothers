@@ -243,19 +243,20 @@ export default function ContactPage() {
               {/* Interactive Map Card */}
               <div className="bg-white border border-[#e8e0d0]/60 rounded-3xl overflow-hidden shadow-sm flex flex-col h-[280px]">
                 <iframe
-                  src="https://maps.google.com/maps?q=1599%20E%20Orangewood%20Ave,%20Ste%20200,%20Phoenix,%20AZ%2085020&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                  className="w-full flex-grow border-0"
-                  allowFullScreen
-                  loading="lazy"
-                  title="Office Location Map"
-                ></iframe>
+  src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE"
+  className="w-full h-full border-0"
+  loading="lazy"
+  allowFullScreen
+  referrerPolicy="no-referrer-when-downgrade"
+  title="Mortgage Brothers Office"
+/>
                 <div className="bg-[#faf7f0] px-6 py-4 border-t border-[#e8e0d0]/40 flex justify-between items-center text-[12px] font-sans">
                   <div>
                     <span className="text-[#052316] font-bold block">1599 E Orangewood Ave, Ste 200</span>
                     <span className="text-[#8a9a7a]">Phoenix, AZ 85020</span>
                   </div>
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=1599+E+Orangewood+Ave,+Ste+200,+Phoenix,+AZ+85020"
+                    href="https://www.google.com/maps/place/Mortgage+Brothers/@33.545095,-112.048227,17z/data=!4m6!3m5!1s0x872b72a8a56e5b8f:0x32ff520eb58d08d6!8m2!3d33.5450949!4d-112.0482274!16s%2Fg%2F1tfp2y0l?hl=en&entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#3fb364] font-bold hover:text-[#2d5a2d] transition-colors whitespace-nowrap ml-2"

@@ -348,8 +348,6 @@ const faqData = [
 
 export default function FAQPage() {
   const [activeCategory, setActiveCategory] = useState("General");
-  const [clickedCategory, setClickedCategory] = useState<string | null>(null);
-  const [isProgrammatic, setIsProgrammatic] = useState(false);
   const [expandedIds, setExpandedIds] = useState<Record<string, boolean>>({
     "gen-1": true, // Default expand the first general item
     "loan-1": true, // Default expand the first loan program item
@@ -363,61 +361,10 @@ export default function FAQPage() {
   
   const searchRef = useRef<HTMLDivElement>(null);
 
-  // Smooth scroll handler with offset for sticky navbar only (category bar is NOT sticky)
-  const handleScroll = (id: string, name: string) => {
+  // Tab click handler — just changes active category, no scroll
+  const handleCategoryChange = (name: string) => {
     setActiveCategory(name);
-    setClickedCategory(name);
-    setIsProgrammatic(true);
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 90; // offset just for the main navbar
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-
-      // Release lock after smooth scroll completes
-      setTimeout(() => {
-        setIsProgrammatic(false);
-      }, 1000);
-    }
   };
-
-  // Scroll Spy to update active category button as the user scrolls
-  useEffect(() => {
-    const handleScrollSpy = () => {
-      if (isProgrammatic) return; // Ignore scroll spy updates during auto-scrolls
-
-      const scrollPosition = window.scrollY + 140; // offset
-
-      // If scrolled back near the top, restore the clicked category or default to first
-      if (window.scrollY < 150) {
-        setActiveCategory(clickedCategory || "General");
-        return;
-      }
-
-      for (let i = 0; i < categories.length; i++) {
-        const cat = categories[i];
-        const el = document.getElementById(cat.targetId);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveCategory(cat.name);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScrollSpy);
-    return () => window.removeEventListener("scroll", handleScrollSpy);
-  }, [clickedCategory, isProgrammatic]);
 
   // Click outside listener to close search dropdown
   useEffect(() => {
@@ -474,12 +421,16 @@ export default function FAQPage() {
     setSearchQuery("");
     setShowDropdown(false);
 
-    // 3. Scroll to the question card element on the page
+    // 3. Set active category and scroll to the question
     setTimeout(() => {
       const element = document.getElementById(qId);
       if (element) {
-        setIsProgrammatic(true);
-        const offset = 100; // offset to clear sticky header
+        const parentSection = element.closest('section[id^="topic-"]');
+        if (parentSection) {
+          const cat = categories.find(c => c.targetId === parentSection.id);
+          if (cat) setActiveCategory(cat.name);
+        }
+        const offset = 100;
         const bodyRect = document.body.getBoundingClientRect().top;
         const elementRect = element.getBoundingClientRect().top;
         const elementPosition = elementRect - bodyRect;
@@ -489,11 +440,6 @@ export default function FAQPage() {
           top: offsetPosition,
           behavior: "smooth",
         });
-
-        // Release lock after smooth scroll completes
-        setTimeout(() => {
-          setIsProgrammatic(false);
-        }, 1000);
       }
     }, 100);
   };
@@ -703,7 +649,7 @@ export default function FAQPage() {
                 return (
                   <button
                     key={c.name}
-                    onClick={() => handleScroll(c.targetId, c.name)}
+                    onClick={() => handleCategoryChange(c.name)}
                     className={`text-[13px] font-medium px-5 py-2.5 rounded-full border transition-all duration-200 cursor-pointer ${
                       isActive
                         ? "bg-[#3fb364] border-[#3fb364] text-white shadow-md shadow-[#3fb364]/10"
@@ -720,11 +666,13 @@ export default function FAQPage() {
 
         {/* FAQ Contents Area */}
         <div>
-          {faqData.map((topic) => (
+          {faqData.map((topic) => {
+            const isVisible = topic.targetId === categories.find(c => c.name === activeCategory)?.targetId;
+            return (
             <section
               key={topic.targetId}
               id={topic.targetId}
-              className={`w-full py-16 lg:py-20 border-b border-[#e8e0d0]/40 scroll-mt-24 ${topic.bgClass}`}
+              className={`w-full py-16 lg:py-20 border-b border-[#e8e0d0]/40 scroll-mt-24 ${topic.bgClass}${!isVisible ? ' hidden' : ''}`}
             >
               <div className="max-w-4xl mx-auto px-6">
                 {/* Topic Header */}
@@ -840,7 +788,8 @@ export default function FAQPage() {
                 </div>
               </div>
             </section>
-          ))}
+            );
+          })}
         </div>
       </main>
 
