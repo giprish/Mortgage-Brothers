@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import SliderInput from "../component/SliderInput";
+import { InteractivePieChart } from "../component/InteractiveCharts";
 
 // ─── Down Payment Calculator Specification Lookup Tables ─────────────────────
 
@@ -802,10 +803,20 @@ export default function DownPaymentCalculatorPage() {
 
                 {/* Monthly payments breakdown list */}
                 <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm">
-                  <h3 className="text-[#052316] text-[16px] font-bold mb-4 pb-3 border-b border-[#e8e0d0]/40">Monthly Payment Breakdown</h3>
-                  <div className="flex flex-col gap-3">
+                  <InteractivePieChart
+                    title="Monthly Payment Breakdown"
+                    donut={true}
+                    dataItems={[
+                      { label: "Principal & Interest", value: result.monthlyPI, color: "#4CAF50" },
+                      { label: "Property Taxes", value: result.monthlyTax, color: "#9C27B0" },
+                      { label: "Home Insurance", value: result.monthlyIns, color: "#FF9800" },
+                      { label: "Mortgage Insurance (PMI/MIP)", value: result.monthlyFee, color: "#E1BEE7" },
+                      { label: "HOA Dues", value: result.monthlyHOA, color: "#2196F3" },
+                    ]}
+                  />
+                  <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-[#e8e0d0]/40">
                     <div className="flex justify-between text-[13.5px]">
-                      <span className="text-[#888]">Principal & Interest</span>
+                      <span className="text-[#888]">Principal &amp; Interest</span>
                       <span className="text-[#052316] font-bold">{fmt(result.monthlyPI)}</span>
                     </div>
                     <div className="flex justify-between text-[13.5px]">

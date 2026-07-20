@@ -4,6 +4,7 @@ import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import { InteractivePieChart } from "../component/InteractiveCharts";
 
 interface RefinanceResult {
   currentBalance: number;
@@ -453,51 +454,16 @@ export default function RefinanceCalculatorPage() {
               </div>
 
               <div className="lg:col-span-4 bg-white rounded-xl border border-[#e0e0e0] p-6 shadow-sm flex flex-col items-center justify-center text-center h-full">
-                <h3 className="text-[16px] font-semibold text-[#32353C] mb-4">
-                  Monthly Payment Comparison
-                </h3>
-
-                <div className="relative w-44 h-44 my-2 flex items-center justify-center">
-                  <svg viewBox="0 0 200 200" className="w-full h-full transform -rotate-90">
-                    <circle cx="100" cy="100" r="70" fill="none" stroke="#e0e0e0" strokeWidth="18" />
-                    <circle
-                      cx="100"
-                      cy="100"
-                      r="70"
-                      fill="none"
-                      stroke="#90A4AE"
-                      strokeWidth="18"
-                      strokeDasharray={`${(2 * Math.PI * 70 * doughnutData.curPct) / 100} ${2 * Math.PI * 70}`}
-                    />
-                    <circle
-                      cx="100"
-                      cy="100"
-                      r="70"
-                      fill="none"
-                      stroke="#4CAF50"
-                      strokeWidth="18"
-                      strokeDasharray={`${(2 * Math.PI * 70 * doughnutData.newPct) / 100} ${2 * Math.PI * 70}`}
-                      strokeDashoffset={`-${(2 * Math.PI * 70 * doughnutData.curPct) / 100}`}
-                    />
-                  </svg>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <span className="text-[11px] uppercase tracking-wider text-[#888] font-semibold">New Payment</span>
-                    <span className="text-[17px] font-bold text-[#4CAF50]">
-                      {fmtCurr(result.newMonthlyPayment)}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="flex flex-col gap-2 text-[12.5px] pt-3 w-full">
-                  <div className="flex justify-between items-center px-2 py-1 bg-[#f8f9fa] rounded">
-                    <span className="text-[#666]">Current Payment:</span>
-                    <span className="font-semibold text-[#32353C]">{fmtCurr(result.currentMonthlyPayment)}</span>
-                  </div>
-                  <div className="flex justify-between items-center px-2 py-1 bg-emerald-50 rounded">
-                    <span className="text-[#666]">New Payment:</span>
-                    <span className="font-semibold text-[#4CAF50]">{fmtCurr(result.newMonthlyPayment)}</span>
-                  </div>
-                </div>
+                <InteractivePieChart
+                  title="Monthly Payment Comparison"
+                  donut={true}
+                  centerTextTitle="New Payment"
+                  centerTextSub={fmtCurr(result.newMonthlyPayment)}
+                  dataItems={[
+                    { label: "Current Payment", value: result.currentMonthlyPayment, color: "#90A4AE" },
+                    { label: "New Refinanced Payment", value: result.newMonthlyPayment, color: "#4CAF50" },
+                  ]}
+                />
               </div>
 
             </div>

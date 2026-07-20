@@ -4,6 +4,7 @@ import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import { InteractivePieChart } from "../component/InteractiveCharts";
 
 interface ScenarioResult {
   maxPayment: number;
@@ -34,7 +35,7 @@ interface AffordabilityResult {
 }
 
 const fmtCurr = (v: number) =>
-  new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round(v));
+  new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(v);
 
 const parseFormattedNumber = (str: string): number => {
   if (!str) return 0;
@@ -601,79 +602,18 @@ export default function MortgageAffordabilityCalculatorPage() {
 
               {/* Right Column: Donut Chart */}
               <div className="lg:col-span-5 bg-white rounded-xl border border-[#e0e0e0] p-6 shadow-sm flex flex-col items-center justify-center text-center h-full">
-                <h3 className="text-[16px] font-semibold text-[#32353C] mb-4">
-                  Payment Distribution
-                </h3>
-
-                <div className="relative w-44 h-44 my-2 flex items-center justify-center">
-                  <svg viewBox="0 0 200 200" className="w-full h-full transform -rotate-90">
-                    <circle cx="100" cy="100" r="70" fill="none" stroke="#e0e0e0" strokeWidth="18" />
-                    <circle
-                      cx="100"
-                      cy="100"
-                      r="70"
-                      fill="none"
-                      stroke="#4CAF50"
-                      strokeWidth="18"
-                      strokeDasharray={`${(2 * Math.PI * 70 * pieSplit.piPct) / 100} ${2 * Math.PI * 70}`}
-                    />
-                    <circle
-                      cx="100"
-                      cy="100"
-                      r="70"
-                      fill="none"
-                      stroke="#9C27B0"
-                      strokeWidth="18"
-                      strokeDasharray={`${(2 * Math.PI * 70 * pieSplit.taxPct) / 100} ${2 * Math.PI * 70}`}
-                      strokeDashoffset={`-${(2 * Math.PI * 70 * pieSplit.piPct) / 100}`}
-                    />
-                    <circle
-                      cx="100"
-                      cy="100"
-                      r="70"
-                      fill="none"
-                      stroke="#FF9800"
-                      strokeWidth="18"
-                      strokeDasharray={`${(2 * Math.PI * 70 * pieSplit.insPct) / 100} ${2 * Math.PI * 70}`}
-                      strokeDashoffset={`-${(2 * Math.PI * 70 * (pieSplit.piPct + pieSplit.taxPct)) / 100}`}
-                    />
-                    <circle
-                      cx="100"
-                      cy="100"
-                      r="70"
-                      fill="none"
-                      stroke="#E1BEE7"
-                      strokeWidth="18"
-                      strokeDasharray={`${(2 * Math.PI * 70 * pieSplit.pmiPct) / 100} ${2 * Math.PI * 70}`}
-                      strokeDashoffset={`-${(2 * Math.PI * 70 * (pieSplit.piPct + pieSplit.taxPct + pieSplit.insPct)) / 100}`}
-                    />
-                  </svg>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <span className="text-[11px] uppercase tracking-wider text-[#888] font-semibold">Total</span>
-                    <span className="text-[16px] font-bold text-[#32353C]">
-                      {fmtCurr(result.totalMortgagePayment)}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap justify-center gap-3 text-[12px] pt-3 font-medium">
-                  <div className="flex items-center gap-1.5">
-                    <div className="w-3 h-3 rounded-full bg-[#4CAF50]" />
-                    <span>P&amp;I ({pieSplit.piPct}%)</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <div className="w-3 h-3 rounded-full bg-[#9C27B0]" />
-                    <span>Taxes ({pieSplit.taxPct}%)</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <div className="w-3 h-3 rounded-full bg-[#FF9800]" />
-                    <span>Ins ({pieSplit.insPct}%)</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <div className="w-3 h-3 rounded-full bg-[#E1BEE7]" />
-                    <span>PMI ({pieSplit.pmiPct}%)</span>
-                  </div>
-                </div>
+                <InteractivePieChart
+                  title="Payment Distribution"
+                  donut={true}
+                  centerTextTitle="Total"
+                  centerTextSub={fmtCurr(result.totalMortgagePayment)}
+                  dataItems={[
+                    { label: "Principal & Interest", value: result.monthlyPIPayment, color: "#4CAF50" },
+                    { label: "Property Tax", value: result.propertyTax, color: "#9C27B0" },
+                    { label: "Insurance", value: result.insurance, color: "#FF9800" },
+                    { label: "PMI", value: result.pmi, color: "#E1BEE7" },
+                  ]}
+                />
               </div>
 
             </div>

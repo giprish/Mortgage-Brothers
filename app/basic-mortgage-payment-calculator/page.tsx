@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import SliderInput from "../component/SliderInput";
+import { InteractivePieChart, BasicPaymentOverTimeChart } from "../component/InteractiveCharts";
 
 interface AmortizationRow {
   paymentNum: number;
@@ -389,43 +390,21 @@ export default function BasicMortgageCalculatorPage() {
 
                 <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm">
                   <h3 className="text-[#052316] text-[16px] font-bold mb-4 pb-3 border-b border-[#e8e0d0]/40 font-sans">Cost Breakdown</h3>
-                  <PieChart downAmt={result.downPaymentAmt} loanAmount={result.loanAmount} totalInterest={result.totalInterest} />
-                  <div className="flex flex-col gap-2.5 mt-5 font-sans">
-                    {[
-                      { color: "#3fb364", label: "Down Payment", value: result.downPaymentAmt },
-                      { color: "#052316", label: "Principal (Financed)", value: result.loanAmount },
-                      { color: "#b89a5a", label: "Total Interest", value: result.totalInterest },
-                    ].map((l) => (
-                      <div key={l.label} className="flex items-center justify-between text-[13px]">
-                        <div className="flex items-center gap-2">
-                          <div className="w-3 h-3 rounded-sm flex-shrink-0" style={{ background: l.color }} />
-                          <span className="text-[#888]">{l.label}</span>
-                        </div>
-                        <span className="text-[#052316] font-bold">{fmt(l.value)} <span className="text-[#a89a70] font-normal text-[11px]">({piePct(l.value)}%)</span></span>
-                      </div>
-                    ))}
-                    <div className="border-t border-[#e8e0d0]/40 pt-2.5 flex items-center justify-between text-[13.5px] font-bold">
-                      <span className="text-[#052316]">Overall Cost</span>
-                      <span className="text-[#052316]">{fmt(result.overallCost)}</span>
-                    </div>
-                  </div>
+                  <InteractivePieChart
+                    donut={true}
+                    dataItems={[
+                      { label: "Down Payment", value: result.downPaymentAmt, color: "#9C27B0" },
+                      { label: "Financed Amount", value: result.loanAmount, color: "#4CAF50" },
+                      { label: "Total Interest", value: result.totalInterest, color: "#FF9800" },
+                    ]}
+                  />
                 </div>
               </div>
 
               <div className="lg:col-span-7 flex flex-col gap-6">
                 <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm">
-                  <h3 className="text-[#052316] text-[16px] font-bold mb-2 pb-3 border-b border-[#e8e0d0]/40 font-sans">Payment Over Time</h3>
-                  <div className="flex items-center gap-5 mt-3 mb-4 font-sans">
-                    {[{ color: "#3fb364", label: "Principal" }, { color: "#b89a5a", label: "Interest" }, { color: "#052316", label: "Remaining Balance" }].map((l) => (
-                      <div key={l.label} className="flex items-center gap-1.5">
-                        <div className="w-3 h-3 rounded-sm" style={{ background: l.color }} />
-                        <span className="text-[11.5px] text-[#888]">{l.label}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="overflow-x-auto">
-                    <PaymentLineChart schedule={result.schedule} monthlyPayment={result.monthlyPayment} />
-                  </div>
+                  <h3 className="text-[#052316] text-[18px] md:text-[20px] font-bold mb-4 pb-3 border-b border-[#f0ece1]">Payment Over Time</h3>
+                  <BasicPaymentOverTimeChart schedule={result.schedule} />
                 </div>
 
                 <div className="bg-[#faf7f0] rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm">

@@ -4,6 +4,7 @@ import React, { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import { InteractivePieChart, InteractiveAmortizationChart } from "../component/InteractiveCharts";
 
 interface AmortizationRow {
   month: number;
@@ -512,51 +513,16 @@ export default function ExtraPaymentMortgageCalculator() {
               </div>
 
               <div className="bg-[#f8f9fa] rounded-xl border border-[#e0e0e0] p-6 flex flex-col items-center justify-center h-full text-center">
-                <h3 className="text-[16px] font-semibold text-[#32353C] mb-4">
-                  Payment Distribution
-                </h3>
-
-                <div className="relative w-44 h-44 my-2 flex items-center justify-center">
-                  <svg viewBox="0 0 200 200" className="w-full h-full transform -rotate-90">
-                    <circle cx="100" cy="100" r="70" fill="none" stroke="#e0e0e0" strokeWidth="18" />
-                    <circle
-                      cx="100"
-                      cy="100"
-                      r="70"
-                      fill="none"
-                      stroke="#4CAF50"
-                      strokeWidth="18"
-                      strokeDasharray={`${(2 * Math.PI * 70 * donutSplit.regularPct) / 100} ${2 * Math.PI * 70}`}
-                    />
-                    <circle
-                      cx="100"
-                      cy="100"
-                      r="70"
-                      fill="none"
-                      stroke="#FF9800"
-                      strokeWidth="18"
-                      strokeDasharray={`${(2 * Math.PI * 70 * donutSplit.extraPct) / 100} ${2 * Math.PI * 70}`}
-                      strokeDashoffset={`-${(2 * Math.PI * 70 * donutSplit.regularPct) / 100}`}
-                    />
-                  </svg>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <span className="text-[11px] uppercase tracking-wider text-[#888] font-semibold">Monthly Total</span>
-                    <span className="text-[16px] font-bold text-[#32353C]">
-                      {calcResult ? fmtCurr(calcResult.standardPayment + addMonthly) : "$0"}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="flex gap-4 text-[12.5px] pt-3 font-medium">
-                  <div className="flex items-center gap-1.5">
-                    <div className="w-3 h-3 rounded-full bg-[#4CAF50]" />
-                    <span>Regular Payment ({donutSplit.regularPct}%)</span>
-                  </div>
-                  <div className="flex items-center gap-1.5">
-                    <div className="w-3 h-3 rounded-full bg-[#FF9800]" />
-                    <span>Extra Payment ({donutSplit.extraPct}%)</span>
-                  </div>
-                </div>
+                <InteractivePieChart
+                  title="Payment Distribution"
+                  donut={true}
+                  centerTextTitle="Monthly Total"
+                  centerTextSub={calcResult ? fmtCurr(calcResult.standardPayment + addMonthly) : "$0"}
+                  dataItems={[
+                    { label: "Regular Payment", value: calcResult ? calcResult.standardPayment : 0, color: "#4CAF50" },
+                    { label: "Extra Payment", value: addMonthly, color: "#FF9800" },
+                  ]}
+                />
               </div>
 
             </div>
@@ -668,6 +634,18 @@ export default function ExtraPaymentMortgageCalculator() {
                     </div>
                   ))}
                 </div>
+              </div>
+
+              <div className="mt-12">
+                <InteractiveAmortizationChart
+                  title="Accelerated Amortization & Balance Progression Over Time"
+                  schedule={calcResult.schedule.map((row) => ({
+                    month: row.month,
+                    principalPaid: row.principalPaid,
+                    interestPaid: row.interestPaid,
+                    remainingBalance: row.remainingBalance,
+                  }))}
+                />
               </div>
 
               <div className="mt-12">

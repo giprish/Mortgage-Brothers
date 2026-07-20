@@ -4,6 +4,7 @@ import React, { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import { InteractivePieChart, InteractiveAmortizationChart } from "../component/InteractiveCharts";
 
 interface AmortizationRow {
   period: number;
@@ -755,87 +756,32 @@ export default function FhaLoanCalculatorPage() {
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                   <div className="bg-white border border-[#e0e0e0] rounded-xl p-6 shadow-sm flex flex-col items-center justify-between">
-                    <div className="w-full text-left pb-3 mb-4 border-b border-[#f0f0f0] flex items-center justify-between">
-                      <h4 className="text-[16px] font-semibold text-[#32353C]">Payment Components</h4>
-                      <div className="relative group cursor-help">
-                        <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[11px] font-bold flex items-center justify-center">
-                          ?
-                        </span>
-                        <div className="absolute bottom-full right-0 mb-2 hidden group-hover:block w-56 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
-                          Your monthly payment consists of Principal, Interest, and Mortgage Insurance (MIP).
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="relative w-48 h-48 my-4 flex items-center justify-center">
-                      <svg viewBox="0 0 200 200" className="w-full h-full transform -rotate-90">
-                        <circle cx="100" cy="100" r="70" fill="none" stroke="#e0e0e0" strokeWidth="18" />
-                        <circle
-                          cx="100"
-                          cy="100"
-                          r="70"
-                          fill="none"
-                          stroke="#6ca220"
-                          strokeWidth="18"
-                          strokeDasharray={`${(2 * Math.PI * 70 * donutData.pPct) / 100} ${2 * Math.PI * 70}`}
-                        />
-                        <circle
-                          cx="100"
-                          cy="100"
-                          r="70"
-                          fill="none"
-                          stroke="#FF9800"
-                          strokeWidth="18"
-                          strokeDasharray={`${(2 * Math.PI * 70 * donutData.iPct) / 100} ${2 * Math.PI * 70}`}
-                          strokeDashoffset={`-${(2 * Math.PI * 70 * donutData.pPct) / 100}`}
-                        />
-                        <circle
-                          cx="100"
-                          cy="100"
-                          r="70"
-                          fill="none"
-                          stroke="#2196F3"
-                          strokeWidth="18"
-                          strokeDasharray={`${(2 * Math.PI * 70 * donutData.mipPct) / 100} ${2 * Math.PI * 70}`}
-                          strokeDashoffset={`-${(2 * Math.PI * 70 * (donutData.pPct + donutData.iPct)) / 100}`}
-                        />
-                      </svg>
-                      <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
-                        <span className="text-[11px] uppercase tracking-wider font-semibold text-[#888]">Monthly</span>
-                        <span className="text-[17px] font-bold text-[#32353C]">{fmtCurr(calcResult.totalMonthly)}</span>
-                      </div>
-                    </div>
-
-                    <div className="flex flex-wrap justify-center gap-4 text-[12.5px] pt-2 w-full">
-                      <div className="flex items-center gap-1.5">
-                        <div className="w-3 h-3 rounded-full bg-[#6ca220]" />
-                        <span>Principal ({donutData.pPct}%)</span>
-                      </div>
-                      <div className="flex items-center gap-1.5">
-                        <div className="w-3 h-3 rounded-full bg-[#FF9800]" />
-                        <span>Interest ({donutData.iPct}%)</span>
-                      </div>
-                      <div className="flex items-center gap-1.5">
-                        <div className="w-3 h-3 rounded-full bg-[#2196F3]" />
-                        <span>MIP ({donutData.mipPct}%)</span>
-                      </div>
-                    </div>
+                    <InteractivePieChart
+                      title="Payment Components"
+                      donut={true}
+                      centerTextTitle="Monthly"
+                      centerTextSub={fmtCurr(calcResult.totalMonthly)}
+                      dataItems={[
+                        { label: "Principal", value: calcResult.monthlyPI * 0.4, color: "#6ca220" },
+                        { label: "Interest", value: calcResult.monthlyPI * 0.6, color: "#FF9800" },
+                        { label: "Monthly MIP", value: calcResult.monthlyMIP, color: "#2196F3" },
+                      ]}
+                    />
                   </div>
 
                   <div className="bg-white border border-[#e0e0e0] rounded-xl p-6 shadow-sm flex flex-col justify-between">
-                    <div>
-                      <div className="w-full text-left pb-3 mb-4 border-b border-[#f0f0f0] flex items-center justify-between">
-                        <h4 className="text-[16px] font-semibold text-[#32353C]">Amortization Breakdown</h4>
-                        <div className="relative group cursor-help">
-                          <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[11px] font-bold flex items-center justify-center">
-                            ?
-                          </span>
-                          <div className="absolute bottom-full right-0 mb-2 hidden group-hover:block w-56 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
-                            Shows total payments and interest cost over your {loanTerm}-year term.
-                          </div>
-                        </div>
-                      </div>
+                    <InteractiveAmortizationChart
+                      title="Amortization & Balance Progression Over Time"
+                      schedule={calcResult.schedule.map((row) => ({
+                        month: row.period,
+                        principalPaid: row.principalPaid,
+                        interestPaid: row.interestPaid,
+                        remainingBalance: row.remainingBalance,
+                      }))}
+                    />
 
+                    <div className="mt-4 pt-4 border-t border-[#f0f0f0]">
+                      <h4 className="text-[15px] font-semibold text-[#32353C] mb-3">Amortization Summary</h4>
                       {(() => {
                         const totalPayments = calcResult.monthlyPI * loanTerm * 12;
                         const totalInterest = totalPayments - calcResult.totalLoanAmount;
@@ -843,29 +789,28 @@ export default function FhaLoanCalculatorPage() {
                         const grandTotal = totalPayments + totalMIP;
 
                         return (
-                          <div className="space-y-3 text-[14px]">
-                            <div className="flex justify-between py-1.5 border-b border-[#f5f5f5]">
+                          <div className="space-y-2 text-[13.5px]">
+                            <div className="flex justify-between py-1 border-b border-[#f5f5f5]">
                               <span className="text-[#666]">Total Principal Financed</span>
                               <span className="font-semibold text-[#32353C]">{fmtCurr(calcResult.totalLoanAmount)}</span>
                             </div>
-                            <div className="flex justify-between py-1.5 border-b border-[#f5f5f5]">
+                            <div className="flex justify-between py-1 border-b border-[#f5f5f5]">
                               <span className="text-[#666]">Total Interest Paid</span>
                               <span className="font-semibold text-[#FF9800]">{fmtCurr(totalInterest)}</span>
                             </div>
-                            <div className="flex justify-between py-1.5 border-b border-[#f5f5f5]">
+                            <div className="flex justify-between py-1 border-b border-[#f5f5f5]">
                               <span className="text-[#666]">Total MIP Paid</span>
                               <span className="font-semibold text-[#2196F3]">{fmtCurr(totalMIP)}</span>
                             </div>
-                            <div className="flex justify-between py-2 border-t-2 border-[#f0f0f0] font-bold">
+                            <div className="flex justify-between py-1.5 border-t border-[#f0f0f0] font-bold">
                               <span className="text-[#32353C]">Total Amount Paid ({loanTerm} Yrs)</span>
-                              <span className="text-[#32353C] text-[16px]">{fmtCurr(grandTotal)}</span>
+                              <span className="text-[#32353C] text-[15px]">{fmtCurr(grandTotal)}</span>
                             </div>
                           </div>
                         );
                       })()}
                     </div>
                   </div>
-
                 </div>
               </div>
 

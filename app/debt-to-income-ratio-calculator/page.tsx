@@ -4,6 +4,7 @@ import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import { InteractivePieChart } from "../component/InteractiveCharts";
 
 interface DtiResult {
   monthlyGrossIncome: number;
@@ -566,47 +567,15 @@ export default function DtiCalculatorPage() {
             </div>
 
             <div className="bg-[#f8f9fa] border border-[#e0e0e0] rounded-xl p-6 mb-10">
-              <h4 className="text-[15px] font-semibold text-[#32353C] mb-4">
-                Monthly Income Allocation
-              </h4>
-              <div className="w-full h-6 bg-[#e0e0e0] rounded-full overflow-hidden flex">
-                <div
-                  style={{ width: `${chartData.housingPct}%` }}
-                  className="bg-[#4CAF50] h-full flex items-center justify-center text-[10px] text-white font-bold"
-                  title={`Housing: ${chartData.housingPct}%`}
-                >
-                  {chartData.housingPct > 10 && `${chartData.housingPct}%`}
-                </div>
-                <div
-                  style={{ width: `${chartData.debtPct}%` }}
-                  className="bg-[#FF9800] h-full flex items-center justify-center text-[10px] text-white font-bold"
-                  title={`Other Debts: ${chartData.debtPct}%`}
-                >
-                  {chartData.debtPct > 8 && `${chartData.debtPct}%`}
-                </div>
-                <div
-                  style={{ width: `${chartData.remainPct}%` }}
-                  className="bg-[#90A4AE] h-full flex items-center justify-center text-[10px] text-white font-bold"
-                  title={`Remaining: ${chartData.remainPct}%`}
-                >
-                  {chartData.remainPct > 10 && `${chartData.remainPct}%`}
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-6 text-[12.5px] mt-4 font-medium">
-                <div className="flex items-center gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-[#4CAF50]" />
-                  <span>Housing Expenses ({chartData.housingPct}%)</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-[#FF9800]" />
-                  <span>Other Debts ({chartData.debtPct}%)</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-[#90A4AE]" />
-                  <span>Remaining Income ({chartData.remainPct}%)</span>
-                </div>
-              </div>
+              <InteractivePieChart
+                title="Monthly Income Allocation"
+                donut={true}
+                dataItems={[
+                  { label: "Housing Expenses", value: result.monthlyHousingExpenses, color: "#4CAF50" },
+                  { label: "Other Monthly Debts", value: result.otherMonthlyDebts, color: "#FF9800" },
+                  { label: "Remaining Income", value: Math.max(0, result.monthlyGrossIncome - result.monthlyHousingExpenses - result.otherMonthlyDebts), color: "#90A4AE" },
+                ]}
+              />
             </div>
 
             <div>

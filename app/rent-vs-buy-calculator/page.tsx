@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import SliderInput from "../component/SliderInput";
+import { InteractiveLineChart } from "../component/InteractiveCharts";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -559,7 +560,7 @@ export default function RentVsBuyCalculatorPage() {
                 <div>
                   <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Annual Rent Increase</label>
                   <div className="relative">
-                    <input type="number" value={rentIncrease} onChange={(e) => setRentIncrease(parseFloat(e.target.value) || 0)}
+                    <input type="number" step="any" inputMode="decimal" value={rentIncrease} onChange={(e) => setRentIncrease(parseFloat(e.target.value) || 0)}
                       className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-3 pr-8 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                     <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">%</span>
                   </div>
@@ -568,7 +569,7 @@ export default function RentVsBuyCalculatorPage() {
                   <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Renter&apos;s Insurance ($/yr)</label>
                   <div className="relative">
                     <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                    <input type="number" value={rentersIns} onChange={(e) => setRentersIns(parseFloat(e.target.value) || 0)}
+                    <input type="number" step="any" inputMode="decimal" value={rentersIns} onChange={(e) => setRentersIns(parseFloat(e.target.value) || 0)}
                       className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                   </div>
                 </div>
@@ -576,7 +577,7 @@ export default function RentVsBuyCalculatorPage() {
                   <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Security Deposit</label>
                   <div className="relative">
                     <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                    <input type="number" value={securityDeposit} onChange={(e) => setSecurityDeposit(parseFloat(e.target.value) || 0)}
+                    <input type="number" step="any" inputMode="decimal" value={securityDeposit} onChange={(e) => setSecurityDeposit(parseFloat(e.target.value) || 0)}
                       className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                   </div>
                 </div>
@@ -589,7 +590,7 @@ export default function RentVsBuyCalculatorPage() {
                 <div>
                   <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Investment Return Rate</label>
                   <div className="relative">
-                    <input type="number" value={returnRate} onChange={(e) => setReturnRate(parseFloat(e.target.value) || 0)}
+                    <input type="number" step="any" inputMode="decimal" value={returnRate} onChange={(e) => setReturnRate(parseFloat(e.target.value) || 0)}
                       className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-3 pr-8 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                     <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">%</span>
                   </div>
@@ -597,14 +598,14 @@ export default function RentVsBuyCalculatorPage() {
                 <div>
                   <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Federal Tax Rate</label>
                   <div className="relative">
-                    <input type="number" value={taxRate} onChange={(e) => setTaxRate(parseFloat(e.target.value) || 0)}
+                    <input type="number" step="any" inputMode="decimal" value={taxRate} onChange={(e) => setTaxRate(parseFloat(e.target.value) || 0)}
                       className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-3 pr-8 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                     <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">%</span>
                   </div>
                 </div>
                 <div>
                   <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Comparison Timeframe</label>
-                  <input type="number" value={comparisonPeriod} onChange={(e) => setComparisonPeriod(parseFloat(e.target.value) || 30)}
+                  <input type="number" step="any" inputMode="decimal" value={comparisonPeriod} onChange={(e) => setComparisonPeriod(parseFloat(e.target.value) || 30)}
                     className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 px-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                 </div>
               </div>
@@ -619,7 +620,7 @@ export default function RentVsBuyCalculatorPage() {
                   <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Home Price</label>
                   <div className="relative">
                     <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                    <input type="number" value={homePrice} onChange={(e) => handleHomePriceChange(parseFloat(e.target.value) || 0)}
+                    <input type="number" step="any" inputMode="decimal" value={homePrice} onChange={(e) => handleHomePriceChange(parseFloat(e.target.value) || 0)}
                       className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                   </div>
                 </div>
@@ -635,7 +636,7 @@ export default function RentVsBuyCalculatorPage() {
                 {loanProgram !== "va" && (
                   <div>
                     <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Credit Score</label>
-                    <input type="number" value={creditScore} onChange={(e) => setCreditScore(parseFloat(e.target.value) || 740)}
+                    <input type="number" step="any" inputMode="decimal" value={creditScore} onChange={(e) => setCreditScore(parseFloat(e.target.value) || 740)}
                       className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
                     <p className="text-[11px] text-[#888] mt-1">Used to estimate {loanProgram === "fha" ? "MIP" : "PMI"} rate.</p>
                   </div>
@@ -658,14 +659,14 @@ export default function RentVsBuyCalculatorPage() {
                     <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Down Payment ($)</label>
                     <div className="relative">
                       <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={downPaymentVal} onChange={(e) => handleDpAmtChange(parseFloat(e.target.value) || 0)}
+                      <input type="number" step="any" inputMode="decimal" value={downPaymentVal} onChange={(e) => handleDpAmtChange(parseFloat(e.target.value) || 0)}
                         className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                     </div>
                   </div>
                   <div>
                     <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Down Payment (%)</label>
                     <div className="relative">
-                      <input type="number" value={downPaymentPct} onChange={(e) => handleDpPctChange(parseFloat(e.target.value) || 0)}
+                      <input type="number" step="any" inputMode="decimal" value={downPaymentPct} onChange={(e) => handleDpPctChange(parseFloat(e.target.value) || 0)}
                         className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-3 pr-8 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                       <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">%</span>
                     </div>
@@ -676,14 +677,14 @@ export default function RentVsBuyCalculatorPage() {
                     <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Closing Costs</label>
                     <div className="relative">
                       <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={closingCosts} onChange={(e) => handleClosingCostsChange(parseFloat(e.target.value) || 0)}
+                      <input type="number" step="any" inputMode="decimal" value={closingCosts} onChange={(e) => handleClosingCostsChange(parseFloat(e.target.value) || 0)}
                         className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                     </div>
                   </div>
                   <div>
                     <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Interest Rate</label>
                     <div className="relative">
-                      <input type="number" value={interestRate} onChange={(e) => setInterestRate(parseFloat(e.target.value) || 0)}
+                      <input type="number" step="any" inputMode="decimal" value={interestRate} onChange={(e) => setInterestRate(parseFloat(e.target.value) || 0)}
                         className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-3 pr-8 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                       <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">%</span>
                     </div>
@@ -708,14 +709,14 @@ export default function RentVsBuyCalculatorPage() {
                     <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Annual Taxes</label>
                     <div className="relative">
                       <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={taxes} onChange={(e) => handleTaxesChange(parseFloat(e.target.value) || 0)}
+                      <input type="number" step="any" inputMode="decimal" value={taxes} onChange={(e) => handleTaxesChange(parseFloat(e.target.value) || 0)}
                         className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                     </div>
                   </div>
                   <div>
                     <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Home Appreciation</label>
                     <div className="relative">
-                      <input type="number" value={appreciation} onChange={(e) => setAppreciation(parseFloat(e.target.value) || 0)}
+                      <input type="number" step="any" inputMode="decimal" value={appreciation} onChange={(e) => setAppreciation(parseFloat(e.target.value) || 0)}
                         className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-3 pr-8 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                       <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">%</span>
                     </div>
@@ -820,12 +821,29 @@ export default function RentVsBuyCalculatorPage() {
               </div>
             </div>
 
-            <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm">
-              <h3 className="text-[#052316] text-[16px] font-bold mb-2 pb-3 border-b border-[#e8e0d0]/40 font-sans">Cumulative Cost Comparison Over Time</h3>
-              <div className="overflow-x-auto">
-                <CostComparisonChart series={result.yearlySeries} breakEven={result.breakEvenYear} />
-              </div>
-            </div>
+            <InteractiveLineChart
+              title="Cumulative Cost & Net Worth Comparison Over Time"
+              xTitle="Years"
+              yTitle="Cumulative Cost ($)"
+              labels={result.yearlySeries.map((d) => `Year ${d.year}`)}
+              series={[
+                {
+                  label: "Cumulative Renting Cost",
+                  data: result.yearlySeries.map((d) => d.cumulativeRentingCost),
+                  color: "#e11d48",
+                },
+                {
+                  label: "Cumulative Buying Cost",
+                  data: result.yearlySeries.map((d) => d.cumulativeBuyingCost),
+                  color: "#10b981",
+                },
+                {
+                  label: "Home Equity Built",
+                  data: result.yearlySeries.map((d) => d.equity),
+                  color: "#3b82f6",
+                },
+              ]}
+            />
 
             <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm font-sans text-center">
               <h3 className="text-[#052316] text-[16px] font-bold mb-4 pb-3 border-b border-[#e8e0d0]/40 font-sans">Long-term Equity & Net Benefit</h3>

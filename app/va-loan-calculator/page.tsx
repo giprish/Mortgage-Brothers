@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import SliderInput from "../component/SliderInput";
+import { InteractivePieChart, InteractiveAmortizationChart } from "../component/InteractiveCharts";
 
 interface AmortizationRow {
   month: number;
@@ -403,29 +404,14 @@ export default function VaLoanCalculatorPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
             <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm flex flex-col justify-between items-center text-center">
-              <div className="w-full text-left">
-                <h3 className="text-[#052316] text-[16px] font-bold pb-3 border-b border-[#e8e0d0]/40 font-sans">Payment Allocation (Month 1)</h3>
-              </div>
-
-              <div className="relative w-40 h-40 my-6">
-                <svg viewBox="0 0 200 200" className="w-full h-full transform -rotate-90">
-                  <circle cx="100" cy="100" r="70" fill="none" stroke="#fcf9f3" strokeWidth="16" />
-                  <circle cx="100" cy="100" r="70" fill="none" stroke="#3fb364" strokeWidth="16"
-                    strokeDasharray={`${2 * Math.PI * 70 * (parseFloat(getDonutSplit(result).p) / 100)} ${2 * Math.PI * 70}`} />
-                  <circle cx="100" cy="100" r="70" fill="none" stroke="#052316" strokeWidth="16"
-                    strokeDasharray={`${2 * Math.PI * 70 * (parseFloat(getDonutSplit(result).i) / 100)} ${2 * Math.PI * 70}`}
-                    strokeDashoffset={`-${2 * Math.PI * 70 * (parseFloat(getDonutSplit(result).p) / 100)}`} />
-                </svg>
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-[#888]">Monthly P&I</span>
-                  <span className="text-[15.5px] font-bold text-[#052316]">{fmt(result.monthlyPI)}</span>
-                </div>
-              </div>
-
-              <div className="flex gap-6 text-[12px] font-sans pt-1">
-                <div className="flex items-center gap-1.5"><div className="w-3.5 h-3.5 rounded bg-[#3fb364]" /> <span>Principal ({getDonutSplit(result).p}%)</span></div>
-                <div className="flex items-center gap-1.5"><div className="w-3.5 h-3.5 rounded bg-[#052316]" /> <span>Interest ({getDonutSplit(result).i}%)</span></div>
-              </div>
+              <InteractivePieChart
+                title="Payment Allocation (Month 1)"
+                donut={true}
+                dataItems={[
+                  { label: "Principal", value: result.schedule[0]?.principalPaid || 0, color: "#3fb364" },
+                  { label: "Interest", value: result.schedule[0]?.interestPaid || 0, color: "#052316" },
+                ]}
+              />
             </div>
 
             <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm flex flex-col justify-between">
@@ -490,6 +476,16 @@ export default function VaLoanCalculatorPage() {
               </p>
             </div>
           </div>
+
+          <InteractiveAmortizationChart
+            title="VA Amortization & Remaining Balance Over Time"
+            schedule={result.schedule.map((row) => ({
+              month: row.month,
+              principalPaid: row.principalPaid,
+              interestPaid: row.interestPaid,
+              remainingBalance: row.remainingBalance,
+            }))}
+          />
 
           <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 shadow-sm overflow-hidden font-sans">
             <div className="px-7 py-5 border-b border-[#e8e0d0]/40 flex justify-between items-center">

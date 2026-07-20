@@ -1,32 +1,67 @@
 "use client";
 
-import React, { useCallback } from "react";
+import React, { useState, useEffect } from "react";
 
 interface SliderInputProps {
-  label: string;
+  label?: string;
   value: number;
-  min: number;
-  max: number;
-  step: number;
+  min?: number;
+  max?: number;
+  step?: number;
   prefix?: string;
   suffix?: string;
   onChange: (val: number) => void;
   formatValue?: (val: number) => string;
 }
 
-export default function SliderInput({ label, value, min, max, step, prefix, suffix, onChange }: SliderInputProps) {
-  const handleInput = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const raw = e.target.value.replace(/[^0-9.]/g, "");
-    const num = parseFloat(raw);
-    if (raw === "" || raw === "0" || raw === "0.") {
-      if (raw.endsWith(".")) return;
+export default function SliderInput({ label, value, prefix, suffix, onChange }: SliderInputProps) {
+  // Local string state to allow seamless typing of decimal points (e.g. "6.", "6.5", "0.75")
+  const [localStr, setLocalStr] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (localStr !== null) {
+      const parsed = parseFloat(localStr);
+      if (!isNaN(parsed) && parsed === value) {
+        return;
+      }
+    }
+    setLocalStr(null);
+  }, [value]);
+
+  const displayVal =
+    localStr !== null
+      ? localStr
+      : value !== undefined && value !== null
+      ? suffix === "%"
+        ? value.toString()
+        : value.toLocaleString("en-US")
+      : "";
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let raw = e.target.value.replace(/[^0-9.]/g, "");
+
+    // Allow only one decimal point
+    const parts = raw.split(".");
+    if (parts.length > 2) {
+      raw = parts[0] + "." + parts.slice(1).join("");
+    }
+
+    setLocalStr(raw);
+
+    if (raw === "" || raw === ".") {
       onChange(0);
       return;
     }
+
+    const num = parseFloat(raw);
     if (!isNaN(num)) {
       onChange(num);
     }
-  }, [onChange]);
+  };
+
+  const handleBlur = () => {
+    setLocalStr(null);
+  };
 
   return (
     <div>
@@ -44,8 +79,9 @@ export default function SliderInput({ label, value, min, max, step, prefix, suff
         <input
           type="text"
           inputMode="decimal"
-          value={value !== undefined && value !== null ? value.toLocaleString("en-US") : ""}
-          onChange={handleInput}
+          value={displayVal}
+          onChange={handleInputChange}
+          onBlur={handleBlur}
           className={`w-full h-[45px] bg-white border border-[#e0e0e0] rounded-md ${
             prefix ? "pl-8" : "pl-3.5"
           } ${suffix ? "pr-8" : "pr-3.5"} text-[15px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50]`}

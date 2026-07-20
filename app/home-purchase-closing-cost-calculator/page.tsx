@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import SliderInput from "../component/SliderInput";
+import { InteractivePieChart } from "../component/InteractiveCharts";
 
 function getTitleEscrowFee(homePrice: number): number {
   if (homePrice <= 200000) return 450;
@@ -323,32 +324,15 @@ export default function ClosingCostCalculatorPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
             
             <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm flex flex-col justify-between items-center text-center">
-              <div className="w-full text-left">
-                <h3 className="text-[#052316] text-[16px] font-bold pb-3 border-b border-[#e8e0d0]/40 font-sans">Cost Component Breakdown</h3>
-              </div>
-
-              <div className="relative w-40 h-40 my-6">
-                <svg viewBox="0 0 200 200" className="w-full h-full transform -rotate-90">
-                  <circle cx="100" cy="100" r="70" fill="none" stroke="#fcf9f3" strokeWidth="16" />
-                  {(() => {
-                    let currentOffset = 0;
-                    return getChartSegments(result).map((seg) => {
-                      const pct = (seg.val / result.totalClosingCosts) * 100;
-                      const dasharray = `${2 * Math.PI * 70 * (pct / 100)} ${2 * Math.PI * 70}`;
-                      const offset = `-${2 * Math.PI * 70 * (currentOffset / 100)}`;
-                      currentOffset += pct;
-                      return (
-                        <circle key={seg.name} cx="100" cy="100" r="70" fill="none" stroke={seg.color} strokeWidth="16"
-                          strokeDasharray={dasharray} strokeDashoffset={offset} />
-                      );
-                    });
-                  })()}
-                </svg>
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-[#888]">Total</span>
-                  <span className="text-[15.5px] font-bold text-[#052316]">{fmt(result.totalClosingCosts)}</span>
-                </div>
-              </div>
+              <InteractivePieChart
+                title="Cost Component Breakdown"
+                donut={true}
+                dataItems={getChartSegments(result).map((seg) => ({
+                  label: seg.name,
+                  value: seg.val,
+                  color: seg.color,
+                }))}
+              />
 
               <div className="grid grid-cols-2 gap-3 text-[11px] font-sans pt-1 text-left w-full max-w-sm mx-auto">
                 {getChartSegments(result).map((seg) => (
