@@ -5,7 +5,7 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import SliderInput from "../component/SliderInput";
-import { InteractivePieChart, InteractiveAmortizationChart } from "../component/InteractiveCharts";
+import { InteractivePieChart, BasicPaymentOverTimeChart } from "../component/InteractiveCharts";
 
 interface AmortizationRow {
   month: number;
@@ -38,7 +38,7 @@ const SERVICE_ERA_MINIMUMS: Record<string, { label: string; minMonths: number }>
 };
 
 const fmt = (v: number) =>
-  new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round(v));
+  new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(v);
 
 function getFundingFeeRate(
   status: string,
@@ -477,15 +477,19 @@ export default function VaLoanCalculatorPage() {
             </div>
           </div>
 
-          <InteractiveAmortizationChart
-            title="VA Amortization & Remaining Balance Over Time"
-            schedule={result.schedule.map((row) => ({
-              month: row.month,
-              principalPaid: row.principalPaid,
-              interestPaid: row.interestPaid,
-              remainingBalance: row.remainingBalance,
-            }))}
-          />
+          <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm">
+            <h3 className="text-[#052316] text-[18px] md:text-[20px] font-bold mb-4 pb-3 border-b border-[#f0ece1]">
+              Payment Over Time
+            </h3>
+            <BasicPaymentOverTimeChart
+              schedule={result.schedule.map((row) => ({
+                paymentNum: row.month,
+                principal: row.principalPaid,
+                interest: row.interestPaid,
+                endBalance: row.remainingBalance,
+              }))}
+            />
+          </div>
 
           <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 shadow-sm overflow-hidden font-sans">
             <div className="px-7 py-5 border-b border-[#e8e0d0]/40 flex justify-between items-center">

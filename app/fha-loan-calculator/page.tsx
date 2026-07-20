@@ -4,7 +4,7 @@ import React, { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
-import { InteractivePieChart, InteractiveAmortizationChart } from "../component/InteractiveCharts";
+import { InteractivePieChart, BasicPaymentOverTimeChart } from "../component/InteractiveCharts";
 
 interface AmortizationRow {
   period: number;
@@ -86,9 +86,9 @@ const fmtCurr = (v: number) =>
   new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0
-  }).format(Math.round(v));
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  }).format(v);
 
 const parseFormattedNumber = (str: string): number => {
   if (!str) return 0;
@@ -115,7 +115,6 @@ export default function FhaLoanCalculatorPage() {
   const [loanTerm, setLoanTerm] = useState(30);
 
   const [, setPropertyConfirmed] = useState(true);
-  const [hasCalculated, setHasCalculated] = useState(true);
   const [propertyNotification, setPropertyNotification] = useState("");
   const [loanNotification, setLoanNotification] = useState("");
   const [dpWarning, setDpWarning] = useState("");
@@ -196,19 +195,6 @@ export default function FhaLoanCalculatorPage() {
     }
   };
 
-  const handleCalculateFhaLoan = () => {
-    if (!homePrice || homePrice <= 0) {
-      setLoanNotification("Please enter a valid Home Price to calculate.");
-      return;
-    }
-    setLoanNotification("");
-    setHasCalculated(true);
-
-    const resultsEl = document.getElementById("resultsSection");
-    if (resultsEl) {
-      resultsEl.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   const calcResult = useMemo<FhaCalcResult | null>(() => {
     const hp = homePrice;
@@ -360,7 +346,7 @@ export default function FhaLoanCalculatorPage() {
       <Navbar />
 
       <main className="flex-grow pb-16">
-        <section className="w-full bg-[#052316] text-white py-14 lg:py-16 text-center relative overflow-hidden">
+        <section className="w-full bg-[#052316] text-white pt-20 lg:pt-24 pb-16 lg:pb-20 text-center relative overflow-hidden">
           <div className="max-w-4xl mx-auto px-6 relative z-10">
             <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-2 font-sans">
               ARIZONA MORTGAGE TOOLS
@@ -640,12 +626,6 @@ export default function FhaLoanCalculatorPage() {
                       {loanNotification}
                     </div>
                   )}
-                  <button
-                    onClick={handleCalculateFhaLoan}
-                    className="w-full h-[45px] bg-[#4CAF50] hover:bg-[#45a049] text-white font-medium text-[16px] rounded-md transition-all duration-200 cursor-pointer shadow-sm active:translate-y-0.5"
-                  >
-                    Calculate FHA Loan
-                  </button>
                 </div>
               </div>
 
@@ -654,7 +634,7 @@ export default function FhaLoanCalculatorPage() {
           </div>
         </div>
 
-        {hasCalculated && calcResult && (
+        {calcResult && (
           <section id="resultsSection" className="max-w-6xl mx-auto px-4 lg:px-8 mt-10 space-y-8 animate-fadeIn">
             <div className="bg-white rounded-2xl border border-[#e0e0e0] shadow-sm p-6 lg:p-10">
               
@@ -770,13 +750,13 @@ export default function FhaLoanCalculatorPage() {
                   </div>
 
                   <div className="bg-white border border-[#e0e0e0] rounded-xl p-6 shadow-sm flex flex-col justify-between">
-                    <InteractiveAmortizationChart
-                      title="Amortization & Balance Progression Over Time"
+                    <h4 className="text-[17px] font-bold text-[#32353C] mb-4 text-center">Payment Over Time</h4>
+                    <BasicPaymentOverTimeChart
                       schedule={calcResult.schedule.map((row) => ({
-                        month: row.period,
-                        principalPaid: row.principalPaid,
-                        interestPaid: row.interestPaid,
-                        remainingBalance: row.remainingBalance,
+                        paymentNum: row.period,
+                        principal: row.principalPaid,
+                        interest: row.interestPaid,
+                        endBalance: row.remainingBalance,
                       }))}
                     />
 

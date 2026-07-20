@@ -76,8 +76,8 @@ interface ClosingCostResult {
   insuranceFee: number;
   originationFee: number;
   appraisalFee: number;
-  creditReportFee: number;
   recordingFee: number;
+  locationAmt: number;
   totalClosingCosts: number;
 
   govFeeLabel: string;
@@ -88,21 +88,59 @@ interface ClosingCostResult {
 const fmt = (v: number) =>
   new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round(v));
 
+const LOCATION_RATES: Record<string, number> = {
+  Phoenix: 0.0015,
+  Tucson: 0.0010,
+  Mesa: 0.0010,
+  Chandler: 0.0010,
+  Gilbert: 0.0005,
+  Glendale: 0.0010,
+  Scottsdale: 0.0020,
+  Peoria: 0.0005,
+  Tempe: 0.0010,
+  Surprise: 0.0005,
+  Goodyear: 0.0005,
+  Buckeye: 0.0005,
+  "San Tan Valley": 0.0005,
+  Yuma: 0.0010,
+  Avondale: 0.0005,
+  Flagstaff: 0.0020,
+  "Queen Creek": 0.0005,
+  Maricopa: 0.0005,
+  "Casas Adobes": 0.0005,
+  "Casa Grande": 0.0005,
+  "Lake Havasu City": 0.0010,
+  Marana: 0.0005,
+  "Catalina Foothills": 0.0010,
+  "Prescott Valley": 0.0005,
+  "Oro Valley": 0.0005,
+  "City Not Listed": 0.0005
+};
+
+const ORIGINATION_FEES: Record<string, number> = {
+  conventional: 1095,
+  fha: 1095,
+  va: 0,
+  usda: 547
+};
+
 function solveClosingCosts(
   homePrice: number,
   loanAmount: number,
   program: string,
-  vaStatus: string
+  vaStatus: string,
+  city: string
 ): ClosingCostResult {
   const escrowFee = getTitleEscrowFee(homePrice);
   const insuranceFee = getTitleInsuranceFee(loanAmount);
 
-  const originationFee = 1000;
+  const originationFee = ORIGINATION_FEES[program] ?? 1095;
   const appraisalFee = 650;
-  const creditReportFee = 95;
   const recordingFee = 75;
 
-  const totalClosingCosts = escrowFee + insuranceFee + originationFee + appraisalFee + creditReportFee + recordingFee;
+  const locationAmt = 10;
+
+  const totalClosingCosts = escrowFee + insuranceFee + originationFee + appraisalFee + recordingFee + locationAmt;
 
   let govFeeLabel = "";
   let govFeeRate = 0;
@@ -138,8 +176,8 @@ function solveClosingCosts(
     insuranceFee,
     originationFee,
     appraisalFee,
-    creditReportFee,
     recordingFee,
+    locationAmt,
     totalClosingCosts,
     govFeeLabel,
     govFeeRate,
@@ -193,8 +231,8 @@ export default function ClosingCostCalculatorPage() {
   };
 
   const result = useMemo(() => {
-    return solveClosingCosts(homePrice, loanAmount, program, vaStatus);
-  }, [homePrice, loanAmount, program, vaStatus]);
+    return solveClosingCosts(homePrice, loanAmount, program, vaStatus, selectedCity);
+  }, [homePrice, loanAmount, program, vaStatus, selectedCity]);
 
   const validationWarning = useMemo(() => {
     if (homePrice <= 0 || loanAmount <= 0) return "";
@@ -207,14 +245,15 @@ export default function ClosingCostCalculatorPage() {
   const getChartSegments = (r: ClosingCostResult) => {
     const total = r.totalClosingCosts;
     if (total <= 0) return [];
-    return [
+    const segments = [
       { name: "Title Escrow Fee", val: r.escrowFee, color: "#052316" },
       { name: "Title Insurance Fee", val: r.insuranceFee, color: "#3fb364" },
       { name: "Loan Origination Fee", val: r.originationFee, color: "#b89a5a" },
       { name: "Appraisal Fee", val: r.appraisalFee, color: "#a89a70" },
       { name: "Recording Fee", val: r.recordingFee, color: "#dcd6cd" },
-      { name: "Credit Report Fee", val: r.creditReportFee, color: "#888888" },
     ];
+    if (r.locationAmt > 0) segments.push({ name: "Location Adjustment", val: r.locationAmt, color: "#e8dcc6" });
+    return segments;
   };
 
   return (
@@ -305,7 +344,7 @@ export default function ClosingCostCalculatorPage() {
                 <span className="text-[#3fb364] text-[10.5px] font-bold tracking-wider uppercase">Total Estimated Closing Costs</span>
                 <h2 className="text-[38px] font-bold mt-1.5">{fmt(result.totalClosingCosts)}</h2>
               </div>
-              <p className="text-[12.5px] text-[#c8c8b8] mt-3 pt-2.5 border-t border-white/10">Cash required at closing for title/lender fees.</p>
+              <p className="text-[12.5px] text-[#c8c8b8] mt-3 pt-2.5 border-t border-white/10">Cash required at closing for title, escrow, lender &amp; location fees.</p>
             </div>
 
             {result.govFeeAmt > 0 && (
@@ -369,8 +408,8 @@ export default function ClosingCostCalculatorPage() {
                     <span className="text-[#052316] font-bold">{fmt(result.recordingFee)}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-[#888] font-sans">Credit Report Fee</span>
-                    <span className="text-[#052316] font-bold">{fmt(result.creditReportFee)}</span>
+                    <span className="text-[#888]">Location Adjustment</span>
+                    <span className="text-[#052316] font-bold">{fmt(result.locationAmt)}</span>
                   </div>
                 </div>
               </div>
