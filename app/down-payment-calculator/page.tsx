@@ -1,847 +1,900 @@
 "use client";
 
-import React, { useState, useCallback, useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
-import SliderInput from "../component/SliderInput";
 import { InteractivePieChart } from "../component/InteractiveCharts";
 
-// ─── Down Payment Calculator Specification Lookup Tables ─────────────────────
-
-function getTaxDefault(homePrice: number): { amount: number; rate: number } {
-  let amount = 7518;
-  if (homePrice <= 100000) amount = 1000;
-  else if (homePrice <= 150000) amount = 1065;
-  else if (homePrice <= 200000) amount = 1134;
-  else if (homePrice <= 250000) amount = 1208;
-  else if (homePrice <= 300000) amount = 1286;
-  else if (homePrice <= 350000) amount = 1370;
-  else if (homePrice <= 400000) amount = 1459;
-  else if (homePrice <= 450000) amount = 1554;
-  else if (homePrice <= 500000) amount = 1756;
-  else if (homePrice <= 550000) amount = 1984;
-  else if (homePrice <= 600000) amount = 2242;
-  else if (homePrice <= 650000) amount = 2534;
-  else if (homePrice <= 700000) amount = 2863;
-  else if (homePrice <= 750000) amount = 3149;
-  else if (homePrice <= 800000) amount = 3370;
-  else if (homePrice <= 850000) amount = 3606;
-  else if (homePrice <= 900000) amount = 3858;
-  else if (homePrice <= 950000) amount = 4128;
-  else if (homePrice <= 1000000) amount = 4417;
-  else if (homePrice <= 1050000) amount = 4638;
-  else if (homePrice <= 1100000) amount = 4870;
-  else if (homePrice <= 1150000) amount = 5114;
-  else if (homePrice <= 1200000) amount = 5267;
-  else if (homePrice <= 1250000) amount = 5425;
-  else if (homePrice <= 1300000) amount = 5588;
-  else if (homePrice <= 1350000) amount = 5755;
-  else if (homePrice <= 1400000) amount = 5928;
-  else if (homePrice <= 1450000) amount = 6047;
-  else if (homePrice <= 1500000) amount = 6167;
-  else if (homePrice <= 1550000) amount = 6291;
-  else if (homePrice <= 1600000) amount = 6417;
-  else if (homePrice <= 1650000) amount = 6545;
-  else if (homePrice <= 1700000) amount = 6676;
-  else if (homePrice <= 1750000) amount = 6809;
-  else if (homePrice <= 1800000) amount = 6946;
-  else if (homePrice <= 1850000) amount = 7084;
-  else if (homePrice <= 1900000) amount = 7226;
-  else if (homePrice <= 1950000) amount = 7371;
-
-  const rate = homePrice > 0 ? (amount / homePrice) * 100 : 0;
-  return { amount, rate: parseFloat(rate.toFixed(2)) };
+// ─── Arizona City / County Configuration ────────────────────────────────────
+interface CityConfig {
+  county: string;
+  taxRate: number;
+  recordingFee: number;
+  propertyTax: number;
 }
 
-function getHomeInsuranceDefault(homePrice: number): number {
-  if (homePrice <= 100000) return 1000;
-  if (homePrice <= 150000) return 1040;
-  if (homePrice <= 200000) return 1082;
-  if (homePrice <= 250000) return 1125;
-  if (homePrice <= 300000) return 1170;
-  if (homePrice <= 350000) return 1217;
-  if (homePrice <= 400000) return 1265;
-  if (homePrice <= 450000) return 1316;
-  if (homePrice <= 500000) return 1369;
-  if (homePrice <= 550000) return 1423;
-  if (homePrice <= 600000) return 1480;
-  if (homePrice <= 650000) return 1539;
-  if (homePrice <= 700000) return 1601;
-  if (homePrice <= 750000) return 1665;
-  if (homePrice <= 800000) return 1732;
-  if (homePrice <= 850000) return 1801;
-  if (homePrice <= 900000) return 1873;
-  if (homePrice <= 950000) return 1948;
-  if (homePrice <= 1000000) return 2026;
-  if (homePrice <= 1050000) return 2107;
-  if (homePrice <= 1100000) return 2191;
-  if (homePrice <= 1150000) return 2279;
-  if (homePrice <= 1200000) return 2370;
-  if (homePrice <= 1250000) return 2465;
-  if (homePrice <= 1300000) return 2563;
-  if (homePrice <= 1350000) return 2666;
-  if (homePrice <= 1400000) return 2772;
-  if (homePrice <= 1450000) return 2883;
-  if (homePrice <= 1500000) return 2999;
-  if (homePrice <= 1550000) return 3119;
-  if (homePrice <= 1600000) return 3243;
-  if (homePrice <= 1650000) return 3373;
-  if (homePrice <= 1700000) return 3508;
-  if (homePrice <= 1750000) return 3648;
-  if (homePrice <= 1800000) return 3794;
-  if (homePrice <= 1850000) return 3946;
-  if (homePrice <= 1900000) return 4104;
-  if (homePrice <= 1950000) return 4268;
-  return 4439;
-}
-
-function getClosingCostsDefault(homePrice: number): number {
-  if (homePrice <= 100000) return 3100;
-  if (homePrice <= 150000) return 3178;
-  if (homePrice <= 200000) return 3257;
-  if (homePrice <= 250000) return 3338;
-  if (homePrice <= 300000) return 3422;
-  if (homePrice <= 350000) return 3507;
-  if (homePrice <= 400000) return 3595;
-  if (homePrice <= 450000) return 3685;
-  if (homePrice <= 500000) return 3777;
-  if (homePrice <= 550000) return 3871;
-  if (homePrice <= 600000) return 3968;
-  if (homePrice <= 650000) return 4067;
-  if (homePrice <= 700000) return 4169;
-  if (homePrice <= 750000) return 4273;
-  if (homePrice <= 800000) return 4359;
-  if (homePrice <= 850000) return 4446;
-  if (homePrice <= 900000) return 4535;
-  if (homePrice <= 950000) return 4626;
-  if (homePrice <= 1000000) return 4718;
-  if (homePrice <= 1050000) return 4765;
-  if (homePrice <= 1100000) return 4813;
-  if (homePrice <= 1150000) return 4861;
-  if (homePrice <= 1200000) return 4910;
-  if (homePrice <= 1250000) return 4959;
-  if (homePrice <= 1300000) return 5008;
-  if (homePrice <= 1350000) return 5059;
-  if (homePrice <= 1400000) return 5109;
-  if (homePrice <= 1450000) return 5160;
-  if (homePrice <= 1500000) return 5212;
-  if (homePrice <= 1550000) return 5264;
-  if (homePrice <= 1600000) return 5317;
-  if (homePrice <= 1650000) return 5370;
-  if (homePrice <= 1700000) return 5423;
-  if (homePrice <= 1750000) return 5478;
-  if (homePrice <= 1800000) return 5532;
-  if (homePrice <= 1850000) return 5588;
-  if (homePrice <= 1900000) return 5644;
-  if (homePrice <= 1950000) return 5700;
-  return 6500;
-}
-
-// PMI Rates (Row mapping: Excellent, Good/Very Good, Fair/Good, Poor, High Risk)
-// Cols: 3-4.99% down, 5-9.99%, 10-14.99%, 15-19.99%
-const PMI_RATES = {
-  excellent: [0.30, 0.19, 0.15, 0.10], // 760+
-  good: [0.48, 0.33, 0.24, 0.13],      // 720-759 (Using 740-759 row per specification midpoint)
-  fair: [1.02, 0.75, 0.52, 0.23],      // 680-719 (Using 680-699 row per specification)
-  poor: [1.20, 0.89, 0.61, 0.26],      // 620-679 (Using 620-639 row per specification)
-  highRisk: [1.56, 1.17, 0.79, 0.33]  // Below 620
+const CITY_CONFIGS: Record<string, CityConfig> = {
+  // Phoenix Metro Area
+  phoenix: { county: "Maricopa County", taxRate: 0.72, recordingFee: 85, propertyTax: 1700 },
+  mesa: { county: "Maricopa County", taxRate: 0.72, recordingFee: 85, propertyTax: 1700 },
+  chandler: { county: "Maricopa County", taxRate: 0.72, recordingFee: 85, propertyTax: 1700 },
+  scottsdale: { county: "Maricopa County", taxRate: 0.72, recordingFee: 85, propertyTax: 1700 },
+  gilbert: { county: "Maricopa County", taxRate: 0.72, recordingFee: 85, propertyTax: 1700 },
+  glendale: { county: "Maricopa County", taxRate: 0.72, recordingFee: 85, propertyTax: 1700 },
+  tempe: { county: "Maricopa County", taxRate: 0.72, recordingFee: 0, propertyTax: 1700 },
+  peoria: { county: "Maricopa County", taxRate: 0.72, recordingFee: -15, propertyTax: 1700 },
+  surprise: { county: "Maricopa County", taxRate: 0.72, recordingFee: 15, propertyTax: 1700 },
+  goodyear: { county: "Maricopa County", taxRate: 0.72, recordingFee: 30, propertyTax: 1700 },
+  buckeye: { county: "Maricopa County", taxRate: 0.72, recordingFee: 45, propertyTax: 1700 },
+  avondale: { county: "Maricopa County", taxRate: 0.72, recordingFee: 85, propertyTax: 1700 },
+  queen_creek: { county: "Maricopa County", taxRate: 0.72, recordingFee: 85, propertyTax: 1700 },
+  maricopa: { county: "Maricopa County", taxRate: 0.72, recordingFee: 85, propertyTax: 1700 },
+  paradise_valley: { county: "Maricopa County", taxRate: 0.72, recordingFee: 85, propertyTax: 1700 },
+  apache_junction: { county: "Maricopa County", taxRate: 0.72, recordingFee: 85, propertyTax: 1700 },
+  // Tucson Area
+  tucson: { county: "Pima County", taxRate: 0.84, recordingFee: 85, propertyTax: 1800 },
+  marana: { county: "Pima County", taxRate: 0.84, recordingFee: 85, propertyTax: 1800 },
+  oro_valley: { county: "Pima County", taxRate: 0.84, recordingFee: 85, propertyTax: 1800 },
+  // Other Arizona Cities
+  san_tan_valley: { county: "Pinal County", taxRate: 0.81, recordingFee: 60, propertyTax: 1790 },
+  yuma: { county: "Yuma County", taxRate: 0.86, recordingFee: 75, propertyTax: 1830 },
+  flagstaff: { county: "Coconino County", taxRate: 0.68, recordingFee: 85, propertyTax: 1680 },
+  lake_havasu: { county: "Mohave County", taxRate: 0.77, recordingFee: 85, propertyTax: 1770 },
+  casa_grande: { county: "Pinal County", taxRate: 0.81, recordingFee: 85, propertyTax: 1790 },
+  sierra_vista: { county: "Cochise County", taxRate: 0.80, recordingFee: 85, propertyTax: 1750 },
+  bullhead_city: { county: "Mohave County", taxRate: 0.77, recordingFee: 85, propertyTax: 1770 },
+  prescott: { county: "Yavapai County", taxRate: 0.82, recordingFee: 85, propertyTax: 1820 },
 };
 
-function getAnnualPMIRate(creditScoreBand: string, dpPct: number): number {
-  let rateArr = PMI_RATES.excellent;
-  if (creditScoreBand === "720-759") rateArr = PMI_RATES.good;
-  else if (creditScoreBand === "680-719") rateArr = PMI_RATES.fair;
-  else if (creditScoreBand === "620-679") rateArr = PMI_RATES.poor;
-  else if (creditScoreBand === "below-620") rateArr = PMI_RATES.highRisk;
-
-  if (dpPct < 5.0) return rateArr[0];
-  if (dpPct < 10.0) return rateArr[1];
-  if (dpPct < 15.0) return rateArr[2];
-  return rateArr[3];
-}
-
-function getFHAMIPRate(termYears: number, ltv: number, loanAmount: number): number {
-  if (loanAmount <= 726200) {
-    if (termYears > 15) {
-      if (ltv <= 90.0) return 0.50;
-      if (ltv <= 95.0) return 0.55;
-      return 0.75;
-    } else {
-      if (ltv <= 90.0) return 0.15;
-      return 0.40;
-    }
-  } else {
-    if (termYears > 15) {
-      if (ltv <= 90.0) return 0.70;
-      if (ltv <= 95.0) return 0.70;
-      return 0.75;
-    } else {
-      if (ltv <= 78.0) return 0.15;
-      if (ltv <= 90.0) return 0.40;
-      return 0.65;
-    }
-  }
-}
-
-function getVAFeeRate(dpPct: number): number {
-  if (dpPct < 5.0) return 2.15;
-  if (dpPct < 10.0) return 1.50;
-  return 1.25;
-}
-
-// ─── Interfaces ───
-
-interface DownPaymentResult {
-  requiredSavings: number;
-  downPaymentAmt: number;
-  closingCosts: number;
-  loanAmount: number;
-  monthlyPI: number;
-  monthlyTax: number;
-  monthlyIns: number;
-  monthlyHOA: number;
-  monthlyFee: number;
-  totalMonthly: number;
-  housingCostRatio: number;
-  dtiRatio: number;
-}
-
-const fmt = (v: number) =>
-  new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round(v));
-
-// ─── Core Solver ──────────────────────────────────────────────────────────────
-
-function solvePayments(
-  homePrice: number,
-  dpAmt: number,
-  dpPct: number,
-  annualIncome: number,
-  monthlyDebts: number,
-  creditScore: string,
-  loanType: string,
-  interestRate: number,
-  loanTerm: number,
-  taxAmountManual: number,
-  insManual: number,
-  hoaManual: number
-): DownPaymentResult {
-  const loanAmount = Math.max(0, homePrice - dpAmt);
-  const termMonths = loanTerm * 12;
-  const monthlyRate = interestRate / 100 / 12;
-
-  // Principal & Interest
-  let monthlyPI = 0;
-  if (loanAmount > 0 && termMonths > 0) {
-    if (monthlyRate === 0) {
-      monthlyPI = loanAmount / termMonths;
-    } else {
-      const factor = Math.pow(1 + monthlyRate, termMonths);
-      monthlyPI = (loanAmount * monthlyRate * factor) / (factor - 1);
-    }
-  }
-
-  // Monthly tax
-  const monthlyTax = taxAmountManual / 12;
-
-  // Monthly Ins
-  const monthlyIns = insManual / 12;
-
-  const monthlyHOA = hoaManual;
-
-  // Monthly Fee / PMI / MIP
-  let monthlyFee = 0;
-  const ltv = homePrice > 0 ? (loanAmount / homePrice) * 100 : 0;
-
-  if (loanType === "conventional") {
-    if (dpPct < 20.0) {
-      const pmiRate = getAnnualPMIRate(creditScore, dpPct);
-      monthlyFee = (loanAmount * (pmiRate / 100)) / 12;
-    }
-  } else if (loanType === "fha") {
-    const mipRate = getFHAMIPRate(loanTerm, ltv, loanAmount);
-    monthlyFee = (loanAmount * (mipRate / 100)) / 12;
-  } else if (loanType === "usda") {
-    monthlyFee = (loanAmount * 0.0035) / 12;
-  }
-
-  const totalMonthly = monthlyPI + monthlyTax + monthlyIns + monthlyHOA + monthlyFee;
-
-  // Ratios
-  const monthlyIncome = annualIncome > 0 ? annualIncome / 12 : 1;
-  const housingCostRatio = (totalMonthly / monthlyIncome) * 100;
-  const dtiRatio = ((totalMonthly + monthlyDebts) / monthlyIncome) * 100;
-
-  const closingCosts = getClosingCostsDefault(homePrice);
-  const requiredSavings = dpAmt + closingCosts;
-
-  return {
-    requiredSavings,
-    downPaymentAmt: dpAmt,
-    closingCosts,
-    loanAmount,
-    monthlyPI,
-    monthlyTax,
-    monthlyIns,
-    monthlyHOA,
-    monthlyFee,
-    totalMonthly,
-    housingCostRatio: parseFloat(housingCostRatio.toFixed(2)),
-    dtiRatio: parseFloat(dtiRatio.toFixed(2)),
-  };
-}
-
-const CITY_DEFAULTS: Record<string, { price: number; downPayment: number; tax: number; insurance: number; rate: number }> = {
-  Phoenix: { price: 400000, downPayment: 80000, tax: 1700, insurance: 1200, rate: 6.5 },
-  Tucson: { price: 350000, downPayment: 70000, tax: 1800, insurance: 1100, rate: 6.5 },
-  Mesa: { price: 400000, downPayment: 80000, tax: 1700, insurance: 1200, rate: 6.5 },
-  Chandler: { price: 500000, downPayment: 100000, tax: 2100, insurance: 1400, rate: 6.5 },
-  Gilbert: { price: 475000, downPayment: 95000, tax: 2000, insurance: 1350, rate: 6.5 },
-  Glendale: { price: 425000, downPayment: 85000, tax: 1800, insurance: 1250, rate: 6.5 },
-  Scottsdale: { price: 750000, downPayment: 150000, tax: 3200, insurance: 1800, rate: 6.8 },
-  Peoria: { price: 425000, downPayment: 85000, tax: 1800, insurance: 1250, rate: 6.5 },
-  Tempe: { price: 450000, downPayment: 90000, tax: 1900, insurance: 1300, rate: 6.5 },
-  Surprise: { price: 400000, downPayment: 80000, tax: 1700, insurance: 1200, rate: 6.5 },
-  Goodyear: { price: 425000, downPayment: 85000, tax: 1800, insurance: 1250, rate: 6.5 },
-  Buckeye: { price: 400000, downPayment: 80000, tax: 1700, insurance: 1200, rate: 6.5 },
-  "San Tan Valley": { price: 375000, downPayment: 75000, tax: 1790, insurance: 1150, rate: 6.5 },
-  Yuma: { price: 300000, downPayment: 60000, tax: 1830, insurance: 1050, rate: 6.5 },
-  Avondale: { price: 400000, downPayment: 80000, tax: 1700, insurance: 1200, rate: 6.5 },
-  Flagstaff: { price: 500000, downPayment: 100000, tax: 1680, insurance: 1400, rate: 6.5 },
-  "Queen Creek": { price: 450000, downPayment: 90000, tax: 1900, insurance: 1300, rate: 6.5 },
-  Maricopa: { price: 350000, downPayment: 70000, tax: 1700, insurance: 1100, rate: 6.5 },
-  "Casas Adobes": { price: 375000, downPayment: 75000, tax: 1800, insurance: 1150, rate: 6.5 },
-  "Casa Grande": { price: 300000, downPayment: 60000, tax: 1790, insurance: 1050, rate: 6.5 },
-  "Lake Havasu City": { price: 350000, downPayment: 70000, tax: 1770, insurance: 1100, rate: 6.5 },
-  Marana: { price: 375000, downPayment: 75000, tax: 1800, insurance: 1150, rate: 6.5 },
-  "Catalina Foothills": { price: 450000, downPayment: 90000, tax: 1900, insurance: 1300, rate: 6.5 },
-  "Prescott Valley": { price: 350000, downPayment: 70000, tax: 1820, insurance: 1100, rate: 6.5 },
-  "Oro Valley": { price: 400000, downPayment: 80000, tax: 1800, insurance: 1200, rate: 6.5 },
-  "City Not Listed": { price: 400000, downPayment: 80000, tax: 1700, insurance: 1200, rate: 6.5 }
+// Program Closing Cost Fees
+const PROGRAM_FEES: Record<string, number> = {
+  conventional: 0,
+  fha: 75,
+  va: 200,
+  usda: 50,
 };
 
-const ARIZONA_CITIES = Object.keys(CITY_DEFAULTS);
+// Helper Functions
+const parseCurrency = (val: string | number): number => {
+  if (!val) return 0;
+  const clean = val.toString().replace(/[^0-9.]/g, "");
+  return parseFloat(clean) || 0;
+};
+
+const formatCurrency = (num: number): string => {
+  return "$" + Number(num).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+};
+
+function calculateMortgagePayment(loanAmount: number, annualRatePct: number, years: number): number {
+  const monthlyRate = annualRatePct / 100 / 12;
+  const n = years * 12;
+  if (monthlyRate === 0) return loanAmount / n;
+  return (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
+}
+
+function calculateClosingCosts(homePrice: number, loanAmount: number, locationKey: string, loanType: string): number {
+  const originationFee = 1000;
+  const creditReportFee = 95;
+  const appraisalFee = 650;
+  const programFee = PROGRAM_FEES[loanType] || 0;
+
+  let titleInsuranceFee = 1200;
+  if (loanAmount <= 300000) titleInsuranceFee = 895;
+  else if (loanAmount <= 500000) titleInsuranceFee = 1000;
+
+  let titleEscrowFee = 800;
+  if (homePrice <= 350000) titleEscrowFee = 610;
+  else if (homePrice <= 500000) titleEscrowFee = 700;
+
+  const cityConf = CITY_CONFIGS[locationKey] || CITY_CONFIGS["phoenix"];
+  const recordingFee = 75 + cityConf.recordingFee;
+
+  return originationFee + programFee + creditReportFee + appraisalFee + titleInsuranceFee + titleEscrowFee + recordingFee;
+}
 
 export default function DownPaymentCalculatorPage() {
-  const [selectedCity, setSelectedCity] = useState("Phoenix");
-  const [homePrice, setHomePrice] = useState(400000);
-  const [annualIncome, setAnnualIncome] = useState(100000);
-  const [monthlyDebts, setMonthlyDebts] = useState(500);
-  const [creditScore, setCreditScore] = useState("720-759");
+  // Group 1: Property Information
+  const [homePriceStr, setHomePriceStr] = useState("400,000");
+  const [locationKey, setLocationKey] = useState("phoenix");
+
+  // Group 2: Financial Profile
+  const [annualIncomeStr, setAnnualIncomeStr] = useState("120,000");
+  const [monthlyDebtStr, setMonthlyDebtStr] = useState("500");
+  const [creditScore, setCreditScore] = useState("760");
+
+  // Group 3: Loan Details
   const [loanType, setLoanType] = useState("conventional");
-  const [interestRate, setInterestRate] = useState(6.5);
+  const [interestRateStr, setInterestRateStr] = useState("4.5");
   const [loanTerm, setLoanTerm] = useState(30);
 
-  const [dpVal, setDpVal] = useState(80000);
+  // Group 4: Down Payment
+  const [downDollarStr, setDownDollarStr] = useState("40,000");
+  const [downPercentStr, setDownPercentStr] = useState("10");
 
-  const [taxAmountManual, setTaxAmountManual] = useState(1700);
-  const [insManual, setInsManual] = useState(1200);
-  const [hoa, setHoa] = useState(0);
+  // Group 5: Additional Costs
+  const [propertyTaxRateStr, setPropertyTaxRateStr] = useState("0.72");
+  const [annualInsuranceStr, setAnnualInsuranceStr] = useState("1,200");
+  const [monthlyHOAStr, setMonthlyHOAStr] = useState("0");
 
-  const handleCityChange = (city: string) => {
-    setSelectedCity(city);
-    const defaults = CITY_DEFAULTS[city] || CITY_DEFAULTS.Phoenix;
-    setHomePrice(defaults.price);
-    setDpVal(defaults.downPayment);
-    setTaxAmountManual(defaults.tax);
-    setInsManual(defaults.insurance);
-    setInterestRate(defaults.rate);
-  };
-
-  // Sync inputs
-  const handleHomePriceChange = (val: number) => {
-    setHomePrice(val);
-    // Auto-clamp down payment to new max (100% of home price)
-    if (val > 0 && dpVal > val) {
-      setDpVal(val);
+  // Location Selector Handler
+  const handleLocationChange = (loc: string) => {
+    setLocationKey(loc);
+    const conf = CITY_CONFIGS[loc];
+    if (conf) {
+      setPropertyTaxRateStr(conf.taxRate.toString());
     }
   };
 
-  const handleDpAmtChange = (val: number) => {
-    // Clamp to max 100% of home price
-    const maxVal = homePrice;
-    const clampedVal = Math.min(val, maxVal);
-    setDpVal(clampedVal);
+  // Synchronize Down Payment Amount & Percent
+  const handleHomePriceChange = (valStr: string) => {
+    const rawVal = valStr.replace(/[^0-9]/g, "");
+    const price = rawVal ? parseInt(rawVal, 10) : 0;
+    setHomePriceStr(price ? price.toLocaleString("en-US") : "");
+
+    const pct = parseFloat(downPercentStr) || 0;
+    if (price > 0 && pct >= 0) {
+      const dollar = Math.round((price * pct) / 100);
+      setDownDollarStr(dollar.toLocaleString("en-US"));
+    }
   };
 
-  // Auto-calculate result
-  const result = useMemo<DownPaymentResult | null>(() => {
-    const hp = homePrice;
-    if (hp <= 0) return null;
+  const handleDownDollarChange = (valStr: string) => {
+    const rawVal = valStr.replace(/[^0-9]/g, "");
+    const dollar = rawVal ? parseInt(rawVal, 10) : 0;
+    setDownDollarStr(dollar ? dollar.toLocaleString("en-US") : "");
 
-    let dpAmt = dpVal;
-    dpAmt = Math.max(0, Math.min(dpAmt, hp));
-    const dpPct = hp > 0 ? (dpAmt / hp) * 100 : 0;
-
-    const income = annualIncome;
-    const debts = monthlyDebts;
-    const rate = interestRate;
-    const term = Math.round(loanTerm || 30);
-    const hoaVal = hoa;
-
-    return solvePayments(hp, dpAmt, dpPct, income, debts, creditScore, loanType, rate, term, taxAmountManual, insManual, hoaVal);
-  }, [homePrice, dpVal, annualIncome, monthlyDebts, creditScore, loanType, interestRate, loanTerm, taxAmountManual, insManual, hoa]);
-
-  // Validation Warnings
-  const getMinDpRequirement = () => {
-    if (loanType === "conventional") return { pct: 3, label: "3%" };
-    if (loanType === "fha") return { pct: 3.5, label: "3.5%" };
-    return { pct: 0, label: "0%" };
+    const price = parseCurrency(homePriceStr);
+    if (price > 0) {
+      const pct = ((dollar / price) * 100).toFixed(1);
+      setDownPercentStr(pct);
+    }
   };
 
-  const minDp = getMinDpRequirement();
-  const currentDpPctNum = homePrice > 0 ? (dpVal / homePrice) * 100 : 0;
-  const isBelowMinDp = currentDpPctNum < minDp.pct;
-  const requiredMinAmt = homePrice * (minDp.pct / 100);
+  const handleDownPercentChange = (valStr: string) => {
+    setDownPercentStr(valStr);
+    const pct = parseFloat(valStr) || 0;
+    const price = parseCurrency(homePriceStr);
+    if (price > 0) {
+      const dollar = Math.round((price * pct) / 100);
+      setDownDollarStr(dollar ? dollar.toLocaleString("en-US") : "0");
+    }
+  };
 
-  // Recommendations and insights
-  const largestShareText = (r: DownPaymentResult) => {
-    const shares = [
-      { name: "Principal & Interest", val: r.monthlyPI },
-      { name: "Property Tax", val: r.monthlyTax },
-      { name: "Insurance", val: r.monthlyIns },
-      { name: "PMI/MIP Fee", val: r.monthlyFee },
-      { name: "HOA", val: r.monthlyHOA }
+  const handleLoanTypeChange = (type: string) => {
+    setLoanType(type);
+    const price = parseCurrency(homePriceStr);
+    let defaultPct = 20;
+    if (type === "fha") defaultPct = 3.5;
+    else if (type === "va" || type === "usda") defaultPct = 0;
+
+    setDownPercentStr(defaultPct.toString());
+    if (price > 0) {
+      const dollar = Math.round((price * defaultPct) / 100);
+      setDownDollarStr(dollar ? dollar.toLocaleString("en-US") : "0");
+    }
+  };
+
+  // ─── Perform Calculations ─────────────────────────────────────────────────
+  const calcResult = useMemo(() => {
+    const homePrice = parseCurrency(homePriceStr);
+    const downDollar = parseCurrency(downDollarStr);
+    const downPercent = parseFloat(downPercentStr) || 0;
+    const annualIncome = parseCurrency(annualIncomeStr);
+    const monthlyDebt = parseCurrency(monthlyDebtStr);
+    const interestRate = parseFloat(interestRateStr) || 0;
+    const propertyTaxRate = parseFloat(propertyTaxRateStr) || 0;
+    const annualInsurance = parseCurrency(annualInsuranceStr);
+    const monthlyHOA = parseCurrency(monthlyHOAStr);
+
+    const loanAmount = Math.max(0, homePrice - downDollar);
+    const closingCosts = calculateClosingCosts(homePrice, loanAmount, locationKey, loanType);
+    const requiredSavings = downDollar + closingCosts;
+
+    // Monthly Mortgage Principal & Interest
+    const monthlyPI = calculateMortgagePayment(loanAmount, interestRate, loanTerm);
+
+    // Monthly Property Tax
+    const monthlyTax = (homePrice * (propertyTaxRate / 100)) / 12;
+
+    // Monthly Homeowners Insurance
+    const monthlyInsurance = annualInsurance / 12;
+
+    // Monthly PMI / MIP
+    let monthlyPMI = 0;
+    if (loanType === "conventional" && downPercent < 20) {
+      const pmiRate = 0.005; // 0.5% annual PMI rate default
+      monthlyPMI = (loanAmount * pmiRate) / 12;
+    } else if (loanType === "fha") {
+      const mipRate = 0.0055; // FHA annual MIP
+      monthlyPMI = (loanAmount * mipRate) / 12;
+    }
+
+    const totalMonthlyPayment = monthlyPI + monthlyTax + monthlyInsurance + monthlyPMI + monthlyHOA;
+
+    // Affordability Metrics
+    const monthlyIncome = annualIncome / 12;
+    const housingRatio = monthlyIncome > 0 ? (totalMonthlyPayment / monthlyIncome) * 100 : 0;
+    const dtiRatio = monthlyIncome > 0 ? ((totalMonthlyPayment + monthlyDebt) / monthlyIncome) * 100 : 0;
+
+    return {
+      homePrice,
+      downDollar,
+      downPercent,
+      loanAmount,
+      closingCosts,
+      requiredSavings,
+      interestRate,
+      loanTerm,
+      monthlyPI,
+      monthlyTax,
+      monthlyInsurance,
+      monthlyHOA,
+      monthlyPMI,
+      totalMonthlyPayment,
+      monthlyIncome,
+      housingRatio,
+      dtiRatio,
+    };
+  }, [
+    homePriceStr,
+    downDollarStr,
+    downPercentStr,
+    annualIncomeStr,
+    monthlyDebtStr,
+    interestRateStr,
+    loanTerm,
+    locationKey,
+    loanType,
+    propertyTaxRateStr,
+    annualInsuranceStr,
+    monthlyHOAStr,
+  ]);
+
+  // ─── Scenarios Table Data ────────────────────────────────────────────────
+  const scenarios = useMemo(() => {
+    const homePrice = parseCurrency(homePriceStr);
+    const interestRate = parseFloat(interestRateStr) || 0;
+    const propertyTaxRate = parseFloat(propertyTaxRateStr) || 0;
+    const annualInsurance = parseCurrency(annualInsuranceStr);
+    const monthlyHOA = parseCurrency(monthlyHOAStr);
+
+    const list = [
+      { downPercent: 0, label: "0% (No Down Payment)" },
+      { downPercent: 3, label: "3% (Minimum)" },
+      { downPercent: 5, label: "5% Down" },
+      { downPercent: 10, label: "10% Down" },
+      { downPercent: 15, label: "15% Down" },
+      { downPercent: 20, label: "20% Down (Recommended)" },
+      { downPercent: 25, label: "25% Down" },
     ];
-    shares.sort((a, b) => b.val - a.val);
-    const pct = ((shares[0].val / r.totalMonthly) * 100).toFixed(1);
-    return `${shares[0].name} occupies the largest share of your monthly payment at ${pct}%.`;
-  };
 
-  // Donut chart path values
-  const getDonutPaths = (r: DownPaymentResult) => {
-    const segments = [
-      { val: r.monthlyPI, color: "#052316" },
-      { val: r.monthlyTax, color: "#b89a5a" },
-      { val: r.monthlyIns, color: "#3fb364" },
-      { val: r.monthlyFee, color: "#000" },
-      { val: r.monthlyHOA, color: "#aaa" }
-    ].filter(s => s.val > 0);
+    return list.map((s) => {
+      const downAmt = (homePrice * s.downPercent) / 100;
+      const loanAmt = Math.max(0, homePrice - downAmt);
+      const pi = calculateMortgagePayment(loanAmt, interestRate, loanTerm);
+      const tax = (homePrice * (propertyTaxRate / 100)) / 12;
+      const ins = annualInsurance / 12;
+      let pmi = 0;
+      if (s.downPercent < 20) {
+        pmi = (loanAmt * 0.005) / 12;
+      }
+      const total = pi + tax + ins + pmi + monthlyHOA;
 
-    const total = segments.reduce((sum, s) => sum + s.val, 0);
-    if (total <= 0) return [];
-
-    let cumPercent = 0;
-    return segments.map(s => {
-      const pct = s.val / total;
-      const startAngle = cumPercent * 2 * Math.PI - Math.PI / 2;
-      cumPercent += pct;
-      const endAngle = cumPercent * 2 * Math.PI - Math.PI / 2;
-
-      const x1 = 100 + 70 * Math.cos(startAngle);
-      const y1 = 100 + 70 * Math.sin(startAngle);
-      const x2 = 100 + 70 * Math.cos(endAngle);
-      const y2 = 100 + 70 * Math.sin(endAngle);
-
-      const largeArc = pct > 0.5 ? 1 : 0;
       return {
-        d: `M ${x1} ${y1} A 70 70 0 ${largeArc} 1 ${x2} ${y2}`,
-        color: s.color,
-        pct: (pct * 100).toFixed(1)
+        ...s,
+        downAmt,
+        loanAmt,
+        totalMonthly: total,
       };
     });
-  };
-
-  // Scenario check list
-  const getScenarioRows = () => {
-    const hp = homePrice;
-    const income = annualIncome;
-    const debts = monthlyDebts;
-    const rate = interestRate;
-    const term = Math.round(loanTerm || 30);
-    const hoaVal = hoa;
-
-    let checkpoints = [3, 5, 10, 15, 20, 25];
-    if (loanType === "fha") checkpoints = [3.5, 5, 10, 15];
-    if (loanType === "va" || loanType === "usda") checkpoints = [0, 5, 10];
-
-    return checkpoints.map(pct => {
-      const dp = hp * (pct / 100);
-      const r = solvePayments(hp, dp, pct, income, debts, creditScore, loanType, rate, term, taxAmountManual, insManual, hoaVal);
-      return {
-        pct,
-        dp,
-        loan: r.loanAmount,
-        monthly: r.totalMonthly
-      };
-    });
-  };
+  }, [homePriceStr, interestRateStr, loanTerm, propertyTaxRateStr, annualInsuranceStr, monthlyHOAStr]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#fcf9f3] font-sans">
+    <div className="min-h-screen bg-[#faf7f0] text-[#32353C] font-sans">
       <Navbar />
-      <main className="flex-grow">
 
-        {/* Hero Section */}
-        <section className="w-full bg-[#052316] text-white py-16 lg:py-20 text-center relative overflow-hidden">
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5 opacity-40" />
-            <div className="absolute -top-36 -right-36 w-[400px] h-[400px] rounded-full border border-white/5 opacity-40" />
-          </div>
-          <div className="max-w-4xl mx-auto px-6 relative z-10">
-            <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3 font-sans">MORTGAGE TOOLS</span>
-            <h1 className="text-white text-[38px] lg:text-[52px] font-playfair font-normal leading-[1.15] mb-6">
-              Down Payment Calculator
-            </h1>
-            <p className="text-[#c8c8b8] text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto">
-              Determine your required upfront savings, monthly mortgage expenses, and program eligibility depending on your target down payment size.
-            </p>
-          </div>
-        </section>
+      {/* Hero Header */}
+      <section className="bg-[#052316] text-white pt-12 pb-16 px-4 lg:px-8">
+        <div className="max-w-5xl mx-auto text-center">
+          <h1 className="text-[32px] md:text-[44px] font-bold mb-3 tracking-tight font-playfair">
+            Down Payment Calculator
+          </h1>
+          <p className="text-[#c8c8b8] text-[15px] md:text-[17px] max-w-3xl mx-auto leading-relaxed">
+            Calculate your down payment requirements, total upfront cash needed, monthly payment breakdown, PMI costs, and affordability ratios for buying a home in Arizona.
+          </p>
+        </div>
+      </section>
 
-        {/* Inputs */}
-        <section className="py-12 px-6 lg:px-10 max-w-6xl mx-auto font-sans">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      {/* Main Container */}
+      <main className="max-w-6xl mx-auto px-4 lg:px-8 -mt-8 pb-20">
+        <div className="bg-white rounded-2xl border border-[#e0e0e0] shadow-sm p-6 lg:p-10 space-y-10">
+          <h3 className="text-[22px] font-bold text-[#32353C] pb-3 border-b border-[#e0e0e0]">
+            Enter Your Details
+          </h3>
+
+          {/* Form Inputs Grid (3 Groups Top, 2 Groups Bottom) */}
+          <div className="space-y-8">
             
-            {/* Left Box: Property Information & Financial Profile */}
-            <div className="lg:col-span-6 flex flex-col gap-6">
+            {/* Top Row: Groups 1, 2, 3 */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               
-              {/* PROPERTY INFORMATION */}
-              <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 lg:p-8 shadow-sm flex flex-col gap-6">
-                <h3 className="text-[#052316] text-[17px] font-bold pb-3 border-b border-[#e8e0d0]/40 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#052316]" /> Property Information
-                </h3>
+              {/* Group 1: Property Information */}
+              <div className="bg-[#f8f9fa] p-5 rounded-xl border border-[#e0e0e0] space-y-4">
+                <h4 className="text-[16px] font-bold text-[#4CAF50] border-b border-[#e0e0e0] pb-2">
+                  Property Information
+                </h4>
                 
                 <div>
-                  <label className="text-[#052316] text-[14px] font-semibold block mb-2">Select Your Arizona City</label>
-                  <select
-                    value={selectedCity}
-                    onChange={(e) => handleCityChange(e.target.value)}
-                    className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3.5 text-[14px] font-bold text-[#052316] focus:outline-none cursor-pointer"
-                  >
-                    {ARIZONA_CITIES.map((city) => (
-                      <option key={city} value={city}>
-                        {city}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <SliderInput
-                  label="Home Price"
-                  value={homePrice}
-                  min={50000}
-                  max={2000000}
-                  step={1000}
-                  prefix="$"
-                  onChange={handleHomePriceChange}
-                />
-              </div>
-
-              {/* FINANCIAL PROFILE */}
-              <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 lg:p-8 shadow-sm flex flex-col gap-6">
-                <h3 className="text-[#052316] text-[17px] font-bold pb-3 border-b border-[#e8e0d0]/40 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#b89a5a]" /> Financial Profile
-                </h3>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <SliderInput
-                    label="Annual Income"
-                    value={annualIncome}
-                    min={0}
-                    max={500000}
-                    step={1000}
-                    prefix="$"
-                    onChange={setAnnualIncome}
-                  />
-                  <SliderInput
-                    label="Monthly Debt Payments"
-                    value={monthlyDebts}
-                    min={0}
-                    max={20000}
-                    step={100}
-                    prefix="$"
-                    onChange={setMonthlyDebts}
-                  />
+                  <div className="flex items-center gap-1.5 mb-1.5">
+                    <label htmlFor="home-price" className="text-[13.5px] font-medium text-[#32353C]">Home Price ($)</label>
+                    <div className="relative group cursor-help">
+                      <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[10px] font-bold flex items-center justify-center">?</span>
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                        Total purchase price agreed upon for the home.
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#666] text-[14px] font-medium pointer-events-none">$</span>
+                    <input
+                      type="text"
+                      id="home-price"
+                      value={homePriceStr}
+                      onChange={(e) => handleHomePriceChange(e.target.value)}
+                      placeholder="Home Price"
+                      className="w-full h-[42px] pl-8 pr-3 bg-white border border-[#e0e0e0] rounded-md text-[14.5px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50]"
+                    />
+                  </div>
                 </div>
 
                 <div>
-                  <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Credit Score Range</label>
-                  <select value={creditScore} onChange={(e) => setCreditScore(e.target.value)}
-                    className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3 text-[14px] font-bold text-[#052316] focus:outline-none cursor-pointer">
-                    <option value="760+">760+ (Excellent)</option>
-                    <option value="720-759">720–759 (Good to Very Good)</option>
-                    <option value="680-719">680–719 (Fair to Good)</option>
-                    <option value="620-679">620–679 (Poor to below Fair)</option>
-                    <option value="below-620">Below 620 (High Risk)</option>
+                  <div className="flex items-center gap-1.5 mb-1.5">
+                    <label htmlFor="location" className="text-[13.5px] font-medium text-[#32353C]">Location (Arizona)</label>
+                    <div className="relative group cursor-help">
+                      <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[10px] font-bold flex items-center justify-center">?</span>
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-52 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                        Select your city to calculate location-specific recording fees &amp; property taxes.
+                      </div>
+                    </div>
+                  </div>
+                  <select
+                    id="location"
+                    value={locationKey}
+                    onChange={(e) => handleLocationChange(e.target.value)}
+                    className="w-full h-[42px] px-3 bg-white border border-[#e0e0e0] rounded-md text-[14px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50] cursor-pointer"
+                  >
+                    <optgroup label="Phoenix Metro Area">
+                      <option value="phoenix">Phoenix</option>
+                      <option value="mesa">Mesa</option>
+                      <option value="chandler">Chandler</option>
+                      <option value="scottsdale">Scottsdale</option>
+                      <option value="gilbert">Gilbert</option>
+                      <option value="glendale">Glendale</option>
+                      <option value="tempe">Tempe</option>
+                      <option value="peoria">Peoria</option>
+                      <option value="surprise">Surprise</option>
+                      <option value="goodyear">Goodyear</option>
+                      <option value="buckeye">Buckeye</option>
+                      <option value="avondale">Avondale</option>
+                      <option value="queen_creek">Queen Creek</option>
+                      <option value="maricopa">Maricopa</option>
+                      <option value="paradise_valley">Paradise Valley</option>
+                      <option value="apache_junction">Apache Junction</option>
+                    </optgroup>
+                    <optgroup label="Tucson Area">
+                      <option value="tucson">Tucson</option>
+                      <option value="marana">Marana</option>
+                      <option value="oro_valley">Oro Valley</option>
+                    </optgroup>
+                    <optgroup label="Other Arizona Cities">
+                      <option value="san_tan_valley">San Tan Valley</option>
+                      <option value="yuma">Yuma</option>
+                      <option value="flagstaff">Flagstaff</option>
+                      <option value="lake_havasu">Lake Havasu City</option>
+                      <option value="casa_grande">Casa Grande</option>
+                      <option value="sierra_vista">Sierra Vista</option>
+                      <option value="bullhead_city">Bullhead City</option>
+                      <option value="prescott">Prescott</option>
+                    </optgroup>
                   </select>
                 </div>
               </div>
-            </div>
 
-            {/* Right Box: Loan Details, Down Payment & Additional Costs */}
-            <div className="lg:col-span-6 flex flex-col gap-6">
-              
-              {/* LOAN DETAILS */}
-              <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 lg:p-8 shadow-sm flex flex-col gap-6">
-                <h3 className="text-[#052316] text-[17px] font-bold pb-3 border-b border-[#e8e0d0]/40 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#3fb364]" /> Loan Details
-                </h3>
+              {/* Group 2: Financial Profile */}
+              <div className="bg-[#f8f9fa] p-5 rounded-xl border border-[#e0e0e0] space-y-4">
+                <h4 className="text-[16px] font-bold text-[#4CAF50] border-b border-[#e0e0e0] pb-2">
+                  Financial Profile
+                </h4>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Loan Type</label>
-                    <select value={loanType} onChange={(e) => setLoanType(e.target.value)}
-                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-2.5 text-[13.5px] font-bold text-[#052316] focus:outline-none cursor-pointer">
-                      <option value="conventional">Conventional</option>
-                      <option value="fha">FHA Loan</option>
-                      <option value="va">VA Loan</option>
-                      <option value="usda">USDA Loan</option>
-                    </select>
+                <div>
+                  <div className="flex items-center gap-1.5 mb-1.5">
+                    <label htmlFor="annual-income" className="text-[13.5px] font-medium text-[#32353C]">Annual Income ($)</label>
+                    <div className="relative group cursor-help">
+                      <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[10px] font-bold flex items-center justify-center">?</span>
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                        Total annual household income before taxes.
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Loan Term</label>
-                    <select value={loanTerm} onChange={(e) => setLoanTerm(Number(e.target.value))}
-                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3 text-[14px] font-bold text-[#052316] focus:outline-none cursor-pointer">
-                      <option value={30}>30 Years</option>
-                      <option value={25}>25 Years</option>
-                      <option value={20}>20 Years</option>
-                      <option value={15}>15 Years</option>
-                      <option value={10}>10 Years</option>
-                    </select>
+                  <div className="relative">
+                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#666] text-[14px] font-medium pointer-events-none">$</span>
+                    <input
+                      type="text"
+                      id="annual-income"
+                      value={annualIncomeStr}
+                      onChange={(e) => {
+                        const val = e.target.value.replace(/[^0-9]/g, "");
+                        setAnnualIncomeStr(val ? parseInt(val, 10).toLocaleString("en-US") : "");
+                      }}
+                      placeholder="Annual Income"
+                      className="w-full h-[42px] pl-8 pr-3 bg-white border border-[#e0e0e0] rounded-md text-[14.5px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50]"
+                    />
                   </div>
                 </div>
 
-                <SliderInput
-                  label="Interest Rate"
-                  value={interestRate}
-                  min={0}
-                  max={15}
-                  step={0.125}
-                  suffix="%"
-                  onChange={setInterestRate}
-                />
+                <div>
+                  <div className="flex items-center gap-1.5 mb-1.5">
+                    <label htmlFor="monthly-debt" className="text-[13.5px] font-medium text-[#32353C]">Monthly Debt Payments ($)</label>
+                    <div className="relative group cursor-help">
+                      <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[10px] font-bold flex items-center justify-center">?</span>
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-56 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                        Total monthly debt payments (car, student loans, credit cards).
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#666] text-[14px] font-medium pointer-events-none">$</span>
+                    <input
+                      type="text"
+                      id="monthly-debt"
+                      value={monthlyDebtStr}
+                      onChange={(e) => {
+                        const val = e.target.value.replace(/[^0-9]/g, "");
+                        setMonthlyDebtStr(val ? parseInt(val, 10).toLocaleString("en-US") : "");
+                      }}
+                      placeholder="Monthly Debt"
+                      className="w-full h-[42px] pl-8 pr-3 bg-white border border-[#e0e0e0] rounded-md text-[14.5px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50]"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-1.5 mb-1.5">
+                    <label htmlFor="credit-score" className="text-[13.5px] font-medium text-[#32353C]">Credit Score Range</label>
+                    <div className="relative group cursor-help">
+                      <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[10px] font-bold flex items-center justify-center">?</span>
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-52 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                        Select your credit score range.
+                      </div>
+                    </div>
+                  </div>
+                  <select
+                    id="credit-score"
+                    value={creditScore}
+                    onChange={(e) => setCreditScore(e.target.value)}
+                    className="w-full h-[42px] px-3 bg-white border border-[#e0e0e0] rounded-md text-[14px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50] cursor-pointer"
+                  >
+                    <option value="760">760+ (Excellent)</option>
+                    <option value="720">720-759 (Good to Very Good)</option>
+                    <option value="680">680-719 (Fair to Good)</option>
+                    <option value="620">620-679 (Poor to below Fair)</option>
+                    <option value="619">Below 620 (High Risk)</option>
+                  </select>
+                </div>
               </div>
 
-              {/* DOWN PAYMENT */}
-              <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 lg:p-8 shadow-sm flex flex-col gap-6">
-                <h3 className="text-[#052316] text-[17px] font-bold pb-3 border-b border-[#e8e0d0]/40 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#3fb364]" /> Down Payment
-                </h3>
+              {/* Group 3: Loan Details */}
+              <div className="bg-[#f8f9fa] p-5 rounded-xl border border-[#e0e0e0] space-y-4">
+                <h4 className="text-[16px] font-bold text-[#4CAF50] border-b border-[#e0e0e0] pb-2">
+                  Loan Details
+                </h4>
 
-                <SliderInput
-                  label="Down Payment ($)"
-                  value={dpVal}
-                  min={0}
-                  max={homePrice}
-                  step={1000}
-                  prefix="$"
-                  onChange={handleDpAmtChange}
-                />
+                <div>
+                  <div className="flex items-center gap-1.5 mb-1.5">
+                    <label htmlFor="loan-type" className="text-[13.5px] font-medium text-[#32353C]">Loan Type</label>
+                    <div className="relative group cursor-help">
+                      <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[10px] font-bold flex items-center justify-center">?</span>
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-52 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                        Select mortgage type. Different loans have different down payment rules.
+                      </div>
+                    </div>
+                  </div>
+                  <select
+                    id="loan-type"
+                    value={loanType}
+                    onChange={(e) => handleLoanTypeChange(e.target.value)}
+                    className="w-full h-[42px] px-3 bg-white border border-[#e0e0e0] rounded-md text-[14px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50] cursor-pointer"
+                  >
+                    <option value="conventional">Conventional Loan</option>
+                    <option value="fha">FHA Loan</option>
+                    <option value="va">VA Loan</option>
+                    <option value="usda">USDA Loan</option>
+                  </select>
+                </div>
 
-                {/* Validation warning below inputs */}
-                {isBelowMinDp && (
-                  <div className="mt-3 bg-yellow-50 border border-yellow-200 text-yellow-800 rounded-xl p-3 text-[12.5px] font-medium leading-relaxed">
-                    ⚠️ Down payment does not meet program minimum specifications for <strong>{loanType.toUpperCase()}</strong>:
-                    <br />Minimum required is <strong>{minDp.label}</strong> (approximately <strong>{fmt(requiredMinAmt)}</strong>).
+                <div>
+                  <div className="flex items-center gap-1.5 mb-1.5">
+                    <label htmlFor="interest-rate" className="text-[13.5px] font-medium text-[#32353C]">Interest Rate (%)</label>
+                    <div className="relative group cursor-help">
+                      <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[10px] font-bold flex items-center justify-center">?</span>
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                        Annual interest rate for your loan.
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <input
+                      type="text"
+                      id="interest-rate"
+                      value={interestRateStr}
+                      onChange={(e) => setInterestRateStr(e.target.value)}
+                      placeholder="Interest Rate"
+                      className="w-full h-[42px] pl-3.5 pr-8 bg-white border border-[#e0e0e0] rounded-md text-[14.5px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50] text-right"
+                    />
+                    <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#666] text-[14px] font-medium pointer-events-none">%</span>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-1.5 mb-1.5">
+                    <label htmlFor="loan-term" className="text-[13.5px] font-medium text-[#32353C]">Loan Term (Years)</label>
+                    <div className="relative group cursor-help">
+                      <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[10px] font-bold flex items-center justify-center">?</span>
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                        Length of your loan in years.
+                      </div>
+                    </div>
+                  </div>
+                  <select
+                    id="loan-term"
+                    value={loanTerm}
+                    onChange={(e) => setLoanTerm(parseInt(e.target.value, 10))}
+                    className="w-full h-[42px] px-3 bg-white border border-[#e0e0e0] rounded-md text-[14px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50] cursor-pointer"
+                  >
+                    <option value={30}>30 Years</option>
+                    <option value={20}>20 Years</option>
+                    <option value={15}>15 Years</option>
+                    <option value={10}>10 Years</option>
+                  </select>
+                </div>
+              </div>
+
+            </div>
+
+            {/* Bottom Row: Groups 4 & 5 Side-by-Side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+              
+              {/* Group 4: Down Payment */}
+              <div className="bg-[#f8f9fa] p-5 rounded-xl border border-[#e0e0e0] space-y-4">
+                <h4 className="text-[16px] font-bold text-[#4CAF50] border-b border-[#e0e0e0] pb-2">
+                  Down Payment
+                </h4>
+
+                <div className="grid grid-cols-2 gap-3">
+                  <div>
+                    <div className="flex items-center gap-1 mb-1">
+                      <label htmlFor="down-dollar" className="text-[13px] font-medium text-[#32353C]">Down Payment ($)</label>
+                    </div>
+                    <div className="relative">
+                      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#666] text-[13px] font-medium pointer-events-none">$</span>
+                      <input
+                        type="text"
+                        id="down-dollar"
+                        value={downDollarStr}
+                        onChange={(e) => handleDownDollarChange(e.target.value)}
+                        placeholder="Amount"
+                        className="w-full h-[42px] pl-7 pr-2.5 bg-white border border-[#e0e0e0] rounded-md text-[14px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50]"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <div className="flex items-center gap-1 mb-1">
+                      <label htmlFor="down-percent" className="text-[13px] font-medium text-[#32353C]">Down Payment (%)</label>
+                    </div>
+                    <div className="relative">
+                      <input
+                        type="text"
+                        id="down-percent"
+                        value={downPercentStr}
+                        onChange={(e) => handleDownPercentChange(e.target.value)}
+                        placeholder="Percent"
+                        className="w-full h-[42px] pl-2.5 pr-7 bg-white border border-[#e0e0e0] rounded-md text-[14px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50] text-right"
+                      />
+                      <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[#666] text-[13px] font-medium pointer-events-none">%</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white p-3.5 rounded-lg border border-[#e0e0e0]">
+                  <h5 className="text-[13px] font-bold text-[#32353C] mb-1.5">Selected Loan Type Details:</h5>
+                  <div className="text-[12.5px] text-[#666] leading-relaxed">
+                    {loanType === "conventional" && (
+                      <ul className="list-disc pl-4 space-y-1">
+                        <li>Minimum down payment: 3-5%</li>
+                        <li>20% down payment avoids PMI</li>
+                        <li>Flexible terms available</li>
+                        <li>Good credit score recommended</li>
+                      </ul>
+                    )}
+                    {loanType === "fha" && (
+                      <ul className="list-disc pl-4 space-y-1">
+                        <li>Minimum down payment: 3.5%</li>
+                        <li>Lower credit score requirements</li>
+                        <li>Requires MIP (Mortgage Insurance Premium)</li>
+                        <li>Great for first-time buyers</li>
+                      </ul>
+                    )}
+                    {loanType === "va" && (
+                      <ul className="list-disc pl-4 space-y-1">
+                        <li>No down payment required ($0 down)</li>
+                        <li>No monthly PMI required</li>
+                        <li>Must be eligible veteran/service member</li>
+                        <li>VA funding fee may apply</li>
+                      </ul>
+                    )}
+                    {loanType === "usda" && (
+                      <ul className="list-disc pl-4 space-y-1">
+                        <li>No down payment required ($0 down)</li>
+                        <li>Must be in eligible rural area</li>
+                        <li>Income limits apply</li>
+                        <li>USDA guarantee fee required</li>
+                      </ul>
+                    )}
+                  </div>
+                </div>
+              </div>
+
+              {/* Group 5: Additional Costs */}
+              <div className="bg-[#f8f9fa] p-5 rounded-xl border border-[#e0e0e0] space-y-4">
+                <h4 className="text-[16px] font-bold text-[#4CAF50] border-b border-[#e0e0e0] pb-2">
+                  Additional Costs
+                </h4>
+
+                <div>
+                  <div className="flex items-center gap-1.5 mb-1.5">
+                    <label htmlFor="property-tax" className="text-[13.5px] font-medium text-[#32353C]">Property Tax Rate (%)</label>
+                    <div className="relative group cursor-help">
+                      <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[10px] font-bold flex items-center justify-center">?</span>
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                        Annual property tax rate for selected area.
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <input
+                      type="text"
+                      id="property-tax"
+                      value={propertyTaxRateStr}
+                      onChange={(e) => setPropertyTaxRateStr(e.target.value)}
+                      placeholder="Property Tax Rate"
+                      className="w-full h-[42px] pl-3.5 pr-8 bg-white border border-[#e0e0e0] rounded-md text-[14.5px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50] text-right"
+                    />
+                    <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#666] text-[14px] font-medium pointer-events-none">%</span>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-1.5 mb-1.5">
+                    <label htmlFor="insurance" className="text-[13.5px] font-medium text-[#32353C]">Annual Home Insurance ($)</label>
+                    <div className="relative group cursor-help">
+                      <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[10px] font-bold flex items-center justify-center">?</span>
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-52 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                        Estimated annual cost of homeowners insurance.
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#666] text-[14px] font-medium pointer-events-none">$</span>
+                    <input
+                      type="text"
+                      id="insurance"
+                      value={annualInsuranceStr}
+                      onChange={(e) => {
+                        const val = e.target.value.replace(/[^0-9]/g, "");
+                        setAnnualInsuranceStr(val ? parseInt(val, 10).toLocaleString("en-US") : "");
+                      }}
+                      placeholder="Annual Insurance"
+                      className="w-full h-[42px] pl-8 pr-3.5 bg-white border border-[#e0e0e0] rounded-md text-[14.5px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50]"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-1.5 mb-1.5">
+                    <label htmlFor="hoa" className="text-[13.5px] font-medium text-[#32353C]">Monthly HOA Fees ($)</label>
+                    <div className="relative group cursor-help">
+                      <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[10px] font-bold flex items-center justify-center">?</span>
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                        Monthly HOA dues if applicable.
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#666] text-[14px] font-medium pointer-events-none">$</span>
+                    <input
+                      type="text"
+                      id="hoa"
+                      value={monthlyHOAStr}
+                      onChange={(e) => {
+                        const val = e.target.value.replace(/[^0-9]/g, "");
+                        setMonthlyHOAStr(val ? parseInt(val, 10).toLocaleString("en-US") : "");
+                      }}
+                      placeholder="Monthly HOA"
+                      className="w-full h-[42px] pl-8 pr-3.5 bg-white border border-[#e0e0e0] rounded-md text-[14.5px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50]"
+                    />
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          {/* Results Section */}
+          <div className="pt-6 border-t border-[#f0f0f0] space-y-8 animate-fadeIn">
+            <h3 className="text-[22px] font-bold text-[#32353C]">Your Results</h3>
+
+            {/* Results Grid (4 Cards) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              
+              {/* Card 1: Initial Costs */}
+              <div className="bg-[#f8f9fa] border border-[#e0e0e0] rounded-xl p-5 space-y-3 shadow-sm">
+                <h4 className="text-[15px] font-bold text-[#4CAF50] border-b border-[#e0e0e0] pb-2">Initial Costs</h4>
+                <div className="flex justify-between text-[13.5px]">
+                  <span className="text-[#666]">Required Savings:</span>
+                  <span className="font-bold text-[#32353C]">{formatCurrency(calcResult.requiredSavings)}</span>
+                </div>
+                <div className="flex justify-between text-[13.5px]">
+                  <span className="text-[#666]">Down Payment:</span>
+                  <span className="font-semibold text-[#32353C]">{formatCurrency(calcResult.downDollar)}</span>
+                </div>
+                <div className="flex justify-between text-[13.5px]">
+                  <span className="text-[#666]">Estimated Closing Costs:</span>
+                  <span className="font-semibold text-[#32353C]">{formatCurrency(calcResult.closingCosts)}</span>
+                </div>
+              </div>
+
+              {/* Card 2: Loan Details */}
+              <div className="bg-[#f8f9fa] border border-[#e0e0e0] rounded-xl p-5 space-y-3 shadow-sm">
+                <h4 className="text-[15px] font-bold text-[#4CAF50] border-b border-[#e0e0e0] pb-2">Loan Details</h4>
+                <div className="flex justify-between text-[13.5px]">
+                  <span className="text-[#666]">Total Loan Amount:</span>
+                  <span className="font-bold text-[#32353C]">{formatCurrency(calcResult.loanAmount)}</span>
+                </div>
+                <div className="flex justify-between text-[13.5px]">
+                  <span className="text-[#666]">Interest Rate:</span>
+                  <span className="font-semibold text-[#32353C]">{calcResult.interestRate}%</span>
+                </div>
+                <div className="flex justify-between text-[13.5px]">
+                  <span className="text-[#666]">Loan Term:</span>
+                  <span className="font-semibold text-[#32353C]">{calcResult.loanTerm} Years</span>
+                </div>
+              </div>
+
+              {/* Card 3: Monthly Payments */}
+              <div className="bg-[#f8f9fa] border border-[#e0e0e0] rounded-xl p-5 space-y-2.5 shadow-sm">
+                <h4 className="text-[15px] font-bold text-[#4CAF50] border-b border-[#e0e0e0] pb-2">Monthly Payments</h4>
+                <div className="flex justify-between text-[13px]">
+                  <span className="text-[#666]">Principal &amp; Interest:</span>
+                  <span className="font-medium text-[#32353C]">{formatCurrency(calcResult.monthlyPI)}</span>
+                </div>
+                <div className="flex justify-between text-[13px]">
+                  <span className="text-[#666]">Property Tax:</span>
+                  <span className="font-medium text-[#32353C]">{formatCurrency(calcResult.monthlyTax)}</span>
+                </div>
+                <div className="flex justify-between text-[13px]">
+                  <span className="text-[#666]">Insurance:</span>
+                  <span className="font-medium text-[#32353C]">{formatCurrency(calcResult.monthlyInsurance)}</span>
+                </div>
+                {calcResult.monthlyHOA > 0 && (
+                  <div className="flex justify-between text-[13px]">
+                    <span className="text-[#666]">HOA Dues:</span>
+                    <span className="font-medium text-[#32353C]">{formatCurrency(calcResult.monthlyHOA)}</span>
                   </div>
                 )}
-              </div>
-
-              {/* ADDITIONAL COSTS */}
-              <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 lg:p-8 shadow-sm flex flex-col gap-6">
-                <h3 className="text-[#052316] text-[17px] font-bold pb-3 border-b border-[#e8e0d0]/40 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#b89a5a]" /> Additional Costs
-                </h3>
-                
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div>
-                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Property Tax ($/yr)</label>
-                    <div className="relative">
-                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={taxAmountManual} onChange={(e) => setTaxAmountManual(parseFloat(e.target.value) || 0)}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
-                    </div>
+                {calcResult.monthlyPMI > 0 && (
+                  <div className="flex justify-between text-[13px]">
+                    <span className="text-[#666]">PMI / MIP:</span>
+                    <span className="font-medium text-[#FF9800]">{formatCurrency(calcResult.monthlyPMI)}</span>
                   </div>
-                  <div>
-                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Home Insurance ($/yr)</label>
-                    <div className="relative">
-                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={insManual} onChange={(e) => setInsManual(parseFloat(e.target.value) || 0)}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">HOA Dues ($/mo)</label>
-                    <div className="relative">
-                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={hoa} onChange={(e) => setHoa(parseFloat(e.target.value) || 0)}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
-                    </div>
-                  </div>
+                )}
+                <div className="flex justify-between text-[14px] pt-2 border-t border-[#e0e0e0] font-bold text-[#32353C]">
+                  <span>Total Monthly Payment:</span>
+                  <span className="text-[#4CAF50]">{formatCurrency(calcResult.totalMonthlyPayment)}</span>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Results */}
-        {result && (
-          <section id="calc-results" className="pb-16 px-6 lg:px-10 max-w-6xl mx-auto space-y-8 animate-fadeUp">
-            
-            {/* Primary outputs panels */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              <div className="bg-[#052316] text-white border border-[#052316] rounded-3xl p-6 shadow-sm flex flex-col justify-between">
-                <div>
-                  <span className="text-[#3fb364] text-[10.5px] font-bold tracking-wider uppercase">Required Cash Savings</span>
-                  <h2 className="text-[34px] font-bold tracking-tight leading-none mt-1.5">{fmt(result.requiredSavings)}</h2>
-                </div>
-                <p className="text-[12.5px] text-[#c8c8b8] mt-3 pt-2.5 border-t border-white/10">Includes Down Payment and estimated closing costs.</p>
               </div>
 
-              <div className="bg-white border border-[#e8e0d0]/60 rounded-3xl p-6 shadow-sm flex flex-col justify-between">
-                <div>
-                  <span className="text-[#a89a70] text-[10.5px] font-bold tracking-wider uppercase">Total Monthly Payment</span>
-                  <h2 className="text-[34px] font-bold tracking-tight leading-none mt-1.5 text-[#052316]">{fmt(result.totalMonthly)}</h2>
+              {/* Card 4: Affordability Metrics */}
+              <div className="bg-[#f8f9fa] border border-[#e0e0e0] rounded-xl p-5 space-y-3 shadow-sm">
+                <h4 className="text-[15px] font-bold text-[#4CAF50] border-b border-[#e0e0e0] pb-2">Affordability Metrics</h4>
+                <div className="flex justify-between text-[13.5px]">
+                  <span className="text-[#666]">Housing Cost Ratio:</span>
+                  <span className={`font-bold ${calcResult.housingRatio > 30 ? "text-[#FF9800]" : "text-[#4CAF50]"}`}>
+                    {calcResult.housingRatio.toFixed(1)}%
+                  </span>
                 </div>
-                <p className="text-[12.5px] text-[#888] mt-3 pt-2.5 border-t border-[#e8e0d0]/30">Full payment including taxes, insurance, HOA & fees.</p>
+                <div className="flex justify-between text-[13.5px]">
+                  <span className="text-[#666]">Debt-to-Income (DTI):</span>
+                  <span className={`font-bold ${calcResult.dtiRatio > 43 ? "text-[#FF9800]" : "text-[#4CAF50]"}`}>
+                    {calcResult.dtiRatio.toFixed(1)}%
+                  </span>
+                </div>
+                <p className="text-[11.5px] text-[#666] italic pt-1">
+                  {calcResult.dtiRatio > 43
+                    ? "DTI exceeds standard 43% guideline. Consider larger down payment or lower debt."
+                    : "Ratios are within standard qualifying guidelines."}
+                </p>
               </div>
 
-              <div className="bg-white border border-[#e8e0d0]/60 rounded-3xl p-6 shadow-sm flex flex-col justify-between">
-                <div>
-                  <span className="text-[#a89a70] text-[10.5px] font-bold tracking-wider uppercase">Financed Loan Amount</span>
-                  <h2 className="text-[34px] font-bold tracking-tight leading-none mt-1.5 text-[#052316]">{fmt(result.loanAmount)}</h2>
-                </div>
-                <p className="text-[12.5px] text-[#888] mt-3 pt-2.5 border-t border-[#e8e0d0]/30">Remaining principal balance amortized.</p>
-              </div>
             </div>
 
-            {/* Split Breakdown section — chart left, cards right */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              
-              {/* Visual chart & Insights (LEFT) */}
-              <div className="space-y-6">
+            {/* Visual Representation & Key Insights */}
+            <div className="bg-[#f8f9fa] border border-[#e0e0e0] rounded-2xl p-6 lg:p-8 space-y-8">
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                 
-                {/* SVG Donut Chart */}
-                <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm text-center">
-                  <h3 className="text-[#052316] text-[16px] font-bold mb-5 pb-3 border-b border-[#e8e0d0]/40 text-left">Monthly Distribution</h3>
-                  
-                  <div className="relative w-44 h-44 mx-auto mb-6">
-                    <svg viewBox="0 0 200 200" className="w-full h-full transform -rotate-90">
-                      <circle cx="100" cy="100" r="70" fill="none" stroke="#fcf9f3" strokeWidth="16" />
-                      {getDonutPaths(result).map((p, idx) => (
-                        <path key={idx} d={p.d} fill="none" stroke={p.color} strokeWidth="16" strokeLinecap="round" />
-                      ))}
-                    </svg>
-                    <div className="absolute inset-0 flex flex-col items-center justify-center">
-                      <span className="text-[10px] uppercase font-bold tracking-wider text-[#888]">Total</span>
-                      <span className="text-[17px] font-bold text-[#052316]">{fmt(result.totalMonthly)}</span>
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-3 text-[12px] text-left pt-2 font-sans">
-                    <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-full bg-[#052316]" /> <span>Principal & Interest ({((result.monthlyPI / result.totalMonthly) * 100).toFixed(1)}%)</span></div>
-                    <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-full bg-[#b89a5a]" /> <span>Property Taxes ({((result.monthlyTax / result.totalMonthly) * 100).toFixed(1)}%)</span></div>
-                    <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-full bg-[#3fb364]" /> <span>Home Insurance ({((result.monthlyIns / result.totalMonthly) * 100).toFixed(1)}%)</span></div>
-                    {result.monthlyFee > 0 && <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-full bg-[#000]" /> <span>PMI/MIP Fee ({((result.monthlyFee / result.totalMonthly) * 100).toFixed(1)}%)</span></div>}
-                    {result.monthlyHOA > 0 && <div className="flex items-center gap-1.5"><div className="w-3 h-3 rounded-full bg-[#aaa]" /> <span>HOA Dues ({((result.monthlyHOA / result.totalMonthly) * 100).toFixed(1)}%)</span></div>}
-                  </div>
-                </div>
-
-                {/* Key Insights & Recommendations */}
-                <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm space-y-4 text-[13.5px] leading-relaxed text-[#555]">
-                  <h3 className="text-[#052316] text-[16px] font-bold pb-2 border-b border-[#e8e0d0]/40">Key Insights</h3>
-                  
-                  <div>
-                    <h4 className="text-[#052316] font-bold text-[13px] mb-1 font-sans">Monthly Payment Breakdown</h4>
-                    <p>{largestShareText(result)}</p>
-                  </div>
-
-                  <div>
-                    <h4 className="text-[#052316] font-bold text-[13px] mb-1 font-sans">Affordability Analysis</h4>
-                    <p>
-                      Housing Cost Ratio (Front-end): <strong>{result.housingCostRatio}%</strong> (Limit 40%)
-                      <br />DTI Ratio (Back-end): <strong>{result.dtiRatio}%</strong> (Limit 48%)
-                      <br />
-                      {result.housingCostRatio <= 40 && result.dtiRatio <= 48
-                        ? "✅ Both debt ratios fall safely within target guidelines."
-                        : result.housingCostRatio > 40 && result.dtiRatio > 48
-                          ? "⚠️ Caution: Both housing expense and total debt ratios exceed recommended thresholds."
-                          : "⚠️ Warning: One of your debt-to-income ratios is currently over recommended guidelines."}
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className="text-[#052316] font-bold text-[13px] mb-1 font-sans">Recommendations</h4>
-                    <ul className="list-disc pl-4 space-y-1 mt-1 font-sans text-[13px]">
-                      {loanType === "conventional" && currentDpPctNum < 20 && (
-                        <li>Increasing your down payment to <strong>20% ({fmt(homePrice * 0.2)})</strong> will eliminate the monthly PMI, saving you <strong>{fmt(result.monthlyFee)}/mo</strong>.</li>
-                      )}
-                      {result.dtiRatio > 48 && (
-                        <li>Consider reducing recurring monthly debts or increasing down payment to reduce mortgage balance and lower DTI ratio.</li>
-                      )}
-                      {result.requiredSavings > 0 && (
-                        <li>Ensure you have additional emergency reserves in savings after closing.</li>
-                      )}
-                    </ul>
-                  </div>
-                </div>
-
-              </div>
-
-              {/* Cost breakdown cards (RIGHT) */}
-              <div className="space-y-6">
-                
-                {/* Initial costs */}
-                <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm">
-                  <h3 className="text-[#052316] text-[16px] font-bold mb-4 pb-3 border-b border-[#e8e0d0]/40">Upfront Savings Breakdown</h3>
-                  <div className="flex flex-col gap-3">
-                    <div className="flex justify-between text-[13.5px]">
-                      <span className="text-[#888]">Target Down Payment ({currentDpPctNum.toFixed(1)}%)</span>
-                      <span className="text-[#052316] font-bold">{fmt(result.downPaymentAmt)}</span>
-                    </div>
-                    <div className="flex justify-between text-[13.5px] py-1 border-t border-[#e8e0d0]/20 mt-1">
-                      <span className="text-[#888]">Estimated Closing Costs (Lookup table)</span>
-                      <span className="text-[#052316] font-bold">{fmt(result.closingCosts)}</span>
-                    </div>
-                    <div className="flex justify-between text-[14.5px] pt-3.5 border-t border-[#e8e0d0]/40 mt-1 font-bold text-[#052316]">
-                      <span>Required Savings</span>
-                      <span>{fmt(result.requiredSavings)}</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Monthly payments breakdown list */}
-                <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm">
+                {/* Donut Chart */}
+                <div className="lg:col-span-5 bg-white p-6 rounded-xl border border-[#e0e0e0] shadow-sm flex flex-col items-center justify-center">
                   <InteractivePieChart
-                    title="Monthly Payment Breakdown"
+                    title="Monthly Payment Distribution"
                     donut={true}
+                    centerTextTitle="Monthly Total"
+                    centerTextSub={formatCurrency(calcResult.totalMonthlyPayment)}
                     dataItems={[
-                      { label: "Principal & Interest", value: result.monthlyPI, color: "#4CAF50" },
-                      { label: "Property Taxes", value: result.monthlyTax, color: "#9C27B0" },
-                      { label: "Home Insurance", value: result.monthlyIns, color: "#FF9800" },
-                      { label: "Mortgage Insurance (PMI/MIP)", value: result.monthlyFee, color: "#E1BEE7" },
-                      { label: "HOA Dues", value: result.monthlyHOA, color: "#2196F3" },
+                      { label: "Principal & Interest", value: calcResult.monthlyPI, color: "#6ca220" },
+                      { label: "Property Tax", value: calcResult.monthlyTax, color: "#4a4a4a" },
+                      { label: "Insurance", value: calcResult.monthlyInsurance, color: "#64B5F6" },
+                      { label: "PMI / MIP", value: calcResult.monthlyPMI, color: "#BA68C8" },
+                      { label: "HOA Dues", value: calcResult.monthlyHOA, color: "#FF9800" },
                     ]}
                   />
-                  <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-[#e8e0d0]/40">
-                    <div className="flex justify-between text-[13.5px]">
-                      <span className="text-[#888]">Principal &amp; Interest</span>
-                      <span className="text-[#052316] font-bold">{fmt(result.monthlyPI)}</span>
+                </div>
+
+                {/* Key Insights */}
+                <div className="lg:col-span-7 bg-white p-6 rounded-xl border border-[#e0e0e0] shadow-sm space-y-5">
+                  <h4 className="text-[18px] font-bold text-[#32353C] border-b border-[#e0e0e0] pb-2">
+                    Key Insights &amp; Recommendations
+                  </h4>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <h5 className="text-[14px] font-bold text-[#4CAF50] mb-2">Monthly Payment Breakdown</h5>
+                      <ul className="space-y-1.5 text-[13px] text-[#555]">
+                        <li className="flex justify-between">
+                          <span>Principal &amp; Interest:</span>
+                          <span className="font-semibold text-[#32353C]">{formatCurrency(calcResult.monthlyPI)}</span>
+                        </li>
+                        <li className="flex justify-between">
+                          <span>Property Tax:</span>
+                          <span className="font-semibold text-[#32353C]">{formatCurrency(calcResult.monthlyTax)}</span>
+                        </li>
+                        <li className="flex justify-between">
+                          <span>Insurance:</span>
+                          <span className="font-semibold text-[#32353C]">{formatCurrency(calcResult.monthlyInsurance)}</span>
+                        </li>
+                        {calcResult.monthlyPMI > 0 && (
+                          <li className="flex justify-between">
+                            <span>PMI / MIP:</span>
+                            <span className="font-semibold text-[#FF9800]">{formatCurrency(calcResult.monthlyPMI)}</span>
+                          </li>
+                        )}
+                        <li className="flex justify-between pt-1 border-t border-[#f0f0f0] font-bold text-[#32353C]">
+                          <span>Total Monthly Payment:</span>
+                          <span>{formatCurrency(calcResult.totalMonthlyPayment)}</span>
+                        </li>
+                      </ul>
                     </div>
-                    <div className="flex justify-between text-[13.5px]">
-                      <span className="text-[#888]">Property Taxes</span>
-                      <span className="text-[#052316] font-bold">{fmt(result.monthlyTax)}</span>
-                    </div>
-                    <div className="flex justify-between text-[13.5px]">
-                      <span className="text-[#888]">Home Insurance</span>
-                      <span className="text-[#052316] font-bold">{fmt(result.monthlyIns)}</span>
-                    </div>
-                    {result.monthlyFee > 0 && (
-                      <div className="flex justify-between text-[13.5px]">
-                        <span className="text-[#888] font-bold">{loanType.toUpperCase()} PMI/MIP Fee</span>
-                        <span className="text-red-500 font-bold">{fmt(result.monthlyFee)}</span>
-                      </div>
-                    )}
-                    {result.monthlyHOA > 0 && (
-                      <div className="flex justify-between text-[13.5px]">
-                        <span className="text-[#888]">HOA Dues</span>
-                        <span className="text-[#052316] font-bold">{fmt(result.monthlyHOA)}</span>
-                      </div>
-                    )}
-                    <div className="flex justify-between text-[14.5px] pt-3.5 border-t border-[#e8e0d0]/40 mt-1 font-bold text-[#052316]">
-                      <span>Total Monthly Cost</span>
-                      <span>{fmt(result.totalMonthly)}</span>
+
+                    <div>
+                      <h5 className="text-[14px] font-bold text-[#4CAF50] mb-2">Recommendations</h5>
+                      <ul className="list-disc pl-4 space-y-1.5 text-[12.5px] text-[#555] leading-relaxed">
+                        {calcResult.monthlyPMI > 0 && (
+                          <li>Increase down payment to 20% to eliminate monthly PMI ({formatCurrency(calcResult.monthlyPMI)}/mo).</li>
+                        )}
+                        <li>Down payment of {calcResult.downPercent}% requires {formatCurrency(calcResult.downDollar)} upfront.</li>
+                        <li>Total closing costs estimated at {formatCurrency(calcResult.closingCosts)}.</li>
+                      </ul>
                     </div>
                   </div>
                 </div>
@@ -850,28 +903,30 @@ export default function DownPaymentCalculatorPage() {
             </div>
 
             {/* Down Payment Scenarios Comparison Table */}
-            <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 shadow-sm overflow-hidden font-sans">
-              <div className="px-7 py-5 border-b border-[#e8e0d0]/40">
-                <h3 className="text-[#052316] text-[16px] font-bold">Down Payment Scenarios Comparison</h3>
-                <p className="text-[#888] text-[12.5px] mt-0.5">Holding price, rate, and credit score constant.</p>
-              </div>
-
-              <div className="overflow-x-auto">
-                <table className="w-full text-[12.5px]">
+            <div className="pt-4">
+              <h3 className="text-[20px] font-bold text-[#4CAF50] mb-4">
+                Down Payment Scenarios Comparison
+              </h3>
+              <div className="overflow-x-auto rounded-xl border border-[#e0e0e0] shadow-sm">
+                <table className="w-full text-left border-collapse text-[13.5px]">
                   <thead>
                     <tr className="bg-[#052316] text-white">
-                      {["Down %", "Down Payment ($)", "Financed Loan Amount", "Estimated Monthly Payment"].map((h) => (
-                        <th key={h} className="py-3 px-4 text-left font-semibold whitespace-nowrap">{h}</th>
-                      ))}
+                      <th className="py-3 px-4 font-semibold">Down %</th>
+                      <th className="py-3 px-4 font-semibold">Down Payment ($)</th>
+                      <th className="py-3 px-4 font-semibold">Loan Amount ($)</th>
+                      <th className="py-3 px-4 font-semibold">Total Monthly Payment ($)</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {getScenarioRows().map((row) => (
-                      <tr key={row.pct} className={Math.abs(row.pct - currentDpPctNum) < 0.1 ? "bg-[#3fb364]/10 font-bold" : "hover:bg-[#faf7f0] border-b border-[#e8e0d0]/20"}>
-                        <td className="py-3 px-4 text-[#052316]">{row.pct}%</td>
-                        <td className="py-3 px-4 text-[#052316]">{fmt(row.dp)}</td>
-                        <td className="py-3 px-4 text-[#052316]">{fmt(row.loan)}</td>
-                        <td className="py-3 px-4 text-[#052316]">{fmt(row.monthly)}</td>
+                    {scenarios.map((scen, idx) => (
+                      <tr
+                        key={scen.downPercent}
+                        className={idx % 2 === 0 ? "bg-white" : "bg-[#f8f9fa]"}
+                      >
+                        <td className="py-3 px-4 font-bold text-[#32353C]">{scen.label}</td>
+                        <td className="py-3 px-4 text-[#32353C] font-semibold">{formatCurrency(scen.downAmt)}</td>
+                        <td className="py-3 px-4 text-[#32353C]">{formatCurrency(scen.loanAmt)}</td>
+                        <td className="py-3 px-4 font-bold text-[#4CAF50]">{formatCurrency(scen.totalMonthly)}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -879,24 +934,11 @@ export default function DownPaymentCalculatorPage() {
               </div>
             </div>
 
-            {/* CTA */}
-            <div className="bg-[#052316] rounded-3xl p-6 lg:p-8 text-white shadow-md relative overflow-hidden">
-              <div className="absolute -bottom-16 -right-16 w-[200px] h-[200px] rounded-full border border-white/5 opacity-40" />
-              <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 font-sans">
-                <div>
-                  <h4 className="text-[18px] font-bold mb-1">Ready to purchase?</h4>
-                  <p className="text-[#c8c8b8] text-[13.5px]">Get a fully qualified pre-approval letter for your target loan type today.</p>
-                </div>
-                <Link href="/#get-pre-approved"
-                  className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-bold px-6 py-3 rounded-full inline-flex items-center gap-2 transition-all shadow-md whitespace-nowrap">
-                  Connect With Us →
-                </Link>
-              </div>
-            </div>
+          </div>
 
-          </section>
-        )}
+        </div>
       </main>
+
       <Footer />
     </div>
   );
