@@ -72,24 +72,15 @@ export default function CalculatorsPage() {
                     onChange={(v) => setHomePrice(v)} formatValue={(v) => formatCurrency(v)} />
 
                   <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <label className="text-[#052316] text-[14px] font-semibold">Down Payment</label>
-                      <span className="text-[#052316] text-[15px] font-bold">{downPaymentPct}%</span>
-                    </div>
-                    <div className="flex items-center gap-4">
-                      <div className="relative flex-1">
-                        <div className="absolute top-1/2 -translate-y-1/2 left-0 right-0 h-[6px] bg-[#d4d4d4] rounded-full pointer-events-none"></div>
-                        <div className="absolute top-1/2 -translate-y-1/2 left-0 h-[6px] bg-[#3fb364] rounded-full pointer-events-none" style={{ width: `${(downPaymentPct / 50) * 100}%` }}></div>
-                        <input type="range" min={0} max={50} step={1} value={downPaymentPct}
-                          onChange={(e) => setDownPaymentPct(Number(e.target.value))}
-                          className="w-full appearance-none bg-transparent cursor-pointer relative z-10 slider-thumb" />
-                      </div>
-                      <div className="relative w-[130px] flex-shrink-0">
-                        <input type="number" value={downPaymentPct}
-                          onChange={(e) => setDownPaymentPct(Math.min(50, Math.max(0, Number(e.target.value))))}
-                          className="w-full bg-white border border-[#e8e0d0] rounded-xl py-2.5 pl-3 pr-8 text-[14px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]" />
-                        <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[#888] font-semibold">%</span>
-                      </div>
+                    <label className="text-[#32353C] text-[14px] font-medium block mb-2">Down Payment (%)</label>
+                    <div className="relative w-full">
+                      <input
+                        type="number"
+                        value={downPaymentPct}
+                        onChange={(e) => setDownPaymentPct(Math.min(50, Math.max(0, Number(e.target.value))))}
+                        className="w-full h-[45px] bg-white border border-[#e0e0e0] rounded-md pl-3.5 pr-8 text-[15px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50]"
+                      />
+                      <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#666] font-medium text-[14px] pointer-events-none">%</span>
                     </div>
                   </div>
 

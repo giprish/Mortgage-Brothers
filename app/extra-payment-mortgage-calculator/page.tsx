@@ -1,10 +1,9 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
-import SliderInput from "../component/SliderInput";
 
 interface AmortizationRow {
   month: number;
@@ -31,14 +30,21 @@ interface ExtraCalcResult {
   extraTotalInterest: number;
   extraTotalPaid: number;
   interestSavings: number;
+  totalSavings: number;
   monthsSaved: number;
 
   schedule: AmortizationRow[];
   comparisons: TermComparisonRow[];
 }
 
-const fmt = (v: number) =>
+const fmtCurr = (v: number) =>
   new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round(v));
+
+const parseFormattedNumber = (str: string): number => {
+  if (!str) return 0;
+  const cleaned = str.replace(/,/g, "").replace(/[^0-9.]/g, "");
+  return parseFloat(cleaned) || 0;
+};
 
 function runAmortizationSimulation(
   loanAmount: number,
@@ -62,7 +68,7 @@ function runAmortizationSimulation(
     }
   }
 
-  const standardTotalInterest = Math.max(0, (standardPayment * n) - p);
+  const standardTotalInterest = Math.max(0, standardPayment * n - p);
   const standardTotalPaid = p + standardTotalInterest;
 
   let balance = p;
@@ -99,17 +105,18 @@ function runAmortizationSimulation(
       month,
       principalPaid: totalPrincipalThisMonth,
       interestPaid: interestThisMonth,
-      remainingBalance: balance
+      remainingBalance: Math.max(0, balance)
     });
   }
 
   const extraTotalInterest = totalInterestPaidExtra;
   const extraTotalPaid = p + extraTotalInterest;
   const interestSavings = Math.max(0, standardTotalInterest - extraTotalInterest);
+  const totalSavings = interestSavings;
   const monthsSaved = Math.max(0, n - month);
 
-  const termOptions = [10, 15, 20, 30];
-  const comparisons = termOptions.map(tYr => {
+  const termOptions = [30, 20, 15, 10];
+  const comparisons = termOptions.map((tYr) => {
     const tN = tYr * 12;
     let tStdPmt = 0;
     if (p > 0 && tN > 0) {
@@ -120,7 +127,7 @@ function runAmortizationSimulation(
         tStdPmt = (p * r * factor) / (factor - 1);
       }
     }
-    const tStdInterest = Math.max(0, (tStdPmt * tN) - p);
+    const tStdInterest = Math.max(0, tStdPmt * tN - p);
 
     let tBal = p;
     let tMonth = 0;
@@ -165,19 +172,11 @@ function runAmortizationSimulation(
     extraTotalInterest,
     extraTotalPaid,
     interestSavings,
+    totalSavings,
     monthsSaved,
     schedule,
     comparisons
   };
-}
-
-function formatMonthsSaved(totalMonths: number): string {
-  if (totalMonths <= 0) return "0 months";
-  const yrs = Math.floor(totalMonths / 12);
-  const mos = totalMonths % 12;
-  if (yrs > 0 && mos > 0) return `${yrs} yr${yrs > 1 ? "s" : ""}, ${mos} mo${mos > 1 ? "s" : ""}`;
-  if (yrs > 0) return `${yrs} year${yrs > 1 ? "s" : ""}`;
-  return `${mos} month${mos > 1 ? "s" : ""}`;
 }
 
 function getNewPayoffDate(months: number): string {
@@ -187,394 +186,591 @@ function getNewPayoffDate(months: number): string {
 }
 
 export default function ExtraPaymentMortgageCalculator() {
-  const [loanAmount, setLoanAmount] = useState(250000);
-  const [interestRate, setInterestRate] = useState(4.5);
+  const [loanAmountStr, setLoanAmountStr] = useState("250,000");
+  const [interestRateStr, setInterestRateStr] = useState("4.5");
   const [termYears, setTermYears] = useState(30);
 
-  const [addMonthly, setAddMonthly] = useState(200);
-  const [lumpSum, setLumpSum] = useState(5000);
-  const [lumpSumMonth, setLumpSumMonth] = useState(12);
+  const [activePreset, setActivePreset] = useState<"minimal" | "moderate" | "aggressive">("minimal");
+  const [addMonthlyStr, setAddMonthlyStr] = useState("100");
+  const [lumpSumStr, setLumpSumStr] = useState("2,000");
+  const [lumpSumMonthStr, setLumpSumMonthStr] = useState("12");
 
   const [currentPage, setCurrentPage] = useState(0);
-  const rowsPerPage = 24;
+  const rowsPerPage = 12;
 
-  const result = useMemo(() => {
-    const p = Math.max(0, loanAmount);
-    if (p <= 0) return null;
-    const rate = Math.max(0, interestRate);
-    let tYr = Math.round(termYears);
-    tYr = Math.max(1, Math.min(30, tYr));
-    const extraM = Math.max(0, addMonthly);
-    const lump = Math.max(0, lumpSum);
-    const lumpM = Math.max(0, lumpSumMonth);
-    return runAmortizationSimulation(p, rate, tYr, extraM, lump, lumpM);
+  const loanAmount = useMemo(() => parseFormattedNumber(loanAmountStr), [loanAmountStr]);
+  const interestRate = useMemo(() => parseFormattedNumber(interestRateStr), [interestRateStr]);
+  const addMonthly = useMemo(() => parseFormattedNumber(addMonthlyStr), [addMonthlyStr]);
+  const lumpSum = useMemo(() => parseFormattedNumber(lumpSumStr), [lumpSumStr]);
+  const lumpSumMonth = useMemo(() => parseInt(lumpSumMonthStr, 10) || 0, [lumpSumMonthStr]);
+
+  const calcResult = useMemo(() => {
+    if (!loanAmount || loanAmount <= 0) return null;
+    return runAmortizationSimulation(loanAmount, interestRate, termYears, addMonthly, lumpSum, lumpSumMonth);
   }, [loanAmount, interestRate, termYears, addMonthly, lumpSum, lumpSumMonth]);
 
+  useEffect(() => {
+    setCurrentPage(0);
+  }, [calcResult]);
+
   const applyPreset = (preset: "minimal" | "moderate" | "aggressive") => {
+    setActivePreset(preset);
     if (preset === "minimal") {
-      setAddMonthly(100);
-      setLumpSum(2000);
-      setLumpSumMonth(12);
+      setAddMonthlyStr("100");
+      setLumpSumStr("2,000");
+      setLumpSumMonthStr("12");
     } else if (preset === "moderate") {
-      setAddMonthly(200);
-      setLumpSum(5000);
-      setLumpSumMonth(12);
+      setAddMonthlyStr("200");
+      setLumpSumStr("5,000");
+      setLumpSumMonthStr("12");
     } else {
-      setAddMonthly(500);
-      setLumpSum(10000);
-      setLumpSumMonth(12);
+      setAddMonthlyStr("500");
+      setLumpSumStr("10,000");
+      setLumpSumMonthStr("12");
     }
   };
 
-  const getDonutSplitPct = (r: ExtraCalcResult) => {
-    const total = r.standardPayment + addMonthly;
-    if (total <= 0) return { standard: "100.0", extra: "0.0" };
+  const donutSplit = useMemo(() => {
+    if (!calcResult || calcResult.standardPayment <= 0) {
+      return { regularPct: 80, extraPct: 20 };
+    }
+    const reg = calcResult.standardPayment;
+    const extra = addMonthly;
+    const total = reg + extra;
+    if (total <= 0) return { regularPct: 100, extraPct: 0 };
     return {
-      standard: ((r.standardPayment / total) * 100).toFixed(1),
-      extra: ((addMonthly / total) * 100).toFixed(1)
+      regularPct: parseFloat(((reg / total) * 100).toFixed(1)),
+      extraPct: parseFloat(((extra / total) * 100).toFixed(1))
     };
-  };
+  }, [calcResult, addMonthly]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#fcf9f3] font-sans">
+    <div className="flex flex-col min-h-screen bg-[#f8f9fa] font-sans text-[#32353C]">
       <Navbar />
-      <main className="flex-grow">
 
-        <section className="w-full bg-[#052316] text-white py-16 lg:py-20 text-center relative overflow-hidden">
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5 opacity-40" />
-            <div className="absolute -top-36 -right-36 w-[400px] h-[400px] rounded-full border border-white/5 opacity-40" />
-          </div>
+      <main className="flex-grow pb-16">
+        <section className="w-full bg-[#052316] text-white py-14 lg:py-16 text-center relative overflow-hidden">
           <div className="max-w-4xl mx-auto px-6 relative z-10">
-            <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">MORTGAGE TOOLS</span>
-            <h1 className="text-white text-[38px] lg:text-[52px] font-playfair font-normal leading-[1.15] mb-6">
+            <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-2 font-sans">
+              MORTGAGE TOOLS
+            </span>
+            <h1 className="text-white text-[34px] lg:text-[46px] font-playfair font-normal leading-[1.2] mb-4">
               Extra Payment Mortgage Calculator
             </h1>
-            <p className="text-[#c8c8b8] text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto">
-              Simulate the payoff speed and interest savings of your mortgage by planning additional monthly payments or a one-time lump sum.
+            <p className="text-[#c8c8b8] text-[14.5px] lg:text-[16px] leading-[1.6] max-w-2xl mx-auto font-sans">
+              See how adding extra monthly payments or one-time lump sums can shorten your loan term and save thousands in interest.
             </p>
           </div>
         </section>
 
-        <section className="py-12 px-6 lg:px-10 max-w-6xl mx-auto font-sans">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="max-w-6xl mx-auto px-4 lg:px-8 mt-8">
+          <div className="bg-white rounded-2xl border border-[#e0e0e0] shadow-sm p-6 lg:p-10 space-y-8">
+            
+            <div>
+              <h3 className="text-[18px] font-semibold text-[#32353C] pb-3 mb-6 border-b border-[#f0f0f0]">
+                Loan Information
+              </h3>
 
-            <div className="lg:col-span-6 flex flex-col gap-6">
-              <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 lg:p-8 shadow-sm flex flex-col gap-6">
-                <h3 className="text-[#052316] text-[17px] font-bold pb-3 border-b border-[#e8e0d0]/40 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#052316]" /> Loan Basics
-                </h3>
-
-                <SliderInput
-                  label="Original Loan Amount ($)"
-                  value={loanAmount}
-                  min={10000}
-                  max={2000000}
-                  step={1000}
-                  prefix="$"
-                  onChange={setLoanAmount}
-                />
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <SliderInput
-                    label="Interest Rate (%)"
-                    value={interestRate}
-                    min={0}
-                    max={15}
-                    step={0.125}
-                    suffix="%"
-                    formatValue={(v) => `${v}%`}
-                    onChange={setInterestRate}
-                  />
-                  <div>
-                    <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Loan Term</label>
-                    <select value={termYears} onChange={(e) => setTermYears(parseInt(e.target.value))}
-                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 px-3 text-[14px] font-bold text-[#052316] focus:outline-none cursor-pointer">
-                      <option value="30">30 Years</option>
-                      <option value="20">20 Years</option>
-                      <option value="15">15 Years</option>
-                      <option value="10">10 Years</option>
-                    </select>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                  <div className="flex items-center gap-1.5 mb-2">
+                    <label htmlFor="loanAmount" className="text-[14px] font-medium text-[#32353C]">
+                      Original Loan Amount ($)
+                    </label>
+                    <div className="relative group cursor-help">
+                      <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[11px] font-bold flex items-center justify-center">
+                        ?
+                      </span>
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-52 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                        Enter the total amount you want to borrow for your mortgage.
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#666] text-[14px] font-medium pointer-events-none">
+                      $
+                    </span>
+                    <input
+                      type="text"
+                      id="loanAmount"
+                      value={loanAmountStr}
+                      onChange={(e) => {
+                        const val = e.target.value.replace(/[^0-9]/g, "");
+                        setLoanAmountStr(val ? parseInt(val, 10).toLocaleString("en-US") : "");
+                      }}
+                      className="w-full h-[45px] pl-8 pr-3.5 bg-white border border-[#e0e0e0] rounded-md text-[15px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50]"
+                    />
                   </div>
                 </div>
-              </div>
 
-              <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 lg:p-8 shadow-sm flex flex-col gap-4">
-                <h3 className="text-[#052316] text-[16px] font-bold pb-2 border-b border-[#e8e0d0]/40">Quick-Fill Extra Payment Presets</h3>
-                <div className="grid grid-cols-3 gap-3">
-                  <button onClick={() => applyPreset("minimal")}
-                    className="py-3 px-2 bg-[#fcf9f3] hover:bg-[#052316] hover:text-white border border-[#e8e0d0]/60 rounded-xl text-[12.5px] font-bold transition-all text-[#052316] cursor-pointer">
-                    Minimal
-                  </button>
-                  <button onClick={() => applyPreset("moderate")}
-                    className="py-3 px-2 bg-[#fcf9f3] hover:bg-[#052316] hover:text-white border border-[#e8e0d0]/60 rounded-xl text-[12.5px] font-bold transition-all text-[#052316] cursor-pointer">
-                    Moderate
-                  </button>
-                  <button onClick={() => applyPreset("aggressive")}
-                    className="py-3 px-2 bg-[#fcf9f3] hover:bg-[#052316] hover:text-white border border-[#e8e0d0]/60 rounded-xl text-[12.5px] font-bold transition-all text-[#052316] cursor-pointer">
-                    Aggressive
-                  </button>
+                <div>
+                  <div className="flex items-center gap-1.5 mb-2">
+                    <label htmlFor="interestRate" className="text-[14px] font-medium text-[#32353C]">
+                      Interest Rate (%)
+                    </label>
+                    <div className="relative group cursor-help">
+                      <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[11px] font-bold flex items-center justify-center">
+                        ?
+                      </span>
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                        Enter your annual interest rate (e.g. 4.5).
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <input
+                      type="text"
+                      id="interestRate"
+                      value={interestRateStr}
+                      onChange={(e) => {
+                        let val = e.target.value.replace(/[^0-9.]/g, "");
+                        const parts = val.split(".");
+                        if (parts.length > 2) val = parts[0] + "." + parts.slice(1).join("");
+                        setInterestRateStr(val);
+                      }}
+                      className="w-full h-[45px] pl-3.5 pr-8 bg-white border border-[#e0e0e0] rounded-md text-[15px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50] text-right"
+                    />
+                    <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#666] text-[14px] font-medium pointer-events-none">
+                      %
+                    </span>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-1.5 mb-2">
+                    <label htmlFor="loanTerm" className="text-[14px] font-medium text-[#32353C]">
+                      Loan Term
+                    </label>
+                    <div className="relative group cursor-help">
+                      <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[11px] font-bold flex items-center justify-center">
+                        ?
+                      </span>
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-52 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                        Select the length of your mortgage in years.
+                      </div>
+                    </div>
+                  </div>
+                  <select
+                    id="loanTerm"
+                    value={termYears}
+                    onChange={(e) => setTermYears(parseInt(e.target.value, 10))}
+                    className="w-full h-[45px] px-3.5 bg-white border border-[#e0e0e0] rounded-md text-[15px] text-[#32353C] focus:outline-none focus:border-[#4CAF50] cursor-pointer"
+                  >
+                    <option value={30}>30 Years</option>
+                    <option value={20}>20 Years</option>
+                    <option value={15}>15 Years</option>
+                    <option value={10}>10 Years</option>
+                  </select>
                 </div>
               </div>
             </div>
 
-            <div className="lg:col-span-6 flex flex-col gap-6">
-              <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 lg:p-8 shadow-sm flex flex-col gap-6">
-                <h3 className="text-[#052316] text-[17px] font-bold pb-3 border-b border-[#e8e0d0]/40 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#3fb364]" /> Extra Payments Planned
+            <div>
+              <h4 className="text-[14px] font-semibold text-[#666] uppercase tracking-wider mb-3 font-sans">
+                Quick Scenarios
+              </h4>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <button
+                  type="button"
+                  onClick={() => applyPreset("minimal")}
+                  className={`p-3.5 rounded-xl border text-center transition-all cursor-pointer ${
+                    activePreset === "minimal"
+                      ? "bg-[#4CAF50] text-white border-[#4CAF50] font-semibold shadow-sm"
+                      : "bg-white text-[#4CAF50] border-[#4CAF50] hover:bg-[#4CAF50]/10 font-medium"
+                  }`}
+                >
+                  <span className="block text-[15px]">Minimal Extra</span>
+                  <span className="text-[11.5px] opacity-85 block mt-0.5">
+                    Add $100/mo + $2,000 lump sum (Month 12)
+                  </span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => applyPreset("moderate")}
+                  className={`p-3.5 rounded-xl border text-center transition-all cursor-pointer ${
+                    activePreset === "moderate"
+                      ? "bg-[#4CAF50] text-white border-[#4CAF50] font-semibold shadow-sm"
+                      : "bg-white text-[#4CAF50] border-[#4CAF50] hover:bg-[#4CAF50]/10 font-medium"
+                  }`}
+                >
+                  <span className="block text-[15px]">Moderate Extra</span>
+                  <span className="text-[11.5px] opacity-85 block mt-0.5">
+                    Add $200/mo + $5,000 lump sum (Month 12)
+                  </span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => applyPreset("aggressive")}
+                  className={`p-3.5 rounded-xl border text-center transition-all cursor-pointer ${
+                    activePreset === "aggressive"
+                      ? "bg-[#4CAF50] text-white border-[#4CAF50] font-semibold shadow-sm"
+                      : "bg-white text-[#4CAF50] border-[#4CAF50] hover:bg-[#4CAF50]/10 font-medium"
+                  }`}
+                >
+                  <span className="block text-[15px]">Aggressive Payoff</span>
+                  <span className="text-[11.5px] opacity-85 block mt-0.5">
+                    Add $500/mo + $10,000 lump sum (Month 12)
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start pt-4 border-t border-[#f0f0f0]">
+              <div className="space-y-5">
+                <h3 className="text-[18px] font-semibold text-[#32353C] pb-3 border-b border-[#f0f0f0]">
+                  Extra Payments
                 </h3>
 
-                <SliderInput
-                  label="Additional Monthly Payment"
-                  value={addMonthly}
-                  min={0}
-                  max={5000}
-                  step={50}
-                  prefix="$"
-                  onChange={setAddMonthly}
-                />
+                <div>
+                  <div className="flex items-center gap-1.5 mb-2">
+                    <label htmlFor="extraMonthly" className="text-[14px] font-medium text-[#32353C]">
+                      Additional Monthly Payment ($)
+                    </label>
+                    <div className="relative group cursor-help">
+                      <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[11px] font-bold flex items-center justify-center">
+                        ?
+                      </span>
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-56 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                        Enter extra amount to add to each monthly payment.
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#666] text-[14px] font-medium pointer-events-none">
+                      $
+                    </span>
+                    <input
+                      type="text"
+                      id="extraMonthly"
+                      value={addMonthlyStr}
+                      onChange={(e) => {
+                        const val = e.target.value.replace(/[^0-9]/g, "");
+                        setAddMonthlyStr(val ? parseInt(val, 10).toLocaleString("en-US") : "");
+                      }}
+                      className="w-full h-[45px] pl-8 pr-3.5 bg-white border border-[#e0e0e0] rounded-md text-[15px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50]"
+                    />
+                  </div>
+                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <SliderInput
-                    label="One-Time Lump Sum"
-                    value={lumpSum}
-                    min={0}
-                    max={100000}
-                    step={500}
-                    prefix="$"
-                    onChange={setLumpSum}
+                <div>
+                  <div className="flex items-center gap-1.5 mb-2">
+                    <label htmlFor="lumpSum" className="text-[14px] font-medium text-[#32353C]">
+                      Lump Sum Payment ($)
+                    </label>
+                    <div className="relative group cursor-help">
+                      <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[11px] font-bold flex items-center justify-center">
+                        ?
+                      </span>
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-56 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                        Enter a one-time extra payment amount (from bonus or savings).
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#666] text-[14px] font-medium pointer-events-none">
+                      $
+                    </span>
+                    <input
+                      type="text"
+                      id="lumpSum"
+                      value={lumpSumStr}
+                      onChange={(e) => {
+                        const val = e.target.value.replace(/[^0-9]/g, "");
+                        setLumpSumStr(val ? parseInt(val, 10).toLocaleString("en-US") : "");
+                      }}
+                      className="w-full h-[45px] pl-8 pr-3.5 bg-white border border-[#e0e0e0] rounded-md text-[15px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50]"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-1.5 mb-2">
+                    <label htmlFor="lumpSumMonth" className="text-[14px] font-medium text-[#32353C]">
+                      Lump Sum Payment Month
+                    </label>
+                    <div className="relative group cursor-help">
+                      <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[11px] font-bold flex items-center justify-center">
+                        ?
+                      </span>
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-56 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                        Month number when the lump sum is applied (e.g. 12 = 1st year).
+                      </div>
+                    </div>
+                  </div>
+                  <input
+                    type="number"
+                    id="lumpSumMonth"
+                    value={lumpSumMonthStr}
+                    min="0"
+                    max={termYears * 12}
+                    onChange={(e) => setLumpSumMonthStr(e.target.value)}
+                    className="w-full h-[45px] px-3.5 bg-white border border-[#e0e0e0] rounded-md text-[15px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50]"
                   />
-                  <SliderInput
-                    label="Apply in Month #"
-                    value={lumpSumMonth}
-                    min={0}
-                    max={360}
-                    step={1}
-                    suffix=""
-                    onChange={setLumpSumMonth}
-                  />
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
 
-        {result && (
-          <section id="calc-results" className="pb-16 px-6 lg:px-10 max-w-6xl mx-auto space-y-8 animate-fadeUp font-sans">
+              <div className="bg-[#f8f9fa] rounded-xl border border-[#e0e0e0] p-6 flex flex-col items-center justify-center h-full text-center">
+                <h3 className="text-[16px] font-semibold text-[#32353C] mb-4">
+                  Payment Distribution
+                </h3>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-              <div className="bg-[#052316] text-white rounded-3xl p-6 shadow-sm border border-[#052316] flex flex-col justify-between">
-                <div>
-                  <span className="text-[#3fb364] text-[10.5px] font-bold tracking-wider uppercase">Interest Savings</span>
-                  <h2 className="text-[34px] font-bold mt-1.5">{fmt(result.interestSavings)}</h2>
-                </div>
-                <p className="text-[12.5px] text-[#c8c8b8] mt-3 pt-2.5 border-t border-white/10">Reduced lifetime interest cost.</p>
-              </div>
-
-              <div className="bg-white border border-[#e8e0d0]/60 rounded-3xl p-6 shadow-sm flex flex-col justify-between">
-                <div>
-                  <span className="text-[#a89a70] text-[10.5px] font-bold tracking-wider uppercase">Time Saved</span>
-                  <h2 className="text-[30px] font-bold mt-2 text-[#052316] leading-tight">
-                    {formatMonthsSaved(result.monthsSaved)}
-                  </h2>
-                </div>
-                <p className="text-[12.5px] text-[#888] mt-3 pt-2.5 border-t border-[#e8e0d0]/30">
-                  Paid off in {Math.floor(result.extraPayoffMonths / 12)} years, {result.extraPayoffMonths % 12} months.
-                </p>
-              </div>
-
-              <div className="bg-white border border-[#e8e0d0]/60 rounded-3xl p-6 shadow-sm flex flex-col justify-between">
-                <div>
-                  <span className="text-[#a89a70] text-[10.5px] font-bold tracking-wider uppercase">New Payoff Date</span>
-                  <h2 className="text-[34px] font-bold mt-1.5 text-[#052316]">{getNewPayoffDate(result.extraPayoffMonths)}</h2>
-                </div>
-                <p className="text-[12.5px] text-[#888] mt-3 pt-2.5 border-t border-[#e8e0d0]/30">Estimated calendar payoff timeline.</p>
-              </div>
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-
-              <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm flex flex-col justify-between items-center text-center">
-                <div className="w-full text-left">
-                  <h3 className="text-[#052316] text-[16px] font-bold pb-3 border-b border-[#e8e0d0]/40 font-sans">Payment Allocation (Recurring)</h3>
-                </div>
-
-                <div className="relative w-40 h-40 my-6">
+                <div className="relative w-44 h-44 my-2 flex items-center justify-center">
                   <svg viewBox="0 0 200 200" className="w-full h-full transform -rotate-90">
-                    <circle cx="100" cy="100" r="70" fill="none" stroke="#fcf9f3" strokeWidth="16" />
-                    <circle cx="100" cy="100" r="70" fill="none" stroke="#052316" strokeWidth="16"
-                      strokeDasharray={`${2 * Math.PI * 70 * (parseFloat(getDonutSplitPct(result).standard) / 100)} ${2 * Math.PI * 70}`} />
-                    <circle cx="100" cy="100" r="70" fill="none" stroke="#3fb364" strokeWidth="16"
-                      strokeDasharray={`${2 * Math.PI * 70 * (parseFloat(getDonutSplitPct(result).extra) / 100)} ${2 * Math.PI * 70}`}
-                      strokeDashoffset={`-${2 * Math.PI * 70 * (parseFloat(getDonutSplitPct(result).standard) / 100)}`} />
+                    <circle cx="100" cy="100" r="70" fill="none" stroke="#e0e0e0" strokeWidth="18" />
+                    <circle
+                      cx="100"
+                      cy="100"
+                      r="70"
+                      fill="none"
+                      stroke="#4CAF50"
+                      strokeWidth="18"
+                      strokeDasharray={`${(2 * Math.PI * 70 * donutSplit.regularPct) / 100} ${2 * Math.PI * 70}`}
+                    />
+                    <circle
+                      cx="100"
+                      cy="100"
+                      r="70"
+                      fill="none"
+                      stroke="#FF9800"
+                      strokeWidth="18"
+                      strokeDasharray={`${(2 * Math.PI * 70 * donutSplit.extraPct) / 100} ${2 * Math.PI * 70}`}
+                      strokeDashoffset={`-${(2 * Math.PI * 70 * donutSplit.regularPct) / 100}`}
+                    />
                   </svg>
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <span className="text-[10px] uppercase font-bold tracking-wider text-[#888]">Monthly Outlay</span>
-                    <span className="text-[15.5px] font-bold text-[#052316]">{fmt(result.standardPayment + addMonthly)}</span>
+                    <span className="text-[11px] uppercase tracking-wider text-[#888] font-semibold">Monthly Total</span>
+                    <span className="text-[16px] font-bold text-[#32353C]">
+                      {calcResult ? fmtCurr(calcResult.standardPayment + addMonthly) : "$0"}
+                    </span>
                   </div>
                 </div>
 
-                <div className="flex gap-6 text-[12px] font-sans pt-1">
-                  <div className="flex items-center gap-1.5"><div className="w-3.5 h-3.5 rounded bg-[#052316]" /> <span>Regular Payment ({getDonutSplitPct(result).standard}%)</span></div>
-                  <div className="flex items-center gap-1.5"><div className="w-3.5 h-3.5 rounded bg-[#3fb364]" /> <span>Extra Payment ({getDonutSplitPct(result).extra}%)</span></div>
+                <div className="flex gap-4 text-[12.5px] pt-3 font-medium">
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-3 h-3 rounded-full bg-[#4CAF50]" />
+                    <span>Regular Payment ({donutSplit.regularPct}%)</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-3 h-3 rounded-full bg-[#FF9800]" />
+                    <span>Extra Payment ({donutSplit.extraPct}%)</span>
+                  </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm">
-                <h3 className="text-[#052316] text-[16px] font-bold mb-4 pb-3 border-b border-[#e8e0d0]/40 font-sans">Payment Comparison</h3>
+            </div>
 
-                <div className="overflow-x-auto text-[13px]">
-                  <table className="w-full text-left border-collapse">
+          </div>
+        </div>
+
+        {calcResult && (
+          <section className="max-w-6xl mx-auto px-4 lg:px-8 mt-10 space-y-8 animate-fadeIn font-sans">
+            <div className="bg-white rounded-2xl border border-[#e0e0e0] shadow-sm p-6 lg:p-10">
+              
+              <h2 className="text-[24px] font-semibold text-[#32353C] pb-4 mb-8 border-b-2 border-[#f0f0f0]">
+                Your Loan Summary
+              </h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                <div className="bg-[#f8f9fa] border border-[#e0e0e0] rounded-xl p-5 text-center">
+                  <span className="text-[13px] text-[#666] font-medium block mb-1">New Payoff Date</span>
+                  <div className="text-[24px] font-bold text-[#4CAF50]">
+                    {getNewPayoffDate(calcResult.extraPayoffMonths)}
+                  </div>
+                  <span className="text-[12px] text-[#888] block mt-1">
+                    Saved {Math.floor(calcResult.monthsSaved / 12)} yrs {calcResult.monthsSaved % 12} mos compared to standard term
+                  </span>
+                </div>
+
+                <div className="bg-[#f8f9fa] border border-[#e0e0e0] rounded-xl p-5 text-center">
+                  <span className="text-[13px] text-[#666] font-medium block mb-1">Interest Savings ($)</span>
+                  <div className="text-[24px] font-bold text-[#4CAF50]">
+                    {fmtCurr(calcResult.interestSavings)}
+                  </div>
+                  <span className="text-[12px] text-[#888] block mt-1">Total interest reduction over life of loan</span>
+                </div>
+
+                <div className="bg-[#f8f9fa] border border-[#e0e0e0] rounded-xl p-5 text-center">
+                  <span className="text-[13px] text-[#666] font-medium block mb-1">Total Savings ($)</span>
+                  <div className="text-[24px] font-bold text-[#4CAF50]">
+                    {fmtCurr(calcResult.totalSavings)}
+                  </div>
+                  <span className="text-[12px] text-[#888] block mt-1">Net mortgage savings achieved</span>
+                </div>
+              </div>
+
+              {/* Baseline vs Extra Payment Comparison Table */}
+              <div className="bg-[#f8f9fa] border border-[#e0e0e0] rounded-xl p-6 mb-10">
+                <h3 className="text-[17px] font-semibold text-[#32353C] mb-4">
+                  Standard vs. Extra Payment Comparison
+                </h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left text-[14px]">
                     <thead>
-                      <tr className="border-b border-[#e8e0d0]/60">
-                        <th className="py-2.5 font-bold text-[#052316]">Detail</th>
-                        <th className="py-2.5 font-bold text-[#888]">Standard Schedule</th>
-                        <th className="py-2.5 font-bold text-[#3fb364]">With Extra Payments</th>
+                      <tr className="border-b border-[#e0e0e0] text-[#666]">
+                        <th className="py-2.5 px-3 font-semibold">Metric</th>
+                        <th className="py-2.5 px-3 font-semibold">Standard Schedule</th>
+                        <th className="py-2.5 px-3 font-semibold text-[#4CAF50]">With Extra Payments</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr className="border-b border-[#e8e0d0]/20">
-                        <td className="py-3 text-[#052316] font-semibold">Monthly Outlay</td>
-                        <td className="py-3 text-[#052316]">{fmt(result.standardPayment)}</td>
-                        <td className="py-3 text-[#052316] font-bold">
-                          {fmt(result.standardPayment + addMonthly)}
-                          {lumpSum > 0 && lumpSumMonth > 0 && (
-                            <span className="text-[10.5px] text-[#a89a70] font-normal block">
-                              (+{fmt(lumpSum)} in Mo {lumpSumMonth})
-                            </span>
-                          )}
-                        </td>
-                      </tr>
-                      <tr className="border-b border-[#e8e0d0]/20">
-                        <td className="py-3 text-[#052316] font-semibold">Total Payoff Months</td>
-                        <td className="py-3 text-[#052316]">{result.standardPayoffMonths} months</td>
-                        <td className="py-3 text-[#3fb364] font-bold">{result.extraPayoffMonths} months</td>
-                      </tr>
-                      <tr className="border-b border-[#e8e0d0]/20">
-                        <td className="py-3 text-[#052316] font-semibold">Total Interest Paid</td>
-                        <td className="py-3 text-[#052316]">{fmt(result.standardTotalInterest)}</td>
-                        <td className="py-3 text-[#052316] font-bold">{fmt(result.extraTotalInterest)}</td>
+                    <tbody className="divide-y divide-[#e0e0e0]">
+                      <tr>
+                        <td className="py-3 px-3 font-medium text-[#32353C]">Monthly Payment</td>
+                        <td className="py-3 px-3 text-[#666]">{fmtCurr(calcResult.standardPayment)}</td>
+                        <td className="py-3 px-3 text-[#4CAF50] font-bold">{fmtCurr(calcResult.standardPayment + addMonthly)}</td>
                       </tr>
                       <tr>
-                        <td className="py-3 text-[#052316] font-semibold">Total Amount Paid</td>
-                        <td className="py-3 text-[#052316]">{fmt(result.standardTotalPaid)}</td>
-                        <td className="py-3 text-[#052316] font-bold">{fmt(result.extraTotalPaid)}</td>
+                        <td className="py-3 px-3 font-medium text-[#32353C]">Payoff Timeline</td>
+                        <td className="py-3 px-3 text-[#666]">{calcResult.standardPayoffMonths} months ({termYears} yrs)</td>
+                        <td className="py-3 px-3 text-[#4CAF50] font-bold">{calcResult.extraPayoffMonths} months ({Math.floor(calcResult.extraPayoffMonths / 12)} yrs {calcResult.extraPayoffMonths % 12} mos)</td>
+                      </tr>
+                      <tr>
+                        <td className="py-3 px-3 font-medium text-[#32353C]">Total Interest Paid</td>
+                        <td className="py-3 px-3 text-[#666]">{fmtCurr(calcResult.standardTotalInterest)}</td>
+                        <td className="py-3 px-3 text-[#4CAF50] font-bold">{fmtCurr(calcResult.extraTotalInterest)}</td>
+                      </tr>
+                      <tr>
+                        <td className="py-3 px-3 font-medium text-[#32353C]">Total Amount Paid</td>
+                        <td className="py-3 px-3 text-[#666]">{fmtCurr(calcResult.standardTotalPaid)}</td>
+                        <td className="py-3 px-3 text-[#4CAF50] font-bold">{fmtCurr(calcResult.extraTotalPaid)}</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
               </div>
 
-            </div>
+              <div className="mt-10">
+                <h3 className="text-[18px] font-semibold text-[#32353C] mb-6">
+                  Compare Different Loan Terms
+                </h3>
 
-            <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 shadow-sm overflow-hidden font-sans">
-              <div className="px-7 py-5 border-b border-[#e8e0d0]/40">
-                <h3 className="text-[#052316] text-[16px] font-bold">Compare Different Loan Terms</h3>
-                <p className="text-[#888] text-[12.5px] mt-0.5">Holding loan amount, interest rate, and extra payments constant.</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                  {calcResult.comparisons.map((row) => (
+                    <div key={row.termYears} className="bg-white border border-[#e0e0e0] rounded-xl p-5 shadow-sm space-y-3">
+                      <h4 className="text-[16px] font-bold text-[#4CAF50] pb-2 border-b border-[#f0f0f0]">
+                        {row.termYears} Year Term
+                      </h4>
+                      <div className="text-[13px] space-y-2 text-[#32353C]">
+                        <div className="flex justify-between">
+                          <span className="text-[#666]">Base Payment:</span>
+                          <span className="font-semibold">{fmtCurr(row.standardPayment)}</span>
+                        </div>
+                        <div className="flex justify-between">
+                          <span className="text-[#666]">New Payoff:</span>
+                          <span className="font-semibold">{Math.floor(row.payoffTimeMonths / 12)}y {row.payoffTimeMonths % 12}m</span>
+                        </div>
+                        <div className="flex justify-between pt-1 border-t border-[#f0f0f0] font-bold">
+                          <span className="text-[#666]">Interest Saved:</span>
+                          <span className="text-[#4CAF50]">{fmtCurr(row.interestSavings)}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <div className="overflow-x-auto">
-                <table className="w-full text-[12.5px]">
-                  <thead>
-                    <tr className="bg-[#052316] text-white">
-                      {["Term (Years)", "Standard Payment", "Payoff Timeline (With Extra)", "Interest Paid (With Extra)", "Interest Savings vs. Standard"].map((h) => (
-                        <th key={h} className="py-3 px-4 text-left font-semibold whitespace-nowrap">{h}</th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {result.comparisons.map((row) => (
-                      <tr key={row.termYears} className={row.termYears === termYears ? "bg-[#3fb364]/10 font-bold" : "hover:bg-[#faf7f0] border-b border-[#e8e0d0]/20"}>
-                        <td className="py-3 px-4 text-[#052316]">{row.termYears} Years</td>
-                        <td className="py-3 px-4 text-[#052316]">{fmt(row.standardPayment)}</td>
-                        <td className="py-3 px-4 text-[#052316]">{Math.floor(row.payoffTimeMonths / 12)} yrs, {row.payoffTimeMonths % 12} mos</td>
-                        <td className="py-3 px-4 text-[#052316]">{fmt(row.totalInterestPaid)}</td>
-                        <td className="py-3 px-4 text-[#3fb364] font-bold">{fmt(row.interestSavings)}</td>
+              <div className="mt-12">
+                <div className="flex justify-between items-center pb-4 mb-4 border-b border-[#f0f0f0]">
+                  <div>
+                    <h3 className="text-[18px] font-semibold text-[#32353C]">Amortization Schedule</h3>
+                    <p className="text-[#888] text-[13px]">
+                      Month-by-month payoff schedule including extra principal payments.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="overflow-x-auto border border-[#e0e0e0] rounded-xl shadow-sm">
+                  <table className="w-full text-left text-[13.5px] border-collapse">
+                    <thead>
+                      <tr className="bg-[#4CAF50] text-white font-medium">
+                        <th className="py-3 px-4">Month</th>
+                        <th className="py-3 px-4">Principal Paid</th>
+                        <th className="py-3 px-4">Interest Paid</th>
+                        <th className="py-3 px-4">Remaining Balance</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
+                    </thead>
+                    <tbody>
+                      {calcResult.schedule
+                        .slice(currentPage * rowsPerPage, (currentPage + 1) * rowsPerPage)
+                        .map((row, idx) => (
+                          <tr
+                            key={row.month}
+                            className={idx % 2 === 0 ? "bg-white" : "bg-[#f8f9fa] hover:bg-[#f0f4f7]"}
+                          >
+                            <td className="py-3 px-4 font-semibold text-[#32353C]">Month {row.month}</td>
+                            <td className="py-3 px-4 font-semibold text-[#4CAF50]">{fmtCurr(row.principalPaid)}</td>
+                            <td className="py-3 px-4 font-medium text-[#FF9800]">{fmtCurr(row.interestPaid)}</td>
+                            <td className="py-3 px-4 font-semibold text-[#32353C]">{fmtCurr(row.remainingBalance)}</td>
+                          </tr>
+                        ))}
+                    </tbody>
+                  </table>
+                </div>
 
-            <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 shadow-sm overflow-hidden font-sans">
-              <div className="px-7 py-5 border-b border-[#e8e0d0]/40 flex justify-between items-center">
+                {Math.ceil(calcResult.schedule.length / rowsPerPage) > 1 && (
+                  <div className="flex items-center justify-between pt-4">
+                    <button
+                      onClick={() => setCurrentPage((p) => Math.max(0, p - 1))}
+                      disabled={currentPage === 0}
+                      className="px-4 py-2 text-[13px] font-semibold bg-[#32353C] text-white rounded-lg disabled:opacity-30 cursor-pointer disabled:cursor-default"
+                    >
+                      ← Previous
+                    </button>
+                    <span className="text-[13px] text-[#666] font-medium">
+                      Page {currentPage + 1} of {Math.ceil(calcResult.schedule.length / rowsPerPage)}
+                    </span>
+                    <button
+                      onClick={() =>
+                        setCurrentPage((p) =>
+                          Math.min(Math.ceil(calcResult.schedule.length / rowsPerPage) - 1, p + 1)
+                        )
+                      }
+                      disabled={currentPage === Math.ceil(calcResult.schedule.length / rowsPerPage) - 1}
+                      className="px-4 py-2 text-[13px] font-semibold bg-[#32353C] text-white rounded-lg disabled:opacity-30 cursor-pointer disabled:cursor-default"
+                    >
+                      Next →
+                    </button>
+                  </div>
+                )}
+              </div>
+
+              {/* Methodology & Disclaimer Section */}
+              <div className="mt-12 bg-[#f8f9fa] border border-[#e0e0e0] rounded-2xl p-6 lg:p-8 space-y-4 text-[13.5px] leading-relaxed text-[#555]">
+                <h4 className="text-[16px] font-bold text-[#32353C] border-b border-[#e0e0e0] pb-2">
+                  Calculation Methodology &amp; Extra Payment Benefits
+                </h4>
+                <p>
+                  <strong>How Extra Payments Work:</strong> Adding extra principal payments reduces your loan balance faster. Because interest is calculated monthly on the remaining balance, every extra dollar paid directly lowers future interest charges, accelerating your payoff timeline without changing your mandatory monthly obligation.
+                </p>
+                <div className="space-y-2 pt-1">
+                  <p><strong>• Additional Monthly Payment:</strong> Regular extra contributions added to your monthly mortgage check.</p>
+                  <p><strong>• Lump Sum Payment:</strong> One-time windfalls (tax refunds, annual bonuses) applied directly to principal at a specific month.</p>
+                  <p><strong>• Recalculation Note:</strong> Prepayment penalties are rare on standard Arizona residential mortgages. Always verify with your servicer that extra payments are allocated to principal.</p>
+                </div>
+              </div>
+
+              <div className="mt-12 bg-[#052316] rounded-2xl p-6 lg:p-8 text-white shadow-md flex flex-col md:flex-row items-center justify-between gap-6">
                 <div>
-                  <h3 className="text-[#052316] text-[16.5px] font-bold">Amortization Schedule (With Extra Payments)</h3>
-                  <p className="text-[#888] text-[12px] mt-0.5">Month-by-month payoff projection schedule.</p>
+                  <h4 className="text-[20px] font-bold mb-1 font-playfair">Want to evaluate your mortgage payoff strategy?</h4>
+                  <p className="text-[#c8c8b8] text-[14px]">
+                    Speak with our mortgage advisors to review refinancing or custom extra payment options.
+                  </p>
                 </div>
-              </div>
-
-              <div className="overflow-x-auto">
-                <table className="w-full text-[12.5px]">
-                  <thead>
-                    <tr className="bg-[#052316] text-white">
-                      {["Month", "Principal Paid", "Interest Paid", "Remaining Balance"].map((h) => (
-                        <th key={h} className="py-3 px-4 text-left font-semibold whitespace-nowrap">{h}</th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {result.schedule.slice(currentPage * rowsPerPage, (currentPage + 1) * rowsPerPage).map((row) => (
-                      <tr key={row.month} className={row.month % 2 === 0 ? "bg-white" : "bg-[#faf7f0]"}>
-                        <td className="py-2.5 px-4 text-[#888] font-bold">Month {row.month}</td>
-                        <td className="py-2.5 px-4 text-[#3fb364] font-bold">{fmt(row.principalPaid)}</td>
-                        <td className="py-2.5 px-4 text-[#b89a5a]">{fmt(row.interestPaid)}</td>
-                        <td className="py-2.5 px-4 text-[#052316]">{fmt(row.remainingBalance)}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-
-              {Math.ceil(result.schedule.length / rowsPerPage) > 1 && (
-                <div className="flex items-center justify-between px-7 py-4 border-t border-[#e8e0d0]/40">
-                  <button onClick={() => setCurrentPage((p) => Math.max(0, p - 1))} disabled={currentPage === 0}
-                    className="px-4 py-2 text-[13px] font-bold bg-[#052316] text-white rounded-xl disabled:opacity-40 cursor-pointer disabled:cursor-default">
-                    ← Prev
-                  </button>
-                  <span className="text-[13px] text-[#888]">Page {currentPage + 1} of {Math.ceil(result.schedule.length / rowsPerPage)}</span>
-                  <button onClick={() => setCurrentPage((p) => Math.min(Math.ceil(result.schedule.length / rowsPerPage) - 1, p + 1))}
-                    disabled={currentPage === Math.ceil(result.schedule.length / rowsPerPage) - 1}
-                    className="px-4 py-2 text-[13px] font-bold bg-[#052316] text-white rounded-xl disabled:opacity-40 cursor-pointer disabled:cursor-default">
-                    Next →
-                  </button>
-                </div>
-              )}
-            </div>
-
-            <div className="bg-[#052316] rounded-3xl p-6 lg:p-8 text-white shadow-md relative overflow-hidden">
-              <div className="absolute -bottom-16 -right-16 w-[200px] h-[200px] rounded-full border border-white/5 opacity-40" />
-              <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 font-sans">
-                <div>
-                  <h4 className="text-[18px] font-bold mb-1">Looking to buy or refinance in Arizona?</h4>
-                  <p className="text-[#c8c8b8] text-[13.5px]">Get in touch with the Knoell team for a complete review of your loan scenarios.</p>
-                </div>
-                <Link href="/#get-pre-approved"
-                  className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-bold px-6 py-3 rounded-full inline-flex items-center gap-2 transition-all shadow-md whitespace-nowrap">
+                <Link
+                  href="/#get-pre-approved"
+                  className="bg-[#4CAF50] hover:bg-[#45a049] text-white text-[15px] font-semibold px-6 py-3 rounded-full transition-all duration-200 shadow whitespace-nowrap cursor-pointer"
+                >
                   Connect With Us →
                 </Link>
               </div>
-            </div>
 
-          </section>
-        )}
-
-        {!result && (
-          <section className="pb-16 px-6 lg:px-10 max-w-3xl mx-auto text-center font-sans">
-            <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-10 lg:p-14 shadow-sm">
-              <div className="w-16 h-16 rounded-2xl bg-[#3fb364]/10 flex items-center justify-center mx-auto mb-5">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3fb364" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-                </svg>
-              </div>
-              <h3 className="text-[#052316] text-[20px] font-bold mb-2">Enter a Loan Amount</h3>
-              <p className="text-[#888] text-[14.5px] leading-relaxed max-w-md mx-auto font-sans">
-                Set a loan amount above to see your payoff savings automatically.
-              </p>
             </div>
           </section>
         )}
+
       </main>
+
       <Footer />
     </div>
   );

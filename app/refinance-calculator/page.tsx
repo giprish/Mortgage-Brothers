@@ -1,411 +1,628 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
+import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
-import SliderInput from "../component/SliderInput";
-
-// ─── Types ────────────────────────────────────────────────────────────────────
 
 interface RefinanceResult {
   currentBalance: number;
-  currentAnnualRate: number;
-  currentMonthlyRate: number;
-  currentTermYears: number;
-  currentNumPayments: number;
-  newAnnualRate: number;
-  newMonthlyRate: number;
+  currentRate: number;
+  remainingTermYears: number;
+  newRate: number;
   newTermYears: number;
-  newNumPayments: number;
   closingCosts: number;
-  closingCostsFinanced: boolean;
-  cashOutAmount: number;
-  newLoanAmount: number;
+  addClosingToLoan: boolean;
+
   currentMonthlyPayment: number;
   newMonthlyPayment: number;
-  paymentOnOriginalBalance: number;
-  paymentOnFinancedCosts: number;
-  paymentOnCashOut: number;
+  newLoanAmount: number;
+
   monthlySavings: number;
-  paymentChangeStatus: "decrease" | "same" | "increase";
-  breakEvenNumerator: number;
-  breakEvenMonthsRaw: number | null;
-  breakEvenMonthsDisplay: number | null;
-  breakEvenStatus: "immediate" | "finite" | "no_savings" | "negative_savings" | "no_costs";
-  currentTotalScheduled: number;
+  breakEvenMonths: number | null;
   currentTotalInterest: number;
-  newTotalScheduled: number;
   newTotalInterest: number;
-  totalInterestSavings: number;
-  interestChangeStatus: "decrease" | "same" | "increase";
-  netCashAtClosing: number;
+  interestSavings: number;
+
+  status: "positive" | "negative" | "neutral";
+  message: string;
 }
 
-// ─── Core Calculations ────────────────────────────────────────────────────────
+const fmtCurr = (v: number) =>
+  new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round(v));
 
-function calcPayment(principal: number, monthlyRate: number, numPayments: number): number {
-  if (principal <= 0 || numPayments <= 0) return 0;
-  if (monthlyRate === 0) return principal / numPayments;
-  const factor = Math.pow(1 + monthlyRate, numPayments);
-  return (principal * monthlyRate * factor) / (factor - 1);
-}
+const parseFormattedNumber = (str: string): number => {
+  if (!str) return 0;
+  const cleaned = str.replace(/,/g, "").replace(/[^0-9.]/g, "");
+  return parseFloat(cleaned) || 0;
+};
 
-function paymentPerDollar(monthlyRate: number, numPayments: number): number {
-  if (numPayments <= 0) return 0;
-  if (monthlyRate === 0) return 1 / numPayments;
-  return monthlyRate / (1 - Math.pow(1 + monthlyRate, -numPayments));
-}
+const CITY_DEFAULTS: Record<string, { balance: number; currentRate: number; remainingTerm: number; newRate: number; newTerm: number; closingCosts: number }> = {
+  Phoenix: { balance: 250000, currentRate: 7.8, remainingTerm: 28, newRate: 6.8, newTerm: 25, closingCosts: 2510 },
+  Tucson: { balance: 200000, currentRate: 7.6, remainingTerm: 27, newRate: 6.7, newTerm: 25, closingCosts: 2515 },
+  Mesa: { balance: 275000, currentRate: 7.9, remainingTerm: 29, newRate: 6.9, newTerm: 25, closingCosts: 2530 },
+  Chandler: { balance: 300000, currentRate: 7.7, remainingTerm: 28, newRate: 6.8, newTerm: 25, closingCosts: 2545 },
+  Gilbert: { balance: 280000, currentRate: 7.8, remainingTerm: 28, newRate: 6.8, newTerm: 25, closingCosts: 2560 },
+  Glendale: { balance: 240000, currentRate: 7.7, remainingTerm: 27, newRate: 6.7, newTerm: 25, closingCosts: 2575 },
+  Scottsdale: { balance: 400000, currentRate: 7.5, remainingTerm: 27, newRate: 6.7, newTerm: 25, closingCosts: 2590 },
+  Peoria: { balance: 260000, currentRate: 7.6, remainingTerm: 28, newRate: 6.7, newTerm: 25, closingCosts: 2400 },
+  Tempe: { balance: 270000, currentRate: 7.8, remainingTerm: 28, newRate: 6.8, newTerm: 25, closingCosts: 2415 },
+  Surprise: { balance: 250000, currentRate: 7.7, remainingTerm: 28, newRate: 6.7, newTerm: 25, closingCosts: 2430 },
+  Goodyear: { balance: 280000, currentRate: 7.8, remainingTerm: 28, newRate: 6.8, newTerm: 25, closingCosts: 2445 },
+  Buckeye: { balance: 240000, currentRate: 7.7, remainingTerm: 27, newRate: 6.7, newTerm: 25, closingCosts: 2460 },
+  "San Tan Valley": { balance: 260000, currentRate: 7.8, remainingTerm: 28, newRate: 6.8, newTerm: 25, closingCosts: 2475 },
+  Yuma: { balance: 190000, currentRate: 7.5, remainingTerm: 26, newRate: 6.6, newTerm: 25, closingCosts: 2490 },
+  Avondale: { balance: 230000, currentRate: 7.7, remainingTerm: 27, newRate: 6.7, newTerm: 25, closingCosts: 2505 },
+  Flagstaff: { balance: 350000, currentRate: 7.6, remainingTerm: 28, newRate: 6.7, newTerm: 25, closingCosts: 2685 },
+  "Queen Creek": { balance: 310000, currentRate: 7.8, remainingTerm: 28, newRate: 6.8, newTerm: 25, closingCosts: 2565 },
+  Maricopa: { balance: 220000, currentRate: 7.7, remainingTerm: 27, newRate: 6.7, newTerm: 25, closingCosts: 2510 },
+  "Casas Adobes": { balance: 210000, currentRate: 7.6, remainingTerm: 27, newRate: 6.6, newTerm: 25, closingCosts: 2650 },
+  "Casa Grande": { balance: 200000, currentRate: 7.7, remainingTerm: 27, newRate: 6.7, newTerm: 25, closingCosts: 2675 },
+  "Lake Havasu City": { balance: 240000, currentRate: 7.5, remainingTerm: 26, newRate: 6.6, newTerm: 25, closingCosts: 2690 },
+  Marana: { balance: 260000, currentRate: 7.6, remainingTerm: 27, newRate: 6.7, newTerm: 25, closingCosts: 2685 },
+  "Catalina Foothills": { balance: 380000, currentRate: 7.4, remainingTerm: 27, newRate: 6.5, newTerm: 25, closingCosts: 2685 },
+  "Prescott Valley": { balance: 250000, currentRate: 7.6, remainingTerm: 27, newRate: 6.7, newTerm: 25, closingCosts: 2685 },
+  "Oro Valley": { balance: 290000, currentRate: 7.5, remainingTerm: 27, newRate: 6.6, newTerm: 25, closingCosts: 2684 },
+  "City Not Listed": { balance: 250000, currentRate: 7.7, remainingTerm: 28, newRate: 6.7, newTerm: 25, closingCosts: 2500 }
+};
 
-function normalizeTerm(val: number): number {
-  let t = Math.round(val);
-  if (t < 1) t = 1;
-  if (t > 30) t = 30;
-  return t;
-}
+const ARIZONA_CITIES = Object.keys(CITY_DEFAULTS);
 
-function guardZero(v: number): number {
-  return Math.abs(v) < 0.005 ? 0 : v;
+function calcMonthlyPayment(principal: number, annualRatePct: number, termYears: number): number {
+  if (principal <= 0 || termYears <= 0) return 0;
+  const r = annualRatePct / 100 / 12;
+  const n = termYears * 12;
+  if (r === 0) return principal / n;
+  const factor = Math.pow(1 + r, n);
+  return (principal * r * factor) / (factor - 1);
 }
 
 function calculateRefinance(
   currentBalance: number,
-  currentRatePct: number,
-  currentTermRaw: number,
-  newRatePct: number,
-  newTermRaw: number,
+  currentRate: number,
+  remainingTermYears: number,
+  newRate: number,
+  newTermYears: number,
   closingCosts: number,
-  costsFinanced: boolean,
-  cashOut: number
+  addClosingToLoan: boolean
 ): RefinanceResult {
   const bal = Math.max(0, currentBalance);
-  const curRate = Math.max(0, currentRatePct);
-  const newRate = Math.max(0, newRatePct);
-  const curTerm = normalizeTerm(currentTermRaw);
-  const newTerm = normalizeTerm(newTermRaw);
-  const curN = curTerm * 12;
-  const newN = newTerm * 12;
+  const curR = Math.max(0, currentRate);
+  const curT = Math.max(1, remainingTermYears);
+  const newR = Math.max(0, newRate);
+  const newT = Math.max(1, newTermYears);
   const cc = Math.max(0, closingCosts);
-  const co = Math.max(0, cashOut);
 
-  const curMonthlyRate = curRate / 100 / 12;
-  const newMonthlyRate = newRate / 100 / 12;
+  const currentMonthlyPayment = calcMonthlyPayment(bal, curR, curT);
+  const newLoanAmount = addClosingToLoan ? bal + cc : bal;
+  const newMonthlyPayment = calcMonthlyPayment(newLoanAmount, newR, newT);
 
-  const currentPayment = calcPayment(bal, curMonthlyRate, curN);
-  const financedCosts = costsFinanced ? cc : 0;
-  const newLoanAmount = bal + financedCosts + co;
-  const newPayment = calcPayment(newLoanAmount, newMonthlyRate, newN);
+  const monthlySavings = currentMonthlyPayment - newMonthlyPayment;
 
-  const ppd = paymentPerDollar(newMonthlyRate, newN);
-  const paymentOnOrigBal = bal * ppd;
-  const paymentOnFinCosts = financedCosts * ppd;
-  const paymentOnCashOut = co * ppd;
-
-  const monthlySavings = guardZero(currentPayment - newPayment);
-
-  let breakEvenStatus: RefinanceResult["breakEvenStatus"];
-  let breakEvenRaw: number | null = null;
-  let breakEvenDisplay: number | null = null;
-
+  let breakEvenMonths: number | null = null;
   if (cc === 0) {
-    breakEvenStatus = "no_costs";
-    breakEvenDisplay = 0;
-  } else if (monthlySavings <= 0) {
-    breakEvenStatus = monthlySavings === 0 ? "no_savings" : "negative_savings";
-  } else {
-    breakEvenRaw = cc / monthlySavings;
-    breakEvenDisplay = Math.ceil(breakEvenRaw);
-    breakEvenStatus = breakEvenDisplay === 0 ? "immediate" : "finite";
+    breakEvenMonths = 0;
+  } else if (monthlySavings > 0) {
+    breakEvenMonths = Math.ceil(cc / monthlySavings);
   }
 
-  const curTotalScheduled = currentPayment * curN;
-  const curTotalInterest = guardZero(curTotalScheduled - bal);
-  const newTotalScheduled = newPayment * newN;
-  const newTotalInterest = guardZero(newTotalScheduled - newLoanAmount);
-  const totalIntSavings = guardZero(curTotalInterest - newTotalInterest);
+  const currentTotalScheduled = currentMonthlyPayment * (curT * 12);
+  const currentTotalInterest = Math.max(0, currentTotalScheduled - bal);
 
-  const netCash = costsFinanced ? co : co - cc;
+  const newTotalScheduled = newMonthlyPayment * (newT * 12);
+  const newTotalInterest = Math.max(0, newTotalScheduled - newLoanAmount);
 
-  const paymentChangeStatus: RefinanceResult["paymentChangeStatus"] =
-    monthlySavings > 0 ? "decrease" : monthlySavings < 0 ? "increase" : "same";
-  const interestChangeStatus: RefinanceResult["interestChangeStatus"] =
-    totalIntSavings > 0 ? "decrease" : totalIntSavings < 0 ? "increase" : "same";
+  const interestSavings = currentTotalInterest - newTotalInterest;
+
+  let status: RefinanceResult["status"] = "neutral";
+  let message = "";
+
+  if (monthlySavings > 0) {
+    status = "positive";
+    message = `Refinancing will save you ${fmtCurr(monthlySavings)} per month! Your break-even point to recoup ${fmtCurr(cc)} in closing costs is approx ${breakEvenMonths} month(s).`;
+  } else if (monthlySavings < 0) {
+    status = "negative";
+    message = `Your new monthly payment would be ${fmtCurr(Math.abs(monthlySavings))} higher than your current payment. Consider extending your loan term or looking for a lower interest rate.`;
+  } else {
+    status = "neutral";
+    message = "Your monthly payment will remain approximately the same.";
+  }
 
   return {
-    currentBalance: bal, currentAnnualRate: curRate, currentMonthlyRate: curMonthlyRate, currentTermYears: curTerm, currentNumPayments: curN,
-    newAnnualRate: newRate, newMonthlyRate: newMonthlyRate, newTermYears: newTerm, newNumPayments: newN,
-    closingCosts: cc, closingCostsFinanced: costsFinanced, cashOutAmount: co, newLoanAmount,
-    currentMonthlyPayment: currentPayment, newMonthlyPayment: newPayment,
-    paymentOnOriginalBalance: paymentOnOrigBal, paymentOnFinancedCosts: paymentOnFinCosts, paymentOnCashOut: paymentOnCashOut,
-    monthlySavings, paymentChangeStatus, breakEvenNumerator: cc, breakEvenMonthsRaw: breakEvenRaw, breakEvenMonthsDisplay: breakEvenDisplay, breakEvenStatus,
-    currentTotalScheduled: curTotalScheduled, currentTotalInterest: curTotalInterest,
-    newTotalScheduled: newTotalScheduled, newTotalInterest: newTotalInterest, totalInterestSavings: totalIntSavings, interestChangeStatus,
-    netCashAtClosing: netCash
+    currentBalance: bal,
+    currentRate: curR,
+    remainingTermYears: curT,
+    newRate: newR,
+    newTermYears: newT,
+    closingCosts: cc,
+    addClosingToLoan,
+    currentMonthlyPayment,
+    newMonthlyPayment,
+    newLoanAmount,
+    monthlySavings,
+    breakEvenMonths,
+    currentTotalInterest,
+    newTotalInterest,
+    interestSavings,
+    status,
+    message
   };
 }
 
-const fmtWhole = (v: number) =>
-  new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(Math.round(v));
-
-const fmt2 = (v: number) =>
-  new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(v);
-
-// ─── Component ────────────────────────────────────────────────────────────────
-
 export default function RefinanceCalculatorPage() {
-  const [currentBalance, setCurrentBalance] = useState(300000);
-  const [currentRate, setCurrentRate] = useState(7.0);
-  const [currentTerm, setCurrentTerm] = useState(30);
-  const [newRate, setNewRate] = useState(6.0);
-  const [newTerm, setNewTerm] = useState(30);
-  const [closingCosts, setClosingCosts] = useState(5000);
-  const [costsFinanced, setCostsFinanced] = useState(false);
-  const [cashOut, setCashOut] = useState(0);
+  const [selectedCity, setSelectedCity] = useState("Phoenix");
+  const [currentBalanceStr, setCurrentBalanceStr] = useState("250,000");
+  const [currentRateStr, setCurrentRateStr] = useState("7.8");
+  const [remainingTermStr, setRemainingTermStr] = useState("28");
 
-  const result = useMemo<RefinanceResult>(() => {
-    return calculateRefinance(
-      currentBalance,
-      currentRate,
-      currentTerm,
-      newRate,
-      newTerm,
-      closingCosts,
-      costsFinanced,
-      cashOut
-    );
-  }, [currentBalance, currentRate, currentTerm, newRate, newTerm, closingCosts, costsFinanced, cashOut]);
+  const [newRateStr, setNewRateStr] = useState("6.8");
+  const [newTermStr, setNewTermStr] = useState("25");
+  const [closingCostsStr, setClosingCostsStr] = useState("2,510");
 
-  const termOpts = [10, 15, 20, 25, 30];
+  const [addClosingToLoan, setAddClosingToLoan] = useState(false);
 
-  const breakEvenText = (r: RefinanceResult) => {
-    switch (r.breakEvenStatus) {
-      case "no_costs": return "Immediate (no costs)";
-      case "immediate": return "Immediate";
-      case "finite": return `${r.breakEvenMonthsDisplay} months (~${(r.breakEvenMonthsDisplay! / 12).toFixed(1)} years)`;
-      case "no_savings": return "N/A \u2014 no monthly savings";
-      case "negative_savings": return "N/A \u2014 payment increases";
-      default: return "N/A";
-    }
+  const handleCityChange = (city: string) => {
+    setSelectedCity(city);
+    const defaults = CITY_DEFAULTS[city] || CITY_DEFAULTS.Phoenix;
+    setCurrentBalanceStr(defaults.balance.toLocaleString("en-US"));
+    setCurrentRateStr(defaults.currentRate.toString());
+    setRemainingTermStr(defaults.remainingTerm.toString());
+    setNewRateStr(defaults.newRate.toString());
+    setNewTermStr(defaults.newTerm.toString());
+    setClosingCostsStr(defaults.closingCosts.toLocaleString("en-US"));
   };
 
+  const result = useMemo(() => {
+    return calculateRefinance(
+      parseFormattedNumber(currentBalanceStr),
+      parseFormattedNumber(currentRateStr),
+      parseFormattedNumber(remainingTermStr),
+      parseFormattedNumber(newRateStr),
+      parseFormattedNumber(newTermStr),
+      parseFormattedNumber(closingCostsStr),
+      addClosingToLoan
+    );
+  }, [currentBalanceStr, currentRateStr, remainingTermStr, newRateStr, newTermStr, closingCostsStr, addClosingToLoan]);
+
+  const doughnutData = useMemo(() => {
+    const total = result.currentMonthlyPayment + result.newMonthlyPayment;
+    if (total <= 0) return { curPct: 50, newPct: 50 };
+    return {
+      curPct: parseFloat(((result.currentMonthlyPayment / total) * 100).toFixed(1)),
+      newPct: parseFloat(((result.newMonthlyPayment / total) * 100).toFixed(1))
+    };
+  }, [result]);
+
   return (
-    <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
+    <div className="flex flex-col min-h-screen bg-[#f8f9fa] font-sans text-[#32353C]">
       <Navbar />
-      <main className="flex-grow">
-        {/* Hero */}
-        <section className="w-full text-white py-20 lg:py-28 text-center relative overflow-hidden bg-cover bg-no-repeat bg-center"
-          style={{ backgroundImage: "url('/mortgage-calculators.jpg')", backgroundPosition: "center top" }}>
-          <div className="absolute inset-0 bg-[#08271B]/80 z-0" />
-          <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
-            <div className="absolute -top-36 -right-36 w-[400px] h-[400px] rounded-full border border-white/5" />
-            <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5" />
-          </div>
-          <div className="max-w-4xl mx-auto px-6 relative z-20">
-            <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-4 font-sans">MORTGAGE TOOLS</p>
-            <h1 className="text-white text-[36px] lg:text-[52px] font-playfair font-normal leading-[1.1] mb-5">
-              Refinance Calculator
+
+      <main className="flex-grow pb-16">
+        <section className="w-full bg-[#052316] text-white py-14 lg:py-16 text-center relative overflow-hidden">
+          <div className="max-w-4xl mx-auto px-6 relative z-10">
+            <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-2 font-sans">
+              ARIZONA MORTGAGE TOOLS
+            </span>
+            <h1 className="text-white text-[34px] lg:text-[46px] font-playfair font-normal leading-[1.2] mb-4">
+              Refinance Calculator for Arizona
             </h1>
-            <p className="text-[#c8c8b8] text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto">
-              Compare your current mortgage with a proposed refinance. See your monthly savings, break-even point, and total interest impact \u2014 including optional cash-out.
+            <p className="text-[#c8c8b8] text-[14.5px] lg:text-[16px] leading-[1.6] max-w-2xl mx-auto font-sans">
+              Calculate your monthly savings, break-even point, and overall interest reduction when refinancing your mortgage in Arizona.
             </p>
           </div>
         </section>
 
-        {/* Form Inputs */}
-        <section className="py-12 px-6 lg:px-10 max-w-5xl mx-auto">
-          <div className="flex flex-col gap-6 font-sans">
-            <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 lg:p-8 shadow-sm flex flex-col gap-6">
-              <h3 className="text-[#052316] text-[18px] font-bold pb-3 border-b border-[#e8e0d0]/40 font-sans">1. Current Mortgage</h3>
-
-              <SliderInput label="Current Loan Balance" value={currentBalance} min={10000} max={2000000} step={1000}
-                prefix="$" onChange={setCurrentBalance} />
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <SliderInput label="Current Interest Rate" value={currentRate} min={0} max={15} step={0.125}
-                  suffix="%" onChange={setCurrentRate} />
-                <div>
-                  <label className="text-[#052316] text-[14px] font-semibold block mb-2">Remaining Term</label>
-                  <div className="flex gap-2 flex-wrap">
-                    {termOpts.map((yr) => (
-                      <button key={yr} onClick={() => setCurrentTerm(yr)}
-                        className={`px-3.5 py-2.5 text-[13px] font-bold rounded-xl border-2 transition-all cursor-pointer ${currentTerm === yr ? "bg-[#052316] text-white border-[#052316] shadow-sm" : "bg-white text-[#052316] border-[#e8e0d0] hover:border-[#052316]"}`}>
-                        {yr} yr
-                      </button>
-                    ))}
-                    <div className="relative flex-grow min-w-[70px]">
-                      <input type="number" value={currentTerm} onChange={(e) => setCurrentTerm(parseFloat(e.target.value) || 30)}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-2.5 px-3 text-[13px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]" />
-                    </div>
-                  </div>
-                </div>
+        <div className="max-w-6xl mx-auto px-4 lg:px-8 mt-8">
+          <div className="bg-white rounded-2xl border border-[#e0e0e0] shadow-sm p-6 lg:p-10 space-y-8">
+            
+            <div className="bg-[#f8f9fa] border border-[#e0e0e0] rounded-xl p-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div>
+                <label htmlFor="citySelect" className="text-[15px] font-semibold text-[#32353C] block mb-1">
+                  Select Your Arizona City
+                </label>
+                <p className="text-[#666] text-[13px]">
+                  Loads localized average loan terms and closing cost estimates for your area.
+                </p>
               </div>
-            </div>
-
-            <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 lg:p-8 shadow-sm flex flex-col gap-6">
-              <h3 className="text-[#052316] text-[18px] font-bold pb-3 border-b border-[#e8e0d0]/40 font-sans">2. Proposed Refinance</h3>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <SliderInput label="New Interest Rate" value={newRate} min={0} max={15} step={0.125}
-                  suffix="%" onChange={setNewRate} />
-                <div>
-                  <label className="text-[#052316] text-[14px] font-semibold block mb-2">New Loan Term</label>
-                  <div className="flex gap-2 flex-wrap">
-                    {termOpts.map((yr) => (
-                      <button key={yr} onClick={() => setNewTerm(yr)}
-                        className={`px-3.5 py-2.5 text-[13px] font-bold rounded-xl border-2 transition-all cursor-pointer ${newTerm === yr ? "bg-[#052316] text-white border-[#052316] shadow-sm" : "bg-white text-[#052316] border-[#e8e0d0] hover:border-[#052316]"}`}>
-                        {yr} yr
-                      </button>
-                    ))}
-                    <div className="relative flex-grow min-w-[70px]">
-                      <input type="number" value={newTerm} onChange={(e) => setNewTerm(parseFloat(e.target.value) || 30)}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-2.5 px-3 text-[13px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 lg:p-8 shadow-sm flex flex-col gap-6">
-              <h3 className="text-[#052316] text-[18px] font-bold pb-3 border-b border-[#e8e0d0]/40 font-sans">3. Closing Costs & Cash-Out</h3>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div>
-                  <SliderInput label="Closing Costs" value={closingCosts} min={0} max={50000} step={100}
-                    prefix="$" onChange={setClosingCosts} />
-                  <div className="mt-3 flex bg-[#fcf9f3] border border-[#e8e0d0] rounded-lg p-0.5 text-[12px] font-semibold w-fit">
-                    <button onClick={() => setCostsFinanced(false)} className={`px-4 py-1.5 rounded-md transition-all cursor-pointer ${!costsFinanced ? "bg-[#052316] text-white shadow-sm" : "text-[#4e5b4e]"}`}>Pay Out of Pocket</button>
-                    <button onClick={() => setCostsFinanced(true)} className={`px-4 py-1.5 rounded-md transition-all cursor-pointer ${costsFinanced ? "bg-[#052316] text-white shadow-sm" : "text-[#4e5b4e]"}`}>Add to Loan</button>
-                  </div>
-                </div>
-                <div>
-                  <label className="text-[#052316] text-[14px] font-semibold block mb-2">Cash-Out Amount <span className="text-[#a89a70] font-normal text-[12px]">(optional)</span></label>
-                  <div className="relative">
-                    <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#888] font-semibold">$</span>
-                    <input type="number" value={cashOut} onChange={(e) => setCashOut(parseFloat(e.target.value) || 0)}
-                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-4 text-[15px] font-bold text-[#052316] focus:outline-none focus:ring-2 focus:ring-[#3fb364]/30 focus:border-[#3fb364]"
-                      placeholder="0" />
-                  </div>
-                  <p className="text-[11px] text-[#a89a70] mt-1.5 italic">Cash received at closing, always added to new loan.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Results */}
-        <section id="refi-results" className="pb-16 px-6 lg:px-10 max-w-7xl mx-auto space-y-8 animate-fadeUp">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 font-sans">
-            <div className={`rounded-3xl p-6 shadow-sm border ${result.paymentChangeStatus === "increase" ? "bg-red-50 border-red-200 text-red-900" : "bg-[#052316] border-[#052316] text-white"}`}>
-              <p className={`text-[11px] font-bold uppercase tracking-wider mb-1 ${result.paymentChangeStatus === "increase" ? "text-red-400" : "text-[#3fb364]"}`}>{result.paymentChangeStatus === "increase" ? "Monthly Increase" : "Monthly Savings"}</p>
-              <p className="text-[36px] font-bold leading-tight">{fmtWhole(Math.abs(result.monthlySavings))}</p>
-              <p className="text-[13px] mt-1 opacity-80">{result.paymentChangeStatus === "decrease" ? "per month lower payment" : result.paymentChangeStatus === "increase" ? "per month higher payment" : "no change in payment"}</p>
-            </div>
-
-            <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm font-sans">
-              <p className="text-[#a89a70] text-[11px] font-bold uppercase tracking-wider mb-1">Break-Even Point</p>
-              <p className="text-[#052316] text-[28px] font-bold leading-tight">{result.breakEvenStatus === "finite" ? `${result.breakEvenMonthsDisplay} months` : "N/A"}</p>
-              <p className="text-[#888] text-[13px] mt-1">{breakEvenText(result)}</p>
-            </div>
-
-            <div className={`rounded-3xl p-6 shadow-sm border ${result.interestChangeStatus === "increase" ? "bg-red-50 border-red-200 text-red-900" : "bg-white border-[#e8e0d0]/60 text-[#052316]"}`}>
-              <p className={`text-[11px] font-bold uppercase tracking-wider mb-1 ${result.interestChangeStatus === "increase" ? "text-red-400" : "text-[#a89a70]"}`}>{result.interestChangeStatus === "increase" ? "Additional Interest" : "Total Interest Savings"}</p>
-              <p className={`text-[28px] font-bold leading-tight ${result.interestChangeStatus === "increase" ? "text-red-600" : "text-[#3fb364]"}`}>{fmtWhole(Math.abs(result.totalInterestSavings))}</p>
-              <p className="text-[13px] mt-1 opacity-80">{result.interestChangeStatus === "decrease" ? "less interest over loan life" : result.interestChangeStatus === "increase" ? "more interest over loan life" : "no change in total interest"}</p>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 font-sans">
-            <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm">
-              <h3 className="text-[#052316] text-[16px] font-bold mb-5 pb-3 border-b border-[#e8e0d0]/40 font-sans">Monthly Payment Comparison</h3>
-              <div className="flex flex-col gap-4">
-                <div>
-                  <div className="flex items-center justify-between text-[13.5px] mb-2">
-                    <span className="text-[#888]">Current Payment</span>
-                    <span className="text-[#052316] font-bold">{fmt2(result.currentMonthlyPayment)}</span>
-                  </div>
-                  <div className="w-full h-3 rounded-full bg-[#fcf9f3] border border-[#e8e0d0]/40 overflow-hidden">
-                    <div className="h-full bg-[#b89a5a] rounded-full transition-all duration-500"
-                      style={{ width: `${Math.min(100, (result.currentMonthlyPayment / Math.max(result.currentMonthlyPayment, result.newMonthlyPayment)) * 100)}%` }} />
-                  </div>
-                </div>
-                <div>
-                  <div className="flex items-center justify-between text-[13.5px] mb-2">
-                    <span className="text-[#888]">New Payment</span>
-                    <span className="text-[#052316] font-bold">{fmt2(result.newMonthlyPayment)}</span>
-                  </div>
-                  <div className="w-full h-3 rounded-full bg-[#fcf9f3] border border-[#e8e0d0]/40 overflow-hidden">
-                    <div className="h-full bg-[#3fb364] rounded-full transition-all duration-500"
-                      style={{ width: `${Math.min(100, (result.newMonthlyPayment / Math.max(result.currentMonthlyPayment, result.newMonthlyPayment)) * 100)}%` }} />
-                  </div>
-                </div>
-
-                {(result.paymentOnFinancedCosts > 0 || result.paymentOnCashOut > 0) && (
-                  <div className="pt-3 border-t border-[#e8e0d0]/30 text-[13px]">
-                    <p className="text-[11px] text-[#a89a70] font-bold uppercase tracking-wide mb-2">New Payment Breakdown</p>
-                    <div className="flex flex-col gap-1.5">
-                      <div className="flex justify-between"><span className="text-[#888]">On original balance</span><span className="text-[#052316] font-medium">{fmt2(result.paymentOnOriginalBalance)}</span></div>
-                      {result.paymentOnFinancedCosts > 0 && <div className="flex justify-between"><span className="text-[#888]">On financed closing costs</span><span className="text-[#052316] font-medium">{fmt2(result.paymentOnFinancedCosts)}</span></div>}
-                      {result.paymentOnCashOut > 0 && <div className="flex justify-between"><span className="text-[#888]">On cash-out</span><span className="text-[#052316] font-medium">{fmt2(result.paymentOnCashOut)}</span></div>}
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm">
-              <h3 className="text-[#052316] text-[16px] font-bold mb-5 pb-3 border-b border-[#e8e0d0]/40 font-sans">Loan Balance Comparison</h3>
-              <div className="flex flex-col gap-3">
-                {[
-                  { label: "Current Loan Balance", value: fmt2(result.currentBalance) },
-                  ...(result.closingCostsFinanced && result.closingCosts > 0 ? [{ label: "+ Financed Closing Costs", value: fmt2(result.closingCosts) }] : []),
-                  ...(result.cashOutAmount > 0 ? [{ label: "+ Cash-Out Amount", value: fmt2(result.cashOutAmount) }] : []),
-                ].map((row) => (
-                  <div key={row.label} className="flex items-center justify-between text-[13.5px] py-2 border-b border-[#e8e0d0]/30">
-                    <span className="text-[#888]">{row.label}</span>
-                    <span className="text-[#052316] font-bold">{row.value}</span>
-                  </div>
+              <select
+                id="citySelect"
+                value={selectedCity}
+                onChange={(e) => handleCityChange(e.target.value)}
+                className="h-[45px] px-4 bg-white border border-[#e0e0e0] rounded-md text-[15px] font-semibold text-[#32353C] focus:outline-none focus:border-[#4CAF50] cursor-pointer md:w-64"
+              >
+                {ARIZONA_CITIES.map((city) => (
+                  <option key={city} value={city}>
+                    {city}
+                  </option>
                 ))}
-                <div className="flex items-center justify-between text-[15px] font-bold py-2 bg-[#fcf9f3] rounded-xl px-4 mt-1">
-                  <span className="text-[#052316]">New Loan Amount</span>
-                  <span className="text-[#052316]">{fmt2(result.newLoanAmount)}</span>
+              </select>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+              
+              <div className="lg:col-span-8 space-y-6">
+                
+                <div className="bg-white rounded-xl border border-[#e0e0e0] p-6 shadow-sm">
+                  <h3 className="text-[17px] font-semibold text-[#32353C] pb-3 mb-5 border-b border-[#f0f0f0]">
+                    Current Loan Details
+                  </h3>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div>
+                      <div className="flex items-center gap-1.5 mb-2">
+                        <label htmlFor="currentBalance" className="text-[13.5px] font-medium text-[#32353C]">
+                          Current Balance ($)
+                        </label>
+                        <div className="relative group cursor-help">
+                          <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[11px] font-bold flex items-center justify-center">
+                            ?
+                          </span>
+                          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                            Enter the remaining balance on your current mortgage.
+                          </div>
+                        </div>
+                      </div>
+                      <div className="relative">
+                        <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#666] text-[14px] font-medium pointer-events-none">
+                          $
+                        </span>
+                        <input
+                          type="text"
+                          id="currentBalance"
+                          value={currentBalanceStr}
+                          onChange={(e) => {
+                            const val = e.target.value.replace(/[^0-9]/g, "");
+                            setCurrentBalanceStr(val ? parseInt(val, 10).toLocaleString("en-US") : "");
+                          }}
+                          className="w-full h-[45px] pl-8 pr-3 bg-white border border-[#e0e0e0] rounded-md text-[14.5px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50]"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <div className="flex items-center gap-1.5 mb-2">
+                        <label htmlFor="currentRate" className="text-[13.5px] font-medium text-[#32353C]">
+                          Current Rate (%)
+                        </label>
+                        <div className="relative group cursor-help">
+                          <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[11px] font-bold flex items-center justify-center">
+                            ?
+                          </span>
+                          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                            Your existing annual interest rate percentage.
+                          </div>
+                        </div>
+                      </div>
+                      <div className="relative">
+                        <input
+                          type="text"
+                          id="currentRate"
+                          value={currentRateStr}
+                          onChange={(e) => {
+                            let val = e.target.value.replace(/[^0-9.]/g, "");
+                            const parts = val.split(".");
+                            if (parts.length > 2) val = parts[0] + "." + parts.slice(1).join("");
+                            setCurrentRateStr(val);
+                          }}
+                          className="w-full h-[45px] pl-3 pr-8 bg-white border border-[#e0e0e0] rounded-md text-[14.5px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50] text-right"
+                        />
+                        <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#666] text-[14px] font-medium pointer-events-none">
+                          %
+                        </span>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div className="flex items-center gap-1.5 mb-2">
+                        <label htmlFor="remainingTerm" className="text-[13.5px] font-medium text-[#32353C]">
+                          Remaining Term (Yrs)
+                        </label>
+                        <div className="relative group cursor-help">
+                          <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[11px] font-bold flex items-center justify-center">
+                            ?
+                          </span>
+                          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                            Number of years remaining on your current loan.
+                          </div>
+                        </div>
+                      </div>
+                      <input
+                        type="number"
+                        id="remainingTerm"
+                        value={remainingTermStr}
+                        onChange={(e) => setRemainingTermStr(e.target.value)}
+                        className="w-full h-[45px] px-3 bg-white border border-[#e0e0e0] rounded-md text-[14.5px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50]"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl border border-[#e0e0e0] p-6 shadow-sm">
+                  <h3 className="text-[17px] font-semibold text-[#32353C] pb-3 mb-5 border-b border-[#f0f0f0]">
+                    New Refinance Loan Details
+                  </h3>
+
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <div>
+                      <div className="flex items-center gap-1.5 mb-2">
+                        <label htmlFor="newRate" className="text-[13.5px] font-medium text-[#32353C]">
+                          New Rate (%)
+                        </label>
+                        <div className="relative group cursor-help">
+                          <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[11px] font-bold flex items-center justify-center">
+                            ?
+                          </span>
+                          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                            The new interest rate offered for refinancing.
+                          </div>
+                        </div>
+                      </div>
+                      <div className="relative">
+                        <input
+                          type="text"
+                          id="newRate"
+                          value={newRateStr}
+                          onChange={(e) => {
+                            let val = e.target.value.replace(/[^0-9.]/g, "");
+                            const parts = val.split(".");
+                            if (parts.length > 2) val = parts[0] + "." + parts.slice(1).join("");
+                            setNewRateStr(val);
+                          }}
+                          className="w-full h-[45px] pl-3 pr-8 bg-white border border-[#e0e0e0] rounded-md text-[14.5px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50] text-right"
+                        />
+                        <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#666] text-[14px] font-medium pointer-events-none">
+                          %
+                        </span>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div className="flex items-center gap-1.5 mb-2">
+                        <label htmlFor="newTerm" className="text-[13.5px] font-medium text-[#32353C]">
+                          New Term (Yrs)
+                        </label>
+                        <div className="relative group cursor-help">
+                          <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[11px] font-bold flex items-center justify-center">
+                            ?
+                          </span>
+                          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                            Choose length for the new mortgage term (e.g. 30, 25, 20, 15).
+                          </div>
+                        </div>
+                      </div>
+                      <select
+                        id="newTerm"
+                        value={newTermStr}
+                        onChange={(e) => setNewTermStr(e.target.value)}
+                        className="w-full h-[45px] px-3 bg-white border border-[#e0e0e0] rounded-md text-[14.5px] text-[#32353C] focus:outline-none focus:border-[#4CAF50] cursor-pointer"
+                      >
+                        <option value="30">30 Years</option>
+                        <option value="25">25 Years</option>
+                        <option value="20">20 Years</option>
+                        <option value="15">15 Years</option>
+                        <option value="10">10 Years</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <div className="flex items-center gap-1.5 mb-2">
+                        <label htmlFor="closingCosts" className="text-[13.5px] font-medium text-[#32353C]">
+                          Closing Costs ($)
+                        </label>
+                        <div className="relative group cursor-help">
+                          <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[11px] font-bold flex items-center justify-center">
+                            ?
+                          </span>
+                          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-52 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                            Estimated closing costs for refinancing (lender fees, title, etc.).
+                          </div>
+                        </div>
+                      </div>
+                      <div className="relative">
+                        <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#666] text-[14px] font-medium pointer-events-none">
+                          $
+                        </span>
+                        <input
+                          type="text"
+                          id="closingCosts"
+                          value={closingCostsStr}
+                          onChange={(e) => {
+                            const val = e.target.value.replace(/[^0-9]/g, "");
+                            setClosingCostsStr(val ? parseInt(val, 10).toLocaleString("en-US") : "");
+                          }}
+                          className="w-full h-[45px] pl-8 pr-3 bg-white border border-[#e0e0e0] rounded-md text-[14.5px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50]"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-5 p-3.5 bg-[#f8f9fa] border border-[#e0e0e0] rounded-lg flex items-center gap-3">
+                    <input
+                      type="checkbox"
+                      id="addClosingToLoan"
+                      checked={addClosingToLoan}
+                      onChange={(e) => setAddClosingToLoan(e.target.checked)}
+                      className="w-4 h-4 text-[#4CAF50] accent-[#4CAF50] rounded cursor-pointer"
+                    />
+                    <label htmlFor="addClosingToLoan" className="text-[13.5px] font-medium text-[#32353C] cursor-pointer">
+                      Add closing costs ({fmtCurr(parseFormattedNumber(closingCostsStr))}) to new loan amount
+                    </label>
+                  </div>
+                </div>
+
+              </div>
+
+              <div className="lg:col-span-4 bg-white rounded-xl border border-[#e0e0e0] p-6 shadow-sm flex flex-col items-center justify-center text-center h-full">
+                <h3 className="text-[16px] font-semibold text-[#32353C] mb-4">
+                  Monthly Payment Comparison
+                </h3>
+
+                <div className="relative w-44 h-44 my-2 flex items-center justify-center">
+                  <svg viewBox="0 0 200 200" className="w-full h-full transform -rotate-90">
+                    <circle cx="100" cy="100" r="70" fill="none" stroke="#e0e0e0" strokeWidth="18" />
+                    <circle
+                      cx="100"
+                      cy="100"
+                      r="70"
+                      fill="none"
+                      stroke="#90A4AE"
+                      strokeWidth="18"
+                      strokeDasharray={`${(2 * Math.PI * 70 * doughnutData.curPct) / 100} ${2 * Math.PI * 70}`}
+                    />
+                    <circle
+                      cx="100"
+                      cy="100"
+                      r="70"
+                      fill="none"
+                      stroke="#4CAF50"
+                      strokeWidth="18"
+                      strokeDasharray={`${(2 * Math.PI * 70 * doughnutData.newPct) / 100} ${2 * Math.PI * 70}`}
+                      strokeDashoffset={`-${(2 * Math.PI * 70 * doughnutData.curPct) / 100}`}
+                    />
+                  </svg>
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <span className="text-[11px] uppercase tracking-wider text-[#888] font-semibold">New Payment</span>
+                    <span className="text-[17px] font-bold text-[#4CAF50]">
+                      {fmtCurr(result.newMonthlyPayment)}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-2 text-[12.5px] pt-3 w-full">
+                  <div className="flex justify-between items-center px-2 py-1 bg-[#f8f9fa] rounded">
+                    <span className="text-[#666]">Current Payment:</span>
+                    <span className="font-semibold text-[#32353C]">{fmtCurr(result.currentMonthlyPayment)}</span>
+                  </div>
+                  <div className="flex justify-between items-center px-2 py-1 bg-emerald-50 rounded">
+                    <span className="text-[#666]">New Payment:</span>
+                    <span className="font-semibold text-[#4CAF50]">{fmtCurr(result.newMonthlyPayment)}</span>
+                  </div>
                 </div>
               </div>
 
-              {result.cashOutAmount > 0 && (
-                <div className="mt-5 pt-4 border-t border-[#e8e0d0]/40 text-[13.5px]">
-                  <p className="text-[11px] text-[#a89a70] font-bold uppercase tracking-wide mb-2 font-sans">Cash-Out Summary</p>
-                  <div className="flex flex-col gap-1.5">
-                    <div className="flex justify-between"><span className="text-[#888]">Cash-Out Proceeds</span><span className="text-[#052316] font-bold">{fmt2(result.cashOutAmount)}</span></div>
-                    {!result.closingCostsFinanced && result.closingCosts > 0 && <div className="flex justify-between"><span className="text-[#888]">Less Out-of-Pocket Costs</span><span className="text-red-500 font-bold">-{fmt2(result.closingCosts)}</span></div>}
-                    <div className="flex justify-between pt-1.5 border-t border-[#e8e0d0]/30 font-bold"><span className="text-[#052316]">Net Cash at Closing</span><span className="text-[#3fb364]">{fmt2(result.netCashAtClosing)}</span></div>
-                  </div>
-                </div>
-              )}
             </div>
-          </div>
 
-          <div className="bg-[#faf7f0] rounded-3xl border border-[#e8e0d0]/60 p-6 shadow-sm font-sans">
-            <h3 className="text-[#052316] text-[16px] font-bold mb-5 pb-3 border-b border-[#e8e0d0]/40 font-sans">Total Interest Comparison</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[
-                { label: "Current Total Interest", sublabel: `${result.currentTermYears}yr @ ${result.currentAnnualRate}%`, value: fmtWhole(result.currentTotalInterest) },
-                { label: "New Total Interest", sublabel: `${result.newTermYears}yr @ ${result.newAnnualRate}%`, value: fmtWhole(result.newTotalInterest) },
-                { label: "Current Total Payments", sublabel: `${result.currentNumPayments} payments`, value: fmtWhole(result.currentTotalScheduled) },
-                { label: "New Total Payments", sublabel: `${result.newNumPayments} payments`, value: fmtWhole(result.newTotalScheduled) },
-              ].map((item) => (
-                <div key={item.label} className="bg-white rounded-2xl p-4 border border-[#e8e0d0]/40">
-                  <p className="text-[11px] text-[#a89a70] font-bold uppercase tracking-wide mb-0.5">{item.label}</p>
-                  <p className="text-[10.5px] text-[#888] mb-1.5">{item.sublabel}</p>
-                  <p className="text-[20px] font-bold text-[#052316]">{item.value}</p>
+          </div>
+        </div>
+
+        <section className="max-w-6xl mx-auto px-4 lg:px-8 mt-10 space-y-8 animate-fadeIn">
+          <div className="bg-white rounded-2xl border border-[#e0e0e0] shadow-sm p-6 lg:p-10">
+            
+            <h2 className="text-[24px] font-semibold text-[#32353C] pb-4 mb-8 border-b-2 border-[#f0f0f0]">
+              Refinance Results
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="bg-[#f8f9fa] border border-[#e0e0e0] rounded-xl p-5 text-center">
+                <span className="text-[13px] text-[#666] font-medium block mb-1">Monthly Savings</span>
+                <div className={`text-[26px] font-bold ${result.monthlySavings > 0 ? "text-[#4CAF50]" : "text-red-500"}`}>
+                  {result.monthlySavings >= 0 ? fmtCurr(result.monthlySavings) : `-${fmtCurr(Math.abs(result.monthlySavings))}`}
                 </div>
-              ))}
+                <span className="text-[12px] text-[#888] block mt-1">Reduction in your monthly mortgage payment</span>
+              </div>
+
+              <div className="bg-[#f8f9fa] border border-[#e0e0e0] rounded-xl p-5 text-center">
+                <span className="text-[13px] text-[#666] font-medium block mb-1">Break-Even Point</span>
+                <div className="text-[26px] font-bold text-[#32353C]">
+                  {result.breakEvenMonths !== null ? `${result.breakEvenMonths} mo${result.breakEvenMonths === 1 ? "" : "s"}` : "N/A"}
+                </div>
+                <span className="text-[12px] text-[#888] block mt-1">Time needed to recover refinancing closing costs</span>
+              </div>
+
+              <div className="bg-[#f8f9fa] border border-[#e0e0e0] rounded-xl p-5 text-center">
+                <span className="text-[13px] text-[#666] font-medium block mb-1">Total Interest Savings</span>
+                <div className={`text-[26px] font-bold ${result.interestSavings >= 0 ? "text-[#4CAF50]" : "text-red-500"}`}>
+                  {fmtCurr(result.interestSavings)}
+                </div>
+                <span className="text-[12px] text-[#888] block mt-1">Total reduction in interest payments over loan term</span>
+              </div>
             </div>
-            <div className={`mt-4 rounded-2xl p-4 flex items-center justify-between ${result.interestChangeStatus === "increase" ? "bg-red-500" : "bg-[#052316]"}`}>
-              <p className="text-white text-[13px] font-bold uppercase tracking-wide">{result.interestChangeStatus === "increase" ? "Additional Interest Cost" : "Total Interest Savings"}</p>
-              <p className="text-white text-[22px] font-bold">{fmtWhole(Math.abs(result.totalInterestSavings))}</p>
+
+            {/* Current vs New Loan Comparison Table */}
+            <div className="bg-[#f8f9fa] border border-[#e0e0e0] rounded-xl p-6 mb-8">
+              <h3 className="text-[17px] font-semibold text-[#32353C] mb-4">
+                Current Loan vs. Refinanced Loan Comparison
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="w-full text-left text-[14px]">
+                  <thead>
+                    <tr className="border-b border-[#e0e0e0] text-[#666]">
+                      <th className="py-2.5 px-3 font-semibold">Details</th>
+                      <th className="py-2.5 px-3 font-semibold">Current Loan</th>
+                      <th className="py-2.5 px-3 font-semibold text-[#4CAF50]">New Refinanced Loan</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-[#e0e0e0]">
+                    <tr>
+                      <td className="py-3 px-3 font-medium text-[#32353C]">Loan Balance</td>
+                      <td className="py-3 px-3 text-[#666]">{fmtCurr(result.currentBalance)}</td>
+                      <td className="py-3 px-3 text-[#4CAF50] font-bold">{fmtCurr(result.newLoanAmount)}</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-3 font-medium text-[#32353C]">Interest Rate</td>
+                      <td className="py-3 px-3 text-[#666]">{result.currentRate}%</td>
+                      <td className="py-3 px-3 text-[#4CAF50] font-bold">{result.newRate}%</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-3 font-medium text-[#32353C]">Loan Term</td>
+                      <td className="py-3 px-3 text-[#666]">{result.remainingTermYears} Years Remaining</td>
+                      <td className="py-3 px-3 text-[#4CAF50] font-bold">{result.newTermYears} Years New</td>
+                    </tr>
+                    <tr>
+                      <td className="py-3 px-3 font-medium text-[#32353C]">Monthly Payment</td>
+                      <td className="py-3 px-3 text-[#666]">{fmtCurr(result.currentMonthlyPayment)}</td>
+                      <td className="py-3 px-3 text-[#4CAF50] font-bold">{fmtCurr(result.newMonthlyPayment)}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
+
+            <div className={`p-5 rounded-xl border text-[14.5px] leading-relaxed ${
+              result.status === "positive"
+                ? "bg-emerald-50 border-emerald-200 text-emerald-900"
+                : result.status === "negative"
+                ? "bg-amber-50 border-amber-200 text-amber-900"
+                : "bg-gray-50 border-gray-200 text-gray-800"
+            }`}>
+              {result.message}
+            </div>
+
+            {/* Methodology & Refinance Guide Section */}
+            <div className="mt-12 bg-[#f8f9fa] border border-[#e0e0e0] rounded-2xl p-6 lg:p-8 space-y-4 text-[13.5px] leading-relaxed text-[#555]">
+              <h4 className="text-[16px] font-bold text-[#32353C] border-b border-[#e0e0e0] pb-2">
+                Calculation Methodology &amp; Refinancing Guidelines
+              </h4>
+              <p>
+                <strong>Understanding Refinance Break-Even:</strong> Refinancing typically involves upfront closing costs (lender appraisal, title insurance, recording fees). The break-even point calculates the exact number of months required for your monthly payment savings to cover those initial closing costs.
+              </p>
+              <div className="space-y-2 pt-1">
+                <p><strong>• Monthly Savings:</strong> Current Monthly Payment minus New Monthly Payment.</p>
+                <p><strong>• Break-Even Calculation:</strong> Total Closing Costs divided by Monthly Savings.</p>
+                <p><strong>• Financed Closing Costs:</strong> Checking the "Add closing costs to new loan amount" option increases your new loan balance, avoiding upfront out-of-pocket cash requirements.</p>
+              </div>
+            </div>
+
+            <div className="mt-12 bg-[#052316] rounded-2xl p-6 lg:p-8 text-white shadow-md flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <h4 className="text-[20px] font-bold mb-1 font-playfair">Ready to refinance your Arizona mortgage?</h4>
+                <p className="text-[#c8c8b8] text-[14px]">
+                  Get custom rate quotes and check your exact closing cost options with our team.
+                </p>
+              </div>
+              <Link
+                href="/#get-pre-approved"
+                className="bg-[#4CAF50] hover:bg-[#45a049] text-white text-[15px] font-semibold px-6 py-3 rounded-full transition-all duration-200 shadow whitespace-nowrap cursor-pointer"
+              >
+                Connect With Us →
+              </Link>
+            </div>
+
           </div>
         </section>
+
       </main>
+
       <Footer />
     </div>
   );

@@ -139,38 +139,95 @@ function PieChart({ downAmt, loanAmount, totalInterest }: { downAmt: number; loa
   );
 }
 
-function PaymentBarChart({ schedule, monthlyPayment }: { schedule: AmortizationRow[]; monthlyPayment: number }) {
+function PaymentLineChart({ schedule, monthlyPayment }: { schedule: AmortizationRow[]; monthlyPayment: number }) {
   if (schedule.length === 0) return null;
   const step = Math.max(1, Math.floor(schedule.length / 60));
   const data = schedule.filter((_, i) => i % step === 0 || i === schedule.length - 1);
-  const W = 600, H = 160, pad = { left: 50, right: 10, top: 10, bottom: 30 };
+  const W = 700, H = 200, pad = { left: 60, right: 60, top: 15, bottom: 35 };
   const chartW = W - pad.left - pad.right;
   const chartH = H - pad.top - pad.bottom;
-  const barW = Math.max(2, chartW / data.length - 1);
+  
   const maxPmt = monthlyPayment;
-  const balancePts = data.map((d, i) => {
+  const maxBalance = schedule[0].beginBalance;
+  
+  // Generate Y-axis ticks with more granularity (every $250-500)
+  const yTickCount = 6;
+  const yTickStep = maxPmt / yTickCount;
+  const yTicks = [];
+  for (let i = 0; i <= yTickCount; i++) {
+    yTicks.push(i * yTickStep);
+  }
+  
+  // Generate right Y-axis ticks for balance
+  const rightYTickCount = 5;
+  const rightYTickStep = maxBalance / rightYTickCount;
+  const rightYTicks = [];
+  for (let i = 0; i <= rightYTickCount; i++) {
+    rightYTicks.push(i * rightYTickStep);
+  }
+  
+  // Generate line points
+  const principalPts = data.map((d, i) => {
     const x = pad.left + (i / (data.length - 1)) * chartW;
-    const y = pad.top + chartH - (d.endBalance / schedule[0].beginBalance) * chartH;
+    const y = pad.top + chartH - (d.principal / maxPmt) * chartH;
     return `${x},${y}`;
   }).join(" ");
+  
+  const interestPts = data.map((d, i) => {
+    const x = pad.left + (i / (data.length - 1)) * chartW;
+    const y = pad.top + chartH - (d.interest / maxPmt) * chartH;
+    return `${x},${y}`;
+  }).join(" ");
+  
+  const balancePts = data.map((d, i) => {
+    const x = pad.left + (i / (data.length - 1)) * chartW;
+    const y = pad.top + chartH - (d.endBalance / maxBalance) * chartH;
+    return `${x},${y}`;
+  }).join(" ");
+  
   return (
     <svg viewBox={`0 0 ${W} ${H}`} className="w-full" preserveAspectRatio="none">
-      {data.map((d, i) => {
-        const x = pad.left + i * (chartW / data.length);
-        const intH = (d.interest / maxPmt) * chartH;
-        const prinH = (d.principal / maxPmt) * chartH;
+      {/* Grid lines */}
+      {yTicks.map((tick, i) => {
+        const y = pad.top + chartH - (tick / maxPmt) * chartH;
         return (
-          <g key={i}>
-            <rect x={x} y={pad.top + chartH - intH} width={barW} height={intH} fill="#b89a5a" opacity="0.85" />
-            <rect x={x} y={pad.top + chartH - intH - prinH} width={barW} height={prinH} fill="#3fb364" opacity="0.85" />
-          </g>
+          <line key={i} x1={pad.left} y1={y} x2={W - pad.right} y2={y} stroke="#e8e0d0" strokeWidth="1" strokeDasharray="3,3" />
         );
       })}
-      {data.length > 1 && <polyline points={balancePts} fill="none" stroke="#052316" strokeWidth="2" strokeLinejoin="round" />}
-      <text x={pad.left - 4} y={pad.top + 4} textAnchor="end" fontSize="9" fill="#888">{fmtK(maxPmt)}</text>
-      <text x={pad.left - 4} y={pad.top + chartH} textAnchor="end" fontSize="9" fill="#888">$0</text>
-      <text x={pad.left} y={H - 4} fontSize="9" fill="#888">Mo 1</text>
-      <text x={W - pad.right} y={H - 4} textAnchor="end" fontSize="9" fill="#888">Mo {schedule.length}</text>
+      
+      {/* Left Y-axis labels */}
+      {yTicks.map((tick, i) => {
+        const y = pad.top + chartH - (tick / maxPmt) * chartH;
+        return (
+          <text key={i} x={pad.left - 8} y={y + 3} textAnchor="end" fontSize="9" fill="#888">{fmtK(tick)}</text>
+        );
+      })}
+      
+      {/* Right Y-axis labels */}
+      {rightYTicks.map((tick, i) => {
+        const y = pad.top + chartH - (tick / maxBalance) * chartH;
+        return (
+          <text key={i} x={W - pad.right + 8} y={y + 3} textAnchor="start" fontSize="9" fill="#888">{fmtK(tick)}</text>
+        );
+      })}
+      
+      {/* X-axis labels */}
+      <text x={pad.left} y={H - 12} fontSize="9" fill="#888">Mo 1</text>
+      <text x={W - pad.right} y={H - 12} textAnchor="end" fontSize="9" fill="#888">Mo {schedule.length}</text>
+      
+      {/* Lines */}
+      {data.length > 1 && (
+        <>
+          <polyline points={principalPts} fill="none" stroke="#3fb364" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" />
+          <polyline points={interestPts} fill="none" stroke="#b89a5a" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" />
+          <polyline points={balancePts} fill="none" stroke="#052316" strokeWidth="2.5" strokeLinejoin="round" strokeLinecap="round" />
+        </>
+      )}
+      
+      {/* Axis lines */}
+      <line x1={pad.left} y1={pad.top} x2={pad.left} y2={pad.top + chartH} stroke="#ccc" strokeWidth="1" />
+      <line x1={W - pad.right} y1={pad.top} x2={W - pad.right} y2={pad.top + chartH} stroke="#ccc" strokeWidth="1" />
+      <line x1={pad.left} y1={pad.top + chartH} x2={W - pad.right} y2={pad.top + chartH} stroke="#ccc" strokeWidth="1" />
     </svg>
   );
 }
@@ -178,8 +235,6 @@ function PaymentBarChart({ schedule, monthlyPayment }: { schedule: AmortizationR
 export default function BasicMortgageCalculatorPage() {
   const [homePrice, setHomePrice] = useState(425000);
   const [dpAmt, setDpAmt] = useState(85000);
-  const [dpPct, setDpPct] = useState(20);
-  const [lastDpMode, setLastDpMode] = useState<"amt" | "pct">("pct");
   const [annualRate, setAnnualRate] = useState(6.75);
   const [termYears, setTermYears] = useState(30);
   const [showSchedule, setShowSchedule] = useState(false);
@@ -189,36 +244,24 @@ export default function BasicMortgageCalculatorPage() {
   const result = useMemo<CalcResult | null>(() => {
     const hp = homePrice;
     if (!isFinite(hp) || hp <= 0) return null;
-    let down = lastDpMode === "pct" ? hp * (dpPct) / 100 : dpAmt;
-    down = Math.max(0, Math.min(down, hp));
+    let down = Math.max(0, Math.min(dpAmt, hp));
     const rate = Math.max(0, annualRate);
     let term = Math.round(termYears);
     if (term < 1) term = 1;
     if (term > 30) term = 30;
     return buildAmortization(hp, down, rate, term);
-  }, [homePrice, dpAmt, dpPct, lastDpMode, annualRate, termYears]);
+  }, [homePrice, dpAmt, annualRate, termYears]);
 
   const handleHomePriceChange = (val: number) => {
     setHomePrice(val);
-    if (val > 0) {
-      if (lastDpMode === "pct") {
-        setDpAmt(val * dpPct / 100);
-      } else {
-        setDpPct((dpAmt / val) * 100);
-      }
+    if (dpAmt > val) {
+      setDpAmt(val);
     }
   };
 
   const handleDpAmtChange = (val: number) => {
-    setDpAmt(val); setLastDpMode("amt");
-    const hp = homePrice;
-    if (hp > 0) setDpPct((val / hp) * 100);
-  };
-
-  const handleDpPctChange = (val: number) => {
-    setDpPct(val); setLastDpMode("pct");
-    const hp = homePrice;
-    if (hp > 0) setDpAmt(hp * val / 100);
+    const clampedVal = Math.min(val, homePrice);
+    setDpAmt(clampedVal);
   };
 
   const termOpts = [10, 15, 20, 25, 30];
@@ -257,10 +300,17 @@ export default function BasicMortgageCalculatorPage() {
               onChange={handleHomePriceChange} formatValue={(v) => fmt(v)} />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <SliderInput label="Down Payment ($)" value={dpAmt} min={0} max={2000000} step={1000} prefix="$"
-                onChange={handleDpAmtChange} />
-              <SliderInput label="Down Payment (%)" value={dpPct} min={0} max={100} step={0.5} suffix="%"
-                onChange={handleDpPctChange} />
+              <SliderInput label="Down Payment ($)" value={dpAmt} min={0} max={homePrice} step={1000} prefix="$"
+                onChange={handleDpAmtChange} formatValue={(v) => fmt(v)} />
+              <div>
+                <label className="text-[#052316] text-[14px] font-semibold block mb-2">Down Payment (%)</label>
+                <input
+                  type="text"
+                  readOnly
+                  value={homePrice > 0 ? ((dpAmt / homePrice) * 100).toFixed(2) + '%' : '0%'}
+                  className="w-full bg-[#f5f5f0] border border-[#e8e0d0] rounded-xl py-2.5 px-3 text-[13px] font-bold text-[#052316] cursor-not-allowed"
+                />
+              </div>
             </div>
 
             <SliderInput label="Annual Interest Rate" value={annualRate} min={0} max={15} step={0.125} suffix="%"
@@ -374,7 +424,7 @@ export default function BasicMortgageCalculatorPage() {
                     ))}
                   </div>
                   <div className="overflow-x-auto">
-                    <PaymentBarChart schedule={result.schedule} monthlyPayment={result.monthlyPayment} />
+                    <PaymentLineChart schedule={result.schedule} monthlyPayment={result.monthlyPayment} />
                   </div>
                 </div>
 

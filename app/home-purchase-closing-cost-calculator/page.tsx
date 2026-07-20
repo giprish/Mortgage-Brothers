@@ -146,11 +146,50 @@ function solveClosingCosts(
   };
 }
 
+const CITY_DEFAULTS: Record<string, { price: number; loan: number }> = {
+  Phoenix: { price: 400000, loan: 320000 },
+  Tucson: { price: 350000, loan: 280000 },
+  Mesa: { price: 400000, loan: 320000 },
+  Chandler: { price: 500000, loan: 400000 },
+  Gilbert: { price: 475000, loan: 380000 },
+  Glendale: { price: 425000, loan: 340000 },
+  Scottsdale: { price: 750000, loan: 600000 },
+  Peoria: { price: 425000, loan: 340000 },
+  Tempe: { price: 450000, loan: 360000 },
+  Surprise: { price: 400000, loan: 320000 },
+  Goodyear: { price: 425000, loan: 340000 },
+  Buckeye: { price: 400000, loan: 320000 },
+  "San Tan Valley": { price: 375000, loan: 300000 },
+  Yuma: { price: 300000, loan: 240000 },
+  Avondale: { price: 400000, loan: 320000 },
+  Flagstaff: { price: 500000, loan: 400000 },
+  "Queen Creek": { price: 450000, loan: 360000 },
+  Maricopa: { price: 350000, loan: 280000 },
+  "Casas Adobes": { price: 375000, loan: 300000 },
+  "Casa Grande": { price: 300000, loan: 240000 },
+  "Lake Havasu City": { price: 350000, loan: 280000 },
+  Marana: { price: 375000, loan: 300000 },
+  "Catalina Foothills": { price: 450000, loan: 360000 },
+  "Prescott Valley": { price: 350000, loan: 280000 },
+  "Oro Valley": { price: 400000, loan: 320000 },
+  "City Not Listed": { price: 400000, loan: 320000 }
+};
+
+const ARIZONA_CITIES = Object.keys(CITY_DEFAULTS);
+
 export default function ClosingCostCalculatorPage() {
+  const [selectedCity, setSelectedCity] = useState("Phoenix");
   const [homePrice, setHomePrice] = useState(400000);
   const [loanAmount, setLoanAmount] = useState(320000);
   const [program, setProgram] = useState("conventional");
   const [vaStatus, setVaStatus] = useState("firstTime");
+
+  const handleCityChange = (city: string) => {
+    setSelectedCity(city);
+    const defaults = CITY_DEFAULTS[city] || CITY_DEFAULTS.Phoenix;
+    setHomePrice(defaults.price);
+    setLoanAmount(defaults.loan);
+  };
 
   const result = useMemo(() => {
     return solveClosingCosts(homePrice, loanAmount, program, vaStatus);
@@ -203,6 +242,21 @@ export default function ClosingCostCalculatorPage() {
             <h3 className="text-[#052316] text-[17px] font-bold pb-3 border-b border-[#e8e0d0]/40 flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-[#052316]" /> Transaction Details
             </h3>
+
+            <div>
+              <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Select Your Arizona City</label>
+              <select
+                value={selectedCity}
+                onChange={(e) => handleCityChange(e.target.value)}
+                className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 px-3.5 text-[14px] font-bold text-[#052316] focus:outline-none cursor-pointer"
+              >
+                {ARIZONA_CITIES.map((city) => (
+                  <option key={city} value={city}>
+                    {city}
+                  </option>
+                ))}
+              </select>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <SliderInput label="Home Price" value={homePrice} min={50000} max={2000000} step={1000} prefix="$" onChange={setHomePrice} />

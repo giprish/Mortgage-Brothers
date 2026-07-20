@@ -41,48 +41,124 @@ interface RentVsBuyResult {
   monthlyHOA: number;
   monthlyInsurance: number;
   yearlySeries: YearlyData[];
+  loanProgram: string;
+  upfrontFee: number;
+  upfrontFeeLabel: string | null;
+  miAppliesAtStart: boolean;
+  miAnnualRate: number;
 }
 
-function getDefaultClosingCosts(homePrice: number): number {
-  if (homePrice <= 100000) return 3100;
-  if (homePrice <= 150000) return 3178;
-  if (homePrice <= 200000) return 3257;
-  if (homePrice <= 250000) return 3338;
-  if (homePrice <= 300000) return 3422;
-  if (homePrice <= 350000) return 3507;
-  if (homePrice <= 400000) return 3595;
-  if (homePrice <= 450000) return 3685;
-  if (homePrice <= 500000) return 3777;
-  if (homePrice <= 550000) return 3871;
-  if (homePrice <= 600000) return 3968;
-  if (homePrice <= 650000) return 4067;
-  if (homePrice <= 700000) return 4169;
-  if (homePrice <= 750000) return 4273;
-  if (homePrice <= 800000) return 4359;
-  if (homePrice <= 850000) return 4446;
-  if (homePrice <= 900000) return 4535;
-  if (homePrice <= 950000) return 4626;
-  if (homePrice <= 1000000) return 4718;
-  if (homePrice <= 1050000) return 4765;
-  if (homePrice <= 1100000) return 4813;
-  if (homePrice <= 1150000) return 4861;
-  if (homePrice <= 1200000) return 4910;
-  if (homePrice <= 1250000) return 4959;
-  if (homePrice <= 1300000) return 5008;
-  if (homePrice <= 1350000) return 5059;
-  if (homePrice <= 1400000) return 5109;
-  if (homePrice <= 1450000) return 5160;
-  if (homePrice <= 1500000) return 5212;
-  if (homePrice <= 1550000) return 5264;
-  if (homePrice <= 1600000) return 5317;
-  if (homePrice <= 1650000) return 5370;
-  if (homePrice <= 1700000) return 5423;
-  if (homePrice <= 1750000) return 5478;
-  if (homePrice <= 1800000) return 5532;
-  if (homePrice <= 1850000) return 5588;
-  if (homePrice <= 1900000) return 5644;
-  if (homePrice <= 1950000) return 5700;
-  return 6500;
+// Arizona closing cost schedule (Title Escrow Fee by Home Price)
+const titleEscrowTable: [number, number][] = [
+  [200000, 450], [300000, 530], [400000, 610], [500000, 690], [600000, 770],
+  [700000, 850], [800000, 930], [900000, 1010], [1000000, 1090], [1100000, 1170],
+  [1200000, 1250], [1300000, 1330], [1400000, 1410], [1500000, 1490], [1600000, 1570],
+  [1700000, 1650], [1800000, 1730], [1900000, 1810], [2000000, 1890], [2100000, 1970],
+  [2200000, 2050], [2300000, 2130], [2400000, 2210], [2500000, 2290], [2600000, 2370],
+  [2700000, 2450], [2800000, 2530], [2900000, 2610], [3000000, 2690]
+];
+
+// Title Insurance Fee by Loan Amount
+const titleInsuranceTable: [number, number][] = [
+  [200000, 770], [300000, 895], [400000, 1020], [500000, 1145], [600000, 1270],
+  [700000, 1395], [800000, 1520], [900000, 1645], [1000000, 1770], [1100000, 1895],
+  [1200000, 2020], [1300000, 2145], [1400000, 2270], [1500000, 2395], [1600000, 2520],
+  [1700000, 2645], [1800000, 2770], [1900000, 2895], [2000000, 3020], [2100000, 3145],
+  [2200000, 3270], [2300000, 3395], [2400000, 3520], [2500000, 3645], [2600000, 3770],
+  [2700000, 3895], [2800000, 4020], [2900000, 4145], [3000000, 4270]
+];
+
+const CC_FIXED_FEES = { origination: 1000, appraisal: 650, creditReport: 95, recording: 75 };
+
+function lookupBandTable(table: [number, number][], value: number): number {
+  for (const [upTo, val] of table) {
+    if (value <= upTo) return val;
+  }
+  return table[table.length - 1][1];
+}
+
+function getDefaultClosingCosts(homePrice: number, loanAmount: number): number {
+  const escrow = lookupBandTable(titleEscrowTable, homePrice);
+  const titleIns = lookupBandTable(titleInsuranceTable, loanAmount);
+  return escrow + titleIns + CC_FIXED_FEES.origination + CC_FIXED_FEES.appraisal +
+         CC_FIXED_FEES.creditReport + CC_FIXED_FEES.recording;
+}
+
+// Arizona Property Tax Schedule by Home Price
+const propertyTaxTable: [number, number][] = [
+  [100000, 1000], [150000, 1065], [200000, 1134], [250000, 1208], [300000, 1286],
+  [350000, 1370], [400000, 1459], [450000, 1554], [500000, 1756], [550000, 1984],
+  [600000, 2242], [650000, 2534], [700000, 2863], [750000, 3149], [800000, 3370],
+  [850000, 3606], [900000, 3858], [950000, 4128], [1000000, 4417], [1050000, 4638],
+  [1100000, 4870], [1150000, 5114], [1200000, 5267], [1250000, 5425], [1300000, 5588],
+  [1350000, 5755], [1400000, 5928], [1450000, 6047], [1500000, 6167], [1550000, 6291],
+  [1600000, 6417], [1650000, 6545], [1700000, 6676], [1750000, 6809], [1800000, 6946],
+  [1850000, 7084], [1900000, 7226], [1950000, 7371], [10000000, 7518]
+];
+
+function getDefaultAnnualPropertyTax(homePrice: number): number {
+  return lookupBandTable(propertyTaxTable, homePrice);
+}
+
+// Conventional PMI rate table (annual %, by credit score band x down-payment tier)
+const PMI_TABLE: Record<number, number[]> = {
+  760: [0.30, 0.19, 0.15, 0.10],
+  720: [0.48, 0.33, 0.24, 0.13],
+  680: [1.02, 0.75, 0.52, 0.23],
+  620: [1.56, 1.17, 0.79, 0.33],
+  0: [1.56, 1.17, 0.79, 0.33]
+};
+
+function creditScoreBand(score: number): number {
+  if (score >= 760) return 760;
+  if (score >= 720) return 720;
+  if (score >= 680) return 680;
+  if (score >= 620) return 620;
+  return 0;
+}
+
+function getConventionalPMIRate(creditScore: number, ltvPct: number): number {
+  const downPct = 100 - ltvPct;
+  const row = PMI_TABLE[creditScoreBand(creditScore)];
+  let ratePct: number;
+  if (downPct < 5) ratePct = row[0];
+  else if (downPct < 10) ratePct = row[1];
+  else if (downPct < 15) ratePct = row[2];
+  else ratePct = row[3];
+  return ratePct / 100;
+}
+
+// FHA MIP
+const FHA_UFMIP_RATE = 0.0175;
+
+function getFhaAnnualMipRate(ltvPct: number, termYears: number): number {
+  if (termYears > 15) {
+    return ltvPct > 95 ? 0.0055 : 0.0050;
+  }
+  return ltvPct > 90 ? 0.0040 : 0.0015;
+}
+
+function fhaMipRemovalYear(ltvPct: number): number {
+  return ltvPct > 90 ? Infinity : 11;
+}
+
+// VA Funding Fee (2023+ schedule)
+function getVaFundingFeeRate(dpPct: number, firstUse: boolean): number {
+  if (firstUse) {
+    if (dpPct < 5) return 0.0215;
+    if (dpPct < 10) return 0.0150;
+    return 0.0125;
+  } else {
+    if (dpPct < 5) return 0.0330;
+    if (dpPct < 10) return 0.0150;
+    return 0.0125;
+  }
+}
+
+function minDownPaymentPct(program: string): number {
+  if (program === "va") return 0;
+  if (program === "fha") return 3.5;
+  return 3;
 }
 
 const ARIZONA_COUNTIES = [
@@ -100,9 +176,29 @@ function runRentVsBuyCalc(
   investmentReturnPct: number, taxRatePct: number,
   homePrice: number, downPaymentAmt: number, closingCosts: number, interestRatePct: number, loanTermYears: number,
   propertyTaxAnnual: number, homeAppreciationPct: number, homeInsAnnual: number, maintenanceMonthly: number, hoaMonthly: number,
-  comparisonYears: number
+  comparisonYears: number,
+  loanProgram: string, creditScore: number, vaFirstUse: boolean, vaExempt: boolean
 ): RentVsBuyResult {
-  const loanAmt = Math.max(0, homePrice - downPaymentAmt);
+  const homePriceVal = Math.max(10000, homePrice);
+  const floorPct = minDownPaymentPct(loanProgram);
+  let dpPct = homePriceVal > 0 ? (downPaymentAmt / homePriceVal) * 100 : 20;
+  dpPct = Math.max(floorPct, Math.min(100, dpPct));
+  const downPayment = homePriceVal * dpPct / 100;
+  const baseLoanAmount = Math.max(0, homePriceVal - downPayment);
+
+  // Program-specific upfront fee (financed into the loan)
+  let upfrontFee = 0;
+  let upfrontFeeLabel: string | null = null;
+  if (loanProgram === "fha") {
+    upfrontFee = baseLoanAmount * FHA_UFMIP_RATE;
+    upfrontFeeLabel = "FHA Upfront MIP";
+  } else if (loanProgram === "va" && !vaExempt) {
+    const feeRate = getVaFundingFeeRate(dpPct, vaFirstUse);
+    upfrontFee = baseLoanAmount * feeRate;
+    upfrontFeeLabel = "VA Funding Fee";
+  }
+  const loanAmt = baseLoanAmount + upfrontFee;
+
   const monthlyRate = interestRatePct / 100 / 12;
   const totalMonths = loanTermYears * 12;
 
@@ -116,8 +212,28 @@ function runRentVsBuyCalc(
     }
   }
 
-  const downPct = homePrice > 0 ? (downPaymentAmt / homePrice) * 100 : 0;
-  let pmiRemovedGlobally = downPct >= 20;
+  const originalLtvPct = homePriceVal > 0 ? (baseLoanAmount / homePriceVal * 100) : 0;
+
+  // Recurring mortgage insurance setup
+  let miAnnualRate = 0;
+  let miAppliesAtStart = false;
+  let miRemovalYear: number | null = null;
+  let miLifeOfLoan = false;
+
+  if (loanProgram === "conventional") {
+    miAppliesAtStart = dpPct < 20;
+    if (miAppliesAtStart) {
+      miAnnualRate = getConventionalPMIRate(creditScore, originalLtvPct);
+    }
+  } else if (loanProgram === "fha") {
+    miAppliesAtStart = true;
+    miAnnualRate = getFhaAnnualMipRate(originalLtvPct, loanTermYears);
+    const cutoff = fhaMipRemovalYear(originalLtvPct);
+    if (cutoff === Infinity) { miLifeOfLoan = true; } else { miRemovalYear = cutoff; }
+  }
+  // VA: no recurring mortgage insurance ever
+
+  let miRemoved = !miAppliesAtStart;
 
   const yearlySeries: YearlyData[] = [];
   let cumBuyingCost = 0;
@@ -133,8 +249,8 @@ function runRentVsBuyCalc(
     const rentPaidThisYear = currentMonthlyRent * 12;
     totalRentPaid += rentPaidThisYear;
 
-    const homeValueAtYearEnd = homePrice * Math.pow(1 + homeAppreciationPct / 100, year);
-    const homeValueAtYearStart = homePrice * Math.pow(1 + homeAppreciationPct / 100, year - 1);
+    const homeValueAtYearEnd = homePriceVal * Math.pow(1 + homeAppreciationPct / 100, year);
+    const homeValueAtYearStart = homePriceVal * Math.pow(1 + homeAppreciationPct / 100, year - 1);
     const startBalanceOfYear = balance;
 
     let interestPaidThisYear = 0;
@@ -157,16 +273,23 @@ function runRentVsBuyCalc(
       }
     }
 
-    if (!pmiRemovedGlobally) {
-      if (startBalanceOfYear / homeValueAtYearStart <= 0.80) {
-        pmiRemovedGlobally = true;
+    if (!miRemoved && (year - 1) * 12 < totalMonths) {
+      if (loanProgram === "conventional") {
+        const homeValue_startOfYear = homePriceVal * Math.pow(1 + homeAppreciationPct / 100, year - 1);
+        const ltvStart = startBalanceOfYear / homeValue_startOfYear;
+        if (ltvStart > 0.80) { pmiPaidThisYear = startBalanceOfYear * miAnnualRate; }
+        else { miRemoved = true; }
+      } else if (loanProgram === "fha") {
+        if (miLifeOfLoan || (miRemovalYear !== null && year <= miRemovalYear)) {
+          pmiPaidThisYear = startBalanceOfYear * miAnnualRate;
+        } else {
+          miRemoved = true;
+        }
       }
     }
 
-    if (!pmiRemovedGlobally) {
-      pmiPaidThisYear = startBalanceOfYear * 0.0055;
-    } else {
-      pmiPaidThisYear = 0;
+    if (loanProgram === "conventional" && !miRemoved && homeValueAtYearEnd > 0 && (balance / homeValueAtYearEnd) <= 0.80) {
+      miRemoved = true;
     }
 
     totalPMIPaid += pmiPaidThisYear;
@@ -176,14 +299,14 @@ function runRentVsBuyCalc(
     totalTaxBenefits += taxBenefitThisYear;
 
     cumBuyingCost =
-      downPaymentAmt + closingCosts +
+      downPayment + closingCosts + upfrontFee +
       (monthlyPI * 12 * Math.min(year, loanTermYears)) +
       totalPMIPaid + (propertyTaxAnnual * year) +
       (maintenanceMonthly * 12 * year) + (hoaMonthly * 12 * year) +
-      (homeInsAnnual * year) - (homeValueAtYearEnd - homePrice) - totalTaxBenefits;
+      (homeInsAnnual * year) - (homeValueAtYearEnd - homePriceVal) - totalTaxBenefits;
 
     const rate = investmentReturnPct / 100;
-    const dpCcGrowth = (downPaymentAmt + closingCosts) * (Math.pow(1 + rate, year) - 1);
+    const dpCcGrowth = (downPayment + closingCosts) * (Math.pow(1 + rate, year) - 1);
     const sdGrowth = securityDeposit * (Math.pow(1 + rate, year) - 1);
 
     cumRentingCost = totalRentPaid + (rentersInsAnnual * year) + sdGrowth - dpCcGrowth;
@@ -216,16 +339,17 @@ function runRentVsBuyCalc(
   }
 
   const lastYear = yearlySeries[yearlySeries.length - 1];
-  const initialPMI = pmiRemovedGlobally ? 0 : (loanAmt * 0.0055) / 12;
+  const initialPMI = miAppliesAtStart ? (baseLoanAmount * miAnnualRate) / 12 : 0;
   const initialMonthlyBuyingTotal = monthlyPI + initialPMI + (propertyTaxAnnual / 12) + maintenanceMonthly + hoaMonthly + (homeInsAnnual / 12);
 
   return {
     monthlyRent, monthlyBuyingTotal: initialMonthlyBuyingTotal, monthlyDifference: initialMonthlyBuyingTotal - monthlyRent,
     totalSavings: lastYear.cumulativeRentingCost - lastYear.cumulativeBuyingCost, breakEvenYear, futureHomeValue: lastYear.homeValue,
     equityBuilt: lastYear.equity, taxBenefits: totalTaxBenefits, totalCostRenting: lastYear.cumulativeRentingCost,
-    totalCostBuying: lastYear.cumulativeBuyingCost, downPaymentAmt, closingCostsAmt: closingCosts,
+    totalCostBuying: lastYear.cumulativeBuyingCost, downPaymentAmt: downPayment, closingCostsAmt: closingCosts,
     monthlyMortgagePI: monthlyPI, monthlyPMI: initialPMI, monthlyTax: propertyTaxAnnual / 12, monthlyMaintenance: maintenanceMonthly,
-    monthlyHOA: hoaMonthly, monthlyInsurance: homeInsAnnual / 12, yearlySeries
+    monthlyHOA: hoaMonthly, monthlyInsurance: homeInsAnnual / 12, yearlySeries,
+    loanProgram, upfrontFee, upfrontFeeLabel, miAppliesAtStart, miAnnualRate
   };
 }
 
@@ -293,12 +417,13 @@ export default function RentVsBuyCalculatorPage() {
   const [downPaymentVal, setDownPaymentVal] = useState(80000);
   const [downPaymentPct, setDownPaymentPct] = useState(20);
   const [lastDpMode, setLastDpMode] = useState<"amt" | "pct">("pct");
-  const [closingCosts, setClosingCosts] = useState(getDefaultClosingCosts(400000));
+  const [closingCosts, setClosingCosts] = useState(getDefaultClosingCosts(400000, 320000));
   const [hasCustomClosing, setHasCustomClosing] = useState(false);
   const [interestRate, setInterestRate] = useState(6.75);
   const [loanTerm, setLoanTerm] = useState(30);
   const [county, setCounty] = useState("Maricopa");
-  const [taxes, setTaxes] = useState(2400);
+  const [taxes, setTaxes] = useState(getDefaultAnnualPropertyTax(400000));
+  const [hasCustomTaxes, setHasCustomTaxes] = useState(false);
   const [appreciation, setAppreciation] = useState(4);
   const [homeIns, setHomeIns] = useState(Math.round(400000 * 0.0035));
   const [hasCustomHomeIns, setHasCustomHomeIns] = useState(false);
@@ -306,6 +431,10 @@ export default function RentVsBuyCalculatorPage() {
   const [hasCustomMaintenance, setHasCustomMaintenance] = useState(false);
   const [hoa, setHoa] = useState(0);
   const [comparisonPeriod, setComparisonPeriod] = useState(30);
+  const [loanProgram, setLoanProgram] = useState("conventional");
+  const [creditScore, setCreditScore] = useState(740);
+  const [vaFirstUse, setVaFirstUse] = useState(true);
+  const [vaExempt, setVaExempt] = useState(false);
 
   const handleMonthlyRentChange = (val: number) => {
     setRent(val);
@@ -320,7 +449,9 @@ export default function RentVsBuyCalculatorPage() {
       } else {
         setDownPaymentPct(parseFloat((downPaymentVal / val * 100).toFixed(4)));
       }
-      if (!hasCustomClosing) setClosingCosts(getDefaultClosingCosts(val));
+      const loanAmt = Math.max(0, val - (lastDpMode === "pct" ? val * downPaymentPct / 100 : downPaymentVal));
+      if (!hasCustomClosing) setClosingCosts(getDefaultClosingCosts(val, loanAmt));
+      if (!hasCustomTaxes) setTaxes(getDefaultAnnualPropertyTax(val));
       if (!hasCustomHomeIns) setHomeIns(Math.round(val * 0.0035));
       if (!hasCustomMaintenance) setMaintenance(Math.round(val * 0.01 / 12));
     }
@@ -339,6 +470,11 @@ export default function RentVsBuyCalculatorPage() {
   const handleClosingCostsChange = (val: number) => {
     setClosingCosts(val);
     setHasCustomClosing(true);
+  };
+
+  const handleTaxesChange = (val: number) => {
+    setTaxes(val);
+    setHasCustomTaxes(true);
   };
 
   const handleHomeInsChange = (val: number) => {
@@ -380,8 +516,8 @@ export default function RentVsBuyCalculatorPage() {
     if (compYears < 1) compYears = 1;
     if (compYears > 30) compYears = 30;
 
-    return runRentVsBuyCalc(rRent, rInc, rIns, rSec, shareReturn, shareTax, hp, dpVal, cc, rate, term, propTax, appPct, ins, maint, hFees, compYears);
-  }, [rent, rentIncrease, rentersIns, securityDeposit, returnRate, taxRate, homePrice, downPaymentVal, downPaymentPct, lastDpMode, closingCosts, interestRate, loanTerm, taxes, appreciation, homeIns, maintenance, hoa, comparisonPeriod]);
+    return runRentVsBuyCalc(rRent, rInc, rIns, rSec, shareReturn, shareTax, hp, dpVal, cc, rate, term, propTax, appPct, ins, maint, hFees, compYears, loanProgram, creditScore, vaFirstUse, vaExempt);
+  }, [rent, rentIncrease, rentersIns, securityDeposit, returnRate, taxRate, homePrice, downPaymentVal, downPaymentPct, lastDpMode, closingCosts, interestRate, loanTerm, taxes, appreciation, homeIns, maintenance, hoa, comparisonPeriod, loanProgram, creditScore, vaFirstUse, vaExempt]);
 
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
@@ -412,8 +548,22 @@ export default function RentVsBuyCalculatorPage() {
                 <h3 className="text-[#052316] text-[17px] font-bold pb-3 border-b border-[#e8e0d0]/40 flex items-center gap-2 font-sans">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#052316]" /> Renting Assumptions
                 </h3>
-                <SliderInput label="Monthly Rent" value={rent} min={0} max={10000} step={100} prefix="$" onChange={(val) => handleMonthlyRentChange(val)} />
-                <SliderInput label="Annual Rent Increase" value={rentIncrease} min={0} max={15} step={0.5} suffix="%" onChange={(val) => setRentIncrease(val)} />
+                <div>
+                  <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Monthly Rent</label>
+                  <div className="relative">
+                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
+                    <input type="number" value={rent} onChange={(e) => handleMonthlyRentChange(parseFloat(e.target.value) || 0)}
+                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
+                  </div>
+                </div>
+                <div>
+                  <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Annual Rent Increase</label>
+                  <div className="relative">
+                    <input type="number" value={rentIncrease} onChange={(e) => setRentIncrease(parseFloat(e.target.value) || 0)}
+                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-3 pr-8 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
+                    <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">%</span>
+                  </div>
+                </div>
                 <div>
                   <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Renter&apos;s Insurance ($/yr)</label>
                   <div className="relative">
@@ -436,9 +586,27 @@ export default function RentVsBuyCalculatorPage() {
                 <h3 className="text-[#052316] text-[17px] font-bold pb-3 border-b border-[#e8e0d0]/40 flex items-center gap-2 font-sans">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#b89a5a]" /> Shared Financial Assumptions
                 </h3>
-                <SliderInput label="Investment Return Rate" value={returnRate} min={0} max={20} step={0.5} suffix="%" onChange={(val) => setReturnRate(val)} />
-                <SliderInput label="Federal Tax Rate" value={taxRate} min={0} max={50} step={1} suffix="%" onChange={(val) => setTaxRate(val)} />
-                <SliderInput label="Comparison Timeframe" value={comparisonPeriod} min={1} max={30} step={1} suffix=" years" onChange={(val) => setComparisonPeriod(val)} />
+                <div>
+                  <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Investment Return Rate</label>
+                  <div className="relative">
+                    <input type="number" value={returnRate} onChange={(e) => setReturnRate(parseFloat(e.target.value) || 0)}
+                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-3 pr-8 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
+                    <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">%</span>
+                  </div>
+                </div>
+                <div>
+                  <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Federal Tax Rate</label>
+                  <div className="relative">
+                    <input type="number" value={taxRate} onChange={(e) => setTaxRate(parseFloat(e.target.value) || 0)}
+                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-3 pr-8 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
+                    <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">%</span>
+                  </div>
+                </div>
+                <div>
+                  <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Comparison Timeframe</label>
+                  <input type="number" value={comparisonPeriod} onChange={(e) => setComparisonPeriod(parseFloat(e.target.value) || 30)}
+                    className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 px-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
+                </div>
               </div>
             </div>
 
@@ -447,14 +615,79 @@ export default function RentVsBuyCalculatorPage() {
                 <h3 className="text-[#052316] text-[17px] font-bold pb-3 border-b border-[#e8e0d0]/40 flex items-center gap-2 font-sans">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#3fb364]" /> Buying Assumptions
                 </h3>
-                <SliderInput label="Home Price ($)" value={homePrice} min={50000} max={2000000} step={1000} prefix="$" onChange={handleHomePriceChange} />
+                <div>
+                  <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Home Price</label>
+                  <div className="relative">
+                    <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
+                    <input type="number" value={homePrice} onChange={(e) => handleHomePriceChange(parseFloat(e.target.value) || 0)}
+                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
+                  </div>
+                </div>
+                <div>
+                  <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Loan Program</label>
+                  <select value={loanProgram} onChange={(e) => setLoanProgram(e.target.value)}
+                    className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3 text-[14px] font-bold text-[#052316] focus:outline-none cursor-pointer">
+                    <option value="conventional">Conventional</option>
+                    <option value="fha">FHA</option>
+                    <option value="va">VA</option>
+                  </select>
+                </div>
+                {loanProgram !== "va" && (
+                  <div>
+                    <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Credit Score</label>
+                    <input type="number" value={creditScore} onChange={(e) => setCreditScore(parseFloat(e.target.value) || 740)}
+                      className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3 text-[14px] font-bold text-[#052316] focus:outline-none" />
+                    <p className="text-[11px] text-[#888] mt-1">Used to estimate {loanProgram === "fha" ? "MIP" : "PMI"} rate.</p>
+                  </div>
+                )}
+                {loanProgram === "va" && (
+                  <div className="bg-[#fcf9f3] rounded-xl p-4 border border-[#e8e0d0]/40">
+                    <label className="text-[#052316] text-[13.5px] font-semibold block mb-2">VA Funding Fee Options</label>
+                    <label className="flex items-center gap-2 text-[13px] text-[#052316] mb-2">
+                      <input type="checkbox" checked={vaFirstUse} onChange={(e) => setVaFirstUse(e.target.checked)} className="w-4 h-4" />
+                      First use of VA loan benefit
+                    </label>
+                    <label className="flex items-center gap-2 text-[13px] text-[#052316]">
+                      <input type="checkbox" checked={vaExempt} onChange={(e) => setVaExempt(e.target.checked)} className="w-4 h-4" />
+                      Exempt from funding fee (service-connected disability)
+                    </label>
+                  </div>
+                )}
                 <div className="grid grid-cols-2 gap-4">
-                  <SliderInput label="Down Payment ($)" value={downPaymentVal} min={0} max={2000000} step={1000} prefix="$" onChange={(val) => handleDpAmtChange(val)} />
-                  <SliderInput label="Down Payment (%)" value={downPaymentPct} min={0} max={100} step={0.5} suffix="%" onChange={(val) => handleDpPctChange(val)} />
+                  <div>
+                    <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Down Payment ($)</label>
+                    <div className="relative">
+                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
+                      <input type="number" value={downPaymentVal} onChange={(e) => handleDpAmtChange(parseFloat(e.target.value) || 0)}
+                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Down Payment (%)</label>
+                    <div className="relative">
+                      <input type="number" value={downPaymentPct} onChange={(e) => handleDpPctChange(parseFloat(e.target.value) || 0)}
+                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-3 pr-8 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
+                      <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">%</span>
+                    </div>
+                  </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <SliderInput label="Closing Costs" value={closingCosts} min={0} max={100000} step={500} prefix="$" onChange={(val) => handleClosingCostsChange(val)} />
-                  <SliderInput label="Interest Rate (%)" value={interestRate} min={0} max={15} step={0.125} suffix="%" onChange={(val) => setInterestRate(val)} />
+                  <div>
+                    <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Closing Costs</label>
+                    <div className="relative">
+                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
+                      <input type="number" value={closingCosts} onChange={(e) => handleClosingCostsChange(parseFloat(e.target.value) || 0)}
+                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Interest Rate</label>
+                    <div className="relative">
+                      <input type="number" value={interestRate} onChange={(e) => setInterestRate(parseFloat(e.target.value) || 0)}
+                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-3 pr-8 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
+                      <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">%</span>
+                    </div>
+                  </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans">
                   <div>
@@ -471,8 +704,22 @@ export default function RentVsBuyCalculatorPage() {
                   <div><label className="text-[#052316] text-[13px] font-semibold block mb-1.5 font-sans">County</label><select value={county} onChange={(e) => setCounty(e.target.value)} className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3 text-[14px] font-bold text-[#052316] focus:outline-none">{ARIZONA_COUNTIES.map(c => <option key={c} value={c}>{c} County</option>)}</select></div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 font-sans">
-                  <SliderInput label="Annual Taxes" value={taxes} min={0} max={50000} step={500} prefix="$" onChange={(val) => setTaxes(val)} />
-                  <SliderInput label="Home Appreciation" value={appreciation} min={0} max={15} step={0.5} suffix="%" onChange={(val) => setAppreciation(val)} />
+                  <div>
+                    <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Annual Taxes</label>
+                    <div className="relative">
+                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
+                      <input type="number" value={taxes} onChange={(e) => handleTaxesChange(parseFloat(e.target.value) || 0)}
+                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-[#052316] text-[13.5px] font-semibold block mb-1.5">Home Appreciation</label>
+                    <div className="relative">
+                      <input type="number" value={appreciation} onChange={(e) => setAppreciation(parseFloat(e.target.value) || 0)}
+                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-3 pr-8 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
+                      <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">%</span>
+                    </div>
+                  </div>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 font-sans">
                   <div>
@@ -546,13 +793,28 @@ export default function RentVsBuyCalculatorPage() {
                   <h4 className="text-[#052316] text-[16px] font-bold mb-4 pb-3 border-b border-[#e8e0d0]/40 flex items-center gap-2 font-sans"><span className="w-2.5 h-2.5 rounded-full bg-[#3fb364]" /> Buying Costs</h4>
                   <div className="flex flex-col gap-2.5 text-[13.5px]">
                     <div className="flex justify-between py-1 border-b border-[#e8e0d0]/20"><span className="text-[#888]">Monthly Mortgage (P&I)</span><span className="text-[#052316] font-bold">{fmt(result.monthlyMortgagePI)}/mo</span></div>
-                    {result.monthlyPMI > 0 && <div className="flex justify-between py-1 border-b border-[#e8e0d0]/20"><span className="text-[#888]">Monthly PMI</span><span className="text-[#052316] font-bold">{fmt(result.monthlyPMI)}/mo</span></div>}
+                    {result.monthlyPMI > 0 && <div className="flex justify-between py-1 border-b border-[#e8e0d0]/20"><span className="text-[#888]">Monthly {result.loanProgram === "fha" ? "MIP" : "PMI"} {result.miAnnualRate > 0 ? `(${(result.miAnnualRate * 100).toFixed(2)}%/yr)` : ""}</span><span className="text-[#052316] font-bold">{fmt(result.monthlyPMI)}/mo</span></div>}
                     <div className="flex justify-between py-1 border-b border-[#e8e0d0]/20"><span className="text-[#888]">Monthly Property Taxes</span><span className="text-[#052316] font-bold">{fmt(result.monthlyTax)}/mo</span></div>
                     <div className="flex justify-between py-1 border-b border-[#e8e0d0]/20"><span className="text-[#888]">Monthly Maintenance</span><span className="text-[#052316] font-bold">{fmt(result.monthlyMaintenance)}/mo</span></div>
                     <div className="flex justify-between py-1 border-b border-[#e8e0d0]/20"><span className="text-[#888]">Monthly HOA Fees</span><span className="text-[#052316] font-bold">{fmt(result.monthlyHOA)}/mo</span></div>
                     <div className="flex justify-between py-1 border-b border-[#e8e0d0]/20"><span className="text-[#888]">Monthly Home Insurance</span><span className="text-[#052316] font-bold">{fmt(result.monthlyInsurance)}/mo</span></div>
                     <div className="flex justify-between py-1.5 bg-[#fcf9f3] rounded-lg px-2 mt-1 font-bold text-[#052316]"><span>Total Initial Monthly Payment</span><span>{fmt(result.monthlyBuyingTotal)}/mo</span></div>
                   </div>
+                  {result.loanProgram === "va" && (
+                    <p className="text-[11px] text-[#888] mt-3 italic">VA loans don't require monthly mortgage insurance.</p>
+                  )}
+                  {result.loanProgram === "conventional" && !result.miAppliesAtStart && (
+                    <p className="text-[11px] text-[#888] mt-3 italic">Down payment is 20%+ — no mortgage insurance required.</p>
+                  )}
+                  {result.loanProgram === "conventional" && result.miAppliesAtStart && (
+                    <p className="text-[11px] text-[#888] mt-3 italic">Estimated PMI based on credit score and down payment. Removed once loan balance reaches 80% of home value.</p>
+                  )}
+                  {result.loanProgram === "fha" && (
+                    <p className="text-[11px] text-[#888] mt-3 italic">FHA annual MIP applies. Removal depends on original LTV and loan term.</p>
+                  )}
+                  {result.upfrontFeeLabel && result.upfrontFee > 0 && (
+                    <p className="text-[11px] text-[#a89a70] mt-2 font-semibold">{result.upfrontFeeLabel} of {fmt(result.upfrontFee)} is financed into the loan.</p>
+                  )}
                 </div>
                 <div className="mt-6 pt-5 border-t border-[#e8e0d0]/40 bg-[#faf7f0] rounded-2xl p-4"><div className="flex justify-between text-[14px] font-bold text-[#052316]"><span>Lifetime Buying Costs</span><span>{fmt(result.totalCostBuying)}</span></div></div>
               </div>

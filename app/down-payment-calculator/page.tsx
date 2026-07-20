@@ -221,7 +221,7 @@ function solvePayments(
   loanType: string,
   interestRate: number,
   loanTerm: number,
-  taxRateManual: number,
+  taxAmountManual: number,
   insManual: number,
   hoaManual: number
 ): DownPaymentResult {
@@ -241,7 +241,7 @@ function solvePayments(
   }
 
   // Monthly tax
-  const monthlyTax = (homePrice * (taxRateManual / 100)) / 12;
+  const monthlyTax = taxAmountManual / 12;
 
   // Monthly Ins
   const monthlyIns = insManual / 12;
@@ -290,9 +290,39 @@ function solvePayments(
   };
 }
 
-// ─── Component ────────────────────────────────────────────────────────────────
+const CITY_DEFAULTS: Record<string, { price: number; downPayment: number; tax: number; insurance: number; rate: number }> = {
+  Phoenix: { price: 400000, downPayment: 80000, tax: 1700, insurance: 1200, rate: 6.5 },
+  Tucson: { price: 350000, downPayment: 70000, tax: 1800, insurance: 1100, rate: 6.5 },
+  Mesa: { price: 400000, downPayment: 80000, tax: 1700, insurance: 1200, rate: 6.5 },
+  Chandler: { price: 500000, downPayment: 100000, tax: 2100, insurance: 1400, rate: 6.5 },
+  Gilbert: { price: 475000, downPayment: 95000, tax: 2000, insurance: 1350, rate: 6.5 },
+  Glendale: { price: 425000, downPayment: 85000, tax: 1800, insurance: 1250, rate: 6.5 },
+  Scottsdale: { price: 750000, downPayment: 150000, tax: 3200, insurance: 1800, rate: 6.8 },
+  Peoria: { price: 425000, downPayment: 85000, tax: 1800, insurance: 1250, rate: 6.5 },
+  Tempe: { price: 450000, downPayment: 90000, tax: 1900, insurance: 1300, rate: 6.5 },
+  Surprise: { price: 400000, downPayment: 80000, tax: 1700, insurance: 1200, rate: 6.5 },
+  Goodyear: { price: 425000, downPayment: 85000, tax: 1800, insurance: 1250, rate: 6.5 },
+  Buckeye: { price: 400000, downPayment: 80000, tax: 1700, insurance: 1200, rate: 6.5 },
+  "San Tan Valley": { price: 375000, downPayment: 75000, tax: 1790, insurance: 1150, rate: 6.5 },
+  Yuma: { price: 300000, downPayment: 60000, tax: 1830, insurance: 1050, rate: 6.5 },
+  Avondale: { price: 400000, downPayment: 80000, tax: 1700, insurance: 1200, rate: 6.5 },
+  Flagstaff: { price: 500000, downPayment: 100000, tax: 1680, insurance: 1400, rate: 6.5 },
+  "Queen Creek": { price: 450000, downPayment: 90000, tax: 1900, insurance: 1300, rate: 6.5 },
+  Maricopa: { price: 350000, downPayment: 70000, tax: 1700, insurance: 1100, rate: 6.5 },
+  "Casas Adobes": { price: 375000, downPayment: 75000, tax: 1800, insurance: 1150, rate: 6.5 },
+  "Casa Grande": { price: 300000, downPayment: 60000, tax: 1790, insurance: 1050, rate: 6.5 },
+  "Lake Havasu City": { price: 350000, downPayment: 70000, tax: 1770, insurance: 1100, rate: 6.5 },
+  Marana: { price: 375000, downPayment: 75000, tax: 1800, insurance: 1150, rate: 6.5 },
+  "Catalina Foothills": { price: 450000, downPayment: 90000, tax: 1900, insurance: 1300, rate: 6.5 },
+  "Prescott Valley": { price: 350000, downPayment: 70000, tax: 1820, insurance: 1100, rate: 6.5 },
+  "Oro Valley": { price: 400000, downPayment: 80000, tax: 1800, insurance: 1200, rate: 6.5 },
+  "City Not Listed": { price: 400000, downPayment: 80000, tax: 1700, insurance: 1200, rate: 6.5 }
+};
+
+const ARIZONA_CITIES = Object.keys(CITY_DEFAULTS);
 
 export default function DownPaymentCalculatorPage() {
+  const [selectedCity, setSelectedCity] = useState("Phoenix");
   const [homePrice, setHomePrice] = useState(400000);
   const [annualIncome, setAnnualIncome] = useState(100000);
   const [monthlyDebts, setMonthlyDebts] = useState(500);
@@ -302,33 +332,35 @@ export default function DownPaymentCalculatorPage() {
   const [loanTerm, setLoanTerm] = useState(30);
 
   const [dpVal, setDpVal] = useState(80000);
-  const [dpPct, setDpPct] = useState(20);
-  const [lastDpMode, setLastDpMode] = useState<"amt" | "pct">("pct");
 
-  const [taxRateManual, setTaxRateManual] = useState(1.25);
-  const [insManual, setInsManual] = useState(100);
+  const [taxAmountManual, setTaxAmountManual] = useState(1700);
+  const [insManual, setInsManual] = useState(1200);
   const [hoa, setHoa] = useState(0);
+
+  const handleCityChange = (city: string) => {
+    setSelectedCity(city);
+    const defaults = CITY_DEFAULTS[city] || CITY_DEFAULTS.Phoenix;
+    setHomePrice(defaults.price);
+    setDpVal(defaults.downPayment);
+    setTaxAmountManual(defaults.tax);
+    setInsManual(defaults.insurance);
+    setInterestRate(defaults.rate);
+  };
 
   // Sync inputs
   const handleHomePriceChange = (val: number) => {
     setHomePrice(val);
-    if (val > 0) {
-      if (lastDpMode === "pct") {
-        setDpVal(Math.round(val * dpPct / 100));
-      } else {
-        setDpPct(parseFloat(((dpVal / val) * 100).toFixed(2)));
-      }
+    // Auto-clamp down payment to new max (100% of home price)
+    if (val > 0 && dpVal > val) {
+      setDpVal(val);
     }
   };
 
   const handleDpAmtChange = (val: number) => {
-    setDpVal(val); setLastDpMode("amt");
-    if (homePrice > 0) setDpPct(parseFloat(((val / homePrice) * 100).toFixed(4)));
-  };
-
-  const handleDpPctChange = (val: number) => {
-    setDpPct(val); setLastDpMode("pct");
-    if (homePrice > 0) setDpVal(Math.round(homePrice * val / 100));
+    // Clamp to max 100% of home price
+    const maxVal = homePrice;
+    const clampedVal = Math.min(val, maxVal);
+    setDpVal(clampedVal);
   };
 
   // Auto-calculate result
@@ -336,10 +368,9 @@ export default function DownPaymentCalculatorPage() {
     const hp = homePrice;
     if (hp <= 0) return null;
 
-    let dpAmt = lastDpMode === "pct"
-      ? hp * dpPct / 100
-      : dpVal;
+    let dpAmt = dpVal;
     dpAmt = Math.max(0, Math.min(dpAmt, hp));
+    const dpPct = hp > 0 ? (dpAmt / hp) * 100 : 0;
 
     const income = annualIncome;
     const debts = monthlyDebts;
@@ -347,8 +378,8 @@ export default function DownPaymentCalculatorPage() {
     const term = Math.round(loanTerm || 30);
     const hoaVal = hoa;
 
-    return solvePayments(hp, dpAmt, dpPct, income, debts, creditScore, loanType, rate, term, taxRateManual, insManual, hoaVal);
-  }, [homePrice, dpPct, dpVal, lastDpMode, annualIncome, monthlyDebts, creditScore, loanType, interestRate, loanTerm, taxRateManual, insManual, hoa]);
+    return solvePayments(hp, dpAmt, dpPct, income, debts, creditScore, loanType, rate, term, taxAmountManual, insManual, hoaVal);
+  }, [homePrice, dpVal, annualIncome, monthlyDebts, creditScore, loanType, interestRate, loanTerm, taxAmountManual, insManual, hoa]);
 
   // Validation Warnings
   const getMinDpRequirement = () => {
@@ -358,7 +389,7 @@ export default function DownPaymentCalculatorPage() {
   };
 
   const minDp = getMinDpRequirement();
-  const currentDpPctNum = dpPct;
+  const currentDpPctNum = homePrice > 0 ? (dpVal / homePrice) * 100 : 0;
   const isBelowMinDp = currentDpPctNum < minDp.pct;
   const requiredMinAmt = homePrice * (minDp.pct / 100);
 
@@ -425,7 +456,7 @@ export default function DownPaymentCalculatorPage() {
 
     return checkpoints.map(pct => {
       const dp = hp * (pct / 100);
-      const r = solvePayments(hp, dp, pct, income, debts, creditScore, loanType, rate, term, taxRateManual, insManual, hoaVal);
+      const r = solvePayments(hp, dp, pct, income, debts, creditScore, loanType, rate, term, taxAmountManual, insManual, hoaVal);
       return {
         pct,
         dp,
@@ -461,15 +492,30 @@ export default function DownPaymentCalculatorPage() {
         <section className="py-12 px-6 lg:px-10 max-w-6xl mx-auto font-sans">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             
-            {/* Left Box: Property & Financial Profile */}
+            {/* Left Box: Property Information & Financial Profile */}
             <div className="lg:col-span-6 flex flex-col gap-6">
               
-              {/* PROPERTY INFO */}
+              {/* PROPERTY INFORMATION */}
               <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 lg:p-8 shadow-sm flex flex-col gap-6">
                 <h3 className="text-[#052316] text-[17px] font-bold pb-3 border-b border-[#e8e0d0]/40 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#052316]" /> Property Profile
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#052316]" /> Property Information
                 </h3>
                 
+                <div>
+                  <label className="text-[#052316] text-[14px] font-semibold block mb-2">Select Your Arizona City</label>
+                  <select
+                    value={selectedCity}
+                    onChange={(e) => handleCityChange(e.target.value)}
+                    className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3 px-3.5 text-[14px] font-bold text-[#052316] focus:outline-none cursor-pointer"
+                  >
+                    {ARIZONA_CITIES.map((city) => (
+                      <option key={city} value={city}>
+                        {city}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
                 <SliderInput
                   label="Home Price"
                   value={homePrice}
@@ -479,6 +525,13 @@ export default function DownPaymentCalculatorPage() {
                   prefix="$"
                   onChange={handleHomePriceChange}
                 />
+              </div>
+
+              {/* FINANCIAL PROFILE */}
+              <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 lg:p-8 shadow-sm flex flex-col gap-6">
+                <h3 className="text-[#052316] text-[17px] font-bold pb-3 border-b border-[#e8e0d0]/40 flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#b89a5a]" /> Financial Profile
+                </h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <SliderInput
@@ -513,48 +566,15 @@ export default function DownPaymentCalculatorPage() {
                   </select>
                 </div>
               </div>
-
-              {/* ADDITIONAL ASSUMPTIONS */}
-              <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 lg:p-8 shadow-sm flex flex-col gap-6">
-                <h3 className="text-[#052316] text-[17px] font-bold pb-3 border-b border-[#e8e0d0]/40 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#b89a5a]" /> Optional Cost Estimators
-                </h3>
-                
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div>
-                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Property Tax Rate</label>
-                    <div className="relative">
-                      <input type="number" step="0.1" value={taxRateManual} onChange={(e) => setTaxRateManual(parseFloat(e.target.value) || 0)}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 px-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
-                      <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">%</span>
-                    </div>
-                  </div>
-                  <div>
-                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Home Insurance ($/yr)</label>
-                    <div className="relative">
-                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={insManual} onChange={(e) => setInsManual(parseFloat(e.target.value) || 0)}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">HOA Dues ($/mo)</label>
-                    <div className="relative">
-                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
-                      <input type="number" value={hoa} onChange={(e) => setHoa(parseFloat(e.target.value) || 0)}
-                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
 
-            {/* Right Box: Loan Details & Down Payment */}
+            {/* Right Box: Loan Details, Down Payment & Additional Costs */}
             <div className="lg:col-span-6 flex flex-col gap-6">
               
+              {/* LOAN DETAILS */}
               <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 lg:p-8 shadow-sm flex flex-col gap-6">
                 <h3 className="text-[#052316] text-[17px] font-bold pb-3 border-b border-[#e8e0d0]/40 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#3fb364]" /> Loan & Down Payment details
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#3fb364]" /> Loan Details
                 </h3>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -590,37 +610,64 @@ export default function DownPaymentCalculatorPage() {
                   suffix="%"
                   onChange={setInterestRate}
                 />
+              </div>
 
-                {/* Bidirectional Down Payment */}
-                <div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <SliderInput
-                      label="Down Payment ($)"
-                      value={dpVal}
-                      min={0}
-                      max={2000000}
-                      step={1000}
-                      prefix="$"
-                      onChange={handleDpAmtChange}
-                    />
-                    <SliderInput
-                      label="Down Payment (%)"
-                      value={dpPct}
-                      min={0}
-                      max={100}
-                      step={0.5}
-                      suffix="%"
-                      onChange={handleDpPctChange}
-                    />
+              {/* DOWN PAYMENT */}
+              <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 lg:p-8 shadow-sm flex flex-col gap-6">
+                <h3 className="text-[#052316] text-[17px] font-bold pb-3 border-b border-[#e8e0d0]/40 flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#3fb364]" /> Down Payment
+                </h3>
+
+                <SliderInput
+                  label="Down Payment ($)"
+                  value={dpVal}
+                  min={0}
+                  max={homePrice}
+                  step={1000}
+                  prefix="$"
+                  onChange={handleDpAmtChange}
+                />
+
+                {/* Validation warning below inputs */}
+                {isBelowMinDp && (
+                  <div className="mt-3 bg-yellow-50 border border-yellow-200 text-yellow-800 rounded-xl p-3 text-[12.5px] font-medium leading-relaxed">
+                    ⚠️ Down payment does not meet program minimum specifications for <strong>{loanType.toUpperCase()}</strong>:
+                    <br />Minimum required is <strong>{minDp.label}</strong> (approximately <strong>{fmt(requiredMinAmt)}</strong>).
                   </div>
+                )}
+              </div>
 
-                  {/* Validation warning below inputs */}
-                  {isBelowMinDp && (
-                    <div className="mt-3 bg-yellow-50 border border-yellow-200 text-yellow-800 rounded-xl p-3 text-[12.5px] font-medium leading-relaxed">
-                      ⚠️ Down payment does not meet program minimum specifications for <strong>{loanType.toUpperCase()}</strong>:
-                      <br />Minimum required is <strong>{minDp.label}</strong> (approximately <strong>{fmt(requiredMinAmt)}</strong>).
+              {/* ADDITIONAL COSTS */}
+              <div className="bg-white rounded-3xl border border-[#e8e0d0]/60 p-6 lg:p-8 shadow-sm flex flex-col gap-6">
+                <h3 className="text-[#052316] text-[17px] font-bold pb-3 border-b border-[#e8e0d0]/40 flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-[#b89a5a]" /> Additional Costs
+                </h3>
+                
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div>
+                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Property Tax ($/yr)</label>
+                    <div className="relative">
+                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
+                      <input type="number" value={taxAmountManual} onChange={(e) => setTaxAmountManual(parseFloat(e.target.value) || 0)}
+                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
                     </div>
-                  )}
+                  </div>
+                  <div>
+                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">Home Insurance ($/yr)</label>
+                    <div className="relative">
+                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
+                      <input type="number" value={insManual} onChange={(e) => setInsManual(parseFloat(e.target.value) || 0)}
+                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="text-[#052316] text-[13px] font-semibold block mb-1.5">HOA Dues ($/mo)</label>
+                    <div className="relative">
+                      <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#888] font-bold text-[14px]">$</span>
+                      <input type="number" value={hoa} onChange={(e) => setHoa(parseFloat(e.target.value) || 0)}
+                        className="w-full bg-white border border-[#e8e0d0] rounded-xl py-3.5 pl-8 pr-3 text-[14.5px] font-bold text-[#052316] focus:outline-none" />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -716,7 +763,7 @@ export default function DownPaymentCalculatorPage() {
                   <div>
                     <h4 className="text-[#052316] font-bold text-[13px] mb-1 font-sans">Recommendations</h4>
                     <ul className="list-disc pl-4 space-y-1 mt-1 font-sans text-[13px]">
-                      {loanType === "conventional" && dpPct < 20 && (
+                      {loanType === "conventional" && currentDpPctNum < 20 && (
                         <li>Increasing your down payment to <strong>20% ({fmt(homePrice * 0.2)})</strong> will eliminate the monthly PMI, saving you <strong>{fmt(result.monthlyFee)}/mo</strong>.</li>
                       )}
                       {result.dtiRatio > 48 && (
@@ -739,7 +786,7 @@ export default function DownPaymentCalculatorPage() {
                   <h3 className="text-[#052316] text-[16px] font-bold mb-4 pb-3 border-b border-[#e8e0d0]/40">Upfront Savings Breakdown</h3>
                   <div className="flex flex-col gap-3">
                     <div className="flex justify-between text-[13.5px]">
-                      <span className="text-[#888]">Target Down Payment ({dpPct}%)</span>
+                      <span className="text-[#888]">Target Down Payment ({currentDpPctNum.toFixed(1)}%)</span>
                       <span className="text-[#052316] font-bold">{fmt(result.downPaymentAmt)}</span>
                     </div>
                     <div className="flex justify-between text-[13.5px] py-1 border-t border-[#e8e0d0]/20 mt-1">
@@ -809,7 +856,7 @@ export default function DownPaymentCalculatorPage() {
                   </thead>
                   <tbody>
                     {getScenarioRows().map((row) => (
-                      <tr key={row.pct} className={Math.abs(row.pct - dpPct) < 0.1 ? "bg-[#3fb364]/10 font-bold" : "hover:bg-[#faf7f0] border-b border-[#e8e0d0]/20"}>
+                      <tr key={row.pct} className={Math.abs(row.pct - currentDpPctNum) < 0.1 ? "bg-[#3fb364]/10 font-bold" : "hover:bg-[#faf7f0] border-b border-[#e8e0d0]/20"}>
                         <td className="py-3 px-4 text-[#052316]">{row.pct}%</td>
                         <td className="py-3 px-4 text-[#052316]">{fmt(row.dp)}</td>
                         <td className="py-3 px-4 text-[#052316]">{fmt(row.loan)}</td>
