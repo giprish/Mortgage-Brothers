@@ -96,7 +96,7 @@ const Footer = () => {
               {["Conventional", "FHA", "VA", "Refinance"].map((item) => (
                 <li key={item}>
                   <a
-                    href={`/loan-programs#${item.toLowerCase()}`}
+                    href={`/mortgage-loan-programs-arizona#${item.toLowerCase()}`}
                     className="text-[#a8b89a] hover:text-white text-[13px] transition-colors duration-200"
                   >
                     {item}
