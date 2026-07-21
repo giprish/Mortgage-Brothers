@@ -29,8 +29,15 @@ export const countyMap: Record<string, string> = {
   "yuma-county-az": "Yuma County"
 };
 
-// List of all 80 cities under their respective counties
+// List of all 108 cities under their respective 15 counties
 const rawCitiesByCounty: Record<string, string[]> = {
+  "maricopa-county-az": [
+    "Phoenix", "Scottsdale", "Mesa", "Chandler", "Gilbert", "Glendale", "Tempe", "Peoria",
+    "Surprise", "Goodyear", "Avondale", "Buckeye", "Queen Creek", "Fountain Hills",
+    "Paradise Valley", "Cave Creek", "Carefree", "Anthem", "Sun City", "Sun City West",
+    "Litchfield Park", "Wickenburg", "Apache Junction", "Guadalupe", "El Mirage",
+    "Tolleson", "Youngtown", "Gila Bend"
+  ],
   "pima-county-az": [
     "Tucson", "Oro Valley", "Marana", "Sahuarita", "Vail", "Green Valley", "Catalina Foothills", "South Tucson"
   ],
@@ -75,6 +82,51 @@ const rawCitiesByCounty: Record<string, string[]> = {
   ]
 };
 
+export interface CountyCityDetail {
+  name: string;
+  desc: string;
+  badge?: string;
+}
+
+const cityCustomDescriptions: Record<string, string> = {
+  "Phoenix": "As Arizona's capital and largest city, Phoenix offers a dynamic real estate market with diverse neighborhoods.",
+  "Scottsdale": "Known for luxury living and vibrant culture, Scottsdale buyers benefit from jumbo loans and custom home financing.",
+  "Mesa": "Mesa's family-friendly communities and job growth make it a top choice for buyers and refinancers.",
+  "Chandler": "Tech-driven economy and top-rated schools attract families and professionals across Chandler.",
+  "Gilbert": "Safe neighborhoods and top master-planned communities make Gilbert ideal for new home buyers.",
+  "Glendale": "From historic districts to sports entertainment hubs, Glendale offers diverse housing choices.",
+  "Tempe": "Vibrant university town energy with diverse residential housing options near ASU and employment hubs.",
+  "Tucson": "Southern Arizona's major hub, Tucson offers mountain view estates, historic character, and desert living.",
+  "Oro Valley": "Upscale golf communities and scenic Santa Catalina mountain views define Oro Valley living.",
+  "Flagstaff": "High-country mountain town offering cooler climate properties, pine forests, and university living.",
+  "Prescott": "Rich Western heritage, historic courthouse square, and mile-high mountain air attract buyers.",
+  "Lake Havasu City": "Boating, sunshine, and resort-style waterfront living along the Colorado River.",
+  "Yuma": "Fast-growing desert city with sunshine, affordable housing, and strong agricultural community ties.",
+  "Casa Grande": "Strategic location between Phoenix and Tucson with affordable new home construction developments."
+};
+
+const countySeats = ["Phoenix", "Tucson", "Florence", "Prescott", "Flagstaff", "Holbrook", "St. Johns", "Globe", "Bisbee", "Safford", "Clifton", "Nogales", "Kingman", "Parker", "Yuma"];
+
+export function getCountyCitiesDetails(countySlug: string): CountyCityDetail[] {
+  const norm = normalizeCountySlug(countySlug);
+  const cities = rawCitiesByCounty[norm] || [];
+  return cities.map((cityName) => {
+    let badge: string | undefined;
+    if (cityName === "Phoenix" || cityName === "Tucson") {
+      badge = "TOP METRO";
+    } else if (countySeats.includes(cityName)) {
+      badge = "COUNTY SEAT";
+    }
+
+    const desc = cityCustomDescriptions[cityName] || `Home loans, refinancing, and pre-approvals for ${cityName} buyers.`;
+    return {
+      name: cityName,
+      desc,
+      badge
+    };
+  });
+}
+
 // Helper to slugify city/county names
 export function slugify(name: string): string {
   return name
@@ -84,12 +136,25 @@ export function slugify(name: string): string {
     .replace(/-+/g, "-");
 }
 
+export function normalizeCountySlug(countySlug: string): string {
+  if (!countySlug) return "";
+  const clean = countySlug.toLowerCase().trim().replace(/\/$/, "");
+  if (countyMap[clean]) return clean;
+  let base = clean.endsWith("-az") ? clean.slice(0, -3) : clean;
+  if (!base.endsWith("-county")) base = `${base}-county`;
+  const full = `${base}-az`;
+  if (countyMap[full]) return full;
+  return clean;
+}
+
 export function countyNameToSlug(countyName: string): string {
-  return slugify(countyName) + "-az";
+  const clean = slugify(countyName);
+  return clean.includes("county") ? `${clean}-az` : `${clean}-county-az`;
 }
 
 export function getCountyName(countySlug: string): string | null {
-  return countyMap[countySlug] || null;
+  const norm = normalizeCountySlug(countySlug);
+  return countyMap[norm] || countyMap[countySlug] || null;
 }
 
 // Generate realistic pricing based on name (so premium cities get higher valuations)
@@ -113,10 +178,11 @@ function getDaysOnMarket(): string {
 
 // Main lookup builder
 export function getCityData(countySlug: string, citySlug: string): CityData | null {
-  const countyName = countyMap[countySlug];
+  const normCounty = normalizeCountySlug(countySlug);
+  const countyName = countyMap[normCounty] || countyMap[countySlug];
   if (!countyName) return null;
 
-  const citiesList = rawCitiesByCounty[countySlug];
+  const citiesList = rawCitiesByCounty[normCounty] || rawCitiesByCounty[countySlug];
   if (!citiesList) return null;
 
   const cityName = citiesList.find(c => slugify(c) === citySlug);

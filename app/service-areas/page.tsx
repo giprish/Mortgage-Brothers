@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "../../app/component/Navbar";
 import Footer from "../../app/component/Footer";
@@ -170,12 +170,31 @@ export default function MaricopaCounty2() {
   const [selectedCounty, setSelectedCounty] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
+  // Sync selected county from URL query param on mount or URL change
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const countyParam = params.get("county");
+      if (countyParam) {
+        const matched = sidebarCounties.find(c => {
+          const cSlug = c.name.toLowerCase().replace(/\s+/g, "-");
+          const pClean = countyParam.toLowerCase().replace(/-county-az$/, "").replace(/-az$/, "");
+          return c.name.toLowerCase() === countyParam.toLowerCase() || cSlug === pClean;
+        });
+        if (matched) {
+          setSelectedCounty(matched.name);
+        }
+      }
+    }
+  }, []);
+
   // Filters the complete list based on selected county and search query
   const filteredCities = useMemo(() => {
     return citiesData.filter((city) => {
       const matchesCounty =
         selectedCounty === "All" ||
-        city.county.toLowerCase().startsWith(selectedCounty.toLowerCase());
+        city.county.toLowerCase().startsWith(selectedCounty.toLowerCase()) ||
+        city.county.toLowerCase().includes(selectedCounty.toLowerCase());
       
       const query = searchQuery.trim().toLowerCase();
       const matchesSearch =
@@ -191,9 +210,9 @@ export default function MaricopaCounty2() {
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
 
-      <main className="flex-grow pt-[72px]">
+      <main className="flex-grow pt-[110px] lg:pt-[130px]">
         {/* Widescreen Hero Section */}
-        <section className="w-full bg-[#fcf9f3] py-16 lg:py-20 text-center relative overflow-hidden">
+        <section className="w-full bg-[#fcf9f3] pb-12 lg:pb-16 text-center relative overflow-hidden">
           <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">
             {/* Upper Badge */}
             <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
@@ -227,10 +246,18 @@ export default function MaricopaCounty2() {
                   <div className="flex flex-col gap-1">
                     {sidebarCounties.map((county) => {
                       const isActive = county.name === selectedCounty;
+                      const cleanName = county.name.toLowerCase().replace(/\s+/g, "-");
+                      const countySlug = county.name === "All" 
+                        ? "" 
+                        : (cleanName.includes("county") ? `${cleanName}-az` : `${cleanName}-county-az`);
+                      const countyHref = county.name === "All" 
+                        ? "/service-areas" 
+                        : `/service-areas/${countySlug}`;
+
                       return (
-                        <button
+                        <Link
                           key={county.name}
-                          onClick={() => setSelectedCounty(county.name)}
+                          href={countyHref}
                           className={`flex items-center justify-between text-[13.5px] font-semibold px-4 py-2.5 rounded-xl cursor-pointer transition-all duration-200 ${
                             isActive
                               ? "bg-[#052316] text-white shadow-md shadow-[#052316]/10"
@@ -241,7 +268,7 @@ export default function MaricopaCounty2() {
                           <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full ${isActive ? "bg-white/15 text-white" : "bg-[#f5f0e8] text-[#4e5b4e]"}`}>
                             {county.count}
                           </span>
-                        </button>
+                        </Link>
                       );
                     })}
                   </div>
