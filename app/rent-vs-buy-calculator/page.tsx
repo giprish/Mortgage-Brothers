@@ -289,7 +289,7 @@ export default function RentVsBuyCalculatorPage() {
       <Navbar />
 
       {/* Hero Header */}
-      <section className="bg-[#052316] text-white pt-12 pb-16 px-4 lg:px-8">
+      <section className="bg-[#052316] text-white pt-12 pb-16 px-4 lg:px-8 mt-10">
         <div className="max-w-5xl mx-auto text-center">
           <h1 className="text-[32px] md:text-[44px] font-bold mb-3 tracking-tight font-playfair">
             Rent Vs Buy Calculator
@@ -648,6 +648,56 @@ export default function RentVsBuyCalculatorPage() {
                       value={appreciationRateStr}
                       onChange={(e) => setAppreciationRateStr(e.target.value)}
                       placeholder="Appreciation Rate"
+                      className="w-full h-[45px] pl-3.5 pr-8 bg-white border border-[#e0e0e0] rounded-md text-[15px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50] text-right"
+                    />
+                    <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#666] text-[14px] font-medium pointer-events-none">%</span>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-1.5 mb-2">
+                    <label htmlFor="buying-investment-rate" className="text-[14px] font-medium text-[#32353C]">
+                      Investment Return (% annually)
+                    </label>
+                    <div className="relative group cursor-help">
+                      <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[11px] font-bold flex items-center justify-center">?</span>
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-64 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                        Used for opportunity cost of down payment &amp; closing costs (default 5.0%).
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <input
+                      type="text"
+                      id="buying-investment-rate"
+                      value={investmentRateStr}
+                      onChange={(e) => setInvestmentRateStr(e.target.value)}
+                      placeholder="Investment Return Rate"
+                      className="w-full h-[45px] pl-3.5 pr-8 bg-white border border-[#e0e0e0] rounded-md text-[15px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50] text-right"
+                    />
+                    <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#666] text-[14px] font-medium pointer-events-none">%</span>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex items-center gap-1.5 mb-2">
+                    <label htmlFor="buying-tax-rate" className="text-[14px] font-medium text-[#32353C]">
+                      Federal Tax Rate (%)
+                    </label>
+                    <div className="relative group cursor-help">
+                      <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[11px] font-bold flex items-center justify-center">?</span>
+                      <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-64 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
+                        Default tax rate used for mortgage interest &amp; other deductions (default 18.0%).
+                      </div>
+                    </div>
+                  </div>
+                  <div className="relative">
+                    <input
+                      type="text"
+                      id="buying-tax-rate"
+                      value={taxRateStr}
+                      onChange={(e) => setTaxRateStr(e.target.value)}
+                      placeholder="Tax Rate"
                       className="w-full h-[45px] pl-3.5 pr-8 bg-white border border-[#e0e0e0] rounded-md text-[15px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50] text-right"
                     />
                     <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#666] text-[14px] font-medium pointer-events-none">%</span>

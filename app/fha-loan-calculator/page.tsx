@@ -135,16 +135,16 @@ export default function FhaLoanCalculatorPage() {
     const val = e.target.value.replace(/[^0-9]/g, "");
     if (!val) {
       setHomePriceStr("");
-      setDpAmountStr("");
-      setDpPercentStr("3.5");
       return;
     }
     const num = parseInt(val, 10);
     setHomePriceStr(num.toLocaleString("en-US"));
 
-    const pct = parseFormattedNumber(dpPercentStr) || 3.5;
-    const newDpAmt = Math.round((num * pct) / 100);
-    setDpAmountStr(newDpAmt.toLocaleString("en-US"));
+    const existingDpAmt = parseFormattedNumber(dpAmountStr);
+    if (existingDpAmt > 0) {
+      const newPct = ((existingDpAmt / num) * 100).toFixed(2);
+      setDpPercentStr(newPct);
+    }
   };
 
   const handleDpAmountInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -169,10 +169,12 @@ export default function FhaLoanCalculatorPage() {
     if (parts.length > 2) val = parts[0] + "." + parts.slice(1).join("");
     setDpPercentStr(val);
 
-    const pct = parseFloat(val) || 0;
-    if (homePrice > 0 && pct >= 0) {
+    const pct = parseFloat(val);
+    if (homePrice > 0 && !isNaN(pct)) {
       const newDpAmt = Math.round((homePrice * pct) / 100);
       setDpAmountStr(newDpAmt.toLocaleString("en-US"));
+    } else {
+      setDpAmountStr("");
     }
   };
 
@@ -182,6 +184,26 @@ export default function FhaLoanCalculatorPage() {
     if (parts.length > 2) val = parts[0] + "." + parts.slice(1).join("");
     setInterestRateStr(val);
   };
+
+  useEffect(() => {
+    if (homePrice <= 0 || dpAmount <= 0) {
+      setDpWarning("");
+      return;
+    }
+    const minStandardDp = Math.round(homePrice * 0.035);
+    const minLimitDp = Math.max(0, homePrice - currentLimit);
+    const minRequiredDp = Math.max(minStandardDp, minLimitDp);
+
+    if (dpAmount < minRequiredDp) {
+      if (minLimitDp > minStandardDp) {
+        setDpWarning(`⚠️ Loan amount exceeds the ${fmtCurr(currentLimit)} FHA limit for ${county.toUpperCase()}. Down payment must be at least $${minLimitDp.toLocaleString()}.`);
+      } else {
+        setDpWarning(`⚠️ FHA loans require a minimum of 3.5% down payment ($${minStandardDp.toLocaleString()}).`);
+      }
+    } else {
+      setDpWarning("");
+    }
+  }, [homePrice, dpAmount, currentLimit, county]);
 
   const handleConfirmPropertyDetails = () => {
     setPropertyConfirmed(true);
@@ -195,7 +217,6 @@ export default function FhaLoanCalculatorPage() {
     }
   };
 
-
   const calcResult = useMemo<FhaCalcResult | null>(() => {
     const hp = homePrice;
     if (!hp || hp <= 0) return null;
@@ -208,16 +229,9 @@ export default function FhaLoanCalculatorPage() {
     const minLimitDp = Math.max(0, hp - currentLimit);
     const minRequiredDp = Math.max(minStandardDp, minLimitDp);
 
-    let warningText = "";
     if (dp < minRequiredDp) {
       dp = minRequiredDp;
-      if (minLimitDp > minStandardDp) {
-        warningText = `⚠️ Down payment increased to $${minLimitDp.toLocaleString()} so loan amount does not exceed the ${fmtCurr(currentLimit)} FHA limit for ${county.toUpperCase()}.`;
-      } else {
-        warningText = `⚠️ FHA loans require a minimum of 3.5% down payment ($${minStandardDp.toLocaleString()}).`;
-      }
     }
-    setDpWarning(warningText);
 
     const baseLoanAmount = Math.max(0, hp - dp);
     const upfrontMIP = baseLoanAmount * 0.0175;
@@ -248,47 +262,30 @@ export default function FhaLoanCalculatorPage() {
     let balance = totalLoanAmount;
 
     if (scheduleViewMode === "annual") {
-      let accumPrincipal = 0;
-      let accumInterest = 0;
-      let accumMIP = 0;
+      const years = Math.ceil(numberOfPayments / 12);
+      for (let year = 0; year <= years; year++) {
+        const monthlyInterest = balance * monthlyRate;
+        const monthlyPrincipal = Math.max(0, monthlyPI - monthlyInterest);
 
-      for (let m = 1; m <= numberOfPayments; m++) {
-        const interestPaid = balance * monthlyRate;
-        let principalPaid = monthlyPI - interestPaid;
-        const mipPaid = (baseLoanAmount * (annualMIPRate / 100)) / 12;
+        schedule.push({
+          period: year,
+          label: `Year ${year}`,
+          principalPaid: monthlyPrincipal,
+          interestPaid: Math.max(0, monthlyInterest),
+          mipPaid: monthlyMIP,
+          remainingBalance: Math.max(0, balance)
+        });
 
-        if (principalPaid >= balance || m === numberOfPayments) {
-          principalPaid = balance;
-          balance = 0;
-        } else {
-          balance -= principalPaid;
-        }
-
-        accumPrincipal += principalPaid;
-        accumInterest += interestPaid;
-        accumMIP += mipPaid;
-
-        if (m % 12 === 0 || m === numberOfPayments) {
-          const yearNum = Math.ceil(m / 12);
-          schedule.push({
-            period: yearNum,
-            label: `Year ${yearNum}`,
-            principalPaid: accumPrincipal,
-            interestPaid: accumInterest,
-            mipPaid: accumMIP,
-            remainingBalance: Math.max(0, balance)
-          });
-          accumPrincipal = 0;
-          accumInterest = 0;
-          accumMIP = 0;
+        for (let month = 0; month < 12 && year < years; month++) {
+          const interest = balance * monthlyRate;
+          const principal = monthlyPI - interest;
+          balance = Math.max(0, balance - principal);
         }
       }
     } else {
       for (let m = 1; m <= numberOfPayments; m++) {
         const interestPaid = balance * monthlyRate;
         let principalPaid = monthlyPI - interestPaid;
-        const mipPaid = (baseLoanAmount * (annualMIPRate / 100)) / 12;
-
         if (principalPaid >= balance || m === numberOfPayments) {
           principalPaid = balance;
           balance = 0;
@@ -299,9 +296,9 @@ export default function FhaLoanCalculatorPage() {
         schedule.push({
           period: m,
           label: `Month ${m}`,
-          principalPaid,
-          interestPaid,
-          mipPaid,
+          principalPaid: Math.max(0, principalPaid),
+          interestPaid: Math.max(0, interestPaid),
+          mipPaid: monthlyMIP,
           remainingBalance: Math.max(0, balance)
         });
       }
@@ -534,7 +531,7 @@ export default function FhaLoanCalculatorPage() {
                             value={dpAmountStr}
                             onChange={handleDpAmountInput}
                             placeholder="Amount"
-                            className="w-full h-[45px] pl-8 pr-3.5 bg-white border border-[#e0e0e0] rounded-md text-[15px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50]"
+                            className="w-full h-[45px] pl-8 pr-3.5 bg-white border border-[#e0e0e0] rounded-md text-[15px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50] text-right"
                           />
                         </div>
                         <div className="relative">
@@ -742,8 +739,8 @@ export default function FhaLoanCalculatorPage() {
                       centerTextTitle="Monthly"
                       centerTextSub={fmtCurr(calcResult.totalMonthly)}
                       dataItems={[
-                        { label: "Principal", value: calcResult.monthlyPI * 0.4, color: "#6ca220" },
-                        { label: "Interest", value: calcResult.monthlyPI * 0.6, color: "#FF9800" },
+                        { label: "Principal", value: calcResult.monthlyPrincipal, color: "#6ca220" },
+                        { label: "Interest", value: calcResult.monthlyInterest, color: "#FF9800" },
                         { label: "Monthly MIP", value: calcResult.monthlyMIP, color: "#2196F3" },
                       ]}
                     />

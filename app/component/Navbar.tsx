@@ -130,6 +130,9 @@ const Navbar = () => {
                     <Link href="/down-payment-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Down Payment Calculator
                     </Link>
+                    <Link href="/down-payment-calculator-1" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                      Down Payment Calculator 1
+                    </Link>
                     <Link href="/debt-to-income-ratio-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Debt-to-Income Ratio
                     </Link>
@@ -527,6 +530,13 @@ const Navbar = () => {
             className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
           >
             ↳ Down Payment Calculator
+          </Link>
+          <Link
+            href="/down-payment-calculator-1"
+            onClick={() => setMobileMenuOpen(false)}
+            className="text-[#b8c8b8] text-[14px] pl-4 py-1.5 hover:text-[#3fb364] transition-colors font-medium border-l border-[#1a3a1a]/60 ml-2"
+          >
+            ↳ Down Payment Calculator 1
           </Link>
           <Link
             href="/debt-to-income-ratio-calculator"
