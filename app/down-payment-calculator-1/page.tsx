@@ -1,9 +1,11 @@
 "use client";
-// @ts-nocheck
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type CSSProperties, type ReactNode } from "react";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+
+type LoanType = "conventional" | "fha" | "va" | "usda";
+type RatioStatus = "pass" | "warn" | "fail";
 
 /* ============================================================
    COLORS (ported 1:1 from the original stylesheet)
@@ -30,7 +32,7 @@ const MONO = '"IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace';
 /* ============================================================
    LOOKUP TABLES (Section 3 of spec)
 ============================================================ */
-const PROPERTY_TAX_TABLE = [
+const PROPERTY_TAX_TABLE: number[][] = [
   [100000, 1000], [150000, 1065], [200000, 1134], [250000, 1208], [300000, 1286],
   [350000, 1370], [400000, 1459], [450000, 1554], [500000, 1756], [550000, 1984],
   [600000, 2242], [650000, 2534], [700000, 2863], [750000, 3149], [800000, 3370],
@@ -40,7 +42,7 @@ const PROPERTY_TAX_TABLE = [
   [1600000, 6417], [1650000, 6545], [1700000, 6676], [1750000, 6809], [1800000, 6946],
   [1850000, 7084], [1900000, 7226], [1950000, 7371], [10000000, 7518],
 ];
-const INSURANCE_TABLE = [
+const INSURANCE_TABLE: number[][] = [
   [100000, 1000], [150000, 1040], [200000, 1082], [250000, 1125], [300000, 1170],
   [350000, 1217], [400000, 1265], [450000, 1316], [500000, 1369], [550000, 1423],
   [600000, 1480], [650000, 1539], [700000, 1601], [750000, 1665], [800000, 1732],
@@ -50,7 +52,7 @@ const INSURANCE_TABLE = [
   [1600000, 3243], [1650000, 3373], [1700000, 3508], [1750000, 3648], [1800000, 3794],
   [1850000, 3946], [1900000, 4104], [1950000, 4268], [10000000, 4439],
 ];
-const CLOSING_COST_TABLE = [
+const CLOSING_COST_TABLE: number[][] = [
   [100000, 3100], [150000, 3178], [200000, 3257], [250000, 3338], [300000, 3422],
   [350000, 3507], [400000, 3595], [450000, 3685], [500000, 3777], [550000, 3871],
   [600000, 3968], [650000, 4067], [700000, 4169], [750000, 4273], [800000, 4359],
@@ -61,7 +63,7 @@ const CLOSING_COST_TABLE = [
   [1850000, 5588], [1900000, 5644], [1950000, 5700], [10000000, 6500],
 ];
 
-function lookupTable(table, price) {
+function lookupTable(table: number[][], price: number) {
   for (const [upTo, val] of table) {
     if (price <= upTo) return val;
   }
@@ -78,7 +80,7 @@ const PMI_TABLE = {
   640: [1.38, 1.03, 0.70, 0.30],
   620: [1.56, 1.17, 0.79, 0.33], // also used as the floor for any score below 620
 };
-function creditScoreBand(score) {
+function creditScoreBand(score: number) {
   if (score >= 760) return 760;
   if (score >= 740) return 740;
   if (score >= 720) return 720;
@@ -88,7 +90,7 @@ function creditScoreBand(score) {
   if (score >= 640) return 640;
   return 620;
 }
-function creditScoreLabel(score) {
+function creditScoreLabel(score: number) {
   if (score >= 760) return "Excellent";
   if (score >= 740) return "Very Good";
   if (score >= 720) return "Good";
@@ -98,9 +100,9 @@ function creditScoreLabel(score) {
   if (score >= 640) return "Poor";
   return "High Risk";
 }
-function pmiRate(creditScore, downPct) {
+function pmiRate(creditScore: number, downPct: number) {
   if (downPct >= 20) return 0;
-  const row = PMI_TABLE[creditScoreBand(creditScore)];
+  const row = PMI_TABLE[creditScoreBand(creditScore) as keyof typeof PMI_TABLE];
   if (downPct < 5) return row[0];
   if (downPct < 10) return row[1];
   if (downPct < 15) return row[2];
@@ -108,7 +110,7 @@ function pmiRate(creditScore, downPct) {
 }
 
 const FHA_UFMIP_RATE = 0.0175;
-function fhaAnnualMipRate(loanAmount, ltv, termYears) {
+function fhaAnnualMipRate(loanAmount: number, ltv: number, termYears: number) {
   const highBalance = loanAmount > 726200;
   if (!highBalance) {
     if (termYears > 15) {
@@ -132,7 +134,7 @@ function fhaAnnualMipRate(loanAmount, ltv, termYears) {
   }
 }
 
-function vaFundingFeeRate(downPct) {
+function vaFundingFeeRate(downPct: number) {
   if (downPct < 5) return 2.15;
   if (downPct < 10) return 1.50;
   return 1.25;
@@ -151,36 +153,36 @@ const SCENARIO_CHECKPOINTS = {
 /* ============================================================
    HELPERS
 ============================================================ */
-function parseNum(str) {
+function parseNum(str: unknown) {
   if (typeof str !== "string") return 0;
   const n = parseFloat(str.replace(/[^0-9.\-]/g, ""));
   return isNaN(n) ? 0 : n;
 }
-function fmtMoney(n, decimals = 0) {
+function fmtMoney(n: number, decimals = 0) {
   if (!isFinite(n)) n = 0;
   return "$" + n.toLocaleString("en-US", { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
 }
-function fmtPct(n, decimals = 2) {
+function fmtPct(n: number, decimals = 2) {
   if (!isFinite(n)) n = 0;
   return n.toLocaleString("en-US", { minimumFractionDigits: decimals, maximumFractionDigits: decimals }) + "%";
 }
-function round2(n) { return Math.round(n * 100) / 100; }
-function normalizeTerm(raw) {
-  let n = parseFloat(raw);
+function round2(n: number) { return Math.round(n * 100) / 100; }
+function normalizeTerm(raw: string | number) {
+  let n = parseFloat(String(raw));
   if (isNaN(n)) n = 30;
   n = Math.round(n);
   if (n < 1) n = 1;
   if (n > 30) n = 30;
   return n;
 }
-function computeMonthlyPI(loanAmount, annualRatePct, termYears) {
+function computeMonthlyPI(loanAmount: number, annualRatePct: number, termYears: number) {
   const n = termYears * 12;
   const r = (annualRatePct / 100) / 12;
   if (annualRatePct === 0) return loanAmount / n;
   const factor = Math.pow(1 + r, n);
   return (loanAmount * (r * factor)) / (factor - 1);
 }
-function computeScenario(homePrice, downPct, interestRate, termYears, loanType, creditScore) {
+function computeScenario(homePrice: number, downPct: number, interestRate: number, termYears: number, loanType: LoanType, creditScore: number) {
   const downDollar = homePrice * (downPct / 100);
   const loanAmount = homePrice - downDollar;
   const ltv = homePrice > 0 ? (loanAmount / homePrice) * 100 : 0;
@@ -208,7 +210,7 @@ function computeScenario(homePrice, downPct, interestRate, termYears, loanType, 
   }
   return { downDollar, loanAmount, ltv, pi, monthlyMI, upfrontFee, miLabel };
 }
-function setRatioStatus(ratio, threshold) {
+function setRatioStatus(ratio: number, threshold: number): RatioStatus {
   return ratio <= threshold ? "pass" : ratio <= threshold + 2 ? "warn" : "fail";
 }
 const STATUS_COLOR = { pass: C.greenDeep, warn: C.amber, fail: C.red };
@@ -224,7 +226,7 @@ const LOAN_TYPE_NOTES = {
 /* ============================================================
    SMALL UI PRIMITIVES
 ============================================================ */
-function Field({ label, hint, children, error }) {
+function Field({ label, hint, children, error }: { label: string; hint?: string; children: ReactNode; error?: string }) {
   return (
     <div style={{ marginBottom: 14 }}>
       <label style={{ display: "block", fontSize: 12.5, fontWeight: 600, color: C.ink, marginBottom: 5 }}>
@@ -236,7 +238,7 @@ function Field({ label, hint, children, error }) {
     </div>
   );
 }
-const inputStyle = {
+const inputStyle: CSSProperties = {
   width: "100%",
   padding: "9px 11px",
   border: `1.5px solid #c3ccbb`,
@@ -249,7 +251,7 @@ const inputStyle = {
   boxSizing: "border-box",
   boxShadow: "inset 0 1px 2px rgba(27,42,31,0.06)",
 };
-function Panel({ number, title, children }) {
+function Panel({ number, title, children }: { number?: string | number; title: string; children: ReactNode }) {
   return (
     <div style={{ background: C.panel, border: `1px solid ${C.line}`, borderRadius: 10, padding: "20px 22px 22px", marginBottom: 18 }}>
       <h2 style={{ fontFamily: SERIF, fontSize: 16, fontWeight: 600, margin: "0 0 14px", color: C.greenDeep, display: "flex", alignItems: "center", gap: 8 }}>
@@ -264,7 +266,7 @@ function Panel({ number, title, children }) {
     </div>
   );
 }
-function ResultLine({ label, value, total, id }) {
+function ResultLine({ label, value, total, id }: { label: string; value: string; total?: boolean; id?: string }) {
   return (
     <div
       style={{
@@ -284,7 +286,9 @@ function ResultLine({ label, value, total, id }) {
   );
 }
 
-function SliderRow({ min, max, step, value, onChange, minLabel, maxLabel }) {
+function SliderRow({ min, max, step, value, onChange, minLabel, maxLabel }: {
+  min: number; max: number; step: number; value: number; onChange: (v: number) => void; minLabel: string; maxLabel: string;
+}) {
   const safeValue = isFinite(value) ? Math.min(max, Math.max(min, value)) : min;
   return (
     <div style={{ marginTop: 8 }}>
@@ -305,7 +309,10 @@ function SliderRow({ min, max, step, value, onChange, minLabel, maxLabel }) {
   );
 }
 
-function InsightsPanel({ groups, nextSteps }) {
+function InsightsPanel({ groups, nextSteps }: {
+  groups: { title: string; color: string; bullets: string[] }[];
+  nextSteps: string[];
+}) {
   return (
     <div style={{ background: "#f7f8f5", border: `1px solid ${C.line}`, borderRadius: 10, padding: "20px 22px 22px", marginBottom: 18 }}>
       <h3 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 600, margin: "0 0 12px", color: C.ink }}>Recommendations & Key Insights</h3>
@@ -351,7 +358,7 @@ function DownPaymentCalculator() {
   const creditScore = isFinite(creditScoreRaw) ? Math.min(850, Math.max(600, creditScoreRaw)) : 720;
 
   // Loan details
-  const [loanType, setLoanType] = useState("conventional");
+  const [loanType, setLoanType] = useState<LoanType>("conventional");
   const [interestRateText, setInterestRateText] = useState("6.500");
   const [loanTerm, setLoanTerm] = useState(30);
 
@@ -379,14 +386,14 @@ function DownPaymentCalculator() {
   const insDefault = lookupTable(INSURANCE_TABLE, homePrice);
 
   /* ---- Down payment $ / % bidirectional sync ---- */
-  function onHomePriceChange(text) {
+  function onHomePriceChange(text: string) {
     setHomePriceText(text);
     const newPrice = parseNum(text);
     const dollarVal = parseNum(downPaymentDollarText);
     const newPct = newPrice > 0 ? (dollarVal / newPrice) * 100 : 0;
     setDownPaymentPercentText(round2(newPct).toFixed(2));
   }
-  function onDownPaymentDollarChange(text) {
+  function onDownPaymentDollarChange(text: string) {
     setDownPaymentDollarText(text);
     let dp = parseNum(text);
     if (dp > homePrice) dp = homePrice;
@@ -394,7 +401,7 @@ function DownPaymentCalculator() {
     const pct = homePrice > 0 ? (dp / homePrice) * 100 : 0;
     setDownPaymentPercentText(round2(pct).toFixed(2));
   }
-  function onDownPaymentPercentChange(text) {
+  function onDownPaymentPercentChange(text: string) {
     let pctVal = parseNum(text);
     if (pctVal > 100) pctVal = 100;
     if (pctVal < 0) pctVal = 0;
@@ -670,7 +677,7 @@ function DownPaymentCalculator() {
 
             <Panel number={4} title="Loan Details">
               <Field label="Loan Type">
-                <select className="dpc-input" style={inputStyle} value={loanType} onChange={(e) => setLoanType(e.target.value)}>
+                <select className="dpc-input" style={inputStyle} value={loanType} onChange={(e) => setLoanType(e.target.value as LoanType)}>
                   <option value="conventional">Conventional Loan</option>
                   <option value="fha">FHA Loan</option>
                   <option value="va">VA Loan</option>
@@ -840,7 +847,7 @@ function DownPaymentCalculator() {
   );
 }
 
-function Badge({ status }) {
+function Badge({ status }: { status: RatioStatus }) {
   const text = status === "pass" ? "within guideline" : status === "warn" ? "borderline" : "above guideline";
   return (
     <span style={{ display: "inline-block", fontFamily: MONO, fontSize: 10.5, textTransform: "uppercase", letterSpacing: ".05em", padding: "2px 7px", borderRadius: 99, marginLeft: 6, background: STATUS_BG[status], color: STATUS_COLOR[status] }}>
@@ -848,7 +855,7 @@ function Badge({ status }) {
     </span>
   );
 }
-function RatioLine({ label, ratio, threshold, status }) {
+function RatioLine({ label, ratio, threshold, status }: { label: string; ratio: number; threshold: number; status: RatioStatus }) {
   const pct = Math.min(100, (ratio / threshold) * 100);
   return (
     <div>
@@ -863,10 +870,10 @@ function RatioLine({ label, ratio, threshold, status }) {
   );
 }
 
-function MilestoneBar({ loanType, min, downPct }) {
+function MilestoneBar({ loanType, min, downPct }: { loanType: LoanType; min: number; downPct: number }) {
   const showBestRate = loanType === "conventional";
   const scaleMax = Math.max(30, downPct + 5);
-  const pctOf = (v) => Math.min(100, Math.max(0, (v / scaleMax) * 100));
+  const pctOf = (v: number) => Math.min(100, Math.max(0, (v / scaleMax) * 100));
 
   const markers = [
     { value: min, label: "Min", color: C.amber },
@@ -894,7 +901,7 @@ function MilestoneBar({ loanType, min, downPct }) {
   );
 }
 
-function MilestoneStat({ label, value, note, highlight }) {
+function MilestoneStat({ label, value, note, highlight }: { label: string; value: string; note: string; highlight?: boolean }) {
   return (
     <div style={{
       background: highlight ? C.greenDeep : "#fff",
@@ -909,7 +916,7 @@ function MilestoneStat({ label, value, note, highlight }) {
   );
 }
 
-function CompactLine({ label, value, emphasize }) {
+function CompactLine({ label, value, emphasize }: { label: string; value: string; emphasize?: boolean }) {
   return (
     <div style={{ padding: "4px 0" }}>
       <div style={{ fontSize: 11, color: C.inkSoft }}>{label}</div>
