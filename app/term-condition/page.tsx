@@ -112,7 +112,7 @@ export default function TeamPage() {
 
       <main className="flex-grow">
         {/* Section 1: Meet the Team */}
-        <section className="py-20 px-6 lg:px-10 max-w-5xl mx-auto">
+        <section className="mt-10 lg:mt-20 py-20 px-6 lg:px-10 max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-[#b89a5a] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
               MEET THE TEAM

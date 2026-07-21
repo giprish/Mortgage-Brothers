@@ -289,7 +289,7 @@ export default function RentVsBuyCalculatorPage() {
       <Navbar />
 
       {/* Hero Header */}
-      <section className="bg-[#052316] text-white pt-12 pb-16 px-4 lg:px-8 mt-10">
+      <section className="bg-[#052316] text-white pt-[110px] lg:pt-[130px] pb-16 px-4 lg:px-8">
         <div className="max-w-5xl mx-auto text-center">
           <h1 className="text-[32px] md:text-[44px] font-bold mb-3 tracking-tight font-playfair">
             Rent Vs Buy Calculator

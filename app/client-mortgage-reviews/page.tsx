@@ -99,7 +99,7 @@ export default function ReviewsPage() {
       <main className="flex-grow">
         
         {/* Hero Summary Header */}
-        <section className="w-full bg-brand-green-deep text-white py-16 lg:py-24 text-center relative overflow-hidden">
+        <section className="w-full bg-brand-green-deep text-white pt-[110px] lg:pt-[130px] pb-16 lg:pb-24 text-center relative overflow-hidden">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute -top-36 -right-36 w-[400px] h-[400px] rounded-full border border-white/5 pointer-events-none"></div>
             <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5 pointer-events-none"></div>

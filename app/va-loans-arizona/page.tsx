@@ -33,7 +33,7 @@ export default function VaLoansPage() {
 
       <main className="flex-grow">
         {/* HERO SECTION */}
-        <section className="relative w-full bg-[#052316] text-white py-16 lg:py-24 px-6 lg:px-12 overflow-hidden">
+        <section className="relative w-full bg-[#052316] text-white pt-[110px] lg:pt-[130px] pb-16 lg:pb-24 px-6 lg:px-12 overflow-hidden">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#3fb364]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">

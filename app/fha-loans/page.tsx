@@ -45,7 +45,7 @@ export default function FhaLoanPage() {
 
       <main className="flex-grow">
         {/* Section 1: Hero Section */}
-        <section className="bg-[#052316] text-white pt-[88px] pb-16 px-6 lg:px-10">
+        <section className="bg-[#052316] text-white pt-[110px] lg:pt-[130px] pb-16 lg:pb-24 px-6 lg:px-10">
           <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left side info */}
             <div className="lg:col-span-7 flex flex-col items-start">

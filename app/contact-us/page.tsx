@@ -40,7 +40,7 @@ export default function ContactPage() {
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
 
-      <main className="flex-grow pt-[72px] py-16 px-6 lg:px-10">
+      <main className="flex-grow pt-[110px] lg:pt-[130px] pb-16 px-6 lg:px-10">
         <div className="max-w-5xl mx-auto">
           {/* Header Section */}
           <div className="text-center mb-16">

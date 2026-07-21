@@ -261,7 +261,7 @@ export default function ClosingCostCalculatorPage() {
       <Navbar />
       <main className="flex-grow">
 
-        <section className="w-full bg-[#052316] text-white py-16 lg:py-20 text-center relative overflow-hidden">
+        <section className="w-full bg-[#052316] text-white pt-[110px] lg:pt-[130px] pb-16 lg:pb-20 text-center relative overflow-hidden">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5 opacity-40" />
             <div className="absolute -top-36 -right-36 w-[400px] h-[400px] rounded-full border border-white/5 opacity-40" />

@@ -11,7 +11,7 @@ const Hero = () => {
         backgroundPosition: "center center",
       }}
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 lg:py-20 xl:py-24 2xl:py-28 pt-[72px] lg:pt-[100px] xl:pt-[120px] 2xl:pt-[150px]">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 py-16 lg:py-20 xl:py-24 2xl:py-28 pt-[110px] lg:pt-[130px] xl:pt-[140px] 2xl:pt-[160px]">
         <div className="flex flex-col lg:flex-row items-start justify-between gap-12 lg:gap-16">
           {/* Left Content */}
           <div className="flex-1 max-w-xl">

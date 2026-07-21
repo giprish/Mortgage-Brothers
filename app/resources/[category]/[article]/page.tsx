@@ -31,7 +31,7 @@ export default function ArticleDetailPage() {
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
 
-      <main className="flex-grow py-12 px-6 lg:px-10">
+      <main className="flex-grow pt-[110px] lg:pt-[130px] pb-12 px-6 lg:px-10">
         <div className="max-w-5xl mx-auto">
           {/* Breadcrumb */}
           <div className="flex items-center gap-1.5 text-[12px] text-[#8da684] font-semibold mb-6">

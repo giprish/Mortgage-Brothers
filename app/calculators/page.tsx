@@ -43,7 +43,7 @@ export default function CalculatorsPage() {
 
       <main className="flex-grow">
         <section
-          className="w-full bg-brand-green-deep text-white py-20 lg:py-28 text-center relative overflow-hidden bg-cover bg-no-repeat bg-center"
+          className="w-full bg-brand-green-deep text-white pt-[110px] lg:pt-[130px] pb-20 lg:pb-28 text-center relative overflow-hidden bg-cover bg-no-repeat bg-center"
           style={{ backgroundImage: "url('/mortgage-calculators.jpg')", backgroundSize: "cover", backgroundPosition: "center top" }}
         >
           <div className="absolute inset-0 bg-[#08271B]/75 z-0"></div>

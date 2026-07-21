@@ -343,7 +343,7 @@ export default function FhaLoanCalculatorPage() {
       <Navbar />
 
       <main className="flex-grow pb-16">
-        <section className="w-full bg-[#052316] text-white pt-20 lg:pt-24 pb-16 lg:pb-20 text-center relative overflow-hidden">
+        <section className="w-full bg-[#052316] text-white pt-[110px] lg:pt-[130px] pb-16 lg:pb-20 text-center relative overflow-hidden">
           <div className="max-w-4xl mx-auto px-6 relative z-10">
             <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-2 font-sans">
               ARIZONA MORTGAGE TOOLS

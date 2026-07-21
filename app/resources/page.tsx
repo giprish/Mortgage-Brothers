@@ -186,7 +186,7 @@ export default function ResourceLibraryPage() {
       <main className="flex-grow">
         
         {/* Header Section */}
-        <section className="w-full pt-16 pb-12 px-6 text-center">
+        <section className="w-full pt-[110px] lg:pt-[130px] pb-12 px-6 text-center">
           <div className="max-w-4xl mx-auto">
             <span className="text-[#a89a70] text-[11px] font-bold tracking-[0.2em] uppercase mb-4 block">
               THE RESOURCE LIBRARY

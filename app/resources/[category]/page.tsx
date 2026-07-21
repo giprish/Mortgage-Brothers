@@ -203,7 +203,7 @@ export default function ResourceCategoryPage() {
       <main className="flex-grow">
         
         {/* Top Header Block Banner */}
-        <section className="w-full bg-[#052316] text-white py-12 px-6 lg:px-10 relative overflow-hidden">
+        <section className="w-full bg-[#052316] text-white pt-[110px] lg:pt-[130px] pb-12 px-6 lg:px-10 relative overflow-hidden">
           {/* Subtle background circles */}
           <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full border border-white/5 pointer-events-none -mr-16 -mt-16"></div>
           

@@ -242,7 +242,7 @@ export default function ExtraPaymentMortgageCalculatorPage() {
       <Navbar />
 
       {/* Hero Header */}
-      <section className="bg-[#052316] text-white pt-20 lg:pt-24 pb-16 lg:pb-20 px-4 lg:px-8">
+      <section className="bg-[#052316] text-white pt-[110px] lg:pt-[130px] pb-16 lg:pb-20 px-4 lg:px-8">
         <div className="max-w-5xl mx-auto text-center">
           <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-2 font-sans">
             ARIZONA MORTGAGE TOOLS
