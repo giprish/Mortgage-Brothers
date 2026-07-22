@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { homeSeoMetadata } from "@/lib/seo";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,9 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mortgage Brothers | Arizona Home Loans Handled With Care",
-  description:
-    "Independent mortgage brokers shopping 30+ lenders for your best rate. Get pre-approved for your Arizona home loan today. NMLS #1007154.",
+  metadataBase: new URL("https://azmortgagebrothers.com"),
+  ...homeSeoMetadata,
 };
 
 export default function RootLayout({
