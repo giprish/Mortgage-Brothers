@@ -695,7 +695,7 @@ const Navbar = () => {
                         onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
                         className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
                       >
-                        HOME PURCHASE CLOSING
+                        HOME LOAN CLOSING COST CALCULATOR
                       </Link>
                     </>
                   )}

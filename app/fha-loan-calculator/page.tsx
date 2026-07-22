@@ -1,923 +1,783 @@
 "use client";
 
-import React, { useState, useMemo, useEffect } from "react";
-import Link from "next/link";
+import { useMemo, useState, type ChangeEvent, type CSSProperties, type ReactNode } from "react";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
-import { InteractivePieChart, BasicPaymentOverTimeChart } from "../component/InteractiveCharts";
+import {
+  InteractivePieChart,
+  BasicPaymentOverTimeChart,
+  LtvOverTimeChart,
+} from "../component/InteractiveCharts";
 
-interface AmortizationRow {
-  period: number;
-  label: string;
-  principalPaid: number;
-  interestPaid: number;
-  mipPaid: number;
-  remainingBalance: number;
-}
-
-interface FhaCalcResult {
-  baseLoanAmount: number;
-  upfrontMIP: number;
-  totalLoanAmount: number;
-  annualMIPRate: number;
-  ltvRatio: number;
-  monthlyPI: number;
-  monthlyMIP: number;
-  totalMonthly: number;
-  monthlyInterest: number;
-  monthlyPrincipal: number;
-  schedule: AmortizationRow[];
-}
-
-interface CountyLimits {
-  single: number;
-  duplex: number;
-  triplex: number;
-  fourplex: number;
-}
-
-const COUNTY_LIMITS: Record<string, CountyLimits> = {
-  coconino: { single: 609500, duplex: 780250, triplex: 943150, fourplex: 1172150 },
-  maricopa: { single: 557750, duplex: 714000, triplex: 863100, fourplex: 1072600 },
-  pinal: { single: 557750, duplex: 714000, triplex: 863100, fourplex: 1072600 },
-  apache: { single: 541287, duplex: 693050, triplex: 837700, fourplex: 1041125 },
-  cochise: { single: 541287, duplex: 693050, triplex: 837700, fourplex: 1041125 },
-  gila: { single: 541287, duplex: 693050, triplex: 837700, fourplex: 1041125 },
-  graham: { single: 541287, duplex: 693050, triplex: 837700, fourplex: 1041125 },
-  greenlee: { single: 541287, duplex: 693050, triplex: 837700, fourplex: 1041125 },
-  la_paz: { single: 541287, duplex: 693050, triplex: 837700, fourplex: 1041125 },
-  mohave: { single: 541287, duplex: 693050, triplex: 837700, fourplex: 1041125 },
-  navajo: { single: 541287, duplex: 693050, triplex: 837700, fourplex: 1041125 },
-  pima: { single: 541287, duplex: 693050, triplex: 837700, fourplex: 1041125 },
-  santa_cruz: { single: 541287, duplex: 693050, triplex: 837700, fourplex: 1041125 },
-  yavapai: { single: 541287, duplex: 693050, triplex: 837700, fourplex: 1041125 },
-  yuma: { single: 541287, duplex: 693050, triplex: 837700, fourplex: 1041125 }
+/* ============================================================
+   DESIGN TOKENS (shared across the suite)
+============================================================ */
+const C = {
+  ink: "#1b2a1f",
+  inkSoft: "#4a5a4d",
+  paper: "#faf9f5",
+  card: "#ffffff",
+  line: "#dfe3dc",
+  greenDeep: "#2c5e1a",
+  green: "#3a7d1e",
+  greenBright: "#6ca220",
+  greenWash: "#eef4e6",
+  amber: "#9a6b12",
+  amberWash: "#fbf1dd",
+  danger: "#a3372b",
+  dangerWash: "#faeae8",
 };
+const SERIF = '"Source Serif 4", Georgia, "Times New Roman", serif';
+const SANS = "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+const MONO = "'IBM Plex Mono', 'SFMono-Regular', Menlo, Consolas, monospace";
 
-const ARIZONA_COUNTIES = [
-  { id: "maricopa", label: "Maricopa" },
-  { id: "pima", label: "Pima" },
-  { id: "pinal", label: "Pinal" },
-  { id: "apache", label: "Apache" },
-  { id: "cochise", label: "Cochise" },
-  { id: "coconino", label: "Coconino" },
-  { id: "gila", label: "Gila" },
-  { id: "graham", label: "Graham" },
-  { id: "greenlee", label: "Greenlee" },
-  { id: "la_paz", label: "La Paz" },
-  { id: "mohave", label: "Mohave" },
-  { id: "navajo", label: "Navajo" },
-  { id: "santa_cruz", label: "Santa Cruz" },
-  { id: "yavapai", label: "Yavapai" },
-  { id: "yuma", label: "Yuma" }
-];
+const fieldBg = "#eef1ea";
+const fieldBorder = "#c3ccbb";
 
-function calculateMIPRate(loanTerm: number, ltv: number): number {
-  if (loanTerm > 15) {
-    if (ltv <= 95) return 0.80;
-    return 0.85;
+/* ============================================================
+   TYPES
+============================================================ */
+interface ScheduleRow {
+  month: number;
+  principal: number;
+  interest: number;
+  mip: number;
+  balance: number;
+}
+
+interface DownPaymentBounds {
+  minimum: number;
+  maximum: number;
+  limitBinding: boolean;
+}
+
+interface SelectOption {
+  value: string | number;
+  label: string;
+}
+
+interface InsightGroup {
+  title: string;
+  color: string;
+  bullets: string[];
+}
+
+/* ============================================================
+   HELPERS
+============================================================ */
+function toNumber(str: string): number {
+  if (typeof str !== "string") return NaN;
+  const cleaned = str.replace(/[^0-9.\-]/g, "");
+  if (cleaned === "" || cleaned === "-") return NaN;
+  return parseFloat(cleaned);
+}
+function fmtMoney(n: number): string {
+  if (!isFinite(n)) n = 0;
+  return "$" + Math.round(n).toLocaleString("en-US");
+}
+function fmtPct(n: number, decimals = 2): string {
+  if (!isFinite(n)) n = 0;
+  return n.toLocaleString("en-US", { minimumFractionDigits: decimals, maximumFractionDigits: decimals }) + "%";
+}
+
+/* ============================================================
+   FHA LOAN LIMIT TABLE — Arizona only, ported 1:1
+   Index: [1-unit, 2-unit, 3-unit, 4-unit]
+============================================================ */
+const FLOOR: number[] = [541287, 693050, 837700, 1041125];
+const FHA_LIMITS: Record<string, number[]> = {
+  Maricopa: [557750, 714100, 863300, 1073000],
+  Pinal: [557750, 714100, 863300, 1073000],
+  Coconino: [609500, 780400, 943200, 1172500],
+  Pima: FLOOR, Apache: FLOOR, Cochise: FLOOR, Gila: FLOOR,
+  Graham: FLOOR, Greenlee: FLOOR, "La Paz": FLOOR, Mohave: FLOOR,
+  Navajo: FLOOR, "Santa Cruz": FLOOR, Yavapai: FLOOR, Yuma: FLOOR,
+};
+const COUNTIES = Object.keys(FHA_LIMITS);
+const PROPERTY_TYPES = ["Single Family", "Duplex", "Triplex", "Fourplex"];
+
+/* ============================================================
+   FHA MIP LOGIC — current HUD ML 2023-05 rates, ported 1:1
+============================================================ */
+const UFMIP_RATE = 1.75;
+function annualMipRate(baseLoanAmount: number, ltv: number, termYears: number): number {
+  const highBalance = baseLoanAmount > 726200;
+  if (!highBalance) {
+    if (termYears > 15) {
+      if (ltv <= 90) return 0.5;
+      if (ltv <= 95) return 0.5;
+      return 0.55;
+    } else {
+      if (ltv <= 90) return 0.15;
+      return 0.4;
+    }
   } else {
-    if (ltv <= 90) return 0.45;
-    return 0.70;
+    if (termYears > 15) {
+      if (ltv <= 90) return 0.7;
+      if (ltv <= 95) return 0.7;
+      return 0.75;
+    } else {
+      if (ltv <= 78) return 0.15;
+      if (ltv <= 90) return 0.4;
+      return 0.65;
+    }
   }
 }
+function stdMonthlyPayment(P: number, r: number, n: number): number {
+  if (r === 0) return P / n;
+  const factor = Math.pow(1 + r, n);
+  return (P * (r * factor)) / (factor - 1);
+}
 
-const fmtCurr = (v: number) =>
-  new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-  }).format(v);
+const PROPERTY_TAX_TABLE: number[][] = [
+  [100000, 1000], [150000, 1065], [200000, 1134], [250000, 1208], [300000, 1286],
+  [350000, 1370], [400000, 1459], [450000, 1554], [500000, 1756], [550000, 1984],
+  [600000, 2242], [650000, 2534], [700000, 2863], [750000, 3149], [800000, 3370],
+  [850000, 3606], [900000, 3858], [950000, 4128], [1000000, 4417], [1050000, 4638],
+  [1100000, 4870], [1150000, 5114], [1200000, 5267], [1250000, 5425], [1300000, 5588],
+  [1350000, 5755], [1400000, 5928], [1450000, 6047], [1500000, 6167], [1550000, 6291],
+  [1600000, 6417], [1650000, 6545], [1700000, 6676], [1750000, 6809], [1800000, 6946],
+  [1850000, 7084], [1900000, 7226], [1950000, 7371], [10000000, 7518],
+];
+const INSURANCE_TABLE: number[][] = [
+  [100000, 1000], [150000, 1040], [200000, 1082], [250000, 1125], [300000, 1170],
+  [350000, 1217], [400000, 1265], [450000, 1316], [500000, 1369], [550000, 1423],
+  [600000, 1480], [650000, 1539], [700000, 1601], [750000, 1665], [800000, 1732],
+  [850000, 1801], [900000, 1873], [950000, 1948], [1000000, 2026], [1050000, 2107],
+  [1100000, 2191], [1150000, 2279], [1200000, 2370], [1250000, 2465], [1300000, 2563],
+  [1350000, 2666], [1400000, 2772], [1450000, 2883], [1500000, 2999], [1550000, 3119],
+  [1600000, 3243], [1650000, 3373], [1700000, 3508], [1750000, 3648], [1800000, 3794],
+  [1850000, 3946], [1900000, 4104], [1950000, 4268], [10000000, 4439],
+];
+function lookupBandTable(table: number[][], value: number): number {
+  for (const [upTo, val] of table) {
+    if (value <= upTo) return val;
+  }
+  return table[table.length - 1][1];
+}
 
-const parseFormattedNumber = (str: string): number => {
-  if (!str) return 0;
-  const cleaned = str.replace(/,/g, "").replace(/[^0-9.]/g, "");
-  return parseFloat(cleaned) || 0;
+/* ============================================================
+   DOWN PAYMENT MIN/MAX ENFORCEMENT — ported 1:1
+============================================================ */
+function downPaymentBounds(homePrice: number, limit: number): DownPaymentBounds {
+  const standardMinimum = homePrice * 0.035;
+  const limitBasedMinimum = Math.max(0, homePrice - limit);
+  const minimum = Math.max(standardMinimum, limitBasedMinimum);
+  const maximum = homePrice * 0.9;
+  return { minimum, maximum, limitBinding: limitBasedMinimum > standardMinimum };
+}
+
+/* ============================================================
+   UI PRIMITIVES
+============================================================ */
+function Field({ label, hint, children }: { label: ReactNode; hint?: ReactNode; children: ReactNode }) {
+  return (
+    <div style={{ marginBottom: 14 }}>
+      <label style={{ display: "block", fontSize: 12.5, fontWeight: 600, color: C.ink, marginBottom: 5 }}>{label}</label>
+      {children}
+      {hint && <div style={{ fontSize: 11.5, color: C.inkSoft, marginTop: 4 }}>{hint}</div>}
+    </div>
+  );
+}
+const inputStyle: CSSProperties = {
+  width: "100%",
+  padding: "9px 11px",
+  border: `1.5px solid ${fieldBorder}`,
+  borderRadius: 7,
+  fontFamily: SANS,
+  fontSize: 14.5,
+  color: C.ink,
+  background: fieldBg,
+  outline: "none",
+  boxSizing: "border-box",
+  boxShadow: "inset 0 1px 2px rgba(27,42,31,0.06)",
 };
+function MiniSlider({ min, max, step, value, onChange }: { min: number; max: number; step: number; value: number; onChange: (v: number) => void }) {
+  const safe = isFinite(value) ? Math.min(max, Math.max(min, value)) : min;
+  return (
+    <input
+      type="range"
+      min={min}
+      max={max}
+      step={step}
+      value={safe}
+      onChange={(e) => onChange(parseFloat(e.target.value))}
+      style={{ WebkitAppearance: "none", display: "block", width: "100%", maxWidth: "100%", boxSizing: "border-box", height: 4, borderRadius: 2, background: C.line, marginTop: 8, accentColor: C.greenBright }}
+    />
+  );
+}
+function Panel({ number, title, tag, children }: { number?: number | string; title?: ReactNode; tag?: ReactNode; children: ReactNode }) {
+  return (
+    <div style={{ background: C.card, border: `1px solid ${C.line}`, borderRadius: 10, padding: "20px 22px 22px", marginBottom: 18 }}>
+      {(number || title) && (
+        <h2 style={{ fontFamily: SERIF, fontSize: 16, fontWeight: 600, margin: "0 0 14px", color: C.greenDeep, display: "flex", alignItems: "center", gap: 8, flexWrap: "wrap" }}>
+          {number != null && number !== "" && (
+            <span style={{ fontFamily: MONO, fontSize: 11, color: "#fff", background: C.greenBright, width: 20, height: 20, borderRadius: 5, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+              {number}
+            </span>
+          )}
+          {title}
+          {tag && <span style={{ fontFamily: MONO, fontSize: 10, fontWeight: 400, color: C.inkSoft }}>{tag}</span>}
+        </h2>
+      )}
+      {children}
+    </div>
+  );
+}
+function SectionLabel({ children }: { children: ReactNode }) {
+  return <h3 style={{ fontFamily: MONO, fontSize: 11, textTransform: "uppercase", letterSpacing: ".07em", color: C.inkSoft, margin: "0 0 12px" }}>{children}</h3>;
+}
+function ResultLine({ label, value, total }: { label: string; value: ReactNode; total?: boolean }) {
+  return (
+    <div style={{
+      display: "flex", justifyContent: "space-between", alignItems: "baseline",
+      padding: total ? "10px 0 0" : "7px 0",
+      borderTop: total ? `2px solid ${C.green}` : "none",
+      borderBottom: total ? "none" : `1px dashed ${C.line}`,
+      marginTop: total ? 4 : 0,
+    }}>
+      <span style={{ color: C.inkSoft, fontSize: 13.5 }}>{label}</span>
+      <span style={{ fontWeight: 700, fontVariantNumeric: "tabular-nums", color: total ? C.greenDeep : C.ink, fontSize: total ? 16 : 13.5 }}>{value}</span>
+    </div>
+  );
+}
+function SelectField({
+  label,
+  hint,
+  value,
+  onChange,
+  options,
+}: {
+  label: ReactNode;
+  hint?: ReactNode;
+  value: string | number;
+  onChange: (e: ChangeEvent<HTMLSelectElement>) => void;
+  options: SelectOption[];
+}) {
+  return (
+    <Field label={label} hint={hint}>
+      <select value={value} onChange={onChange} style={{ ...inputStyle, cursor: "pointer" }}>
+        {options.map((o) => (
+          <option key={String(o.value)} value={o.value}>{o.label}</option>
+        ))}
+      </select>
+    </Field>
+  );
+}
+function MilestoneStat({ label, value, note, highlight }: { label: string; value: ReactNode; note: ReactNode; highlight?: boolean }) {
+  const bg = highlight ? C.greenDeep : "#fff";
+  const border = highlight ? C.greenDeep : "#cfe0c2";
+  const labelColor = highlight ? "#eaf3e3" : C.inkSoft;
+  const valColor = highlight ? "#fff" : C.greenDeep;
+  const noteColor = highlight ? "#dcead0" : C.inkSoft;
+  return (
+    <div style={{ background: bg, border: `1.5px solid ${border}`, borderRadius: 8, padding: "10px 12px" }}>
+      <div style={{ fontSize: 10, textTransform: "uppercase", letterSpacing: ".04em", fontWeight: 700, color: labelColor, marginBottom: 3 }}>{label}</div>
+      <div style={{ fontFamily: MONO, fontWeight: 700, fontSize: 17, color: valColor, marginBottom: 2 }}>{value}</div>
+      <div style={{ fontSize: 10.5, color: noteColor, lineHeight: 1.3 }}>{note}</div>
+    </div>
+  );
+}
 
-const formatInputNumber = (val: number | string): string => {
-  if (val === "" || val === null || val === undefined) return "";
-  const num = typeof val === "number" ? val : parseFormattedNumber(val);
-  if (isNaN(num) || num === 0) return "";
-  return num.toLocaleString("en-US");
-};
+const TERM_OPTIONS = [30, 25, 20, 15, 10];
+function TermSelector({ value, onChange }: { value: number; onChange: (v: number) => void }) {
+  return (
+    <div>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 6, marginBottom: 6 }}>
+        {TERM_OPTIONS.map((t) => {
+          const active = t === value;
+          return (
+            <button key={t} type="button" onClick={() => onChange(t)}
+              style={{
+                border: `1px solid ${active ? C.greenBright : fieldBorder}`,
+                background: active ? C.greenWash : "#fff",
+                color: active ? C.greenDeep : C.inkSoft,
+                borderRadius: 7, textAlign: "center", padding: "8px 2px", fontSize: 12, fontWeight: 600, cursor: "pointer",
+              }}>
+              {t}yr
+            </button>
+          );
+        })}
+      </div>
+      <input type="range" min={1} max={30} step={1} value={value}
+        onChange={(e) => onChange(parseInt(e.target.value, 10))}
+        style={{ WebkitAppearance: "none", width: "100%", height: 4, borderRadius: 2, background: C.line, accentColor: C.greenBright }} />
+    </div>
+  );
+}
 
-export default function FhaLoanCalculatorPage() {
-  const [county, setCounty] = useState("maricopa");
-  const [propertyType, setPropertyType] = useState<"single" | "duplex" | "triplex" | "fourplex">("single");
+function InsightsPanel({ groups, nextSteps }: { groups: InsightGroup[]; nextSteps: string[] }) {
+  return (
+    <div style={{ background: "#f7f8f5", border: `1px solid ${C.line}`, borderRadius: 10, padding: "20px 22px 22px", marginBottom: 18 }}>
+      <h2 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 600, margin: "0 0 12px", color: C.ink }}>Recommendations &amp; Key Insights</h2>
+      <div style={{ borderBottom: `1px solid ${C.line}`, marginBottom: 16 }} />
+      <div className="fha-insights-grid" style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 20, alignItems: "start" }}>
+        <div>
+          {groups.map((g) => (
+            <div key={g.title} style={{ marginBottom: 16 }}>
+              <h4 style={{ fontSize: 13.5, fontWeight: 700, margin: "0 0 8px", color: g.color }}>{g.title}</h4>
+              <ul style={{ margin: 0, paddingLeft: 18 }}>
+                {g.bullets.map((b, i) => (
+                  <li key={i} style={{ fontSize: 13, color: C.ink, marginBottom: 6, lineHeight: 1.5 }}>{b}</li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+        <div style={{ background: "#fff", border: `1px solid ${C.line}`, borderRadius: 8, padding: 16 }}>
+          <h4 style={{ fontSize: 13.5, fontWeight: 700, margin: "0 0 4px", color: C.ink }}>Next Steps</h4>
+          <p style={{ fontSize: 12, color: C.inkSoft, margin: "0 0 10px" }}>Based on your scenario, here&apos;s what we&apos;d suggest next:</p>
+          <ul style={{ margin: 0, paddingLeft: 18 }}>
+            {nextSteps.map((s, i) => (
+              <li key={i} style={{ fontSize: 13, color: C.ink, marginBottom: 6, lineHeight: 1.5 }}>{s}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+      <style>{`@media (max-width: 640px) { .fha-insights-grid { grid-template-columns: 1fr !important; } }`}</style>
+    </div>
+  );
+}
 
-  const [homePriceStr, setHomePriceStr] = useState("350,000");
-  const [dpAmountStr, setDpAmountStr] = useState("12,250");
-  const [dpPercentStr, setDpPercentStr] = useState("3.5");
+/* ============================================================
+   MAIN COMPONENT
+============================================================ */
+export default function FhaLoanCalculator() {
+  const [county, setCounty] = useState("Maricopa");
+  const [propertyType, setPropertyType] = useState(0);
 
-  const [interestRateStr, setInterestRateStr] = useState("6.25");
-  const [loanTerm, setLoanTerm] = useState(30);
+  const [homePriceText, setHomePriceText] = useState("450,000");
+  const [downPaymentDollarText, setDownPaymentDollarText] = useState("15,750");
+  const [downPaymentPercentText, setDownPaymentPercentText] = useState("3.50");
+  const [rateText, setRateText] = useState("6.500");
+  const [term, setTerm] = useState(30);
 
-  const [, setPropertyConfirmed] = useState(true);
-  const [propertyNotification, setPropertyNotification] = useState("");
-  const [loanNotification, setLoanNotification] = useState("");
-  const [dpWarning, setDpWarning] = useState("");
+  const [propertyTaxRateText, setPropertyTaxRateText] = useState("");
+  const [homeInsuranceText, setHomeInsuranceText] = useState("");
 
-  const [scheduleViewMode, setScheduleViewMode] = useState<"annual" | "monthly">("annual");
-  const [currentPage, setCurrentPage] = useState(0);
-  const rowsPerPage = 12;
+  const limit = FHA_LIMITS[county][propertyType];
+  const homePrice = Math.max(0, toNumber(homePriceText) || 0);
+  const bounds = useMemo(() => downPaymentBounds(homePrice, limit), [homePrice, limit]);
 
-  const currentLimit = useMemo(() => {
-    const limits = COUNTY_LIMITS[county] || COUNTY_LIMITS.maricopa;
-    return limits[propertyType];
-  }, [county, propertyType]);
+  function onDownPaymentDollarChange(text: string) {
+    setDownPaymentDollarText(text);
+    const amt = Math.max(0, toNumber(text) || 0);
+    const pct = homePrice > 0 ? (amt / homePrice) * 100 : 0;
+    setDownPaymentPercentText((Math.round(pct * 100) / 100).toFixed(2));
+  }
+  function onDownPaymentPercentChange(text: string) {
+    setDownPaymentPercentText(text);
+    const pctVal = toNumber(text);
+    const amt = homePrice > 0 && isFinite(pctVal) ? homePrice * (pctVal / 100) : 0;
+    setDownPaymentDollarText(Math.round(amt).toLocaleString("en-US"));
+  }
+  function onHomePriceChange(text: string) {
+    setHomePriceText(text);
+    const newVal = Math.max(0, toNumber(text) || 0);
+    // The down payment dollar amount is the independent, committed value and never changes
+    // here. Percent is purely a derived display of that dollar amount against the new price.
+    const dp = Math.max(0, toNumber(downPaymentDollarText) || 0);
+    const pct = newVal > 0 ? (dp / newVal) * 100 : 0;
+    setDownPaymentPercentText((Math.round(pct * 100) / 100).toFixed(2));
+  }
 
-  const homePrice = useMemo(() => parseFormattedNumber(homePriceStr), [homePriceStr]);
-  const dpAmount = useMemo(() => parseFormattedNumber(dpAmountStr), [dpAmountStr]);
+  function onCountyChange(e: ChangeEvent<HTMLSelectElement>) {
+    setCounty(e.target.value);
+  }
+  function onPropertyTypeChange(e: ChangeEvent<HTMLSelectElement>) {
+    setPropertyType(parseInt(e.target.value, 10));
+  }
 
-  const handleHomePriceInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const val = e.target.value.replace(/[^0-9]/g, "");
-    if (!val) {
-      setHomePriceStr("");
-      return;
+  const homePriceHint = homePrice > limit
+    ? `This price exceeds the ${fmtMoney(limit)} FHA limit for this county/property type — a larger down payment is required.`
+    : "";
+
+  // Home Price and Down Payment are independent inputs — moving one never changes the
+  // other's value. We still flag (loudly) when the combination isn't FHA-compliant, but we
+  // no longer silently override what the user entered.
+  const downPaymentRaw = Math.max(0, toNumber(downPaymentDollarText) || 0);
+  const infeasible = bounds.minimum > bounds.maximum + 0.5;
+  const isOutOfBounds = !infeasible && (downPaymentRaw < bounds.minimum - 0.5 || downPaymentRaw > bounds.maximum + 0.5);
+  // Distinguish "below the ordinary 3.5% minimum" from "the county's FHA loan limit itself
+  // is binding" — only the latter should flag the loan-limit callout in Property Details.
+  const loanLimitExceeded = infeasible || (bounds.limitBinding && downPaymentRaw < bounds.minimum - 0.5);
+
+  let limitMessage = "";
+  if (infeasible) {
+    const loanAtMaxDown = homePrice - bounds.maximum;
+    limitMessage = `This home price isn't eligible for FHA financing in ${county} County (${PROPERTY_TYPES[propertyType]}) — even a 90% down payment leaves a ${fmtMoney(loanAtMaxDown)} loan, still over the ${fmtMoney(limit)} limit. Lower the home price or ask about a different loan program.`;
+  } else if (downPaymentRaw < bounds.minimum - 0.5) {
+    limitMessage = bounds.limitBinding
+      ? `Home price exceeds the FHA loan limit for this county/property type — down payment needs to be at least ${fmtMoney(bounds.minimum)} to keep the loan at or under ${fmtMoney(limit)}.`
+      : `FHA requires a minimum 3.5% down payment — that's ${fmtMoney(bounds.minimum)} for this home price.`;
+  } else if (downPaymentRaw > bounds.maximum + 0.5) {
+    limitMessage = `FHA down payments are capped at 90% of home price (${fmtMoney(bounds.maximum)} here).`;
+  }
+
+  const rate = Math.max(0, toNumber(rateText) || 0);
+  const n = term * 12;
+  const r = rate / 100 / 12;
+
+  const baseLoan = Math.max(0, homePrice - downPaymentRaw);
+  const ltv = homePrice > 0 ? (baseLoan / homePrice) * 100 : 0;
+  const upfrontMip = baseLoan * (UFMIP_RATE / 100);
+  const totalLoan = baseLoan + upfrontMip;
+  const mipRate = annualMipRate(baseLoan, ltv, term);
+
+  const PMT = stdMonthlyPayment(baseLoan, r, n);
+  const month1Interest = baseLoan * r;
+  const month1Principal = PMT - month1Interest;
+  const month1Mip = (baseLoan * (mipRate / 100)) / 12;
+  const taxDefaultDollar = lookupBandTable(PROPERTY_TAX_TABLE, homePrice);
+  const taxDefaultRate = homePrice > 0 ? Math.round((taxDefaultDollar / homePrice) * 10000) / 100 : 0;
+  const insDefault = lookupBandTable(INSURANCE_TABLE, homePrice);
+  const propertyTaxManual = propertyTaxRateText.trim() === "" ? null : toNumber(propertyTaxRateText);
+  const insuranceManual = homeInsuranceText.trim() === "" ? null : toNumber(homeInsuranceText);
+  const taxAnnual = propertyTaxManual !== null && isFinite(propertyTaxManual) ? homePrice * (propertyTaxManual / 100) : taxDefaultDollar;
+  const insAnnual = insuranceManual !== null && isFinite(insuranceManual) ? insuranceManual : insDefault;
+  const propertyTaxMonthly = taxAnnual / 12;
+  const homeInsuranceMonthly = insAnnual / 12;
+
+  const totalMonthlyPayment = PMT + month1Mip + propertyTaxMonthly + homeInsuranceMonthly;
+
+  const schedule = useMemo((): ScheduleRow[] => {
+    let balance = baseLoan;
+    const rows: ScheduleRow[] = [];
+    for (let month = 1; month <= n; month++) {
+      const interestThisMonth = balance * r;
+      let principalThisMonth = PMT - interestThisMonth;
+      if (principalThisMonth >= balance) principalThisMonth = balance;
+      const mipThisMonth = (balance * (mipRate / 100)) / 12;
+      balance = Math.max(0, balance - principalThisMonth);
+      rows.push({ month, principal: principalThisMonth, interest: interestThisMonth, mip: mipThisMonth, balance });
+      if (balance <= 0) break;
     }
-    const num = parseInt(val, 10);
-    setHomePriceStr(num.toLocaleString("en-US"));
+    return rows;
+  }, [baseLoan, r, n, PMT, mipRate]);
 
-    const existingDpAmt = parseFormattedNumber(dpAmountStr);
-    if (existingDpAmt > 0) {
-      const newPct = ((existingDpAmt / num) * 100).toFixed(2);
-      setDpPercentStr(newPct);
+  /* MIP Removal Milestone (HUD ML 2013-04: ≤90% LTV at closing removes MIP after 11 years).
+     For LTV > 90% at closing, MIP is life-of-loan under FHA rules — but rather than stop
+     there, we surface the month the loan naturally amortizes down to 80% LTV (using the
+     original home price, no appreciation assumed), since that's the point a borrower could
+     refinance into a conventional loan and drop MIP entirely. */
+  const naturalPayoffMonth = schedule.length || n;
+  const elevenYearMonth = 132;
+  const canRemove = ltv <= 90;
+
+  const refinanceEligibleMonth = useMemo((): number | null => {
+    if (canRemove || homePrice <= 0) return null;
+    const hit = schedule.find((row) => row.balance / homePrice <= 0.8);
+    return hit ? hit.month : naturalPayoffMonth;
+  }, [canRemove, homePrice, schedule, naturalPayoffMonth]);
+
+  const milestoneMonth: number = canRemove
+    ? Math.min(elevenYearMonth, naturalPayoffMonth)
+    : (refinanceEligibleMonth ?? naturalPayoffMonth);
+  const mipPaidByMilestone = schedule.filter((row) => row.month <= milestoneMonth).reduce((sum, row) => sum + row.mip, 0);
+  const mipSavings = canRemove
+    ? schedule.filter((row) => row.month > milestoneMonth).reduce((sum, row) => sum + row.mip, 0)
+    : 0;
+
+  const insights = useMemo(() => {
+    const cost: string[] = [
+      `Your base loan amount is ${fmtMoney(baseLoan)} at ${fmtPct(ltv, 1)} LTV, with a ${fmtMoney(upfrontMip)} upfront MIP financed into the loan for a total loan amount of ${fmtMoney(totalLoan)}.`,
+      `Your estimated total monthly payment is ${fmtMoney(totalMonthlyPayment)} — ${fmtMoney(PMT)} in principal and interest, ${fmtMoney(month1Mip)} in monthly MIP (${fmtPct(mipRate, 2)} annual rate), ${fmtMoney(propertyTaxMonthly)} in property taxes, and ${fmtMoney(homeInsuranceMonthly)} in homeowners insurance.`,
+    ];
+    if (homePrice > limit) {
+      cost.push(`Your home price exceeds the ${fmtMoney(limit)} FHA loan limit for ${county} County (${PROPERTY_TYPES[propertyType]}) — a larger down payment than the standard 3.5% minimum is required to keep the loan within the limit.`);
     }
-  };
 
-  const handleDpAmountInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const val = e.target.value.replace(/[^0-9]/g, "");
-    if (!val) {
-      setDpAmountStr("");
-      setDpPercentStr("");
-      return;
-    }
-    const num = parseInt(val, 10);
-    setDpAmountStr(num.toLocaleString("en-US"));
-
-    if (homePrice > 0) {
-      const pct = ((num / homePrice) * 100).toFixed(2);
-      setDpPercentStr(pct);
-    }
-  };
-
-  const handleDpPercentInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let val = e.target.value.replace(/[^0-9.]/g, "");
-    const parts = val.split(".");
-    if (parts.length > 2) val = parts[0] + "." + parts.slice(1).join("");
-    setDpPercentStr(val);
-
-    const pct = parseFloat(val);
-    if (homePrice > 0 && !isNaN(pct)) {
-      const newDpAmt = Math.round((homePrice * pct) / 100);
-      setDpAmountStr(newDpAmt.toLocaleString("en-US"));
+    const mipNotes: string[] = [];
+    if (canRemove) {
+      mipNotes.push(`Because your LTV at closing is ${fmtPct(ltv, 1)} (at or under 90%), monthly MIP is scheduled to be removed after 11 years (month ${milestoneMonth}), saving roughly ${fmtMoney(mipSavings)} in MIP compared to paying it for the full loan term.`);
     } else {
-      setDpAmountStr("");
+      mipNotes.push(`Because your LTV at closing is ${fmtPct(ltv, 1)} (over 90%), monthly MIP applies for the life of the loan under current FHA rules. But amortization alone brings you to 80% LTV by month ${milestoneMonth} (no home value appreciation assumed) — at that point you could refinance into a conventional loan and drop MIP entirely. You'd have paid roughly ${fmtMoney(mipPaidByMilestone)} in MIP by then.`);
     }
-  };
+    mipNotes.push("The 1.75% upfront MIP is financed into the loan balance in this estimate; some borrowers choose to pay it in cash at closing instead, which would lower the total loan amount.");
 
-  const handleInterestRateInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let val = e.target.value.replace(/[^0-9.]/g, "");
-    const parts = val.split(".");
-    if (parts.length > 2) val = parts[0] + "." + parts.slice(1).join("");
-    setInterestRateStr(val);
-  };
+    const nextSteps = [
+      "Get a verified FHA pre-approval to confirm your exact loan limit, MIP rate, and qualifying ratios.",
+      "Ask a loan officer whether a conventional loan might cost less over time once PMI cancellation is factored in, especially if your LTV is above 90%.",
+      "Contact a Mortgage Brothers loan officer to review your options and confirm current FHA guidelines.",
+    ];
 
-  useEffect(() => {
-    if (homePrice <= 0 || dpAmount <= 0) {
-      setDpWarning("");
-      return;
-    }
-    const minStandardDp = Math.round(homePrice * 0.035);
-    const minLimitDp = Math.max(0, homePrice - currentLimit);
-    const minRequiredDp = Math.max(minStandardDp, minLimitDp);
+    return { cost, mip: mipNotes, nextSteps };
+  }, [baseLoan, ltv, upfrontMip, totalLoan, totalMonthlyPayment, PMT, month1Mip, mipRate, homePrice, limit, county, propertyType, canRemove, milestoneMonth, mipSavings, mipPaidByMilestone, propertyTaxMonthly, homeInsuranceMonthly]);
 
-    if (dpAmount < minRequiredDp) {
-      if (minLimitDp > minStandardDp) {
-        setDpWarning(`⚠️ Loan amount exceeds the ${fmtCurr(currentLimit)} FHA limit for ${county.toUpperCase()}. Down payment must be at least $${minLimitDp.toLocaleString()}.`);
-      } else {
-        setDpWarning(`⚠️ FHA loans require a minimum of 3.5% down payment ($${minStandardDp.toLocaleString()}).`);
-      }
-    } else {
-      setDpWarning("");
-    }
-  }, [homePrice, dpAmount, currentLimit, county]);
-
-  const handleConfirmPropertyDetails = () => {
-    setPropertyConfirmed(true);
-    const countyObj = ARIZONA_COUNTIES.find((c) => c.id === county);
-    setPropertyNotification(`Property details confirmed: ${countyObj?.label} County (${propertyType.toUpperCase()}) Limit is ${fmtCurr(currentLimit)}.`);
-    setTimeout(() => setPropertyNotification(""), 5000);
-
-    const loanDetailsEl = document.getElementById("loanDetailsSection");
-    if (loanDetailsEl) {
-      loanDetailsEl.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const calcResult = useMemo<FhaCalcResult | null>(() => {
-    const hp = homePrice;
-    if (!hp || hp <= 0) return null;
-
-    let dp = dpAmount;
-    const rate = parseFormattedNumber(interestRateStr) || 0;
-    const term = loanTerm;
-
-    const minStandardDp = Math.round(hp * 0.035);
-    const minLimitDp = Math.max(0, hp - currentLimit);
-    const minRequiredDp = Math.max(minStandardDp, minLimitDp);
-
-    if (dp < minRequiredDp) {
-      dp = minRequiredDp;
-    }
-
-    const baseLoanAmount = Math.max(0, hp - dp);
-    const upfrontMIP = baseLoanAmount * 0.0175;
-    const totalLoanAmount = baseLoanAmount + upfrontMIP;
-    const ltvRatio = (baseLoanAmount / hp) * 100;
-
-    const annualMIPRate = calculateMIPRate(term, ltvRatio);
-    const monthlyRate = rate / 100 / 12;
-    const numberOfPayments = term * 12;
-
-    let monthlyPI = 0;
-    if (totalLoanAmount > 0 && numberOfPayments > 0) {
-      if (monthlyRate === 0) {
-        monthlyPI = totalLoanAmount / numberOfPayments;
-      } else {
-        const factor = Math.pow(1 + monthlyRate, numberOfPayments);
-        monthlyPI = (totalLoanAmount * monthlyRate * factor) / (factor - 1);
-      }
-    }
-
-    const monthlyMIP = (baseLoanAmount * (annualMIPRate / 100)) / 12;
-    const totalMonthly = monthlyPI + monthlyMIP;
-
-    const firstMonthInterest = totalLoanAmount * monthlyRate;
-    const firstMonthPrincipal = monthlyPI - firstMonthInterest;
-
-    const schedule: AmortizationRow[] = [];
-    let balance = totalLoanAmount;
-
-    if (scheduleViewMode === "annual") {
-      const years = Math.ceil(numberOfPayments / 12);
-      for (let year = 0; year <= years; year++) {
-        const monthlyInterest = balance * monthlyRate;
-        const monthlyPrincipal = Math.max(0, monthlyPI - monthlyInterest);
-
-        schedule.push({
-          period: year,
-          label: `Year ${year}`,
-          principalPaid: monthlyPrincipal,
-          interestPaid: Math.max(0, monthlyInterest),
-          mipPaid: monthlyMIP,
-          remainingBalance: Math.max(0, balance)
-        });
-
-        for (let month = 0; month < 12 && year < years; month++) {
-          const interest = balance * monthlyRate;
-          const principal = monthlyPI - interest;
-          balance = Math.max(0, balance - principal);
-        }
-      }
-    } else {
-      for (let m = 1; m <= numberOfPayments; m++) {
-        const interestPaid = balance * monthlyRate;
-        let principalPaid = monthlyPI - interestPaid;
-        if (principalPaid >= balance || m === numberOfPayments) {
-          principalPaid = balance;
-          balance = 0;
-        } else {
-          balance -= principalPaid;
-        }
-
-        schedule.push({
-          period: m,
-          label: `Month ${m}`,
-          principalPaid: Math.max(0, principalPaid),
-          interestPaid: Math.max(0, interestPaid),
-          mipPaid: monthlyMIP,
-          remainingBalance: Math.max(0, balance)
-        });
-      }
-    }
-
-    return {
-      baseLoanAmount,
-      upfrontMIP,
-      totalLoanAmount,
-      annualMIPRate,
-      ltvRatio: parseFloat(ltvRatio.toFixed(2)),
-      monthlyPI,
-      monthlyMIP,
-      totalMonthly,
-      monthlyInterest: firstMonthInterest,
-      monthlyPrincipal: firstMonthPrincipal,
-      schedule
-    };
-  }, [homePrice, dpAmount, interestRateStr, loanTerm, currentLimit, county, scheduleViewMode]);
-
-  useEffect(() => {
-    setCurrentPage(0);
-  }, [scheduleViewMode, calcResult]);
-
-  const donutData = useMemo(() => {
-    if (!calcResult || calcResult.totalMonthly <= 0) {
-      return { pPct: 50, iPct: 35, mipPct: 15 };
-    }
-    const total = calcResult.totalMonthly;
-    const p = (calcResult.monthlyPrincipal / total) * 100;
-    const i = (calcResult.monthlyInterest / total) * 100;
-    const mip = (calcResult.monthlyMIP / total) * 100;
-    return {
-      pPct: parseFloat(p.toFixed(1)),
-      iPct: parseFloat(i.toFixed(1)),
-      mipPct: parseFloat(mip.toFixed(1))
-    };
-  }, [calcResult]);
+  const paymentTotal = month1Principal + month1Interest + month1Mip + propertyTaxMonthly + homeInsuranceMonthly;
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#f8f9fa] font-sans text-[#32353C]">
+    <div className="flex flex-col min-h-screen" style={{ background: C.paper }}>
       <Navbar />
-
-      <main className="flex-grow pb-16">
-        <section className="w-full bg-[#052316] text-white pt-[110px] lg:pt-[130px] pb-16 lg:pb-20 text-center relative overflow-hidden">
-          <div className="max-w-4xl mx-auto px-6 relative z-10">
-            <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-2 font-sans">
-              ARIZONA MORTGAGE TOOLS
-            </span>
-            <h1 className="text-white text-[34px] lg:text-[46px] font-playfair font-normal leading-[1.2] mb-4">
+      <main className="flex-grow" style={{ color: C.ink, fontFamily: SANS, fontSize: 15, lineHeight: 1.5, overflowX: "hidden" }}>
+        {/* Hero */}
+        <section className="w-full text-white py-20 lg:py-28 text-center relative overflow-hidden bg-cover bg-no-repeat bg-center"
+          style={{ backgroundImage: "url('/mortgage-calculators.jpg')", backgroundPosition: "center top" }}>
+          <div className="absolute inset-0 bg-[#08271B]/80 z-0" />
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
+            <div className="absolute -top-36 -right-36 w-[400px] h-[400px] rounded-full border border-white/5" />
+            <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5" />
+          </div>
+          <div className="max-w-4xl mx-auto px-6 relative z-20">
+            <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-4 font-sans">MORTGAGE TOOLS</p>
+            <h1 className="text-white text-[36px] lg:text-[52px] font-playfair font-normal leading-[1.1] mb-5">
               FHA Loan Calculator
             </h1>
-            <p className="text-[#c8c8b8] text-[14.5px] lg:text-[16px] leading-[1.6] max-w-2xl mx-auto font-sans">
-              Estimate your monthly FHA mortgage payment with upfront &amp; annual MIP, factor in Arizona county FHA loan limits, and calculate minimum down payments.
+            <p className="text-[#c8c8b8] text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto">
+              Estimate FHA payments, MIP, and Arizona county loan limits — results update as you adjust the inputs.
             </p>
           </div>
         </section>
 
-        <div className="max-w-6xl mx-auto px-4 lg:px-8 mt-8">
-          <div className="bg-white rounded-2xl border border-[#e0e0e0] shadow-sm p-6 lg:p-10">
-            
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-              
-              <div className="bg-[#ffffff] rounded-xl border border-[#e0e0e0] p-6 shadow-sm flex flex-col justify-between h-full">
-                <div>
-                  <h3 className="text-[18px] font-semibold text-[#32353C] pb-4 mb-6 border-b border-[#f0f0f0]">
-                    Property Details
-                  </h3>
-
-                  <div className="flex flex-col gap-6">
-                    <div>
-                      <div className="flex items-center gap-1.5 mb-2">
-                        <label htmlFor="countySelect" className="text-[14px] font-medium text-[#32353C]">
-                          Arizona Counties
-                        </label>
-                        <div className="relative group cursor-help">
-                          <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[11px] font-bold flex items-center justify-center">
-                            ?
-                          </span>
-                          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
-                            Select your county to see the FHA loan limit.
-                          </div>
-                        </div>
-                      </div>
-                      <select
-                        id="countySelect"
-                        value={county}
-                        onChange={(e) => setCounty(e.target.value)}
-                        className="w-full h-[45px] px-3.5 bg-white border border-[#e0e0e0] rounded-md text-[15px] text-[#32353C] focus:outline-none focus:border-[#4CAF50] cursor-pointer"
-                      >
-                        {ARIZONA_COUNTIES.map((c) => (
-                          <option key={c.id} value={c.id}>
-                            {c.label}
-                          </option>
-                        ))}
-                      </select>
-                    </div>
-
-                    <div>
-                      <div className="flex items-center gap-1.5 mb-2">
-                        <label htmlFor="propertyType" className="text-[14px] font-medium text-[#32353C]">
-                          Property Type
-                        </label>
-                        <div className="relative group cursor-help">
-                          <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[11px] font-bold flex items-center justify-center">
-                            ?
-                          </span>
-                          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
-                            Select your property type to see the FHA loan limit.
-                          </div>
-                        </div>
-                      </div>
-                      <select
-                        id="propertyType"
-                        value={propertyType}
-                        onChange={(e) => setPropertyType(e.target.value as any)}
-                        className="w-full h-[45px] px-3.5 bg-white border border-[#e0e0e0] rounded-md text-[15px] text-[#32353C] focus:outline-none focus:border-[#4CAF50] cursor-pointer"
-                      >
-                        <option value="single">Single Family</option>
-                        <option value="duplex">Duplex</option>
-                        <option value="triplex">Triplex</option>
-                        <option value="fourplex">Fourplex</option>
-                      </select>
-                    </div>
-
-                    <div>
-                      <div className="flex items-center gap-1.5 mb-2">
-                        <label htmlFor="loanLimit" className="text-[14px] font-medium text-[#32353C]">
-                          FHA Loan Limit
-                        </label>
-                        <div className="relative group cursor-help">
-                          <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[11px] font-bold flex items-center justify-center">
-                            ?
-                          </span>
-                          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-56 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
-                            Maximum loan amount for the selected county and property type. Values updated for 2026.
-                          </div>
-                        </div>
-                      </div>
-                      <div className="relative">
-                        <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#666] text-[14px] font-medium pointer-events-none">
-                          $
-                        </span>
-                        <input
-                          type="text"
-                          id="loanLimit"
-                          value={formatInputNumber(currentLimit)}
-                          readOnly
-                          className="w-full h-[45px] pl-8 pr-3.5 bg-[#f8f9fa] border border-[#e0e0e0] rounded-md text-[15px] font-bold text-[#32353C] focus:outline-none cursor-default"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-8">
-                  {propertyNotification && (
-                    <div className="mb-3 p-3 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded text-[13px] text-center font-medium animate-fadeIn">
-                      {propertyNotification}
-                    </div>
-                  )}
-                  <button
-                    onClick={handleConfirmPropertyDetails}
-                    className="w-full h-[45px] bg-[#4CAF50] hover:bg-[#45a049] text-white font-medium text-[16px] rounded-md transition-all duration-200 cursor-pointer shadow-sm active:translate-y-0.5"
-                  >
-                    Confirm Property Details
-                  </button>
-                </div>
-              </div>
-
-              <div id="loanDetailsSection" className="bg-[#ffffff] rounded-xl border border-[#e0e0e0] p-6 shadow-sm flex flex-col justify-between h-full">
-                <div>
-                  <h3 className="text-[18px] font-semibold text-[#32353C] pb-4 mb-6 border-b border-[#f0f0f0]">
-                    Loan Details
-                  </h3>
-
-                  <div className="flex flex-col gap-6">
-                    <div>
-                      <div className="flex items-center gap-1.5 mb-2">
-                        <label htmlFor="homePrice" className="text-[14px] font-medium text-[#32353C]">
-                          Home Price
-                        </label>
-                        <div className="relative group cursor-help">
-                          <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[11px] font-bold flex items-center justify-center">
-                            ?
-                          </span>
-                          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-56 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
-                            The purchase price of the home. If it exceeds the FHA loan limit, you&apos;ll need a larger down payment.
-                          </div>
-                        </div>
-                      </div>
-                      <div className="relative">
-                        <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#666] text-[14px] font-medium pointer-events-none">
-                          $
-                        </span>
-                        <input
-                          type="text"
-                          id="homePrice"
-                          value={homePriceStr}
-                          onChange={handleHomePriceInput}
-                          placeholder="Enter home price"
-                          className="w-full h-[45px] pl-8 pr-3.5 bg-white border border-[#e0e0e0] rounded-md text-[15px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50]"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="flex items-center gap-1.5 mb-2">
-                        <label className="text-[14px] font-medium text-[#32353C]">
-                          Down Payment
-                        </label>
-                        <div className="relative group cursor-help">
-                          <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[11px] font-bold flex items-center justify-center">
-                            ?
-                          </span>
-                          <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-64 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
-                            Minimum 3.5% required for FHA. If home price exceeds loan limit, additional down payment is required.
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-2 gap-3">
-                        <div className="relative">
-                          <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-[#666] text-[14px] font-medium pointer-events-none">
-                            $
-                          </span>
-                          <input
-                            type="text"
-                            id="downPaymentAmount"
-                            value={dpAmountStr}
-                            onChange={handleDpAmountInput}
-                            placeholder="Amount"
-                            className="w-full h-[45px] pl-8 pr-3.5 bg-white border border-[#e0e0e0] rounded-md text-[15px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50] text-right"
-                          />
-                        </div>
-                        <div className="relative">
-                          <input
-                            type="text"
-                            id="downPaymentPercent"
-                            value={dpPercentStr}
-                            onChange={handleDpPercentInput}
-                            placeholder="Percentage"
-                            className="w-full h-[45px] pl-3.5 pr-8 bg-white border border-[#e0e0e0] rounded-md text-[15px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50] text-right"
-                          />
-                          <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#666] text-[14px] font-medium pointer-events-none">
-                            %
-                          </span>
-                        </div>
-                      </div>
-
-                      {dpWarning && (
-                        <div className="mt-2 p-2.5 bg-amber-50 border border-amber-200 text-amber-900 rounded text-[12px]">
-                          {dpWarning}
-                        </div>
-                      )}
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-3">
-                      <div>
-                        <div className="flex items-center gap-1.5 mb-2">
-                          <label htmlFor="interestRate" className="text-[14px] font-medium text-[#32353C]">
-                            Interest Rate
-                          </label>
-                          <div className="relative group cursor-help">
-                            <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[11px] font-bold flex items-center justify-center">
-                              ?
-                            </span>
-                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-44 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
-                              Enter interest rate.
-                            </div>
-                          </div>
-                        </div>
-                        <div className="relative">
-                          <input
-                            type="text"
-                            id="interestRate"
-                            value={interestRateStr}
-                            onChange={handleInterestRateInput}
-                            placeholder="Enter rate"
-                            className="w-full h-[45px] pl-3.5 pr-8 bg-white border border-[#e0e0e0] rounded-md text-[15px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50] text-right"
-                          />
-                          <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#666] text-[14px] font-medium pointer-events-none">
-                            %
-                          </span>
-                        </div>
-                      </div>
-
-                      <div>
-                        <div className="flex items-center gap-1.5 mb-2">
-                          <label htmlFor="loanTerm" className="text-[14px] font-medium text-[#32353C]">
-                            Loan Term
-                          </label>
-                          <div className="relative group cursor-help">
-                            <span className="w-4 h-4 rounded-full bg-[#4CAF50] text-white text-[11px] font-bold flex items-center justify-center">
-                              ?
-                            </span>
-                            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-44 bg-[#32353C] text-white text-[12px] p-2 rounded shadow-lg text-center z-20">
-                              Choose your loan term.
-                            </div>
-                          </div>
-                        </div>
-                        <select
-                          id="loanTerm"
-                          value={loanTerm}
-                          onChange={(e) => setLoanTerm(parseInt(e.target.value, 10))}
-                          className="w-full h-[45px] px-3 bg-white border border-[#e0e0e0] rounded-md text-[15px] text-[#32353C] focus:outline-none focus:border-[#4CAF50] cursor-pointer"
-                        >
-                          <option value={30}>30 Years</option>
-                          <option value={25}>25 Years</option>
-                          <option value={20}>20 Years</option>
-                          <option value={15}>15 Years</option>
-                          <option value={10}>10 Years</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-8">
-                  {loanNotification && (
-                    <div className="mb-3 p-3 bg-red-50 border border-red-200 text-red-700 rounded text-[13px] text-center font-medium animate-fadeIn">
-                      {loanNotification}
-                    </div>
-                  )}
-                </div>
-              </div>
-
-            </div>
-
+        <div style={{ maxWidth: 1180, margin: "0 auto", padding: "28px 20px 64px", boxSizing: "border-box" }}>
+          {/* Amortization Over Time — bold, high-visibility centerpiece, full width at the very top */}
+          <div style={{
+            background: `linear-gradient(135deg, ${C.greenWash} 0%, #ffffff 55%)`,
+            border: `2px solid ${C.greenBright}`,
+            borderRadius: 12,
+            padding: "16px 20px 18px",
+            marginBottom: 18,
+            boxShadow: "0 4px 18px rgba(58,125,30,0.12)",
+          }}>
+            <h2 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 700, margin: "0 0 2px", color: C.greenDeep }}>Amortization Over Time</h2>
+            <p style={{ fontSize: 12, color: C.inkSoft, margin: "0 0 12px" }}>
+              How your payment splits between principal and interest, and how your balance declines, across the full loan term.
+            </p>
+            <BasicPaymentOverTimeChart
+              schedule={schedule.map((row) => ({
+                paymentNum: row.month,
+                principal: row.principal,
+                interest: row.interest,
+                endBalance: row.balance,
+              }))}
+            />
           </div>
-        </div>
 
-        {calcResult && (
-          <section id="resultsSection" className="max-w-6xl mx-auto px-4 lg:px-8 mt-10 space-y-8 animate-fadeIn">
-            <div className="bg-white rounded-2xl border border-[#e0e0e0] shadow-sm p-6 lg:p-10">
-              
-              <h2 className="text-[24px] font-semibold text-[#32353C] pb-4 mb-8 border-b-2 border-[#f0f0f0]">
-                Loan Analysis
-              </h2>
-
-              {/* 3 Result Cards with Text Descriptions */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
-                <div className="bg-[#052316] text-white border border-[#052316] rounded-2xl p-5 shadow-sm flex flex-col justify-between">
-                  <div>
-                    <span className="text-[#3fb364] text-[11px] font-bold tracking-wider uppercase">Initial Monthly Payment</span>
-                    <div className="text-[30px] font-bold mt-1">{fmtCurr(calcResult.totalMonthly)}</div>
-                  </div>
-                  <p className="text-[12.5px] text-[#c8c8b8] mt-3 pt-2.5 border-t border-white/10">
-                    Base P&amp;I plus first month MIP.
-                  </p>
+          <div className="fha-layout" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "start" }}>
+            {/* ============ INPUT COLUMN ============ */}
+            <div style={{ minWidth: 0 }}>
+              <Panel number={1} title="Property Details">
+                <SelectField label="Arizona County" value={county} onChange={onCountyChange}
+                  options={COUNTIES.map((c) => ({ value: c, label: c }))} />
+                <SelectField label="Property Type" value={propertyType} onChange={onPropertyTypeChange}
+                  options={PROPERTY_TYPES.map((p, i) => ({ value: i, label: p }))} />
+                <div style={{
+                  background: loanLimitExceeded ? C.dangerWash : C.greenWash,
+                  border: `1px solid ${loanLimitExceeded ? "#e2b3ac" : "#cfe0c2"}`,
+                  borderRadius: 8, padding: "10px 12px", fontSize: 12.5,
+                  color: loanLimitExceeded ? C.danger : C.greenDeep, marginTop: 2, marginBottom: 14,
+                }}>
+                  FHA Loan Limit for this county &amp; property type: <span style={{ fontWeight: 700, fontSize: 15 }}>{fmtMoney(limit)}</span>
+                  {loanLimitExceeded && <div style={{ marginTop: 6, fontWeight: 600 }}>⚠ Current inputs exceed this limit — increase the down payment below to bring the loan into compliance.</div>}
                 </div>
+              </Panel>
 
-                <div className="bg-white border border-[#e0e0e0] rounded-2xl p-5 shadow-sm flex flex-col justify-between">
-                  <div>
-                    <span className="text-[#888] text-[11px] font-bold tracking-wider uppercase">Base Loan Amount</span>
-                    <div className="text-[30px] font-bold mt-1 text-[#32353C]">{fmtCurr(calcResult.baseLoanAmount)}</div>
-                  </div>
-                  <p className="text-[12.5px] text-[#888] mt-3 pt-2.5 border-t border-[#e0e0e0]/40">
-                    Excluding upfront mortgage insurance.
-                  </p>
+              <Panel number={2} title="Loan Details">
+                <Field label="Home Price ($)" hint={homePriceHint}>
+                  <input className="fha-input" style={inputStyle} inputMode="numeric" value={homePriceText}
+                    onChange={(e) => onHomePriceChange(e.target.value)}
+                    onBlur={() => setHomePriceText(homePrice.toLocaleString("en-US"))} />
+                  <MiniSlider min={0} max={3000000} step={5000} value={homePrice} onChange={(v) => onHomePriceChange(String(Math.round(v)))} />
+                </Field>
+
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+                  <Field label="Down Payment ($)">
+                    <input className="fha-input" style={{ ...inputStyle, borderColor: isOutOfBounds || infeasible ? C.danger : fieldBorder }} inputMode="numeric" value={downPaymentDollarText}
+                      onChange={(e) => onDownPaymentDollarChange(e.target.value)}
+                      onBlur={() => setDownPaymentDollarText(downPaymentRaw.toLocaleString("en-US"))} />
+                  </Field>
+                  <Field label="Down Payment (%)">
+                    <input className="fha-input" style={{ ...inputStyle, borderColor: isOutOfBounds || infeasible ? C.danger : fieldBorder }} inputMode="decimal" value={downPaymentPercentText}
+                      onChange={(e) => onDownPaymentPercentChange(e.target.value)}
+                      onBlur={() => setDownPaymentPercentText((homePrice > 0 ? (downPaymentRaw / homePrice) * 100 : 0).toFixed(2))} />
+                  </Field>
                 </div>
-
-                <div className="bg-white border border-[#e0e0e0] rounded-2xl p-5 shadow-sm flex flex-col justify-between">
-                  <div>
-                    <span className="text-[#888] text-[11px] font-bold tracking-wider uppercase">Total Loan Financed</span>
-                    <div className="text-[30px] font-bold mt-1 text-[#32353C]">{fmtCurr(calcResult.totalLoanAmount)}</div>
-                  </div>
-                  <p className="text-[12.5px] text-[#888] mt-3 pt-2.5 border-t border-[#e0e0e0]/40">
-                    Includes 1.75% upfront MIP financed.
-                  </p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
-                
-                <div className="bg-white rounded-xl border border-[#e0e0e0] p-6 shadow-sm flex flex-col justify-between">
-                  <h3 className="text-[18px] font-semibold text-[#32353C] pb-3 mb-4 border-b border-[#f0f0f0]">
-                    Monthly Payment Breakdown
-                  </h3>
-
-                  <div className="space-y-3.5 text-[14.5px]">
-                    <div className="flex justify-between items-center py-1.5 border-b border-[#f5f5f5]">
-                      <span className="text-[#666] font-medium">Principal &amp; Interest</span>
-                      <span className="font-semibold text-[#32353C]">{fmtCurr(calcResult.monthlyPI)}</span>
-                    </div>
-                    <div className="flex justify-between items-center py-1.5 border-b border-[#f5f5f5]">
-                      <span className="text-[#666] font-medium">Monthly MIP</span>
-                      <span className="font-semibold text-[#32353C]">{fmtCurr(calcResult.monthlyMIP)}</span>
-                    </div>
-                    <div className="flex justify-between items-center pt-3 border-t-2 border-[#f0f0f0]">
-                      <span className="text-[#32353C] font-semibold text-[16px]">Total Monthly Payment</span>
-                      <span className="text-[#4CAF50] font-bold text-[20px]">{fmtCurr(calcResult.totalMonthly)}</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-white rounded-xl border border-[#e0e0e0] p-6 shadow-sm flex flex-col justify-between">
-                  <h3 className="text-[18px] font-semibold text-[#32353C] pb-3 mb-4 border-b border-[#f0f0f0]">
-                    Loan Summary
-                  </h3>
-
-                  <div className="space-y-3 text-[14px]">
-                    <div className="flex justify-between items-center py-1 border-b border-[#f5f5f5]">
-                      <span className="text-[#666] font-medium">Base Loan Amount</span>
-                      <span className="font-semibold text-[#32353C]">{fmtCurr(calcResult.baseLoanAmount)}</span>
-                    </div>
-                    <div className="flex justify-between items-center py-1 border-b border-[#f5f5f5]">
-                      <span className="text-[#666] font-medium">Upfront MIP (1.75%)</span>
-                      <span className="font-semibold text-[#32353C]">{fmtCurr(calcResult.upfrontMIP)}</span>
-                    </div>
-                    <div className="flex justify-between items-center py-1 border-b border-[#f5f5f5]">
-                      <span className="text-[#666] font-medium">Total Loan Amount</span>
-                      <span className="font-semibold text-[#32353C]">{fmtCurr(calcResult.totalLoanAmount)}</span>
-                    </div>
-                    <div className="flex justify-between items-center py-1 border-b border-[#f5f5f5]">
-                      <span className="text-[#666] font-medium">Annual MIP Rate</span>
-                      <span className="font-semibold text-[#4CAF50]">{calcResult.annualMIPRate.toFixed(2)}%</span>
-                    </div>
-                    <div className="flex justify-between items-center py-1">
-                      <span className="text-[#666] font-medium">LTV Ratio</span>
-                      <span className="font-semibold text-[#32353C]">{calcResult.ltvRatio}%</span>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-              <div className="mt-10">
-                <h3 className="text-[18px] font-semibold text-[#32353C] mb-6">
-                  Loan Analysis Charts
-                </h3>
-
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  <div className="bg-white border border-[#e0e0e0] rounded-xl p-6 shadow-sm flex flex-col items-center justify-between">
-                    <InteractivePieChart
-                      title="Payment Components"
-                      donut={true}
-                      centerTextTitle="Monthly"
-                      centerTextSub={fmtCurr(calcResult.totalMonthly)}
-                      dataItems={[
-                        { label: "Principal", value: calcResult.monthlyPrincipal, color: "#6ca220" },
-                        { label: "Interest", value: calcResult.monthlyInterest, color: "#FF9800" },
-                        { label: "Monthly MIP", value: calcResult.monthlyMIP, color: "#2196F3" },
-                      ]}
-                    />
-                  </div>
-
-                  <div className="bg-white border border-[#e0e0e0] rounded-xl p-6 shadow-sm flex flex-col justify-between">
-                    <h4 className="text-[17px] font-bold text-[#32353C] mb-4 text-center">Payment Over Time</h4>
-                    <BasicPaymentOverTimeChart
-                      schedule={calcResult.schedule.map((row) => ({
-                        paymentNum: row.period,
-                        principal: row.principalPaid,
-                        interest: row.interestPaid,
-                        endBalance: row.remainingBalance,
-                      }))}
-                    />
-
-                    <div className="mt-4 pt-4 border-t border-[#f0f0f0]">
-                      <h4 className="text-[15px] font-semibold text-[#32353C] mb-3">Amortization Summary</h4>
-                      {(() => {
-                        const totalPayments = calcResult.monthlyPI * loanTerm * 12;
-                        const totalInterest = totalPayments - calcResult.totalLoanAmount;
-                        const totalMIP = calcResult.monthlyMIP * loanTerm * 12;
-                        const grandTotal = totalPayments + totalMIP;
-
-                        return (
-                          <div className="space-y-2 text-[13.5px]">
-                            <div className="flex justify-between py-1 border-b border-[#f5f5f5]">
-                              <span className="text-[#666]">Total Principal Financed</span>
-                              <span className="font-semibold text-[#32353C]">{fmtCurr(calcResult.totalLoanAmount)}</span>
-                            </div>
-                            <div className="flex justify-between py-1 border-b border-[#f5f5f5]">
-                              <span className="text-[#666]">Total Interest Paid</span>
-                              <span className="font-semibold text-[#FF9800]">{fmtCurr(totalInterest)}</span>
-                            </div>
-                            <div className="flex justify-between py-1 border-b border-[#f5f5f5]">
-                              <span className="text-[#666]">Total MIP Paid</span>
-                              <span className="font-semibold text-[#2196F3]">{fmtCurr(totalMIP)}</span>
-                            </div>
-                            <div className="flex justify-between py-1.5 border-t border-[#f0f0f0] font-bold">
-                              <span className="text-[#32353C]">Total Amount Paid ({loanTerm} Yrs)</span>
-                              <span className="text-[#32353C] text-[15px]">{fmtCurr(grandTotal)}</span>
-                            </div>
-                          </div>
-                        );
-                      })()}
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="mt-12">
-                <div className="flex flex-col md:flex-row md:items-center justify-between pb-4 mb-4 border-b border-[#f0f0f0] gap-3">
-                  <div>
-                    <h3 className="text-[18px] font-semibold text-[#32353C]">Payment Over Time</h3>
-                    <p className="text-[#888] text-[13px]">
-                      Detailed payoff schedule including principal reduction, interest, and MIP.
-                    </p>
-                  </div>
-
-                  <div className="flex items-center bg-[#f8f9fa] border border-[#e0e0e0] rounded-lg p-1">
-                    <button
-                      onClick={() => setScheduleViewMode("annual")}
-                      className={`px-3 py-1.5 text-[13px] font-semibold rounded-md transition-all cursor-pointer ${
-                        scheduleViewMode === "annual"
-                          ? "bg-[#4CAF50] text-white shadow-sm"
-                          : "text-[#666] hover:text-[#32353C]"
-                      }`}
-                    >
-                      Annual Schedule
-                    </button>
-                    <button
-                      onClick={() => setScheduleViewMode("monthly")}
-                      className={`px-3 py-1.5 text-[13px] font-semibold rounded-md transition-all cursor-pointer ${
-                        scheduleViewMode === "monthly"
-                          ? "bg-[#4CAF50] text-white shadow-sm"
-                          : "text-[#666] hover:text-[#32353C]"
-                      }`}
-                    >
-                      Monthly Schedule
-                    </button>
-                  </div>
-                </div>
-
-                <div className="overflow-x-auto border border-[#e0e0e0] rounded-xl shadow-sm">
-                  <table className="w-full text-left text-[13.5px] border-collapse">
-                    <thead>
-                      <tr className="text-white font-medium">
-                        <th className="py-3 px-4 bg-[#90A4AE]">Period</th>
-                        <th className="py-3 px-4 bg-[#6ca220]">Principal</th>
-                        <th className="py-3 px-4 bg-[#FF9800]">Interest</th>
-                        <th className="py-3 px-4 bg-[#2196F3]">MIP</th>
-                        <th className="py-3 px-4 bg-[#607D8B]">Remaining Balance</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {calcResult.schedule
-                        .slice(currentPage * rowsPerPage, (currentPage + 1) * rowsPerPage)
-                        .map((row, idx) => (
-                          <tr
-                            key={row.label}
-                            className={idx % 2 === 0 ? "bg-white" : "bg-[#f8f9fa] hover:bg-[#f0f4f7]"}
-                          >
-                            <td className="py-3 px-4 font-semibold text-[#32353C]">{row.label}</td>
-                            <td className="py-3 px-4 font-semibold text-[#6ca220]">{fmtCurr(row.principalPaid)}</td>
-                            <td className="py-3 px-4 font-medium text-[#FF9800]">{fmtCurr(row.interestPaid)}</td>
-                            <td className="py-3 px-4 font-medium text-[#2196F3]">{fmtCurr(row.mipPaid)}</td>
-                            <td className="py-3 px-4 font-semibold text-[#32353C]">{fmtCurr(row.remainingBalance)}</td>
-                          </tr>
-                        ))}
-                    </tbody>
-                  </table>
-                </div>
-
-                {Math.ceil(calcResult.schedule.length / rowsPerPage) > 1 && (
-                  <div className="flex items-center justify-between pt-4">
-                    <button
-                      onClick={() => setCurrentPage((p) => Math.max(0, p - 1))}
-                      disabled={currentPage === 0}
-                      className="px-4 py-2 text-[13px] font-semibold bg-[#32353C] text-white rounded-lg disabled:opacity-30 cursor-pointer disabled:cursor-default"
-                    >
-                      ← Previous
-                    </button>
-                    <span className="text-[13px] text-[#666] font-medium">
-                      Page {currentPage + 1} of {Math.ceil(calcResult.schedule.length / rowsPerPage)}
-                    </span>
-                    <button
-                      onClick={() =>
-                        setCurrentPage((p) =>
-                          Math.min(Math.ceil(calcResult.schedule.length / rowsPerPage) - 1, p + 1)
-                        )
-                      }
-                      disabled={currentPage === Math.ceil(calcResult.schedule.length / rowsPerPage) - 1}
-                      className="px-4 py-2 text-[13px] font-semibold bg-[#32353C] text-white rounded-lg disabled:opacity-30 cursor-pointer disabled:cursor-default"
-                    >
-                      Next →
-                    </button>
+                <MiniSlider min={0} max={500000} step={500} value={downPaymentRaw} onChange={(v) => onDownPaymentDollarChange(String(Math.round(v)))} />
+                {limitMessage && (
+                  <div style={{
+                    fontSize: 12, marginTop: 6, marginBottom: 10, fontWeight: 600, color: infeasible ? C.danger : C.amber,
+                    background: infeasible ? C.dangerWash : C.amberWash, border: `1px solid ${infeasible ? "#e2b3ac" : "#f0dca8"}`,
+                    borderRadius: 7, padding: "8px 10px",
+                  }}>
+                    ⚠ {limitMessage}
                   </div>
                 )}
 
-              </div>
+                <Field label="Interest Rate (%)">
+                  <input className="fha-input" style={inputStyle} inputMode="decimal" value={rateText}
+                    onChange={(e) => setRateText(e.target.value)}
+                    onBlur={() => { const v = toNumber(rateText); if (isFinite(v)) setRateText(Math.max(0, v).toFixed(3)); }} />
+                  <MiniSlider min={0} max={15} step={0.125} value={rate} onChange={(v) => setRateText(v.toString())} />
+                </Field>
 
-              {/* Calculation Methodology & Disclaimer Section */}
-              <div className="mt-12 bg-[#f8f9fa] border border-[#e0e0e0] rounded-2xl p-6 lg:p-8 space-y-4 text-[13.5px] leading-relaxed text-[#555]">
-                <h4 className="text-[16px] font-bold text-[#32353C] border-b border-[#e0e0e0] pb-2">
-                  Calculation Methodology &amp; FHA Guidelines
-                </h4>
-                <p>
-                  <strong>Disclaimer:</strong> This FHA loan calculator provides estimates only and does not include property taxes, homeowners insurance, HOA fees, or closing costs. Results may vary based on your specific financial situation and current FHA guidelines.
-                </p>
-                <div className="space-y-2 pt-1">
-                  <p><strong>• Upfront MIP (UFMIP):</strong> Standard FHA loans require a 1.75% upfront mortgage insurance premium, which is financed directly into your total loan amount.</p>
-                  <p><strong>• Annual MIP:</strong> Annual mortgage insurance premium ranges from 0.45% to 0.85% based on loan term and loan-to-value (LTV) ratio. For standard 30-year loans with down payments under 5%, the annual MIP is 0.85%.</p>
-                  <p><strong>• FHA Loan Limits:</strong> Maximum loan amounts vary by county and property type (Single Family vs Multi-Unit). If your purchase price exceeds the county limit, an increased down payment is required to keep the financed balance within limits.</p>
-                </div>
-              </div>
+                <Field label="Loan Term">
+                  <TermSelector value={term} onChange={setTerm} />
+                </Field>
+              </Panel>
 
-              <div className="mt-12 bg-[#052316] rounded-2xl p-6 lg:p-8 text-white shadow-md flex flex-col md:flex-row items-center justify-between gap-6">
-                <div>
-                  <h4 className="text-[20px] font-bold mb-1 font-playfair">Ready to apply for an FHA loan in Arizona?</h4>
-                  <p className="text-[#c8c8b8] text-[14px]">
-                    Contact our mortgage specialists to get pre-approved and lock in your rate.
-                  </p>
-                </div>
-                <Link
-                  href="/#get-pre-approved"
-                  className="bg-[#4CAF50] hover:bg-[#45a049] text-white text-[15px] font-semibold px-6 py-3 rounded-full transition-all duration-200 shadow whitespace-nowrap cursor-pointer"
-                >
-                  Connect With Us →
-                </Link>
-              </div>
-
+              <Panel number={3} title="Housing Costs" tag="for a fuller payment estimate">
+                <Field label="Property Tax Rate (%)" hint={`Auto-estimated for this home price: ${taxDefaultRate.toFixed(2)}% (${fmtMoney(taxDefaultDollar)}/yr) — edit to override.`}>
+                  <input className="fha-input" style={inputStyle} inputMode="decimal" placeholder="Auto-estimated from home price"
+                    value={propertyTaxRateText} onChange={(e) => setPropertyTaxRateText(e.target.value)} />
+                </Field>
+                <Field label="Annual Home Insurance ($)" hint={`Auto-estimated for this home price: ${fmtMoney(insDefault)}/yr — edit to override.`}>
+                  <input className="fha-input" style={inputStyle} inputMode="numeric" placeholder="Auto-estimated from home price"
+                    value={homeInsuranceText} onChange={(e) => setHomeInsuranceText(e.target.value)} />
+                </Field>
+              </Panel>
             </div>
-          </section>
-        )}
 
+            {/* ============ RESULTS COLUMN ============ */}
+            <div style={{ minWidth: 0 }}>
+              <div style={{
+                background: `linear-gradient(135deg, ${C.greenWash} 0%, #ffffff 60%)`,
+                border: `2px solid ${infeasible ? C.danger : C.greenBright}`,
+                borderRadius: 12,
+                padding: "20px 22px 22px",
+                marginBottom: 18,
+                boxShadow: infeasible ? "0 4px 18px rgba(163,55,43,0.14)" : "0 4px 18px rgba(58,125,30,0.12)",
+              }}>
+                <h2 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 700, margin: "0 0 14px", color: C.greenDeep }}>Loan Analysis</h2>
+
+                {(isOutOfBounds || infeasible) && (
+                  <div style={{
+                    background: infeasible ? C.dangerWash : C.amberWash,
+                    border: `1.5px solid ${infeasible ? C.danger : C.amber}`,
+                    borderRadius: 8, padding: "10px 12px", fontSize: 12.5, fontWeight: 600,
+                    color: infeasible ? C.danger : C.amber, marginBottom: 16,
+                  }}>
+                    ⚠ {limitMessage}
+                  </div>
+                )}
+
+                <div style={{ marginBottom: 16 }}>
+                  <SectionLabel>Monthly Payment Breakdown</SectionLabel>
+                  <ResultLine label="Principal & Interest" value={fmtMoney(PMT)} />
+                  <ResultLine label="Monthly MIP" value={fmtMoney(month1Mip)} />
+                  <ResultLine label="Property Taxes" value={fmtMoney(propertyTaxMonthly)} />
+                  <ResultLine label="Homeowners Insurance" value={fmtMoney(homeInsuranceMonthly)} />
+                  <ResultLine label="Total Monthly Payment" value={fmtMoney(totalMonthlyPayment)} total />
+                </div>
+                <div>
+                  <SectionLabel>Loan Summary</SectionLabel>
+                  <ResultLine label="Base Loan Amount" value={fmtMoney(baseLoan)} />
+                  <ResultLine label="Upfront MIP (1.75%)" value={fmtMoney(upfrontMip)} />
+                  <ResultLine label="Total Loan Amount" value={fmtMoney(totalLoan)} />
+                  <ResultLine label="Annual MIP Rate" value={fmtPct(mipRate, 2)} />
+                  <ResultLine label="LTV Ratio" value={fmtPct(ltv, 2)} />
+                </div>
+              </div>
+
+              <Panel>
+                <SectionLabel>Payment Components</SectionLabel>
+                <p style={{ fontSize: 11.5, color: C.inkSoft, margin: "0 0 12px" }}>
+                  Your monthly payment consists of Principal, Interest, MIP, Property Tax, and Homeowners Insurance (month 1 of the schedule).
+                </p>
+                <InteractivePieChart
+                  donut
+                  showLegend
+                  centerTextTitle="month 1"
+                  centerTextSub={fmtMoney(paymentTotal)}
+                  dataItems={[
+                    { label: "Principal", value: month1Principal, color: C.greenDeep },
+                    { label: "Interest", value: month1Interest, color: C.greenBright },
+                    { label: "MIP", value: month1Mip, color: C.danger },
+                    { label: "Property Tax", value: propertyTaxMonthly, color: C.amber },
+                    { label: "Insurance", value: homeInsuranceMonthly, color: "#2f5488" },
+                  ]}
+                />
+              </Panel>
+
+              <div style={{
+                background: `linear-gradient(135deg, ${C.greenWash} 0%, #ffffff 55%)`,
+                border: `2px solid ${C.greenBright}`,
+                borderRadius: 12,
+                padding: "16px 20px 18px",
+                marginBottom: 18,
+                boxShadow: "0 4px 18px rgba(58,125,30,0.12)",
+              }}>
+                <h2 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 700, margin: "0 0 2px", color: C.greenDeep }}>MIP & Loan-to-Value Milestone</h2>
+                <p style={{ fontSize: 12, color: C.inkSoft, margin: "0 0 12px" }}>
+                  {canRemove
+                    ? "Your LTV at closing qualifies for the 11-year MIP cancellation rule — here's your loan-to-value path and what MIP costs along the way."
+                    : "Your LTV at closing means MIP is life-of-loan under FHA rules — but here's when amortization alone gets you to 80% LTV, the point you could refinance into a conventional loan and drop MIP entirely."}
+                </p>
+
+                <LtvOverTimeChart
+                  points={homePrice > 0 ? schedule.map((row) => ({ month: row.month, ltv: (row.balance / homePrice) * 100 })) : []}
+                  milestoneMonth={milestoneMonth}
+                />
+
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 10, marginTop: 14 }}>
+                  <MilestoneStat label="LTV at Closing" value={fmtPct(ltv, 1)} note={canRemove ? "at or under 90%" : "over 90%"} />
+                  <MilestoneStat
+                    label={canRemove ? "MIP Removal Milestone" : "Refinance Opportunity"}
+                    value={canRemove ? "11-Year Cancellation" : `Month ${milestoneMonth}`}
+                    note={canRemove ? `at month ${milestoneMonth}` : "80% LTV via amortization — refinance into a conventional loan to drop MIP"}
+                  />
+                  <MilestoneStat label="Total MIP Paid by Then" value={fmtMoney(mipPaidByMilestone)} note={canRemove ? "before cancellation" : "before refinance-eligible"} highlight />
+                </div>
+              </div>
+
+              <Panel>
+                <SectionLabel>
+                  Payment Over Time <span style={{ fontWeight: 400, textTransform: "none" }}>(monthly amortization schedule)</span>
+                </SectionLabel>
+                <div style={{ maxHeight: 340, overflowY: "auto", border: `1px solid ${C.line}`, borderRadius: 8 }}>
+                  <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12.5 }}>
+                    <thead>
+                      <tr>
+                        {["Month", "Principal", "Interest", "MIP", "Balance"].map((h, i) => (
+                          <th key={h} style={{
+                            position: "sticky", top: 0, background: C.greenWash,
+                            textAlign: i === 0 ? "left" : "right", fontFamily: MONO, fontSize: 10, textTransform: "uppercase",
+                            color: C.greenDeep, padding: "7px 10px", borderBottom: `2px solid ${C.line}`, zIndex: 1,
+                          }}>{h}</th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {schedule.map((row) => {
+                        const isFinal = row.month === schedule.length;
+                        return (
+                          <tr key={row.month} style={{ background: isFinal ? C.greenWash : undefined }}>
+                            <td style={{ textAlign: "left", padding: "6px 10px", borderBottom: `1px solid ${C.line}`, fontWeight: isFinal ? 700 : 600 }}>{row.month}</td>
+                            <td style={{ textAlign: "right", padding: "6px 10px", borderBottom: `1px solid ${C.line}`, fontVariantNumeric: "tabular-nums", fontWeight: isFinal ? 700 : 400 }}>{fmtMoney(row.principal)}</td>
+                            <td style={{ textAlign: "right", padding: "6px 10px", borderBottom: `1px solid ${C.line}`, fontVariantNumeric: "tabular-nums", fontWeight: isFinal ? 700 : 400 }}>{fmtMoney(row.interest)}</td>
+                            <td style={{ textAlign: "right", padding: "6px 10px", borderBottom: `1px solid ${C.line}`, fontVariantNumeric: "tabular-nums", fontWeight: isFinal ? 700 : 400 }}>{fmtMoney(row.mip)}</td>
+                            <td style={{ textAlign: "right", padding: "6px 10px", borderBottom: `1px solid ${C.line}`, fontVariantNumeric: "tabular-nums", fontWeight: isFinal ? 700 : 400 }}>{fmtMoney(row.balance)}</td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+              </Panel>
+
+              {/* Insights — last section, below all charts/tables */}
+              <InsightsPanel
+                groups={[
+                  { title: "FHA Cost Analysis", color: C.greenDeep, bullets: insights.cost },
+                  { title: "MIP Considerations", color: C.amber, bullets: insights.mip },
+                ]}
+                nextSteps={insights.nextSteps}
+              />
+
+              <p style={{ fontSize: 11.5, color: C.inkSoft, marginTop: 18, lineHeight: 1.5 }}>
+                This FHA loan calculator provides estimates only. Property taxes and homeowners insurance are auto-estimated based on typical rates for your home price and can be overridden; actual amounts vary by location and provider. HOA fees and closing costs are not included. Results may vary based on your specific financial situation and current FHA guidelines. For a complete assessment of your mortgage costs and eligibility, please consult with one of our mortgage professionals. Rates and terms are subject to change without notice.
+              </p>
+            </div>
+          </div>
+        </div>
+        <style>{`
+          @media (max-width: 760px) {
+            .fha-layout { grid-template-columns: 1fr !important; }
+          }
+          .fha-input { transition: border-color .15s, box-shadow .15s, background .15s; }
+          .fha-input:hover { border-color: #a9b59c; }
+          .fha-input:focus { background: #ffffff; border-color: ${C.greenBright}; box-shadow: 0 0 0 3px ${C.greenWash}; }
+        `}</style>
       </main>
-
       <Footer />
     </div>
   );
