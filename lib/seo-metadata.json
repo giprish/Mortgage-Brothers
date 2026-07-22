@@ -37,6 +37,25 @@
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/your-phoenix-arizona-mortgage-team.jpg"
     }
   },
+  "/realtorteam": {
+    "section": "pages",
+    "sourceUrl": "https://azmortgagebrothers.com/realtorteam/",
+    "title": "Partner with Mortgage Brothers for Success",
+    "description": "Partner with AZ Mortgage Brothers for fast closings, dedicated support, competitive loan programs, and co-branded marketing resources built for real estate professionals.",
+    "openGraph": {
+      "title": "Partner with Mortgage Brothers for Success",
+      "description": "Partner with AZ Mortgage Brothers for fast closings, dedicated support, competitive loan programs, and co-branded marketing resources built for real estate professionals.",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/arizona-mortgage-office-building.jpg",
+      "url": "https://azmortgagebrothers.com/realtorteam/",
+      "type": "article"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Partner with Mortgage Brothers for Success",
+      "description": "Partner with AZ Mortgage Brothers for fast closings, dedicated support, competitive loan programs, and co-branded marketing resources built for real estate professionals.",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/arizona-mortgage-office-building.jpg"
+    }
+  },
   "/basic-mortgage-payment-calculator": {
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/basic-mortgage-payment-calculator/",

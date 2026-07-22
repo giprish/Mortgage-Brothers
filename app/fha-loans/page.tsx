@@ -33,10 +33,10 @@ const faqs = [
 ];
 
 export default function FhaLoanPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [openFaqs, setOpenFaqs] = useState<Record<number, boolean>>({ 0: true, 1: true, 2: true, 3: true, 4: true, 5: true });
 
   const toggleFaq = (idx: number) => {
-    setOpenFaq(openFaq === idx ? null : idx);
+    setOpenFaqs((prev) => ({ ...prev, [idx]: !prev[idx] }));
   };
 
   return (
@@ -387,17 +387,47 @@ export default function FhaLoanPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {faqs.map((faq, idx) => (
-              <div key={idx} className="border-b border-[#e8e0d0]/50 pb-6 flex flex-col gap-2">
-                <h3 className="text-[#052316] text-[15.5px] font-bold">
-                  {faq.question}
-                </h3>
-                <p className="text-[#4e5b4e] text-[13.5px] leading-relaxed">
-                  {faq.answer}
-                </p>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 items-start">
+            {faqs.map((faq, idx) => {
+              const isOpen = openFaqs[idx];
+              return (
+                <div key={idx} className="border-b border-[#e8e0d0]/60 pb-6 flex flex-col transition-all duration-200">
+                  <button
+                    onClick={() => toggleFaq(idx)}
+                    className="w-full flex items-start justify-between text-left gap-3 group cursor-pointer"
+                  >
+                    <h3 className="text-[#052316] text-[15.5px] lg:text-[16.5px] font-bold leading-snug group-hover:text-[#3fb364] transition-colors">
+                      {faq.question}
+                    </h3>
+                    <div
+                      className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 transition-transform duration-200 ${
+                        isOpen ? "bg-[#e8f5e9] text-[#3fb364] rotate-180" : "bg-[#f5f0e8] text-[#052316]"
+                      }`}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      >
+                        <polyline points="6 9 12 15 18 9" />
+                      </svg>
+                    </div>
+                  </button>
+
+                  {isOpen && (
+                    <p className="text-[#4e5b4e] text-[13.5px] lg:text-[14px] leading-relaxed mt-3 transition-all duration-200">
+                      {faq.answer}
+                    </p>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </section>
 

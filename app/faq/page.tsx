@@ -348,13 +348,14 @@ const faqData = [
 
 export default function FAQPage() {
   const [activeCategory, setActiveCategory] = useState("General");
-  const [expandedIds, setExpandedIds] = useState<Record<string, boolean>>({
-    "gen-1": true, // Default expand the first general item
-    "loan-1": true, // Default expand the first loan program item
-    "proc-1": true, // Default expand the first process item
-    "rate-1": true, // Default expand the first rates item
-    "az-1": true, // Default expand the first AZ item
-    "agent-1": true, // Default expand the first agent partner item
+  const [expandedIds, setExpandedIds] = useState<Record<string, boolean>>(() => {
+    const initial: Record<string, boolean> = {};
+    faqData.forEach((cat) => {
+      cat.questions.forEach((q) => {
+        initial[q.id] = true;
+      });
+    });
+    return initial;
   });
   const [searchQuery, setSearchQuery] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
@@ -674,9 +675,9 @@ export default function FAQPage() {
               id={topic.targetId}
               className={`w-full py-16 lg:py-20 border-b border-[#e8e0d0]/40 scroll-mt-24 ${topic.bgClass}${!isVisible ? ' hidden' : ''}`}
             >
-              <div className="max-w-4xl mx-auto px-6">
+              <div className="max-w-5xl mx-auto px-6">
                 {/* Topic Header */}
-                <div className="flex items-start gap-4 mb-8">
+                <div className="flex items-start gap-4 mb-12">
                   {/* Icon Block */}
                   <div className="w-11 h-11 rounded-lg bg-[#1a3a1a] flex items-center justify-center text-white flex-shrink-0">
                     {topic.icon}
@@ -686,7 +687,7 @@ export default function FAQPage() {
                       {topic.topicId}
                     </p>
                     <h2
-                      className="text-[#1a3a1a] text-[26px] lg:text-[32px] font-normal leading-[1.1] inline-block relative pb-2"
+                      className="text-[#1a3a1a] text-[28px] lg:text-[34px] font-normal leading-[1.1] inline-block relative pb-2"
                       style={{ fontFamily: "'Playfair Display', serif" }}
                     >
                       {topic.topicTitle}
@@ -695,74 +696,57 @@ export default function FAQPage() {
                   </div>
                 </div>
 
-                {/* Accordion Questions List */}
-                <div className="flex flex-col gap-4">
+                {/* 2-Column Grid Questions List */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 items-start">
                   {topic.questions.map((q) => {
                     const isExpanded = expandedIds[q.id];
                     return (
                       <div
                         key={q.id}
                         id={q.id}
-                        className="bg-white border border-[#e8e0d0]/80 rounded-2xl p-5 lg:p-6 transition-all duration-300 hover:-translate-y-0.5 hover:scale-[1.008] hover:shadow-lg hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/30 active:scale-[0.995]"
+                        className="border-b border-[#e8e0d0]/60 pb-6 flex flex-col transition-all duration-200"
                       >
                         <button
                           onClick={() => toggleExpand(q.id)}
-                          className="w-full flex items-center justify-between text-left gap-4 font-semibold text-[#1a3a1a] hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
+                          className="w-full flex items-start justify-between text-left gap-3 group cursor-pointer"
                         >
-                          <span className="text-[16px] lg:text-[17px] leading-snug">
+                          <h3 className="text-[#052316] text-[15.5px] lg:text-[16.5px] font-bold leading-snug group-hover:text-[#3fb364] transition-colors">
                             {q.question}
-                          </span>
+                          </h3>
                           <div
-                            className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 transition-colors duration-200 ${
-                              isExpanded ? "bg-[#e8f5e9] text-[#3fb364]" : "bg-[#f5f0e8] text-[#1a3a1a]"
+                            className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 transition-transform duration-200 ${
+                              isExpanded ? "bg-[#e8f5e9] text-[#3fb364] rotate-180" : "bg-[#f5f0e8] text-[#052316]"
                             }`}
                           >
-                            {isExpanded ? (
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="3.5"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              >
-                                <line x1="5" y1="12" x2="19" y2="12" />
-                              </svg>
-                            ) : (
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="14"
-                                height="14"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="3.5"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                              >
-                                <line x1="12" y1="5" x2="12" y2="19" />
-                                <line x1="5" y1="12" x2="19" y2="12" />
-                              </svg>
-                            )}
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="14"
+                              height="14"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <polyline points="6 9 12 15 18 9" />
+                            </svg>
                           </div>
                         </button>
 
                         {isExpanded && (
-                          <div className="mt-4 pt-4 border-t border-[#e8e0d0]/50 transition-all duration-300">
-                            <p className="text-[#5a6a5a] text-[14px] lg:text-[15px] leading-[1.65]">
+                          <div className="mt-3 transition-all duration-200">
+                            <p className="text-[#4e5b4e] text-[13.5px] lg:text-[14px] leading-relaxed">
                               {q.answer}
                             </p>
 
                             {q.quickAnswer && (
-                              <div className="bg-[#0f220f] border-l-4 border-[#3fb364] text-white rounded-r-xl p-4 flex items-start gap-3 mt-4">
-                                <div className="w-5 h-5 flex items-center justify-center flex-shrink-0 text-[#b89a5a] mt-0.5">
+                              <div className="bg-[#0f220f] border-l-3 border-[#3fb364] text-white rounded-r-lg p-3.5 flex items-start gap-2.5 mt-3">
+                                <div className="w-4 h-4 flex items-center justify-center flex-shrink-0 text-[#b89a5a] mt-0.5">
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    width="14"
-                                    height="14"
+                                    width="12"
+                                    height="12"
                                     viewBox="0 0 24 24"
                                     fill="currentColor"
                                     stroke="none"
@@ -771,10 +755,10 @@ export default function FAQPage() {
                                   </svg>
                                 </div>
                                 <div>
-                                  <p className="text-[#b89a5a] text-[10px] font-bold tracking-wider uppercase mb-1">
-                                    QUICK ANSWER
+                                  <p className="text-[#b89a5a] text-[9.5px] font-bold tracking-wider uppercase mb-0.5">
+                                    QUICK SUMMARY
                                   </p>
-                                  <p className="text-[#c8c8b8] text-[13px] leading-[1.6]">
+                                  <p className="text-[#c8c8b8] text-[12.5px] leading-snug">
                                     {q.quickAnswer}
                                   </p>
                                 </div>

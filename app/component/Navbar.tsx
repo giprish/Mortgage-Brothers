@@ -131,9 +131,6 @@ const Navbar = () => {
                     <Link href="/down-payment-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Down Payment Calculator
                     </Link>
-                    <Link href="/down-payment-calculator-1" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
-                      Down Payment Calculator 1
-                    </Link>
                     <Link href="/debt-to-income-ratio-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Debt-to-Income Ratio
                     </Link>
@@ -394,6 +391,14 @@ const Navbar = () => {
             </div>
           </div>
 
+          {/* Realtors */}
+          <Link
+            href="/realtorteam"
+            className="text-white text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
+          >
+            Realtors
+          </Link>
+
         </div>
 
         {/* Right Side - Phone + CTA */}
@@ -596,6 +601,17 @@ const Navbar = () => {
                     className="text-white font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 border-b border-[#3b4148] hover:bg-[#343a42] transition-colors block"
                   >
                     CONTACT US
+                  </Link>
+
+                  <Link
+                    href="/realtorteam"
+                    onClick={() => {
+                      setMobileMenuOpen(false);
+                      setActiveSubmenu(null);
+                    }}
+                    className="text-white font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 border-b border-[#3b4148] hover:bg-[#343a42] transition-colors block"
+                  >
+                    REALTORS
                   </Link>
                 </div>
               ) : (
