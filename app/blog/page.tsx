@@ -105,13 +105,13 @@ const topicsData = [
     title: "Arizona Mortgage Insights",
     description: "Explore local market trends, regulations, and unique opportunities for homebuyers in the Grand Canyon State. Get expert advice on navigating Arizona's diverse real estate landscape and mortgage options.",
     linkText: "Explore Arizona Options",
-    href: "/blog"
+    href: "/arizona-mortgage-insights"
   },
   {
     title: "Mortgage Process Guidance",
     description: "Navigate the mortgage application process with confidence. From pre-approval to closing, our step-by-step guides help you understand what to expect and how to prepare at each stage.",
     linkText: "Navigate Your Mortgage",
-    href: "/va-loans-for-first-time-homebuyers-in-arizona-your-path-to-homeownership"
+    href: "/mortgage-process-guidance"
   },
   {
     title: "FHA Loans",
@@ -123,43 +123,43 @@ const topicsData = [
     title: "Mortgage Qualifications",
     description: "Understand the factors that lenders consider when approving mortgages. Learn how to improve your chances of qualification by optimizing your credit score, debt-to-income ratio, and down payment.",
     linkText: "Check Your Qualifications",
-    href: "/how-to-get-a-mortgage-in-arizona-with-fair-or-improving-credit"
+    href: "/mortgage-qualifications"
   },
   {
     title: "Homeownership Tips",
     description: "Find practical advice on maintaining, improving, and managing your home. From budget-friendly renovations to energy-saving strategies, empower yourself with knowledge to maximize your investment.",
     linkText: "Get Home Smart",
-    href: "/blog"
+    href: "/homeownership-tips"
   },
   {
     title: "Real Estate & Mortgages",
     description: "Explore the intersection of real estate trends and mortgage options. Get insights on how market conditions affect home prices, interest rates, and financing opportunities.",
     linkText: "Sync Market & Mortgage",
-    href: "/arizona-real-estate-trends-in-2026-predicting-mortgage-rates-market-shifts"
+    href: "/real-estate-mortgages"
   },
   {
     title: "Mortgage Basics",
     description: "Demystify the world of mortgages with our comprehensive guides. Understand key terms, loan types, and fundamental concepts to make informed decisions about your home financing.",
     linkText: "Master Mortgage Fundamentals",
-    href: "/conventional-home-loans-vs-fha-loans-which-is-right-for-you"
+    href: "/mortgage-basics"
   },
   {
     title: "Specialty Loans",
     description: "Discover unique mortgage products designed for specific needs. From VA loans for veterans to jumbo loans for high-value properties, learn about specialized financing options that might suit your situation.",
     linkText: "Find Your Niche Loan",
-    href: "/private-money-lender-arizona"
+    href: "/specialty-loans"
   },
   {
     title: "Mortgage Payments & Strategies",
     description: "Optimize your mortgage with smart payment strategies. Learn about bi-weekly payments, extra principal payments, and refinancing options to potentially save thousands over the life of your home loan.",
     linkText: "Explore Payment Strategies",
-    href: "/calculators"
+    href: "/mortgage-payments-strategies"
   },
   {
     title: "Spouse & Estate Considerations",
     description: "Understand the implications of mortgages on marriage, divorce, and estate planning. Get expert advice on protecting your assets and ensuring smooth transitions in various life scenarios.",
     linkText: "Protect Your Assets",
-    href: "/navigating-mortgage-options-during-divorce-a-complete-guide-for-arizona-homeowners"
+    href: "/spouse-estate-considerations"
   }
 ];
 
@@ -213,10 +213,35 @@ export default function BlogPage() {
           <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-2">
             {categories.map((cat) => {
               const isActive = selectedCategory === cat;
+              const categoryHrefMap: Record<string, string> = {
+                "All": "/blog",
+                "Pillar Post": "/pillar-post",
+                "Arizona Mortgage Insights": "/arizona-mortgage-insights",
+                "Mortgage Basics": "/mortgage-basics",
+                "Real Estate & Mortgages": "/real-estate-mortgages",
+                "Process Guidance": "/mortgage-process-guidance",
+              };
+              const href = categoryHrefMap[cat] || "/blog";
+              
+              if (cat === "All" ) {
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => setSelectedCategory(cat)}
+                    className={`px-4 py-2 text-[13.5px] font-semibold rounded-full border transition-all duration-200 cursor-pointer ${
+                      isActive
+                        ? "bg-[#3fb364] text-white border-transparent shadow-md"
+                        : "bg-white border-[#e8dcc6] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#052316]"
+                    }`}
+                  >
+                    {cat}
+                  </button>
+                );
+              }
               return (
-                <button
+                <Link
                   key={cat}
-                  onClick={() => setSelectedCategory(cat)}
+                  href={href}
                   className={`px-4 py-2 text-[13.5px] font-semibold rounded-full border transition-all duration-200 cursor-pointer ${
                     isActive
                       ? "bg-[#3fb364] text-white border-transparent shadow-md"
@@ -224,7 +249,7 @@ export default function BlogPage() {
                   }`}
                 >
                   {cat}
-                </button>
+                </Link>
               );
             })}
           </div>
