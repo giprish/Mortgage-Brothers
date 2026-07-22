@@ -303,7 +303,7 @@ const Navbar = () => {
           {/* Resources Dropdown */}
           <div className="relative group py-2">
             <Link
-              href="/resources"
+              href="/blog"
               className="flex items-center gap-1.5 text-white text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
             >
               Resources
@@ -385,7 +385,7 @@ const Navbar = () => {
                 </Link>
                 <div className="border-t border-[#e8e0d0]/40 my-1"></div>
                 <Link
-                  href="/resources"
+                  href="/blog"
                   className="block px-4 py-2 text-[14px] text-[#3fb364] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-semibold"
                 >
                   All Resources

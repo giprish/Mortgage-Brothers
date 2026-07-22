@@ -210,7 +210,7 @@ export default function ResourceCategoryPage() {
           <div className="max-w-5xl mx-auto relative z-10">
             {/* Breadcrumb row */}
             <div className="flex items-center gap-1.5 text-[12px] text-[#3fb364] font-medium mb-6">
-              <Link href="/resources" className="hover:underline">
+              <Link href="/blog" className="hover:underline">
                 Resources
               </Link>
               <span>&gt;</span>
