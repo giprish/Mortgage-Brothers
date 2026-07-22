@@ -404,27 +404,7 @@ export default function MortgageLoanProgramsArizonaPage() {
                         </li>
                       ))}
                     </ul>
-                    <Link
-                      href="/#get-pre-approved"
-                      className="btn-primary hover:shadow-brand-green-accent/20 group"
-                    >
-                      {prog.ctaText}
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="group-hover:translate-x-0.5 transition-transform duration-200"
-                      >
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                        <polyline points="12 5 19 12 12 19" />
-                      </svg>
-                    </Link>
+
                   </div>
                   <div className="lg:col-span-5 flex lg:justify-end justify-center w-full">
                     <div className="w-full max-w-[420px] bg-brand-card-bg text-white rounded-2xl p-6 lg:p-8 border border-white/5 shadow-xl flex flex-col justify-between hover:-translate-y-1 hover:scale-[1.02] hover:shadow-2xl hover:border-brand-green-accent/30 active:scale-[0.98] active:translate-y-0 cursor-pointer transition-all duration-300">

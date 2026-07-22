@@ -19,69 +19,53 @@ const Footer = () => {
             <p className="text-[#a8b89a] text-[13px] leading-[1.65] mb-6 max-w-[280px]">
               Independent Arizona mortgage brokers making banks compete for your business, since day one.
             </p>
-            {/* Social Icons */}
-            <div className="flex items-center gap-3">
-              {/* Yelp */}
-              <a
-                href="#yelp"
-                className="w-9 h-9 rounded-full bg-[#142814] hover:bg-[#1f3d1f] border border-[#1b341b] flex items-center justify-center text-[#8a9a7a] hover:text-white transition-all duration-200"
-                aria-label="Yelp"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" />
-                  <path d="M12 8V16" />
-                  <path d="M8 12H16" />
-                </svg>
-              </a>
-              {/* Google */}
-              <a
-                href="#google"
-                className="w-9 h-9 rounded-full bg-[#142814] hover:bg-[#1f3d1f] border border-[#1b341b] flex items-center justify-center text-[#8a9a7a] hover:text-white transition-all duration-200"
-                aria-label="Google"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <circle cx="12" cy="12" r="10" />
-                  <path d="M8 12h8" />
-                </svg>
-              </a>
+            {/* Social Icons matching azmortgagebrothers.com */}
+            <div className="flex items-center gap-3 mt-2">
               {/* Facebook */}
               <a
-                href="#facebook"
-                className="w-9 h-9 rounded-full bg-[#142814] hover:bg-[#1f3d1f] border border-[#1b341b] flex items-center justify-center text-[#8a9a7a] hover:text-white transition-all duration-200"
+                href="https://www.facebook.com/azmortgagebrothers/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-[#ebf1f5] hover:bg-white text-[#22632d] hover:text-[#174820] flex items-center justify-center font-serif font-bold text-[20px] shadow-sm transition-all duration-200 transform hover:scale-105"
                 aria-label="Facebook"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                f
+              </a>
+
+              {/* X / Twitter */}
+              <a
+                href="https://x.com/azmortgagebros"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-[#ebf1f5] hover:bg-white text-[#22632d] hover:text-[#174820] flex items-center justify-center shadow-sm transition-all duration-200 transform hover:scale-105"
+                aria-label="X (Twitter)"
+              >
+                <svg className="w-4.5 h-4.5 fill-[#22632d]" viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                </svg>
+              </a>
+
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/company/azmortgagebrothers/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-[#ebf1f5] hover:bg-white text-[#22632d] hover:text-[#174820] flex items-center justify-center font-sans font-bold text-[15px] tracking-tighter shadow-sm transition-all duration-200 transform hover:scale-105"
+                aria-label="LinkedIn"
+              >
+                in
+              </a>
+
+              {/* YouTube */}
+              <a
+                href="https://www.youtube.com/@azmortgagebrothers"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-[#ebf1f5] hover:bg-white text-[#22632d] hover:text-[#174820] flex items-center justify-center shadow-sm transition-all duration-200 transform hover:scale-105"
+                aria-label="YouTube"
+              >
+                <svg className="w-5 h-5 fill-[#22632d]" viewBox="0 0 24 24">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                 </svg>
               </a>
             </div>

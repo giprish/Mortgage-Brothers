@@ -322,6 +322,12 @@ const Navbar = () => {
             <div className="absolute left-[-12px] top-full pt-3 w-60 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
               <div className="bg-white border border-[#e8e0d0] rounded-xl shadow-xl py-2">
                 <Link
+                  href="/blog/"
+                  className="block px-4 py-2.5 text-[14px] text-[#3fb364] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-bold"
+                >
+                  Blog
+                </Link>
+                <Link
                   href="/mortgage-basics/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
@@ -737,6 +743,13 @@ const Navbar = () => {
 
                   {activeSubmenu === "RESOURCES" && (
                     <>
+                      <Link
+                        href="/blog/"
+                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
+                        className="text-[#3fb364] font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-white transition-colors"
+                      >
+                        BLOG
+                      </Link>
                       <Link
                         href="/mortgage-basics/"
                         onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
