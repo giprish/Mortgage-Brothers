@@ -25,7 +25,7 @@ const articles = [
   {
     title: "Who Qualifies for a Reverse Mortgage? Understanding Eligibility in Arizona",
     description: "A complete guide to HECM reverse mortgage eligibility rules, age requirements, and equity qualifications for Arizona seniors.",
-    href: "/who-qualifies-for-a-reverse-mortgage-understanding-eligibility-in-requirements",
+    href: "/who-qualifies-for-a-reverse-mortgage-understanding-eligibility-requirements",
     date: "Jun 5, 2026",
     readTime: "9 min read",
     category: "Arizona Mortgage Insights"
