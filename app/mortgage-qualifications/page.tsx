@@ -9,7 +9,7 @@ const articles = [
   {
     title: "How to Get a Mortgage in Arizona with Fair or Improving Credit",
     description: "Learn how buyers with credit scores between 580 and 660 qualify for home loans in Arizona with FHA programs and rapid rescoring.",
-    href: "/how-to-get-a-mortgage-in-arizona-with-fair-or-improving-credit",
+    href: "/how-to-get-a-mortgage-in-arizona-with-fair-or-improving-credit/",
     date: "Jun 10, 2026",
     readTime: "7 min read",
     category: "Mortgage Qualifications"
@@ -17,7 +17,7 @@ const articles = [
   {
     title: "Who Qualifies for a Reverse Mortgage? Understanding Eligibility in Arizona",
     description: "A complete guide to HECM reverse mortgage eligibility rules, age requirements, and equity qualifications for Arizona seniors.",
-    href: "/who-qualifies-for-a-reverse-mortgage-understanding-eligibility-requirements",
+    href: "/who-qualifies-for-a-reverse-mortgage-understanding-eligibility-requirements/",
     date: "Jun 5, 2026",
     readTime: "9 min read",
     category: "Mortgage Qualifications"
@@ -25,7 +25,7 @@ const articles = [
   {
     title: "Conventional Home Loans vs. FHA Loans: Which Is Right for You?",
     description: "Detailed side-by-side comparison of credit score rules, down payments, PMI vs. MIP, and total 30-year costs for Arizona buyers.",
-    href: "/conventional-home-loans-vs-fha-loans-which-is-right-for-you",
+    href: "/conventional-home-loans-vs-fha-loans-which-is-right-for-you/",
     date: "Jun 20, 2026",
     readTime: "10 min read",
     category: "Mortgage Qualifications"
@@ -43,7 +43,7 @@ export default function MortgageQualificationsPage() {
           <div className="max-w-5xl mx-auto">
             {/* Breadcrumb */}
             <div className="flex items-center gap-2 text-[#8da684] text-[13px] font-medium mb-6">
-              <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+              <Link href="/blog/" className="hover:text-white transition-colors">Blog</Link>
               <span>&gt;</span>
               <span className="text-[#3fb364]">Mortgage Qualifications</span>
             </div>

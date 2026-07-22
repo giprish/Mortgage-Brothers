@@ -27,7 +27,7 @@ const Navbar = () => {
           {/* Loan Programs Dropdown */}
           <div className="relative group py-2">
             <Link
-              href="/mortgage-loan-programs-arizona"
+              href="/mortgage-loan-programs-arizona/"
               className="flex items-center gap-1.5 text-white text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
             >
               Loan Programs
@@ -49,25 +49,25 @@ const Navbar = () => {
             <div className="absolute left-[-12px] top-full pt-3 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
               <div className="bg-white border border-[#e8e0d0] rounded-xl shadow-xl py-2">
                 {/* <Link
-                  href="/loan-programs"
+                  href="/loan-programs/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   All Programs
                 </Link> */}
                 <Link
-                  href="/fha-loans"
+                  href="/fha-loans/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   FHA Loans
                 </Link>
                 <Link
-                  href="/loan-programs-detail"
+                  href="/loan-programs-detail/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Loan Program Details
                 </Link>
                 {/* <Link
-                  href="/loan-programs#va"
+                  href="/loan-programs/#va"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   VA Loans
@@ -78,7 +78,7 @@ const Navbar = () => {
           {/* Calculators Megamenu Dropdown */}
           <div className="relative group py-2">
             <Link
-              href="/calculators"
+              href="/calculators/"
               className="flex items-center gap-1.5 text-white text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
             >
               Calculators
@@ -107,13 +107,13 @@ const Navbar = () => {
                     BASIC CALCULATORS
                   </h4>
                   <div className="flex flex-col gap-2.5">
-                    <Link href="/basic-mortgage-payment-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link href="/basic-mortgage-payment-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Basic Mortgage Payment
                     </Link>
-                    <Link href="/mortgage-affordability-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link href="/mortgage-affordability-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Mortgage Affordability
                     </Link>
-                    <Link href="/refinance-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link href="/refinance-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Refinance Calculator
                     </Link>
                   </div>
@@ -125,13 +125,13 @@ const Navbar = () => {
                     COMPARISON TOOLS
                   </h4>
                   <div className="flex flex-col gap-2.5">
-                    <Link href="/rent-vs-buy-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link href="/rent-vs-buy-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Rent vs. Buy Calculator
                     </Link>
-                    <Link href="/down-payment-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link href="/down-payment-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Down Payment Calculator
                     </Link>
-                    <Link href="/debt-to-income-ratio-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link href="/debt-to-income-ratio-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Debt-to-Income Ratio
                     </Link>
                   </div>
@@ -143,16 +143,16 @@ const Navbar = () => {
                     SPECIALIZED
                   </h4>
                   <div className="flex flex-col gap-2.5">
-                    <Link href="/extra-payment-mortgage-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link href="/extra-payment-mortgage-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Extra Payment Mortgage
                     </Link>
-                    <Link href="/fha-loan-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link href="/fha-loan-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       FHA Loan Calculator
                     </Link>
-                    <Link href="/va-loan-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link href="/va-loan-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       VA Loan Calculator
                     </Link>
-                    <Link href="/home-purchase-closing-cost-calculator" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link href="/home-purchase-closing-cost-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Home Purchase Closing Cost
                     </Link>
                   </div>
@@ -164,7 +164,7 @@ const Navbar = () => {
           {/* Areas We Serve Dropdown */}
           <div className="relative group py-2">
             <Link
-              href="/areas-we-serve"
+              href="/areas-we-serve/"
               className="flex items-center gap-1.5 text-white text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
             >
               Areas We Serve
@@ -192,10 +192,10 @@ const Navbar = () => {
                     DIRECTORIES & AREAS
                   </h4>
                   <div className="flex flex-col gap-1.5">
-                    <Link href="/arizona-directory" className="text-[#3fb364] text-[13px] font-bold hover:text-[#2d5a2d] transition-colors">Arizona Directory</Link>
-                    <Link href="/arizona-directory-2" className="text-[#3fb364] text-[13px] font-bold hover:text-[#2d5a2d] transition-colors">Arizona Directory 2</Link>
-                    <Link href="/areas-we-serve" className="text-[#3fb364] text-[13px] font-bold hover:text-[#2d5a2d] transition-colors">All Service Areas</Link>
-                    <Link href="/areas-we-serve/maricopa-county" className="text-[#3fb364] text-[13px] font-bold hover:text-[#2d5a2d] transition-colors">Maricopa County</Link>
+                    <Link href="/arizona-directory/" className="text-[#3fb364] text-[13px] font-bold hover:text-[#2d5a2d] transition-colors">Arizona Directory</Link>
+                    <Link href="/arizona-directory-2/" className="text-[#3fb364] text-[13px] font-bold hover:text-[#2d5a2d] transition-colors">Arizona Directory 2</Link>
+                    <Link href="/areas-we-serve/" className="text-[#3fb364] text-[13px] font-bold hover:text-[#2d5a2d] transition-colors">All Service Areas</Link>
+                    <Link href="/areas-we-serve/maricopa-county/" className="text-[#3fb364] text-[13px] font-bold hover:text-[#2d5a2d] transition-colors">Maricopa County</Link>
                   </div>
                 </div>
 
@@ -205,16 +205,16 @@ const Navbar = () => {
                     CITIES A-G
                   </h4>
                   <div className="flex flex-col gap-1.5">
-                    <Link href="/areas-we-serve/maricopa-county/phoenix" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Phoenix</Link>
-                    <Link href="/areas-we-serve/maricopa-county/scottsdale" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Scottsdale</Link>
-                    <Link href="/areas-we-serve/maricopa-county/mesa" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Mesa</Link>
-                    <Link href="/areas-we-serve/maricopa-county/chandler" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Chandler</Link>
-                    <Link href="/areas-we-serve/maricopa-county/gilbert" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Gilbert</Link>
-                    <Link href="/areas-we-serve/maricopa-county/glendale" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Glendale</Link>
-                    <Link href="/areas-we-serve/maricopa-county/tempe" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Tempe</Link>
-                    <Link href="/areas-we-serve/maricopa-county/peoria" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Peoria</Link>
-                    <Link href="/areas-we-serve/maricopa-county/surprise" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Surprise</Link>
-                    <Link href="/areas-we-serve/maricopa-county/goodyear" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Goodyear</Link>
+                    <Link href="/areas-we-serve/maricopa-county/phoenix/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Phoenix</Link>
+                    <Link href="/areas-we-serve/maricopa-county/scottsdale/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Scottsdale</Link>
+                    <Link href="/areas-we-serve/maricopa-county/mesa/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Mesa</Link>
+                    <Link href="/areas-we-serve/maricopa-county/chandler/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Chandler</Link>
+                    <Link href="/areas-we-serve/maricopa-county/gilbert/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Gilbert</Link>
+                    <Link href="/areas-we-serve/maricopa-county/glendale/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Glendale</Link>
+                    <Link href="/areas-we-serve/maricopa-county/tempe/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Tempe</Link>
+                    <Link href="/areas-we-serve/maricopa-county/peoria/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Peoria</Link>
+                    <Link href="/areas-we-serve/maricopa-county/surprise/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Surprise</Link>
+                    <Link href="/areas-we-serve/maricopa-county/goodyear/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Goodyear</Link>
                   </div>
                 </div>
 
@@ -224,15 +224,15 @@ const Navbar = () => {
                     CITIES H-Q
                   </h4>
                   <div className="flex flex-col gap-1.5">
-                    <Link href="/areas-we-serve/maricopa-county/avondale" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Avondale</Link>
-                    <Link href="/areas-we-serve/maricopa-county/buckeye" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Buckeye</Link>
-                    <Link href="/areas-we-serve/maricopa-county/queen-creek" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Queen Creek</Link>
-                    <Link href="/areas-we-serve/maricopa-county/fountain-hills" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Fountain Hills</Link>
-                    <Link href="/areas-we-serve/maricopa-county/paradise-valley" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Paradise Valley</Link>
-                    <Link href="/areas-we-serve/maricopa-county/cave-creek" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Cave Creek</Link>
-                    <Link href="/areas-we-serve/maricopa-county/carefree" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Carefree</Link>
-                    <Link href="/areas-we-serve/maricopa-county/anthem" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Anthem</Link>
-                    <Link href="/areas-we-serve/maricopa-county/sun-city" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Sun City</Link>
+                    <Link href="/areas-we-serve/maricopa-county/avondale/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Avondale</Link>
+                    <Link href="/areas-we-serve/maricopa-county/buckeye/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Buckeye</Link>
+                    <Link href="/areas-we-serve/maricopa-county/queen-creek/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Queen Creek</Link>
+                    <Link href="/areas-we-serve/maricopa-county/fountain-hills/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Fountain Hills</Link>
+                    <Link href="/areas-we-serve/maricopa-county/paradise-valley/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Paradise Valley</Link>
+                    <Link href="/areas-we-serve/maricopa-county/cave-creek/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Cave Creek</Link>
+                    <Link href="/areas-we-serve/maricopa-county/carefree/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Carefree</Link>
+                    <Link href="/areas-we-serve/maricopa-county/anthem/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Anthem</Link>
+                    <Link href="/areas-we-serve/maricopa-county/sun-city/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Sun City</Link>
                   </div>
                 </div>
 
@@ -242,15 +242,15 @@ const Navbar = () => {
                     CITIES R-Z
                   </h4>
                   <div className="flex flex-col gap-1.5">
-                    <Link href="/areas-we-serve/maricopa-county/sun-city-west" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Sun City West</Link>
-                    <Link href="/areas-we-serve/maricopa-county/litchfield-park" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Litchfield Park</Link>
-                    <Link href="/areas-we-serve/maricopa-county/wickenburg" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Wickenburg</Link>
-                    <Link href="/areas-we-serve/maricopa-county/apache-junction" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Apache Junction</Link>
-                    <Link href="/areas-we-serve/maricopa-county/guadalupe" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Guadalupe</Link>
-                    <Link href="/areas-we-serve/maricopa-county/el-mirage" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">El Mirage</Link>
-                    <Link href="/areas-we-serve/maricopa-county/tolleson" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Tolleson</Link>
-                    <Link href="/areas-we-serve/maricopa-county/youngtown" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Youngtown</Link>
-                    <Link href="/areas-we-serve/maricopa-county/gila-bend" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Gila Bend</Link>
+                    <Link href="/areas-we-serve/maricopa-county/sun-city-west/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Sun City West</Link>
+                    <Link href="/areas-we-serve/maricopa-county/litchfield-park/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Litchfield Park</Link>
+                    <Link href="/areas-we-serve/maricopa-county/wickenburg/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Wickenburg</Link>
+                    <Link href="/areas-we-serve/maricopa-county/apache-junction/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Apache Junction</Link>
+                    <Link href="/areas-we-serve/maricopa-county/guadalupe/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Guadalupe</Link>
+                    <Link href="/areas-we-serve/maricopa-county/el-mirage/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">El Mirage</Link>
+                    <Link href="/areas-we-serve/maricopa-county/tolleson/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Tolleson</Link>
+                    <Link href="/areas-we-serve/maricopa-county/youngtown/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Youngtown</Link>
+                    <Link href="/areas-we-serve/maricopa-county/gila-bend/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Gila Bend</Link>
                   </div>
                 </div>
               </div>
@@ -260,7 +260,7 @@ const Navbar = () => {
           {/* About Dropdown */}
           <div className="relative group py-2">
             <Link
-              href="/about-us"
+              href="/about-us/"
               className="flex items-center gap-1.5 text-white text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
             >
               About
@@ -282,13 +282,13 @@ const Navbar = () => {
             <div className="absolute left-[-12px] top-full pt-3 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
               <div className="bg-white border border-[#e8e0d0] rounded-xl shadow-xl py-2">
                 <Link
-                  href="/contact-us"
+                  href="/contact-us/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Contact Us
                 </Link>
                 <Link
-                  href="/term-condition"
+                  href="/term-condition/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                 Team & Careers
@@ -300,7 +300,7 @@ const Navbar = () => {
           {/* Resources Dropdown */}
           <div className="relative group py-2">
             <Link
-              href="/blog"
+              href="/blog/"
               className="flex items-center gap-1.5 text-white text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
             >
               Resources
@@ -322,67 +322,67 @@ const Navbar = () => {
             <div className="absolute left-[-12px] top-full pt-3 w-60 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
               <div className="bg-white border border-[#e8e0d0] rounded-xl shadow-xl py-2">
                 <Link
-                  href="/mortgage-basics"
+                  href="/mortgage-basics/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Mortgage Basics
                 </Link>
                 <Link
-                  href="/videos"
+                  href="/videos/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Videos
                 </Link>
                 <Link
-                  href="/mortgage-basics/conventional-loan-basics"
+                  href="/mortgage-basics/conventional-loan-basics/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Conventional Loans
                 </Link>
                 <Link
-                  href="/client-mortgage-reviews"
+                  href="/client-mortgage-reviews/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Reviews
                 </Link>
                 <Link
-                  href="/faq"
+                  href="/faq/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   FAQ
                 </Link>{/*  <Link
-                  href="/resources/fha-loans"
+                  href="/resources/fha-loans/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   FHA Loans
                 </Link>
                 <Link
-                  href="/resources/real-estate-mortgages"
+                  href="/resources/real-estate-mortgages/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Real Estate & Mortgages
                 </Link>
                 <Link
-                  href="/resources/specialty-loans"
+                  href="/resources/specialty-loans/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Specialty Loans
                 </Link>
                 <Link
-                  href="/resources/homeownership-tips"
+                  href="/resources/homeownership-tips/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Homeownership Tips
                 </Link>
                 <Link
-                  href="/resources/process-guidance"
+                  href="/resources/process-guidance/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Process Guidance
                 </Link>
                 <div className="border-t border-[#e8e0d0]/40 my-1"></div>
                 <Link
-                  href="/blog"
+                  href="/blog/"
                   className="block px-4 py-2 text-[14px] text-[#3fb364] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-semibold"
                 >
                   All Resources
@@ -393,7 +393,7 @@ const Navbar = () => {
 
           {/* Realtors */}
           <Link
-            href="/realtorteam"
+            href="/realtorteam/"
             className="text-white text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
           >
             Realtors
@@ -566,7 +566,7 @@ const Navbar = () => {
                   </button>
 
                   <Link
-                    href="/service-areas"
+                    href="/service-areas/"
                     onClick={() => {
                       setMobileMenuOpen(false);
                       setActiveSubmenu(null);
@@ -593,7 +593,7 @@ const Navbar = () => {
                   </button>
 
                   <Link
-                    href="/contact-us"
+                    href="/contact-us/"
                     onClick={() => {
                       setMobileMenuOpen(false);
                       setActiveSubmenu(null);
@@ -604,7 +604,7 @@ const Navbar = () => {
                   </Link>
 
                   <Link
-                    href="/realtorteam"
+                    href="/realtorteam/"
                     onClick={() => {
                       setMobileMenuOpen(false);
                       setActiveSubmenu(null);
@@ -625,14 +625,14 @@ const Navbar = () => {
                   {activeSubmenu === "LOAN PROGRAMS" && (
                     <>
                       <Link
-                        href="/fha-loans"
+                        href="/fha-loans/"
                         onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
                         className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
                       >
                         FHA LOANS
                       </Link>
                       <Link
-                        href="/loan-programs-detail"
+                        href="/loan-programs-detail/"
                         onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
                         className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
                       >
@@ -644,70 +644,70 @@ const Navbar = () => {
                   {activeSubmenu === "CALCULATORS" && (
                     <>
                       <Link
-                        href="/basic-mortgage-payment-calculator"
+                        href="/basic-mortgage-payment-calculator/"
                         onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
                         className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
                       >
                         BASIC MORTGAGE PAYMENT
                       </Link>
                       <Link
-                        href="/mortgage-affordability-calculator"
+                        href="/mortgage-affordability-calculator/"
                         onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
                         className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
                       >
                         MORTGAGE AFFORDABILITY
                       </Link>
                       <Link
-                        href="/refinance-calculator"
+                        href="/refinance-calculator/"
                         onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
                         className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
                       >
                         REFINANCE CALCULATOR
                       </Link>
                       <Link
-                        href="/rent-vs-buy-calculator"
+                        href="/rent-vs-buy-calculator/"
                         onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
                         className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
                       >
                         RENT VS. BUY CALCULATOR
                       </Link>
                       <Link
-                        href="/down-payment-calculator"
+                        href="/down-payment-calculator/"
                         onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
                         className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
                       >
                         DOWN PAYMENT CALCULATOR
                       </Link>
                       <Link
-                        href="/debt-to-income-ratio-calculator"
+                        href="/debt-to-income-ratio-calculator/"
                         onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
                         className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
                       >
                         DEBT-TO-INCOME RATIO
                       </Link>
                       <Link
-                        href="/extra-payment-mortgage-calculator"
+                        href="/extra-payment-mortgage-calculator/"
                         onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
                         className="text-[#3fb364] font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-white transition-colors"
                       >
                         EXTRA PAYMENT MORTGAGE
                       </Link>
                       <Link
-                        href="/fha-loan-calculator"
+                        href="/fha-loan-calculator/"
                         onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
                         className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
                       >
                         FHA LOAN CALCULATOR
                       </Link>
                       <Link
-                        href="/va-loan-calculator"
+                        href="/va-loan-calculator/"
                         onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
                         className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
                       >
                         VA LOAN CALCULATOR
                       </Link>
                       <Link
-                        href="/home-purchase-closing-cost-calculator"
+                        href="/home-purchase-closing-cost-calculator/"
                         onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
                         className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
                       >
@@ -719,14 +719,14 @@ const Navbar = () => {
                   {activeSubmenu === "ABOUT" && (
                     <>
                       <Link
-                        href="/contact-us"
+                        href="/contact-us/"
                         onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
                         className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
                       >
                         CONTACT US
                       </Link>
                       <Link
-                        href="/term-condition"
+                        href="/term-condition/"
                         onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
                         className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
                       >
@@ -738,35 +738,35 @@ const Navbar = () => {
                   {activeSubmenu === "RESOURCES" && (
                     <>
                       <Link
-                        href="/mortgage-basics"
+                        href="/mortgage-basics/"
                         onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
                         className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
                       >
                         MORTGAGE BASICS
                       </Link>
                       <Link
-                        href="/videos"
+                        href="/videos/"
                         onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
                         className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
                       >
                         VIDEOS
                       </Link>
                       <Link
-                        href="/mortgage-basics/conventional-loan-basics"
+                        href="/mortgage-basics/conventional-loan-basics/"
                         onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
                         className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
                       >
                         CONVENTIONAL LOANS
                       </Link>
                       <Link
-                        href="/client-mortgage-reviews"
+                        href="/client-mortgage-reviews/"
                         onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
                         className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
                       >
                         REVIEWS
                       </Link>
                       <Link
-                        href="/faq"
+                        href="/faq/"
                         onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
                         className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
                       >

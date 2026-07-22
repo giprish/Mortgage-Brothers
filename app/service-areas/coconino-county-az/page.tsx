@@ -43,7 +43,7 @@ export default function CoconinoCountyPage() {
           <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">
             {/* Breadcrumb inside Pine Green Section */}
             <div className="flex items-center justify-center gap-2 text-[13px] font-medium text-[#c8c8b8] mb-5">
-              <Link href="/service-areas" className="hover:text-[#3fb364] transition-colors duration-200">
+              <Link href="/service-areas/" className="hover:text-[#3fb364] transition-colors duration-200">
                 Areas We Serve
               </Link>
               <span className="text-[#3fb364]/60">&gt;</span>
@@ -85,7 +85,7 @@ export default function CoconinoCountyPage() {
                 </svg>
               </Link>
               <Link
-                href="/about#talk-to-broker"
+                href="/about/#talk-to-broker"
                 className="w-full sm:w-auto inline-flex items-center justify-center bg-transparent border border-white/30 hover:border-white/60 text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200"
               >
                 Talk to a Broker
@@ -114,7 +114,7 @@ export default function CoconinoCountyPage() {
               {cities.map((city, index) => (
                 <Link
                   key={index}
-                  href={`/service-areas/coconino-county-az/${city.name.toLowerCase().replace(/\./g, "").replace(/\s+/g, "-")}`}
+                  href={`/service-areas/coconino-county-az/${city.name.toLowerCase().replace(/\./g, "").replace(/\s+/g, "-")}/`}
                   className="bg-[#faf7f0] rounded-2xl p-6 lg:p-7 border border-[#e8e0d0]/50 shadow-sm flex flex-col hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/30 active:scale-[0.98] active:translate-y-0 cursor-pointer transition-all duration-300"
                 >
                   <div className="flex items-center gap-2 mb-4 text-brand-green-deep">

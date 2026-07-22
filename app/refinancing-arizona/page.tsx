@@ -37,7 +37,7 @@ export default function RefinancingArizonaPage() {
                 Lower your monthly mortgage payment, tap into equity cash, or drop monthly PMI with custom Arizona mortgage refinancing options.
               </p>
               <div className="pt-4 flex flex-wrap items-center gap-4">
-                <Link href="/refinance-calculator" className="bg-[#3fb364] hover:bg-[#359854] text-white text-[16px] font-bold px-8 py-4 rounded-full transition-all shadow-lg">
+                <Link href="/refinance-calculator/" className="bg-[#3fb364] hover:bg-[#359854] text-white text-[16px] font-bold px-8 py-4 rounded-full transition-all shadow-lg">
                   CALCULATE REFINANCE SAVINGS →
                 </Link>
                 <a href="tel:4805356200" className="border border-white/30 hover:border-white text-white text-[15px] font-semibold px-6 py-4 rounded-full transition-all hover:bg-white/10">
@@ -87,7 +87,7 @@ export default function RefinancingArizonaPage() {
 
         <section className="py-16 bg-[#052316] text-white text-center">
           <h2 className="text-[28px] font-bold font-playfair mb-4">Calculate Your Arizona Refinance Savings</h2>
-          <Link href="/refinance-calculator" className="bg-[#3fb364] text-white font-bold px-8 py-4 rounded-full inline-block">CALCULATE REFINANCE SAVINGS →</Link>
+          <Link href="/refinance-calculator/" className="bg-[#3fb364] text-white font-bold px-8 py-4 rounded-full inline-block">CALCULATE REFINANCE SAVINGS →</Link>
         </section>
       </main>
       <Footer />

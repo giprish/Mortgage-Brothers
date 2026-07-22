@@ -9,7 +9,7 @@ const articles = [
   {
     title: "VA Loans for First-Time Homebuyers in Arizona: Your Path to Homeownership",
     description: "Explore 0% down payment VA loan benefits, eligibility guidelines, and rate advantages for military buyers in Arizona.",
-    href: "/va-loans-for-first-time-homebuyers-in-arizona-your-path-to-affordable-homeownership",
+    href: "/va-loans-for-first-time-homebuyers-in-arizona-your-path-to-affordable-homeownership/",
     date: "May 28, 2026",
     readTime: "8 min read",
     category: "Specialty Loans"
@@ -17,7 +17,7 @@ const articles = [
   {
     title: "What Is a Jumbo Loan? Everything You Need to Know Before Applying in Arizona",
     description: "Understanding non-conforming luxury home financing, qualification rules, and 2026 limits in Scottsdale and Phoenix.",
-    href: "/what-is-a-jumbo-loan-everything-you-need-to-know-before-applying",
+    href: "/what-is-a-jumbo-loan-everything-you-need-to-know-before-applying/",
     date: "May 12, 2026",
     readTime: "9 min read",
     category: "Specialty Loans"
@@ -25,7 +25,7 @@ const articles = [
   {
     title: "Top 7 Reasons Arizona Investment Home Buyers Choose Private Money Lenders",
     description: "Discover why real estate investors in Phoenix and Scottsdale turn to private money lending for fast, flexible property acquisitions.",
-    href: "/top-7-reasons-arizona-investment-home-buyers-choose-private-money-lenders",
+    href: "/top-7-reasons-arizona-investment-home-buyers-choose-private-money-lenders/",
     date: "Jun 15, 2026",
     readTime: "8 min read",
     category: "Specialty Loans"
@@ -43,7 +43,7 @@ export default function SpecialtyLoansPage() {
           <div className="max-w-5xl mx-auto">
             {/* Breadcrumb */}
             <div className="flex items-center gap-2 text-[#8da684] text-[13px] font-medium mb-6">
-              <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+              <Link href="/blog/" className="hover:text-white transition-colors">Blog</Link>
               <span>&gt;</span>
               <span className="text-[#3fb364]">Specialty Loans</span>
             </div>

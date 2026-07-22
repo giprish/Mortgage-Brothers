@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  trailingSlash: true,
   async redirects() {
     return [
       {
@@ -11,12 +11,22 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/resources/mortgage-basics",
-        destination: "/mortgage-basics",
+        destination: "/mortgage-basics/",
+        permanent: true,
+      },
+      {
+        source: "/resources/mortgage-basics/",
+        destination: "/mortgage-basics/",
         permanent: true,
       },
       {
         source: "/resources/mortgage-basics/:article",
-        destination: "/mortgage-basics/:article",
+        destination: "/mortgage-basics/:article/",
+        permanent: true,
+      },
+      {
+        source: "/resources/mortgage-basics/:article/",
+        destination: "/mortgage-basics/:article/",
         permanent: true,
       },
     ];
@@ -28,8 +38,16 @@ const nextConfig: NextConfig = {
         destination: "/resources/mortgage-basics",
       },
       {
+        source: "/mortgage-basics/",
+        destination: "/resources/mortgage-basics/",
+      },
+      {
         source: "/mortgage-basics/:article",
         destination: "/resources/mortgage-basics/:article",
+      },
+      {
+        source: "/mortgage-basics/:article/",
+        destination: "/resources/mortgage-basics/:article/",
       },
     ];
   },

@@ -258,7 +258,7 @@ export default function MaricopaCounty2() {
                   </p>
                 </div>
                 <Link
-                  href="/about#talk-to-broker"
+                  href="/about/#talk-to-broker"
                   className="text-brand-green-accent hover:text-[#2d5a2d] text-[13px] font-bold flex items-center gap-1.5 transition-colors group"
                 >
                   Request your area

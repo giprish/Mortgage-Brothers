@@ -9,7 +9,7 @@ const articles = [
   {
     title: "VA Loans for First-Time Homebuyers in Arizona: Your Path to Homeownership",
     description: "Explore 0% down payment VA loan benefits, eligibility guidelines, and rate advantages for military buyers in Arizona.",
-    href: "/va-loans-for-first-time-homebuyers-in-arizona-your-path-to-affordable-homeownership",
+    href: "/va-loans-for-first-time-homebuyers-in-arizona-your-path-to-affordable-homeownership/",
     date: "May 28, 2026",
     readTime: "8 min read",
     category: "Mortgage Process Guidance"
@@ -17,7 +17,7 @@ const articles = [
   {
     title: "How to Get a Mortgage in Arizona with Fair or Improving Credit",
     description: "Learn how buyers with credit scores between 580 and 660 qualify for home loans in Arizona with FHA programs and rapid rescoring.",
-    href: "/how-to-get-a-mortgage-in-arizona-with-fair-or-improving-credit",
+    href: "/how-to-get-a-mortgage-in-arizona-with-fair-or-improving-credit/",
     date: "Jun 10, 2026",
     readTime: "7 min read",
     category: "Mortgage Process Guidance"
@@ -25,7 +25,7 @@ const articles = [
   {
     title: "Conventional Home Loans vs. FHA Loans: Which Is Right for You?",
     description: "Detailed side-by-side comparison of credit score rules, down payments, PMI vs. MIP, and total 30-year costs for Arizona buyers.",
-    href: "/conventional-home-loans-vs-fha-loans-which-is-right-for-you",
+    href: "/conventional-home-loans-vs-fha-loans-which-is-right-for-you/",
     date: "Jun 20, 2026",
     readTime: "10 min read",
     category: "Mortgage Process Guidance"
@@ -43,7 +43,7 @@ export default function MortgageProcessGuidancePage() {
           <div className="max-w-5xl mx-auto">
             {/* Breadcrumb */}
             <div className="flex items-center gap-2 text-[#8da684] text-[13px] font-medium mb-6">
-              <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+              <Link href="/blog/" className="hover:text-white transition-colors">Blog</Link>
               <span>&gt;</span>
               <span className="text-[#3fb364]">Mortgage Process Guidance</span>
             </div>

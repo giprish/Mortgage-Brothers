@@ -9,7 +9,7 @@ const articles = [
   {
     title: "Conventional Home Loans vs. FHA Loans: Which Is Right for You?",
     description: "Detailed side-by-side comparison of credit score rules, down payments, PMI vs. MIP, and total 30-year costs for Arizona buyers.",
-    href: "/conventional-home-loans-vs-fha-loans-which-is-right-for-you",
+    href: "/conventional-home-loans-vs-fha-loans-which-is-right-for-you/",
     date: "Jun 20, 2026",
     readTime: "10 min read",
     category: "Mortgage Payments & Strategies"
@@ -17,7 +17,7 @@ const articles = [
   {
     title: "Arizona Real Estate Trends in 2026: Predicting Mortgage Rates & Market Shifts",
     description: "Market analysis on 2026 Phoenix mortgage rate forecasts, housing inventory recovery, and home appreciation trends.",
-    href: "/arizona-real-estate-trends-in-2026-predicting-mortgage-rates-for-the-coming-year",
+    href: "/arizona-real-estate-trends-in-2026-predicting-mortgage-rates-for-the-coming-year/",
     date: "May 5, 2026",
     readTime: "10 min read",
     category: "Mortgage Payments & Strategies"
@@ -35,7 +35,7 @@ export default function MortgagePaymentsStrategiesPage() {
           <div className="max-w-5xl mx-auto">
             {/* Breadcrumb */}
             <div className="flex items-center gap-2 text-[#8da684] text-[13px] font-medium mb-6">
-              <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+              <Link href="/blog/" className="hover:text-white transition-colors">Blog</Link>
               <span>&gt;</span>
               <span className="text-[#3fb364]">Mortgage Payments &amp; Strategies</span>
             </div>

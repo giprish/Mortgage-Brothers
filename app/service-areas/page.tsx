@@ -251,8 +251,8 @@ export default function MaricopaCounty2() {
                         ? "" 
                         : (cleanName.includes("county") ? `${cleanName}-az` : `${cleanName}-county-az`);
                       const countyHref = county.name === "All" 
-                        ? "/service-areas" 
-                        : `/service-areas/${countySlug}`;
+                        ? "/service-areas/" 
+                        : `/service-areas/${countySlug}/`;
 
                       return (
                         <Link
@@ -285,7 +285,7 @@ export default function MaricopaCounty2() {
                     </p>
                   </div>
                   <Link
-                    href="/about#talk-to-broker"
+                    href="/about/#talk-to-broker"
                     className="text-brand-green-accent hover:text-[#2d5a2d] text-[13px] font-bold flex items-center gap-1.5 transition-colors group"
                   >
                     Request your area
@@ -347,7 +347,7 @@ export default function MaricopaCounty2() {
                     const citySlug = city.name.toLowerCase().replace(/\./g, "").replace(/\s+/g, "-");
                     const countySlug = city.county.toLowerCase().replace(/\s+/g, "-") + "-az";
 
-                    const href = `/service-areas/${countySlug}/${citySlug}`;
+                    const href = `/service-areas/${countySlug}/${citySlug}/`;
 
                     const cardContent = (
                       <>

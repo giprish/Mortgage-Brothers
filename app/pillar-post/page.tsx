@@ -9,7 +9,7 @@ const articles = [
   {
     title: "The Complete Arizona Guide to Selling Your Home for Cash (2026)",
     description: "A cash home sale is a transaction in which a buyer purchases your house outright, without a mortgage. Learn the pros, cons, and alternatives in Arizona.",
-    href: "/how-to-sell-my-house-fast-in-arizona",
+    href: "/how-to-sell-my-house-fast-in-arizona/",
     date: "Jun 25, 2026",
     readTime: "33 min read",
     category: "Pillar Post"
@@ -17,7 +17,7 @@ const articles = [
   {
     title: "Conventional Home Loans vs. FHA Loans: Which Is Right for You?",
     description: "Side-by-side comparison of down payments, credit requirements, PMI vs. MIP, and loan limits for Arizona homebuyers in 2026.",
-    href: "/conventional-home-loans-vs-fha-loans-which-is-right-for-you",
+    href: "/conventional-home-loans-vs-fha-loans-which-is-right-for-you/",
     date: "Jun 20, 2026",
     readTime: "12 min read",
     category: "Pillar Post"
@@ -25,7 +25,7 @@ const articles = [
   {
     title: "Arizona Real Estate Trends in 2026: Predicting Mortgage Rates & Market Shifts",
     description: "In-depth analysis of Phoenix, Tucson, and Arizona housing market shifts, rate predictions, and buyer strategies for 2026.",
-    href: "/arizona-real-estate-trends-in-2026-predicting-mortgage-rates-market-shifts",
+    href: "/arizona-real-estate-trends-in-2026-predicting-mortgage-rates-market-shifts/",
     date: "May 28, 2026",
     readTime: "15 min read",
     category: "Pillar Post"
@@ -43,7 +43,7 @@ export default function PillarPostPage() {
           <div className="max-w-5xl mx-auto">
             {/* Breadcrumb */}
             <div className="flex items-center gap-2 text-[#8da684] text-[13px] font-medium mb-6">
-              <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+              <Link href="/blog/" className="hover:text-white transition-colors">Blog</Link>
               <span>&gt;</span>
               <span className="text-[#3fb364]">Pillar Post</span>
             </div>

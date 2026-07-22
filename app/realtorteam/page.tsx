@@ -420,7 +420,7 @@ export default function RealtorTeamPage() {
                 </div>
                 <div className="bg-white border border-[#e8e0d0]/60 rounded-2xl p-6 shadow-sm">
                   <p className="text-[#a89a70] text-[10px] font-bold tracking-widest uppercase mb-2">CONTACT US</p>
-                  <Link href="/contact-us" className="text-[#052316] text-[16px] font-bold hover:text-[#3fb364] transition-colors">
+                  <Link href="/contact-us/" className="text-[#052316] text-[16px] font-bold hover:text-[#3fb364] transition-colors">
                     Open contact page →
                   </Link>
                 </div>

@@ -35,10 +35,10 @@ export default function ArticleDetailPage() {
         <div className="max-w-5xl mx-auto">
           {/* Breadcrumb */}
           <div className="flex items-center gap-1.5 text-[12px] text-[#8da684] font-semibold mb-6">
-            <Link href="/blog" className="hover:text-[#2d5a2d] transition-colors">Resources</Link>
+            <Link href="/blog/" className="hover:text-[#2d5a2d] transition-colors">Resources</Link>
             <span>&gt;</span>
             <Link 
-              href={categorySlug === "mortgage-basics" ? "/mortgage-basics" : `/resources/${categorySlug}`} 
+              href={categorySlug === "mortgage-basics" ? "/mortgage-basics/" : `/resources/${categorySlug}/`} 
               className="hover:text-[#2d5a2d] transition-colors text-[#3fb364]"
             >
               {categoryTitle}
@@ -257,7 +257,7 @@ export default function ArticleDetailPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* Card 1 */}
-              <Link href={`/resources/${categorySlug}/conventional-vs-fha`} className="bg-white border border-[#e8e0d0]/60 p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-brand-green-accent/20 transition-all cursor-pointer flex flex-col justify-between min-h-[140px]">
+              <Link href={`/resources/${categorySlug}/conventional-vs-fha/`} className="bg-white border border-[#e8e0d0]/60 p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-brand-green-accent/20 transition-all cursor-pointer flex flex-col justify-between min-h-[140px]">
                 <div>
                   <span className="text-[#b89a5a] text-[9.5px] font-bold tracking-widest uppercase block mb-2">
                     MORTGAGE BASICS
@@ -270,7 +270,7 @@ export default function ArticleDetailPage() {
               </Link>
 
               {/* Card 2 */}
-              <Link href={`/resources/${categorySlug}/calculate-pmi`} className="bg-white border border-[#e8e0d0]/60 p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-brand-green-accent/20 transition-all cursor-pointer flex flex-col justify-between min-h-[140px]">
+              <Link href={`/resources/${categorySlug}/calculate-pmi/`} className="bg-white border border-[#e8e0d0]/60 p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-brand-green-accent/20 transition-all cursor-pointer flex flex-col justify-between min-h-[140px]">
                 <div>
                   <span className="text-[#b89a5a] text-[9.5px] font-bold tracking-widest uppercase block mb-2">
                     MORTGAGE BASICS
@@ -283,7 +283,7 @@ export default function ArticleDetailPage() {
               </Link>
 
               {/* Card 3 */}
-              <Link href={`/resources/${categorySlug}/rapid-rescore`} className="bg-white border border-[#e8e0d0]/60 p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-brand-green-accent/20 transition-all cursor-pointer flex flex-col justify-between min-h-[140px]">
+              <Link href={`/resources/${categorySlug}/rapid-rescore/`} className="bg-white border border-[#e8e0d0]/60 p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-brand-green-accent/20 transition-all cursor-pointer flex flex-col justify-between min-h-[140px]">
                 <div>
                   <span className="text-[#b89a5a] text-[9.5px] font-bold tracking-widest uppercase block mb-2">
                     PROCESS GUIDANCE

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = getSeoMetadata("/mortgage-process-guidance");
+export const metadata: Metadata = getSeoMetadata("/mortgage-process-guidance/");
 
 export default function Layout({
   children,

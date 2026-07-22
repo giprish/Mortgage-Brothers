@@ -210,7 +210,7 @@ export default function ResourceCategoryPage() {
           <div className="max-w-5xl mx-auto relative z-10">
             {/* Breadcrumb row */}
             <div className="flex items-center gap-1.5 text-[12px] text-[#3fb364] font-medium mb-6">
-              <Link href="/blog" className="hover:underline">
+              <Link href="/blog/" className="hover:underline">
                 Resources
               </Link>
               <span>&gt;</span>
@@ -245,8 +245,8 @@ export default function ResourceCategoryPage() {
               <div className="flex flex-col gap-6">
                 {filteredArticles.map((art) => {
                   const articleHref = slug === "mortgage-basics"
-                    ? `/mortgage-basics/${art.id}`
-                    : `/resources/${slug}/${art.id}`;
+                    ? `/mortgage-basics/${art.id}/`
+                    : `/resources/${slug}/${art.id}/`;
                   return (
                     <Link
                       key={art.id}

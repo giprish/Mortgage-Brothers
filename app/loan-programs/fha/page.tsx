@@ -51,7 +51,7 @@ export default function FhaLoanPage() {
             <div className="lg:col-span-7 flex flex-col items-start">
               {/* Breadcrumb */}
               <div className="flex items-center gap-2 text-[#8da684] text-[12px] font-semibold mb-6">
-                <Link href="/mortgage-loan-programs-arizona" className="hover:text-white transition-colors">Loan Programs</Link>
+                <Link href="/mortgage-loan-programs-arizona/" className="hover:text-white transition-colors">Loan Programs</Link>
                 <span>&gt;</span>
                 <span className="text-[#3fb364]">FHA Home Loans</span>
               </div>
@@ -76,7 +76,7 @@ export default function FhaLoanPage() {
                   Get Pre-Approved &rarr;
                 </Link>
                 <Link
-                  href="/calculators"
+                  href="/calculators/"
                   className="border border-white/20 hover:border-white text-white text-[14px] font-semibold px-6 py-3 rounded-full transition-all duration-200"
                 >
                   Estimate my payment
@@ -307,7 +307,7 @@ export default function FhaLoanPage() {
 
               <div className="relative z-10 pt-4 border-t border-white/10">
                 <Link
-                  href="/calculators"
+                  href="/calculators/"
                   className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[13.5px] font-bold py-3 px-6 rounded-xl text-center flex items-center justify-center gap-1.5 transition-all duration-200"
                 >
                   Run your numbers
@@ -423,7 +423,7 @@ export default function FhaLoanPage() {
                   Often cheaper long-term for stronger credit and larger down payments.
                 </p>
               </div>
-              <Link href="/mortgage-loan-programs-arizona" className="text-[#3fb364] hover:text-[#2d5a2d] text-[12px] font-semibold mt-4 block">
+              <Link href="/mortgage-loan-programs-arizona/" className="text-[#3fb364] hover:text-[#2d5a2d] text-[12px] font-semibold mt-4 block">
                 View program &rarr;
               </Link>
             </div>
@@ -441,7 +441,7 @@ export default function FhaLoanPage() {
                   $0 down and no monthly mortgage insurance for eligible veterans.
                 </p>
               </div>
-              <Link href="/mortgage-loan-programs-arizona" className="text-[#3fb364] hover:text-[#2d5a2d] text-[12px] font-semibold mt-4 block">
+              <Link href="/mortgage-loan-programs-arizona/" className="text-[#3fb364] hover:text-[#2d5a2d] text-[12px] font-semibold mt-4 block">
                 View program &rarr;
               </Link>
             </div>
@@ -459,7 +459,7 @@ export default function FhaLoanPage() {
                   Already have an FHA loan? Lower your rate later with minimal paperwork.
                 </p>
               </div>
-              <Link href="/mortgage-loan-programs-arizona" className="text-[#3fb364] hover:text-[#2d5a2d] text-[12px] font-semibold mt-4 block">
+              <Link href="/mortgage-loan-programs-arizona/" className="text-[#3fb364] hover:text-[#2d5a2d] text-[12px] font-semibold mt-4 block">
                 View program &rarr;
               </Link>
             </div>
@@ -487,7 +487,7 @@ export default function FhaLoanPage() {
                 Get Pre-Approved &rarr;
               </Link>
               <Link
-                href="/contact-us"
+                href="/contact-us/"
                 className="border border-white/20 hover:border-white text-white text-[14px] font-semibold px-6 py-3 rounded-full transition-all duration-200"
               >
                 Talk to a Broker

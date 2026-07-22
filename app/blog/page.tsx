@@ -15,7 +15,7 @@ const articlesData = [
     date: "Jun 25, 2026",
     readTime: "33 min read",
     isFeatured: true,
-    href: "/how-to-sell-my-house-fast-in-arizona"
+    href: "/how-to-sell-my-house-fast-in-arizona/"
   },
   {
     id: "top-7-reasons-arizona-investment-home-buyers-choose-private-money-lenders",
@@ -25,7 +25,7 @@ const articlesData = [
     date: "Jun 15, 2026",
     readTime: "8 min read",
     isFeatured: false,
-    href: "/top-7-reasons-arizona-investment-home-buyers-choose-private-money-lenders"
+    href: "/top-7-reasons-arizona-investment-home-buyers-choose-private-money-lenders/"
   },
   {
     id: "how-to-get-a-mortgage-in-arizona-with-fair-or-improving-credit",
@@ -35,7 +35,7 @@ const articlesData = [
     date: "Jun 10, 2026",
     readTime: "7 min read",
     isFeatured: false,
-    href: "/how-to-get-a-mortgage-in-arizona-with-fair-or-improving-credit"
+    href: "/how-to-get-a-mortgage-in-arizona-with-fair-or-improving-credit/"
   },
   {
     id: "who-qualifies-for-a-reverse-mortgage-understanding-eligibility-requirements",
@@ -45,7 +45,7 @@ const articlesData = [
     date: "Jun 5, 2026",
     readTime: "9 min read",
     isFeatured: false,
-    href: "/who-qualifies-for-a-reverse-mortgage-understanding-eligibility-requirements"
+    href: "/who-qualifies-for-a-reverse-mortgage-understanding-eligibility-requirements/"
   },
   {
     id: "va-loans-for-first-time-homebuyers-in-arizona-your-path-to-affordable-homeownership/",
@@ -55,7 +55,7 @@ const articlesData = [
     date: "May 28, 2026",
     readTime: "8 min read",
     isFeatured: false,
-    href: "/va-loans-for-first-time-homebuyers-in-arizona-your-path-to-affordable-homeownership"
+    href: "/va-loans-for-first-time-homebuyers-in-arizona-your-path-to-affordable-homeownership/"
   },
   {
     id: "navigating-mortgage-options-during-divorce-a-complete-guide",
@@ -65,7 +65,7 @@ const articlesData = [
     date: "May 20, 2026",
     readTime: "11 min read",
     isFeatured: false,
-    href: "/navigating-mortgage-options-during-divorce-a-complete-guide"
+    href: "/navigating-mortgage-options-during-divorce-a-complete-guide/"
   },
   {
     id: "what-is-a-jumbo-loan-everything-you-need-to-know-before-applying",
@@ -85,7 +85,7 @@ const articlesData = [
     date: "Jun 20, 2026",
     readTime: "10 min read",
     isFeatured: false,
-    href: "/conventional-home-loans-vs-fha-loans-which-is-right-for-you"
+    href: "/conventional-home-loans-vs-fha-loans-which-is-right-for-you/"
   },
   {
     id: "arizona-real-estate-trends-in-2026-predicting-mortgage-rates-for-the-coming-year",
@@ -95,7 +95,7 @@ const articlesData = [
     date: "May 5, 2026",
     readTime: "10 min read",
     isFeatured: false,
-    href: "/arizona-real-estate-trends-in-2026-predicting-mortgage-rates-for-the-coming-year"
+    href: "/arizona-real-estate-trends-in-2026-predicting-mortgage-rates-for-the-coming-year/"
   }
 ];
 
@@ -105,61 +105,61 @@ const topicsData = [
     title: "Arizona Mortgage Insights",
     description: "Explore local market trends, regulations, and unique opportunities for homebuyers in the Grand Canyon State. Get expert advice on navigating Arizona's diverse real estate landscape and mortgage options.",
     linkText: "Explore Arizona Options",
-    href: "/arizona-mortgage-insights"
+    href: "/arizona-mortgage-insights/"
   },
   {
     title: "Mortgage Process Guidance",
     description: "Navigate the mortgage application process with confidence. From pre-approval to closing, our step-by-step guides help you understand what to expect and how to prepare at each stage.",
     linkText: "Navigate Your Mortgage",
-    href: "/mortgage-process-guidance"
+    href: "/mortgage-process-guidance/"
   },
   {
     title: "FHA Loans",
     description: "Discover the benefits and requirements of Federal Housing Administration loans. Learn how these government-backed mortgages can make homeownership more accessible,",
     linkText: "Explore FHA Loans",
-    href: "/fha-loans"
+    href: "/fha-loans/"
   },
   {
     title: "Mortgage Qualifications",
     description: "Understand the factors that lenders consider when approving mortgages. Learn how to improve your chances of qualification by optimizing your credit score, debt-to-income ratio, and down payment.",
     linkText: "Check Your Qualifications",
-    href: "/mortgage-qualifications"
+    href: "/mortgage-qualifications/"
   },
   {
     title: "Homeownership Tips",
     description: "Find practical advice on maintaining, improving, and managing your home. From budget-friendly renovations to energy-saving strategies, empower yourself with knowledge to maximize your investment.",
     linkText: "Get Home Smart",
-    href: "/homeownership-tips"
+    href: "/homeownership-tips/"
   },
   {
     title: "Real Estate & Mortgages",
     description: "Explore the intersection of real estate trends and mortgage options. Get insights on how market conditions affect home prices, interest rates, and financing opportunities.",
     linkText: "Sync Market & Mortgage",
-    href: "/real-estate-mortgages"
+    href: "/real-estate-mortgages/"
   },
   {
     title: "Mortgage Basics",
     description: "Demystify the world of mortgages with our comprehensive guides. Understand key terms, loan types, and fundamental concepts to make informed decisions about your home financing.",
     linkText: "Master Mortgage Fundamentals",
-    href: "/mortgage-basics"
+    href: "/mortgage-basics/"
   },
   {
     title: "Specialty Loans",
     description: "Discover unique mortgage products designed for specific needs. From VA loans for veterans to jumbo loans for high-value properties, learn about specialized financing options that might suit your situation.",
     linkText: "Find Your Niche Loan",
-    href: "/specialty-loans"
+    href: "/specialty-loans/"
   },
   {
     title: "Mortgage Payments & Strategies",
     description: "Optimize your mortgage with smart payment strategies. Learn about bi-weekly payments, extra principal payments, and refinancing options to potentially save thousands over the life of your home loan.",
     linkText: "Explore Payment Strategies",
-    href: "/mortgage-payments-strategies"
+    href: "/mortgage-payments-strategies/"
   },
   {
     title: "Spouse & Estate Considerations",
     description: "Understand the implications of mortgages on marriage, divorce, and estate planning. Get expert advice on protecting your assets and ensuring smooth transitions in various life scenarios.",
     linkText: "Protect Your Assets",
-    href: "/spouse-estate-considerations"
+    href: "/spouse-estate-considerations/"
   }
 ];
 
@@ -214,14 +214,14 @@ export default function BlogPage() {
             {categories.map((cat) => {
               const isActive = selectedCategory === cat;
               const categoryHrefMap: Record<string, string> = {
-                "All": "/blog",
-                "Pillar Post": "/pillar-post",
-                "Arizona Mortgage Insights": "/arizona-mortgage-insights",
-                "Mortgage Basics": "/mortgage-basics",
-                "Real Estate & Mortgages": "/real-estate-mortgages",
-                "Process Guidance": "/mortgage-process-guidance",
+                "All": "/blog/",
+                "Pillar Post": "/pillar-post/",
+                "Arizona Mortgage Insights": "/arizona-mortgage-insights/",
+                "Mortgage Basics": "/mortgage-basics/",
+                "Real Estate & Mortgages": "/real-estate-mortgages/",
+                "Process Guidance": "/mortgage-process-guidance/",
               };
-              const href = categoryHrefMap[cat] || "/blog";
+              const href = categoryHrefMap[cat] || "/blog/";
               
               if (cat === "All" ) {
                 return (
@@ -282,7 +282,7 @@ export default function BlogPage() {
                   <span className="text-brand-text-muted text-[12px] block mb-2">
                     {featuredArticle.date} · {featuredArticle.readTime}
                   </span>
-                  <Link href={featuredArticle.href || "/how-to-sell-my-house-fast-in-arizona"}>
+                  <Link href={featuredArticle.href || "/how-to-sell-my-house-fast-in-arizona/"}>
                     <h2 className="text-[#052316] text-[24px] lg:text-[28px] font-playfair font-normal leading-tight mb-3 hover:text-[#3fb364] transition-colors cursor-pointer">
                       {featuredArticle.title}
                     </h2>
@@ -293,7 +293,7 @@ export default function BlogPage() {
                 </div>
 
                 <Link
-                  href={featuredArticle.href || "/how-to-sell-my-house-fast-in-arizona"}
+                  href={featuredArticle.href || "/how-to-sell-my-house-fast-in-arizona/"}
                   className="text-[#3fb364] hover:text-[#2d5a2d] text-[14px] font-bold flex items-center gap-1.5 transition-colors group w-fit"
                 >
                   Read the guide
@@ -352,7 +352,7 @@ export default function BlogPage() {
 
                       {/* Content block */}
                       <div className="p-6">
-                        <Link href={art.href || "/how-to-sell-my-house-fast-in-arizona"}>
+                        <Link href={art.href || "/how-to-sell-my-house-fast-in-arizona/"}>
                           <h3 className="text-[#052316] text-[17px] font-playfair font-normal leading-snug mb-2.5 hover:text-[#3fb364] transition-colors cursor-pointer">
                             {art.title}
                           </h3>
@@ -411,7 +411,7 @@ export default function BlogPage() {
                     </p>
                     {topic.linkText && (
                       <Link
-                        href={topic.href || "/blog"}
+                        href={topic.href || "/blog/"}
                         onClick={() => setSelectedCategory(topic.title)}
                         className="inline-flex items-center text-[#388e3c] hover:text-[#2e7d32] text-[14px] font-medium transition-colors hover:underline"
                       >

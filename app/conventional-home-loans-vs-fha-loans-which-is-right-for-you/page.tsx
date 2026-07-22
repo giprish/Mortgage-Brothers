@@ -21,7 +21,7 @@ export default function ConventionalVsFhaLoansPage() {
         <section className="bg-[#052316] text-white py-16 px-6 lg:px-10 relative overflow-hidden text-center">
           <div className="max-w-4xl mx-auto relative z-10">
             <div className="flex items-center justify-center gap-2 text-[#8da684] text-[13px] font-semibold mb-6">
-              <Link href="/blog" className="hover:text-white transition-colors">
+              <Link href="/blog/" className="hover:text-white transition-colors">
                 Blog
               </Link>
               <span>&gt;</span>
@@ -57,7 +57,7 @@ export default function ConventionalVsFhaLoansPage() {
               Buying a home in Arizona is exciting—but it can also feel overwhelming when it comes to choosing the right mortgage.
             </p>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
-              Take Emma, a first-time buyer in Phoenix. She’s saved some money but isn’t sure if a <Link href="/conventional-home-loans-arizona" className="text-[#3fb364] font-semibold underline">Conventional home loan</Link> or an <Link href="/fha-loans" className="text-[#3fb364] font-semibold underline">FHA loan</Link> makes more sense. Her friend Carlos, upgrading to a bigger home in Gilbert with excellent credit, is leaning Conventional.
+              Take Emma, a first-time buyer in Phoenix. She’s saved some money but isn’t sure if a <Link href="/conventional-home-loans-arizona/" className="text-[#3fb364] font-semibold underline">Conventional home loan</Link> or an <Link href="/fha-loans/" className="text-[#3fb364] font-semibold underline">FHA loan</Link> makes more sense. Her friend Carlos, upgrading to a bigger home in Gilbert with excellent credit, is leaning Conventional.
             </p>
 
             <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl my-6">

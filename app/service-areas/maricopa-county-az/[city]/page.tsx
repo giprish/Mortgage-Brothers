@@ -8,7 +8,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { city } = await params;
-  return getSeoMetadata(`/service-areas/maricopa-county-az/${city}`);
+  return getSeoMetadata(`/service-areas/maricopa-county-az/${city}/`);
 }
 
 export default function Page() {

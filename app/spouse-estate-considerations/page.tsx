@@ -9,7 +9,7 @@ const articles = [
   {
     title: "Navigating Mortgage Options During Divorce: A Complete Guide for Arizona Homeowners",
     description: "How to handle marital real estate in Arizona, including buyout refinances, equity splits, and home sale strategies.",
-    href: "/navigating-mortgage-options-during-divorce-a-complete-guide",
+    href: "/navigating-mortgage-options-during-divorce-a-complete-guide/",
     date: "May 20, 2026",
     readTime: "11 min read",
     category: "Spouse & Estate Considerations"
@@ -17,7 +17,7 @@ const articles = [
   {
     title: "Who Qualifies for a Reverse Mortgage? Understanding Eligibility in Arizona",
     description: "A complete guide to HECM reverse mortgage eligibility rules, age requirements, and equity qualifications for Arizona seniors.",
-    href: "/who-qualifies-for-a-reverse-mortgage-understanding-eligibility-requirements",
+    href: "/who-qualifies-for-a-reverse-mortgage-understanding-eligibility-requirements/",
     date: "Jun 5, 2026",
     readTime: "9 min read",
     category: "Spouse & Estate Considerations"
@@ -35,7 +35,7 @@ export default function SpouseEstateConsiderationsPage() {
           <div className="max-w-5xl mx-auto">
             {/* Breadcrumb */}
             <div className="flex items-center gap-2 text-[#8da684] text-[13px] font-medium mb-6">
-              <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+              <Link href="/blog/" className="hover:text-white transition-colors">Blog</Link>
               <span>&gt;</span>
               <span className="text-[#3fb364]">Spouse &amp; Estate Considerations</span>
             </div>

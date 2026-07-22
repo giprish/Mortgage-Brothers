@@ -96,7 +96,7 @@ const Footer = () => {
               {["Conventional", "FHA", "VA", "Refinance"].map((item) => (
                 <li key={item}>
                   <a
-                    href={`/mortgage-loan-programs-arizona#${item.toLowerCase()}`}
+                    href={`/mortgage-loan-programs-arizona/#${item.toLowerCase()}`}
                     className="text-[#a8b89a] hover:text-white text-[13px] transition-colors duration-200"
                   >
                     {item}
@@ -114,12 +114,12 @@ const Footer = () => {
             <ul className="flex flex-col gap-3">
               {["About Us", "The Team", "Reviews", "Calculators", "Areas We Serve", "FAQ"].map((item) => {
                 let href = `/#${item.toLowerCase().replace(" ", "-")}`;
-                if (item === "FAQ") href = "/faq";
-                if (item === "About Us") href = "/about-us";
-                if (item === "Reviews") href = "/client-mortgage-reviews";
-                if (item === "Calculators") href = "/calculators";
-                if (item === "Areas We Serve") href = "/service-areas";
-                if (item === "The Team") href = "/team";
+                if (item === "FAQ") href = "/faq/";
+                if (item === "About Us") href = "/about-us/";
+                if (item === "Reviews") href = "/client-mortgage-reviews/";
+                if (item === "Calculators") href = "/calculators/";
+                if (item === "Areas We Serve") href = "/service-areas/";
+                if (item === "The Team") href = "/team/";
                 return (
                   <li key={item}>
                     <a

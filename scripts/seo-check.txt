@@ -1,0 +1,6 @@
+﻿{
+  entries: 163,
+  keysWithSlash: 0,
+  sourceUrlMissingSlash: 0,
+  ogUrlMissingSlash: 0
+}

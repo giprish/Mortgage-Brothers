@@ -21,7 +21,7 @@ export default function VaLoansArticlePage() {
         <section className="bg-[#052316] text-white py-16 px-6 lg:px-10 text-center relative overflow-hidden">
           <div className="max-w-4xl mx-auto relative z-10">
             <div className="flex items-center justify-center gap-2 text-[#8da684] text-[13px] font-semibold mb-6">
-              <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+              <Link href="/blog/" className="hover:text-white transition-colors">Blog</Link>
               <span>&gt;</span>
               <span className="text-[#3fb364]">Process Guidance</span>
             </div>
@@ -110,7 +110,7 @@ export default function VaLoansArticlePage() {
           <div className="bg-[#052316] text-white rounded-2xl p-8 text-center mt-12 shadow-xl">
             <h3 className="text-[24px] font-bold mb-3 font-playfair">Get Pre-Approved for an Arizona VA Loan</h3>
             <p className="text-[#c8c8b8] text-[15px] max-w-xl mx-auto mb-6">Our military-specialized mortgage team will pull your Certificate of Eligibility (COE) for free.</p>
-            <Link href="/va-loans-arizona" className="inline-block bg-[#3fb364] hover:bg-[#2d9e4f] text-white font-bold text-[15px] px-8 py-3.5 rounded-xl transition-colors">
+            <Link href="/va-loans-arizona/" className="inline-block bg-[#3fb364] hover:bg-[#2d9e4f] text-white font-bold text-[15px] px-8 py-3.5 rounded-xl transition-colors">
               Explore VA Loan Programs
             </Link>
           </div>

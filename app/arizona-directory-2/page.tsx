@@ -13,7 +13,7 @@ const countiesData = [
     region: "GREATER PHOENIX",
     seat: "Phoenix",
     cityCount: 28,
-    route: "/service-areas/maricopa-county-az",
+    route: "/service-areas/maricopa-county-az/",
     cities: [
       "Phoenix", "Scottsdale", "Mesa", "Chandler", "Gilbert", "Glendale", "Tempe", "Peoria",
       "Surprise", "Goodyear", "Avondale", "Buckeye", "Queen Creek", "Fountain Hills",
@@ -28,7 +28,7 @@ const countiesData = [
     region: "SOUTHERN ARIZONA",
     seat: "Tucson",
     cityCount: 8,
-    route: "/service-areas/pima-county-az",
+    route: "/service-areas/pima-county-az/",
     cities: ["Tucson", "Oro Valley", "Marana", "Sahuarita", "Vail", "Green Valley", "Catalina Foothills", "South Tucson"]
   },
   {
@@ -37,7 +37,7 @@ const countiesData = [
     region: "GREATER PHOENIX",
     seat: "Florence",
     cityCount: 10,
-    route: "/service-areas/pinal-county-az",
+    route: "/service-areas/pinal-county-az/",
     cities: ["Casa Grande", "Maricopa", "San Tan Valley", "Florence", "Coolidge", "Eloy", "Apache Junction", "Superior", "Kearny", "Mammoth"]
   },
   {
@@ -46,7 +46,7 @@ const countiesData = [
     region: "NORTHERN ARIZONA",
     seat: "Prescott",
     cityCount: 9,
-    route: "/service-areas/yavapai-county-az",
+    route: "/service-areas/yavapai-county-az/",
     cities: ["Prescott", "Prescott Valley", "Sedona", "Cottonwood", "Chino Valley", "Camp Verde", "Dewey-Humboldt", "Clarkdale", "Jerome"]
   },
   {
@@ -55,7 +55,7 @@ const countiesData = [
     region: "NORTHERN ARIZONA",
     seat: "Flagstaff",
     cityCount: 6,
-    route: "/service-areas/coconino-county-az",
+    route: "/service-areas/coconino-county-az/",
     cities: ["Flagstaff", "Sedona", "Williams", "Page", "Fredonia", "Tusayan"]
   },
   {
@@ -64,7 +64,7 @@ const countiesData = [
     region: "NORTHERN ARIZONA",
     seat: "Holbrook",
     cityCount: 6,
-    route: "/service-areas/navajo-county-az",
+    route: "/service-areas/navajo-county-az/",
     cities: ["Show Low", "Pinetop-Lakeside", "Holbrook", "Taylor", "Snowflake", "Winslow"]
   },
   {
@@ -73,7 +73,7 @@ const countiesData = [
     region: "NORTHERN ARIZONA",
     seat: "St. Johns",
     cityCount: 5,
-    route: "/service-areas/apache-county-az",
+    route: "/service-areas/apache-county-az/",
     cities: ["St. Johns", "Eagar", "Springerville", "Chinle", "Window Rock"]
   },
   {
@@ -82,7 +82,7 @@ const countiesData = [
     region: "NORTHERN ARIZONA",
     seat: "Globe",
     cityCount: 5,
-    route: "/service-areas/gila-county-az",
+    route: "/service-areas/gila-county-az/",
     cities: ["Payson", "Globe", "Miami", "Star Valley", "Hayden"]
   },
   {
@@ -91,7 +91,7 @@ const countiesData = [
     region: "SOUTHERN ARIZONA",
     seat: "Bisbee",
     cityCount: 7,
-    route: "/service-areas/cochise-county-az",
+    route: "/service-areas/cochise-county-az/",
     cities: ["Sierra Vista", "Douglas", "Bisbee", "Benson", "Willcox", "Tombstone", "Huachuca City"]
   },
   {
@@ -100,7 +100,7 @@ const countiesData = [
     region: "SOUTHERN ARIZONA",
     seat: "Safford",
     cityCount: 3,
-    route: "/service-areas/graham-county-az",
+    route: "/service-areas/graham-county-az/",
     cities: ["Safford", "Thatcher", "Pima"]
   },
   {
@@ -109,7 +109,7 @@ const countiesData = [
     region: "SOUTHERN ARIZONA",
     seat: "Clifton",
     cityCount: 3,
-    route: "/service-areas/greenlee-county-az",
+    route: "/service-areas/greenlee-county-az/",
     cities: ["Clifton", "Duncan", "Morenci"]
   },
   {
@@ -118,7 +118,7 @@ const countiesData = [
     region: "SOUTHERN ARIZONA",
     seat: "Nogales",
     cityCount: 4,
-    route: "/service-areas/santa-cruz-county-az",
+    route: "/service-areas/santa-cruz-county-az/",
     cities: ["Nogales", "Rio Rico", "Tubac", "Patagonia"]
   },
   {
@@ -127,7 +127,7 @@ const countiesData = [
     region: "WESTERN ARIZONA",
     seat: "Kingman",
     cityCount: 6,
-    route: "/service-areas/mohave-county-az",
+    route: "/service-areas/mohave-county-az/",
     cities: ["Lake Havasu City", "Kingman", "Bullhead City", "Fort Mohave", "Golden Valley", "Colorado City"]
   },
   {
@@ -136,7 +136,7 @@ const countiesData = [
     region: "WESTERN ARIZONA",
     seat: "Parker",
     cityCount: 4,
-    route: "/service-areas/la-paz-county-az",
+    route: "/service-areas/la-paz-county-az/",
     cities: ["Parker", "Quartzsite", "Salome", "Bouse"]
   },
   {
@@ -145,7 +145,7 @@ const countiesData = [
     region: "WESTERN ARIZONA",
     seat: "Yuma",
     cityCount: 4,
-    route: "/service-areas/yuma-county-az",
+    route: "/service-areas/yuma-county-az/",
     cities: ["Yuma", "San Luis", "Somerton", "Wellton"]
   }
 ];
@@ -531,7 +531,7 @@ export default function ArizonaDirectory2Page() {
                     </p>
                   </div>
                   <Link
-                    href="/service-areas/maricopa-county-az"
+                    href="/service-areas/maricopa-county-az/"
                     className="text-brand-green-accent hover:text-[#2d5a2d] text-[13px] font-bold flex items-center gap-1 transition-colors group mt-2"
                   >
                     Explore county
@@ -580,7 +580,7 @@ export default function ArizonaDirectory2Page() {
                     </p>
                   </div>
                   <Link
-                    href="/service-areas/pima-county-az"
+                    href="/service-areas/pima-county-az/"
                     className="text-brand-green-accent hover:text-[#2d5a2d] text-[13px] font-bold flex items-center gap-1 transition-colors group mt-2 text-left"
                   >
                     Explore county

@@ -9,7 +9,7 @@ const articles = [
   {
     title: "The Complete Arizona Guide to Selling Your Home for Cash (2026)",
     description: "A cash home sale is a transaction in which a buyer purchases your house outright, without a mortgage. Learn the pros, cons, and alternatives in Arizona.",
-    href: "/how-to-sell-my-house-fast-in-arizona",
+    href: "/how-to-sell-my-house-fast-in-arizona/",
     date: "Jun 25, 2026",
     readTime: "33 min read",
     category: "Homeownership Tips"
@@ -17,7 +17,7 @@ const articles = [
   {
     title: "Arizona Real Estate Trends in 2026: Predicting Mortgage Rates & Market Shifts",
     description: "Market analysis on 2026 Phoenix mortgage rate forecasts, housing inventory recovery, and home appreciation trends.",
-    href: "/arizona-real-estate-trends-in-2026-predicting-mortgage-rates-for-the-coming-year",
+    href: "/arizona-real-estate-trends-in-2026-predicting-mortgage-rates-for-the-coming-year/",
     date: "May 5, 2026",
     readTime: "10 min read",
     category: "Homeownership Tips"
@@ -35,7 +35,7 @@ export default function HomeownershipTipsPage() {
           <div className="max-w-5xl mx-auto">
             {/* Breadcrumb */}
             <div className="flex items-center gap-2 text-[#8da684] text-[13px] font-medium mb-6">
-              <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+              <Link href="/blog/" className="hover:text-white transition-colors">Blog</Link>
               <span>&gt;</span>
               <span className="text-[#3fb364]">Homeownership Tips</span>
             </div>

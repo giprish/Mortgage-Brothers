@@ -44,22 +44,22 @@ const regionMap: Record<string, string> = {
 };
 
 const sidebarCounties = [
-  { name: "All", count: 108, href: "/service-areas" },
-  { name: "Maricopa", count: 28, href: "/service-areas/maricopa-county-az" },
-  { name: "Pima", count: 8, href: "/service-areas/pima-county-az" },
-  { name: "Pinal", count: 10, href: "/service-areas/pinal-county-az" },
-  { name: "Yavapai", count: 9, href: "/service-areas/yavapai-county-az" },
-  { name: "Coconino", count: 6, href: "/service-areas/coconino-county-az" },
-  { name: "Navajo", count: 6, href: "/service-areas/navajo-county-az" },
-  { name: "Apache", count: 5, href: "/service-areas/apache-county-az" },
-  { name: "Gila", count: 5, href: "/service-areas/gila-county-az" },
-  { name: "Cochise", count: 7, href: "/service-areas/cochise-county-az" },
-  { name: "Graham", count: 3, href: "/service-areas/graham-county-az" },
-  { name: "Greenlee", count: 3, href: "/service-areas/greenlee-county-az" },
-  { name: "Santa Cruz", count: 4, href: "/service-areas/santa-cruz-county-az" },
-  { name: "Mohave", count: 6, href: "/service-areas/mohave-county-az" },
-  { name: "La Paz", count: 4, href: "/service-areas/la-paz-county-az" },
-  { name: "Yuma", count: 4, href: "/service-areas/yuma-county-az" }
+  { name: "All", count: 108, href: "/service-areas/" },
+  { name: "Maricopa", count: 28, href: "/service-areas/maricopa-county-az/" },
+  { name: "Pima", count: 8, href: "/service-areas/pima-county-az/" },
+  { name: "Pinal", count: 10, href: "/service-areas/pinal-county-az/" },
+  { name: "Yavapai", count: 9, href: "/service-areas/yavapai-county-az/" },
+  { name: "Coconino", count: 6, href: "/service-areas/coconino-county-az/" },
+  { name: "Navajo", count: 6, href: "/service-areas/navajo-county-az/" },
+  { name: "Apache", count: 5, href: "/service-areas/apache-county-az/" },
+  { name: "Gila", count: 5, href: "/service-areas/gila-county-az/" },
+  { name: "Cochise", count: 7, href: "/service-areas/cochise-county-az/" },
+  { name: "Graham", count: 3, href: "/service-areas/graham-county-az/" },
+  { name: "Greenlee", count: 3, href: "/service-areas/greenlee-county-az/" },
+  { name: "Santa Cruz", count: 4, href: "/service-areas/santa-cruz-county-az/" },
+  { name: "Mohave", count: 6, href: "/service-areas/mohave-county-az/" },
+  { name: "La Paz", count: 4, href: "/service-areas/la-paz-county-az/" },
+  { name: "Yuma", count: 4, href: "/service-areas/yuma-county-az/" }
 ];
 
 export default function CountyPage() {
@@ -94,7 +94,7 @@ export default function CountyPage() {
           <div className="text-center py-20">
             <h1 className="text-[#052316] text-[32px] font-playfair mb-4">County Not Found</h1>
             <p className="text-[#4e5b4e] text-[15px] mb-8">The county you&apos;re looking for doesn&apos;t exist.</p>
-            <Link href="/service-areas" className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-semibold px-6 py-3 rounded-full transition-all">
+            <Link href="/service-areas/" className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-semibold px-6 py-3 rounded-full transition-all">
               Browse All Areas →
             </Link>
           </div>
@@ -156,7 +156,7 @@ export default function CountyPage() {
                   </p>
                 </div>
                 <Link
-                  href="/about#talk-to-broker"
+                  href="/about/#talk-to-broker"
                   className="text-brand-green-accent hover:text-[#2d5a2d] text-[13px] font-bold flex items-center gap-1.5 transition-colors group"
                 >
                   Request your area
@@ -187,7 +187,7 @@ export default function CountyPage() {
                 <div className="relative z-10">
                   {/* Breadcrumb inside Pine Green Container */}
                   <div className="flex items-center gap-2 text-[13px] font-medium text-[#c8c8b8] mb-4">
-                    <Link href="/service-areas" className="hover:text-[#3fb364] transition-colors">Areas We Serve</Link>
+                    <Link href="/service-areas/" className="hover:text-[#3fb364] transition-colors">Areas We Serve</Link>
                     <span className="text-[#3fb364]/60">&gt;</span>
                     <span className="text-white font-semibold">{countyName}</span>
                   </div>
@@ -237,7 +237,7 @@ export default function CountyPage() {
                   {filteredCities.map((city) => {
                     const initials = city.name.substring(0, 2);
                     const citySlug = city.name.toLowerCase().replace(/\./g, "").replace(/\s+/g, "-");
-                    const href = `/service-areas/${countySlug}/${citySlug}`;
+                    const href = `/service-areas/${countySlug}/${citySlug}/`;
 
                     return (
                       <Link

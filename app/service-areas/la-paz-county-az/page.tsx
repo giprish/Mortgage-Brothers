@@ -21,7 +21,7 @@ export default function LaPazCountyPage() {
           <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">
             {/* Breadcrumb inside Pine Green Section */}
             <div className="flex items-center justify-center gap-2 text-[13px] font-medium text-[#c8c8b8] mb-5">
-              <Link href="/service-areas" className="hover:text-[#3fb364] transition-colors duration-200">Areas We Serve</Link>
+              <Link href="/service-areas/" className="hover:text-[#3fb364] transition-colors duration-200">Areas We Serve</Link>
               <span className="text-[#3fb364]/60">&gt;</span>
               <span className="text-white font-semibold">La Paz County</span>
             </div>
@@ -32,7 +32,7 @@ export default function LaPazCountyPage() {
               <Link href="/#get-pre-approved" className="w-full sm:w-auto btn-primary hover:shadow-brand-green-accent/20 group">
                 Start My Pre-Approval
               </Link>
-              <Link href="/about#talk-to-broker" className="w-full sm:w-auto inline-flex items-center justify-center bg-transparent border border-white/30 hover:border-white/60 text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200">
+              <Link href="/about/#talk-to-broker" className="w-full sm:w-auto inline-flex items-center justify-center bg-transparent border border-white/30 hover:border-white/60 text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200">
                 Talk to a Broker
               </Link>
             </div>
@@ -47,7 +47,7 @@ export default function LaPazCountyPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {cities.map((city, index) => (
-                <Link key={index} href={`/service-areas/la-paz-county-az/${city.name.toLowerCase().replace(/\./g, "").replace(/\s+/g, "-")}`} className="bg-[#faf7f0] rounded-2xl p-6 lg:p-7 border border-[#e8e0d0]/50 shadow-sm flex flex-col hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl transition-all duration-300">
+                <Link key={index} href={`/service-areas/la-paz-county-az/${city.name.toLowerCase().replace(/\./g, "").replace(/\s+/g, "-")}/`} className="bg-[#faf7f0] rounded-2xl p-6 lg:p-7 border border-[#e8e0d0]/50 shadow-sm flex flex-col hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl transition-all duration-300">
                   <div className="flex items-center gap-2 mb-4 text-brand-green-deep">
                     <h3 className="text-[17px] font-bold tracking-tight">{city.name}</h3>
                   </div>

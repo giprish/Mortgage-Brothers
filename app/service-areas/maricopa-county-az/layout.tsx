@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = getSeoMetadata("/service-areas/maricopa-county-az");
+export const metadata: Metadata = getSeoMetadata("/service-areas/maricopa-county-az/");
 
 export default function Layout({
   children,

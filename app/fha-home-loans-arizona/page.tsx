@@ -41,7 +41,7 @@ export default function FhaHomeLoansArizonaPage() {
                 Achieve homeownership with low 3.5% down payment options, flexible credit requirements, and low Arizona FHA mortgage rates.
               </p>
               <div className="pt-4 flex flex-wrap items-center gap-4">
-                <Link href="/fha-loan-calculator" className="bg-[#3fb364] hover:bg-[#359854] text-white text-[16px] font-bold px-8 py-4 rounded-full transition-all shadow-lg">
+                <Link href="/fha-loan-calculator/" className="bg-[#3fb364] hover:bg-[#359854] text-white text-[16px] font-bold px-8 py-4 rounded-full transition-all shadow-lg">
                   CALCULATE FHA LOAN →
                 </Link>
                 <a href="tel:4805356200" className="border border-white/30 hover:border-white text-white text-[15px] font-semibold px-6 py-4 rounded-full transition-all hover:bg-white/10">
@@ -91,7 +91,7 @@ export default function FhaHomeLoansArizonaPage() {
 
         <section className="py-16 bg-[#052316] text-white text-center">
           <h2 className="text-[28px] font-bold font-playfair mb-4">Get Pre-Approved for an FHA Loan Today</h2>
-          <Link href="/fha-loan-calculator" className="bg-[#3fb364] text-white font-bold px-8 py-4 rounded-full inline-block">CALCULATE FHA PAYMENTS →</Link>
+          <Link href="/fha-loan-calculator/" className="bg-[#3fb364] text-white font-bold px-8 py-4 rounded-full inline-block">CALCULATE FHA PAYMENTS →</Link>
         </section>
       </main>
       <Footer />

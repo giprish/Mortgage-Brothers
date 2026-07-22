@@ -8,7 +8,7 @@ type Props = {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { county } = await params;
-  return getSeoMetadata(`/service-areas/${county}`);
+  return getSeoMetadata(`/service-areas/${county}/`);
 }
 
 export default function Page() {

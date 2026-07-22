@@ -9,7 +9,7 @@ const articles = [
   {
     title: "Top 7 Reasons Arizona Investment Home Buyers Choose Private Money Lenders",
     description: "Discover why real estate investors in Phoenix and Scottsdale turn to private money lending for fast, flexible property acquisitions.",
-    href: "/top-7-reasons-arizona-investment-home-buyers-choose-private-money-lenders",
+    href: "/top-7-reasons-arizona-investment-home-buyers-choose-private-money-lenders/",
     date: "Jun 15, 2026",
     readTime: "8 min read",
     category: "Arizona Mortgage Insights"
@@ -17,7 +17,7 @@ const articles = [
   {
     title: "How to Get a Mortgage in Arizona with Fair or Improving Credit",
     description: "Learn how buyers with credit scores between 580 and 660 qualify for home loans in Arizona with FHA programs and rapid rescoring.",
-    href: "/how-to-get-a-mortgage-in-arizona-with-fair-or-improving-credit",
+    href: "/how-to-get-a-mortgage-in-arizona-with-fair-or-improving-credit/",
     date: "Jun 10, 2026",
     readTime: "7 min read",
     category: "Arizona Mortgage Insights"
@@ -25,7 +25,7 @@ const articles = [
   {
     title: "Who Qualifies for a Reverse Mortgage? Understanding Eligibility in Arizona",
     description: "A complete guide to HECM reverse mortgage eligibility rules, age requirements, and equity qualifications for Arizona seniors.",
-    href: "/who-qualifies-for-a-reverse-mortgage-understanding-eligibility-requirements",
+    href: "/who-qualifies-for-a-reverse-mortgage-understanding-eligibility-requirements/",
     date: "Jun 5, 2026",
     readTime: "9 min read",
     category: "Arizona Mortgage Insights"
@@ -43,7 +43,7 @@ export default function ArizonaMortgageInsightsPage() {
           <div className="max-w-5xl mx-auto">
             {/* Breadcrumb */}
             <div className="flex items-center gap-2 text-[#8da684] text-[13px] font-medium mb-6">
-              <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
+              <Link href="/blog/" className="hover:text-white transition-colors">Blog</Link>
               <span>&gt;</span>
               <span className="text-[#3fb364]">Arizona Mortgage Insights</span>
             </div>

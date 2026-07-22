@@ -72,7 +72,7 @@ export default function VideosPage() {
           <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full border border-white/5 pointer-events-none -mr-16 -mt-16"></div>
           <div className="max-w-5xl mx-auto relative z-10">
             <div className="flex items-center gap-1.5 text-[12px] text-[#3fb364] font-medium mb-6">
-              <Link href="/blog" className="hover:underline">Resources</Link>
+              <Link href="/blog/" className="hover:underline">Resources</Link>
               <span>&gt;</span>
               <span className="text-[#a89a70]">Videos</span>
             </div>

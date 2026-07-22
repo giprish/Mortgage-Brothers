@@ -463,9 +463,9 @@ export default function CityDetailPage() {
           <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10 pt-[110px] lg:pt-[130px] pb-16 lg:pb-20">
             {/* Breadcrumbs */}
             <div className="flex items-center gap-2 text-[12px] font-semibold mb-8">
-              <Link href="/service-areas" className="text-[#8da684] hover:text-white transition-colors">Areas We Serve</Link>
+              <Link href="/service-areas/" className="text-[#8da684] hover:text-white transition-colors">Areas We Serve</Link>
               <span className="text-[#8da684]/50">&gt;</span>
-              <Link href="/service-areas/maricopa-county-az" className="text-[#8da684] hover:text-white transition-colors">Maricopa County</Link>
+              <Link href="/service-areas/maricopa-county-az/" className="text-[#8da684] hover:text-white transition-colors">Maricopa County</Link>
               <span className="text-[#8da684]/50">&gt;</span>
               <span className="text-[#3fb364]">{city}</span>
             </div>
@@ -751,7 +751,7 @@ export default function CityDetailPage() {
                     Get Expert Mortgage Advice
                   </Link>
                   <Link
-                    href="/contact-us"
+                    href="/contact-us/"
                     className="border border-white text-white font-bold text-[14.5px] px-6 py-3.5 rounded-lg hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">

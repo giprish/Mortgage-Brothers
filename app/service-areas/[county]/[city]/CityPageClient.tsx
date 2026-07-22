@@ -142,7 +142,7 @@ export default function GenericCityDetailPage() {
           <div className="text-center py-20">
             <h1 className="text-[#052316] text-[32px] font-playfair mb-4">City Not Found</h1>
             <p className="text-[#4e5b4e] text-[15px] mb-8">The city you&apos;re looking for doesn&apos;t exist in our directory.</p>
-            <Link href="/service-areas" className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-semibold px-6 py-3 rounded-full transition-all">
+            <Link href="/service-areas/" className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-semibold px-6 py-3 rounded-full transition-all">
               Browse All Areas →
             </Link>
           </div>
@@ -172,9 +172,9 @@ export default function GenericCityDetailPage() {
           <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10 pt-[110px] lg:pt-[130px] pb-16 lg:pb-20">
             {/* Breadcrumbs */}
             <div className="flex items-center gap-2 text-[12px] font-semibold mb-8">
-              <Link href="/service-areas" className="text-[#8da684] hover:text-white transition-colors">Areas We Serve</Link>
+              <Link href="/service-areas/" className="text-[#8da684] hover:text-white transition-colors">Areas We Serve</Link>
               <span className="text-[#8da684]/50">&gt;</span>
-              <Link href={`/service-areas/${countySlug}`} className="text-[#8da684] hover:text-white transition-colors">{countyName}</Link>
+              <Link href={`/service-areas/${countySlug}/`} className="text-[#8da684] hover:text-white transition-colors">{countyName}</Link>
               <span className="text-[#8da684]/50">&gt;</span>
               <span className="text-[#3fb364]">{city}</span>
             </div>
@@ -460,7 +460,7 @@ export default function GenericCityDetailPage() {
                     Get Expert Mortgage Advice
                   </Link>
                   <Link
-                    href="/contact-us"
+                    href="/contact-us/"
                     className="border border-white text-white font-bold text-[14.5px] px-6 py-3.5 rounded-lg hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">

@@ -554,7 +554,7 @@ export default function RefinanceCalculator() {
               <MilestoneStat label="Break-Even Point" value={valid ? (r.breakEvenStatus === "finite" ? `${beMonths} mo` : r.breakEvenStatus === "immediate" ? "Immediate" : "N/A") : "—"}
                 note={valid ? (r.breakEvenStatus === "finite" ? (recoveryQuality ? <b style={{ fontWeight: 800 }}>{recoveryQuality.label} recovery time</b> : `${(beMonths / 12).toFixed(1)} years`) : r.breakEvenStatus === "immediate" ? "no costs to recover" : "no payment savings") : ""}
                 highlight={valid && (r.breakEvenStatus === "finite" || r.breakEvenStatus === "immediate")} />
-              <MilestoneStat label="Monthly Payment" value={valid ? fmtSignedWhole(r.monthlySavings) + "/mo" : "—"}
+              <MilestoneStat label="Monthly Payment" value={valid ? fmtSignedWhole(r.monthlySavings) + "/mo/" : "—"}
                 note={valid ? `${fmtWhole(r.currentPayment)} → ${fmtWhole(r.newPayment)}` : ""} highlight={valid && r.paymentStatus === "decrease"} />
               <MilestoneStat label="Lifetime Interest" value={valid ? fmtSignedWhole(r.totalInterestSavings) : "—"}
                 note={valid ? (r.interestStatus === "decrease" ? "less interest over the loan" : r.interestStatus === "increase" ? "more interest over the loan" : "no change") : ""}
@@ -648,7 +648,7 @@ export default function RefinanceCalculator() {
               ) : (
                 <>
                   <div className="refi-primary-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 }}>
-                    <MetricCard label="Monthly Payment" value={fmtSignedWhole(r.monthlySavings) + "/mo"}
+                    <MetricCard label="Monthly Payment" value={fmtSignedWhole(r.monthlySavings) + "/mo/"}
                       sub={`${fmtWhole(r.currentPayment)} now → ${fmtWhole(r.newPayment)} proposed`}
                       tag={r.paymentStatus === "decrease" ? "Payment decreases" : r.paymentStatus === "increase" ? "Payment increases" : "Payment unchanged"}
                       status={r.paymentStatus === "decrease" ? "good" : r.paymentStatus === "increase" ? "bad" : "neutral"} />
@@ -669,7 +669,7 @@ export default function RefinanceCalculator() {
                       <SimpleRow name="Cash-out amount" value={fmtWhole(r.cashOut)} />
                       <SimpleRow name="Added to new loan" value={fmtWhole(r.cashOut) + " principal"} />
                       <SimpleRow name="Net cash at closing" value={fmtWhole(r.netCashAtClosing)} />
-                      <SimpleRow name="Monthly payment impact from cash-out" value={"+" + fmtWhole(r.paymentAttributableToCashOut) + "/mo"} last />
+                      <SimpleRow name="Monthly payment impact from cash-out" value={"+" + fmtWhole(r.paymentAttributableToCashOut) + "/mo/"} last />
                     </div>
                   )}
 
@@ -704,8 +704,8 @@ export default function RefinanceCalculator() {
 
                   <div style={{ background: C.card, border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(24,42,28,0.04), 0 8px 24px -12px rgba(24,42,28,0.18)", padding: "20px 22px 22px" }}>
                     <h3 style={{ fontFamily: SERIF, fontSize: 15.5, fontWeight: 600, margin: "0 0 16px" }}>Monthly Payment</h3>
-                    <CompareRow name="Current" value={fmtWhole(r.currentPayment) + "/mo"} pct={(r.currentPayment / Math.max(r.currentPayment, r.newPayment, 1)) * 100} color="#b7bdb1" />
-                    <CompareRow name="Proposed" value={fmtWhole(r.newPayment) + "/mo"} pct={(r.newPayment / Math.max(r.currentPayment, r.newPayment, 1)) * 100} color={r.paymentStatus === "increase" ? C.amber : C.green} marginBottom={0} />
+                    <CompareRow name="Current" value={fmtWhole(r.currentPayment) + "/mo/"} pct={(r.currentPayment / Math.max(r.currentPayment, r.newPayment, 1)) * 100} color="#b7bdb1" />
+                    <CompareRow name="Proposed" value={fmtWhole(r.newPayment) + "/mo/"} pct={(r.newPayment / Math.max(r.currentPayment, r.newPayment, 1)) * 100} color={r.paymentStatus === "increase" ? C.amber : C.green} marginBottom={0} />
                   </div>
 
                   <div style={{ background: C.card, border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(24,42,28,0.04), 0 8px 24px -12px rgba(24,42,28,0.18)", padding: "20px 22px 22px" }}>

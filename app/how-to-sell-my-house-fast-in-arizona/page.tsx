@@ -21,7 +21,7 @@ export default function HowToSellMyHouseFastInArizonaPage() {
         <section className="bg-[#052316] text-white py-16 px-6 lg:px-10 relative overflow-hidden">
           <div className="max-w-4xl mx-auto text-center relative z-10">
             <div className="flex items-center justify-center gap-2 text-[#8da684] text-[13px] font-semibold mb-6">
-              <Link href="/blog" className="hover:text-white transition-colors">
+              <Link href="/blog/" className="hover:text-white transition-colors">
                 Blog
               </Link>
               <span>&gt;</span>
@@ -262,13 +262,13 @@ export default function HowToSellMyHouseFastInArizonaPage() {
             <ul className="list-disc pl-6 space-y-2 text-[15px] leading-[1.7] text-[#3a4a3a] mb-6">
               <li>
                 <strong>Cash-out refinance.</strong> Replace your mortgage with a larger one and take equity in cash. See our{" "}
-                <Link href="/refinancing-arizona" className="text-[#3fb364] font-semibold underline">
+                <Link href="/refinancing-arizona/" className="text-[#3fb364] font-semibold underline">
                   Arizona Refinancing Guide
                 </Link>.
               </li>
               <li>
                 <strong>Reverse mortgage (age 62+).</strong> Convert equity into cash without monthly mortgage payments. See our{" "}
-                <Link href="/reverse-mortgage-arizona" className="text-[#3fb364] font-semibold underline">
+                <Link href="/reverse-mortgage-arizona/" className="text-[#3fb364] font-semibold underline">
                   Arizona Reverse Mortgage Guide
                 </Link>.
               </li>
