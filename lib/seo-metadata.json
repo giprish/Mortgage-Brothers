@@ -2678,6 +2678,25 @@
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
+  "/videos/phoenix-market-and-real-estate-updates": {
+    "section": "pages",
+    "sourceUrl": "https://azmortgagebrothers.com/videos/phoenix-market-and-real-estate-updates/",
+    "title": "Phoenix Market and Real Estate Updates - Arizona Home Loans | The Mortgage Brothers",
+    "description": "Find our videos covering the latest Phoenix market trends and real estate updates right here.",
+    "openGraph": {
+      "title": "Phoenix Market and Real Estate Updates - Arizona Home Loans | The Mortgage Brothers",
+      "description": "Find our videos covering the latest Phoenix market trends and real estate updates right here.",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
+      "url": "https://azmortgagebrothers.com/videos/phoenix-market-and-real-estate-updates/",
+      "type": "article"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Phoenix Market and Real Estate Updates - Arizona Home Loans | The Mortgage Brothers",
+      "description": "Find our videos covering the latest Phoenix market trends and real estate updates right here.",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
+    }
+  },
   "/service-areas/santa-cruz-county-az/santa-cruz": {
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/santa-cruz-county-az/santa-cruz/",
