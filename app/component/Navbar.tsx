@@ -128,6 +128,9 @@ const Navbar = () => {
                     <Link href="/rent-vs-buy-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Rent vs. Buy Calculator
                     </Link>
+                    <Link href="/conventional-vs-fha-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                      Conventional vs. FHA Calculator
+                    </Link>
                     <Link href="/down-payment-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Down Payment Calculator
                     </Link>
@@ -676,6 +679,13 @@ const Navbar = () => {
                         className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
                       >
                         RENT VS. BUY CALCULATOR
+                      </Link>
+                      <Link
+                        href="/conventional-vs-fha-calculator/"
+                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
+                        className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
+                      >
+                        CONVENTIONAL VS. FHA
                       </Link>
                       <Link
                         href="/down-payment-calculator/"
