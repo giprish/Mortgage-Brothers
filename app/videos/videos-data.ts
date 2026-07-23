@@ -47,6 +47,7 @@ export const VIDEO_CATEGORIES: VideoCategory[] = [
     id: "reverse-mortgage",
     label: "Reverse Mortgage",
     heading: "Reverse Mortgage",
+    viewAllHref: "/videos/reverse-mortgage/",
     videos: [
       {
         id: "rm-4-questions",
@@ -70,6 +71,7 @@ export const VIDEO_CATEGORIES: VideoCategory[] = [
     id: "mortgage-rates",
     label: "Mortgage Rates Today",
     heading: "Mortgage Rates Today",
+    viewAllHref: "/videos/mortgage-rates-today/",
     videos: [
       {
         id: "rates-truflation",
@@ -92,6 +94,7 @@ export const VIDEO_CATEGORIES: VideoCategory[] = [
     id: "podcast",
     label: "The Mortgage Brothers Show — Podcast",
     heading: "Video Podcast for The Mortgage Brothers Show",
+    viewAllHref: "/videos/video-podcast-for-the-mortgage-brothers-show/",
     videos: [
       {
         id: "rental-property-loans",
@@ -114,6 +117,7 @@ export const VIDEO_CATEGORIES: VideoCategory[] = [
     id: "important-topics",
     label: "Important Mortgage & Home Loan Topics",
     heading: "Important Mortgage Home Loan Topics",
+    viewAllHref: "/videos/important-mortgage-home-loan-topics/",
     videos: [
       {
         id: "mortgage-scams",
@@ -136,6 +140,7 @@ export const VIDEO_CATEGORIES: VideoCategory[] = [
     id: "agent-tips",
     label: "Real Estate Agent Quick Tips",
     heading: "Real Estate Agent Quick Tips",
+    viewAllHref: "/videos/real-estate-agent-quick-tips/",
     videos: [
       {
         id: "homebot-agents",
@@ -159,6 +164,7 @@ export const VIDEO_CATEGORIES: VideoCategory[] = [
     id: "loan-products",
     label: "Mortgage Loan Products",
     heading: "Mortgage Loan Products",
+    viewAllHref: "/videos/mortgage-loan-products/",
     videos: [
       {
         id: "manufactured-homes",

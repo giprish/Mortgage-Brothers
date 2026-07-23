@@ -366,7 +366,7 @@ export default function VideosPage() {
                     heading={category.heading}
                     videos={category.videos}
                     onPlay={setPlayingVideo}
-                    showViewAll={activeFilter === "all"}
+                    showViewAll={true}
                     viewAllHref={category.viewAllHref}
                   />
                   {showMidBanner && <MidCtaBanner />}

@@ -58,7 +58,7 @@ const Footer = () => {
 
               {/* YouTube */}
               <a
-                href="https://www.youtube.com/@azmortgagebrothers"
+                href="https://www.youtube.com/@TheMortgageBrothersTeam"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-[#ebf1f5] hover:bg-white text-[#22632d] hover:text-[#174820] flex items-center justify-center shadow-sm transition-all duration-200 transform hover:scale-105"
