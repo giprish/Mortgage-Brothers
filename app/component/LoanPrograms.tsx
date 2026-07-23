@@ -4,7 +4,8 @@ import Link from "next/link";
 const loanSolutions = [
   {
     title: "Conventional Home Loans",
-    description: "Ideal for buyers with good credit and stable income, offering competitive rates, low down payment options as low as 3% for first time home buyers.",
+    description:
+      "Ideal for buyers with good credit and a stable income, offering competitive rates and terms and down payments as low as 1% for first time home buyers.",
     linkText: "View Details",
     href: "/conventional-home-loans-arizona/",
     icon: (
@@ -15,8 +16,8 @@ const loanSolutions = [
   },
   {
     title: "Jumbo Loans",
-    description: "For high-value properties that exceed conforming loan limits, offering flexible financing options.",
-    linkText: "Learn More",
+    description: "For high-value properties that exceed conforming loan limits, providing flexible financing options.",
+    linkText: "Learn more",
     href: "/jumbo-loans-arizona/",
     icon: (
       <svg className="w-6 h-6 text-[#3fb364]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -26,9 +27,9 @@ const loanSolutions = [
   },
   {
     title: "FHA Home Loans",
-    description: "Government-backed loans ideal for lower credit borrowers and first-time buyers, requiring low down payments and great interest rates.",
+    description: "Government-backed loans ideal for lower credit borrowers and low to-moderate-income buyers, requiring lower down payments and great interest rates.",
     linkText: "Discover FHA",
-    href: "/fha-loans/",
+    href: "/fha-home-loans-arizona/",
     icon: (
       <svg className="w-6 h-6 text-[#3fb364]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -37,7 +38,7 @@ const loanSolutions = [
   },
   {
     title: "Reverse Mortgage",
-    description: "A financial tool for seniors 62+ to convert home equity into cash while retaining home ownership.",
+    description: "A financial tool for seniors to convert home equity into cash while retaining home ownership.",
     linkText: "Get Cash",
     href: "/reverse-mortgage-arizona/",
     icon: (
@@ -70,7 +71,7 @@ const loanSolutions = [
   },
   {
     title: "VA Loans",
-    description: "Eligibility for Military and Active-Duty service members with zero down payment required.",
+    description: "Rightfully so, this is the best loan available to veterans and active military members with favorable terms and no down payment required.",
     linkText: "For Veterans",
     href: "/va-loans-arizona/",
     icon: (
@@ -81,7 +82,7 @@ const loanSolutions = [
   },
   {
     title: "Private Money Lender",
-    description: "Access alternative funding options through private lenders for unique situations, no income verification in some cases.",
+    description: "Access alternative financing options through private lenders for unique situations. No income verification in some cases.",
     linkText: "Find Out",
     href: "/private-money-lender-arizona/",
     icon: (
@@ -93,8 +94,8 @@ const loanSolutions = [
   {
     title: "First Time Home Buyer",
     description: "Specialized programs and guidance designed to help first-time buyers navigate the mortgage process confidently.",
-    linkText: "Learn More",
-    href: "/first-time-home-buyer-arizona/",
+    linkText: "Start Here",
+    href: "/first-time-home-buyer-arizona-guide/",
     icon: (
       <svg className="w-6 h-6 text-[#3fb364]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
         <path strokeLinecap="round" strokeLinejoin="round" d="M15 7a2 2 0 012 2m-5-2a2 2 0 012 2m-5-2a2 2 0 012 2m-5-2a2 2 0 012 2m-5 12h14a2 2 0 002-2V9a2 2 0 00-2-2h-14a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -104,7 +105,7 @@ const loanSolutions = [
   {
     title: "Reverse Mortgage for a Home Purchase",
     description: "Use your home equity to buy your dream home without monthly mortgage payments.",
-    linkText: "Explore Reverse For Home Buyers",
+    linkText: "Explore Reverse Purchase Options",
     href: "/reverse-mortgage-home-purchase-arizona/",
     icon: (
       <svg className="w-6 h-6 text-[#3fb364]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -119,7 +120,7 @@ const LoanPrograms = () => {
     <section className="w-full bg-[#f3f5f8] py-16 lg:py-24">
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         
-        {/* Title Section matching Image 1 */}
+        {/* Title Section */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <h2
             className="text-[#1a3a1a] text-[30px] sm:text-[36px] lg:text-[40px] font-bold tracking-tight mb-3"
@@ -139,7 +140,7 @@ const LoanPrograms = () => {
           </p>
         </div>
 
-        {/* 2-Column Grid matching Image 1 */}
+        {/* 2-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 mb-14">
           {loanSolutions.map((item, index) => (
             <div key={index} className="flex gap-4 items-start group">
@@ -181,13 +182,13 @@ const LoanPrograms = () => {
           ))}
         </div>
 
-        {/* Bottom CTA Button matching Image 1 */}
+        {/* Bottom CTA Button */}
         <div className="text-center">
           <Link
             href="/mortgage-loan-programs-arizona/"
             className="inline-block bg-[#007a33] hover:bg-[#006128] text-white font-bold text-[15px] px-8 py-3.5 rounded-lg shadow-md hover:shadow-xl transition-all duration-200"
           >
-            Find Out Which Suit You
+            Find Your Perfect Loan
           </Link>
         </div>
 

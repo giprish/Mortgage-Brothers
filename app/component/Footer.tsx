@@ -124,13 +124,13 @@ const Footer = () => {
               Contact
             </h4>
             <p className="text-[#a8b89a] text-[13px] leading-relaxed mb-4 max-w-[240px]">
-              1833 E Queensborough Ave, Ste 202, Phoenix, AZ 85020
+              1599 East Orangewood Ave, Suite 200, Phoenix, AZ 85020
             </p>
             <a
-              href="tel:6028352171"
+              href="tel:+16025352171"
               className="text-[#a8b89a] hover:text-white text-[13px] font-semibold transition-colors duration-200"
             >
-              (602) 835-2171
+              (602) 535-2171
             </a>
           </div>
         </div>
@@ -167,7 +167,7 @@ const Footer = () => {
           {/* Disclaimers & Licensing */}
           <div className="flex-1 max-w-4xl lg:ml-8">
             <p className="text-[#8a9a7a] text-[11px] leading-[1.6]">
-              Mortgage Brothers L.L.C. &bull; NMLS #1607154 &bull; AZ License #0937814 &bull; 1833 E Queensborough Ave, Suite 202, Phoenix, AZ 85020 &bull; (602) 835-2171. All loans subject to underwriter approval. &copy; 2026 Mortgage Brothers. All rights reserved.
+              Mortgage Brothers L.L.C. &bull; NMLS #1607154 &bull; AZ License #0937814 &bull; 1599 East Orangewood Ave, Suite 200, Phoenix, AZ 85020 &bull; (602) 535-2171. All loans subject to underwriter approval. &copy; 2026 Mortgage Brothers. All rights reserved.
             </p>
           </div>
         </div>
