@@ -246,19 +246,13 @@ export default function MaricopaCounty2() {
                   <div className="flex flex-col gap-1">
                     {sidebarCounties.map((county) => {
                       const isActive = county.name === selectedCounty;
-                      const cleanName = county.name.toLowerCase().replace(/\s+/g, "-");
-                      const countySlug = county.name === "All" 
-                        ? "" 
-                        : (cleanName.includes("county") ? `${cleanName}-az` : `${cleanName}-county-az`);
-                      const countyHref = county.name === "All" 
-                        ? "/service-areas/" 
-                        : `/service-areas/${countySlug}/`;
 
                       return (
-                        <Link
+                        <button
                           key={county.name}
-                          href={countyHref}
-                          className={`flex items-center justify-between text-[13.5px] font-semibold px-4 py-2.5 rounded-xl cursor-pointer transition-all duration-200 ${
+                          type="button"
+                          onClick={() => setSelectedCounty(county.name)}
+                          className={`flex items-center justify-between text-[13.5px] font-semibold px-4 py-2.5 rounded-xl cursor-pointer transition-all duration-200 text-left w-full ${
                             isActive
                               ? "bg-[#052316] text-white shadow-md shadow-[#052316]/10"
                               : "text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d]"
@@ -268,41 +262,10 @@ export default function MaricopaCounty2() {
                           <span className={`text-[11px] font-bold px-2 py-0.5 rounded-full ${isActive ? "bg-white/15 text-white" : "bg-[#f5f0e8] text-[#4e5b4e]"}`}>
                             {county.count}
                           </span>
-                        </Link>
+                        </button>
                       );
                     })}
                   </div>
-                </div>
-
-                {/* Sidebar bottom Request Card */}
-                <div className="bg-white rounded-2xl border border-[#e8e0d0]/60 p-6 shadow-sm flex flex-col items-start gap-4">
-                  <div>
-                    <h4 className="text-[#08271B] text-[15px] font-bold tracking-tight mb-1">
-                      Don&apos;t see your town?
-                    </h4>
-                    <p className="text-brand-text-muted text-[12.5px] leading-relaxed">
-                      We&apos;re licensed statewide — tell us where you&apos;re buying.
-                    </p>
-                  </div>
-                  <Link
-                    href="/about/#talk-to-broker"
-                    className="text-brand-green-accent hover:text-[#2d5a2d] text-[13px] font-bold flex items-center gap-1.5 transition-colors group"
-                  >
-                    Request your area
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      className="group-hover:translate-x-0.5 transition-transform duration-200"
-                    >
-                      <line x1="5" y1="12" x2="19" y2="12" />
-                      <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                  </Link>
                 </div>
 
               </div>
@@ -344,10 +307,6 @@ export default function MaricopaCounty2() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {filteredCities.map((city, index) => {
                     const initials = city.name.substring(0, 2);
-                    const citySlug = city.name.toLowerCase().replace(/\./g, "").replace(/\s+/g, "-");
-                    const countySlug = city.county.toLowerCase().replace(/\s+/g, "-") + "-az";
-
-                    const href = `/service-areas/${countySlug}/${citySlug}/`;
 
                     const cardContent = (
                       <>
@@ -384,12 +343,12 @@ export default function MaricopaCounty2() {
                       </>
                     );
 
-                    const cardClassName = "bg-white rounded-2xl p-6 border border-[#e8e0d0]/50 shadow-sm flex flex-col justify-between transition-all duration-300 min-h-[170px] hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/30 active:scale-[0.98] active:translate-y-0 cursor-pointer";
+                    const cardClassName = "bg-white rounded-2xl p-6 border border-[#e8e0d0]/50 shadow-sm flex flex-col justify-between transition-all duration-300 min-h-[170px]";
 
                     return (
-                      <Link key={index} href={href} className={cardClassName}>
+                      <div key={index} className={cardClassName}>
                         {cardContent}
-                      </Link>
+                      </div>
                     );
                   })}
                   </div>

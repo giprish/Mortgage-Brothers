@@ -58,12 +58,6 @@ const Hero = () => {
                   <polyline points="12 5 19 12 12 19" />
                 </svg>
               </Link>
-              <a
-                href="#talk-to-broker"
-                className="inline-flex items-center gap-2 bg-transparent border-2 border-white/30 hover:border-white/60 text-white text-[15px] font-semibold px-7 py-3.5 rounded-full transition-all duration-200"
-              >
-                Talk to a Broker
-              </a>
             </div>
 
             {/* Bottom Badges */}

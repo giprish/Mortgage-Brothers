@@ -164,10 +164,10 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Areas We Serve Dropdown */}
+          {/* Areas We Serve Dropdown — matches live site mega menu */}
           <div className="relative group py-2">
             <Link
-              href="/areas-we-serve/"
+              href="/service-areas/"
               className="flex items-center gap-1.5 text-white text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
             >
               Areas We Serve
@@ -183,81 +183,61 @@ const Navbar = () => {
                 strokeLinejoin="round"
                 className="group-hover:rotate-180 transition-transform duration-200"
               >
-                {/* <polyline points="6 9 12 15 18 9" /> */}
+                <polyline points="6 9 12 15 18 9" />
               </svg>
             </Link>
-            {/* Areas We Serve Megamenu Container */}
-            {/* <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[840px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
+
+            <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[720px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
               <div className="bg-white border border-[#e8e0d0] rounded-xl shadow-xl p-6 grid grid-cols-4 gap-6 text-left">
-               
                 <div>
-                  <h4 className="text-[#3fb364] text-[11px] font-bold tracking-[0.12em] uppercase mb-3 pb-1 border-b border-[#e8e0d0]/40">
-                    DIRECTORIES & AREAS
+                  <h4 className="text-[#3fb364] text-[11px] font-bold tracking-[0.12em] uppercase mb-4 pb-1.5 border-b border-[#e8e0d0]/40">
+                    MAJOR COUNTIES
                   </h4>
-                  <div className="flex flex-col gap-1.5">
-                    <Link href="/arizona-directory/" className="text-[#3fb364] text-[13px] font-bold hover:text-[#2d5a2d] transition-colors">Arizona Directory</Link>
-                    <Link href="/arizona-directory-2/" className="text-[#3fb364] text-[13px] font-bold hover:text-[#2d5a2d] transition-colors">Arizona Directory 2</Link>
-                    <Link href="/areas-we-serve/" className="text-[#3fb364] text-[13px] font-bold hover:text-[#2d5a2d] transition-colors">All Service Areas</Link>
-                    <Link href="/areas-we-serve/maricopa-county/" className="text-[#3fb364] text-[13px] font-bold hover:text-[#2d5a2d] transition-colors">Maricopa County</Link>
+                  <div className="flex flex-col gap-2.5">
+                    <Link href="/service-areas/maricopa-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Maricopa County</Link>
+                    <Link href="/service-areas/pima-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Pima County</Link>
+                    <Link href="/service-areas/pinal-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Pinal County</Link>
+                    <Link href="/service-areas/yavapai-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Yavapai County</Link>
                   </div>
                 </div>
 
-                
                 <div>
-                  <h4 className="text-[#3fb364] text-[11px] font-bold tracking-[0.12em] uppercase mb-3 pb-1 border-b border-[#e8e0d0]/40">
-                    CITIES A-G
+                  <h4 className="text-[#3fb364] text-[11px] font-bold tracking-[0.12em] uppercase mb-4 pb-1.5 border-b border-[#e8e0d0]/40">
+                    NORTHERN AZ
                   </h4>
-                  <div className="flex flex-col gap-1.5">
-                    <Link href="/areas-we-serve/maricopa-county/phoenix/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Phoenix</Link>
-                    <Link href="/areas-we-serve/maricopa-county/scottsdale/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Scottsdale</Link>
-                    <Link href="/areas-we-serve/maricopa-county/mesa/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Mesa</Link>
-                    <Link href="/areas-we-serve/maricopa-county/chandler/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Chandler</Link>
-                    <Link href="/areas-we-serve/maricopa-county/gilbert/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Gilbert</Link>
-                    <Link href="/areas-we-serve/maricopa-county/glendale/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Glendale</Link>
-                    <Link href="/areas-we-serve/maricopa-county/tempe/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Tempe</Link>
-                    <Link href="/areas-we-serve/maricopa-county/peoria/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Peoria</Link>
-                    <Link href="/areas-we-serve/maricopa-county/surprise/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Surprise</Link>
-                    <Link href="/areas-we-serve/maricopa-county/goodyear/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Goodyear</Link>
+                  <div className="flex flex-col gap-2.5">
+                    <Link href="/service-areas/coconino-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Coconino County</Link>
+                    <Link href="/service-areas/navajo-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Navajo County</Link>
+                    <Link href="/service-areas/apache-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Apache County</Link>
+                    <Link href="/service-areas/gila-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Gila County</Link>
                   </div>
                 </div>
 
-             
                 <div>
-                  <h4 className="text-[#3fb364] text-[11px] font-bold tracking-[0.12em] uppercase mb-3 pb-1 border-b border-[#e8e0d0]/40">
-                    CITIES H-Q
+                  <h4 className="text-[#3fb364] text-[11px] font-bold tracking-[0.12em] uppercase mb-4 pb-1.5 border-b border-[#e8e0d0]/40">
+                    SOUTHERN AZ
                   </h4>
-                  <div className="flex flex-col gap-1.5">
-                    <Link href="/areas-we-serve/maricopa-county/avondale/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Avondale</Link>
-                    <Link href="/areas-we-serve/maricopa-county/buckeye/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Buckeye</Link>
-                    <Link href="/areas-we-serve/maricopa-county/queen-creek/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Queen Creek</Link>
-                    <Link href="/areas-we-serve/maricopa-county/fountain-hills/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Fountain Hills</Link>
-                    <Link href="/areas-we-serve/maricopa-county/paradise-valley/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Paradise Valley</Link>
-                    <Link href="/areas-we-serve/maricopa-county/cave-creek/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Cave Creek</Link>
-                    <Link href="/areas-we-serve/maricopa-county/carefree/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Carefree</Link>
-                    <Link href="/areas-we-serve/maricopa-county/anthem/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Anthem</Link>
-                    <Link href="/areas-we-serve/maricopa-county/sun-city/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Sun City</Link>
+                  <div className="flex flex-col gap-2.5">
+                    <Link href="/service-areas/cochise-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Cochise County</Link>
+                    <Link href="/service-areas/graham-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Graham County</Link>
+                    <Link href="/service-areas/greenlee-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Greenlee County</Link>
+                    <Link href="/service-areas/santa-cruz-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Santa Cruz County</Link>
                   </div>
                 </div>
 
-               
                 <div>
-                  <h4 className="text-[#3fb364] text-[11px] font-bold tracking-[0.12em] uppercase mb-3 pb-1 border-b border-[#e8e0d0]/40">
-                    CITIES R-Z
+                  <h4 className="text-[#3fb364] text-[11px] font-bold tracking-[0.12em] uppercase mb-4 pb-1.5 border-b border-[#e8e0d0]/40">
+                    WESTERN AZ
                   </h4>
-                  <div className="flex flex-col gap-1.5">
-                    <Link href="/areas-we-serve/maricopa-county/sun-city-west/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Sun City West</Link>
-                    <Link href="/areas-we-serve/maricopa-county/litchfield-park/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Litchfield Park</Link>
-                    <Link href="/areas-we-serve/maricopa-county/wickenburg/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Wickenburg</Link>
-                    <Link href="/areas-we-serve/maricopa-county/apache-junction/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Apache Junction</Link>
-                    <Link href="/areas-we-serve/maricopa-county/guadalupe/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Guadalupe</Link>
-                    <Link href="/areas-we-serve/maricopa-county/el-mirage/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">El Mirage</Link>
-                    <Link href="/areas-we-serve/maricopa-county/tolleson/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Tolleson</Link>
-                    <Link href="/areas-we-serve/maricopa-county/youngtown/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Youngtown</Link>
-                    <Link href="/areas-we-serve/maricopa-county/gila-bend/" className="text-[#1a3a1a] text-[13px] font-medium hover:text-[#2d5a2d] transition-colors">Gila Bend</Link>
+                  <div className="flex flex-col gap-2.5">
+                    <Link href="/service-areas/mohave-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Mohave County</Link>
+                    <Link href="/service-areas/la-paz-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">La Paz County</Link>
+                    <Link href="/service-areas/yuma-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Yuma County</Link>
+                    {/* <Link href="/service-areas/" className="text-[#3fb364] text-[13.5px] font-bold hover:text-[#2d5a2d] transition-colors mt-1">View All Areas →</Link> */}
                   </div>
                 </div>
               </div>
-            </div> */}
+            </div>
           </div>
 
           {/* About Dropdown */}
@@ -574,16 +554,13 @@ const Navbar = () => {
                     <span className="text-[10px] text-white/70">▶</span>
                   </button>
 
-                  <Link
-                    href="/service-areas/"
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      setActiveSubmenu(null);
-                    }}
-                    className="text-white font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 border-b border-[#3b4148] hover:bg-[#343a42] transition-colors block"
+                  <button
+                    onClick={() => setActiveSubmenu("AREAS WE SERVE")}
+                    className="w-full text-white font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 border-b border-[#3b4148] flex items-center justify-between hover:bg-[#343a42] transition-colors cursor-pointer text-left"
                   >
-                    AREAS WE SERVE
-                  </Link>
+                    <span>AREAS WE SERVE</span>
+                    <span className="text-[10px] text-white/70">▶</span>
+                  </button>
 
                   <button
                     onClick={() => setActiveSubmenu("ABOUT")}
@@ -729,6 +706,33 @@ const Navbar = () => {
                       >
                         HOME LOAN CLOSING COST CALCULATOR
                       </Link>
+                    </>
+                  )}
+
+                  {activeSubmenu === "AREAS WE SERVE" && (
+                    <>
+                      <Link
+                        href="/service-areas/"
+                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
+                        className="text-[#3fb364] font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-white transition-colors"
+                      >
+                        ALL SERVICE AREAS
+                      </Link>
+                      <Link href="/service-areas/maricopa-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">MARICOPA COUNTY</Link>
+                      <Link href="/service-areas/pima-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">PIMA COUNTY</Link>
+                      <Link href="/service-areas/pinal-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">PINAL COUNTY</Link>
+                      <Link href="/service-areas/yavapai-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">YAVAPAI COUNTY</Link>
+                      <Link href="/service-areas/coconino-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">COCONINO COUNTY</Link>
+                      <Link href="/service-areas/navajo-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">NAVAJO COUNTY</Link>
+                      <Link href="/service-areas/apache-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">APACHE COUNTY</Link>
+                      <Link href="/service-areas/gila-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">GILA COUNTY</Link>
+                      <Link href="/service-areas/cochise-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">COCHISE COUNTY</Link>
+                      <Link href="/service-areas/graham-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">GRAHAM COUNTY</Link>
+                      <Link href="/service-areas/greenlee-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">GREENLEE COUNTY</Link>
+                      <Link href="/service-areas/santa-cruz-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">SANTA CRUZ COUNTY</Link>
+                      <Link href="/service-areas/mohave-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">MOHAVE COUNTY</Link>
+                      <Link href="/service-areas/la-paz-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">LA PAZ COUNTY</Link>
+                      <Link href="/service-areas/yuma-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">YUMA COUNTY</Link>
                     </>
                   )}
 

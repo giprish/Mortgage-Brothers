@@ -49,12 +49,6 @@ const CTA = () => {
               <polyline points="12 5 19 12 12 19" />
             </svg>
           </Link>
-          <a
-            href="#ask-question"
-            className="w-full sm:w-auto inline-flex items-center justify-center bg-transparent border border-white/30 hover:border-white/60 text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200"
-          >
-            Ask a Question
-          </a>
         </div>
       </div>
     </section>

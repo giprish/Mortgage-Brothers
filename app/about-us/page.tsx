@@ -349,7 +349,7 @@ export default function AboutPage() {
               href="tel:6025352171"
               className="btn-primary hover:shadow-brand-green-accent/20 group"
             >
-              Talk to a Broker
+              Call (602) 535-2171
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"
