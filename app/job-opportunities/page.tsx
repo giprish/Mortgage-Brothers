@@ -28,18 +28,22 @@ const positions = [
   {
     title: "Mortgage Broker Loan Officer",
     text: "Guide clients through the mortgage process, analyze financial situations, and recommend suitable loan products. Build relationships with real estate professionals and financial advisors.",
+    href: "/mortgage-broker-loan-officer-originator/",
   },
   {
     title: "Reverse Mortgage Loan Officer",
     text: "Specialize in reverse mortgages for seniors, educating clients on this unique financial tool. Conduct in-depth financial assessments and guide applicants through the reverse mortgage process.",
+    href: "/reverse-mortgage-loan-officer/",
   },
   {
     title: "Mortgage Processor",
     text: "Manage loan application pipelines, verify documentation, and ensure smooth progression of loans through the approval process. Great opportunity to start your career in the mortgage industry.",
+    href: "/mortgage-processor/",
   },
   {
     title: "Loan Officer Assistant",
     text: "Support loan officers in client communication, document collection, and basic loan file preparation. Ideal for those looking to enter the mortgage industry and learn from experienced professionals.",
+    href: "/loan-officer-assistant/",
   },
 ];
 
@@ -271,7 +275,7 @@ export default function JobOpportunitiesPage() {
                   <h3 className="text-[#3fb364] text-[19px] font-bold mb-3">{job.title}</h3>
                   <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed mb-5">{job.text}</p>
                   <Link
-                    href="/contact-us/"
+                    href={job.href}
                     className="inline-flex items-center gap-1.5 text-[#08271B] hover:text-[#3fb364] font-semibold text-[14px] transition-colors"
                   >
                     Learn More

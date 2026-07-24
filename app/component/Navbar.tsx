@@ -78,7 +78,7 @@ const Navbar = () => {
           {/* Calculators Megamenu Dropdown */}
           <div className="relative group py-2">
             <Link
-              href="/calculators/"
+              href="/mortgage-calculator-arizona/"
               className="flex items-center gap-1.5 text-white text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
             >
               Calculators

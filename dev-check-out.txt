@@ -1,0 +1,11 @@
+=== netstat ===
+  TCP    0.0.0.0:3000           0.0.0.0:0              LISTENING       21264
+  TCP    [::]:3000              [::]:0                 LISTENING       21264
+PORT 3000 HTTP:200
+SIZE:230829
+HAS_CLIENTS:True
+HAS_PATTERN:True
+PORT 3001 HTTP:000
+NO_FILE
+PORT 3002 HTTP:000
+NO_FILE
