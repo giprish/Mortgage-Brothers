@@ -37,6 +37,25 @@
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/your-phoenix-arizona-mortgage-team.jpg"
     }
   },
+  "/the-broker-advantage": {
+    "section": "pages",
+    "sourceUrl": "https://azmortgagebrothers.com/the-broker-advantage/",
+    "title": "Maximize Success with The Broker Advantage",
+    "description": "Discover expert insights and strategies defining The Broker Advantage for superior mortgage solutions with Arizona Mortgage Brothers",
+    "openGraph": {
+      "title": "Maximize Success with The Broker Advantage",
+      "description": "Discover expert insights and strategies defining The Broker Advantage for superior mortgage solutions with Arizona Mortgage Brothers",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/mortgage-broker-vs-banker.jpg",
+      "url": "https://azmortgagebrothers.com/the-broker-advantage/",
+      "type": "article"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Maximize Success with The Broker Advantage",
+      "description": "Discover expert insights and strategies defining The Broker Advantage for superior mortgage solutions with Arizona Mortgage Brothers",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/mortgage-broker-vs-banker.jpg"
+    }
+  },
   "/arizona-mortgage-insights": {
     "section": "cats",
     "sourceUrl": "https://azmortgagebrothers.com/arizona-mortgage-insights/",
@@ -111,6 +130,120 @@
       "title": "Arizona Mortgage Brothers Blog: Expert Tips & Insights",
       "description": "Stay informed with the Arizona Mortgage Brothers blog. Explore expert tips, industry updates, and insights on mortgages and home loans in Arizona.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/mortgage-tips-insights-arizona-blog.jpg"
+    }
+  },
+  "/credit-score-quiz": {
+    "section": "pages",
+    "sourceUrl": "https://azmortgagebrothers.com/credit-score-quiz/",
+    "title": "Evaluate Your Credit Score with a Credit Score Check",
+    "description": "Evaluate your credit readiness with our Mortgage Credit Quiz and learn how a credit score check can improve your mortgage opportunities!",
+    "openGraph": {
+      "title": "Evaluate Your Credit Score with a Credit Score Check",
+      "description": "Evaluate your credit readiness with our Mortgage Credit Quiz and learn how a credit score check can improve your mortgage opportunities!",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/mortgage-credit-quiz.jpg",
+      "url": "https://azmortgagebrothers.com/credit-score-quiz/",
+      "type": "article"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Evaluate Your Credit Score with a Credit Score Check",
+      "description": "Evaluate your credit readiness with our Mortgage Credit Quiz and learn how a credit score check can improve your mortgage opportunities!",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/mortgage-credit-quiz.jpg"
+    }
+  },
+  "/glossary": {
+    "section": "pages",
+    "sourceUrl": "https://azmortgagebrothers.com/glossary/",
+    "title": "Master Mortgage Glossary: Understand Key Terms",
+    "description": "Explore our Mortgage Glossary for clear definitions of essential mortgage terms and expert insights from Arizona Mortgage Brothers.",
+    "openGraph": {
+      "title": "Master Mortgage Glossary: Understand Key Terms",
+      "description": "Explore our Mortgage Glossary for clear definitions of essential mortgage terms and expert insights from Arizona Mortgage Brothers.",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/glossary-terms.jpg",
+      "url": "https://azmortgagebrothers.com/glossary/",
+      "type": "article"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Master Mortgage Glossary: Understand Key Terms",
+      "description": "Explore our Mortgage Glossary for clear definitions of essential mortgage terms and expert insights from Arizona Mortgage Brothers.",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/glossary-terms.jpg"
+    }
+  },
+  "/mortgage-101": {
+    "section": "pages",
+    "sourceUrl": "https://azmortgagebrothers.com/mortgage-101/",
+    "title": "Mortgage 101: Your Guide to Home Financing",
+    "description": "Discover Mortgage 101 fundamentals with expert insights from Arizona Mortgage Brothers to kickstart your home financing journey.",
+    "openGraph": {
+      "title": "Mortgage 101: Your Guide to Home Financing",
+      "description": "Discover Mortgage 101 fundamentals with expert insights from Arizona Mortgage Brothers to kickstart your home financing journey.",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/arizona-mortgage-101.jpg",
+      "url": "https://azmortgagebrothers.com/mortgage-101/",
+      "type": "article"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Mortgage 101: Your Guide to Home Financing",
+      "description": "Discover Mortgage 101 fundamentals with expert insights from Arizona Mortgage Brothers to kickstart your home financing journey.",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/arizona-mortgage-101.jpg"
+    }
+  },
+  "/mortgage-rates-tool-arizona": {
+    "section": "pages",
+    "sourceUrl": "https://azmortgagebrothers.com/mortgage-rates-tool-arizona/",
+    "title": "Find Your Best Rate with Mortgage Rates Tool Arizona",
+    "description": "Compare competitive rates using our Mortgage Rates Tool Arizona and secure the ideal mortgage solution with expert guidance.",
+    "openGraph": {
+      "title": "Find Your Best Rate with Mortgage Rates Tool Arizona",
+      "description": "Compare competitive rates using our Mortgage Rates Tool Arizona and secure the ideal mortgage solution with expert guidance.",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/arizona-mortgage-rates.jpg",
+      "url": "https://azmortgagebrothers.com/mortgage-rates-tool-arizona/",
+      "type": "article"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Find Your Best Rate with Mortgage Rates Tool Arizona",
+      "description": "Compare competitive rates using our Mortgage Rates Tool Arizona and secure the ideal mortgage solution with expert guidance.",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/arizona-mortgage-rates.jpg"
+    }
+  },
+  "/loan-applications": {
+    "section": "pages",
+    "sourceUrl": "https://azmortgagebrothers.com/loan-applications/",
+    "title": "Simplify Your Loan Applications Process Today",
+    "description": "Streamline your journey with our secure Loan Applications process at Arizona Mortgage Brothers. Apply quickly and confidently!",
+    "openGraph": {
+      "title": "Simplify Your Loan Applications Process Today",
+      "description": "Streamline your journey with our secure Loan Applications process at Arizona Mortgage Brothers. Apply quickly and confidently!",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/your-phoenix-arizona-mortgage-team.jpg",
+      "url": "https://azmortgagebrothers.com/loan-applications/",
+      "type": "article"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Simplify Your Loan Applications Process Today",
+      "description": "Streamline your journey with our secure Loan Applications process at Arizona Mortgage Brothers. Apply quickly and confidently!",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/your-phoenix-arizona-mortgage-team.jpg"
+    }
+  },
+  "/job-opportunities": {
+    "section": "pages",
+    "sourceUrl": "https://azmortgagebrothers.com/job-opportunities/",
+    "title": "Mortgage Job Opportunities | Arizona Mortgage Brothers Team",
+    "description": "Explore rewarding job opportunities at Arizona Mortgage Brothers and take the next step in your mortgage industry career.",
+    "openGraph": {
+      "title": "Mortgage Job Opportunities | Arizona Mortgage Brothers Team",
+      "description": "Explore rewarding job opportunities at Arizona Mortgage Brothers and take the next step in your mortgage industry career.",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/mortgage-career-opportunities-in-arizona.jpg",
+      "url": "https://azmortgagebrothers.com/job-opportunities/",
+      "type": "article"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Mortgage Job Opportunities | Arizona Mortgage Brothers Team",
+      "description": "Explore rewarding job opportunities at Arizona Mortgage Brothers and take the next step in your mortgage industry career.",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/mortgage-career-opportunities-in-arizona.jpg"
     }
   },
   "/client-mortgage-reviews": {

@@ -4,16 +4,16 @@ import Image from "next/image";
 
 const insideLinks = [
   { label: "About Us", href: "/about-us/" },
-  { label: "Mortgage Broker VS Banker", href: "/about-us/" },
+  { label: "Mortgage Broker VS Banker", href: "/the-broker-advantage/" },
   { label: "Client Reviews", href: "/client-mortgage-reviews/" },
   { label: "News and Updates", href: "/blog/" },
-  { label: "Job Opportunities", href: "/contact-us/" },
-  { label: "Loan Applications", href: "/#get-pre-approved" },
-  { label: "Mortgage Rates", href: "/blog/" },
+  { label: "Job Opportunities", href: "/job-opportunities/" },
+  { label: "Loan Applications", href: "/loan-applications/" },
+  { label: "Mortgage Rates", href: "/mortgage-rates-tool-arizona/" },
   { label: "Mortgage Calculator", href: "/calculators/" },
-  { label: "Mortgage 101", href: "/mortgage-basics/" },
-  { label: "Credit Score Quiz", href: "/first-time-home-buyer-arizona-guide/" },
-  { label: "Glossary", href: "/blog/" },
+  { label: "Mortgage 101", href: "/mortgage-101/" },
+  { label: "Credit Score Quiz", href: "/credit-score-quiz/" },
+  { label: "Glossary", href: "/glossary/" },
 ];
 
 const loanLinks = [
