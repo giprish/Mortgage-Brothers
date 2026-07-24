@@ -189,6 +189,25 @@
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/10/FHA-Loans-Home.webp"
     }
   },
+  "/conventional-vs-fha-loans-arizona": {
+    "section": "pages",
+    "sourceUrl": "https://azmortgagebrothers.com/conventional-vs-fha-loans-arizona/",
+    "title": "Conventional vs FHA Loans in Arizona - Compare & Choose",
+    "description": "Unsure which loan is right for you? Arizona Mortgage Brothers break down Conventional vs FHA loans in Arizona. Find the best option for your needs today!",
+    "openGraph": {
+      "title": "Conventional vs FHA Loans in Arizona - Compare & Choose",
+      "description": "Unsure which loan is right for you? Arizona Mortgage Brothers break down Conventional vs FHA loans in Arizona. Find the best option for your needs today!",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/conventional-vs-fha-loans-arizona.jpg",
+      "url": "https://azmortgagebrothers.com/conventional-vs-fha-loans-arizona/",
+      "type": "article"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Conventional vs FHA Loans in Arizona - Compare & Choose",
+      "description": "Unsure which loan is right for you? Arizona Mortgage Brothers break down Conventional vs FHA loans in Arizona. Find the best option for your needs today!",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/conventional-vs-fha-loans-arizona.jpg"
+    }
+  },
   "/conventional-vs-fha-calculator": {
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/conventional-vs-fha-calculator/",
@@ -491,6 +510,63 @@
       "title": "Learn Mortgage Basics for Home Financing",
       "description": "Discover key mortgage basics, including amortization, APR, and closing costs, to make smarter home financing decisions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
+    }
+  },
+  "/mortgage-for-excellent-credit": {
+    "section": "pages",
+    "sourceUrl": "https://azmortgagebrothers.com/mortgage-for-excellent-credit/",
+    "title": "Mortgage for Excellent Credit – Best Home Loan Options",
+    "description": "Unlock exclusive mortgage options with the lowest interest rates for excellent credit borrowers. Arizona mortgage experts at Mortgage Brothers.",
+    "openGraph": {
+      "title": "Mortgage for Excellent Credit – Best Home Loan Options",
+      "description": "Unlock exclusive mortgage options with the lowest interest rates for excellent credit borrowers. Arizona mortgage experts at Mortgage Brothers.",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/mortgage-for-excellent-credit.jpg",
+      "url": "https://azmortgagebrothers.com/mortgage-for-excellent-credit/",
+      "type": "article"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Mortgage for Excellent Credit – Best Home Loan Options",
+      "description": "Unlock exclusive mortgage options with the lowest interest rates for excellent credit borrowers. Arizona mortgage experts at Mortgage Brothers.",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/mortgage-for-excellent-credit.jpg"
+    }
+  },
+  "/mortgage-for-poor-credit": {
+    "section": "pages",
+    "sourceUrl": "https://azmortgagebrothers.com/mortgage-for-poor-credit/",
+    "title": "Mortgage for Poor Credit – Get Approved for a Home Loan",
+    "description": "Need a mortgage for poor credit? Learn how to qualify, improve your credit, and explore lenders willing to help you buy a home despite credit challenges.",
+    "openGraph": {
+      "title": "Mortgage for Poor Credit – Get Approved for a Home Loan",
+      "description": "Need a mortgage for poor credit? Learn how to qualify, improve your credit, and explore lenders willing to help you buy a home despite credit challenges.",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/mortgage-for-poor-credit.jpg",
+      "url": "https://azmortgagebrothers.com/mortgage-for-poor-credit/",
+      "type": "article"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Mortgage for Poor Credit – Get Approved for a Home Loan",
+      "description": "Need a mortgage for poor credit? Learn how to qualify, improve your credit, and explore lenders willing to help you buy a home despite credit challenges.",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/mortgage-for-poor-credit.jpg"
+    }
+  },
+  "/mortgage-for-good-credit": {
+    "section": "pages",
+    "sourceUrl": "https://azmortgagebrothers.com/mortgage-for-good-credit/",
+    "title": "Mortgage for Good Credit – Compare Your Best Options",
+    "description": "Unlock competitive mortgage rates with good credit. Compare loan options and get personalized guidance from Arizona Mortgage Brothers.",
+    "openGraph": {
+      "title": "Mortgage for Good Credit – Compare Your Best Options",
+      "description": "Unlock competitive mortgage rates with good credit. Compare loan options and get personalized guidance from Arizona Mortgage Brothers.",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/mortgage-good-credit.jpg",
+      "url": "https://azmortgagebrothers.com/mortgage-for-good-credit/",
+      "type": "article"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Mortgage for Good Credit – Compare Your Best Options",
+      "description": "Unlock competitive mortgage rates with good credit. Compare loan options and get personalized guidance from Arizona Mortgage Brothers.",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/mortgage-good-credit.jpg"
     }
   },
   "/mortgage-payments-strategies": {
