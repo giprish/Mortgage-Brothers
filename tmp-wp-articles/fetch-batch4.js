@@ -5,15 +5,34 @@ const out = __dirname;
 const home = path.join(base, "public/home");
 
 const slugs = [
-  "buying-or-selling-personal-property-with-your-home-sale-must-watch-this-first",
-  "how-to-skip-2-payments-on-your-mortgage",
-  "put-bow-fha-loan-gift-guide",
+  "lsu-forms-loan-status-updates-and-what-you-need-to-know",
+  "how-do-solar-panels-affect-the-mortgage-and-closing-process",
+  "get-part-income-commission-can-use-qualify-loan",
+  "how-to-count-commissions-and-bonuses-and-tips",
 ];
+
+function decode(html) {
+  return html
+    .replace(/&nbsp;/g, " ")
+    .replace(/&#8217;/g, "'")
+    .replace(/&rsquo;/g, "'")
+    .replace(/&#8216;/g, "'")
+    .replace(/&lsquo;/g, "'")
+    .replace(/&#8220;/g, '"')
+    .replace(/&#8221;/g, '"')
+    .replace(/&ldquo;/g, '"')
+    .replace(/&rdquo;/g, '"')
+    .replace(/&#8211;/g, "-")
+    .replace(/&#8212;/g, "--")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">");
+}
 
 (async () => {
   for (const slug of slugs) {
     const res = await fetch(
-      `https://azmortgagebrothers.com/wp-json/wp/v2/posts?slug=${slug}&_fields=id,title,date,featured_media,categories,content,link&per_page=1`
+      `https://azmortgagebrothers.com/wp-json/wp/v2/posts?slug=${slug}&_fields=id,title,date,featured_media,categories,content,link,excerpt,yoast_head_json&per_page=1`
     );
     const arr = await res.json();
     const p = arr[0];
@@ -48,52 +67,64 @@ const slugs = [
     const primaryCat = p.categories[0];
     const neigh = await (
       await fetch(
-        `https://azmortgagebrothers.com/wp-json/wp/v2/posts?categories=${primaryCat}&per_page=100&order=asc&orderby=date&_fields=slug,date`
+        `https://azmortgagebrothers.com/wp-json/wp/v2/posts?categories=${primaryCat}&per_page=100&order=asc&orderby=date&_fields=slug,date,title`
       )
     ).json();
     const i = neigh.findIndex((x) => x.slug === slug);
 
     const html = p.content.rendered;
     const yt =
-      (html.match(/youtu\.be\/([\w-]+)/) || html.match(/embed\/([\w-]+)/) || [])[1];
+      (html.match(/youtu\.be\/([\w-]+)/) || html.match(/embed\/([\w-]+)/) || [])[1] ||
+      null;
     const faqs = [];
     const re = /"name"\s*:\s*"([^"]+)"[\s\S]*?"text"\s*:\s*"((?:\\.|[^"\\])*)"/g;
     let m;
     while ((m = re.exec(html))) {
       faqs.push({
-        q: m[1],
-        a: m[2].replace(/\\"/g, '"').replace(/\\n/g, " "),
+        q: decode(m[1]),
+        a: decode(m[2].replace(/\\"/g, '"').replace(/\\n/g, " ")),
       });
     }
     const h2 = [...html.matchAll(/<h2[^>]*>([\s\S]*?)<\/h2>/gi)].map((x) =>
-      x[1].replace(/<[^>]+>/g, "").trim()
+      decode(x[1].replace(/<[^>]+>/g, "").trim())
     );
-    const text = html
-      .replace(/<script[\s\S]*?<\/script>/gi, "")
-      .replace(/<style[\s\S]*?<\/style>/gi, "")
-      .replace(/<[^>]+>/g, "\n")
-      .replace(/&nbsp;/g, " ")
-      .replace(/&#8217;/g, "'")
-      .replace(/&rsquo;/g, "'")
-      .replace(/&ldquo;/g, '"')
-      .replace(/&rdquo;/g, '"')
-      .replace(/&amp;/g, "&")
-      .replace(/\n{3,}/g, "\n\n")
-      .trim();
+    const text = decode(
+      html
+        .replace(/<script[\s\S]*?<\/script>/gi, "")
+        .replace(/<style[\s\S]*?<\/style>/gi, "")
+        .replace(/<[^>]+>/g, "\n")
+        .replace(/\n{3,}/g, "\n\n")
+        .trim()
+    );
     fs.writeFileSync(path.join(out, slug + ".txt"), text);
 
+    const yoast = p.yoast_head_json || {};
     const meta = {
-      title: p.title.rendered,
+      title: decode(p.title.rendered),
       date: p.date,
       categories: cats,
       yt,
       h2,
       faqs,
-      alt: media.alt_text,
+      alt: media.alt_text || "",
       imgName,
       imgUrl,
-      prev: neigh[i - 1]?.slug,
-      next: neigh[i + 1]?.slug,
+      prev: neigh[i - 1]
+        ? {
+            slug: neigh[i - 1].slug,
+            title: decode(neigh[i - 1].title.rendered),
+          }
+        : null,
+      next: neigh[i + 1]
+        ? {
+            slug: neigh[i + 1].slug,
+            title: decode(neigh[i + 1].title.rendered),
+          }
+        : null,
+      seoTitle: yoast.title || decode(p.title.rendered),
+      seoDesc:
+        yoast.description ||
+        decode((p.excerpt?.rendered || "").replace(/<[^>]+>/g, "")).trim(),
     };
     fs.writeFileSync(path.join(out, slug + "-meta.json"), JSON.stringify(meta, null, 2));
     console.log(
@@ -107,9 +138,9 @@ const slugs = [
       "yt",
       yt,
       "prev",
-      meta.prev,
+      meta.prev?.slug,
       "next",
-      meta.next,
+      meta.next?.slug,
       "faqs",
       faqs.length,
       "h2",

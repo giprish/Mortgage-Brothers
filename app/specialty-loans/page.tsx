@@ -31,6 +31,15 @@ const articles = [
     category: "Specialty Loans"
   },
   {
+    title: "How Fast is Too Fast to Close a Mortgage Loan to Purchase a House?",
+    description: "Learn why a 30-day close is ideal, when 20–25 days is reasonable, and the risks of rushing a super-fast mortgage closing.",
+    href: "/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house/",
+    date: "Feb 4, 2025",
+    readTime: "10 min read",
+    category: "Specialty Loans"
+  },
+
+  {
     title: "VA Loans for First-Time Homebuyers in Arizona: Your Path to Homeownership",
     description: "Explore 0% down payment VA loan benefits, eligibility guidelines, and rate advantages for military buyers in Arizona.",
     href: "/va-loans-for-first-time-homebuyers-in-arizona-your-path-to-affordable-homeownership/",

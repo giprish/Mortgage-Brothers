@@ -31,6 +31,22 @@ const articles = [
     category: "Mortgage Qualifications"
   },
   {
+    title: "Will Commissions Count Towards a Loan?",
+    description: "Can commission and bonus income help you qualify? See FHA, VA, and Conventional requirements for using variable income on a home loan.",
+    href: "/get-part-income-commission-can-use-qualify-loan/",
+    date: "Feb 6, 2025",
+    readTime: "9 min read",
+    category: "Mortgage Qualifications"
+  },
+  {
+    title: "How to Count Commissions and Bonuses and Tips",
+    description: "Learn how lenders count commissions, bonuses, and tip income for Conventional, VA, and FHA loans—and how long of a history you need.",
+    href: "/how-to-count-commissions-and-bonuses-and-tips/",
+    date: "Feb 6, 2025",
+    readTime: "8 min read",
+    category: "Mortgage Qualifications"
+  },
+  {
     title: "Getting a Mortgage with Employment Gaps",
     description: "Learn how employment gaps can affect mortgage approval and what Conventional, FHA, and VA loan programs require.",
     href: "/getting-a-mortgage-with-employment-gaps/",

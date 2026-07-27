@@ -7,6 +7,14 @@ import Footer from "../component/Footer";
 
 const articles = [
   {
+    title: "How Fast is Too Fast to Close a Mortgage Loan to Purchase a House?",
+    description: "Learn why a 30-day close is ideal, when 20–25 days is reasonable, and the risks of rushing a super-fast mortgage closing.",
+    href: "/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house/",
+    date: "Feb 4, 2025",
+    readTime: "10 min read",
+    category: "Mortgage Process Guidance"
+  },
+  {
     title: "VA Loans for First-Time Homebuyers in Arizona: Your Path to Homeownership",
     description: "Explore 0% down payment VA loan benefits, eligibility guidelines, and rate advantages for military buyers in Arizona.",
     href: "/va-loans-for-first-time-homebuyers-in-arizona-your-path-to-affordable-homeownership/",
@@ -14,6 +22,7 @@ const articles = [
     readTime: "8 min read",
     category: "Mortgage Process Guidance"
   },
+
   {
     title: "How to Get a Mortgage in Arizona with Fair or Improving Credit",
     description: "Learn how buyers with credit scores between 580 and 660 qualify for home loans in Arizona with FHA programs and rapid rescoring.",
@@ -27,6 +36,14 @@ const articles = [
     description: "Detailed side-by-side comparison of credit score rules, down payments, PMI vs. MIP, and total 30-year costs for Arizona buyers.",
     href: "/conventional-home-loans-vs-fha-loans-which-is-right-for-you/",
     date: "Jun 20, 2026",
+    readTime: "10 min read",
+    category: "Mortgage Process Guidance"
+  },
+  {
+    title: "How do Solar Panels affect the mortgage and closing process?",
+    description: "Learn how lenders view owned vs. leased solar panels, how they impact appraised value, and whether solar payments affect mortgage qualifications.",
+    href: "/how-do-solar-panels-affect-the-mortgage-and-closing-process/",
+    date: "Feb 6, 2025",
     readTime: "10 min read",
     category: "Mortgage Process Guidance"
   }

@@ -7,6 +7,30 @@ import Footer from "../component/Footer";
 
 const articles = [
   {
+    title: "Put A Bow On It: FHA Loan Gift Guide",
+    description: "Learn FHA gift fund rules for down payments—gift letters, documented transfers, acceptable donors, and why cash gifts are not allowed.",
+    href: "/put-bow-fha-loan-gift-guide/",
+    date: "Feb 5, 2025",
+    readTime: "8 min read",
+    category: "Mortgage Payments & Strategies"
+  },
+  {
+    title: "How to Skip 2 Payments On Your Mortgage?",
+    description: "See how refinancing can let you skip two mortgage payments, why interest is prepaid or rolled forward, and why it does not save money.",
+    href: "/how-to-skip-2-payments-on-your-mortgage/",
+    date: "Feb 5, 2025",
+    readTime: "9 min read",
+    category: "Mortgage Payments & Strategies"
+  },
+  {
+    title: "Buying or Selling personal property with your home sale? Must Watch this First!",
+    description: "Learn why personal property in a purchase contract can trigger lender issues and which Arizona items can transfer with the home sale.",
+    href: "/buying-or-selling-personal-property-with-your-home-sale-must-watch-this-first/",
+    date: "Feb 5, 2025",
+    readTime: "11 min read",
+    category: "Mortgage Payments & Strategies"
+  },
+  {
     title: "Delayed Financing – how to get cashout without waiting 6 months seasoning",
     description: "Learn how delayed financing lets you buy with cash and cash out soon after closing—without waiting the standard 6-month seasoning period.",
     href: "/delayed-financing-how-to-get-cashout-without-waiting-6-months-seasoning/",

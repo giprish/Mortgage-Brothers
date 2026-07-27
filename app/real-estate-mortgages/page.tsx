@@ -31,6 +31,22 @@ const articles = [
     category: "Real Estate & Mortgages"
   },
   {
+    title: "LSU Forms – Loan Status Updates and what you need to know",
+    description: "We go through the Arizona LSU (Loan Status Updates) form lenders send to sellers throughout a purchase—and what buyers, sellers, and Realtors should watch for.",
+    href: "/lsu-forms-loan-status-updates-and-what-you-need-to-know/",
+    date: "Feb 6, 2025",
+    readTime: "12 min read",
+    category: "Real Estate & Mortgages"
+  },
+  {
+    title: "How do Solar Panels affect the mortgage and closing process?",
+    description: "Learn how lenders view owned vs. leased solar panels, how they impact appraised value, and whether solar payments affect mortgage qualifications.",
+    href: "/how-do-solar-panels-affect-the-mortgage-and-closing-process/",
+    date: "Feb 6, 2025",
+    readTime: "10 min read",
+    category: "Real Estate & Mortgages"
+  },
+  {
     title: "Arizona BINSR Buyer Inspection Notice and Seller Response",
     description: "Learn how the Arizona BINSR process works, what buyers and sellers need to know, and how to handle repair requests in a home sale.",
     href: "/arizona-binsr-buyer-inspection-notice-and-seller-response/",
@@ -84,6 +100,22 @@ const articles = [
     href: "/arizona-real-estate-capital-gains-is-back/",
     date: "Feb 4, 2025",
     readTime: "6 min read",
+    category: "Real Estate & Mortgages"
+  },
+  {
+    title: "What Is The Difference Between A Condo And A Townhome?",
+    description: "Compare Arizona condo vs townhome ownership structures and why lenders treat condos with stricter financing guidelines.",
+    href: "/what-is-the-difference-between-aan-arizona-condo-and-arizona-townhome/",
+    date: "Feb 5, 2025",
+    readTime: "6 min read",
+    category: "Real Estate & Mortgages"
+  },
+  {
+    title: "Detached Guest Home (Casita) Appraisal Issues",
+    description: "Learn how casitas are appraised as line-item adjustments, why values often lag build cost, and what that means for buyers and refinancers.",
+    href: "/detached-guest-home-casita-appraisal-issues/",
+    date: "Feb 5, 2025",
+    readTime: "11 min read",
     category: "Real Estate & Mortgages"
   }
 ];
