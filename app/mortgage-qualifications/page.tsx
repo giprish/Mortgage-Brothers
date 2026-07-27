@@ -45,6 +45,22 @@ const articles = [
     date: "Feb 3, 2025",
     readTime: "7 min read",
     category: "Mortgage Qualifications"
+  },
+  {
+    title: "Can I Relocate and Get a Mortgage While Working Remotely Out of State?",
+    description: "Learn how to qualify for a mortgage while working remotely, meet lender requirements, and secure financing when relocating to a new state.",
+    href: "/can-i-relocate-and-get-a-mortgage-while-working-remotely-out-of-state/",
+    date: "Feb 3, 2025",
+    readTime: "8 min read",
+    category: "Mortgage Qualifications"
+  },
+  {
+    title: "DSCR Loan: The Best Alternative to Hard Money",
+    description: "Learn how a DSCR loan works, why it's a great alternative to hard money, and how investors can qualify without personal income verification.",
+    href: "/dscr-loan-the-best-alternative-to-hard-money/",
+    date: "Feb 3, 2025",
+    readTime: "9 min read",
+    category: "Mortgage Qualifications"
   }
 ];
 

@@ -29,6 +29,38 @@ const articles = [
     date: "Jun 15, 2026",
     readTime: "8 min read",
     category: "Real Estate & Mortgages"
+  },
+  {
+    title: "Arizona BINSR Buyer Inspection Notice and Seller Response",
+    description: "Learn how the Arizona BINSR process works, what buyers and sellers need to know, and how to handle repair requests in a home sale.",
+    href: "/arizona-binsr-buyer-inspection-notice-and-seller-response/",
+    date: "Feb 4, 2025",
+    readTime: "7 min read",
+    category: "Real Estate & Mortgages"
+  },
+  {
+    title: "What you need to know about the Arizona Prequalification Form",
+    description: "Highlight key line items on the Arizona Prequalification Form, how it strengthens offers in competitive markets, and why income and asset docs matter.",
+    href: "/what-you-need-to-know-about-the-arizona-prequalification-form/",
+    date: "Feb 4, 2025",
+    readTime: "12 min read",
+    category: "Real Estate & Mortgages"
+  },
+  {
+    title: "Arizona Mortgage Rates and the Interest Deduction",
+    description: "Understand the mortgage interest tax deduction, why few homeowners claim it, and how demographics affect usage across states including Arizona.",
+    href: "/arizona-mortgage-rates-and-the-interest-deduction/",
+    date: "Feb 4, 2025",
+    readTime: "6 min read",
+    category: "Real Estate & Mortgages"
+  },
+  {
+    title: "Prepayment Penalties on Your Arizona Mortgage",
+    description: "Learn how optional prepayment penalties work on Arizona mortgages, when they may lower your rate, and how to negotiate or avoid surprise fees.",
+    href: "/prepayment-penalties-on-your-arizona-mortgage/",
+    date: "Feb 4, 2025",
+    readTime: "5 min read",
+    category: "Real Estate & Mortgages"
   }
 ];
 

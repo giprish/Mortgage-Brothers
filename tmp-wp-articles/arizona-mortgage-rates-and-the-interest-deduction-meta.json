@@ -1,0 +1,25 @@
+{
+  "title": "Arizona Mortgage Rates and the Interest Deduction",
+  "h2": [
+    "So why do less than 25% of people take this deduction?",
+    "It’s not the same across the county"
+  ],
+  "faqs": [
+    {
+      "q": "What is the mortgage interest tax deduction and how does it work?",
+      "a": "The mortgage interest deduction is a federal tax incentive designed to reduce the cost of homeownership. If you itemize your deductions, it allows you to subtract the total amount of interest paid on your home loan from your gross income, actively lowering your overall taxable income balance for the year."
+    },
+    {
+      "q": "How do I know exactly how much mortgage interest I paid over the tax year?",
+      "a": "Every January, your mortgage servicer is legally required to send you an IRS Form 1098. This official document states the precise dollar amount of mortgage interest and any deductible loan points you paid during the prior calendar year, which your tax professional will use to calculate your write-off."
+    },
+    {
+      "q": "Does a higher annual income increase the value of the mortgage interest deduction?",
+      "a": "Yes, because tax savings scale directly with your federal income tax bracket. For example, a homeowner in a 12% marginal tax bracket who pays $12,000 in annual mortgage interest will save roughly $1,400 on their tax bill, whereas a higher-earning homeowner paying the same interest in a 22% tax bracket will save closer to $3,500."
+    },
+    {
+      "q": "What are the limitations on writing off home loan interest under current tax laws?",
+      "a": "To claim the mortgage interest write-off, your total itemized deductions must exceed the standard deduction set by the IRS. Additionally, federal tax guidelines limit the deduction to the interest paid on the first $750,000 of indebtedness for properties purchased after December 15, 2017."
+    }
+  ]
+}
