@@ -63,6 +63,14 @@ const articles = [
     category: "Mortgage Qualifications"
   },
   {
+    title: "Can I simply payoff credit cards to qualify for a mortgage?",
+    description: "See how Conventional, FHA, and VA guidelines treat paying off credit cards—and whether you still need to close the account to lower DTI.",
+    href: "/can-i-simply-payoff-credit-cards-to-qualify-for-a-mortgage/",
+    date: "Feb 3, 2025",
+    readTime: "7 min read",
+    category: "Mortgage Qualifications"
+  },
+  {
     title: "Which Is Better: Getting a Mortgage As a Couple vs. As a Single Applicant?",
     description: "Compare applying for a mortgage as a couple versus a single applicant and understand how underwriting may treat your credit.",
     href: "/better-getting-mortgage-couple-vs-single-applicant/",

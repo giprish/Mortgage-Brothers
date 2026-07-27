@@ -1,0 +1,55 @@
+{
+  "wpType": "posts",
+  "title": "Arizona Home Buying Process",
+  "date": "2025-02-10T21:03:18",
+  "categories": [
+    {
+      "name": "Mortgage Basics",
+      "slug": "mortgage-basics"
+    },
+    {
+      "name": "Mortgage Process Guidance",
+      "slug": "mortgage-process-guidance"
+    }
+  ],
+  "yt": null,
+  "h2": [
+    "Step 1 – Filling out a Loan Application so you can get Pre-Approved before you begin shopping for a home",
+    "Step 2 – Assemble your Home Buying Team",
+    "Step 3 – Submit your purchase offer",
+    "Step 4 – Conditions and Paperwork",
+    "Step 5 – Closing",
+    "Home Buying FAQ’s"
+  ],
+  "faqs": [
+    {
+      "q": "What are the primary operational steps in the Arizona home buying process?",
+      "a": "The entire home buying process can be broken down into five major sequential phases. It begins with filling out a mortgage application for pre-approval, followed by assembling your real estate team, submitting a formal purchase offer, clearing underwriting conditions and paperwork, and finally attending the closing appointment."
+    },
+    {
+      "q": "Why is a personalized strategy session required before shopping for an Arizona home?",
+      "a": "A personalized strategy session with a trusted mortgage lender ensures you clearly understand how much home you can afford, establishes your exact down payment budget, and identifies the best mortgage program for your needs. It also allows the lender to uncover and resolve any potential loan approval issues early in the process."
+    },
+    {
+      "q": "What happens during the due diligence period after a purchase offer is accepted?",
+      "a": "Once the seller accepts your offer, the official due diligence period begins. This phase triggers a series of time-sensitive real estate events, including completing property home inspections to ensure the structure is sound, ordering the bank appraisal, and processing final mortgage approvals before signing closing documents."
+    },
+    {
+      "q": "How do Homeowners Associations (HOAs) impact buyers in Arizona?",
+      "a": "HOAs hold significant regulatory power over a property and can dictate specific rules regarding home paint colors, pet limits, landscaping choices, and architectural changes. Because they can assess financial penalties for non-compliance, buyers must thoroughly review the scope, guidelines, and monthly premiums of the HOA during escrow."
+    }
+  ],
+  "alt": "A clear overview of the Arizona home buying process for prospective homeowners",
+  "imgName": "arizona-home-buying-process.jpg",
+  "imgUrl": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/arizona-home-buying-process.jpg",
+  "prev": {
+    "slug": "arizona-mortgage-payments",
+    "title": "Arizona Mortgage Payments"
+  },
+  "next": {
+    "slug": "arizona-mortgage-closing-process",
+    "title": "Arizona Mortgage Closing Process"
+  },
+  "seoTitle": "Arizona Home Buying Process",
+  "seoDesc": "What is the overall Home Buying Process? Of course there are lot of moving parts, but the entire process can be broken down into a few major points that you will need to understand and be prepared for as you start working with your agent and your Arizona mortgage lender. Step 1 – Filling out [&hellip;]"
+}

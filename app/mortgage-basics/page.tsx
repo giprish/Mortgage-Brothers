@@ -7,6 +7,46 @@ import Footer from "../component/Footer";
 
 const articles = [
   {
+    title: "Arizona Refinance Process",
+    description: "Learn the Arizona refinance process, four top reasons to refinance, how to calculate net benefit, and HELOC vs cash-out options.",
+    href: "/arizona-refinance-process/",
+    date: "Feb 10, 2025",
+    readTime: "10 min read",
+    category: "Mortgage Basics"
+  },
+  {
+    title: "Arizona Mortgage Closing Process",
+    description: "Understand prior-to-closing conditions, what to bring on signing day, and how closing timing affects your Arizona mortgage.",
+    href: "/arizona-mortgage-closing-process/",
+    date: "Feb 10, 2025",
+    readTime: "10 min read",
+    category: "Mortgage Basics"
+  },
+  {
+    title: "Arizona Home Buying Process",
+    description: "Walk through the five major steps of buying a home in Arizona—from pre-approval and your buying team to offer, paperwork, and closing.",
+    href: "/arizona-home-buying-process/",
+    date: "Feb 10, 2025",
+    readTime: "9 min read",
+    category: "Mortgage Basics"
+  },
+  {
+    title: "Arizona Mortgage Payments",
+    description: "Understand what’s in your Arizona mortgage payment—principal, interest, taxes, insurance, MIP/PMI—and how escrow and impound accounts work.",
+    href: "/arizona-mortgage-payments/",
+    date: "Feb 10, 2025",
+    readTime: "7 min read",
+    category: "Mortgage Basics"
+  },
+  {
+    title: "Learn About the Home Mortgage Approval Process",
+    description: "A step-by-step roadmap of the Arizona mortgage approval process, plus key concepts like DTI, LTV, credit, and pre-approval letters.",
+    href: "/arizona-mortgage-approval-process/",
+    date: "Feb 10, 2025",
+    readTime: "12 min read",
+    category: "Mortgage Basics"
+  },
+  {
     title: "How to Calculate How Much PMI Mortgage Insurance Will Be",
     description: "Learn how PMI is calculated, when it’s required, and how to remove it — with a real Radian quote example.",
     href: "/how-to-calculate-how-much-pmi-mortgage-insurance-will-be/",

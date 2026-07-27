@@ -55,6 +55,14 @@ const articles = [
     category: "Real Estate & Mortgages"
   },
   {
+    title: "Air Conditioning’s Impact on Phoenix Valley Real Estate",
+    description: "How residential AC shaped Phoenix growth, swamp coolers vs central air, and what cooling systems mean for Valley home values and energy costs.",
+    href: "/air-conditionings-impact-phoenix-valley-real-estate/",
+    date: "Feb 6, 2025",
+    readTime: "8 min read",
+    category: "Real Estate & Mortgages"
+  },
+  {
     title: "Arizona BINSR Buyer Inspection Notice and Seller Response",
     description: "Learn how the Arizona BINSR process works, what buyers and sellers need to know, and how to handle repair requests in a home sale.",
     href: "/arizona-binsr-buyer-inspection-notice-and-seller-response/",

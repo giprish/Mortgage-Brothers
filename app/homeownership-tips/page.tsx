@@ -15,6 +15,14 @@ const articles = [
     category: "Homeownership Tips"
   },
   {
+    title: "Canceling your FHA MIP is Easier than you think",
+    description: "Learn when FHA MIP can cancel, how Streamline refinance helps pre-2009 loans, and how refinancing to conventional can eliminate mortgage insurance.",
+    href: "/canceling-your-fha-mip-is-easier-than-you-think/",
+    date: "Feb 6, 2025",
+    readTime: "10 min read",
+    category: "Homeownership Tips"
+  },
+  {
     title: "What If My Spouse Dies and I'm Not On The Mortgage?",
     description: "Learn what happens to a mortgage when a spouse dies if you are not on the loan, including title, St. Germain Act protections, community property, and refinance options.",
     href: "/what-if-my-spouse-dies-and-im-not-on-the-mortgage/",

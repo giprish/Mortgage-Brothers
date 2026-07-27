@@ -7,6 +7,30 @@ import Footer from "../component/Footer";
 
 const articles = [
   {
+    title: "Arizona Mortgage Closing Process",
+    description: "Understand prior-to-closing conditions, what to bring on signing day, and how closing timing affects your Arizona mortgage.",
+    href: "/arizona-mortgage-closing-process/",
+    date: "Feb 10, 2025",
+    readTime: "10 min read",
+    category: "Mortgage Process Guidance"
+  },
+  {
+    title: "Arizona Home Buying Process",
+    description: "Walk through the five major steps of buying a home in Arizona—from pre-approval and your buying team to offer, paperwork, and closing.",
+    href: "/arizona-home-buying-process/",
+    date: "Feb 10, 2025",
+    readTime: "9 min read",
+    category: "Mortgage Process Guidance"
+  },
+  {
+    title: "Learn About the Home Mortgage Approval Process",
+    description: "A step-by-step roadmap of the Arizona mortgage approval process, plus key concepts like DTI, LTV, credit, and pre-approval letters.",
+    href: "/arizona-mortgage-approval-process/",
+    date: "Feb 10, 2025",
+    readTime: "12 min read",
+    category: "Mortgage Process Guidance"
+  },
+  {
     title: "How Fast is Too Fast to Close a Mortgage Loan to Purchase a House?",
     description: "Learn why a 30-day close is ideal, when 20–25 days is reasonable, and the risks of rushing a super-fast mortgage closing.",
     href: "/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house/",

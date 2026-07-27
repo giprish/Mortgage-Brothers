@@ -1,0 +1,52 @@
+{
+  "wpType": "posts",
+  "title": "Arizona Mortgage Closing Process",
+  "date": "2025-02-10T21:10:49",
+  "categories": [
+    {
+      "name": "Mortgage Basics",
+      "slug": "mortgage-basics"
+    },
+    {
+      "name": "Mortgage Process Guidance",
+      "slug": "mortgage-process-guidance"
+    }
+  ],
+  "yt": null,
+  "h2": [
+    "Prior-To-Closing conditions",
+    "Items To Bring To Closing",
+    "Frequently Asked Questions"
+  ],
+  "faqs": [
+    {
+      "q": "What are the common prior-to-closing conditions that can cause mortgage delays?",
+      "a": "Even after initial loan approval, several factors can delay closing. These include lenders requesting updated income or asset documentation, new credit inquiries or opened accounts, employment verification issues, delays in liquidating funds for closing, newly uncovered liens during title and judgment searches, and difficulties securing adequate homeowners or flood insurance coverage."
+    },
+    {
+      "q": "What essential items must a homebuyer bring to their closing appointment?",
+      "a": "The two most critical items to bring to your mortgage closing are proper funds to close and proof of identification. Required funds must be in the form of a certified bank check or wire transfer instructions, as personal checks or cash are not accepted. For identification, an unexpired, valid state driver's license, state ID card, or passport is required."
+    },
+    {
+      "q": "How does the timing of a mortgage closing date affect the transaction?",
+      "a": "Closing early to mid-month is generally recommended to minimize transaction stress and streamline funding. However, for an FHA loan refinance, it is highly advantageous to close at the very end of the month, because FHA guidelines require the borrower to pay the entire month's interest regardless of the specific day they close. Additionally, borrowers should avoid closing on a Friday, as delays could make them responsible for paying interest on both the old and new loans over the weekend."
+    },
+    {
+      "q": "What are the final legal steps required to officially close on an Arizona property?",
+      "a": "After the buyer and seller sign all legal closing documents—including the final loan application, Closing Disclosure, Promissory Note, and the Deed of Trust—the title company returns the package to the lender for final review. Once approved, the lender releases the funds to the title company, and the escrow agent submits the deed to the county recorder's office. Ownership officially transfers to the buyer only after the deed is recorded."
+    }
+  ],
+  "alt": "A detailed explanation of the Arizona mortgage closing process for homebuyers.",
+  "imgName": "arizona-mortgage-closing-process.jpg",
+  "imgUrl": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/arizona-mortgage-closing-process.jpg",
+  "prev": {
+    "slug": "arizona-home-buying-process",
+    "title": "Arizona Home Buying Process"
+  },
+  "next": {
+    "slug": "arizona-mortgage-closing-costs",
+    "title": "Arizona Mortgage Closing Costs"
+  },
+  "seoTitle": "Arizona Mortgage Closing Process",
+  "seoDesc": "As we’ve mentioned in other helpful articles, the home buying process is packed full of paperwork, key dates and contracts plus daily market movements and checklists that can fluster even the most experienced real estate investor! We’ve also mentioned before how important it is to have a solid, professional real estate buying team assembled. We [&hellip;]"
+}

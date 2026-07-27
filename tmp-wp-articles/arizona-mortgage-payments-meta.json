@@ -1,0 +1,46 @@
+{
+  "wpType": "posts",
+  "title": "Arizona Mortgage Payments",
+  "date": "2025-02-10T20:30:49",
+  "categories": [
+    {
+      "name": "Mortgage Basics",
+      "slug": "mortgage-basics"
+    }
+  ],
+  "yt": null,
+  "h2": [
+    "Frequently Asked Questions"
+  ],
+  "faqs": [
+    {
+      "q": "What temporary documents can I use if my official mortgage bill doesn't arrive before the first payment is due?",
+      "a": "If your official mortgage statement or payment booklet does not arrive in time, you can use the temporary payment coupons provided within your closing documentation package to submit your initial monthly payment."
+    },
+    {
+      "q": "What are the core components that make up a standard monthly mortgage payment?",
+      "a": "A standard monthly mortgage payment, often referred to as PITI, is composed of principal reduction, interest charges, real estate property taxes, hazard homeowners insurance, and any applicable mortgage insurance premiums (PMI/MIP)."
+    },
+    {
+      "q": "What is an escrow or impound account and how does it affect my monthly payment?",
+      "a": "An escrow or impound account is a specialized financial account managed by your loan servicer. It collects a portion of your monthly payment specifically designated for real estate property taxes and hazard insurance, ensuring those annual bills are paid automatically on your behalf."
+    },
+    {
+      "q": "Are homeowners required to maintain an escrow account for their mortgage?",
+      "a": "Escrow accounts are mandatory for government-backed financing programs like FHA and VA loans. For conventional loans, buyers can request an escrow waiver if their loan-to-value (LTV) ratio is low enough, though lenders may charge a slightly higher interest rate due to the increased risk."
+    }
+  ],
+  "alt": "An overview of Arizona mortgage payments and strategies for effective management",
+  "imgName": "arizona-mortgage-payments.jpg",
+  "imgUrl": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/arizona-mortgage-payments.jpg",
+  "prev": {
+    "slug": "arizona-understanding-your-credit",
+    "title": "Understanding Your Credit"
+  },
+  "next": {
+    "slug": "arizona-home-buying-process",
+    "title": "Arizona Home Buying Process"
+  },
+  "seoTitle": "Arizona Mortgage Payments",
+  "seoDesc": "Unfortunately a major side effect of having a mortgage loan is that you’ll have to pay it back! We wanted to highlight a few points about your upcoming mortgage payment so you can understand what it is you’re paying. See my payment calculator to play around with scenarios. You should receive a mortgage payment booklet [&hellip;]"
+}
