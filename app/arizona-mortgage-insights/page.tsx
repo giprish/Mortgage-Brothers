@@ -7,6 +7,22 @@ import Footer from "../component/Footer";
 
 const articles = [
   {
+    title: "Arizona Vacation and Investment Home Mortgages",
+    description: "Learn down payment rules for Arizona vacation and investment homes, and why working with a local mortgage broker helps.",
+    href: "/arizona-vacation-and-investment-home-mortgages/",
+    date: "Feb 14, 2025",
+    readTime: "8 min read",
+    category: "Arizona Mortgage Insights"
+  },
+  {
+    title: "How High Will A Lender Allow Your Deductible To Be?",
+    description: "See how raising your homeowners insurance deductible can lower premiums and what lenders typically allow.",
+    href: "/how-high-will-a-lender-allow-your-deductible-to-be/",
+    date: "Feb 12, 2025",
+    readTime: "9 min read",
+    category: "Arizona Mortgage Insights"
+  },
+  {
     title: "How Does My Car Loan Payment Affect My Mortgage?",
     description: "See how car payments impact debt-to-income ratios and how much home-buying power you lose with common auto loan amounts.",
     href: "/how-does-my-car-loan-payment-affect-my-mortgage/",

@@ -7,6 +7,14 @@ import Footer from "../component/Footer";
 
 const articles = [
   {
+    title: "Is The Mortgage Interest Tax Deduction Really a Big Deal?",
+    description: "See how the mortgage interest tax deduction works with four income examples and what those tax savings look like day to day.",
+    href: "/is-the-mortgage-interest-tax-deduction-really-a-big-deal/",
+    date: "Feb 12, 2025",
+    readTime: "11 min read",
+    category: "Mortgage Payments & Strategies"
+  },
+  {
     title: "Put A Bow On It: FHA Loan Gift Guide",
     description: "Learn FHA gift fund rules for down payments—gift letters, documented transfers, acceptable donors, and why cash gifts are not allowed.",
     href: "/put-bow-fha-loan-gift-guide/",

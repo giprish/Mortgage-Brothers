@@ -39,6 +39,14 @@ const articles = [
     category: "Real Estate & Mortgages"
   },
   {
+    title: "Difference Between Owner-Occupied, Second Home, and Investment Property?",
+    description: "Occupancy type drives down payment, loan programs, and rates. Compare owner-occupied, second home, and investment property requirements.",
+    href: "/difference-between-owner-occupied-second-home-and-investment-property/",
+    date: "Feb 5, 2025",
+    readTime: "7 min read",
+    category: "Real Estate & Mortgages"
+  },
+  {
     title: "How do Solar Panels affect the mortgage and closing process?",
     description: "Learn how lenders view owned vs. leased solar panels, how they impact appraised value, and whether solar payments affect mortgage qualifications.",
     href: "/how-do-solar-panels-affect-the-mortgage-and-closing-process/",

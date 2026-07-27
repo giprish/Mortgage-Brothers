@@ -7,6 +7,14 @@ import Footer from "../component/Footer";
 
 const articles = [
   {
+    title: "Who CAN and CANNOT Be On Title When you Get A Mortgage?",
+    description: "Learn who can be added to a mortgage title, spouse and co-borrower rules, community property, and closing in a trust.",
+    href: "/who-can-and-cannot-be-on-title-when-you-get-a-mortgage/",
+    date: "Feb 12, 2025",
+    readTime: "10 min read",
+    category: "Specialty Loans"
+  },
+  {
     title: "How Does My Car Loan Payment Affect My Mortgage?",
     description: "See how car payments impact debt-to-income ratios and how much home-buying power you lose with common auto loan amounts.",
     href: "/how-does-my-car-loan-payment-affect-my-mortgage/",

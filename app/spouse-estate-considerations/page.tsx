@@ -7,6 +7,14 @@ import Footer from "../component/Footer";
 
 const articles = [
   {
+    title: "Who CAN and CANNOT Be On Title When you Get A Mortgage?",
+    description: "Learn who can be added to a mortgage title, spouse and co-borrower rules, community property, and closing in a trust.",
+    href: "/who-can-and-cannot-be-on-title-when-you-get-a-mortgage/",
+    date: "Feb 12, 2025",
+    readTime: "10 min read",
+    category: "Spouse & Estate Considerations"
+  },
+  {
     title: "What If My Spouse Dies and I'm Not On The Mortgage?",
     description: "Learn what happens to a mortgage when a spouse dies if you are not on the loan, including title, St. Germain Act protections, community property, and refinance options.",
     href: "/what-if-my-spouse-dies-and-im-not-on-the-mortgage/",

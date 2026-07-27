@@ -1,0 +1,382 @@
+[et_pb_section fb_built="1&#8243; admin_label="section" _builder_version="4.27.4&#8243; background_enable_color="off" custom_padding="0px||||false|false" global_colors_info="{}"][et_pb_row _builder_version="4.27.4&#8243; _module_preset="default" width="100%" custom_margin="10px||||false|false" custom_padding="0px||||false|false" global_colors_info="{}"][et_pb_column type="4_4&#8243; _builder_version="4.27.4&#8243; _module_preset="default" global_colors_info="{}"][et_pb_text _builder_version="4.27.4&#8243; _module_preset="default" global_colors_info="{}"]
+
+Buying your first home in Arizona is an exciting milestone — but it can also feel overwhelming. From choosing the right neighborhood to securing financing, there are a lot of moving parts. One of the biggest decisions you’ll face is 
+which type of mortgage loan to use
+.
+
+For many buyers, a 
+
+conventional home loan
+
+ is the best fit. Conventional loans are popular, flexible, and often come with long-term advantages, especially if you have a strong credit profile. In this guide, we’ll break down exactly what a conventional loan is, who qualifies, what Arizona loan limits look like in 2025, and how it compares to other options like FHA and VA loans.
+
+[/et_pb_text][/et_pb_column][/et_pb_row][et_pb_row _builder_version="4.27.4&#8243; _module_preset="default" width="100%" custom_margin="||||false|false" global_colors_info="{}"][et_pb_column type="4_4&#8243; _builder_version="4.27.4&#8243; _module_preset="default" global_colors_info="{}"][et_pb_heading title="What Exactly Is a Conventional Home Loan?" _builder_version="4.27.4&#8243; _module_preset="default" title_level="h2&#8243; title_font="|600|||||||" title_font_size="28px" custom_margin="||10px||false|false" custom_padding="||||false|false" global_colors_info="{}"][/et_pb_heading][et_pb_text _builder_version="4.27.4&#8243; _module_preset="default" custom_margin="||10px||false|false" global_colors_info="{}"]A 
+conventional home loan
+ is any mortgage that isn’t insured or guaranteed by the federal government. Instead, it’s offered by private lenders such as banks, credit unions, or mortgage companies. Conventional loans are the most common mortgage type in the U.S., especially among first-time buyers with steady income and decent credit (
+Consumer Financial Protection Bureau
+).
+
+There are two main categories:
+
+Conforming Loans
+ – These meet the loan limits set by the Federal Housing Finance Agency (FHFA) and can be sold to Fannie Mae or Freddie Mac.
+
+Non-Conforming Loans (Jumbo Loans)
+ – These exceed FHFA limits and are not eligible to be sold to Fannie Mae or Freddie Mac.
+
+[/et_pb_text][et_pb_heading title="2025 Arizona Loan Limits" _builder_version="4.27.4&#8243; _module_preset="default" title_level="h2&#8243; title_font="|600|||||||" title_font_size="28px" custom_margin="||10px||false|false" custom_padding="||||false|false" global_colors_info="{}"][/et_pb_heading][et_pb_text _builder_version="4.27.4&#8243; _module_preset="default" custom_margin="||10px||false|false" global_colors_info="{}"]Loan limits determine how large a loan can be while still being considered “conforming.” For 2025, the conforming loan limit for a single-family home in Arizona is 
+$806,500
+ (
+FHFA 2025 Loan Limits PDF
+).
+
+Conventional (Conforming) Loan
+ → Up to 
+$806,500
+
+Jumbo Loan → $806,501 and above
+
+These limits apply to most Arizona counties, including Maricopa, Pima, Pinal, and Mohave.[/et_pb_text][/et_pb_column][/et_pb_row][et_pb_row _builder_version="4.27.4&#8243; _module_preset="default" width="100%" custom_margin="||||false|false" custom_padding="0px||||false|false" global_colors_info="{}"][et_pb_column type="4_4&#8243; _builder_version="4.27.4&#8243; _module_preset="default" global_colors_info="{}"][et_pb_heading title="Why First-Time Buyers Choose Conventional Loans" _builder_version="4.27.4&#8243; _module_preset="default" title_level="h2&#8243; title_font="|600|||||||" title_font_size="28px" custom_margin="||10px||false|false" custom_padding="||||false|false" global_colors_info="{}"][/et_pb_heading][et_pb_text _builder_version="4.27.4&#8243; _module_preset="default" custom_margin="||25px||false|false" global_colors_info="{}"]
+
+For many Arizona first-time buyers, conventional loans offer a balance of flexibility, affordability, and long-term savings. Some of the key benefits include:
+
+1. Lower Down Payment Options
+
+Conventional loans aren’t just for buyers with large savings. Certain programs allow first-time buyers to put down as little as 
+3%
+ (
+ Freddie Mac Home Possible®
+).
+
+2. Flexible Credit Requirements
+
+A 
+minimum credit score of 620
+ is usually required (Fannie Mae Eligibility Matrix).
+
+3. Cancelable Private Mortgage Insurance (PMI)
+
+If your down payment is under 20%, you’ll need PMI. The advantage with conventional loans is that PMI can be 
+removed once you reach 20% equity
+.
+
+4. Broad Property Eligibility
+
+Conventional loans can be used for 
+primary residences, second homes, and even investment properties
+ (
+Fannie Mae Selling Guide
+).
+
+[/et_pb_text][et_pb_heading title="Conventional Loan Requirements" _builder_version="4.27.4&#8243; _module_preset="default" title_level="h2&#8243; title_font="|600|||||||" title_font_size="28px" custom_margin="||10px||false|false" custom_padding="||||false|false" global_colors_info="{}"][/et_pb_heading][et_pb_text _builder_version="4.27.4&#8243; _module_preset="default" custom_margin="||10px||false|false" global_colors_info="{}"]To qualify for a conventional mortgage in 2025, first-time buyers should be prepared for:
+
+Credit Score
+: Minimum of 620, but higher scores mean better terms.
+
+Down Payment
+: As little as 3% for first-time buyers; 5–20% for others.
+
+Debt-to-Income Ratio (DTI)
+: Generally under 36% is preferred, though some lenders allow up to 45–50% (
+Fannie Mae
+, 
+CFPB
+).
+
+Employment & Income
+: At least 2 years of stable employment history with documented income (
+Investopedia Conventional Loan Guide
+).
+
+[/et_pb_text][et_pb_button button_url="#getin_touch" button_text="Start My Pre-Approval" button_alignment="center" _builder_version="4.27.4&#8243; _module_preset="default" custom_button="on" button_text_color="#ffffff" button_bg_color="#6CA220&#8243; button_use_icon="off" custom_margin="||20px||false|false" global_colors_info="{}"][/et_pb_button][/et_pb_column][/et_pb_row][et_pb_row _builder_version="4.27.4&#8243; _module_preset="default" width="100%" custom_margin="||||false|false" custom_padding="0px||||false|false" global_colors_info="{}"][et_pb_column type="4_4&#8243; _builder_version="4.27.4&#8243; _module_preset="default" global_colors_info="{}"][et_pb_heading title="Conventional vs. FHA, VA, and Jumbo Loans" _builder_version="4.27.4&#8243; _module_preset="default" title_level="h2&#8243; title_font="|600|||||||" title_font_size="28px" custom_margin="||10px||false|false" custom_padding="||||false|false" border_width_bottom="3px" border_color_bottom="#4b800a" global_colors_info="{}"][/et_pb_heading][et_pb_text _builder_version="4.27.4&#8243; _module_preset="default" custom_padding="10px||||false|false" global_colors_info="{}"]Here’s how conventional loans compare to other common options in 2025:[/et_pb_text][/et_pb_column][/et_pb_row][et_pb_row _builder_version="4.27.4&#8243; _module_preset="default" background_enable_color="off" use_background_color_gradient="on" background_color_gradient_stops="#e1ffbd 0%|#e6ffc9 100%" width="100%" custom_margin="||||false|false" custom_padding="25px|25px|25px|25px|false|false" border_radii="on|10px|10px|10px|10px" border_width_all="2px" border_color_all="#4b800a" global_colors_info="{}"][et_pb_column type="4_4&#8243; _builder_version="4.27.4&#8243; _module_preset="default" global_colors_info="{}"][et_pb_code _builder_version="4.27.4&#8243; _module_preset="default" global_colors_info="{}"]
+
+  
+
+    
+
+      
+
+        
+
+Feature
+
+        
+
+Conventional Loan
+
+        
+
+FHA Loan
+
+        
+
+VA Loan (
+VA.gov
+)
+
+        
+
+Jumbo Loan
+
+      
+
+      
+
+        
+
+Down Payment
+
+        
+
+As low as 3%
+
+        
+
+3.5% (580+ credit score)
+
+        
+
+0% (for eligible veterans)
+
+        
+
+10–20% typical
+
+      
+
+      
+
+        
+
+Credit Score
+
+        
+
+620+
+
+        
+
+580+
+
+        
+
+Flexible, no set minimum
+
+        
+
+700+ preferred
+
+      
+
+      
+
+        
+
+Mortgage Insurance
+
+        
+
+PMI (removable)
+
+        
+
+MIP (often permanent)
+
+        
+
+None for most borrowers
+
+        
+
+None, but higher rates
+
+      
+
+      
+
+        
+
+Loan Limit
+
+        
+
+$806,500
+
+        
+
+~$498,257 (varies)
+
+        
+
+No cap with entitlement
+
+        
+
+$806,501+
+
+      
+
+    
+
+  
+
+[/et_pb_code][/et_pb_column][/et_pb_row][et_pb_row _builder_version="4.27.4&#8243; _module_preset="default" width="100%" custom_margin="||||false|false" global_colors_info="{}"][et_pb_column type="4_4&#8243; _builder_version="4.27.4&#8243; _module_preset="default" global_colors_info="{}"][et_pb_heading title="Mortgage Options by Credit Level" _builder_version="4.27.4&#8243; _module_preset="default" title_level="h2&#8243; title_font="|600|||||||" title_font_size="28px" custom_margin="||5px||false|false" global_colors_info="{}"][/et_pb_heading][et_pb_text _builder_version="4.27.4&#8243; _module_preset="default" global_colors_info="{}"]Your credit score plays a big role in your loan options and interest rate:
+
+Excellent Credit (740+)
+ → Best rates, lowest PMI.
+
+Good Credit (680–739)
+ → Competitive rates with manageable PMI.
+
+Fair Credit (620–679)
+ → Still eligible for conventional, though FHA may provide more leniency.
+
+Below 620
+ → May need to improve credit before qualifying, or consider FHA options.
+
+[/et_pb_text][/et_pb_column][/et_pb_row][et_pb_row _builder_version="4.27.4&#8243; _module_preset="default" width="100%" custom_margin="2px||||false|false" custom_padding="0px||10px||false|false" global_colors_info="{}"][et_pb_column type="4_4&#8243; _builder_version="4.27.4&#8243; _module_preset="default" global_colors_info="{}"][et_pb_heading title="First-Time Buyer Tips for Arizona" _builder_version="4.27.4&#8243; _module_preset="default" title_level="h2&#8243; title_font="|600|||||||" title_font_size="28px" custom_margin="||15px||false|false" custom_padding="||||false|false" border_color_bottom="#4b800a" global_colors_info="{}"][/et_pb_heading][et_pb_text _builder_version="4.27.4&#8243; _module_preset="default" custom_margin="||10px||false|false" global_colors_info="{}"]
+
+Check Your Credit
+ – Request a free report from 
+AnnualCreditReport.com
+
+Save for a Down Payment
+ – Even if you qualify for 3% down, a larger down payment reduces PMI and monthly costs.
+
+Calculate Affordability
+ – Keep housing costs under 28% of your monthly income (
+CFPB Mortgage Affordability
+).
+
+Get Pre-Approved
+ – A pre-approval from AZ Mortgage Brothers helps you shop with confidence.
+
+Work With Local Experts
+ – Arizona mortgage professionals can help you navigate county-specific loan limits and eligibility rules.
+
+[/et_pb_text][/et_pb_column][/et_pb_row][et_pb_row _builder_version="4.27.4&#8243; _module_preset="default" background_color="#f8f9fa" width="100%" custom_margin="||30px||false|false" custom_padding="25px|25px|25px|25px|false|false" border_radii="on|10px|10px|10px|10px" box_shadow_style="preset1&#8243; box_shadow_vertical="1px" box_shadow_blur="4px" global_colors_info="{}"][et_pb_column type="4_4&#8243; _builder_version="4.27.4&#8243; _module_preset="default" global_colors_info="{}"][et_pb_heading title="Why Choose AZ Mortgage Brothers?" _builder_version="4.27.4&#8243; _module_preset="default" title_level="h3&#8243; title_font="|600|||||||" title_font_size="24px" custom_margin="||5px||false|false" global_colors_info="{}"][/et_pb_heading][et_pb_text _builder_version="4.27.4&#8243; _module_preset="default" global_colors_info="{}"]
+
+AZ Mortgage Brothers specialize in conventional loans, 
+
+FHA loans
+
+, 
+
+VA loans
+
+, 
+
+jumbo loans
+
+, 
+
+refinancing
+
+, 
+
+reverse mortgages
+
+, and 
+
+private money lending
+
+. Their Arizona-based team helps first-time buyers secure fast pre-approvals and personalized loan solutions.
+
+With the right guidance, buying your first home in Arizona doesn’t have to be overwhelming.
+
+[/et_pb_text][/et_pb_column][/et_pb_row][et_pb_row _builder_version="4.27.4&#8243; _module_preset="default" width="100%" custom_margin="10px||||false|false" custom_padding="||10px||false|false" global_colors_info="{}"][et_pb_column type="4_4&#8243; _builder_version="4.27.4&#8243; _module_preset="default" global_colors_info="{}"][et_pb_heading title="FAQs (Frequently Asked Questions)" _builder_version="4.27.4&#8243; _module_preset="default" title_level="h2&#8243; title_font="|600|||||||" title_font_size="28px" custom_margin="||20px||false|false" custom_padding="||||false|false" border_width_bottom="3px" border_color_bottom="#4b800a" global_colors_info="{}"][/et_pb_heading][et_pb_accordion _builder_version="4.27.4&#8243; _module_preset="default" toggle_level="h3&#8243; toggle_font="|600|||||||" toggle_font_size="20px" global_colors_info="{}"][et_pb_accordion_item title="1: What exactly is a conventional home loan?" open="on" _builder_version="4.27.4&#8243; _module_preset="default" custom_margin="||20px||false|false" custom_padding="15px|15px|15px|15px|false|false" global_colors_info="{}"]A conventional home loan is a mortgage not insured by the federal government, offered by private lenders like banks or credit unions.[/et_pb_accordion_item][et_pb_accordion_item title="2: What is the 2026 conforming loan limit in Arizona?" _builder_version="4.27.4&#8243; _module_preset="default" custom_margin="||20px||false|false" custom_padding="15px|15px|15px|15px|false|false" global_colors_info="{}" open="off"]For 2026, the conforming loan limit for a single-family home in Arizona is $806,500.[/et_pb_accordion_item][et_pb_accordion_item title="3: What credit score is needed for a conventional loan?" _builder_version="4.27.4&#8243; _module_preset="default" global_colors_info="{}" open="off"]A minimum credit score of 620 is usually required to qualify for a conventional loan.[/et_pb_accordion_item][/et_pb_accordion][/et_pb_column][/et_pb_row][et_pb_row disabled_on="on|on|on" admin_label="row" _builder_version="4.27.4&#8243; background_color="#f9f9f9&#8243; background_size="initial" background_position="top_left" background_repeat="repeat" width="100%" custom_margin="||30px||false|false" custom_padding="50px|30px|40px|30px|false|false" border_radii="on|10px|10px|10px|10px" border_width_left="5px" border_color_left="#4b800a" box_shadow_style="preset3&#8243; disabled="on" global_colors_info="{}"][et_pb_column type="4_4&#8243; _builder_version="4.16&#8243; custom_padding="|||" global_colors_info="{}" custom_padding__hover="|||"][et_pb_heading title="Quick Takeaways: What You'll Learn" _builder_version="4.27.4&#8243; _module_preset="default" title_level="h2&#8243; title_font="|600|||||||" title_font_size="28px" custom_padding="||2px||false|false" border_width_bottom="3px" border_color_bottom="#4b800a" global_colors_info="{}"][/et_pb_heading][et_pb_text _builder_version="4.27.4&#8243; _module_preset="default" global_colors_info="{}"]
+
+Conventional loans aren't just for wealthy buyers
+ – 3% down options exist
+
+You don't need perfect credit
+ – 620+ score can qualify you
+
+PMI is removable
+ – unlike FHA mortgage insurance
+
+Arizona buyers have advantages
+ – conforming limits work in your favor
+
+Multiple loan types available
+ – fixed, ARM, conforming, and jumbo options
+
+[/et_pb_text][/et_pb_column][/et_pb_row][et_pb_row disabled_on="on|on|on" _builder_version="4.27.4&#8243; _module_preset="default" background_enable_color="off" use_background_color_gradient="on" background_color_gradient_stops="#e1ffbd 0%|#e6ffc9 100%" width="100%" custom_margin="||||false|false" custom_padding="25px|25px|25px|25px|false|false" border_radii="on|10px|10px|10px|10px" border_width_all="2px" border_color_all="#4b800a" disabled="on" global_colors_info="{}"][et_pb_column type="4_4&#8243; _builder_version="4.27.4&#8243; _module_preset="default" global_colors_info="{}"][et_pb_heading title="Quick Summary Box: Conventional Loan Basics" _builder_version="4.27.4&#8243; _module_preset="default" title_level="h2&#8243; title_font="|600|||||||" title_text_align="center" custom_margin="||0px||false|false" custom_padding="||2px||false|false" border_color_bottom="rgba(188,188,188,0)" global_colors_info="{}"][/et_pb_heading][et_pb_code _builder_version="4.27.4&#8243; _module_preset="default" global_colors_info="{}"]
+
+	
+
+		
+
+			
+
+Feature
+
+			
+
+Details
+
+		
+
+		
+
+			
+
+Backing
+
+			
+
+Private lenders + Fannie Mae/Freddie Mac
+
+		
+
+		
+
+			
+
+Down Payment
+
+			
+
+As low as 3% for qualified buyers
+
+		
+
+		
+
+			
+
+Credit Score
+
+			
+
+Minimum 620 (best rates at 760+)
+
+		
+
+		
+
+			
+
+Loan Limits
+
+			
+
+Up to $806,500 in Arizona (FHFA, 2026)
+
+		
+
+		
+
+			
+
+PMI
+
+			
+
+Required under 20% down, but removable
+
+		
+
+	
+
+[/et_pb_code][/et_pb_column][/et_pb_row][/et_pb_section][et_pb_section fb_built="1&#8243; _builder_version="4.27.4&#8243; _module_preset="default" custom_padding="0px||0px||false|false" global_colors_info="{}"][et_pb_row _builder_version="4.27.4&#8243; _module_preset="default" custom_padding="0px||0px||false|false" global_colors_info="{}"][et_pb_column type="4_4&#8243; _builder_version="4.27.4&#8243; _module_preset="default" global_colors_info="{}"][et_pb_code admin_label="FAQ Schema" _builder_version="4.27.4&#8243; _module_preset="default" global_colors_info="{}"][/et_pb_code][/et_pb_column][/et_pb_row][/et_pb_section]

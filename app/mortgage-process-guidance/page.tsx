@@ -22,7 +22,14 @@ const articles = [
     readTime: "8 min read",
     category: "Mortgage Process Guidance"
   },
-
+  {
+    title: "What Is a Conventional Home Loan? The Complete First-Time Buyer Mortgage Guide",
+    description: "Learn what a conventional home loan is, 2025 Arizona loan limits, qualification requirements, and how it compares to FHA, VA, and jumbo options.",
+    href: "/what-is-a-conventional-home-loan-the-complete-first-time-buyer-mortgage-guide/",
+    date: "Sep 16, 2025",
+    readTime: "12 min read",
+    category: "Mortgage Process Guidance"
+  },
   {
     title: "How to Get a Mortgage in Arizona with Fair or Improving Credit",
     description: "Learn how buyers with credit scores between 580 and 660 qualify for home loans in Arizona with FHA programs and rapid rescoring.",

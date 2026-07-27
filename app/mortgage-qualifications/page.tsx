@@ -47,6 +47,14 @@ const articles = [
     category: "Mortgage Qualifications"
   },
   {
+    title: "If I have 1 Mortgage Late in the Past 12 Months, Can I Get Approved for a Mortgage?",
+    description: "One late mortgage payment doesn’t always mean denial. See how FHA, Conventional, and VA treat 30-day lates—and what underwriters look for.",
+    href: "/if-i-have-1-mortgage-late-in-the-past-12-months-can-i-get-approved-for-a-mortgage/",
+    date: "Dec 30, 2024",
+    readTime: "9 min read",
+    category: "Mortgage Qualifications"
+  },
+  {
     title: "Getting a Mortgage with Employment Gaps",
     description: "Learn how employment gaps can affect mortgage approval and what Conventional, FHA, and VA loan programs require.",
     href: "/getting-a-mortgage-with-employment-gaps/",
