@@ -1,0 +1,33 @@
+[
+  {
+    "id": 4,
+    "name": "Eddie Knoell",
+    "url": "",
+    "description": "",
+    "link": "https://azmortgagebrothers.com/author/eddie-knoell/",
+    "slug": "eddie-knoell",
+    "avatar_urls": {
+      "24": "https://secure.gravatar.com/avatar/5485001814ffe1b3fda88c3ccbe9d9c408689223bba98c1597e6a146d87e52c6?s=24&r=g",
+      "48": "https://secure.gravatar.com/avatar/5485001814ffe1b3fda88c3ccbe9d9c408689223bba98c1597e6a146d87e52c6?s=48&r=g",
+      "96": "https://secure.gravatar.com/avatar/5485001814ffe1b3fda88c3ccbe9d9c408689223bba98c1597e6a146d87e52c6?s=96&r=g"
+    },
+    "meta": [],
+    "_links": {
+      "self": [
+        {
+          "href": "https://azmortgagebrothers.com/wp-json/wp/v2/users/4",
+          "targetHints": {
+            "allow": [
+              "GET"
+            ]
+          }
+        }
+      ],
+      "collection": [
+        {
+          "href": "https://azmortgagebrothers.com/wp-json/wp/v2/users"
+        }
+      ]
+    }
+  }
+]

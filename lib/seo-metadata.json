@@ -4748,5 +4748,24 @@
       "description": "So, the short answer is that every mortgage is due on the first of the month. Now, where it gets a little trickier is that there are two different ways to think about if it’s late: When the bank or lender thinks you’re late Now, the lender doesn’t consider your payment late until after the",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/when-mortgage-payment-considered-late.jpg"
     }
+  },
+  "/author/eddie-knoell": {
+    "section": "pages",
+    "sourceUrl": "https://azmortgagebrothers.com/author/eddie-knoell/",
+    "title": "Eddie Knoell: Local Phoenix Mortgage Broker",
+    "description": "Meet Eddie Knoell, Senior Loan Officer/Owner of Mortgage Brothers LLC in Phoenix, with 23+ years' experience and a 3rd generation real estate legacy.",
+    "openGraph": {
+      "title": "Eddie Knoell: Local Phoenix Mortgage Broker",
+      "description": "Meet Eddie Knoell, Senior Loan Officer/Owner of Mortgage Brothers LLC in Phoenix, with 23+ years' experience and a 3rd generation real estate legacy.",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/Knoell-Eddie-Co-Founder.jpg",
+      "url": "https://azmortgagebrothers.com/author/eddie-knoell/",
+      "type": "profile"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Eddie Knoell: Local Phoenix Mortgage Broker",
+      "description": "Meet Eddie Knoell, Senior Loan Officer/Owner of Mortgage Brothers LLC in Phoenix, with 23+ years' experience and a 3rd generation real estate legacy.",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/Knoell-Eddie-Co-Founder.jpg"
+    }
   }
 }
