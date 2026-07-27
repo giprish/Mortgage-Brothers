@@ -7,6 +7,22 @@ import Footer from "../component/Footer";
 
 const articles = [
   {
+    title: "The Ultimate Guide to Your First Mortgage",
+    description: "A complete first-time buyer guide covering credit, down payments, loan types, pre-approval, rate locks, and closing in Arizona.",
+    href: "/ultimate-guide-first-mortgage/",
+    date: "Feb 11, 2025",
+    readTime: "18 min read",
+    category: "Mortgage Process Guidance"
+  },
+  {
+    title: "Arizona Mortgage Closing Costs",
+    description: "Break down Arizona mortgage closing costs—lender fees, title company fees, appraisals, pest inspections, septic/well certifications, and condo questionnaire fees.",
+    href: "/arizona-mortgage-closing-costs/",
+    date: "Feb 10, 2025",
+    readTime: "8 min read",
+    category: "Mortgage Process Guidance"
+  },
+  {
     title: "Arizona Mortgage Closing Process",
     description: "Understand prior-to-closing conditions, what to bring on signing day, and how closing timing affects your Arizona mortgage.",
     href: "/arizona-mortgage-closing-process/",

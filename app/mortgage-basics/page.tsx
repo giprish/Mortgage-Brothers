@@ -7,6 +7,30 @@ import Footer from "../component/Footer";
 
 const articles = [
   {
+    title: "What to Expect When You’re Not a First Time Mortgage Shopper",
+    description: "What experienced Phoenix homebuyers need to know about online lenders, choosing a broker, pre-approval, rate locks, and closing.",
+    href: "/expect-youre-not-first-time-mortgage-shopper/",
+    date: "Feb 11, 2025",
+    readTime: "14 min read",
+    category: "Mortgage Basics"
+  },
+  {
+    title: "The Ultimate Guide to Your First Mortgage",
+    description: "A complete first-time buyer guide covering credit, down payments, loan types, pre-approval, rate locks, and closing in Arizona.",
+    href: "/ultimate-guide-first-mortgage/",
+    date: "Feb 11, 2025",
+    readTime: "18 min read",
+    category: "Mortgage Basics"
+  },
+  {
+    title: "Arizona Mortgage Closing Costs",
+    description: "Break down Arizona mortgage closing costs—lender fees, title company fees, appraisals, pest inspections, septic/well certifications, and condo questionnaire fees.",
+    href: "/arizona-mortgage-closing-costs/",
+    date: "Feb 10, 2025",
+    readTime: "8 min read",
+    category: "Mortgage Basics"
+  },
+  {
     title: "Arizona Refinance Process",
     description: "Learn the Arizona refinance process, four top reasons to refinance, how to calculate net benefit, and HELOC vs cash-out options.",
     href: "/arizona-refinance-process/",
@@ -15,11 +39,35 @@ const articles = [
     category: "Mortgage Basics"
   },
   {
+    title: "Why Use an Arizona Mortgage Broker",
+    description: "Learn why an Arizona mortgage broker can shop multiple lenders, compare rates, and guide you from pre-qualification through closing.",
+    href: "/why-use-an-arizona-mortgage-broker/",
+    date: "Feb 10, 2025",
+    readTime: "8 min read",
+    category: "Mortgage Basics"
+  },
+  {
+    title: "Understanding Your Credit",
+    description: "Understand FICO score components, free credit reports, and what does—and doesn’t—impact your score when applying for an Arizona mortgage.",
+    href: "/arizona-understanding-your-credit/",
+    date: "Feb 10, 2025",
+    readTime: "7 min read",
+    category: "Mortgage Basics"
+  },
+  {
     title: "Arizona Mortgage Closing Process",
     description: "Understand prior-to-closing conditions, what to bring on signing day, and how closing timing affects your Arizona mortgage.",
     href: "/arizona-mortgage-closing-process/",
     date: "Feb 10, 2025",
     readTime: "10 min read",
+    category: "Mortgage Basics"
+  },
+  {
+    title: "Arizona Mortgage Basics",
+    description: "Learn what a mortgage is, how approval works, payment structure, programs, closing costs/fees, and rates for Arizona homebuyers.",
+    href: "/arizona-mortgage-basics/",
+    date: "Feb 10, 2025",
+    readTime: "8 min read",
     category: "Mortgage Basics"
   },
   {
@@ -51,6 +99,14 @@ const articles = [
     description: "Learn how PMI is calculated, when it’s required, and how to remove it — with a real Radian quote example.",
     href: "/how-to-calculate-how-much-pmi-mortgage-insurance-will-be/",
     date: "Dec 30, 2024",
+    readTime: "8 min read",
+    category: "Mortgage Basics"
+  },
+  {
+    title: "When is a mortgage payment actually considered late?",
+    description: "Learn when lenders vs. credit bureaus consider a mortgage payment late, grace periods, 5% late fees, and 30-day credit reporting.",
+    href: "/when-is-a-mortgage-payment-actually-considered-late/",
+    date: "Dec 29, 2024",
     readTime: "8 min read",
     category: "Mortgage Basics"
   },

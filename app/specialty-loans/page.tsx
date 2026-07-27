@@ -7,6 +7,14 @@ import Footer from "../component/Footer";
 
 const articles = [
   {
+    title: "Is Homeownership Hereditary?",
+    description: "Urban Institute research on how parental homeownership and wealth influence millennial homeownership rates and generational wealth.",
+    href: "/is-homeownership-hereditary/",
+    date: "Feb 12, 2025",
+    readTime: "7 min read",
+    category: "Specialty Loans"
+  },
+  {
     title: "Who CAN and CANNOT Be On Title When you Get A Mortgage?",
     description: "Learn who can be added to a mortgage title, spouse and co-borrower rules, community property, and closing in a trust.",
     href: "/who-can-and-cannot-be-on-title-when-you-get-a-mortgage/",

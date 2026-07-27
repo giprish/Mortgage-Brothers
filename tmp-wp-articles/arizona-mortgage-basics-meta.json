@@ -1,0 +1,50 @@
+{
+  "wpType": "posts",
+  "title": "Arizona Mortgage Basics",
+  "date": "2025-02-10T18:50:20",
+  "categories": [
+    {
+      "name": "Mortgage Basics",
+      "slug": "mortgage-basics"
+    }
+  ],
+  "yt": null,
+  "h2": [
+    "Mortgage Approval",
+    "Mortgage Payments",
+    "Mortgage Programs",
+    "Closing Costs/Fees",
+    "Mortgage Rates"
+  ],
+  "faqs": [
+    {
+      "q": "What is a mortgage and how does it work?",
+      "a": "A mortgage is a loan secured by real property, which means the lender is protected by the property itself. The borrower repays the loan over a set period of time. If the borrower fails to make payments, the lender can take ownership of the property to recover losses."
+    },
+    {
+      "q": "What factors do Arizona mortgage lenders consider for loan approval?",
+      "a": "Arizona mortgage lenders typically evaluate a borrower’s credit history, employment history, income, assets, and debts. Additionally, the property must meet certain standards set by the lender before approval of the mortgage loan."
+    },
+    {
+      "q": "How are mortgage payments structured?",
+      "a": "Most home loans are set for 15 or 30 years and include both principal and interest portions. Over time, the amount applied toward interest decreases while the portion applied to the principal increases—a process known as amortization. Lenders may also offer alternative plans such as interest-only payments or introductory teaser rates."
+    },
+    {
+      "q": "What costs and fees are associated with getting a mortgage in Arizona?",
+      "a": "Mortgage costs may include points to secure lower rates, processing or underwriting fees, and other out-of-pocket expenses such as appraisal fees, property taxes, insurance, and inspections. Government consumer protection policies help ensure buyers understand these costs during the mortgage process."
+    }
+  ],
+  "alt": "Explaining essential Arizona mortgage basics for first-time homebuyers",
+  "imgName": "arizona-mortgage-basics.jpg",
+  "imgUrl": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/arizona-mortgage-basics.jpg",
+  "prev": {
+    "slug": "mortgage-101",
+    "title": "Arizona Mortgage 101"
+  },
+  "next": {
+    "slug": "why-use-an-arizona-mortgage-broker",
+    "title": "Why Use an Arizona Mortgage Broker"
+  },
+  "seoTitle": "Arizona Mortgage Basics",
+  "seoDesc": "What exactly is a mortgage anyway? In simple terms a mortgage is a loan that is secured or backed by real property. It is then paid back over a set period of time. The term “secured” means that the lender is protected by the piece of property that he can take ownership of in the [&hellip;]"
+}

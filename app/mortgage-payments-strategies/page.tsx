@@ -39,6 +39,30 @@ const articles = [
     category: "Mortgage Payments & Strategies"
   },
   {
+    title: "Seller Concessions To Buyers - How Much?",
+    description: "See Phoenix Metro seller concession averages by city and price range from ARMLS data—what buyers typically receive at closing.",
+    href: "/seller-concessions-to-buyers-how-much/",
+    date: "Feb 5, 2025",
+    readTime: "6 min read",
+    category: "Mortgage Payments & Strategies"
+  },
+  {
+    title: "FHA Flip Rule Waiver Expired – You need to wait 90 days to write a contract",
+    description: "Homes owned less than 90 days are not eligible for FHA financing after the flip-rule waiver expired—contracts cannot be written before 90 days.",
+    href: "/fha-flip-rule-waiver-expired-you-need-wait-90-days-to-write-a-contract/",
+    date: "Feb 4, 2025",
+    readTime: "5 min read",
+    category: "Mortgage Payments & Strategies"
+  },
+  {
+    title: "What Is An Assumable Mortgage?",
+    description: "Learn what an assumable mortgage is, how the assumption clause works, and why FHA loans can be a selling-point advantage.",
+    href: "/assumable-mortgage/",
+    date: "Feb 4, 2025",
+    readTime: "6 min read",
+    category: "Mortgage Payments & Strategies"
+  },
+  {
     title: "Delayed Financing – how to get cashout without waiting 6 months seasoning",
     description: "Learn how delayed financing lets you buy with cash and cash out soon after closing—without waiting the standard 6-month seasoning period.",
     href: "/delayed-financing-how-to-get-cashout-without-waiting-6-months-seasoning/",

@@ -127,6 +127,14 @@ const articles = [
     category: "Real Estate & Mortgages"
   },
   {
+    title: "Does connecting a guest house to the main house add value?",
+    description: "See how connecting a detached casita to the main house can change appraisal value, square footage, and refinance options.",
+    href: "/connecting-guest-house-main-house-add-value/",
+    date: "Feb 5, 2025",
+    readTime: "9 min read",
+    category: "Real Estate & Mortgages"
+  },
+  {
     title: "Detached Guest Home (Casita) Appraisal Issues",
     description: "Learn how casitas are appraised as line-item adjustments, why values often lag build cost, and what that means for buyers and refinancers.",
     href: "/detached-guest-home-casita-appraisal-issues/",

@@ -87,6 +87,14 @@ const articles = [
     category: "Mortgage Qualifications"
   },
   {
+    title: "How a Rapid Rescore Can Help You Qualify for a Mortgage",
+    description: "Learn how a rapid rescore can quickly update your credit profile, boost your score in days, and help you qualify for a mortgage.",
+    href: "/how-a-rapid-rescore-can-help-to-get-qualified-for-a-mortgage/",
+    date: "Feb 3, 2025",
+    readTime: "10 min read",
+    category: "Mortgage Qualifications"
+  },
+  {
     title: "DSCR Loan: The Best Alternative to Hard Money",
     description: "Learn how a DSCR loan works, why it's a great alternative to hard money, and how investors can qualify without personal income verification.",
     href: "/dscr-loan-the-best-alternative-to-hard-money/",
