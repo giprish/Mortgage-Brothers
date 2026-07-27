@@ -29,6 +29,22 @@ const articles = [
     date: "Jun 20, 2026",
     readTime: "10 min read",
     category: "Mortgage Qualifications"
+  },
+  {
+    title: "Getting a Mortgage with Employment Gaps",
+    description: "Learn how employment gaps can affect mortgage approval and what Conventional, FHA, and VA loan programs require.",
+    href: "/getting-a-mortgage-with-employment-gaps/",
+    date: "Feb 3, 2025",
+    readTime: "8 min read",
+    category: "Mortgage Qualifications"
+  },
+  {
+    title: "Which Is Better: Getting a Mortgage As a Couple vs. As a Single Applicant?",
+    description: "Compare applying for a mortgage as a couple versus a single applicant and understand how underwriting may treat your credit.",
+    href: "/better-getting-mortgage-couple-vs-single-applicant/",
+    date: "Feb 3, 2025",
+    readTime: "7 min read",
+    category: "Mortgage Qualifications"
   }
 ];
 

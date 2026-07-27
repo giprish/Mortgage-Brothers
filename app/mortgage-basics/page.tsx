@@ -15,6 +15,46 @@ const articles = [
     category: "Mortgage Basics"
   },
   {
+    title: "Understanding An Amortization Schedule",
+    description: "Learn how a mortgage amortization schedule works, how principal and interest change over time, and how extra payments can shorten your loan.",
+    href: "/understanding-amortization-chart/",
+    date: "Feb 3, 2025",
+    readTime: "7 min read",
+    category: "Mortgage Basics"
+  },
+  {
+    title: "What Are Mortgage Trigger Leads? Why Are Strangers Calling Your phone?",
+    description: "Learn what mortgage trigger leads are, why strangers call after you apply, and how to stop unwanted calls and mail with Do Not Call and DMA Choice.",
+    href: "/what-are-mortgage-trigger-leads/",
+    date: "Feb 3, 2025",
+    readTime: "6 min read",
+    category: "Mortgage Basics"
+  },
+  {
+    title: "How Does a Mortgage APR Work and What Does It Mean?",
+    description: "Learn how mortgage APR differs from interest rate, how closing costs affect APR, and how to compare loan offers by focusing on fees—not just the rate.",
+    href: "/how-does-a-mortgage-apr-work-and-what-does-it-mean/",
+    date: "Feb 3, 2025",
+    readTime: "8 min read",
+    category: "Mortgage Basics"
+  },
+  {
+    title: "What Are Closing Costs on a Home Purchase",
+    description: "Learn what closing costs are on a home purchase, what fees are true lender costs, and how prepaids like taxes and insurance affect cash-to-close.",
+    href: "/what-are-closing-costs-on-a-home-purchase/",
+    date: "Feb 3, 2025",
+    readTime: "9 min read",
+    category: "Mortgage Basics"
+  },
+  {
+    title: "Why Is My Mortgage Payoff Higher Than My Mortgage Statement Balance?",
+    description: "Understand why mortgage payoff amounts can exceed statement balances, including daily accrued interest, payoff timing, and closing date impacts.",
+    href: "/mortgage-payoff-higher-than-mortgage-balance/",
+    date: "Feb 3, 2025",
+    readTime: "7 min read",
+    category: "Mortgage Basics"
+  },
+  {
     title: "Conventional Home Loans vs. FHA Loans: Which Is Right for You?",
     description: "Detailed side-by-side comparison of credit score rules, down payments, PMI vs. MIP, and total 30-year costs for Arizona buyers.",
     href: "/conventional-home-loans-vs-fha-loans-which-is-right-for-you/",

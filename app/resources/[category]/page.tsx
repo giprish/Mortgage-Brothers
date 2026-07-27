@@ -244,9 +244,16 @@ export default function ResourceCategoryPage() {
 
               <div className="flex flex-col gap-6">
                 {filteredArticles.map((art) => {
-                  const articleHref = slug === "mortgage-basics"
-                    ? `/mortgage-basics/${art.id}/`
-                    : `/resources/${slug}/${art.id}/`;
+                  const topLevelRoutes: Record<string, string> = {
+                    "understanding-amortization-chart": "/understanding-amortization-chart/",
+                    "calculate-pmi": "/how-to-calculate-how-much-pmi-mortgage-insurance-will-be/",
+                    "mortgage-trigger-leads": "/what-are-mortgage-trigger-leads/",
+                  };
+                  const articleHref =
+                    topLevelRoutes[art.id] ??
+                    (slug === "mortgage-basics"
+                      ? `/mortgage-basics/${art.id}/`
+                      : `/resources/${slug}/${art.id}/`);
                   return (
                     <Link
                       key={art.id}

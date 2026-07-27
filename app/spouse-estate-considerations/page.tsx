@@ -7,6 +7,14 @@ import Footer from "../component/Footer";
 
 const articles = [
   {
+    title: "What If My Spouse Dies and I'm Not On The Mortgage?",
+    description: "Learn what happens to a mortgage when a spouse dies if you are not on the loan, including title, St. Germain Act protections, community property, and refinance options.",
+    href: "/what-if-my-spouse-dies-and-im-not-on-the-mortgage/",
+    date: "Dec 30, 2024",
+    readTime: "9 min read",
+    category: "Spouse & Estate Considerations"
+  },
+  {
     title: "Navigating Mortgage Options During Divorce: A Complete Guide for Arizona Homeowners",
     description: "How to handle marital real estate in Arizona, including buyout refinances, equity splits, and home sale strategies.",
     href: "/navigating-mortgage-options-during-divorce-a-complete-guide/",

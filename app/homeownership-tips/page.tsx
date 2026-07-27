@@ -7,6 +7,14 @@ import Footer from "../component/Footer";
 
 const articles = [
   {
+    title: "What If My Spouse Dies and I'm Not On The Mortgage?",
+    description: "Learn what happens to a mortgage when a spouse dies if you are not on the loan, including title, St. Germain Act protections, community property, and refinance options.",
+    href: "/what-if-my-spouse-dies-and-im-not-on-the-mortgage/",
+    date: "Dec 30, 2024",
+    readTime: "9 min read",
+    category: "Homeownership Tips"
+  },
+  {
     title: "The Complete Arizona Guide to Selling Your Home for Cash (2026)",
     description: "A cash home sale is a transaction in which a buyer purchases your house outright, without a mortgage. Learn the pros, cons, and alternatives in Arizona.",
     href: "/how-to-sell-my-house-fast-in-arizona/",

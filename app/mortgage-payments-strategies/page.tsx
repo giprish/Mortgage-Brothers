@@ -7,6 +7,14 @@ import Footer from "../component/Footer";
 
 const articles = [
   {
+    title: "Understanding An Amortization Schedule",
+    description: "Learn how a mortgage amortization schedule works, how principal and interest change over time, and how extra payments can shorten your loan.",
+    href: "/understanding-amortization-chart/",
+    date: "Feb 3, 2025",
+    readTime: "7 min read",
+    category: "Mortgage Payments & Strategies"
+  },
+  {
     title: "Conventional Home Loans vs. FHA Loans: Which Is Right for You?",
     description: "Detailed side-by-side comparison of credit score rules, down payments, PMI vs. MIP, and total 30-year costs for Arizona buyers.",
     href: "/conventional-home-loans-vs-fha-loans-which-is-right-for-you/",
