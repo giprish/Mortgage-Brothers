@@ -7,6 +7,14 @@ import Footer from "../component/Footer";
 
 const articles = [
   {
+    title: "How Does My Car Loan Payment Affect My Mortgage?",
+    description: "See how car payments impact debt-to-income ratios and how much home-buying power you lose with common auto loan amounts.",
+    href: "/how-does-my-car-loan-payment-affect-my-mortgage/",
+    date: "Feb 4, 2025",
+    readTime: "8 min read",
+    category: "Homeownership Tips"
+  },
+  {
     title: "What If My Spouse Dies and I'm Not On The Mortgage?",
     description: "Learn what happens to a mortgage when a spouse dies if you are not on the loan, including title, St. Germain Act protections, community property, and refinance options.",
     href: "/what-if-my-spouse-dies-and-im-not-on-the-mortgage/",

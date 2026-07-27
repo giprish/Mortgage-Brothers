@@ -7,6 +7,30 @@ import Footer from "../component/Footer";
 
 const articles = [
   {
+    title: "How Does My Car Loan Payment Affect My Mortgage?",
+    description: "See how car payments impact debt-to-income ratios and how much home-buying power you lose with common auto loan amounts.",
+    href: "/how-does-my-car-loan-payment-affect-my-mortgage/",
+    date: "Feb 4, 2025",
+    readTime: "8 min read",
+    category: "Specialty Loans"
+  },
+  {
+    title: "Grossing Up Your Income… what does that mean?",
+    description: "Learn how lenders gross up non-taxable income like foster care, child support, and Social Security to boost qualifying income.",
+    href: "/grossing-up-your-income-what-does-that-mean/",
+    date: "Feb 4, 2025",
+    readTime: "9 min read",
+    category: "Specialty Loans"
+  },
+  {
+    title: "Can I Get a 3rd Mortgage?",
+    description: "Understand lien positions, why third mortgages are rarely available, and how to access more equity by refinancing instead.",
+    href: "/can-i-get-a-3rd-mortgage/",
+    date: "Feb 4, 2025",
+    readTime: "9 min read",
+    category: "Specialty Loans"
+  },
+  {
     title: "VA Loans for First-Time Homebuyers in Arizona: Your Path to Homeownership",
     description: "Explore 0% down payment VA loan benefits, eligibility guidelines, and rate advantages for military buyers in Arizona.",
     href: "/va-loans-for-first-time-homebuyers-in-arizona-your-path-to-affordable-homeownership/",

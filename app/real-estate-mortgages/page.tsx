@@ -61,6 +61,30 @@ const articles = [
     date: "Feb 4, 2025",
     readTime: "5 min read",
     category: "Real Estate & Mortgages"
+  },
+  {
+    title: "Buying Down Your Home Loan Interest Rate",
+    description: "Learn how mortgage buydowns and discount points work in Arizona, including simple, 2-1, and 3-2-1 options that can lower your rate.",
+    href: "/buying-down-your-arizona-interest-rate/",
+    date: "Feb 4, 2025",
+    readTime: "6 min read",
+    category: "Real Estate & Mortgages"
+  },
+  {
+    title: "Arizona Second Mortgages",
+    description: "Understand Arizona second mortgages, home equity loans, HELOCs, and how homeowners can qualify to access equity.",
+    href: "/arizona-second-mortgages/",
+    date: "Feb 4, 2025",
+    readTime: "6 min read",
+    category: "Real Estate & Mortgages"
+  },
+  {
+    title: "Arizona Real Estate Capital Gains is back",
+    description: "A recap of capital gains rules for Arizona home sellers, main-home exclusions, and special situations that can reduce tax liability.",
+    href: "/arizona-real-estate-capital-gains-is-back/",
+    date: "Feb 4, 2025",
+    readTime: "6 min read",
+    category: "Real Estate & Mortgages"
   }
 ];
 

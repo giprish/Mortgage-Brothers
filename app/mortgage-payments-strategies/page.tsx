@@ -7,6 +7,30 @@ import Footer from "../component/Footer";
 
 const articles = [
   {
+    title: "Delayed Financing – how to get cashout without waiting 6 months seasoning",
+    description: "Learn how delayed financing lets you buy with cash and cash out soon after closing—without waiting the standard 6-month seasoning period.",
+    href: "/delayed-financing-how-to-get-cashout-without-waiting-6-months-seasoning/",
+    date: "Feb 4, 2025",
+    readTime: "10 min read",
+    category: "Mortgage Payments & Strategies"
+  },
+  {
+    title: "What is an Example of a Mortgage Recast?",
+    description: "See a clear mortgage recast example, how lump-sum payments lower monthly payments, and when paying down principal without a recast is better.",
+    href: "/what-is-an-example-of-a-mortgage-recast/",
+    date: "Feb 4, 2025",
+    readTime: "9 min read",
+    category: "Mortgage Payments & Strategies"
+  },
+  {
+    title: "Buying a House with a Cash Offer and Simultaneously getting Mortgage Financing",
+    description: "How to make a competitive cash offer using family or private funds, then refinance into a traditional mortgage after closing.",
+    href: "/buying-a-house-with-a-cash-offer-and-simultaneously-getting-mortgage-financing/",
+    date: "Feb 4, 2025",
+    readTime: "9 min read",
+    category: "Mortgage Payments & Strategies"
+  },
+  {
     title: "Understanding An Amortization Schedule",
     description: "Learn how a mortgage amortization schedule works, how principal and interest change over time, and how extra payments can shorten your loan.",
     href: "/understanding-amortization-chart/",

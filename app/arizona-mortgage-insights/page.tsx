@@ -7,6 +7,14 @@ import Footer from "../component/Footer";
 
 const articles = [
   {
+    title: "How Does My Car Loan Payment Affect My Mortgage?",
+    description: "See how car payments impact debt-to-income ratios and how much home-buying power you lose with common auto loan amounts.",
+    href: "/how-does-my-car-loan-payment-affect-my-mortgage/",
+    date: "Feb 4, 2025",
+    readTime: "8 min read",
+    category: "Arizona Mortgage Insights"
+  },
+  {
     title: "Top 7 Reasons Arizona Investment Home Buyers Choose Private Money Lenders",
     description: "Discover why real estate investors in Phoenix and Scottsdale turn to private money lending for fast, flexible property acquisitions.",
     href: "/top-7-reasons-arizona-investment-home-buyers-choose-private-money-lenders/",
