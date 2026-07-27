@@ -44,8 +44,8 @@ export default function FhaStreamlinePage() {
                 <Link href="/fha-loan-calculator/" className="bg-[#3fb364] hover:bg-[#359854] text-white text-[16px] font-bold px-8 py-4 rounded-full transition-all shadow-lg">
                   CALCULATE SAVINGS NOW →
                 </Link>
-                <a href="tel:4805356200" className="border border-white/30 hover:border-white text-white text-[15px] font-semibold px-6 py-4 rounded-full transition-all hover:bg-white/10">
-                  Call (480) 535-6200
+                <a href="tel:+16025352171" className="border border-white/30 hover:border-white text-white text-[15px] font-semibold px-6 py-4 rounded-full transition-all hover:bg-white/10">
+                  Call (602) 535-2171
                 </a>
               </div>
             </div>

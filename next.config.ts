@@ -10,6 +10,36 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/term-condition",
+        destination: "/team/",
+        permanent: true,
+      },
+      {
+        source: "/term-condition/",
+        destination: "/team/",
+        permanent: true,
+      },
+      {
+        source: "/fha-loans",
+        destination: "/fha-home-loans-arizona/",
+        permanent: true,
+      },
+      {
+        source: "/fha-loans/",
+        destination: "/fha-home-loans-arizona/",
+        permanent: true,
+      },
+      {
+        source: "/loan-programs-detail",
+        destination: "/mortgage-loan-programs-arizona/",
+        permanent: true,
+      },
+      {
+        source: "/loan-programs-detail/",
+        destination: "/mortgage-loan-programs-arizona/",
+        permanent: true,
+      },
+      {
         source: "/resources/mortgage-basics",
         destination: "/mortgage-basics/",
         permanent: true,

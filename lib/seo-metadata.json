@@ -3,10 +3,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/",
     "title": "Arizona Mortgage Brothers | Phoenix Home Loan Broker",
-    "description": "We live here, we work here, and we know this market better than anyone. Mortgage broker serving all of Arziona — Conventional, FHA, VA, Jumbo & Reverse Mortgage",
+    "description": "We live here, we work here, and we know this market better than anyone. Mortgage broker serving all of Arizona — Conventional, FHA, VA, Jumbo & Reverse Mortgage",
     "openGraph": {
       "title": "Arizona Mortgage Brothers | Phoenix Home Loan Broker",
-      "description": "We live here, we work here, and we know this market better than anyone. Mortgage broker serving all of Arziona — Conventional, FHA, VA, Jumbo & Reverse Mortgage",
+      "description": "We live here, we work here, and we know this market better than anyone. Mortgage broker serving all of Arizona — Conventional, FHA, VA, Jumbo & Reverse Mortgage",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/your-trusted-mortgage-experts.jpg",
       "url": "https://azmortgagebrothers.com/",
       "type": "website"
@@ -14,7 +14,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Arizona Mortgage Brothers | Phoenix Home Loan Broker",
-      "description": "We live here, we work here, and we know this market better than anyone. Mortgage broker serving all of Arziona — Conventional, FHA, VA, Jumbo & Reverse Mortgage",
+      "description": "We live here, we work here, and we know this market better than anyone. Mortgage broker serving all of Arizona — Conventional, FHA, VA, Jumbo & Reverse Mortgage",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/your-trusted-mortgage-experts.jpg"
     }
   },
@@ -34,6 +34,25 @@
       "card": "summary_large_image",
       "title": "About Us: Arizona Mortgage Brothers Story",
       "description": "Discover the story behind Arizona Mortgage Brothers. Learn about our team, values, and commitment to your mortgage success.",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/your-phoenix-arizona-mortgage-team.jpg"
+    }
+  },
+  "/team": {
+    "section": "pages",
+    "sourceUrl": "https://azmortgagebrothers.com/about-us/",
+    "title": "Our Team & Careers | Arizona Mortgage Brothers",
+    "description": "Meet Eddie Knoell (NMLS #210917) and Thomas Knoell (NMLS #1618695), and explore career opportunities with Mortgage Brothers LLC (NMLS #1007154).",
+    "openGraph": {
+      "title": "Our Team & Careers | Arizona Mortgage Brothers",
+      "description": "Meet Eddie Knoell (NMLS #210917) and Thomas Knoell (NMLS #1618695), and explore career opportunities with Mortgage Brothers LLC (NMLS #1007154).",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/your-phoenix-arizona-mortgage-team.jpg",
+      "url": "https://azmortgagebrothers.com/about-us/",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Our Team & Careers | Arizona Mortgage Brothers",
+      "description": "Meet Eddie Knoell (NMLS #210917) and Thomas Knoell (NMLS #1618695), and explore career opportunities with Mortgage Brothers LLC (NMLS #1007154).",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/your-phoenix-arizona-mortgage-team.jpg"
     }
   },

@@ -437,7 +437,7 @@ export default function GenericCityDetailPage() {
               <div className="md:col-span-5">
                 <div className="relative w-full h-[260px] md:h-[300px] rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-[#0f2d1d]">
                   <img 
-                    src="/Knoell.webp" 
+                    src="/home/eddie-knoell.jpg" 
                     alt="Eddie Knoell" 
                     className="w-full h-full object-cover object-top"
                   />

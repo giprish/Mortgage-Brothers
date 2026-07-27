@@ -66,9 +66,9 @@ const HomeFaq = () => {
                       aria-expanded={isOpen}
                       className="w-full flex items-center justify-between gap-4 text-left px-5 py-4 cursor-pointer"
                     >
-                      <span className="text-[#08271B] text-[15px] font-semibold">
+                      <h3 className="text-[#08271B] text-[15px] font-semibold m-0">
                         {faq.question}
-                      </span>
+                      </h3>
                       <svg
                         width="16"
                         height="16"

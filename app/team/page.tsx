@@ -1,38 +1,28 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import { LOAN_OFFICERS } from "@/lib/company";
 
 const teamMembers = [
   {
     initials: "EK",
-    name: "Eddie Knoell",
+    name: LOAN_OFFICERS.eddie.name,
     title: "Co-Founder - Senior Loan Officer",
     description: "Third-generation Phoenix real estate. Eddie has closed thousands of Arizona loans and hosts The Mortgage Brothers Show.",
-    nmls: "NMLS #223625"
+    nmls: LOAN_OFFICERS.eddie.nmlsDisplay,
+    azLicense: LOAN_OFFICERS.eddie.azLicenseDisplay,
   },
   {
     initials: "TK",
-    name: "Thomas Knoell",
+    name: LOAN_OFFICERS.thomas.name,
     title: "Co-Founder - Senior Loan Officer",
     description: "Twenty years matching Arizona families to the right loan. Thomas leads our reverse-mortgage and refinance practice.",
-    nmls: "NMLS #191572"
+    nmls: LOAN_OFFICERS.thomas.nmlsDisplay,
+    azLicense: LOAN_OFFICERS.thomas.azLicenseDisplay,
   },
-  {
-    initials: "SM",
-    name: "Sarah Mendez",
-    title: "Senior Mortgage Processor",
-    description: "The reason our files close on time. Sarah keeps every document, condition, and deadline moving.",
-    nmls: null
-  },
-  {
-    initials: "ML",
-    name: "Marcus Lee",
-    title: "Loan Officer Assistant",
-    description: "Your first call and steady hand — Marcus keeps buyers informed at every milestone.",
-    nmls: null
-  }
 ];
 
 const benefits = [
@@ -80,28 +70,32 @@ const jobs = [
     department: "Sales",
     type: "Full-time",
     location: "Phoenix, AZ · Hybrid",
-    description: "Bring your book or build one with our leads. Broker platform, 30+ lenders, and real marketing support."
+    description: "Bring your book or build one with our leads. Broker platform, 30+ lenders, and real marketing support.",
+    href: "/mortgage-broker-loan-officer-originator/",
   },
   {
     title: "Reverse Mortgage Loan Officer",
     department: "Sales",
     type: "Full-time",
     location: "Phoenix, AZ",
-    description: "Specialize in the fastest-growing segment of our business, serving Arizona's 62+ homeowners."
+    description: "Specialize in the fastest-growing segment of our business, serving Arizona's 62+ homeowners.",
+    href: "/reverse-mortgage-loan-officer/",
   },
   {
     title: "Mortgage Processor",
     department: "Operations",
     type: "Full-time",
     location: "Phoenix, AZ · On-site",
-    description: "Own files from submission to clear-to-close. Conventional, FHA, VA, and jumbo experience a plus."
+    description: "Own files from submission to clear-to-close. Conventional, FHA, VA, and jumbo experience a plus.",
+    href: "/mortgage-processor/",
   },
   {
     title: "Loan Officer Assistant",
     department: "Operations",
     type: "Full-time",
     location: "Phoenix, AZ",
-    description: "Support a top-producing team, learn the business end to end, and grow into origination."
+    description: "Support a top-producing team, learn the business end to end, and grow into origination.",
+    href: "/loan-officer-assistant/",
   }
 ];
 
@@ -110,7 +104,7 @@ export default function TeamPage() {
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
 
-      <main className="flex-grow">
+      <main className="flex-grow pt-[72px]">
         {/* Section 1: Meet the Team */}
         <section className="py-20 px-6 lg:px-10 max-w-5xl mx-auto">
           <div className="text-center mb-16">
@@ -126,7 +120,7 @@ export default function TeamPage() {
           </div>
 
           {/* Grid of Team Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {teamMembers.map((member) => (
               <div key={member.name} className="bg-[#faf7f0] rounded-2xl overflow-hidden border border-[#e8e0d0]/60 shadow-sm flex flex-col hover:-translate-y-1 hover:shadow-md transition-all duration-300">
                 {/* Diagonal Striped Avatar Header */}
@@ -153,11 +147,14 @@ export default function TeamPage() {
                       {member.description}
                     </p>
                   </div>
-                  {member.nmls && (
-                    <span className="text-[#8a9a7a] text-[11px] font-medium mt-4 block">
+                  <div className="mt-4 space-y-0.5">
+                    <span className="text-[#8a9a7a] text-[11px] font-medium block">
                       {member.nmls}
                     </span>
-                  )}
+                    <span className="text-[#8a9a7a] text-[11px] font-medium block">
+                      {member.azLicense}
+                    </span>
+                  </div>
                 </div>
               </div>
             ))}
@@ -229,11 +226,15 @@ export default function TeamPage() {
                   </div>
 
                   {/* Arrow circle */}
-                  <div className="w-10 h-10 rounded-full bg-[#3fb364] text-white flex items-center justify-center flex-shrink-0 cursor-pointer shadow-md group-hover:bg-[#349b55] hover:scale-105 active:scale-95 transition-all">
+                  <Link
+                    href={job.href}
+                    className="w-10 h-10 rounded-full bg-[#3fb364] text-white flex items-center justify-center flex-shrink-0 cursor-pointer shadow-md group-hover:bg-[#349b55] hover:scale-105 active:scale-95 transition-all"
+                    aria-label={`View ${job.title} job posting`}
+                  >
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5" className="w-4 h-4">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                     </svg>
-                  </div>
+                  </Link>
                 </div>
               ))}
             </div>

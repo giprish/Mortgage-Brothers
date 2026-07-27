@@ -10,14 +10,14 @@ const teamMembers = [
     name: "Eddie Knoell",
     title: "Co-Founder - Senior Loan Officer",
     description: "Third-generation Phoenix real estate. Eddie has closed thousands of Arizona loans and hosts The Mortgage Brothers Show.",
-    nmls: "NMLS #223625"
+    nmls: "NMLS #210917"
   },
   {
     initials: "TK",
     name: "Thomas Knoell",
     title: "Co-Founder - Senior Loan Officer",
     description: "Twenty years matching Arizona families to the right loan. Thomas leads our reverse-mortgage and refinance practice.",
-    nmls: "NMLS #191572"
+    nmls: "NMLS #1618695"
   },
   {
     initials: "SM",

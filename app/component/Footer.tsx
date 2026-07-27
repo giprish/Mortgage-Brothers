@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { COMPANY, LOAN_OFFICERS } from "@/lib/company";
 
 const insideLinks = [
   { label: "About Us", href: "/about-us/" },
@@ -33,6 +34,7 @@ const loanLinks = [
   { label: "Mortgage for Excellent Credit", href: "/mortgage-for-excellent-credit/" },
   { label: "Home Loans for Good Credit", href: "/mortgage-for-good-credit/" },
   { label: "Mortgage Options for Poor Credit", href: "/mortgage-for-poor-credit/" },
+  { label: "Sell Home for Cash", href: "/sell-my-house-fast-arizona/" },
   { label: "Areas we Serve", href: "/service-areas/" },
 ];
 
@@ -49,9 +51,7 @@ const Footer = () => {
   return (
     <footer className="w-full bg-[#32353C] text-[#c8cdc8]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-14 lg:pt-16 pb-10">
-        {/* Three main columns */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-14 mb-12">
-          {/* Column 1 — Inside Mortgage Brothers */}
           <div>
             <h3 className="text-[#3fb364] text-[16px] font-semibold mb-3">
               Inside Mortgage Brothers
@@ -66,7 +66,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 2 — Arizona Loan Services */}
           <div>
             <h3 className="mb-3">
               <Link
@@ -86,48 +85,49 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 3 — Company / Licenses / Contact */}
           <div>
             <h3 className="text-[#3fb364] text-[16px] font-semibold mb-3">
-              Mortgage Brothers LLC
+              {COMPANY.legalName}
             </h3>
             <div className="w-full h-px bg-[#3fb364]/70 mb-5" />
 
             <div className="text-[#e8ece8] text-[14px] leading-[1.7] mb-5">
-              <p className="font-medium">NMLS #1007154</p>
-              <p className="mb-3">AZ License #MB0922514</p>
+              <p className="font-medium">{COMPANY.nmlsDisplay}</p>
+              <p className="mb-3">{COMPANY.azLicenseDisplay}</p>
               <p>
                 <a
-                  href="https://goo.gl/maps/GVLYa"
+                  href={COMPANY.addressMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[#3fb364] transition-colors"
                 >
-                  1599 East Orangewood Ave Suite 200
+                  {COMPANY.addressLine1}
                   <br />
-                  Phoenix, AZ 85020
+                  {COMPANY.addressLine2}
                 </a>
               </p>
               <p className="mt-2 mb-5">
-                <a href="tel:+16025352171" className="hover:text-[#3fb364] transition-colors font-medium">
-                  +1 602 535 2171
+                <a
+                  href={COMPANY.phoneHref}
+                  className="hover:text-[#3fb364] transition-colors font-medium"
+                >
+                  {COMPANY.phoneDisplay}
                 </a>
               </p>
 
               <div className="mb-3">
-                <p className="font-semibold text-white">Eddie Knoell</p>
-                <p className="text-[#c8cdc8]">NMLS #210917</p>
-                <p className="text-[#c8cdc8]">AZ License #LO-0911422</p>
+                <p className="font-semibold text-white">{LOAN_OFFICERS.eddie.name}</p>
+                <p className="text-[#c8cdc8]">{LOAN_OFFICERS.eddie.nmlsDisplay}</p>
+                <p className="text-[#c8cdc8]">{LOAN_OFFICERS.eddie.azLicenseDisplay}</p>
               </div>
 
               <div className="mb-6">
-                <p className="font-semibold text-white">Thomas Knoell</p>
-                <p className="text-[#c8cdc8]">NMLS #1618695</p>
-                <p className="text-[#c8cdc8]">AZ License #LO-0942229</p>
+                <p className="font-semibold text-white">{LOAN_OFFICERS.thomas.name}</p>
+                <p className="text-[#c8cdc8]">{LOAN_OFFICERS.thomas.nmlsDisplay}</p>
+                <p className="text-[#c8cdc8]">{LOAN_OFFICERS.thomas.azLicenseDisplay}</p>
               </div>
             </div>
 
-            {/* Social icons — circular light badges like live site */}
             <div className="flex items-center gap-3">
               <a
                 href="https://www.facebook.com/azmortgagebrothers/"
@@ -175,13 +175,12 @@ const Footer = () => {
 
         <div className="w-full h-px bg-white/10 mb-8" />
 
-        {/* Bottom: disclaimers + badges */}
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 lg:gap-14 items-start">
           <div className="text-[12px] leading-[1.7] text-[#a8aea8] max-w-3xl">
             <p className="mb-3">
               You can verify our Mortgage Broker License through the{" "}
               <a
-                href="https://www.nmlsconsumeraccess.org/Home.aspx/SubSearch?searchText=1007154"
+                href={COMPANY.nmlsConsumerAccessUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#3fb364] hover:underline"
@@ -193,7 +192,7 @@ const Footer = () => {
             <p className="mb-3">
               You can verify our licenses on the official regulatory websites:{" "}
               <a
-                href="https://www.nmlsconsumeraccess.org/Home.aspx/SubSearch?searchText=1007154"
+                href={COMPANY.nmlsConsumerAccessUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#3fb364] hover:underline"
@@ -214,16 +213,18 @@ const Footer = () => {
             </p>
             <p className="mb-3">All loans subject to underwriter approval.</p>
             <p className="mb-3">
-              <span className="font-semibold text-[#c8cdc8]">INFORMATION DISCLAIMER:</span> Content
-              on this website is provided for informational purposes only and does not constitute an
-              offer to lend. Information presented may not reflect current rates, terms, or program
-              availability. Please{" "}
+              <span className="font-semibold text-[#c8cdc8]">INFORMATION DISCLAIMER:</span>{" "}
+              {COMPANY.disclaimer.split("Please contact")[0]}
+              Please{" "}
               <Link href="/contact-us/#Get-in-Touch" className="text-[#3fb364] hover:underline">
                 contact our loan officers
               </Link>{" "}
               for the most up-to-date information.
             </p>
-            <p className="mb-3">Mortgage Brothers LLC is an Equal Opportunity Employer.</p>
+            <p className="mb-3">
+              {COMPANY.legalName} is an {COMPANY.equalHousingLabel} and an Equal Opportunity
+              Employer.
+            </p>
             <p className="mb-3">
               <Link href="/privacy-policy/" className="text-[#3fb364] hover:underline">
                 Privacy Policy
@@ -233,19 +234,23 @@ const Footer = () => {
                 Terms of Use
               </Link>
             </p>
-            <p className="text-[#8a908a]">Copyright © {new Date().getFullYear()} Mortgage Brothers LLC</p>
+            <p className="text-[#8a908a]">
+              Copyright © {new Date().getFullYear()} {COMPANY.legalName}
+            </p>
           </div>
 
-          {/* Recognition badges */}
           <div className="grid grid-cols-2 gap-4 w-full max-w-[280px] mx-auto lg:mx-0">
-            <div className="bg-white/5 rounded-lg p-3 flex items-center justify-center min-h-[88px]">
+            <div className="bg-white/5 rounded-lg p-3 flex flex-col items-center justify-center min-h-[88px] gap-1">
               <Image
                 src="/home/equal-housing.png"
                 alt="Equal Housing Opportunity"
                 width={72}
                 height={72}
-                className="object-contain max-h-[72px] w-auto"
+                className="object-contain max-h-[56px] w-auto"
               />
+              <span className="text-[10px] text-[#c8cdc8] text-center leading-tight">
+                {COMPANY.equalHousingLabel}
+              </span>
             </div>
             <div className="bg-white/5 rounded-lg p-3 flex items-center justify-center min-h-[88px]">
               <Image

@@ -238,7 +238,7 @@ export default function AboutPage() {
                     {/* High-res Image Avatar */}
                     <div className="relative w-16 h-16 rounded-full border-2 border-brand-green-accent overflow-hidden bg-white flex-shrink-0 shadow-sm">
                       <Image
-                        src="/Knoell.webp"
+                        src="/home/eddie-knoell.jpg"
                         alt="Eddie Knoell"
                         fill
                         className="object-cover object-top"
@@ -277,7 +277,7 @@ export default function AboutPage() {
                     {/* High-res Image Avatar */}
                     <div className="relative w-16 h-16 rounded-full border-2 border-brand-green-accent overflow-hidden bg-white flex-shrink-0 shadow-sm">
                       <Image
-                        src="/image.png"
+                        src="/home/thomas-knoell.jpg"
                         alt="Thomas Knoell"
                         fill
                         className="object-cover object-top"
@@ -288,7 +288,7 @@ export default function AboutPage() {
                         Thomas Knoell
                       </h3>
                       <span className="text-brand-gold text-[12px] font-semibold tracking-wide uppercase mt-0.5">
-                        Loan Officer · NMLS #1978890
+                        Loan Officer · NMLS #1618695
                       </span>
                     </div>
                   </div>

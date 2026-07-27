@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { homeSeoMetadata } from "@/lib/seo";
 import PreApprovalProvider from "./component/PreApprovalProvider";
+import JsonLd from "./component/JsonLd";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -17,6 +18,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://azmortgagebrothers.com"),
   ...homeSeoMetadata,
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -30,13 +35,13 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        <meta name="robots" content="noindex, nofollow" />
         <link
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </head>
       <body className="min-h-full flex flex-col">
+        <JsonLd />
         <PreApprovalProvider>{children}</PreApprovalProvider>
       </body>
     </html>

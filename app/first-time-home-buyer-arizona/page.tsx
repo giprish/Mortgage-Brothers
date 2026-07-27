@@ -58,10 +58,10 @@ export default function FirstTimeHomeBuyerPage() {
                   GET PRE-APPROVED NOW →
                 </Link>
                 <a
-                  href="tel:4805356200"
+                  href="tel:+16025352171"
                   className="border border-white/30 hover:border-white text-white text-[15px] font-semibold px-6 py-4 rounded-full transition-all hover:bg-white/10"
                 >
-                  Call (480) 535-6200
+                  Call (602) 535-2171
                 </a>
               </div>
             </div>
@@ -99,7 +99,7 @@ export default function FirstTimeHomeBuyerPage() {
 
                 <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between text-[13px] text-[#8da684]">
                   <span>AZ Mortgage Brothers</span>
-                  <span className="font-semibold text-[#3fb364]">NMLS #1661360</span>
+                  <span className="font-semibold text-[#3fb364]">NMLS #1007154</span>
                 </div>
               </div>
             </div>
@@ -242,10 +242,10 @@ export default function FirstTimeHomeBuyerPage() {
                 GET PRE-APPROVED NOW →
               </Link>
               <a
-                href="tel:4805356200"
+                href="tel:+16025352171"
                 className="border border-white/30 hover:border-white text-white font-semibold text-[15px] px-7 py-4 rounded-full transition-all hover:bg-white/10"
               >
-                Call (480) 535-6200
+                Call (602) 535-2171
               </a>
             </div>
           </div>

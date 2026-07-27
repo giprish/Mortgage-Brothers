@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { COMPANY, LOAN_PROGRAM_LINKS } from "@/lib/company";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -24,7 +25,7 @@ const Navbar = () => {
 
         {/* Desktop Nav Links */}
         <div className="hidden lg:flex items-center gap-5 px-3">
-          {/* Loan Programs Dropdown */}
+          {/* Loan Programs Megamenu */}
           <div className="relative group py-2">
             <Link
               href="/mortgage-loan-programs-arizona/"
@@ -46,32 +47,71 @@ const Navbar = () => {
                 <polyline points="6 9 12 15 18 9" />
               </svg>
             </Link>
-            <div className="absolute left-[-12px] top-full pt-3 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
-              <div className="bg-white border border-[#e8e0d0] rounded-xl shadow-xl py-2">
-                {/* <Link
-                  href="/loan-programs/"
-                  className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
-                >
-                  All Programs
-                </Link> */}
-                <Link
-                  href="/fha-loans/"
-                  className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
-                >
-                  FHA Loans
-                </Link>
-                <Link
-                  href="/loan-programs-detail/"
-                  className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
-                >
-                  Loan Program Details
-                </Link>
-                {/* <Link
-                  href="/loan-programs/#va"
-                  className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
-                >
-                  VA Loans
-                </Link> */}
+
+            {/* Megamenu container */}
+            <div className="absolute left-0 top-full pt-3 w-[720px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
+              <div className="bg-white border border-[#e8e0d0] rounded-xl shadow-xl p-6 grid grid-cols-3 gap-6 text-left">
+
+                {/* Column 1 — Home Loans */}
+                <div>
+                  <h4 className="text-[#3fb364] text-[11px] font-bold tracking-[0.12em] uppercase mb-4 pb-1.5 border-b border-[#e8e0d0]/40">
+                    HOME LOANS
+                  </h4>
+                  <div className="flex flex-col gap-2.5">
+                    <Link href="/conventional-home-loans-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                      Conventional Home Loans
+                    </Link>
+                    <Link href="/fha-home-loans-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                      FHA Home Loans
+                    </Link>
+                    <Link href="/jumbo-loans-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                      Jumbo Loans
+                    </Link>
+                    <Link href="/va-loans-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                      VA Loans
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Column 2 — Specialty Programs */}
+                <div>
+                  <h4 className="text-[#3fb364] text-[11px] font-bold tracking-[0.12em] uppercase mb-4 pb-1.5 border-b border-[#e8e0d0]/40">
+                    SPECIALTY PROGRAMS
+                  </h4>
+                  <div className="flex flex-col gap-2.5">
+                    <Link href="/reverse-mortgage-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                      Reverse Mortgage
+                    </Link>
+                    <Link href="/reverse-mortgage-home-purchase-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                      Reverse Mortgage for Purchase
+                    </Link>
+                    <Link href="/private-money-lender-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                      Private Money Lender
+                    </Link>
+                    <Link href="/sell-my-house-fast-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                      Sell Home for Cash
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Column 3 — Refinancing */}
+                <div>
+                  <h4 className="text-[#3fb364] text-[11px] font-bold tracking-[0.12em] uppercase mb-4 pb-1.5 border-b border-[#e8e0d0]/40">
+                    REFINANCING
+                  </h4>
+                  <div className="flex flex-col gap-2.5">
+                    <Link href="/fha-streamline-refinance-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                      FHA Streamline Refinance
+                    </Link>
+                    <Link href="/refinancing-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                      Mortgage Refinancing
+                    </Link>
+                    <Link href="/conventional-vs-fha-loans-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                      Conventional vs FHA Loans
+                    </Link>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -271,10 +311,16 @@ const Navbar = () => {
                   Contact Us
                 </Link>
                 <Link
-                  href="/term-condition/"
+                  href="/team/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
-                Team & Careers
+                  Team & Careers
+                </Link>
+                <Link
+                  href="/job-opportunities/"
+                  className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
+                >
+                  Job Opportunities
                 </Link>
               </div>
             </div>
@@ -393,7 +439,7 @@ const Navbar = () => {
         {/* Right Side - Phone + CTA */}
         <div className="hidden lg:flex items-center gap-4">
           <a
-            href="tel:6025352171"
+            href={COMPANY.phoneHref}
             className="flex items-center gap-1.5 text-white text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200"
           >
             <svg
@@ -409,7 +455,7 @@ const Navbar = () => {
             >
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
             </svg>
-            (602) 535-2171
+            {COMPANY.phoneDisplay}
           </a>
           <Link
             href="/#get-pre-approved"
@@ -490,7 +536,7 @@ const Navbar = () => {
               <div className="flex items-center justify-between px-5 py-4 bg-[#292e34] border-b border-[#3b4148]">
                 {/* Call Us Button */}
                 <a
-                  href="tel:6025352171"
+                  href={COMPANY.phoneHref}
                   className="border-2 border-white/90 text-white font-bold text-[12px] tracking-wider uppercase px-4 py-1.5 rounded flex items-center gap-2 hover:bg-white/10 transition-colors"
                 >
                   <svg
@@ -610,20 +656,16 @@ const Navbar = () => {
 
                   {activeSubmenu === "LOAN PROGRAMS" && (
                     <>
-                      <Link
-                        href="/fha-loans/"
-                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                        className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
-                      >
-                        FHA LOANS
-                      </Link>
-                      <Link
-                        href="/loan-programs-detail/"
-                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                        className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
-                      >
-                        LOAN PROGRAM DETAILS
-                      </Link>
+                      {LOAN_PROGRAM_LINKS.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
+                          className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
                     </>
                   )}
 
@@ -746,11 +788,18 @@ const Navbar = () => {
                         CONTACT US
                       </Link>
                       <Link
-                        href="/term-condition/"
+                        href="/team/"
                         onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
                         className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
                       >
                         TEAM & CAREERS
+                      </Link>
+                      <Link
+                        href="/job-opportunities/"
+                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
+                        className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
+                      >
+                        JOB OPPORTUNITIES
                       </Link>
                     </>
                   )}
