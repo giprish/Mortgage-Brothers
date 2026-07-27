@@ -7,6 +7,14 @@ import Footer from "../component/Footer";
 
 const articles = [
   {
+    title: "How to Calculate How Much PMI Mortgage Insurance Will Be",
+    description: "Learn how PMI is calculated, when it’s required, and how to remove it — with a real Radian quote example.",
+    href: "/how-to-calculate-how-much-pmi-mortgage-insurance-will-be/",
+    date: "Dec 30, 2024",
+    readTime: "8 min read",
+    category: "Mortgage Basics"
+  },
+  {
     title: "Conventional Home Loans vs. FHA Loans: Which Is Right for You?",
     description: "Detailed side-by-side comparison of credit score rules, down payments, PMI vs. MIP, and total 30-year costs for Arizona buyers.",
     href: "/conventional-home-loans-vs-fha-loans-which-is-right-for-you/",

@@ -270,7 +270,7 @@ export default function ArticleDetailPage() {
               </Link>
 
               {/* Card 2 */}
-              <Link href={`/resources/${categorySlug}/calculate-pmi/`} className="bg-white border border-[#e8e0d0]/60 p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-brand-green-accent/20 transition-all cursor-pointer flex flex-col justify-between min-h-[140px]">
+              <Link href="/how-to-calculate-how-much-pmi-mortgage-insurance-will-be/" className="bg-white border border-[#e8e0d0]/60 p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-brand-green-accent/20 transition-all cursor-pointer flex flex-col justify-between min-h-[140px]">
                 <div>
                   <span className="text-[#b89a5a] text-[9.5px] font-bold tracking-widest uppercase block mb-2">
                     MORTGAGE BASICS

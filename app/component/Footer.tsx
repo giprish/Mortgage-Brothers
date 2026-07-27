@@ -33,7 +33,7 @@ const loanLinks = [
   { label: "Mortgage for Excellent Credit", href: "/mortgage-for-excellent-credit/" },
   { label: "Home Loans for Good Credit", href: "/mortgage-for-good-credit/" },
   { label: "Mortgage Options for Poor Credit", href: "/mortgage-for-poor-credit/" },
-  { label: "Service Areas", href: "/service-areas/" },
+  { label: "Areas we Serve", href: "/service-areas/" },
 ];
 
 const FooterLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
