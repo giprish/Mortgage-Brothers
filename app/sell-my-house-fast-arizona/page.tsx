@@ -200,55 +200,65 @@ export default function SellMyHouseFastArizonaPage() {
       <Navbar />
 
       <main className="flex-grow">
-        {/* Hero */}
-        <section className="relative w-full bg-[#052316] text-white pt-[110px] lg:pt-[130px] pb-16 lg:pb-24 px-6 lg:px-12 overflow-hidden">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#3fb364]/10 rounded-full blur-3xl pointer-events-none" />
-
-          <div className="max-w-6xl mx-auto relative z-10">
-            <div className="max-w-3xl space-y-6 text-left">
-              <span className="inline-block bg-[#3fb364]/20 border border-[#3fb364]/40 text-[#3fb364] text-[12px] font-bold px-3.5 py-1.5 rounded-full uppercase tracking-wider">
-                ARIZONA HOME SELLING GUIDE
-              </span>
-
-              <h1 className="text-[34px] sm:text-[44px] lg:text-[54px] font-bold font-playfair leading-[1.15] text-white">
+        {/* Hero — matches original Sell-Review.webp layout */}
+        <section
+          className="relative w-full overflow-hidden bg-[#fcf9f3] min-h-[560px] lg:min-h-[640px] xl:min-h-[720px] flex items-center"
+          style={{
+            backgroundImage: "url('/home/sell-review-hero.webp')",
+            backgroundPosition: "center right",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 pt-[120px] pb-14 lg:pt-[140px] lg:pb-20 relative z-10">
+            <div className="max-w-[560px] space-y-5 text-left">
+              <h1
+                className="text-[#1a1a1a] text-[34px] sm:text-[44px] lg:text-[52px] font-bold leading-[1.12] tracking-tight"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
                 Sell Your Home for Cash in Arizona
               </h1>
 
-              <p className="text-[#c8c8b8] text-[16px] lg:text-[18px] leading-relaxed max-w-2xl">
+              <p className="text-[#3fb364] text-[17px] sm:text-[20px] lg:text-[22px] font-medium leading-snug">
                 Before you accept a cash offer, compare it to every other way you could sell — with local experts who don&apos;t buy houses.
               </p>
 
-              <p className="text-[#8da684] text-[15px] leading-relaxed max-w-2xl">
+              <p className="text-[#333333] text-[15px] lg:text-[16px] leading-relaxed">
                 See how a cash sale really stacks up against listing traditionally, selling as-is, repairing first, or keeping your home — in plain numbers, with no pressure and no obligation.
               </p>
 
-              <ul className="flex flex-wrap gap-3 text-[13px] font-semibold text-[#3fb364]">
-                {["100% Free", "No Obligation", "We Don't Buy Houses", "Local Arizona Experts"].map((badge) => (
-                  <li key={badge} className="flex items-center gap-1.5 bg-[#3fb364]/10 border border-[#3fb364]/30 px-3 py-1.5 rounded-full">
-                    <CheckIcon />
-                    {badge}
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 text-[15px] font-semibold text-[#1a1a1a]">
+                {["100% Free", "No Obligation", "We Don't Buy Houses", "Local Arizona Experts"].map((item) => (
+                  <li key={item} className="flex items-center gap-2.5">
+                    <span className="w-6 h-6 rounded-full bg-[#3fb364] flex items-center justify-center shrink-0">
+                      <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </span>
+                    {item}
                   </li>
                 ))}
               </ul>
 
-              <div className="pt-2 flex flex-wrap items-center gap-4">
+              <div className="pt-2 space-y-3">
                 <Link
                   href="/#get-pre-approved"
-                  className="bg-[#3fb364] hover:bg-[#359854] text-white text-[16px] font-bold px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[16px] font-bold px-7 py-3.5 rounded-md transition-all shadow-md"
                 >
-                  Get My Free Home Selling Options Review
+                  Get My Free Home Selling Options Review →
                 </Link>
-                <a
-                  href={COMPANY.phoneHref}
-                  className="border border-white/30 hover:border-white text-white text-[15px] font-semibold px-6 py-4 rounded-full transition-all hover:bg-white/10"
-                >
-                  Call {COMPANY.phoneDisplay}
-                </a>
+                <p className="text-[#3fb364] text-[15px] font-medium">
+                  or call{" "}
+                  <a href={COMPANY.phoneHref} className="underline underline-offset-2 hover:text-[#2d8a4a]">
+                    602-535-2171
+                  </a>
+                </p>
+                <p className="text-[#777777] text-[12px] leading-relaxed pt-1">
+                  Safe. Secure. No pressure.
+                  <br />
+                  Reviewed by {LOAN_OFFICERS.eddie.name}, Licensed Mortgage Broker ({LOAN_OFFICERS.eddie.nmlsDisplay})
+                </p>
               </div>
-
-              <p className="text-[#8da684] text-[13px]">
-                Safe. Secure. No pressure. · Reviewed by {LOAN_OFFICERS.eddie.name}, Licensed Mortgage Broker ({LOAN_OFFICERS.eddie.nmlsDisplay})
-              </p>
             </div>
           </div>
         </section>

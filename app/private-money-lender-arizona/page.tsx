@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import LoanProgramHero from "../component/LoanProgramHero";
 
 const featureStrip = [
   "Fast Funding for Unique Arizona Real Estate Deals",
@@ -210,7 +211,7 @@ const faqs = [
   },
   {
     q: "How quickly can a private money loan close in Arizona?",
-    a: "Private money loans can typically close much faster than traditional bank loans — often in as little as 7 to 14 days. At Mortgage Brothers, we work efficiently to help investors and buyers who need speed and flexibility. Contact us to discuss your specific timeline.",
+    a: "Private money loans can typically close much faster than traditional bank loans — often in as little as 7 to 14 days. At Mortgage Brothers, we work efficiently to help investors and buyers who need speed and flexibility.",
   },
   {
     q: "How much down payment is required for a portfolio loan?",
@@ -245,37 +246,11 @@ export default function PrivateMoneyLenderPage() {
       <Navbar />
 
       <main className="flex-grow">
-        {/* Hero */}
-        <section
-          className="relative w-full text-white min-h-[520px] lg:min-h-[640px] xl:min-h-[720px] flex items-center overflow-hidden bg-cover bg-no-repeat"
-          style={{
-            backgroundImage:
-              "linear-gradient(90deg, rgb(52, 69, 37) 0%, rgb(50, 94, 63) 20%, rgba(255, 255, 255, 0) 100%), url('/home/private-money-and-portfolio-loans.jpg')",
-            backgroundPosition: "0% 50%, 100% 50%",
-            backgroundSize: "cover, cover",
-          }}
-        >
-          <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 pt-[120px] pb-14 lg:pt-[140px] lg:pb-20 relative z-10">
-            <div className="max-w-[720px]">
-              <h1 className="text-white text-[34px] sm:text-[46px] lg:text-[54px] font-bold leading-[1.1] mb-5 tracking-tight">
-                Private Money and Portfolio Loans in Arizona
-              </h1>
-              <h2 className="text-white/95 text-[17px] sm:text-[22px] lg:text-[26px] font-normal leading-[1.35] mb-8 max-w-[600px]">
-                Fast approvals, competitive rates, and personalized service for unique borrowing needs
-              </h2>
-              <Link
-                href="/#get-pre-approved"
-                className="inline-flex items-center gap-2.5 bg-[#3fb364] hover:bg-[#349b55] text-white text-[16px] font-semibold px-8 py-3.5 rounded-full transition-all shadow-lg"
-              >
-                Start my preapproval
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              </Link>
-              <p className="text-white/70 text-[13px] mt-3 font-medium">3 min / no credit impact</p>
-            </div>
-          </div>
-        </section>
+        <LoanProgramHero
+          title="Private Money and Portfolio Loans in Arizona"
+          subtitle="Fast approvals, competitive rates, and personalized service for unique borrowing needs"
+          imageSrc="/home/loan-hero-private-money.jpg"
+        />
 
         {/* Feature strip */}
         <section className="w-full bg-[#eeeff4] border-b border-[#e0e2e8] py-10 lg:py-12">
@@ -732,6 +707,9 @@ export default function PrivateMoneyLenderPage() {
             >
               Start my preapproval
             </Link>
+            <p className="text-[#8a958a] text-[12px] leading-relaxed mt-8 max-w-2xl mx-auto">
+              Mortgage Brothers NMLS 1007154, NMLS #210917 and #1618695. Equal housing lender.
+            </p>
           </div>
         </section>
 
