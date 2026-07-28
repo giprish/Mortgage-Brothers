@@ -12,15 +12,15 @@ const Navbar = () => {
     <nav className="w-full bg-[#08271B] border-b border-[#1a3a1a] fixed top-0 left-0 right-0 z-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-[72px]">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 hover:opacity-90 transition-opacity duration-200">
-          <div className="flex flex-col leading-tight">
-            <span className="text-[#3fb364] font-bold text-[18px] tracking-[0.08em] uppercase leading-[1.1]">
-              MORTGAGE
-            </span>
-            <span className="text-[#3fb364] font-bold text-[18px] tracking-[0.08em] uppercase leading-[1.1]">
-              BROTHERS
-            </span>
-          </div>
+        <Link href="/" className="flex items-center hover:opacity-90 transition-opacity duration-200 shrink-0">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+  src="/home/mortgage-brothers-logo.png"
+  alt="Mortgage Brothers"
+  width={150}
+  height={45}
+  className="h-[32px] sm:h-[38px] w-auto object-contain"
+/>
         </Link>
 
         {/* Desktop Nav Links */}

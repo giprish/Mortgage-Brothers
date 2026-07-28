@@ -300,10 +300,16 @@ const Footer = () => {
         <div className="w-full h-px bg-white/10 mb-5" />
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-4">
-            <div className="flex flex-col leading-tight">
-              <span className="text-[#3fb364] font-bold text-[13px] tracking-[0.08em] uppercase leading-[1.1]">MORTGAGE</span>
-              <span className="text-[#3fb364] font-bold text-[13px] tracking-[0.08em] uppercase leading-[1.1]">BROTHERS</span>
-            </div>
+            <Link href="/" className="shrink-0 hover:opacity-90 transition-opacity">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/home/mortgage-brothers-logo.png"
+                alt="Mortgage Brothers"
+                width={120}
+                height={40}
+                className="h-[36px] w-auto object-contain"
+              />
+            </Link>
             <span className="text-[#a8aea8] text-[12px]">
               © {new Date().getFullYear()} {COMPANY.legalName} · {COMPANY.nmlsDisplay}
             </span>
