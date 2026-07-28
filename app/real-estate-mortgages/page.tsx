@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import { getArticleImage } from "@/lib/article-images";
 
 const articles = [
   {
@@ -183,37 +184,57 @@ export default function RealEstateMortgagesPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {articles.map((article, idx) => (
-              <Link
-                key={idx}
-                href={article.href}
-                className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/60 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group"
-              >
-                <div>
-                  <div className="flex items-center justify-between text-[12px] text-[#8c857b] mb-4">
-                    <span className="bg-[#f2eee3] text-[#052316] px-3 py-1 rounded-full font-semibold">
-                      {article.category}
-                    </span>
-                    <span>{article.readTime}</span>
+            {articles.map((article, idx) => {
+              const imageSrc = getArticleImage(article.href);
+              return (
+                <Link
+                  key={idx}
+                  href={article.href}
+                  className="bg-white rounded-2xl border border-[#e8e0d0]/60 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group overflow-hidden"
+                >
+                  <div className="h-44 w-full overflow-hidden bg-[#f2eee3]">
+                    {imageSrc ? (
+                      <>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={imageSrc}
+                          alt=""
+                          className="h-44 w-full object-cover"
+                        />
+                      </>
+                    ) : (
+                      <div className="h-44 w-full bg-gradient-to-br from-[#f2eee3] to-[#e8f5e9]" />
+                    )}
                   </div>
 
-                  <h3 className="text-[#052316] text-[18px] font-bold font-playfair mb-3 leading-snug group-hover:text-[#3fb364] transition-colors">
-                    {article.title}
-                  </h3>
+                  <div className="p-6 flex flex-col flex-grow justify-between">
+                    <div>
+                      <div className="flex items-center justify-between text-[12px] text-[#8c857b] mb-4">
+                        <span className="bg-[#f2eee3] text-[#052316] px-3 py-1 rounded-full font-semibold">
+                          {article.category}
+                        </span>
+                        <span>{article.readTime}</span>
+                      </div>
 
-                  <p className="text-[#4e5b4e] text-[13.5px] leading-relaxed mb-6">
-                    {article.description}
-                  </p>
-                </div>
+                      <h3 className="text-[#052316] text-[18px] font-bold font-playfair mb-3 leading-snug group-hover:text-[#3fb364] transition-colors">
+                        {article.title}
+                      </h3>
 
-                <div className="flex items-center justify-between pt-4 border-t border-[#f2eee3]">
-                  <span className="text-[12px] text-[#8c857b]">{article.date}</span>
-                  <span className="text-[#3fb364] font-semibold text-[13.5px] flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    Read Article &rarr;
-                  </span>
-                </div>
-              </Link>
-            ))}
+                      <p className="text-[#4e5b4e] text-[13.5px] leading-relaxed mb-6">
+                        {article.description}
+                      </p>
+                    </div>
+
+                    <div className="flex items-center justify-between pt-4 border-t border-[#f2eee3]">
+                      <span className="text-[12px] text-[#8c857b]">{article.date}</span>
+                      <span className="text-[#3fb364] font-semibold text-[13.5px] flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                        Read Article &rarr;
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </section>
 

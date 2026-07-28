@@ -464,7 +464,7 @@ export default function AssumableMortgagePage() {
             </Link>
           </div>
         </section>
-
+R
         <section className="w-full py-16 lg:py-20">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <h2

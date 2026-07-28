@@ -6,6 +6,7 @@ import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import { COMPANY, LOAN_OFFICERS } from "@/lib/company";
 import eddiePosts from "@/lib/eddie-knoell-posts.json";
+import { getArticleImage } from "@/lib/article-images";
 
 const PER_PAGE = 9;
 
@@ -118,11 +119,26 @@ export default function EddieKnoellAuthorPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-              {pagePosts.map((post) => (
+              {pagePosts.map((post) => {
+                const imageSrc = getArticleImage(post.href);
+                return (
                 <article
                   key={post.href}
-                  className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 flex flex-col shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-white border border-[#e8e0d0]/70 rounded-2xl overflow-hidden flex flex-col shadow-sm hover:shadow-md transition-shadow"
                 >
+                  <div className="h-40 w-full overflow-hidden bg-[#f2eee3]">
+                    {imageSrc ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={imageSrc}
+                        alt={post.title}
+                        className="h-40 w-full object-cover"
+                      />
+                    ) : (
+                      <div className="h-40 w-full bg-gradient-to-br from-[#f2eee3] to-[#e8f5e9]" />
+                    )}
+                  </div>
+                  <div className="p-6 flex flex-col flex-grow">
                   <p className="text-[#8a9a7a] text-[12px] mb-3">{post.date}</p>
                   <h3
                     className="text-[#052316] text-[20px] font-normal leading-snug mb-3"
@@ -148,8 +164,10 @@ export default function EddieKnoellAuthorPage() {
                       <span aria-hidden>→</span>
                     </Link>
                   </div>
+                  </div>
                 </article>
-              ))}
+              );
+              })}
             </div>
 
             {totalPages > 1 && (
