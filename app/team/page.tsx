@@ -2,26 +2,27 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import { LOAN_OFFICERS } from "@/lib/company";
 
 const teamMembers = [
   {
-    initials: "EK",
     name: LOAN_OFFICERS.eddie.name,
     title: "Co-Founder - Senior Loan Officer",
     description: "Third-generation Phoenix real estate. Eddie has closed thousands of Arizona loans and hosts The Mortgage Brothers Show.",
     nmls: LOAN_OFFICERS.eddie.nmlsDisplay,
     azLicense: LOAN_OFFICERS.eddie.azLicenseDisplay,
+    image: "/home/eddie-knoell.jpg",
   },
   {
-    initials: "TK",
     name: LOAN_OFFICERS.thomas.name,
     title: "Co-Founder - Senior Loan Officer",
     description: "Twenty years matching Arizona families to the right loan. Thomas leads our reverse-mortgage and refinance practice.",
     nmls: LOAN_OFFICERS.thomas.nmlsDisplay,
     azLicense: LOAN_OFFICERS.thomas.azLicenseDisplay,
+    image: "/home/thomas-knoell.jpg",
   },
 ];
 
@@ -123,15 +124,15 @@ export default function TeamPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {teamMembers.map((member) => (
               <div key={member.name} className="bg-[#faf7f0] rounded-2xl overflow-hidden border border-[#e8e0d0]/60 shadow-sm flex flex-col hover:-translate-y-1 hover:shadow-md transition-all duration-300">
-                {/* Diagonal Striped Avatar Header */}
-                <div className="bg-[#052316] h-36 relative overflow-hidden flex items-center justify-center">
-                  {/* Stripes */}
-                  <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "repeating-linear-gradient(45deg, #ffffff 0px, #ffffff 8px, transparent 8px, transparent 16px)" }}></div>
-                  
-                  {/* Initials Circle */}
-                  <div className="w-16 h-16 rounded-full border-2 border-[#3fb364]/30 bg-[#08271b] flex items-center justify-center text-[#3fb364] text-[18px] font-bold relative z-10">
-                    {member.initials}
-                  </div>
+                <div className="relative bg-[#052316] h-56 sm:h-64 overflow-hidden">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 640px) 100vw, 360px"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#052316]/55 via-transparent to-transparent" />
                 </div>
 
                 {/* Member Body */}

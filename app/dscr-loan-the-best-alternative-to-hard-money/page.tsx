@@ -359,7 +359,7 @@ export default function DscrLoanHardMoneyPage() {
                   </p>
                 </section>
 
-                <section id="get-in-touch">
+                <section id="contact">
                   <h2
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}

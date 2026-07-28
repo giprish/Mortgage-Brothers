@@ -216,7 +216,7 @@ const Footer = () => {
               <span className="font-semibold text-[#c8cdc8]">INFORMATION DISCLAIMER:</span>{" "}
               {COMPANY.disclaimer.split("Please contact")[0]}
               Please{" "}
-              <Link href="/contact-us/#Get-in-Touch" className="text-[#3fb364] hover:underline">
+              <Link href="/contact-us/" className="text-[#3fb364] hover:underline">
                 contact our loan officers
               </Link>{" "}
               for the most up-to-date information.

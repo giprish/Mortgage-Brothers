@@ -255,7 +255,7 @@ export default function MortgageBrokerLoanOfficerPage() {
 
             <div className="text-center">
               <a
-                href="#Get-in-Touch"
+                href="#contact"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Start Your Application
@@ -342,7 +342,7 @@ export default function MortgageBrokerLoanOfficerPage() {
 
             <div className="text-center">
               <a
-                href="#Get-in-Touch"
+                href="#contact"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Start Your Application
@@ -353,7 +353,7 @@ export default function MortgageBrokerLoanOfficerPage() {
 
         {/* Contact + application form */}
         <section
-          id="Get-in-Touch"
+          id="contact"
           className="w-full bg-[#f5f0e8] py-16 lg:py-20 border-y border-[#e8e0d0]/50 scroll-mt-[90px]"
         >
           <div className="max-w-4xl mx-auto px-6 lg:px-10">

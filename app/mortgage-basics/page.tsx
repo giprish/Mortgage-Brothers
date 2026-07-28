@@ -184,9 +184,26 @@ export default function MortgageBasicsPage() {
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-[#052316] text-white pt-[110px] lg:pt-[130px] pb-16 lg:pb-24 px-6 lg:px-10">
-          <div className="max-w-5xl mx-auto">
-            {/* Breadcrumb */}
+        <section className="relative w-full text-white min-h-[480px] lg:min-h-[560px] flex items-center overflow-hidden">
+          <div
+            className="absolute inset-0 bg-cover bg-no-repeat"
+            style={{
+              backgroundImage: "url('/home/hero-bg.jpg')",
+              backgroundPosition: "right top",
+              backgroundSize: "auto 110%",
+            }}
+            aria-hidden
+          />
+          <div
+            className="absolute inset-0"
+            style={{
+              background:
+                "linear-gradient(90deg, rgb(5, 35, 22) 0%, rgba(5, 35, 22, 0.95) 38%, rgba(5, 35, 22, 0.55) 65%, rgba(5, 35, 22, 0.2) 100%)",
+            }}
+            aria-hidden
+          />
+
+          <div className="max-w-5xl mx-auto w-full px-6 lg:px-10 pt-[110px] lg:pt-[130px] pb-16 lg:pb-20 relative z-10">
             <div className="flex items-center gap-2 text-[#8da684] text-[13px] font-medium mb-6">
               <Link href="/blog/" className="hover:text-white transition-colors">Blog</Link>
               <span>&gt;</span>
@@ -197,12 +214,12 @@ export default function MortgageBasicsPage() {
               TOPIC CATEGORY
             </span>
 
-            <h1 className="text-white text-[36px] lg:text-[52px] font-playfair font-normal leading-[1.15] mb-6">
+            <h1 className="text-white text-[36px] lg:text-[52px] font-playfair font-normal leading-[1.15] mb-6 max-w-2xl">
               Mortgage Basics
             </h1>
 
             <p className="text-[#c8c8b8] text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl">
-              Demystify the world of mortgages with our comprehensive guides. Understand key terms, loan types, and fundamental concepts to make informed decisions about your home financing.
+              Explore essential mortgage terms and processes, including amortization, APR, and closing costs, for informed home financing decisions.
             </p>
           </div>
         </section>

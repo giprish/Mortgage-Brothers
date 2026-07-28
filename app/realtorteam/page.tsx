@@ -150,7 +150,7 @@ export default function RealtorTeamPage() {
                 Partner with trusted mortgage experts to deliver exceptional service and grow your business together
               </p>
               <a
-                href="#get-in-touch"
+                href="#contact"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-bold px-6 py-3.5 rounded-full transition-all shadow-lg shadow-[#3fb364]/20"
               >
                 Become a Business Partner
@@ -209,7 +209,7 @@ export default function RealtorTeamPage() {
 
             <div className="text-center">
               <a
-                href="#get-in-touch"
+                href="#contact"
                 className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[14px] font-bold px-6 py-3.5 rounded-full transition-all"
               >
                 Join Our Partner Network
@@ -254,7 +254,7 @@ export default function RealtorTeamPage() {
 
             <div className="text-center">
               <a
-                href="#get-in-touch"
+                href="#contact"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-bold px-6 py-3.5 rounded-full transition-all"
               >
                 Contact Our Partnership Team
@@ -291,7 +291,7 @@ export default function RealtorTeamPage() {
                 Ready to elevate your business? Join hundreds of successful partners who have grown their business with AZ Mortgage Brothers. Our team is ready to answer your questions and help you get started.
               </p>
               <a
-                href="#get-in-touch"
+                href="#contact"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-bold px-6 py-3.5 rounded-full transition-all"
               >
                 Schedule Your Partnership Consultation
@@ -301,7 +301,7 @@ export default function RealtorTeamPage() {
         </section>
 
         {/* Contact / form */}
-        <section id="get-in-touch" className="w-full py-16 lg:py-24 bg-[#fcf9f3] scroll-mt-24">
+        <section id="contact" className="w-full py-16 lg:py-24 bg-[#fcf9f3] scroll-mt-24">
           <div className="max-w-7xl mx-auto px-6 lg:px-10">
             <div className="max-w-3xl mb-12">
               <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">GET IN TOUCH</p>

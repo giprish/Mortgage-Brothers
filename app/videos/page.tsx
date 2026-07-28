@@ -377,8 +377,8 @@ export default function VideosPage() {
           </div>
         </section>
 
-        {/* Bottom get-in-touch / conventional CTA */}
-        <section id="Get-in-Touch" className="w-full bg-[#052316] py-16 lg:py-20 px-6 lg:px-10">
+        {/* Bottom contact / conventional CTA */}
+        <section id="contact" className="w-full bg-[#052316] py-16 lg:py-20 px-6 lg:px-10">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-white text-[30px] lg:text-[40px] font-bold leading-tight mb-4">
