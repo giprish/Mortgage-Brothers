@@ -249,7 +249,6 @@ export default function PrivateMoneyLenderPage() {
         <LoanProgramHero
           title="Private Money and Portfolio Loans in Arizona"
           subtitle="Fast approvals, competitive rates, and personalized service for unique borrowing needs"
-          imageSrc="/home/loan-hero-private-money.jpg"
         />
 
         {/* Feature strip */}

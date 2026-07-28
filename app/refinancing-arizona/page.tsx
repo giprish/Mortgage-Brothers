@@ -250,7 +250,6 @@ export default function RefinancingArizonaPage() {
         <LoanProgramHero
           title="Mortgage Refinancing in Arizona"
           subtitle="Lower your monthly payments, access cash, or shorten your loan term with our tailored refinancing options."
-          imageSrc="/home/loan-hero-refinancing.jpg"
         />
 
         {/* Feature strip */}

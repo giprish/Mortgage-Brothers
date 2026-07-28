@@ -545,10 +545,10 @@ export default function RefinanceCalculator() {
                   }}>
                     <span style={{ display: "inline-block", width: 9, height: 9, borderRadius: 2, background: z.color, border: `1px solid ${z.textColor}33` }} />
                     {z.label} ({z.sub})
-                  </span>
+                          </span>
                 );
               })}
-            </div>
+                          </div>
 
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: 10 }}>
               <MilestoneStat label="Break-Even Point" value={valid ? (r.breakEvenStatus === "finite" ? `${beMonths} mo` : r.breakEvenStatus === "immediate" ? "Immediate" : "N/A") : "—"}
@@ -559,8 +559,8 @@ export default function RefinanceCalculator() {
               <MilestoneStat label="Lifetime Interest" value={valid ? fmtSignedWhole(r.totalInterestSavings) : "—"}
                 note={valid ? (r.interestStatus === "decrease" ? "less interest over the loan" : r.interestStatus === "increase" ? "more interest over the loan" : "no change") : ""}
                 highlight={valid && r.interestStatus === "decrease"} />
-            </div>
-          </div>
+                      </div>
+                    </div>
 
           <div className="refi-layout" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "start" }}>
             {/* ============ INPUTS ============ */}
@@ -588,9 +588,9 @@ export default function RefinanceCalculator() {
                     <div style={{ minWidth: 52, textAlign: "center", background: C.greenPale, color: C.greenDeep, fontFamily: MONO, fontWeight: 600, fontSize: 13, padding: "6px 6px", borderRadius: 7, border: "1px solid #d3e5c6" }}>
                       {currentTermYears} yr
                     </div>
-                  </div>
+                          </div>
                 </Field>
-              </div>
+                        </div>
 
               <DividerLabel>Proposed refinance</DividerLabel>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
@@ -637,14 +637,14 @@ export default function RefinanceCalculator() {
                   onBlur={() => { const n2 = toNumber(cashOutText); if (isFinite(n2)) setCashOutText(Math.max(0, n2).toLocaleString("en-US")); }} />
                 <MiniSlider min={0} max={300000} step={1000} value={cashOutRaw} onChange={(v) => setCashOutText(Math.round(v).toLocaleString("en-US"))} />
               </Field>
-            </div>
+                          </div>
 
             {/* ============ RESULTS ============ */}
             <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               {!valid ? (
                 <div style={{ background: C.dangerPale, border: "1px solid #e3b3ae", color: C.danger, borderRadius: 10, padding: "16px 18px", fontSize: 13.5, fontWeight: 500 }}>
                   {Object.values(errors)[0]}
-                </div>
+                        </div>
               ) : (
                 <>
                   <div className="refi-primary-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: 16 }}>
@@ -661,7 +661,7 @@ export default function RefinanceCalculator() {
                       sub={`${fmtWhole(r.currentTotalInterest)} current → ${fmtWhole(r.newTotalInterest)} proposed`}
                       tag={r.interestStatus === "decrease" ? "Less lifetime interest" : r.interestStatus === "increase" ? "More lifetime interest" : "No change"}
                       status={r.interestStatus === "decrease" ? "good" : r.interestStatus === "increase" ? "bad" : "neutral"} />
-                  </div>
+                      </div>
 
                   {r.cashOut > 0 && (
                     <div style={{ background: C.card, border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(24,42,28,0.04), 0 8px 24px -12px rgba(24,42,28,0.18)", padding: "20px 22px 22px" }}>
@@ -712,7 +712,7 @@ export default function RefinanceCalculator() {
                     <h3 style={{ fontFamily: SERIF, fontSize: 15.5, fontWeight: 600, margin: "0 0 16px" }}>Total Interest Remaining</h3>
                     <CompareRow name="Current loan" value={fmtWhole(r.currentTotalInterest)} pct={(r.currentTotalInterest / Math.max(r.currentTotalInterest, r.newTotalInterest, 1)) * 100} color="#b7bdb1" />
                     <CompareRow name="Proposed refinance" value={fmtWhole(r.newTotalInterest)} pct={(r.newTotalInterest / Math.max(r.currentTotalInterest, r.newTotalInterest, 1)) * 100} color={r.interestStatus === "increase" ? C.amber : C.green} marginBottom={0} />
-                  </div>
+              </div>
 
                   <div style={{ background: C.card, border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(24,42,28,0.04), 0 8px 24px -12px rgba(24,42,28,0.18)", padding: "4px 0" }}>
                     <button onClick={() => setShowDetails((v) => !v)}
@@ -758,13 +758,13 @@ export default function RefinanceCalculator() {
                               <tr key={i}>
                                 <td style={{ padding: "7px 4px", borderBottom: `1px solid ${C.line}`, color: C.inkSoft }}>{row[0]}</td>
                                 <td style={{ padding: "7px 4px", borderBottom: `1px solid ${C.line}`, textAlign: "right", fontFamily: MONO, fontWeight: 600 }}>{row[1]}</td>
-                              </tr>
+                    </tr>
                             ))}
-                          </tbody>
-                        </table>
-                      </div>
+                  </tbody>
+                </table>
+              </div>
                     )}
-                  </div>
+            </div>
 
                   {/* Insights — last section, below all charts/tables */}
                   <InsightsPanel
@@ -776,8 +776,8 @@ export default function RefinanceCalculator() {
                   />
                 </>
               )}
+              </div>
             </div>
-          </div>
 
           <div style={{ marginTop: 36, paddingTop: 18, borderTop: `1px solid ${C.line}`, fontSize: 11.5, color: C.inkSoft, lineHeight: 1.6 }}>
             This calculator compares principal-and-interest payments only. It does not include property taxes, homeowners insurance, mortgage insurance, HOA dues, or other escrow items, and it does not determine loan eligibility, underwriting approval, or qualification for any specific rate. Mortgage Brothers LLC · NMLS #1007154 · AZ MB #MB0922514.

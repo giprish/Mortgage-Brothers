@@ -205,7 +205,6 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
         <LoanProgramHero
           title="Reverse Mortgage for a Home Purchase"
           subtitle="No Monthly Payments for 62+ Homebuyers"
-          imageSrc="/home/loan-hero-reverse-purchase.jpg"
         />
 
         {/* TRUST BAR */}

@@ -15,12 +15,12 @@ const Navbar = () => {
         <Link href="/" className="flex items-center hover:opacity-90 transition-opacity duration-200 shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-  src="/home/mortgage-brothers-logo.png"
-  alt="Mortgage Brothers"
-  width={150}
-  height={45}
-  className="h-[32px] sm:h-[38px] w-auto object-contain"
-/>
+            src="/home/mortgage-brothers-logo.png"
+            alt="Mortgage Brothers"
+            width={150}
+            height={45}
+            className="h-[42px] sm:h-[48px] w-auto object-contain"
+          />
         </Link>
 
         {/* Desktop Nav Links */}

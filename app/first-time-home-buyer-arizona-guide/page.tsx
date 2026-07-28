@@ -207,7 +207,6 @@ export default function FirstTimeHomeBuyerGuidePage() {
         <LoanProgramHero
           title="Guide for the First-time Home Buyer in Arizona"
           subtitle="Expert advice and support for navigating the exciting journey of homeownership"
-          imageSrc="/home/loan-hero-first-time.jpg"
         />
 
         {/* HIGHLIGHT BAR */}

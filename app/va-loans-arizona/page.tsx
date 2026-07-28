@@ -307,7 +307,6 @@ export default function VaLoansArizonaPage() {
         <LoanProgramHero
           title="VA Loans in Arizona"
           subtitle="Exclusive Benefits for Veterans and Active Duty Service Members"
-          imageSrc="/home/loan-hero-va.jpg"
         />
 
         {/* TRUST BAR */}

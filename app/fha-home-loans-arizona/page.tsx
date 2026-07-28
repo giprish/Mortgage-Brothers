@@ -206,7 +206,6 @@ export default function FhaHomeLoansArizonaPage() {
         <LoanProgramHero
           title="FHA Home Loans in Arizona"
           subtitle="Low down payments, flexible credit requirements, and expert guidance"
-          imageSrc="/home/loan-hero-fha.jpg"
         />
 
         {/* HIGHLIGHT BAR */}

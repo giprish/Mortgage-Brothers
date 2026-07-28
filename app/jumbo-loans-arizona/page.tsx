@@ -281,7 +281,6 @@ export default function JumboLoansPage() {
         <LoanProgramHero
           title="Jumbo Loans in Arizona"
           subtitle="Unlock Your Dream Home with Our Jumbo Loan Solutions"
-          imageSrc="/home/loan-hero-jumbo.jpg"
         />
 
         {/* Feature strip */}

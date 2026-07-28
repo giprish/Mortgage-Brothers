@@ -23,8 +23,8 @@ const brothers = [
 
 const Brothers = () => {
   return (
-    <section className="w-full bg-[#eeeff4] py-20 lg:py-28 border-t border-[#e8e0d0]/30">
-      <div className="w-[90%] max-w-[1520px] mx-auto px-0 sm:px-2">
+    <section className="w-full bg-[#fcf9f3] py-20 lg:py-28 border-t border-[#e8e0d0]/30">
+      <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
           <p className="text-[#b89a5a] text-[12px] font-semibold tracking-[0.14em] uppercase mb-3">
@@ -107,20 +107,6 @@ const Brothers = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Intro video — matches live site */}
-        <div className="w-full mb-12 lg:mb-14">
-          <div className="relative w-full aspect-video rounded-md overflow-hidden bg-[#08271B] shadow-sm">
-            <iframe
-              src="https://www.youtube.com/embed/YqOa8IipIPU?feature=oembed"
-              title="The Mortgage Brothers in Phoenix Arizona"
-              className="absolute inset-0 w-full h-full border-0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            />
-          </div>
         </div>
 
         <div className="text-center">

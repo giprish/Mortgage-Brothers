@@ -182,7 +182,6 @@ export default function ConventionalHomeLoansPage() {
         <LoanProgramHero
           title="Conventional Home Loans in Arizona"
           subtitle="Flexible options, competitive rates, and expert guidance"
-          imageSrc="/home/loan-hero-conventional.jpg"
         />
 
         {/* HIGHLIGHT BAR */}

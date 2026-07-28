@@ -153,7 +153,6 @@ export default function ReverseMortgageArizonaPage() {
         <LoanProgramHero
           title="Reverse Mortgage in Arizona"
           subtitle="Unlock Your Home's Value with a Reverse Mortgage"
-          imageSrc="/home/loan-hero-reverse.jpg"
         />
 
         {/* TRUST BAR */}
