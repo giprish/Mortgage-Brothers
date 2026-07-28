@@ -50,9 +50,9 @@ const snippets = [
 ];
 
 const stats = [
-  { value: "24", suffix: "hrs", label: "Hours to Preapproval" },
-  { value: "40+", suffix: "", label: "Partner Banks" },
-  { value: "98", suffix: "%", label: "Closing Success" },
+  { value: "5", suffix: "", label: "Hours to Preapproval" },
+  { value: "20+", suffix: "", label: "Partner Banks" },
+  { value: "99.5", suffix: "%", label: "Closing Success" },
 ];
 
 const BrokersAdvocate = () => {

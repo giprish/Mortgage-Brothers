@@ -136,20 +136,20 @@ export default function ArizonaSecondMortgagesPage() {
 
       <main className="flex-grow relative z-0">
         <section className="relative z-0 w-full bg-white overflow-hidden">
-          <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 py-4 lg:py-6">
+          <div className="w-[90%] max-w-[1520px] mx-auto px-0 py-3 lg:py-5">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="/home/arizona-second-mortgages.jpg"
               alt="Understanding Arizona second mortgages and how they help homeowners access equity."
               width={1920}
               height={1080}
-              className="relative z-0 w-full h-auto block max-w-full rounded-lg"
+              className="relative z-0 w-full h-auto block max-w-full rounded-md lg:rounded-lg"
             />
           </div>
         </section>
 
         <section className="relative z-0 w-full py-12 lg:py-16 bg-[#fcf9f3]">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-10 lg:gap-12">
+          <div className="w-[90%] max-w-[1520px] mx-auto px-0 sm:px-2 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
             <article className="min-w-0">
               <h1
                 className="text-[#08271B] text-[30px] sm:text-[38px] lg:text-[44px] font-normal leading-tight mb-3"
