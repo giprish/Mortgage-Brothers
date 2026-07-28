@@ -102,7 +102,7 @@ export default function UnderstandingAmortizationChartPage() {
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-8">
                 If you are looking for Amortization Calculators to graph principal and interest payments,
                 please visit our{" "}
-                <Link href="/calculators/" className="text-[#3fb364] font-semibold hover:underline">
+                <Link href="/mortgage-calculator-arizona/" className="text-[#3fb364] font-semibold hover:underline">
                   Mortgage Calculator Page
                 </Link>
               </p>

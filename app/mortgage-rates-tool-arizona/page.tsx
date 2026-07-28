@@ -78,7 +78,7 @@ function withCalculatorLinks(text: string) {
     part === "Mortgage Calculator tool" ? (
       <Link
         key={i}
-        href="/calculators/"
+        href="/mortgage-calculator-arizona/"
         className="text-[#3fb364] font-semibold hover:underline"
       >
         Mortgage Calculator tool

@@ -44,25 +44,27 @@ export default function TheBrokerAdvantagePage() {
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
 
-      <main className="flex-grow pt-[72px]">
+      <div className="h-[72px] w-full shrink-0" aria-hidden />
+
+      <main className="flex-grow relative z-0">
         {/* Featured hero — full 16:9 image, no crop (matches live) */}
-        <section className="w-full bg-white py-6">
-  <div className="max-w-[1400px] mx-auto px-8 sm:px-10 lg:px-12 mt-6">
-    <Image
-      src="/home/mortgage-broker-vs-banker.jpg"
-      alt="Mortgage Broker vs Banker — The Mortgage Brothers Team"
-      width={1920}
-      height={1080}
-      priority
-      className="w-full h-auto rounded-lg"
-      sizes="(max-width: 1400px) 100vw, 1400px"
-    />
-  </div>
-</section>
+        <section className="relative z-0 w-full bg-white overflow-hidden">
+          <div className="w-[90%] max-w-[1520px] mx-auto px-0 py-3 lg:py-5">
+            <Image
+              src="/home/mortgage-broker-vs-banker.jpg"
+              alt="Mortgage Broker vs Banker — The Mortgage Brothers Team"
+              width={1920}
+              height={1080}
+              priority
+              className="relative z-0 w-full h-auto block max-w-full rounded-md lg:rounded-lg"
+              sizes="(max-width: 1520px) 90vw, 1520px"
+            />
+          </div>
+        </section>
 
         {/* Article + sidebar */}
-        <section className="w-full py-12 lg:py-16 bg-[#fcf9f3]">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-10 lg:gap-12">
+        <section className="relative z-0 w-full py-12 lg:py-16 bg-[#fcf9f3]">
+          <div className="w-[90%] max-w-[1520px] mx-auto px-0 sm:px-2 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
             <article className="min-w-0">
               <h1
                 className="text-[#08271B] text-[32px] sm:text-[40px] lg:text-[46px] font-normal leading-tight mb-3"

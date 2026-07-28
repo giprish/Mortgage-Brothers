@@ -11,7 +11,7 @@ const insideLinks = [
   { label: "Job Opportunities", href: "/job-opportunities/" },
   { label: "Loan Applications", href: "/loan-applications/" },
   { label: "Mortgage Rates", href: "/mortgage-rates-tool-arizona/" },
-  { label: "Mortgage Calculator", href: "/calculators/" },
+  { label: "Mortgage Calculator", href: "/mortgage-calculator-arizona/" },
   { label: "Mortgage 101", href: "/mortgage-101/" },
   { label: "Credit Score Quiz", href: "/credit-score-quiz/" },
   { label: "Glossary", href: "/glossary/" },
