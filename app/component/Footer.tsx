@@ -173,114 +173,152 @@ const Footer = () => {
           </div>
         </div>
 
+        {/* Bottom Section */}
         <div className="w-full h-px bg-white/10 mb-8" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-10 lg:gap-14 items-start">
-          <div className="text-[12px] leading-[1.7] text-[#a8aea8] max-w-3xl">
-            <p className="mb-3">
-              You can verify our Mortgage Broker License through the{" "}
-              <a
-                href={COMPANY.nmlsConsumerAccessUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#3fb364] hover:underline"
-              >
-                official NMLS Consumer Access website
-              </a>
-              .
-            </p>
-            <p className="mb-3">
-              You can verify our licenses on the official regulatory websites:{" "}
-              <a
-                href={COMPANY.nmlsConsumerAccessUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#3fb364] hover:underline"
-              >
-                NMLS Consumer Access
-              </a>{" "}
-              for our Mortgage Broker License and Arizona Department of Financial Institutions for
-              our{" "}
-              <a
-                href="https://azdifi.portalus.thentiacloud.net/webs/portal/register/#/profile/LO-0911422/0/20/all/all/false/66185b7fa32d990aef41475d"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#3fb364] hover:underline"
-              >
-                Loan Originator License
-              </a>
-              .
-            </p>
-            <p className="mb-3">All loans subject to underwriter approval.</p>
-            <p className="mb-3">
-              <span className="font-semibold text-[#c8cdc8]">INFORMATION DISCLAIMER:</span>{" "}
-              {COMPANY.disclaimer.split("Please contact")[0]}
-              Please{" "}
-              <Link href="/contact-us/" className="text-[#3fb364] hover:underline">
-                contact our loan officers
-              </Link>{" "}
-              for the most up-to-date information.
-            </p>
-            <p className="mb-3">
-              {COMPANY.legalName} is an {COMPANY.equalHousingLabel} and an Equal Opportunity
-              Employer.
-            </p>
-            <p className="mb-3">
-              <Link href="/privacy-policy/" className="text-[#3fb364] hover:underline">
-                Privacy Policy
-              </Link>
-              <span className="mx-2 text-[#6a706a]">|</span>
-              <Link href="/terms-of-use/" className="text-[#3fb364] hover:underline">
-                Terms of Use
-              </Link>
-            </p>
-            <p className="text-[#8a908a]">
-              Copyright © {new Date().getFullYear()} {COMPANY.legalName}
-            </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start mb-10">
+
+          {/* Left: Verify Licenses card + Disclaimer */}
+          <div>
+            {/* Verify our licenses card */}
+            <div className="border border-white/10 rounded-xl p-5 mb-6 bg-white/5">
+              <div className="flex items-start gap-3">
+                <div className="mt-0.5 flex-shrink-0 w-7 h-7 rounded-full bg-[#3fb364]/20 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-[#3fb364]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <div className="text-[13px] leading-[1.7]">
+                  <p className="font-semibold text-white mb-1">Verify our licenses</p>
+                  <p className="text-[#a8aea8]">
+                    Check our Mortgage Broker License through the{" "}
+                    <a
+                      href={COMPANY.nmlsConsumerAccessUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#3fb364] hover:underline"
+                    >
+                      official NMLS Consumer Access website
+                    </a>
+                    . Arizona licenses are verifiable via{" "}
+                    <a
+                      href={COMPANY.nmlsConsumerAccessUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#3fb364] hover:underline"
+                    >
+                      NMLS Consumer Access
+                    </a>{" "}
+                    and the Arizona Department of Financial Institutions{" "}
+                    <a
+                      href="https://azdifi.portalus.thentiacloud.net/webs/portal/register/#/profile/LO-0911422/0/20/all/all/false/66185b7fa32d990aef41475d"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#3fb364] hover:underline"
+                    >
+                      Loan Originator License
+                    </a>
+                    .
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Information Disclaimer */}
+            <div className="text-[13px] leading-[1.75] text-[#a8aea8]">
+              <p className="text-[#3fb364] font-bold tracking-wide text-[11px] uppercase mb-2">
+                Information Disclaimer
+              </p>
+              <p className="mb-4">
+                Content on this website is provided for informational purposes only and does not
+                constitute an offer to lend. Rates, terms, and program availability may change
+                without notice.{" "}
+                <Link href="/contact-us/" className="text-[#3fb364] hover:underline">
+                  Contact our loan officers
+                </Link>{" "}
+                for the most up-to-date information. All loans subject to underwriter approval.
+              </p>
+              <p>
+                {COMPANY.legalName} is an{" "}
+                <strong className="text-white font-semibold">Equal Housing Lender</strong> and an{" "}
+                <strong className="text-white font-semibold">Equal Opportunity Employer</strong>.
+              </p>
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 w-full max-w-[280px] mx-auto lg:mx-0">
-            <div className="bg-white/5 rounded-lg p-3 flex flex-col items-center justify-center min-h-[88px] gap-1">
-              <Image
-                src="/home/equal-housing.png"
-                alt="Equal Housing Opportunity"
-                width={72}
-                height={72}
-                className="object-contain max-h-[56px] w-auto"
-              />
-              <span className="text-[10px] text-[#c8cdc8] text-center leading-tight">
-                {COMPANY.equalHousingLabel}
-              </span>
-            </div>
-            <div className="bg-white/5 rounded-lg p-3 flex items-center justify-center min-h-[88px]">
-              <Image
-                src="/home/angies-list.png"
-                alt="Angie's List Super Service Award"
-                width={90}
-                height={72}
-                className="object-contain max-h-[72px] w-auto"
-              />
-            </div>
-            <div className="bg-white/5 rounded-lg p-3 flex items-center justify-center min-h-[88px]">
-              <Image
-                src="/home/shop-local.png"
-                alt="Shop Local"
-                width={72}
-                height={72}
-                className="object-contain max-h-[72px] w-auto"
-              />
-            </div>
-            <div className="bg-white/5 rounded-lg p-3 flex items-center justify-center min-h-[88px]">
-              <Image
-                src="/home/fha-approved.png"
-                alt="FHA Approved Lending Partner"
-                width={90}
-                height={72}
-                className="object-contain max-h-[72px] w-auto"
-              />
+          {/* Right: Accredited & Recognized */}
+          <div className="flex flex-col items-end">
+            {/* <p className="text-[#a8aea8] text-[11px] font-bold tracking-[0.14em] uppercase mb-4">
+              Accredited &amp; Recognized
+            </p> */}
+            <div className="grid grid-cols-2 gap-4 w-full max-w-[280px]">
+              <div className="bg-white/5 rounded-lg p-3 flex flex-col items-center justify-center min-h-[88px] gap-1">
+                <Image
+                  src="/home/equal-housing.png"
+                  alt="Equal Housing Opportunity"
+                  width={72}
+                  height={72}
+                  className="object-contain max-h-[56px] w-auto"
+                />
+                <span className="text-[10px] text-[#c8cdc8] text-center leading-tight">
+                  {COMPANY.equalHousingLabel}
+                </span>
+              </div>
+              <div className="bg-white/5 rounded-lg p-3 flex items-center justify-center min-h-[88px]">
+                <Image
+                  src="/home/angies-list.png"
+                  alt="Angie's List Super Service Award"
+                  width={90}
+                  height={72}
+                  className="object-contain max-h-[72px] w-auto"
+                />
+              </div>
+              <div className="bg-white/5 rounded-lg p-3 flex items-center justify-center min-h-[88px]">
+                <Image
+                  src="/home/shop-local.png"
+                  alt="Shop Local"
+                  width={72}
+                  height={72}
+                  className="object-contain max-h-[72px] w-auto"
+                />
+              </div>
+              <div className="bg-white/5 rounded-lg p-3 flex items-center justify-center min-h-[88px]">
+                <Image
+                  src="/home/fha-approved.png"
+                  alt="FHA Approved Lending Partner"
+                  width={90}
+                  height={72}
+                  className="object-contain max-h-[72px] w-auto"
+                />
+              </div>
             </div>
           </div>
+
         </div>
+
+        {/* Bottom Bar */}
+        <div className="w-full h-px bg-white/10 mb-5" />
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="flex items-center gap-4">
+            <div className="flex flex-col leading-tight">
+              <span className="text-[#3fb364] font-bold text-[13px] tracking-[0.08em] uppercase leading-[1.1]">MORTGAGE</span>
+              <span className="text-[#3fb364] font-bold text-[13px] tracking-[0.08em] uppercase leading-[1.1]">BROTHERS</span>
+            </div>
+            <span className="text-[#a8aea8] text-[12px]">
+              © {new Date().getFullYear()} {COMPANY.legalName} · {COMPANY.nmlsDisplay}
+            </span>
+          </div>
+          <div className="flex items-center gap-2 text-[12px]">
+            <Link href="/privacy-policy/" className="text-[#3fb364] hover:underline font-medium">
+              Privacy Policy
+            </Link>
+            <span className="text-[#6a706a]">·</span>
+            <Link href="/terms-of-use/" className="text-[#3fb364] hover:underline font-medium">
+              Terms of Use
+            </Link>
+          </div>
+        </div>
+
       </div>
     </footer>
   );
