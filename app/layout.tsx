@@ -22,6 +22,28 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: [
+      {
+        url: "/favicon-32x32.jpg",
+        sizes: "32x32",
+        type: "image/jpeg",
+      },
+      {
+        url: "/favicon-192x192.jpg",
+        sizes: "192x192",
+        type: "image/jpeg",
+      },
+    ],
+    apple: [
+      {
+        url: "/apple-touch-icon.jpg",
+        sizes: "180x180",
+        type: "image/jpeg",
+      },
+    ],
+    shortcut: "/favicon-32x32.jpg",
+  },
 };
 
 export default function RootLayout({
@@ -36,7 +58,7 @@ export default function RootLayout({
     >
       <head>
         <link
-          href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
       </head>

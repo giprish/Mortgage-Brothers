@@ -183,107 +183,117 @@ export default function MortgageBasicsPage() {
       <Navbar />
 
       <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="relative w-full text-white min-h-[480px] lg:min-h-[560px] flex items-center overflow-hidden">
+        {/* Hero Section — full-bleed cover like homepage so large screens have no seam */}
+        <section
+          className="relative w-full text-white min-h-[480px] lg:min-h-[580px] xl:min-h-[680px] flex items-center overflow-hidden bg-[#052316]"
+          style={{
+            backgroundImage: "url('/home/hero-bg.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center right",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
           <div
-            className="absolute inset-0 bg-cover bg-no-repeat"
-            style={{
-              backgroundImage: "url('/home/hero-bg.jpg')",
-              backgroundPosition: "right top",
-              backgroundSize: "auto 110%",
-            }}
-            aria-hidden
-          />
-          <div
-            className="absolute inset-0"
-            style={{
-              background:
-                "linear-gradient(90deg, rgb(5, 35, 22) 0%, rgba(5, 35, 22, 0.95) 38%, rgba(5, 35, 22, 0.55) 65%, rgba(5, 35, 22, 0.2) 100%)",
-            }}
+            className="absolute inset-0 pointer-events-none bg-gradient-to-r from-[#052316]/95 via-[#052316]/75 to-[#052316]/20 lg:to-transparent"
             aria-hidden
           />
 
-          <div className="max-w-5xl mx-auto w-full px-6 lg:px-10 pt-[110px] lg:pt-[130px] pb-16 lg:pb-20 relative z-10">
-            <div className="flex items-center gap-2 text-[#8da684] text-[13px] font-medium mb-6">
-              <Link href="/blog/" className="hover:text-white transition-colors">Blog</Link>
-              <span>&gt;</span>
-              <span className="text-[#3fb364]">Mortgage Basics</span>
+          <div className="max-w-7xl mx-auto w-full px-6 lg:px-10 pt-[110px] lg:pt-[130px] pb-16 lg:pb-20 relative z-10">
+            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+              <div className="max-w-xl">
+                <div className="flex items-center gap-2 text-[#8da684] text-[13px] font-medium mb-6">
+                  <Link href="/blog/" className="hover:text-white transition-colors">Blog</Link>
+                  <span>&gt;</span>
+                  <span className="text-[#3fb364]">Mortgage Basics</span>
+                </div>
+
+                <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
+                  TOPIC CATEGORY
+                </span>
+
+                <h1 className="text-white text-[36px] lg:text-[52px] font-playfair font-normal leading-[1.15] mb-6">
+                  Mortgage Basics
+                </h1>
+
+                <p className="text-[#c8c8b8] text-[15px] lg:text-[17px] leading-[1.7]">
+                  Explore essential mortgage terms and processes, including amortization, APR, and closing costs, for informed home financing decisions.
+                </p>
+              </div>
+
+              {/* Spacer keeps title clear of brothers on desktop / large screens */}
+              <div className="hidden lg:block flex-1 max-w-[480px] min-h-[300px]" aria-hidden />
             </div>
-
-            <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
-              TOPIC CATEGORY
-            </span>
-
-            <h1 className="text-white text-[36px] lg:text-[52px] font-playfair font-normal leading-[1.15] mb-6 max-w-2xl">
-              Mortgage Basics
-            </h1>
-
-            <p className="text-[#c8c8b8] text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl">
-              Explore essential mortgage terms and processes, including amortization, APR, and closing costs, for informed home financing decisions.
-            </p>
           </div>
         </section>
 
-        {/* Articles Grid Section */}
-        <section className="py-16 px-6 lg:px-10 max-w-6xl mx-auto">
-          <div className="mb-10">
-            <h2 className="text-[#052316] text-[24px] lg:text-[30px] font-playfair font-normal">
-              Articles in Mortgage Basics
-            </h2>
-          </div>
+        {/* Articles Grid Section — wide row + tall thumbs matching original Divi blog grid */}
+        <section className="w-full py-14 lg:py-16 px-6 lg:px-10 bg-[#fcf9f3]">
+          <div className="w-full max-w-[1520px] mx-auto">
+            <div className="mb-10 lg:mb-12">
+              <h2 className="text-[#052316] text-[24px] lg:text-[32px] font-playfair font-normal">
+                Articles in Mortgage Basics
+              </h2>
+            </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {articles.map((article, idx) => {
-              const imageSrc = getArticleImage(article.href);
-              return (
-                <Link
-                  key={idx}
-                  href={article.href}
-                  className="bg-white rounded-2xl border border-[#e8e0d0]/60 shadow-sm hover:shadow-md transition-all flex flex-col justify-between group overflow-hidden"
-                >
-                  <div className="h-44 w-full overflow-hidden bg-[#f2eee3]">
-                    {imageSrc ? (
-                      <>
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12 lg:gap-x-10">
+              {articles.map((article, idx) => {
+                const imageSrc = getArticleImage(article.href);
+                return (
+                  <article
+                    key={idx}
+                    className="flex flex-col group"
+                  >
+                    <Link
+                      href={article.href}
+                      className="relative block w-full aspect-[8/5] overflow-hidden bg-[#e8e0d0] mb-5"
+                    >
+                      {imageSrc ? (
+                        // eslint-disable-next-line @next/next/no-img-element
                         <img
                           src={imageSrc}
                           alt=""
-                          className="h-44 w-full object-cover"
+                          className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                         />
-                      </>
-                    ) : (
-                      <div className="h-44 w-full bg-gradient-to-br from-[#f2eee3] to-[#e8f5e9]" />
-                    )}
-                  </div>
+                      ) : (
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#f2eee3] to-[#e8f5e9]" />
+                      )}
+                    </Link>
 
-                  <div className="p-6 flex flex-col flex-grow justify-between">
-                    <div>
-                      <div className="flex items-center justify-between text-[12px] text-[#8c857b] mb-4">
-                        <span className="bg-[#f2eee3] text-[#052316] px-3 py-1 rounded-full font-semibold">
-                          {article.category}
-                        </span>
-                        <span>{article.readTime}</span>
-                      </div>
-
-                      <h3 className="text-[#052316] text-[18px] font-bold font-playfair mb-3 leading-snug group-hover:text-[#3fb364] transition-colors">
+                    <h3 className="text-[#052316] text-[18px] lg:text-[20px] font-playfair font-normal leading-snug mb-2">
+                      <Link
+                        href={article.href}
+                        className="hover:text-[#3fb364] transition-colors"
+                      >
                         {article.title}
-                      </h3>
+                      </Link>
+                    </h3>
 
-                      <p className="text-[#4e5b4e] text-[13.5px] leading-relaxed mb-6">
-                        {article.description}
-                      </p>
-                    </div>
+                    <p className="text-[#666] text-[13px] lg:text-[14px] mb-3">
+                      by{" "}
+                      <Link
+                        href="/author/eddie-knoell/"
+                        className="hover:text-[#3fb364] transition-colors"
+                      >
+                        Eddie Knoell
+                      </Link>
+                      {" | "}
+                      <span className="text-[#3fb364]">{article.category}</span>
+                    </p>
 
-                    <div className="flex items-center justify-between pt-4 border-t border-[#f2eee3]">
-                      <span className="text-[12px] text-[#8c857b]">{article.date}</span>
-                      <span className="text-[#3fb364] font-semibold text-[13.5px] flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                        Read Article &rarr;
-                      </span>
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
+                    <p className="text-[#4e5b4e] text-[14px] lg:text-[15px] leading-relaxed mb-4 flex-grow line-clamp-4">
+                      {article.description}
+                    </p>
+
+                    <Link
+                      href={article.href}
+                      className="text-[#3fb364] hover:text-[#2d5a2d] text-[14px] font-medium w-fit transition-colors"
+                    >
+                      read more
+                    </Link>
+                  </article>
+                );
+              })}
+            </div>
           </div>
         </section>
 
