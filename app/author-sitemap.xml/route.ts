@@ -1,12 +1,12 @@
 import {
   buildUrlSetXml,
   collectSitemapEntries,
+  resolveSiteUrl,
   xmlResponse,
 } from "@/lib/sitemap";
 
-export const dynamic = "force-static";
-
-export function GET() {
-  const { authors } = collectSitemapEntries();
+export function GET(request: Request) {
+  const siteUrl = resolveSiteUrl(request);
+  const { authors } = collectSitemapEntries(siteUrl);
   return xmlResponse(buildUrlSetXml(authors));
 }

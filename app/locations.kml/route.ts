@@ -1,10 +1,13 @@
-import { buildLocationsKml, xmlResponse } from "@/lib/sitemap";
+import {
+  buildLocationsKml,
+  resolveSiteUrl,
+  xmlResponse,
+} from "@/lib/sitemap";
 
-export const dynamic = "force-static";
-
-export function GET() {
+export function GET(request: Request) {
+  const siteUrl = resolveSiteUrl(request);
   return xmlResponse(
-    buildLocationsKml(),
+    buildLocationsKml(siteUrl),
     "application/vnd.google-earth.kml+xml; charset=utf-8",
   );
 }

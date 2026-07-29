@@ -59,6 +59,16 @@ const nextConfig: NextConfig = {
         destination: "/mortgage-basics/:article/",
         permanent: true,
       },
+      {
+        source: "/sitemap_index.xml",
+        destination: "/sitemap.xml",
+        permanent: true,
+      },
+      {
+        source: "/sitemap_index.xml/",
+        destination: "/sitemap.xml",
+        permanent: true,
+      },
     ];
   },
   async rewrites() {

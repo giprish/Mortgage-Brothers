@@ -9,7 +9,10 @@ import {
 import { normalizePathname, seoMetadata, toTrailingSlashPath } from "@/lib/seo";
 import eddiePosts from "@/lib/eddie-knoell-posts.json";
 
-export const SITE_URL = COMPANY.siteUrl;
+export const FALLBACK_SITE_URL = COMPANY.siteUrl;
+
+const XML_STYLESHEET_PI =
+  '<?xml-stylesheet type="text/xsl" href="/main-sitemap.xsl"?>';
 
 export type SitemapKind = "pages" | "posts" | "categories" | "authors";
 
@@ -50,6 +53,19 @@ const CHILD_SITEMAPS = [
 
 export type ChildSitemapName = (typeof CHILD_SITEMAPS)[number];
 
+/** Origin of the deployment actually serving this request. */
+export function resolveSiteUrl(request: Request): string {
+  const headers = request.headers;
+  const host = headers.get("x-forwarded-host") ?? headers.get("host");
+  if (!host) return FALLBACK_SITE_URL;
+  const proto =
+    headers.get("x-forwarded-proto")?.split(",")[0]?.trim() ??
+    (host.startsWith("localhost") || host.startsWith("127.0.0.1")
+      ? "http"
+      : "https");
+  return `${proto}://${host}`;
+}
+
 function escapeXml(value: string): string {
   return value
     .replace(/&/g, "&amp;")
@@ -59,10 +75,10 @@ function escapeXml(value: string): string {
     .replace(/'/g, "&apos;");
 }
 
-function absoluteUrl(pathname: string): string {
+function absoluteUrl(siteUrl: string, pathname: string): string {
   const path = toTrailingSlashPath(pathname);
-  if (path === "/") return `${SITE_URL}/`;
-  return `${SITE_URL}${path}`;
+  if (path === "/") return `${siteUrl}/`;
+  return `${siteUrl}${path}`;
 }
 
 function isExcludedPath(pathname: string): boolean {
@@ -197,7 +213,9 @@ function dedupePaths(paths: string[]): string[] {
   return out;
 }
 
-export function collectSitemapEntries(): Record<SitemapKind, SitemapUrlEntry[]> {
+export function collectSitemapEntries(
+  siteUrl: string,
+): Record<SitemapKind, SitemapUrlEntry[]> {
   const appDir = join(process.cwd(), "app");
   const postMap = getPostPathSet();
   const categorySet = new Set(getCategoryPaths());
@@ -218,22 +236,22 @@ export function collectSitemapEntries(): Record<SitemapKind, SitemapUrlEntry[]> 
   const posts: SitemapUrlEntry[] = [...postMap.entries()]
     .filter(([path]) => !isExcludedPath(path))
     .map(([path, lastmod]) => ({
-      loc: absoluteUrl(path),
+      loc: absoluteUrl(siteUrl, path),
       ...(lastmod ? { lastmod } : {}),
     }))
     .sort((a, b) => a.loc.localeCompare(b.loc));
 
   const categories: SitemapUrlEntry[] = [...categorySet]
-    .map((path) => ({ loc: absoluteUrl(path) }))
+    .map((path) => ({ loc: absoluteUrl(siteUrl, path) }))
     .sort((a, b) => a.loc.localeCompare(b.loc));
 
   const authors: SitemapUrlEntry[] = authorPaths
     .filter((path) => !isExcludedPath(path))
-    .map((path) => ({ loc: absoluteUrl(path) }))
+    .map((path) => ({ loc: absoluteUrl(siteUrl, path) }))
     .sort((a, b) => a.loc.localeCompare(b.loc));
 
   const pages: SitemapUrlEntry[] = pagePaths
-    .map((path) => ({ loc: absoluteUrl(path) }))
+    .map((path) => ({ loc: absoluteUrl(siteUrl, path) }))
     .sort((a, b) => a.loc.localeCompare(b.loc));
 
   return { pages, posts, categories, authors };
@@ -249,32 +267,33 @@ export function buildUrlSetXml(entries: SitemapUrlEntry[]): string {
     })
     .join("\n");
 
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
+  return `<?xml version="1.0" encoding="UTF-8"?>\n${XML_STYLESHEET_PI}\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`;
 }
 
 export function buildSitemapIndexXml(
+  siteUrl: string,
   lastmods: Partial<Record<ChildSitemapName, string>> = {},
 ): string {
   const today = new Date().toISOString().slice(0, 10);
   const items = CHILD_SITEMAPS.map((name) => {
     const lastmod = lastmods[name] ?? today;
-    return `\t<sitemap>\n\t\t<loc>${escapeXml(`${SITE_URL}/${name}`)}</loc>\n\t\t<lastmod>${escapeXml(lastmod)}</lastmod>\n\t</sitemap>`;
+    return `\t<sitemap>\n\t\t<loc>${escapeXml(`${siteUrl}/${name}`)}</loc>\n\t\t<lastmod>${escapeXml(lastmod)}</lastmod>\n\t</sitemap>`;
   }).join("\n");
 
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${items}\n</sitemapindex>\n`;
+  return `<?xml version="1.0" encoding="UTF-8"?>\n${XML_STYLESHEET_PI}\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${items}\n</sitemapindex>\n`;
 }
 
-export function buildLocalSitemapXml(): string {
+export function buildLocalSitemapXml(siteUrl: string): string {
   const today = new Date().toISOString().slice(0, 10);
   return buildUrlSetXml([
     {
-      loc: `${SITE_URL}/locations.kml`,
+      loc: `${siteUrl}/locations.kml`,
       lastmod: today,
     },
   ]);
 }
 
-export function buildLocationsKml(): string {
+export function buildLocationsKml(siteUrl: string): string {
   const lat = 33.547046;
   const lng = -112.046049;
   const placemarkName = `${COMPANY.brandName}`;
@@ -287,13 +306,13 @@ export function buildLocationsKml(): string {
 \t\t<name>Locations for ${escapeXml(placemarkName)}</name>
 \t\t<open>1</open>
 \t\t<Folder>
-\t\t\t<atom:link href="${escapeXml(SITE_URL)}" />
+\t\t\t<atom:link href="${escapeXml(siteUrl)}" />
 \t\t\t<Placemark>
 \t\t\t\t<name><![CDATA[${placemarkName}]]></name>
 \t\t\t\t<description><![CDATA[${placemarkDescription}]]></description>
 \t\t\t\t<address><![CDATA[${placemarkAddress}]]></address>
 \t\t\t\t<phoneNumber><![CDATA[${COMPANY.phoneDisplay}]]></phoneNumber>
-\t\t\t\t<atom:link href="${escapeXml(SITE_URL)}"/>
+\t\t\t\t<atom:link href="${escapeXml(siteUrl)}"/>
 \t\t\t\t<LookAt>
 \t\t\t\t\t<latitude>${lat}</latitude>
 \t\t\t\t\t<longitude>${lng}</longitude>

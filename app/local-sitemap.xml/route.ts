@@ -1,7 +1,10 @@
-import { buildLocalSitemapXml, xmlResponse } from "@/lib/sitemap";
+import {
+  buildLocalSitemapXml,
+  resolveSiteUrl,
+  xmlResponse,
+} from "@/lib/sitemap";
 
-export const dynamic = "force-static";
-
-export function GET() {
-  return xmlResponse(buildLocalSitemapXml());
+export function GET(request: Request) {
+  const siteUrl = resolveSiteUrl(request);
+  return xmlResponse(buildLocalSitemapXml(siteUrl));
 }

@@ -202,13 +202,15 @@ if (categoryPaths.has("/fha-loans")) fail("redirect /fha-loans in categories");
 ok("excluded redirect/duplicate paths absent");
 
 const requiredRoutes = [
-  "app/sitemap_index.xml/route.ts",
+  "app/sitemap.xml/route.ts",
   "app/page-sitemap.xml/route.ts",
   "app/post-sitemap.xml/route.ts",
   "app/category-sitemap.xml/route.ts",
   "app/author-sitemap.xml/route.ts",
   "app/local-sitemap.xml/route.ts",
   "app/locations.kml/route.ts",
+  "app/main-sitemap.xsl/route.ts",
+  "app/robots.txt/route.ts",
   "lib/sitemap.ts",
 ];
 for (const file of requiredRoutes) {
@@ -216,14 +218,14 @@ for (const file of requiredRoutes) {
 }
 ok("all sitemap route files present");
 
-const robots = readFileSync(join(root, "public/robots.txt"), "utf8");
-if (!robots.includes("Sitemap: https://azmortgagebrothers.com/sitemap_index.xml")) {
-  fail("robots.txt missing Sitemap directive");
+const robotsRoute = readFileSync(join(root, "app/robots.txt/route.ts"), "utf8");
+if (!robotsRoute.includes("Sitemap: ${siteUrl}/sitemap.xml")) {
+  fail("robots.txt route missing host-aware Sitemap directive");
 }
-if (/Disallow:\s*\/author/.test(robots)) {
+if (/Disallow:\s*\/author/.test(robotsRoute)) {
   fail("robots.txt still disallows /author");
 }
-ok("robots.txt points at sitemap_index and allows authors");
+ok("robots.txt route points at sitemap.xml and allows all");
 
 if (process.exitCode) {
   console.error("\nSitemap validation failed.");
