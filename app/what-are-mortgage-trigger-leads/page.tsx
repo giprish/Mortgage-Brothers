@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import ArticleHero from "../component/ArticleHero";
 
 const relatedLinks = [
   { label: "When is a mortgage payment actually considered late?", href: "/when-is-a-mortgage-payment-actually-considered-late/" },
@@ -112,36 +113,19 @@ export default function MortgageTriggerLeadsPage() {
 
       <main className="flex-grow relative z-0">
         {/* Featured hero image */}
-        <section className="relative z-0 w-full bg-white overflow-hidden">
-          <div className="w-[90%] max-w-[1520px] mx-auto px-0 py-3 lg:py-5">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/home/what-are-mortgage-trigger-leads.webp"
-              alt="Mortgage trigger leads explained—why lenders call after a credit inquiry."
-              width={1920}
-              height={1080}
-              className="relative z-0 w-full h-auto block max-w-full rounded-md lg:rounded-lg"
-            />
-          </div>
-        </section>
+        <ArticleHero
+          title={<>What Are Mortgage Trigger Leads? Why Are Strangers Calling Your phone?</>}
+          excerpt="Learn what mortgage trigger leads are, why strangers call after you apply, and how to stop unwanted calls and mail with Do Not Call and DMA Choice."
+          category="Mortgage Basics"
+          categoryHref="/mortgage-basics/"
+          dateLabel="Feb 3, 2025"
+          readTime="6 min read"
+        />
 
         {/* Article + sidebar */}
         <section className="relative z-0 w-full py-12 lg:py-16 bg-[#fcf9f3]">
           <div className="w-[90%] max-w-[1520px] mx-auto px-0 sm:px-2 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
             <article className="min-w-0">
-              <h1
-                className="text-brand-green-deep text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.1] mb-3"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                What Are Mortgage Trigger Leads? Why Are Strangers Calling Your phone?
-              </h1>
-              <p className="text-[#8a9a7a] text-[14px] mb-8">
-                by{" "}
-                <Link href="/about-us/" className="text-[#3fb364] hover:underline font-medium">
-                  Eddie Knoell
-                </Link>{" "}
-                | Feb 3, 2025
-              </p>
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-8">
                 Today we&apos;re talking about trigger leads. We&apos;re going to cover what they are and how

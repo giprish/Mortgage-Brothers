@@ -4,7 +4,7 @@ import React, { useState, useMemo } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
-import { getArticleImage } from "@/lib/article-images";
+import ArticleCard from "../component/ArticleCard";
 
 // Detailed Resource Articles list matching the screenshots
 const articlesData = [
@@ -188,10 +188,6 @@ export default function BlogPage() {
     return featured || filteredArticles[0] || null;
   }, [filteredArticles]);
 
-  const featuredImage = featuredArticle
-    ? getArticleImage(featuredArticle.href)
-    : null;
-
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
@@ -260,74 +256,36 @@ export default function BlogPage() {
           </div>
         </section>
 
-        {/* Featured Article Section */}
+        {/* Featured Article Section — text-only card */}
         {featuredArticle && (
           <section className="w-full px-6 mb-16">
-            <div className="max-w-5xl mx-auto bg-white rounded-3xl border border-[#e8e0d0]/60 shadow-lg overflow-hidden grid grid-cols-1 md:grid-cols-2 hover:shadow-xl transition-all duration-300">
-              
-              {/* Featured article image (or decorative fallback) */}
-              {featuredImage ? (
-                <div className="h-56 md:h-auto relative min-h-[220px] overflow-hidden">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={featuredImage}
-                    alt=""
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                  <span className="absolute bottom-6 left-6 bg-[#103020]/90 border border-[#205030] text-[#3fb364] text-[10px] font-bold px-3 py-1.5 rounded-lg uppercase tracking-wider w-fit z-10">
+            <div className="max-w-5xl mx-auto">
+              <Link
+                href={featuredArticle.href || "/how-to-sell-my-house-fast-in-arizona/"}
+                className="group block bg-white rounded-2xl border border-[#e8e0d0]/70 shadow-sm hover:shadow-md transition-all duration-300 p-7 sm:p-9"
+              >
+                <div className="flex items-center gap-2.5 mb-4">
+                  <span className="block w-5 h-[2px] bg-[#3fb364] shrink-0" aria-hidden />
+                  <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.14em] uppercase">
                     {featuredArticle.category}
                   </span>
                 </div>
-              ) : (
-                <div className="h-56 md:h-auto bg-[#052316] relative flex flex-col justify-between p-8 overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#0b2f1f] to-[#052316] opacity-90"></div>
-                  <div className="absolute inset-0 opacity-15 scale-110" style={{ backgroundImage: "repeating-linear-gradient(45deg, #3fb364 0px, #3fb364 10px, transparent 10px, transparent 20px)" }}></div>
-                  <span className="text-[#c8c8b8] text-[9.5px] font-bold uppercase tracking-wider block relative z-10">
-                    FEATURED · DROP IMAGE
-                  </span>
-                  <span className="bg-[#103020]/90 border border-[#205030] text-[#3fb364] text-[10px] font-bold px-3 py-1.5 rounded-lg uppercase tracking-wider block w-fit relative z-10">
-                    {featuredArticle.category}
-                  </span>
-                </div>
-              )}
-
-              {/* Right Content Details */}
-              <div className="p-8 flex flex-col justify-between gap-6">
-                <div>
-                  <span className="text-brand-text-muted text-[12px] block mb-2">
+                <h2 className="text-[#052316] text-[24px] lg:text-[30px] font-playfair font-bold leading-snug mb-3 group-hover:text-[#3fb364] transition-colors">
+                  {featuredArticle.title}
+                </h2>
+                <p className="text-[#5a675a] text-[15px] leading-[1.7] mb-6 max-w-3xl">
+                  {featuredArticle.description}
+                </p>
+                <div className="pt-4 border-t border-[#ebe4d6] flex items-center justify-between gap-3">
+                  <span className="text-[12px] text-[#8a9a7a]">
                     {featuredArticle.date} · {featuredArticle.readTime}
                   </span>
-                  <Link href={featuredArticle.href || "/how-to-sell-my-house-fast-in-arizona/"}>
-                    <h2 className="text-[#052316] text-[24px] lg:text-[28px] font-playfair font-normal leading-tight mb-3 hover:text-[#3fb364] transition-colors cursor-pointer">
-                      {featuredArticle.title}
-                    </h2>
-                  </Link>
-                  <p className="text-[#4e5b4e] text-[14px] leading-relaxed">
-                    {featuredArticle.description}
-                  </p>
+                  <span className="text-[#3fb364] text-[13.5px] font-bold inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">
+                    Read
+                    <span aria-hidden>→</span>
+                  </span>
                 </div>
-
-                <Link
-                  href={featuredArticle.href || "/how-to-sell-my-house-fast-in-arizona/"}
-                  className="text-[#3fb364] hover:text-[#2d5a2d] text-[14px] font-bold flex items-center gap-1.5 transition-colors group w-fit"
-                >
-                  Read the guide
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    className="group-hover:translate-x-0.5 transition-transform duration-200"
-                  >
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
-                  </svg>
-                </Link>
-              </div>
-
+              </Link>
             </div>
           </section>
         )}
@@ -348,61 +306,18 @@ export default function BlogPage() {
                 <p className="text-[#4e5b4e] text-[15px]">No articles found in this category.</p>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredArticles.map((art) => {
-                  const imageSrc = getArticleImage(art.href);
-                  return (
-                    <div
-                      key={art.id}
-                      className="bg-white rounded-2xl border border-[#e8e0d0]/60 shadow-sm overflow-hidden flex flex-col justify-between hover:-translate-y-1 hover:scale-[1.01] hover:shadow-lg transition-all duration-300 min-h-[360px]"
-                    >
-                      <div>
-                        {/* Article thumbnail */}
-                        <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#f5f0e8]">
-                          {imageSrc ? (
-                            <>
-                              {/* eslint-disable-next-line @next/next/no-img-element */}
-                              <img
-                                src={imageSrc}
-                                alt=""
-                                className="absolute inset-0 h-full w-full object-cover"
-                              />
-                            </>
-                          ) : (
-                            <div
-                              className="absolute inset-0 opacity-15"
-                              style={{
-                                backgroundImage:
-                                  "repeating-linear-gradient(45deg, #a89a70 0px, #a89a70 8px, transparent 8px, transparent 16px)",
-                              }}
-                            />
-                          )}
-                          <span className="absolute bottom-3 left-3 text-[10px] font-bold uppercase tracking-wider text-[#3fb364] bg-white border border-[#e8dcc6]/60 px-2.5 py-1 rounded z-10">
-                            {art.category}
-                          </span>
-                        </div>
-
-                        {/* Content block */}
-                        <div className="p-6">
-                          <Link href={art.href || "/how-to-sell-my-house-fast-in-arizona/"}>
-                            <h3 className="text-[#052316] text-[17px] font-playfair font-normal leading-snug mb-2.5 hover:text-[#3fb364] transition-colors cursor-pointer">
-                              {art.title}
-                            </h3>
-                          </Link>
-                          <p className="text-[#4e5b4e] text-[13px] leading-relaxed line-clamp-3">
-                            {art.description}
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Footer strip */}
-                      <div className="px-6 pb-6 pt-4 border-t border-[#e8e0d0]/30 flex items-center justify-between text-[11.5px] text-[#8a9a7a]">
-                        <span>{art.date}</span>
-                        <span>{art.readTime}</span>
-                      </div>
-                    </div>
-                  );
-                })}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                {filteredArticles.map((art) => (
+                  <ArticleCard
+                    key={art.id}
+                    title={art.title}
+                    description={art.description}
+                    href={art.href || "/how-to-sell-my-house-fast-in-arizona/"}
+                    category={art.category}
+                    date={art.date}
+                    readTime={art.readTime}
+                  />
+                ))}
               </div>
             )}
           </div>

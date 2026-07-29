@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import ArticleHero from "../component/ArticleHero";
 
 const relatedLinks = [
   {
@@ -139,36 +140,18 @@ export default function ExpectYoureNotFirstTimeMortgageShopperPage() {
       <div className="h-[72px] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
-        <section className="relative z-0 w-full bg-white overflow-hidden">
-          <div className="w-[90%] max-w-[1520px] mx-auto px-0 py-3 lg:py-5">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/home/not-a-first-time-mortgage-shopper.jpg"
-              alt="Insights for experienced mortgage shoppers navigating the home financing process."
-              width={1920}
-              height={1080}
-              className="relative z-0 w-full h-auto block max-w-full rounded-md lg:rounded-lg"
-            />
-          </div>
-        </section>
+        <ArticleHero
+          title={<>What to Expect When You&apos;re Not a First Time Mortgage Shopper</>}
+          excerpt="What experienced Phoenix homebuyers need to know about online lenders, choosing a broker, pre-approval, rate locks, and closing."
+          category="Mortgage Basics"
+          categoryHref="/mortgage-basics/"
+          dateLabel="Feb 11, 2025"
+          readTime="14 min read"
+        />
 
         <section className="relative z-0 w-full py-12 lg:py-16 bg-[#fcf9f3]">
           <div className="w-[90%] max-w-[1520px] mx-auto px-0 sm:px-2 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
             <article className="min-w-0">
-              <h1
-                className="text-brand-green-deep text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.1] mb-3"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                What to Expect When You&apos;re Not a First Time Mortgage Shopper
-              </h1>
-
-              <p className="text-[#8a9a7a] text-[14px] mb-8">
-                by{" "}
-                <Link href="/about-us/" className="text-[#3fb364] hover:underline font-medium">
-                  Eddie Knoell
-                </Link>{" "}
-                | Feb 11, 2025
-              </p>
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-5">
                 When you&apos;re moving to Phoenix, or moving up to a new home within the area, one of the

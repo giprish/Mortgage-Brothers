@@ -6,7 +6,7 @@ import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import { COMPANY, LOAN_OFFICERS } from "@/lib/company";
 import eddiePosts from "@/lib/eddie-knoell-posts.json";
-import { getArticleImage } from "@/lib/article-images";
+import ArticleCard from "../../component/ArticleCard";
 
 const PER_PAGE = 9;
 
@@ -119,55 +119,17 @@ export default function EddieKnoellAuthorPage() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-              {pagePosts.map((post) => {
-                const imageSrc = getArticleImage(post.href);
-                return (
-                <article
+              {pagePosts.map((post) => (
+                <ArticleCard
                   key={post.href}
-                  className="bg-white border border-[#e8e0d0]/70 rounded-2xl overflow-hidden flex flex-col shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div className="h-40 w-full overflow-hidden bg-[#f2eee3]">
-                    {imageSrc ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img
-                        src={imageSrc}
-                        alt={post.title}
-                        className="h-40 w-full object-cover"
-                      />
-                    ) : (
-                      <div className="h-40 w-full bg-gradient-to-br from-[#f2eee3] to-[#e8f5e9]" />
-                    )}
-                  </div>
-                  <div className="p-6 flex flex-col flex-grow">
-                  <p className="text-[#8a9a7a] text-[12px] mb-3">{post.date}</p>
-                  <h3
-                    className="text-[#052316] text-[20px] font-normal leading-snug mb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    <Link
-                      href={post.href}
-                      className="hover:text-[#3fb364] transition-colors"
-                    >
-                      {post.title}
-                    </Link>
-                  </h3>
-                  <p className="text-[#4e5b4e] text-[14px] leading-relaxed mb-5 flex-grow">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-center justify-between gap-3 pt-3 border-t border-[#e8e0d0]/60">
-                    <span className="text-[#8a9a7a] text-[13px]">Eddie Knoell</span>
-                    <Link
-                      href={post.href}
-                      className="text-[#3fb364] hover:text-[#2d5a2d] text-[13px] font-bold inline-flex items-center gap-1"
-                    >
-                      Read more
-                      <span aria-hidden>→</span>
-                    </Link>
-                  </div>
-                  </div>
-                </article>
-              );
-              })}
+                  title={post.title}
+                  description={post.excerpt}
+                  href={post.href}
+                  category="Resources"
+                  date={post.date}
+                  readTime="Eddie Knoell"
+                />
+              ))}
             </div>
 
             {totalPages > 1 && (

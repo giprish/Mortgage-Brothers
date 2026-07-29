@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import ArticleHero from "../component/ArticleHero";
 
 const loanSolutions = [
   { label: "Conventional Home Loans", href: "/conventional-home-loans-arizona/" },
@@ -48,37 +49,19 @@ export default function TheBrokerAdvantagePage() {
 
       <main className="flex-grow relative z-0">
         {/* Featured hero — full 16:9 image, no crop (matches live) */}
-        <section className="relative z-0 w-full bg-white overflow-hidden">
-          <div className="w-[90%] max-w-[1520px] mx-auto px-0 py-3 lg:py-5">
-            <Image
-              src="/home/mortgage-broker-vs-banker.jpg"
-              alt="Mortgage Broker vs Banker — The Mortgage Brothers Team"
-              width={1920}
-              height={1080}
-              priority
-              className="relative z-0 w-full h-auto block max-w-full rounded-md lg:rounded-lg"
-              sizes="(max-width: 1520px) 90vw, 1520px"
-            />
-          </div>
-        </section>
+        <ArticleHero
+          title={<>The Broker Advantage</>}
+          excerpt="Understanding the advantages of using a mortgage broker instead of a mortgage banker can make a world of difference when you are financing a new home."
+          category="Mortgage Basics"
+          categoryHref="/mortgage-basics/"
+          dateLabel="Feb 10, 2025"
+          readTime="3 min read"
+        />
 
         {/* Article + sidebar */}
         <section className="relative z-0 w-full py-12 lg:py-16 bg-[#fcf9f3]">
           <div className="w-[90%] max-w-[1520px] mx-auto px-0 sm:px-2 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
             <article className="min-w-0">
-              <h1
-                className="text-brand-green-deep text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.1] mb-3"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                The Broker Advantage
-              </h1>
-              <p className="text-[#8a9a7a] text-[14px] mb-8">
-                by{" "}
-                <Link href="/about-us/" className="text-[#3fb364] hover:underline font-medium">
-                  Eddie Knoell
-                </Link>{" "}
-                | Feb 10, 2025
-              </p>
 
               <div className="space-y-5 text-[#3a4a3a] text-[16px] leading-[1.8]">
                 <p>

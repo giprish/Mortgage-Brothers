@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import ArticleHero from "../component/ArticleHero";
 
 const relatedLinks = [
   { label: "When is a mortgage payment actually considered late?", href: "/when-is-a-mortgage-payment-actually-considered-late/" },
@@ -103,32 +104,18 @@ export default function MortgagePayoffPage() {
       <div className="h-[72px] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
-        <section className="relative z-0 w-full bg-white overflow-hidden">
-          <div className="w-[90%] max-w-[1520px] mx-auto px-0 py-3 lg:py-5">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/home/why-is-my-mortgage-payoff-higher-than-my-mortgage-statement-balance.jpg"
-              alt="Explanation of why a mortgage payoff amount is higher than the statement balance."
-              width={1920}
-              height={1080}
-              className="relative z-0 w-full h-auto block max-w-full rounded-md lg:rounded-lg"
-            />
-          </div>
-        </section>
+        <ArticleHero
+          title={<>Why Is My Mortgage Payoff Higher Than My Mortgage Statement Balance?</>}
+          excerpt="Understand why mortgage payoff amounts can exceed statement balances, including daily accrued interest, payoff timing, and closing date impacts."
+          category="Mortgage Basics"
+          categoryHref="/mortgage-basics/"
+          dateLabel="Feb 3, 2025"
+          readTime="7 min read"
+        />
 
         <section className="relative z-0 w-full py-12 lg:py-16 bg-[#fcf9f3]">
           <div className="w-[90%] max-w-[1520px] mx-auto px-0 sm:px-2 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
             <article className="min-w-0">
-              <h1 className="text-brand-green-deep text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.1] mb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
-                Why Is My Mortgage Payoff Higher Than My Mortgage Statement Balance?
-              </h1>
-              <p className="text-[#8a9a7a] text-[14px] mb-8">
-                by{" "}
-                <Link href="/about-us/" className="text-[#3fb364] hover:underline font-medium">
-                  Eddie Knoell
-                </Link>{" "}
-                | Feb 3, 2025
-              </p>
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-8">
                 Many borrowers are surprised when payoff is higher than the latest statement balance. The short answer is accrued daily interest and payoff timing, not lender markup.

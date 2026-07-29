@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import ArticleHero from "../component/ArticleHero";
 
 const relatedLinks = [
   {
@@ -123,35 +124,18 @@ export default function ArizonaRealEstateTrends2026Page() {
       <div className="h-[72px] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
-      <section className="relative z-0 w-full bg-white overflow-hidden">
-  <div className="w-[90%] max-w-[1520px] mx-auto px-0 py-3 lg:py-5">
-    <img
-      src="/home/Arizona-Real-Estate-Trends.webp"
-      alt="Arizona Real Estate Trends in 2026: Predicting Mortgage Rates for the Coming Year"
-      width={1920}
-      height={1080}
-      className="w-full h-[350px] sm:h-[450px] lg:h-[600px] object-cover rounded-lg"
-    />
-  </div>
-</section>
+        <ArticleHero
+          title={<>Arizona Real Estate Trends in 2026: Predicting Mortgage Rates for the Coming Year</>}
+          excerpt="Market analysis on 2026 Phoenix mortgage rate forecasts, housing inventory recovery, and home appreciation trends."
+          category="Real Estate & Mortgages"
+          categoryHref="/real-estate-mortgages/"
+          dateLabel="May 5, 2026"
+          readTime="10 min read"
+        />
 
         <section className="relative z-0 w-full py-12 lg:py-16 bg-[#fcf9f3]">
           <div className="w-[90%] max-w-[1520px] mx-auto px-0 sm:px-2 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
             <article className="min-w-0">
-              <h1
-                className="text-brand-green-deep text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.1] mb-3"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                Arizona Real Estate Trends in 2026: Predicting Mortgage Rates for the Coming Year
-              </h1>
-
-              <p className="text-[#8a9a7a] text-[14px] mb-8">
-                by{" "}
-                <Link href="/about-us/" className="text-[#3fb364] hover:underline font-medium">
-                  Eddie Knoell
-                </Link>{" "}
-                | Sep 26, 2025
-              </p>
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-5">
                 If you&apos;ve been watching Arizona&apos;s housing market over the past few years, you know

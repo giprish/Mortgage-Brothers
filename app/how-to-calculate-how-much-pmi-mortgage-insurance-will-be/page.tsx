@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import ArticleHero from "../component/ArticleHero";
 
 const pmiFactors = [
   "Down payment percentage (e.g., 5%, 10%, 15%)",
@@ -77,36 +78,19 @@ export default function PmiMortgageInsurancePage() {
 
       <main className="flex-grow relative z-0">
         {/* Featured hero image */}
-        <section className="relative z-0 w-full bg-white overflow-hidden">
-          <div className="w-[90%] max-w-[1520px] mx-auto px-0 py-3 lg:py-5">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/home/calculate-pmi-mortgage-insurance.jpg"
-              alt="Learn how to estimate your PMI mortgage insurance costs in Arizona"
-              width={1920}
-              height={1080}
-              className="relative z-0 w-full h-auto block max-w-full rounded-md lg:rounded-lg"
-            />
-          </div>
-        </section>
+        <ArticleHero
+          title={<>How to Calculate How Much PMI Mortgage Insurance Will Be</>}
+          excerpt="Learn how PMI is calculated, when it’s required, and how to remove it — with a real Radian quote example."
+          category="Mortgage Basics"
+          categoryHref="/mortgage-basics/"
+          dateLabel="Dec 30, 2024"
+          readTime="8 min read"
+        />
 
         {/* Article + sidebar */}
         <section className="relative z-0 w-full py-12 lg:py-16 bg-[#fcf9f3]">
           <div className="w-[90%] max-w-[1520px] mx-auto px-0 sm:px-2 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
             <article className="min-w-0">
-              <h1
-                className="text-brand-green-deep text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.1] mb-3"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                How to Calculate How Much PMI Mortgage Insurance Will Be
-              </h1>
-              <p className="text-[#8a9a7a] text-[14px] mb-8">
-                by{" "}
-                <Link href="/about-us/" className="text-[#3fb364] hover:underline font-medium">
-                  Eddie Knoell
-                </Link>{" "}
-                | Dec 30, 2024
-              </p>
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-8">
                 In this episode, we&apos;re talking about PMI. PMI stands for Private Mortgage Insurance.

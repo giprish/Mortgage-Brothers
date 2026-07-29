@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import ArticleHero from "../component/ArticleHero";
 
 const relatedLinks = [
   {
@@ -123,36 +124,18 @@ export default function FairOrImprovingCreditPage() {
       <div className="h-[72px] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
-        <section className="relative z-0 w-full bg-white overflow-hidden">
-          <div className="w-[90%] max-w-[1520px] mx-auto px-0 py-3 lg:py-5">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/home/how-to-get-a-mortgage-in-arizona-with-fair-or-improving-credit.webp"
-              alt="How to get a mortgage in Arizona with fair or improving credit"
-              width={1920}
-              height={1080}
-              className="relative z-0 w-full h-auto block max-w-full rounded-md lg:rounded-lg"
-            />
-          </div>
-        </section>
+        <ArticleHero
+          title={<>How to Get a Mortgage in Arizona with Fair or Improving Credit</>}
+          excerpt="Learn how buyers with credit scores between 580 and 660 qualify for home loans in Arizona with FHA programs and rapid rescoring."
+          category="Arizona Mortgage Insights"
+          categoryHref="/arizona-mortgage-insights/"
+          dateLabel="Jun 10, 2026"
+          readTime="7 min read"
+        />
 
         <section className="relative z-0 w-full py-12 lg:py-16 bg-[#fcf9f3]">
           <div className="w-[90%] max-w-[1520px] mx-auto px-0 sm:px-2 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
             <article className="min-w-0">
-              <h1
-                className="text-brand-green-deep text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.1] mb-3"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                How to Get a Mortgage in Arizona with Fair or Improving Credit
-              </h1>
-
-              <p className="text-[#8a9a7a] text-[14px] mb-8">
-                by{" "}
-                <Link href="/about-us/" className="text-[#3fb364] hover:underline font-medium">
-                  Eddie Knoell
-                </Link>{" "}
-                | Oct 28, 2025
-              </p>
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-5">
                 You&apos;ve been dreaming of owning a home in Arizona — maybe a starter home in Mesa, a family

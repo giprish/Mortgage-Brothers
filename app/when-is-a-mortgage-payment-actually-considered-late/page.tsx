@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import ArticleHero from "../component/ArticleHero";
 
 const relatedLinks = [
   {
@@ -123,36 +124,18 @@ export default function WhenIsAMortgagePaymentActuallyConsideredLatePage() {
       <div className="h-[72px] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
-        <section className="relative z-0 w-full bg-white overflow-hidden">
-          <div className="w-[90%] max-w-[1520px] mx-auto px-0 py-3 lg:py-5">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/home/when-mortgage-payment-considered-late.jpg"
-              alt="Understand when a mortgage payment is officially considered late in Arizona"
-              width={1920}
-              height={1080}
-              className="relative z-0 w-full h-auto block max-w-full rounded-md lg:rounded-lg"
-            />
-          </div>
-        </section>
+        <ArticleHero
+          title={<>When is a mortgage payment actually considered late?</>}
+          excerpt="Learn when lenders vs. credit bureaus consider a mortgage payment late, grace periods, 5% late fees, and 30-day credit reporting."
+          category="Mortgage Basics"
+          categoryHref="/mortgage-basics/"
+          dateLabel="Dec 29, 2024"
+          readTime="8 min read"
+        />
 
         <section className="relative z-0 w-full py-12 lg:py-16 bg-[#fcf9f3]">
           <div className="w-[90%] max-w-[1520px] mx-auto px-0 sm:px-2 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
             <article className="min-w-0">
-              <h1
-                className="text-brand-green-deep text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.1] mb-3"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                When is a mortgage payment actually considered late?
-              </h1>
-
-              <p className="text-[#8a9a7a] text-[14px] mb-8">
-                by{" "}
-                <Link href="/about-us/" className="text-[#3fb364] hover:underline font-medium">
-                  Eddie Knoell
-                </Link>{" "}
-                | Dec 29, 2024
-              </p>
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-5">
                 So, the short answer is that every mortgage is due on the first of the month. Now, where it gets

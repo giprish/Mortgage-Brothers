@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import ArticleHero from "../component/ArticleHero";
 
 const relatedLinks = [
   {
@@ -115,36 +116,18 @@ export default function FhaFlipRuleWaiverExpiredPage() {
       <div className="h-[72px] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
-        <section className="relative z-0 w-full bg-white overflow-hidden">
-          <div className="w-[90%] max-w-[1520px] mx-auto px-0 py-3 lg:py-5">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/home/fha-flip-waiver-expired-90-days.jpg"
-              alt="The FHA flip rule waiver has expired, requiring a 90-day waiting period before reselling."
-              width={1920}
-              height={1080}
-              className="relative z-0 w-full h-auto block max-w-full rounded-md lg:rounded-lg"
-            />
-          </div>
-        </section>
+        <ArticleHero
+          title={<>FHA Flip Rule Waiver Expired – You need to wait 90 days to write a contract</>}
+          excerpt="Homes owned less than 90 days are not eligible for FHA financing after the flip-rule waiver expired—contracts cannot be written before 90 days."
+          category="Mortgage Payments & Strategies"
+          categoryHref="/mortgage-payments-strategies/"
+          dateLabel="Feb 4, 2025"
+          readTime="5 min read"
+        />
 
         <section className="relative z-0 w-full py-12 lg:py-16 bg-[#fcf9f3]">
           <div className="w-[90%] max-w-[1520px] mx-auto px-0 sm:px-2 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
             <article className="min-w-0">
-              <h1
-                className="text-brand-green-deep text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.1] mb-3"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                FHA Flip Rule Waiver Expired – You need to wait 90 days to write a contract
-              </h1>
-
-              <p className="text-[#8a9a7a] text-[14px] mb-8">
-                by{" "}
-                <Link href="/about-us/" className="text-[#3fb364] hover:underline font-medium">
-                  Eddie Knoell
-                </Link>{" "}
-                | Feb 4, 2025
-              </p>
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
                 Are you a buyer getting FHA financing? Make sure to check whether the home you are interested

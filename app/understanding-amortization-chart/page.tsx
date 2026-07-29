@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import ArticleHero from "../component/ArticleHero";
 
 const relatedLinks = [
   { label: "When is a mortgage payment actually considered late?", href: "/when-is-a-mortgage-payment-actually-considered-late/" },
@@ -68,36 +69,19 @@ export default function UnderstandingAmortizationChartPage() {
 
       <main className="flex-grow relative z-0">
         {/* Featured hero image */}
-        <section className="relative z-0 w-full bg-white overflow-hidden">
-          <div className="w-[90%] max-w-[1520px] mx-auto px-0 py-3 lg:py-5">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/home/understanding-an-amortization-schedule.webp"
-              alt="Amortization schedule breakdown showing principal and interest payments over time."
-              width={1920}
-              height={1080}
-              className="relative z-0 w-full h-auto block max-w-full rounded-md lg:rounded-lg"
-            />
-          </div>
-        </section>
+        <ArticleHero
+          title={<>Understanding An Amortization Schedule</>}
+          excerpt="Learn how a mortgage amortization schedule works, how principal and interest change over time, and how extra payments can shorten your loan."
+          category="Mortgage Basics"
+          categoryHref="/mortgage-basics/"
+          dateLabel="Feb 3, 2025"
+          readTime="7 min read"
+        />
 
         {/* Article + sidebar */}
         <section className="relative z-0 w-full py-12 lg:py-16 bg-[#fcf9f3]">
           <div className="w-[90%] max-w-[1520px] mx-auto px-0 sm:px-2 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
             <article className="min-w-0">
-              <h1
-                className="text-brand-green-deep text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.1] mb-3"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                Understanding An Amortization Schedule
-              </h1>
-              <p className="text-[#8a9a7a] text-[14px] mb-8">
-                by{" "}
-                <Link href="/about-us/" className="text-[#3fb364] hover:underline font-medium">
-                  Eddie Knoell
-                </Link>{" "}
-                | Feb 3, 2025
-              </p>
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-8">
                 If you are looking for Amortization Calculators to graph principal and interest payments,

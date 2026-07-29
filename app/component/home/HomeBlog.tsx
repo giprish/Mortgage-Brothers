@@ -1,28 +1,34 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
+import ArticleCard from "../ArticleCard";
 
 const articles = [
   {
     title: "The Complete Arizona Guide to Selling Your Home for Cash (2026)",
     excerpt:
       "A cash home sale is a transaction in which a buyer purchases your house outright, without a mortgage. With no lender, appraisal contingency, or loan underwriting in the way, these sales can close in roughly 7–14 days instead of the 30–60 days a financed sale typically takes.",
-    image: "/home/blog-cash.webp",
     href: "/how-to-sell-my-house-fast-in-arizona/",
+    category: "Pillar Post",
+    date: "Jun 25, 2026",
+    readTime: "33 min read",
   },
   {
     title: "Top 7 Reasons Arizona Investment Home Buyers Choose Private Money Lenders",
     excerpt:
       "In Arizona's fast-moving real estate market, timing is everything. Whether you're acquiring a rental property or flipping a home, private money loans offer speed and flexibility that traditional lenders can't match.",
-    image: "/home/blog-private.png",
     href: "/top-7-reasons-arizona-investment-home-buyers-choose-private-money-lenders/",
+    category: "Arizona Mortgage Insights",
+    date: "Jun 15, 2026",
+    readTime: "8 min read",
   },
   {
     title: "How to Get a Mortgage in Arizona with Fair or Improving Credit",
     excerpt:
       "You've been dreaming of owning a home in Arizona — maybe a starter home in Mesa, a family house in Gilbert, or a desert getaway in Tucson. Here's the truth: you don't need perfect credit to qualify.",
-    image: "/home/blog-credit.webp",
     href: "/how-to-get-a-mortgage-in-arizona-with-fair-or-improving-credit/",
+    category: "Arizona Mortgage Insights",
+    date: "Jun 10, 2026",
+    readTime: "7 min read",
   },
 ];
 
@@ -47,40 +53,17 @@ const HomeBlog = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-7">
           {articles.map((article) => (
-            <Link
+            <ArticleCard
               key={article.href}
+              title={article.title}
+              description={article.excerpt}
               href={article.href}
-              className="group bg-white border border-[#e8e0d0]/60 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
-            >
-              <div className="relative w-full h-[190px] overflow-hidden bg-[#08271B]">
-                <Image
-                  src={article.image}
-                  alt={article.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-              <div className="p-6 flex flex-col flex-1">
-                <h3
-                  className="text-[#08271B] text-[17px] font-semibold leading-snug mb-3 group-hover:text-[#3fb364] transition-colors duration-200"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-                >
-                  {article.title}
-                </h3>
-                <p className="text-[#4e5b4e] text-[13.5px] leading-relaxed mb-5 line-clamp-4">
-                  {article.excerpt}
-                </p>
-                <span className="inline-flex items-center gap-1.5 text-[#3fb364] text-[13px] font-semibold mt-auto">
-                  Read More
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M9 5l7 7-7 7" />
-                  </svg>
-                </span>
-              </div>
-            </Link>
+              category={article.category}
+              date={article.date}
+              readTime={article.readTime}
+            />
           ))}
         </div>
 

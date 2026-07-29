@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
-import { getArticleImage } from "@/lib/article-images";
+import ArticleCard from "../component/ArticleCard";
 
 const articles = [
   {
@@ -183,88 +183,46 @@ export default function MortgageBasicsPage() {
       <Navbar />
 
       <main className="flex-grow pt-[110px] lg:pt-[130px]">
-        {/* Hero — typography matched to Areas We Serve */}
-        <section className="w-full bg-[#fcf9f3] pb-12 lg:pb-16 text-center relative overflow-hidden">
+        {/* Hero — brand deep green band */}
+        <section className="w-full bg-brand-green-deep pb-12 lg:pb-16 pt-4 lg:pt-6 text-center relative overflow-hidden">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
+            <div className="absolute -bottom-36 -left-36 w-[min(360px,90vw)] h-[360px] rounded-full border border-white/5 opacity-40" />
+            <div className="absolute -top-36 -right-36 w-[min(400px,90vw)] h-[400px] rounded-full border border-white/5 opacity-40" />
+          </div>
           <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">
             <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
               RESOURCES
             </p>
-            <h1 className="text-brand-green-deep text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.1] mb-6">
+            <h1 className="text-white text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.1] mb-6">
               Mortgage Basics
             </h1>
-            <p className="text-brand-text-muted text-[15px] lg:text-[16px] leading-[1.7] max-w-2xl mx-auto">
+            <p className="text-brand-text-light text-[15px] lg:text-[16px] leading-[1.7] max-w-2xl mx-auto">
               Explore essential mortgage terms and processes, including amortization, APR, and closing costs, for informed home financing decisions.
             </p>
           </div>
         </section>
 
-        {/* Articles Grid Section — wide row + tall thumbs matching original Divi blog grid */}
+        {/* Articles Grid Section */}
         <section className="w-full py-14 lg:py-16 px-6 lg:px-10 bg-[#fcf9f3]">
-          <div className="w-full max-w-[1520px] mx-auto">
+          <div className="w-full max-w-6xl mx-auto">
             <div className="mb-10 lg:mb-12">
               <h2 className="text-[#052316] text-[24px] lg:text-[32px] font-playfair font-normal">
                 Articles in Mortgage Basics
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-8 gap-y-12 lg:gap-x-10">
-              {articles.map((article, idx) => {
-                const imageSrc = getArticleImage(article.href);
-                return (
-                  <article
-                    key={idx}
-                    className="flex flex-col group"
-                  >
-                    <Link
-                      href={article.href}
-                      className="relative block w-full aspect-[8/5] overflow-hidden bg-[#e8e0d0] mb-5"
-                    >
-                      {imageSrc ? (
-                        // eslint-disable-next-line @next/next/no-img-element
-                        <img
-                          src={imageSrc}
-                          alt=""
-                          className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-                        />
-                      ) : (
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#f2eee3] to-[#e8f5e9]" />
-                      )}
-                    </Link>
-
-                    <h3 className="text-[#052316] text-[18px] lg:text-[20px] font-playfair font-normal leading-snug mb-2">
-                      <Link
-                        href={article.href}
-                        className="hover:text-[#3fb364] transition-colors"
-                      >
-                        {article.title}
-                      </Link>
-                    </h3>
-
-                    <p className="text-[#666] text-[13px] lg:text-[14px] mb-3">
-                      by{" "}
-                      <Link
-                        href="/author/eddie-knoell/"
-                        className="hover:text-[#3fb364] transition-colors"
-                      >
-                        Eddie Knoell
-                      </Link>
-                      {" | "}
-                      <span className="text-[#3fb364]">{article.category}</span>
-                    </p>
-
-                    <p className="text-[#4e5b4e] text-[14px] lg:text-[15px] leading-relaxed mb-4 flex-grow line-clamp-4">
-                      {article.description}
-                    </p>
-
-                    <Link
-                      href={article.href}
-                      className="text-[#3fb364] hover:text-[#2d5a2d] text-[14px] font-medium w-fit transition-colors"
-                    >
-                      read more
-                    </Link>
-                  </article>
-                );
-              })}
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
+              {articles.map((article, idx) => (
+                <ArticleCard
+                  key={idx}
+                  title={article.title}
+                  description={article.description}
+                  href={article.href}
+                  category={article.category}
+                  date={article.date}
+                  readTime={article.readTime}
+                />
+              ))}
             </div>
           </div>
         </section>
