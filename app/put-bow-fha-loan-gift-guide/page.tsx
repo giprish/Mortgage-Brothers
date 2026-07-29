@@ -148,7 +148,7 @@ export default function PutBowFhaLoanGiftGuidePage() {
           <div className="w-[90%] max-w-[1520px] mx-auto px-0 sm:px-2 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
             <article className="min-w-0">
               <h1
-                className="text-[#08271B] text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.1] mb-3"
+                className="text-brand-green-deep text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.1] mb-3"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 Put A Bow On It: FHA Loan Gift Guide

@@ -102,7 +102,7 @@ export default function SpecialtyLoansPage() {
               TOPIC CATEGORY
             </span>
 
-            <h1 className="text-white text-[36px] lg:text-[52px] font-playfair font-normal leading-[1.15] mb-6">
+            <h1 className="text-white text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.1] mb-6">
               Specialty Loans
             </h1>
 

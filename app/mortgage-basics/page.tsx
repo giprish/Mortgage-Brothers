@@ -4,7 +4,6 @@ import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
-import LoanProgramHero from "../component/LoanProgramHero";
 import { getArticleImage } from "@/lib/article-images";
 
 const articles = [
@@ -183,13 +182,21 @@ export default function MortgageBasicsPage() {
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
 
-      <main className="flex-grow">
-        <LoanProgramHero
-          title="Mortgage Basics"
-          subtitle="Explore essential mortgage terms and processes, including amortization, APR, and closing costs, for informed home financing decisions."
-          ctaLabel=""
-          note=""
-        />
+      <main className="flex-grow pt-[110px] lg:pt-[130px]">
+        {/* Hero — typography matched to Areas We Serve */}
+        <section className="w-full bg-[#fcf9f3] pb-12 lg:pb-16 text-center relative overflow-hidden">
+          <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">
+            <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
+              RESOURCES
+            </p>
+            <h1 className="text-brand-green-deep text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.1] mb-6">
+              Mortgage Basics
+            </h1>
+            <p className="text-brand-text-muted text-[15px] lg:text-[16px] leading-[1.7] max-w-2xl mx-auto">
+              Explore essential mortgage terms and processes, including amortization, APR, and closing costs, for informed home financing decisions.
+            </p>
+          </div>
+        </section>
 
         {/* Articles Grid Section — wide row + tall thumbs matching original Divi blog grid */}
         <section className="w-full py-14 lg:py-16 px-6 lg:px-10 bg-[#fcf9f3]">
