@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { COMPANY } from "./company";
 import seoMetadataJson from "./seo-metadata.json";
 
 export type SeoEntry = {
@@ -53,11 +52,10 @@ export function getSeoEntry(pathname: string): SeoEntry | undefined {
 
 export function getSeoMetadata(pathname: string): Metadata {
   const canonicalPath = toTrailingSlashPath(pathname);
-  const canonicalUrl = `${COMPANY.siteUrl}${canonicalPath}`;
 
   const metadata: Metadata = {
     alternates: {
-      canonical: canonicalUrl,
+      canonical: canonicalPath,
     },
   };
 
@@ -74,7 +72,7 @@ export function getSeoMetadata(pathname: string): Metadata {
     metadata.openGraph = {
       ...(og.title ? { title: og.title } : {}),
       ...(og.description ? { description: og.description } : {}),
-      url: canonicalUrl,
+      url: canonicalPath,
       ...(og.type
         ? { type: og.type as "website" | "article" | "profile" | "book" }
         : {}),

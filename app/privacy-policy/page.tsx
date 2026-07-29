@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Privacy Policy for Mortgage Brothers LLC — how we collect, use, and protect your information.",
   alternates: {
-    canonical: "https://azmortgagebrothers.com/privacy-policy/",
+    canonical: "/privacy-policy/",
   },
 };
 
