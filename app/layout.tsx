@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Geist, Geist_Mono } from "next/font/google";
 import { homeSeoMetadata } from "@/lib/seo";
+import { resolveSiteUrlFromHeaders } from "@/lib/site-url";
 import PreApprovalProvider from "./component/PreApprovalProvider";
 import JsonLd from "./component/JsonLd";
 import "./globals.css";
@@ -15,36 +17,41 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://azmortgagebrothers.com"),
-  ...homeSeoMetadata,
-  robots: {
-    index: false,
-    follow: false,
-  },
-  icons: {
-    icon: [
-      {
-        url: "/favicon-32x32.jpg",
-        sizes: "32x32",
-        type: "image/jpeg",
-      },
-      {
-        url: "/favicon-192x192.jpg",
-        sizes: "192x192",
-        type: "image/jpeg",
-      },
-    ],
-    apple: [
-      {
-        url: "/apple-touch-icon.jpg",
-        sizes: "180x180",
-        type: "image/jpeg",
-      },
-    ],
-    shortcut: "/favicon-32x32.jpg",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const requestHeaders = await headers();
+  const siteUrl = resolveSiteUrlFromHeaders(requestHeaders);
+
+  return {
+    metadataBase: new URL(siteUrl),
+    ...homeSeoMetadata,
+    robots: {
+      index: false,
+      follow: false,
+    },
+    icons: {
+      icon: [
+        {
+          url: "/favicon-32x32.jpg",
+          sizes: "32x32",
+          type: "image/jpeg",
+        },
+        {
+          url: "/favicon-192x192.jpg",
+          sizes: "192x192",
+          type: "image/jpeg",
+        },
+      ],
+      apple: [
+        {
+          url: "/apple-touch-icon.jpg",
+          sizes: "180x180",
+          type: "image/jpeg",
+        },
+      ],
+      shortcut: "/favicon-32x32.jpg",
+    },
+  };
+}
 
 export default function RootLayout({
   children,

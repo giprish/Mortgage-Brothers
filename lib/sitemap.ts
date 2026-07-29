@@ -1,6 +1,7 @@
 import { existsSync, readdirSync, statSync } from "fs";
 import { join, relative, sep } from "path";
 import { COMPANY } from "@/lib/company";
+import { resolveSiteUrlFromHeaders } from "@/lib/site-url";
 import {
   countyMap,
   getCountyCitiesDetails,
@@ -55,15 +56,7 @@ export type ChildSitemapName = (typeof CHILD_SITEMAPS)[number];
 
 /** Origin of the deployment actually serving this request. */
 export function resolveSiteUrl(request: Request): string {
-  const headers = request.headers;
-  const host = headers.get("x-forwarded-host") ?? headers.get("host");
-  if (!host) return FALLBACK_SITE_URL;
-  const proto =
-    headers.get("x-forwarded-proto")?.split(",")[0]?.trim() ??
-    (host.startsWith("localhost") || host.startsWith("127.0.0.1")
-      ? "http"
-      : "https");
-  return `${proto}://${host}`;
+  return resolveSiteUrlFromHeaders(request.headers);
 }
 
 function escapeXml(value: string): string {
