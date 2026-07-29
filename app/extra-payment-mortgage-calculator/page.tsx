@@ -24,7 +24,7 @@ const C = {
   danger: "#a3372b",
   dangerWash: "#faeae8",
 };
-const SERIF = '"Source Serif 4", Georgia, "Times New Roman", serif';
+const SERIF = '"Playfair Display", Georgia, serif';
 const SANS = "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
 const MONO = "'IBM Plex Mono', 'SFMono-Regular', Menlo, Consolas, monospace";
 
@@ -242,7 +242,7 @@ const TERM_OPTIONS = [30, 20, 15, 10];
 function TermSelector({ value, onChange }: { value: number; onChange: (v: number) => void }) {
   return (
     <div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 8, marginBottom: 6 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 8, marginBottom: 6 }}>
         {TERM_OPTIONS.map((t) => {
           const active = t === value;
           return (
@@ -312,7 +312,7 @@ function InsightsPanel({ groups, nextSteps }: { groups: InsightGroup[]; nextStep
     <div style={{ background: "#f7f8f5", border: `1px solid ${C.line}`, borderRadius: 10, padding: "20px 22px 22px", marginBottom: 18 }}>
       <h2 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 600, margin: "0 0 12px", color: C.ink }}>Recommendations &amp; Key Insights</h2>
       <div style={{ borderBottom: `1px solid ${C.line}`, marginBottom: 16 }} />
-      <div className="epc-insights-grid" style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 20, alignItems: "start" }}>
+      <div className="epc-insights-grid" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.3fr) minmax(0, 1fr)", gap: 20, alignItems: "start" }}>
         <div>
           {groups.map((g) => (
             <div key={g.title} style={{ marginBottom: 16 }}>
@@ -337,23 +337,23 @@ function InsightsPanel({ groups, nextSteps }: { groups: InsightGroup[]; nextStep
       </div>
       <style>{`
           /* Mobile calculator optimization */
-          @media (max-width: 760px) {
+          @media (max-width: 1023px) {
             .bmc-layout, .refi-layout, .fha-layout, .va-layout, .dti-layout,
             .ccc-layout, .epc-layout, .rvb-layout, .mac-layout, .cvf-layout, .dpc-grid {
-              grid-template-columns: 1fr !important;
+              grid-template-columns: minmax(0, 1fr) !important;
               gap: 16px !important;
             }
-            .bmc-stats, .rvb-stats { grid-template-columns: 1fr 1fr !important; }
-            .bmc-charts-row { grid-template-columns: 1fr !important; }
+            .bmc-stats, .rvb-stats { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important; }
+            .bmc-charts-row { grid-template-columns: minmax(0, 1fr) !important; }
             .bmc-sticky-panel, .rvb-sticky-panel { position: static !important; }
           }
           @media (max-width: 480px) {
-            .bmc-stats, .rvb-stats { grid-template-columns: 1fr !important; }
+            .bmc-stats, .rvb-stats { grid-template-columns: minmax(0, 1fr) !important; }
             input.dpc-input, select.dpc-input, .dpc-input {
               font-size: 16px !important;
             }
           }
-@media (max-width: 640px) { .epc-insights-grid { grid-template-columns: 1fr !important; } }`}</style>
+@media (max-width: 640px) { .epc-insights-grid { grid-template-columns: minmax(0, 1fr) !important; } }`}</style>
     </div>
   );
 }
@@ -499,7 +499,7 @@ export default function ExtraPaymentCalculator() {
             </div>
           </div>
 
-          <div className="epc-layout" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "start" }}>
+          <div className="epc-layout" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: 24, alignItems: "start" }}>
             {/* ============ INPUT COLUMN ============ */}
             <div>
               <Panel number={1} title="Loan Details">
@@ -521,7 +521,7 @@ export default function ExtraPaymentCalculator() {
               </Panel>
 
               <Panel number={2} title="Extra Payments">
-                <div style={{ display: "grid", gridTemplateColumns: "1fr", gap: 8, marginBottom: 16 }}>
+                <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr)", gap: 8, marginBottom: 16 }}>
                   <button type="button" onClick={() => applyPreset("minimal", 100, 2000, 12)}
                     style={{
                       border: `1.5px solid ${selectedPreset === "minimal" ? C.greenBright : fieldBorder}`,
@@ -593,7 +593,7 @@ export default function ExtraPaymentCalculator() {
                 boxShadow: "0 4px 18px rgba(58,125,30,0.12)",
               }}>
                 <h2 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 700, margin: "0 0 14px", color: C.greenDeep }}>Your Loan Summary</h2>
-                <div className="calc-fields-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+                <div className="calc-fields-2" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: 14 }}>
                   <StatBox label="New Payoff Date" value={fmtDate(payoffDate)} sub={monthsSaved > 0 ? `${monthsToYearsMonths(monthsSaved)} earlier` : "Same as standard schedule"} />
                   <StatBox label="Interest Savings" value={fmtMoney(interestSavings)} sub="vs. standard schedule" highlight />
                   <StatBox label="Total Savings" value={fmtMoney(totalSavings)} sub="reduced interest cost" />
@@ -620,6 +620,7 @@ export default function ExtraPaymentCalculator() {
 
               <Panel>
                 <SectionLabel>Payment Comparison</SectionLabel>
+                <div className="calc-table-scroll">
                 <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
                   <thead>
                     <tr>
@@ -638,6 +639,7 @@ export default function ExtraPaymentCalculator() {
                     ))}
                   </tbody>
                 </table>
+                </div>
               </Panel>
 
               <Panel>
@@ -680,7 +682,8 @@ export default function ExtraPaymentCalculator() {
                 <p style={{ fontSize: 11.5, color: C.inkSoft, margin: "0 0 12px" }}>
                   Same loan amount, rate, and extra payment inputs applied across all four standard terms.
                 </p>
-                <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+                <div className="calc-table-scroll">
+                <table style={{ width: "100%", minWidth: 540, borderCollapse: "collapse", fontSize: 13 }}>
                   <thead>
                     <tr>
                       {["Loan Term", "Standard Payment", "Payoff Time (Extra)", "Total Interest (Extra)", "Interest Savings"].map((h, i) => (
@@ -700,6 +703,7 @@ export default function ExtraPaymentCalculator() {
                     ))}
                   </tbody>
                 </table>
+                </div>
               </Panel>
 
               {/* Insights — last section, below all charts/tables */}
@@ -718,8 +722,8 @@ export default function ExtraPaymentCalculator() {
           </div>
         </div>
         <style>{`
-          @media (max-width: 760px) {
-            .epc-layout { grid-template-columns: 1fr !important; }
+          @media (max-width: 1023px) {
+            .epc-layout { grid-template-columns: minmax(0, 1fr) !important; }
           }
           .epc-input { transition: border-color .15s, box-shadow .15s, background .15s; }
           .epc-input:hover { border-color: #a9b59c; }

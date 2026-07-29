@@ -4,7 +4,6 @@ import React, { useMemo, useState } from "react";
 import Link from "next/link";
 
 const AZ_COUNTIES = [
-  { value: "maricopa", label: "Maricopa County", note: "Phoenix, Mesa, Chandler, Scottsdale, Tempe" },
   { value: "apache", label: "Apache County", note: "St. Johns" },
   { value: "cochise", label: "Cochise County", note: "Bisbee, Tombstone" },
   { value: "coconino", label: "Coconino County", note: "Flagstaff" },
@@ -12,6 +11,7 @@ const AZ_COUNTIES = [
   { value: "graham", label: "Graham County", note: "Safford" },
   { value: "greenlee", label: "Greenlee County", note: "Clifton" },
   { value: "lapaz", label: "La Paz County", note: "Quartzsite" },
+  { value: "maricopa", label: "Maricopa County", note: "Phoenix, Mesa, Chandler, Scottsdale, Tempe" },
   { value: "mohave", label: "Mohave County", note: "Kingman, Lake Havasu City, Bullhead City" },
   { value: "navajo", label: "Navajo County", note: "Holbrook, Show Low" },
   { value: "pima", label: "Pima County", note: "Tucson, Oro Valley" },
@@ -133,7 +133,7 @@ const HomeCalculator = () => {
                     inputMode="decimal"
                     value={homePrice}
                     onChange={(e) => setHomePrice(Number(e.target.value) || 0)}
-                    className="w-full h-[44px] px-3.5 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
+                    className="w-full h-[44px] px-3.5 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                   />
                 </div>
 
@@ -149,7 +149,7 @@ const HomeCalculator = () => {
                         inputMode="decimal"
                         value={downPaymentAmount}
                         onChange={(e) => handleDownPaymentDollar(Number(e.target.value) || 0)}
-                        className="w-full h-[44px] pl-6 pr-2 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
+                        className="w-full h-[44px] pl-6 pr-2 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                       />
                     </div>
                     <div className="relative w-[72px] sm:w-[90px] shrink-0">
@@ -158,7 +158,7 @@ const HomeCalculator = () => {
                         inputMode="decimal"
                         value={Math.round(downPaymentPct * 10) / 10}
                         onChange={(e) => setDownPaymentPct(Number(e.target.value) || 0)}
-                        className="w-full h-[44px] pl-2.5 pr-6 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
+                        className="w-full h-[44px] pl-2.5 pr-6 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                       />
                       <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#8a9a7a] text-[13px]">%</span>
                     </div>
@@ -172,7 +172,7 @@ const HomeCalculator = () => {
                   <select
                     value={creditScore}
                     onChange={(e) => setCreditScore(e.target.value)}
-                    className="w-full h-[44px] px-3 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364] bg-white"
+                    className="calc-select w-full h-[44px] px-3 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364] bg-white"
                   >
                     <option value="760+">760+</option>
                     <option value="740-759">740 - 759</option>
@@ -191,7 +191,7 @@ const HomeCalculator = () => {
                   <select
                     value={termYears}
                     onChange={(e) => setTermYears(Number(e.target.value))}
-                    className="w-full h-[44px] px-3 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364] bg-white"
+                    className="calc-select w-full h-[44px] px-3 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364] bg-white"
                   >
                     {LOAN_TERMS.map((t) => (
                       <option key={t} value={t}>
@@ -226,7 +226,7 @@ const HomeCalculator = () => {
                   <select
                     value={county}
                     onChange={(e) => setCounty(e.target.value)}
-                    className="w-full h-[44px] px-3 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364] bg-white"
+                    className="calc-select w-full h-[44px] px-3 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364] bg-white"
                   >
                     {AZ_COUNTIES.map((c) => (
                       <option key={c.value} value={c.value}>

@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full bg-[#08271B] border-b border-[#1a3a1a] fixed top-0 left-0 right-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between h-[64px] sm:h-[72px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-5 xl:px-10 flex items-center justify-between h-[64px] sm:h-[72px]">
         {/* Logo */}
         <Link href="/" className="flex items-center hover:opacity-90 transition-opacity duration-200 shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -24,12 +24,12 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Nav Links */}
-        <div className="hidden lg:flex items-center gap-5 px-3">
+        <div className="hidden lg:flex items-center gap-3 xl:gap-5 xl:px-3 whitespace-nowrap">
           {/* Loan Programs Megamenu */}
           <div className="relative group py-2">
             <Link
               href="/mortgage-loan-programs-arizona/"
-              className="flex items-center gap-1.5 text-white text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
+              className="flex items-center gap-1.5 text-white text-[13px] xl:text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
             >
               Loan Programs
               <svg
@@ -119,7 +119,7 @@ const Navbar = () => {
           <div className="relative group py-2">
             <Link
               href="/mortgage-calculator-arizona/"
-              className="flex items-center gap-1.5 text-white text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
+              className="flex items-center gap-1.5 text-white text-[13px] xl:text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
             >
               Calculators
               <svg
@@ -208,7 +208,7 @@ const Navbar = () => {
           <div className="relative group py-2">
             <Link
               href="/service-areas/"
-              className="flex items-center gap-1.5 text-white text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
+              className="flex items-center gap-1.5 text-white text-[13px] xl:text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
             >
               Areas We Serve
               <svg
@@ -284,7 +284,7 @@ const Navbar = () => {
           <div className="relative group py-2">
             <Link
               href="/about-us/"
-              className="flex items-center gap-1.5 text-white text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
+              className="flex items-center gap-1.5 text-white text-[13px] xl:text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
             >
               About
               <svg
@@ -330,7 +330,7 @@ const Navbar = () => {
           <div className="relative group py-2">
             <Link
               href="/blog/"
-              className="flex items-center gap-1.5 text-white text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
+              className="flex items-center gap-1.5 text-white text-[13px] xl:text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
             >
               Resources
               <svg
@@ -429,7 +429,7 @@ const Navbar = () => {
           {/* Realtors */}
           <Link
             href="/realtorteam/"
-            className="text-white text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
+            className="text-white text-[13px] xl:text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
           >
             Realtors
           </Link>
@@ -437,10 +437,10 @@ const Navbar = () => {
         </div>
 
         {/* Right Side - Phone + CTA */}
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-2.5 xl:gap-4 whitespace-nowrap">
           <a
             href={COMPANY.phoneHref}
-            className="flex items-center gap-1.5 text-white text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200"
+            className="flex items-center gap-1.5 text-white text-[13px] xl:text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -459,7 +459,7 @@ const Navbar = () => {
           </a>
           <Link
             href="/#get-pre-approved"
-            className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[13px] font-semibold px-4.5 py-2 rounded-full transition-all duration-200 hover:shadow-lg"
+            className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[12.5px] xl:text-[13px] font-semibold px-3.5 xl:px-4.5 py-2 rounded-full transition-all duration-200 hover:shadow-lg shrink-0"
           >
             Get Pre-Approved
           </Link>

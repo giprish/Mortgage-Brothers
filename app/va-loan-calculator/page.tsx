@@ -24,7 +24,7 @@ const C = {
   danger: "#a3372b",
   dangerWash: "#faeae8",
 };
-const SERIF = '"Source Serif 4", Georgia, "Times New Roman", serif';
+const SERIF = '"Playfair Display", Georgia, serif';
 const SANS = "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
 const MONO = "'IBM Plex Mono', 'SFMono-Regular', Menlo, Consolas, monospace";
 
@@ -240,7 +240,7 @@ function SelectField({
 }) {
   return (
     <Field label={label} hint={hint}>
-      <select value={value} onChange={onChange} style={{ ...inputStyle, cursor: "pointer" }}>
+      <select className="calc-select" value={value} onChange={onChange} style={{ ...inputStyle, cursor: "pointer" }}>
         {options.map((o) => (
           <option key={o.value} value={o.value}>{o.label}</option>
         ))}
@@ -260,7 +260,7 @@ function ToggleRow<T extends string>({
   columns: number;
 }) {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: `repeat(${columns}, 1fr)`, gap: 6, marginBottom: 6 }}>
+    <div style={{ display: "grid", gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`, gap: 6, marginBottom: 6 }}>
       {options.map((o) => {
         const active = o.value === value;
         return (
@@ -283,7 +283,7 @@ const TERM_OPTIONS = [30, 20, 15];
 function TermSelector({ value, onChange }: { value: number; onChange: (v: number) => void }) {
   return (
     <div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 6, marginBottom: 6 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 6, marginBottom: 6 }}>
         {TERM_OPTIONS.map((t) => {
           const active = t === value;
           return (
@@ -311,7 +311,7 @@ function InsightsPanel({ groups, nextSteps }: { groups: InsightGroup[]; nextStep
     <div style={{ background: "#f7f8f5", border: `1px solid ${C.line}`, borderRadius: 10, padding: "20px 22px 22px", marginBottom: 18 }}>
       <h2 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 600, margin: "0 0 12px", color: C.ink }}>Recommendations &amp; Key Insights</h2>
       <div style={{ borderBottom: `1px solid ${C.line}`, marginBottom: 16 }} />
-      <div className="va-insights-grid" style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 20, alignItems: "start" }}>
+      <div className="va-insights-grid" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.3fr) minmax(0, 1fr)", gap: 20, alignItems: "start" }}>
         <div>
           {groups.map((g) => (
             <div key={g.title} style={{ marginBottom: 16 }}>
@@ -336,23 +336,23 @@ function InsightsPanel({ groups, nextSteps }: { groups: InsightGroup[]; nextStep
       </div>
       <style>{`
           /* Mobile calculator optimization */
-          @media (max-width: 760px) {
+          @media (max-width: 1023px) {
             .bmc-layout, .refi-layout, .fha-layout, .va-layout, .dti-layout,
             .ccc-layout, .epc-layout, .rvb-layout, .mac-layout, .cvf-layout, .dpc-grid {
-              grid-template-columns: 1fr !important;
+              grid-template-columns: minmax(0, 1fr) !important;
               gap: 16px !important;
             }
-            .bmc-stats, .rvb-stats { grid-template-columns: 1fr 1fr !important; }
-            .bmc-charts-row { grid-template-columns: 1fr !important; }
+            .bmc-stats, .rvb-stats { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important; }
+            .bmc-charts-row { grid-template-columns: minmax(0, 1fr) !important; }
             .bmc-sticky-panel, .rvb-sticky-panel { position: static !important; }
           }
           @media (max-width: 480px) {
-            .bmc-stats, .rvb-stats { grid-template-columns: 1fr !important; }
+            .bmc-stats, .rvb-stats { grid-template-columns: minmax(0, 1fr) !important; }
             input.dpc-input, select.dpc-input, .dpc-input {
               font-size: 16px !important;
             }
           }
-@media (max-width: 640px) { .va-insights-grid { grid-template-columns: 1fr !important; } }`}</style>
+@media (max-width: 640px) { .va-insights-grid { grid-template-columns: minmax(0, 1fr) !important; } }`}</style>
     </div>
   );
 }
@@ -526,7 +526,7 @@ export default function VaLoanCalculator() {
         />
 
         <div style={{ maxWidth: 1180, margin: "0 auto", padding: "28px 20px 64px", boxSizing: "border-box" }}>
-          <div className="va-layout" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "start" }}>
+          <div className="va-layout" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: 24, alignItems: "start" }}>
             {/* ============ INPUT COLUMN ============ */}
             <div style={{ minWidth: 0 }}>
               <Panel number={1} title="Service Information">
@@ -605,7 +605,7 @@ export default function VaLoanCalculator() {
                 </Panel>
               ) : (
                 <Panel number={4} title="Down Payment">
-                  <div className="calc-fields-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+                  <div className="calc-fields-2" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: 10 }}>
                     <Field label="Down Payment (%)">
                       <input className="va-input" style={inputStyle} inputMode="decimal" value={downPaymentPercentText}
                         onChange={(e) => onDownPaymentPercentChange(e.target.value)}
@@ -789,8 +789,8 @@ export default function VaLoanCalculator() {
           </div>
         </div>
         <style>{`
-          @media (max-width: 760px) {
-            .va-layout { grid-template-columns: 1fr !important; }
+          @media (max-width: 1023px) {
+            .va-layout { grid-template-columns: minmax(0, 1fr) !important; }
           }
           .va-input { transition: border-color .15s, box-shadow .15s, background .15s; }
           .va-input:hover { border-color: #a9b59c; }

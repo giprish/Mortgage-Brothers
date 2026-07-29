@@ -23,7 +23,7 @@ const C = {
   goldPale: "#f5ead9",
   danger: "#a3402f",
 };
-const SERIF = '"Source Serif 4", Georgia, serif';
+const SERIF = '"Playfair Display", Georgia, serif';
 const SANS = "'Inter', -apple-system, BlinkMacSystemFont, sans-serif";
 const MONO = "'Roboto Mono', monospace";
 
@@ -370,7 +370,7 @@ function InsightsPanel({ groups, nextSteps }: { groups: { title: string; color: 
     <div style={{ background: "#f7f8f5", border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(28,42,23,0.06), 0 6px 20px rgba(28,42,23,0.05)", padding: 22, marginBottom: 20 }}>
       <h2 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 600, margin: "0 0 12px", color: C.ink }}>Recommendations & Key Insights</h2>
       <div style={{ borderBottom: `1px solid ${C.line}`, marginBottom: 16 }} />
-      <div className="insights-grid" style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 20, alignItems: "start" }}>
+      <div className="insights-grid" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.3fr) minmax(0, 1fr)", gap: 20, alignItems: "start" }}>
         <div>
           {groups.map((g) => (
             <div key={g.title} style={{ marginBottom: 16 }}>
@@ -395,7 +395,7 @@ function InsightsPanel({ groups, nextSteps }: { groups: { title: string; color: 
       </div>
       <style>{`
           @media (max-width: 640px) {
-            .insights-grid { grid-template-columns: 1fr !important; }
+            .insights-grid { grid-template-columns: minmax(0, 1fr) !important; }
           }
         `}</style>
     </div>
@@ -564,7 +564,7 @@ export default function MortgageAffordabilityCalculator() {
                   <MiniSlider min={0} max={10000} step={50} value={existingDebts} onChange={(v) => setDebtsText(Math.round(v).toLocaleString("en-US"))} />
                 </Field>
 
-                <div className="mac-fields" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+                <div className="mac-fields" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: 12 }}>
                   <Field label="Down Payment ($)">
                     <MoneyInput value={downText} onChange={setDownText}
                       onBlur={() => { if (isFinite(downPayment)) setDownText(downPayment.toLocaleString("en-US")); }} />
@@ -601,7 +601,7 @@ export default function MortgageAffordabilityCalculator() {
                   </div>
                 </Field>
 
-                <div className="mac-fields" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+                <div className="mac-fields" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: 12 }}>
                   <Field label="Property Tax ($/mo)" hint="Leave blank to auto-estimate from home price.">
                     <MoneyInput value={taxText} onChange={setTaxText} placeholder="Auto-estimated"
                       onBlur={() => { if (propertyTaxManual !== null) setTaxText(propertyTaxManual.toLocaleString("en-US")); }} />
@@ -744,10 +744,10 @@ export default function MortgageAffordabilityCalculator() {
           }
           @media (max-width: 560px) {
             .mac-fields {
-              grid-template-columns: 1fr !important;
+              grid-template-columns: minmax(0, 1fr) !important;
             }
             .mac-milestone-grid {
-              grid-template-columns: 1fr !important;
+              grid-template-columns: minmax(0, 1fr) !important;
             }
           }
           .mac-input {

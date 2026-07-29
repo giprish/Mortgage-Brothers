@@ -2,6 +2,7 @@
 
 import { useMemo, useState, type CSSProperties, type ReactNode } from "react";
 import Navbar from "../component/Navbar";
+import LoanProgramHero from "../component/LoanProgramHero";
 import Footer from "../component/Footer";
 
 type LoanType = "conventional" | "fha" | "va" | "usda";
@@ -25,7 +26,7 @@ const C = {
   red: "#a3372b",
   redWash: "#faeae8",
 };
-const SERIF = '"Source Serif 4", Georgia, "Times New Roman", serif';
+const SERIF = '"Playfair Display", Georgia, serif';
 const SANS = '-apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif';
 const MONO = '"IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace';
 
@@ -317,7 +318,7 @@ function InsightsPanel({ groups, nextSteps }: {
     <div style={{ background: "#f7f8f5", border: `1px solid ${C.line}`, borderRadius: 10, padding: "20px 22px 22px", marginBottom: 18 }}>
       <h3 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 600, margin: "0 0 12px", color: C.ink }}>Recommendations & Key Insights</h3>
       <div style={{ borderBottom: `1px solid ${C.line}`, marginBottom: 16 }} />
-      <div className="insights-grid" style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 20, alignItems: "start" }}>
+      <div className="insights-grid" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.3fr) minmax(0, 1fr)", gap: 20, alignItems: "start" }}>
         <div>
           {groups.map((g) => (
             <div key={g.title} style={{ marginBottom: 16 }}>
@@ -340,7 +341,7 @@ function InsightsPanel({ groups, nextSteps }: {
           </ul>
         </div>
       </div>
-      <style>{`@media (max-width: 640px) { .insights-grid { grid-template-columns: 1fr !important; } }`}</style>
+      <style>{`@media (max-width: 640px) { .insights-grid { grid-template-columns: minmax(0, 1fr) !important; } }`}</style>
     </div>
   );
 }
@@ -550,17 +551,8 @@ function DownPaymentCalculator() {
   }, [loanType, downPct, homePrice, interestRate, loanTerm, creditScore, taxAnnual, insAnnual, hoaFees]);
 
   return (
-    <div style={{ background: C.paper, color: C.ink, fontFamily: SANS, fontSize: 15, lineHeight: 1.5, padding: "20px 12px 64px", minHeight: "100vh", overflowX: "hidden" }}>
+    <div style={{ background: C.paper, color: C.ink, fontFamily: SANS, fontSize: 15, lineHeight: 1.5, padding: "20px 12px 64px", overflowX: "hidden" }}>
       <div style={{ maxWidth: 1180, margin: "0 auto", width: "100%" }}>
-        {/* Header */}
-        <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", flexWrap: "wrap", gap: 8, marginBottom: 22, paddingBottom: 18, borderBottom: `2px solid ${C.green}` }}>
-          <h1 style={{ fontFamily: SERIF, fontWeight: 600, fontSize: "clamp(22px, 6vw, 28px)", margin: 0, color: C.greenDeep, letterSpacing: "-0.01em" }}>
-            Down Payment Calculator
-          </h1>
-          <span style={{ fontFamily: MONO, fontSize: 11, textTransform: "uppercase", letterSpacing: ".08em", color: C.inkSoft, background: C.greenWash, border: `1px solid ${C.line}`, padding: "5px 10px", borderRadius: 99 }}>
-            Arizona · Mortgage Brothers
-          </span>
-        </div>
 
         {/* Down Payment Milestones — bold, high-visibility centerpiece, full width at the very top */}
         <div style={{
@@ -588,7 +580,7 @@ function DownPaymentCalculator() {
 
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "start" }}
+        <div style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: 24, alignItems: "start" }}
           className="dpc-grid"
         >
           {/* ============ INPUT COLUMN ============ */}
@@ -597,7 +589,7 @@ function DownPaymentCalculator() {
               <p style={{ fontSize: 13, color: C.inkSoft, margin: "-6px 0 14px", lineHeight: 1.5 }}>
                 How much have you saved for your down payment?
               </p>
-              <div className="calc-fields-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+              <div className="calc-fields-2" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: 12 }}>
                 <Field label="Amount Saved ($)">
                   <input className="dpc-input" style={inputStyle} inputMode="numeric" value={downPaymentDollarText}
                     onChange={(e) => onDownPaymentDollarChange(e.target.value)}
@@ -677,7 +669,7 @@ function DownPaymentCalculator() {
 
             <Panel number={4} title="Loan Details">
               <Field label="Loan Type">
-                <select className="dpc-input" style={inputStyle} value={loanType} onChange={(e) => setLoanType(e.target.value as LoanType)}>
+                <select className="dpc-input calc-select" style={inputStyle} value={loanType} onChange={(e) => setLoanType(e.target.value as LoanType)}>
                   <option value="conventional">Conventional Loan</option>
                   <option value="fha">FHA Loan</option>
                   <option value="va">VA Loan</option>
@@ -687,7 +679,7 @@ function DownPaymentCalculator() {
               <div style={{ background: C.greenWash, border: "1px solid #cfe0c2", borderRadius: 8, padding: "10px 12px", fontSize: 12.5, color: C.greenDeep, marginTop: -2, marginBottom: 14 }}>
                 {LOAN_TYPE_NOTES[loanType]}
               </div>
-              <div className="calc-fields-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+              <div className="calc-fields-2" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: 12 }}>
                 <Field label="Interest Rate (%)">
                   <input className="dpc-input" style={inputStyle} inputMode="decimal" value={interestRateText}
                     onChange={(e) => setInterestRateText(e.target.value)}
@@ -765,7 +757,8 @@ function DownPaymentCalculator() {
             {/* Scenario table — the centerpiece of this calculator */}
             <div style={{ background: C.panel, border: `1px solid ${C.line}`, borderRadius: 10, padding: "20px 22px 22px", marginBottom: 18 }}>
               <h3 style={{ fontFamily: MONO, fontSize: 11, textTransform: "uppercase", letterSpacing: ".07em", color: C.inkSoft, margin: "0 0 12px" }}>Down Payment Scenarios Comparison</h3>
-              <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
+              <div className="calc-table-scroll">
+              <table style={{ width: "100%", minWidth: 460, borderCollapse: "collapse", fontSize: 13 }}>
                 <thead>
                   <tr>
                     {["Down %", "Down Payment ($)", "Loan Amount ($)", "Monthly Payment ($)"].map((h, i) => (
@@ -784,6 +777,7 @@ function DownPaymentCalculator() {
                   ))}
                 </tbody>
               </table>
+              </div>
             </div>
 
             {/* Donut chart */}
@@ -829,10 +823,10 @@ function DownPaymentCalculator() {
       </div>
       <style>{`
           /* Mobile calculator optimization */
-          @media (max-width: 760px) {
+          @media (max-width: 1023px) {
             .bmc-layout, .refi-layout, .fha-layout, .va-layout, .dti-layout,
             .ccc-layout, .epc-layout, .rvb-layout, .mac-layout, .cvf-layout, .dpc-grid {
-              grid-template-columns: 1fr !important;
+              grid-template-columns: minmax(0, 1fr) !important;
               gap: 16px !important;
             }
           }
@@ -841,8 +835,8 @@ function DownPaymentCalculator() {
               font-size: 16px !important;
             }
           }
-        @media (max-width: 760px) {
-          .dpc-grid { grid-template-columns: 1fr !important; }
+        @media (max-width: 1023px) {
+          .dpc-grid { grid-template-columns: minmax(0, 1fr) !important; }
         }
         .dpc-input {
           transition: border-color .15s, box-shadow .15s, background .15s;
@@ -896,7 +890,8 @@ function MilestoneBar({ loanType, min, downPct }: { loanType: LoanType; min: num
 
   return (
     <div>
-      <div style={{ position: "relative", height: 8, background: "#fff", border: `1px solid #cfe0c2`, borderRadius: 99, marginTop: 16, marginBottom: 18 }}>
+      {/* marginTop clears the "You:" bubble, which is ~21px tall above the bar */}
+      <div style={{ position: "relative", height: 8, background: "#fff", border: `1px solid #cfe0c2`, borderRadius: 99, marginTop: 28, marginBottom: 18 }}>
         <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: `${pctOf(downPct)}%`, background: C.greenBright, borderRadius: 99, transition: "width .2s" }} />
         {markers.map((m) => (
           <div key={m.label} style={{ position: "absolute", left: `${pctOf(m.value)}%`, top: -14, transform: "translateX(-50%)", textAlign: "center" }}>
@@ -931,9 +926,15 @@ function MilestoneStat({ label, value, note, highlight }: { label: string; value
 
 export default function DownPaymentCalculatorPage() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen" style={{ background: C.paper }}>
       <Navbar />
-      <main className="flex-grow pt-[72px]">
+      <main className="flex-grow overflow-x-hidden">
+        <LoanProgramHero
+          title="Down Payment Calculator"
+          subtitle="Compare down payment scenarios side by side to see how each one changes your loan amount, monthly payment, and mortgage insurance."
+          ctaLabel=""
+          note=""
+        />
         <DownPaymentCalculator />
       </main>
       <Footer />

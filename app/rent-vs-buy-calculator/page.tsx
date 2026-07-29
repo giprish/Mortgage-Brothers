@@ -25,7 +25,7 @@ const C = {
   rentPale: "#e7edf4",
   danger: "#a3402f",
 };
-const SERIF = '"Source Serif 4", Georgia, serif';
+const SERIF = '"Playfair Display", Georgia, serif';
 const SANS = "'Inter', -apple-system, BlinkMacSystemFont, sans-serif";
 const MONO = "'Roboto Mono', monospace";
 
@@ -529,7 +529,7 @@ function InsightsPanel({ groups, nextSteps }: { groups: { title: string; color: 
     <div style={{ background: "#f7f8f5", border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(28,42,23,0.06), 0 6px 20px rgba(28,42,23,0.05)", padding: 22, marginBottom: 20 }}>
       <h2 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 600, margin: "0 0 12px", color: C.ink }}>Recommendations & Key Insights</h2>
       <div style={{ borderBottom: `1px solid ${C.line}`, marginBottom: 16 }} />
-      <div className="insights-grid" style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 20, alignItems: "start" }}>
+      <div className="insights-grid" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.3fr) minmax(0, 1fr)", gap: 20, alignItems: "start" }}>
         <div>
           {groups.map((g) => (
             <div key={g.title} style={{ marginBottom: 16 }}>
@@ -554,23 +554,23 @@ function InsightsPanel({ groups, nextSteps }: { groups: { title: string; color: 
       </div>
       <style>{`
           /* Mobile calculator optimization */
-          @media (max-width: 760px) {
+          @media (max-width: 1023px) {
             .bmc-layout, .refi-layout, .fha-layout, .va-layout, .dti-layout,
             .ccc-layout, .epc-layout, .rvb-layout, .mac-layout, .cvf-layout, .dpc-grid {
-              grid-template-columns: 1fr !important;
+              grid-template-columns: minmax(0, 1fr) !important;
               gap: 16px !important;
             }
-            .bmc-stats, .rvb-stats { grid-template-columns: 1fr 1fr !important; }
-            .bmc-charts-row { grid-template-columns: 1fr !important; }
+            .bmc-stats, .rvb-stats { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important; }
+            .bmc-charts-row { grid-template-columns: minmax(0, 1fr) !important; }
             .bmc-sticky-panel, .rvb-sticky-panel { position: static !important; }
           }
           @media (max-width: 480px) {
-            .bmc-stats, .rvb-stats { grid-template-columns: 1fr !important; }
+            .bmc-stats, .rvb-stats { grid-template-columns: minmax(0, 1fr) !important; }
             input.dpc-input, select.dpc-input, .dpc-input {
               font-size: 16px !important;
             }
           }
-@media (max-width: 640px) { .insights-grid { grid-template-columns: 1fr !important; } }`}</style>
+@media (max-width: 640px) { .insights-grid { grid-template-columns: minmax(0, 1fr) !important; } }`}</style>
     </div>
   );
 }
@@ -806,7 +806,7 @@ export default function RentVsBuyCalculator() {
             </div>
           </div>
 
-          <div className="rvb-layout" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginTop: 24, alignItems: "start" }}>
+          <div className="rvb-layout" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: 24, marginTop: 24, alignItems: "start" }}>
             {/* ============ INPUT PANEL ============ */}
             <div className="rvb-sticky-panel" style={{ background: C.card, border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(28,42,23,0.06), 0 6px 20px rgba(28,42,23,0.05)", padding: 0, overflow: "hidden" }}>
               <Accordion title="Renting" chipColor={C.rent} chipBg={C.rentPale} open={openSections.renting}
@@ -849,7 +849,7 @@ export default function RentVsBuyCalculator() {
                     onChange={(v) => onHomePriceChange(fmtMoney(v))} />
                 </Field>
                 <Field label="Loan Program">
-                  <select className="dpc-input" style={{ ...baseInput, padding: "9px 12px", fontFamily: SANS, fontWeight: 500 }}
+                  <select className="dpc-input calc-select" style={{ ...baseInput, padding: "9px 12px", fontFamily: SANS, fontWeight: 500 }}
                     value={loanProgram} onChange={(e) => onLoanProgramChange(e.target.value)}>
                     <option value="conventional">Conventional</option>
                     <option value="fha">FHA</option>
@@ -989,7 +989,7 @@ export default function RentVsBuyCalculator() {
               <div style={{ background: C.card, border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(28,42,23,0.06), 0 6px 20px rgba(28,42,23,0.05)", padding: 22, marginBottom: 20 }}>
                 <div className="rvb-hero" style={{
                   position: "relative",
-                  display: "grid", gridTemplateColumns: "1fr auto 1fr", alignItems: "center", gap: 18,
+                  display: "grid", gridTemplateColumns: "minmax(0, 1fr) auto minmax(0, 1fr)", alignItems: "center", gap: 18,
                   padding: "20px",
                   marginBottom: 18,
                   borderRadius: 12,
@@ -1021,7 +1021,7 @@ export default function RentVsBuyCalculator() {
                   </div>
                 </div>
 
-                <div className="rvb-stats" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: 14 }}>
+                <div className="rvb-stats" style={{ display: "grid", gridTemplateColumns: "repeat(4, minmax(0, 1fr))", gap: 14 }}>
                   <StatBox label="Break-even Point" color={C.greenDeep}
                     value={res.breakEvenYear ? `${(res.breakEvenInterp ? res.breakEvenInterp.toFixed(1) : res.breakEvenYear)} yrs` : `Not within ${res.timeframe} yrs`} />
                   <StatBox label="Total Savings" value={`${res.totalSavings >= 0 ? "" : "-"}$${fmtMoney(Math.abs(res.totalSavings))}`}
@@ -1099,14 +1099,19 @@ export default function RentVsBuyCalculator() {
           </div>
         </div>
         <style>{`
-          @media (max-width: 760px) {
-            .rvb-layout { grid-template-columns: 1fr !important; }
+          @media (max-width: 1023px) {
+            .rvb-layout { grid-template-columns: minmax(0, 1fr) !important; }
           }
           @media (max-width: 640px) {
-            .rvb-hero { grid-template-columns: 1fr !important; text-align: left; }
+            .rvb-hero { grid-template-columns: minmax(0, 1fr) !important; text-align: left; }
           }
-          @media (max-width: 760px) {
-            .rvb-stats { grid-template-columns: repeat(2,1fr) !important; }
+          @media (max-width: 1023px) {
+            .rvb-stats { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
+          }
+          /* Must follow the 1023px rule to win the cascade — two columns leave
+             the monospace dollar values too narrow to fit below 480px. */
+          @media (max-width: 480px) {
+            .rvb-stats { grid-template-columns: minmax(0, 1fr) !important; }
           }
           .dpc-input { transition: border-color .15s, box-shadow .15s, background .15s; }
           .dpc-input:hover { border-color: #a9b59c; }

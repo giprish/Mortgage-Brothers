@@ -35,7 +35,7 @@ const C = {
   blue: "#2f5488",
   blueWash: "#e8eef5",
 };
-const SERIF = '"Source Serif 4", Georgia, "Times New Roman", serif';
+const SERIF = '"Playfair Display", Georgia, serif';
 const SANS = "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
 const MONO = "'IBM Plex Mono', 'SFMono-Regular', Menlo, Consolas, monospace";
 
@@ -132,7 +132,7 @@ const FHA_LIMITS: Record<string, number[]> = {
   Yavapai: FHA_FLOOR,
   Yuma: FHA_FLOOR,
 };
-const COUNTIES = Object.keys(FHA_LIMITS);
+const COUNTIES = Object.keys(FHA_LIMITS).sort((a, b) => a.localeCompare(b));
 const PROPERTY_TYPES = ["Single Family", "Duplex", "Triplex", "Fourplex"];
 const CONV_LIMITS = [832750, 1066550, 1288725, 1601750];
 
@@ -297,7 +297,7 @@ function SelectField({
 }) {
   return (
     <Field label={label} hint={hint}>
-      <select value={value} onChange={onChange} style={{ ...inputStyle, cursor: "pointer" }}>
+      <select className="calc-select" value={value} onChange={onChange} style={{ ...inputStyle, cursor: "pointer" }}>
         {options.map((o) => (
           <option key={String(o.value)} value={o.value}>{o.label}</option>
         ))}
@@ -307,7 +307,7 @@ function SelectField({
 }
 function ToggleRow({ options, value, onChange, columns }: { options: ToggleOption[]; value: string; onChange: (v: string) => void; columns: number }) {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: `repeat(${columns}, 1fr)`, gap: 6, marginBottom: 6 }}>
+    <div style={{ display: "grid", gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`, gap: 6, marginBottom: 6 }}>
       {options.map((o) => {
         const active = o.value === value;
         return (
@@ -350,7 +350,7 @@ function MilestoneStat({ label, value, note, highlight }: { label: string; value
 }
 function ComparisonLine({ label, fhaValue, convValue, fhaWins, convWins }: { label: string; fhaValue: ReactNode; convValue: ReactNode; fhaWins?: boolean; convWins?: boolean }) {
   return (
-    <div className="cvf-compare-line" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr 1fr", alignItems: "baseline", padding: "7px 0", borderBottom: `1px dashed ${C.line}` }}>
+    <div className="cvf-compare-line" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr)", alignItems: "baseline", padding: "7px 0", borderBottom: `1px dashed ${C.line}` }}>
       <span style={{ fontSize: 12.5, color: C.inkSoft }}>{label}</span>
       <span style={{ textAlign: "right", fontWeight: fhaWins ? 700 : 500, fontVariantNumeric: "tabular-nums", fontSize: 13.5, color: fhaWins ? C.greenDeep : C.ink, paddingRight: 10 }}>{fhaValue}</span>
       <span style={{ textAlign: "right", fontWeight: convWins ? 700 : 500, fontVariantNumeric: "tabular-nums", fontSize: 13.5, color: convWins ? C.blue : C.ink }}>{convValue}</span>
@@ -362,7 +362,7 @@ const TERM_OPTIONS = [30, 20, 15];
 function TermSelector({ value, onChange }: { value: number; onChange: (v: number) => void }) {
   return (
     <div>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 6, marginBottom: 6 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, minmax(0, 1fr))", gap: 6, marginBottom: 6 }}>
         {TERM_OPTIONS.map((t) => {
           const active = t === value;
           return (
@@ -405,7 +405,7 @@ function InsightsPanel({ groups, nextSteps }: { groups: InsightGroup[]; nextStep
     <div style={{ background: "#f7f8f5", border: `1px solid ${C.line}`, borderRadius: 10, padding: "20px 22px 22px", marginBottom: 18 }}>
       <h2 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 600, margin: "0 0 12px", color: C.ink }}>Recommendations &amp; Key Insights</h2>
       <div style={{ borderBottom: `1px solid ${C.line}`, marginBottom: 16 }} />
-      <div className="cvf-insights-grid" style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 20, alignItems: "start" }}>
+      <div className="cvf-insights-grid" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.3fr) minmax(0, 1fr)", gap: 20, alignItems: "start" }}>
         <div>
           {groups.map((g) => (
             <div key={g.title} style={{ marginBottom: 16 }}>
@@ -430,23 +430,23 @@ function InsightsPanel({ groups, nextSteps }: { groups: InsightGroup[]; nextStep
       </div>
       <style>{`
           /* Mobile calculator optimization */
-          @media (max-width: 760px) {
+          @media (max-width: 1023px) {
             .bmc-layout, .refi-layout, .fha-layout, .va-layout, .dti-layout,
             .ccc-layout, .epc-layout, .rvb-layout, .mac-layout, .cvf-layout, .dpc-grid {
-              grid-template-columns: 1fr !important;
+              grid-template-columns: minmax(0, 1fr) !important;
               gap: 16px !important;
             }
-            .bmc-stats, .rvb-stats { grid-template-columns: 1fr 1fr !important; }
-            .bmc-charts-row { grid-template-columns: 1fr !important; }
+            .bmc-stats, .rvb-stats { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important; }
+            .bmc-charts-row { grid-template-columns: minmax(0, 1fr) !important; }
             .bmc-sticky-panel, .rvb-sticky-panel { position: static !important; }
           }
           @media (max-width: 480px) {
-            .bmc-stats, .rvb-stats { grid-template-columns: 1fr !important; }
+            .bmc-stats, .rvb-stats { grid-template-columns: minmax(0, 1fr) !important; }
             input.dpc-input, select.dpc-input, .dpc-input {
               font-size: 16px !important;
             }
           }
-@media (max-width: 640px) { .cvf-insights-grid { grid-template-columns: 1fr !important; } }`}</style>
+@media (max-width: 640px) { .cvf-insights-grid { grid-template-columns: minmax(0, 1fr) !important; } }`}</style>
     </div>
   );
 }
@@ -763,7 +763,7 @@ export default function ConventionalVsFhaCalculator() {
                   True total cost if the loan were paid off completely at each point — payments made so far, plus the loan balance still owed. This is what the home would have actually cost you, not just what you&apos;ve paid out of pocket.
                 </p>
                 <div style={{ background: "#fff", border: `1px solid ${C.line}`, borderRadius: 8, overflow: "hidden" }}>
-                  <div className="cvf-hp-header" style={{ display: "grid", gridTemplateColumns: "0.9fr 1fr 1fr", columnGap: 20, fontSize: 11, textTransform: "uppercase", letterSpacing: ".04em", color: C.inkSoft, padding: "9px 16px", background: "#f2f4ee", borderBottom: `1px solid ${C.line}` }}>
+                  <div className="cvf-hp-header" style={{ display: "grid", gridTemplateColumns: "minmax(0, 0.9fr) minmax(0, 1fr) minmax(0, 1fr)", columnGap: 20, fontSize: 11, textTransform: "uppercase", letterSpacing: ".04em", color: C.inkSoft, padding: "9px 16px", background: "#f2f4ee", borderBottom: `1px solid ${C.line}` }}>
                     <span>Hold Period</span>
                     <span style={{ textAlign: "center", color: C.greenDeep, fontWeight: 700 }}>FHA</span>
                     <span style={{ textAlign: "center", color: C.blue, fontWeight: 700 }}>Conventional</span>
@@ -772,7 +772,7 @@ export default function ConventionalVsFhaCalculator() {
                     const fhaCheaper = row.fhaTrueCost < row.convTrueCost;
                     const convCheaper = row.convTrueCost < row.fhaTrueCost;
                     return (
-                      <div key={row.year} className="cvf-hp-row" style={{ display: "grid", gridTemplateColumns: "0.9fr 1fr 1fr", columnGap: 20, padding: "10px 16px", borderBottom: `1px dashed ${C.line}` }}>
+                      <div key={row.year} className="cvf-hp-row" style={{ display: "grid", gridTemplateColumns: "minmax(0, 0.9fr) minmax(0, 1fr) minmax(0, 1fr)", columnGap: 20, padding: "10px 16px", borderBottom: `1px dashed ${C.line}` }}>
                         <span className="cvf-hp-label" style={{ fontSize: 13, fontWeight: 700, color: C.ink, alignSelf: "center" }}>{row.year} {row.year === 1 ? "year" : "years"}</span>
                         <span className="cvf-hp-cell" style={{ textAlign: "right", background: fhaCheaper ? "#d3e6c2" : convCheaper ? "#f4c9c2" : "transparent", borderRadius: 6, padding: "4px 10px", boxSizing: "border-box" }}>
                           <span className="cvf-hp-tag" style={{ display: "none", fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: ".04em", color: C.greenDeep, marginBottom: 2 }}>FHA</span>
@@ -800,7 +800,7 @@ export default function ConventionalVsFhaCalculator() {
             )}
           </div>
 
-          <div className="cvf-layout" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "start" }}>
+          <div className="cvf-layout" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: 24, alignItems: "start" }}>
             <div style={{ minWidth: 0 }}>
               <Panel number={1} title="Purchase or Refinance">
                 <ToggleRow
@@ -812,7 +812,7 @@ export default function ConventionalVsFhaCalculator() {
                     { value: "refi", label: "Refinance" },
                   ]}
                 />
-                <SelectField label="Arizona County" value={county} onChange={(e) => setCounty(e.target.value)} options={COUNTIES.map((c) => ({ value: c, label: c }))} />
+                <SelectField label="Arizona County" value={county} onChange={(e) => setCounty(e.target.value)} options={COUNTIES.map((c) => ({ value: c, label: `${c} County` }))} />
                 <SelectField label="Property Type" value={propertyType} onChange={(e) => setPropertyType(parseInt(e.target.value, 10))} options={PROPERTY_TYPES.map((p, i) => ({ value: i, label: p }))} />
                 <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
                   <div style={{ background: C.greenWash, border: "1px solid #cfe0c2", borderRadius: 8, padding: "8px 12px", fontSize: 12, color: C.greenDeep, flex: 1 }}>
@@ -881,7 +881,7 @@ export default function ConventionalVsFhaCalculator() {
                     </Field>
                   </>
                 ) : (
-                  <div className="calc-fields-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+                  <div className="calc-fields-2" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: 10 }}>
                     <Field label="Down Payment ($)">
                       <input
                         className="cvf-input"
@@ -942,7 +942,7 @@ export default function ConventionalVsFhaCalculator() {
                   </div>
                   <MiniSlider min={600} max={850} step={1} value={creditScore} onChange={(v) => setCreditScoreText(String(Math.round(v)))} />
                 </Field>
-                <div className="calc-fields-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+                <div className="calc-fields-2" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: 10 }}>
                   <Field label="Conventional Rate (%)">
                     <input
                       className="cvf-input"
@@ -1000,7 +1000,7 @@ export default function ConventionalVsFhaCalculator() {
                 }}
               >
                 <h2 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 700, margin: "0 0 4px", color: C.greenDeep }}>Side-by-Side Comparison</h2>
-                <div className="cvf-compare-header" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr 1fr", fontSize: 11, textTransform: "uppercase", letterSpacing: ".04em", color: C.inkSoft, padding: "10px 0 6px", borderBottom: `2px solid ${C.line}`, marginBottom: 4 }}>
+                <div className="cvf-compare-header" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr)", fontSize: 11, textTransform: "uppercase", letterSpacing: ".04em", color: C.inkSoft, padding: "10px 0 6px", borderBottom: `2px solid ${C.line}`, marginBottom: 4 }}>
                   <span />
                   <span style={{ textAlign: "right", color: C.greenDeep, fontWeight: 700, paddingRight: 10 }}>FHA</span>
                   <span style={{ textAlign: "right", color: C.blue, fontWeight: 700 }}>Conventional</span>
@@ -1012,7 +1012,7 @@ export default function ConventionalVsFhaCalculator() {
                 <ComparisonLine label="Principal & Interest" fhaValue={fmtMoney(fhaPMT)} convValue={fmtMoney(convPMT)} fhaWins={fhaPMT < convPMT} convWins={convPMT < fhaPMT} />
                 <ComparisonLine label="Monthly Mortgage Insurance" fhaValue={fmtMoney(fhaMonth1Mip)} convValue={fmtMoney(convMonth1Pmi)} fhaWins={fhaMonth1Mip < convMonth1Pmi} convWins={convMonth1Pmi < fhaMonth1Mip} />
                 <ComparisonLine label="Taxes, Insurance & HOA" fhaValue={fmtMoney(sharedCosts)} convValue={fmtMoney(sharedCosts)} />
-                <div className="cvf-compare-total" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr 1fr", alignItems: "baseline", padding: "10px 0 0", borderTop: `2px solid ${C.green}`, marginTop: 4 }}>
+                <div className="cvf-compare-total" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr)", alignItems: "baseline", padding: "10px 0 0", borderTop: `2px solid ${C.green}`, marginTop: 4 }}>
                   <span style={{ fontSize: 13.5, color: C.inkSoft, fontWeight: 600 }}>Total Monthly Payment</span>
                   <span style={{ textAlign: "right", fontWeight: 700, fontSize: 17, color: fhaTotalMonthly < convTotalMonthly ? C.greenDeep : C.ink, paddingRight: 10 }}>{fmtMoney(fhaTotalMonthly)}</span>
                   <span style={{ textAlign: "right", fontWeight: 700, fontSize: 17, color: convTotalMonthly < fhaTotalMonthly ? C.blue : C.ink }}>{fmtMoney(convTotalMonthly)}</span>
@@ -1055,12 +1055,12 @@ export default function ConventionalVsFhaCalculator() {
           </div>
         </div>
         <style>{`
-          @media (max-width: 760px) {
-            .cvf-layout { grid-template-columns: 1fr !important; }
+          @media (max-width: 1023px) {
+            .cvf-layout { grid-template-columns: minmax(0, 1fr) !important; }
           }
           @media (max-width: 560px) {
             .cvf-hp-header { display: none !important; }
-            .cvf-hp-row { grid-template-columns: 1fr !important; row-gap: 6px; }
+            .cvf-hp-row { grid-template-columns: minmax(0, 1fr) !important; row-gap: 6px; }
             .cvf-hp-label { margin-bottom: 2px; }
             .cvf-hp-cell { text-align: left !important; }
             .cvf-hp-tag { display: block !important; }

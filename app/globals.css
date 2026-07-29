@@ -157,7 +157,7 @@ nav {
 /* Calculator suite — mobile optimization */
 .calc-fields-2 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 12px;
   min-width: 0;
   max-width: 100%;
@@ -168,7 +168,50 @@ nav {
   max-width: 100%;
 }
 
-@media (max-width: 760px) {
+/* A select's intrinsic width comes from its longest option, so without min-width: 0
+   an option like "Santa Cruz County" pushes the whole field past a narrow viewport. */
+input,
+select,
+textarea {
+  min-width: 0;
+  max-width: 100%;
+}
+
+/* Wide data tables scroll inside their panel rather than being clipped by the page. */
+.calc-table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+}
+
+/* Calculator dropdowns — the inline `background` shorthand on these selects wipes
+   out the chevron, so the arrow declarations need to win over it. */
+.calc-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'><path d='M1 1.5 6 6.5 11 1.5' fill='none' stroke='%233a443a' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/></svg>") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 12px center !important;
+  background-size: 11px 7px !important;
+  padding-right: 34px !important;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+/* 16px keeps iOS Safari from zooming the page when the select is tapped */
+@media (max-width: 640px) {
+  .calc-select {
+    font-size: 16px !important;
+    min-height: 44px;
+  }
+}
+
+/* The calculator two-column layouts need roughly 1000px to hold an input column
+   plus a results column, so they stay stacked through tablet widths. */
+@media (max-width: 1023px) {
   .bmc-layout,
   .refi-layout,
   .fha-layout,

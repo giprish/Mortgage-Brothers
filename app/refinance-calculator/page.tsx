@@ -23,7 +23,7 @@ const C = {
   dangerPale: "#fbeceb",
   purple: "#6b5bd6",
 };
-const SERIF = '"Source Serif 4", Georgia, serif';
+const SERIF = '"Playfair Display", Georgia, serif';
 const SANS = "'Inter', -apple-system, BlinkMacSystemFont, sans-serif";
 const MONO = "'JetBrains Mono', 'Roboto Mono', monospace";
 
@@ -335,7 +335,7 @@ function InsightsPanel({ groups, nextSteps }: { groups: { title: string; color: 
     <div style={{ background: "#f7f7f2", border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(24,42,28,0.04), 0 8px 24px -12px rgba(24,42,28,0.18)", padding: 22, marginBottom: 20 }}>
       <h2 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 600, margin: "0 0 12px", color: C.ink }}>Recommendations & Key Insights</h2>
       <div style={{ borderBottom: `1px solid ${C.line}`, marginBottom: 16 }} />
-      <div className="insights-grid" style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: 20, alignItems: "start" }}>
+      <div className="insights-grid" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.3fr) minmax(0, 1fr)", gap: 20, alignItems: "start" }}>
         <div>
           {groups.map((g) => (
             <div key={g.title} style={{ marginBottom: 16 }}>
@@ -360,23 +360,23 @@ function InsightsPanel({ groups, nextSteps }: { groups: { title: string; color: 
       </div>
       <style>{`
           /* Mobile calculator optimization */
-          @media (max-width: 760px) {
+          @media (max-width: 1023px) {
             .bmc-layout, .refi-layout, .fha-layout, .va-layout, .dti-layout,
             .ccc-layout, .epc-layout, .rvb-layout, .mac-layout, .cvf-layout, .dpc-grid {
-              grid-template-columns: 1fr !important;
+              grid-template-columns: minmax(0, 1fr) !important;
               gap: 16px !important;
             }
-            .bmc-stats, .rvb-stats { grid-template-columns: 1fr 1fr !important; }
-            .bmc-charts-row { grid-template-columns: 1fr !important; }
+            .bmc-stats, .rvb-stats { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important; }
+            .bmc-charts-row { grid-template-columns: minmax(0, 1fr) !important; }
             .bmc-sticky-panel, .rvb-sticky-panel { position: static !important; }
           }
           @media (max-width: 480px) {
-            .bmc-stats, .rvb-stats { grid-template-columns: 1fr !important; }
+            .bmc-stats, .rvb-stats { grid-template-columns: minmax(0, 1fr) !important; }
             input.dpc-input, select.dpc-input, .dpc-input {
               font-size: 16px !important;
             }
           }
-@media (max-width: 640px) { .insights-grid { grid-template-columns: 1fr !important; } }`}</style>
+@media (max-width: 640px) { .insights-grid { grid-template-columns: minmax(0, 1fr) !important; } }`}</style>
     </div>
   );
 }
@@ -568,7 +568,7 @@ export default function RefinanceCalculator() {
                       </div>
                     </div>
 
-          <div className="refi-layout" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, alignItems: "start" }}>
+          <div className="refi-layout" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: 24, alignItems: "start" }}>
             {/* ============ INPUTS ============ */}
             <div style={{ background: C.card, border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(24,42,28,0.04), 0 8px 24px -12px rgba(24,42,28,0.18)", padding: "22px 22px 20px" }}>
               <h2 style={{ fontFamily: SERIF, fontSize: 16.5, fontWeight: 600, margin: "0 0 4px" }}>Your loans</h2>
@@ -580,7 +580,7 @@ export default function RefinanceCalculator() {
                   onBlur={() => { if (isFinite(currentBalance)) setCurrentBalanceText(currentBalance.toLocaleString("en-US")); }} />
                 <MiniSlider min={0} max={2000000} step={1000} value={currentBalance} onChange={(v) => setCurrentBalanceText(Math.round(v).toLocaleString("en-US"))} />
               </Field>
-              <div className="calc-fields-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+              <div className="calc-fields-2" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: 10 }}>
                 <Field label="Interest Rate (%)" error={errors.currentRate}>
                   <RateInput value={currentRateText} onChange={setCurrentRateText}
                     onBlur={() => { const n2 = toNumber(currentRateText); if (isFinite(n2)) setCurrentRateText(n2.toFixed(3)); }} />
@@ -599,7 +599,7 @@ export default function RefinanceCalculator() {
                         </div>
 
               <DividerLabel>Proposed refinance</DividerLabel>
-              <div className="calc-fields-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+              <div className="calc-fields-2" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: 10 }}>
                 <Field label="Interest Rate (%)" error={errors.newRate}>
                   <RateInput value={newRateText} onChange={setNewRateText}
                     onBlur={() => { const n2 = toNumber(newRateText); if (isFinite(n2)) setNewRateText(n2.toFixed(3)); }} />
@@ -727,7 +727,7 @@ export default function RefinanceCalculator() {
                       <span style={{ fontFamily: MONO, color: C.inkSoft, fontSize: 13, transform: showDetails ? "rotate(180deg)" : "none", transition: "transform .2s ease" }}>▾</span>
                     </button>
                     {showDetails && (
-                      <div style={{ padding: "0 22px 20px" }}>
+                      <div style={{ padding: "0 22px 20px" }} className="calc-table-scroll">
                         <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12.5 }}>
                           <tbody>
                             {([
@@ -790,11 +790,11 @@ export default function RefinanceCalculator() {
           </div>
         </div>
         <style>{`
-          @media (max-width: 760px) {
-            .refi-layout { grid-template-columns: 1fr !important; }
+          @media (max-width: 1023px) {
+            .refi-layout { grid-template-columns: minmax(0, 1fr) !important; }
           }
           @media (max-width: 640px) {
-            .refi-primary-grid { grid-template-columns: 1fr !important; }
+            .refi-primary-grid { grid-template-columns: minmax(0, 1fr) !important; }
           }
           .dpc-input { transition: border-color .15s, box-shadow .15s, background .15s; }
           .dpc-input:hover { border-color: #a9b59c; }
