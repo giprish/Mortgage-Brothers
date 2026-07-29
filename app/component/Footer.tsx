@@ -178,8 +178,23 @@ const Footer = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start mb-10">
 
-          {/* Left: Verify Licenses card + Disclaimer */}
+          {/* Left: Logo + Verify Licenses card + Disclaimer */}
           <div>
+            {/* Mortgage Brothers Logo */}
+            <Link
+              href="/"
+              className="inline-block mb-5 hover:opacity-90 transition-opacity"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/home/mortgage-brothers-logo.png"
+                alt="Mortgage Brothers"
+                width={140}
+                height={46}
+                className="h-[42px] w-auto object-contain"
+              />
+            </Link>
+
             {/* Verify our licenses card */}
             <div className="border border-white/10 rounded-xl p-5 mb-6 bg-white/5">
               <div className="flex items-start gap-3">
@@ -247,7 +262,7 @@ const Footer = () => {
           </div>
 
           {/* Right: Accredited & Recognized */}
-          <div className="flex flex-col items-end">
+          <div className="flex flex-col items-end pt-[62px]">
             {/* <p className="text-[#a8aea8] text-[11px] font-bold tracking-[0.14em] uppercase mb-4">
               Accredited &amp; Recognized
             </p> */}
@@ -300,8 +315,8 @@ const Footer = () => {
         <div className="w-full h-px bg-white/10 mb-5" />
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="flex items-center gap-4">
-            <Link href="/" className="shrink-0 hover:opacity-90 transition-opacity">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
+            {/* <Link href="/" className="shrink-0 hover:opacity-90 transition-opacity">
+             
               <img
                 src="/home/mortgage-brothers-logo.png"
                 alt="Mortgage Brothers"
@@ -309,7 +324,7 @@ const Footer = () => {
                 height={40}
                 className="h-[36px] w-auto object-contain"
               />
-            </Link>
+            </Link> */}
             <span className="text-[#a8aea8] text-[12px]">
               © {new Date().getFullYear()} {COMPANY.legalName} · {COMPANY.nmlsDisplay}
             </span>

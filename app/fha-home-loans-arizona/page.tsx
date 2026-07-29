@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { Phone, MapPin } from "lucide-react";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import LoanProgramHero from "../component/LoanProgramHero";
@@ -540,7 +541,7 @@ export default function FhaHomeLoansArizonaPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left max-w-xl mx-auto">
               <div className="flex items-start gap-3">
-                <span className="text-[#3fb364] text-[18px]">📞</span>
+                <Phone className="w-5 h-5 text-[#3fb364] mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-[13px] text-[#8da684] uppercase tracking-wider font-bold mb-1">Phone</p>
                   <a href="tel:+16025352171" className="text-white font-semibold hover:text-[#3fb364] transition-colors">
@@ -549,7 +550,7 @@ export default function FhaHomeLoansArizonaPage() {
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-[#3fb364] text-[18px]">📍</span>
+                <MapPin className="w-5 h-5 text-[#3fb364] mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-[13px] text-[#8da684] uppercase tracking-wider font-bold mb-1">Address</p>
                   <p className="text-white text-[14px] leading-relaxed">

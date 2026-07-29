@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import LoanProgramHero from "../component/LoanProgramHero";
 import { getArticleImage } from "@/lib/article-images";
 
 const articles = [
@@ -183,48 +184,12 @@ export default function MortgageBasicsPage() {
       <Navbar />
 
       <main className="flex-grow">
-        {/* Hero Section — full-bleed cover like homepage so large screens have no seam */}
-        <section
-          className="relative w-full text-white min-h-[480px] lg:min-h-[580px] xl:min-h-[680px] flex items-center overflow-hidden bg-[#052316]"
-          style={{
-            backgroundImage: "url('/home/hero-bg.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center right",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
-          <div
-            className="absolute inset-0 pointer-events-none bg-gradient-to-r from-[#052316]/95 via-[#052316]/75 to-[#052316]/20 lg:to-transparent"
-            aria-hidden
-          />
-
-          <div className="max-w-7xl mx-auto w-full px-6 lg:px-10 pt-[110px] lg:pt-[130px] pb-16 lg:pb-20 relative z-10">
-            <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
-              <div className="max-w-xl">
-                <div className="flex items-center gap-2 text-[#8da684] text-[13px] font-medium mb-6">
-                  <Link href="/blog/" className="hover:text-white transition-colors">Blog</Link>
-                  <span>&gt;</span>
-                  <span className="text-[#3fb364]">Mortgage Basics</span>
-                </div>
-
-                <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
-                  TOPIC CATEGORY
-                </span>
-
-                <h1 className="text-white text-[36px] lg:text-[52px] font-playfair font-normal leading-[1.15] mb-6">
-                  Mortgage Basics
-                </h1>
-
-                <p className="text-[#c8c8b8] text-[15px] lg:text-[17px] leading-[1.7]">
-                  Explore essential mortgage terms and processes, including amortization, APR, and closing costs, for informed home financing decisions.
-                </p>
-              </div>
-
-              {/* Spacer keeps title clear of brothers on desktop / large screens */}
-              <div className="hidden lg:block flex-1 max-w-[480px] min-h-[300px]" aria-hidden />
-            </div>
-          </div>
-        </section>
+        <LoanProgramHero
+          title="Mortgage Basics"
+          subtitle="Explore essential mortgage terms and processes, including amortization, APR, and closing costs, for informed home financing decisions."
+          ctaLabel=""
+          note=""
+        />
 
         {/* Articles Grid Section — wide row + tall thumbs matching original Divi blog grid */}
         <section className="w-full py-14 lg:py-16 px-6 lg:px-10 bg-[#fcf9f3]">

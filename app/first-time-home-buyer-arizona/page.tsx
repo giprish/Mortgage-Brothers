@@ -108,17 +108,17 @@ export default function FirstTimeHomeBuyerPage() {
 
         {/* HIGHLIGHTS BAR */}
         <div className="w-full bg-[#03170e] text-[#c8c8b8] border-y border-white/10 py-4 px-6">
-          <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-around gap-6 text-[14px] font-medium">
-            <div className="flex items-center gap-2">
-              <span className="text-[#3fb364]">🎁</span>
+          <div className="max-w-5xl mx-auto flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center justify-center sm:justify-around gap-3 sm:gap-6 text-[13px] sm:text-[14px] font-medium">
+            <div className="flex items-start sm:items-center gap-2 w-full sm:w-auto">
+              <span className="text-[#3fb364] shrink-0">🎁</span>
               <span>Down Payment Assistance Available</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-[#3fb364]">⚡</span>
+            <div className="flex items-start sm:items-center gap-2 w-full sm:w-auto">
+              <span className="text-[#3fb364] shrink-0">⚡</span>
               <span>Fast 24-Hour Pre-Approval</span>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-[#3fb364]">🏡</span>
+            <div className="flex items-start sm:items-center gap-2 w-full sm:w-auto">
+              <span className="text-[#3fb364] shrink-0">🏡</span>
               <span>3% Down Conventional &amp; 3.5% FHA</span>
             </div>
           </div>

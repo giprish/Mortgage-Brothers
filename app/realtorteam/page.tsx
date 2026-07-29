@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import LoanProgramHero from "../component/LoanProgramHero";
 
 const WHY_PARTNER = [
   {
@@ -123,44 +124,13 @@ export default function RealtorTeamPage() {
       <Navbar />
 
       <main className="flex-grow">
-        {/* Hero */}
-        <section
-          className="w-full text-white py-24 lg:py-32 text-left relative overflow-hidden bg-cover bg-no-repeat bg-center"
-          style={{
-            backgroundImage: "url('/arizona-mortgage-brothers-team.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center top",
-          }}
-        >
-          <div className="absolute inset-0 bg-[#08271B]/75 z-0" />
-          <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
-            <div className="absolute -top-36 -right-36 w-[400px] h-[400px] rounded-full border border-white/5" />
-            <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5" />
-          </div>
-
-          <div className="max-w-7xl mx-auto px-6 lg:px-10 relative z-20">
-            <div className="max-w-2xl">
-              <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
-                REALTOR PARTNERSHIPS
-              </p>
-              <h1 className="text-white text-[36px] lg:text-[54px] font-playfair font-normal leading-[1.1] mb-5">
-                A Mortgage Partner You Can Depend On
-              </h1>
-              <p className="text-[#c8c8b8] text-[15px] lg:text-[18px] leading-[1.7] mb-8 max-w-xl">
-                Partner with trusted mortgage experts to deliver exceptional service and grow your business together
-              </p>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-bold px-6 py-3.5 rounded-full transition-all shadow-lg shadow-[#3fb364]/20"
-              >
-                Become a Business Partner
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </section>
+        <LoanProgramHero
+          title="A Mortgage Partner You Can Depend On"
+          subtitle="Partner with trusted mortgage experts to deliver exceptional service and grow your business together"
+          ctaLabel="Become a Business Partner"
+          ctaHref="#contact"
+          note=""
+        />
 
         {/* Highlight strip */}
         <section className="w-full bg-[#052316] py-8 border-b border-white/5">

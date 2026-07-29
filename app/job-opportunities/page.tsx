@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import LoanProgramHero from "../component/LoanProgramHero";
 
 const whyCards = [
   {
@@ -146,36 +147,13 @@ export default function JobOpportunitiesPage() {
       <Navbar />
 
       <main className="flex-grow">
-        {/* Hero */}
-        <section
-          className="relative w-full text-white min-h-[520px] lg:min-h-[640px] xl:min-h-[670px] flex items-center overflow-hidden bg-cover bg-no-repeat"
-          style={{
-            backgroundImage:
-              "linear-gradient(90deg, rgb(52, 69, 37) 0%, rgb(50, 94, 63) 20%, rgba(255, 255, 255, 0) 100%), url('/home/job-opportunities.jpg')",
-            backgroundPosition: "0% 50%, 100% 50%",
-            backgroundSize: "cover, cover",
-          }}
-        >
-          <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 pt-[120px] pb-14 lg:pt-[140px] lg:pb-20 relative z-10">
-            <div className="max-w-[680px]">
-              <h1 className="text-white text-[36px] sm:text-[48px] lg:text-[58px] xl:text-[64px] font-bold leading-[1.08] mb-5 tracking-tight">
-                Mortgage Job Opportunities in Arizona
-              </h1>
-              <h2 className="text-white text-[17px] sm:text-[22px] lg:text-[28px] font-normal leading-[1.35] mb-8 max-w-[560px]">
-                Join Our Team and Build a Rewarding Career in Mortgage Lending
-              </h2>
-              <a
-                href="#open-positions"
-                className="inline-flex items-center gap-3 bg-[#4B800A] hover:bg-[#3f6d09] text-white text-[16px] lg:text-[18px] font-semibold pl-7 pr-5 py-3 rounded-full transition-all shadow-lg"
-              >
-                View Open Positions
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <path d="M12 5v14M5 12l7 7 7-7" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </section>
+        <LoanProgramHero
+          title="Mortgage Job Opportunities in Arizona"
+          subtitle="Join Our Team and Build a Rewarding Career in Mortgage Lending"
+          ctaLabel="View Open Positions"
+          ctaHref="#open-positions"
+          note=""
+        />
 
         {/* Feature strip */}
         <section className="w-full bg-[#eeeff4] border-b border-[#e0e2e8] py-10 lg:py-12">

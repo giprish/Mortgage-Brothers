@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import LoanProgramHero from "../component/LoanProgramHero";
 
 const reviews = [
   {
@@ -358,47 +359,10 @@ export default function ClientMortgageReviewsPage() {
       <Navbar />
 
       <main className="flex-grow">
-        {/* Hero */}
-        <section
-          className="relative w-full text-white min-h-[560px] lg:min-h-[700px] xl:min-h-[725px] flex items-center overflow-hidden bg-cover bg-no-repeat"
-          style={{
-            backgroundImage:
-              "linear-gradient(90deg, rgb(52, 69, 37) 0%, rgb(50, 94, 63) 20%, rgba(255, 255, 255, 0) 100%), url('/home/client-reviews.jpg')",
-            backgroundPosition: "0% 50%, 100% 50%",
-            backgroundSize: "cover, cover",
-          }}
-        >
-          <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 pt-[120px] pb-14 lg:pt-[140px] lg:pb-20 relative z-10">
-            <div className="max-w-[640px]">
-              <h1 className="text-white text-[40px] sm:text-[52px] lg:text-[64px] xl:text-[72px] font-bold leading-[1.05] mb-5 tracking-tight">
-                Real Stories, Real Results
-              </h1>
-              <h2 className="text-white text-[18px] sm:text-[24px] lg:text-[30px] font-normal leading-[1.35] mb-8 max-w-[580px]">
-                See How We&apos;ve Helped Clients Achieve Their Homeownership Dreams
-              </h2>
-              <div className="flex flex-col items-start gap-3">
-                <Link
-                  href="/#get-pre-approved"
-                  className="inline-flex items-center gap-3 bg-[#4B800A] hover:bg-[#3f6d09] text-white text-[16px] lg:text-[18px] font-semibold pl-7 pr-2 py-2 rounded-full transition-all shadow-lg"
-                >
-                  Start my preapproval
-                  <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#052316]/35">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                  </span>
-                </Link>
-                <p className="text-white/85 text-[13px] lg:text-[14px] font-medium flex items-center gap-2">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                    <circle cx="12" cy="12" r="9" />
-                    <polyline points="12 7 12 12 15 14" />
-                  </svg>
-                  3 min / no credit impact
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+        <LoanProgramHero
+          title="Real Stories, Real Results"
+          subtitle="See How We've Helped Clients Achieve Their Homeownership Dreams"
+        />
 
         {/* Feature strip */}
         <section className="w-full bg-[#eeeff4] border-b border-[#e0e2e8] py-10 lg:py-12">
