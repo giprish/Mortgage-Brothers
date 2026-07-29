@@ -460,7 +460,7 @@ export default function FAQPage() {
 
           <div className="max-w-4xl mx-auto px-6 relative z-10">
             {/* Subtitle */}
-            <p className="text-[#b89a5a] text-[12px] font-semibold tracking-[0.14em] uppercase mb-4">
+            <p className="text-[#b89a5a] text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
               HELP CENTER
             </p>
 

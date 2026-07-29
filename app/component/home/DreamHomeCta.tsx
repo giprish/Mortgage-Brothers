@@ -28,11 +28,11 @@ const DreamHomeCta = () => {
 
           {/* Content */}
           <div className="order-1 lg:order-2">
-            <p className="text-[#3fb364] text-[12px] font-semibold tracking-[0.14em] uppercase mb-4">
+            <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
               Ready When You Are
             </p>
             <h2
-              className="text-white text-[30px] lg:text-[40px] font-normal leading-tight mb-6"
+              className="text-white text-[28px] lg:text-[40px] font-normal leading-tight mb-6"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Your Dream Home in Arizona Is Closer Than You Think

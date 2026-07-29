@@ -25,7 +25,7 @@ const RootedInArizona = () => {
             {/* Left Content */}
             <div className="flex-1 max-w-xl ">
               {/* Subtitle */}
-              <p className="text-[#b89a5a] text-[12px] font-semibold tracking-[0.14em] uppercase mb-4">
+              <p className="text-[#b89a5a] text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
                 ROOTED IN ARIZONA
               </p>
 

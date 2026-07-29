@@ -18,15 +18,15 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-[110px] pb-14 sm:pt-[130px] sm:pb-16 lg:pt-[150px] lg:pb-24 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
           <div className="flex-1 max-w-xl text-center lg:text-left min-w-0">
-            <h1 className="text-white text-[clamp(32px,8vw,56px)] sm:text-[48px] lg:text-[56px] font-bold leading-[1.08] mb-4 tracking-tight">
+            <h1 className="text-white text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.1] mb-4">
               Home Loans Made Simple
             </h1>
 
-            <h2 className="text-white text-[clamp(18px,5vw,28px)] sm:text-[26px] lg:text-[28px] font-semibold leading-snug mb-5">
+            <h2 className="text-white text-[20px] lg:text-[24px] font-playfair font-normal leading-snug mb-5">
               Trusted Mortgage Experts in Arizona
             </h2>
 
-            <p className="text-[#d4dcd0] text-[16px] lg:text-[17px] leading-[1.7] mb-9 max-w-md mx-auto lg:mx-0">
+            <p className="text-[#d4dcd0] text-[15px] lg:text-[16px] leading-[1.7] mb-9 max-w-md mx-auto lg:mx-0">
               At The Mortgage Brothers, we simplify the mortgage process for families across Arizona
             </p>
 

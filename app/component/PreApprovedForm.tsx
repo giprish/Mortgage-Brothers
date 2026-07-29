@@ -16,11 +16,11 @@ const PreApprovedForm = () => {
       className="w-full bg-[#fcf9f3] py-16 lg:py-24 border-t border-[#e8e0d0]/40 scroll-mt-20"
     >
       <div className="max-w-3xl mx-auto px-6 text-center">
-        <p className="text-[#b89a5a] text-[12px] font-semibold tracking-[0.14em] uppercase mb-3">
+        <p className="text-[#b89a5a] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
           SECURE APPLICATION
         </p>
         <h2
-          className="text-[#08271B] text-[clamp(26px,6vw,42px)] lg:text-[42px] font-normal leading-tight mb-4"
+          className="text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight mb-4"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           Start Your Pre-Approval

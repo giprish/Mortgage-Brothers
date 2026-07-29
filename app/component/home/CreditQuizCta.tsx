@@ -6,11 +6,11 @@ const CreditQuizCta = () => {
     <section className="w-full bg-[#08271B] py-16 lg:py-20 relative overflow-hidden">
       <div className="pointer-events-none absolute -top-24 right-0 w-[380px] h-[380px] rounded-full bg-[#3fb364]/10 blur-[100px]" />
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-        <p className="text-[#b89a5a] text-[12px] font-semibold tracking-[0.14em] uppercase mb-4">
+        <p className="text-[#b89a5a] text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
           Know Before You Apply
         </p>
         <h2
-          className="text-white text-[28px] lg:text-[36px] font-normal leading-tight mb-5"
+          className="text-white text-[28px] lg:text-[40px] font-normal leading-tight mb-5"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           Is Your Credit Score Ready for Homeownership?

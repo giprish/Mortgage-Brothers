@@ -31,11 +31,11 @@ const HomeBlog = () => {
     <section className="w-full bg-[#f5f0e8] py-20 lg:py-28 border-t border-[#e8e0d0]/50">
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <p className="text-[#b89a5a] text-[12px] font-semibold tracking-[0.14em] uppercase mb-3">
+          <p className="text-[#b89a5a] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
             Resources
           </p>
           <h2
-            className="text-[#08271B] text-[30px] lg:text-[38px] font-normal leading-tight mb-5"
+            className="text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight mb-5"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             We are Here to Simplify the Home Loan Process

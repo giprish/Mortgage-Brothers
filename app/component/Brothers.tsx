@@ -27,11 +27,11 @@ const Brothers = () => {
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
-          <p className="text-[#b89a5a] text-[12px] font-semibold tracking-[0.14em] uppercase mb-3">
+          <p className="text-[#b89a5a] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
             The Brothers
           </p>
           <h2
-            className="text-[#08271B] text-[clamp(26px,6vw,42px)] lg:text-[42px] font-normal leading-tight mb-6"
+            className="text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight mb-6"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Meet The Mortgage Brothers — Experts You Can Trust

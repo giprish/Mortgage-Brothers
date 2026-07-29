@@ -61,11 +61,11 @@ const BrokersAdvocate = () => {
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <p className="text-[#b89a5a] text-[12px] font-semibold tracking-[0.14em] uppercase mb-3">
+          <p className="text-[#b89a5a] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
             Why Work With Us
           </p>
           <h2
-            className="text-[#08271B] text-[32px] lg:text-[42px] font-normal leading-tight mb-6"
+            className="text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight mb-6"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             We Are Brokers Advocating For You

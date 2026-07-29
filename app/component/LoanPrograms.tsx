@@ -134,7 +134,7 @@ const LoanPrograms = () => {
         {/* Title Section */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <h2
-            className="text-[#1a3a1a] text-[30px] sm:text-[36px] lg:text-[40px] font-bold tracking-tight mb-3"
+            className="text-[#1a3a1a] text-[28px] lg:text-[40px] font-normal leading-tight mb-3"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Explore Our Mortgage Solutions

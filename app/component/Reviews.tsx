@@ -68,7 +68,7 @@ const Reviews = () => {
       <div className="max-w-5xl mx-auto px-6 lg:px-10">
         <div className="text-center max-w-3xl mx-auto mb-10">
           <h2
-            className="text-[#333333] text-[26px] sm:text-[30px] lg:text-[34px] font-normal leading-tight mb-4"
+            className="text-[#333333] text-[28px] lg:text-[40px] font-normal leading-tight mb-4"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             What Our Clients Are Saying

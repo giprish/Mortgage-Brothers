@@ -15,7 +15,7 @@ export default function TermsOfUsePage() {
       <Navbar />
       <main className="flex-grow pt-[110px] lg:pt-[130px] pb-16">
         <div className="max-w-3xl mx-auto px-6 lg:px-10">
-          <p className="text-[#b89a5a] text-[12px] font-semibold tracking-[0.14em] uppercase mb-3">
+          <p className="text-[#b89a5a] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
             Legal
           </p>
           <h1

@@ -42,11 +42,11 @@ const HomeFaq = () => {
 
           {/* Accordion */}
           <div className="order-1 lg:order-2">
-            <p className="text-[#b89a5a] text-[12px] font-semibold tracking-[0.14em] uppercase mb-3">
+            <p className="text-[#b89a5a] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
               FAQ
             </p>
             <h2
-              className="text-[#08271B] text-[30px] lg:text-[36px] font-normal leading-tight mb-8"
+              className="text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight mb-8"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Answers to Your Arizona Mortgage Questions
