@@ -4767,5 +4767,43 @@
       "description": "Meet Eddie Knoell, Senior Loan Officer/Owner of Mortgage Brothers LLC in Phoenix, with 23+ years' experience and a 3rd generation real estate legacy.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/Knoell-Eddie-Co-Founder.jpg"
     }
+  },
+  "/mortgage-calculator-arizona": {
+    "section": "pages",
+    "sourceUrl": "https://azmortgagebrothers.com/mortgage-calculator-arizona/",
+    "title": "Easy-to-Use Mortgage Calculator | Arizona Mortgage Brothers",
+    "description": "Calculate your monthly mortgage payments with our free mortgage calculator. Get quick insights to plan your home loan in Arizona. Try it now!",
+    "openGraph": {
+      "title": "Easy-to-Use Mortgage Calculator | Arizona Mortgage Brothers",
+      "description": "Calculate your monthly mortgage payments with our free mortgage calculator. Get quick insights to plan your home loan in Arizona. Try it now!",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/arizona-mortgage-calculators-tools.jpg",
+      "url": "https://azmortgagebrothers.com/mortgage-calculator-arizona/",
+      "type": "article"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Easy-to-Use Mortgage Calculator | Arizona Mortgage Brothers",
+      "description": "Calculate your monthly mortgage payments with our free mortgage calculator. Get quick insights to plan your home loan in Arizona. Try it now!",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/arizona-mortgage-calculators-tools.jpg"
+    }
+  },
+  "/mortgage-loan-programs-arizona": {
+    "section": "pages",
+    "sourceUrl": "https://azmortgagebrothers.com/mortgage-loan-programs-arizona/",
+    "title": "Unlock 10 Amazing Loan Programs in Arizona Today!",
+    "description": "Discover tailored loan programs in Arizona with Arizona Mortgage Brothers. Find the perfect home loan to fit your needs. Start exploring now!",
+    "openGraph": {
+      "title": "Unlock 10 Amazing Loan Programs in Arizona Today!",
+      "description": "Discover tailored loan programs in Arizona with Arizona Mortgage Brothers. Find the perfect home loan to fit your needs. Start exploring now!",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/mortgage-loan-programs-in-arizona.jpg",
+      "url": "https://azmortgagebrothers.com/mortgage-loan-programs-arizona/",
+      "type": "article"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Unlock 10 Amazing Loan Programs in Arizona Today!",
+      "description": "Discover tailored loan programs in Arizona with Arizona Mortgage Brothers. Find the perfect home loan to fit your needs. Start exploring now!",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/mortgage-loan-programs-in-arizona.jpg"
+    }
   }
 }

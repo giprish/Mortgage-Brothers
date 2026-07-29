@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { COMPANY } from "./company";
 import seoMetadataJson from "./seo-metadata.json";
 
 export type SeoEntry = {
@@ -44,21 +45,6 @@ export function toTrailingSlashPath(pathname: string): string {
   return `${path}/`;
 }
 
-function ensureAbsoluteTrailingSlashUrl(url: string | undefined): string | undefined {
-  if (!url) return undefined;
-  try {
-    const u = new URL(url);
-    // Do not alter asset URLs (files with extensions)
-    if (/\.[a-z0-9]{2,5}$/i.test(u.pathname)) return url;
-    if (!u.pathname.endsWith("/")) {
-      u.pathname = `${u.pathname}/`;
-    }
-    return u.toString();
-  } catch {
-    return url;
-  }
-}
-
 export function getSeoEntry(pathname: string): SeoEntry | undefined {
   const path = normalizePathname(pathname);
   const aliased = PATH_ALIASES[path] ?? path;
@@ -66,32 +52,29 @@ export function getSeoEntry(pathname: string): SeoEntry | undefined {
 }
 
 export function getSeoMetadata(pathname: string): Metadata {
-  const entry = getSeoEntry(pathname);
-  if (!entry) {
-    return {};
-  }
-
   const canonicalPath = toTrailingSlashPath(pathname);
-  const canonicalUrl =
-    ensureAbsoluteTrailingSlashUrl(entry.openGraph?.url) ??
-    ensureAbsoluteTrailingSlashUrl(entry.sourceUrl) ??
-    `https://azmortgagebrothers.com${canonicalPath === "/" ? "/" : canonicalPath}`;
+  const canonicalUrl = `${COMPANY.siteUrl}${canonicalPath}`;
 
   const metadata: Metadata = {
     alternates: {
       canonical: canonicalUrl,
     },
   };
+
+  const entry = getSeoEntry(pathname);
+  if (!entry) {
+    return metadata;
+  }
+
   if (entry.title) metadata.title = entry.title;
   if (entry.description) metadata.description = entry.description;
 
   if (entry.openGraph) {
     const og = entry.openGraph;
-    const ogUrl = ensureAbsoluteTrailingSlashUrl(og.url) ?? canonicalUrl;
     metadata.openGraph = {
       ...(og.title ? { title: og.title } : {}),
       ...(og.description ? { description: og.description } : {}),
-      url: ogUrl,
+      url: canonicalUrl,
       ...(og.type
         ? { type: og.type as "website" | "article" | "profile" | "book" }
         : {}),

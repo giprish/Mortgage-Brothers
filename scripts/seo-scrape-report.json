@@ -1,7 +1,10 @@
 {
-  "scrapedAt": "2026-07-22T08:21:03.502Z",
-  "total": 162,
-  "success": 162,
+  "scrapedAt": "2026-07-29T07:37:24.800Z",
+  "mode": "incremental",
+  "doneTotal": 250,
+  "scraped": 2,
+  "success": 2,
+  "registrySize": 253,
   "failures": [],
-  "missing": []
+  "stillMissing": []
 }

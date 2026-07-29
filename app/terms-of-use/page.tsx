@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Terms of Use | Mortgage Brothers",
   description:
     "Terms of Use for the Mortgage Brothers LLC website and online mortgage resources.",
+  alternates: {
+    canonical: "https://azmortgagebrothers.com/terms-of-use/",
+  },
 };
 
 export default function TermsOfUsePage() {

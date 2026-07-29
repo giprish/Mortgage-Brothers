@@ -2,17 +2,26 @@
 /**
  * Scrapes title, description, Open Graph, and Twitter meta from Done URLs
  * via Firecrawl (site has SoftGarden captcha that blocks direct fetch).
+ *
+ * Default: incremental — only scrape Done URLs missing from lib/seo-metadata.json,
+ * then merge results into the existing registry (preserves non-sheet entries).
+ *
+ * Full refresh: node scripts/scrape-seo-meta.mjs --full
+ *   Re-scrapes every Done URL and rewrites the registry from Done URLs only
+ *   (extra non-sheet keys are dropped).
  */
-import { writeFileSync, mkdirSync, readFileSync } from "node:fs";
+import { writeFileSync, mkdirSync, readFileSync, existsSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { homedir } from "node:os";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
+const OUT_PATH = join(ROOT, "lib", "seo-metadata.json");
 const SHEET_CSV =
   "https://docs.google.com/spreadsheets/d/1AV11mP_IJzh5BLSQtIJvmYnLTn6b76Lx/export?format=csv&gid=1530173043";
 const FIRECRAWL_API = "https://api.firecrawl.dev/v1";
+const FULL_REFRESH = process.argv.includes("--full");
 
 function getApiKey() {
   if (process.env.FIRECRAWL_API_KEY) return process.env.FIRECRAWL_API_KEY;
@@ -223,25 +232,22 @@ async function scrapeOne(apiKey, url) {
   return body.data?.metadata ?? {};
 }
 
-async function main() {
-  const apiKey = getApiKey();
-  if (!apiKey) {
-    console.error("FIRECRAWL_API_KEY not found");
-    process.exit(1);
+function loadExistingRegistry() {
+  if (!existsSync(OUT_PATH)) return {};
+  try {
+    return JSON.parse(readFileSync(OUT_PATH, "utf8"));
+  } catch {
+    return {};
   }
+}
 
-  console.log("Fetching sheet CSV…");
-  const csvText = await (await fetch(SHEET_CSV)).text();
-  const done = getDoneUrls(parseCsv(csvText));
-  console.log(`Found ${done.length} Done URLs. Scraping via Firecrawl…`);
-
-  // Firecrawl batch scrape has URL limits; chunk into batches of 50
+async function scrapeTargets(apiKey, targets) {
   const CHUNK = 40;
   const byUrl = new Map();
   const failures = [];
 
-  for (let i = 0; i < done.length; i += CHUNK) {
-    const chunk = done.slice(i, i + CHUNK);
+  for (let i = 0; i < targets.length; i += CHUNK) {
+    const chunk = targets.slice(i, i + CHUNK);
     console.log(
       `\nBatch ${Math.floor(i / CHUNK) + 1}: URLs ${i + 1}-${i + chunk.length}`,
     );
@@ -263,7 +269,6 @@ async function main() {
           chunk.find((d) => d.pathname === pathname) ||
           chunk.find((d) => sourceUrl.startsWith(d.url.replace(/\/$/, "")));
         if (!match) {
-          // still store by pathname
           if (pathname) {
             byUrl.set(pathname, pickMeta(item.metadata, sourceUrl, "unknown"));
           }
@@ -297,8 +302,7 @@ async function main() {
     }
   }
 
-  // Retry any Done URLs missing from results
-  for (const item of done) {
+  for (const item of targets) {
     if (byUrl.has(item.pathname)) continue;
     try {
       console.log(`Retry missing: ${item.pathname}`);
@@ -313,16 +317,56 @@ async function main() {
     }
   }
 
-  const registry = {};
-  for (const item of done) {
-    if (byUrl.has(item.pathname)) {
-      registry[item.pathname] = byUrl.get(item.pathname);
+  return { byUrl, failures };
+}
+
+async function main() {
+  const apiKey = getApiKey();
+  if (!apiKey) {
+    console.error("FIRECRAWL_API_KEY not found");
+    process.exit(1);
+  }
+
+  console.log("Fetching sheet CSV…");
+  const csvText = await (await fetch(SHEET_CSV)).text();
+  const done = getDoneUrls(parseCsv(csvText));
+  const existing = loadExistingRegistry();
+  const existingCount = Object.keys(existing).length;
+
+  const targets = FULL_REFRESH
+    ? done
+    : done.filter((d) => !existing[d.pathname]);
+
+  console.log(
+    FULL_REFRESH
+      ? `Full refresh: scraping all ${done.length} Done URLs…`
+      : `Incremental: ${targets.length} missing of ${done.length} Done URLs (registry has ${existingCount})…`,
+  );
+
+  if (targets.length === 0) {
+    console.log("Nothing to scrape. Registry already covers all Done URLs.");
+    return;
+  }
+
+  const { byUrl, failures } = await scrapeTargets(apiKey, targets);
+
+  let registry;
+  if (FULL_REFRESH) {
+    registry = {};
+    for (const item of done) {
+      if (byUrl.has(item.pathname)) {
+        registry[item.pathname] = byUrl.get(item.pathname);
+      }
+    }
+  } else {
+    registry = { ...existing };
+    for (const [pathname, entry] of byUrl.entries()) {
+      registry[pathname] = entry;
     }
   }
 
   mkdirSync(join(ROOT, "lib"), { recursive: true });
-  const outPath = join(ROOT, "lib", "seo-metadata.json");
-  writeFileSync(outPath, JSON.stringify(registry, null, 2) + "\n");
+  writeFileSync(OUT_PATH, JSON.stringify(registry, null, 2) + "\n");
 
   const reportPath = join(ROOT, "scripts", "seo-scrape-report.json");
   writeFileSync(
@@ -330,10 +374,15 @@ async function main() {
     JSON.stringify(
       {
         scrapedAt: new Date().toISOString(),
-        total: done.length,
-        success: Object.keys(registry).length,
+        mode: FULL_REFRESH ? "full" : "incremental",
+        doneTotal: done.length,
+        scraped: targets.length,
+        success: [...byUrl.keys()].filter((k) =>
+          targets.some((t) => t.pathname === k),
+        ).length,
+        registrySize: Object.keys(registry).length,
         failures,
-        missing: done
+        stillMissing: done
           .filter((d) => !registry[d.pathname])
           .map((d) => d.pathname),
       },
@@ -343,11 +392,11 @@ async function main() {
   );
 
   console.log(
-    `\nWrote ${Object.keys(registry).length}/${done.length} entries → ${outPath}`,
+    `\nWrote ${Object.keys(registry).length} registry entries → ${OUT_PATH}`,
   );
-  if (failures.length) {
-    console.log(`Failures: ${failures.length} (see ${reportPath})`);
-  }
+  console.log(
+    `Scraped ${targets.length}; failures: ${failures.length} (see ${reportPath})`,
+  );
 }
 
 main().catch((err) => {

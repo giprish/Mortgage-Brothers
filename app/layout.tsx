@@ -19,8 +19,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://azmortgagebrothers.com"),
   ...homeSeoMetadata,
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
   },
   icons: {
     icon: [
