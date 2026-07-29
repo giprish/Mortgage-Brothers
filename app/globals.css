@@ -25,10 +25,10 @@
   --space-section-py: 3rem;                /* Standard vertical padding for sections (48px) */
   --space-section-py-lg: 4rem;             /* Large vertical padding for sections (64px) */
 
-  /* Typographic Size Tokens */
-  --font-size-hero-title: 40px;
-  --font-size-hero-title-lg: 54px;
-  --font-size-section-title: 28px;
+  /* Typographic Size Tokens — match Areas We Serve hero */
+  --font-size-hero-title: 32px;
+  --font-size-hero-title-lg: 48px;
+  --font-size-section-title: clamp(24px, 5.5vw, 28px);
   --font-size-section-title-lg: 34px;
 }
 
@@ -64,6 +64,22 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent fixed-width grids/tables from forcing page overflow */
+main,
+section,
+footer,
+header,
+nav {
+  max-width: 100%;
 }
 
 /* Custom CSS utilities for easy global component modification */
@@ -136,5 +152,112 @@ body {
   border: 3px solid #ffffff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+}
+
+/* Calculator suite — mobile optimization */
+.calc-fields-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.calc-fields-2 > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+@media (max-width: 760px) {
+  .bmc-layout,
+  .refi-layout,
+  .fha-layout,
+  .va-layout,
+  .dti-layout,
+  .ccc-layout,
+  .epc-layout,
+  .rvb-layout,
+  .mac-layout,
+  .cvf-layout,
+  .dpc-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 16px !important;
+  }
+
+  .bmc-layout > *,
+  .refi-layout > *,
+  .fha-layout > *,
+  .va-layout > *,
+  .dti-layout > *,
+  .ccc-layout > *,
+  .epc-layout > *,
+  .rvb-layout > *,
+  .mac-layout > *,
+  .cvf-layout > *,
+  .dpc-grid > * {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .bmc-charts-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .bmc-sticky-panel,
+  .rvb-sticky-panel {
+    position: static !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .calc-fields-2,
+  .mac-fields {
+    grid-template-columns: 1fr !important;
+  }
+
+  .cvf-compare-line,
+  .cvf-compare-header,
+  .cvf-compare-total {
+    grid-template-columns: 1fr !important;
+    row-gap: 4px;
+  }
+
+  .cvf-compare-header {
+    display: none !important;
+  }
+
+  .cvf-compare-line > span:nth-child(2),
+  .cvf-compare-line > span:nth-child(3),
+  .cvf-compare-total > span:nth-child(2),
+  .cvf-compare-total > span:nth-child(3) {
+    text-align: left !important;
+    padding-right: 0 !important;
+  }
+
+  .cvf-compare-line > span:nth-child(2)::before {
+    content: "FHA: ";
+    font-weight: 600;
+    opacity: 0.7;
+  }
+
+  .cvf-compare-line > span:nth-child(3)::before {
+    content: "Conv: ";
+    font-weight: 600;
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 480px) {
+  .bmc-stats,
+  .rvb-stats {
+    grid-template-columns: 1fr !important;
+  }
+
+  .btn-primary {
+    width: 100%;
+    justify-content: center;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
 }
 

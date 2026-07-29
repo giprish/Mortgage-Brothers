@@ -21,18 +21,18 @@ export default function LoanProgramHero({
   note = "3 min - no credit impact",
 }: LoanProgramHeroProps) {
   return (
-    <section className="w-full bg-brand-green-deep text-white py-16 lg:py-20 text-center relative overflow-hidden">
+    <section className="w-full bg-brand-green-deep text-white py-12 sm:py-16 lg:py-20 text-center relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
-        <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5 opacity-40" />
-        <div className="absolute -top-36 -right-36 w-[400px] h-[400px] rounded-full border border-white/5 opacity-40" />
+        <div className="absolute -bottom-36 -left-36 w-[min(360px,90vw)] h-[360px] rounded-full border border-white/5 opacity-40" />
+        <div className="absolute -top-36 -right-36 w-[min(400px,90vw)] h-[400px] rounded-full border border-white/5 opacity-40" />
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center pt-[56px] lg:pt-[40px]">
-        <h1 className="text-white text-hero-title font-playfair font-normal leading-[1.1] mb-6 max-w-3xl">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center pt-[48px] sm:pt-[56px] lg:pt-[40px] min-w-0">
+        <h1 className="text-white text-hero-title font-playfair font-normal leading-[1.1] mb-5 sm:mb-6 max-w-3xl break-words">
           {title}
         </h1>
 
-        <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">
+        <p className="text-brand-text-light text-[15px] lg:text-[16px] leading-[1.7] max-w-2xl mx-auto mb-8">
           {subtitle}
         </p>
 

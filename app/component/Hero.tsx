@@ -4,7 +4,7 @@ import Link from "next/link";
 const Hero = () => {
   return (
     <section
-      className="w-full bg-[#052316] relative overflow-hidden min-h-[600px] lg:min-h-[720px] xl:min-h-[800px] bg-cover bg-no-repeat bg-center"
+      className="w-full bg-[#052316] relative overflow-hidden min-h-[520px] sm:min-h-[600px] lg:min-h-[720px] xl:min-h-[800px] bg-cover bg-no-repeat bg-center"
       style={{
         backgroundImage: "url('/home/hero-bg.jpg')",
         backgroundSize: "cover",
@@ -12,17 +12,17 @@ const Hero = () => {
       }}
     >
       {/* Dark overlay for text readability — stronger on left */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#052316]/95 via-[#052316]/75 to-[#052316]/25 lg:to-transparent" />
-      <div className="pointer-events-none absolute -top-40 left-1/4 w-[480px] h-[480px] rounded-full bg-[#3fb364]/15 blur-[110px]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#052316]/95 via-[#052316]/80 to-[#052316]/40 sm:via-[#052316]/75 sm:to-[#052316]/25 lg:to-transparent" />
+      <div className="pointer-events-none absolute -top-40 left-1/4 w-[min(480px,100vw)] h-[480px] rounded-full bg-[#3fb364]/15 blur-[110px]" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-[130px] pb-16 lg:pt-[150px] lg:pb-24 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-[110px] pb-14 sm:pt-[130px] sm:pb-16 lg:pt-[150px] lg:pb-24 relative z-10">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
-          <div className="flex-1 max-w-xl text-center lg:text-left">
-            <h1 className="text-white text-[40px] sm:text-[48px] lg:text-[56px] font-bold leading-[1.08] mb-4 tracking-tight">
+          <div className="flex-1 max-w-xl text-center lg:text-left min-w-0">
+            <h1 className="text-white text-[clamp(32px,8vw,56px)] sm:text-[48px] lg:text-[56px] font-bold leading-[1.08] mb-4 tracking-tight">
               Home Loans Made Simple
             </h1>
 
-            <h2 className="text-white text-[22px] sm:text-[26px] lg:text-[28px] font-semibold leading-snug mb-5">
+            <h2 className="text-white text-[clamp(18px,5vw,28px)] sm:text-[26px] lg:text-[28px] font-semibold leading-snug mb-5">
               Trusted Mortgage Experts in Arizona
             </h2>
 
@@ -30,10 +30,10 @@ const Hero = () => {
               At The Mortgage Brothers, we simplify the mortgage process for families across Arizona
             </p>
 
-            <div className="flex flex-col items-center lg:items-start gap-3">
+            <div className="flex flex-col items-center lg:items-start gap-3 w-full sm:w-auto">
               <Link
                 href="/#get-pre-approved"
-                className="inline-flex items-center gap-2.5 bg-[#3fb364] hover:bg-[#349b55] text-white text-[16px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-[#3fb364]/35"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#3fb364] hover:bg-[#349b55] text-white text-[16px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-[#3fb364]/35"
               >
                 Start my preapproval
                 <svg

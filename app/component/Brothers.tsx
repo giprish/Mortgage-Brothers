@@ -31,7 +31,7 @@ const Brothers = () => {
             The Brothers
           </p>
           <h2
-            className="text-[#08271B] text-[32px] lg:text-[42px] font-normal leading-tight mb-6"
+            className="text-[#08271B] text-[clamp(26px,6vw,42px)] lg:text-[42px] font-normal leading-tight mb-6"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Meet The Mortgage Brothers — Experts You Can Trust
@@ -53,7 +53,7 @@ const Brothers = () => {
               className="group bg-white border border-[#e8e0d0]/60 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col"
             >
               {/* Image Container */}
-              <div className="h-[360px] w-full overflow-hidden bg-[#2b3531] relative">
+              <div className="h-[280px] sm:h-[360px] w-full overflow-hidden bg-[#2b3531] relative">
                 <Image
                   src={person.photo}
                   alt={person.name}
@@ -65,18 +65,20 @@ const Brothers = () => {
               </div>
 
               {/* Content Area */}
-              <div className="p-8 flex-1 flex flex-col">
+              <div className="p-5 sm:p-8 flex-1 flex flex-col min-w-0">
                 <span className="inline-block text-[#b89a5a] text-[11px] font-bold uppercase tracking-wider mb-2">
                   {person.role}
                 </span>
                 <h3
-                  className="text-[#08271B] text-[24px] font-normal mb-2"
+                  className="text-[#08271B] text-[22px] sm:text-[24px] font-normal mb-2"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   {person.name}
                 </h3>
-                <p className="text-[#8a9a7a] text-[12.5px] font-medium mb-4">
-                  {person.nmls} &bull; {person.license}
+                <p className="text-[#8a9a7a] text-[12px] sm:text-[12.5px] font-medium mb-4 leading-snug">
+                  <span className="block sm:inline">{person.nmls}</span>
+                  <span className="hidden sm:inline"> &bull; </span>
+                  <span className="block sm:inline">{person.license}</span>
                 </p>
                 <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed mb-8">
                   {person.bio}

@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import SliderInput from "../component/SliderInput";
+import LoanProgramHero from "../component/LoanProgramHero";
 
 export default function CalculatorsPage() {
   const [homePrice, setHomePrice] = useState(425000);
@@ -41,31 +42,18 @@ export default function CalculatorsPage() {
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
 
-      <main className="flex-grow">
-        <section
-          className="w-full bg-brand-green-deep text-white pt-[110px] lg:pt-[130px] pb-20 lg:pb-28 text-center relative overflow-hidden bg-cover bg-no-repeat bg-center"
-          style={{ backgroundImage: "url('/mortgage-calculators.jpg')", backgroundSize: "cover", backgroundPosition: "center top" }}
-        >
-          <div className="absolute inset-0 bg-[#08271B]/75 z-0"></div>
-          <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
-            <div className="absolute -top-36 -right-36 w-[400px] h-[400px] rounded-full border border-white/5 pointer-events-none"></div>
-            <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5 pointer-events-none"></div>
-          </div>
-          <div className="max-w-4xl mx-auto px-6 relative z-20">
-            <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-4">MORTGAGE CALCULATOR</p>
-            <h1 className="text-white text-hero-title font-playfair font-normal leading-[1.1] mb-6">
-              Know your numbers before you shop.
-            </h1>
-            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto">
-              Adjust the sliders or type directly into the fields to see your estimated monthly payment instantly.
-            </p>
-          </div>
-        </section>
+      <main className="flex-grow overflow-x-hidden">
+        <LoanProgramHero
+          title="Know your numbers before you shop."
+          subtitle="Adjust the sliders or type directly into the fields to see your estimated monthly payment instantly."
+          ctaLabel=""
+          note=""
+        />
 
-        <section className="w-full py-12 lg:py-16 -mt-25 relative z-20">
-          <div className="max-w-5xl mx-auto px-6 lg:px-10">
-            <div className="bg-white rounded-3xl shadow-xl border border-[#e8e0d0]/40 p-8 lg:p-12">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+        <section className="w-full py-8 sm:py-12 lg:py-16 relative z-20">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-10">
+            <div className="bg-white rounded-2xl sm:rounded-3xl shadow-xl border border-[#e8e0d0]/40 p-5 sm:p-8 lg:p-12">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start">
 
                 <div className="flex flex-col gap-8">
                   <SliderInput label="Home Price" value={homePrice} min={50000} max={2000000} step={1000} prefix="$"
@@ -110,13 +98,13 @@ export default function CalculatorsPage() {
                   </div>
                 </div>
 
-                <div className="flex flex-col items-start bg-[#faf7f0] rounded-2xl p-6 lg:p-8">
+                <div className="flex flex-col items-start bg-[#faf7f0] rounded-2xl p-5 sm:p-6 lg:p-8 w-full min-w-0">
                   <span className="text-brand-green-accent text-[10px] font-bold tracking-[0.15em] uppercase mb-2">
                     ESTIMATED MONTHLY PAYMENT
                   </span>
-                  <h2 className="text-brand-green-deep text-[42px] lg:text-[52px] font-bold tracking-tight leading-none mb-1">
+                  <h2 className="text-brand-green-deep text-[36px] sm:text-[42px] lg:text-[52px] font-bold tracking-tight leading-none mb-1">
                     {formatCurrency(Math.round(calculations.monthlyPayment))}
-                    <span className="text-[18px] lg:text-[22px] font-medium text-brand-text-muted">/mo</span>
+                    <span className="text-[16px] sm:text-[18px] lg:text-[22px] font-medium text-brand-text-muted">/mo</span>
                   </h2>
 
                   <div className="w-full h-[8px] rounded-full bg-[#d4d4d4] mt-5 mb-3 overflow-hidden">

@@ -261,22 +261,22 @@ export default function FhaHomeLoansArizonaPage() {
 
         {/* STATS BANNER */}
         <section className="w-full bg-[#3fb364] text-white py-10 px-6">
-          <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
             <div>
-              <div className="text-[36px] lg:text-[44px] font-extrabold leading-none">3.5%</div>
-              <div className="text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-2 opacity-90">Down Payment Required</div>
+              <div className="text-[clamp(28px,7vw,44px)] lg:text-[44px] font-extrabold leading-none">3.5%</div>
+              <div className="text-[11px] sm:text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-2 opacity-90">Down Payment Required</div>
             </div>
             <div>
-              <div className="text-[28px] lg:text-[36px] font-extrabold leading-none">$557,750</div>
-              <div className="text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-2 opacity-90">2026 FHA Maricopa County Loan Limit</div>
+              <div className="text-[clamp(20px,5.5vw,36px)] lg:text-[36px] font-extrabold leading-none">$557,750</div>
+              <div className="text-[11px] sm:text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-2 opacity-90">2026 FHA Maricopa County Loan Limit</div>
             </div>
             <div>
-              <div className="text-[36px] lg:text-[44px] font-extrabold leading-none">1.75%</div>
-              <div className="text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-2 opacity-90">Upfront MIP</div>
+              <div className="text-[clamp(28px,7vw,44px)] lg:text-[44px] font-extrabold leading-none">1.75%</div>
+              <div className="text-[11px] sm:text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-2 opacity-90">Upfront MIP</div>
             </div>
             <div>
-              <div className="text-[36px] lg:text-[44px] font-extrabold leading-none">0.55%</div>
-              <div className="text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-2 opacity-90">Annual MIP Rate</div>
+              <div className="text-[clamp(28px,7vw,44px)] lg:text-[44px] font-extrabold leading-none">0.55%</div>
+              <div className="text-[11px] sm:text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-2 opacity-90">Annual MIP Rate</div>
             </div>
           </div>
         </section>

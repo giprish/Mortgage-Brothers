@@ -252,22 +252,22 @@ export default function FhaStreamlineRefinanceArizonaPage() {
 
         {/* STATS BANNER */}
         <section className="w-full bg-[#3fb364] text-white py-10 px-6">
-          <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
             <div>
-              <div className="text-[36px] lg:text-[44px] font-extrabold leading-none">600</div>
-              <div className="text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-2 opacity-90">Minimum Credit Score</div>
+              <div className="text-[clamp(28px,7vw,44px)] lg:text-[44px] font-extrabold leading-none">600</div>
+              <div className="text-[11px] sm:text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-2 opacity-90">Minimum Credit Score</div>
             </div>
             <div>
-              <div className="text-[28px] lg:text-[36px] font-extrabold leading-none">$0</div>
-              <div className="text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-2 opacity-90">Upfront Cost</div>
+              <div className="text-[clamp(22px,6vw,36px)] lg:text-[36px] font-extrabold leading-none">$0</div>
+              <div className="text-[11px] sm:text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-2 opacity-90">Upfront Cost</div>
             </div>
             <div>
-              <div className="text-[36px] lg:text-[44px] font-extrabold leading-none">30%</div>
-              <div className="text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-2 opacity-90">Potential Payment Reduction</div>
+              <div className="text-[clamp(28px,7vw,44px)] lg:text-[44px] font-extrabold leading-none">30%</div>
+              <div className="text-[11px] sm:text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-2 opacity-90">Potential Payment Reduction</div>
             </div>
             <div>
-              <div className="text-[36px] lg:text-[44px] font-extrabold leading-none">210</div>
-              <div className="text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-2 opacity-90">Original Loan Days Old</div>
+              <div className="text-[clamp(28px,7vw,44px)] lg:text-[44px] font-extrabold leading-none">210</div>
+              <div className="text-[11px] sm:text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-2 opacity-90">Original Loan Days Old</div>
             </div>
           </div>
         </section>

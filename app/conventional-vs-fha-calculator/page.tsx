@@ -2,6 +2,7 @@
 
 import { useMemo, useState, type ChangeEvent, type CSSProperties, type ReactNode } from "react";
 import Navbar from "../component/Navbar";
+import LoanProgramHero from "../component/LoanProgramHero";
 import Footer from "../component/Footer";
 import {
   ResponsiveContainer,
@@ -349,7 +350,7 @@ function MilestoneStat({ label, value, note, highlight }: { label: string; value
 }
 function ComparisonLine({ label, fhaValue, convValue, fhaWins, convWins }: { label: string; fhaValue: ReactNode; convValue: ReactNode; fhaWins?: boolean; convWins?: boolean }) {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr 1fr", alignItems: "baseline", padding: "7px 0", borderBottom: `1px dashed ${C.line}` }}>
+    <div className="cvf-compare-line" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr 1fr", alignItems: "baseline", padding: "7px 0", borderBottom: `1px dashed ${C.line}` }}>
       <span style={{ fontSize: 12.5, color: C.inkSoft }}>{label}</span>
       <span style={{ textAlign: "right", fontWeight: fhaWins ? 700 : 500, fontVariantNumeric: "tabular-nums", fontSize: 13.5, color: fhaWins ? C.greenDeep : C.ink, paddingRight: 10 }}>{fhaValue}</span>
       <span style={{ textAlign: "right", fontWeight: convWins ? 700 : 500, fontVariantNumeric: "tabular-nums", fontSize: 13.5, color: convWins ? C.blue : C.ink }}>{convValue}</span>
@@ -427,7 +428,25 @@ function InsightsPanel({ groups, nextSteps }: { groups: InsightGroup[]; nextStep
           </ul>
         </div>
       </div>
-      <style>{`@media (max-width: 640px) { .cvf-insights-grid { grid-template-columns: 1fr !important; } }`}</style>
+      <style>{`
+          /* Mobile calculator optimization */
+          @media (max-width: 760px) {
+            .bmc-layout, .refi-layout, .fha-layout, .va-layout, .dti-layout,
+            .ccc-layout, .epc-layout, .rvb-layout, .mac-layout, .cvf-layout, .dpc-grid {
+              grid-template-columns: 1fr !important;
+              gap: 16px !important;
+            }
+            .bmc-stats, .rvb-stats { grid-template-columns: 1fr 1fr !important; }
+            .bmc-charts-row { grid-template-columns: 1fr !important; }
+            .bmc-sticky-panel, .rvb-sticky-panel { position: static !important; }
+          }
+          @media (max-width: 480px) {
+            .bmc-stats, .rvb-stats { grid-template-columns: 1fr !important; }
+            input.dpc-input, select.dpc-input, .dpc-input {
+              font-size: 16px !important;
+            }
+          }
+@media (max-width: 640px) { .cvf-insights-grid { grid-template-columns: 1fr !important; } }`}</style>
     </div>
   );
 }
@@ -652,26 +671,13 @@ export default function ConventionalVsFhaCalculator() {
   return (
     <div className="flex flex-col min-h-screen" style={{ background: C.paper }}>
       <Navbar />
-      <main className="flex-grow" style={{ color: C.ink, fontFamily: SANS, fontSize: 15, lineHeight: 1.5, overflowX: "hidden" }}>
-        <section
-          className="w-full text-white py-20 lg:py-28 text-center relative overflow-hidden bg-cover bg-no-repeat bg-center"
-          style={{ backgroundImage: "url('/mortgage-calculators.jpg')", backgroundPosition: "center top" }}
-        >
-          <div className="absolute inset-0 bg-[#08271B]/80 z-0" />
-          <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
-            <div className="absolute -top-36 -right-36 w-[400px] h-[400px] rounded-full border border-white/5" />
-            <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5" />
-          </div>
-          <div className="max-w-4xl mx-auto px-6 relative z-20">
-            <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-4 font-sans">MORTGAGE TOOLS</p>
-            <h1 className="text-white text-[36px] lg:text-[52px] font-playfair font-normal leading-[1.1] mb-5">
-              Conventional vs. FHA Comparison Calculator
-            </h1>
-            <p className="text-[#c8c8b8] text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto">
-              Compare FHA and Conventional side by side — monthly payments, mortgage insurance, and true total cost over time.
-            </p>
-          </div>
-        </section>
+      <main className="flex-grow overflow-x-hidden" style={{ color: C.ink, fontFamily: SANS, fontSize: 15, lineHeight: 1.5, overflowX: "hidden" }}>
+        <LoanProgramHero
+          title="Conventional vs. FHA Comparison Calculator"
+          subtitle="Compare FHA and Conventional side by side — monthly payments, mortgage insurance, and true total cost over time."
+          ctaLabel=""
+          note=""
+        />
 
         <div style={{ maxWidth: 1180, margin: "0 auto", padding: "28px 20px 64px", boxSizing: "border-box" }}>
           <div
@@ -875,7 +881,7 @@ export default function ConventionalVsFhaCalculator() {
                     </Field>
                   </>
                 ) : (
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+                  <div className="calc-fields-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
                     <Field label="Down Payment ($)">
                       <input
                         className="cvf-input"
@@ -936,7 +942,7 @@ export default function ConventionalVsFhaCalculator() {
                   </div>
                   <MiniSlider min={600} max={850} step={1} value={creditScore} onChange={(v) => setCreditScoreText(String(Math.round(v)))} />
                 </Field>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+                <div className="calc-fields-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
                   <Field label="Conventional Rate (%)">
                     <input
                       className="cvf-input"
@@ -994,7 +1000,7 @@ export default function ConventionalVsFhaCalculator() {
                 }}
               >
                 <h2 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 700, margin: "0 0 4px", color: C.greenDeep }}>Side-by-Side Comparison</h2>
-                <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr 1fr", fontSize: 11, textTransform: "uppercase", letterSpacing: ".04em", color: C.inkSoft, padding: "10px 0 6px", borderBottom: `2px solid ${C.line}`, marginBottom: 4 }}>
+                <div className="cvf-compare-header" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr 1fr", fontSize: 11, textTransform: "uppercase", letterSpacing: ".04em", color: C.inkSoft, padding: "10px 0 6px", borderBottom: `2px solid ${C.line}`, marginBottom: 4 }}>
                   <span />
                   <span style={{ textAlign: "right", color: C.greenDeep, fontWeight: 700, paddingRight: 10 }}>FHA</span>
                   <span style={{ textAlign: "right", color: C.blue, fontWeight: 700 }}>Conventional</span>
@@ -1006,7 +1012,7 @@ export default function ConventionalVsFhaCalculator() {
                 <ComparisonLine label="Principal & Interest" fhaValue={fmtMoney(fhaPMT)} convValue={fmtMoney(convPMT)} fhaWins={fhaPMT < convPMT} convWins={convPMT < fhaPMT} />
                 <ComparisonLine label="Monthly Mortgage Insurance" fhaValue={fmtMoney(fhaMonth1Mip)} convValue={fmtMoney(convMonth1Pmi)} fhaWins={fhaMonth1Mip < convMonth1Pmi} convWins={convMonth1Pmi < fhaMonth1Mip} />
                 <ComparisonLine label="Taxes, Insurance & HOA" fhaValue={fmtMoney(sharedCosts)} convValue={fmtMoney(sharedCosts)} />
-                <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr 1fr", alignItems: "baseline", padding: "10px 0 0", borderTop: `2px solid ${C.green}`, marginTop: 4 }}>
+                <div className="cvf-compare-total" style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr 1fr", alignItems: "baseline", padding: "10px 0 0", borderTop: `2px solid ${C.green}`, marginTop: 4 }}>
                   <span style={{ fontSize: 13.5, color: C.inkSoft, fontWeight: 600 }}>Total Monthly Payment</span>
                   <span style={{ textAlign: "right", fontWeight: 700, fontSize: 17, color: fhaTotalMonthly < convTotalMonthly ? C.greenDeep : C.ink, paddingRight: 10 }}>{fmtMoney(fhaTotalMonthly)}</span>
                   <span style={{ textAlign: "right", fontWeight: 700, fontSize: 17, color: convTotalMonthly < fhaTotalMonthly ? C.blue : C.ink }}>{fmtMoney(convTotalMonthly)}</span>

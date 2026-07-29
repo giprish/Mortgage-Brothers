@@ -10,7 +10,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full bg-[#08271B] border-b border-[#1a3a1a] fixed top-0 left-0 right-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between h-[72px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 flex items-center justify-between h-[64px] sm:h-[72px]">
         {/* Logo */}
         <Link href="/" className="flex items-center hover:opacity-90 transition-opacity duration-200 shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -19,7 +19,7 @@ const Navbar = () => {
             alt="Mortgage Brothers"
             width={150}
             height={45}
-            className="h-[42px] sm:h-[48px] w-auto object-contain"
+            className="h-[42px] sm:h-[48px] w-auto max-w-[150px] object-contain"
           />
         </Link>
 

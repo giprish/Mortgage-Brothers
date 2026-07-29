@@ -2,6 +2,7 @@
 
 import { useMemo, useState, type ReactNode } from "react";
 import Navbar from "../component/Navbar";
+import LoanProgramHero from "../component/LoanProgramHero";
 import Footer from "../component/Footer";
 import { ScenarioBarChart } from "../component/InteractiveCharts";
 
@@ -255,7 +256,7 @@ function calcScenario(dtiRatio: number, ctx: Ctx): ScenarioResult {
 ============================================================ */
 function Field({ label, hint, children }: { label: string; hint?: string; children: ReactNode }) {
   return (
-    <div style={{ marginBottom: 16 }}>
+    <div style={{ marginBottom: 16, minWidth: 0, maxWidth: "100%" }}>
       <label style={{ display: "block", fontSize: 12, fontWeight: 600, textTransform: "uppercase", letterSpacing: ".05em", color: C.inkSoft, marginBottom: 7 }}>
         {label}
       </label>
@@ -266,10 +267,12 @@ function Field({ label, hint, children }: { label: string; hint?: string; childr
 }
 const baseInput: React.CSSProperties = {
   width: "100%",
+  maxWidth: "100%",
+  minWidth: 0,
   border: `1.5px solid ${fieldBorder}`,
   borderRadius: 8,
   fontFamily: MONO,
-  fontSize: 14,
+  fontSize: 16,
   fontWeight: 500,
   color: C.ink,
   background: fieldBg,
@@ -279,7 +282,7 @@ const baseInput: React.CSSProperties = {
 };
 function MoneyInput({ value, onChange, onBlur, placeholder }: { value: string; onChange: (v: string) => void; onBlur?: () => void; placeholder?: string }) {
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative", width: "100%", minWidth: 0 }}>
       <span style={{ position: "absolute", left: 11, top: "50%", transform: "translateY(-50%)", color: C.inkSoft, fontWeight: 600, fontSize: 14, pointerEvents: "none" }}>$</span>
       <input className="mac-input" style={{ ...baseInput, padding: "10px 12px 10px 26px" }} inputMode="decimal" value={value} placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)} onBlur={onBlur} />
@@ -288,7 +291,7 @@ function MoneyInput({ value, onChange, onBlur, placeholder }: { value: string; o
 }
 function RateInput({ value, onChange, onBlur }: { value: string; onChange: (v: string) => void; onBlur?: () => void }) {
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative", width: "100%", minWidth: 0 }}>
       <input className="mac-input" style={{ ...baseInput, padding: "10px 26px 10px 12px" }} inputMode="decimal" value={value}
         onChange={(e) => onChange(e.target.value)} onBlur={onBlur} />
       <span style={{ position: "absolute", right: 11, top: "50%", transform: "translateY(-50%)", color: C.inkSoft, fontWeight: 600, fontSize: 14, pointerEvents: "none" }}>%</span>
@@ -300,7 +303,7 @@ function MiniSlider({ min, max, step, value, onChange }: { min: number; max: num
   return (
     <input type="range" min={min} max={max} step={step} value={safe}
       onChange={(e) => onChange(parseFloat(e.target.value))}
-      style={{ WebkitAppearance: "none", width: "100%", height: 4, borderRadius: 2, background: C.line, marginTop: 10, accentColor: C.green }} />
+      style={{ WebkitAppearance: "none", width: "100%", maxWidth: "100%", minWidth: 0, height: 4, borderRadius: 2, background: C.line, marginTop: 10, accentColor: C.green, display: "block", boxSizing: "border-box" }} />
   );
 }
 function MilestoneStat({ label, value, note, highlight, onClick }: { label: string; value: string; note: string; highlight?: boolean; onClick?: () => void }) {
@@ -390,21 +393,26 @@ function InsightsPanel({ groups, nextSteps }: { groups: { title: string; color: 
           </ul>
         </div>
       </div>
-      <style>{`@media (max-width: 640px) { .insights-grid { grid-template-columns: 1fr !important; } }`}</style>
+      <style>{`
+          @media (max-width: 640px) {
+            .insights-grid { grid-template-columns: 1fr !important; }
+          }
+        `}</style>
     </div>
   );
 }
 function BdItem({ label, value, total }: { label: string; value: string; total?: boolean }) {
   return (
     <div style={{
-      display: "flex", justifyContent: "space-between", alignItems: "baseline",
+      display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 12,
       padding: total ? "10px 0 0" : "7px 0",
       borderTop: total ? `2px solid ${C.green}` : "none",
       borderBottom: total ? "none" : `1px dashed ${C.line}`,
       marginTop: total ? 4 : 0,
+      flexWrap: "wrap",
     }}>
-      <span style={{ color: C.inkSoft, fontSize: total ? 14 : 13.5 }}>{label}</span>
-      <span style={{ fontFamily: MONO, fontWeight: 700, color: total ? C.greenDeep : C.ink, fontSize: total ? 17 : 14 }}>{value}</span>
+      <span style={{ color: C.inkSoft, fontSize: total ? 14 : 13.5, minWidth: 0 }}>{label}</span>
+      <span style={{ fontFamily: MONO, fontWeight: 700, color: total ? C.greenDeep : C.ink, fontSize: total ? 17 : 14, textAlign: "right", wordBreak: "break-word" }}>{value}</span>
     </div>
   );
 }
@@ -496,42 +504,31 @@ export default function MortgageAffordabilityCalculator() {
   return (
     <div className="flex flex-col min-h-screen" style={{ background: C.paper }}>
       <Navbar />
-      <main className="flex-grow" style={{ color: C.ink, fontFamily: SANS, fontSize: 15, lineHeight: 1.5 }}>
-        {/* Hero */}
-        <section className="w-full text-white py-20 lg:py-28 text-center relative overflow-hidden bg-cover bg-no-repeat bg-center"
-          style={{ backgroundImage: "url('/mortgage-calculators.jpg')", backgroundPosition: "center top" }}>
-          <div className="absolute inset-0 bg-[#08271B]/80 z-0" />
-          <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
-            <div className="absolute -top-36 -right-36 w-[400px] h-[400px] rounded-full border border-white/5" />
-            <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5" />
-          </div>
-          <div className="max-w-4xl mx-auto px-6 relative z-20">
-            <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-4 font-sans">MORTGAGE TOOLS</p>
-            <h1 className="text-white text-[36px] lg:text-[52px] font-playfair font-normal leading-[1.1] mb-5">
-              Mortgage Affordability Calculator
-            </h1>
-            <p className="text-[#c8c8b8] text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto">
-              Estimate the maximum home price you may be able to afford at three debt-to-income levels — conservative,
-              moderate, and aggressive — based on your income, debts, and target housing costs.
-            </p>
-          </div>
-        </section>
+      <main className="flex-grow overflow-x-hidden" style={{ color: C.ink, fontFamily: SANS, fontSize: 15, lineHeight: 1.5, overflowX: "hidden" }}>
+        <LoanProgramHero
+          title="Mortgage Affordability Calculator"
+          subtitle="Estimate the maximum home price you may be able to afford at three debt-to-income levels — conservative, moderate, and aggressive — based on your income, debts, and target housing costs."
+          ctaLabel=""
+          note=""
+        />
 
-        <div style={{ maxWidth: 1180, margin: "0 auto", padding: "32px 20px 64px" }}>
+        <div style={{ maxWidth: 1180, margin: "0 auto", padding: "16px 12px 48px", width: "100%", boxSizing: "border-box" }}>
           {/* DTI Milestones — bold, high-visibility centerpiece, full width at the very top */}
           <div style={{
             background: `linear-gradient(135deg, ${C.greenPale} 0%, #ffffff 55%)`,
             border: `2px solid ${C.green}`,
             borderRadius: 12,
             boxShadow: "0 4px 18px rgba(58,125,30,0.12)",
-            padding: 22, marginBottom: 24,
+            padding: "16px 14px", marginBottom: 20,
+            maxWidth: "100%",
+            boxSizing: "border-box",
           }}>
             <h3 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 700, margin: "0 0 2px", color: C.greenDeep }}>DTI Milestones</h3>
             <p style={{ fontSize: 12.5, color: C.inkSoft, margin: "0 0 4px" }}>
               The maximum home price you could afford at each debt-to-income comfort level. Click one to see its full breakdown below.
             </p>
             <DtiMilestoneBar scenarios={scenarios} />
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 12 }}>
+            <div className="mac-milestone-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 160px), 1fr))", gap: 12 }}>
               {scenarios.map((s) => (
                 <MilestoneStat key={s.key}
                   label={`${s.label} · ${s.dti}% DTI`}
@@ -543,10 +540,10 @@ export default function MortgageAffordabilityCalculator() {
             </div>
           </div>
 
-          <div className="mac-layout" style={{ display: "grid", gridTemplateColumns: "1fr 1.15fr", gap: 24, alignItems: "start" }}>
+          <div className="mac-layout" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.15fr)", gap: 24, alignItems: "start", width: "100%" }}>
             {/* ============ INPUTS ============ */}
-            <div>
-              <div style={{ background: C.card, border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(28,42,23,0.06), 0 6px 20px rgba(28,42,23,0.05)", padding: 22, marginBottom: 20 }}>
+            <div style={{ minWidth: 0, maxWidth: "100%", width: "100%" }}>
+              <div style={{ background: C.card, border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(28,42,23,0.06), 0 6px 20px rgba(28,42,23,0.05)", padding: "16px 14px", marginBottom: 20, maxWidth: "100%", boxSizing: "border-box" }}>
                 <h2 style={{ fontFamily: SERIF, fontSize: 16, fontWeight: 600, margin: "0 0 16px" }}>Your Numbers</h2>
 
                 {errors.length > 0 && (
@@ -567,7 +564,7 @@ export default function MortgageAffordabilityCalculator() {
                   <MiniSlider min={0} max={10000} step={50} value={existingDebts} onChange={(v) => setDebtsText(Math.round(v).toLocaleString("en-US"))} />
                 </Field>
 
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+                <div className="mac-fields" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                   <Field label="Down Payment ($)">
                     <MoneyInput value={downText} onChange={setDownText}
                       onBlur={() => { if (isFinite(downPayment)) setDownText(downPayment.toLocaleString("en-US")); }} />
@@ -604,7 +601,7 @@ export default function MortgageAffordabilityCalculator() {
                   </div>
                 </Field>
 
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+                <div className="mac-fields" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                   <Field label="Property Tax ($/mo)" hint="Leave blank to auto-estimate from home price.">
                     <MoneyInput value={taxText} onChange={setTaxText} placeholder="Auto-estimated"
                       onBlur={() => { if (propertyTaxManual !== null) setTaxText(propertyTaxManual.toLocaleString("en-US")); }} />
@@ -643,18 +640,20 @@ export default function MortgageAffordabilityCalculator() {
             </div>
 
             {/* ============ RESULTS ============ */}
-            <div>
+            <div style={{ minWidth: 0, maxWidth: "100%", width: "100%" }}>
               <div style={{
                 background: `linear-gradient(135deg, ${C.greenPale} 0%, #ffffff 55%)`,
                 border: `2px solid ${C.green}`,
                 borderRadius: 12,
                 boxShadow: "0 4px 18px rgba(58,125,30,0.14)",
-                padding: 22, marginBottom: 20,
+                padding: "16px 14px", marginBottom: 20,
+                maxWidth: "100%",
+                boxSizing: "border-box",
               }}>
                 <div style={{ fontSize: 12, textTransform: "uppercase", letterSpacing: ".05em", color: C.inkSoft, fontWeight: 700, marginBottom: 6 }}>
                   Estimated Max Home Price — {selected.label} Scenario ({selected.dti}% DTI)
                 </div>
-                <div style={{ fontFamily: SERIF, fontSize: 44, fontWeight: 700, color: C.greenDeep, lineHeight: 1, marginBottom: 16 }}>{fmtMoney(primary.homePrice)}</div>
+                <div style={{ fontFamily: SERIF, fontSize: "clamp(28px, 8vw, 44px)", fontWeight: 700, color: C.greenDeep, lineHeight: 1.1, marginBottom: 16, wordBreak: "break-word" }}>{fmtMoney(primary.homePrice)}</div>
                 <div>
                   <BdItem label="Loan amount" value={fmtMoney(primary.loanAmount)} />
                   <BdItem label="Down payment" value={`${fmtMoney(downPayment)} (${fmtPct(primary.downPaymentPct)})`} />
@@ -664,7 +663,7 @@ export default function MortgageAffordabilityCalculator() {
                 </div>
               </div>
 
-              <div style={{ background: C.card, border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(28,42,23,0.06), 0 6px 20px rgba(28,42,23,0.05)", padding: 22, marginBottom: 20 }}>
+              <div style={{ background: C.card, border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(28,42,23,0.06), 0 6px 20px rgba(28,42,23,0.05)", padding: "16px 14px", marginBottom: 20, maxWidth: "100%", boxSizing: "border-box" }}>
                 <h2 style={{ fontFamily: SERIF, fontSize: 16, fontWeight: 600, margin: "0 0 12px" }}>
                   Payment Breakdown ({selected.label} — {selected.dti}% DTI Scenario)
                 </h2>
@@ -675,10 +674,10 @@ export default function MortgageAffordabilityCalculator() {
                 <BdItem label="Total Housing Payment" value={fmtMoney(primary.maxHousingPayment, 2)} total />
               </div>
 
-              <div style={{ background: C.card, border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(28,42,23,0.06), 0 6px 20px rgba(28,42,23,0.05)", padding: 22, marginBottom: 20 }}>
+              <div style={{ background: C.card, border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(28,42,23,0.06), 0 6px 20px rgba(28,42,23,0.05)", padding: "16px 14px", marginBottom: 20, maxWidth: "100%", boxSizing: "border-box", overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
                 <h2 style={{ fontFamily: SERIF, fontSize: 16, fontWeight: 600, margin: "0 0 12px" }}>Compare All Three Scenarios</h2>
-                <div style={{ overflowX: "auto" }}>
-                  <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12.5 }}>
+                <div style={{ overflowX: "auto", maxWidth: "100%" }}>
+                  <table style={{ width: "100%", minWidth: 560, borderCollapse: "collapse", fontSize: 12.5 }}>
                     <thead>
                       <tr>
                         {["Scenario", "Max Home Price", "Housing Pmt", "P&I", "Tax", "Insurance", "PMI", "Resulting DTI"].map((h, i) => (
@@ -708,7 +707,7 @@ export default function MortgageAffordabilityCalculator() {
                 </div>
               </div>
 
-              <div style={{ background: C.card, border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(28,42,23,0.06), 0 6px 20px rgba(28,42,23,0.05)", padding: 22, marginBottom: 20 }}>
+              <div style={{ background: C.card, border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(28,42,23,0.06), 0 6px 20px rgba(28,42,23,0.05)", padding: "16px 14px", marginBottom: 20, maxWidth: "100%", boxSizing: "border-box" }}>
                 <h2 style={{ fontFamily: SERIF, fontSize: 16, fontWeight: 600, margin: "0 0 12px" }}>Max Home Price by Scenario</h2>
                 <ScenarioBarChart
                   labels={scenarios.map((s) => s.label)}
@@ -733,12 +732,37 @@ export default function MortgageAffordabilityCalculator() {
           </div>
         </div>
         <style>{`
-          @media (max-width: 820px) {
-            .mac-layout { grid-template-columns: 1fr !important; }
+          .mac-layout > * {
+            min-width: 0;
+            max-width: 100%;
           }
-          .mac-input { transition: border-color .15s, box-shadow .15s, background .15s; }
+          @media (max-width: 820px) {
+            .mac-layout {
+              grid-template-columns: minmax(0, 1fr) !important;
+              gap: 16px !important;
+            }
+          }
+          @media (max-width: 560px) {
+            .mac-fields {
+              grid-template-columns: 1fr !important;
+            }
+            .mac-milestone-grid {
+              grid-template-columns: 1fr !important;
+            }
+          }
+          .mac-input {
+            transition: border-color .15s, box-shadow .15s, background .15s;
+            max-width: 100%;
+          }
           .mac-input:hover { border-color: #a9b59c; }
-          .mac-input:focus { background: #ffffff; border-color: ${C.green}; box-shadow: 0 0 0 3px ${C.greenPale}; }
+          .mac-input:focus {
+            background: #ffffff;
+            border-color: ${C.green};
+            box-shadow: 0 0 0 3px ${C.greenPale};
+          }
+          @media (min-width: 641px) {
+            .mac-input { font-size: 14px !important; }
+          }
         `}</style>
       </main>
       <Footer />

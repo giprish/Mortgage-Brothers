@@ -153,7 +153,7 @@ export default function PreApprovalProvider({
             <button
               type="button"
               onClick={close}
-              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/15 text-white text-[13px] font-semibold px-4 py-2 rounded-full transition-colors cursor-pointer whitespace-nowrap"
+              className="inline-flex items-center gap-1.5 sm:gap-2 bg-white/10 hover:bg-white/15 text-white text-[12px] sm:text-[13px] font-semibold px-3 sm:px-4 py-2 rounded-full transition-colors cursor-pointer shrink-0"
             >
               <svg
                 className="w-4 h-4"
@@ -165,7 +165,8 @@ export default function PreApprovalProvider({
               >
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
               </svg>
-              Back to Website
+              <span className="sm:hidden">Back</span>
+              <span className="hidden sm:inline">Back to Website</span>
             </button>
           </div>
 

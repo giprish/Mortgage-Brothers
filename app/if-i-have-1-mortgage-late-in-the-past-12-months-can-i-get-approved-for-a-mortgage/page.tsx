@@ -132,7 +132,7 @@ export default function MortgageLateApprovalPage() {
           <div className="w-[90%] max-w-[1520px] mx-auto px-0 sm:px-2 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
             <article className="min-w-0">
               <h1
-                className="text-[#08271B] text-[30px] sm:text-[38px] lg:text-[44px] font-normal leading-tight mb-3"
+                className="text-[#08271B] text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.1] mb-3"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 If I have 1 Mortgage Late in the Past 12 Months, Can I Get Approved for a Mortgage?

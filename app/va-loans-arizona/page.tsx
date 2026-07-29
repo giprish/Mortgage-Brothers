@@ -375,28 +375,28 @@ export default function VaLoansArizonaPage() {
 
         {/* STATS */}
         <section className="w-full bg-[#3fb364] text-white py-10 px-6">
-          <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
             <div>
-              <div className="text-[28px] lg:text-[36px] font-extrabold leading-none">13,119</div>
-              <div className="text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-1 opacity-90">
+              <div className="text-[clamp(22px,6vw,36px)] lg:text-[36px] font-extrabold leading-none">13,119</div>
+              <div className="text-[11px] sm:text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-1 opacity-90">
                 VA Loans in Arizona
               </div>
             </div>
             <div>
-              <div className="text-[28px] lg:text-[36px] font-extrabold leading-none">$0</div>
-              <div className="text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-1 opacity-90">
+              <div className="text-[clamp(22px,6vw,36px)] lg:text-[36px] font-extrabold leading-none">$0</div>
+              <div className="text-[11px] sm:text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-1 opacity-90">
                 Monthly Mortgage Insurance
               </div>
             </div>
             <div>
-              <div className="text-[28px] lg:text-[36px] font-extrabold leading-none">$0</div>
-              <div className="text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-1 opacity-90">
+              <div className="text-[clamp(22px,6vw,36px)] lg:text-[36px] font-extrabold leading-none">$0</div>
+              <div className="text-[11px] sm:text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-1 opacity-90">
                 Disabled Vet Funding Fee
               </div>
             </div>
             <div>
-              <div className="text-[28px] lg:text-[36px] font-extrabold leading-none">$2M</div>
-              <div className="text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-1 opacity-90">
+              <div className="text-[clamp(22px,6vw,36px)] lg:text-[36px] font-extrabold leading-none">$2M</div>
+              <div className="text-[11px] sm:text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-1 opacity-90">
                 VA Loans Up To
               </div>
             </div>

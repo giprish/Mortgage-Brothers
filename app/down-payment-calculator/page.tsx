@@ -550,11 +550,11 @@ function DownPaymentCalculator() {
   }, [loanType, downPct, homePrice, interestRate, loanTerm, creditScore, taxAnnual, insAnnual, hoaFees]);
 
   return (
-    <div style={{ background: C.paper, color: C.ink, fontFamily: SANS, fontSize: 15, lineHeight: 1.5, padding: "28px 16px 80px", minHeight: "100vh" }}>
-      <div style={{ maxWidth: 1180, margin: "0 auto" }}>
+    <div style={{ background: C.paper, color: C.ink, fontFamily: SANS, fontSize: 15, lineHeight: 1.5, padding: "20px 12px 64px", minHeight: "100vh", overflowX: "hidden" }}>
+      <div style={{ maxWidth: 1180, margin: "0 auto", width: "100%" }}>
         {/* Header */}
         <div style={{ display: "flex", alignItems: "baseline", justifyContent: "space-between", flexWrap: "wrap", gap: 8, marginBottom: 22, paddingBottom: 18, borderBottom: `2px solid ${C.green}` }}>
-          <h1 style={{ fontFamily: SERIF, fontWeight: 600, fontSize: 28, margin: 0, color: C.greenDeep, letterSpacing: "-0.01em" }}>
+          <h1 style={{ fontFamily: SERIF, fontWeight: 600, fontSize: "clamp(22px, 6vw, 28px)", margin: 0, color: C.greenDeep, letterSpacing: "-0.01em" }}>
             Down Payment Calculator
           </h1>
           <span style={{ fontFamily: MONO, fontSize: 11, textTransform: "uppercase", letterSpacing: ".08em", color: C.inkSoft, background: C.greenWash, border: `1px solid ${C.line}`, padding: "5px 10px", borderRadius: 99 }}>
@@ -597,7 +597,7 @@ function DownPaymentCalculator() {
               <p style={{ fontSize: 13, color: C.inkSoft, margin: "-6px 0 14px", lineHeight: 1.5 }}>
                 How much have you saved for your down payment?
               </p>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+              <div className="calc-fields-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                 <Field label="Amount Saved ($)">
                   <input className="dpc-input" style={inputStyle} inputMode="numeric" value={downPaymentDollarText}
                     onChange={(e) => onDownPaymentDollarChange(e.target.value)}
@@ -687,7 +687,7 @@ function DownPaymentCalculator() {
               <div style={{ background: C.greenWash, border: "1px solid #cfe0c2", borderRadius: 8, padding: "10px 12px", fontSize: 12.5, color: C.greenDeep, marginTop: -2, marginBottom: 14 }}>
                 {LOAN_TYPE_NOTES[loanType]}
               </div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+              <div className="calc-fields-2" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
                 <Field label="Interest Rate (%)">
                   <input className="dpc-input" style={inputStyle} inputMode="decimal" value={interestRateText}
                     onChange={(e) => setInterestRateText(e.target.value)}
@@ -828,6 +828,19 @@ function DownPaymentCalculator() {
         </div>
       </div>
       <style>{`
+          /* Mobile calculator optimization */
+          @media (max-width: 760px) {
+            .bmc-layout, .refi-layout, .fha-layout, .va-layout, .dti-layout,
+            .ccc-layout, .epc-layout, .rvb-layout, .mac-layout, .cvf-layout, .dpc-grid {
+              grid-template-columns: 1fr !important;
+              gap: 16px !important;
+            }
+          }
+          @media (max-width: 480px) {
+            input.dpc-input, select.dpc-input, .dpc-input {
+              font-size: 16px !important;
+            }
+          }
         @media (max-width: 760px) {
           .dpc-grid { grid-template-columns: 1fr !important; }
         }

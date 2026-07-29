@@ -16,7 +16,7 @@ const CTA = () => {
 
         {/* Heading */}
         <h2
-          className="text-white text-[38px] lg:text-[50px] font-normal leading-[1.15] mb-6"
+          className="text-white text-[clamp(28px,7vw,50px)] lg:text-[50px] font-normal leading-[1.15] mb-6"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           Let&apos;s get you home.

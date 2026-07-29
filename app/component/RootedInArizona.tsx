@@ -75,11 +75,11 @@ const RootedInArizona = () => {
               </div>
 
               {/* Two small stat cards */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 {/* Google Reviews */}
-                <div className="bg-white rounded-xl p-5 border border-[#e8e0d0]">
+                <div className="bg-white rounded-xl p-3 sm:p-5 border border-[#e8e0d0] min-w-0">
                   <div className="flex items-baseline gap-1 mb-1">
-                    <span className="text-[#1a3a1a] text-[28px] font-semibold leading-none">
+                    <span className="text-[#1a3a1a] text-[24px] sm:text-[28px] font-semibold leading-none">
                       4.9
                     </span>
                     <span className="text-[#b89a5a] text-[14px] font-medium">
@@ -102,9 +102,9 @@ const RootedInArizona = () => {
                 </div>
 
                 {/* Average Close */}
-                <div className="bg-white rounded-xl p-5 border border-[#e8e0d0]">
+                <div className="bg-white rounded-xl p-3 sm:p-5 border border-[#e8e0d0] min-w-0">
                   <div className="flex items-baseline gap-1 mb-1">
-                    <span className="text-[#1a3a1a] text-[28px] font-semibold leading-none">
+                    <span className="text-[#1a3a1a] text-[24px] sm:text-[28px] font-semibold leading-none">
                       25
                     </span>
                     <span className="text-[#8a9a7a] text-[14px] font-medium">

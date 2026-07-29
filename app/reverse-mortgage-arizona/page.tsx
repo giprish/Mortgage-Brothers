@@ -234,7 +234,7 @@ export default function ReverseMortgageArizonaPage() {
 
         {/* FIT CHECK STATS */}
         <section className="w-full bg-[#3fb364] text-white py-10 px-6">
-          <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
             {[
               { value: "Yes", label: "Do you Love Your Home?" },
               { value: "Yes", label: "Do you Love your Location?" },
@@ -242,8 +242,8 @@ export default function ReverseMortgageArizonaPage() {
               { value: "Yes", label: "Is Your Income Limited?" }
             ].map((s) => (
               <div key={s.label}>
-                <div className="text-[36px] lg:text-[44px] font-extrabold leading-none">{s.value}</div>
-                <div className="text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-1 opacity-90">
+                <div className="text-[clamp(28px,7vw,44px)] lg:text-[44px] font-extrabold leading-none">{s.value}</div>
+                <div className="text-[11px] sm:text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-1 opacity-90">
                   {s.label}
                 </div>
               </div>

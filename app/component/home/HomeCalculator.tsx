@@ -98,14 +98,14 @@ const HomeCalculator = () => {
   const selectedCounty = AZ_COUNTIES.find((c) => c.value === county);
 
   return (
-    <section className="w-full bg-[#fcf9f3] py-20 lg:py-28 border-t border-[#e8e0d0]/40" id="calculator">
-      <div className="max-w-6xl mx-auto px-6 lg:px-10">
-        <div className="text-center max-w-2xl mx-auto mb-12">
+    <section className="w-full bg-[#fcf9f3] py-12 sm:py-20 lg:py-28 border-t border-[#e8e0d0]/40" id="calculator">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
           <p className="text-[#b89a5a] text-[12px] font-semibold tracking-[0.14em] uppercase mb-3">
             Estimate Your Payment
           </p>
           <h2
-            className="text-[#08271B] text-[30px] lg:text-[38px] font-normal leading-tight mb-4"
+            className="text-[#08271B] text-[26px] sm:text-[30px] lg:text-[38px] font-normal leading-tight mb-4"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Plan Your Arizona Mortgage with Confidence
@@ -116,23 +116,24 @@ const HomeCalculator = () => {
           </p>
         </div>
 
-        <div className="bg-white border border-[#e8e0d0]/70 rounded-3xl shadow-xl overflow-hidden">
+        <div className="bg-white border border-[#e8e0d0]/70 rounded-2xl sm:rounded-3xl shadow-xl overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-5">
             {/* Inputs */}
-            <div className="lg:col-span-3 p-6 sm:p-8 lg:p-10">
+            <div className="lg:col-span-3 p-4 sm:p-6 lg:p-10 min-w-0">
               <h3 className="text-[#08271B] text-[13px] font-bold uppercase tracking-wider mb-5 pb-3 border-b border-[#e8e0d0]">
                 Loan Information
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mb-8">
                 <div>
                   <label className="block text-[#3a443a] text-[13.5px] font-medium mb-1.5">
                     Home Price ($)
                   </label>
                   <input
                     type="number"
+                    inputMode="decimal"
                     value={homePrice}
                     onChange={(e) => setHomePrice(Number(e.target.value) || 0)}
-                    className="w-full h-[44px] px-3.5 rounded-lg border border-[#e0d8c8] text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
+                    className="w-full h-[44px] px-3.5 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                   />
                 </div>
 
@@ -140,22 +141,24 @@ const HomeCalculator = () => {
                   <label className="block text-[#3a443a] text-[13.5px] font-medium mb-1.5">
                     Down Payment
                   </label>
-                  <div className="flex gap-2">
-                    <div className="relative flex-1">
+                  <div className="flex gap-2 min-w-0">
+                    <div className="relative flex-1 min-w-0">
                       <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#8a9a7a] text-[13px]">$</span>
                       <input
                         type="number"
+                        inputMode="decimal"
                         value={downPaymentAmount}
                         onChange={(e) => handleDownPaymentDollar(Number(e.target.value) || 0)}
-                        className="w-full h-[44px] pl-6 pr-2 rounded-lg border border-[#e0d8c8] text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
+                        className="w-full h-[44px] pl-6 pr-2 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                       />
                     </div>
-                    <div className="relative w-[90px]">
+                    <div className="relative w-[72px] sm:w-[90px] shrink-0">
                       <input
                         type="number"
+                        inputMode="decimal"
                         value={Math.round(downPaymentPct * 10) / 10}
                         onChange={(e) => setDownPaymentPct(Number(e.target.value) || 0)}
-                        className="w-full h-[44px] pl-2.5 pr-6 rounded-lg border border-[#e0d8c8] text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
+                        className="w-full h-[44px] pl-2.5 pr-6 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                       />
                       <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#8a9a7a] text-[13px]">%</span>
                     </div>
@@ -169,7 +172,7 @@ const HomeCalculator = () => {
                   <select
                     value={creditScore}
                     onChange={(e) => setCreditScore(e.target.value)}
-                    className="w-full h-[44px] px-3 rounded-lg border border-[#e0d8c8] text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364] bg-white"
+                    className="w-full h-[44px] px-3 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364] bg-white"
                   >
                     <option value="760+">760+</option>
                     <option value="740-759">740 - 759</option>
@@ -188,7 +191,7 @@ const HomeCalculator = () => {
                   <select
                     value={termYears}
                     onChange={(e) => setTermYears(Number(e.target.value))}
-                    className="w-full h-[44px] px-3 rounded-lg border border-[#e0d8c8] text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364] bg-white"
+                    className="w-full h-[44px] px-3 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364] bg-white"
                   >
                     {LOAN_TERMS.map((t) => (
                       <option key={t} value={t}>
@@ -207,7 +210,7 @@ const HomeCalculator = () => {
                     step="0.01"
                     value={interestRate}
                     onChange={(e) => setInterestRate(Number(e.target.value) || 0)}
-                    className="w-full h-[44px] px-3.5 rounded-lg border border-[#e0d8c8] text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
+                    className="w-full h-[44px] px-3.5 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                   />
                 </div>
               </div>
@@ -223,7 +226,7 @@ const HomeCalculator = () => {
                   <select
                     value={county}
                     onChange={(e) => setCounty(e.target.value)}
-                    className="w-full h-[44px] px-3 rounded-lg border border-[#e0d8c8] text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364] bg-white"
+                    className="w-full h-[44px] px-3 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364] bg-white"
                   >
                     {AZ_COUNTIES.map((c) => (
                       <option key={c.value} value={c.value}>
@@ -244,7 +247,7 @@ const HomeCalculator = () => {
                     type="number"
                     value={annualTaxes}
                     onChange={(e) => setAnnualTaxes(Number(e.target.value) || 0)}
-                    className="w-full h-[44px] px-3.5 rounded-lg border border-[#e0d8c8] text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
+                    className="w-full h-[44px] px-3.5 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                   />
                 </div>
 
@@ -256,7 +259,7 @@ const HomeCalculator = () => {
                     type="number"
                     value={annualInsurance}
                     onChange={(e) => setAnnualInsurance(Number(e.target.value) || 0)}
-                    className="w-full h-[44px] px-3.5 rounded-lg border border-[#e0d8c8] text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
+                    className="w-full h-[44px] px-3.5 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                   />
                 </div>
 
@@ -268,14 +271,14 @@ const HomeCalculator = () => {
                     type="number"
                     value={hoa}
                     onChange={(e) => setHoa(Number(e.target.value) || 0)}
-                    className="w-full h-[44px] px-3.5 rounded-lg border border-[#e0d8c8] text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
+                    className="w-full h-[44px] px-3.5 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                   />
                 </div>
               </div>
             </div>
 
             {/* Summary */}
-            <div className="lg:col-span-2 bg-[#08271B] p-6 sm:p-8 lg:p-10 flex flex-col">
+            <div className="lg:col-span-2 bg-[#08271B] p-5 sm:p-8 lg:p-10 flex flex-col min-w-0">
               <h3 className="text-[#3fb364] text-[13px] font-bold uppercase tracking-wider mb-6">
                 Your Mortgage Summary
               </h3>
@@ -283,7 +286,7 @@ const HomeCalculator = () => {
               <div className="mb-8">
                 <p className="text-[#8a9a7a] text-[12.5px] font-medium mb-1">Monthly Payment</p>
                 <p
-                  className="text-white text-[42px] lg:text-[48px] font-semibold leading-none"
+                  className="text-white text-[34px] sm:text-[42px] lg:text-[48px] font-semibold leading-none break-all"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   {fmtCurrency(results.total)}

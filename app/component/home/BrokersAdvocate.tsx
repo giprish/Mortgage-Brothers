@@ -130,15 +130,15 @@ const BrokersAdvocate = () => {
         </div>
 
         {/* Stats Row */}
-        <div className="bg-[#08271B] rounded-2xl px-8 py-10 lg:py-12 grid grid-cols-3 divide-x divide-[#1a3a1a]">
+        <div className="bg-[#08271B] rounded-2xl px-5 sm:px-8 py-8 sm:py-10 lg:py-12 grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#1a3a1a]">
           {stats.map((stat) => (
-            <div key={stat.label} className="flex flex-col items-center text-center px-2">
+            <div key={stat.label} className="flex flex-col items-center text-center px-2 py-5 sm:py-0 first:pt-0 last:pb-0 sm:first:pt-0 sm:last:pb-0">
               <span
-                className="text-[#3fb364] text-[32px] lg:text-[42px] font-semibold leading-none"
+                className="text-[#3fb364] text-[28px] sm:text-[32px] lg:text-[42px] font-semibold leading-none"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 {stat.value}
-                <span className="text-[20px] lg:text-[26px]">{stat.suffix}</span>
+                <span className="text-[18px] sm:text-[20px] lg:text-[26px]">{stat.suffix}</span>
               </span>
               <span className="text-[#c8c8b8] text-[12.5px] lg:text-[13.5px] font-medium mt-2.5">
                 {stat.label}

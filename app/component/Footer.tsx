@@ -49,9 +49,9 @@ const FooterLink = ({ href, children }: { href: string; children: React.ReactNod
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-[#32353C] text-[#c8cdc8]">
-      <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-14 lg:pt-16 pb-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-14 mb-12">
+    <footer className="w-full bg-[#32353C] text-[#c8cdc8] overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-12 sm:pt-14 lg:pt-16 pb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-14 mb-12">
           <div>
             <h3 className="text-[#3fb364] text-[16px] font-semibold mb-3">
               Inside Mortgage Brothers
@@ -191,7 +191,7 @@ const Footer = () => {
                 alt="Mortgage Brothers"
                 width={140}
                 height={46}
-                className="h-[42px] w-auto object-contain"
+                className="h-[42px] w-auto max-w-[140px] object-contain"
               />
             </Link>
 
@@ -262,11 +262,11 @@ const Footer = () => {
           </div>
 
           {/* Right: Accredited & Recognized */}
-          <div className="flex flex-col items-end pt-[62px]">
+          <div className="flex flex-col items-center lg:items-end pt-0 lg:pt-[62px]">
             {/* <p className="text-[#a8aea8] text-[11px] font-bold tracking-[0.14em] uppercase mb-4">
               Accredited &amp; Recognized
             </p> */}
-            <div className="grid grid-cols-2 gap-4 w-full max-w-[280px]">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 w-full max-w-[320px] sm:max-w-[280px]">
               <div className="bg-white/5 rounded-lg p-3 flex flex-col items-center justify-center min-h-[88px] gap-1">
                 <Image
                   src="/home/equal-housing.png"
@@ -313,8 +313,8 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="w-full h-px bg-white/10 mb-5" />
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          <div className="flex items-center justify-center sm:justify-start gap-4 min-w-0">
             {/* <Link href="/" className="shrink-0 hover:opacity-90 transition-opacity">
              
               <img
@@ -325,11 +325,11 @@ const Footer = () => {
                 className="h-[36px] w-auto object-contain"
               />
             </Link> */}
-            <span className="text-[#a8aea8] text-[12px]">
+            <span className="text-[#a8aea8] text-[11px] sm:text-[12px] leading-snug break-words">
               © {new Date().getFullYear()} {COMPANY.legalName} · {COMPANY.nmlsDisplay}
             </span>
           </div>
-          <div className="flex items-center gap-2 text-[12px]">
+          <div className="flex items-center gap-2 text-[12px] shrink-0">
             <Link href="/privacy-policy/" className="text-[#3fb364] hover:underline font-medium">
               Privacy Policy
             </Link>

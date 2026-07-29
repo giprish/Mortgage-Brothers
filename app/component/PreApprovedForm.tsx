@@ -20,7 +20,7 @@ const PreApprovedForm = () => {
           SECURE APPLICATION
         </p>
         <h2
-          className="text-[#08271B] text-[32px] lg:text-[42px] font-normal leading-tight mb-4"
+          className="text-[#08271B] text-[clamp(26px,6vw,42px)] lg:text-[42px] font-normal leading-tight mb-4"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
           Start Your Pre-Approval
@@ -33,7 +33,7 @@ const PreApprovedForm = () => {
         <button
           type="button"
           onClick={open}
-          className="inline-flex items-center justify-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-[#3fb364]/20 cursor-pointer"
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-[#3fb364]/20 cursor-pointer"
         >
           Get Pre-Approved
           <svg

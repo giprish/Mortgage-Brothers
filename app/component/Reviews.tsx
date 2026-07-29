@@ -96,7 +96,7 @@ const Reviews = () => {
             type="button"
             onClick={prev}
             aria-label="Previous review"
-            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center text-[#08271B]/50 hover:text-[#3fb364] transition-colors cursor-pointer"
+            className="absolute left-1 sm:left-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-white/70 sm:bg-transparent text-[#08271B]/60 hover:text-[#3fb364] transition-colors cursor-pointer"
           >
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
               <path d="M15 18l-6-6 6-6" />
@@ -107,15 +107,15 @@ const Reviews = () => {
             type="button"
             onClick={next}
             aria-label="Next review"
-            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center text-[#08271B]/50 hover:text-[#3fb364] transition-colors cursor-pointer"
+            className="absolute right-1 sm:right-4 top-1/2 -translate-y-1/2 z-10 w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-white/70 sm:bg-transparent text-[#08271B]/60 hover:text-[#3fb364] transition-colors cursor-pointer"
           >
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
               <path d="M9 18l6-6-6-6" />
             </svg>
           </button>
 
-          <div className="px-10 sm:px-16 lg:px-24 py-12 lg:py-14 text-center min-h-[320px] flex flex-col items-center justify-center">
-            <p className="text-[#3a443a] text-[15px] sm:text-[16px] leading-[1.75] italic max-w-3xl">
+          <div className="px-12 sm:px-16 lg:px-24 py-10 sm:py-12 lg:py-14 text-center min-h-[280px] sm:min-h-[320px] flex flex-col items-center justify-center">
+            <p className="text-[#3a443a] text-[14.5px] sm:text-[16px] leading-[1.75] italic max-w-3xl">
               {review.text}
             </p>
 

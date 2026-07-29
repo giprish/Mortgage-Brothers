@@ -2,6 +2,7 @@
 
 import { useMemo, useState, type ReactNode } from "react";
 import Navbar from "../component/Navbar";
+import LoanProgramHero from "../component/LoanProgramHero";
 import Footer from "../component/Footer";
 import { InteractiveLineChart } from "../component/InteractiveCharts";
 
@@ -551,7 +552,25 @@ function InsightsPanel({ groups, nextSteps }: { groups: { title: string; color: 
           </ul>
         </div>
       </div>
-      <style>{`@media (max-width: 640px) { .insights-grid { grid-template-columns: 1fr !important; } }`}</style>
+      <style>{`
+          /* Mobile calculator optimization */
+          @media (max-width: 760px) {
+            .bmc-layout, .refi-layout, .fha-layout, .va-layout, .dti-layout,
+            .ccc-layout, .epc-layout, .rvb-layout, .mac-layout, .cvf-layout, .dpc-grid {
+              grid-template-columns: 1fr !important;
+              gap: 16px !important;
+            }
+            .bmc-stats, .rvb-stats { grid-template-columns: 1fr 1fr !important; }
+            .bmc-charts-row { grid-template-columns: 1fr !important; }
+            .bmc-sticky-panel, .rvb-sticky-panel { position: static !important; }
+          }
+          @media (max-width: 480px) {
+            .bmc-stats, .rvb-stats { grid-template-columns: 1fr !important; }
+            input.dpc-input, select.dpc-input, .dpc-input {
+              font-size: 16px !important;
+            }
+          }
+@media (max-width: 640px) { .insights-grid { grid-template-columns: 1fr !important; } }`}</style>
     </div>
   );
 }
@@ -743,25 +762,13 @@ export default function RentVsBuyCalculator() {
   return (
     <div className="flex flex-col min-h-screen" style={{ background: C.paper }}>
       <Navbar />
-      <main className="flex-grow" style={{ color: C.ink, fontFamily: SANS, fontSize: 15, lineHeight: 1.5 }}>
-        {/* Hero */}
-        <section className="w-full text-white py-20 lg:py-28 text-center relative overflow-hidden bg-cover bg-no-repeat bg-center"
-          style={{ backgroundImage: "url('/mortgage-calculators.jpg')", backgroundPosition: "center top" }}>
-          <div className="absolute inset-0 bg-[#08271B]/80 z-0" />
-          <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
-            <div className="absolute -top-36 -right-36 w-[400px] h-[400px] rounded-full border border-white/5" />
-            <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5" />
-          </div>
-          <div className="max-w-4xl mx-auto px-6 relative z-20">
-            <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-4 font-sans">MORTGAGE TOOLS</p>
-            <h1 className="text-white text-[36px] lg:text-[52px] font-playfair font-normal leading-[1.1] mb-5">
-              Rent vs. Buy Calculator
-            </h1>
-            <p className="text-[#c8c8b8] text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto">
-              Compare the true long-term cost of renting versus owning a home in Arizona.
-            </p>
-          </div>
-        </section>
+      <main className="flex-grow overflow-x-hidden" style={{ color: C.ink, fontFamily: SANS, fontSize: 15, lineHeight: 1.5, overflowX: "hidden" }}>
+        <LoanProgramHero
+          title="Rent vs. Buy Calculator"
+          subtitle="Compare the true long-term cost of renting versus owning a home in Arizona."
+          ctaLabel=""
+          note=""
+        />
 
         <div style={{ maxWidth: 1220, margin: "0 auto", padding: "32px 20px 64px" }}>
           {/* Break-Even Milestone — bold, high-visibility centerpiece, full width at the very top */}
