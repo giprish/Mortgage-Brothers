@@ -182,9 +182,9 @@ export default function MortgageBasicsPage() {
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
 
-      <main className="flex-grow pt-[110px] lg:pt-[130px]">
+      <main className="flex-grow">
         {/* Hero — brand deep green band */}
-        <section className="w-full bg-brand-green-deep pb-12 lg:pb-16 pt-4 lg:pt-6 text-center relative overflow-hidden">
+        <section className="w-full bg-brand-green-deep pt-[110px] lg:pt-[130px] pb-12 lg:pb-16 text-center relative overflow-hidden">
           <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
             <div className="absolute -bottom-36 -left-36 w-[min(360px,90vw)] h-[360px] rounded-full border border-white/5 opacity-40" />
             <div className="absolute -top-36 -right-36 w-[min(400px,90vw)] h-[400px] rounded-full border border-white/5 opacity-40" />
