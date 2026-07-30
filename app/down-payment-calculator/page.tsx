@@ -3,6 +3,7 @@
 import { useMemo, useState, type CSSProperties, type ReactNode } from "react";
 import Navbar from "../component/Navbar";
 import LoanProgramHero from "../component/LoanProgramHero";
+import CalcSelect from "../component/CalcSelect";
 import Footer from "../component/Footer";
 
 type LoanType = "conventional" | "fha" | "va" | "usda";
@@ -669,12 +670,18 @@ function DownPaymentCalculator() {
 
             <Panel number={4} title="Loan Details">
               <Field label="Loan Type">
-                <select className="dpc-input calc-select" style={inputStyle} value={loanType} onChange={(e) => setLoanType(e.target.value as LoanType)}>
-                  <option value="conventional">Conventional Loan</option>
-                  <option value="fha">FHA Loan</option>
-                  <option value="va">VA Loan</option>
-                  <option value="usda">USDA Loan</option>
-                </select>
+                <CalcSelect
+                  className="dpc-input"
+                  style={inputStyle}
+                  value={loanType}
+                  onChange={(next) => setLoanType(next as LoanType)}
+                  options={[
+                    { value: "conventional", label: "Conventional Loan" },
+                    { value: "fha", label: "FHA Loan" },
+                    { value: "va", label: "VA Loan" },
+                    { value: "usda", label: "USDA Loan" },
+                  ]}
+                />
               </Field>
               <div style={{ background: C.greenWash, border: "1px solid #cfe0c2", borderRadius: 8, padding: "10px 12px", fontSize: 12.5, color: C.greenDeep, marginTop: -2, marginBottom: 14 }}>
                 {LOAN_TYPE_NOTES[loanType]}

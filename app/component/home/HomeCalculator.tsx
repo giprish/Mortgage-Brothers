@@ -2,6 +2,7 @@
 
 import React, { useMemo, useState } from "react";
 import Link from "next/link";
+import CalcSelect from "../CalcSelect";
 
 const AZ_COUNTIES = [
   { value: "apache", label: "Apache County", note: "St. Johns" },
@@ -169,36 +170,34 @@ const HomeCalculator = () => {
                   <label className="block text-[#3a443a] text-[13.5px] font-medium mb-1.5">
                     Credit Score
                   </label>
-                  <select
+                  <CalcSelect
                     value={creditScore}
-                    onChange={(e) => setCreditScore(e.target.value)}
-                    className="calc-select w-full h-[44px] px-3 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364] bg-white"
-                  >
-                    <option value="760+">760+</option>
-                    <option value="740-759">740 - 759</option>
-                    <option value="720-739">720 - 739</option>
-                    <option value="700-719">700 - 719</option>
-                    <option value="680-699">680 - 699</option>
-                    <option value="660-679">660 - 679</option>
-                    <option value="below-660">Below 660</option>
-                  </select>
+                    onChange={setCreditScore}
+                    ariaLabel="Credit Score"
+                    className="h-[44px] px-3 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
+                    options={[
+                      { value: "760+", label: "760+" },
+                      { value: "740-759", label: "740 - 759" },
+                      { value: "720-739", label: "720 - 739" },
+                      { value: "700-719", label: "700 - 719" },
+                      { value: "680-699", label: "680 - 699" },
+                      { value: "660-679", label: "660 - 679" },
+                      { value: "below-660", label: "Below 660" },
+                    ]}
+                  />
                 </div>
 
                 <div>
                   <label className="block text-[#3a443a] text-[13.5px] font-medium mb-1.5">
                     Loan Term (Years)
                   </label>
-                  <select
+                  <CalcSelect
                     value={termYears}
-                    onChange={(e) => setTermYears(Number(e.target.value))}
-                    className="calc-select w-full h-[44px] px-3 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364] bg-white"
-                  >
-                    {LOAN_TERMS.map((t) => (
-                      <option key={t} value={t}>
-                        {t} Years
-                      </option>
-                    ))}
-                  </select>
+                    onChange={(next) => setTermYears(Number(next))}
+                    ariaLabel="Loan Term (Years)"
+                    className="h-[44px] px-3 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
+                    options={LOAN_TERMS.map((t) => ({ value: t, label: `${t} Years` }))}
+                  />
                 </div>
 
                 <div className="sm:col-span-2">
@@ -223,17 +222,13 @@ const HomeCalculator = () => {
                   <label className="block text-[#3a443a] text-[13.5px] font-medium mb-1.5">
                     County (Arizona)
                   </label>
-                  <select
+                  <CalcSelect
                     value={county}
-                    onChange={(e) => setCounty(e.target.value)}
-                    className="calc-select w-full h-[44px] px-3 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364] bg-white"
-                  >
-                    {AZ_COUNTIES.map((c) => (
-                      <option key={c.value} value={c.value}>
-                        {c.label}
-                      </option>
-                    ))}
-                  </select>
+                    onChange={setCounty}
+                    ariaLabel="County (Arizona)"
+                    className="h-[44px] px-3 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
+                    options={AZ_COUNTIES.map((c) => ({ value: c.value, label: c.label }))}
+                  />
                   {selectedCounty && (
                     <p className="text-[#8a9a7a] text-[12px] mt-1.5">{selectedCounty.note}</p>
                   )}

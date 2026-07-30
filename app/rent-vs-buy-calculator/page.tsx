@@ -3,6 +3,7 @@
 import { useMemo, useState, type ReactNode } from "react";
 import Navbar from "../component/Navbar";
 import LoanProgramHero from "../component/LoanProgramHero";
+import CalcSelect from "../component/CalcSelect";
 import Footer from "../component/Footer";
 import { InteractiveLineChart } from "../component/InteractiveCharts";
 
@@ -849,12 +850,17 @@ export default function RentVsBuyCalculator() {
                     onChange={(v) => onHomePriceChange(fmtMoney(v))} />
                 </Field>
                 <Field label="Loan Program">
-                  <select className="dpc-input calc-select" style={{ ...baseInput, padding: "9px 12px", fontFamily: SANS, fontWeight: 500 }}
-                    value={loanProgram} onChange={(e) => onLoanProgramChange(e.target.value)}>
-                    <option value="conventional">Conventional</option>
-                    <option value="fha">FHA</option>
-                    <option value="va">VA</option>
-                  </select>
+                  <CalcSelect
+                    className="dpc-input"
+                    style={{ ...baseInput, padding: "9px 12px", fontFamily: SANS, fontWeight: 500 }}
+                    value={loanProgram}
+                    onChange={onLoanProgramChange}
+                    options={[
+                      { value: "conventional", label: "Conventional" },
+                      { value: "fha", label: "FHA" },
+                      { value: "va", label: "VA" },
+                    ]}
+                  />
                 </Field>
                 {loanProgram !== "va" && (
                   <Field label="Credit Score" hint="Used to estimate mortgage insurance (PMI for Conventional, MIP for FHA).">

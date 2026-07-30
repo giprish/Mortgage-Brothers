@@ -3,6 +3,7 @@
 import { useMemo, useState, type ChangeEvent, type CSSProperties, type ReactNode } from "react";
 import Navbar from "../component/Navbar";
 import LoanProgramHero from "../component/LoanProgramHero";
+import CalcSelect from "../component/CalcSelect";
 import Footer from "../component/Footer";
 import { InteractivePieChart, BasicPaymentOverTimeChart } from "../component/InteractiveCharts";
 
@@ -240,11 +241,12 @@ function SelectField({
 }) {
   return (
     <Field label={label} hint={hint}>
-      <select className="calc-select" value={value} onChange={onChange} style={{ ...inputStyle, cursor: "pointer" }}>
-        {options.map((o) => (
-          <option key={o.value} value={o.value}>{o.label}</option>
-        ))}
-      </select>
+      <CalcSelect
+        value={value}
+        options={options}
+        style={{ ...inputStyle, cursor: "pointer" }}
+        onChange={(next) => onChange({ target: { value: next } } as ChangeEvent<HTMLSelectElement>)}
+      />
     </Field>
   );
 }

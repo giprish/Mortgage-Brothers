@@ -209,6 +209,95 @@ textarea {
   }
 }
 
+/* Calculator dropdown (CalcSelect) — a native select's option list is drawn by the
+   OS outside the page, so long lists like the Arizona counties spill past the
+   viewport on phones. This renders the list inside the page instead, capped and
+   scrollable. */
+.calc-dropdown {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+
+.calc-dropdown-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  max-width: 100%;
+  text-align: left;
+  cursor: pointer;
+  background: #fff;
+}
+
+.calc-dropdown-value {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.calc-dropdown-chevron {
+  width: 11px;
+  height: 7px;
+  flex: 0 0 11px;
+  color: #3a443a;
+  transition: transform 0.18s ease;
+}
+
+.calc-dropdown-panel {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 70;
+  padding: 4px;
+  background: #fff;
+  border: 1px solid #cfd8cc;
+  border-radius: 8px;
+  box-shadow: 0 12px 28px rgba(5, 35, 22, 0.16);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+.calc-dropdown-option {
+  display: block;
+  width: 100%;
+  padding: 9px 11px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: #1b2a1b;
+  font-size: 14px;
+  line-height: 1.35;
+  text-align: left;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+
+.calc-dropdown-option.is-active {
+  background: #f1f6ef;
+}
+
+.calc-dropdown-option.is-selected {
+  background: #e6f4ea;
+  color: #08271b;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .calc-dropdown-trigger {
+    font-size: 16px !important;
+    min-height: 44px;
+  }
+
+  .calc-dropdown-option {
+    font-size: 15.5px;
+    padding: 11px 12px;
+  }
+}
+
 /* The calculator two-column layouts need roughly 1000px to hold an input column
    plus a results column, so they stay stacked through tablet widths. */
 @media (max-width: 1023px) {
