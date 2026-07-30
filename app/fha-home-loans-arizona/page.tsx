@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Phone, MapPin } from "lucide-react";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import StatsBanner from "../component/StatsBanner";
 import LoanProgramHero from "../component/LoanProgramHero";
 import { LOAN_PROGRAM_LINKS } from "@/lib/company";
 
@@ -260,26 +261,14 @@ export default function FhaHomeLoansArizonaPage() {
         </section>
 
         {/* STATS BANNER */}
-        <section className="w-full bg-[#3fb364] text-white py-10 px-6">
-          <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
-            <div>
-              <div className="text-[clamp(28px,7vw,44px)] lg:text-[44px] font-extrabold leading-none">3.5%</div>
-              <div className="text-[11px] sm:text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-2 opacity-90">Down Payment Required</div>
-            </div>
-            <div>
-              <div className="text-[clamp(20px,5.5vw,36px)] lg:text-[36px] font-extrabold leading-none">$557,750</div>
-              <div className="text-[11px] sm:text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-2 opacity-90">2026 FHA Maricopa County Loan Limit</div>
-            </div>
-            <div>
-              <div className="text-[clamp(28px,7vw,44px)] lg:text-[44px] font-extrabold leading-none">1.75%</div>
-              <div className="text-[11px] sm:text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-2 opacity-90">Upfront MIP</div>
-            </div>
-            <div>
-              <div className="text-[clamp(28px,7vw,44px)] lg:text-[44px] font-extrabold leading-none">0.55%</div>
-              <div className="text-[11px] sm:text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-2 opacity-90">Annual MIP Rate</div>
-            </div>
-          </div>
-        </section>
+        <StatsBanner
+          stats={[
+            { value: "3.5%", label: "Down Payment Required" },
+            { value: "$557,750", label: "2026 FHA Maricopa County Loan Limit" },
+            { value: "1.75%", label: "Upfront MIP" },
+            { value: "0.55%", label: "Annual MIP Rate" },
+          ]}
+        />
 
         {/* FHA LOAN OPTIONS */}
         <section className="py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">

@@ -209,40 +209,35 @@ export default function VideosPage() {
 
       <main className="flex-grow">
         {/* Hero */}
-        <section className="w-full bg-[#111111] text-white pt-[110px] lg:pt-[120px] pb-14 lg:pb-20 px-6 lg:px-10">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-center">
-            <div>
-              <h1 className="text-white text-[36px] sm:text-[44px] lg:text-[52px] font-bold leading-[1.12] mb-6">
-                Real Advice. Real Numbers. Straight Talk.
-              </h1>
-              <p className="text-white/85 text-[16px] lg:text-[18px] leading-[1.7] mb-8 max-w-xl">
-                Eddie and Tom Knoell break down Arizona mortgage rates, market updates, loan
-                programs, and the home-buying process — short, clear videos you can watch from your
-                phone, your couch, or your car.
-              </p>
-              <Link
-                href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-7 py-3.5 rounded-xl transition-all shadow-lg shadow-[#3fb364]/25"
-              >
-                Get Custom Rate Quote
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-              </Link>
-            </div>
+        <section className="w-full bg-brand-green-deep pt-[110px] lg:pt-[130px] pb-12 lg:pb-16 px-6 text-center relative overflow-hidden">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
+            <div className="absolute -bottom-36 -left-36 w-[min(360px,90vw)] h-[360px] rounded-full border border-white/5 opacity-40" />
+            <div className="absolute -top-36 -right-36 w-[min(400px,90vw)] h-[400px] rounded-full border border-white/5 opacity-40" />
+          </div>
+          <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center">
+            <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
+              THE VIDEO LIBRARY
+            </p>
 
-            <div className="relative">
-              <div className="rounded-3xl overflow-hidden shadow-2xl aspect-[16/11] bg-[#1a1a1a]">
-                <img
-                  src="/arizona-mortgage-brothers-team.jpg"
-                  alt="Eddie and Tom Knoell — The Mortgage Brothers"
-                  className="w-full h-full object-cover object-top"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src = "/az-mortgage-brothers.jpg";
-                  }}
-                />
-              </div>
-            </div>
+            <h1 className="text-white text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.1] mb-6">
+              Real Advice. Real Numbers. Straight Talk.
+            </h1>
+
+            <p className="text-brand-text-light text-[15px] lg:text-[16px] leading-[1.7] max-w-2xl mx-auto">
+              Eddie and Tom Knoell break down Arizona mortgage rates, market updates, loan
+              programs, and the home-buying process — short, clear videos you can watch from your
+              phone, your couch, or your car.
+            </p>
+
+            <Link
+              href="/#get-pre-approved"
+              className="mt-8 inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-7 py-3.5 rounded-xl transition-all shadow-lg shadow-[#3fb364]/25"
+            >
+              Get Custom Rate Quote
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+            </Link>
           </div>
         </section>
 
@@ -412,6 +407,7 @@ export default function VideosPage() {
                         required
                         value={firstName}
                         onChange={(e) => setFirstName(e.target.value)}
+                        placeholder="Jane"
                         className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364]"
                       />
                     </div>
@@ -421,6 +417,7 @@ export default function VideosPage() {
                         required
                         value={lastName}
                         onChange={(e) => setLastName(e.target.value)}
+                        placeholder="Doe"
                         className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364]"
                       />
                     </div>
@@ -433,6 +430,7 @@ export default function VideosPage() {
                         required
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
+                        placeholder="jane@example.com"
                         className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364]"
                       />
                     </div>
@@ -443,6 +441,7 @@ export default function VideosPage() {
                         required
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
+                        placeholder="(602) 555-0123"
                         className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364]"
                       />
                     </div>

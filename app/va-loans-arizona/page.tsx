@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import StatsBanner from "../component/StatsBanner";
 import LoanProgramHero from "../component/LoanProgramHero";
 
 export default function VaLoansArizonaPage() {
@@ -374,34 +375,14 @@ export default function VaLoansArizonaPage() {
         </section>
 
         {/* STATS */}
-        <section className="w-full bg-[#3fb364] text-white py-10 px-6">
-          <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
-            <div>
-              <div className="text-[clamp(22px,6vw,36px)] lg:text-[36px] font-extrabold leading-none">13,119</div>
-              <div className="text-[11px] sm:text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-1 opacity-90">
-                VA Loans in Arizona
-              </div>
-            </div>
-            <div>
-              <div className="text-[clamp(22px,6vw,36px)] lg:text-[36px] font-extrabold leading-none">$0</div>
-              <div className="text-[11px] sm:text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-1 opacity-90">
-                Monthly Mortgage Insurance
-              </div>
-            </div>
-            <div>
-              <div className="text-[clamp(22px,6vw,36px)] lg:text-[36px] font-extrabold leading-none">$0</div>
-              <div className="text-[11px] sm:text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-1 opacity-90">
-                Disabled Vet Funding Fee
-              </div>
-            </div>
-            <div>
-              <div className="text-[clamp(22px,6vw,36px)] lg:text-[36px] font-extrabold leading-none">$2M</div>
-              <div className="text-[11px] sm:text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-1 opacity-90">
-                VA Loans Up To
-              </div>
-            </div>
-          </div>
-        </section>
+        <StatsBanner
+          stats={[
+            { value: "13,119", label: "VA Loans in Arizona" },
+            { value: "$0", label: "Monthly Mortgage Insurance" },
+            { value: "$0", label: "Disabled Vet Funding Fee" },
+            { value: "$2M", label: "VA Loans Up To" },
+          ]}
+        />
 
         {/* WHO QUALIFIES */}
         <section className="py-16 lg:py-24 px-6 lg:px-12 bg-[#fcf9f3]">

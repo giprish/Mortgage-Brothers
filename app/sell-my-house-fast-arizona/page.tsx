@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import StatsBanner from "../component/StatsBanner";
 import { COMPANY, LOAN_OFFICERS } from "@/lib/company";
 
 const comparisonRows = [
@@ -200,65 +201,56 @@ export default function SellMyHouseFastArizonaPage() {
       <Navbar />
 
       <main className="flex-grow">
-        {/* Hero — matches original Sell-Review.webp layout */}
-        <section
-          className="relative w-full overflow-hidden bg-[#fcf9f3] min-h-[560px] lg:min-h-[640px] xl:min-h-[720px] flex items-center"
-          style={{
-            backgroundImage: "url('/home/sell-review-hero.webp')",
-            backgroundPosition: "center right",
-            backgroundSize: "cover",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
-          <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 pt-[120px] pb-14 lg:pt-[140px] lg:pb-20 relative z-10">
-            <div className="max-w-[560px] space-y-5 text-left">
-              <h1
-                className="text-[#1a1a1a] text-[34px] sm:text-[44px] lg:text-[52px] font-bold leading-[1.12] tracking-tight"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+        {/* Hero — centered, matches the Areas We Serve page */}
+        <section className="w-full bg-brand-green-deep pt-[110px] lg:pt-[130px] pb-12 lg:pb-16 text-center relative overflow-hidden">
+          <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">
+            <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
+              HOME SELLING OPTIONS REVIEW
+            </p>
+
+            <h1 className="text-white text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.1] mb-6">
+              Sell Your Home for Cash in Arizona
+            </h1>
+
+            <p className="text-[#63cd85] text-[17px] lg:text-[20px] font-medium leading-snug mb-5 max-w-2xl mx-auto">
+              Before you accept a cash offer, compare it to every other way you could sell — with local experts who don&apos;t buy houses.
+            </p>
+
+            <p className="text-[#c8c8b8] text-[15px] lg:text-[16px] leading-[1.7] max-w-2xl mx-auto">
+              See how a cash sale really stacks up against listing traditionally, selling as-is, repairing first, or keeping your home — in plain numbers, with no pressure and no obligation.
+            </p>
+
+            <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2.5 text-[15px] font-semibold text-white text-left">
+              {["100% Free", "No Obligation", "We Don't Buy Houses", "Local Arizona Experts"].map((item) => (
+                <li key={item} className="flex items-center gap-2.5">
+                  <span className="w-6 h-6 rounded-full bg-[#3fb364] flex items-center justify-center shrink-0">
+                    <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-8 flex flex-col items-center gap-3">
+              <Link
+                href="/#get-pre-approved"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[16px] font-bold px-7 py-3.5 rounded-md transition-all shadow-md"
               >
-                Sell Your Home for Cash in Arizona
-              </h1>
-
-              <p className="text-[#3fb364] text-[17px] sm:text-[20px] lg:text-[22px] font-medium leading-snug">
-                Before you accept a cash offer, compare it to every other way you could sell — with local experts who don&apos;t buy houses.
+                Get My Free Home Selling Options Review →
+              </Link>
+              <p className="text-[#63cd85] text-[15px] font-medium">
+                or call{" "}
+                <a href={COMPANY.phoneHref} className="underline underline-offset-2 hover:text-white">
+                  602-535-2171
+                </a>
               </p>
-
-              <p className="text-[#333333] text-[15px] lg:text-[16px] leading-relaxed">
-                See how a cash sale really stacks up against listing traditionally, selling as-is, repairing first, or keeping your home — in plain numbers, with no pressure and no obligation.
+              <p className="text-[#8da684] text-[12px] leading-relaxed">
+                Safe. Secure. No pressure.
+                <br />
+                Reviewed by {LOAN_OFFICERS.eddie.name}, Licensed Mortgage Broker ({LOAN_OFFICERS.eddie.nmlsDisplay})
               </p>
-
-              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 text-[15px] font-semibold text-[#1a1a1a]">
-                {["100% Free", "No Obligation", "We Don't Buy Houses", "Local Arizona Experts"].map((item) => (
-                  <li key={item} className="flex items-center gap-2.5">
-                    <span className="w-6 h-6 rounded-full bg-[#3fb364] flex items-center justify-center shrink-0">
-                      <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="pt-2 space-y-3">
-                <Link
-                  href="/#get-pre-approved"
-                  className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[16px] font-bold px-7 py-3.5 rounded-md transition-all shadow-md"
-                >
-                  Get My Free Home Selling Options Review →
-                </Link>
-                <p className="text-[#3fb364] text-[15px] font-medium">
-                  or call{" "}
-                  <a href={COMPANY.phoneHref} className="underline underline-offset-2 hover:text-[#2d8a4a]">
-                    602-535-2171
-                  </a>
-                </p>
-                <p className="text-[#777777] text-[12px] leading-relaxed pt-1">
-                  Safe. Secure. No pressure.
-                  <br />
-                  Reviewed by {LOAN_OFFICERS.eddie.name}, Licensed Mortgage Broker ({LOAN_OFFICERS.eddie.nmlsDisplay})
-                </p>
-              </div>
             </div>
           </div>
         </section>
@@ -303,22 +295,13 @@ export default function SellMyHouseFastArizonaPage() {
         </section>
 
         {/* Stats */}
-        <section className="w-full bg-[#3fb364] text-white py-10 px-6">
-          <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-[36px] lg:text-[44px] font-extrabold leading-none font-playfair">23+</div>
-              <div className="text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-1 opacity-90">Years in Business</div>
-            </div>
-            <div>
-              <div className="text-[36px] lg:text-[44px] font-extrabold leading-none font-playfair">Thousands</div>
-              <div className="text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-1 opacity-90">of Arizona Families Helped</div>
-            </div>
-            <div>
-              <div className="text-[36px] lg:text-[44px] font-extrabold leading-none font-playfair">5-Star</div>
-              <div className="text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-1 opacity-90">Local Reputation</div>
-            </div>
-          </div>
-        </section>
+        <StatsBanner
+          stats={[
+            { value: "23+", label: "Years in Business" },
+            { value: "Thousands", label: "of Arizona Families Helped" },
+            { value: "5-Star", label: "Local Reputation" },
+          ]}
+        />
 
         {/* What It Means */}
         <section className="py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import StatsBanner from "../component/StatsBanner";
 
 export default function FirstTimeHomeBuyerPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -171,26 +172,14 @@ export default function FirstTimeHomeBuyerPage() {
         </section>
 
         {/* STATS BANNER */}
-        <section className="w-full bg-[#3fb364] text-white py-10 px-6">
-          <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div>
-              <div className="text-[36px] lg:text-[44px] font-extrabold leading-none">3%</div>
-              <div className="text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-1 opacity-90">Minimum Down</div>
-            </div>
-            <div>
-              <div className="text-[36px] lg:text-[44px] font-extrabold leading-none">580+</div>
-              <div className="text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-1 opacity-90">Min Credit Score</div>
-            </div>
-            <div>
-              <div className="text-[36px] lg:text-[44px] font-extrabold leading-none">100%</div>
-              <div className="text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-1 opacity-90">Gift Funds Allowed</div>
-            </div>
-            <div>
-              <div className="text-[36px] lg:text-[44px] font-extrabold leading-none">$0</div>
-              <div className="text-[12px] lg:text-[13px] font-bold uppercase tracking-wider mt-1 opacity-90">Pre-Approval Fee</div>
-            </div>
-          </div>
-        </section>
+        <StatsBanner
+          stats={[
+            { value: "3%", label: "Minimum Down" },
+            { value: "580+", label: "Min Credit Score" },
+            { value: "100%", label: "Gift Funds Allowed" },
+            { value: "$0", label: "Pre-Approval Fee" },
+          ]}
+        />
 
         {/* FAQ ACCORDION */}
         <section className="py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
