@@ -57,7 +57,7 @@ const stats = [
 
 const BrokersAdvocate = () => {
   return (
-    <section className="w-full bg-[#fcf9f3] py-20 lg:py-28">
+    <section className="w-full bg-[#fcf9f3] pt-14 sm:pt-20 lg:pt-24 pb-12 sm:pb-14 lg:pb-16">
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
@@ -81,7 +81,7 @@ const BrokersAdvocate = () => {
         </div>
 
         {/* Feature Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-16 lg:mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-12 lg:mb-14">
           {features.map((feature) => (
             <div
               key={feature.title}
@@ -104,7 +104,7 @@ const BrokersAdvocate = () => {
         </div>
 
         {/* Review Snippets */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-16 lg:mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12 lg:mb-14">
           {snippets.map((s) => (
             <div
               key={s.initials}

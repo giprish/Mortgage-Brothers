@@ -99,7 +99,7 @@ const HomeCalculator = () => {
   const selectedCounty = AZ_COUNTIES.find((c) => c.value === county);
 
   return (
-    <section className="w-full bg-[#fcf9f3] py-12 sm:py-20 lg:py-28 border-t border-[#e8e0d0]/40" id="calculator">
+    <section className="w-full bg-[#fcf9f3] py-14 sm:py-20 lg:py-24 border-t border-[#e8e0d0]/40" id="calculator">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10">
         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
           <p className="text-[#b89a5a] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">

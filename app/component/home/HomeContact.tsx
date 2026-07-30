@@ -29,7 +29,7 @@ const HomeContact = () => {
   };
 
   return (
-    <section id="contact" className="w-full bg-[#fcf9f3] py-20 lg:py-28 border-t border-[#e8e0d0]/40 scroll-mt-20">
+    <section id="contact" className="w-full bg-[#fcf9f3] pt-14 sm:pt-20 lg:pt-24 pb-12 sm:pb-14 lg:pb-16 border-t border-[#e8e0d0]/40 scroll-mt-20">
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
           {/* Info Column */}

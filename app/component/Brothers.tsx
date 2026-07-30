@@ -23,10 +23,10 @@ const brothers = [
 
 const Brothers = () => {
   return (
-    <section className="w-full bg-[#fcf9f3] py-20 lg:py-28 border-t border-[#e8e0d0]/30">
+    <section className="w-full bg-[#fcf9f3] pt-12 sm:pt-14 lg:pt-16 pb-14 sm:pb-20 lg:pb-24 border-t border-[#e8e0d0]/30">
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 lg:mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-14">
           <p className="text-[#b89a5a] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
             The Brothers
           </p>

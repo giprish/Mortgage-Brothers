@@ -17,7 +17,7 @@ const DreamHomeCta = () => {
   <div className="pointer-events-none absolute -top-32 -left-32 w-[420px] h-[420px] rounded-full bg-[#3fb364]/10 blur-[110px]" />
   <div className="pointer-events-none absolute -bottom-24 right-0 w-[380px] h-[380px] rounded-full bg-[#3fb364]/10 blur-[110px]" />
 
-  <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-28 lg:pt-40 pb-20 lg:pb-28 relative z-10">
+  <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-16 sm:pt-24 lg:pt-32 pb-14 sm:pb-20 lg:pb-24 relative z-10">
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
       {/* YouTube video */}
       <div className="order-2 lg:order-1">
