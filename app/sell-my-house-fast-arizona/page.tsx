@@ -202,7 +202,7 @@ export default function SellMyHouseFastArizonaPage() {
 
       <main className="flex-grow">
         {/* Hero — centered, matches the Areas We Serve page */}
-        <section className="w-full bg-brand-green-deep pt-[110px] lg:pt-[130px] pb-12 lg:pb-16 text-center relative overflow-hidden">
+        <section className="w-full bg-brand-green-deep pt-[110px] lg:pt-[130px] pb-12 sm:pb-14 lg:pb-16 text-center relative overflow-hidden">
           <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">
             <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
               HOME SELLING OPTIONS REVIEW
@@ -274,7 +274,7 @@ export default function SellMyHouseFastArizonaPage() {
         </div>
 
         {/* We Are Not Cash Buyers */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-white">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-white">
           <div className="max-w-5xl mx-auto space-y-6 text-left">
             <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase">
               INDEPENDENT ADVICE
@@ -304,7 +304,7 @@ export default function SellMyHouseFastArizonaPage() {
         />
 
         {/* What It Means */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
           <div className="max-w-5xl mx-auto space-y-6">
             <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair leading-tight">
               What It Means to Sell Your Home for Cash
@@ -333,7 +333,7 @@ export default function SellMyHouseFastArizonaPage() {
         </section>
 
         {/* How It Works */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-white">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-white">
           <div className="max-w-5xl mx-auto space-y-10">
             <div>
               <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair leading-tight mb-4">
@@ -359,7 +359,7 @@ export default function SellMyHouseFastArizonaPage() {
         </section>
 
         {/* What Cash Buyers Pay */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
           <div className="max-w-5xl mx-auto space-y-6">
             <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair leading-tight">
               What Cash Buyers Typically Pay (the Honest Trade-Off)
@@ -374,7 +374,7 @@ export default function SellMyHouseFastArizonaPage() {
         </section>
 
         {/* Comparison Table */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-white">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-white">
           <div className="max-w-6xl mx-auto space-y-10">
             <div className="text-center">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
@@ -425,7 +425,7 @@ export default function SellMyHouseFastArizonaPage() {
         </section>
 
         {/* Why Homeowners Sell for Cash */}
-        <section className="py-16 lg:py-24 px-6 lg:px-12 bg-[#fcf9f3]">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
           <div className="max-w-5xl mx-auto space-y-12">
             <div className="text-center">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
@@ -452,7 +452,7 @@ export default function SellMyHouseFastArizonaPage() {
         </section>
 
         {/* Who Should Sell */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-white">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-white">
           <div className="max-w-5xl mx-auto space-y-6">
             <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair leading-tight">
               Who Should Sell a House for Cash?
@@ -464,7 +464,7 @@ export default function SellMyHouseFastArizonaPage() {
         </section>
 
         {/* Questions Before Accepting */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-[#052316] text-white">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-[#052316] text-white">
           <div className="max-w-5xl mx-auto space-y-8">
             <h2 className="text-[28px] lg:text-[38px] font-bold font-playfair leading-tight">
               Questions to Ask Before You Accept Any Cash Offer
@@ -487,7 +487,7 @@ export default function SellMyHouseFastArizonaPage() {
         </section>
 
         {/* Why Trust Us */}
-        <section className="py-16 lg:py-24 px-6 lg:px-12 bg-[#fcf9f3]">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
           <div className="max-w-5xl mx-auto space-y-12">
             <div className="text-center">
               <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair">
@@ -551,7 +551,7 @@ export default function SellMyHouseFastArizonaPage() {
         </section>
 
         {/* Service Areas */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-white">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-white">
           <div className="max-w-5xl mx-auto space-y-8">
             <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair text-center">
               Serving Homeowners Across the Phoenix Metro &amp; Arizona
@@ -586,7 +586,7 @@ export default function SellMyHouseFastArizonaPage() {
         </section>
 
         {/* Quick Answers */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
           <div className="max-w-4xl mx-auto space-y-10">
             <div className="text-center">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
@@ -612,7 +612,7 @@ export default function SellMyHouseFastArizonaPage() {
         </section>
 
         {/* FAQ Accordion */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-white">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-white">
           <div className="max-w-4xl mx-auto space-y-10">
             <div className="text-center">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
@@ -662,7 +662,7 @@ export default function SellMyHouseFastArizonaPage() {
         </section>
 
         {/* Final CTA */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-[#052316] text-white">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-[#052316] text-white">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h2 className="text-[28px] lg:text-[40px] font-bold font-playfair">
               Get Clarity. Compare Your Options. Decide with Confidence.

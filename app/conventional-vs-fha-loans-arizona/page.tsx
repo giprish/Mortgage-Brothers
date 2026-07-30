@@ -271,7 +271,7 @@ export default function ConventionalVsFhaLoansPage() {
         </section>
 
         {/* Introduction */}
-        <section className="w-full py-16 lg:py-24">
+        <section className="w-full py-14 sm:py-16 lg:py-20">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2
@@ -343,7 +343,7 @@ export default function ConventionalVsFhaLoansPage() {
         <StatsBanner stats={stats} />
 
         {/* Key differences */}
-        <section className="w-full py-16 lg:py-24">
+        <section className="w-full py-14 sm:py-16 lg:py-20">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2
@@ -396,7 +396,7 @@ export default function ConventionalVsFhaLoansPage() {
         </section>
 
         {/* Who benefits */}
-        <section className="w-full bg-[#f5f0e8] py-16 lg:py-24 border-y border-[#e8e0d0]/50">
+        <section className="w-full bg-[#f5f0e8] py-14 sm:py-16 lg:py-20 border-y border-[#e8e0d0]/50">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2
@@ -465,7 +465,7 @@ export default function ConventionalVsFhaLoansPage() {
         </section>
 
         {/* Cost comparisons */}
-        <section className="w-full py-16 lg:py-24">
+        <section className="w-full py-14 sm:py-16 lg:py-20">
           <div className="max-w-5xl mx-auto px-6 lg:px-10">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2
@@ -572,7 +572,7 @@ export default function ConventionalVsFhaLoansPage() {
         </section>
 
         {/* Mid CTA */}
-        <section className="w-full bg-[#08271B] py-14 lg:py-16 text-white text-center">
+        <section className="w-full bg-[#08271B] py-12 sm:py-14 lg:py-16 text-white text-center">
           <div className="max-w-3xl mx-auto px-6">
             <p className="text-[#c8c8b8] text-[15.5px] leading-relaxed mb-6">
               Still weighing the pros and cons of Conventional vs. FHA loans? Let&apos;s simplify the
@@ -588,7 +588,7 @@ export default function ConventionalVsFhaLoansPage() {
         </section>
 
         {/* Reviews */}
-        <section className="w-full py-16 lg:py-24">
+        <section className="w-full py-14 sm:py-16 lg:py-20">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2
@@ -642,7 +642,7 @@ export default function ConventionalVsFhaLoansPage() {
         </section>
 
         {/* Quiz CTA */}
-        <section className="w-full bg-[#f5f0e8] py-14 border-y border-[#e8e0d0]/50">
+        <section className="w-full bg-[#f5f0e8] py-12 sm:py-14 lg:py-16 border-y border-[#e8e0d0]/50">
           <div className="max-w-3xl mx-auto px-6 text-center">
             <h2
               className="text-[#08271B] text-[26px] lg:text-[32px] font-normal leading-tight mb-4"
@@ -664,7 +664,7 @@ export default function ConventionalVsFhaLoansPage() {
         </section>
 
         {/* Expert guidance */}
-        <section className="w-full bg-[#08271B] py-16 lg:py-24 text-white">
+        <section className="w-full bg-[#08271B] py-14 sm:py-16 lg:py-20 text-white">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2
@@ -700,7 +700,7 @@ export default function ConventionalVsFhaLoansPage() {
         </section>
 
         {/* FAQ */}
-        <section className="w-full py-16 lg:py-24">
+        <section className="w-full py-14 sm:py-16 lg:py-20">
           <div className="max-w-3xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-10">
               <h2
@@ -762,7 +762,7 @@ export default function ConventionalVsFhaLoansPage() {
         </section>
 
         {/* Contact CTA */}
-        <section className="w-full bg-[#f5f0e8] py-16 lg:py-20 border-y border-[#e8e0d0]/50">
+        <section className="w-full bg-[#f5f0e8] py-14 sm:py-16 lg:py-20 border-y border-[#e8e0d0]/50">
           <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center">
             <h2
               className="text-[#08271B] text-[30px] lg:text-[38px] font-normal leading-tight mb-5"
@@ -794,7 +794,7 @@ export default function ConventionalVsFhaLoansPage() {
         </section>
 
         {/* Explore solutions */}
-        <section className="w-full py-16 lg:py-20">
+        <section className="w-full py-14 sm:py-16 lg:py-20">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <h2
               className="text-[#08271B] text-[28px] lg:text-[34px] font-normal text-center mb-10"

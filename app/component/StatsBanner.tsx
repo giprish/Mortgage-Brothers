@@ -41,7 +41,7 @@ export default function StatsBanner({ stats }: StatsBannerProps) {
   const tier = sizeTier(stats, isTriple);
 
   return (
-    <section className="w-full bg-[#fcf9f3] py-12 lg:py-16">
+    <section className="w-full bg-[#fcf9f3] py-6 lg:py-8">
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         <div
           className={`bg-[#08271B] rounded-2xl px-4 sm:px-8 py-8 sm:py-10 lg:py-12 grid ${columns}`}

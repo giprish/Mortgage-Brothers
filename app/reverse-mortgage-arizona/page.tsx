@@ -175,7 +175,7 @@ export default function ReverseMortgageArizonaPage() {
         </div>
 
         {/* OVERVIEW */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-white">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-white">
           <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-7 space-y-6 text-left">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase">
@@ -244,7 +244,7 @@ export default function ReverseMortgageArizonaPage() {
         />
 
         {/* ELIGIBILITY */}
-        <section className="py-16 lg:py-24 px-6 lg:px-12 bg-[#fcf9f3]">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
           <div className="max-w-5xl mx-auto text-center space-y-12">
             <div>
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
@@ -303,7 +303,7 @@ export default function ReverseMortgageArizonaPage() {
         </section>
 
         {/* PROCESS */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
           <div className="max-w-5xl mx-auto space-y-10">
             <div className="text-center">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
@@ -344,7 +344,7 @@ export default function ReverseMortgageArizonaPage() {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-white">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-white">
           <div className="max-w-4xl mx-auto space-y-10">
             <div className="text-center">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
@@ -389,7 +389,7 @@ export default function ReverseMortgageArizonaPage() {
         </section>
 
         {/* TESTIMONIALS */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
           <div className="max-w-5xl mx-auto space-y-10">
             <div className="text-center">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
@@ -428,7 +428,7 @@ export default function ReverseMortgageArizonaPage() {
         </section>
 
         {/* WHY MORTGAGE BROTHERS */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-white">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-white">
           <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-5 space-y-5 text-left">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase">
@@ -460,7 +460,7 @@ export default function ReverseMortgageArizonaPage() {
         </section>
 
         {/* FINAL CTA */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-[#052316] text-white">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-[#052316] text-white">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h2 className="text-[28px] lg:text-[40px] font-bold font-playfair">
               Ready to Learn More About Reverse Mortgages?
@@ -492,7 +492,7 @@ export default function ReverseMortgageArizonaPage() {
         </section>
 
         {/* RELATED LOANS */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
           <div className="max-w-5xl mx-auto space-y-8">
             <div className="text-center">
               <h2 className="text-[#052316] text-[28px] lg:text-[34px] font-bold font-playfair">

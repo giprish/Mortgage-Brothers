@@ -224,7 +224,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
         </div>
 
         {/* OVERVIEW + BENEFITS */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-white">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-white">
           <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-6 space-y-6 text-left">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase">
@@ -275,7 +275,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
         />
 
         {/* ESSENTIAL QUESTIONS */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
           <div className="max-w-5xl mx-auto space-y-10">
             <div className="text-center space-y-4">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block">
@@ -304,7 +304,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
         </section>
 
         {/* FINANCIAL PATH */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-white">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-white">
           <div className="max-w-5xl mx-auto space-y-10">
             <div className="text-center space-y-4">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block">
@@ -336,7 +336,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
         </section>
 
         {/* LOAN PROGRAMS */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
           <div className="max-w-5xl mx-auto space-y-10">
             <div className="text-center space-y-4">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block">
@@ -371,7 +371,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
         </section>
 
         {/* ROADMAP STEPS */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-white">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-white">
           <div className="max-w-5xl mx-auto space-y-10">
             <div className="text-center space-y-4">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block">
@@ -403,7 +403,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
         </section>
 
         {/* TESTIMONIALS */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
           <div className="max-w-5xl mx-auto space-y-10">
             <div className="text-center space-y-4">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block">
@@ -443,7 +443,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
         </section>
 
         {/* WHY AZ MORTGAGE BROTHERS */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-white">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-white">
           <div className="max-w-5xl mx-auto space-y-10">
             <div className="text-center space-y-4">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block">
@@ -492,7 +492,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
           <div className="max-w-4xl mx-auto space-y-10">
             <div className="text-center">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
@@ -534,7 +534,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
         </section>
 
         {/* FINAL CTA */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-[#052316] text-white">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-[#052316] text-white">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <h2 className="text-[28px] lg:text-[40px] font-bold font-playfair">
               Start Your First-Time Homebuyer Journey Today
@@ -574,7 +574,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
         </section>
 
         {/* OTHER LOAN PROGRAMS */}
-        <section className="py-16 lg:py-20 px-6 lg:px-12 bg-white">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-white">
           <div className="max-w-5xl mx-auto space-y-10">
             <div className="text-center">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">

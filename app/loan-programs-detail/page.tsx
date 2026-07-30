@@ -192,7 +192,7 @@ export default function LoanProgramsDetailPage() {
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-[#052316] text-white pt-[92px] pb-20 px-6 lg:px-10 relative overflow-hidden">
+        <section className="bg-[#052316] text-white pt-[92px] pb-14 sm:pb-16 lg:pb-20 px-6 lg:px-10 relative overflow-hidden">
           <div className="absolute top-0 right-0 w-[300px] h-[300px] rounded-full border border-white/5 pointer-events-none -mr-16 -mt-16"></div>
           
           <div className="max-w-5xl mx-auto text-center relative z-10">
@@ -224,7 +224,7 @@ export default function LoanProgramsDetailPage() {
         </section>
 
         {/* Benefits cards row */}
-        <section className="py-16 px-6 lg:px-10 bg-white border-b border-[#e8e0d0]/40">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-10 bg-white border-b border-[#e8e0d0]/40">
           <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Card 1 */}
             <div className="bg-[#fcf9f3] rounded-2xl p-6 border border-[#e8e0d0]/40 flex flex-col items-start gap-4">
@@ -282,7 +282,7 @@ export default function LoanProgramsDetailPage() {
         </section>
 
         {/* Programs List */}
-        <section className="py-20 px-6 lg:px-10 max-w-5xl mx-auto">
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-10 max-w-5xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-[#052316] text-[30px] lg:text-[36px] font-playfair font-normal mb-3">
               Find the right loan for your needs
@@ -355,7 +355,7 @@ export default function LoanProgramsDetailPage() {
         </section>
 
         {/* Bottom CTA Banner */}
-        <section className="bg-[#052316] text-white py-20 text-center border-t border-white/10 mt-12">
+        <section className="bg-[#052316] text-white py-14 sm:py-16 lg:py-20 text-center border-t border-white/10 mt-12">
           <div className="max-w-2xl mx-auto px-6 flex flex-col items-center">
             <span className="text-[#b89a5a] text-[10px] font-bold tracking-[0.15em] uppercase block mb-3">
               NOT SURE WHICH FITS?

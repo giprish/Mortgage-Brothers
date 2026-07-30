@@ -267,7 +267,7 @@ export default function PrivateMoneyLenderPage() {
         </section>
 
         {/* Flexible financing intro */}
-        <section className="w-full py-16 lg:py-24">
+        <section className="w-full py-14 sm:py-16 lg:py-20">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2
@@ -318,7 +318,7 @@ export default function PrivateMoneyLenderPage() {
         <StatsBanner stats={stats} />
 
         {/* Private money loans */}
-        <section className="w-full py-16 lg:py-24">
+        <section className="w-full py-14 sm:py-16 lg:py-20">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2
@@ -361,7 +361,7 @@ export default function PrivateMoneyLenderPage() {
         </section>
 
         {/* Portfolio loans */}
-        <section className="w-full bg-[#f5f0e8] py-16 lg:py-24 border-y border-[#e8e0d0]/50">
+        <section className="w-full bg-[#f5f0e8] py-14 sm:py-16 lg:py-20 border-y border-[#e8e0d0]/50">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2
@@ -405,7 +405,7 @@ export default function PrivateMoneyLenderPage() {
         </section>
 
         {/* Qualifying */}
-        <section className="w-full py-16 lg:py-24">
+        <section className="w-full py-14 sm:py-16 lg:py-20">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2
@@ -447,7 +447,7 @@ export default function PrivateMoneyLenderPage() {
         </section>
 
         {/* Credit quiz CTA */}
-        <section className="w-full bg-[#08271B] py-14 lg:py-16">
+        <section className="w-full bg-[#08271B] py-12 sm:py-14 lg:py-16">
           <div className="max-w-3xl mx-auto px-6 text-center">
             <h3
               className="text-white text-[24px] lg:text-[30px] font-normal mb-4"
@@ -469,7 +469,7 @@ export default function PrivateMoneyLenderPage() {
         </section>
 
         {/* How to secure */}
-        <section className="w-full py-16 lg:py-24">
+        <section className="w-full py-14 sm:py-16 lg:py-20">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2
@@ -517,7 +517,7 @@ export default function PrivateMoneyLenderPage() {
         </section>
 
         {/* Reviews */}
-        <section className="w-full bg-[#f5f0e8] py-16 lg:py-24 border-y border-[#e8e0d0]/50">
+        <section className="w-full bg-[#f5f0e8] py-14 sm:py-16 lg:py-20 border-y border-[#e8e0d0]/50">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2
@@ -568,7 +568,7 @@ export default function PrivateMoneyLenderPage() {
         </section>
 
         {/* Why choose */}
-        <section className="w-full py-16 lg:py-24">
+        <section className="w-full py-14 sm:py-16 lg:py-20">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2
@@ -608,7 +608,7 @@ export default function PrivateMoneyLenderPage() {
         </section>
 
         {/* FAQ */}
-        <section className="w-full bg-[#f5f0e8] py-16 lg:py-24 border-y border-[#e8e0d0]/50">
+        <section className="w-full bg-[#f5f0e8] py-14 sm:py-16 lg:py-20 border-y border-[#e8e0d0]/50">
           <div className="max-w-3xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-10">
               <h2
@@ -670,7 +670,7 @@ export default function PrivateMoneyLenderPage() {
         </section>
 
         {/* Contact */}
-        <section className="w-full py-16 lg:py-20">
+        <section className="w-full py-14 sm:py-16 lg:py-20">
           <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center">
             <h2
               className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-5"
@@ -700,7 +700,7 @@ export default function PrivateMoneyLenderPage() {
         </section>
 
         {/* Explore solutions */}
-        <section className="w-full bg-[#f5f0e8] py-16 lg:py-20 border-t border-[#e8e0d0]/50">
+        <section className="w-full bg-[#f5f0e8] py-14 sm:py-16 lg:py-20 border-t border-[#e8e0d0]/50">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <h2
               className="text-[#08271B] text-[28px] lg:text-[34px] font-normal text-center mb-10"
