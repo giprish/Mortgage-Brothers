@@ -33,9 +33,9 @@ export default function PillarPostPage() {
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="bg-[#052316] text-white pt-[110px] lg:pt-[130px] pb-16 lg:pb-24 px-6 lg:px-10">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-5xl mx-auto text-center flex flex-col items-center">
             {/* Breadcrumb */}
-            <div className="flex items-center gap-2 text-[#8da684] text-[13px] font-medium mb-6">
+            <div className="flex flex-wrap items-center justify-center gap-2 text-[#8da684] text-[13px] font-medium mb-6">
               <Link href="/blog/" className="hover:text-white transition-colors">Blog</Link>
               <span>&gt;</span>
               <span className="text-[#3fb364]">Pillar Post</span>
@@ -45,11 +45,11 @@ export default function PillarPostPage() {
               TOPIC CATEGORY
             </span>
 
-            <h1 className="text-white text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.1] mb-6">
+            <h1 className="text-white text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.1] mb-6 max-w-3xl mx-auto">
               Pillar Posts & Complete Guides
             </h1>
 
-            <p className="text-[#c8c8b8] text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl">
+            <p className="text-[#c8c8b8] text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto">
               Explore our foundational cornerstone articles, detailed Arizona real estate guides, and deep-dive comparisons designed to master your mortgage and homebuying journey.
             </p>
           </div>
