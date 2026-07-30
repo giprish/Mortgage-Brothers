@@ -17,9 +17,9 @@ const Navbar = () => {
           <img
             src="/home/mortgage-brothers-logo.png"
             alt="Mortgage Brothers"
-            width={150}
-            height={45}
-            className="h-[42px] sm:h-[48px] w-auto max-w-[150px] object-contain"
+            width={140}
+            height={40}
+            className="h-[40px] sm:h-[48px] w-auto max-w-[150px] object-contain"
           />
         </Link>
 

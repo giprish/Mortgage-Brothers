@@ -43,11 +43,18 @@ const HomeContact = () => {
             >
               Get in Touch with The Mortgage Brothers
             </h2>
-            <p className="text-[#4e5b4e] text-[15px] leading-[1.75] mb-8">
+            <p className="text-[#4e5b4e] text-[15px] leading-[1.75] mb-4">
               Have questions or need assistance? Our team is here to help you navigate your
-              mortgage journey. We&apos;re committed to providing personalized solutions for your
-              unique situation, whether you&apos;re a first-time homebuyer in Phoenix or looking
-              to refinance in Scottsdale.
+              mortgage journey.
+            </p>
+            <p className="text-[#4e5b4e] text-[15px] leading-[1.75] mb-4">
+              Fill out the form below, and one of our mortgage experts will get back to you
+              shortly.
+            </p>
+            <p className="text-[#4e5b4e] text-[15px] leading-[1.75] mb-8">
+              We&apos;re committed to providing personalized solutions for your unique situation,
+              whether you&apos;re a first-time homebuyer in Phoenix or looking to refinance in
+              Scottsdale.
             </p>
 
             <div className="flex flex-col gap-5">

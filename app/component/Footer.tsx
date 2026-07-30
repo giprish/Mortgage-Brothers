@@ -189,9 +189,9 @@ const Footer = () => {
               <img
                 src="/home/mortgage-brothers-logo.png"
                 alt="Mortgage Brothers"
-                width={140}
-                height={46}
-                className="h-[42px] w-auto max-w-[140px] object-contain"
+                width={104}
+                height={34}
+                className="h-[30px] w-auto max-w-[104px] object-contain"
               />
             </Link>
 
