@@ -54,8 +54,8 @@ export default function ArticleHero({
         <div className="absolute -top-10 right-16 w-[min(240px,55vw)] h-[240px] rounded-full border border-white/[0.05]" />
       </div>
 
-      <div className="relative z-10 max-w-3xl mx-auto px-6 lg:px-8 py-12 lg:py-16">
-        <nav className="flex flex-wrap items-center gap-2 text-[12.5px] mb-5">
+      <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10 py-12 lg:py-16 text-center flex flex-col items-center">
+        <nav className="flex flex-wrap items-center justify-center gap-2 text-[12.5px] mb-5">
           <Link href="/blog/" className="text-[#8da684] hover:text-white transition-colors">
             Resources
           </Link>
@@ -70,24 +70,24 @@ export default function ArticleHero({
           </Link>
         </nav>
 
-        <div className="flex items-center gap-2.5 mb-4">
+        <div className="flex items-center justify-center gap-2.5 mb-4">
           <span className="block w-6 h-[2px] bg-[#3fb364] shrink-0" aria-hidden />
           <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.14em] uppercase">
             {category}
           </span>
         </div>
 
-        <h1 className="text-white font-playfair font-bold text-[30px] sm:text-[36px] lg:text-[46px] leading-[1.12] mb-5">
+        <h1 className="text-white font-playfair font-bold text-[30px] sm:text-[36px] lg:text-[46px] leading-[1.12] mb-5 max-w-4xl mx-auto">
           {title}
         </h1>
 
         {excerpt && (
-          <p className="text-[#b8c8b8] text-[16px] lg:text-[17px] leading-[1.7] mb-8 max-w-2xl">
+          <p className="text-[#b8c8b8] text-[16px] lg:text-[17px] leading-[1.7] mb-8 max-w-2xl mx-auto">
             {excerpt}
           </p>
         )}
 
-        <div className="pt-6 border-t border-white/10 flex flex-wrap items-center gap-x-8 gap-y-4">
+        <div className="w-full pt-6 border-t border-white/10 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
           <div className="flex items-center gap-3">
             <span className="w-10 h-10 rounded-full bg-[#3fb364]/20 text-[#3fb364] text-[13px] font-bold flex items-center justify-center shrink-0">
               {initials}
@@ -133,7 +133,7 @@ export default function ArticleHero({
             </div>
           )}
 
-          <div className="flex items-center gap-2 sm:ml-auto">
+          <div className="flex items-center justify-center gap-2">
             <button
               type="button"
               onClick={handleShare}
