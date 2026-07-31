@@ -28,10 +28,6 @@ export default function HowToSellMyHouseFastInArizonaPage() {
               <span className="text-[#3fb364]">Arizona Real Estate Guide</span>
             </div>
 
-            <span className="bg-[#103020] border border-[#205030] text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase px-3.5 py-1.5 rounded-full inline-block mb-4">
-              PILLAR POST · 2026 GUIDE
-            </span>
-
             <h1
               className="text-[32px] sm:text-[42px] lg:text-[50px] font-bold leading-tight mb-6 text-white"
               style={{ fontFamily: "'Playfair Display', serif" }}

@@ -47,6 +47,8 @@ interface InteractivePieChartProps {
   centerTextTitle?: string;
   centerTextSub?: string;
   showLegend?: boolean;
+  /** Donut diameter in px (default 240). */
+  size?: number;
   className?: string;
 }
 
@@ -57,6 +59,7 @@ export function InteractivePieChart({
   centerTextTitle,
   centerTextSub,
   showLegend = true,
+  size = 200,
   className = "",
 }: InteractivePieChartProps) {
   const filtered = dataItems.filter((item) => item.value > 0);
@@ -73,7 +76,7 @@ export function InteractivePieChart({
         backgroundColor: bgColors,
         borderWidth: 2,
         borderColor: "#ffffff",
-        hoverOffset: 8,
+        hoverOffset: 6,
       },
     ],
   };
@@ -83,7 +86,7 @@ export function InteractivePieChart({
     maintainAspectRatio: true,
     plugins: {
       legend: {
-        display: showLegend,
+        display: false,
         position: "bottom" as const,
         labels: {
           font: { size: 12, family: "sans-serif", weight: "bold" as const },
@@ -115,42 +118,53 @@ export function InteractivePieChart({
   };
 
   const ChartComponent = donut ? Doughnut : Pie;
-
-  // Always keep Chart.js legend off the canvas so the donut stays visually
-  // centered; render labels below when showLegend is true.
-  const chartOptions = {
-    ...options,
-    plugins: {
-      ...options.plugins,
-      legend: {
-        ...options.plugins.legend,
-        display: false,
-      },
-    },
-  };
-
   const hasCenterText = Boolean(donut && (centerTextTitle || centerTextSub));
 
   return (
     <div className={`w-full flex flex-col items-center justify-center ${className}`}>
       {title && <h4 className="text-[15px] font-bold text-[#32353C] mb-3 text-center">{title}</h4>}
-      <div className="relative mx-auto aspect-square w-full max-w-[240px] md:max-w-[280px]">
-        <ChartComponent data={chartData} options={chartOptions} />
+      <div
+        className="relative mx-auto"
+        style={{ width: size, height: size, maxWidth: "100%" }}
+      >
+        <ChartComponent data={chartData} options={options} />
         {hasCenterText && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none text-center px-6">
-            {centerTextTitle && <span className="text-[11px] uppercase font-bold tracking-wider text-[#888]">{centerTextTitle}</span>}
-            {centerTextSub && <span className="text-[16px] md:text-[18px] font-bold text-[#32353C]">{centerTextSub}</span>}
+          <div className="absolute inset-0 z-[1] flex flex-col items-center justify-center pointer-events-none text-center px-4">
+            {centerTextTitle && (
+              <span className="text-[10px] uppercase font-bold tracking-[0.12em] text-[#888] leading-none mb-1">
+                {centerTextTitle}
+              </span>
+            )}
+            {centerTextSub && (
+              <span className="text-[14px] sm:text-[15px] font-bold text-[#32353C] leading-tight tabular-nums">
+                {centerTextSub}
+              </span>
+            )}
           </div>
         )}
       </div>
       {showLegend && (
-        <ul className="mt-4 flex w-full max-w-[360px] flex-wrap justify-center gap-x-4 gap-y-2 px-2">
-          {filtered.map((item) => (
-            <li key={item.label} className="flex items-center gap-1.5 text-[12px] font-bold text-[#32353C]">
-              <span className="inline-block h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: item.color }} />
-              {item.label}
-            </li>
-          ))}
+        <ul className="mt-4 w-full max-w-[340px] px-1">
+          {filtered.map((item) => {
+            const pct = total > 0 ? ((item.value / total) * 100).toFixed(1) : "0.0";
+            return (
+              <li
+                key={item.label}
+                className="flex items-center gap-2.5 border-b border-[#e8ebe4] py-[7px] text-[12.5px] text-[#32353C] last:border-b-0"
+              >
+                <span
+                  className="inline-block h-2.5 w-2.5 shrink-0 rounded-[3px] ring-1 ring-black/10"
+                  style={{ background: item.color }}
+                  aria-hidden
+                />
+                <span className="min-w-0 flex-1 font-medium leading-snug">{item.label}</span>
+                <span className="shrink-0 font-bold tabular-nums text-[#1b2a1f]">{fmtCurrency(item.value)}</span>
+                <span className="w-11 shrink-0 text-right text-[11.5px] font-semibold tabular-nums text-[#6b7568]">
+                  {pct}%
+                </span>
+              </li>
+            );
+          })}
         </ul>
       )}
     </div>

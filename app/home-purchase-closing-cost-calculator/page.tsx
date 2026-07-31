@@ -332,9 +332,9 @@ export default function ClosingCostCalculator() {
     { label: "Title Escrow Fee", value: escrowFee, color: C.greenDeep },
     { label: "Title Insurance Fee", value: titleInsFee, color: C.green },
     { label: "Loan Origination Fee", value: FIXED_FEES.origination, color: C.greenBright },
-    { label: "Appraisal Fee", value: FIXED_FEES.appraisal, color: "#9dbf6c" },
-    { label: "Credit Report Fee", value: FIXED_FEES.creditReport, color: "#c9d9a8" },
-    { label: "Recording Fee", value: FIXED_FEES.recording, color: "#e3ecd2" },
+    { label: "Appraisal Fee", value: FIXED_FEES.appraisal, color: "#7a9e3e" },
+    { label: "Credit Report Fee", value: FIXED_FEES.creditReport, color: "#a8c45c" },
+    { label: "Recording Fee", value: FIXED_FEES.recording, color: "#c4d88a" },
     { label: "Miscellaneous Fees", value: FIXED_FEES.misc, color: "#8a6d3b" },
   ];
 
@@ -473,6 +473,9 @@ export default function ClosingCostCalculator() {
                 <InteractivePieChart
                   donut
                   showLegend
+                  size={180}
+                  centerTextTitle="total"
+                  centerTextSub={fmtMoney(total)}
                   dataItems={segments}
                 />
               </Panel>
