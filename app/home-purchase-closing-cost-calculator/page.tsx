@@ -473,8 +473,6 @@ export default function ClosingCostCalculator() {
                 <InteractivePieChart
                   donut
                   showLegend
-                  centerTextTitle="total"
-                  centerTextSub={fmtMoney(total)}
                   dataItems={segments}
                 />
               </Panel>

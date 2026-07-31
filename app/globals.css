@@ -177,6 +177,25 @@ textarea {
   max-width: 100%;
 }
 
+/* iOS Safari zooms the page when focused inputs are under 16px. Force 16px on
+   phones only — desktop/tablet keep each calculator's designed size. */
+@media (max-width: 640px) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="hidden"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]):not([type="color"]),
+  select,
+  textarea,
+  .dpc-input,
+  .va-input,
+  .fha-input,
+  .mac-input,
+  .cvf-input,
+  .epc-input,
+  .ccc-input,
+  .calc-select,
+  .calc-dropdown-trigger {
+    font-size: 16px !important;
+  }
+}
+
 /* Wide data tables scroll inside their panel rather than being clipped by the page. */
 .calc-table-scroll {
   max-width: 100%;

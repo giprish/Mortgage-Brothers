@@ -35,7 +35,6 @@ const fieldBorder = "#c3ccbb";
 // A reddish tint for the "Renting" side of the comparison hero (kept local to that
 // section so it doesn't affect the rent color used in the chart/legend elsewhere).
 const RENT_RED = "#b3413a";
-const RENT_RED_PALE = "#f7e6e3";
 
 /* ============================================================
    TYPES
@@ -1000,20 +999,33 @@ export default function RentVsBuyCalculator() {
                   marginBottom: 18,
                   borderRadius: 12,
                   border: `2px solid ${res.monthlyDifference < 0 ? C.green : RENT_RED}`,
-                  background: `linear-gradient(90deg, ${RENT_RED_PALE} 0%, #ffffff 48%, #ffffff 52%, ${C.greenPale} 100%)`,
+                  background: "#ffffff",
                   boxShadow: `0 4px 16px ${res.monthlyDifference < 0 ? "rgba(58,125,30,0.14)" : "rgba(163,64,47,0.16)"}`,
+                  textAlign: "center",
                 }}>
-                  <div>
+                  <div className="rvb-hero-side">
                     <div style={{ fontSize: 11.5, textTransform: "uppercase", letterSpacing: ".05em", color: RENT_RED, fontWeight: 700, marginBottom: 6 }}>Renting / Month</div>
                     <div style={{ fontFamily: SERIF, fontSize: 38, fontWeight: 700, lineHeight: 1, color: RENT_RED }}>${fmtMoney(res.monthlyRent)}</div>
                   </div>
-                  <div style={{
-                    fontFamily: MONO, fontSize: 22, fontWeight: 700, color: "#fff",
-                    background: `linear-gradient(135deg, ${RENT_RED}, ${C.green})`,
-                    width: 80, height: 80, borderRadius: "50%", display: "flex", alignItems: "center", justifyContent: "center",
-                    boxShadow: "0 4px 14px rgba(28,42,23,0.3)", flexShrink: 0,
-                  }}>vs</div>
-                  <div>
+                  <div
+                    className="rvb-hero-vs"
+                    aria-hidden="true"
+                    style={{
+                      fontFamily: MONO,
+                      fontSize: 16,
+                      fontWeight: 700,
+                      color: C.inkSoft,
+                      background: "none",
+                      border: "none",
+                      boxShadow: "none",
+                      padding: "4px 0",
+                      flexShrink: 0,
+                      lineHeight: 1,
+                    }}
+                  >
+                    vs
+                  </div>
+                  <div className="rvb-hero-side">
                     <div style={{ fontSize: 11.5, textTransform: "uppercase", letterSpacing: ".05em", color: C.greenDeep, fontWeight: 700, marginBottom: 6 }}>Buying / Month</div>
                     <div style={{ fontFamily: SERIF, fontSize: 38, fontWeight: 700, lineHeight: 1, color: C.greenDeep }}>
                       ${fmtMoney(Math.floor(res.monthlyPaymentIfBuying))}
@@ -1107,9 +1119,25 @@ export default function RentVsBuyCalculator() {
         <style>{`
           @media (max-width: 1023px) {
             .rvb-layout { grid-template-columns: minmax(0, 1fr) !important; }
-          }
-          @media (max-width: 640px) {
-            .rvb-hero { grid-template-columns: minmax(0, 1fr) !important; text-align: left; }
+            .rvb-hero {
+              display: flex !important;
+              flex-direction: column !important;
+              align-items: center !important;
+              justify-content: center !important;
+              text-align: center !important;
+              gap: 12px !important;
+            }
+            .rvb-hero-side {
+              width: 100%;
+              text-align: center !important;
+            }
+            .rvb-hero-vs {
+              margin: 0 auto !important;
+              background: none !important;
+              background-image: none !important;
+              border: none !important;
+              box-shadow: none !important;
+            }
           }
           @media (max-width: 1023px) {
             .rvb-stats { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }

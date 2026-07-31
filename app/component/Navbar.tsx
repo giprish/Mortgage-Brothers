@@ -490,6 +490,7 @@ const Navbar = () => {
               <line x1="6" y1="6" x2="18" y2="18" />
             </svg>
           ) : (
+            /* Sidebar-style menu icon (panel + lines) */
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -552,28 +553,29 @@ const Navbar = () => {
                   CALL US
                 </a>
 
-                {/* Hamburger Close Button */}
+                {/* Close Button */}
                 <button
                   onClick={() => {
                     setMobileMenuOpen(false);
                     setActiveSubmenu(null);
                   }}
                   className="text-[#3fb364] p-1.5 hover:text-white transition-colors"
+                  aria-label="Close menu"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
+                    width="22"
+                    height="22"
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="2.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
+                    aria-hidden
                   >
-                    <line x1="3" y1="6" x2="21" y2="6" />
-                    <line x1="3" y1="12" x2="21" y2="12" />
-                    <line x1="3" y1="18" x2="21" y2="18" />
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
                   </svg>
                 </button>
               </div>
@@ -723,7 +725,7 @@ const Navbar = () => {
                       <Link
                         href="/extra-payment-mortgage-calculator/"
                         onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                        className="text-[#3fb364] font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-white transition-colors"
+                        className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
                       >
                         EXTRA PAYMENT MORTGAGE
                       </Link>

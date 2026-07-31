@@ -80,7 +80,7 @@ export function InteractivePieChart({
 
   const options = {
     responsive: true,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
     plugins: {
       legend: {
         display: showLegend,
@@ -116,18 +116,43 @@ export function InteractivePieChart({
 
   const ChartComponent = donut ? Doughnut : Pie;
 
+  // Always keep Chart.js legend off the canvas so the donut stays visually
+  // centered; render labels below when showLegend is true.
+  const chartOptions = {
+    ...options,
+    plugins: {
+      ...options.plugins,
+      legend: {
+        ...options.plugins.legend,
+        display: false,
+      },
+    },
+  };
+
+  const hasCenterText = Boolean(donut && (centerTextTitle || centerTextSub));
+
   return (
     <div className={`w-full flex flex-col items-center justify-center ${className}`}>
       {title && <h4 className="text-[15px] font-bold text-[#32353C] mb-3 text-center">{title}</h4>}
-      <div className="relative w-full h-[240px] md:h-[280px] flex items-center justify-center">
-        <ChartComponent data={chartData} options={options} />
-        {donut && (centerTextTitle || centerTextSub) && (
-          <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none text-center">
+      <div className="relative mx-auto aspect-square w-full max-w-[240px] md:max-w-[280px]">
+        <ChartComponent data={chartData} options={chartOptions} />
+        {hasCenterText && (
+          <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none text-center px-6">
             {centerTextTitle && <span className="text-[11px] uppercase font-bold tracking-wider text-[#888]">{centerTextTitle}</span>}
             {centerTextSub && <span className="text-[16px] md:text-[18px] font-bold text-[#32353C]">{centerTextSub}</span>}
           </div>
         )}
       </div>
+      {showLegend && (
+        <ul className="mt-4 flex w-full max-w-[360px] flex-wrap justify-center gap-x-4 gap-y-2 px-2">
+          {filtered.map((item) => (
+            <li key={item.label} className="flex items-center gap-1.5 text-[12px] font-bold text-[#32353C]">
+              <span className="inline-block h-2.5 w-2.5 shrink-0 rounded-full" style={{ background: item.color }} />
+              {item.label}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
