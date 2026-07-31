@@ -2,11 +2,111 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { FaAngleRight, FaArrowLeft } from "react-icons/fa";
 import { COMPANY, LOAN_PROGRAM_LINKS } from "@/lib/company";
 
+const CALCULATOR_LINKS = [
+  { href: "/basic-mortgage-payment-calculator/", label: "BASIC MORTGAGE PAYMENT" },
+  { href: "/mortgage-affordability-calculator/", label: "MORTGAGE AFFORDABILITY" },
+  { href: "/refinance-calculator/", label: "REFINANCE CALCULATOR" },
+  { href: "/rent-vs-buy-calculator/", label: "RENT VS. BUY CALCULATOR" },
+  { href: "/conventional-vs-fha-calculator/", label: "CONVENTIONAL VS. FHA" },
+  { href: "/down-payment-calculator/", label: "DOWN PAYMENT CALCULATOR" },
+  { href: "/debt-to-income-ratio-calculator/", label: "DEBT-TO-INCOME RATIO" },
+  { href: "/extra-payment-mortgage-calculator/", label: "EXTRA PAYMENT MORTGAGE" },
+  { href: "/fha-loan-calculator/", label: "FHA LOAN CALCULATOR" },
+  { href: "/va-loan-calculator/", label: "VA LOAN CALCULATOR" },
+  { href: "/home-purchase-closing-cost-calculator/", label: "HOME LOAN CLOSING COST CALCULATOR" },
+] as const;
+
+const AREA_LINKS = [
+  { href: "/service-areas/", label: "ALL SERVICE AREAS" },
+  { href: "/service-areas/maricopa-county-az/", label: "MARICOPA COUNTY" },
+  { href: "/service-areas/pima-county-az/", label: "PIMA COUNTY" },
+  { href: "/service-areas/pinal-county-az/", label: "PINAL COUNTY" },
+  { href: "/service-areas/yavapai-county-az/", label: "YAVAPAI COUNTY" },
+  { href: "/service-areas/coconino-county-az/", label: "COCONINO COUNTY" },
+  { href: "/service-areas/navajo-county-az/", label: "NAVAJO COUNTY" },
+  { href: "/service-areas/apache-county-az/", label: "APACHE COUNTY" },
+  { href: "/service-areas/gila-county-az/", label: "GILA COUNTY" },
+  { href: "/service-areas/cochise-county-az/", label: "COCHISE COUNTY" },
+  { href: "/service-areas/graham-county-az/", label: "GRAHAM COUNTY" },
+  { href: "/service-areas/greenlee-county-az/", label: "GREENLEE COUNTY" },
+  { href: "/service-areas/santa-cruz-county-az/", label: "SANTA CRUZ COUNTY" },
+  { href: "/service-areas/mohave-county-az/", label: "MOHAVE COUNTY" },
+  { href: "/service-areas/la-paz-county-az/", label: "LA PAZ COUNTY" },
+  { href: "/service-areas/yuma-county-az/", label: "YUMA COUNTY" },
+] as const;
+
+const ABOUT_LINKS = [
+  { href: "/contact-us/", label: "CONTACT US" },
+  { href: "/team/", label: "TEAM & CAREERS" },
+  { href: "/job-opportunities/", label: "JOB OPPORTUNITIES" },
+] as const;
+
+const RESOURCE_LINKS = [
+  { href: "/blog/", label: "BLOG" },
+  { href: "/mortgage-basics/", label: "MORTGAGE BASICS" },
+  { href: "/videos/", label: "VIDEOS" },
+  { href: "/mortgage-basics/conventional-loan-basics/", label: "CONVENTIONAL LOANS" },
+  { href: "/client-mortgage-reviews/", label: "REVIEWS" },
+  { href: "/faq/", label: "MORTGAGE FAQ" },
+] as const;
+
+function normalizePath(path: string) {
+  if (!path) return "/";
+  return path.endsWith("/") ? path : `${path}/`;
+}
+
+function pathsMatch(href: string, pathname: string) {
+  return normalizePath(pathname) === normalizePath(href);
+}
+
+function mobileItemClass(active: boolean, size: "main" | "sub" = "sub") {
+  const base =
+    size === "main"
+      ? "font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 border-b border-[#3b4148] transition-colors block"
+      : "font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] transition-colors";
+  return active
+    ? `${base} text-[#3fb364] hover:text-white`
+    : `${base} text-white hover:text-[#3fb364]`;
+}
+
 const Navbar = () => {
+  const pathname = usePathname() || "/";
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+
+  const isPathActive = (href: string) => pathsMatch(href, pathname);
+  const isLoanProgramsActive = LOAN_PROGRAM_LINKS.some((item) => isPathActive(item.href));
+  const isCalculatorsActive = CALCULATOR_LINKS.some((item) => isPathActive(item.href));
+  const isAreasActive = AREA_LINKS.some((item) => isPathActive(item.href));
+  const isAboutActive = ABOUT_LINKS.some((item) => isPathActive(item.href));
+  const isResourcesActive = RESOURCE_LINKS.some((item) => isPathActive(item.href));
+
+  // When opening the drawer on a matching page, jump straight into that submenu.
+  const resolveSubmenuForPath = () => {
+    if (isCalculatorsActive) return "CALCULATORS";
+    if (isLoanProgramsActive) return "LOAN PROGRAMS";
+    if (isAreasActive) return "AREAS WE SERVE";
+    if (isAboutActive) return "ABOUT";
+    if (isResourcesActive) return "RESOURCES";
+    return null;
+  };
+
+  const closeMobile = () => {
+    setMobileMenuOpen(false);
+    setActiveSubmenu(null);
+  };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen((open) => {
+      const next = !open;
+      setActiveSubmenu(next ? resolveSubmenuForPath() : null);
+      return next;
+    });
+  };
 
   return (
     <nav className="w-full bg-[#08271B] border-b border-[#1a3a1a] fixed top-0 left-0 right-0 z-50">
@@ -468,10 +568,7 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <button
           className="lg:hidden flex items-center justify-center w-10 h-10 text-white"
-          onClick={() => {
-            setMobileMenuOpen(!mobileMenuOpen);
-            setActiveSubmenu(null);
-          }}
+          onClick={toggleMobileMenu}
           aria-label="Toggle menu"
         >
           {mobileMenuOpen ? (
@@ -531,7 +628,7 @@ const Navbar = () => {
                 onClick={() => setActiveSubmenu(null)}
                 className="w-full bg-[#348e38] text-white font-bold text-[14px] px-5 py-3.5 flex items-center gap-2 tracking-wide uppercase shadow-sm cursor-pointer"
               >
-                <span className="text-[16px] font-extrabold">&lt;</span> Back
+                <FaArrowLeft className="text-[14px] shrink-0" aria-hidden /> Back
               </button>
             ) : (
               <div className="flex items-center justify-between px-5 py-4 bg-[#292e34] border-b border-[#3b4148]">
@@ -588,62 +685,56 @@ const Navbar = () => {
                 <div className="flex flex-col">
                   <button
                     onClick={() => setActiveSubmenu("LOAN PROGRAMS")}
-                    className="w-full text-white font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 border-b border-[#3b4148] flex items-center justify-between hover:bg-[#343a42] transition-colors cursor-pointer text-left"
+                    className={`w-full flex items-center justify-between hover:bg-[#343a42] cursor-pointer text-left ${mobileItemClass(isLoanProgramsActive, "main")}`}
                   >
                     <span>LOAN PROGRAMS</span>
-                    <span className="text-[10px] text-white/70">▶</span>
+                    <span className="shrink-0 opacity-70"><FaAngleRight className="text-[14px]" aria-hidden /></span>
                   </button>
 
                   <button
                     onClick={() => setActiveSubmenu("CALCULATORS")}
-                    className="w-full text-white font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 border-b border-[#3b4148] flex items-center justify-between hover:bg-[#343a42] transition-colors cursor-pointer text-left"
+                    className={`w-full flex items-center justify-between hover:bg-[#343a42] cursor-pointer text-left ${mobileItemClass(isCalculatorsActive, "main")}`}
                   >
                     <span>CALCULATORS</span>
-                    <span className="text-[10px] text-white/70">▶</span>
+                    <span className="shrink-0 opacity-70"><FaAngleRight className="text-[14px]" aria-hidden /></span>
                   </button>
 
                   <button
                     onClick={() => setActiveSubmenu("AREAS WE SERVE")}
-                    className="w-full text-white font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 border-b border-[#3b4148] flex items-center justify-between hover:bg-[#343a42] transition-colors cursor-pointer text-left"
+                    className={`w-full flex items-center justify-between hover:bg-[#343a42] cursor-pointer text-left ${mobileItemClass(isAreasActive, "main")}`}
                   >
                     <span>AREAS WE SERVE</span>
-                    <span className="text-[10px] text-white/70">▶</span>
+                    <span className="shrink-0 opacity-70"><FaAngleRight className="text-[14px]" aria-hidden /></span>
                   </button>
 
                   <button
                     onClick={() => setActiveSubmenu("ABOUT")}
-                    className="w-full text-white font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 border-b border-[#3b4148] flex items-center justify-between hover:bg-[#343a42] transition-colors cursor-pointer text-left"
+                    className={`w-full flex items-center justify-between hover:bg-[#343a42] cursor-pointer text-left ${mobileItemClass(isAboutActive, "main")}`}
                   >
                     <span>ABOUT</span>
-                    <span className="text-[10px] text-white/70">▶</span>
+                    <span className="shrink-0 opacity-70"><FaAngleRight className="text-[14px]" aria-hidden /></span>
                   </button>
 
                   <button
                     onClick={() => setActiveSubmenu("RESOURCES")}
-                    className="w-full text-white font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 border-b border-[#3b4148] flex items-center justify-between hover:bg-[#343a42] transition-colors cursor-pointer text-left"
+                    className={`w-full flex items-center justify-between hover:bg-[#343a42] cursor-pointer text-left ${mobileItemClass(isResourcesActive, "main")}`}
                   >
                     <span>RESOURCES</span>
-                    <span className="text-[10px] text-white/70">▶</span>
+                    <span className="shrink-0 opacity-70"><FaAngleRight className="text-[14px]" aria-hidden /></span>
                   </button>
 
                   <Link
                     href="/contact-us/"
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      setActiveSubmenu(null);
-                    }}
-                    className="text-white font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 border-b border-[#3b4148] hover:bg-[#343a42] transition-colors block"
+                    onClick={closeMobile}
+                    className={`${mobileItemClass(isPathActive("/contact-us/"), "main")} hover:bg-[#343a42]`}
                   >
                     CONTACT US
                   </Link>
 
                   <Link
                     href="/realtorteam/"
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                      setActiveSubmenu(null);
-                    }}
-                    className="text-white font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 border-b border-[#3b4148] hover:bg-[#343a42] transition-colors block"
+                    onClick={closeMobile}
+                    className={`${mobileItemClass(isPathActive("/realtorteam/"), "main")} hover:bg-[#343a42]`}
                   >
                     REALTORS
                   </Link>
@@ -656,202 +747,65 @@ const Navbar = () => {
                     {activeSubmenu}
                   </div>
 
-                  {activeSubmenu === "LOAN PROGRAMS" && (
-                    <>
-                      {LOAN_PROGRAM_LINKS.map((item) => (
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                          className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
-                    </>
-                  )}
+                  {activeSubmenu === "LOAN PROGRAMS" &&
+                    LOAN_PROGRAM_LINKS.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        onClick={closeMobile}
+                        className={mobileItemClass(isPathActive(item.href))}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
 
-                  {activeSubmenu === "CALCULATORS" && (
-                    <>
+                  {activeSubmenu === "CALCULATORS" &&
+                    CALCULATOR_LINKS.map((item) => (
                       <Link
-                        href="/basic-mortgage-payment-calculator/"
-                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                        className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
+                        key={item.href}
+                        href={item.href}
+                        onClick={closeMobile}
+                        className={mobileItemClass(isPathActive(item.href))}
                       >
-                        BASIC MORTGAGE PAYMENT
+                        {item.label}
                       </Link>
-                      <Link
-                        href="/mortgage-affordability-calculator/"
-                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                        className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
-                      >
-                        MORTGAGE AFFORDABILITY
-                      </Link>
-                      <Link
-                        href="/refinance-calculator/"
-                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                        className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
-                      >
-                        REFINANCE CALCULATOR
-                      </Link>
-                      <Link
-                        href="/rent-vs-buy-calculator/"
-                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                        className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
-                      >
-                        RENT VS. BUY CALCULATOR
-                      </Link>
-                      <Link
-                        href="/conventional-vs-fha-calculator/"
-                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                        className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
-                      >
-                        CONVENTIONAL VS. FHA
-                      </Link>
-                      <Link
-                        href="/down-payment-calculator/"
-                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                        className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
-                      >
-                        DOWN PAYMENT CALCULATOR
-                      </Link>
-                      <Link
-                        href="/debt-to-income-ratio-calculator/"
-                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                        className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
-                      >
-                        DEBT-TO-INCOME RATIO
-                      </Link>
-                      <Link
-                        href="/extra-payment-mortgage-calculator/"
-                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                        className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
-                      >
-                        EXTRA PAYMENT MORTGAGE
-                      </Link>
-                      <Link
-                        href="/fha-loan-calculator/"
-                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                        className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
-                      >
-                        FHA LOAN CALCULATOR
-                      </Link>
-                      <Link
-                        href="/va-loan-calculator/"
-                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                        className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
-                      >
-                        VA LOAN CALCULATOR
-                      </Link>
-                      <Link
-                        href="/home-purchase-closing-cost-calculator/"
-                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                        className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
-                      >
-                        HOME LOAN CLOSING COST CALCULATOR
-                      </Link>
-                    </>
-                  )}
+                    ))}
 
-                  {activeSubmenu === "AREAS WE SERVE" && (
-                    <>
+                  {activeSubmenu === "AREAS WE SERVE" &&
+                    AREA_LINKS.map((item) => (
                       <Link
-                        href="/service-areas/"
-                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                        className="text-[#3fb364] font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-white transition-colors"
+                        key={item.href}
+                        href={item.href}
+                        onClick={closeMobile}
+                        className={mobileItemClass(isPathActive(item.href))}
                       >
-                        ALL SERVICE AREAS
+                        {item.label}
                       </Link>
-                      <Link href="/service-areas/maricopa-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">MARICOPA COUNTY</Link>
-                      <Link href="/service-areas/pima-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">PIMA COUNTY</Link>
-                      <Link href="/service-areas/pinal-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">PINAL COUNTY</Link>
-                      <Link href="/service-areas/yavapai-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">YAVAPAI COUNTY</Link>
-                      <Link href="/service-areas/coconino-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">COCONINO COUNTY</Link>
-                      <Link href="/service-areas/navajo-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">NAVAJO COUNTY</Link>
-                      <Link href="/service-areas/apache-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">APACHE COUNTY</Link>
-                      <Link href="/service-areas/gila-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">GILA COUNTY</Link>
-                      <Link href="/service-areas/cochise-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">COCHISE COUNTY</Link>
-                      <Link href="/service-areas/graham-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">GRAHAM COUNTY</Link>
-                      <Link href="/service-areas/greenlee-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">GREENLEE COUNTY</Link>
-                      <Link href="/service-areas/santa-cruz-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">SANTA CRUZ COUNTY</Link>
-                      <Link href="/service-areas/mohave-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">MOHAVE COUNTY</Link>
-                      <Link href="/service-areas/la-paz-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">LA PAZ COUNTY</Link>
-                      <Link href="/service-areas/yuma-county-az/" onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }} className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors">YUMA COUNTY</Link>
-                    </>
-                  )}
+                    ))}
 
-                  {activeSubmenu === "ABOUT" && (
-                    <>
+                  {activeSubmenu === "ABOUT" &&
+                    ABOUT_LINKS.map((item) => (
                       <Link
-                        href="/contact-us/"
-                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                        className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
+                        key={item.href}
+                        href={item.href}
+                        onClick={closeMobile}
+                        className={mobileItemClass(isPathActive(item.href))}
                       >
-                        CONTACT US
+                        {item.label}
                       </Link>
-                      <Link
-                        href="/team/"
-                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                        className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
-                      >
-                        TEAM & CAREERS
-                      </Link>
-                      <Link
-                        href="/job-opportunities/"
-                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                        className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
-                      >
-                        JOB OPPORTUNITIES
-                      </Link>
-                    </>
-                  )}
+                    ))}
 
-                  {activeSubmenu === "RESOURCES" && (
-                    <>
+                  {activeSubmenu === "RESOURCES" &&
+                    RESOURCE_LINKS.map((item) => (
                       <Link
-                        href="/blog/"
-                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                        className="text-[#3fb364] font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-white transition-colors"
+                        key={item.href}
+                        href={item.href}
+                        onClick={closeMobile}
+                        className={mobileItemClass(isPathActive(item.href))}
                       >
-                        BLOG
+                        {item.label}
                       </Link>
-                      <Link
-                        href="/mortgage-basics/"
-                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                        className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
-                      >
-                        MORTGAGE BASICS
-                      </Link>
-                      <Link
-                        href="/videos/"
-                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                        className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
-                      >
-                        VIDEOS
-                      </Link>
-                      <Link
-                        href="/mortgage-basics/conventional-loan-basics/"
-                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                        className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
-                      >
-                        CONVENTIONAL LOANS
-                      </Link>
-                      <Link
-                        href="/client-mortgage-reviews/"
-                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                        className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
-                      >
-                        REVIEWS
-                      </Link>
-                      <Link
-                        href="/faq/"
-                        onClick={() => { setMobileMenuOpen(false); setActiveSubmenu(null); }}
-                        className="text-white font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] hover:text-[#3fb364] transition-colors"
-                      >
-                        MORTGAGE FAQ
-                      </Link>
-                    </>
-                  )}
+                    ))}
                 </div>
               )}
             </div>

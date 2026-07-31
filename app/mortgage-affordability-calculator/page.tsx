@@ -362,7 +362,7 @@ function DtiMilestoneBar({ scenarios }: { scenarios: Scenario[] }) {
           <div style={{ width: 2, height: 16, background: C.greenDeep, margin: "2px auto 0" }} />
         </div>
       ))}
-    </div>
+          </div>
   );
 }
 function InsightsPanel({ groups, nextSteps }: { groups: { title: string; color: string; bullets: string[] }[]; nextSteps: string[] }) {
@@ -371,7 +371,7 @@ function InsightsPanel({ groups, nextSteps }: { groups: { title: string; color: 
       <h2 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 600, margin: "0 0 12px", color: C.ink }}>Recommendations & Key Insights</h2>
       <div style={{ borderBottom: `1px solid ${C.line}`, marginBottom: 16 }} />
       <div className="insights-grid" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.3fr) minmax(0, 1fr)", gap: 20, alignItems: "start" }}>
-        <div>
+              <div>
           {groups.map((g) => (
             <div key={g.title} style={{ marginBottom: 16 }}>
               <h4 style={{ fontSize: 13.5, fontWeight: 700, margin: "0 0 8px", color: g.color }}>{g.title}</h4>
@@ -382,7 +382,7 @@ function InsightsPanel({ groups, nextSteps }: { groups: { title: string; color: 
               </ul>
             </div>
           ))}
-        </div>
+                      </div>
         <div style={{ background: "#fff", border: `1px solid ${C.line}`, borderRadius: 8, padding: 16 }}>
           <h4 style={{ fontSize: 13.5, fontWeight: 700, margin: "0 0 4px", color: C.ink }}>Next Steps</h4>
           <p style={{ fontSize: 12, color: C.inkSoft, margin: "0 0 10px" }}>Based on your scenario, here's what we'd suggest next:</p>
@@ -391,14 +391,14 @@ function InsightsPanel({ groups, nextSteps }: { groups: { title: string; color: 
               <li key={i} style={{ fontSize: 13, color: C.ink, marginBottom: 6, lineHeight: 1.5 }}>{s}</li>
             ))}
           </ul>
-        </div>
-      </div>
+                    </div>
+                  </div>
       <style>{`
           @media (max-width: 640px) {
             .insights-grid { grid-template-columns: minmax(0, 1fr) !important; }
           }
         `}</style>
-    </div>
+                  </div>
   );
 }
 function BdItem({ label, value, total }: { label: string; value: string; total?: boolean }) {
@@ -413,7 +413,7 @@ function BdItem({ label, value, total }: { label: string; value: string; total?:
     }}>
       <span style={{ color: C.inkSoft, fontSize: total ? 14 : 13.5, minWidth: 0 }}>{label}</span>
       <span style={{ fontFamily: MONO, fontWeight: 700, color: total ? C.greenDeep : C.ink, fontSize: total ? 17 : 14, textAlign: "right", wordBreak: "break-word" }}>{value}</span>
-    </div>
+                </div>
   );
 }
 
@@ -538,7 +538,7 @@ export default function MortgageAffordabilityCalculator() {
                   onClick={() => setSelectedKey(s.key)} />
               ))}
             </div>
-          </div>
+                      </div>
 
           <div className="mac-layout" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1.15fr)", gap: 24, alignItems: "start", width: "100%" }}>
             {/* ============ INPUTS ============ */}
@@ -615,7 +615,7 @@ export default function MortgageAffordabilityCalculator() {
                 <label style={{ display: "flex", alignItems: "center", gap: 8, marginTop: 4, marginBottom: 4, fontSize: 13, color: C.ink, cursor: "pointer" }}>
                   <input type="checkbox" checked={pmiEnabled} onChange={(e) => setPmiEnabled(e.target.checked)} style={{ width: 16, height: 16, accentColor: C.green }} />
                   Include PMI when down payment is below 20%
-                </label>
+                    </label>
 
                 {pmiEnabled && (
                   <div style={{ marginTop: 12 }}>
@@ -666,7 +666,7 @@ export default function MortgageAffordabilityCalculator() {
               <div style={{ background: C.card, border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(28,42,23,0.06), 0 6px 20px rgba(28,42,23,0.05)", padding: "16px 14px", marginBottom: 20, maxWidth: "100%", boxSizing: "border-box" }}>
                 <h2 style={{ fontFamily: SERIF, fontSize: 16, fontWeight: 600, margin: "0 0 12px" }}>
                   Payment Breakdown ({selected.label} — {selected.dti}% DTI Scenario)
-                </h2>
+            </h2>
                 <BdItem label="Principal & Interest" value={fmtMoney(primary.piPayment, 2)} />
                 <BdItem label="Property Tax" value={fmtMoney(primary.propertyTax, 2)} />
                 <BdItem label="Insurance" value={fmtMoney(primary.insurance, 2)} />
