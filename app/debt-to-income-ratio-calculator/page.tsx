@@ -307,27 +307,125 @@ function RatioMilestoneBar({
   hasIncome: boolean;
   info?: string;
 }) {
-  const scaleMax = Math.max(threshold + 15, ratio + 5);
+  const scaleMax = Math.max(60, Math.ceil(Math.max(ratio * 1.15, threshold * 1.35) / 5) * 5);
   const pctOf = (v: number) => Math.min(100, Math.max(0, (v / scaleMax) * 100));
   const status = hasIncome ? ratioStatus(ratio, threshold) : "pass";
+  const fillPct = hasIncome ? pctOf(ratio) : 0;
+  const limitPct = pctOf(threshold);
+  const withinPct = Math.min(fillPct, limitPct);
+  const overPct = Math.max(0, fillPct - limitPct);
+  const fillColor = STATUS_COLOR[status] === C.greenDeep ? C.greenBright : STATUS_COLOR[status];
+
   return (
-    <div style={{ marginBottom: 14 }}>
-      <div style={{ display: "flex", justifyContent: "space-between", fontSize: 12, marginBottom: 6 }}>
-        <span title={info || undefined} style={{ fontWeight: 700, color: C.ink, display: "inline-flex", alignItems: "center", gap: 6, cursor: info ? "help" : "default", padding: info ? "4px 0" : 0 }}>{label} {info && <InfoDot />}</span>
-        <span style={{ fontFamily: MONO, fontWeight: 700, color: hasIncome ? STATUS_COLOR[status] : C.inkSoft }}>
-          {hasIncome ? fmtPct(ratio) : "—"} <span style={{ fontWeight: 400, color: C.inkSoft }}>/ {threshold}% guideline</span>
-        </span>
+    <div style={{ marginBottom: 16 }}>
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "minmax(0, 1fr) auto",
+          gap: "6px 12px",
+          alignItems: "start",
+          marginBottom: 8,
+        }}
+      >
+        <div
+          title={info || undefined}
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 6,
+            minHeight: 22,
+            cursor: info ? "help" : "default",
+          }}
+        >
+          <span style={{ fontWeight: 700, fontSize: 13, color: C.greenDeep, lineHeight: 1.25 }}>
+            {label}
+          </span>
+          {info ? <InfoDot /> : null}
+        </div>
+        <div style={{ textAlign: "right", fontFamily: MONO, lineHeight: 1.25, whiteSpace: "nowrap" }}>
+          <div style={{ fontWeight: 700, fontSize: 14, color: hasIncome ? STATUS_COLOR[status] : C.inkSoft }}>
+            {hasIncome ? fmtPct(ratio) : "—"}
+          </div>
+          <div style={{ fontWeight: 500, fontSize: 11, color: C.inkSoft }}>
+            / {threshold}% guideline
+          </div>
+        </div>
       </div>
-      <div style={{ position: "relative", height: 10, borderRadius: 99, background: "#fff", border: `1px solid ${C.line}`, overflow: "hidden" }}>
-        <div style={{ position: "absolute", left: 0, width: `${pctOf(threshold)}%`, top: 0, bottom: 0, background: C.greenWash }} />
-        <div style={{ position: "absolute", left: `${pctOf(threshold)}%`, width: `${pctOf(threshold + 2) - pctOf(threshold)}%`, top: 0, bottom: 0, background: C.amberWash }} />
-        <div style={{ position: "absolute", left: `${pctOf(threshold + 2)}%`, right: 0, top: 0, bottom: 0, background: C.dangerWash }} />
+
+      <div style={{ position: "relative", height: 12, borderRadius: 6, background: C.line }}>
+        {/* Soft zone hints under the fill */}
+        <div style={{ position: "absolute", inset: 0, borderRadius: 6, overflow: "hidden" }}>
+          <div style={{ position: "absolute", left: 0, width: `${limitPct}%`, top: 0, bottom: 0, background: C.greenWash }} />
+          <div style={{ position: "absolute", left: `${limitPct}%`, right: 0, top: 0, bottom: 0, background: C.dangerWash }} />
+        </div>
+
+        {/* Actual ratio fill */}
         {hasIncome && (
-          <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: `${pctOf(ratio)}%`, background: STATUS_COLOR[status], opacity: 0.9 }} />
+          <>
+            <div
+              style={{
+                position: "absolute",
+                left: 0,
+                top: 0,
+                bottom: 0,
+                width: `${withinPct}%`,
+                background: fillColor,
+                borderRadius: overPct > 0 ? "6px 0 0 6px" : 6,
+                transition: "width .2s ease",
+              }}
+            />
+            {overPct > 0 && (
+              <div
+                style={{
+                  position: "absolute",
+                  left: `${limitPct}%`,
+                  top: 0,
+                  bottom: 0,
+                  width: `${overPct}%`,
+                  background: C.danger,
+                  opacity: 0.85,
+                  borderRadius: "0 6px 6px 0",
+                  transition: "width .2s ease",
+                }}
+              />
+            )}
+          </>
         )}
-        <div style={{ position: "absolute", left: `${pctOf(threshold)}%`, top: 0, bottom: 0, width: 2, background: C.ink }} />
+
+        {/* Guideline marker */}
+        <div
+          aria-hidden
+          title={`Guideline ${threshold}%`}
+          style={{
+            position: "absolute",
+            left: `${limitPct}%`,
+            top: -3,
+            bottom: -3,
+            width: 2,
+            marginLeft: -1,
+            background: C.ink,
+            borderRadius: 1,
+            zIndex: 1,
+          }}
+        />
       </div>
-      <div style={{ fontSize: 10, color: C.inkSoft, marginTop: 3 }}>Guideline marker at {threshold}%</div>
+
+      <div style={{ position: "relative", height: 14, marginTop: 4, fontSize: 10, color: C.inkSoft, fontFamily: MONO }}>
+        <span style={{ position: "absolute", left: 0 }}>0%</span>
+        <span
+          style={{
+            position: "absolute",
+            left: `${limitPct}%`,
+            transform: "translateX(-50%)",
+            whiteSpace: "nowrap",
+            fontWeight: 700,
+            color: C.ink,
+          }}
+        >
+          {threshold}%
+        </span>
+        <span style={{ position: "absolute", right: 0 }}>{scaleMax}%</span>
+      </div>
     </div>
   );
 }

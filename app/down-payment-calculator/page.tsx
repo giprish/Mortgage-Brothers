@@ -789,9 +789,9 @@ function DownPaymentCalculator() {
 
             {/* Donut chart */}
             <div style={{ background: C.panel, border: `1px solid ${C.line}`, borderRadius: 10, padding: "20px 22px 22px", marginBottom: 18 }}>
-              <h3 style={{ fontFamily: MONO, fontSize: 11, textTransform: "uppercase", letterSpacing: ".07em", color: C.inkSoft, margin: "0 0 12px" }}>Monthly Payment Distribution</h3>
-              <div style={{ display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap" }}>
-                <svg width={150} height={150} viewBox="0 0 150 150">
+              <h3 style={{ fontFamily: MONO, fontSize: 11, textTransform: "uppercase", letterSpacing: ".07em", color: C.inkSoft, margin: "0 0 12px", textAlign: "center" }}>Monthly Payment Distribution</h3>
+              <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 16 }}>
+                <svg width={150} height={150} viewBox="0 0 150 150" style={{ display: "block", margin: "0 auto" }}>
                   {chart.arcs.map((a, i) => (
                     <circle key={i} cx={chart.CX} cy={chart.CY} r={chart.R} fill="none" stroke={a.color} strokeWidth={chart.STROKE}
                       strokeDasharray={`${a.len} ${chart.circumference - a.len}`} strokeDashoffset={a.dashOffset}
@@ -801,7 +801,7 @@ function DownPaymentCalculator() {
                   <text x={chart.CX} y={chart.CY - 3} textAnchor="middle" fontSize={15} fontWeight={700} fill={C.ink} fontFamily={SANS}>{fmtMoney(totalMonthly)}</text>
                   <text x={chart.CX} y={chart.CY + 14} textAnchor="middle" fontSize={9.5} fill={C.inkSoft} fontFamily={SANS}>per month</text>
                 </svg>
-                <div style={{ flex: 1, minWidth: 160 }}>
+                <div style={{ width: "100%", maxWidth: 320 }}>
                   {chart.arcs.map((a, i) => (
                     <div key={i} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 12.5, padding: "4px 0" }}>
                       <span style={{ width: 10, height: 10, borderRadius: 3, flexShrink: 0, background: a.color }} />
@@ -870,15 +870,84 @@ function Badge({ status }: { status: RatioStatus }) {
   );
 }
 function RatioLine({ label, ratio, threshold, status }: { label: string; ratio: number; threshold: number; status: RatioStatus }) {
-  const pct = Math.min(100, (ratio / threshold) * 100);
+  // Keep the scale tight so overshoot past the guideline is easy to see.
+  const scaleMax = Math.max(60, Math.ceil(Math.max(ratio * 1.15, threshold * 1.35) / 5) * 5);
+  const fillPct = Math.min(100, Math.max(0, (ratio / scaleMax) * 100));
+  const limitPct = Math.min(100, Math.max(0, (threshold / scaleMax) * 100));
+  const withinPct = Math.min(fillPct, limitPct);
+  const overPct = Math.max(0, fillPct - limitPct);
+  const baseColor = STATUS_COLOR[status] === C.greenDeep ? C.greenBright : STATUS_COLOR[status];
+
   return (
     <div>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", fontSize: 14 }}>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "baseline", gap: 10, fontSize: 14, flexWrap: "wrap" }}>
         <span style={{ color: C.inkSoft }}>{label}</span>
-        <span style={{ fontWeight: 700, color: STATUS_COLOR[status] }}>{fmtPct(ratio)} (limit {threshold}%)</span>
+        <span style={{ fontWeight: 700, color: STATUS_COLOR[status], fontVariantNumeric: "tabular-nums", whiteSpace: "nowrap" }}>
+          {fmtPct(ratio)} <span style={{ fontWeight: 500, color: C.inkSoft }}>(limit {threshold}%)</span>
+        </span>
       </div>
-      <div style={{ height: 6, background: C.line, borderRadius: 4, overflow: "hidden", marginTop: 4 }}>
-        <div style={{ height: "100%", borderRadius: 4, width: `${pct}%`, background: STATUS_COLOR[status] === C.greenDeep ? C.greenBright : STATUS_COLOR[status] }} />
+      <div style={{ position: "relative", height: 12, background: C.line, borderRadius: 6, marginTop: 6 }}>
+        {/* Portion at/under the guideline */}
+        <div
+          style={{
+            position: "absolute",
+            left: 0,
+            top: 0,
+            bottom: 0,
+            width: `${withinPct}%`,
+            background: baseColor,
+            borderRadius: overPct > 0 ? "6px 0 0 6px" : 6,
+            transition: "width .2s ease",
+          }}
+        />
+        {/* Overshoot past the guideline */}
+        {overPct > 0 && (
+          <div
+            style={{
+              position: "absolute",
+              left: `${limitPct}%`,
+              top: 0,
+              bottom: 0,
+              width: `${overPct}%`,
+              background: C.red,
+              opacity: 0.85,
+              borderRadius: "0 6px 6px 0",
+              transition: "width .2s ease",
+            }}
+          />
+        )}
+        {/* Guideline marker */}
+        <div
+          aria-hidden
+          title={`Limit ${threshold}%`}
+          style={{
+            position: "absolute",
+            left: `${limitPct}%`,
+            top: -3,
+            bottom: -3,
+            width: 2,
+            marginLeft: -1,
+            background: C.ink,
+            borderRadius: 1,
+            zIndex: 1,
+          }}
+        />
+      </div>
+      <div style={{ position: "relative", height: 14, marginTop: 3, fontSize: 10, color: C.inkSoft, fontFamily: MONO }}>
+        <span style={{ position: "absolute", left: 0 }}>0%</span>
+        <span
+          style={{
+            position: "absolute",
+            left: `${limitPct}%`,
+            transform: "translateX(-50%)",
+            whiteSpace: "nowrap",
+            fontWeight: 700,
+            color: C.ink,
+          }}
+        >
+          {threshold}%
+        </span>
+        <span style={{ position: "absolute", right: 0 }}>{scaleMax}%</span>
       </div>
     </div>
   );
