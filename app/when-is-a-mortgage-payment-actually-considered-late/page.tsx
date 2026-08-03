@@ -1,5 +1,7 @@
 "use client";
 
+import FaqAccordion from "../component/FaqAccordion";
+
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -121,7 +123,7 @@ export default function WhenIsAMortgagePaymentActuallyConsideredLatePage() {
       />
 
       <Navbar />
-      <div className="h-[72px] w-full shrink-0" aria-hidden />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
         <ArticleHero
@@ -301,46 +303,22 @@ export default function WhenIsAMortgagePaymentActuallyConsideredLatePage() {
                 </p>
 
                 <section id="frequently-asked-questions">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Frequently Asked Questions
-                  </h2>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        When is a mortgage payment considered late by the bank?
-                      </h3>
-                      <p>
-                        Lenders typically consider your mortgage payment late if it&apos;s received after the
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={[
+                    { q: "When is a mortgage payment considered late by the bank?", a: <>Lenders typically consider your mortgage payment late if it&apos;s received after the
                         15th of the month. Payments made within the first 15 days are not penalized, but if your
                         payment is made on the 16th or later, you may incur a 5% late fee. This does not affect
-                        your credit score.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        When does a late mortgage payment impact your credit score?
-                      </h3>
-                      <p>
-                        A late mortgage payment impacts your credit score if it is 30 or more days past due. At
+                        your credit score.</> },
+                    { q: "When does a late mortgage payment impact your credit score?", a: <>A late mortgage payment impacts your credit score if it is 30 or more days past due. At
                         that point, the credit bureau will mark your report with a &apos;30-day late,&apos;
                         which can make it harder to get approved for future loans. A 90-day late could trigger
-                        foreclosure proceedings, depending on state laws.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Can I still get a mortgage with a 30-day late payment on your credit report?
-                      </h3>
-                      <p>
-                        Yes, it&apos;s still possible to get approved for a mortgage even with a 30-day late
+                        foreclosure proceedings, depending on state laws.</> },
+                    { q: "Can I still get a mortgage with a 30-day late payment on your credit report?", a: <>Yes, it&apos;s still possible to get approved for a mortgage even with a 30-day late
                         payment on your credit report. However, it may make the approval process more difficult
-                        and could affect your interest rate or loan terms.
-                      </p>
-                    </div>
-                  </div>
+                        and could affect your interest rate or loan terms.</> }
+                    ]}
+                  />
                 </section>
 
                 <section id="podcast-transcript">

@@ -1,5 +1,7 @@
 "use client";
 
+import FaqAccordion from "../component/FaqAccordion";
+
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -145,7 +147,7 @@ export default function UltimateGuideFirstMortgagePage() {
       />
 
       <Navbar />
-      <div className="h-[72px] w-full shrink-0" aria-hidden />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
         <ArticleHero
@@ -752,82 +754,37 @@ export default function UltimateGuideFirstMortgagePage() {
                 </div>
 
                 <section id="frequently-asked-questions">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Frequently Asked Questions
-                  </h2>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        What do lenders look for when approving a mortgage?
-                      </h3>
-                      <p>
-                        Lenders typically assess several key factors when approving a mortgage, including your
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={[
+                    { q: "What do lenders look for when approving a mortgage?", a: <>Lenders typically assess several key factors when approving a mortgage, including your
                         credit score and payment history, reliable income, debt-to-income ratio, and available
                         assets. They want to ensure you have a strong record of repaying debts, a stable income
-                        source, manageable debt levels, and financial reserves to cover unforeseen circumstances.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        How does my credit score affect my mortgage approval?
-                      </h3>
-                      <p>
-                        Your credit score plays a major role in determining the interest rate and loan options
+                        source, manageable debt levels, and financial reserves to cover unforeseen circumstances.</> },
+                    { q: "How does my credit score affect my mortgage approval?", a: <>Your credit score plays a major role in determining the interest rate and loan options
                         available to you. A score around 700 or higher is considered good and often qualifies for
                         the best rates. Scores as low as 620 may still be accepted, but they typically result in
                         higher rates. Lenders also consider your credit utilization and full credit history, not
-                        just the score.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        How much down payment do I need for my first home?
-                      </h3>
-                      <p>
-                        The required down payment depends on the type of loan and home price. Conventional loans
+                        just the score.</> },
+                    { q: "How much down payment do I need for my first home?", a: <>The required down payment depends on the type of loan and home price. Conventional loans
                         generally need 20% down, though some allow as little as 5%. FHA loans require a minimum of
                         3.5% down, and VA loans for veterans can go as low as 0%. A larger down payment helps reduce
-                        your monthly payments and total loan cost.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        What types of home loans are available for first-time buyers?
-                      </h3>
-                      <p>
-                        Common loan types include conventional loans, FHA loans, and VA loans. Conventional loans
+                        your monthly payments and total loan cost.</> },
+                    { q: "What types of home loans are available for first-time buyers?", a: <>Common loan types include conventional loans, FHA loans, and VA loans. Conventional loans
                         are widely available and often sold on the secondary market. FHA loans are backed by the
                         Federal Housing Administration and offer lower down payments, while VA loans are guaranteed
                         by the Department of Veterans Affairs and provide benefits like no down payment for
-                        eligible veterans.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        What is the difference between pre-approval and pre-qualification?
-                      </h3>
-                      <p>
-                        A pre-qualification is an initial estimate of how much you may be able to borrow based on
+                        eligible veterans.</> },
+                    { q: "What is the difference between pre-approval and pre-qualification?", a: <>A pre-qualification is an initial estimate of how much you may be able to borrow based on
                         basic information you provide. A pre-approval is a more detailed process that requires
                         financial verification, such as proof of income, tax returns, and bank statements.
-                        Pre-approval carries more weight when making an offer on a home.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        What happens after my mortgage is approved?
-                      </h3>
-                      <p>
-                        Once your mortgage is approved, the lender will finalize the loan documents and schedule
+                        Pre-approval carries more weight when making an offer on a home.</> },
+                    { q: "What happens after my mortgage is approved?", a: <>Once your mortgage is approved, the lender will finalize the loan documents and schedule
                         your closing. You&apos;ll complete a final home inspection, sign paperwork with your
                         closing agent or attorney, and arrange for the key transfer. Staying in close contact with
-                        your lender and real estate agent ensures a smooth closing process.
-                      </p>
-                    </div>
-                  </div>
+                        your lender and real estate agent ensures a smooth closing process.</> }
+                    ]}
+                  />
                 </section>
 
                 <p>

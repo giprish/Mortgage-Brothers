@@ -1,5 +1,7 @@
 "use client";
 
+import FaqAccordion from "../component/FaqAccordion";
+
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -121,7 +123,7 @@ export default function AssumableMortgagePage() {
       />
 
       <Navbar />
-      <div className="h-[72px] w-full shrink-0" aria-hidden />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
         <ArticleHero
@@ -216,44 +218,20 @@ export default function AssumableMortgagePage() {
                 </section>
 
                 <section id="frequently-asked-questions">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Frequently Asked Questions
-                  </h2>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        What is an assumable mortgage?
-                      </h3>
-                      <p>
-                        An assumable mortgage is one where the lender includes a clause allowing a third party,
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={[
+                    { q: "What is an assumable mortgage?", a: <>An assumable mortgage is one where the lender includes a clause allowing a third party,
                         typically the homebuyer, to take over the existing mortgage. If the mortgage is not
-                        assumable, the clause will clearly state so.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        What does an assumable clause look like?
-                      </h3>
-                      <p>
-                        A typical assumable clause may read: &apos;If all or any part of the property is sold or
+                        assumable, the clause will clearly state so.</> },
+                    { q: "What does an assumable clause look like?", a: <>A typical assumable clause may read: &apos;If all or any part of the property is sold or
                         transferred without the lender&apos;s prior consent, the lender may require immediate
                         payment in full of the loan.&apos; This means the mortgage may be assumed if the lender
-                        is notified and consents to the transfer.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Are FHA mortgages assumable?
-                      </h3>
-                      <p>
-                        Yes, one of the advantages of FHA mortgages is that they are assumable. This can be a
-                        strong selling point if you decide to sell your home in the future.
-                      </p>
-                    </div>
-                  </div>
+                        is notified and consents to the transfer.</> },
+                    { q: "Are FHA mortgages assumable?", a: <>Yes, one of the advantages of FHA mortgages is that they are assumable. This can be a
+                        strong selling point if you decide to sell your home in the future.</> }
+                    ]}
+                  />
                 </section>
 
                 <p>

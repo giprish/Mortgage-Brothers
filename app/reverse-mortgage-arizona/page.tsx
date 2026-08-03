@@ -236,10 +236,10 @@ export default function ReverseMortgageArizonaPage() {
         {/* FIT CHECK STATS */}
         <StatsBanner
           stats={[
-            { value: "Yes", label: "Do you Love Your Home?" },
-            { value: "Yes", label: "Do you Love your Location?" },
-            { value: "Yes", label: "Is Your Home Low Maintenance?" },
-            { value: "Yes", label: "Is Your Income Limited?" },
+            { value: "62+", label: "Minimum Age Requirement" },
+            { value: "$0", label: "Monthly Payments Required" },
+            { value: "30%-60%", label: "Home Equity Accessible" },
+            { value: "100%", label: "Retain Full Ownership" },
           ]}
         />
 

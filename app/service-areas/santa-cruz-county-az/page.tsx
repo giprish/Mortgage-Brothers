@@ -16,7 +16,7 @@ export default function SantaCruzCountyPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
-      <main className="flex-grow pt-[72px]">
+      <main className="flex-grow pt-[64px] sm:pt-[72px]">
         <section className="w-full bg-brand-green-deep text-white py-16 lg:py-20 text-center relative overflow-hidden">
           <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">
             {/* Breadcrumb inside Pine Green Section */}

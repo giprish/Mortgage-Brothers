@@ -14,7 +14,7 @@ export default function LoanApplicationsPage() {
     <div className="flex flex-col min-h-screen bg-[#e8eaed]">
       <Navbar />
 
-      <main className="flex-grow pt-[72px]">
+      <main className="flex-grow pt-[64px] sm:pt-[72px]">
         {/* Secure loan application — matches live PreApproveMe embed */}
         <section className="relative w-full min-h-[calc(100vh-72px)] bg-[#e8eaed]">
           {isLoading && (

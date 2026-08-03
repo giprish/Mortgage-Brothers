@@ -1,5 +1,7 @@
 "use client";
 
+import FaqAccordion from "../component/FaqAccordion";
+
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -129,7 +131,7 @@ export default function ArizonaHomeBuyingProcessPage() {
       />
 
       <Navbar />
-      <div className="h-[72px] w-full shrink-0" aria-hidden />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
         <ArticleHero
@@ -262,57 +264,25 @@ export default function ArizonaHomeBuyingProcessPage() {
                 </section>
 
                 <section id="home-buying-faqs">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Home Buying FAQ&apos;s
-                  </h2>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        I&apos;ve heard the term &quot;Buyer&apos;s Market&quot; and &quot;Seller&apos;s
-                        Market&quot;. What does that mean?
-                      </h3>
-                      <p>
-                        Simply, it&apos;s about economics. When there are more buyers than sellers, it becomes a
+                  <FaqAccordion
+                    title="Home Buying FAQ's"
+                    items={[
+                    { q: "I've heard the term \"Buyer's Market\" and \"Seller's\r\n                        Market\". What does that mean?", a: <>Simply, it&apos;s about economics. When there are more buyers than sellers, it becomes a
                         Seller&apos;s Market…meaning the seller has the control. If they don&apos;t like your bid,
                         there&apos;s probably someone else out there ready to buy. On the flip side, if there are
                         more sellers than buyers, it becomes a Buyer&apos;s Market because there probably
-                        isn&apos;t someone else waiting to place a bid.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Where does my &quot;earnest&quot; money go?
-                      </h3>
-                      <p>
-                        Earnest money, or a small down payment to &quot;hold&quot; the purchase, is credited back
-                        toward the buyer&apos;s closing costs or down payment.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Do I need a Home Inspection?
-                      </h3>
-                      <p>
-                        Some mortgage loan programs require a borrower to get an inspection. However, even if
+                        isn&apos;t someone else waiting to place a bid.</> },
+                    { q: "Where does my \"earnest\" money go?", a: <>Earnest money, or a small down payment to &quot;hold&quot; the purchase, is credited back
+                        toward the buyer&apos;s closing costs or down payment.</> },
+                    { q: "Do I need a Home Inspection?", a: <>Some mortgage loan programs require a borrower to get an inspection. However, even if
                         it&apos;s not required it is still important to complete to be sure the house is sound and
-                        there are no problems waiting in the wings.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Does it matter if I buy a home that&apos;s part of a Home Owner&apos;s Association?
-                      </h3>
-                      <p>
-                        Yes, it does. An HOA may have the power to determine the color of your home, the number of
+                        there are no problems waiting in the wings.</> },
+                    { q: "Does it matter if I buy a home that's part of a Home Owner's Association?", a: <>Yes, it does. An HOA may have the power to determine the color of your home, the number of
                         pets you have and even the type of grass and flowers you plant? They may also have the
                         power to assess penalties to you if the problems aren&apos;t fixed. It&apos;s very
-                        important to understand the scope of any HOA and what the costs/premiums might be.
-                      </p>
-                    </div>
-                  </div>
+                        important to understand the scope of any HOA and what the costs/premiums might be.</> }
+                    ]}
+                  />
                 </section>
 
                 <p>

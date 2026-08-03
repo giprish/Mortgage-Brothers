@@ -1,5 +1,7 @@
 "use client";
 
+import FaqAccordion from "../component/FaqAccordion";
+
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -129,7 +131,7 @@ export default function ArizonaMortgagePaymentsPage() {
       />
 
       <Navbar />
-      <div className="h-[72px] w-full shrink-0" aria-hidden />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
         <ArticleHero
@@ -236,53 +238,21 @@ export default function ArizonaMortgagePaymentsPage() {
                 </section>
 
                 <section id="frequently-asked-questions">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Frequently Asked Questions
-                  </h2>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        What is an Impounded or Escrow Account?
-                      </h3>
-                      <p>
-                        Loans are made up of Principal, Interest, Taxes and Insurance (PITI). The escrow account
-                        covers the T and the I and is included in the monthly payment.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Are Impound Accounts required?
-                      </h3>
-                      <p>
-                        In some cases yes, as with Government Loans, FHA and VA loan programs. In other cases, if
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={[
+                    { q: "What is an Impounded or Escrow Account?", a: <>Loans are made up of Principal, Interest, Taxes and Insurance (PITI). The escrow account
+                        covers the T and the I and is included in the monthly payment.</> },
+                    { q: "Are Impound Accounts required?", a: <>In some cases yes, as with Government Loans, FHA and VA loan programs. In other cases, if
                         the Loan to Value is low enough an escrow waiver is allowed but there&apos;s typically a
-                        higher mortgage rate due to the lender taking on more risk.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        If I refinance my existing Arizona mortgage loan, what happens to my impound/escrow
-                        account?
-                      </h3>
-                      <p>
-                        If there is a balance after the refinance, the excess is generally refunded back to the
-                        homeowner.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Can I set up an escrow account later?
-                      </h3>
-                      <p>
-                        Yes, you can request an escrow account at anytime. Keep in mind that you&apos;ll have to
+                        higher mortgage rate due to the lender taking on more risk.</> },
+                    { q: "If I refinance my existing Arizona mortgage loan, what happens to my impound/escrow\n                        account?", a: <>If there is a balance after the refinance, the excess is generally refunded back to the
+                        homeowner.</> },
+                    { q: "Can I set up an escrow account later?", a: <>Yes, you can request an escrow account at anytime. Keep in mind that you&apos;ll have to
                         deposit at least 12 months of hazard insurance as well as around 6 months of tax payments
-                        in the account in order to get it established.
-                      </p>
-                    </div>
-                  </div>
+                        in the account in order to get it established.</> }
+                    ]}
+                  />
                 </section>
 
                 <p>

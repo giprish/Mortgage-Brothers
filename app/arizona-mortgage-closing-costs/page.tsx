@@ -1,5 +1,7 @@
 "use client";
 
+import FaqAccordion from "../component/FaqAccordion";
+
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -129,7 +131,7 @@ export default function ArizonaMortgageClosingCostsPage() {
       />
 
       <Navbar />
-      <div className="h-[72px] w-full shrink-0" aria-hidden />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
         <ArticleHero
@@ -266,57 +268,26 @@ export default function ArizonaMortgageClosingCostsPage() {
                 </section>
 
                 <section id="frequently-asked-questions">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Frequently Asked Questions
-                  </h2>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        What are lender fees in Arizona mortgage closing costs?
-                      </h3>
-                      <p>
-                        Lender fees are the costs charged by your mortgage lender for creating and funding your
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={[
+                    { q: "What are lender fees in Arizona mortgage closing costs?", a: <>Lender fees are the costs charged by your mortgage lender for creating and funding your
                         loan. These fees vary by lender and typically include administrative and underwriting
                         costs. You can compare lenders to find lower fees, but your decision shouldn&apos;t be
-                        based solely on the fee amount.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Why are title company fees required during mortgage closing?
-                      </h3>
-                      <p>
-                        Title company fees cover services like verifying a clear property title, preparing the deed
+                        based solely on the fee amount.</> },
+                    { q: "Why are title company fees required during mortgage closing?", a: <>Title company fees cover services like verifying a clear property title, preparing the deed
                         transfer, and recording the mortgage with the county. The title company ensures the legal
                         transfer of ownership and that there are no existing claims or issues with the property
-                        title.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        What is an appraisal fee in mortgage closing costs?
-                      </h3>
-                      <p>
-                        An appraisal fee is charged for evaluating the property&apos;s market value. Lenders require
+                        title.</> },
+                    { q: "What is an appraisal fee in mortgage closing costs?", a: <>An appraisal fee is charged for evaluating the property&apos;s market value. Lenders require
                         an appraisal to ensure the home is worth the amount you&apos;re borrowing. This cost
-                        appears on your closing statement and is typically paid at closing.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Are there additional inspection fees involved in closing a mortgage in Arizona?
-                      </h3>
-                      <p>
-                        Yes, additional inspection fees may include pest inspections for termites or wood-destroying
+                        appears on your closing statement and is typically paid at closing.</> },
+                    { q: "Are there additional inspection fees involved in closing a mortgage in Arizona?", a: <>Yes, additional inspection fees may include pest inspections for termites or wood-destroying
                         organisms, as well as septic and well certifications if the property relies on those
                         systems. Condo buyers might also face questionnaire fees required by the condominium
-                        association.
-                      </p>
-                    </div>
-                  </div>
+                        association.</> }
+                    ]}
+                  />
                 </section>
 
                 <p>

@@ -16,7 +16,7 @@ export default function HowToSellMyHouseFastInArizonaPage() {
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
 
-      <main className="flex-grow pt-[72px]">
+      <main className="flex-grow pt-[64px] sm:pt-[72px]">
         {/* Article Hero Banner */}
         <section className="bg-[#052316] text-white py-16 px-6 lg:px-10 relative overflow-hidden">
           <div className="max-w-4xl mx-auto text-center relative z-10">

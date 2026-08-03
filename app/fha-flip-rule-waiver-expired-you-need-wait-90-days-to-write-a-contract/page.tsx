@@ -1,5 +1,7 @@
 "use client";
 
+import FaqAccordion from "../component/FaqAccordion";
+
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -113,7 +115,7 @@ export default function FhaFlipRuleWaiverExpiredPage() {
       />
 
       <Navbar />
-      <div className="h-[72px] w-full shrink-0" aria-hidden />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
         <ArticleHero
@@ -190,33 +192,16 @@ export default function FhaFlipRuleWaiverExpiredPage() {
                 </section>
 
                 <section id="frequently-asked-questions">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Frequently Asked Questions
-                  </h2>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Are homes owned by the seller for less than 90 days eligible for FHA financing?
-                      </h3>
-                      <p>
-                        No, homes that have been owned by the seller for less than 90 days are not eligible for
-                        FHA financing as of January 1, 2015.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        When can FHA buyers write a contract on a home owned by the seller?
-                      </h3>
-                      <p>
-                        FHA buyers can write a contract only after the seller has owned the home for at least
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={[
+                    { q: "Are homes owned by the seller for less than 90 days eligible for FHA financing?", a: <>No, homes that have been owned by the seller for less than 90 days are not eligible for
+                        FHA financing as of January 1, 2015.</> },
+                    { q: "When can FHA buyers write a contract on a home owned by the seller?", a: <>FHA buyers can write a contract only after the seller has owned the home for at least
                         90 days. The 90-day waiting period applies to writing the contract, not to closing the
-                        loan.
-                      </p>
-                    </div>
-                  </div>
+                        loan.</> }
+                    ]}
+                  />
                 </section>
 
                 <p>

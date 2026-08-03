@@ -1,5 +1,7 @@
 "use client";
 
+import FaqAccordion from "../component/FaqAccordion";
+
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -129,7 +131,7 @@ export default function ArizonaMortgageBasicsPage() {
       />
 
       <Navbar />
-      <div className="h-[72px] w-full shrink-0" aria-hidden />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
         <ArticleHero
@@ -299,56 +301,25 @@ export default function ArizonaMortgageBasicsPage() {
                 </section>
 
                 <section id="frequently-asked-questions">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Frequently Asked Questions
-                  </h2>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        What is a mortgage and how does it work?
-                      </h3>
-                      <p>
-                        A mortgage is a loan secured by real property, which means the lender is protected by the
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={[
+                    { q: "What is a mortgage and how does it work?", a: <>A mortgage is a loan secured by real property, which means the lender is protected by the
                         property itself. The borrower repays the loan over a set period of time. If the borrower
-                        fails to make payments, the lender can take ownership of the property to recover losses.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        What factors do Arizona mortgage lenders consider for loan approval?
-                      </h3>
-                      <p>
-                        Arizona mortgage lenders typically evaluate a borrower&apos;s credit history, employment
+                        fails to make payments, the lender can take ownership of the property to recover losses.</> },
+                    { q: "What factors do Arizona mortgage lenders consider for loan approval?", a: <>Arizona mortgage lenders typically evaluate a borrower&apos;s credit history, employment
                         history, income, assets, and debts. Additionally, the property must meet certain standards
-                        set by the lender before approval of the mortgage loan.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        How are mortgage payments structured?
-                      </h3>
-                      <p>
-                        Most home loans are set for 15 or 30 years and include both principal and interest portions.
+                        set by the lender before approval of the mortgage loan.</> },
+                    { q: "How are mortgage payments structured?", a: <>Most home loans are set for 15 or 30 years and include both principal and interest portions.
                         Over time, the amount applied toward interest decreases while the portion applied to the
                         principal increases—a process known as amortization. Lenders may also offer alternative
-                        plans such as interest-only payments or introductory teaser rates.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        What costs and fees are associated with getting a mortgage in Arizona?
-                      </h3>
-                      <p>
-                        Mortgage costs may include points to secure lower rates, processing or underwriting fees,
+                        plans such as interest-only payments or introductory teaser rates.</> },
+                    { q: "What costs and fees are associated with getting a mortgage in Arizona?", a: <>Mortgage costs may include points to secure lower rates, processing or underwriting fees,
                         and other out-of-pocket expenses such as appraisal fees, property taxes, insurance, and
                         inspections. Government consumer protection policies help ensure buyers understand these
-                        costs during the mortgage process.
-                      </p>
-                    </div>
-                  </div>
+                        costs during the mortgage process.</> }
+                    ]}
+                  />
                 </section>
 
                 <p>

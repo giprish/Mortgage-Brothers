@@ -387,17 +387,49 @@ export default function FhaLoanPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {faqs.map((faq, idx) => (
-              <div key={idx} className="border-b border-[#e8e0d0]/50 pb-6 flex flex-col gap-2">
-                <h3 className="text-[#052316] text-[15.5px] font-bold">
-                  {faq.question}
-                </h3>
-                <p className="text-[#4e5b4e] text-[13.5px] leading-relaxed">
-                  {faq.answer}
-                </p>
-              </div>
-            ))}
+          <div className="space-y-3 max-w-3xl">
+            {faqs.map((faq, idx) => {
+              const isOpen = openFaq === idx;
+              return (
+                <div
+                  key={idx}
+                  className="bg-white border border-[#e8e0d0]/70 rounded-xl overflow-hidden shadow-sm"
+                >
+                  <button
+                    type="button"
+                    onClick={() => toggleFaq(idx)}
+                    aria-expanded={isOpen}
+                    className="w-full flex items-center justify-between gap-4 text-left px-5 py-4 cursor-pointer hover:bg-[#faf7f0] transition-colors"
+                  >
+                    <span className="text-[#052316] text-[15.5px] font-bold">
+                      {faq.question}
+                    </span>
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className={`text-[#3fb364] shrink-0 transition-transform duration-200 ${
+                        isOpen ? "rotate-180" : ""
+                      }`}
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
+                  </button>
+                  {isOpen && (
+                    <div className="px-5 pb-5 border-t border-[#e8e0d0]/50 pt-4">
+                      <p className="text-[#4e5b4e] text-[14px] leading-relaxed">
+                        {faq.answer}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </section>
 

@@ -118,7 +118,7 @@ export default function MaricopaCounty() {
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
 
-      <main className="flex-grow pt-[72px]">
+      <main className="flex-grow pt-[64px] sm:pt-[72px]">
         {/* Hero Section */}
         <section className="w-full bg-brand-green-deep text-white py-16 lg:py-20 text-center relative overflow-hidden">
           {/* Subtle circles background */}

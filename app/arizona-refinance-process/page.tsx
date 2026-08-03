@@ -1,5 +1,7 @@
 "use client";
 
+import FaqAccordion from "../component/FaqAccordion";
+
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -137,7 +139,7 @@ export default function ArizonaRefinanceProcessPage() {
       />
 
       <Navbar />
-      <div className="h-[72px] w-full shrink-0" aria-hidden />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
         <ArticleHero
@@ -248,77 +250,31 @@ export default function ArizonaRefinanceProcessPage() {
                 </section>
 
                 <section id="frequently-asked-questions">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Frequently Asked Questions
-                  </h2>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Is there such a thing as a &quot;No Cost&quot; mortgage?
-                      </h3>
-                      <p>
-                        We get this question a lot. Technically speaking, there are always costs, it just depends
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={[
+                    { q: "Is there such a thing as a \"No Cost\" mortgage?", a: <>We get this question a lot. Technically speaking, there are always costs, it just depends
                         on who is paying them. Either you (the borrower) will pay the closing costs OR the lender
                         will pay them. Even though you may hear or read deceiving advertising that gives you the
                         impression that you can get a loan with no closing costs, they are not being forthcoming.
                         If you don&apos;t want to pay any closing costs, the lender will structure (increase the
-                        interest rate) so that the lender will pay them.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        How long do I have to wait to refinance after a purchase transaction?
-                      </h3>
-                      <p>
-                        A good rule of thumb is after your 6th scheduled payment, but there are exceptions. It is
+                        interest rate) so that the lender will pay them.</> },
+                    { q: "How long do I have to wait to refinance after a purchase transaction?", a: <>A good rule of thumb is after your 6th scheduled payment, but there are exceptions. It is
                         wise to discuss this with your lender at the time of your initial application to be sure
                         there are no short-term penalties involved with a quick refinance. Another thing to
                         consider is the cost of a refinance. If you watch the market closely and think that a quick
                         refinance may be a possibility, it may be more beneficial to purchase points rather than
-                        having a refinance.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        I&apos;ve heard that you should only refinance if there is at least a 1% drop in my
-                        mortgage rate. Is this true?
-                      </h3>
-                      <p>
-                        The answer is…every mortgage is different. Sometimes 1/2% could be beneficial, sometimes
-                        1% may not be!
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Couldn&apos;t I simply compare my current payment to the proposed payment and figure out
-                        my benefit?
-                      </h3>
-                      <p>
-                        This is an easy way to look at your &quot;cash flow&quot; savings, but depending on your
+                        having a refinance.</> },
+                    { q: "I've heard that you should only refinance if there is at least a 1% drop in my\r\n                        mortgage rate. Is this true?", a: <>The answer is…every mortgage is different. Sometimes 1/2% could be beneficial, sometimes
+                        1% may not be!</> },
+                    { q: "Couldn't I simply compare my current payment to the proposed payment and figure out\r\n                        my benefit?", a: <>This is an easy way to look at your &quot;cash flow&quot; savings, but depending on your
                         amortization schedule, the overall cost savings can be very different. Over the life of
                         the mortgage loan you may or may not save money, but it might benefit your current cash
-                        flow.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Is it easier to refinance with my current mortgage company?
-                      </h3>
-                      <p>
-                        Sometimes your current Arizona mortgage lender can help to reduce documentation that&apos;s
+                        flow.</> },
+                    { q: "Is it easier to refinance with my current mortgage company?", a: <>Sometimes your current Arizona mortgage lender can help to reduce documentation that&apos;s
                         required, but they make up for that with other costs. Make sure that you check to assure
-                        the best deal.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Will I automatically qualify for a refinance?
-                      </h3>
-                      <p>
-                        No. You will have to qualify for a refinance, however certain programs will allow for a
+                        the best deal.</> },
+                    { q: "Will I automatically qualify for a refinance?", a: <>No. You will have to qualify for a refinance, however certain programs will allow for a
                         reduced quantity of documentation such as the{" "}
                         <Link
                           href="/fha-home-loans-arizona/"
@@ -333,10 +289,9 @@ export default function ArizonaRefinanceProcessPage() {
                         >
                           FHA Streamline
                         </Link>
-                        .
-                      </p>
-                    </div>
-                  </div>
+                        .</> }
+                    ]}
+                  />
                 </section>
 
                 <p>

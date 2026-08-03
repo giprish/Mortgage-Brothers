@@ -1,5 +1,7 @@
 "use client";
 
+import FaqAccordion from "../component/FaqAccordion";
+
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -129,7 +131,7 @@ export default function ArizonaMortgageClosingProcessPage() {
       />
 
       <Navbar />
-      <div className="h-[72px] w-full shrink-0" aria-hidden />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
         <ArticleHero
@@ -299,45 +301,20 @@ export default function ArizonaMortgageClosingProcessPage() {
                 </section>
 
                 <section id="frequently-asked-questions">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Frequently Asked Questions
-                  </h2>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Does it matter what day of the month I close on?
-                      </h3>
-                      <p>
-                        If you&apos;re more concerned about successfully closing with the least amount of stress,
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={[
+                    { q: "Does it matter what day of the month I close on?", a: <>If you&apos;re more concerned about successfully closing with the least amount of stress,
                         then early to mid month is usually the best time to close. It really comes down to the
                         timing of the money and how it will be applied to the mortgage loan. Regardless, pay now
-                        or pay later but it all evens out at the end of the process.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        I am refinancing an FHA loan. Will it benefit me to close in the beginning of the month?
-                      </h3>
-                      <p>
-                        No. In fact, FHA refinances should always close at the END of the month because you are
-                        responsible for the entire month&apos;s interest.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Should I be concerned about the closing date on a conventional Arizona mortgage loan
-                        refinance?
-                      </h3>
-                      <p>
-                        Not really. You can save a few dollars by closing early in the month but it won&apos;t
+                        or pay later but it all evens out at the end of the process.</> },
+                    { q: "I am refinancing an FHA loan. Will it benefit me to close in the beginning of the month?", a: <>No. In fact, FHA refinances should always close at the END of the month because you are
+                        responsible for the entire month&apos;s interest.</> },
+                    { q: "Should I be concerned about the closing date on a conventional Arizona mortgage loan\r\n                        refinance?", a: <>Not really. You can save a few dollars by closing early in the month but it won&apos;t
                         amount to much. You WILL want to avoid closing on a Friday since you could be responsible
-                        for the interest due on both loans over the weekend.
-                      </p>
-                    </div>
-                  </div>
+                        for the interest due on both loans over the weekend.</> }
+                    ]}
+                  />
                 </section>
 
                 <p>

@@ -69,7 +69,7 @@ const programsData = [
       "Available for primary residences",
     ],
     ctaText: "Talk About FHA",
-    bgColor: "bg-brand-cream-light",
+    bgColor: "bg-[#fcf9f3]",
     cardMeta: {
       downPayment: "As low as 3.5%",
       bestFor: "First-time buyers or those rebuilding credit.",
@@ -138,7 +138,7 @@ const programsData = [
       "No down payment required",
     ],
     ctaText: "Talk About USDA",
-    bgColor: "bg-brand-cream-light",
+    bgColor: "bg-[#fcf9f3]",
     cardMeta: {
       downPayment: "$0 down for eligible properties",
       bestFor: "Buyers in qualifying Arizona communities outside the urban core.",
@@ -213,7 +213,7 @@ const programsData = [
       "Available on most existing loan types",
     ],
     ctaText: "Talk About Refinance",
-    bgColor: "bg-brand-cream-light",
+    bgColor: "bg-[#fcf9f3]",
     cardMeta: {
       downPayment: "N/A — refinance of existing loan",
       bestFor: "Homeowners looking to improve their existing terms.",
@@ -306,24 +306,19 @@ export default function MortgageLoanProgramsArizonaPage() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
       <main className="flex-grow">
-        <section 
-          className="w-full bg-brand-green-deep text-white py-24 lg:py-32 text-center relative overflow-hidden bg-cover bg-no-repeat bg-center"
-          style={{ 
-            backgroundImage: "url('/loan-programs.jpg')", 
-            backgroundPosition: "center top",
-          }}
-        >
-          <div className="absolute inset-0 bg-[#08271B]/75 z-0"></div>
+        {/* Reserves space for fixed navbar */}
+        <div className="h-[64px] sm:h-[72px] bg-[#08271B]" aria-hidden />
 
-          <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
-            <div className="absolute -top-36 -right-36 w-[400px] h-[400px] rounded-full border border-white/5 pointer-events-none"></div>
-            <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5 pointer-events-none"></div>
+        <section className="w-full bg-brand-green-deep text-white py-14 sm:py-16 lg:py-20 text-center relative overflow-hidden">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
+            <div className="absolute -top-36 -right-36 w-[400px] h-[400px] rounded-full border border-white/5 opacity-40 pointer-events-none"></div>
+            <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5 opacity-40 pointer-events-none"></div>
           </div>
           
-          <div className="max-w-4xl mx-auto px-6 relative z-20">
+          <div className="max-w-4xl mx-auto px-6 relative z-10">
             <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
               LOAN PROGRAMS
             </p>

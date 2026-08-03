@@ -1,5 +1,7 @@
 "use client";
 
+import FaqAccordion from "../component/FaqAccordion";
+
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -121,7 +123,7 @@ export default function ArizonaRealEstateTrends2026Page() {
       />
 
       <Navbar />
-      <div className="h-[72px] w-full shrink-0" aria-hidden />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
         <ArticleHero
@@ -442,40 +444,16 @@ export default function ArizonaRealEstateTrends2026Page() {
                 </section>
 
                 <section id="faq">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    FAQ: Arizona Real Estate Trends in 2026
-                  </h2>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Q: Are Arizona home prices dropping in 2026?
-                      </h3>
-                      <p>
-                        Not significantly. Prices are stabilizing, with some growth in suburbs like Buckeye,
-                        Marana, and Casa Grande.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Q: What are mortgage rates in Arizona right now?
-                      </h3>
-                      <p>
-                        Most buyers are seeing rates between 6.0%–6.375%, depending on credit and loan type.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Q: Is 2026 a good time to buy in Arizona?
-                      </h3>
-                      <p>
-                        Yes, especially with more inventory and fewer bidding wars. Down payment assistance can
-                        also help first-time buyers.
-                      </p>
-                    </div>
-                  </div>
+                  <FaqAccordion
+                    title="FAQ: Arizona Real Estate Trends in 2026"
+                    items={[
+                    { q: "Q: Are Arizona home prices dropping in 2026?", a: <>Not significantly. Prices are stabilizing, with some growth in suburbs like Buckeye,
+                        Marana, and Casa Grande.</> },
+                    { q: "Q: What are mortgage rates in Arizona right now?", a: <>Most buyers are seeing rates between 6.0%–6.375%, depending on credit and loan type.</> },
+                    { q: "Q: Is 2026 a good time to buy in Arizona?", a: <>Yes, especially with more inventory and fewer bidding wars. Down payment assistance can
+                        also help first-time buyers.</> }
+                    ]}
+                  />
                 </section>
 
                 <p>

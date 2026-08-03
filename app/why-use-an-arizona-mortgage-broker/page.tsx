@@ -1,5 +1,7 @@
 "use client";
 
+import FaqAccordion from "../component/FaqAccordion";
+
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -129,7 +131,7 @@ export default function WhyUseAnArizonaMortgageBrokerPage() {
       />
 
       <Navbar />
-      <div className="h-[72px] w-full shrink-0" aria-hidden />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
         <ArticleHero
@@ -262,58 +264,26 @@ export default function WhyUseAnArizonaMortgageBrokerPage() {
                 </section>
 
                 <section id="frequently-asked-questions">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Frequently Asked Questions
-                  </h2>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Why should I use an Arizona mortgage broker?
-                      </h3>
-                      <p>
-                        An Arizona mortgage broker can help you find the best mortgage rates by working with
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={[
+                    { q: "Why should I use an Arizona mortgage broker?", a: <>An Arizona mortgage broker can help you find the best mortgage rates by working with
                         multiple lenders, unlike banks that offer only their own loan products. They assist with
                         pre-qualification, completing your mortgage application, locking your loan rate, and
-                        guiding you through the entire loan process.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        What are the benefits of working with an Arizona mortgage broker instead of a bank loan
-                        officer?
-                      </h3>
-                      <p>
-                        Mortgage brokers offer flexible hours, often working evenings and weekends, while bank loan
+                        guiding you through the entire loan process.</> },
+                    { q: "What are the benefits of working with an Arizona mortgage broker instead of a bank loan\r\n                        officer?", a: <>Mortgage brokers offer flexible hours, often working evenings and weekends, while bank loan
                         officers typically work 9 a.m. to 5 p.m. Brokers can compare rates across lenders to save
                         you time and money and find solutions for unique financial situations. Bank loan officers
-                        can only offer products from their own institution.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Can a Realtor help me find a reliable Arizona mortgage broker?
-                      </h3>
-                      <p>
-                        Yes, Realtors often have established relationships with trusted Arizona mortgage brokers.
+                        can only offer products from their own institution.</> },
+                    { q: "Can a Realtor help me find a reliable Arizona mortgage broker?", a: <>Yes, Realtors often have established relationships with trusted Arizona mortgage brokers.
                         They can refer you to brokers who have a proven track record of helping clients close their
-                        deals smoothly and on time.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        What is the difference between pre-qualification and pre-approval for a mortgage?
-                      </h3>
-                      <p>
-                        Pre-qualification provides an estimate of how much you can borrow based on your financial
+                        deals smoothly and on time.</> },
+                    { q: "What is the difference between pre-qualification and pre-approval for a mortgage?", a: <>Pre-qualification provides an estimate of how much you can borrow based on your financial
                         information, while pre-approval means your income, assets, credit, and loan application
                         have been reviewed and approved by a lender. A pre-approval letter carries more weight with
-                        sellers and helps you close faster when you find a home.
-                      </p>
-                    </div>
-                  </div>
+                        sellers and helps you close faster when you find a home.</> }
+                    ]}
+                  />
                 </section>
 
                 <p>

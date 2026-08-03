@@ -1,5 +1,7 @@
 "use client";
 
+import FaqAccordion from "../component/FaqAccordion";
+
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -129,7 +131,7 @@ export default function ArizonaUnderstandingYourCreditPage() {
       />
 
       <Navbar />
-      <div className="h-[72px] w-full shrink-0" aria-hidden />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
         <ArticleHero
@@ -279,54 +281,23 @@ export default function ArizonaUnderstandingYourCreditPage() {
                 </section>
 
                 <section id="frequently-asked-questions">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Frequently Asked Questions
-                  </h2>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Why is understanding credit important for getting a mortgage loan in Arizona?
-                      </h3>
-                      <p>
-                        Understanding credit is crucial because lenders evaluate your credit history, open
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={[
+                    { q: "Why is understanding credit important for getting a mortgage loan in Arizona?", a: <>Understanding credit is crucial because lenders evaluate your credit history, open
                         accounts, payment behavior, and types of credit to determine your risk level. Even small
                         changes in your credit score can influence your down payment, loan programs, and interest
-                        rates.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        What factors make up a credit score?
-                      </h3>
-                      <p>
-                        Credit scores are calculated based on several components: 35% payment history, 30% amount
+                        rates.</> },
+                    { q: "What factors make up a credit score?", a: <>Credit scores are calculated based on several components: 35% payment history, 30% amount
                         owed compared to available credit, 15% length of credit history, 10% mix of credit, and 10%
-                        new credit applications.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Where can I get a free copy of my credit report?
-                      </h3>
-                      <p>
-                        Consumers are entitled by law to one free credit report annually from each of the three
+                        new credit applications.</> },
+                    { q: "Where can I get a free copy of my credit report?", a: <>Consumers are entitled by law to one free credit report annually from each of the three
                         major credit bureaus—Equifax, Experian, and TransUnion. You can access your free credit
-                        report at www.AnnualCreditReport.com.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        What factors do not affect my credit score?
-                      </h3>
-                      <p>
-                        Factors such as your age, race, sex, employment history, income, marital status, length of
-                        employment, and occupancy status do not impact your credit score.
-                      </p>
-                    </div>
-                  </div>
+                        report at www.AnnualCreditReport.com.</> },
+                    { q: "What factors do not affect my credit score?", a: <>Factors such as your age, race, sex, employment history, income, marital status, length of
+                        employment, and occupancy status do not impact your credit score.</> }
+                    ]}
+                  />
                 </section>
 
                 <p>

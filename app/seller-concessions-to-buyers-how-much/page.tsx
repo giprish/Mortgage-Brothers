@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
+import FaqAccordion from "../component/FaqAccordion";
 
 const relatedLinks = [
   {
@@ -129,7 +130,7 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
       />
 
       <Navbar />
-      <div className="h-[72px] w-full shrink-0" aria-hidden />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
         <ArticleHero
@@ -238,47 +239,15 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
                 </p>
 
                 <section id="frequently-asked-questions">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Frequently Asked Questions
-                  </h2>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        What are seller concessions in real estate?
-                      </h3>
-                      <p>
-                        Seller concessions are closing cost contributions from the seller to help buyers complete
-                        the purchase.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        How much were seller concessions in Phoenix Metro?
-                      </h3>
-                      <p>
-                        Concessions ranged from 0.9% to 2.6% of sale prices across 2,112 closings in the prior 30
-                        days as of February 9, 2019.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Which city had the highest seller concessions?
-                      </h3>
-                      <p>Glendale recorded the highest average seller concessions at about 2.3%.</p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Which price range had the most closings?
-                      </h3>
-                      <p>
-                        Homes priced between $200,000 and $300,000 had the most closings, with average concessions
-                        of 1.9%.
-                      </p>
-                    </div>
-                  </div>
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={[
+                    { q: "What are seller concessions in real estate?", a: <>Seller concessions are closing cost contributions from the seller to help buyers complete the purchase.</> },
+                    { q: "How much were seller concessions in Phoenix Metro?", a: <>Concessions ranged from 0.9% to 2.6% of sale prices across 2,112 closings in the prior 30 days as of February 9, 2019.</> },
+                    { q: "Which city had the highest seller concessions?", a: <>Glendale recorded the highest average seller concessions at about 2.3%.</> },
+                    { q: "Which price range had the most closings?", a: <>Homes priced between $200,000 and $300,000 had the most closings, with average concessions of 1.9%.</> }
+                    ]}
+                  />
                 </section>
 
                 <p>

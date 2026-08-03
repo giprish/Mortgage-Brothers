@@ -1,5 +1,7 @@
 "use client";
 
+import FaqAccordion from "../component/FaqAccordion";
+
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -129,7 +131,7 @@ export default function RapidRescoreMortgagePage() {
       />
 
       <Navbar />
-      <div className="h-[72px] w-full shrink-0" aria-hidden />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
         <ArticleHero
@@ -315,57 +317,26 @@ export default function RapidRescoreMortgagePage() {
                 </section>
 
                 <section id="frequently-asked-questions">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Frequently Asked Questions
-                  </h2>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        What is a rapid rescore and how does it work?
-                      </h3>
-                      <p>
-                        A rapid rescore is an expedited process where a mortgage lender or broker submits proof of
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={[
+                    { q: "What is a rapid rescore and how does it work?", a: <>A rapid rescore is an expedited process where a mortgage lender or broker submits proof of
                         recent positive financial behavior or corrected errors directly to the three major credit
                         bureaus. This method bypasses the traditional 30 to 45-day credit reporting cycle, updating
-                        your credit report profile in just a matter of days.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        How quickly can a rapid rescore improve your credit score?
-                      </h3>
-                      <p>
-                        While traditional credit report updates can take months, a rapid rescore allows a mortgage
+                        your credit report profile in just a matter of days.</> },
+                    { q: "How quickly can a rapid rescore improve your credit score?", a: <>While traditional credit report updates can take months, a rapid rescore allows a mortgage
                         lender to receive an updated credit report and fresh credit score typically within three to
-                        seven business days after submitting the necessary documentation.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Can an individual request a rapid rescore on their own?
-                      </h3>
-                      <p>
-                        No, individuals cannot initiate a rapid rescore independently. The process must be handled
+                        seven business days after submitting the necessary documentation.</> },
+                    { q: "Can an individual request a rapid rescore on their own?", a: <>No, individuals cannot initiate a rapid rescore independently. The process must be handled
                         directly through a credentialed mortgage lender or financial broker who has an active
-                        relationship with the credit bureaus&apos; expedited rescoring systems.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        How does a rapid rescore process differ from standard credit repair?
-                      </h3>
-                      <p>
-                        Unlike traditional credit repair companies that focus on disputing long-term negative items,
+                        relationship with the credit bureaus&apos; expedited rescoring systems.</> },
+                    { q: "How does a rapid rescore process differ from standard credit repair?", a: <>Unlike traditional credit repair companies that focus on disputing long-term negative items,
                         rapid rescoring is intended to quickly update clear, accurate information. It is used after
                         specific actions have occurred—such as paying down high credit card balances, resolving
                         charge-offs, or correcting obvious clerical errors—to reflect your true credit standing
-                        immediately for mortgage pre-approval.
-                      </p>
-                    </div>
-                  </div>
+                        immediately for mortgage pre-approval.</> }
+                    ]}
+                  />
                 </section>
 
                 <p>

@@ -92,7 +92,7 @@ export default function ArticleHero({
             <span className="w-10 h-10 rounded-full bg-[#3fb364]/20 text-[#3fb364] text-[13px] font-bold flex items-center justify-center shrink-0">
               {initials}
             </span>
-            <span className="flex flex-col leading-tight">
+            <span className="flex flex-col items-start leading-tight text-left">
               <span className="text-white text-[13.5px] font-bold">{author}</span>
               <span className="text-[#8da684] text-[12px]">{authorRole}</span>
             </span>

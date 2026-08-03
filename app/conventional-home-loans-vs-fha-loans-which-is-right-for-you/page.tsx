@@ -1,5 +1,7 @@
 "use client";
 
+import FaqAccordion from "../component/FaqAccordion";
+
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -137,7 +139,7 @@ export default function ConventionalVsFhaLoansPage() {
       />
 
       <Navbar />
-      <div className="h-[72px] w-full shrink-0" aria-hidden />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
         <ArticleHero
@@ -620,48 +622,17 @@ export default function ConventionalVsFhaLoansPage() {
                 </section>
 
                 <section id="faqs">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Frequently Asked Questions
-                  </h2>
-
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        1. Can I switch from FHA to Conventional later?
-                      </h3>
-                      <p>
-                        Yes — many refinance into Conventional loans once they&apos;ve built equity to drop
-                        mortgage insurance.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        2. Do FHA loans always cost more long-term?
-                      </h3>
-                      <p>Usually. FHA&apos;s lifetime MIP adds up, unless you refinance.</p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        3. Which loan is better for investors?
-                      </h3>
-                      <p>Conventional — FHA is only for primary residences.</p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        4. Which loan closes faster?
-                      </h3>
-                      <p>Conventional, since FHA requires stricter inspections.</p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        5. Can I use Conventional with less than 20% down?
-                      </h3>
-                      <p>Yes. You&apos;ll pay PMI, but it&apos;s temporary — unlike FHA&apos;s MIP.</p>
-                    </div>
-                  </div>
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={[
+                    { q: "Can I switch from FHA to Conventional later?", a: <>Yes — many refinance into Conventional loans once they&apos;ve built equity to drop
+                        mortgage insurance.</> },
+                    { q: "Do FHA loans always cost more long-term?", a: <>Usually. FHA&apos;s lifetime MIP adds up, unless you refinance.</> },
+                    { q: "Which loan is better for investors?", a: <>Conventional — FHA is only for primary residences.</> },
+                    { q: "Which loan closes faster?", a: <>Conventional, since FHA requires stricter inspections.</> },
+                    { q: "Can I use Conventional with less than 20% down?", a: <>Yes. You&apos;ll pay PMI, but it&apos;s temporary — unlike FHA&apos;s MIP.</> }
+                    ]}
+                  />
                 </section>
 
                 <p className="text-[#8a9a7a] text-[13px] leading-relaxed pt-4">

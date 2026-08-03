@@ -1,5 +1,7 @@
 "use client";
 
+import FaqAccordion from "../component/FaqAccordion";
+
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -141,7 +143,7 @@ export default function ArizonaMortgageApprovalProcessPage() {
       />
 
       <Navbar />
-      <div className="h-[72px] w-full shrink-0" aria-hidden />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
         <ArticleHero
@@ -522,65 +524,32 @@ export default function ArizonaMortgageApprovalProcessPage() {
                 </section>
 
                 <section id="arizona-mortgage-approval-process-faqs">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Arizona Mortgage Approval Process FAQ&apos;s
-                  </h2>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        I was told I needed a second pre-approval letter from a different lender when I wanted to
-                        make an offer on a certain home. Why?
-                      </h3>
-                      <p>
-                        Some large banks that are trying to sell a bank-owned or short sale property may require
+                  <FaqAccordion
+                    title="Arizona Mortgage Approval Process FAQ's"
+                    items={[
+                    { q: "I was told I needed a second pre-approval letter from a different lender when I wanted to\r\n                        make an offer on a certain home. Why?", a: <>Some large banks that are trying to sell a bank-owned or short sale property may require
                         this and it&apos;s called &quot;Cross Qualification&quot;. In effect, this may be required
                         in order to make the seller, the agent, or the bank who owns the property more comfortable
-                        that if the primary lending option falls through that there is a backup plan in place.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        I was pre-approved for a loan, but after I found a home and signed the contract, my lender
-                        decided to deny my loan! Why did they do that?
-                      </h3>
-                      <p>
-                        Unfortunately since Arizona mortgage loans have many moving parts, sometimes even the
+                        that if the primary lending option falls through that there is a backup plan in place.</> },
+                    { q: "I was pre-approved for a loan, but after I found a home and signed the contract, my lender\r\n                        decided to deny my loan! Why did they do that?", a: <>Unfortunately since Arizona mortgage loans have many moving parts, sometimes even the
                         smallest change in credit scores, income or employment can change the status of a loan
                         causing the lender to deny it at the last minute. Other issues such as the appraised value,
                         the inspection report, or even the seller turning uncooperative can cause issues along with
                         changes in the interest rates offered by a lender. There are many reason to go from a
                         pre-approval to a denial, so be sure to keep in constant contact with your mortgage lender
-                        to assure things flow smoothly.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        What happens if I don&apos;t find a home before my pre-approval letter expires?
-                      </h3>
-                      <p>
-                        This all depends on the mortgage program you&apos;re involved in, but in most cases it will
+                        to assure things flow smoothly.</> },
+                    { q: "What happens if I don't find a home before my pre-approval letter expires?", a: <>This all depends on the mortgage program you&apos;re involved in, but in most cases it will
                         require you to re-submit the most recent 30 days of income and asset documentation as well
                         as having your credit report pulled. This is precisely why it&apos;s important to
                         understand the expiration dates of all documents to avoid having the entire process drag
-                        out for months.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Do I have to sell my current home before I can qualify for a new mortgage loan?
-                      </h3>
-                      <p>
-                        The answer is…it depends. If you&apos;re in a financial position where you could afford
+                        out for months.</> },
+                    { q: "Do I have to sell my current home before I can qualify for a new mortgage loan?", a: <>The answer is…it depends. If you&apos;re in a financial position where you could afford
                         BOTH payments until your first home sells, then there should be no problem! This comes
                         down to your Debt to Income ratio (mentioned earlier) but additional expenses such as
                         maintenance of the first property, unexpected repairs and even property taxes will need to
-                        be taken into account.
-                      </p>
-                    </div>
-                  </div>
+                        be taken into account.</> }
+                    ]}
+                  />
                 </section>
 
                 <p>

@@ -1,5 +1,7 @@
 "use client";
 
+import FaqAccordion from "../component/FaqAccordion";
+
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -129,7 +131,7 @@ export default function ConnectingGuestHouseAddValuePage() {
       />
 
       <Navbar />
-      <div className="h-[72px] w-full shrink-0" aria-hidden />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
         <ArticleHero
@@ -275,60 +277,29 @@ export default function ConnectingGuestHouseAddValuePage() {
                 </section>
 
                 <section id="frequently-asked-questions">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Frequently Asked Questions
-                  </h2>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        How does connecting a detached casita to the main house affect home valuation?
-                      </h3>
-                      <p>
-                        When you officially connect a detached guest house to the main dwelling, its square footage
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={[
+                    { q: "How does connecting a detached casita to the main house affect home valuation?", a: <>When you officially connect a detached guest house to the main dwelling, its square footage
                         is absorbed directly into the total primary living area of the home. Instead of receiving a
                         lower, separate line-item adjustment for a detached casita, the entire space is appraised as
                         a single, larger home structure based on comparable market sales for that higher total
-                        square footage.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        What structural requirements must be met for a guest house connection to add value?
-                      </h3>
-                      <p>
-                        The connecting structure cannot just be a covered breezeway or an open patio. To be
+                        square footage.</> },
+                    { q: "What structural requirements must be met for a guest house connection to add value?", a: <>The connecting structure cannot just be a covered breezeway or an open patio. To be
                         recognized by city building codes and mortgage appraisers, it must be fully enclosed,
                         permitted, and constructed as a completely finished, heated, and cooled livable space that
-                        seamlessly connects the main house and the casita.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Why do detached guest houses typically receive lower appraisal values?
-                      </h3>
-                      <p>
-                        Appraisers do not calculate a detached casita&apos;s value using its actual cost of
+                        seamlessly connects the main house and the casita.</> },
+                    { q: "Why do detached guest houses typically receive lower appraisal values?", a: <>Appraisers do not calculate a detached casita&apos;s value using its actual cost of
                         construction. Instead, they apply a standard, flat line-item adjustment on the appraisal
                         report—often ranging from $15,000 to $30,000—regardless of whether the structure cost
                         significantly more to build, because finding exact detached comparable sales in the
-                        immediate area is highly difficult.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Does adding more square footage to a home always yield a straight-line increase in value?
-                      </h3>
-                      <p>
-                        No, real estate valuation does not follow a perfectly straight line due to the law of
+                        immediate area is highly difficult.</> },
+                    { q: "Does adding more square footage to a home always yield a straight-line increase in value?", a: <>No, real estate valuation does not follow a perfectly straight line due to the law of
                         diminishing returns. In many neighborhoods, larger homes command a slightly lower price per
                         square foot than smaller properties, so it is critical to evaluate recent local comparable
-                        sales for larger homes to ensure the expansion makes financial sense.
-                      </p>
-                    </div>
-                  </div>
+                        sales for larger homes to ensure the expansion makes financial sense.</> }
+                    ]}
+                  />
                 </section>
 
                 <p>

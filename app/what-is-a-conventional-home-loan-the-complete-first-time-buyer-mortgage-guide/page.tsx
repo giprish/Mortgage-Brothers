@@ -1,5 +1,7 @@
 "use client";
 
+import FaqAccordion from "../component/FaqAccordion";
+
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -121,7 +123,7 @@ export default function ConventionalHomeLoanGuidePage() {
       />
 
       <Navbar />
-      <div className="h-[72px] w-full shrink-0" aria-hidden />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
         <ArticleHero
@@ -469,39 +471,15 @@ export default function ConventionalHomeLoanGuidePage() {
                 </section>
 
                 <section id="faqs">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    FAQs (Frequently Asked Questions)
-                  </h2>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        1: What exactly is a conventional home loan?
-                      </h3>
-                      <p>
-                        A conventional home loan is a mortgage not insured by the federal government, offered by
-                        private lenders like banks or credit unions.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        2: What is the 2026 conforming loan limit in Arizona?
-                      </h3>
-                      <p>
-                        For 2026, the conforming loan limit for a single-family home in Arizona is $806,500.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        3: What credit score is needed for a conventional loan?
-                      </h3>
-                      <p>
-                        A minimum credit score of 620 is usually required to qualify for a conventional loan.
-                      </p>
-                    </div>
-                  </div>
+                  <FaqAccordion
+                    title="FAQs (Frequently Asked Questions)"
+                    items={[
+                    { q: "What exactly is a conventional home loan?", a: <>A conventional home loan is a mortgage not insured by the federal government, offered by
+                        private lenders like banks or credit unions.</> },
+                    { q: "What is the 2026 conforming loan limit in Arizona?", a: <>For 2026, the conforming loan limit for a single-family home in Arizona is $806,500.</> },
+                    { q: "What credit score is needed for a conventional loan?", a: <>A minimum credit score of 620 is usually required to qualify for a conventional loan.</> }
+                    ]}
+                  />
                 </section>
 
                 <p>

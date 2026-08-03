@@ -1,5 +1,7 @@
 "use client";
 
+import FaqAccordion from "../component/FaqAccordion";
+
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -121,7 +123,7 @@ export default function FairOrImprovingCreditPage() {
       />
 
       <Navbar />
-      <div className="h-[72px] w-full shrink-0" aria-hidden />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
         <ArticleHero
@@ -471,43 +473,18 @@ export default function FairOrImprovingCreditPage() {
                 </section>
 
                 <section id="faqs">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Frequently Asked Questions
-                  </h2>
-
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        1. What&apos;s the minimum credit score to buy a home in Arizona?
-                      </h3>
-                      <p>
-                        Most loan programs require <strong>620 or higher</strong>. This threshold opens the door
-                        to FHA, VA, and conventional loan options.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        2. Can I qualify if my credit is below 620?
-                      </h3>
-                      <p>
-                        Not at this time. We recommend improving your score first — our team can review your
-                        credit and create a quick action plan to reach 620+.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        3. How long does credit improvement take?
-                      </h3>
-                      <p>
-                        Depending on your situation, meaningful progress can occur in{" "}
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={[
+                    { q: "What's the minimum credit score to buy a home in Arizona?", a: <>Most loan programs require <strong>620 or higher</strong>. This threshold opens the door
+                        to FHA, VA, and conventional loan options.</> },
+                    { q: "Can I qualify if my credit is below 620?", a: <>Not at this time. We recommend improving your score first — our team can review your
+                        credit and create a quick action plan to reach 620+.</> },
+                    { q: "How long does credit improvement take?", a: <>Depending on your situation, meaningful progress can occur in{" "}
                         <strong>30–90 days</strong> by paying down debt, correcting errors, and managing
-                        utilization.
-                      </p>
-                    </div>
-                  </div>
+                        utilization.</> }
+                    ]}
+                  />
                 </section>
 
                 <p className="text-[#8a9a7a] text-[13px] leading-relaxed pt-4">

@@ -1,5 +1,7 @@
 "use client";
 
+import FaqAccordion from "../component/FaqAccordion";
+
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -121,7 +123,7 @@ export default function IsHomeownershipHereditaryPage() {
       />
 
       <Navbar />
-      <div className="h-[72px] w-full shrink-0" aria-hidden />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
         <ArticleHero
@@ -262,44 +264,20 @@ export default function IsHomeownershipHereditaryPage() {
                 </section>
 
                 <section id="frequently-asked-questions">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Frequently Asked Questions
-                  </h2>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Is homeownership hereditary?
-                      </h3>
-                      <p>
-                        Yes, research suggests that homeownership can be hereditary. A study by the Urban
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={[
+                    { q: "Is homeownership hereditary?", a: <>Yes, research suggests that homeownership can be hereditary. A study by the Urban
                         Institute found that young adults whose parents own homes are significantly more likely
-                        to become homeowners themselves compared to those whose parents rent.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        What factors influence millennial homeownership rates?
-                      </h3>
-                      <p>
-                        According to the Urban Institute, millennial homeownership rates are affected by factors
+                        to become homeowners themselves compared to those whose parents rent.</> },
+                    { q: "What factors influence millennial homeownership rates?", a: <>According to the Urban Institute, millennial homeownership rates are affected by factors
                         such as higher education debt, delayed marriage and childbearing, rising rent costs, and
-                        increased racial diversity among millennials.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        How does parental wealth impact homeownership among millennials?
-                      </h3>
-                      <p>
-                        The study found a strong correlation between parents&apos; net worth and their
+                        increased racial diversity among millennials.</> },
+                    { q: "How does parental wealth impact homeownership among millennials?", a: <>The study found a strong correlation between parents&apos; net worth and their
                         children&apos;s likelihood of owning a home. As a parent&apos;s wealth increases, the
-                        chances of their child becoming a homeowner also rise.
-                      </p>
-                    </div>
-                  </div>
+                        chances of their child becoming a homeowner also rise.</> }
+                    ]}
+                  />
                 </section>
 
                 <p>

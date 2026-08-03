@@ -59,7 +59,7 @@ export default function ArticleDetailPage() {
               <div className="w-10 h-10 rounded-full bg-[#3fb364]/20 flex items-center justify-center text-[#3fb364] font-bold text-[14px]">
                 EK
               </div>
-              <div className="flex flex-col leading-tight">
+              <div className="flex flex-col items-start leading-tight text-left">
                 <span className="text-[#052316] text-[13.5px] font-bold">Eddie Knoell</span>
                 <span className="text-[#8a9a7a] text-[11px] font-semibold">June 18, 2026 · 9 min read</span>
               </div>

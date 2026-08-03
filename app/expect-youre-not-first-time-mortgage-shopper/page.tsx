@@ -1,5 +1,7 @@
 "use client";
 
+import FaqAccordion from "../component/FaqAccordion";
+
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -137,7 +139,7 @@ export default function ExpectYoureNotFirstTimeMortgageShopperPage() {
       />
 
       <Navbar />
-      <div className="h-[72px] w-full shrink-0" aria-hidden />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
         <ArticleHero
@@ -522,70 +524,32 @@ export default function ExpectYoureNotFirstTimeMortgageShopperPage() {
                 </section>
 
                 <section id="frequently-asked-questions">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Frequently Asked Questions
-                  </h2>
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Should I use an online mortgage lender when buying a home in Phoenix?
-                      </h3>
-                      <p>
-                        Online lenders may advertise very low teaser rates, but these usually apply only to
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={[
+                    { q: "Should I use an online mortgage lender when buying a home in Phoenix?", a: <>Online lenders may advertise very low teaser rates, but these usually apply only to
                         buyers with perfect credit, no debt, and large cash reserves. Many real estate agents
                         advise against using online lenders because they often lack personal service, can cause
-                        delays, and may put you at a disadvantage in multiple-offer situations.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        What is the difference between a mortgage broker and a mortgage banker?
-                      </h3>
-                      <p>
-                        A mortgage broker works independently and can offer loan options from multiple lenders,
+                        delays, and may put you at a disadvantage in multiple-offer situations.</> },
+                    { q: "What is the difference between a mortgage broker and a mortgage banker?", a: <>A mortgage broker works independently and can offer loan options from multiple lenders,
                         often helping you secure the best rates. A mortgage banker works for a specific bank or
                         lender and can only offer the loans that their company originates. Some lenders may also
-                        provide portfolio lending, where they originate and service the loan themselves.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Why is it important to get pre-approved instead of just prequalified?
-                      </h3>
-                      <p>
-                        A prequalification is based on verbal information and doesn&apos;t include a credit
+                        provide portfolio lending, where they originate and service the loan themselves.</> },
+                    { q: "Why is it important to get pre-approved instead of just prequalified?", a: <>A prequalification is based on verbal information and doesn&apos;t include a credit
                         check or income verification, so it carries little weight with sellers. A pre-approval,
                         however, verifies your financial information and signals to sellers that you are ready
                         and able to buy. In competitive markets, a pre-approval can make the difference between
-                        having your offer accepted or rejected.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        What documents are needed for mortgage pre-approval?
-                      </h3>
-                      <p>
-                        To get pre-approved, you typically need to provide your Social Security number, proof of
+                        having your offer accepted or rejected.</> },
+                    { q: "What documents are needed for mortgage pre-approval?", a: <>To get pre-approved, you typically need to provide your Social Security number, proof of
                         employment, recent pay stubs, tax returns from the last two years, and bank account
                         information. These documents help lenders verify your income, employment stability, and
-                        available assets.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        What should I avoid doing during the mortgage approval process?
-                      </h3>
-                      <p>
-                        To avoid delays or loan denial, do not make large purchases on credit such as cars,
+                        available assets.</> },
+                    { q: "What should I avoid doing during the mortgage approval process?", a: <>To avoid delays or loan denial, do not make large purchases on credit such as cars,
                         boats, or vacations. Always provide requested documentation promptly, follow the
                         timelines in your purchase agreement, and stay in close contact with your lender and
-                        agent throughout the process.
-                      </p>
-                    </div>
-                  </div>
+                        agent throughout the process.</> }
+                    ]}
+                  />
                 </section>
 
                 <p>

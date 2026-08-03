@@ -37,7 +37,7 @@ export default function EddieKnoellAuthorPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
-      <div className="h-[72px] w-full shrink-0" aria-hidden />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow">
         {/* Author bio */}

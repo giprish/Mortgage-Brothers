@@ -1,5 +1,7 @@
 "use client";
 
+import FaqAccordion from "../component/FaqAccordion";
+
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -129,7 +131,7 @@ export default function WhatIsAJumboLoanPage() {
       />
 
       <Navbar />
-      <div className="h-[72px] w-full shrink-0" aria-hidden />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
         <ArticleHero
@@ -496,53 +498,21 @@ export default function WhatIsAJumboLoanPage() {
                 </section>
 
                 <section id="faqs">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    FAQs About Jumbo Loans in Arizona
-                  </h2>
-
-                  <div className="space-y-6">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        1. What credit score do I need for a jumbo loan in Arizona?
-                      </h3>
-                      <p>
-                        Most lenders require at least a <strong>700–720 credit score</strong>, but higher scores
-                        can unlock better rates and more flexible terms.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        2. Can I use a jumbo loan for a vacation home or investment property?
-                      </h3>
-                      <p>
-                        Yes. Many Arizona lenders offer jumbo financing for{" "}
+                  <FaqAccordion
+                    title="FAQs About Jumbo Loans in Arizona"
+                    items={[
+                    { q: "What credit score do I need for a jumbo loan in Arizona?", a: <>Most lenders require at least a <strong>700–720 credit score</strong>, but higher scores
+                        can unlock better rates and more flexible terms.</> },
+                    { q: "Can I use a jumbo loan for a vacation home or investment property?", a: <>Yes. Many Arizona lenders offer jumbo financing for{" "}
                         <strong>second homes and investment properties</strong>, though down payment and reserve
-                        requirements are typically higher.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        3. Are jumbo loan rates higher than conventional mortgage rates?
-                      </h3>
-                      <p>
-                        They used to be, but not always today. In competitive markets, jumbo rates can be{" "}
+                        requirements are typically higher.</> },
+                    { q: "Are jumbo loan rates higher than conventional mortgage rates?", a: <>They used to be, but not always today. In competitive markets, jumbo rates can be{" "}
                         <strong>similar or even slightly lower</strong> than conforming rates depending on your
-                        profile.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        4. How can I increase my chances of jumbo loan approval?
-                      </h3>
-                      <p>
-                        Focus on strengthening your credit, maintaining low debt levels, and building substantial
-                        liquid reserves before applying.
-                      </p>
-                    </div>
-                  </div>
+                        profile.</> },
+                    { q: "How can I increase my chances of jumbo loan approval?", a: <>Focus on strengthening your credit, maintaining low debt levels, and building substantial
+                        liquid reserves before applying.</> }
+                    ]}
+                  />
                 </section>
 
                 <p className="text-[#8a9a7a] text-[13px] leading-relaxed pt-4">

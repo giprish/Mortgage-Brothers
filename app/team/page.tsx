@@ -105,7 +105,7 @@ export default function TeamPage() {
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
 
-      <main className="flex-grow pt-[72px]">
+      <main className="flex-grow pt-[64px] sm:pt-[72px]">
         {/* Section 1: Meet the Team */}
         <section className="py-20 px-6 lg:px-10 max-w-5xl mx-auto">
           <div className="text-center mb-16">
