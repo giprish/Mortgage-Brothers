@@ -268,16 +268,9 @@ export default function CashOfferMortgageFinancingPage() {
                   </p>
                 </section>
 
-                <section id="as-always">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    As always&hellip;
-                  </h2>
-                  <p>
-                    If you have any questions about this or if you have any questions you&apos;d like us to
-                    answer on our podcast, you can submit your questions using our{" "}
+                <p>
+                  If you have any questions about this or if you have any questions you&apos;d like us to
+                  answer on our podcast, you can submit your questions using our{" "}
                     <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
                       contact form
                     </Link>{" "}
@@ -288,6 +281,8 @@ export default function CashOfferMortgageFinancingPage() {
                     . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work
                     with you and help you through the whole process.
                   </p>
+
+                  <p className="mb-5 text-center text-[20px]">&bull;&bull;&bull;</p>
                 </section>
 
                 <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
@@ -357,7 +352,18 @@ export default function CashOfferMortgageFinancingPage() {
                         know how to ask:
                       </p>
                       <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>How can you buy a home with a cash offer if you don&apos;t have cash?</li>
+                        <li>
+                          How can you buy a home with a{" "}
+                          <a
+                            href="https://en.wikipedia.org/wiki/Cash_offer"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#3fb364] font-semibold hover:underline"
+                          >
+                            cash offer
+                          </a>{" "}
+                          if you don&apos;t have cash?
+                        </li>
                         <li>Can you still get a mortgage after using cash to buy a home?</li>
                       </ul>
                       <p>

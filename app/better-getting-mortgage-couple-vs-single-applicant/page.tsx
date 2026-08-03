@@ -161,6 +161,12 @@ export default function MortgageCoupleVsSingleApplicantPage() {
                 research. For instance: taking the time to look at your credit score.
               </p>
 
+              <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-8">
+                The following are the pros and cons of getting a mortgage as a single applicant versus as a
+                couple, as well as a recommendation to increase your chances of getting the best mortgage rate
+                possible.
+              </p>
+
               {/* CTA */}
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
                 <h2
@@ -233,7 +239,16 @@ export default function MortgageCoupleVsSingleApplicantPage() {
                     interest rate from the mortgage lender will be worth it.
                   </p>
                   <p className="mb-5">
-                    Overall, the mortgage process as a couple is the same as a single applicant as your incomes and credit histories are combined. However, if this
+                    Overall, the{" "}
+                    <a
+                      href="https://www.investopedia.com/mortgage-process-explained-5213694"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      mortgage process
+                    </a>{" "}
+                    as a couple is the same as a single applicant as your incomes and credit histories are combined. However, if this
                     isn&rsquo;t taken into account properly on your end before you begin the process of applying for a mortgage you can run into trouble right away.
                   </p>
                   <p>

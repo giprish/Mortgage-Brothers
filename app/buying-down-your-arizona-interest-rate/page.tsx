@@ -259,12 +259,19 @@ export default function BuyingDownArizonaInterestRatePage() {
                   you and help you through the whole process.
                 </p>
 
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
-                    you and help you through the whole process.
-                  </p>
-                </div>
+                <p className="mb-5 text-center text-[20px]">&bull;&bull;&bull;</p>
+
+                <p>
+                  Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
+                  you and help you through the whole process.
+                </p>
+
+                <p>
+                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
+                  been prepared for informational purposes only. You should consult your own tax, legal, and
+                  accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
+                  #210917 and 1618695. Equal housing lender.
+                </p>
 
                 <p className="text-[15px]">
                   Discover effective strategies for buying down your Arizona interest rate. For a

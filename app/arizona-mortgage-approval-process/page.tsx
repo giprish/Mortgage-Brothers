@@ -251,21 +251,218 @@ export default function ArizonaMortgageApprovalProcessPage() {
                     The loan officer will pull your credit to determine what liabilities you have on a monthly
                     basis and what credit score you have. The content of your credit report as well as the credit
                     score will impact and affect your approval.
+];
+
+const loanSolutions = [
+  { label: "Conventional Home Loans", href: "/conventional-home-loans-arizona/" },
+  { label: "Private Money Lender", href: "/private-money-lender-arizona/" },
+  { label: "FHA Home Loans", href: "/fha-home-loans-arizona/" },
+  { label: "FHA Streamline Refinance", href: "/fha-streamline-refinance-arizona/" },
+  { label: "First Time Home Buyer", href: "/first-time-home-buyer-arizona-guide/" },
+  { label: "Reverse Mortgage", href: "/reverse-mortgage-arizona/" },
+  { label: "Reverse Mortgage for a Home Purchase", href: "/reverse-mortgage-home-purchase-arizona/" },
+  { label: "Refinancing", href: "/refinancing-arizona/" },
+  { label: "Jumbo Loans", href: "/jumbo-loans-arizona/" },
+  { label: "VA Loans", href: "/va-loans-arizona/" },
+];
+
+const tocLinks = [
+  { label: "Mortgage Approval Process Outline", href: "#mortgage-approval-process-outline" },
+  { label: "Beyond the Steps of the Mortgage Approval Process", href: "#beyond-the-steps" },
+  { label: "Debt to Income (DTI) Ratio", href: "#debt-to-income-dti-ratio" },
+  { label: "Loan to Value (LTV)", href: "#loan-to-value-ltv" },
+  { label: "Credit", href: "#credit" },
+  { label: "Property Types", href: "#property-types" },
+  { label: "Mortgage Programs", href: "#mortgage-programs" },
+  { label: "Pre-Approval Letters", href: "#pre-approval-letters" },
+  { label: "Arizona Mortgage Approval Process FAQ's", href: "#arizona-mortgage-approval-process-faqs" },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What basic background information is required during the initial mortgage application?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "When a loan officer takes your initial application, you must provide your full legal name, a complete two-year residence and employment history, documentation of your assets and income, a list of any other properties you own, and disclosures regarding past credit events like collections, bankruptcies, or foreclosures.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How do automated underwriting systems evaluate an Arizona mortgage file?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Once your credit profile and application are loaded, the file is typically submitted through online automated underwriting platforms like Desktop Underwriter (DU) or Loan Product Advisor (LPA). These systems generate automated 'findings' that determine initial approval status and list the explicit documentation requirements needed for the loan file.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Should I expect the underwriter to request more documents after initial submission?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Nearly 99% of all mortgage files receive an initial approval that is conditional, meaning it contains conditional requirements. Homebuyers should fully anticipate that the underwriter will ask for additional supporting documents, asset verifications, or letters of explanation before issuing a final approval.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What are the final operational steps required to fund an Arizona mortgage?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Once all conditional requirements are cleared, the lender issues a final approval and delivers the closing loan documents to the title company for your signing appointment. After signing, the package is reviewed by the lender's funder, who authorizes and sends the final wire transfer to the title company to fund the transaction.",
+      },
+    },
+  ],
+};
+
+const CheckIcon = () => (
+  <svg
+    className="w-5 h-5 text-[#3fb364] shrink-0 mt-0.5"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth="2.5"
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+  </svg>
+);
+
+export default function ArizonaMortgageApprovalProcessPage() {
+  return (
+    <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      <Navbar />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
+
+      <main className="flex-grow relative z-0">
+        <ArticleHero
+          title={<>Learn About the Home Mortgage Approval Process</>}
+          excerpt="A step-by-step roadmap of the Arizona mortgage approval process, plus key concepts like DTI, LTV, credit, and pre-approval letters."
+          category="Mortgage Basics"
+          categoryHref="/mortgage-basics/"
+          dateLabel="Feb 10, 2025"
+          readTime="12 min read"
+        />
+
+        <section className="relative z-0 w-full py-12 lg:py-16 bg-[#fcf9f3]">
+          <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
+            <article className="min-w-0">
+
+              <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-5">
+                There&apos;s no question that the entire approval process for home loans in Arizona can be
+                confusing and slightly overwhelming! For the first-time home buyer the process can be a stressful
+                situation so we want to provide you a road map to help you navigate the event, but be sure that
+                you always take the time to ask your Arizona mortgage broker if anything is unclear!
+              </p>
+              <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-5">
+                We&apos;ve also placed at the bottom of this page a Frequently Asked Questions (FAQ) section for
+                quick reference!
+              </p>
+              <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
+                Mortgage loan program guidelines, Arizona mortgage rate questions and down payment requirements
+                are a few of the major components you&apos;ll need to be familiar with when applying for a home
+                loan for your new purchase or for your refinance.
+              </p>
+
+              <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
+                <h2
+                  className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                  Master the Process—Connect with Our Experts!
+                </h2>
+                <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
+                  Now that you understand the Arizona Mortgage Approval Process, reach out to us. We&apos;re here
+                  to streamline your mortgage journey.
+                </p>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                  <Link
+                    href="/#get-pre-approved"
+                    className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                  >
+                    Get Pre-Approved &rarr;
+                  </Link>
+                  <Link
+                    href="/contact-us/"
+                    className="inline-flex items-center gap-2 text-[#3fb364] hover:underline text-[15px] font-semibold px-4 py-3 transition-all"
+                  >
+                    Contact Us Today
+                  </Link>
+                </div>
+              </div>
+
+              <div className="space-y-10 text-[#3a4a3a] text-[16px] leading-[1.8]">
+                <nav
+                  aria-label="Table of contents"
+                  className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm"
+                >
+                  <p className="text-[#052316] text-[16px] font-bold mb-3">On this page</p>
+                  <ul className="space-y-2">
+                    {tocLinks.map((item) => (
+                      <li key={item.href}>
+                        <a
+                          href={item.href}
+                          className="text-[14px] text-[#3fb364] font-semibold hover:underline"
+                        >
+                          {item.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+
+                <section id="mortgage-approval-process-outline">
+                  <h2
+                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    Mortgage Approval Process Outline
+                  </h2>
+
+                  <h3 className="text-[#052316] text-[18px] font-bold mb-3">Step 1</h3>
+                  <p className="mb-3 font-semibold text-[#052316]">
+                    Loan Officer takes your application. The application contains:
+                  </p>
+                  <ul className="list-disc pl-6 space-y-2 mb-6">
+                    <li>Your legal name</li>
+                    <li>Address and where you have worked for the last 2 years</li>
+                    <li>Your asset and income documentation</li>
+                    <li>List of all properties that you own</li>
+                    <li>
+                      You will need to disclose whether you have had any collections, judgements, Bankruptcies,
+                      Foreclosures, etc.
+                    </li>
+                  </ul>
+
+                  <h3 className="text-[#052316] text-[18px] font-bold mb-3">Step 2</h3>
+                  <p className="mb-3 font-semibold text-[#052316]">The loan officer will pull your credit:</p>
+                  <p className="mb-6">
+                    The loan officer will pull your credit to determine what liabilities you have on a monthly
+                    basis and what credit score you have. The content of your credit report as well as the credit
+                    score will impact and affect your approval.
                   </p>
 
                   <h3 className="text-[#052316] text-[18px] font-bold mb-3">Step 3</h3>
                   <p className="mb-3 font-semibold text-[#052316]">
                     Your file is setup and then submitted your loan through the underwriter pre-approval process
                   </p>
-                  <p className="mb-3">
-                    In most cases, this is a submitted through an online approval system. The two most widely used
-                    underwriting systems are &apos;Desktop Underwriter&apos; and &apos;Loan Prospector&apos;
-                  </p>
-                  <p className="mb-6">
-                    The approval system will give the loan officer &apos;findings&apos; which tell them if you are
-                    approved for the loan or not. The &apos;findings&apos; will tell them specifically what they
-                    will need to document in your file.
-                  </p>
+                  <ul className="list-disc pl-6 space-y-2 mb-6">
+                    <li>
+                      In most cases, this is a submitted through an online approval system. The two most widely used
+                      underwriting systems are &apos;Desktop Underwriter&apos; and &apos;Loan Prospector&apos;
+                    </li>
+                    <li>
+                      The approval system will give the loan officer &apos;findings&apos; which tell them if you are
+                      approved for the loan or not. The &apos;findings&apos; will tell them specifically what they
+                      will need to document in your file.
+                    </li>
+                  </ul>
 
                   <h3 className="text-[#052316] text-[18px] font-bold mb-3">Step 4</h3>
                   <p className="mb-3 font-semibold text-[#052316]">
@@ -292,20 +489,24 @@ export default function ArizonaMortgageApprovalProcessPage() {
                   <p className="mb-3 font-semibold text-[#052316]">
                     Your loan file is setup and then submitted to underwriting
                   </p>
-                  <p className="mb-6">
-                    All your documents and supporting loan items are organized in a particular order for the
-                    underwriter to review for preliminary or final approval.
-                  </p>
+                  <ul className="list-disc pl-6 space-y-2 mb-6">
+                    <li>
+                      All your documents and supporting loan items are organized in a particular order for the
+                      underwriter to review for preliminary or final approval.
+                    </li>
+                  </ul>
 
                   <h3 className="text-[#052316] text-[18px] font-bold mb-3">Step 6</h3>
                   <p className="mb-3 font-semibold text-[#052316]">
                     Your loan receive an approval either with or without conditions:
                   </p>
-                  <p className="mb-6">
-                    In most cases there is something (extra documentation) that the underwriter will be asking the
-                    loan officer to gather for the file. This occurs on nearly 99% of all files and should be
-                    anticipated by the borrower.
-                  </p>
+                  <ul className="list-disc pl-6 space-y-2 mb-6">
+                    <li>
+                      In most cases there is something (extra documentation) that the underwriter will be asking the
+                      loan officer to gather for the file. This occurs on nearly 99% of all files and should be
+                      anticipated by the borrower.
+                    </li>
+                  </ul>
 
                   <h3 className="text-[#052316] text-[18px] font-bold mb-3">Step 7</h3>
                   <p className="mb-3 font-semibold text-[#052316]">
@@ -345,7 +546,9 @@ export default function ArizonaMortgageApprovalProcessPage() {
                   <p className="mb-3 font-semibold text-[#052316]">
                     The title company records the purchase or refinance loan
                   </p>
-                  <p>The home loan is complete and you can now relax.</p>
+                  <ul className="list-disc pl-6 space-y-2 mb-6">
+                    <li>The home loan is complete and you can now relax.</li>
+                  </ul>
                 </section>
 
                 <section id="beyond-the-steps">
@@ -370,13 +573,15 @@ export default function ArizonaMortgageApprovalProcessPage() {
                   >
                     Debt to Income (DTI) Ratio
                   </h2>
-                  <p className="mb-5">
-                    This ratio is a comparison between a borrower&apos;s income to their debt (or liabilities).
-                  </p>
-                  <p>
-                    The lower the ratio (that is, the higher your income is compared to the debts you have) the
-                    better it is. This gives confidence to the lender that you&apos;ll be able to repay the loan.
-                  </p>
+                  <ul className="list-disc pl-6 space-y-2 mb-6">
+                    <li>
+                      This ratio is a comparison between a borrower&apos;s income to their debt (or liabilities).
+                    </li>
+                    <li>
+                      The lower the ratio (that is, the higher your income is compared to the debts you have) the
+                      better it is. This gives confidence to the lender that you&apos;ll be able to repay the loan.
+                    </li>
+                  </ul>
                 </section>
 
                 <section id="loan-to-value-ltv">
@@ -386,20 +591,22 @@ export default function ArizonaMortgageApprovalProcessPage() {
                   >
                     Loan to Value (LTV)
                   </h2>
-                  <p className="mb-5">
-                    A common term used by mortgage lenders, it compared the difference between the outstanding
-                    amount of the loan compared to the property&apos;s value.
-                  </p>
-                  <p className="mb-5">
-                    Depending on this ratio, you may be required to have a higher down payment in order to avoid
-                    mortgage insurance. However, some government loan programs can be done with little to no down
-                    payment (or higher Loan to Value ratios).
-                  </p>
-                  <p>
-                    Here&apos;s an example: A lender might tell you that in order to avoid mortgage insurance you
-                    will have to have a Loan to Value of less than 80%. This means you down payment must be 20% of
-                    the amount of the loan.
-                  </p>
+                  <ul className="list-disc pl-6 space-y-2 mb-6">
+                    <li>
+                      A common term used by mortgage lenders, it compared the difference between the outstanding
+                      amount of the loan compared to the property&apos;s value.
+                    </li>
+                    <li>
+                      Depending on this ratio, you may be required to have a higher down payment in order to avoid
+                      mortgage insurance. However, some government loan programs can be done with little to no down
+                      payment (or higher Loan to Value ratios).
+                    </li>
+                    <li>
+                      Here&apos;s an example: A lender might tell you that in order to avoid mortgage insurance you
+                      will have to have a Loan to Value of less than 80%. This means you down payment must be 20% of
+                      the amount of the loan.
+                    </li>
+                  </ul>
                 </section>
 
                 <section id="credit">
@@ -409,15 +616,17 @@ export default function ArizonaMortgageApprovalProcessPage() {
                   >
                     Credit
                   </h2>
-                  <p className="mb-5">
-                    Credit scores and credit history are used by AZ mortgage brokers in order to estimate the risk
-                    associated with a borrower.
-                  </p>
-                  <p>
-                    While lenders like to see several open lines of credit with at least 2 years of history,
-                    others offer programs to allow borrowers to use a variety of credit histories to qualify for a
-                    loan.
-                  </p>
+                  <ul className="list-disc pl-6 space-y-2 mb-6">
+                    <li>
+                      Credit scores and credit history are used by AZ mortgage brokers in order to estimate the risk
+                      associated with a borrower.
+                    </li>
+                    <li>
+                      While lenders like to see several open lines of credit with at least 2 years of history,
+                      others offer programs to allow borrowers to use a variety of credit histories to qualify for a
+                      loan.
+                    </li>
+                  </ul>
                 </section>
 
                 <section id="property-types">
@@ -427,13 +636,15 @@ export default function ArizonaMortgageApprovalProcessPage() {
                   >
                     Property Types
                   </h2>
-                  <p>
-                    The type of property and how a borrower plans to use the property plays a major role in a
-                    mortgage lender&apos;s decision on granting a loan. Home Owners Association (HOA)
-                    restrictions, government lending mortgage insurance requirements and appraisal policies can be
-                    very different from property to property. This is why your real estate agent must understand
-                    the exact details and possible restrictions before any offer is placed!
-                  </p>
+                  <ul className="list-disc pl-6 space-y-2 mb-6">
+                    <li>
+                      The type of property and how a borrower plans to use the property plays a major role in a
+                      mortgage lender&apos;s decision on granting a loan. Home Owners Association (HOA)
+                      restrictions, government lending mortgage insurance requirements and appraisal policies can be
+                      very different from property to property. This is why your real estate agent must understand
+                      the exact details and possible restrictions before any offer is placed!
+                    </li>
+                  </ul>
                 </section>
 
                 <section id="mortgage-programs">
@@ -443,38 +654,40 @@ export default function ArizonaMortgageApprovalProcessPage() {
                   >
                     Mortgage Programs
                   </h2>
-                  <p className="mb-5">
-                    There are many mortgage programs available to borrowers including allowing 100% financing, low
-                    down payments or even allowing upgrades to a property to be rolled into the mortgage loan.
-                  </p>
-                  <p>
-                    Speak with your Arizona mortgage broker about government insured programs such as{" "}
-                    <Link
-                      href="/fha-home-loans-arizona/"
-                      className="text-[#3fb364] font-semibold hover:underline"
-                    >
-                      FHA
-                    </Link>
-                    , USDA and{" "}
-                    <Link href="/va-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
-                      VA home loans
-                    </Link>{" "}
-                    as well as{" "}
-                    <Link
-                      href="/conventional-home-loans-arizona/"
-                      className="text-[#3fb364] font-semibold hover:underline"
-                    >
-                      conventional
-                    </Link>{" "}
-                    and{" "}
-                    <Link
-                      href="/jumbo-loans-arizona/"
-                      className="text-[#3fb364] font-semibold hover:underline"
-                    >
-                      jumbo loan
-                    </Link>{" "}
-                    financing.
-                  </p>
+                  <ul className="list-disc pl-6 space-y-2 mb-6">
+                    <li>
+                      There are many mortgage programs available to borrowers including allowing 100% financing, low
+                      down payments or even allowing upgrades to a property to be rolled into the mortgage loan.
+                    </li>
+                    <li>
+                      Speak with your Arizona mortgage broker about government insured programs such as{" "}
+                      <Link
+                        href="/fha-home-loans-arizona/"
+                        className="text-[#3fb364] font-semibold hover:underline"
+                      >
+                        FHA
+                      </Link>
+                      , USDA and{" "}
+                      <Link href="/va-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
+                        VA home loans
+                      </Link>{" "}
+                      as well as{" "}
+                      <Link
+                        href="/conventional-home-loans-arizona/"
+                        className="text-[#3fb364] font-semibold hover:underline"
+                      >
+                        conventional
+                      </Link>{" "}
+                      and{" "}
+                      <Link
+                        href="/jumbo-loans-arizona/"
+                        className="text-[#3fb364] font-semibold hover:underline"
+                      >
+                        jumbo loan
+                      </Link>{" "}
+                      financing.
+                    </li>
+                  </ul>
                 </section>
 
                 <section id="pre-approval-letters">
@@ -550,38 +763,6 @@ export default function ArizonaMortgageApprovalProcessPage() {
                         be taken into account.</> }
                     ]}
                   />
-                </section>
-
-                <p>
-                  If you have any questions, call us at{" "}
-                  <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    (602) 535-2171
-                  </a>{" "}
-                  or reach us using our{" "}
-                  <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                    contact form
-                  </Link>
-                  .
-                </p>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you
-                    and help you through the whole process.
-                  </p>
-                </div>
-
-                <p className="text-[#8a9a7a] text-[13px] leading-relaxed">
-                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
-                  prepared for informational purposes only. You should consult your own tax, legal, and accounting
-                  advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
-                  1618695. Equal housing lender.
-                </p>
-              </div>
-
-              <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">
-                <Link
-                  href="/why-use-an-arizona-mortgage-broker/"
                   className="text-[#3fb364] font-semibold hover:underline"
                 >
                   ← Previous Post

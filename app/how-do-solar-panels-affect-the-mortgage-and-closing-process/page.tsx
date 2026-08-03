@@ -392,6 +392,7 @@ export default function SolarPanelsMortgagePage() {
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
                         How Do Solar Panel Leases Impact Buyers? [03:59]
                       </h3>
+                      <p className="mb-3"><strong>What do buyers need to know?</strong></p>
                       <ul className="list-disc pl-6 space-y-2 mb-3">
                         <li>If the panels are leased, the buyer must qualify to take over the lease.</li>
                         <li>Some solar companies will run a credit check on the buyer.</li>
@@ -400,12 +401,18 @@ export default function SolarPanelsMortgagePage() {
                           before closing.
                         </li>
                       </ul>
-                      <p className="mb-3">
-                        Sometimes, sellers offer to pay off the remaining balance to make the home more
-                        attractive. Buyers should ask about the payoff amount before making an offer.
-                      </p>
+                      <p className="mb-3"><strong>Will the seller pay off the loan?</strong></p>
+                      <ul className="list-disc pl-6 space-y-2 mb-3">
+                        <li>
+                          Sometimes, sellers offer to pay off the remaining balance to make the home more
+                          attractive.
+                        </li>
+                        <li>
+                          Buyers should ask about the payoff amount before making an offer.
+                        </li>
+                      </ul>
                       <p>
-                        Pro Tip: If a home has leased panels, check with the solar company early in the
+                        <strong>Pro Tip:</strong> If a home has leased panels, check with the solar company early in the
                         process to avoid last-minute surprises!
                       </p>
                     </div>
@@ -442,14 +449,16 @@ export default function SolarPanelsMortgagePage() {
                       </h3>
                       <p className="mb-3">
                         If the buyer takes over a lease, will the payment count against their mortgage
-                        qualification? It depends. If the lease includes a production guarantee, lenders
+                        qualification? It depends. If the lease includes a <strong>production guarantee</strong>, lenders
                         won&apos;t count it in debt-to-income (DTI) calculations.
                       </p>
                       <p className="mb-3">
-                        A production guarantee is when a solar company promises that the panels will produce a
+                        <strong>What&apos;s a production guarantee?</strong><br />
+                        A solar company promises that the panels will produce a
                         set amount of electricity. If they don&apos;t, they refund the homeowner.
                       </p>
-                      <ul className="list-disc pl-6 space-y-2">
+                      <p className="mb-3"><strong>Why does this matter?</strong></p>
+                      <ul className="list-disc pl-6 space-y-2 mb-3">
                         <li>
                           Without a production guarantee, lenders may count the lease payment as debt,
                           reducing the buyer&apos;s borrowing power.

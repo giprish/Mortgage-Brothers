@@ -157,7 +157,14 @@ export default function ArizonaMortgageBasicsPage() {
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
                 No matter where you live or who does your loan, there are a few standard components to any Mortgage
-                Loan that we will cover below:
+                Loan that{" "}
+                <Link
+                  href="/why-use-an-arizona-mortgage-broker/"
+                  className="text-[#3fb364] font-semibold hover:underline"
+                >
+                  we will cover
+                </Link>{" "}
+                below:
               </p>
 
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
@@ -322,31 +329,7 @@ export default function ArizonaMortgageBasicsPage() {
                   />
                 </section>
 
-                <p>
-                  If you have any questions about Arizona mortgage basics, call us at{" "}
-                  <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    (602) 535-2171
-                  </a>{" "}
-                  or reach us using our{" "}
-                  <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                    contact form
-                  </Link>
-                  .
-                </p>
 
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you
-                    and help you through the whole process.
-                  </p>
-                </div>
-
-                <p className="text-[#8a9a7a] text-[13px] leading-relaxed">
-                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
-                  prepared for informational purposes only. You should consult your own tax, legal, and accounting
-                  advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
-                  1618695. Equal housing lender.
-                </p>
               </div>
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">

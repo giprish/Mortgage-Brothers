@@ -202,7 +202,7 @@ export default function PrepaymentPenaltiesArizonaMortgagePage() {
                     What to Know About Prepayment Penalties
                   </h2>
                   <p className="mb-5">
-                    If you do opt for an Arizona mortgage with a prepayment penalty, try and negotiate a
+                    If you do opt for an Arizona mortgage with a <a href="https://www.investopedia.com/terms/p/prepaymentpenalty.asp" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">prepayment penalty</a>, try and negotiate a
                     prepayment period for no longer than five months, the ability to make a partial prepayment
                     up to 20% of your loan balance at any time and that the prepayment penalty only applies if
                     you refinance your home. If you have plans on staying in your home for more than five
@@ -239,6 +239,7 @@ export default function PrepaymentPenaltiesArizonaMortgagePage() {
                   . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
                   you and help you through the whole process.
                 </p>
+                <p className="text-center font-bold text-xl my-8 text-[#052316]">•••</p>
 
                 <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
                   <p className="text-[15px] text-[#052316] leading-relaxed">

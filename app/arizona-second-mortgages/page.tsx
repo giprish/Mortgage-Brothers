@@ -226,9 +226,18 @@ export default function ArizonaSecondMortgagesPage() {
                     Your lender will order an Arizona appraisal. Your credit must be good, and you need
                     equity in your home. There are closing costs associated with the loan. The lender is
                     required to give you an estimate of the costs at the time you apply. Before you make a
-                    decision about taking out a second mortgage, make sure you can afford to pay it back. If
+                    decision about taking out a{" "}
+                    <a
+                      href="https://www.investopedia.com/terms/s/secondmortgage.asp"
+                      target="_blank"
+                      rel="noopener"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      second mortgage
+                    </a>
+                    , make sure you can afford to pay it back. If
                     you default, the lender could foreclose. If you take too much equity out, you could end up
-                    upside down on your mortgage if property values decline like what has been happening the
+                    upside down on our mortgage if property values decline like what has been happening the
                     past few years in the Arizona housing market as well as nationwide.
                   </p>
                   <p className="mb-5">
@@ -238,10 +247,10 @@ export default function ArizonaSecondMortgagesPage() {
                     Arizona mortgage rates and find one that meets your needs.
                   </p>
                   <p className="mb-5">
-                    The broker will help you complete the application, review your credit and help you gather
+                    The broker will help you complete the application, review your credit and help y gather
                     your financial information for submittal to the lender. The broker understands what type
                     of information the lender is looking for and will make sure you are qualified before
-                    sending your application to the lender. The lender knows that anyone that the mortgage
+                    sending our application to the lender. The lender knows that anyone that the mortgage
                     broker sends to them meets their underwriting guidelines so they are more apt to take loan
                     application requests from borrowers working with mortgage brokers more seriously.
                   </p>

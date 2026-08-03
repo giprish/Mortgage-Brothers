@@ -169,7 +169,7 @@ export default function FhaFlipRuleWaiverExpiredPage() {
                   <p className="mb-5">
                     In 2011, with so many investors purchasing short sale and foreclosure properties,{" "}
                     <a
-                      href="https://www.hud.gov/"
+                      href="https://www.federalregister.gov/documents/2011/12/28/2011-33411/federal-housing-administration-fha-temporary-exemption-from-compliance-with-fhas-regulation-on"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[#3fb364] font-semibold hover:underline"

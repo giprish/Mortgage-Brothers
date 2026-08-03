@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import FaqAccordion from "../component/FaqAccordion";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
@@ -294,6 +295,30 @@ export default function OwnerOccupiedSecondHomeInvestmentPage() {
                   1618695. Equal housing lender.
                 </p>
               </div>
+              
+              <section id="faqs">
+                <FaqAccordion
+                  title="Frequently Asked Questions"
+                  items={[
+                    {
+                      q: "What is a primary or owner-occupied residence?",
+                      a: <>An owner-occupied or primary residence is a residential property where the borrower intends to live for the majority of the calendar year. To qualify under this occupancy type, at least one borrower listed on the mortgage must physically occupy the home, signing both the mortgage note and the security instrument.</>
+                    },
+                    {
+                      q: "What criteria must a property meet to qualify as a second home?",
+                      a: <>To classify a property as a second home for underwriting purposes, the real estate must typically be located at least 50 miles away from the borrower's primary residence. Additionally, the borrower must intend to occupy it for part of the year, and it cannot appear to be purchased for rental or investment purposes.</>
+                    },
+                    {
+                      q: "How does an investment property differ from a second home?",
+                      a: <>Unlike a second home, an investment property is a residential space that the owner does not occupy. Instead, it is acquired primarily to generate rental income or future financial profits. Because of the vacancy and rental risks, lenders enforce different underwriting standards for investment loans.</>
+                    },
+                    {
+                      q: "How do down payment requirements vary across different occupancy types?",
+                      a: <>Down payment guidelines change significantly by occupancy type. Primary residences offer low-down options, such as 0% for VA/USDA, 3.5% for FHA, and 5% to 25% for conventional loans. Second homes generally require an average of a 10% down payment, while investment properties demand the highest reserves, typically requiring a 20% to 25% down payment depending on the number of units.</>
+                    }
+                  ]}
+                />
+              </section>
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">
                 <Link

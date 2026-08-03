@@ -230,43 +230,29 @@ export default function AirConditioningPhoenixRealEstatePage() {
                       central AC/heat pumps because they can handle both the heating and cooling needs of a home.
                       This makes installation more cost effective than installing two separate systems.
                     </li>
-                    <li>
-                      Because of Phoenix&apos;s heavy reliance on air conditioning, many newcomers may unfairly
-                      think the city is an &quot;energy hog&quot; relative to other cities. They may also wonder
-                      whether their heating and cooling bills will be higher here.
-                    </li>
-                    <li>
-                      In fact, due to the fact that Phoenix homes don&apos;t require heat during most of the year,
-                      Phoenix actually uses 26% LESS energy than the US average. Most of that energy use is rather
-                      than heating fuels. Electricity, unfortunately, is fairly expensive. This means that while
-                      Arizonans use less energy and pollute less than most Americans, they spend about the same on
-                      heating and cooling.
-                    </li>
-                    <li>
-                      In a city where summer days over 100 degrees are the norm, there&apos;s good reason to be
-                      grateful for this modern invention that makes life comfortable for Phoenix residents.
-                    </li>
                   </ul>
+                  
+                  <p className="mt-6">
+                    Because of Phoenix&apos;s heavy reliance on air conditioning, many newcomers may unfairly
+                    think the city is an &quot;energy hog&quot; relative to other cities. They may also wonder
+                    whether their heating and cooling bills will be higher here.
+                  </p>
+                  
+                  <p className="mt-6">
+                    In fact, due to the fact that Phoenix homes don&apos;t require heat during most of the year,
+                    Phoenix actually uses 26% LESS energy than the US average. Most of that energy use is rather
+                    than heating fuels. Electricity, unfortunately, is fairly expensive. This means that while
+                    Arizonans use less energy and pollute less than most Americans, they spend about the same on
+                    heating and cooling.
+                  </p>
+                  
+                  <p className="mt-6">
+                    In a city where summer days over 100 degrees are the norm, there&apos;s good reason to be
+                    grateful for this modern invention that makes life comfortable for Phoenix residents.
+                  </p>
                 </section>
 
-                <p>
-                  If you have any questions, call us at{" "}
-                  <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    (602) 535-2171
-                  </a>{" "}
-                  or reach us using our{" "}
-                  <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                    contact form
-                  </Link>
-                  .
-                </p>
 
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you
-                    and help you through the whole process.
-                  </p>
-                </div>
 
                 <p className="text-[15px]">
                   Discover how air conditioning influences real estate trends in the Phoenix Valley. Enhance your
@@ -294,12 +280,7 @@ export default function AirConditioningPhoenixRealEstatePage() {
                   .
                 </p>
 
-                <p className="text-[#8a9a7a] text-[13px] leading-relaxed">
-                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
-                  prepared for informational purposes only. You should consult your own tax, legal, and accounting
-                  advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
-                  1618695. Equal housing lender.
-                </p>
+
               </div>
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">

@@ -261,7 +261,7 @@ export default function GettingMortgageWithEmploymentGapsPage() {
                   </h2>
                   <p className="mb-4">All programs are fine with job gaps less than 30 days</p>
                   <p className="mb-4">
-                    Fannie Mae technically does not have any job gap maximum allowed limit like Freddie Mac. Technically a
+                    <a href="https://www.fhfa.gov/about/fannie-mae-freddie-mac#:~:text=Fannie%20Mae%20was%20first%20chartered,Fannie%20Mae%20Web%20Site" target="_blank" rel="noopener noreferrer" className="text-[#3fb364] font-semibold hover:underline">Fannie Mae</a> technically does not have any job gap maximum allowed limit like <a href="https://www.fhfa.gov/about/fannie-mae-freddie-mac" target="_blank" rel="noopener noreferrer" className="text-[#3fb364] font-semibold hover:underline">Freddie Mac</a>. Technically a
                     borrower can be out of a job for years and come back to the workforce along with a letter of explanation
                     and would be okay. Only full time hourly or salary is allowed in these cases.
                   </p>

@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import FaqAccordion from "../component/FaqAccordion";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
@@ -598,6 +599,31 @@ export default function DscrLoanHardMoneyPage() {
                       </p>
                     </div>
                   </div>
+                  </div>
+                </section>
+                
+                <section id="faqs">
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={[
+                      {
+                        q: "What is a hard money loan?",
+                        a: <>A hard money loan is a loan secured by a property. They close quickly (often within 5 to 7 days), require very little underwriting, and are ideal for investors who move quickly. However, they come with high interest rates (typically 12% or more), high fees, and require significant equity in the home (usually 40–50% down). They are not suitable for long-term investors.</>
+                      },
+                      {
+                        q: "What are the pros and cons of hard money loans?",
+                        a: <>Pros of hard money loans include quick closings (sometimes in less than 7 days) and minimal underwriting. Cons include high interest rates (around 12% or more), high fees, a large amount of equity required, and they are generally not good for long-term investments.</>
+                      },
+                      {
+                        q: "What is a DSCR loan and how does it work?",
+                        a: <>A DSCR (Debt Service Coverage Ratio) loan is a type of investment property loan based on the property's potential rental income rather than the borrower's personal income. The DSCR is calculated by dividing the property's gross rent income by the principal, interest, taxes, and insurance (PITI) payment. If the DSCR ratio is greater than 0.75, you may qualify for this program.</>
+                      },
+                      {
+                        q: "What are the pros and cons of DSCR loans?",
+                        a: <>Pros: Lower rates and fees than hard money, down payments as low as 20%, can be used for purchases and cash-out refinances, no personal income documentation or employment proof needed, gifts allowed for down payments, loan amounts up to $3.5 million, and a minimum credit score of 620. Cons: Cannot be paid off before 6 months, only for investment properties (not second homes), and the property must be in livable condition.</>
+                      }
+                    ]}
+                  />
                 </section>
               </div>
 

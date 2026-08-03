@@ -167,9 +167,9 @@ export default function ArizonaUnderstandingYourCreditPage() {
               </p>
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
-                A person&apos;s credit score, or &quot;FICO&quot; score (which stand for the Fair Isaac
-                Corporation) has been the standard score that the three main credit reporting agencies (Equifax,
-                Experian and TransUnion) use to sell to lenders.
+                A person&apos;s <strong>credit score</strong>, or &quot;<a href="http://en.wikipedia.org/wiki/Fair_Isaac" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">FICO</a>&quot; score (which stand for the Fair Isaac
+                Corporation) has been the standard score that the three main credit reporting agencies (<a href="http://en.wikipedia.org/wiki/Equifax" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">Equifax</a>,
+                <a href="http://en.wikipedia.org/wiki/Experian" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">Experian</a> and <a href="http://en.wikipedia.org/wiki/TransUnion" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">TransUnion</a>) use to sell to lenders.
               </p>
 
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
@@ -211,7 +211,7 @@ export default function ArizonaUnderstandingYourCreditPage() {
                     Consumers are allowed by law to receive a copy of their credit report file from each of the
                     bureaus. You can access your free annual credit report here{" "}
                     <a
-                      href="https://www.AnnualCreditReport.com"
+                      href="https://www.annualcreditreport.com/index.action"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[#3fb364] font-semibold hover:underline"

@@ -198,12 +198,14 @@ export default function CommissionQualifyLoanPage() {
                 <p>
                   People who do not receive commission but do receive regular bonuses fall into the same
                   category. Regular bonuses are treated the same way as commission for{" "}
-                  <Link
-                    href="/mortgage-qualifications/"
+                  <a
+                    href="https://www.irs.gov/individuals/income-verification-express-service"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-[#3fb364] font-semibold hover:underline"
                   >
                     income verification
-                  </Link>{" "}
+                  </a>{" "}
                   purposes.
                 </p>
                 <p>

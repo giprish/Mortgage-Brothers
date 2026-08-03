@@ -239,14 +239,26 @@ export default function ArizonaBinsrPage() {
                   you and help you through the whole process.
                 </p>
 
+                <div className="mb-10 text-center text-[#3a4a3a]">
+                  <p className="text-[24px] tracking-widest text-[#a8b898]">&bull;&bull;&bull;</p>
+                </div>
+
                 <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
                   <p className="text-[15px] text-[#052316] leading-relaxed">
                     Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
                     you and help you through the whole process.
                   </p>
                 </div>
+                
+                <p className="text-[#8a9a7a] text-[13px] leading-relaxed">
+                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
+                  been prepared for informational purposes only. You should consult your own tax, legal, and
+                  accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
+                  #210917 and 1618695. Equal housing lender.
+                </p>
 
-                <p className="text-[15px]">
+                <blockquote className="border-l-4 border-[#3fb364] pl-5 my-8 italic">
+                  <p className="text-[15px]">
                   Discover the ins and outs of buyer inspection notices and seller responses. For more
                   insights, check out our guide on the{" "}
                   <Link
@@ -291,33 +303,30 @@ export default function ArizonaBinsrPage() {
                     capital gains are back
                   </Link>
                   .
-                </p>
-
-                <p className="text-[#8a9a7a] text-[13px] leading-relaxed">
-                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
-                  been prepared for informational purposes only. You should consult your own tax, legal, and
-                  accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
-                  #210917 and 1618695. Equal housing lender.
-                </p>
+                  </p>
+                </blockquote>
+                
+                <hr className="my-10 border-t border-[#e8e0d0]" />
 
                 <section id="podcast-transcript">
                   <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
+                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Transcript of the Mortgage Brothers Podcast
+                    <strong>Transcript of the Mortgage Brothers Podcast</strong>
                   </h2>
 
                   <div className="space-y-8 text-[15.5px]">
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        Arizona BINSR: Buyer Inspection Notice and Seller Response Addendum
+                        <strong>Arizona BINSR: Buyer Inspection Notice and Seller Response Addendum</strong>
                       </h3>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">Introduction [00:02]</h3>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3"><strong>Introduction</strong></h3>
                       <p className="mb-3">
-                        Welcome to the Mortgage Brothers Podcast Show! I&apos;m Eddie Knoell, and I&apos;m
+                        [00:02]<br />
+                        Welcome to the <strong>Mortgage Brothers Podcast Show</strong>! I&apos;m Eddie Knoell, and I&apos;m
                         Tom Knoell. Today, we&apos;re discussing an essential part of the home buying process
-                        in Arizona: the BINSR&mdash;Buyer Inspection Notice and Seller Response Addendum.
+                        in Arizona: the <strong>BINSR</strong>&mdash;Buyer Inspection Notice and Seller Response Addendum.
                       </p>
                       <p>
                         Many buyers and sellers misunderstand how this form works, and in this episode,
@@ -327,16 +336,17 @@ export default function ArizonaBinsrPage() {
 
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        What is the BINSR? [00:39]
+                        <strong>What is the BINSR?</strong>
                       </h3>
                       <p className="mb-3">
-                        The BINSR is a formal process within Arizona&apos;s real estate transactions that
-                        allows buyers to notify the seller of any issues found during a home inspection. It
+                        [00:39]<br />
+                        The <strong>BINSR</strong> is a formal process within Arizona&apos;s real estate transactions that
+                        allows buyers to <strong>notify the seller</strong> of any issues found during a home inspection. It
                         also provides a way for sellers to respond to those concerns.
                       </p>
                       <p>
-                        Once you go under contract, you typically have 10 days to complete your inspections
-                        and submit the BINSR to the seller. This is a critical step that allows buyers to
+                        Once you go under contract, you typically have <strong>10 days</strong> to complete your inspections
+                        and submit the <strong>BINSR</strong> to the seller. This is a critical step that allows buyers to
                         request repairs, negotiate credits, or even cancel the purchase based on inspection
                         findings.
                       </p>
@@ -344,68 +354,70 @@ export default function ArizonaBinsrPage() {
 
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        Key Sections of the BINSR [01:46]
+                        <strong>Key Sections of the BINSR</strong>
                       </h3>
-                      <p className="mb-3">The BINSR form consists of:</p>
-                      <ul className="list-disc pl-6 space-y-2">
+                      <p className="mb-3">[01:46]<br />The BINSR form consists of:</p>
+                      <ol className="list-decimal pl-6 space-y-2">
                         <li>
-                          The Buyer&apos;s Notice &ndash; The buyer lists any requested repairs, asks for a
+                          <strong>The Buyer&apos;s Notice</strong> &ndash; The buyer lists any <strong>requested repairs</strong>, asks for a
                           price reduction, or states they are accepting the property as-is.
                         </li>
                         <li>
-                          The Seller&apos;s Response &ndash; The seller has the option to agree to all, some,
+                          <strong>The Seller&apos;s Response</strong> &ndash; The seller has the option to agree to all, some,
                           or none of the buyer&apos;s requests.
                         </li>
                         <li>
-                          The Buyer&apos;s Final Decision &ndash; After receiving the seller&apos;s response,
-                          the buyer must decide whether to proceed with the purchase or cancel the contract
+                          <strong>The Buyer&apos;s Final Decision</strong> &ndash; After receiving the seller&apos;s response,
+                          the buyer must decide whether to <strong>proceed with the purchase</strong> or <strong>cancel the contract</strong>
                           within the time frame specified.
                         </li>
-                      </ul>
+                      </ol>
                     </div>
 
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        What Happens After the BINSR is Submitted? [03:10]
+                        <strong>What Happens After the BINSR is Submitted?</strong>
                       </h3>
                       <p className="mb-3">
-                        Once the buyer submits the BINSR, the seller has 5 days to respond. Here&apos;s what
+                        [03:10]<br />
+                        Once the buyer submits the BINSR, the seller has <strong>5 days</strong> to respond. Here&apos;s what
                         can happen:
                       </p>
                       <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>The seller agrees to all the requested repairs.</li>
-                        <li>The seller agrees to some but not all requested repairs.</li>
+                        <li>The seller <strong>agrees</strong> to all the requested repairs.</li>
+                        <li>The seller <strong>agrees to some</strong> but not all requested repairs.</li>
                         <li>
-                          The seller declines all requests, leaving the buyer to decide whether to proceed or
+                          The seller <strong>declines all requests</strong>, leaving the buyer to decide whether to proceed or
                           cancel the contract.
                         </li>
                       </ul>
                       <p>
-                        If the seller offers a partial repair list, the buyer has 5 additional days to accept
+                        If the seller offers a partial repair list, the buyer has <strong>5 additional days</strong> to accept
                         or walk away.
                       </p>
                     </div>
 
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        Common Mistakes Buyers Make [04:37]
+                        <strong>Common Mistakes Buyers Make</strong>
                       </h3>
                       <p className="mb-3">
+                        [04:37]<br />
                         Buyers often misunderstand how the BINSR process works. Here are a few common
                         mistakes:
                       </p>
                       <ul className="list-disc pl-6 space-y-2">
                         <li>
-                          Requesting non-essential cosmetic repairs &ndash; Sellers are more likely to agree
-                          to safety or structural concerns than minor cosmetic issues.
+                          <strong>Requesting non-essential cosmetic repairs</strong> &ndash; Sellers are more likely to agree
+                          to <strong>safety or structural concerns</strong> than minor cosmetic issues.
                         </li>
                         <li>
-                          Not understanding that sellers aren&apos;t obligated to fix anything &ndash; The
+                          <strong>Not understanding that sellers aren&apos;t obligated to fix anything</strong> &ndash; The
                           seller can reject all repair requests, and it&apos;s up to the buyer to decide what
                           to do next.
                         </li>
                         <li>
-                          Submitting unrealistic demands &ndash; This can lead to the seller rejecting the
+                          <strong>Submitting unrealistic demands</strong> &ndash; This can lead to the seller rejecting the
                           entire request, potentially causing unnecessary conflicts.
                         </li>
                       </ul>
@@ -413,20 +425,20 @@ export default function ArizonaBinsrPage() {
 
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        Common Seller Mistakes [06:38]
+                        <strong>Common Seller Mistakes</strong>
                       </h3>
-                      <p className="mb-3">Sellers also make missteps when responding to the BINSR:</p>
+                      <p className="mb-3">[06:38]<br />Sellers also make missteps when responding to the BINSR:</p>
                       <ul className="list-disc pl-6 space-y-2">
                         <li>
-                          Automatically rejecting all requests &ndash; This can result in the buyer walking
+                          <strong>Automatically rejecting all requests</strong> &ndash; This can result in the buyer walking
                           away, causing delays in selling the home.
                         </li>
                         <li>
-                          Ignoring the importance of negotiations &ndash; Sellers should carefully consider
+                          <strong>Ignoring the importance of negotiations</strong> &ndash; Sellers should carefully consider
                           reasonable repair requests rather than dismissing them outright.
                         </li>
                         <li>
-                          Misunderstanding appraisal impacts &ndash; Some repairs may be required for
+                          <strong>Misunderstanding appraisal impacts</strong> &ndash; Some repairs may be required for
                           financing (FHA, VA loans), so rejecting them could cause financing issues for the
                           buyer.
                         </li>
@@ -435,46 +447,48 @@ export default function ArizonaBinsrPage() {
 
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        Negotiating the BINSR Successfully [08:44]
+                        <strong>Negotiating the BINSR Successfully</strong>
                       </h3>
                       <p className="mb-3">
+                        [08:44]<br />
                         Both buyers and sellers should approach the BINSR with realistic expectations. The key
                         to a smooth negotiation process is:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2">
+                      <ol className="list-decimal pl-6 space-y-2">
                         <li>
-                          Understanding the home&apos;s condition &ndash; If the house is older, some repairs
+                          <strong>Understanding the home&apos;s condition</strong> &ndash; If the house is older, some repairs
                           should be expected.
                         </li>
                         <li>
-                          Prioritizing safety and structural repairs &ndash; Sellers are more likely to agree
-                          to fixes related to electrical, plumbing, roofing, and HVAC systems.
+                          <strong>Prioritizing safety and structural repairs</strong> &ndash; Sellers are more likely to agree
+                          to fixes related to <strong>electrical, plumbing, roofing, and HVAC systems</strong>.
                         </li>
                         <li>
-                          Compromising when needed &ndash; Both parties should be willing to negotiate and
+                          <strong>Compromising when needed</strong> &ndash; Both parties should be willing to negotiate and
                           find a middle ground.
                         </li>
-                      </ul>
+                      </ol>
                     </div>
 
                     <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">Final Thoughts [10:52]</h3>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3"><strong>Final Thoughts</strong></h3>
                       <p className="mb-3">
-                        The BINSR is not meant to be a second round of price negotiation&mdash;it&apos;s a
+                        [10:52]<br />
+                        The BINSR is <strong>not meant to be a second round of price negotiation</strong>&mdash;it&apos;s a
                         tool to address real concerns that could impact a home&apos;s livability and safety.
                       </p>
                       <p>
-                        Understanding how to navigate this process can help buyers protect their investment
-                        and sellers close the deal smoothly.
+                        Understanding how to navigate this process can help <strong>buyers protect their investment</strong> and <strong>sellers close the deal smoothly</strong>.
                       </p>
                     </div>
 
                     <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">Need More Help? [11:49]</h3>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3"><strong>Need More Help?</strong></h3>
                       <p>
+                        [11:49]<br />
                         If you have any questions about the Arizona BINSR or the home-buying process, feel
-                        free to reach out to the Mortgage Brothers Team. Don&apos;t forget to like, comment,
-                        and subscribe for more mortgage and real estate insights.
+                        free to reach out to the <strong>Mortgage Brothers Team</strong>. Don&apos;t forget to <strong>like, comment,
+                        and subscribe</strong> for more mortgage and real estate insights.
                       </p>
                     </div>
                   </div>

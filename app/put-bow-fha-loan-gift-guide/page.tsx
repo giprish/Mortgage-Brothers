@@ -179,12 +179,13 @@ export default function PutBowFhaLoanGiftGuidePage() {
                 is. During the approval process, the borrower&apos;s finances will need to be thoroughly
                 documented and reviewed, and all money will need to be accounted for. Though FHA loans allow
                 for gifts, there are still rules and regulations regarding accepting and using gifts for an{" "}
-                <Link
-                  href="/fha-home-loans-arizona/"
+                <a
+                  href="https://www.investopedia.com/terms/f/fhaloan.asp"
+                  target="_blank" rel="noopener"
                   className="text-[#3fb364] font-semibold hover:underline"
                 >
-                  FHA loan
-                </Link>
+                FHA loan
+                </a>
                 .
               </p>
 
@@ -315,7 +316,7 @@ export default function PutBowFhaLoanGiftGuidePage() {
                   </p>
                   <p>
                     Or Complete our{" "}
-                    <Link href="/#get-pre-approved" className="text-[#3fb364] font-semibold hover:underline">
+                    <Link href="#Get-in-Touch" className="text-[#3fb364] font-semibold hover:underline">
                       Inquiry Form
                     </Link>
                   </p>

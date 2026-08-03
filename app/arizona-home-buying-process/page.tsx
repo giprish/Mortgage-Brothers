@@ -195,9 +195,14 @@ export default function ArizonaHomeBuyingProcessPage() {
                     session with a trusted mortgage lender should address all of your initial loan approval
                     questions as well as uncovering and addressing any potential issues. You can start this
                     process by{" "}
-                    <Link href="/#get-pre-approved" className="text-[#3fb364] font-semibold hover:underline">
+                    <a
+                      href="https://5e57fc60619043439b57ca0f17e22434.preapprovemeapp.com/Portal/1345/49167/Form?name=Form1003Long&data=f96eaac71b88415b8608669bda86d3d8"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
                       clicking here to take a loan application
-                    </Link>
+                    </a>
                     .
                   </p>
                 </section>
@@ -284,32 +289,6 @@ export default function ArizonaHomeBuyingProcessPage() {
                     ]}
                   />
                 </section>
-
-                <p>
-                  If you have any questions, call us at{" "}
-                  <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    (602) 535-2171
-                  </a>{" "}
-                  or reach us using our{" "}
-                  <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                    contact form
-                  </Link>
-                  .
-                </p>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you
-                    and help you through the whole process.
-                  </p>
-                </div>
-
-                <p className="text-[#8a9a7a] text-[13px] leading-relaxed">
-                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
-                  prepared for informational purposes only. You should consult your own tax, legal, and accounting
-                  advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
-                  1618695. Equal housing lender.
-                </p>
               </div>
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">

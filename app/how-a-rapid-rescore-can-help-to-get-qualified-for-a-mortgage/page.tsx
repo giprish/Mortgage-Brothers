@@ -305,15 +305,215 @@ export default function RapidRescoreMortgagePage() {
                     The pre-approval letters are issued only if the credit score is high. It is one of the important
                     things while you start to buy a home. The traditional methods for improving the credit scores
                     are very time consuming while the rapid rescore can taking an active approach to improve your
+const CheckIcon = () => (
+  <svg
+    className="w-5 h-5 text-[#3fb364] shrink-0 mt-0.5"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    strokeWidth="2.5"
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+  </svg>
+);
+
+export default function RapidRescoreMortgagePage() {
+  return (
+    <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      <Navbar />
+      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
+
+      <main className="flex-grow relative z-0">
+        <ArticleHero
+          title={<>How a Rapid Rescore Can Help You Qualify for a Mortgage</>}
+          excerpt="Learn how a rapid rescore can quickly update your credit profile, boost your score in days, and help you qualify for a mortgage."
+          category="Mortgage Qualifications"
+          categoryHref="/mortgage-qualifications/"
+          dateLabel="Feb 3, 2025"
+          readTime="10 min read"
+        />
+
+        <section className="relative z-0 w-full py-12 lg:py-16 bg-[#fcf9f3]">
+          <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
+            <article className="min-w-0">
+
+              <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
+                A Rapid Rescore is one of the simplest methods to improve your credit score in less time by
+                submitting proof of positive credit behaviors to the three major credit bureaus. This is extremely
+                beneficial and can help you in improving your credit score by 100 points and more within a day as
+                soon as the erroneous or negative records are erased from your credit profile.
+              </p>
+
+              <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
+                <h2
+                  className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                  Need a Credit Score Boost for Your Mortgage?
+                </h2>
+                <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
+                  A rapid rescore can help you qualify for better mortgage rates fast. Let our experts guide you
+                  through the process.
+                </p>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                  <Link
+                    href="/#get-pre-approved"
+                    className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                  >
+                    Get a Free Credit Review &rarr;
+                  </Link>
+                  <Link
+                    href="/contact-us/"
+                    className="inline-flex items-center gap-2 text-[#3fb364] hover:underline text-[15px] font-semibold px-4 py-3 transition-all"
+                  >
+                    Contact Us
+                  </Link>
+                </div>
+              </div>
+
+              <div className="space-y-10 text-[#3a4a3a] text-[16px] leading-[1.8]">
+                <section id="what-are-the-advantages-of-rapid-rescore">
+                  <h2
+                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    What are the advantages of Rapid Rescore?
+                  </h2>
+                  <p>
+                    As we all know that the credit scores are considered as the benchmark for getting a mortgage
+                    from the financial institutions. The problem arises when your credit scores are low and your
+                    mortgage applications are rejected. This is the time when you need to fix up the issues by
+                    paying the balances so the poor records are corrected and your credit scores are improved. This
+                    is quite essential in taking secured loans especially while buying a home.
+                  </p>
+                </section>
+
+                <section id="how-can-you-raise-your-credit-scores-within-days-instead-of-months">
+                  <h2
+                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    How can you raise your credit scores within days instead of Months?
+                  </h2>
+                  <p className="mb-5">
+                    The method of rapid rescoring helps in improving your credit scores faster than other methods.
+                  </p>
+                  <p className="mb-5">
+                    This process is largely used by the mortgage lender and the financial brokers to assist their
+                    clients in improving the credit scores of the borrowers in a fast manner.
+                  </p>
+                  <p>
+                    The issues like charge-offs collection delays and right offs can be corrected within a few days
+                    with rapid rescore method instead of months. The changes in the credit score depend on the
+                    issues being resolved and the overall credit profile of the borrower. The changes in credit
+                    score can range from a few points to hundred plus points.
+                  </p>
+                </section>
+
+                <section id="rapid-rescoring-vs-credit-repair">
+                  <h2
+                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    Rapid Rescoring vs Credit Repair
+                  </h2>
+                  <p className="mb-5">
+                    The process of rapid rescore shall be carried out with the help of the mortgage lender or
+                    mortgage broker and one shall not reach credit repair companies for the same.
+                  </p>
+                  <p className="mb-5">
+                    As per the norms of the Fair Credit Reporting Act (FCRA), the borrowers are not supposed to pay
+                    for brining inaccurate information on their credit profile to credit bureaus notice or filing a
+                    dispute on the same. Apart rescoring is not deemed as disputing the negative information by any
+                    means.
+                  </p>
+                  <p className="mb-5">
+                    The charges for rapid rescoring are quite higher and ranges from $25-$40 per account with one
+                    credit bureau. There are three main credit bureaus and while updating the records with each you
+                    have to pay thrice for one update. For example, if you are looking for a correction in four
+                    accounts then you require twelve updates for completing the process of rapid rescore. Thus;
+                    total approximate charges are as below:
+                  </p>
+                  <ul className="list-disc pl-6 space-y-2 mb-5">
+                    <li>12 total updates @$40 per update</li>
+                    <li>$480 total</li>
+                  </ul>
+                  <p>
+                    It is mentioned in the FCRA ACT that this fee cannot be charged from the borrowers by the
+                    Mortgage lenders and brokers. However rapid rescore is not available with all lenders or
+                    brokers.
+                  </p>
+                </section>
+
+                <section id="process-of-rapid-rescore">
+                  <h2
+                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    Process of Rapid Rescore
+                  </h2>
+                  <p className="mb-5">
+                    Firstly you need to obtain a copy of your credit report. As per the federal regulation, you can
+                    receive a free credit report once a year from the major credit bureaus like as Equifax,
+                    Transunion and Experian.
+                  </p>
+                  <p className="mb-5">
+                    The borrower can initiate with the free report but lenders are required to obtain the credit
+                    report copy on their behalf to initiate the process of rapid rescore.
+                  </p>
+                  <p className="mb-5">
+                    The process of rescoring depends on various factors that need to be corrected. If the scores are
+                    falling low because of the high credit card balance you need to pay the balance before starting
+                    the process. The procedure of rapid rescore is as follows.
+                  </p>
+                  <ul className="list-disc pl-6 space-y-2 mb-5">
+                    <li>Finding the reasons for low credit scores</li>
+                    <li>Assessing which records can be corrected</li>
+                    <li>Paying the credit balance or collecting documents for erroneous records</li>
+                    <li>Reporting the creditor and obtaining the updated records</li>
+                    <li>Submitting the corrected records to the lender</li>
+                    <li>Lender initiates the rapid rescore process</li>
+                  </ul>
+                  <p>
+                    Generally, the lender gets an updated report within three to seven days of completing the
+                    process.
+                  </p>
+                </section>
+
+                <section id="rapid-rescores-helps-in-faster-mortgage">
+                  <h2
+                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    Rapid Rescores helps in faster mortgage
+                  </h2>
+                  <p className="mb-5">
+                    Usually, it takes months to obtain the new credit report which can be completed within few days
+                    with rapid rescore.
+                  </p>
+                  <p className="mb-5">
+                    The pre-approval letters are issued only if the credit score is high. It is one of the important
+                    things while you start to buy a home. The traditional methods for improving the credit scores
+                    are very time consuming while the rapid rescore can taking an active approach to improve your
                     credit scores.
                   </p>
                   <p className="mb-5">
                     This process is quite useful to get qualified for a mortgage by improving the credit scores.
                   </p>
-                  <p>
+                  <p className="mb-5">
                     Looking for today&apos;s live mortgage rates? Act now! You will not be asked for your social
                     security number to get free quotes.
                   </p>
+                  <blockquote className="bg-[#f6fbf7] border-l-4 border-[#3fb364] p-5 lg:p-6 my-6 rounded-r-lg">
+                    <p className="italic text-[#4e5b4e] leading-relaxed">
+                      Looking to boost your mortgage qualification quickly? Discover how a rapid rescore can make a difference, and also check out our tips on managing <Link href="/getting-a-mortgage-with-employment-gaps/" className="text-[#3fb364] font-semibold hover:underline">employment gaps</Link>, strategies for <Link href="/can-i-simply-payoff-credit-cards-to-qualify-for-a-mortgage/" className="text-[#3fb364] font-semibold hover:underline">credit card payoff</Link>, insights into <Link href="/better-getting-mortgage-couple-vs-single-applicant/" className="text-[#3fb364] font-semibold hover:underline">couple vs single applications</Link>, advice on <Link href="/can-i-relocate-and-get-a-mortgage-while-working-remotely-out-of-state/" className="text-[#3fb364] font-semibold hover:underline">relocating while remote</Link>, plus why a <Link href="/dscr-loan-the-best-alternative-to-hard-money/" className="text-[#3fb364] font-semibold hover:underline">DSCR loan might be a smart option</Link>.
+                    </p>
+                  </blockquote>
                 </section>
 
                 <section id="frequently-asked-questions">

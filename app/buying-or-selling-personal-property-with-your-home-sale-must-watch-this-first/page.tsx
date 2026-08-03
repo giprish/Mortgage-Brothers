@@ -267,12 +267,19 @@ export default function BuyingOrSellingPersonalPropertyPage() {
                   you and help you through the whole process.
                 </p>
 
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
-                    you and help you through the whole process.
-                  </p>
-                </div>
+                <p className="mb-5 text-center text-[20px]">&bull;&bull;&bull;</p>
+
+                <p>
+                  Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
+                  you and help you through the whole process.
+                </p>
+
+                <p>
+                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
+                  been prepared for informational purposes only. You should consult your own tax, legal, and
+                  accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
+                  #210917 and 1618695. Equal housing lender.
+                </p>
 
                 <p className="text-[15px]">
                   Before buying or selling personal property with your home sale, watch this essential guide
@@ -322,13 +329,13 @@ export default function BuyingOrSellingPersonalPropertyPage() {
                       </h3>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">Introduction [00:02]</h3>
                       <p className="mb-3">
-                        Welcome to the Mortgage Brothers Podcast! I&apos;m Eddie Knoell, and I&apos;m Tom
-                        Knoell. This is Episode 18—holy cow, 18 episodes already! Today, we have a must-know
+                        (00:02) 🎙 Welcome to the Mortgage Brothers Podcast! I&apos;m Eddie Cannell, and I&apos;m Tom
+                        Cannell. This is Episode 18—holy cow, 18 episodes already! Today, we have a must-know
                         topic for both buyers and sellers: personal property and how it affects your home
                         purchase contract.
                       </p>
                       <p className="mb-3">
-                        [00:42] When walking through a home, buyers often fall in love with certain personal
+                        (00:42) When walking through a home, buyers often fall in love with certain personal
                         items—a pool table, beautiful furniture, or even an outdoor grill. The question is: Can
                         these be included in the home purchase?
                       </p>

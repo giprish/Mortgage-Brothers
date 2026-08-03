@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import FaqAccordion from "../component/FaqAccordion";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
@@ -587,6 +588,31 @@ export default function DelayedFinancingPage() {
                       </p>
                     </div>
                   </div>
+                  </div>
+                </section>
+
+                <section id="faqs">
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={[
+                      {
+                        q: "Delayed Financing - how to get cashout without waiting 6 months seasoning",
+                        a: <>Delayed Financing is a mortgage strategy that allows a buyer to purchase a property with cash (or a HELOC/secured loan) and then refinance shortly after closing, without waiting the standard 6-month seasoning requirement for a cash-out refinance.</>
+                      },
+                      {
+                        q: "Why would someone use Delayed Financing?",
+                        a: <>The main benefits of Delayed Financing include avoiding the 6-month seasoning requirement for cash-out refinancing, saving time by closing quickly with cash, and having a stronger negotiating position by offering a cash purchase.</>
+                      },
+                      {
+                        q: "What are the requirements for Delayed Financing?",
+                        a: <>Requirements include following standard cash-out LTV and interest rate guidelines, obtaining a new appraisal, and ensuring that the funds are replenished to the original source of payment.</>
+                      },
+                      {
+                        q: "Can Delayed Financing be used when parents buy a home for their child?",
+                        a: <>Yes, an alternate use of Delayed Financing is when parents purchase a home with cash for their child, and then the child refinances to pay the parents back. This requires a standard loan agreement, a new appraisal, and the refinance would follow typical rate and LTV rules.</>
+                      }
+                    ]}
+                  />
                 </section>
               </div>
 

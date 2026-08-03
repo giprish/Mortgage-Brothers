@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import FaqAccordion from "../component/FaqAccordion";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
@@ -576,6 +577,31 @@ export default function DetachedGuestHomeCasitaAppraisalPage() {
                       </p>
                     </div>
                   </div>
+                  </div>
+                </section>
+
+                <section id="faqs">
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={[
+                      {
+                        q: "Detached Guest Home (Casita) appraisal issues",
+                        a: <>No, a detached guest home (casita) does not count toward the main house square footage. Instead, it is listed as a line item adjustment in the appraisal report.</>
+                      },
+                      {
+                        q: "How are detached guest homes appraised when refinancing?",
+                        a: <>When refinancing, appraisers typically do not include casitas in the main living area. They add a separate line item adjustment, which may impact the loan-to-value ratio for rate and term refinances.</>
+                      },
+                      {
+                        q: "Why are detached guest homes difficult to appraise when purchasing?",
+                        a: <>Detached guest homes are difficult to appraise because there are fewer comparable sales available. The limited sample size and variations in age, quality, and size make it harder for appraisers to determine accurate values.</>
+                      },
+                      {
+                        q: "What is the cost to build a detached guest home compared to its appraised value?",
+                        a: <>Building a detached guest home often costs between $70,000 and $120,000, but appraisers may only assign a line item adjustment of around $20,000, which is significantly lower than the construction cost.</>
+                      }
+                    ]}
+                  />
                 </section>
               </div>
 
