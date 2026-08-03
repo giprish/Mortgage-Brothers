@@ -259,7 +259,8 @@ export default function RapidRescoreMortgagePage() {
                   <h2
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
-                                     Process of Rapid Rescore
+                  >
+                    Process of Rapid Rescore
                   </h2>
                   <p className="mb-5">
                     Firstly you need to obtain a copy of your credit report. As per the federal regulation, you can
@@ -287,7 +288,7 @@ export default function RapidRescoreMortgagePage() {
                     Generally, the lender gets an updated report within three to seven days of completing the
                     process.
                   </p>
-                </section>-[1.8]">
+                </section>
                 <section id="what-are-the-advantages-of-rapid-rescore">
                   <h2
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"

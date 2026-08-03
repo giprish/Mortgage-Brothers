@@ -222,81 +222,6 @@ export default function ArizonaMortgageApprovalProcessPage() {
                   </ul>
                 </nav>
 
-                <section id="mortgage-approval-process-outline">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Mortgage Approval Process Outline
-                  </h2>
-
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-3">Step 1</h3>
-                  <p className="mb-3 font-semibold text-[#052316]">
-                    Loan Officer takes your application. The application contains:
-                  </p>
-                  <ul className="list-disc pl-6 space-y-2 mb-6">
-                    <li>Your legal name</li>
-                    <li>Address and where you have worked for the last 2 years</li>
-                    <li>Your asset and income documentation</li>
-                    <li>List of all properties that you own</li>
-                    <li>
-                      You will need to disclose whether you have had any collections, judgements, Bankruptcies,
-                      Foreclosures, etc.
-                    </li>
-                  </ul>
-
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-3">Step 2</h3>
-                  <p className="mb-3 font-semibold text-[#052316]">The loan officer will pull your credit:</p>
-                  <p className="mb-6">
-                    The loan officer will pull your credit to determine what liabilities you have on a monthly
-                    basis and what credit score you have. The content of your credit report as well as the credit
-                    score will impact and affect your approval.
-                  </p>
-
-              <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-5">
-                There&apos;s no question that the entire approval process for home loans in Arizona can be
-                confusing and slightly overwhelming! For the first-time home buyer the process can be a stressful
-                situation so we want to provide you a road map to help you navigate the event, but be sure that
-                you always take the time to ask your Arizona mortgage broker if anything is unclear!
-              </p>
-              <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-5">
-                We&apos;ve also placed at the bottom of this page a Frequently Asked Questions (FAQ) section for
-                quick reference!
-              </p>
-              <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
-                Mortgage loan program guidelines, Arizona mortgage rate questions and down payment requirements
-                are a few of the major components you&apos;ll need to be familiar with when applying for a home
-                loan for your new purchase or for your refinance.
-              </p>
-
-              <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
-                <h2
-                  className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-                >
-                  Master the Process—Connect with Our Experts!
-                </h2>
-                <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
-                  Now that you understand the Arizona Mortgage Approval Process, reach out to us. We&apos;re here
-                  to streamline your mortgage journey.
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <Link
-                    href="/#get-pre-approved"
-                    className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
-                  >
-                    Get Pre-Approved &rarr;
-                  </Link>
-                  <Link
-                    href="/contact-us/"
-                    className="inline-flex items-center gap-2 text-[#3fb364] hover:underline text-[15px] font-semibold px-4 py-3 transition-all"
-                  >
-                    Contact Us Today
-                  </Link>
-                </div>
-              </div>
-
-              <div className="space-y-10 text-[#3a4a3a] text-[16px] leading-[1.8]">
                 <nav
                   aria-label="Table of contents"
                   className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm"
@@ -662,16 +587,22 @@ export default function ArizonaMortgageApprovalProcessPage() {
                         be taken into account.</> }
                     ]}
                   />
-                  className="text-[#3fb364] font-semibold hover:underline"
-                >
-                  ← Previous Post
-                </Link>
-                <Link
-                  href="/mortgage-rates-tool-arizona/"
-                  className="text-[#8a9a7a] hover:text-[#3fb364] transition-colors"
-                >
-                  Next Post →
-                </Link>
+                </section>
+
+                <div className="flex items-center justify-between pt-8 border-t border-[#e8e0d0]">
+                  <Link
+                    href="/why-use-an-arizona-mortgage-broker/"
+                    className="text-[#3fb364] font-semibold hover:underline"
+                  >
+                    ← Previous Post
+                  </Link>
+                  <Link
+                    href="/mortgage-rates-tool-arizona/"
+                    className="text-[#8a9a7a] hover:text-[#3fb364] transition-colors"
+                  >
+                    Next Post →
+                  </Link>
+                </div>
               </div>
             </article>
 
