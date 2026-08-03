@@ -283,7 +283,6 @@ export default function CashOfferMortgageFinancingPage() {
                   </p>
 
                   <p className="mb-5 text-center text-[20px]">&bull;&bull;&bull;</p>
-                </section>
 
                 <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
                   <p className="text-[15px] text-[#052316] leading-relaxed">

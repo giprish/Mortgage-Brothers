@@ -588,7 +588,6 @@ export default function DelayedFinancingPage() {
                       </p>
                     </div>
                   </div>
-                  </div>
                 </section>
 
                 <section id="faqs">

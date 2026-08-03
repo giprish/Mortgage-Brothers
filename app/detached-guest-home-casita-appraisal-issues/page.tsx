@@ -577,7 +577,6 @@ export default function DetachedGuestHomeCasitaAppraisalPage() {
                       </p>
                     </div>
                   </div>
-                  </div>
                 </section>
 
                 <section id="faqs">

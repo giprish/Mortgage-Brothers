@@ -599,7 +599,6 @@ export default function DscrLoanHardMoneyPage() {
                       </p>
                     </div>
                   </div>
-                  </div>
                 </section>
                 
                 <section id="faqs">
