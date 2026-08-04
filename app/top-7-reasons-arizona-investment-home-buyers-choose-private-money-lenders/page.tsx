@@ -300,18 +300,56 @@ export default function PrivateMoneyLendersArticlePage() {
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
               <strong>Contact Mortgage Brothers today for:</strong>
             </p>
-            <ul className="space-y-2 mb-5 text-[#3a4a3a] text-[16px]">
-              <li>✅ Free private money consultation</li>
-              <li>✅ Fast pre-qualification (within 24 hours)</li>
-              <li>✅ Access to Arizona&apos;s top private lenders</li>
-              <li>✅ Transparent cost analysis and loan structuring</li>
-              <li>✅ Expert guidance through every step</li>
+            <ul className="space-y-2.5 mb-5 text-[#3a4a3a] text-[16px]">
+              <li className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Free private money consultation</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Fast pre-qualification (within 24 hours)</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Access to Arizona&apos;s top private lenders</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Transparent cost analysis and loan structuring</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Expert guidance through every step</span>
+              </li>
             </ul>
-            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-2">
-              📞 <strong>Call:</strong> <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">+1 602 535 2171</a>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-2 flex items-center gap-1.5">
+              <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              <strong>Call:</strong>{" "}
+              <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
+                +1 602 535 2171
+              </a>
             </p>
-            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
-              🌐 <strong>Visit:</strong> <Link href="/" className="text-[#3fb364] font-semibold hover:underline">https://azmortgagebrothers.com</Link>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4 flex items-center gap-1.5">
+              <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.6 9h16.8M3.6 15h16.8" />
+              </svg>
+              <strong>Visit:</strong>{" "}
+              <Link href="/" className="text-[#3fb364] font-semibold hover:underline">
+                https://azmortgagebrothers.com
+              </Link>
             </p>
           </section>
 

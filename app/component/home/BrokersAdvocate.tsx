@@ -99,7 +99,10 @@ const BrokersAdvocate = () => {
                 {stat.value}
                 <span className="text-[18px] sm:text-[20px] lg:text-[26px]">{stat.suffix}</span>
               </span>
-              <span className="text-[#c8c8b8] text-[12.5px] lg:text-[13.5px] font-medium mt-2.5">
+              <span
+                className="text-[13px] lg:text-[14px] font-medium mt-2.5"
+                style={{ color: "#FAF7F0" }}
+              >
                 {stat.label}
               </span>
             </div>

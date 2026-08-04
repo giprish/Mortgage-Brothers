@@ -1,4 +1,5 @@
 "use client";
+import FaqAccordion from "../../component/FaqAccordion";
 
 import React from "react";
 import Link from "next/link";
@@ -77,29 +78,31 @@ export default function ApacheCountyPage() {
 
         <section className="w-full py-16 bg-[#fcf9f3]">
           <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-brand-green-deep text-[28px] lg:text-[32px] font-playfair mb-8 text-center">Frequently Asked Questions</h2>
-            <div className="space-y-4">
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
-                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">What types of mortgage loans are available in Apache County, AZ?</h3>
-                <p className="text-brand-text-muted text-[15px]">AZ Mortgage Brothers offers a comprehensive range of mortgage products in Apache County, including Conventional, FHA, VA, USDA, and Jumbo loans, as well as refinancing options for current homeowners.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
-                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">What is the FHA loan limit for Apache County in 2026?</h3>
-                <p className="text-brand-text-muted text-[15px]">For 2026, the FHA loan limit for a single-family home in Apache County is $541,287. These limits are updated annually and vary depending on the property type (e.g., duplex, triplex, or fourplex).</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
-                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">How fast can I get a mortgage pre-approval?</h3>
-                <p className="text-brand-text-muted text-[15px]">AZ Mortgage Brothers provides a streamlined pre-approval process, often delivering a pre-approval letter within a few hours after receiving your completed application and necessary financial documentation.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
-                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">What is the minimum credit score required for a mortgage in Apache County?</h3>
-                <p className="text-brand-text-muted text-[15px]">Credit score requirements depend on the loan program. Generally, FHA loans may be available for scores as low as 580, while Conventional loans typically require a minimum score of 620.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
-                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">Does AZ Mortgage Brothers offer down payment assistance in Apache County?</h3>
-                <p className="text-brand-text-muted text-[15px]">Yes, we work with various programs that offer down payment assistance to eligible homebuyers in Apache County, helping to make homeownership more accessible for first-time buyers and those with limited savings.</p>
-              </div>
-            </div>
+            <FaqAccordion
+              title="Frequently Asked Questions"
+              items={[
+                {
+                  q: "What types of mortgage loans are available in Apache County, AZ?",
+                  a: "AZ Mortgage Brothers offers a comprehensive range of mortgage products in Apache County, including Conventional, FHA, VA, USDA, and Jumbo loans, as well as refinancing options for current homeowners."
+                },
+                {
+                  q: "What is the FHA loan limit for Apache County in 2026?",
+                  a: "For 2026, the FHA loan limit for a single-family home in Apache County is $541,287. These limits are updated annually and vary depending on the property type (e.g., duplex, triplex, or fourplex)."
+                },
+                {
+                  q: "How fast can I get a mortgage pre-approval?",
+                  a: "AZ Mortgage Brothers provides a streamlined pre-approval process, often delivering a pre-approval letter within a few hours after receiving your completed application and necessary financial documentation."
+                },
+                {
+                  q: "What is the minimum credit score required for a mortgage in Apache County?",
+                  a: "Credit score requirements depend on the loan program. Generally, FHA loans may be available for scores as low as 580, while Conventional loans typically require a minimum score of 620."
+                },
+                {
+                  q: "Does AZ Mortgage Brothers offer down payment assistance in Apache County?",
+                  a: "Yes, we work with various programs that offer down payment assistance to eligible homebuyers in Apache County, helping to make homeownership more accessible for first-time buyers and those with limited savings."
+                }
+              ]}
+            />
           </div>
         </section>
       </main>

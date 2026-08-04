@@ -9,8 +9,8 @@ const loanSolutions = [
     linkText: "View Details",
     href: "/conventional-home-loans-arizona/",
     icon: (
-      <svg className="w-6 h-6 text-[#3fb364]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3 9.75L12 3l9 6.75V21a.75.75 0 01-.75.75H15a.75.75 0 01-.75-.75v-5.25a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H3.75A.75.75 0 013 21V9.75z" />
       </svg>
     )
   },
@@ -20,8 +20,8 @@ const loanSolutions = [
     linkText: "Learn more",
     href: "/jumbo-loans-arizona/",
     icon: (
-      <svg className="w-6 h-6 text-[#3fb364]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h.008M9 9.75h.008M9 12.75h.008M9 15.75h.008M15 6.75h.008M15 9.75h.008M15 12.75h.008M15 15.75h.008" />
       </svg>
     )
   },
@@ -31,8 +31,8 @@ const loanSolutions = [
     linkText: "Discover FHA",
     href: "/fha-home-loans-arizona/",
     icon: (
-      <svg className="w-6 h-6 text-[#3fb364]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
       </svg>
     )
   },
@@ -42,8 +42,8 @@ const loanSolutions = [
     linkText: "Get Cash",
     href: "/reverse-mortgage-arizona/",
     icon: (
-      <svg className="w-6 h-6 text-[#3fb364]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182.553-.44 1.278-.659 2.003-.659.725 0 1.45.22 2.003.659l.797.599M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     )
   },
@@ -53,8 +53,8 @@ const loanSolutions = [
     linkText: "Lower Rates",
     href: "/refinancing-arizona/",
     icon: (
-      <svg className="w-6 h-6 text-[#3fb364]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 1121.21 7.89H18v3z" />
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
       </svg>
     )
   },
@@ -64,8 +64,8 @@ const loanSolutions = [
     linkText: "Streamline Now",
     href: "/fha-streamline-refinance-arizona/",
     icon: (
-      <svg className="w-6 h-6 text-[#3fb364]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
       </svg>
     )
   },
@@ -75,8 +75,8 @@ const loanSolutions = [
     linkText: "For Veterans",
     href: "/va-loans-arizona/",
     icon: (
-      <svg className="w-6 h-6 text-[#3fb364]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z" />
       </svg>
     )
   },
@@ -86,8 +86,8 @@ const loanSolutions = [
     linkText: "Find Out",
     href: "/private-money-lender-arizona/",
     icon: (
-      <svg className="w-6 h-6 text-[#3fb364]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
     )
   },
@@ -97,8 +97,8 @@ const loanSolutions = [
     linkText: "Start Here",
     href: "/first-time-home-buyer-arizona-guide/",
     icon: (
-      <svg className="w-6 h-6 text-[#3fb364]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15 7a2 2 0 012 2m-5-2a2 2 0 012 2m-5-2a2 2 0 012 2m-5-2a2 2 0 012 2m-5 12h14a2 2 0 002-2V9a2 2 0 00-2-2h-14a2 2 0 00-2 2v8a2 2 0 002 2z" />
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" />
       </svg>
     )
   },
@@ -108,8 +108,8 @@ const loanSolutions = [
     linkText: "Explore Reverse Purchase Options",
     href: "/reverse-mortgage-home-purchase-arizona/",
     icon: (
-      <svg className="w-6 h-6 text-[#3fb364]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
       </svg>
     )
   },
@@ -119,8 +119,8 @@ const loanSolutions = [
     linkText: "Compare Your Options",
     href: "/sell-my-house-fast-arizona/",
     icon: (
-      <svg className="w-6 h-6 text-[#3fb364]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182.553-.44 1.278-.659 2.003-.659.725 0 1.45.22 2.003.659l.797.599M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
       </svg>
     )
   }
@@ -128,58 +128,65 @@ const loanSolutions = [
 
 const LoanPrograms = () => {
   return (
-    <section className="w-full bg-[#f3f5f8] py-14 sm:py-20 lg:py-24">
+    <section className="w-full bg-[#f4f6f9] py-16 sm:py-20 lg:py-24">
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
-        
+
         {/* Title Section */}
-        <div className="text-center max-w-3xl mx-auto mb-14">
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <span className="inline-block text-[#3fb364] text-[13px] font-bold tracking-[0.15em] uppercase mb-3">
+            Loan Programs
+          </span>
           <h2
-            className="text-[#1a3a1a] text-[28px] lg:text-[40px] font-normal leading-tight mb-3"
+            className="text-[#08271B] text-[32px] lg:text-[42px] font-normal leading-tight mb-4"
             style={{ fontFamily: "'Playfair Display', serif" }}
           >
             Explore Our Mortgage Solutions
           </h2>
-          <div className="w-16 h-1 bg-[#3fb364] mx-auto rounded-full mb-6"></div>
-          <p className="text-[#4a5568] text-[15px] sm:text-[16px] leading-relaxed">
+          <div className="w-14 h-[3px] bg-[#3fb364] mx-auto rounded-full mb-6"></div>
+          <p className="text-[#4e5b4e] text-[15.5px] sm:text-[16.5px] leading-relaxed">
             At The Mortgage Brothers, we offer a variety of{" "}
-            <span className="font-bold text-[#1a3a1a]">mortgage solutions</span>{" "}
+            <span className="font-bold text-[#08271B]">mortgage solutions</span>{" "}
             tailored to meet your needs. Whether you&apos;re a{" "}
-            <span className="font-bold text-[#1a3a1a]">first time homebuyer</span>{" "}
+            <span className="font-bold text-[#08271B]">first time homebuyer</span>{" "}
             or looking to{" "}
-            <span className="font-bold text-[#1a3a1a]">refinance</span>, we have the
+            <span className="font-bold text-[#08271B]">refinance</span>, we have the
             expertise to guide you through the process.
           </p>
         </div>
 
-        {/* 2-Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10 mb-14">
+        {/* 2-Column Card Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-14">
           {loanSolutions.map((item, index) => (
-            <div key={index} className="flex gap-4 items-start group">
-              {/* Green Icon */}
-              <div className="w-10 h-10 rounded-lg bg-[#3fb364]/10 flex items-center justify-center shrink-0 mt-1 group-hover:scale-110 group-hover:bg-[#3fb364]/20 transition-all duration-200">
-                {item.icon}
-              </div>
+            <div
+              key={index}
+              className="group bg-white rounded-2xl p-5 sm:p-6 border border-slate-100/80 shadow-[0_1px_3px_rgba(0,0,0,0.02),0_6px_16px_rgba(0,0,0,0.015)] hover:-translate-y-1.5 hover:shadow-[0_12px_28px_rgba(63,179,100,0.08)] hover:border-[#3fb364]/20 transition-all duration-300 ease-out flex flex-col justify-between"
+            >
+              <div>
+                {/* Icon Container with Hover Animation */}
+                <div className="w-11 h-11 rounded-xl bg-[#e8f6ed] text-[#3fb364] flex items-center justify-center mb-3 transition-all duration-300 group-hover:bg-[#3fb364] group-hover:text-white group-hover:scale-110">
+                  {item.icon}
+                </div>
 
-              {/* Content */}
-              <div className="flex flex-col">
-                <Link
-                  href={item.href}
-                  className="text-[#3fb364] hover:text-[#2d8545] font-bold text-[18px] lg:text-[20px] transition-colors leading-snug mb-1.5"
-                >
+                {/* Title */}
+                <h3 className="text-[#08271B] font-bold text-[18px] sm:text-[19px] leading-snug mb-2 transition-colors duration-200 group-hover:text-[#3fb364]">
                   {item.title}
-                </Link>
+                </h3>
 
-                <p className="text-[#4a5568] text-[14px] leading-[1.65] mb-2">
+                {/* Description */}
+                <p className="text-[#4e5b4e] text-[14px] sm:text-[14.5px] leading-[1.65] mb-3.5">
                   {item.description}
                 </p>
+              </div>
 
+              <div>
+                {/* Link with translate arrow micro-animation */}
                 <Link
                   href={item.href}
-                  className="inline-flex items-center gap-1.5 text-[#3fb364] hover:text-[#2d8545] text-[13.5px] font-semibold transition-colors mt-auto group-hover:translate-x-1 transition-transform"
+                  className="inline-flex items-center gap-1.5 text-[#3fb364] text-[14.5px] font-semibold transition-colors duration-200 hover:text-[#349b55] [-webkit-tap-highlight-color:transparent] no-underline"
                 >
-                  {item.linkText}
+                  <span>{item.linkText}</span>
                   <svg
-                    className="w-3.5 h-3.5"
+                    className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1.5"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -197,7 +204,7 @@ const LoanPrograms = () => {
         <div className="text-center">
           <Link
             href="/mortgage-loan-programs-arizona/"
-            className="inline-block bg-[#007a33] hover:bg-[#006128] text-white font-bold text-[15px] px-8 py-3.5 rounded-lg shadow-md hover:shadow-xl transition-all duration-200"
+            className="inline-block bg-[#3fb364] hover:bg-[#349b55] active:bg-[#349b55] text-white font-bold text-[15.5px] px-9 py-4 rounded-full shadow-lg shadow-[#3fb364]/20 hover:shadow-xl hover:shadow-[#3fb364]/30 hover:scale-[1.03] transition-all duration-200 [-webkit-tap-highlight-color:transparent]"
           >
             Find Your Perfect Loan
           </Link>

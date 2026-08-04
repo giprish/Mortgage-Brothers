@@ -195,6 +195,7 @@ const CheckIcon = () => (
 
 export default function SellMyHouseFastArizonaPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
+  const [openQuickAnswer, setOpenQuickAnswer] = useState<number | null>(null);
 
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
@@ -600,11 +601,29 @@ export default function SellMyHouseFastArizonaPage() {
               </p>
             </div>
 
-            <div className="space-y-6">
-              {quickAnswers.map((item) => (
-                <div key={item.q} className="bg-white border border-[#e0e0e0] rounded-2xl p-6 shadow-sm">
-                  <h3 className="text-[#052316] text-[16px] font-bold mb-3 font-playfair">{item.q}</h3>
-                  <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed">{item.a}</p>
+            <div className="space-y-4 text-left">
+              {quickAnswers.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white border border-[#e0e0e0] rounded-2xl overflow-hidden shadow-sm transition-all hover:border-[#3fb364]/40"
+                >
+                  <button
+                    type="button"
+                    onClick={() => setOpenQuickAnswer(openQuickAnswer === idx ? null : idx)}
+                    className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none cursor-pointer"
+                    aria-expanded={openQuickAnswer === idx}
+                  >
+                    <h3 className="font-bold text-[#052316] text-[16.5px] pr-4 font-playfair">{item.q}</h3>
+                    <span className="text-[#3fb364] text-[20px] ml-4 font-bold shrink-0">
+                      {openQuickAnswer === idx ? "−" : "+"}
+                    </span>
+                  </button>
+
+                  {openQuickAnswer === idx && (
+                    <div className="px-6 pb-6 text-[#4e5b4e] text-[14.5px] leading-relaxed border-t border-[#f0f0f0] pt-4">
+                      {item.a}
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

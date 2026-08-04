@@ -1,4 +1,5 @@
 "use client";
+import FaqAccordion from "../../component/FaqAccordion";
 
 import React from "react";
 import Link from "next/link";
@@ -75,33 +76,35 @@ export default function GreenleeCountyPage() {
 
         <section className="w-full py-16 bg-[#fcf9f3]">
           <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-brand-green-deep text-[28px] lg:text-[32px] font-playfair mb-8 text-center">Frequently Asked Questions</h2>
-            <div className="space-y-4">
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
-                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">What mortgage loan options are available in Greenlee County, AZ?</h3>
-                <p className="text-brand-text-muted text-[15px]">AZ Mortgage Brothers provides a comprehensive suite of home loan programs throughout Greenlee County. Our options include Conventional, FHA, VA, and Jumbo loans, as well as refinancing, private money lending, and reverse mortgages.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
-                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">What is the 2026 FHA loan limit for Greenlee County?</h3>
-                <p className="text-brand-text-muted text-[15px]">For 2026, the FHA loan limit for a single-family residence in Greenlee County is $541,287. These loan limits provide an accessible path to homeownership for first-time buyers and those seeking lower down payment requirements in Eastern Arizona.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
-                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">Do you provide mortgages for rural homes and acreage properties in Greenlee County?</h3>
-                <p className="text-brand-text-muted text-[15px]">Yes, we specialize in financing for a variety of property types. Whether you are looking for a home in the close-knit mining community of Morenci or seeking rural landscapes and acreage properties in Duncan, we have flexible loan options to fit your needs.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
-                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">What is the 2026 Conventional loan limit in Greenlee County, Arizona?</h3>
-                <p className="text-brand-text-muted text-[15px]">The 2026 baseline conforming (Conventional) loan limit for a single-unit property in Greenlee County is $832,750. If you are purchasing a property that exceeds this amount, we offer competitive Jumbo loan programs.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
-                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">How fast can I get pre-approved for a home in Greenlee County?</h3>
-                <p className="text-brand-text-muted text-[15px]">Our streamlined digital pre-approval process takes as little as 3 minutes to start and has zero impact on your credit score. After submitting your financial documents, we typically provide a formal pre-approval letter within 4 to 8 hours.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
-                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">Which cities and towns in Greenlee County do you serve?</h3>
-                <p className="text-brand-text-muted text-[15px]">As licensed Arizona mortgage brokers, we serve all communities across Greenlee County. Our most popular local markets include Clifton (the county seat), Morenci, and Duncan.</p>
-              </div>
-            </div>
+            <FaqAccordion
+              title="Frequently Asked Questions"
+              items={[
+                {
+                  q: "What mortgage loan options are available in Greenlee County, AZ?",
+                  a: "AZ Mortgage Brothers provides a comprehensive suite of home loan programs throughout Greenlee County. Our options include Conventional, FHA, VA, and Jumbo loans, as well as refinancing, private money lending, and reverse mortgages."
+                },
+                {
+                  q: "What is the 2026 FHA loan limit for Greenlee County?",
+                  a: "For 2026, the FHA loan limit for a single-family residence in Greenlee County is $541,287. These loan limits provide an accessible path to homeownership for first-time buyers and those seeking lower down payment requirements in Eastern Arizona."
+                },
+                {
+                  q: "Do you provide mortgages for rural homes and acreage properties in Greenlee County?",
+                  a: "Yes, we specialize in financing for a variety of property types. Whether you are looking for a home in the close-knit mining community of Morenci or seeking rural landscapes and acreage properties in Duncan, we have flexible loan options to fit your needs."
+                },
+                {
+                  q: "What is the 2026 Conventional loan limit in Greenlee County, Arizona?",
+                  a: "The 2026 baseline conforming (Conventional) loan limit for a single-unit property in Greenlee County is $832,750. If you are purchasing a property that exceeds this amount, we offer competitive Jumbo loan programs."
+                },
+                {
+                  q: "How fast can I get pre-approved for a home in Greenlee County?",
+                  a: "Our streamlined digital pre-approval process takes as little as 3 minutes to start and has zero impact on your credit score. After submitting your financial documents, we typically provide a formal pre-approval letter within 4 to 8 hours."
+                },
+                {
+                  q: "Which cities and towns in Greenlee County do you serve?",
+                  a: "As licensed Arizona mortgage brokers, we serve all communities across Greenlee County. Our most popular local markets include Clifton (the county seat), Morenci, and Duncan."
+                }
+              ]}
+            />
           </div>
         </section>
       </main>

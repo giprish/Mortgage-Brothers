@@ -1,4 +1,5 @@
 "use client";
+import FaqAccordion from "../../component/FaqAccordion";
 
 import React from "react";
 import Link from "next/link";
@@ -260,33 +261,35 @@ export default function MaricopaCounty() {
 
         <section className="w-full py-16 bg-[#fcf9f3]">
           <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-brand-green-deep text-[28px] lg:text-[32px] font-playfair mb-8 text-center">Frequently Asked Questions</h2>
-            <div className="space-y-4">
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
-                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">What loan programs are available to Maricopa County homebuyers?</h3>
-                <p className="text-brand-text-muted text-[15px]">Maricopa County homebuyers have access to a full range of loan programs including Conventional, FHA, VA, Jumbo, and Reverse Mortgage loans. First-time buyers may also qualify for down payment assistance programs. We help you compare options and match you with the program that best fits your situation.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
-                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">What is the conforming loan limit in Maricopa County?</h3>
-                <p className="text-brand-text-muted text-[15px]">The 2026 conforming loan limit for Maricopa County is $832,750 for a single-family home. Loans above this amount are considered jumbo loans and require different qualifying criteria. If you are buying in a higher price range, we can walk you through your jumbo loan options.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
-                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">What is the FHA loan limit in Maricopa County?</h3>
-                <p className="text-brand-text-muted text-[15px]">The 2026 FHA loan limit for a single-family home in Maricopa County is $557,750. This is the maximum loan amount for an FHA-insured mortgage in the Phoenix metro area. FHA loans are a popular option for buyers with down payments as low as 3.5% and credit scores starting at 580.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
-                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">How competitive is the Maricopa County housing market?</h3>
-                <p className="text-brand-text-muted text-[15px]">Maricopa County remains one of the fastest-growing counties in the U.S. Inventory has improved from pandemic-era lows, but well-priced homes in popular cities like Phoenix, Scottsdale, and Gilbert still move quickly. Getting preapproved before you start shopping gives you a significant advantage.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
-                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">Do I need a large down payment to buy in Maricopa County?</h3>
-                <p className="text-brand-text-muted text-[15px]">Not at all. Conventional loans can require as little as 3% down, and FHA loans require 3.5% for buyers with a 580+ credit score. VA loans require zero down payment for eligible veterans. We will help you find the right program and identify any down payment assistance options available in Arizona.</p>
-              </div>
-              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
-                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">How long does it take to close on a home in Maricopa County?</h3>
-                <p className="text-brand-text-muted text-[15px]">With Mortgage Brothers, most purchases close in 21 to 30 days. Having your documents ready and getting preapproved early are the two biggest factors in a fast closing. Call us to get started and we will keep things moving from day one.</p>
-              </div>
-            </div>
+            <FaqAccordion
+              title="Frequently Asked Questions"
+              items={[
+                {
+                  q: "What loan programs are available to Maricopa County homebuyers?",
+                  a: "Maricopa County homebuyers have access to a full range of loan programs including Conventional, FHA, VA, Jumbo, and Reverse Mortgage loans. First-time buyers may also qualify for down payment assistance programs. We help you compare options and match you with the program that best fits your situation."
+                },
+                {
+                  q: "What is the conforming loan limit in Maricopa County?",
+                  a: "The 2026 conforming loan limit for Maricopa County is $832,750 for a single-family home. Loans above this amount are considered jumbo loans and require different qualifying criteria. If you are buying in a higher price range, we can walk you through your jumbo loan options."
+                },
+                {
+                  q: "What is the FHA loan limit in Maricopa County?",
+                  a: "The 2026 FHA loan limit for a single-family home in Maricopa County is $557,750. This is the maximum loan amount for an FHA-insured mortgage in the Phoenix metro area. FHA loans are a popular option for buyers with down payments as low as 3.5% and credit scores starting at 580."
+                },
+                {
+                  q: "How competitive is the Maricopa County housing market?",
+                  a: "Maricopa County remains one of the fastest-growing counties in the U.S. Inventory has improved from pandemic-era lows, but well-priced homes in popular cities like Phoenix, Scottsdale, and Gilbert still move quickly. Getting preapproved before you start shopping gives you a significant advantage."
+                },
+                {
+                  q: "Do I need a large down payment to buy in Maricopa County?",
+                  a: "Not at all. Conventional loans can require as little as 3% down, and FHA loans require 3.5% for buyers with a 580+ credit score. VA loans require zero down payment for eligible veterans. We will help you find the right program and identify any down payment assistance options available in Arizona."
+                },
+                {
+                  q: "How long does it take to close on a home in Maricopa County?",
+                  a: "With Mortgage Brothers, most purchases close in 21 to 30 days. Having your documents ready and getting preapproved early are the two biggest factors in a fast closing. Call us to get started and we will keep things moving from day one."
+                }
+              ]}
+            />
           </div>
         </section>
 
