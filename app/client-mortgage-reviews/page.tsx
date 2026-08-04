@@ -8,34 +8,34 @@ import LoanProgramHero from "../component/LoanProgramHero";
 
 const reviews = [
   {
-    text: "I was referred to Eddie through my sister-n-law. I had tried a previous company but wasn't satisfied. I have been extremely happy with Eddie's mortgage team. Everything was done online through emails. Every step of the process was done very professionally and friendly. I highly recommend Eddie's mortgage team for your refinancing needs.",
+    text: "I was referred to Eddie through my sister-n-law. I had tried a previous company but wasn't satisfied. I have been extremely happy with Eddie's mortgage team. Everything was done online through emails. This was very helpful as both my husband and I work full time during the day and really have no time to do this. Emails were responded to on a daily basis and in a very quick manner. Every step of the process was done very professionally and friendly. I enjoyed meeting Kristi and Bambi. I don't have a face to put with their name, but they were also very nice, professional and helpful. I always hesitated to do a refinance because of the large amount of paperwork and meetings. But this didn't happen that way. I highly recommend Eddie's mortgage team for your refinancing needs.",
     author: "Chris and Vicky Smith",
     location: "Avondale, Arizona",
   },
   {
-    text: "Eddie and his team are fantastic to work with! They are efficient, friendly and very professional. They communicate to all parties in the transaction; making it a very smooth transaction every time. As a real estate agent, this makes my job that much easier.",
+    text: "Eddie and his team are fantastic to work with! They are efficient, friendly and very professional. They communicate to all parties in the transaction; making it a very smooth transaction every time. As a real estate agent, this makes my job that much easier when I have a lender who always performs and most of the time is even ahead of schedule. I can't say enough good things about Eddie as a mortgage lender!",
     author: "Elizabeth Todd",
     location: "H2 Realty, Phoenix, Arizona",
   },
   {
-    text: "Our mortgage service through Eddie Knoell was seamless throughout. It was like having someone watch over the process without us having any concern. All questions were answered promptly and completely, like dealing with a trusted family member. Thanks again Eddie!!!",
+    text: "Our mortgage service through Eddie Knoell was seamless throughout. It was like having someone watch over the process without us having any concern in the process. All questions were answered promptly and completely with the correct issues addressed without extra fanfare, like dealing with a trusted family member. Thanks again Eddie!!!",
     author: "Thomas and Carol Milberry",
     location: "Queen Creek, Arizona",
   },
   {
-    text: "I met Eddie Knoell in 2012 through a client. He communicates very well, through every step of the process. Before I can even start to wonder what is going on, he's picked up the phone and called to let me know where we are. He closes every deal and communicates through it well.",
+    text: "I met Eddie Knoell in 2012 through a client. He communicates very well, through every step of the process. Before I can even start to wonder what is going on, he's picked up the phone and called to let me know where we are in the process. He closes every deal and communicates through it well. He's patient with the questions and great with every client I have sent his way.",
     author: "Nancy Perry",
     location: "Solutions Real Estate, Avondale, Arizona",
   },
   {
-    text: "My fiancé and I were very nervous about buying our first house. The service Eddie provided made the whole process very easy. Eddie answered all the questions we had. He provided us with prompt and accurate service.",
+    text: "My fiancé and I were very nervous about buying our first house. The service Eddie provided made the whole process very easy. Eddie answered all the questions we had. He provided us with prompt and accurate service. We really appreciate all the help Eddie gave us.- home loan for first time home buyer.",
     author: "Sean Cassidy",
     location: "Phoenix, Arizona",
   },
   {
-    text: "I continue to refer my clients to you because I know I can count on you to provide a fast response and a courteous and professional service. You are the only mortgage contact I have used that provides daily updates on interest rates, costs, etc.",
+    text: "I continue to refer my clients to you because I know I can count on you to provide a fast response and a courteous and professional service. You are the only mortgage contact I have used that provides daily updates on interest rates, costs, etc. I appreciate your personal attention and when you return phone calls as we work through a transaction. And, your dedication to faith & family give me insight into you as a person and not just a mortgage professional. I anticipate doing much more business together! Kind Regards.",
     author: "Linda Martin",
-    location: "Coldwell Banker, Phoenix, Arizona",
+    location: "Coldwell Banker Residential Brokerage, Phoenix, Arizona",
   },
   {
     text: "This is my 8th home purchase and mortgage. Working with Eddie has been by far, the most simple, straight forward experience I've ever had obtaining a mortgage.",
@@ -43,7 +43,7 @@ const reviews = [
     location: "Chandler, Arizona",
   },
   {
-    text: "Working with Eddie has been the smoothest portion of my relocation. Eddie was always on focus. He answered my questions by cell phone after hours when most lenders are turning it off for the day. I would and will recommend Eddie Knoell to anyone looking for a top notch loan officer.",
+    text: "Working with Eddie has been the smoothest portion of my relocation. As with anyone, moving is a stressful time, and to have a lender working with you to make the best of a challenging time is a true pleasure. Eddie was always on focus. He answered my questions by cell phone after hours when most lenders are turning it off for the day. My voice mails were returned promptly and he designated someone to follow through for him in his absence. My particular move had is own challenges/delays/holiday schedules but that didn't stop Eddie from being thorough and professional. Eddie put me at the front of the line and found the best rate and lock for me. It has been a truly wonderful experience working through the mortgage side of the move with Eddie. I would and will recommend Eddie Knoell to anyone I know who is looking for a top notch loan officer.",
     author: "Teresa Beckman",
     location: "Chandler, Arizona",
   },
@@ -63,7 +63,7 @@ const reviews = [
     location: "Chandler, Arizona",
   },
   {
-    text: "Eddie offered us professional service. Most importantly he is honest! I felt 100% confident that he was doing everything possible to get the best loan for us closed in a timely manner. I will definitely refer him to friends and family.",
+    text: "Eddie offered us professional service. Most importantly he is honest! I felt 100% confidant that he was doing everything possible to get the best loan for us closed in a timely manner. I will definitely refer him to friends and family. A good loan officer is hard to come by, and Eddie it just that!",
     author: "John and Theresa Gorraiz",
     location: "Gilbert, Arizona",
   },
@@ -78,42 +78,42 @@ const reviews = [
     location: "Phoenix, Arizona",
   },
   {
-    text: "You closed our house loan in 17 days!!! We can't thank you enough for all you did to help us close this house in the three week deadline we were given. We will never go to a large bank for a home loan again, you are our loan guy period!",
+    text: "You closed our house loan in 17 days!!! We can't thank you enough for all you did to help us close this house in the three week deadline we were given. Early on in this short sale, we contacted our bank (Chase in Sedona) thinking it would be easier setting up the loan on the short sale. When we asked the loan officer how long the escrow would take we were told one to two months!! Even after telling them the other lender wouldn't wait that long, they said that was the best they could do. You had already pre-qualified us so we're very glad we went with you. We will never go to a large bank for a home loan again, you are our loan guy period! Thanks again Eddie, you're one in a million.",
     author: "James Robbins",
     location: "Phoenix, Arizona",
   },
   {
-    text: "The experience working with Eddie was good. Have not done a mortgage in a long time and had no idea really what I was doing. Eddie provided me with everything I needed and explained what all the charges were.",
+    text: "The experience working with Eddie was good. Have not done a mortgage in a long time and had no idea really what I was doing. Eddie provided me with everything I needed to sign or initial, explained what all the charges were. Much of the work was able to be done through fax or e-mail so many trips were not necessary. Any questions I asked regarding what needed to be done were answered quickly.",
     author: "Patricia Barrier",
     location: "Surprise, Arizona",
   },
   {
-    text: "Eddie went above the call of duty on 3 separate transactions for us. Each time we challenged him to work under different circumstances & each time he came through and exceeded our expectations!",
+    text: "Eddie went above the call of duty on 3 separate transactions for us. Each time we challenged him to work under different circumstances & each time he came through and exceeded our expectations! Eddie is extremely efficient & knowledgeable. We really think the world of him and appreciate all that he has done for us!",
     author: "Anita Sanda",
     location: "HomeSmart, Surprise, Arizona",
   },
   {
-    text: "Eddie Knoell was the utmost professional. He is detail oriented, on top of the loan and process. He was able to adjust and accommodate any glitch that came our way. We would highly recommend Eddie.",
+    text: "Eddie Knoell was the utmost professional. He is detailed oriented, on top of the loan and process. He was able to adjust and accommodate any glitch that can our way and insure we knew what was needed to make the process smooth and painless. We would highly recommend, Eddie.",
     author: "Jeanne Morain",
     location: "Gilbert, Arizona",
   },
   {
-    text: "Thank you Eddie for the fast closing of our loan. Our loan closed in 30 days thanks to you and your staff's diligence. We appreciate the fact that you gave us several financing options.",
+    text: "Thank you Eddie for the fast closing of our loan. Our loan closed in 30 days thanks to you and your staff's diligence. We appreciate the fact that you gave us several financing options. We felt that we had a choice and chose the best option for our needs.",
     author: "Diane Stackwick",
     location: "Phoenix, Arizona",
   },
   {
-    text: "I appreciated your good communication and frequent updates. I also appreciate every time I call you I never got a recording — always able to talk to someone in person. You also kept on top of things and were able to close early.",
+    text: "I appreciated your good communication and frequent updates. I also appreciate every time I call you I never got a recording always able to talk to someone in person. You also kept on top of things and were able to close early. Thanks",
     author: "Mike Cameli",
     location: "DPR Realty, Tempe, Arizona",
   },
   {
-    text: "Thank you so much for the professional way in which you dealt with my buyers. They remarked that they felt you gave them the time and attention they wanted and that you responded to their questions in a timely manner.",
+    text: "Thank you so much for the professional way in which you dealt with my buyers. They remarked that they felt you gave them the time and attention they wanted and that you responded to their questions in a timely manner. Whenever I refer a client and it turns out that all parties are satisfied with the customer service—then I do not hesitate to send more referrals.",
     author: "James Smith",
     location: "Queen Creek, Arizona",
   },
   {
-    text: "Thank you for outstanding service in the refinance of our home! Not only were you professional and courteous, you were realistic and honest. Our transaction was easier than we could have imagined.",
+    text: "Thank you for outstanding service in the refinance of our home! Not only were you professional and courteous, you were realistic and honest. Our transaction was easier than we could have imagined and we will definitely call on you for our future needs! Again, thank you for everything!",
     author: "Kristy Bartusek",
     location: "Tempe, Arizona",
   },
@@ -218,7 +218,7 @@ const reviews = [
     location: "Glendale, Arizona",
   },
   {
-    text: "My husband and I would like to thank you for an outstanding job you did with our refinance. Your professionalism was impeccable and your timing was perfect. You are heads and shoulders beyond most I have worked with.",
+    text: "My husband and I would like to thank you for an outstanding job you did with our refinance. You are so knowledgeable and kept us updated on each step of the way. Your professionalism was impeccable and your timing was perfect. As you know, I am a Realtor and have dealt with many mortgage people along my career. You are heads and shoulders beyond most I have worked with. Your communication skills are unique in this business. You were reassuring throughout this entire procedure. I just want you to know I will be proud to refer you to my family, friends and Clients.",
     author: "Marleen Kapanicas",
     location: "HomeSmart, Scottsdale, Arizona",
   },
@@ -360,8 +360,8 @@ export default function ClientMortgageReviewsPage() {
 
       <main className="flex-grow">
         <LoanProgramHero
-          title="Real Stories, Real Results"
-          subtitle="See How We've Helped Clients Achieve Their Homeownership Dreams"
+          title="Client Mortgage Reviews"
+          subtitle="Aggregate Review of All 104 Reviews: 4.9 out of 5"
         />
 
         {/* Feature strip */}

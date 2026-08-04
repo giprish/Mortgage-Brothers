@@ -58,6 +58,55 @@ export default function GilaCountyPage() {
             </div>
           </div>
         </section>
+
+        <section className="w-full py-16 bg-white">
+          <div className="max-w-4xl mx-auto px-6">
+            <h2 className="text-brand-green-deep text-[28px] lg:text-[32px] font-playfair mb-6">Home Loans in Gila County, Arizona</h2>
+            <div className="text-brand-text-muted text-[15px] space-y-4">
+              <p>Buying a home in Payson or the Rim Country? As your local Payson mortgage broker, Mortgage Brothers knows Gila County real estate inside and out.</p>
+              <p>Gila County is Arizona&apos;s Rim Country — a stunning stretch of pine forests, mountain towns, and scenic rivers that draws buyers looking for a quieter pace of life without sacrificing community. From the mountain hub of Payson to the historic mining towns of Globe and Miami, Gila County offers some of the most affordable and picturesque real estate in the state.</p>
+              <p>At Mortgage Brothers, we have been helping Arizona homebuyers navigate the mortgage process for 25+ years. Whether you are buying a primary home in Payson, a cabin near Strawberry or Pine, or refinancing in Globe, we know Gila County and can find the right loan for you.</p>
+              <ul className="list-disc pl-6 space-y-2 mt-4">
+                <li><strong>Major Cities:</strong> Payson, Globe, Miami, Star Valley, Strawberry, Pine, Christopher Creek, Kohls Ranch</li>
+                <li><strong>2026 Conforming Loan Limit:</strong> $832,750</li>
+                <li><strong>2026 FHA Loan Limit:</strong> $541,287</li>
+                <li><strong>Popular Communities:</strong> Washington Park, Whispering Pines, Beaver Valley, Tonto Village, Punkin Center, Young</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-16 bg-[#fcf9f3]">
+          <div className="max-w-4xl mx-auto px-6">
+            <h2 className="text-brand-green-deep text-[28px] lg:text-[32px] font-playfair mb-8 text-center">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
+                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">What home loan programs are available to Gila County homebuyers?</h3>
+                <p className="text-brand-text-muted text-[15px]">Gila County buyers have access to the full range of mortgage programs including Conventional, FHA, VA (for eligible veterans), Jumbo, FHA Streamline Refinance, First-Time Homebuyer programs, Reverse Mortgage (for homeowners 62+), and Refinancing. Our team can walk you through all your options at no cost.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
+                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">What is the conforming loan limit in Gila County for 2026?</h3>
+                <p className="text-brand-text-muted text-[15px]">The 2026 conforming loan limit for Gila County is $832,750 – the same baseline limit that applies across all Arizona counties. This is the maximum loan amount eligible for conventional financing backed by Fannie Mae or Freddie Mac. If your loan exceeds this amount, you will need a jumbo loan.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
+                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">What is the FHA loan limit in Gila County for 2026?</h3>
+                <p className="text-brand-text-muted text-[15px]">The 2026 FHA loan limit for Gila County is $541,287. This means you can finance a home up to that purchase price using an FHA loan with as little as 3.5% down (with a 580+ credit score). FHA loans are a great option in Gila County given the more affordable home prices throughout Payson, Globe, and surrounding communities.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
+                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">Why are people buying homes in Gila County?</h3>
+                <p className="text-brand-text-muted text-[15px]">Gila County attracts buyers who want the beauty of Arizona without the heat and congestion of the Valley. Payson and the Rim Country area are especially popular with Phoenix-area residents looking for a cooler mountain retreat or a full-time relocation. Globe and Miami offer some of the most affordable home prices in Arizona with a strong sense of history and community.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
+                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">How much do I need for a down payment on a Gila County home?</h3>
+                <p className="text-brand-text-muted text-[15px]">FHA loans require as little as 3.5% down. Conventional loans can go as low as 3%-5% for qualified buyers. VA loans require zero down payment for eligible veterans. We also work with down payment assistance programs. Contact us to find out which programs you qualify for.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
+                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">How long does it take to close on a home in Gila County?</h3>
+                <p className="text-brand-text-muted text-[15px]">Most purchase transactions close in 21 to 30 days when all documentation is submitted promptly. Our team is known for fast, smooth closings with no surprises at the closing table.</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>

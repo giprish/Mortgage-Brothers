@@ -422,6 +422,28 @@ export default function FairOrImprovingCreditPage() {
                       Talk to a Local Mortgage Expert Today
                     </Link>
                   </div>
+                </section>
+
+                <section id="homeownership-path">
+                  <h2
+                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    Your Arizona Homeownership Path Starts Here
+                  </h2>
+                  <p className="mb-6">
+                    If your credit is <strong>620 or above</strong>, you&apos;re already on track to qualify. If
+                    it&apos;s close, our advisors can help you fine-tune your profile to get there faster — so you
+                    can buy with confidence and secure better loan terms.
+                  </p>
+                  <div className="text-center my-6">
+                    <Link
+                      href="/#get-pre-approved"
+                      className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                    >
+                      Talk to a Local Mortgage Expert Today
+                    </Link>
+                  </div>
 
                   <h3 className="text-[#052316] text-[18px] font-bold mb-3">
                     Contact Mortgage Brothers today for:
@@ -429,43 +451,51 @@ export default function FairOrImprovingCreditPage() {
                   <p className="mb-4">
                     <strong>Ready to explore your options?</strong> <strong>Mortgage Brothers</strong> offers:
                   </p>
-                  <ul className="list-none space-y-2 mb-5">
-                    <li>✅ Free mortgage consultation</li>
-                    <li>✅ Credit readiness review (620+)</li>
-                    <li>
-                      ✅{" "}
-                      <Link
-                        href="/fha-home-loans-arizona/"
-                        className="text-[#3fb364] font-semibold hover:underline"
-                      >
-                        FHA
-                      </Link>
-                      ,{" "}
-                      <Link
-                        href="/conventional-home-loans-arizona/"
-                        className="text-[#3fb364] font-semibold hover:underline"
-                      >
-                        Conventional
-                      </Link>{" "}
-                      &amp;{" "}
-                      <Link
-                        href="/va-loans-arizona/"
-                        className="text-[#3fb364] font-semibold hover:underline"
-                      >
-                        VA loan
-                      </Link>{" "}
-                      options
+                  <ul className="space-y-2 mb-5">
+                    <li className="flex items-center gap-2">
+                      <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>Free mortgage consultation</span>
                     </li>
-                    <li>✅ Transparent advice from local Arizona experts</li>
+                    <li className="flex items-center gap-2">
+                      <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>Credit readiness review (620+)</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>
+                        <Link href="/fha-home-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">FHA</Link>,{" "}
+                        <Link href="/conventional-home-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">Conventional</Link> &amp;{" "}
+                        <Link href="/va-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">VA loan</Link> options
+                      </span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>Transparent advice from local Arizona experts</span>
+                    </li>
                   </ul>
-                  <p className="mb-2">
-                    📞 <strong>Call:</strong>{" "}
+                  <p className="mb-2 flex items-center gap-1.5">
+                    <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                    <strong>Call:</strong>{" "}
                     <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
                       +1 602 535 2171
                     </a>
                   </p>
-                  <p>
-                    🌐 <strong>Visit:</strong>{" "}
+                  <p className="flex items-center gap-1.5">
+                    <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.6 9h16.8M3.6 15h16.8" />
+                    </svg>
+                    <strong>Visit:</strong>{" "}
                     <Link href="/" className="text-[#3fb364] font-semibold hover:underline">
                       https://azmortgagebrothers.com
                     </Link>

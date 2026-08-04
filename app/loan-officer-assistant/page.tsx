@@ -135,7 +135,7 @@ export default function LoanOfficerAssistantPage() {
           <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 pt-[120px] pb-14 lg:pt-[140px] lg:pb-20 relative z-10">
             <div className="max-w-[720px]">
               <h1 className="text-white text-[36px] sm:text-[48px] lg:text-[58px] font-bold leading-[1.08] mb-5 tracking-tight">
-                Loan Officer Assistant
+                Loan Officer Assistant – Entry Level, No Experience
               </h1>
               <h2 className="text-white text-[17px] sm:text-[22px] lg:text-[28px] font-normal leading-[1.35] mb-8 max-w-[600px]">
                 Kickstart Your Career: Learn, Grow, and Support Clients in the Mortgage Industry
@@ -332,6 +332,11 @@ export default function LoanOfficerAssistantPage() {
                 We&apos;re excited about the possibility of you joining The Mortgage Brothers Team. Whether
                 you&apos;re ready to apply, have questions about our open positions, or simply want to learn
                 more about building a career in the mortgage industry, we&apos;re here to help.
+              </p>
+
+              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
+                Interested? If you are interested in any job opportunity please call 602-535-2171 and
+                ask for Eddie Knoell or fill out our contact form.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-10 text-[14.5px] text-[#08271B]">

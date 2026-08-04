@@ -250,6 +250,18 @@ export default function AirConditioningPhoenixRealEstatePage() {
                     In a city where summer days over 100 degrees are the norm, there&apos;s good reason to be
                     grateful for this modern invention that makes life comfortable for Phoenix residents.
                   </p>
+
+                  <p className="mt-6">
+                    Learn more:{" "}
+                    <Link
+                      href="https://youtu.be/1MiQCBIx1mM"
+                      target="_blank"
+                      rel="noopener"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      How Air Conditioners Work
+                    </Link>
+                  </p>
                 </section>
 
 

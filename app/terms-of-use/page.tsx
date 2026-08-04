@@ -29,46 +29,65 @@ export default function TermsOfUsePage() {
           </h1>
           <div className="prose prose-neutral max-w-none text-[#4e5b4e] text-[15px] leading-[1.75] space-y-5">
             <p>
-              By accessing the Mortgage Brothers LLC website, you agree to these Terms of Use.
-              Content on this site is provided for informational purposes only and does not
-              constitute an offer to lend, a commitment to lend, or financial, legal, or tax advice.
+              Welcome to azmortgagebrothers.com (the &quot;Website&quot;). The Website is owned and operated by Mortgage Brothers LLC (&quot;Company,&quot; &quot;we,&quot; &quot;us,&quot; or &quot;our&quot;). By accessing or using this Website, you agree to be bound by the following Terms of Use (&quot;Terms&quot;). If you do not agree with these Terms, please do not use the Website.
             </p>
-            <h2 className="text-[#08271B] text-[20px] font-semibold pt-2">No Offer to Lend</h2>
+            
+            <h2 className="text-[#08271B] text-[20px] font-semibold pt-2">1. Use of the Website</h2>
             <p>
-              Mortgage products, rates, terms, and availability are subject to change without notice
-              and vary by borrower qualifications, property, and underwriting guidelines. All loans
-              are subject to underwriter approval.
+              The content provided on this Website is for informational purposes only and should not be construed as financial, legal, or professional advice.
             </p>
-            <h2 className="text-[#08271B] text-[20px] font-semibold pt-2">Licensing</h2>
             <p>
-              Mortgage Brothers LLC — NMLS #1007154 · AZ License #MB0922514. You may verify our
-              licenses through the{" "}
-              <a
-                href="https://www.nmlsconsumeraccess.org/Home.aspx/SubSearch?searchText=1007154"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#3fb364] hover:underline"
-              >
-                NMLS Consumer Access website
-              </a>
-              .
+              You agree to use the Website in compliance with all applicable laws and regulations.
             </p>
-            <h2 className="text-[#08271B] text-[20px] font-semibold pt-2">Website Content</h2>
             <p>
-              Calculators and estimates on this site are illustrative only. Actual payments, costs,
-              and eligibility depend on your specific situation and lender terms.
+              Unauthorized use, reproduction, or distribution of any content on this Website is prohibited.
             </p>
-            <h2 className="text-[#08271B] text-[20px] font-semibold pt-2">Contact</h2>
+            
+            <h2 className="text-[#08271B] text-[20px] font-semibold pt-2">2. No Financial Advice</h2>
             <p>
-              For questions, please{" "}
-              <Link href="/contact-us/" className="text-[#3fb364] hover:underline">
-                contact our team
-              </Link>{" "}
-              or call{" "}
-              <a href="tel:+16025352171" className="text-[#3fb364] hover:underline">
-                +1 602 535 2171
-              </a>
-              .
+              Mortgage Brothers LLC is a mortgage broker, and the information provided on this Website does not constitute an offer to lend, a loan commitment, or financial advice.
+            </p>
+            <p>
+              Any financial decisions you make should be based on consultation with a qualified professional.
+            </p>
+            
+            <h2 className="text-[#08271B] text-[20px] font-semibold pt-2">3. Privacy Policy</h2>
+            <p>
+              Your use of the Website is also governed by our Privacy Policy, which explains how we collect, use, and protect your information. By using this Website, you agree to the terms of our Privacy Policy.
+            </p>
+            
+            <h2 className="text-[#08271B] text-[20px] font-semibold pt-2">4. Third-Party Links</h2>
+            <p>
+              This Website may contain links to third-party websites. We are not responsible for the content, policies, or practices of those websites.
+            </p>
+            <p>
+              Accessing any third-party websites linked on this Website is at your own risk.
+            </p>
+            
+            <h2 className="text-[#08271B] text-[20px] font-semibold pt-2">5. Disclaimer of Warranties</h2>
+            <p>
+              This Website and its content are provided &quot;as is&quot; without warranties of any kind, express or implied.
+            </p>
+            <p>
+              We do not guarantee that the Website will be available, secure, or free of errors.
+            </p>
+
+            <h2 className="text-[#08271B] text-[20px] font-semibold pt-2">6. Limitation of Liability</h2>
+            <p>
+              To the maximum extent permitted by law, Mortgage Brothers LLC shall not be liable for any damages arising from your use of or inability to use this Website.
+            </p>
+
+            <h2 className="text-[#08271B] text-[20px] font-semibold pt-2">7. Changes to These Terms</h2>
+            <p>
+              We reserve the right to update or modify these Terms at any time. Continued use of the Website after any changes constitutes acceptance of the new Terms.
+            </p>
+
+            <h2 className="text-[#08271B] text-[20px] font-semibold pt-2">8. Governing Law</h2>
+            <p>
+              These Terms shall be governed by and construed in accordance with the laws of the State of Arizona, without regard to its conflict of law principles.
+            </p>
+            <p>
+              By using this Website, you acknowledge that you have read, understood, and agreed to these Terms of Use.
             </p>
             <p className="text-[13px] text-[#8a9a7a] pt-4">
               Copyright © {new Date().getFullYear()} Mortgage Brothers LLC. All rights reserved.

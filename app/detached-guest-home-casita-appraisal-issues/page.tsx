@@ -161,7 +161,7 @@ export default function DetachedGuestHomeCasitaAppraisalPage() {
               </ul>
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-8">
                 We&apos;re just going to give you the quick overview here, but for the full details, be sure
-                to listen to the episode in the video or on Apple Podcasts. Let&apos;s get into it.
+                to listen to the episode in the video above or on Apple Podcasts. Let&apos;s get into it.
               </p>
 
               <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#08271B] mb-10 shadow-sm">
@@ -307,6 +307,12 @@ export default function DetachedGuestHomeCasitaAppraisalPage() {
                     you and help you through the whole process.
                   </p>
                 </div>
+
+                <p className="text-[15px]">
+                  Thanks for listening and reading the Mortgage Brothers Show. Let us know if you have any
+                  questions you&apos;d like us to answer on this podcast. You can email your questions to
+                  Tom@AZMortgageBrothers.com or Eddie@AZMortgageBrothers.com.
+                </p>
 
                 <p className="text-[15px]">
                   Uncover common appraisal issues related to detached guest homes. To get a broader

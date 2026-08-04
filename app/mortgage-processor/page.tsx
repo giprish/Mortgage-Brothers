@@ -16,7 +16,7 @@ const overview = [
   "This person would have a high school diploma and could have college experience but it is not a requirement.",
   "The candidate would be responsible to process loans from right after the loan application is completed to the day the loan closes.",
   "They would be responsible for gathering/reviewing personal financial documents and bank statements, working with title and insurance companies requesting title and insurance fees, preparing documents for borrowers to sign via docusign, submitted loan packages to underwriters, reviewing conditions provided by underwriters and working with borrowers on submitting documentation and letters of explanation for particular aspects of the borrowers files needing to be explained, and finally making sure the loan receives final approval and the loan closes on time!",
-  "This person would have excellent communication skills, and likely be considered detailed, organized, thorough, love numbers, ability to multi-task, observant, always positive attitude, and find great satisfaction in closing files on time. The loan business is not a super complicated business it is just very detailed and process heavy!",
+  "This person would have excellent communication skills, and likely be considered detailed, organized, thorough, love numbers, ability to multi-task, observant, always positive attitude, and find great satisfaction in closing files on time 😊. The loan business is not a super complicated business it is just very detailed and process heavy! If you know of anyone or know of anyone who may know someone that would fit this criteria then we'd love to hear from them!!",
 ];
 
 const requirements = [
@@ -127,7 +127,7 @@ export default function MortgageProcessorPage() {
           <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 pt-[120px] pb-14 lg:pt-[140px] lg:pb-20 relative z-10">
             <div className="max-w-[760px]">
               <h1 className="text-white text-[36px] sm:text-[48px] lg:text-[58px] font-bold leading-[1.08] mb-5 tracking-tight">
-                Mortgage Processor
+                Mortgage Processor – Entry Level With OR Without Experience
               </h1>
               <h2 className="text-white text-[17px] sm:text-[22px] lg:text-[26px] font-normal leading-[1.35] mb-8 max-w-[640px]">
                 Start Your Mortgage Career: Support Clients and Build Your Future in the Industry
@@ -166,8 +166,7 @@ export default function MortgageProcessorPage() {
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
                 The Mortgage Brothers Team is looking to add someone to the team to help with processing
-                loans (Entry Level With OR Without Experience). You must be local and be able to work in
-                our Phoenix, AZ office.
+                loans. You must be local and be able to work in our Phoenix, AZ office.
               </p>
             </div>
 
@@ -292,6 +291,10 @@ export default function MortgageProcessorPage() {
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
                 We&apos;re excited about the possibility of you joining The Mortgage Brothers Team. Reach
                 out today and take the first step towards a rewarding career in mortgage lending.
+              </p>
+              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
+                Interested? If you are interested in any job opportunity please call 602-535-2171 and
+                ask for Eddie Knoell or fill out our contact form.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-10 text-[14.5px] text-[#08271B]">
                 <a href="tel:+16025352171" className="font-semibold hover:text-[#3fb364] transition-colors">

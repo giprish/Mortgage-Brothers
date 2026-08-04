@@ -118,7 +118,11 @@ export default function MortgagePayoffPage() {
             <article className="min-w-0">
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-8">
-                Many borrowers are surprised when payoff is higher than the latest statement balance. The short answer is accrued daily interest and payoff timing, not lender markup.
+                One question we get a lot of the time is why is my mortgage payoff higher than my mortgage
+                statement balance? Why is it higher than I thought? Some people have asked us if part of this
+                balance is a markup or overage on our behalf. So, let&apos;s just get that right out of the way.
+                It&apos;s not. The difference is not due to any markup or overage. We don&apos;t keep anything.
+                So, what gives?
               </p>
 
               <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#08271B] mb-10 shadow-sm">
@@ -149,10 +153,16 @@ export default function MortgagePayoffPage() {
                     How do mortgage payoffs work?
                   </h2>
                   <p className="mb-4">
-                    If you are refinancing or paying off a loan, you cannot use just your statement balance. A payoff quote adds the unpaid interest needed through the exact date your old loan is paid in full.
+                    If you&apos;re refinancing, you can&apos;t just get a loan for the exact amount of your
+                    mortgage statement balance. You have to account for interest. We&apos;ve had people call us
+                    looking to refinance who will tell us what they owe, but we always advise them right away to
+                    make sure that they&apos;re looking at their mortgage payoff, not their mortgage statement
+                    balance. It&apos;s a common confusion that happens to a lot of people, which is why we&apos;re
+                    here to clear it up.
                   </p>
                   <p>
-                    Statement balance is a snapshot. Payoff amount is date-sensitive and includes what accrues after that snapshot.
+                    Your monthly payments are formula driven based on your loan amount, your amount of interest,
+                    and when you are paying it off.
                   </p>
                 </section>
 
@@ -161,10 +171,17 @@ export default function MortgagePayoffPage() {
                     I made my payment on time, why is it still going up?
                   </h2>
                   <p className="mb-4">
-                    Mortgage payments are paid in arrears, so your monthly payment covers prior-period interest. After that payment posts, interest starts accumulating again each day.
+                    The reason for this is that mortgage payments are paid in arrears. If you look at your
+                    statement from your bank, you&apos;ll notice that your payment due date is different than
+                    your statement date. That is because your payment at the beginning of, say, July covers the
+                    month of June and each day of that month your amount owed accrues interest.
                   </p>
                   <p>
-                    That is why payoff can look like a stair-step pattern: it rises daily with accrued interest, then drops when a payment is applied.
+                    We like to think of it as a stairstep scenario. When you make the payment on the first of
+                    every month, every day from there on out your balance goes up, as it accrues interest each
+                    day. Because of this, if you charted out the amount you owe on a graph it would look more
+                    like a stairstep than a straight, descending line. It escalates up before it drops down
+                    again.
                   </p>
                 </section>
 
@@ -173,15 +190,44 @@ export default function MortgagePayoffPage() {
                     How does your closing date impact your mortgage payoff?
                   </h2>
                   <p className="mb-4">
-                    Closing date directly affects payoff because interest accrues through the day the lender receives funds. Closing later in the month generally means more interest is added.
+                    Let&apos;s say we close a borrower in the middle of July. They will be responsible for the
+                    interest accrued for the rest of the days in the month. Now if we&apos;re refinancing and
+                    closing your loan at the top of the month, often title companies will ask for a couple of
+                    extra days of interest so that by the time they get their money they are not shorted.
                   </p>
                   <p className="mb-4">
-                    Title may include a small cushion of extra interest days at times to avoid a short payoff. If funds arrive early, overages are typically reconciled.
+                    In cases where the closing date is, say, ten days into the next month, you&apos;ll be
+                    responsible for that daily interest accrued when paying off your mortgage. There is no way
+                    around it. Though it is worth noting that late fees are typically not incurred until
+                    midmonth, so we can close a few days into a new month without having to worry about any late
+                    fees.
                   </p>
-                  <p>
-                    Your payoff number comes from your current servicer, and it reflects all principal plus date-specific daily interest and applicable adjustments.
+                  <p className="mb-4">
+                    When you close on a new mortgage, as well, is something to consider. If you close near the
+                    end of the month, in some scenarios, you won&apos;t be responsible for your first payment
+                    until the end of the next month, but you&apos;ll still be responsible for each day&apos;s
+                    interest, meaning when it comes time for your first payment there will be a larger
+                    out-of-pocket expense.
+                  </p>
+                  <p className="mb-4">
+                    Regardless, the payoff number you will be responsible for is not calculated by us. It comes
+                    directly from your bank. But we want to make sure you are aware of the several layers of
+                    interest that can get tacked onto your unpaid principal balance, which is what can make it
+                    appear off when you&apos;re looking at your payoff amount. In short, remember that the money
+                    the original investor lent you is making that investor money daily and you are responsible
+                    for paying that interest off.
                   </p>
                 </section>
+
+                <p className="text-center font-bold text-xl my-8 text-[#052316]">•••</p>
+
+                <p className="text-[15px]">
+                  Thanks for listening and reading the Mortgage Brothers Show. Let us know if you have any
+                  questions you&apos;d like us to answer on this podcast. You can email your questions to
+                  Tom@AZMortgageBrothers.com or Eddie@AZMortgageBrothers.com. Be sure to ask us for a free quote
+                  on your next mortgage. We&apos;ll personally work with you and help you through the whole
+                  process.
+                </p>
 
                 <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
                   <p className="text-[15px] text-[#052316] leading-relaxed">

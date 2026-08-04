@@ -147,6 +147,15 @@ export default function ArizonaMortgageClosingCostsPage() {
           <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
             <article className="min-w-0">
 
+              <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
+                If you&apos;re getting a mortgage, you&apos;re probably hearing talk of closing costs. But what
+                makes these up, and why do you have to pay them? Closing costs are commonly lender fees,
+                appraisal fees, title company fees, and more. Learning what fees you&apos;ll be expected to pay
+                and why can help make the process of getting a mortgage and buying a home less stressful and
+                confusing. Here are some of the commonly seen closing costs you might have as a part of your
+                mortgage and real estate transaction.
+              </p>
+
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
                 <h2
                   className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"

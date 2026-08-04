@@ -58,6 +58,50 @@ export default function ApacheCountyPage() {
             </div>
           </div>
         </section>
+
+        <section className="w-full py-16 bg-white">
+          <div className="max-w-4xl mx-auto px-6">
+            <h2 className="text-brand-green-deep text-[28px] lg:text-[32px] font-playfair mb-6">Home Loans in Apache County, Arizona</h2>
+            <div className="text-brand-text-muted text-[15px] space-y-4">
+              <p>Whether you are buying in the White Mountains around Eagar and Springerville or in the historic community of St. Johns, Mortgage Brothers is here to make your Apache County home loan straightforward and stress-free.</p>
+              <p>Apache County is Arizona&apos;s northeasternmost county, a vast stretch of high desert and alpine forest that includes the White Mountains, part of the Navajo Nation, and the striking red rock canyons of Canyon de Chelly. With small-town communities, wide-open spaces, and some of the most affordable real estate in the state, Apache County attracts buyers seeking a quiet, scenic pace of life. At Mortgage Brothers, we have been helping Arizona homebuyers navigate the mortgage process for 25+ years — from first-time purchases in Springerville to refinances in St. Johns.</p>
+              <ul className="list-disc pl-6 space-y-2 mt-4">
+                <li><strong>Major Cities:</strong> St. Johns, Eagar, Springerville, Chinle, Window Rock</li>
+                <li><strong>2026 Conforming Loan Limit:</strong> $832,750</li>
+                <li><strong>2026 FHA Loan Limit:</strong> $541,287</li>
+                <li><strong>Popular Communities:</strong> Greer, McNary, Sanders, Ganado, Rock Point, Teec Nos Pos, Saint Michaels</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-16 bg-[#fcf9f3]">
+          <div className="max-w-4xl mx-auto px-6">
+            <h2 className="text-brand-green-deep text-[28px] lg:text-[32px] font-playfair mb-8 text-center">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
+                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">What types of mortgage loans are available in Apache County, AZ?</h3>
+                <p className="text-brand-text-muted text-[15px]">AZ Mortgage Brothers offers a comprehensive range of mortgage products in Apache County, including Conventional, FHA, VA, USDA, and Jumbo loans, as well as refinancing options for current homeowners.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
+                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">What is the FHA loan limit for Apache County in 2026?</h3>
+                <p className="text-brand-text-muted text-[15px]">For 2026, the FHA loan limit for a single-family home in Apache County is $541,287. These limits are updated annually and vary depending on the property type (e.g., duplex, triplex, or fourplex).</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
+                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">How fast can I get a mortgage pre-approval?</h3>
+                <p className="text-brand-text-muted text-[15px]">AZ Mortgage Brothers provides a streamlined pre-approval process, often delivering a pre-approval letter within a few hours after receiving your completed application and necessary financial documentation.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
+                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">What is the minimum credit score required for a mortgage in Apache County?</h3>
+                <p className="text-brand-text-muted text-[15px]">Credit score requirements depend on the loan program. Generally, FHA loans may be available for scores as low as 580, while Conventional loans typically require a minimum score of 620.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
+                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">Does AZ Mortgage Brothers offer down payment assistance in Apache County?</h3>
+                <p className="text-brand-text-muted text-[15px]">Yes, we work with various programs that offer down payment assistance to eligible homebuyers in Apache County, helping to make homeownership more accessible for first-time buyers and those with limited savings.</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>

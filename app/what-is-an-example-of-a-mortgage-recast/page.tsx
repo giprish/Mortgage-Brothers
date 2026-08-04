@@ -144,9 +144,13 @@ export default function MortgageRecastExamplePage() {
               </p>
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-8">
-                There are two common ways of dealing with the new influx of cash: 1) Recasting your mortgage,
-                2) Paying down on the principal without a recast.
+                There are two common ways of dealing with the new influx of cash.
               </p>
+
+              <ul className="list-disc pl-6 space-y-2 text-[#3a4a3a] text-[16px] leading-[1.8] mb-8">
+                <li>Recasting your mortgage</li>
+                <li>Paying down on the principal without a recast</li>
+              </ul>
 
               <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#08271B] mb-10 shadow-sm">
                 <iframe
@@ -265,17 +269,11 @@ export default function MortgageRecastExamplePage() {
                     As always&hellip;
                   </h2>
                   <p>
-                    If you have any questions about this or if you have any questions you&apos;d like us to
-                    answer on our podcast, you can submit your questions using our{" "}
-                    <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                      contact form
-                    </Link>{" "}
-                    or give us a call at{" "}
-                    <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                      (602) 535-2171
-                    </a>
-                    . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work
-                    with you and help you through the whole process.
+                    Thanks for listening and reading the Mortgage Brothers Show. Let us know if you have any
+                    questions you&apos;d like us to answer on this podcast. You can email your questions to
+                    Tom@AZMortgageBrothers.com or Eddie@AZMortgageBrothers.com. Be sure to ask us for a free
+                    quote on your next mortgage. We&apos;ll personally work with you and help you through the
+                    whole process.
                   </p>
                 </section>
 

@@ -34,21 +34,6 @@ const features = [
   },
 ];
 
-const snippets = [
-  {
-    initials: "H.O.",
-    text: "I have been working with Eddie for years, same attention to details and excellent communication.",
-  },
-  {
-    initials: "T.L.",
-    text: "We recently completed a refinance with Mortgage Brothers, and I can honestly say it was the best refinance experience.",
-  },
-  {
-    initials: "P.W.",
-    text: "We have secured two home mortgages with Tom. Tom is very diligent in his research and has great follow up.",
-  },
-];
-
 const stats = [
   { value: "5", suffix: "", label: "Hours to Preapproval" },
   { value: "20+", suffix: "", label: "Partner Banks" },
@@ -99,32 +84,6 @@ const BrokersAdvocate = () => {
               <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed">
                 {feature.description}
               </p>
-            </div>
-          ))}
-        </div>
-
-        {/* Review Snippets */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12 lg:mb-14">
-          {snippets.map((s) => (
-            <div
-              key={s.initials}
-              className="bg-white/70 border border-[#e8e0d0]/60 rounded-xl p-5 flex gap-4 items-start"
-            >
-              <div className="w-10 h-10 shrink-0 rounded-full bg-[#08271B] text-[#3fb364] flex items-center justify-center text-[12.5px] font-bold">
-                {s.initials}
-              </div>
-              <div>
-                <div className="flex gap-0.5 mb-1.5">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <svg key={i} width="12" height="12" viewBox="0 0 24 24" fill="#b89a5a">
-                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                    </svg>
-                  ))}
-                </div>
-                <p className="text-[#3a443a] text-[13.5px] leading-relaxed italic">
-                  &ldquo;{s.text}&rdquo;
-                </p>
-              </div>
             </div>
           ))}
         </div>

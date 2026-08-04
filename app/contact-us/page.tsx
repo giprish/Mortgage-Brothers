@@ -45,18 +45,18 @@ export default function ContactPage() {
           {/* Header Section */}
           <div className="text-center mb-16">
             <span className="text-[#b89a5a] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
-              GET IN TOUCH
+              CONTACT US
             </span>
             <h1 className="text-[#052316] text-[36px] lg:text-[48px] font-playfair font-normal leading-tight mb-4">
-              Let&apos;s talk about your loan.
+              Your Trusted Phoenix Arizona Mortgage Resource
             </h1>
             <p className="text-[#4e5b4e] text-[15px] lg:text-[16px] leading-[1.7] max-w-2xl mx-auto">
-              Real people, same-day replies, and no pressure. Reach us however you like.
+              We&apos;re here to help and we&apos;ll get in touch with you shortly.
             </p>
           </div>
 
           {/* Three Contact Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             {/* Card 1 - Call or Text */}
             <div className="bg-[#faf7f0] rounded-2xl p-6 border border-[#e8e0d0]/60 shadow-sm flex flex-col items-center text-center">
               <div className="w-10 h-10 rounded-full bg-[#3fb364]/10 flex items-center justify-center text-[#3fb364] mb-4">
@@ -85,8 +85,8 @@ export default function ContactPage() {
               <span className="text-[#a89a70] text-[10px] font-bold tracking-widest uppercase mb-1.5">
                 EMAIL
               </span>
-              <a href="mailto:loans@azmortgagebrothers.com" className="text-[#052316] text-[16px] lg:text-[18px] font-bold hover:text-[#3fb364] transition-colors mb-1 break-all">
-                loans@azmortgagebrothers.com
+              <a href="mailto:team@azmortgagebrothers.com" className="text-[#052316] text-[16px] lg:text-[18px] font-bold hover:text-[#3fb364] transition-colors mb-1 break-all">
+                team@azmortgagebrothers.com
               </a>
               <span className="text-[#8a9a7a] text-[12px]">
                 We reply same business day
@@ -105,13 +105,31 @@ export default function ContactPage() {
                 VISIT
               </span>
               <span className="text-[#052316] text-[15px] font-bold mb-1">
-                1599 E Orangewood Ave, Ste 200
+                1599 East Orangewood Ave, Suite 200
               </span>
               <span className="text-[#8a9a7a] text-[12px]">
                 Phoenix, AZ 85020
               </span>
             </div>
           </div>
+
+          {/* Download vCard + immediate help note */}
+          <div className="text-center mb-10">
+            <a
+              href="/contact-brothers.vcf"
+              className="inline-flex items-center gap-2 bg-white border border-[#e8e0d0]/60 rounded-full px-6 py-2.5 text-[#052316] text-[13.5px] font-semibold hover:border-[#3fb364]/50 hover:text-[#3fb364] transition-all shadow-sm"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+              </svg>
+              Download vCard
+            </a>
+          </div>
+
+          <p className="text-center text-[#8a9a7a] text-[13.5px] leading-relaxed mb-16">
+            If you need immediate help, you can call us at{" "}
+            <a href="tel:+16025351288" className="text-[#052316] font-semibold hover:text-[#3fb364] transition-colors">602-535-1288</a>, use our contact form to request a callback.
+          </p>
 
           {/* Two-Column Form & Details Section */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -252,7 +270,7 @@ export default function ContactPage() {
                 />
                 <div className="bg-[#faf7f0] px-6 py-4 border-t border-[#e8e0d0]/40 flex justify-between items-center text-[12px] font-sans">
                   <div>
-                    <span className="text-[#052316] font-bold block">1599 E Orangewood Ave, Ste 200</span>
+                    <span className="text-[#052316] font-bold block">1599 East Orangewood Ave, Suite 200</span>
                     <span className="text-[#8a9a7a]">Phoenix, AZ 85020</span>
                   </div>
                     <a

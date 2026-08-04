@@ -249,6 +249,41 @@ export default function ArizonaRefinanceProcessPage() {
                   </p>
                 </section>
 
+                <section id="three-steps-to-refinance">
+                  <h2
+                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    To refinance your home loan, there are basically three steps that you will take:
+                  </h2>
+                  <ul className="list-disc pl-6 space-y-2 mb-6">
+                    <li>
+                      <strong>Assess:</strong> With your lender, assess if refinancing your mortgage is the
+                      right decision for you at this time. Then assess which program is best for you.
+                    </li>
+                    <li>
+                      <strong>Apply:</strong> Complete the mortgage application. Gather together the documents
+                      required by your lender and his underwriters. Submit them to your lender.
+                    </li>
+                    <li>
+                      <strong>Appraise:</strong> Your lender may require an appraisal of your home to ensure
+                      that it will cover the amount of the home loan. He will arrange this for you.
+                    </li>
+                  </ul>
+                  <h2
+                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    Completing the Refinance Process
+                  </h2>
+                  <p>
+                    Once the mortgage application has been approved and the appraisal has been accepted, your
+                    lender will schedule a closing date. On the date of closing, you will sign new mortgage
+                    documents. Shortly thereafter, the existing mortgage will be paid-off and retired and
+                    payments on your new mortgage will begin.
+                  </p>
+                </section>
+
                 <section id="frequently-asked-questions">
                   <FaqAccordion
                     title="Frequently Asked Questions"

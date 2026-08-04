@@ -150,11 +150,11 @@ export default function PrepaymentPenaltiesArizonaMortgagePage() {
             <article className="min-w-0">
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-6">
-                Prepayment penalties are at the borrower&apos;s option and are never mandatory requirements by
-                the lender. Generally, prepayment penalties disappear after five years. The penalty is a
-                percentage of the outstanding loan balance or it can be equal to a specific number of months
-                of interest. If you want to pay 20% of your loan balance, there is no prepayment penalty for
-                most loans.
+                Prepayment penalties mean there is a penalty for paying your loan off early. Prepayment
+                penalties are at the borrower&apos;s option and are never mandatory requirements by the lender.
+                Generally, prepayment penalties disappear after five years. The penalty is a percentage of the
+                outstanding loan balance or it can be equal to a specific number of months of interest. If you
+                want to pay 20% of your loan balance, there is no prepayment penalty for most loans.
               </p>
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
@@ -179,16 +179,10 @@ export default function PrepaymentPenaltiesArizonaMortgagePage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="/#get-pre-approved"
-                    className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                    href="/#Get-in-Touch"
+                    className="inline-flex items-center gap-2 bg-[#6ca220] hover:bg-[#5b8a1a] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
                   >
-                    Get a Free Mortgage Review &rarr;
-                  </Link>
-                  <Link
-                    href="/contact-us/"
-                    className="inline-flex items-center gap-2 text-[#3fb364] hover:underline text-[15px] font-semibold px-4 py-3 transition-all"
-                  >
-                    Contact Us
+                    Get a Free Mortgage Review
                   </Link>
                 </div>
               </div>
@@ -199,7 +193,7 @@ export default function PrepaymentPenaltiesArizonaMortgagePage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-5 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    What to Know About Prepayment Penalties
+                    What to Know <strong>About Prepayment Penalties</strong>
                   </h2>
                   <p className="mb-5">
                     If you do opt for an Arizona mortgage with a <a href="https://www.investopedia.com/terms/p/prepaymentpenalty.asp" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">prepayment penalty</a>, try and negotiate a
@@ -224,7 +218,30 @@ export default function PrepaymentPenaltiesArizonaMortgagePage() {
                     clearly what you are signing and your obligations, rights and responsibilities regarding
                     your credit obligation.
                   </p>
+                  <p className="mt-5">
+                    To learn more about Arizona mortgage products and Arizona mortgage rates, please contact us
+                    today.
+                  </p>
                 </section>
+
+                <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
+                  <h2
+                    className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-4"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    Need Some Help With A Prepayment Question? Call Us To Learn More!
+                  </h2>
+                  <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-2">
+                    Contact Us Today at{" "}
+                    <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
+                      602-535-2171
+                    </a>
+                  </p>
+                  <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-1">
+                    Or email us at team@azmortgagebrothers.com
+                  </p>
+                  <p className="text-[#4e5b4e] text-[15px] leading-relaxed">Or Complete our Inquiry Form</p>
+                </div>
 
                 <p>
                   If you have any questions about this or if you have any questions you&apos;d like us to
@@ -241,58 +258,9 @@ export default function PrepaymentPenaltiesArizonaMortgagePage() {
                 </p>
                 <p className="text-center font-bold text-xl my-8 text-[#052316]">•••</p>
 
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
-                    you and help you through the whole process.
-                  </p>
-                </div>
-
-                <p className="text-[15px]">
-                  Learn what prepayment penalties mean for your Arizona mortgage. For further context, check
-                  out our guide on{" "}
-                  <Link
-                    href="/arizona-binsr-buyer-inspection-notice-and-seller-response/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    inspection notices
-                  </Link>
-                  , review the{" "}
-                  <Link
-                    href="/what-you-need-to-know-about-the-arizona-prequalification-form/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    prequalification form
-                  </Link>
-                  , explore{" "}
-                  <Link
-                    href="/arizona-mortgage-rates-and-the-interest-deduction/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    mortgage rates &amp; interest deductions
-                  </Link>
-                  , get tips on{" "}
-                  <Link
-                    href="/buying-down-your-arizona-interest-rate/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    buying down rates
-                  </Link>
-                  , consider{" "}
-                  <Link
-                    href="/arizona-second-mortgages/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    second mortgage options
-                  </Link>
-                  , and see why{" "}
-                  <Link
-                    href="/arizona-real-estate-capital-gains-is-back/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    capital gains are back
-                  </Link>
-                  .
+                <p>
+                  Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
+                  you and help you through the whole process.
                 </p>
 
                 <p className="text-[#8a9a7a] text-[13px] leading-relaxed">
@@ -301,6 +269,55 @@ export default function PrepaymentPenaltiesArizonaMortgagePage() {
                   accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
                   #210917 and 1618695. Equal housing lender.
                 </p>
+
+                <blockquote className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
+                  <p className="text-[15px] text-[#052316] leading-relaxed">
+                    Learn what prepayment penalties mean for your Arizona mortgage. For further context, check
+                    out our guide on{" "}
+                    <Link
+                      href="/arizona-binsr-buyer-inspection-notice-and-seller-response/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      inspection notices
+                    </Link>
+                    , review the{" "}
+                    <Link
+                      href="/what-you-need-to-know-about-the-arizona-prequalification-form/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      prequalification form
+                    </Link>
+                    , explore{" "}
+                    <Link
+                      href="/arizona-mortgage-rates-and-the-interest-deduction/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      mortgage rates &amp; interest deductions
+                    </Link>
+                    , get tips on{" "}
+                    <Link
+                      href="/buying-down-your-arizona-interest-rate/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      buying down rates
+                    </Link>
+                    , consider{" "}
+                    <Link
+                      href="/arizona-second-mortgages/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      second mortgage options
+                    </Link>
+                    , and see why{" "}
+                    <Link
+                      href="/arizona-real-estate-capital-gains-is-back/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      capital gains are back
+                    </Link>
+                    .
+                  </p>
+                </blockquote>
               </div>
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">

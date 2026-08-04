@@ -227,10 +227,13 @@ export default function ArizonaBinsrPage() {
 
                 <p>
                   If you have any questions about this or if you have any questions you&apos;d like us to
-                  answer on our podcast, you can submit your questions using our{" "}
-                  <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                    contact form
-                  </Link>{" "}
+                  answer on our podcast, you can email your questions to{" "}
+                  <a
+                    href="mailto:team@azmortgagebrothers.com"
+                    className="text-[#3fb364] font-semibold hover:underline"
+                  >
+                    team@azmortgagebrothers.com
+                  </a>{" "}
                   or give us a call at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
                     (602) 535-2171
@@ -243,6 +246,25 @@ export default function ArizonaBinsrPage() {
                   <p className="text-[24px] tracking-widest text-[#a8b898]">&bull;&bull;&bull;</p>
                 </div>
 
+                <p>
+                  Thanks for listening and reading the Mortgage Brothers Show. Let us know if you have any
+                  questions you&apos;d like us to answer on this podcast. You can email your questions to{" "}
+                  <a
+                    href="mailto:Tom@AZMortgageBrothers.com"
+                    className="text-[#3fb364] font-semibold hover:underline"
+                  >
+                    Tom@AZMortgageBrothers.com
+                  </a>{" "}
+                  or{" "}
+                  <a
+                    href="mailto:Eddie@AZMortgageBrothers.com"
+                    className="text-[#3fb364] font-semibold hover:underline"
+                  >
+                    Eddie@AZMortgageBrothers.com
+                  </a>
+                  .
+                </p>
+
                 <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
                   <p className="text-[15px] text-[#052316] leading-relaxed">
                     Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
@@ -251,10 +273,10 @@ export default function ArizonaBinsrPage() {
                 </div>
                 
                 <p className="text-[#8a9a7a] text-[13px] leading-relaxed">
-                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
-                  been prepared for informational purposes only. You should consult your own tax, legal, and
-                  accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
-                  #210917 and 1618695. Equal housing lender.
+                  Signature Home Loans LLC does not provide tax, legal, or accounting advice. This material
+                  has been prepared for informational purposes only. You should consult your own tax, legal,
+                  and accounting advisors before engaging in any transaction. Signature Home Loans NMLS
+                  1007154, NMLS #210917 and 1618695. Equal housing lender.
                 </p>
 
                 <blockquote className="border-l-4 border-[#3fb364] pl-5 my-8 italic">

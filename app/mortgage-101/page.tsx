@@ -14,17 +14,17 @@ const topics = [
   },
   {
     title: "Why Use an Arizona Mortgage Broker?",
-    text: "Getting a mortgage loan can seem like a daunting and even scary task, but it doesn't have to be that way if you do your research and work with the right people. Using a mortgage broker means you will have access to a number of different banks and other lenders who may each have different guidelines for approval, thereby raising the chances that one of those lenders will be able to say yes to your mortgage loan.",
+    text: "Getting a mortgage loan can seem like a daunting and even scary task, but it doesn't have to be that way if you do your research and work with the right people who can get your loan approved and get you into your new home. Using a mortgage broker means you will have access to a number of different banks and other lenders who may each have different guidelines for approval, thereby raising the chances that one of those lenders will be able to say yes to your mortgage loan so you can head to closing. Arizona mortgage brokers also work in the evenings and on weekends in many cases to make sure they give their all to their clients and help them as much as possible, so you won't be out of luck if you have a question or need to send loan documentation during hours that are not nine to five, Monday through Friday.",
     href: "/why-use-an-arizona-mortgage-broker/",
   },
   {
     title: "Mortgage Approval Process",
-    text: "Required down payment, income/employment information and credit standing are a few of the important factors lenders look at when considering a borrower for a mortgage loan approval. Being prepared with the proper documents and personal information will allow you to spend more quality time with your loan officer addressing the important points of your pre-approval and mortgage program options.",
+    text: "Required down payment, income/employment information and credit standing are a few of the important factors lenders look at when considering a borrower for a mortgage loan approval. There are several questions that a loan officer needs to ask before a simple pre-approval letter can be issued. But more importantly, there are at least 8 top questions that you should be asking your lender before taking any steps to fill out an application. Being prepared with the proper documents and personal information will allow you to spend more quality time with your loan officer addressing the important points of your pre-approval and mortgage program options.",
     href: "/arizona-mortgage-approval-process/",
   },
   {
     title: "Understanding Your Credit",
-    text: "Your credit picture plays a key role in the mortgage approval process, and it is essential to understand how scores are measured and calculated. Should you close all cards or keep them open? What if you don't have any credit history that shows up on a report? In this section, you'll learn the basic rules about preparing your credit standing prior to speaking with a lender for qualification.",
+    text: "Your credit picture plays a key role in the mortgage approval process, and it is essential to understand how scores are measured and calculated. Should you close all cards or keep them open? What if you don't have any credit history that shows up on a report, is there a way to use cell phone and utility bills? In this section, you'll learn the basic rules about preparing your credit standing prior to speaking with a lender for qualification.",
     href: "/arizona-understanding-your-credit/",
   },
   {
@@ -34,37 +34,37 @@ const topics = [
   },
   {
     title: "Mortgage Programs",
-    text: "It's amazing how many mortgage programs have been designed to help First-Time Borrowers get financing on new homes. Before you start shopping for a listing that fits your living needs, it would be extremely beneficial to know what type of lending scenario best fits the type of property or neighborhood you're looking to buy in.",
+    text: "It's amazing how many mortgage programs have been designed to help First-Time Borrowers get financing on new homes. Before you start shopping for a listing that fits your living needs, it would be extremely beneficial to know what type of lending scenario best fits the type of property or neighborhood you're looking to buy in. With regards to a refinance, you may actually qualify for a new government sponsored program that has been designed with current market conditions in mind.",
     href: "/mortgage-loan-programs-arizona/",
   },
   {
     title: "Home Buying Process",
-    text: "What comes first – the approval or the purchase contract? Once you have weighed the basic pros and cons of owning a home vs renting, assembling a winning team of real estate and mortgage professionals will help you cover all of your bases. There are also some very important timelines that you'll need to be aware of, such as appraisal, home inspection and loan approval dates.",
+    text: "What comes first – the approval or the purchase contract? Once you have weighed the basic pros and cons of owning a home vs renting, tax benefits and timely market influences, assembling a winning team of real estate and mortgage professionals will help you cover all of your bases. There are also some very important time lines that you'll need to be aware of, such as appraisal, home inspection and loan approval dates. Can the type of Home Owners Association affect your loan approval? Absolutely. If you're feeling a little anxious at this point, then that just means you're actually taking this home buying thing seriously. Don't worry, we'll make sure you are kept in the loop throughout the entire home buying process.",
     href: "/arizona-home-buying-process/",
   },
   {
     title: "Closing Process",
-    text: "With the right home buying team on your side, the closing process should be a smooth transition from signed documents to closing. Understanding the industry lingo will certainly help you avoid feeling like you're on a roller-coaster while all the team players come together at the end to perform doc signings and pre-closing conditions.",
+    text: "With the right home buying team on your side, the closing process should be a smooth transition from signed documents to closing. The excitement has been building throughout the entire process from home shopping to mortgage approval; so it's easy to overlook some important details at the end. Understanding the industry lingo will certainly help you avoid feeling like you're on a roller-coaster while all the team players come together at the end to perform doc signings, pre-closing conditions… It also helps to know about all of the fees associated with a new home purchase or refinance. Understanding the difference between the fixed and variable fees will help you set a more accurate budget, which could impact whether or not you get your earnest money back at closing.",
     href: "/arizona-mortgage-closing-process/",
   },
   {
     title: "Mortgage Closing Costs",
-    text: "The closing costs associated with a mortgage can seem very confusing if you haven't been given information on them, or if you've never purchased a home before. Understanding the closing costs means you can also be prepared for them and find out approximately how much they will add up to, so you won't end up having to bring more money to the table than you expected.",
+    text: "The closing costs associated with a mortgage can seem very confusing if you haven't been given information on them, or if you've never purchased a home before, because you don't know what to expect or why you are being asked to pay for items you may not understand. Rather than just pay what's asked, you can have a higher level of peace of mind if you understand what all the fees are for and why you are expected to pay them, instead of asking the other party to the transaction to handle those expenses themselves. Understanding the closing costs means you can also be prepared for them and find out approximately how much they will add up to, so you won't end up having to bring more money to the table than you really expected to close your real estate transaction.",
     href: "/arizona-mortgage-closing-costs/",
   },
   {
     title: "Refinance Process",
-    text: "Properly estimating neighborhood property values and your closing costs will help determine the net benefit of a refinance transaction. Some homeowners just want to know the best approach of finding money to make home improvements, while other borrowers are in a situation where their rate is adjusting.",
+    text: "Properly estimating neighborhood property values and your closing costs will help determine the net benefit of a refinance transaction. Some homeowners just want to know the best approach of finding money to make home improvements, while other borrowers are in a situation where their rate is adjusting. Either way, it's easy to get caught off guard if you don't have the essential knowledge about your mortgage refinance options.",
     href: "/arizona-refinance-process/",
   },
   {
     title: "The Ultimate Guide to Your First Mortgage",
-    text: "The Phoenix Valley was recently voted out of the top 20 markets for first time buyers, highlighting that it's getting more expensive to buy your first home. But don't despair. You can still buy the home of your dreams. In this guide, you'll get insider tips on how you can get into your first home without paying too much.",
+    text: "The Phoenix Valley was recently voted out of the top 20 markets for first time buyers, highlighting a fact that most first time buyers have probably already noticed on their own: it's getting more expensive to buy your first home. But don't despair. You can still buy the home of your dreams, even if it will take more time and planning than might have been needed even just a year or two ago. In this guide, I'm going to give you all the insider tips on how you can get into your first home without paying too much.",
     href: "/ultimate-guide-first-mortgage/",
   },
   {
     title: "What to Expect When You're Not a First Time Mortgage Shopper",
-    text: "When you're moving to Phoenix, or moving up to a new home within the area, one of the first things you need to do is find a mortgage lender and understand how to secure a loan. The mortgage industry has changed since your last loan. Here's an overview of what it's really like to get a mortgage these days.",
+    text: "When you're moving to Phoenix, or moving up to a new home within the area, one of the first things you need to do before visiting open houses, before finding a real estate agent or even deciding on a neighborhood, is to find a mortgage lender and understand how to secure a loan to buy a home. If you've bought a home before, you might have some experience with the process. But the mortgage industry has changed since your last loan. And if you're new to the Phoenix Valley, you might not know who to call or what the process will look like here. Here's an overview of what it's really like to get a mortgage these days, and what you need to know and do to ensure you get the best loan for you.",
     href: "/expect-youre-not-first-time-mortgage-shopper/",
   },
 ];

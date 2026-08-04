@@ -1,69 +1,184 @@
 import React from "react";
 
-const stats = [
-  {
-    icon: (
-      <svg className="w-7 h-7 text-[#3fb364]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-    ),
-    label: "5000+ Families Helped Across Arizona",
-  },
-  {
-    icon: (
-      <svg className="w-7 h-7 text-[#3fb364]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-      </svg>
-    ),
-    label: "Average Closing Time: 25 Days",
-  },
-  {
-    icon: (
-      <svg className="w-7 h-7 text-[#3fb364]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-      </svg>
-    ),
-    label: "Rated 4.9/5 on Google Reviews",
-    href: "https://maps.google.com/maps?cid=3674746044086552790",
-  },
-];
-
 const HomeStatsBar = () => {
   return (
-    <section className="w-full bg-white border-b border-[#e8e0d0]/60">
-      <div className="max-w-6xl mx-auto px-6 lg:px-10 py-8 lg:py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-4">
-          {stats.map((stat) => {
-            const inner = (
-              <div className="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
-                <div className="w-12 h-12 rounded-full bg-[#e8f5e9] flex items-center justify-center shrink-0">
-                  {stat.icon}
-                </div>
-                <span className="text-[#08271B] text-[15px] lg:text-[16px] font-semibold leading-snug">
-                  {stat.label}
-                </span>
+    <section className="w-full bg-transparent px-4 sm:px-6 lg:px-8 pb-4 pt-0 -mt-14 sm:-mt-16 lg:-mt-[72px] relative z-20">
+      <div className="max-w-6xl mx-auto bg-[#031d12] border border-[#0d3f28] rounded-2xl p-5 sm:p-6 lg:p-8 shadow-2xl text-white">
+        
+        {/* Desktop Layout: 5 columns in a single row */}
+        <div className="hidden md:grid grid-cols-5 gap-4 divide-x divide-[#0e422b] items-center">
+          
+          {/* Main 4.9 Score Column */}
+          <div className="flex items-center gap-3.5 pr-2">
+            <span className="text-4xl lg:text-5xl font-playfair font-bold text-white tracking-tight leading-none">
+              4.9
+            </span>
+            <div className="flex flex-col min-w-0">
+              <span className="font-bold text-xs lg:text-sm text-white leading-tight">
+                Rated 4.9 / 5
+              </span>
+              <span className="text-[11px] lg:text-xs text-[#8fae9d] leading-tight mt-0.5">
+                from 500+ verified Arizona homeowners
+              </span>
+              <div className="flex text-[#f5c518] gap-0.5 mt-1">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <svg key={i} className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                ))}
               </div>
-            );
+            </div>
+          </div>
 
-            return (
-              <div key={stat.label} className="flex justify-center sm:justify-start">
-                {stat.href ? (
-                  <a
-                    href={stat.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:opacity-80 transition-opacity"
-                  >
-                    {inner}
-                  </a>
-                ) : (
-                  inner
-                )}
-              </div>
-            );
-          })}
+          {/* Google */}
+          <div className="flex items-center justify-center gap-3 pl-4">
+            <div className="w-8 h-8 rounded-full bg-[#083321] flex items-center justify-center text-[#3fb364] font-bold text-sm shrink-0 border border-[#144f33]">
+              G
+            </div>
+            <div className="flex flex-col">
+              <span className="font-bold text-base lg:text-lg text-white leading-none">
+                4.9
+              </span>
+              <span className="text-[11px] lg:text-xs text-[#8fae9d] font-medium mt-0.5">
+                Google
+              </span>
+            </div>
+          </div>
+
+          {/* Zillow */}
+          <div className="flex items-center justify-center gap-3 pl-4">
+            <div className="w-8 h-8 rounded-full bg-[#083321] flex items-center justify-center text-[#3fb364] shrink-0 border border-[#144f33]">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-bold text-base lg:text-lg text-white leading-none">
+                5.0
+              </span>
+              <span className="text-[11px] lg:text-xs text-[#8fae9d] font-medium mt-0.5">
+                Zillow
+              </span>
+            </div>
+          </div>
+
+          {/* Experience */}
+          <div className="flex items-center justify-center gap-3 pl-4">
+            <div className="w-8 h-8 rounded-full bg-[#083321] flex items-center justify-center text-[#3fb364] shrink-0 border border-[#144f33]">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138z" />
+              </svg>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-bold text-base lg:text-lg text-white leading-none">
+                4.9
+              </span>
+              <span className="text-[11px] lg:text-xs text-[#8fae9d] font-medium mt-0.5">
+                Experience
+              </span>
+            </div>
+          </div>
+
+          {/* BBB */}
+          <div className="flex items-center justify-center gap-3 pl-4">
+            <div className="w-8 h-8 rounded-full bg-[#083321] flex items-center justify-center text-[#3fb364] shrink-0 border border-[#144f33]">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-bold text-base lg:text-lg text-white leading-none">
+                A+
+              </span>
+              <span className="text-[11px] lg:text-xs text-[#8fae9d] font-medium mt-0.5">
+                BBB
+              </span>
+            </div>
+          </div>
+
         </div>
+
+        {/* Mobile Layout (under md screen width) */}
+        <div className="flex flex-col md:hidden gap-4 divide-y divide-[#0e422b]">
+          {/* Top overall score (Centered on mobile) */}
+          <div className="flex items-center gap-4 pb-3 justify-center sm:justify-start">
+            <span className="text-5xl font-playfair font-bold text-white tracking-tight leading-none">
+              4.9
+            </span>
+            <div className="flex flex-col">
+              <span className="font-bold text-sm text-white leading-tight">
+                Rated 4.9 / 5
+              </span>
+              <span className="text-xs text-[#8fae9d] leading-tight mt-0.5">
+                from 500+ verified Arizona homeowners
+              </span>
+              <div className="flex text-[#f5c518] gap-0.5 mt-1.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <svg key={i} className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom 4 badges in a clean 2x2 grid */}
+          <div className="grid grid-cols-2 gap-y-4 gap-x-6 pt-3 max-w-[280px] sm:max-w-[320px] mx-auto w-full">
+            
+            {/* Google */}
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-[#083321] flex items-center justify-center text-[#3fb364] font-bold text-xs shrink-0 border border-[#144f33]">
+                G
+              </div>
+              <div className="flex flex-col">
+                <span className="font-bold text-base text-white leading-none">4.9</span>
+                <span className="text-[11px] text-[#8fae9d] font-medium mt-0.5">Google</span>
+              </div>
+            </div>
+
+            {/* Zillow */}
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-[#083321] flex items-center justify-center text-[#3fb364] shrink-0 border border-[#144f33]">
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-bold text-base text-white leading-none">5.0</span>
+                <span className="text-[11px] text-[#8fae9d] font-medium mt-0.5">Zillow</span>
+              </div>
+            </div>
+
+            {/* Experience */}
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-[#083321] flex items-center justify-center text-[#3fb364] shrink-0 border border-[#144f33]">
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138z" />
+                </svg>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-bold text-base text-white leading-none">4.9</span>
+                <span className="text-[11px] text-[#8fae9d] font-medium mt-0.5">Experience</span>
+              </div>
+            </div>
+
+            {/* BBB */}
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 rounded-full bg-[#083321] flex items-center justify-center text-[#3fb364] shrink-0 border border-[#144f33]">
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <div className="flex flex-col">
+                <span className="font-bold text-base text-white leading-none">A+</span>
+                <span className="text-[11px] text-[#8fae9d] font-medium mt-0.5">BBB</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
       </div>
     </section>
   );

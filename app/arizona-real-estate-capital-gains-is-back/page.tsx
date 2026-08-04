@@ -258,10 +258,13 @@ export default function ArizonaRealEstateCapitalGainsPage() {
 
                 <p>
                   If you have any questions about this or if you have any questions you&apos;d like us to
-                  answer on our podcast, you can submit your questions using our{" "}
-                  <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                    contact form
-                  </Link>{" "}
+                  answer on our podcast, you can email your questions to{" "}
+                  <a
+                    href="mailto:team@azmortgagebrothers.com"
+                    className="text-[#3fb364] font-semibold hover:underline"
+                  >
+                    team@azmortgagebrothers.com
+                  </a>{" "}
                   or give us a call at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
                     (602) 535-2171
@@ -325,10 +328,10 @@ export default function ArizonaRealEstateCapitalGainsPage() {
                 </p>
 
                 <p className="text-[#8a9a7a] text-[13px] leading-relaxed">
-                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
+                  Signature Home Loans LLC does not provide tax, legal, or accounting advice. This material has
                   been prepared for informational purposes only. You should consult your own tax, legal, and
-                  accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
-                  #210917 and 1618695. Equal housing lender.
+                  accounting advisors before engaging in any transaction. Signature Home Loans NMLS 1007154,
+                  NMLS #210917 and 1618695. Equal housing lender.
                 </p>
               </div>
 

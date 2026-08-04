@@ -422,27 +422,30 @@ export default function FAQPage() {
     setSearchQuery("");
     setShowDropdown(false);
 
-    // 3. Set active category and scroll to the question
-    setTimeout(() => {
-      const element = document.getElementById(qId);
-      if (element) {
-        const parentSection = element.closest('section[id^="topic-"]');
-        if (parentSection) {
-          const cat = categories.find(c => c.targetId === parentSection.id);
-          if (cat) setActiveCategory(cat.name);
-        }
-        const offset = 100;
-        const bodyRect = document.body.getBoundingClientRect().top;
-        const elementRect = element.getBoundingClientRect().top;
-        const elementPosition = elementRect - bodyRect;
-        const offsetPosition = elementPosition - offset;
+    // 3. Set active category, then scroll only after the section re-renders as visible
+    const parentSection = document.getElementById(qId)?.closest('section[id^="topic-"]');
+    const cat = parentSection
+      ? categories.find((c) => c.targetId === parentSection.id)
+      : undefined;
+    if (cat) setActiveCategory(cat.name);
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        });
-      }
-    }, 100);
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        const element = document.getElementById(qId);
+        if (element) {
+          const offset = 100;
+          const bodyRect = document.body.getBoundingClientRect().top;
+          const elementRect = element.getBoundingClientRect().top;
+          const elementPosition = elementRect - bodyRect;
+          const offsetPosition = elementPosition - offset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth",
+          });
+        }
+      });
+    });
   };
 
   return (
@@ -501,7 +504,7 @@ export default function FAQPage() {
                 onChange={handleSearch}
                 onFocus={() => setShowDropdown(true)}
                 placeholder="Search questions — VA loans, closing costs, timelines..."
-                className="w-full bg-white text-[#1a3a1a] placeholder-[#8a9a7a] text-[15px] pl-13 pr-6 py-4 rounded-xl border-none focus:outline-none focus:ring-2 focus:ring-[#3fb364] shadow-md transition-all duration-200"
+                className="w-full bg-white text-[#1a3a1a] placeholder-[#8a9a7a] text-[15px] pl-14 pr-6 py-4 rounded-xl border-none focus:outline-none focus:ring-2 focus:ring-[#3fb364] shadow-md transition-all duration-200"
               />
 
               {/* Suggestions Dropdown Overlay */}

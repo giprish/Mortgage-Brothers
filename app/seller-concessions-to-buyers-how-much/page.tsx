@@ -169,16 +169,10 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="/#get-pre-approved"
-                    className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                    href="/#Get-in-Touch"
+                    className="inline-flex items-center gap-2 bg-[#6ca220] hover:bg-[#5b8a1a] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
                   >
-                    Get a Free Seller Consultation &rarr;
-                  </Link>
-                  <Link
-                    href="/contact-us/"
-                    className="inline-flex items-center gap-2 text-[#3fb364] hover:underline text-[15px] font-semibold px-4 py-3 transition-all"
-                  >
-                    Contact Us
+                    Get a Free Seller Consultation
                   </Link>
                 </div>
               </div>
@@ -190,19 +184,18 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
                   from ARMLS closings for prior 30 days as of 2/9/19
                 </p>
 
-                <p>
-                  Seller concessions to buyers of single family attached and detached products ranged from a low of
-                  .9% to a high of 2.6% for 2,112 closings in the previous 30 days as of 2/9/2019 in the Greater
-                  Phoenix Metro Area.
-                </p>
-
                 <ul className="list-disc pl-6 space-y-3">
                   <li>
-                    <strong>Key cities</strong> – Gilbert had the lowest concession at 1.3% and Glendale had the
+                    <a href="https://finance.yahoo.com/personal-finance/mortgages/article/seller-concessions-165151738.html" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">Seller concessions to buyers</a> of single family attached and detached products ranged from a low of
+                    .9% to a high of 2.6% for 2,112 closings in the previous 30 days as of 2/9/2019 in the Greater
+                    Phoenix Metro Area.
+                  </li>
+                  <li>
+                    Key cities – Gilbert had the lowest concession at 1.3% and Glendale had the
                     highest at 2.3%
                   </li>
                   <li>
-                    <strong>Most closings in the 30 day period</strong> – $200,000 to $300,000 price range accounted
+                    Most closings in the 30 day period – $200,000 to $300,000 price range accounted
                     for 1,076 closings and an average seller concession to buyers of 1.9%
                   </li>
                   <li>Anthem, Gilbert, Cave Creek, Paradise Valley averaged 1.3%</li>
@@ -212,31 +205,33 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
 
                 <p>Try us on your next loan……our clients appreciate our pricing, timing and customer service</p>
 
-                <p>
-                  Discover how seller concessions can benefit both parties and learn what to expect in
-                  negotiations. For more insights, check out our{" "}
-                  <Link
-                    href="/buying-or-selling-personal-property-with-your-home-sale-must-watch-this-first/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    personal property guide
-                  </Link>
-                  , find out{" "}
-                  <Link
-                    href="/how-to-skip-2-payments-on-your-mortgage/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    how to skip two mortgage payments
-                  </Link>
-                  , and review our{" "}
-                  <Link
-                    href="/put-bow-fha-loan-gift-guide/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    FHA loan gift guide
-                  </Link>
-                  .
-                </p>
+                <blockquote className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
+                  <p className="text-[15px] text-[#052316] leading-relaxed">
+                    Discover how seller concessions can benefit both parties and learn what to expect in
+                    negotiations. For more insights, check out our{" "}
+                    <Link
+                      href="/buying-or-selling-personal-property-with-your-home-sale-must-watch-this-first/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      personal property guide
+                    </Link>
+                    , find out{" "}
+                    <Link
+                      href="/how-to-skip-2-payments-on-your-mortgage/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      how to skip two mortgage payments
+                    </Link>
+                    , and review our{" "}
+                    <Link
+                      href="/put-bow-fha-loan-gift-guide/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      FHA loan gift guide
+                    </Link>
+                    .
+                  </p>
+                </blockquote>
 
                 <section id="frequently-asked-questions">
                   <FaqAccordion
@@ -249,37 +244,11 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
                     ]}
                   />
                 </section>
-
-                <p>
-                  If you have any questions about seller concessions, call us at{" "}
-                  <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    (602) 535-2171
-                  </a>{" "}
-                  or reach us using our{" "}
-                  <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                    contact form
-                  </Link>
-                  .
-                </p>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you
-                    and help you through the whole process.
-                  </p>
-                </div>
-
-                <p className="text-[#8a9a7a] text-[13px] leading-relaxed">
-                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
-                  prepared for informational purposes only. You should consult your own tax, legal, and accounting
-                  advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
-                  1618695. Equal housing lender.
-                </p>
               </div>
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">
                 <Link
-                  href="/buying-a-house-with-a-cash-offer-and-simultaneously-getting-mortgage-financing/"
+                  href="/difference-between-owner-occupied-second-home-and-investment-property/"
                   className="text-[#3fb364] font-semibold hover:underline"
                 >
                   ← Previous Post

@@ -168,6 +168,55 @@ export default function PinalCountyPage() {
           </div>
         </section>
 
+        <section className="w-full py-16 bg-white">
+          <div className="max-w-4xl mx-auto px-6">
+            <h2 className="text-brand-green-deep text-[28px] lg:text-[32px] font-playfair mb-6">Home Loans in Pinal County, Arizona</h2>
+            <div className="text-brand-text-muted text-[15px] space-y-4">
+              <p>Pinal County is one of the fastest-growing counties in the United States, and it is easy to see why. With more affordable home prices than neighboring Maricopa County, a strong sense of community, and easy access to both Phoenix and Tucson, Pinal County attracts first-time buyers, growing families, and retirees alike.</p>
+              <p>At Mortgage Brothers, we have been helping Arizona homebuyers navigate the mortgage process for 25+ years. We know Pinal County — from the master-planned neighborhoods of San Tan Valley and Queen Creek to the historic charm of Casa Grande and Florence. Let us help you find the right loan for your next chapter.</p>
+              <ul className="list-disc pl-6 space-y-2 mt-4">
+                <li><strong>County Population:</strong> Approximately 500,000 residents</li>
+                <li><strong>Major Cities:</strong> San Tan Valley, Queen Creek, Casa Grande, Coolidge, Florence, Apache Junction, Eloy, Maricopa</li>
+                <li><strong>2026 Conforming Loan Limit:</strong> $832,750</li>
+                <li><strong>2026 FHA Loan Limit:</strong> $557,750</li>
+                <li><strong>Popular Communities:</strong> Gold Canyon, Arizona City, Magma Ranch, Anthem at Merrill Ranch, Stanfield, Picacho</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-16 bg-[#fcf9f3]">
+          <div className="max-w-4xl mx-auto px-6">
+            <h2 className="text-brand-green-deep text-[28px] lg:text-[32px] font-playfair mb-8 text-center">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
+                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">What home loan programs are available to Pinal County homebuyers?</h3>
+                <p className="text-brand-text-muted text-[15px]">Pinal County buyers have access to the full range of mortgage programs including Conventional, FHA, VA (for eligible veterans), Jumbo, FHA Streamline Refinance, First-Time Homebuyer programs, Reverse Mortgage (for homeowners 62+), and Refinancing. The best program depends on your credit score, down payment, and financial goals. Our team can walk you through all your options at no cost.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
+                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">What is the conforming loan limit in Pinal County for 2026?</h3>
+                <p className="text-brand-text-muted text-[15px]">The 2026 conforming loan limit for Pinal County is $832,750 - the same baseline limit that applies across all Arizona counties. This is the maximum loan amount eligible for conventional financing backed by Fannie Mae or Freddie Mac. If your loan exceeds this amount, you will need a jumbo loan.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
+                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">What is the FHA loan limit in Pinal County for 2026?</h3>
+                <p className="text-brand-text-muted text-[15px]">The 2026 FHA loan limit for Pinal County is $557,750. This means you can finance a home up to that purchase price using an FHA loan with as little as 3.5% down (with a 580+ credit score). FHA loans are a popular choice in Pinal County because of the flexible credit requirements and low down payment.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
+                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">Why are so many people moving to Pinal County?</h3>
+                <p className="text-brand-text-muted text-[15px]">Pinal County has become one of the top relocation destinations in the country, largely because of more affordable home prices compared to Maricopa County, newer master-planned communities, excellent schools, and shorter commute times to both Phoenix and Tucson. Cities like San Tan Valley, Queen Creek, and Casa Grande offer a great quality of life without the higher price tag of the Phoenix metro core.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
+                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">How much do I need for a down payment on a Pinal County home?</h3>
+                <p className="text-brand-text-muted text-[15px]">It depends on the loan type. FHA loans require as little as 3.5% down. Conventional loans can go as low as 3%-5% for qualified buyers. VA loans require zero down payment for eligible veterans. We also work with down payment assistance programs that may help reduce your out-of-pocket costs.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
+                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">How long does it take to close on a home in Pinal County?</h3>
+                <p className="text-brand-text-muted text-[15px]">Most purchase transactions close in 21 to 30 days when all documentation is submitted promptly. Our team is known for fast, smooth closings - we will keep you informed every step of the way so there are no surprises at the closing table.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Bottom CTA section */}
         <section className="w-full bg-[#052316] text-white py-16 lg:py-24 text-center relative overflow-hidden border-t border-white/5">
           <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">

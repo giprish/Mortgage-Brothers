@@ -6,6 +6,7 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import StatsBanner from "../component/StatsBanner";
 import LoanProgramHero from "../component/LoanProgramHero";
+import FaqAccordion from "../component/FaqAccordion";
 
 const featureStrip = [
   "Unlock Home Equity with Arizona Refinancing Options",
@@ -202,7 +203,6 @@ const CheckIcon = () => (
 );
 
 export default function RefinancingArizonaPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [calcBalance, setCalcBalance] = useState("");
   const [calcCurrentRate, setCalcCurrentRate] = useState("");
   const [calcNewRate, setCalcNewRate] = useState("");
@@ -249,8 +249,8 @@ export default function RefinancingArizonaPage() {
 
       <main className="flex-grow">
         <LoanProgramHero
-          title="Mortgage Refinancing in Arizona"
-          subtitle="Lower your monthly payments, access cash, or shorten your loan term with our tailored refinancing options."
+          title="Refinancing in Arizona"
+          subtitle="Need money back or need to lower your payment? Let us help you with your mortgage refinancing in Arizona. We can help you decide if refinancing a home is the right step for you at this time. If yes, we can then offer you a variety of options to meet your specific needs and circumstances."
         />
 
         {/* Feature strip */}
@@ -307,6 +307,49 @@ export default function RefinancingArizonaPage() {
               >
                 Explore Your Refinancing Options
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Refinance considerations + math */}
+        <section className="w-full bg-[#f5f0e8] py-14 sm:py-16 lg:py-20 border-y border-[#e8e0d0]/50">
+          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+            <div className="max-w-3xl mx-auto">
+              <h2
+                className="text-[#08271B] text-[28px] lg:text-[34px] font-normal leading-tight mb-5"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                Whether or not refinancing your home loan at this time depends on the following factors:
+              </h2>
+              <ul className="list-disc pl-6 space-y-2 text-[#4e5b4e] text-[15.5px] leading-[1.75] mb-6">
+                <li>What is the purpose of the refinancing? Are you taking cash out? Shortening the term? Lowering my interest rate</li>
+                <li>What are the refinancing costs</li>
+                <li>How long do you plan to keep the home</li>
+                <li>What is the refinance interest rate compared to my current rate</li>
+                <li>How long will it take to recover the cost of refinancing</li>
+                <li>Will my income support the refinanced loan amount</li>
+              </ul>
+              <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75] mb-8">
+                Anytime refinance interest rates are lower than your present interest rate you should consider a home refinance.
+              </p>
+              <h3
+                className="text-[#08271B] text-[22px] font-normal mb-3"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                Let&apos;s Run The Math Together
+              </h3>
+              <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75] mb-8">
+                For every $100,000 of your loan balance, a one percent difference in interest rate is equal to $1,000 per year. If you have a loan balance of $300,000 and the interest rate difference is 1.5%, your annual savings from a refinance would be $4,500 or in monthly terms, $375 per month!
+              </p>
+              <h3
+                className="text-[#08271B] text-[22px] font-normal mb-3"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                Quick, Easy, and No-Hassle Mortgage Refinance
+              </h3>
+              <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
+                During our initial visit, we can also discuss affordable refinance programs, refinance interest rates and the HARP refinance program (if this applies to you). Home refinance rates are still at historically low levels.
+              </p>
             </div>
           </div>
         </section>
@@ -395,6 +438,37 @@ export default function RefinancingArizonaPage() {
                   <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed">{step.text}</p>
                 </div>
               ))}
+            </div>
+            <div className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 mt-10 shadow-sm">
+              <h3
+                className="text-[#08271B] text-[22px] font-normal mb-4"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                To refinance your home loan, there are basically three steps that you will take:
+              </h3>
+              <ul className="space-y-4 text-[#4e5b4e] text-[15.5px] leading-[1.75]">
+                <li>
+                  <strong>Assess:</strong> With your lender, assess if refinancing your mortgage is the right
+                  decision for you at this time. Then assess which program is best for you.
+                </li>
+                <li>
+                  <strong>Apply:</strong> Complete the mortgage application. Gather together the documents
+                  required by your lender and his underwriters. Submit them to your lender.
+                </li>
+                <li>
+                  <strong>Appraise:</strong> Your lender may require an appraisal of your home to ensure that it
+                  will cover the amount of the home loan. He will arrange this for you.
+                </li>
+              </ul>
+            </div>
+            <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl mt-6">
+              <h3 className="text-[#052316] text-[18px] font-bold mb-2">Completing the Refinance Process</h3>
+              <p className="text-[15px] text-[#052316] leading-relaxed">
+                Once the mortgage application has been approved and the appraisal has been accepted, your lender
+                will schedule a closing date. On the date of closing, you will sign new mortgage documents.
+                Shortly thereafter, the existing mortgage will be paid-off and retired and payments on your new
+                mortgage will begin.
+              </p>
             </div>
           </div>
         </section>
@@ -618,30 +692,8 @@ export default function RefinancingArizonaPage() {
                 Navigating the refinancing process can raise many questions. Here are some of the most common inquiries we receive from homeowners considering refinancing their mortgages. Understanding these key points can help you make informed decisions about your financial future.
               </p>
             </div>
-            <div className="flex flex-col gap-3 mb-10">
-              {faqs.map((faq, index) => {
-                const open = openFaq === index;
-                return (
-                  <div key={faq.q} className="bg-white border border-[#e8e0d0]/70 rounded-xl overflow-hidden">
-                    <button
-                      type="button"
-                      onClick={() => setOpenFaq(open ? null : index)}
-                      className="w-full flex items-center justify-between gap-4 text-left px-5 py-4 cursor-pointer"
-                      aria-expanded={open}
-                    >
-                      <span className="text-[#08271B] text-[15px] font-semibold leading-snug">{faq.q}</span>
-                      <span className={`text-[#3fb364] text-[22px] font-light shrink-0 transition-transform ${open ? "rotate-45" : ""}`}>
-                        +
-                      </span>
-                    </button>
-                    {open && (
-                      <div className="px-5 pb-5 text-[#4e5b4e] text-[14.5px] leading-relaxed border-t border-[#e8e0d0]/50 pt-4">
-                        {faq.a}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
+            <div className="mb-10">
+              <FaqAccordion items={faqs} />
             </div>
             <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center mb-8">
               Still have questions about refinancing? Our team is here to provide personalized guidance and ensure you have all the information you need to make the best decision for your financial future. Let us help you take the next step with confidence.

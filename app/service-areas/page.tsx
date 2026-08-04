@@ -182,7 +182,8 @@ export default function MaricopaCounty2() {
           return c.name.toLowerCase() === countyParam.toLowerCase() || cSlug === pClean;
         });
         if (matched) {
-          setSelectedCounty(matched.name);
+          const rafId = requestAnimationFrame(() => setSelectedCounty(matched.name));
+          return () => cancelAnimationFrame(rafId);
         }
       }
     }

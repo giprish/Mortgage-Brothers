@@ -5,9 +5,9 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import StatsBanner from "../component/StatsBanner";
+import FaqAccordion from "../component/FaqAccordion";
 
 export default function FirstTimeHomeBuyerPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const faqs = [
     {
@@ -193,23 +193,8 @@ export default function FirstTimeHomeBuyerPage() {
               </h2>
             </div>
 
-            <div className="space-y-4 text-left">
-              {faqs.map((faq, idx) => (
-                <div key={idx} className="bg-white border border-[#e0e0e0] rounded-2xl overflow-hidden shadow-sm">
-                  <button
-                    onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                    className="w-full px-6 py-5 flex items-center justify-between text-left font-semibold text-[#052316] text-[16px] focus:outline-none cursor-pointer"
-                  >
-                    <span>{faq.q}</span>
-                    <span className="text-[#3fb364] text-[20px] ml-4 font-bold">{openFaq === idx ? "−" : "+"}</span>
-                  </button>
-                  {openFaq === idx && (
-                    <div className="px-6 pb-6 text-[#4e5b4e] text-[14.5px] leading-relaxed border-t border-[#f0f0f0] pt-4">
-                      {faq.a}
-                    </div>
-                  )}
-                </div>
-              ))}
+            <div className="text-left">
+              <FaqAccordion items={faqs} />
             </div>
           </div>
         </section>

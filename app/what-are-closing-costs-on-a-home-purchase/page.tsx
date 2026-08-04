@@ -211,6 +211,205 @@ export default function ClosingCostsPage() {
                   </p>
                 </section>
 
+                <section id="transcript">
+                  <h2 className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3" style={{ fontFamily: "'Playfair Display', serif" }}>
+                    Transcript of the Mortgage Brothers Podcast
+                  </h2>
+
+                  <div className="space-y-8 text-[15.5px]">
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        What Are Closing Costs on a Home Purchase?
+                      </h3>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">Introduction</h3>
+                      <p className="mb-3">
+                        [00:02]<br />
+                        Welcome to the Mortgage Brothers Podcast! This week, we&apos;re talking about <strong>closing costs on home purchases</strong>—what they are, how much they typically cost, and how to understand them using a <strong>Loan Estimate</strong>.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        Are Closing Costs a Percentage of the Home Price?
+                      </h3>
+                      <p className="mb-3">
+                        [01:44]<br />
+                        Many people believe closing costs are a percentage of the home price, but that&apos;s not really accurate. Closing costs cover the <strong>work required to process the loan</strong>, and the cost doesn&apos;t scale exactly with the loan amount.
+                      </p>
+                      <ul className="list-disc pl-6 space-y-2 mb-3">
+                        <li>For a <strong>$200,000 home</strong>, closing costs are often between <strong>$3,000 and $3,800</strong>.</li>
+                        <li>For a <strong>$500,000 home</strong>, they might not be much higher.</li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        A Simple Rule of Thumb for Closing Costs
+                      </h3>
+                      <p className="mb-3">
+                        [02:54]<br />
+                        If you&apos;re estimating closing costs on a home <strong>purchase</strong>, a good rule of thumb is <strong>$3,500</strong>.<br />
+                        For <strong>refinances</strong>, closing costs tend to be <strong>lower</strong>, around <strong>$2,500</strong>.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        Breaking Down Closing Costs Using a Loan Estimate
+                      </h3>
+                      <p className="mb-3">
+                        [03:46]<br />
+                        To help explain closing costs, let&apos;s look at a real example:
+                      </p>
+                      <ul className="list-disc pl-6 space-y-2 mb-3">
+                        <li><strong>Home price</strong>: $370,000</li>
+                        <li><strong>Down payment</strong>: 20%–30%</li>
+                        <li><strong>Total closing costs</strong>: <strong>$3,563</strong> (excluding prepaids)</li>
+                      </ul>
+                      <p className="mb-3">
+                        💡 <strong>Important Note:</strong> Many Loan Estimates will show a higher <strong>Estimated Closing Costs</strong> amount because it includes <strong>prepaids</strong> (taxes, insurance, etc.). <strong>Actual loan fees are separate.</strong>
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        Main Categories of Closing Costs
+                      </h3>
+                      <p className="mb-3">
+                        [05:35]<br />
+                        On <strong>page 2</strong> of your Loan Estimate, the left side lists all <strong>closing costs</strong>. These include:
+                      </p>
+                      <ul className="list-disc pl-6 space-y-2 mb-3">
+                        <li><strong>Underwriting Fees</strong> (~$1,000)</li>
+                        <li><strong>Appraisal Fee</strong> ($500–$550)</li>
+                        <li><strong>Credit Report Fee</strong> ($40–$60)</li>
+                        <li><strong>Flood Certification &amp; Tax Service Fees</strong> ($15 for flood, ~$80 for tax verification)</li>
+                        <li><strong>Title Company Fees</strong> (~$1,800–$1,900)</li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        Underwriting Fees &amp; Loan Origination Fees
+                      </h3>
+                      <p className="mb-3">
+                        [06:04]<br />
+                        Most loans <strong>do not</strong> have points, but underwriting fees are standard (~$1,000).
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        Appraisal Fee
+                      </h3>
+                      <p className="mb-3">
+                        [06:37]<br />
+                        Appraisals cost <strong>$500–$550</strong> (slightly higher for <strong>VA loans</strong>, around <strong>$600</strong>). Some borrowers <strong>qualify for an appraisal waiver</strong>, meaning they may <strong>not need an appraisal</strong> at all.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        Credit Report Fee
+                      </h3>
+                      <p className="mb-3">
+                        [07:42]<br />
+                        A <strong>credit report is not free</strong>—lenders pay to pull reports from <strong>Equifax, Experian, and TransUnion</strong>. This typically costs <strong>$40–$60</strong>.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        Flood Certification &amp; Tax Service Fees
+                      </h3>
+                      <p className="mb-3">
+                        [08:46]
+                      </p>
+                      <ul className="list-disc pl-6 space-y-2 mb-3">
+                        <li><strong>Flood Certification Fee</strong> (~$15) ensures the property doesn&apos;t require flood insurance.</li>
+                        <li><strong>Tax Service Fee</strong> (~$80) verifies that property taxes are paid on time.</li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        Title Company Fees
+                      </h3>
+                      <p className="mb-3">
+                        [09:46]<br />
+                        Title fees are set by <strong>third-party title companies</strong> (not the lender). These include:
+                      </p>
+                      <ul className="list-disc pl-6 space-y-2 mb-3">
+                        <li><strong>Closing Protection Letter (CPL)</strong></li>
+                        <li><strong>Document Preparation Fees</strong></li>
+                        <li><strong>Lender&apos;s Title Policy</strong></li>
+                        <li><strong>Settlement/Escrow Fee</strong></li>
+                      </ul>
+                      <p className="mb-3">
+                        💡 <strong>Key Title Fees</strong>:
+                      </p>
+                      <ul className="list-disc pl-6 space-y-2 mb-3">
+                        <li><strong>Settlement/Escrow Fee</strong> (~$500–$600) covers the labor costs for handling the transaction.</li>
+                        <li><strong>Lender&apos;s Title Policy</strong> ensures the property&apos;s ownership history is clear and prevents future claims against the property.</li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        What About Prepaids &amp; Impound Accounts?
+                      </h3>
+                      <p className="mb-3">
+                        [14:09]<br />
+                        Some costs listed on the Loan Estimate are <strong>not actually closing costs</strong>—these are <strong>prepaid expenses</strong> like:
+                      </p>
+                      <ul className="list-disc pl-6 space-y-2 mb-3">
+                        <li><strong>Homeowners insurance</strong> (typically one year upfront)</li>
+                        <li><strong>Property taxes</strong> (several months of escrow payments)</li>
+                      </ul>
+                      <p className="mb-3">
+                        These prepaids are <strong>not fees</strong> but <strong>funds set aside for future payments</strong>.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        Final Thoughts: Understanding Your Closing Costs
+                      </h3>
+                      <p className="mb-3">
+                        [16:17]<br />
+                        The <strong>key takeaway</strong> is to distinguish between <strong>actual loan closing costs ($3,500 range)</strong> and <strong>prepaid expenses</strong>.
+                      </p>
+                      <p className="mb-3">
+                        If a lender tells you <strong>closing costs are only $1,000</strong>, they&apos;re likely only quoting <strong>their fee</strong>, not the total amount.
+                      </p>
+                      <p className="mb-3">
+                        💡 <strong>Quick Summary</strong>:
+                      </p>
+                      <ul className="list-disc pl-6 space-y-2 mb-3">
+                        <li><strong>Purchase Closing Costs</strong>: ~$3,500</li>
+                        <li><strong>Refinance Closing Costs</strong>: ~$2,500</li>
+                        <li><strong>Prepaids &amp; Taxes</strong>: Additional, but not actual fees</li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        Need More Help?
+                      </h3>
+                      <p className="mb-3">
+                        If you have questions about closing costs or need a mortgage quote, reach out to us!
+                      </p>
+                      <p className="mb-3">
+                        📩 <strong>Email</strong>: <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">Contact Form</Link><br />
+                        🏠 <strong>NMLS</strong>: 1007154
+                      </p>
+                      <p className="mb-3 italic">
+                        Disclaimer: This content is for informational purposes only. Please consult legal or financial professionals before making any decisions.
+                      </p>
+                    </div>
+                  </div>
+                </section>
+
                 <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
                   <p className="text-[15px] text-[#052316] leading-relaxed">
                     Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you and help you through the whole process.

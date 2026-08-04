@@ -7,10 +7,10 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import StatsBanner from "../component/StatsBanner";
 import LoanProgramHero from "../component/LoanProgramHero";
+import FaqAccordion from "../component/FaqAccordion";
 import { LOAN_PROGRAM_LINKS } from "@/lib/company";
 
 export default function FirstTimeHomeBuyerGuidePage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const highlights = [
     "Expert Guidance for Your Arizona Home Journey",
@@ -264,6 +264,166 @@ export default function FirstTimeHomeBuyerGuidePage() {
           </div>
         </section>
 
+        {/* FULL GUIDE ARTICLE */}
+        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
+          <div className="max-w-4xl mx-auto space-y-8">
+            <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
+              If you are a first time home buyer Arizona, the overwhelming amount of decisions you will
+              have to make can be dizzying. You need to understand the process from start to finish and
+              make the right decisions all the way along or you could suffer some disastrous consequences.
+              Follow this template and general advice for ensuring you jump into the shallow end of the
+              pool, without drowning from mistakes in the deep end.
+            </p>
+
+            <div>
+              <h2 className="text-[#052316] text-[26px] lg:text-[32px] font-bold font-playfair mb-4">
+                Important Questions you need to ask yourself
+              </h2>
+              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-4">
+                Buying a home is one of life&apos;s most major decisions. Many first time home buyers are
+                ill prepared and are forced to exit their first home in search of greener pastures much
+                before they are financially ready. In purchasing a home there are many considerations:
+              </p>
+              <ul className="list-disc pl-6 space-y-2 text-[#4e5b4e] text-[15.5px] leading-relaxed">
+                <li>Will your career path change radically in the near future?</li>
+                <li>Are you single and want to get married?</li>
+                <li>Are you married and plan on having children?</li>
+                <li>What neighborhood do you want to live in?</li>
+                <li>Do you want a home near your work?</li>
+              </ul>
+              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mt-4">
+                All these question&apos;s answers will lay the ground work for both the size of home you
+                will look for and in which area you will look. Too often people buy a house too small in a
+                poor neighborhood, just to own a home, when renting for an extra year will let you buy a
+                bigger home in a better area.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-[#052316] text-[26px] lg:text-[32px] font-bold font-playfair mb-4">
+                Work On Your Credit
+              </h2>
+              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
+                You will need to get your financial house in order first. If your credit score is under
+                620, many lenders in today&apos;s tight lending atmosphere may not even consider you for a
+                mortgage. Start working on raising your credit score by making regular payments on credit
+                lines or loans and review your credit history for any mistakes.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-[#052316] text-[26px] lg:text-[32px] font-bold font-playfair mb-4">
+                Pay Down Debt
+              </h2>
+              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
+                Using an online mortgage calculator can help you ascertain the size of mortgage you can
+                afford in relation to your income. Remember to keep your total costs of the mortgage less
+                than 45% Loan-to-Value ratio as that is the maximum that lenders will offer for a
+                mortgage. If you have other debt, tied up in credit cards, home equity lines of credit or
+                loans, these will subtract from the total value of a mortgage you will be eligible for. It
+                may be smart to pay off these debt instruments before applying for a mortgage.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-[#052316] text-[26px] lg:text-[32px] font-bold font-playfair mb-4">
+                BEST Loan programs and Down Payments available for first time home buyers
+              </h2>
+              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-4">
+                There are many things to consider, including the financing options available to you. As a
+                first-time home buyer, it is crucial to explore the different financing options to find the
+                one that suits your needs best.
+              </p>
+              <h3 className="text-[#052316] text-[18px] font-bold mb-2 font-playfair">
+                1. VA Loan for Veterans and Active Duty
+              </h3>
+              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-4">
+                If you are a veteran or active-duty military personnel, a VA loan can be an excellent
+                financing option for your first home. This type of loan is offered by lenders and
+                guaranteed by the Department of Veterans Affairs. One of the significant advantages of a VA
+                loan is that it requires no down payment. This means that you can buy a home without having
+                to save for a down payment. Additionally, VA loans typically have lower interest rates than
+                other types of loans, which can save you money in the long run.
+              </p>
+              <h3 className="text-[#052316] text-[18px] font-bold mb-2 font-playfair">
+                2. FHA Loan for Low Credit Scores
+              </h3>
+              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-4">
+                If your credit score is below 700, an FHA loan might be the best financing option for your
+                first home. FHA loans are government-backed and are designed to help individuals with lower
+                credit scores and income levels. One of the most significant advantages of an FHA loan is
+                that it only requires a 3.5% down payment. Additionally, FHA loans have more relaxed credit
+                score requirements, making it easier for first-time home buyers to qualify. The downside of
+                FHA mortgages is that they require an upfront mortgage insurance premium as well as a
+                monthly mortgage insurance premium which are typically higher mortgage insurance premiums
+                than a conventional loan.
+              </p>
+              <h3 className="text-[#052316] text-[18px] font-bold mb-2 font-playfair">
+                3. Conventional Mortgage for Higher Credit Scores
+              </h3>
+              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-4">
+                If your credit score is 700 or above, a conventional mortgage could be the ideal financing
+                option for purchasing your first home. It&apos;s a common myth that many first-time
+                homebuyers believe that conventional loans are not suitable for them. In reality,
+                conventional loan programs offer some of the most favorable terms for first-time
+                homebuyers. Although conventional mortgages typically require a minimum down payment of 3%,
+                the interest rates are highly competitive. Furthermore, conventional mortgages provide
+                greater flexibility in terms of loan terms and repayment options.
+              </p>
+              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
+                Your down payment can be money that you have saved OR a gift that you have received from a
+                relative or employer. The best first time Conventional home buyer program will require 3%
+                down payment. The FHA mortgage will require 3.5% down payment.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-[#052316] text-[26px] lg:text-[32px] font-bold font-playfair mb-4">
+                Get a Preapproved Mortgage
+              </h2>
+              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
+                Get a mortgage preapproval before you start looking to ensure you are not wasting your time
+                on homes you could not afford. Other fees when buying a home include closing costs that can
+                range from 1-8%, so shopping around between lenders can make a big difference.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-[#052316] text-[26px] lg:text-[32px] font-bold font-playfair mb-4">
+                Set Your Minimum Standards
+              </h2>
+              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
+                Now that you have all your preparations in order, it is time to start house hunting. Too
+                often first time home buyers are looking for a great looking home without examining the
+                more important structural parts of a home. The major items that should be considered
+                include the quality or state of: roof, windows, furnace, central air system, plumbing,
+                electrical, non-leaking basement, kitchen and bathrooms. Remember that cosmetic changes
+                like light fixtures, flooring, paint, landscaping, fences, decks, and trim can all be done
+                by yourself or relatively inexpensively by contractors. Replacing major items like a roof or
+                windows require a significant investment.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-[#052316] text-[26px] lg:text-[32px] font-bold font-playfair mb-4">
+                Hire an Agent, Look for a Home
+              </h2>
+              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
+                This is the best part of all, where you get to actually look at your potential new home.
+                Consider a home that meets your needs now and 5-10 years from now. Do not get stuck in a
+                home that you will need to sell in less than 5 years, as you may not even recover your
+                closing costs in the resale of the home.
+              </p>
+              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
+                As a first time home buyer Arizona, remember the most important decisions are: what can you
+                afford? Where do you want to live? Which lender offers the best cost of the mortgage? What
+                are the minimum must-haves you need to even consider a home? From these basic questions,
+                you will get a home you will enjoy.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* STATS BANNER */}
         <StatsBanner
           stats={[
@@ -506,29 +666,8 @@ export default function FirstTimeHomeBuyerGuidePage() {
               </p>
             </div>
 
-            <div className="space-y-4 text-left">
-              {faqs.map((faq, idx) => (
-                <div
-                  key={idx}
-                  className="bg-white border border-[#e0e0e0] rounded-2xl overflow-hidden shadow-sm transition-all"
-                >
-                  <button
-                    onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                    className="w-full px-6 py-5 flex items-center justify-between text-left font-semibold text-[#052316] text-[16px] focus:outline-none cursor-pointer"
-                  >
-                    <span>{faq.q}</span>
-                    <span className="text-[#3fb364] text-[20px] ml-4 font-bold shrink-0">
-                      {openFaq === idx ? "−" : "+"}
-                    </span>
-                  </button>
-
-                  {openFaq === idx && (
-                    <div className="px-6 pb-6 text-[#4e5b4e] text-[14.5px] leading-relaxed border-t border-[#f0f0f0] pt-4">
-                      {faq.a}
-                    </div>
-                  )}
-                </div>
-              ))}
+            <div className="text-left">
+              <FaqAccordion items={faqs} />
             </div>
           </div>
         </section>

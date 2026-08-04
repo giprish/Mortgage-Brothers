@@ -125,10 +125,10 @@ export default function RealtorTeamPage() {
 
       <main className="flex-grow">
         <LoanProgramHero
-          title="A Mortgage Partner You Can Depend On"
-          subtitle="Partner with trusted mortgage experts to deliver exceptional service and grow your business together"
-          ctaLabel="Become a Business Partner"
-          ctaHref="#contact"
+          title="We Want to be Your Mortgage Team"
+          subtitle="Our #1 Priority is giving Realtors® and their buyer clients exceptional service on “Purchase” transactions."
+          ctaLabel="Call +1 602-535-2171 today to speak with us."
+          ctaHref="tel:+16025352171"
           note=""
         />
 
@@ -141,6 +141,50 @@ export default function RealtorTeamPage() {
                 <p className="text-white text-[14px] lg:text-[15px] font-medium leading-snug">{item}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* We Are Brokers Advocating For You */}
+        <section className="w-full py-16 lg:py-24 bg-white">
+          <div className="max-w-7xl mx-auto px-6 lg:px-10">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-[#052316] text-[30px] lg:text-[40px] font-playfair font-normal leading-tight mb-5">
+                We Are Brokers Advocating For You.
+              </h2>
+              <p className="text-[#4e5b4e] text-[15px] lg:text-[16px] leading-[1.7] mb-6">
+                Because we are brokers we shop your scenario so banks compete for your business! We have
+                access to rates and loan programs other banks can&apos;t offer. We are fast and streamlined
+                so you can get on with your life.
+              </p>
+              <a
+                href="#contact"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-bold px-6 py-3.5 rounded-full transition-all"
+              >
+                GET STARTED
+              </a>
+            </div>
+          </div>
+        </section>
+
+        {/* We are Here to Simplify the Home Loan Process */}
+        <section className="w-full py-16 lg:py-24 bg-[#fcf9f3]">
+          <div className="max-w-7xl mx-auto px-6 lg:px-10">
+            <div className="max-w-3xl mx-auto text-center">
+              <h2 className="text-[#052316] text-[30px] lg:text-[40px] font-playfair font-normal leading-tight mb-5">
+                We are Here to Simplify the Home Loan Process.
+              </h2>
+              <p className="text-[#4e5b4e] text-[15px] lg:text-[16px] leading-[1.7] mb-6">
+                Check out our extensive library of video and content aimed at arming you with the right
+                knowledge and the most up-to-date information so that you can start home shopping with
+                confidence.
+              </p>
+              <Link
+                href="/loan-programs/"
+                className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[14px] font-bold px-6 py-3.5 rounded-full transition-all"
+              >
+                VIEW LOAN PROGRAMS
+              </Link>
+            </div>
           </div>
         </section>
 

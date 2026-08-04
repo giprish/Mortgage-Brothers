@@ -360,9 +360,12 @@ export default function DscrLoanHardMoneyPage() {
                       602-535-2171
                     </a>{" "}
                     or shoot us an email at{" "}
-                    <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                      Contact Form
-                    </Link>
+                    <a
+                      href="mailto:team@AZmortgagebrothers.com"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      team@AZmortgagebrothers.com
+                    </a>
                     . Be sure to ask us for a free quote on your next mortgage. We&apos;ll be sure to give you
                     personalized service and help you through the whole process.
                   </p>

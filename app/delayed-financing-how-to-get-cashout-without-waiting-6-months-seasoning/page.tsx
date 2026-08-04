@@ -310,6 +310,12 @@ export default function DelayedFinancingPage() {
                 </div>
 
                 <p className="text-[15px]">
+                  Thanks for listening and reading the Mortgage Brothers Show. Let us know if you have any
+                  questions you&apos;d like us to answer on this podcast. You can email your questions to
+                  Tom@AZMortgageBrothers.com or Eddie@AZMortgageBrothers.com.
+                </p>
+
+                <p className="text-[15px]">
                   Learn how to secure cash out without the typical six-month seasoning. For more insights,
                   explore an example of a{" "}
                   <Link

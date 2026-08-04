@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import FaqAccordion from "../component/FaqAccordion";
 
 const creditTable = [
   { range: "760+ (Excellent)", rate: "Lowest Rates Available", category: "Excellent Credit" },
@@ -199,8 +200,6 @@ const CheckIcon = () => (
 );
 
 export default function MortgageForExcellentCreditPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
-
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
@@ -581,35 +580,8 @@ export default function MortgageForExcellentCreditPage() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-3 mb-10">
-              {faqs.map((faq, index) => {
-                const open = openFaq === index;
-                return (
-                  <div
-                    key={faq.q}
-                    className="bg-white border border-[#e8e0d0]/70 rounded-xl overflow-hidden"
-                  >
-                    <button
-                      type="button"
-                      onClick={() => setOpenFaq(open ? null : index)}
-                      className="w-full flex items-center justify-between gap-4 text-left px-5 py-4 cursor-pointer"
-                      aria-expanded={open}
-                    >
-                      <span className="text-[#08271B] text-[15px] font-semibold leading-snug">
-                        {faq.q}
-                      </span>
-                      <span className={`text-[#3fb364] text-[22px] font-light shrink-0 transition-transform ${open ? "rotate-45" : ""}`}>
-                        +
-                      </span>
-                    </button>
-                    {open && (
-                      <div className="px-5 pb-5 text-[#4e5b4e] text-[14.5px] leading-relaxed border-t border-[#e8e0d0]/50 pt-4">
-                        {faq.a}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
+            <div className="mb-10">
+              <FaqAccordion items={faqs} />
             </div>
 
             <div className="text-center">

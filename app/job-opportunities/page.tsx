@@ -27,22 +27,22 @@ const whyCards = [
 
 const positions = [
   {
-    title: "Mortgage Broker Loan Officer",
+    title: "Mortgage Broker Loan Officer/Originator",
     text: "Guide clients through the mortgage process, analyze financial situations, and recommend suitable loan products. Build relationships with real estate professionals and financial advisors.",
     href: "/mortgage-broker-loan-officer-originator/",
   },
   {
-    title: "Reverse Mortgage Loan Officer",
+    title: "Reverse Mortgage Loan Officer – with Experience",
     text: "Specialize in reverse mortgages for seniors, educating clients on this unique financial tool. Conduct in-depth financial assessments and guide applicants through the reverse mortgage process.",
     href: "/reverse-mortgage-loan-officer/",
   },
   {
-    title: "Mortgage Processor",
+    title: "Mortgage Processor – Entry Level With OR Without Experience",
     text: "Manage loan application pipelines, verify documentation, and ensure smooth progression of loans through the approval process. Great opportunity to start your career in the mortgage industry.",
     href: "/mortgage-processor/",
   },
   {
-    title: "Loan Officer Assistant",
+    title: "Loan Officer Assistant – Entry Level, No Experience",
     text: "Support loan officers in client communication, document collection, and basic loan file preparation. Ideal for those looking to enter the mortgage industry and learn from experienced professionals.",
     href: "/loan-officer-assistant/",
   },
@@ -148,7 +148,7 @@ export default function JobOpportunitiesPage() {
 
       <main className="flex-grow">
         <LoanProgramHero
-          title="Mortgage Job Opportunities in Arizona"
+          title="Available Career Opportunities"
           subtitle="Join Our Team and Build a Rewarding Career in Mortgage Lending"
           ctaLabel="View Open Positions"
           ctaHref="#open-positions"
@@ -392,6 +392,11 @@ export default function JobOpportunitiesPage() {
               We&apos;re excited about the possibility of you joining The Mortgage Brothers Team. Whether
               you&apos;re ready to apply, have questions about our open positions, or simply want to learn
               more about building a career in the mortgage industry, we&apos;re here to help.
+            </p>
+
+            <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
+              Interested? If you are interested in any job opportunity please call 602-535-2171 and ask
+              for Eddie Knoell or fill out our contact form.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 text-[14.5px] text-[#08271B]">

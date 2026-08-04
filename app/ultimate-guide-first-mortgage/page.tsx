@@ -1,7 +1,6 @@
 "use client";
 
 import FaqAccordion from "../component/FaqAccordion";
-
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -188,16 +187,10 @@ export default function UltimateGuideFirstMortgagePage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="/#get-pre-approved"
-                    className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                    href="/#Get-in-Touch"
+                    className="inline-flex items-center gap-2 bg-[#6ca220] hover:bg-[#5b8a1a] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
                   >
-                    Get Started Today &rarr;
-                  </Link>
-                  <Link
-                    href="/contact-us/"
-                    className="inline-flex items-center gap-2 text-[#3fb364] hover:underline text-[15px] font-semibold px-4 py-3 transition-all"
-                  >
-                    Contact Us
+                    Get Started Today
                   </Link>
                 </div>
               </div>
@@ -214,49 +207,41 @@ export default function UltimateGuideFirstMortgagePage() {
                     So, what do you need to do to prepare to buy your first home? What do lenders want to see
                     before approving you for a mortgage? Here are some of the things lenders will consider:
                   </p>
-                  <div className="space-y-5">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">Good Credit</h3>
-                      <p>
-                        Lenders want to know if the loans they provide will be repaid on time. The best way they
-                        have to determine this is by looking at what a loan applicant has done in the past. Most
-                        lenders look at credit scores and credit history to determine whether you have a history of
-                        paying your bills on time.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">Reliable Income</h3>
-                      <p>
-                        Lenders also want to know whether you have a means of repaying them. Do you have the income
-                        to cover the mortgage? They want to see evidence that you have a job that pays enough to
-                        cover a mortgage, and they want some evidence that you&apos;re likely to hold that job for
-                        a while. Typically they&apos;ll be looking for 2 years with the same employer, give or
-                        take. If you can&apos;t show 2 years with a single employer, 2 years at a rising or similar
-                        income level can also work.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">Debt to Income</h3>
-                      <p>
-                        Your debt to income ratio is another aspect of your financial health that lenders look at
-                        when considering you for a loan. How much of your income is currently being used to pay
-                        outstanding debt? If the ratio is too high, that&apos;s an indication that you might have
-                        trouble paying off your loan.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">Assets and Liabilities</h3>
-                      <p>
-                        Lenders have learned that sometimes people who have good credit and reliable income at the
-                        time a loan was made can experience a change in their circumstances, such as job loss or a
-                        long-term illness – that will result in their not being able to pay a mortgage.
-                        Unfortunately, even when these things happen, mortgages still have to be paid, so lenders
-                        want to know if you have assets that you could use in a pinch. They also want to know how
-                        many other liabilities you have – such as credit card debt, student loans or auto payments
-                        – that might also have to be paid.
-                      </p>
-                    </div>
-                  </div>
+                  <ul className="list-disc pl-6 space-y-3">
+                    <li>
+                      <strong>Good Credit</strong><br />
+                      Lenders want to know if the loans they provide will be repaid on time. The best way they
+                      have to determine this is by looking at what a loan applicant has done in the past. Most
+                      lenders look at credit scores and credit history to determine whether you have a history of
+                      paying your bills on time.
+                    </li>
+                    <li>
+                      <strong>Reliable Income</strong><br />
+                      Lenders also want to know whether you have a means of repaying them. Do you have the income
+                      to cover the mortgage? They want to see evidence that you have a job that pays enough to
+                      cover a mortgage, and they want some evidence that you&apos;re likely to hold that job for
+                      a while. Typically they&apos;ll be looking for 2 years with the same employer, give or
+                      take. If you can&apos;t show 2 years with a single employer, 2 years at a rising or similar
+                      income level can also work.
+                    </li>
+                    <li>
+                      <strong>Debt to Income</strong><br />
+                      Your debt to income ratio is another aspect of your financial health that lenders look at
+                      when considering you for a loan. How much of your income is currently being used to pay
+                      outstanding debt? If the ratio is too high, that&apos;s an indication that you might have
+                      trouble paying off your loan.
+                    </li>
+                    <li>
+                      <strong>Assets and Liabilities</strong><br />
+                      Lenders have learned that sometimes people who have good credit and reliable income at the
+                      time a loan was made can experience a change in their circumstances, such as job loss or a
+                      long-term illness – that will result in their not being able to pay a mortgage.
+                      Unfortunately, even when these things happen, mortgages still have to be paid, so lenders
+                      want to know if you have assets that you could use in a pinch. They also want to know how
+                      many other liabilities you have – such as credit card debt, student loans or auto payments
+                      – that might also have to be paid.
+                    </li>
+                  </ul>
                 </section>
 
                 <section id="how-do-lenders-look-at-credit">
@@ -271,38 +256,32 @@ export default function UltimateGuideFirstMortgagePage() {
                     good credit. There&apos;s actually quite a bit more to it. So, what do lenders look at when it
                     comes to credit?
                   </p>
-                  <div className="space-y-5">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">Credit score</h3>
-                      <p>
-                        Yes, most lenders do look at your credit score and this is an important consideration when
-                        it comes to getting a loan. Generally speaking, you&apos;re considered to have good credit
-                        when your score is around 700 or above. This will usually qualify you for the best mortgage
-                        rates. A score as low as 620 may still be considered, but the lower the score, the higher
-                        the rate. Below a 620 credit score will usually not be considered.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">Credit utilization</h3>
-                      <p>
-                        Another aspect of your credit that lenders will look at, is how much of your current
-                        available credit you are using. How high are your balances? If the limit of your credit
-                        card is $25,000, is your balance hovering around that amount, or are you following
-                        responsible credit practices and paying that off? The less you owe on those cards, the
-                        lower your utilization rate and that is what lenders want to see.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">Credit history</h3>
-                      <p>
-                        Some lenders don&apos;t just look at credit score. They look at your whole credit history.
-                        This is a benefit to buyers who are just getting financially established because they often
-                        don&apos;t have a long credit history and this can lower their scores, even though their
-                        actual credit history is good. VA lenders often consider the buyer&apos;s history of
-                        on-time payments for this reason.
-                      </p>
-                    </div>
-                  </div>
+                  <ol className="list-decimal pl-6 space-y-3">
+                    <li>
+                      <strong>Credit score</strong><br />
+                      Yes, most lenders do look at your credit score and this is an important consideration when
+                      it comes to getting a loan. Generally speaking, you&apos;re considered to have good credit
+                      when your score is around 700 or above. This will usually qualify you for the best mortgage
+                      rates. A score as low as 620 may still be considered, but the lower the score, the higher
+                      the rate. Below a 620 credit score will usually not be considered.
+                    </li>
+                    <li>
+                      <strong>Credit utilization</strong><br />
+                      Another aspect of your credit that lenders will look at, is how much of your current
+                      available credit you are using. How high are your balances? If the limit of your credit
+                      card is $25,000, is your balance hovering around that amount, or are you following
+                      responsible credit practices and paying that off? The less you owe on those cards, the
+                      lower your utilization rate and that is what lenders want to see.
+                    </li>
+                    <li>
+                      <strong>Credit history</strong><br />
+                      Some lenders don&apos;t just look at credit score. They look at your whole credit history.
+                      This is a benefit to buyers who are just getting financially established because they often
+                      don&apos;t have a long credit history and this can lower their scores, even though their
+                      actual credit history is good. VA lenders often consider the buyer&apos;s history of
+                      on-time payments for this reason.
+                    </li>
+                  </ol>
                 </section>
 
                 <section id="down-payments-how-much-do-i-need-to-save">
@@ -366,12 +345,14 @@ export default function UltimateGuideFirstMortgagePage() {
                     Take our quick quiz to assess your credit profile and receive personalized insights to guide
                     your mortgage journey.
                   </p>
-                  <Link
-                    href="/#get-pre-approved"
-                    className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                  <a
+                    href="https://form.jotform.com/250305896122151"
+                    target="_blank"
+                    rel="noopener"
+                    className="inline-flex items-center gap-2 bg-[#6ca220] hover:bg-[#5b8a1a] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
                   >
-                    Take the Quiz &rarr;
-                  </Link>
+                    Take the Quiz
+                  </a>
                 </div>
 
                 <section id="finding-a-lender">
@@ -390,53 +371,46 @@ export default function UltimateGuideFirstMortgagePage() {
                     Once, this simply involved going down your local bank and talking to their lending officer.
                     Today, you have a lot more options. These options include:
                   </p>
-                  <div className="space-y-5">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">Online lenders</h3>
-                      <p>
-                        If you&apos;re looking online you&apos;ve probably noticed a lot of online lenders offering
-                        really low rates for loans. There are a few things you should know. The rates offered
-                        online are teaser rates – the lowest possible rates that could ever be offered to a buyer
-                        that has perfect credit, no outstanding debt, and plenty of cash to pay down points. The
-                        rates that will actually be available to you will likely not match those seen online.
-                        It&apos;s also challenging for a first time buyer to work with an online lender because
-                        they are processing huge volumes of loans, leaving them too busy to be available to answer
-                        questions. Follow up tends to be poor as well, so your loan closing can be subject to
-                        problems and delays. These issues can cost you big. If your seller won&apos;t wait for your
-                        lender to resolve issues, you can lose your earnest money deposit or even the house you
-                        wanted to buy. It&apos;s better to develop a relationship with a lender you trust in your
-                        local market.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">Mortgage brokers</h3>
-                      <p>
-                        A mortgage broker is a person who originates or takes applications for loans that are
-                        available on the open market. Those loans are available from multiple lenders, which means
-                        a broker has access to a wide variety of loan programs and types. Unlike a bank that will
-                        only sell you the loans that they offer, a broker can give you access to just about any
-                        loan available on the market and that means they can help you get the best rate possible.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">Mortgage bankers</h3>
-                      <p>
-                        A mortgage banker is similar to a broker in that they originate loans that will be provided
-                        by other lenders. They also often have some of their own &quot;in-house&quot; loan programs
-                        that they can offer. If your credit is challenged, sometimes a mortgage banker will have
-                        in-house programs that they service – called portfolio loans – that you may be able to
-                        qualify for.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">Banks and credit unions</h3>
-                      <p>
-                        Banks and credit unions provide home loans too. These loans are limited to those actually
-                        provided by the bank, which means there&apos;s not much selection. This often equates to a
-                        higher rate.
-                      </p>
-                    </div>
-                  </div>
+                  <ul className="list-disc pl-6 space-y-3">
+                    <li>
+                      <strong>Online lenders</strong><br />
+                      If you&apos;re looking online you&apos;ve probably noticed a lot of online lenders offering
+                      really low rates for loans. There are a few things you should know. The rates offered
+                      online are teaser rates – the lowest possible rates that could ever be offered to a buyer
+                      that has perfect credit, no outstanding debt, and plenty of cash to pay down points. The
+                      rates that will actually be available to you will likely not match those seen online.
+                      It&apos;s also challenging for a first time buyer to work with an online lender because
+                      they are processing huge volumes of loans, leaving them too busy to be available to answer
+                      questions. Follow up tends to be poor as well, so your loan closing can be subject to
+                      problems and delays.<br />
+                      These issues can cost you big. If your seller won&apos;t wait for your
+                      lender to resolve issues, you can lose your earnest money deposit or even the house you
+                      wanted to buy. It&apos;s better to develop a relationship with a lender you trust in your
+                      local market.
+                    </li>
+                    <li>
+                      <strong>Mortgage brokers</strong><br />
+                      A mortgage broker is a person who originates or takes applications for loans that are
+                      available on the open market. Those loans are available from multiple lenders, which means
+                      a broker has access to a wide variety of loan programs and types. Unlike a bank that will
+                      only sell you the loans that they offer, a broker can give you access to just about any
+                      loan available on the market and that means they can help you get the best rate possible.
+                    </li>
+                    <li>
+                      <strong>Mortgage bankers</strong><br />
+                      A mortgage banker is similar to a broker in that they originate loans that will be provided
+                      by other lenders. They also often have some of their own &quot;in-house&quot; loan programs
+                      that they can offer. If your credit is challenged, sometimes a mortgage banker will have
+                      in-house programs that they service – called portfolio loans – that you may be able to
+                      qualify for.
+                    </li>
+                    <li>
+                      <strong>Banks and credit unions</strong><br />
+                      Banks and credit unions provide home loans too. These loans are limited to those actually
+                      provided by the bank, which means there&apos;s not much selection. This often equates to a
+                      higher rate.
+                    </li>
+                  </ul>
                 </section>
 
                 <section id="what-types-of-loans-are-there">
@@ -450,34 +424,28 @@ export default function UltimateGuideFirstMortgagePage() {
                     The most common loan types are conventional loans, VA and FHA loans. Here is a little more
                     information about each of them.
                   </p>
-                  <div className="space-y-5">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">VA loans</h3>
-                      <p>
-                        are for veterans of the armed forces. VA loans are loans that are guaranteed by the
-                        Veterans Administration, which protects the lenders providing these loans against default.
-                        Because they&apos;re federally guaranteed, these loans offer very low rates, and also can
-                        be obtained for as little as 0% down. If you&apos;re a first time buyer who is also a
-                        veteran, ask if you qualify for a VA loan.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">FHA loans</h3>
-                      <p>
-                        are another loan program which is commonly used by first time buyers. FHA loans are
-                        federally guaranteed loans that are often used by first-time buyers. They offer low rates
-                        and a down payment of just 3.5%,
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">Conventional loans</h3>
-                      <p>
-                        are loans with are bought and sold on the open mortgage market (more about that in a
-                        moment). These loans are offered by all types of lenders according to criteria that makes
-                        them easy to underwrite.
-                      </p>
-                    </div>
-                  </div>
+                  <ul className="list-disc pl-6 space-y-3">
+                    <li>
+                      <strong><Link href="/va-loans-arizona/" className="hover:underline">VA loans</Link></strong><br />
+                      are for veterans of the armed forces. VA loans are loans that are guaranteed by the
+                      Veterans Administration, which protects the lenders providing these loans against default.
+                      Because they&apos;re federally guaranteed, these loans offer very low rates, and also can
+                      be obtained for as little as 0% down. If you&apos;re a first time buyer who is also a
+                      veteran, ask if you qualify for a VA loan.
+                    </li>
+                    <li>
+                      <strong><Link href="/fha-home-loans-arizona/" className="hover:underline">FHA loans</Link></strong><br />
+                      are another loan program which is commonly used by first time buyers. FHA loans are
+                      federally guaranteed loans that are often used by first-time buyers. They offer low rates
+                      and a down payment of just 3.5%,
+                    </li>
+                    <li>
+                      <strong><Link href="/conventional-home-loans-arizona/" className="hover:underline">Conventional loans</Link></strong><br />
+                      are loans with are bought and sold on the open mortgage market (more about that in a
+                      moment). These loans are offered by all types of lenders according to criteria that makes
+                      them easy to underwrite.
+                    </li>
+                  </ul>
                 </section>
 
                 <section id="conventional-loans-and-the-mortgage-market">
@@ -647,38 +615,26 @@ export default function UltimateGuideFirstMortgagePage() {
                     To avoid delays or even the possibility that your loan application will be denied, make sure
                     to:
                   </p>
-                  <div className="space-y-5">
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Follow all the terms of your purchase and sale contract.
-                      </h3>
-                      <p>
-                        Make sure you fully understand what actions you&apos;re required to take by what dates in
-                        order to meet the terms of your contract. Your agent can help with this – many of them
-                        provide a calendar of crucial dates for applications, inspections, responses and waivers.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Provide all loan materials requested in a timely way.
-                      </h3>
-                      <p>
-                        If your mortgage lender asks for a piece of additional information, make sure you respond
-                        quickly. Your loan likely cannot be processed and approved without it.
-                      </p>
-                    </div>
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                        Refrain from making any large purchases on credit.
-                      </h3>
-                      <p>
-                        DO NOT purchase a car, a boat, a fabulous vacation, or do an expensive renovation of your
-                        current home that you plan to sell using a home equity line, credit card or any other form
-                        of credit. This will show up on your credit report and can slow or stop your approval. It
-                        can wait.
-                      </p>
-                    </div>
-                  </div>
+                  <ul className="list-disc pl-6 space-y-3">
+                    <li>
+                      <strong>Follow all the terms of your purchase and sale contract.</strong><br />
+                      Make sure you fully understand what actions you&apos;re required to take by what dates in
+                      order to meet the terms of your contract. Your agent can help with this – many of them
+                      provide a calendar of crucial dates for applications, inspections, responses and waivers.
+                    </li>
+                    <li>
+                      <strong>Provide all loan materials requested in a timely way.</strong><br />
+                      If your mortgage lender asks for a piece of additional information, make sure you respond
+                      quickly. Your loan likely cannot be processed and approved without it.
+                    </li>
+                    <li>
+                      <strong>Refrain from making any large purchases on credit.</strong><br />
+                      DO NOT purchase a car, a boat, a fabulous vacation, or do an expensive renovation of your
+                      current home that you plan to sell using a home equity line, credit card or any other form
+                      of credit. This will show up on your credit report and can slow or stop your approval. It
+                      can wait.
+                    </li>
+                  </ul>
                 </section>
 
                 <section id="final-approval-and-the-closing-table">
@@ -734,95 +690,30 @@ export default function UltimateGuideFirstMortgagePage() {
                   </p>
                 </section>
 
-                <div className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
-                  <h2
-                    className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Step Into Homeownership in Arizona Today!
-                  </h2>
-                  <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
-                    Unlock expert tips and essential insights that empower you as a first-time homebuyer. Let our
-                    specialists help you make the leap with confidence.
-                  </p>
-                  <Link
-                    href="/#get-pre-approved"
-                    className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
-                  >
-                    Start Your Journey &rarr;
-                  </Link>
-                </div>
-
                 <section id="frequently-asked-questions">
                   <FaqAccordion
                     title="Frequently Asked Questions"
                     items={[
-                    { q: "What do lenders look for when approving a mortgage?", a: <>Lenders typically assess several key factors when approving a mortgage, including your
-                        credit score and payment history, reliable income, debt-to-income ratio, and available
-                        assets. They want to ensure you have a strong record of repaying debts, a stable income
-                        source, manageable debt levels, and financial reserves to cover unforeseen circumstances.</> },
-                    { q: "How does my credit score affect my mortgage approval?", a: <>Your credit score plays a major role in determining the interest rate and loan options
-                        available to you. A score around 700 or higher is considered good and often qualifies for
-                        the best rates. Scores as low as 620 may still be accepted, but they typically result in
-                        higher rates. Lenders also consider your credit utilization and full credit history, not
-                        just the score.</> },
-                    { q: "How much down payment do I need for my first home?", a: <>The required down payment depends on the type of loan and home price. Conventional loans
-                        generally need 20% down, though some allow as little as 5%. FHA loans require a minimum of
-                        3.5% down, and VA loans for veterans can go as low as 0%. A larger down payment helps reduce
-                        your monthly payments and total loan cost.</> },
-                    { q: "What types of home loans are available for first-time buyers?", a: <>Common loan types include conventional loans, FHA loans, and VA loans. Conventional loans
-                        are widely available and often sold on the secondary market. FHA loans are backed by the
-                        Federal Housing Administration and offer lower down payments, while VA loans are guaranteed
-                        by the Department of Veterans Affairs and provide benefits like no down payment for
-                        eligible veterans.</> },
-                    { q: "What is the difference between pre-approval and pre-qualification?", a: <>A pre-qualification is an initial estimate of how much you may be able to borrow based on
-                        basic information you provide. A pre-approval is a more detailed process that requires
-                        financial verification, such as proof of income, tax returns, and bank statements.
-                        Pre-approval carries more weight when making an offer on a home.</> },
-                    { q: "What happens after my mortgage is approved?", a: <>Once your mortgage is approved, the lender will finalize the loan documents and schedule
-                        your closing. You&apos;ll complete a final home inspection, sign paperwork with your
-                        closing agent or attorney, and arrange for the key transfer. Staying in close contact with
-                        your lender and real estate agent ensures a smooth closing process.</> }
+                    { q: "What do lenders look for when approving a mortgage?", a: <>Lenders typically assess several key factors when approving a mortgage, including your credit score and payment history, reliable income, debt-to-income ratio, and available assets. They want to ensure you have a strong record of repaying debts, a stable income source, manageable debt levels, and financial reserves to cover unforeseen circumstances.</> },
+                    { q: "How does my credit score affect my mortgage approval?", a: <>Your credit score plays a major role in determining the interest rate and loan options available to you. A score around 700 or higher is considered good and often qualifies for the best rates. Scores as low as 620 may still be accepted, but they typically result in higher rates. Lenders also consider your credit utilization and full credit history, not just the score.</> },
+                    { q: "How much down payment do I need for my first home?", a: <>The required down payment depends on the type of loan and home price. Conventional loans generally need 20% down, though some allow as little as 5%. FHA loans require a minimum of 3.5% down, and VA loans for veterans can go as low as 0%. A larger down payment helps reduce your monthly payments and total loan cost.</> },
+                    { q: "What types of home loans are available for first-time buyers?", a: <>Common loan types include conventional loans, FHA loans, and VA loans. Conventional loans are widely available and often sold on the secondary market. FHA loans are backed by the Federal Housing Administration and offer lower down payments, while VA loans are guaranteed by the Department of Veterans Affairs and provide benefits like no down payment for eligible veterans.</> },
+                    { q: "What is the difference between pre-approval and pre-qualification?", a: <>A pre-qualification is an initial estimate of how much you may be able to borrow based on basic information you provide. A pre-approval is a more detailed process that requires financial verification, such as proof of income, tax returns, and bank statements. Pre-approval carries more weight when making an offer on a home.</> },
+                    { q: "What happens after my mortgage is approved?", a: <>Once your mortgage is approved, the lender will finalize the loan documents and schedule your closing. You&apos;ll complete a final home inspection, sign paperwork with your closing agent or attorney, and arrange for the key transfer. Staying in close contact with your lender and real estate agent ensures a smooth closing process.</> }
                     ]}
                   />
                 </section>
-
-                <p>
-                  If you have any questions about your first mortgage, call us at{" "}
-                  <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    (602) 535-2171
-                  </a>{" "}
-                  or reach us using our{" "}
-                  <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                    contact form
-                  </Link>
-                  .
-                </p>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you
-                    and help you through the whole process.
-                  </p>
-                </div>
-
-                <p className="text-[#8a9a7a] text-[13px] leading-relaxed">
-                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
-                  prepared for informational purposes only. You should consult your own tax, legal, and accounting
-                  advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
-                  1618695. Equal housing lender.
-                </p>
               </div>
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">
                 <Link
-                  href="/arizona-refinance-process/"
+                  href="/what-is-a-conventional-home-loan-the-complete-first-time-buyer-mortgage-guide/"
                   className="text-[#3fb364] font-semibold hover:underline"
                 >
                   ← Previous Post
                 </Link>
                 <Link
-                  href="/expect-youre-not-first-time-mortgage-shopper/"
+                  href="/first-time-home-buyer-arizona-guide/"
                   className="text-[#8a9a7a] hover:text-[#3fb364] transition-colors"
                 >
                   Next Post →

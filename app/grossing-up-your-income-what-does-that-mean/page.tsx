@@ -137,11 +137,19 @@ export default function GrossingUpIncomePage() {
           <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
             <article className="min-w-0">
 
-              <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-8">
-                You can think of grossing up as extra credit. Now, this isn&apos;t extra money. It doesn&apos;t
-                go into your bank account, but it is an additional amount we can put on paper when it comes to
-                applying for a loan.
-              </p>
+              <section id="what-is-grossing-up">
+                <h2
+                  className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                  What is grossing up?
+                </h2>
+                <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-8">
+                  You can think of grossing up as extra credit. Now, this isn&apos;t extra money. It doesn&apos;t
+                  go into your bank account, but it is an additional amount we can put on paper when it comes to
+                  applying for a loan.
+                </p>
+              </section>
 
               <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#08271B] mb-10 shadow-sm">
                 <iframe
@@ -255,10 +263,13 @@ export default function GrossingUpIncomePage() {
                   </p>
                   <p>
                     If you have any questions about this or if you have any questions you&apos;d like us to
-                    answer on our podcast, you can submit your questions using our{" "}
-                    <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                      contact form
-                    </Link>{" "}
+                    answer on our podcast, you can email your questions to{" "}
+                    <a
+                      href="mailto:team@azmortgagebrothers.com"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      team@azmortgagebrothers.com
+                    </a>{" "}
                     or give us a call at{" "}
                     <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
                       (602) 535-2171
@@ -274,6 +285,12 @@ export default function GrossingUpIncomePage() {
                     you and help you through the whole process.
                   </p>
                 </div>
+
+                <p className="text-[15px]">
+                  Thanks for listening and reading the Mortgage Brothers Show. Let us know if you have any
+                  questions you&apos;d like us to answer on this podcast. You can email your questions to
+                  Tom@AZMortgageBrothers.com or Eddie@AZMortgageBrothers.com.
+                </p>
 
                 <p className="text-[15px]">
                   Wondering what it means to gross up your income for mortgage qualification? For a complete

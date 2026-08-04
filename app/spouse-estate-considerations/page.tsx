@@ -8,44 +8,28 @@ import ArticleCard from "../component/ArticleCard";
 
 const articles = [
   {
-    title: "Is Homeownership Hereditary?",
-    description: "Urban Institute research on how parental homeownership and wealth influence millennial homeownership rates and generational wealth.",
-    href: "/is-homeownership-hereditary/",
-    date: "Feb 12, 2025",
-    readTime: "7 min read",
-    category: "Spouse & Estate Considerations"
-  },
-  {
     title: "Who CAN and CANNOT Be On Title When you Get A Mortgage?",
-    description: "Learn who can be added to a mortgage title, spouse and co-borrower rules, community property, and closing in a trust.",
+    description: "In this post, we’re going to be answering the question: who can you add on a title when you’re getting a mortgage? You might be surprised how many times, when you’re in the middle of a mortgage, this question comes up. Secure Your Mortgage Title Today! Contact our...",
     href: "/who-can-and-cannot-be-on-title-when-you-get-a-mortgage/",
     date: "Feb 12, 2025",
-    readTime: "10 min read",
-    category: "Spouse & Estate Considerations"
+    readTime: "",
+    category: "Specialty Loans, Spouse & Estate Considerations"
   },
   {
-    title: "What If My Spouse Dies and I'm Not On The Mortgage?",
-    description: "Learn what happens to a mortgage when a spouse dies if you are not on the loan, including title, St. Germain Act protections, community property, and refinance options.",
+    title: "Is Homeownership Hereditary?",
+    description: "Everyone knows that houses can be inherited, but can homeownership? It would seem that the answer to that question is “yes.” Ready to Build Your Legacy? Connect with Arizona Mortgage Brothers today to start your journey toward lasting homeownership and secure mortgage...",
+    href: "/is-homeownership-hereditary/",
+    date: "Feb 12, 2025",
+    readTime: "",
+    category: "Specialty Loans, Spouse & Estate Considerations"
+  },
+  {
+    title: "What If My Spouse Dies and I’m Not On The Mortgage?",
+    description: "In this post, we’re going to touch upon unfortunate circumstances: death. The death of a loved one is incredibly hard to go through. We hope that we can, at the very least, make navigating these tragic circumstances a little bit easier. We’re going to be discussing...",
     href: "/what-if-my-spouse-dies-and-im-not-on-the-mortgage/",
-    date: "Dec 30, 2024",
-    readTime: "9 min read",
-    category: "Spouse & Estate Considerations"
-  },
-  {
-    title: "Navigating Mortgage Options During Divorce: A Complete Guide for Arizona Homeowners",
-    description: "How to handle marital real estate in Arizona, including buyout refinances, equity splits, and home sale strategies.",
-    href: "/navigating-mortgage-options-during-divorce-a-complete-guide/",
-    date: "May 20, 2026",
-    readTime: "11 min read",
-    category: "Spouse & Estate Considerations"
-  },
-  {
-    title: "Who Qualifies for a Reverse Mortgage? Understanding Eligibility in Arizona",
-    description: "A complete guide to HECM reverse mortgage eligibility rules, age requirements, and equity qualifications for Arizona seniors.",
-    href: "/who-qualifies-for-a-reverse-mortgage-understanding-eligibility-requirements/",
-    date: "Jun 5, 2026",
-    readTime: "9 min read",
-    category: "Spouse & Estate Considerations"
+    date: "Jan 1, 2025",
+    readTime: "",
+    category: "Spouse & Estate Considerations, Homeownership Tips"
   }
 ];
 
@@ -74,7 +58,7 @@ export default function SpouseEstateConsiderationsPage() {
             </h1>
 
             <p className="text-[#c8c8b8] text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto">
-              Understand the implications of mortgages on marriage, divorce, and estate planning. Get expert advice on protecting your assets.
+              Understand spouse mortgage impacts, estate considerations, and legal aspects of managing mortgages and homeownership.
             </p>
           </div>
         </section>

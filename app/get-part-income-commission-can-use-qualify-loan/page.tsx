@@ -338,10 +338,13 @@ export default function CommissionQualifyLoanPage() {
                     </a>
                   </p>
                   <p className="mb-3">
-                    Or reach us using our{" "}
-                    <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                      contact form
-                    </Link>
+                    Or email us at{" "}
+                    <a
+                      href="mailto:team@azmortgagebrothers.com"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      team@azmortgagebrothers.com
+                    </a>
                   </p>
                   <p>
                     Or Complete our{" "}

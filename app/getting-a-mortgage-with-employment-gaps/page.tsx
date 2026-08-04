@@ -302,6 +302,12 @@ export default function GettingMortgageWithEmploymentGapsPage() {
                 </div>
 
                 <p className="text-[15px]">
+                  Thanks for listening and reading the Mortgage Brothers Show. Let us know if you have any questions
+                  you&rsquo;d like us to answer on this podcast. You can email your questions to
+                  Tom@AZMortgageBrothers.com or Eddie@AZMortgageBrothers.com.
+                </p>
+
+                <p className="text-[15px]">
                   Worried about employment gaps affecting your mortgage? Explore our guide on{" "}
                   <Link href="/can-i-simply-payoff-credit-cards-to-qualify-for-a-mortgage/" className="text-[#3fb364] font-semibold hover:underline">
                     credit card payoff

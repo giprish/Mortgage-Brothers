@@ -1,5 +1,6 @@
 import Navbar from "./component/Navbar";
 import Hero from "./component/Hero";
+// import HomeStatsBar from "./component/home/HomeStatsBar";
 import HomeStatsBar from "./component/home/HomeStatsBar";
 import BrokersAdvocate from "./component/home/BrokersAdvocate";
 import Brothers from "./component/Brothers";
@@ -22,6 +23,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <HomeStatsBar />
+      <Reviews />
       <BrokersAdvocate />
       <Brothers />
       <Recognition />
@@ -29,7 +31,6 @@ export default function Home() {
       <HomeownershipSteps />
       <LoanPrograms />
       <CreditQuizCta />
-      <Reviews />
       <HomeFaq />
       <HomeBlog />
       <DreamHomeCta />

@@ -159,6 +159,55 @@ export default function YavapaiCountyPage() {
           </div>
         </section>
 
+        <section className="w-full py-16 bg-white">
+          <div className="max-w-4xl mx-auto px-6">
+            <h2 className="text-brand-green-deep text-[28px] lg:text-[32px] font-playfair mb-6">Home Loans in Yavapai County, Arizona</h2>
+            <div className="text-brand-text-muted text-[15px] space-y-4">
+              <p>Mortgage Brothers is the Prescott mortgage broker locals trust - serving Prescott, Prescott Valley, Sedona, and communities across all of Yavapai County for over 25 years.</p>
+              <p>Yavapai County is one of Arizona&apos;s most scenic and diverse counties, stretching from the high desert of Prescott and Prescott Valley to the Verde Valley communities of Cottonwood, Clarkdale, and Jerome. With a mix of retirees, families, and first-time buyers drawn by the cooler climate and more affordable prices than metro Phoenix, Yavapai County has one of the most active real estate markets in the state.</p>
+              <p>At Mortgage Brothers, we have been helping Arizona homebuyers navigate the mortgage process for 25+ years. Whether you are buying in Prescott, Cottonwood, Chino Valley, or anywhere in between, we know the market and can help you find the right loan.</p>
+              <ul className="list-disc pl-6 space-y-2 mt-4">
+                <li><strong>Major Cities:</strong> Prescott, Prescott Valley, Cottonwood, Chino Valley, Sedona (shared with Coconino), Clarkdale, Jerome, Cornville</li>
+                <li><strong>2026 Conforming Loan Limit:</strong> $832,750</li>
+                <li><strong>2026 FHA Loan Limit:</strong> $541,287</li>
+                <li><strong>Popular Communities:</strong> Dewey-Humboldt, Mayer, Paulden, Skull Valley, Crown King, Wilhoit, Williamson Valley</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-16 bg-[#fcf9f3]">
+          <div className="max-w-4xl mx-auto px-6">
+            <h2 className="text-brand-green-deep text-[28px] lg:text-[32px] font-playfair mb-8 text-center">Frequently Asked Questions</h2>
+            <div className="space-y-4">
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
+                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">What home loan programs are available to Yavapai County homebuyers?</h3>
+                <p className="text-brand-text-muted text-[15px]">Yavapai County buyers have access to the full range of mortgage programs including Conventional, FHA, VA (for eligible veterans), Jumbo, FHA Streamline Refinance, First-Time Homebuyer programs, Reverse Mortgage (for homeowners 62+), and Refinancing. The best program depends on your credit score, down payment, and financial goals. Our team can walk you through all your options at no cost.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
+                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">What is the conforming loan limit in Yavapai County for 2026?</h3>
+                <p className="text-brand-text-muted text-[15px]">The 2026 conforming loan limit for Yavapai County is $832,750 - the same baseline limit that applies across all Arizona counties. This is the maximum loan amount eligible for conventional financing backed by Fannie Mae or Freddie Mac. If your loan exceeds this amount, you will need a jumbo loan.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
+                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">What is the FHA loan limit in Yavapai County for 2026?</h3>
+                <p className="text-brand-text-muted text-[15px]">The 2026 FHA loan limit for Yavapai County is $541,287. This means you can finance a home up to that purchase price using an FHA loan with as little as 3.5% down (with a 580+ credit score). FHA loans are popular with Yavapai County buyers because of the flexible credit requirements and low down payment.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
+                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">Why are people moving to Yavapai County?</h3>
+                <p className="text-brand-text-muted text-[15px]">Yavapai County attracts buyers from across Arizona and the country for its cooler climate, scenic landscapes, and more affordable home prices compared to the Phoenix metro. Prescott and Prescott Valley are especially popular with retirees and remote workers, while Cottonwood and the Verde Valley draw buyers looking for a quieter lifestyle with easy access to outdoor recreation.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
+                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">How much do I need for a down payment on a Yavapai County home?</h3>
+                <p className="text-brand-text-muted text-[15px]">It depends on the loan type. FHA loans require as little as 3.5% down. Conventional loans can go as low as 3%-5% for qualified buyers. VA loans require zero down payment for eligible veterans. We also work with down payment assistance programs that may reduce your out-of-pocket costs. Contact us to find out which programs you qualify for.</p>
+              </div>
+              <div className="bg-white rounded-xl p-6 shadow-sm border border-[#e8e0d0]/50">
+                <h3 className="text-[17px] font-bold text-brand-green-deep mb-2">How long does it take to close on a home in Yavapai County?</h3>
+                <p className="text-brand-text-muted text-[15px]">Most purchase transactions close in 21 to 30 days when all documentation is submitted promptly. Our team is known for fast, smooth closings - we will keep you informed every step of the way so there are no surprises at the closing table.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Bottom CTA section */}
         <section className="w-full bg-[#052316] text-white py-16 lg:py-24 text-center relative overflow-hidden border-t border-white/5">
           <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">

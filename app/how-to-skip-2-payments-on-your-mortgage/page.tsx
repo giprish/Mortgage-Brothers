@@ -199,7 +199,7 @@ export default function HowToSkip2PaymentsPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    So, how does skip 2 payments on your mortgage work?
+                    So, what&apos;s this about skipping payments?
                   </h2>
                   <p>
                     In short, there is no payment the month you close and no payment on the final month of a
@@ -229,6 +229,16 @@ export default function HowToSkip2PaymentsPage() {
                     there&apos;s no cheating the system.
                   </p>
                 </section>
+
+                <p className="text-center font-bold text-xl my-8 text-[#052316]">•••</p>
+
+                <p>
+                  Thanks for listening and reading the Mortgage Brothers Show. Let us know if you have any
+                  questions you&apos;d like us to answer on this podcast. You can email your questions to
+                  Tom@AZMortgageBrothers.com or Eddie@AZMortgageBrothers.com. Be sure to ask us for a free quote
+                  on your next mortgage. We&apos;ll personally work with you and help you through the whole
+                  process.
+                </p>
 
                 <p>
                   If you have any questions about this or if you have any questions you&apos;d like us to

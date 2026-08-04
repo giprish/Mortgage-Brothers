@@ -142,7 +142,7 @@ export default function ConventionalHomeLoanGuidePage() {
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-5">
                 Buying your first home in Arizona is an exciting milestone — but it can also feel overwhelming.
                 From choosing the right neighborhood to securing financing, there are a lot of moving parts. One
-                of the biggest decisions you&apos;ll face is which type of mortgage loan to use.
+                of the biggest decisions you&apos;ll face is <strong>which type of mortgage loan to use</strong>.
               </p>
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
                 For many buyers, a{" "}
@@ -150,7 +150,7 @@ export default function ConventionalHomeLoanGuidePage() {
                   href="/conventional-home-loans-arizona/"
                   className="text-[#3fb364] font-semibold hover:underline"
                 >
-                  conventional home loan
+                  <strong>conventional home loan</strong>
                 </Link>{" "}
                 is the best fit. Conventional loans are popular, flexible, and often come with long-term
                 advantages, especially if you have a strong credit profile. In this guide, we&apos;ll break down
@@ -197,7 +197,7 @@ export default function ConventionalHomeLoanGuidePage() {
                     guaranteed by the federal government. Instead, it&apos;s offered by private lenders such as
                     banks, credit unions, or mortgage companies. Conventional loans are the most common mortgage
                     type in the U.S., especially among first-time buyers with steady income and decent credit
-                    (Consumer Financial Protection Bureau).
+                    (<a href="https://www.consumerfinance.gov/ask-cfpb/what-is-private-mortgage-insurance-en-122/" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">Consumer Financial Protection Bureau</a>).
                   </p>
                   <p className="mb-3">There are two main categories:</p>
                   <ul className="list-disc pl-6 space-y-3">
@@ -222,13 +222,13 @@ export default function ConventionalHomeLoanGuidePage() {
                   <p className="mb-5">
                     Loan limits determine how large a loan can be while still being considered
                     &ldquo;conforming.&rdquo; For 2025, the conforming loan limit for a single-family home in
-                    Arizona is <strong>$806,500</strong> (FHFA 2025 Loan Limits PDF).
+                    Arizona is <strong>$806,500</strong> (<a href="https://www.fhfa.gov/sites/default/files/2024-11/FullCountyLoanLimitList2025_HERA-BASED_FINAL_FLAT.pdf" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">FHFA 2025 Loan Limits PDF</a>).
                   </p>
                   <ul className="list-disc pl-6 space-y-2 mb-5">
                     <li>
                       <strong>Conventional (Conforming) Loan</strong> → Up to <strong>$806,500</strong>
                     </li>
-                    <li>Jumbo Loan → $806,501 and above</li>
+                    <li><strong>Jumbo Loan → $806,501 and above</strong></li>
                   </ul>
                   <p>
                     These limits apply to most Arizona counties, including Maricopa, Pima, Pinal, and Mohave.
@@ -246,28 +246,28 @@ export default function ConventionalHomeLoanGuidePage() {
                     For many Arizona first-time buyers, conventional loans offer a balance of flexibility,
                     affordability, and long-term savings. Some of the key benefits include:
                   </p>
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-2">1. Lower Down Payment Options</h3>
+                  <p className="mb-5"><strong>1. Lower Down Payment Options</strong></p>
                   <p className="mb-5">
                     Conventional loans aren&apos;t just for buyers with large savings. Certain programs allow
-                    first-time buyers to put down as little as <strong>3%</strong> (Freddie Mac Home Possible®).
+                    first-time buyers to put down as little as <strong>3%</strong> (<a href="https://www.freddiemac.com/homepossible" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">Freddie Mac Home Possible®</a>).
                   </p>
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-2">2. Flexible Credit Requirements</h3>
+                  <p className="mb-5"><strong>2. Flexible Credit Requirements</strong></p>
                   <p className="mb-5">
                     A <strong>minimum credit score of 620</strong> is usually required (Fannie Mae Eligibility
                     Matrix).
                   </p>
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                    3. Cancelable Private Mortgage Insurance (PMI)
-                  </h3>
+                  <p className="mb-5">
+                    <strong>3. Cancelable Private Mortgage Insurance (PMI)</strong>
+                  </p>
                   <p className="mb-5">
                     If your down payment is under 20%, you&apos;ll need PMI. The advantage with conventional loans
                     is that PMI can be <strong>removed once you reach 20% equity</strong>.
                   </p>
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-2">4. Broad Property Eligibility</h3>
+                  <p className="mb-5"><strong>4. Broad Property Eligibility</strong></p>
                   <p>
                     Conventional loans can be used for{" "}
-                    <strong>primary residences, second homes, and even investment properties</strong> (Fannie Mae
-                    Selling Guide).
+                    <strong>primary residences, second homes, and even investment properties</strong> (<a href="https://singlefamily.fanniemae.com/media/9391/display" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">Fannie Mae
+                    Selling Guide</a>).
                   </p>
                 </section>
 
@@ -290,16 +290,16 @@ export default function ConventionalHomeLoanGuidePage() {
                     </li>
                     <li>
                       <strong>Debt-to-Income Ratio (DTI)</strong>: Generally under 36% is preferred, though some
-                      lenders allow up to 45–50% (Fannie Mae, CFPB).
+                      lenders allow up to 45–50% (<a href="https://singlefamily.fanniemae.com/media/9391/display" target="_blank" rel="nofollow noopener" className="text-[#3fb364] font-semibold hover:underline">Fannie Mae</a>, <a href="https://www.consumerfinance.gov/ask-cfpb/what-is-private-mortgage-insurance-en-122/" target="_blank" rel="nofollow noopener" className="text-[#3fb364] font-semibold hover:underline">CFPB</a>).
                     </li>
                     <li>
                       <strong>Employment &amp; Income</strong>: At least 2 years of stable employment history with
-                      documented income (Investopedia Conventional Loan Guide).
+                      documented income (<a href="https://www.investopedia.com/terms/c/conventionalmortgage.asp" target="_blank" rel="nofollow noopener" className="text-[#3fb364] font-semibold hover:underline">Investopedia Conventional Loan Guide</a>).
                     </li>
                   </ul>
                   <div className="text-center">
                     <Link
-                      href="/#get-pre-approved"
+                      href="/#getin_touch"
                       className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
                     >
                       Start My Pre-Approval
@@ -324,7 +324,7 @@ export default function ConventionalHomeLoanGuidePage() {
                           <th className="py-3 pr-3 font-bold text-[#052316]">Feature</th>
                           <th className="py-3 pr-3 font-bold text-[#052316]">Conventional Loan</th>
                           <th className="py-3 pr-3 font-bold text-[#052316]">FHA Loan</th>
-                          <th className="py-3 pr-3 font-bold text-[#052316]">VA Loan</th>
+                          <th className="py-3 pr-3 font-bold text-[#052316]">VA Loan (<a href="https://www.va.gov/housing-assistance/home-loans/loan-types/" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">VA.gov</a>)</th>
                           <th className="py-3 font-bold text-[#052316]">Jumbo Loan</th>
                         </tr>
                       </thead>
@@ -399,7 +399,7 @@ export default function ConventionalHomeLoanGuidePage() {
                   </h2>
                   <ul className="list-disc pl-6 space-y-3">
                     <li>
-                      <strong>Check Your Credit</strong> – Request a free report from AnnualCreditReport.com
+                      <strong>Check Your Credit</strong> – Request a free report from <a href="https://www.annualcreditreport.com/" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">AnnualCreditReport.com</a>
                     </li>
                     <li>
                       <strong>Save for a Down Payment</strong> – Even if you qualify for 3% down, a larger down
@@ -407,7 +407,7 @@ export default function ConventionalHomeLoanGuidePage() {
                     </li>
                     <li>
                       <strong>Calculate Affordability</strong> – Keep housing costs under 28% of your monthly
-                      income (CFPB Mortgage Affordability).
+                      income (<a href="https://www.consumerfinance.gov/owning-a-home/process/prepare/determine-your-budget/" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">CFPB Mortgage Affordability</a>).
                     </li>
                     <li>
                       <strong>Get Pre-Approved</strong> – A pre-approval from AZ Mortgage Brothers helps you shop
@@ -496,14 +496,14 @@ export default function ConventionalHomeLoanGuidePage() {
                   and help you through the whole process.
                 </p>
 
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
+                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl mt-5">
                   <p className="text-[15px] text-[#052316] leading-relaxed">
                     Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you
                     and help you through the whole process.
                   </p>
                 </div>
 
-                <p className="text-[#8a9a7a] text-[13px] leading-relaxed">
+                <p className="text-[#8a9a7a] text-[13px] leading-relaxed mt-5">
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
                   prepared for informational purposes only. You should consult your own tax, legal, and accounting
                   advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
