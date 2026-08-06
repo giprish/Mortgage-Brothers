@@ -837,7 +837,7 @@ export default function HowToSellMyHouseFastInArizonaPage() {
             </p>
             <Link
               href="/#get-pre-approved"
-              className="inline-block bg-[#3fb364] hover:bg-[#2d9e4f] text-white font-bold text-[15px] px-8 py-3.5 rounded-xl shadow-md transition-colors"
+              className="btn-primary"
             >
               Request Free Options Review
             </Link>

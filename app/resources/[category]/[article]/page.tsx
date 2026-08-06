@@ -240,7 +240,7 @@ export default function ArticleDetailPage() {
                 </div>
                 <Link
                   href="/#get-pre-approved"
-                  className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-semibold px-6 py-3.5 rounded-xl transition-all shadow-md relative z-10 flex-shrink-0 cursor-pointer"
+                  className="btn-primary relative z-10 flex-shrink-0"
                 >
                   Get Pre-Approved &rarr;
                 </Link>

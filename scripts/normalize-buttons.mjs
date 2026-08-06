@@ -144,6 +144,34 @@ const REPLACEMENTS = [
     /inline-flex items-center gap-2 bg-\[#6ca220\] hover:bg-\[#5b8a1a\] text-white text-\[15px\] font-semibold px-7 py-3 rounded-full transition-all/g,
     "btn-primary",
   ],
+  [
+    /mt-8 inline-flex items-center gap-2 bg-\[#3fb364\] hover:bg-\[#349b55\] text-white text-\[15px\] font-bold px-7 py-3\.5 rounded-xl transition-all shadow-lg shadow-\[#3fb364\]\/25/g,
+    "btn-primary mt-8",
+  ],
+  [
+    /inline-flex w-fit items-center gap-2 bg-\[#3fb364\] hover:bg-\[#349b55\] text-white text-\[14px\] font-bold px-6 py-3 rounded-xl transition-all cursor-pointer/g,
+    "btn-primary w-fit",
+  ],
+  [
+    /inline-flex w-fit items-center gap-2 bg-\[#3fb364\] hover:bg-\[#349b55\] text-white text-\[14\.5px\] font-bold px-7 py-3\.5 rounded-xl transition-all cursor-pointer/g,
+    "btn-primary w-fit",
+  ],
+  [
+    /bg-\[#3fb364\] hover:bg-\[#349b55\] text-white text-\[13\.5px\] font-bold py-3 px-6 rounded-xl text-center flex items-center justify-center gap-1\.5 transition-all duration-200/g,
+    "btn-primary",
+  ],
+  [
+    /inline-block bg-\[#3fb364\] hover:bg-\[#2d9e4f\] text-white font-bold text-\[15px\] px-8 py-3\.5 rounded-xl shadow-md transition-colors/g,
+    "btn-primary",
+  ],
+  [
+    /bg-\[#3fb364\] hover:bg-\[#349b55\] text-white text-\[14px\] font-semibold px-6 py-3\.5 rounded-xl transition-all shadow-md relative z-10 flex-shrink-0 cursor-pointer/g,
+    "btn-primary relative z-10 flex-shrink-0",
+  ],
+  [
+    /bg-\[#3fb364\] hover:bg-\[#349b55\] text-white text-\[13px\] font-bold py-2\.5 px-4 rounded-lg text-center flex items-center justify-center gap-1\.5 transition-all duration-200/g,
+    "btn-primary-sm",
+  ],
 ];
 
 function walk(dir, files = []) {

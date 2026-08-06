@@ -329,7 +329,7 @@ export default function ResourceCategoryPage() {
                 </p>
                 <Link
                   href="/#get-pre-approved"
-                  className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[13px] font-bold py-2.5 px-4 rounded-lg text-center flex items-center justify-center gap-1.5 transition-all duration-200"
+                  className="btn-primary-sm"
                 >
                   Get Pre-Approved
                   <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">

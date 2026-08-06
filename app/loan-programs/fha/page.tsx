@@ -308,7 +308,7 @@ export default function FhaLoanPage() {
               <div className="relative z-10 pt-4 border-t border-white/10">
                 <Link
                   href="/mortgage-calculator-arizona/"
-                  className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[13.5px] font-bold py-3 px-6 rounded-xl text-center flex items-center justify-center gap-1.5 transition-all duration-200"
+                  className="btn-primary"
                 >
                   Run your numbers
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3" className="w-3.5 h-3.5">
