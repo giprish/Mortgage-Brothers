@@ -205,7 +205,7 @@ const Footer = () => {
                 </div>
                 <div className="text-[13px] leading-[1.7]">
                   <p className="font-semibold text-white mb-1">Verify our licenses</p>
-                  <p className="text-[#a8aea8]">
+                  <p className="text-[#cdd3cd]">
                     Check our Mortgage Broker License through the{" "}
                     <a
                       href={COMPANY.nmlsConsumerAccessUrl}
@@ -240,7 +240,7 @@ const Footer = () => {
             </div>
 
             {/* Information Disclaimer */}
-            <div className="text-[13px] leading-[1.75] text-[#a8aea8]">
+            <div className="text-[13px] leading-[1.75] text-[#cdd3cd]">
               <p className="text-[#3fb364] font-bold tracking-wide text-[11px] uppercase mb-2">
                 Information Disclaimer
               </p>
@@ -325,7 +325,7 @@ const Footer = () => {
                 className="h-[36px] w-auto object-contain"
               />
             </Link> */}
-            <span className="text-[#a8aea8] text-[11px] sm:text-[12px] leading-snug break-words">
+            <span className="text-[#d6dbd6] text-[11px] sm:text-[12px] leading-snug break-words">
               © {new Date().getFullYear()} {COMPANY.legalName} · {COMPANY.nmlsDisplay}
             </span>
           </div>

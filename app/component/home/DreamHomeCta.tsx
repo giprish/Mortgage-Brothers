@@ -38,7 +38,7 @@ const DreamHomeCta = () => {
 
       {/* Content */}
       <div className="order-1 lg:order-2 flex flex-col h-full justify-center">
-        <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
+        <p className="text-white/90 text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
           Ready When You Are
         </p>
 
@@ -62,12 +62,11 @@ const DreamHomeCta = () => {
               className="bg-white/[0.03] border border-white/10 rounded-2xl px-5 py-4 hover:border-[#3fb364]/40 transition-colors duration-200"
             >
               <p
-                className="font-playfair text-[#3fb364] text-[26px] lg:text-[32px] font-semibold leading-none mb-1.5"
-                
+                className="font-playfair text-white text-[26px] lg:text-[32px] font-semibold leading-none mb-1.5"
               >
                 {stat.value}
               </p>
-              <p className="text-[#8a9a7a] text-[13px] font-medium">
+              <p className="text-white text-[13px] font-medium">
                 {stat.label}
               </p>
             </div>

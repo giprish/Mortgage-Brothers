@@ -145,7 +145,7 @@ const HomeCalculator = () => {
                   </label>
                   <div className="flex gap-2 min-w-0">
                     <div className="relative flex-1 min-w-0">
-                      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#8a9a7a] text-[13px]">$</span>
+                      <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#5f6f54] text-[13px]">$</span>
                       <input
                         id="down-payment-amount"
                         type="number"
@@ -165,7 +165,7 @@ const HomeCalculator = () => {
                         onChange={(e) => setDownPaymentPct(Number(e.target.value) || 0)}
                         className="w-full h-[44px] pl-2.5 pr-6 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                       />
-                      <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#8a9a7a] text-[13px]">%</span>
+                      <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#5f6f54] text-[13px]">%</span>
                     </div>
                   </div>
                 </div>
@@ -238,7 +238,7 @@ const HomeCalculator = () => {
                     options={AZ_COUNTIES.map((c) => ({ value: c.value, label: c.label }))}
                   />
                   {selectedCounty && (
-                    <p className="text-[#8a9a7a] text-[12px] mt-1.5">{selectedCounty.note}</p>
+                    <p className="text-[#5f6f54] text-[12px] mt-1.5">{selectedCounty.note}</p>
                   )}
                 </div>
 
@@ -285,12 +285,12 @@ const HomeCalculator = () => {
 
             {/* Summary */}
             <div className="lg:col-span-2 bg-[#08271B] p-5 sm:p-8 lg:p-10 flex flex-col min-w-0">
-              <h3 className="text-[#3fb364] text-[13px] font-bold uppercase tracking-wider mb-6">
+              <h3 className="text-white text-[13px] font-bold uppercase tracking-wider mb-6">
                 Your Mortgage Summary
               </h3>
 
               <div className="mb-8">
-                <p className="text-[#8a9a7a] text-[12.5px] font-medium mb-1">Monthly Payment</p>
+                <p className="text-[#d6decf] text-[12.5px] font-medium mb-1">Monthly Payment</p>
                 <p
                   className="text-white text-[34px] sm:text-[42px] lg:text-[48px] font-semibold leading-none break-all"
                   
@@ -322,7 +322,7 @@ const HomeCalculator = () => {
                 </div>
               </div>
 
-              <p className="text-[#8a9a7a] text-[12px] leading-relaxed mb-6">
+              <p className="text-[#d6decf] text-[12px] leading-relaxed mb-6">
                 Loan amount: {fmtCurrency(results.loanAmount)}. Estimate only — actual rate, PMI,
                 and closing costs depend on full underwriting.
               </p>
