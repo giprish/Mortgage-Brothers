@@ -51,7 +51,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-3">
           <Link
             href="/#get-pre-approved"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-base font-semibold px-8 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-[#3fb364]/30 hover:scale-[1.02]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#2f8f4f] hover:bg-[#277a42] text-white text-base font-semibold px-8 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-[#3fb364]/30 hover:scale-[1.02]"
           >
             <span>Start my preapproval</span>
             <svg

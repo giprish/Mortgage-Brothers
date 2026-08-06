@@ -102,7 +102,7 @@ const HomeCalculator = () => {
     <section className="w-full bg-[#fcf9f3] py-14 sm:py-20 lg:py-24 border-t border-[#e8e0d0]/40" id="calculator">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10">
         <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12">
-          <p className="text-[#b89a5a] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
+          <p className="text-[#8c6f36] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
             Estimate Your Payment
           </p>
           <h2
@@ -126,10 +126,11 @@ const HomeCalculator = () => {
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 mb-8">
                 <div>
-                  <label className="block text-[#3a443a] text-[13.5px] font-medium mb-1.5">
+                  <label htmlFor="home-price" className="block text-[#3a443a] text-[13.5px] font-medium mb-1.5">
                     Home Price ($)
                   </label>
                   <input
+                    id="home-price"
                     type="number"
                     inputMode="decimal"
                     value={homePrice}
@@ -139,13 +140,14 @@ const HomeCalculator = () => {
                 </div>
 
                 <div>
-                  <label className="block text-[#3a443a] text-[13.5px] font-medium mb-1.5">
+                  <label htmlFor="down-payment-amount" className="block text-[#3a443a] text-[13.5px] font-medium mb-1.5">
                     Down Payment
                   </label>
                   <div className="flex gap-2 min-w-0">
                     <div className="relative flex-1 min-w-0">
                       <span className="absolute left-3 top-1/2 -translate-y-1/2 text-[#8a9a7a] text-[13px]">$</span>
                       <input
+                        id="down-payment-amount"
                         type="number"
                         inputMode="decimal"
                         value={downPaymentAmount}
@@ -155,6 +157,8 @@ const HomeCalculator = () => {
                     </div>
                     <div className="relative w-[72px] sm:w-[90px] shrink-0">
                       <input
+                        id="down-payment-percent"
+                        aria-label="Down payment percent"
                         type="number"
                         inputMode="decimal"
                         value={Math.round(downPaymentPct * 10) / 10}
@@ -167,12 +171,13 @@ const HomeCalculator = () => {
                 </div>
 
                 <div>
-                  <label className="block text-[#3a443a] text-[13.5px] font-medium mb-1.5">
+                  <label htmlFor="credit-score" className="block text-[#3a443a] text-[13.5px] font-medium mb-1.5">
                     Credit Score
                   </label>
                   <CalcSelect
                     value={creditScore}
                     onChange={setCreditScore}
+                    id="credit-score"
                     ariaLabel="Credit Score"
                     className="h-[44px] px-3 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                     options={[
@@ -188,12 +193,13 @@ const HomeCalculator = () => {
                 </div>
 
                 <div>
-                  <label className="block text-[#3a443a] text-[13.5px] font-medium mb-1.5">
+                  <label htmlFor="loan-term-years" className="block text-[#3a443a] text-[13.5px] font-medium mb-1.5">
                     Loan Term (Years)
                   </label>
                   <CalcSelect
                     value={termYears}
                     onChange={(next) => setTermYears(Number(next))}
+                    id="loan-term-years"
                     ariaLabel="Loan Term (Years)"
                     className="h-[44px] px-3 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                     options={LOAN_TERMS.map((t) => ({ value: t, label: `${t} Years` }))}
@@ -201,10 +207,11 @@ const HomeCalculator = () => {
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label className="block text-[#3a443a] text-[13.5px] font-medium mb-1.5">
+                  <label htmlFor="interest-rate" className="block text-[#3a443a] text-[13.5px] font-medium mb-1.5">
                     Interest Rate (%)
                   </label>
                   <input
+                    id="interest-rate"
                     type="number"
                     step="0.01"
                     value={interestRate}
@@ -219,12 +226,13 @@ const HomeCalculator = () => {
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div className="sm:col-span-2">
-                  <label className="block text-[#3a443a] text-[13.5px] font-medium mb-1.5">
+                  <label htmlFor="county" className="block text-[#3a443a] text-[13.5px] font-medium mb-1.5">
                     County (Arizona)
                   </label>
                   <CalcSelect
                     value={county}
                     onChange={setCounty}
+                    id="county"
                     ariaLabel="County (Arizona)"
                     className="h-[44px] px-3 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                     options={AZ_COUNTIES.map((c) => ({ value: c.value, label: c.label }))}
@@ -235,10 +243,11 @@ const HomeCalculator = () => {
                 </div>
 
                 <div>
-                  <label className="block text-[#3a443a] text-[13.5px] font-medium mb-1.5">
+                  <label htmlFor="annual-property-taxes" className="block text-[#3a443a] text-[13.5px] font-medium mb-1.5">
                     Annual Property Taxes ($)
                   </label>
                   <input
+                    id="annual-property-taxes"
                     type="number"
                     value={annualTaxes}
                     onChange={(e) => setAnnualTaxes(Number(e.target.value) || 0)}
@@ -247,10 +256,11 @@ const HomeCalculator = () => {
                 </div>
 
                 <div>
-                  <label className="block text-[#3a443a] text-[13.5px] font-medium mb-1.5">
+                  <label htmlFor="annual-home-insurance" className="block text-[#3a443a] text-[13.5px] font-medium mb-1.5">
                     Annual Home Insurance ($)
                   </label>
                   <input
+                    id="annual-home-insurance"
                     type="number"
                     value={annualInsurance}
                     onChange={(e) => setAnnualInsurance(Number(e.target.value) || 0)}
@@ -259,10 +269,11 @@ const HomeCalculator = () => {
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label className="block text-[#3a443a] text-[13.5px] font-medium mb-1.5">
+                  <label htmlFor="monthly-hoa-fees" className="block text-[#3a443a] text-[13.5px] font-medium mb-1.5">
                     Monthly HOA Fees ($)
                   </label>
                   <input
+                    id="monthly-hoa-fees"
                     type="number"
                     value={hoa}
                     onChange={(e) => setHoa(Number(e.target.value) || 0)}

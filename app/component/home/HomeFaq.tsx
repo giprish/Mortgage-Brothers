@@ -40,7 +40,7 @@ const HomeFaq = () => {
 
           {/* Accordion */}
           <div className="order-1 lg:order-2">
-            <p className="text-[#b89a5a] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
+            <p className="text-[#8c6f36] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
               FAQ
             </p>
             <h2 className="font-playfair text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight mb-8">
@@ -56,7 +56,7 @@ const HomeFaq = () => {
             <div className="mt-8">
               <Link
                 href="/faq/"
-                className="inline-flex items-center gap-2 text-[#3fb364] hover:text-[#2d8545] font-semibold text-[14.5px] transition-colors duration-200"
+                className="inline-flex items-center gap-2 text-[#2d8545] hover:text-[#246d39] font-semibold text-[14.5px] transition-colors duration-200 min-h-[44px] py-2"
               >
                 View All FAQs
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

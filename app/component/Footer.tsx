@@ -41,7 +41,7 @@ const loanLinks = [
 const FooterLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
   <Link
     href={href}
-    className="text-[#e8ece8] hover:text-[#3fb364] text-[14px] leading-snug transition-colors duration-200"
+    className="block text-[#e8ece8] hover:text-[#3fb364] text-[14px] leading-snug transition-colors duration-200"
   >
     {children}
   </Link>
@@ -57,7 +57,7 @@ const Footer = () => {
               Inside Mortgage Brothers
             </h3>
             <div className="w-full h-px bg-[#3fb364]/70 mb-5" />
-            <ul className="flex flex-col gap-2.5">
+            <ul className="flex flex-col gap-1.5">
               {insideLinks.map((item) => (
                 <li key={item.label}>
                   <FooterLink href={item.href}>{item.label}</FooterLink>
@@ -76,7 +76,7 @@ const Footer = () => {
               </Link>
             </h3>
             <div className="w-full h-px bg-[#3fb364]/70 mb-5" />
-            <ul className="flex flex-col gap-2.5">
+            <ul className="flex flex-col gap-1.5">
               {loanLinks.map((item) => (
                 <li key={item.label}>
                   <FooterLink href={item.href}>{item.label}</FooterLink>
@@ -211,7 +211,7 @@ const Footer = () => {
                       href={COMPANY.nmlsConsumerAccessUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#3fb364] hover:underline"
+                      className="text-[#2d8545] underline underline-offset-2 hover:text-[#246d39]"
                     >
                       official NMLS Consumer Access website
                     </a>
@@ -220,7 +220,7 @@ const Footer = () => {
                       href={COMPANY.nmlsConsumerAccessUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#3fb364] hover:underline"
+                      className="text-[#2d8545] underline underline-offset-2 hover:text-[#246d39]"
                     >
                       NMLS Consumer Access
                     </a>{" "}
@@ -229,7 +229,7 @@ const Footer = () => {
                       href="https://azdifi.portalus.thentiacloud.net/webs/portal/register/#/profile/LO-0911422/0/20/all/all/false/66185b7fa32d990aef41475d"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#3fb364] hover:underline"
+                      className="text-[#2d8545] underline underline-offset-2 hover:text-[#246d39]"
                     >
                       Loan Originator License
                     </a>
@@ -248,7 +248,7 @@ const Footer = () => {
                 Content on this website is provided for informational purposes only and does not
                 constitute an offer to lend. Rates, terms, and program availability may change
                 without notice.{" "}
-                <Link href="/contact-us/" className="text-[#3fb364] hover:underline">
+                <Link href="/contact-us/" className="text-[#2d8545] underline underline-offset-2 hover:text-[#246d39]">
                   Contact our loan officers
                 </Link>{" "}
                 for the most up-to-date information. All loans subject to underwriter approval.

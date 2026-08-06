@@ -425,3 +425,20 @@ textarea {
   }
 }
 
+/* Accessibility contrast harmonization for existing utility classes */
+.text-\[\#b89a5a\] {
+  color: #8c6f36 !important;
+}
+
+.text-\[\#3fb364\] {
+  color: #2d8545 !important;
+}
+
+.bg-\[\#3fb364\] {
+  background-color: #2f8f4f !important;
+}
+
+.hover\:bg-\[\#349b55\]:hover {
+  background-color: #277a42 !important;
+}
+

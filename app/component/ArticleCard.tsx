@@ -39,7 +39,7 @@ export default function ArticleCard({
       </p>
 
       <div className="mt-auto pt-4 border-t border-[#ebe4d6] flex items-center justify-between gap-3">
-        <span className="text-[12px] text-[#8a9a7a]">
+        <span className="text-[12px] text-[#5f6f54]">
           {date} · {readTime}
         </span>
         <span className="text-[#3fb364] text-[13.5px] font-bold inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform shrink-0">

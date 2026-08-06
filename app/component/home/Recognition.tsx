@@ -33,7 +33,7 @@ const Recognition = () => {
     <section className="w-full bg-[#f5f0e8] py-14 sm:py-20 lg:py-24 border-t border-[#e8e0d0]/50">
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         <div className="text-center max-w-2xl mx-auto mb-14">
-          <p className="text-[#b89a5a] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
+          <p className="text-[#8c6f36] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
             Recognized Excellence
           </p>
           <h2

@@ -25,9 +25,10 @@ const DreamHomeCta = () => {
           {/* glow frame */}
           <div className="absolute -inset-1 rounded-[28px] bg-gradient-to-br from-[#3fb364]/30 via-transparent to-transparent blur-md -z-10" />
           <iframe
-            src={`https://www.youtube.com/embed/${HOME_VIDEO_ID}?rel=0`}
+            src={`https://www.youtube-nocookie.com/embed/${HOME_VIDEO_ID}?rel=0`}
             title={HOME_VIDEO_TITLE}
             className="absolute inset-0 w-full h-full border-0"
+            loading="lazy"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen

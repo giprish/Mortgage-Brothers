@@ -9,7 +9,7 @@ const HomeContact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
           {/* Info Column — static, server-rendered */}
           <div className="lg:col-span-2">
-            <p className="text-[#b89a5a] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
+            <p className="text-[#8c6f36] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
               Contact Us
             </p>
             <h2 className="font-playfair text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight mb-5">
@@ -37,7 +37,7 @@ const HomeContact = () => {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-[#8a9a7a] text-[11.5px] font-semibold uppercase tracking-wider mb-0.5">Phone</p>
+                  <p className="text-[#5f6f54] text-[11.5px] font-semibold uppercase tracking-wider mb-0.5">Phone</p>
                   <p className="text-[#08271B] group-hover:text-[#3fb364] text-[15px] font-semibold transition-colors duration-200">
                     +1 (602) 535-2171
                   </p>
@@ -52,7 +52,7 @@ const HomeContact = () => {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-[#8a9a7a] text-[11.5px] font-semibold uppercase tracking-wider mb-0.5">Address</p>
+                  <p className="text-[#5f6f54] text-[11.5px] font-semibold uppercase tracking-wider mb-0.5">Address</p>
                   <p className="text-[#08271B] text-[15px] font-medium leading-snug">
                     1599 East Orangewood Ave Suite 200<br />
                     Phoenix, AZ 85020
@@ -62,7 +62,7 @@ const HomeContact = () => {
 
               <Link
                 href="/contact-us/"
-                className="inline-flex items-center gap-2 text-[#3fb364] hover:text-[#2d8545] font-semibold text-[14.5px] transition-colors duration-200 w-fit mt-1"
+                className="inline-flex items-center gap-2 text-[#2d8545] hover:text-[#246d39] font-semibold text-[14.5px] transition-colors duration-200 w-fit mt-1 min-h-[44px] py-2"
               >
                 Visit Contact Page
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

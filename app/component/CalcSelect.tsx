@@ -17,6 +17,7 @@ export type CalcSelectOption = {
 };
 
 type CalcSelectProps = {
+  id?: string;
   value: string | number;
   options: CalcSelectOption[];
   onChange: (value: string) => void;
@@ -30,6 +31,7 @@ const PANEL_MIN_HEIGHT = 96;
 const VIEWPORT_GUTTER = 12;
 
 export default function CalcSelect({
+  id,
   value,
   options,
   onChange,
@@ -159,6 +161,7 @@ export default function CalcSelect({
   return (
     <div ref={wrapRef} className="calc-dropdown" onKeyDown={handleKeyDown}>
       <button
+        id={id}
         ref={triggerRef}
         type="button"
         className={`calc-dropdown-trigger${className ? ` ${className}` : ""}`}

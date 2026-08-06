@@ -182,7 +182,7 @@ const LoanPrograms = () => {
                 {/* Link with translate arrow micro-animation */}
                 <Link
                   href={item.href}
-                  className="inline-flex items-center gap-1.5 text-[#3fb364] text-[14.5px] font-semibold transition-colors duration-200 hover:text-[#349b55] [-webkit-tap-highlight-color:transparent] no-underline"
+                  className="inline-flex items-center gap-1.5 text-[#2d8545] text-[14.5px] font-semibold transition-colors duration-200 hover:text-[#246d39] [-webkit-tap-highlight-color:transparent] no-underline min-h-[44px] py-2"
                 >
                   <span>{item.linkText}</span>
                   <svg
@@ -204,7 +204,7 @@ const LoanPrograms = () => {
         <div className="text-center">
           <Link
             href="/mortgage-loan-programs-arizona/"
-            className="inline-block bg-[#3fb364] hover:bg-[#349b55] active:bg-[#349b55] text-white font-bold text-[15.5px] px-9 py-4 rounded-full shadow-lg shadow-[#3fb364]/20 hover:shadow-xl hover:shadow-[#3fb364]/30 hover:scale-[1.03] transition-all duration-200 [-webkit-tap-highlight-color:transparent]"
+            className="inline-block bg-[#2f8f4f] hover:bg-[#277a42] active:bg-[#277a42] text-white font-bold text-[15.5px] px-9 py-4 rounded-full shadow-lg shadow-[#3fb364]/20 hover:shadow-xl hover:shadow-[#3fb364]/30 hover:scale-[1.03] transition-all duration-200 [-webkit-tap-highlight-color:transparent]"
           >
             Find Your Perfect Loan
           </Link>
