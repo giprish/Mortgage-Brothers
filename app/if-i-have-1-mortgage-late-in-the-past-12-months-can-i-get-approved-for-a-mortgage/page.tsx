@@ -166,12 +166,6 @@ export default function MortgageLateApprovalPage() {
                   >
                     Find Out Your Options &rarr;
                   </Link>
-                  <Link
-                    href="/contact-us/"
-                    className="inline-flex items-center gap-2 text-[#3fb364] hover:underline text-[15px] font-semibold px-4 py-3 transition-all"
-                  >
-                    Contact Us
-                  </Link>
                 </div>
               </div>
 

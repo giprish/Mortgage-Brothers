@@ -574,16 +574,28 @@ export default function GenericCityDetailPage() {
             <p className="text-white/80 text-[14px] mb-6">
               Start your pre-approval in about three minutes — no cost, no obligation.
             </p>
-            <Link
-              href="/#get-pre-approved"
-              className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3a24] text-white text-[14px] font-semibold px-7 py-3.5 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl group"
-            >
-              Get Pre-Approved
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 transition-transform">
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/#get-pre-approved"
+                data-preapproval="true"
+                className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3a24] text-white text-[14px] font-semibold px-7 py-3.5 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl group"
+              >
+                Start My Pre-Approval
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 transition-transform">
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </Link>
+              <a
+                href="tel:+16025352171"
+                className="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 text-white text-[14px] font-semibold px-7 py-3.5 rounded-full transition-all duration-300 border border-white/30"
+              >
+                Talk to a Broker
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </a>
+            </div>
           </div>
         </section>
 

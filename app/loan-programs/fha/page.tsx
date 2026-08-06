@@ -519,7 +519,7 @@ export default function FhaLoanPage() {
                 Get Pre-Approved &rarr;
               </Link>
               <Link
-                href="/contact-us/"
+                href="tel:+16025352171"
                 className="border border-white/20 hover:border-white text-white text-[14px] font-semibold px-6 py-3 rounded-full transition-all duration-200"
               >
                 Talk to a Broker

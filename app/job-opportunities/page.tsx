@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import LoanProgramHero from "../component/LoanProgramHero";
+import StatsBanner from "../component/StatsBanner";
 
 const whyCards = [
   {
@@ -211,21 +212,7 @@ export default function JobOpportunitiesPage() {
         </section>
 
         {/* Stats */}
-        <section className="w-full bg-[#08271B] py-12 lg:py-16">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p
-                  className="text-[#3fb364] text-[32px] lg:text-[40px] font-bold leading-none mb-2"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-                >
-                  {stat.value}
-                </p>
-                <p className="text-[#c8c8b8] text-[13.5px] font-medium leading-snug">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+        <StatsBanner stats={stats} />
 
         {/* Open positions */}
         <section id="open-positions" className="w-full py-16 lg:py-24 scroll-mt-[90px]">

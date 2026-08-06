@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import FaqAccordion from "../component/FaqAccordion";
+import StatsBanner from "../component/StatsBanner";
 
 const creditTable = [
   { range: "760+ (Excellent)", rate: "Lowest Rates Available", category: "Excellent Credit" },
@@ -206,33 +207,24 @@ export default function MortgageForExcellentCreditPage() {
 
       <main className="flex-grow">
         {/* Hero */}
-        <section
-          className="relative w-full text-white pt-[120px] lg:pt-[140px] pb-16 lg:pb-24 overflow-hidden bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "linear-gradient(90deg, rgba(52,69,37,0.95) 0%, rgba(50,94,63,0.82) 35%, rgba(5,35,22,0.45) 100%), url('/home/mortgage-for-excellent-credit.jpg')",
-          }}
-        >
-          <div className="max-w-6xl mx-auto px-6 lg:px-10 relative z-10">
-            <div className="max-w-2xl">
-              <h1 className="text-[36px] sm:text-[46px] lg:text-[54px] font-bold leading-[1.12] mb-5 tracking-tight">
-                Mortgage for Excellent Credit
-              </h1>
-              <p className="text-white/90 text-[16px] lg:text-[18px] leading-relaxed mb-8 max-w-xl">
-                Unlock exclusive mortgage options with the lowest interest rates for excellent credit
-                borrowers
-              </p>
-              <Link
-                href="/#get-pre-approved"
-                className="inline-flex items-center gap-2.5 bg-[#3fb364] hover:bg-[#349b55] text-white text-[16px] font-semibold px-8 py-3.5 rounded-full transition-all shadow-lg shadow-[#3fb364]/25"
-              >
-                Start my preapproval
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              </Link>
-              <p className="text-white/70 text-[13px] mt-3 font-medium">3 min / no credit impact</p>
-            </div>
+        <section className="w-full bg-[#08271B] text-white pt-[110px] sm:pt-[130px] pb-12 sm:pb-16 lg:pb-20 text-center relative overflow-hidden">
+          <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
+            <h1 className="text-white text-[32px] sm:text-[44px] lg:text-[52px] font-bold font-playfair leading-[1.15] mb-4 text-center tracking-tight">
+              Mortgage for Excellent Credit
+            </h1>
+            <p className="text-[#c8c8b8] text-[16px] sm:text-[19px] lg:text-[22px] font-normal leading-[1.6] mb-8 max-w-2xl text-center">
+              Unlock exclusive mortgage options with the lowest interest rates for excellent credit borrowers
+            </p>
+            <Link
+              href="/#get-pre-approved"
+              className="inline-flex items-center gap-2.5 bg-[#3fb364] hover:bg-[#349b55] text-white text-[16px] font-semibold px-8 py-3.5 rounded-full transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            >
+              Start my preapproval
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </Link>
+            <p className="text-[#8a9a7a] text-[12px] font-medium mt-3 text-center">3 min / no credit impact</p>
           </div>
         </section>
 
@@ -370,21 +362,7 @@ export default function MortgageForExcellentCreditPage() {
         </section>
 
         {/* Stats */}
-        <section className="w-full bg-[#08271B] py-12 lg:py-16">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p
-                  className="text-[#3fb364] text-[32px] lg:text-[40px] font-bold leading-none mb-2"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-                >
-                  {stat.value}
-                </p>
-                <p className="text-[#c8c8b8] text-[13.5px] font-medium leading-snug">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+        <StatsBanner stats={stats} />
 
         {/* Benefits */}
         <section className="w-full py-16 lg:py-24">

@@ -187,7 +187,8 @@ export default function UltimateGuideFirstMortgagePage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="/#Get-in-Touch"
+                    href="/#get-pre-approved"
+                    data-preapproval="true"
                     className="inline-flex items-center gap-2 bg-[#6ca220] hover:bg-[#5b8a1a] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
                   >
                     Get Started Today

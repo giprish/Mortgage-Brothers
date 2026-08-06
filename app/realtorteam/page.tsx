@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import LoanProgramHero from "../component/LoanProgramHero";
+import StatsBanner from "../component/StatsBanner";
 
 const WHY_PARTNER = [
   {
@@ -84,9 +85,9 @@ const STEPS = [
 ];
 
 const STATS = [
-  { value: "25", label: "Days Average Closing Time" },
-  { value: "22+", label: "Years Industry Experience" },
-  { value: "4.9", label: "Realtor Star Rating" },
+  { value: "25 Days", label: "Average Closing Time" },
+  { value: "22+ Yrs", label: "Industry Experience" },
+  { value: "4.9 ★", label: "Realtor Star Rating" },
   { value: "99%", label: "Communication Satisfaction" },
 ];
 
@@ -127,17 +128,19 @@ export default function RealtorTeamPage() {
         <LoanProgramHero
           title="We Want to be Your Mortgage Team"
           subtitle="Our #1 Priority is giving Realtors® and their buyer clients exceptional service on “Purchase” transactions."
-          ctaLabel="Call +1 602-535-2171 today to speak with us."
-          ctaHref="tel:+16025352171"
+          ctaLabel="Start My Pre-Approval"
+          ctaHref="/#get-pre-approved"
+          secondaryCtaLabel="Talk to a Broker"
+          secondaryCtaHref="tel:+16025352171"
           note=""
         />
 
         {/* Highlight strip */}
-        <section className="w-full bg-[#052316] py-8 border-b border-white/5">
-          <div className="max-w-7xl mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <section className="w-full bg-[#052316] py-7 border-b border-white/5">
+          <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
             {HIGHLIGHTS.map((item) => (
-              <div key={item} className="flex items-start gap-3">
-                <span className="mt-1 w-2 h-2 rounded-full bg-[#3fb364] flex-shrink-0" />
+              <div key={item} className="flex items-center justify-center md:justify-start gap-3">
+                <span className="w-2 h-2 rounded-full bg-[#3fb364] flex-shrink-0" />
                 <p className="text-white text-[14px] lg:text-[15px] font-medium leading-snug">{item}</p>
               </div>
             ))}
@@ -145,78 +148,83 @@ export default function RealtorTeamPage() {
         </section>
 
         {/* We Are Brokers Advocating For You */}
-        <section className="w-full py-16 lg:py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-[#052316] text-[30px] lg:text-[40px] font-playfair font-normal leading-tight mb-5">
-                We Are Brokers Advocating For You.
-              </h2>
-              <p className="text-[#4e5b4e] text-[15px] lg:text-[16px] leading-[1.7] mb-6">
-                Because we are brokers we shop your scenario so banks compete for your business! We have
-                access to rates and loan programs other banks can&apos;t offer. We are fast and streamlined
-                so you can get on with your life.
-              </p>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-bold px-6 py-3.5 rounded-full transition-all"
+        <section className="w-full py-14 lg:py-20 bg-white border-b border-[#e8e0d0]/50">
+          <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center">
+            <h2 className="text-[#052316] text-[30px] sm:text-[36px] lg:text-[40px] font-playfair font-normal leading-tight mb-5">
+              We Are Brokers Advocating For You.
+            </h2>
+            <p className="text-[#4e5b4e] text-[15.5px] lg:text-[16.5px] leading-[1.75] mb-8 max-w-2xl mx-auto">
+              Because we are brokers we shop your scenario so banks compete for your business! We have
+              access to rates and loan programs other banks can&apos;t offer. We are fast and streamlined
+              so you can get on with your life.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                href="/#get-pre-approved"
+                data-preapproval="true"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
               >
-                GET STARTED
+                Start My Pre-Approval →
+              </Link>
+              <a
+                href="tel:+16025352171"
+                className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all"
+              >
+                Talk to a Broker →
               </a>
             </div>
           </div>
         </section>
 
         {/* We are Here to Simplify the Home Loan Process */}
-        <section className="w-full py-16 lg:py-24 bg-[#fcf9f3]">
-          <div className="max-w-7xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-[#052316] text-[30px] lg:text-[40px] font-playfair font-normal leading-tight mb-5">
-                We are Here to Simplify the Home Loan Process.
-              </h2>
-              <p className="text-[#4e5b4e] text-[15px] lg:text-[16px] leading-[1.7] mb-6">
-                Check out our extensive library of video and content aimed at arming you with the right
-                knowledge and the most up-to-date information so that you can start home shopping with
-                confidence.
-              </p>
-              <Link
-                href="/loan-programs/"
-                className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[14px] font-bold px-6 py-3.5 rounded-full transition-all"
-              >
-                VIEW LOAN PROGRAMS
-              </Link>
-            </div>
+        <section className="w-full py-14 lg:py-20 bg-[#fcf9f3] border-b border-[#e8e0d0]/50">
+          <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center">
+            <h2 className="text-[#052316] text-[30px] sm:text-[36px] lg:text-[40px] font-playfair font-normal leading-tight mb-5">
+              We are Here to Simplify the Home Loan Process.
+            </h2>
+            <p className="text-[#4e5b4e] text-[15.5px] lg:text-[16.5px] leading-[1.75] mb-8 max-w-2xl mx-auto">
+              Check out our extensive library of video and content aimed at arming you with the right
+              knowledge and the most up-to-date information so that you can start home shopping with
+              confidence.
+            </p>
+            <Link
+              href="/loan-programs/"
+              className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
+            >
+              VIEW LOAN PROGRAMS →
+            </Link>
           </div>
         </section>
 
         {/* Why Partner */}
-        <section className="w-full py-16 lg:py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mb-12">
+        <section className="w-full py-16 lg:py-24 bg-white border-b border-[#e8e0d0]/50">
+          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+            <div className="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
               <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">WHY PARTNER</p>
-              <h2 className="text-[#052316] text-[30px] lg:text-[40px] font-playfair font-normal leading-tight mb-5">
+              <h2 className="text-[#052316] text-[30px] sm:text-[36px] lg:text-[40px] font-playfair font-normal leading-tight mb-5">
                 Why Partner With AZ Mortgage Brothers?
               </h2>
-              <p className="text-[#4e5b4e] text-[15px] lg:text-[16px] leading-[1.7] mb-4">
+              <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75] mb-4">
                 We&apos;ve built our reputation on creating meaningful partnerships that drive success for everyone involved. Our approach combines industry expertise, personalized service, and innovative mortgage solutions that help your business thrive.
               </p>
-              <p className="text-[#4e5b4e] text-[15px] lg:text-[16px] leading-[1.7]">
+              <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
                 When you partner with AZ Mortgage Brothers, you&apos;re not just gaining a mortgage resource – you&apos;re joining a team committed to your growth and your clients&apos; satisfaction.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
               {WHY_PARTNER.map((item) => (
                 <div
                   key={item.title}
-                  className="bg-[#faf7f0] border border-[#e8e0d0]/60 rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-[#faf7f0] border border-[#e8e0d0]/70 rounded-2xl p-6 lg:p-7 shadow-sm hover:border-[#3fb364]/40 hover:shadow-md transition-all flex flex-col items-start text-left"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#3fb364]/12 text-[#3fb364] flex items-center justify-center mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-[#3fb364]/15 text-[#3fb364] flex items-center justify-center mb-4 shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
                   </div>
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-2">{item.title}</h3>
-                  <p className="text-[#4e5b4e] text-[14px] leading-[1.65]">{item.body}</p>
+                  <h3 className="text-[#052316] text-[18px] font-bold mb-2.5">{item.title}</h3>
+                  <p className="text-[#4e5b4e] text-[14.5px] leading-[1.65]">{item.body}</p>
                 </div>
               ))}
             </div>
@@ -224,44 +232,35 @@ export default function RealtorTeamPage() {
             <div className="text-center">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[14px] font-bold px-6 py-3.5 rounded-full transition-all"
+                className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
               >
-                Join Our Partner Network
+                Join Our Partner Network →
               </a>
             </div>
           </div>
         </section>
 
         {/* Stats */}
-        <section className="w-full py-14 lg:py-16 bg-[#052316]">
-          <div className="max-w-7xl mx-auto px-6 lg:px-10 grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {STATS.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-white text-[36px] lg:text-[48px] font-bold leading-none mb-2">{stat.value}</div>
-                <div className="text-[#c8c8b8] text-[12px] lg:text-[13px] font-medium uppercase tracking-wide">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </section>
+        <StatsBanner stats={STATS} />
 
         {/* Specialized audiences */}
-        <section className="w-full py-16 lg:py-24 bg-[#fcf9f3]">
-          <div className="max-w-7xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mb-12">
+        <section className="w-full py-16 lg:py-24 bg-[#fcf9f3] border-b border-[#e8e0d0]/50">
+          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+            <div className="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
               <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">WHO WE SERVE</p>
-              <h2 className="text-[#052316] text-[30px] lg:text-[40px] font-playfair font-normal leading-tight mb-5">
+              <h2 className="text-[#052316] text-[30px] sm:text-[36px] lg:text-[40px] font-playfair font-normal leading-tight mb-5">
                 Specialized Solutions for Industry Professionals
               </h2>
-              <p className="text-[#4e5b4e] text-[15px] lg:text-[16px] leading-[1.7]">
+              <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
                 We offer tailored partnership programs designed to meet the unique needs of different real estate professionals. Our specialized approach ensures you receive the exact support, tools, and resources that matter most to your business segment.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
               {AUDIENCES.map((item) => (
-                <div key={item.title} className="bg-white border border-[#e8e0d0]/60 rounded-2xl p-6 shadow-sm">
+                <div key={item.title} className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 lg:p-7 shadow-sm hover:border-[#3fb364]/40 hover:shadow-md transition-all text-left">
                   <h3 className="text-[#052316] text-[18px] font-bold mb-3">{item.title}</h3>
-                  <p className="text-[#4e5b4e] text-[14px] leading-[1.65]">{item.body}</p>
+                  <p className="text-[#4e5b4e] text-[14.5px] leading-[1.65]">{item.body}</p>
                 </div>
               ))}
             </div>
@@ -269,176 +268,191 @@ export default function RealtorTeamPage() {
             <div className="text-center">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-bold px-6 py-3.5 rounded-full transition-all"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
               >
-                Contact Our Partnership Team
+                Contact Our Partnership Team →
               </a>
             </div>
           </div>
         </section>
 
         {/* Four steps */}
-        <section className="w-full py-16 lg:py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mb-12">
+        <section className="w-full py-16 lg:py-24 bg-white border-b border-[#e8e0d0]/50">
+          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+            <div className="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
               <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">HOW IT WORKS</p>
-              <h2 className="text-[#052316] text-[30px] lg:text-[40px] font-playfair font-normal leading-tight mb-5">
+              <h2 className="text-[#052316] text-[30px] sm:text-[36px] lg:text-[40px] font-playfair font-normal leading-tight mb-5">
                 Four Simple Steps to a Powerful Partnership
               </h2>
-              <p className="text-[#4e5b4e] text-[15px] lg:text-[16px] leading-[1.7]">
+              <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
                 Becoming an AZ Mortgage Brothers partner is straightforward and designed to get you up and running quickly. Our streamlined onboarding process ensures you&apos;ll have all the resources you need to start referring clients and growing your business right away.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-12">
               {STEPS.map((item) => (
-                <div key={item.step} className="relative bg-[#faf7f0] border border-[#e8e0d0]/60 rounded-2xl p-6">
+                <div key={item.step} className="relative bg-[#faf7f0] border border-[#e8e0d0]/70 rounded-2xl p-6 lg:p-7 text-left">
                   <div className="text-[#3fb364] text-[28px] font-bold mb-3">{item.step}</div>
-                  <h3 className="text-[#052316] text-[17px] font-bold mb-2">{item.title}</h3>
-                  <p className="text-[#4e5b4e] text-[13.5px] leading-[1.65]">{item.body}</p>
+                  <h3 className="text-[#052316] text-[17.5px] font-bold mb-2">{item.title}</h3>
+                  <p className="text-[#4e5b4e] text-[14px] leading-[1.65]">{item.body}</p>
                 </div>
               ))}
             </div>
 
-            <div className="bg-[#052316] rounded-3xl p-8 lg:p-10 text-center">
-              <p className="text-[#c8c8b8] text-[15px] lg:text-[16px] leading-[1.7] max-w-3xl mx-auto mb-6">
+            <div className="bg-[#052316] rounded-3xl p-8 lg:p-12 text-center shadow-xl">
+              <p className="text-[#c8c8b8] text-[15.5px] lg:text-[16.5px] leading-[1.75] max-w-3xl mx-auto mb-8">
                 Ready to elevate your business? Join hundreds of successful partners who have grown their business with AZ Mortgage Brothers. Our team is ready to answer your questions and help you get started.
               </p>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-bold px-6 py-3.5 rounded-full transition-all"
-              >
-                Schedule Your Partnership Consultation
-              </a>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
+                >
+                  Schedule Your Partnership Consultation →
+                </a>
+                <a
+                  href="tel:+16025352171"
+                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all border border-white/20"
+                >
+                  Talk to a Broker →
+                </a>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Contact / form */}
         <section id="contact" className="w-full py-16 lg:py-24 bg-[#fcf9f3] scroll-mt-24">
-          <div className="max-w-7xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mb-12">
+          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+            <div className="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
               <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">GET IN TOUCH</p>
-              <h2 className="text-[#052316] text-[30px] lg:text-[40px] font-playfair font-normal leading-tight mb-5">
+              <h2 className="text-[#052316] text-[30px] sm:text-[36px] lg:text-[40px] font-playfair font-normal leading-tight mb-5">
                 Let&apos;s Build Something Great Together
               </h2>
-              <p className="text-[#4e5b4e] text-[15px] lg:text-[16px] leading-[1.7]">
+              <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
                 Ready to explore how a partnership with AZ Mortgage Brothers can benefit your business? Complete the form below, and one of our partnership specialists will reach out within one business day to discuss your specific needs and opportunities.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              <div className="lg:col-span-7 bg-white rounded-3xl border border-[#e8e0d0]/60 p-8 shadow-sm">
-                <h3 className="text-[#052316] text-[22px] font-playfair font-normal mb-6">
-                  Partnership Inquiry
-                </h3>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+              <div className="lg:col-span-7 bg-white rounded-3xl border border-[#e8e0d0]/70 p-7 lg:p-9 shadow-sm flex flex-col justify-between">
+                <div>
+                  <h3 className="text-[#052316] text-[22px] font-playfair font-normal mb-6">
+                    Partnership Inquiry
+                  </h3>
 
-                {formSubmitted ? (
-                  <div className="py-12 text-center flex flex-col items-center justify-center gap-4">
-                    <div className="w-14 h-14 rounded-full bg-[#e8f5e9] flex items-center justify-center text-[#3fb364]">
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3" className="w-6 h-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                      </svg>
+                  {formSubmitted ? (
+                    <div className="py-12 text-center flex flex-col items-center justify-center gap-4">
+                      <div className="w-14 h-14 rounded-full bg-[#e8f5e9] flex items-center justify-center text-[#3fb364]">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3" className="w-6 h-6">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                        </svg>
+                      </div>
+                      <h4 className="text-[#052316] text-[18px] font-bold">Message Sent!</h4>
+                      <p className="text-[#4e5b4e] text-[14px] max-w-xs">
+                        Thanks for reaching out. Our partnership team will contact you within one business day.
+                      </p>
                     </div>
-                    <h4 className="text-[#052316] text-[18px] font-bold">Message Sent!</h4>
-                    <p className="text-[#4e5b4e] text-[14px] max-w-xs">
-                      Thanks for reaching out. Our partnership team will contact you within one business day.
-                    </p>
-                  </div>
-                ) : (
-                  <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  ) : (
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="flex flex-col gap-2">
+                          <label className="text-[#1a3a1a] text-[12px] font-semibold">First name</label>
+                          <input
+                            type="text"
+                            required
+                            placeholder="John"
+                            value={firstName}
+                            onChange={(e) => setFirstName(e.target.value)}
+                            className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364]"
+                          />
+                        </div>
+                        <div className="flex flex-col gap-2">
+                          <label className="text-[#1a3a1a] text-[12px] font-semibold">Last name</label>
+                          <input
+                            type="text"
+                            required
+                            placeholder="Smith"
+                            value={lastName}
+                            onChange={(e) => setLastName(e.target.value)}
+                            className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364]"
+                          />
+                        </div>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div className="flex flex-col gap-2">
+                          <label className="text-[#1a3a1a] text-[12px] font-semibold">Email</label>
+                          <input
+                            type="email"
+                            required
+                            placeholder="john@example.com"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364]"
+                          />
+                        </div>
+                        <div className="flex flex-col gap-2">
+                          <label className="text-[#1a3a1a] text-[12px] font-semibold">Phone</label>
+                          <input
+                            type="tel"
+                            required
+                            placeholder="(602) 555-0199"
+                            value={phone}
+                            onChange={(e) => setPhone(e.target.value)}
+                            className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364]"
+                          />
+                        </div>
+                      </div>
+
                       <div className="flex flex-col gap-2">
-                        <label className="text-[#1a3a1a] text-[12px] font-semibold">First name</label>
+                        <label className="text-[#1a3a1a] text-[12px] font-semibold">Company / Brokerage</label>
                         <input
                           type="text"
-                          required
-                          value={firstName}
-                          onChange={(e) => setFirstName(e.target.value)}
+                          placeholder="e.g. Arizona Realty"
+                          value={company}
+                          onChange={(e) => setCompany(e.target.value)}
                           className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364]"
                         />
                       </div>
+
                       <div className="flex flex-col gap-2">
-                        <label className="text-[#1a3a1a] text-[12px] font-semibold">Last name</label>
-                        <input
-                          type="text"
+                        <label className="text-[#1a3a1a] text-[12px] font-semibold">How can we help?</label>
+                        <textarea
                           required
-                          value={lastName}
-                          onChange={(e) => setLastName(e.target.value)}
-                          className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364]"
+                          rows={4}
+                          value={message}
+                          onChange={(e) => setMessage(e.target.value)}
+                          placeholder="Tell us about your partnership goals..."
+                          className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364] resize-none"
                         />
                       </div>
-                    </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div className="flex flex-col gap-2">
-                        <label className="text-[#1a3a1a] text-[12px] font-semibold">Email</label>
-                        <input
-                          type="email"
-                          required
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364]"
-                        />
-                      </div>
-                      <div className="flex flex-col gap-2">
-                        <label className="text-[#1a3a1a] text-[12px] font-semibold">Phone</label>
-                        <input
-                          type="tel"
-                          required
-                          value={phone}
-                          onChange={(e) => setPhone(e.target.value)}
-                          className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364]"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="flex flex-col gap-2">
-                      <label className="text-[#1a3a1a] text-[12px] font-semibold">Company / Brokerage</label>
-                      <input
-                        type="text"
-                        value={company}
-                        onChange={(e) => setCompany(e.target.value)}
-                        className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364]"
-                      />
-                    </div>
-
-                    <div className="flex flex-col gap-2">
-                      <label className="text-[#1a3a1a] text-[12px] font-semibold">How can we help?</label>
-                      <textarea
-                        required
-                        rows={4}
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                        placeholder="Tell us about your partnership goals..."
-                        className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364] resize-none"
-                      />
-                    </div>
-
-                    <button
-                      type="submit"
-                      className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[14.5px] font-bold px-6 py-3 rounded-xl transition-all w-fit cursor-pointer"
-                    >
-                      Send partnership inquiry
-                    </button>
-                  </form>
-                )}
+                      <button
+                        type="submit"
+                        className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[14.5px] font-bold px-7 py-3.5 rounded-full transition-all w-fit cursor-pointer shadow-md"
+                      >
+                        Send partnership inquiry →
+                      </button>
+                    </form>
+                  )}
+                </div>
               </div>
 
-              <div className="lg:col-span-5 flex flex-col gap-5">
-                <div className="bg-white border border-[#e8e0d0]/60 rounded-2xl p-6 shadow-sm">
+              <div className="lg:col-span-5 flex flex-col justify-between gap-5">
+                <div className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 lg:p-7 shadow-sm">
                   <p className="text-[#a89a70] text-[10px] font-bold tracking-widest uppercase mb-2">PHONE</p>
                   <a href="tel:6025352171" className="text-[#052316] text-[20px] font-bold hover:text-[#3fb364] transition-colors">
                     +1 602-535-2171
                   </a>
                 </div>
-                <div className="bg-white border border-[#e8e0d0]/60 rounded-2xl p-6 shadow-sm">
+                <div className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 lg:p-7 shadow-sm">
                   <p className="text-[#a89a70] text-[10px] font-bold tracking-widest uppercase mb-2">CONTACT US</p>
                   <Link href="/contact-us/" className="text-[#052316] text-[16px] font-bold hover:text-[#3fb364] transition-colors">
                     Open contact page →
                   </Link>
                 </div>
-                <div className="bg-white border border-[#e8e0d0]/60 rounded-2xl p-6 shadow-sm">
+                <div className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 lg:p-7 shadow-sm">
                   <p className="text-[#a89a70] text-[10px] font-bold tracking-widest uppercase mb-2">ADDRESS</p>
                   <p className="text-[#052316] text-[15px] font-bold leading-relaxed">
                     1599 East Orangewood Ave<br />

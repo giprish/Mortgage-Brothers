@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import StatsBanner from "../component/StatsBanner";
 
 const creditTable = [
   { range: "760+ (Excellent)", rate: "Lowest Rates Available", category: "Excellent Credit" },
@@ -211,44 +212,24 @@ export default function MortgageForPoorCreditPage() {
 
       <main className="flex-grow">
         {/* Hero */}
-        <section
-          className="relative w-full text-white min-h-[560px] lg:min-h-[700px] xl:min-h-[725px] flex items-center overflow-hidden bg-cover bg-no-repeat"
-          style={{
-            backgroundImage:
-              "linear-gradient(90deg, rgb(52, 69, 37) 0%, rgb(50, 94, 63) 20%, rgba(255, 255, 255, 0) 100%), url('/home/mortgage-poor-credit.jpg')",
-            backgroundPosition: "0% 50%, 100% 50%",
-            backgroundSize: "cover, cover",
-          }}
-        >
-          <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 pt-[120px] pb-14 lg:pt-[140px] lg:pb-20 relative z-10">
-            <div className="max-w-[640px]">
-              <h1 className="text-white text-[40px] sm:text-[52px] lg:text-[64px] xl:text-[72px] font-bold leading-[1.05] mb-5 tracking-tight">
-                Mortgage for Poor Credit
-              </h1>
-              <h2 className="text-white text-[18px] sm:text-[24px] lg:text-[32px] font-normal leading-[1.35] mb-8 max-w-[580px]">
-                Buying a Home with Poor Credit? We Can Help!
-              </h2>
-              <div className="flex flex-col items-start gap-3">
-                <Link
-                  href="/#get-pre-approved"
-                  className="inline-flex items-center gap-3 bg-[#4B800A] hover:bg-[#3f6d09] text-white text-[16px] lg:text-[18px] font-semibold pl-7 pr-2 py-2 rounded-full transition-all shadow-lg"
-                >
-                  Start my preapproval
-                  <span className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-[#052316]/35">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                  </span>
-                </Link>
-                <p className="text-white/85 text-[13px] lg:text-[14px] font-medium flex items-center gap-2">
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                    <circle cx="12" cy="12" r="9" />
-                    <polyline points="12 7 12 12 15 14" />
-                  </svg>
-                  3 min / no credit impact
-                </p>
-              </div>
-            </div>
+        <section className="w-full bg-[#08271B] text-white pt-[110px] sm:pt-[130px] pb-12 sm:pb-16 lg:pb-20 text-center relative overflow-hidden">
+          <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
+            <h1 className="text-white text-[32px] sm:text-[44px] lg:text-[52px] font-bold font-playfair leading-[1.15] mb-4 text-center tracking-tight">
+              Mortgage for Poor Credit
+            </h1>
+            <h2 className="text-[#c8c8b8] text-[16px] sm:text-[19px] lg:text-[22px] font-normal leading-[1.6] mb-8 max-w-2xl text-center">
+              Buying a Home with Poor Credit? We Can Help!
+            </h2>
+            <Link
+              href="/#get-pre-approved"
+              className="inline-flex items-center gap-2.5 bg-[#3fb364] hover:bg-[#349b55] text-white text-[16px] font-semibold px-8 py-3.5 rounded-full transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            >
+              Start my preapproval
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </Link>
+            <p className="text-[#8a9a7a] text-[12px] font-medium mt-3 text-center">3 min / no credit impact</p>
           </div>
         </section>
 
@@ -389,21 +370,7 @@ export default function MortgageForPoorCreditPage() {
         </section>
 
         {/* Stats */}
-        <section className="w-full bg-[#08271B] py-12 lg:py-16">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <p
-                  className="text-[#3fb364] text-[32px] lg:text-[40px] font-bold leading-none mb-2"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-                >
-                  {stat.value}
-                </p>
-                <p className="text-[#c8c8b8] text-[13.5px] font-medium leading-snug">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+        <StatsBanner stats={stats} />
 
         {/* How to get a mortgage */}
         <section className="w-full py-16 lg:py-24">

@@ -86,7 +86,7 @@ export default function CoconinoCountyPage() {
                 </svg>
               </Link>
               <Link
-                href="/about/#talk-to-broker"
+                href="tel:+16025352171"
                 className="w-full sm:w-auto inline-flex items-center justify-center bg-transparent border border-white/30 hover:border-white/60 text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200"
               >
                 Talk to a Broker

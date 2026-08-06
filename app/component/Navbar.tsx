@@ -40,9 +40,20 @@ const AREA_LINKS = [
 ] as const;
 
 const ABOUT_LINKS = [
+  { href: "/about-us/", label: "ABOUT US" },
   { href: "/contact-us/", label: "CONTACT US" },
   { href: "/team/", label: "TEAM & CAREERS" },
   { href: "/job-opportunities/", label: "JOB OPPORTUNITIES" },
+] as const;
+
+const LOAN_PROGRAM_MOBILE_LINKS = [
+  { href: "/mortgage-loan-programs-arizona/", label: "ALL LOAN PROGRAMS" },
+  ...LOAN_PROGRAM_LINKS,
+] as const;
+
+const CALCULATOR_MOBILE_LINKS = [
+  { href: "/mortgage-calculator-arizona/", label: "ALL CALCULATORS" },
+  ...CALCULATOR_LINKS,
 ] as const;
 
 const RESOURCE_LINKS = [
@@ -102,9 +113,8 @@ const Navbar = () => {
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen((open) => {
-      const next = !open;
-      setActiveSubmenu(next ? resolveSubmenuForPath() : null);
-      return next;
+      setActiveSubmenu(null);
+      return !open;
     });
   };
 
@@ -683,46 +693,107 @@ const Navbar = () => {
               {!activeSubmenu ? (
                 /* Main Menu Items */
                 <div className="flex flex-col">
-                  <button
-                    onClick={() => setActiveSubmenu("LOAN PROGRAMS")}
-                    className={`w-full flex items-center justify-between hover:bg-[#343a42] cursor-pointer text-left ${mobileItemClass(isLoanProgramsActive, "main")}`}
-                  >
-                    <span>LOAN PROGRAMS</span>
-                    <span className="shrink-0 opacity-70"><FaAngleRight className="text-[14px]" aria-hidden /></span>
-                  </button>
+                  {/* Loan Programs */}
+                  <div className="flex items-center justify-between border-b border-[#3b4148] hover:bg-[#343a42]">
+                    <Link
+                      href="/mortgage-loan-programs-arizona/"
+                      onClick={closeMobile}
+                      className={`flex-1 font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 ${
+                        isLoanProgramsActive ? "text-[#3fb364]" : "text-white"
+                      }`}
+                    >
+                      LOAN PROGRAMS
+                    </Link>
+                    <button
+                      onClick={() => setActiveSubmenu("LOAN PROGRAMS")}
+                      className="px-5 py-4 text-[#3fb364] hover:text-white shrink-0 cursor-pointer"
+                      aria-label="Open Loan Programs submenu"
+                    >
+                      <FaAngleRight className="text-[14px]" aria-hidden />
+                    </button>
+                  </div>
 
-                  <button
-                    onClick={() => setActiveSubmenu("CALCULATORS")}
-                    className={`w-full flex items-center justify-between hover:bg-[#343a42] cursor-pointer text-left ${mobileItemClass(isCalculatorsActive, "main")}`}
-                  >
-                    <span>CALCULATORS</span>
-                    <span className="shrink-0 opacity-70"><FaAngleRight className="text-[14px]" aria-hidden /></span>
-                  </button>
+                  {/* Calculators */}
+                  <div className="flex items-center justify-between border-b border-[#3b4148] hover:bg-[#343a42]">
+                    <Link
+                      href="/mortgage-calculator-arizona/"
+                      onClick={closeMobile}
+                      className={`flex-1 font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 ${
+                        isCalculatorsActive ? "text-[#3fb364]" : "text-white"
+                      }`}
+                    >
+                      CALCULATORS
+                    </Link>
+                    <button
+                      onClick={() => setActiveSubmenu("CALCULATORS")}
+                      className="px-5 py-4 text-[#3fb364] hover:text-white shrink-0 cursor-pointer"
+                      aria-label="Open Calculators submenu"
+                    >
+                      <FaAngleRight className="text-[14px]" aria-hidden />
+                    </button>
+                  </div>
 
-                  <button
-                    onClick={() => setActiveSubmenu("AREAS WE SERVE")}
-                    className={`w-full flex items-center justify-between hover:bg-[#343a42] cursor-pointer text-left ${mobileItemClass(isAreasActive, "main")}`}
-                  >
-                    <span>AREAS WE SERVE</span>
-                    <span className="shrink-0 opacity-70"><FaAngleRight className="text-[14px]" aria-hidden /></span>
-                  </button>
+                  {/* Areas We Serve */}
+                  <div className="flex items-center justify-between border-b border-[#3b4148] hover:bg-[#343a42]">
+                    <Link
+                      href="/service-areas/"
+                      onClick={closeMobile}
+                      className={`flex-1 font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 ${
+                        isAreasActive ? "text-[#3fb364]" : "text-white"
+                      }`}
+                    >
+                      AREAS WE SERVE
+                    </Link>
+                    <button
+                      onClick={() => setActiveSubmenu("AREAS WE SERVE")}
+                      className="px-5 py-4 text-[#3fb364] hover:text-white shrink-0 cursor-pointer"
+                      aria-label="Open Areas We Serve submenu"
+                    >
+                      <FaAngleRight className="text-[14px]" aria-hidden />
+                    </button>
+                  </div>
 
-                  <button
-                    onClick={() => setActiveSubmenu("ABOUT")}
-                    className={`w-full flex items-center justify-between hover:bg-[#343a42] cursor-pointer text-left ${mobileItemClass(isAboutActive, "main")}`}
-                  >
-                    <span>ABOUT</span>
-                    <span className="shrink-0 opacity-70"><FaAngleRight className="text-[14px]" aria-hidden /></span>
-                  </button>
+                  {/* About */}
+                  <div className="flex items-center justify-between border-b border-[#3b4148] hover:bg-[#343a42]">
+                    <Link
+                      href="/about-us/"
+                      onClick={closeMobile}
+                      className={`flex-1 font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 ${
+                        isAboutActive ? "text-[#3fb364]" : "text-white"
+                      }`}
+                    >
+                      ABOUT US
+                    </Link>
+                    <button
+                      onClick={() => setActiveSubmenu("ABOUT")}
+                      className="px-5 py-4 text-[#3fb364] hover:text-white shrink-0 cursor-pointer"
+                      aria-label="Open About submenu"
+                    >
+                      <FaAngleRight className="text-[14px]" aria-hidden />
+                    </button>
+                  </div>
 
-                  <button
-                    onClick={() => setActiveSubmenu("RESOURCES")}
-                    className={`w-full flex items-center justify-between hover:bg-[#343a42] cursor-pointer text-left ${mobileItemClass(isResourcesActive, "main")}`}
-                  >
-                    <span>RESOURCES</span>
-                    <span className="shrink-0 opacity-70"><FaAngleRight className="text-[14px]" aria-hidden /></span>
-                  </button>
+                  {/* Resources */}
+                  <div className="flex items-center justify-between border-b border-[#3b4148] hover:bg-[#343a42]">
+                    <Link
+                      href="/blog/"
+                      onClick={closeMobile}
+                      className={`flex-1 font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 ${
+                        isResourcesActive ? "text-[#3fb364]" : "text-white"
+                      }`}
+                    >
+                      RESOURCES
+                    </Link>
+                    <button
+                      onClick={() => setActiveSubmenu("RESOURCES")}
+                      className="px-5 py-4 text-[#3fb364] hover:text-white shrink-0 cursor-pointer"
+                      aria-label="Open Resources submenu"
+                    >
+                      <FaAngleRight className="text-[14px]" aria-hidden />
+                    </button>
+                  </div>
 
+                  {/* Contact Us */}
                   <Link
                     href="/contact-us/"
                     onClick={closeMobile}
@@ -731,6 +802,7 @@ const Navbar = () => {
                     CONTACT US
                   </Link>
 
+                  {/* Realtors */}
                   <Link
                     href="/realtorteam/"
                     onClick={closeMobile}
@@ -748,7 +820,7 @@ const Navbar = () => {
                   </div>
 
                   {activeSubmenu === "LOAN PROGRAMS" &&
-                    LOAN_PROGRAM_LINKS.map((item) => (
+                    LOAN_PROGRAM_MOBILE_LINKS.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}
@@ -760,7 +832,7 @@ const Navbar = () => {
                     ))}
 
                   {activeSubmenu === "CALCULATORS" &&
-                    CALCULATOR_LINKS.map((item) => (
+                    CALCULATOR_MOBILE_LINKS.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}

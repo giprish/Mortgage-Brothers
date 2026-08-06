@@ -92,26 +92,15 @@ export default function CreditScoreQuizPage() {
       <Navbar />
 
       <main className="flex-grow">
-        {/* Hero — matches live gradient + background image */}
-        <section
-          className="relative w-full text-white min-h-[420px] lg:min-h-[540px] flex items-center overflow-hidden bg-cover bg-no-repeat"
-          style={{
-            backgroundImage:
-              "linear-gradient(90deg, rgb(52, 69, 37) 0%, rgb(50, 94, 63) 20%, rgba(255, 255, 255, 0) 100%), url('/home/az-mortgage-brothers-background.jpg')",
-            backgroundPosition: "0% 50%, 100% 50%",
-            backgroundSize: "cover, cover",
-            backgroundBlendMode: "normal, multiply",
-          }}
-        >
-          <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 pt-[120px] pb-14 lg:pt-[140px] lg:pb-20 relative z-10">
-            <div className="max-w-[720px]">
-              <h1 className="text-white text-[34px] sm:text-[44px] lg:text-[54px] font-bold leading-[1.12] mb-5 tracking-tight">
-                Is Your Credit Score Good Enough to Buy a Home in Arizona?
-              </h1>
-              <h2 className="text-white/95 text-[18px] sm:text-[22px] lg:text-[26px] font-normal leading-[1.35]">
-                Find out in minutes - no credit pull, no obligation
-              </h2>
-            </div>
+        {/* Hero */}
+        <section className="w-full bg-[#08271B] text-white pt-[110px] sm:pt-[130px] pb-12 sm:pb-16 lg:pb-20 text-center relative overflow-hidden">
+          <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
+            <h1 className="text-white text-[32px] sm:text-[44px] lg:text-[52px] font-bold font-playfair leading-[1.15] mb-4 text-center tracking-tight">
+              Is Your Credit Score Good Enough to Buy a Home in Arizona?
+            </h1>
+            <h2 className="text-[#c8c8b8] text-[16px] sm:text-[19px] lg:text-[22px] font-normal leading-[1.6] max-w-2xl text-center">
+              Find out in minutes - no credit pull, no obligation
+            </h2>
           </div>
         </section>
 

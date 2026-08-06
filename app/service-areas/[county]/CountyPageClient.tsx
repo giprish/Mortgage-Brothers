@@ -156,7 +156,7 @@ export default function CountyPage() {
                   </p>
                 </div>
                 <Link
-                  href="/about/#talk-to-broker"
+                  href="tel:+16025352171"
                   className="text-brand-green-accent hover:text-[#2d5a2d] text-[13px] font-bold flex items-center gap-1.5 transition-colors group"
                 >
                   Request your area
@@ -309,9 +309,14 @@ export default function CountyPage() {
           <div className="max-w-3xl mx-auto">
             <h2 className="text-white text-[26px] lg:text-[32px] font-playfair font-normal mb-4">Ready to get started in {countyName}?</h2>
             <p className="text-[#c8c8b8] text-[15px] mb-6">Start your pre-approval in about three minutes — no cost, no obligation.</p>
-            <Link href="/#get-pre-approved" className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full inline-flex items-center gap-2 transition-all shadow-md">
-              Get Pre-Approved →
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link href="/#get-pre-approved" data-preapproval="true" className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full inline-flex items-center gap-2 transition-all shadow-md">
+                Start My Pre-Approval →
+              </Link>
+              <a href="tel:+16025352171" className="bg-white/10 hover:bg-white/20 text-white text-[15px] font-bold px-8 py-3.5 rounded-full inline-flex items-center gap-2 transition-all border border-white/20">
+                Talk to a Broker →
+              </a>
+            </div>
           </div>
         </section>
       </main>

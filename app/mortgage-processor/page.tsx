@@ -114,31 +114,23 @@ export default function MortgageProcessorPage() {
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
       <main className="flex-grow">
-       <section
-  className="relative w-full text-white min-h-[520px] lg:min-h-[640px] xl:min-h-[690px] flex items-center overflow-hidden bg-no-repeat"
-  style={{
-    backgroundImage:
-      "linear-gradient(90deg, rgb(52, 69, 37) 0%, rgb(50, 94, 63) 20%, rgba(255, 255, 255, 0) 100%), url('/home/mortgage-processor.jpg')",
-    backgroundSize: "cover",
-    backgroundPosition: "left top, center top",
-    backgroundRepeat: "no-repeat",
-  }}
->
-          <div className="max-w-7xl mx-auto w-full px-6 lg:px-12 pt-[120px] pb-14 lg:pt-[140px] lg:pb-20 relative z-10">
-            <div className="max-w-[760px]">
-              <h1 className="text-white text-[36px] sm:text-[48px] lg:text-[58px] font-bold leading-[1.08] mb-5 tracking-tight">
-                Mortgage Processor – Entry Level With OR Without Experience
-              </h1>
-              <h2 className="text-white text-[17px] sm:text-[22px] lg:text-[26px] font-normal leading-[1.35] mb-8 max-w-[640px]">
-                Start Your Mortgage Career: Support Clients and Build Your Future in the Industry
-              </h2>
-              <a
-                href="#Job-Description"
-                className="inline-flex items-center gap-3 bg-[#4B800A] hover:bg-[#3f6d09] text-white text-[16px] font-semibold pl-7 pr-5 py-3 rounded-full transition-all shadow-lg"
-              >
-                View Job Description
-              </a>
-            </div>
+        <section className="w-full bg-[#08271B] text-white pt-[110px] sm:pt-[130px] pb-12 sm:pb-16 lg:pb-20 text-center relative overflow-hidden">
+          <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
+            <h1 className="text-white text-[30px] sm:text-[42px] lg:text-[50px] font-bold font-playfair leading-[1.15] mb-4 text-center tracking-tight">
+              Mortgage Processor – Entry Level With OR Without Experience
+            </h1>
+            <h2 className="text-[#c8c8b8] text-[16px] sm:text-[19px] lg:text-[22px] font-normal leading-[1.6] mb-8 max-w-2xl text-center">
+              Start Your Mortgage Career: Support Clients and Build Your Future in the Industry
+            </h2>
+            <a
+              href="#Job-Description"
+              className="inline-flex items-center gap-3 bg-[#3fb364] hover:bg-[#349b55] text-white text-[16px] lg:text-[17px] font-semibold px-8 py-3.5 rounded-full transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
+            >
+              View Job Description
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <path d="M12 5v14M5 12l7 7 7-7" />
+              </svg>
+            </a>
           </div>
         </section>
 
