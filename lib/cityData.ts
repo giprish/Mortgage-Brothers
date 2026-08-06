@@ -1,3 +1,5 @@
+import { getSeoEntry, seoMetadata, type SeoEntry } from "./seo";
+
 export interface CityData {
   name: string;
   slug: string;
@@ -107,10 +109,119 @@ const cityCustomDescriptions: Record<string, string> = {
 
 const countySeats = ["Phoenix", "Tucson", "Florence", "Prescott", "Flagstaff", "Holbrook", "St. Johns", "Globe", "Bisbee", "Safford", "Clifton", "Nogales", "Kingman", "Parker", "Yuma"];
 
+function slugToDisplayName(slug: string): string {
+  return slug
+    .split("-")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+function parseCityNameFromSeo(entry: SeoEntry | undefined, citySlug: string): string {
+  const title = entry?.title || entry?.openGraph?.title;
+  if (title) {
+    const match = title.match(/^(.+?)\s*-\s*Arizona Home Loans/i);
+    if (match) return match[1].trim();
+  }
+
+  const description = entry?.description || entry?.openGraph?.description;
+  if (description) {
+    const match = description.match(/in\s+([^,]+),\s*AZ/i);
+    if (match) return match[1].trim();
+  }
+
+  return slugToDisplayName(citySlug);
+}
+
+function getSeoCityEntriesForCounty(countySlug: string): { slug: string; name: string; description?: string }[] {
+  const norm = normalizeCountySlug(countySlug);
+  const prefix = `/service-areas/${norm}/`;
+  const results: { slug: string; name: string; description?: string }[] = [];
+
+  for (const path of Object.keys(seoMetadata)) {
+    if (!path.startsWith(prefix)) continue;
+    const citySlug = path.slice(prefix.length);
+    if (!citySlug || citySlug.includes("/")) continue;
+
+    const entry = seoMetadata[path];
+    results.push({
+      slug: citySlug,
+      name: parseCityNameFromSeo(entry, citySlug),
+      description: entry.description,
+    });
+  }
+
+  return results;
+}
+
+function buildCityData(params: {
+  cityName: string;
+  citySlug: string;
+  countyName: string;
+  countySlug: string;
+  seoDescription?: string;
+}): CityData {
+  const { cityName, citySlug, countyName, countySlug, seoDescription } = params;
+  const medianPrice = getMedianPrice(cityName);
+  const daysOnMarket = getDaysOnMarket();
+
+  const communities = [
+    {
+      title: `${cityName} Historic District`,
+      description: `The historic areas of ${cityName} feature charming architecture and established neighborhoods. We assist buyers with customized mortgage programs suited for traditional homes.`,
+    },
+    {
+      title: `Rural Properties & Acreage in ${cityName}`,
+      description: `${cityName} is known for its scenic views and spacious properties. Our mortgage experts help buyers explore custom financing and land options.`,
+    },
+    {
+      title: `Pioneer Park Area`,
+      description: `Homes near the central community hubs and parks in ${cityName} offer family-friendly living with convenient access to schools and local amenities.`,
+    },
+    {
+      title: `${cityName} Heights & Foothills`,
+      description: `Modern developments and elevated homesites in ${cityName} provide scenic desert vistas, master-planned amenities, and custom new construction.`,
+    },
+  ];
+
+  const faqs = [
+    {
+      question: `How do I find competitive mortgage rates in ${cityName}?`,
+      answer: `Our experienced mortgage brokers compare loan options from multiple wholesale lenders to help borrowers secure competitive mortgage rates in ${cityName} based on their credit profile and down payment.`,
+    },
+    {
+      question: `Can I refinance my home in ${cityName}, AZ?`,
+      answer: `Yes! We offer cash-out refinance, rate-and-term refinance, and FHA Streamline refinance options for homeowners across ${cityName} looking to lower their monthly payments or access their home equity.`,
+    },
+    {
+      question: `What loan programs are available for first-time buyers in ${cityName}?`,
+      answer: `First-time home buyers in ${cityName} can access Conventional 3% down options, low down payment FHA loans, zero-down VA loans, and USDA rural home loans with competitive rates.`,
+    },
+  ];
+
+  const defaultDescription = `Home loans, refinancing, and pre-approvals for ${cityName} buyers.`;
+
+  return {
+    name: cityName,
+    slug: citySlug,
+    countyName,
+    countySlug,
+    description: seoDescription || cityCustomDescriptions[cityName] || defaultDescription,
+    longDescription: `${cityName} is a vibrant and growing community located in ${countyName}, offering a diverse real estate market with various neighborhood choices. AZ Mortgage Brothers provides local expertise to help residents and newcomers navigate home financing with confidence, offering tailored mortgage solutions for every buyer.`,
+    medianPrice,
+    daysOnMarket,
+    communities,
+    faqs,
+  };
+}
+
 export function getCountyCitiesDetails(countySlug: string): CountyCityDetail[] {
   const norm = normalizeCountySlug(countySlug);
   const cities = rawCitiesByCounty[norm] || [];
-  return cities.map((cityName) => {
+  const seenSlugs = new Set<string>();
+
+  const details: CountyCityDetail[] = cities.map((cityName) => {
+    seenSlugs.add(slugify(cityName));
+
     let badge: string | undefined;
     if (cityName === "Phoenix" || cityName === "Tucson") {
       badge = "TOP METRO";
@@ -119,12 +230,19 @@ export function getCountyCitiesDetails(countySlug: string): CountyCityDetail[] {
     }
 
     const desc = cityCustomDescriptions[cityName] || `Home loans, refinancing, and pre-approvals for ${cityName} buyers.`;
-    return {
-      name: cityName,
-      desc,
-      badge
-    };
+    return { name: cityName, desc, badge };
   });
+
+  for (const seoCity of getSeoCityEntriesForCounty(norm)) {
+    if (seenSlugs.has(seoCity.slug)) continue;
+    seenSlugs.add(seoCity.slug);
+    details.push({
+      name: seoCity.name,
+      desc: seoCity.description || `Home loans, refinancing, and pre-approvals for ${seoCity.name} buyers.`,
+    });
+  }
+
+  return details;
 }
 
 // Helper to slugify city/county names
@@ -183,60 +301,20 @@ export function getCityData(countySlug: string, citySlug: string): CityData | nu
   if (!countyName) return null;
 
   const citiesList = rawCitiesByCounty[normCounty] || rawCitiesByCounty[countySlug];
-  if (!citiesList) return null;
+  const cityName = citiesList?.find((c) => slugify(c) === citySlug);
 
-  const cityName = citiesList.find(c => slugify(c) === citySlug);
-  if (!cityName) return null;
+  if (cityName) {
+    return buildCityData({ cityName, citySlug, countyName, countySlug });
+  }
 
-  const medianPrice = getMedianPrice(cityName);
-  const daysOnMarket = getDaysOnMarket();
+  const seoEntry = getSeoEntry(`/service-areas/${normCounty}/${citySlug}`);
+  if (!seoEntry) return null;
 
-  // Programmatically build realistic communities/neighborhoods
-  const communities = [
-    {
-      title: `${cityName} Historic District`,
-      description: `The historic areas of ${cityName} feature charming architecture and established neighborhoods. We assist buyers with customized mortgage programs suited for traditional homes.`
-    },
-    {
-      title: `Rural Properties & Acreage in ${cityName}`,
-      description: `${cityName} is known for its scenic views and spacious properties. Our mortgage experts help buyers explore custom financing and land options.`
-    },
-    {
-      title: `Pioneer Park Area`,
-      description: `Homes near the central community hubs and parks in ${cityName} offer family-friendly living with convenient access to schools and local amenities.`
-    },
-    {
-      title: `${cityName} Heights & Foothills`,
-      description: `Modern developments and elevated homesites in ${cityName} provide scenic desert vistas, master-planned amenities, and custom new construction.`
-    }
-  ];
-
-  // Programmatically build FAQs
-  const faqs = [
-    {
-      question: `How do I find competitive mortgage rates in ${cityName}?`,
-      answer: `Our experienced mortgage brokers compare loan options from multiple wholesale lenders to help borrowers secure competitive mortgage rates in ${cityName} based on their credit profile and down payment.`
-    },
-    {
-      question: `Can I refinance my home in ${cityName}, AZ?`,
-      answer: `Yes! We offer cash-out refinance, rate-and-term refinance, and FHA Streamline refinance options for homeowners across ${cityName} looking to lower their monthly payments or access their home equity.`
-    },
-    {
-      question: `What loan programs are available for first-time buyers in ${cityName}?`,
-      answer: `First-time home buyers in ${cityName} can access Conventional 3% down options, low down payment FHA loans, zero-down VA loans, and USDA rural home loans with competitive rates.`
-    }
-  ];
-
-  return {
-    name: cityName,
-    slug: citySlug,
+  return buildCityData({
+    cityName: parseCityNameFromSeo(seoEntry, citySlug),
+    citySlug,
     countyName,
     countySlug,
-    description: `Home loans, refinancing, and pre-approvals for ${cityName} buyers.`,
-    longDescription: `${cityName} is a vibrant and growing community located in ${countyName}, offering a diverse real estate market with various neighborhood choices. AZ Mortgage Brothers provides local expertise to help residents and newcomers navigate home financing with confidence, offering tailored mortgage solutions for every buyer.`,
-    medianPrice,
-    daysOnMarket,
-    communities,
-    faqs
-  };
+    seoDescription: seoEntry.description,
+  });
 }
