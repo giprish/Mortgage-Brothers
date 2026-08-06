@@ -124,7 +124,7 @@ export default function ReverseMortgageLoanOfficerPage() {
             </h2>
             <a
               href="#Job-Description"
-              className="btn-primary"
+              className="inline-flex items-center gap-3 bg-[#3fb364] hover:bg-[#349b55] text-white text-[16px] lg:text-[17px] font-semibold px-8 py-3.5 rounded-full transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               View Job Description
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -180,7 +180,7 @@ export default function ReverseMortgageLoanOfficerPage() {
             <div className="text-center">
               <a
                 href="#contact"
-                className="btn-primary"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Start Your Application
               </a>
@@ -247,7 +247,7 @@ export default function ReverseMortgageLoanOfficerPage() {
             <div className="text-center">
               <a
                 href="#contact"
-                className="btn-primary"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Start Your Application
               </a>

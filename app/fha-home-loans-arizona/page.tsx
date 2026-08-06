@@ -332,7 +332,7 @@ export default function FhaHomeLoansArizonaPage() {
             <div className="text-center">
               <Link
                 href="/#get-pre-approved"
-                className="btn-primary"
+                className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-md inline-block"
               >
                 GET PRE-APPROVED →
               </Link>
@@ -554,7 +554,7 @@ export default function FhaHomeLoansArizonaPage() {
 
             <Link
               href="/#get-pre-approved"
-              className="inline-block btn-primary"
+              className="inline-block bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-lg"
             >
               GET PRE-APPROVED →
             </Link>

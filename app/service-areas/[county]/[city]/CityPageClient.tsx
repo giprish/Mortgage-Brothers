@@ -143,7 +143,7 @@ export default function GenericCityDetailPage() {
           <div className="text-center py-20">
             <h1 className="text-[#052316] text-[32px] font-playfair mb-4">City Not Found</h1>
             <p className="text-[#4e5b4e] text-[15px] mb-8">The city you&apos;re looking for doesn&apos;t exist in our directory.</p>
-            <Link href="/service-areas/" className="btn-primary">
+            <Link href="/service-areas/" className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-semibold px-6 py-3 rounded-full transition-all">
               Browse All Areas →
             </Link>
           </div>
@@ -193,7 +193,7 @@ export default function GenericCityDetailPage() {
                 {/* CTA */}
                 <Link
                   href="/#get-pre-approved"
-                  className="btn-primary group"
+                  className="inline-flex items-center gap-2.5 bg-[#3fb364] hover:bg-[#34a358] text-white text-[15px] font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-[#3fb364]/20 hover:shadow-xl hover:shadow-[#3fb364]/30 transition-all duration-300 group"
                 >
                   Start my preapproval
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 transition-transform">

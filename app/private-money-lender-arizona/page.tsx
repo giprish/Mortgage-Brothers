@@ -193,8 +193,8 @@ const whyChoose = [
   },
 ];
 
-const faqs = [
-  {
+  const faqs = [
+    {
     q: "What's the difference between private money and portfolio loans?",
     a: "Private money loans are typically short-term, asset-based loans from individual investors or small groups, while portfolio loans are held by the lender and offer more flexible long-term financing options.",
   },
@@ -306,7 +306,7 @@ export default function PrivateMoneyLenderPage() {
             <div className="text-center">
               <Link
                 href="/#get-pre-approved"
-                className="btn-primary"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Get Your Fast Financing Today
               </Link>
@@ -352,7 +352,7 @@ export default function PrivateMoneyLenderPage() {
             <div className="text-center">
               <Link
                 href="/#get-pre-approved"
-                className="btn-primary"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Get Your Private Money Loan Quote
               </Link>
@@ -396,7 +396,7 @@ export default function PrivateMoneyLenderPage() {
             <div className="text-center">
               <Link
                 href="/#get-pre-approved"
-                className="btn-primary"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Explore Your Portfolio Loan Options
               </Link>
@@ -438,7 +438,7 @@ export default function PrivateMoneyLenderPage() {
             <div className="text-center">
               <Link
                 href="/#get-pre-approved"
-                className="btn-primary"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Check Your Eligibility Now
               </Link>
@@ -461,11 +461,11 @@ export default function PrivateMoneyLenderPage() {
             </p>
             <Link
               href="/credit-score-quiz/"
-              className="btn-primary"
+              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
             >
               Take The Quiz
-            </Link>
-          </div>
+                </Link>
+              </div>
         </section>
 
         {/* How to secure */}
@@ -498,7 +498,7 @@ export default function PrivateMoneyLenderPage() {
                   <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed">{step.text}</p>
                 </div>
               ))}
-            </div>
+              </div>
 
             <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center max-w-3xl mx-auto mb-8">
               Ready to start your journey towards flexible financing? Our expert loan officers are here to
@@ -508,7 +508,7 @@ export default function PrivateMoneyLenderPage() {
             <div className="text-center">
               <Link
                 href="/#get-pre-approved"
-                className="btn-primary"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Start Your Loan Application
               </Link>
@@ -525,8 +525,8 @@ export default function PrivateMoneyLenderPage() {
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
                 What Our Clients Say About Private Money and Portfolio Loans
-              </h2>
-              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
+          </h2>
+          <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
                 Don’t just take our word for it. Hear from real Arizona borrowers who have successfully
                 leveraged our private money and portfolio loan options.
               </p>
@@ -599,7 +599,7 @@ export default function PrivateMoneyLenderPage() {
             <div className="text-center">
               <Link
                 href="/#get-pre-approved"
-                className="btn-primary"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Get Your Free Mortgage Consultation
               </Link>
@@ -689,7 +689,7 @@ export default function PrivateMoneyLenderPage() {
             </div>
             <Link
               href="/#get-pre-approved"
-              className="btn-primary"
+              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"
             >
               Start my preapproval
             </Link>

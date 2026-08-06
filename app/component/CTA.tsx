@@ -31,7 +31,7 @@ const CTA = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href="/#get-pre-approved"
-            className="btn-primary w-full sm:w-auto"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-250 shadow-lg shadow-[#3fb364]/20 hover:shadow-[#3fb364]/40"
           >
             Start My Pre-Approval
             <svg

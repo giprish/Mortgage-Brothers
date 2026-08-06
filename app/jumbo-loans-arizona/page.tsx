@@ -345,7 +345,7 @@ export default function JumboLoansPage() {
             <div className="text-center">
               <Link
                 href="/#get-pre-approved"
-                className="btn-primary"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Get Your Jumbo Loan Quote Now
               </Link>
@@ -384,7 +384,7 @@ export default function JumboLoansPage() {
             <div className="text-center">
               <Link
                 href="/#get-pre-approved"
-                className="btn-primary"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Get Your Free Home Buying Consultation
               </Link>
@@ -423,7 +423,7 @@ export default function JumboLoansPage() {
             <div className="text-center">
               <Link
                 href="/#get-pre-approved"
-                className="btn-primary"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Get Expert Jumbo Loan Guidance
               </Link>
@@ -459,7 +459,7 @@ export default function JumboLoansPage() {
             <div className="text-center">
               <Link
                 href="/#get-pre-approved"
-                className="btn-primary"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Get Your Free Jumbo Loan Consultation
               </Link>
@@ -481,7 +481,7 @@ export default function JumboLoansPage() {
             </p>
             <Link
               href="/credit-score-quiz/"
-              className="btn-primary"
+              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
             >
               Take The Quiz
             </Link>
@@ -552,7 +552,7 @@ export default function JumboLoansPage() {
             <div className="text-center">
               <Link
                 href="/#get-pre-approved"
-                className="btn-primary"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Discover Your Jumbo Loan Options Today
               </Link>
@@ -695,7 +695,7 @@ export default function JumboLoansPage() {
             <div className="text-center">
               <Link
                 href="/#get-pre-approved"
-                className="btn-primary"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Get Your Jumbo Loan Quote Now
               </Link>
@@ -726,7 +726,7 @@ export default function JumboLoansPage() {
             </p>
             <Link
               href="/#get-pre-approved"
-              className="btn-primary"
+              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"
             >
               Start my preapproval
             </Link>

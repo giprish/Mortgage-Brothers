@@ -329,7 +329,7 @@ const HomeCalculator = () => {
 
               <Link
                 href="/basic-mortgage-payment-calculator/"
-                className="mt-auto btn-primary"
+                className="mt-auto inline-flex items-center justify-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[14.5px] font-semibold px-6 py-3.5 rounded-full transition-all duration-200"
               >
                 Personalize Your Estimate
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

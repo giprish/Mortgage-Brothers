@@ -54,7 +54,7 @@ export default function FirstTimeHomeBuyerPage() {
               <div className="pt-4 flex flex-wrap items-center gap-4">
                 <Link
                   href="/#get-pre-approved"
-                  className="btn-primary"
+                  className="bg-[#3fb364] hover:bg-[#359854] text-white text-[16px] font-bold px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
                 >
                   GET PRE-APPROVED NOW →
                 </Link>

@@ -150,7 +150,7 @@ function ConsultationCta() {
     <section className="w-full py-6 flex justify-center">
       <Link
         href="/contact-us/"
-        className="btn-primary"
+        className="inline-flex items-center justify-center bg-[#3fb364] hover:bg-[#349b55] text-white text-[16px] font-bold px-10 py-4 rounded-full transition-all shadow-lg shadow-[#3fb364]/25"
       >
         Get Your Free Consultation Now →
       </Link>
@@ -231,7 +231,7 @@ export default function VideosPage() {
 
             <Link
               href="/#get-pre-approved"
-              className="btn-primary mt-8"
+              className="mt-8 inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-7 py-3.5 rounded-xl transition-all shadow-lg shadow-[#3fb364]/25"
             >
               Get Custom Rate Quote
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -303,7 +303,7 @@ export default function VideosPage() {
                 <button
                   type="button"
                   onClick={() => setFeaturedPlaying(true)}
-                  className="btn-primary w-fit"
+                  className="inline-flex w-fit items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-bold px-6 py-3 rounded-xl transition-all cursor-pointer"
                 >
                   <PlayIcon className="w-4 h-4" />
                   Watch now
@@ -461,7 +461,7 @@ export default function VideosPage() {
                   </div>
                   <button
                     type="submit"
-                    className="btn-primary w-fit"
+                    className="inline-flex w-fit items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[14.5px] font-bold px-7 py-3.5 rounded-xl transition-all cursor-pointer"
                   >
                     Get started
                   </button>

@@ -162,7 +162,7 @@ export default function RealtorTeamPage() {
               <Link
                 href="/#get-pre-approved"
                 data-preapproval="true"
-                className="btn-primary"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
               >
                 Start My Pre-Approval →
               </Link>
@@ -268,7 +268,7 @@ export default function RealtorTeamPage() {
             <div className="text-center">
               <a
                 href="#contact"
-                className="btn-primary"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
               >
                 Contact Our Partnership Team →
               </a>
@@ -306,7 +306,7 @@ export default function RealtorTeamPage() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a
                   href="#contact"
-                  className="btn-primary"
+                  className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
                 >
                   Schedule Your Partnership Consultation →
                 </a>
@@ -430,7 +430,7 @@ export default function RealtorTeamPage() {
 
                       <button
                         type="submit"
-                        className="btn-primary w-fit"
+                        className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[14.5px] font-bold px-7 py-3.5 rounded-full transition-all w-fit cursor-pointer shadow-md"
                       >
                         Send partnership inquiry →
                       </button>
