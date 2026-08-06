@@ -31,6 +31,8 @@ export default function FaqAccordion({ items, title }: FaqAccordionProps) {
       <div className="space-y-3">
         {items.map((item, idx) => {
           const isOpen = openIndex === idx;
+          const panelId = `faq-panel-${idx}`;
+          const buttonId = `faq-button-${idx}`;
           return (
             <div
               key={idx}
@@ -38,9 +40,11 @@ export default function FaqAccordion({ items, title }: FaqAccordionProps) {
             >
               <button
                 type="button"
+                id={buttonId}
                 onClick={() => setOpenIndex(isOpen ? null : idx)}
                 aria-expanded={isOpen}
-                className="w-full flex items-center justify-between gap-4 text-left px-5 py-4 cursor-pointer hover:bg-[#fcf9f3] transition-colors"
+                aria-controls={panelId}
+                className="w-full flex items-center justify-between gap-4 text-left px-5 py-4 cursor-pointer hover:bg-[#fcf9f3] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3fb364]"
               >
                 <span className="text-[#052316] text-[15px] font-bold leading-snug">
                   {item.q}
@@ -62,7 +66,12 @@ export default function FaqAccordion({ items, title }: FaqAccordionProps) {
                 </svg>
               </button>
               {isOpen && (
-                <div className="px-5 pb-5 border-t border-[#e8e0d0]/50">
+                <div
+                  id={panelId}
+                  role="region"
+                  aria-labelledby={buttonId}
+                  className="px-5 pb-5 border-t border-[#e8e0d0]/50"
+                >
                   <div className="text-[#4e5b4e] text-[14.5px] leading-relaxed pt-4">
                     {item.a}
                   </div>

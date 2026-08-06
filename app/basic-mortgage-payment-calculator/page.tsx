@@ -4,7 +4,7 @@ import { useMemo, useState, type ReactNode } from "react";
 import Navbar from "../component/Navbar";
 import LoanProgramHero from "../component/LoanProgramHero";
 import Footer from "../component/Footer";
-import { InteractivePieChart, BasicPaymentOverTimeChart } from "../component/InteractiveCharts";
+import { InteractivePieChart, BasicPaymentOverTimeChart } from "../component/charts/lazy";
 
 /* ============================================================
    DESIGN TOKENS (matches the suite's Rent vs. Buy / basic-calc

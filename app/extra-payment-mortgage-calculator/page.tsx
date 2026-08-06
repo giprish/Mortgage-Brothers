@@ -4,7 +4,7 @@ import { useMemo, useState, type CSSProperties, type ReactNode } from "react";
 import Navbar from "../component/Navbar";
 import LoanProgramHero from "../component/LoanProgramHero";
 import Footer from "../component/Footer";
-import { InteractivePieChart } from "../component/InteractiveCharts";
+import { InteractivePieChart } from "../component/charts/lazy";
 
 /* ============================================================
    DESIGN TOKENS (shared across the suite)

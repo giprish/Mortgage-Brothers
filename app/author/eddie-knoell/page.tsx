@@ -2,6 +2,7 @@
 
 import React, { useMemo, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import { COMPANY, LOAN_OFFICERS } from "@/lib/company";
@@ -45,12 +46,13 @@ export default function EddieKnoellAuthorPage() {
           <div className="max-w-6xl mx-auto px-6 lg:px-10 py-12 lg:py-16">
             <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 lg:gap-14 items-start">
               <div className="mx-auto lg:mx-0 w-full max-w-[280px]">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                   src="/home/Knoell-Eddie-Co-Founder.jpg"
                   alt="Eddie Knoell, co-founder of AZ Mortgage Brothers, trusted mortgage professional"
                   width={500}
                   height={500}
+                  loading="lazy"
+                  sizes="280px"
                   className="w-full h-auto rounded-2xl shadow-md object-cover bg-[#2a2a2a]"
                 />
               </div>

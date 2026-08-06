@@ -1,4 +1,3 @@
-"use client";
 import FaqAccordion from "../../component/FaqAccordion";
 
 import React from "react";

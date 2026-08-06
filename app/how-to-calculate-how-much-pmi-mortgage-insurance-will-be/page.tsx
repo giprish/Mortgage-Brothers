@@ -1,7 +1,6 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
@@ -182,12 +181,13 @@ export default function PmiMortgageInsurancePage() {
                     Check out this PMI example quote. This is from the private mortgage insurance company,
                     Radian.
                   </p>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
                     src="/home/pmi-premium-details-rates.jpg"
                     alt="Mortgage insurance premium details with base and renewal rates displayed for accurate financial planning."
                     width={900}
                     height={600}
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 900px"
                     className="w-full h-auto rounded-xl border border-[#e8e0d0]/70 mb-5"
                   />
                   <p>

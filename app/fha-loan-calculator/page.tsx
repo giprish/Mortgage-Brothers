@@ -9,7 +9,7 @@ import {
   InteractivePieChart,
   BasicPaymentOverTimeChart,
   LtvOverTimeChart,
-} from "../component/InteractiveCharts";
+} from "../component/charts/lazy";
 
 /* ============================================================
    DESIGN TOKENS (shared across the suite)

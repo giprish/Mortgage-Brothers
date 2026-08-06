@@ -5,7 +5,7 @@ import Navbar from "../component/Navbar";
 import LoanProgramHero from "../component/LoanProgramHero";
 import CalcSelect from "../component/CalcSelect";
 import Footer from "../component/Footer";
-import { InteractivePieChart, BasicPaymentOverTimeChart } from "../component/InteractiveCharts";
+import { InteractivePieChart, BasicPaymentOverTimeChart } from "../component/charts/lazy";
 
 /* ============================================================
    DESIGN TOKENS (shared across the suite)

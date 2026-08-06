@@ -2,6 +2,7 @@
 
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { useParams } from "next/navigation";
 import Navbar from "../../../component/Navbar";
 import Footer from "../../../component/Footer";
@@ -436,10 +437,13 @@ export default function GenericCityDetailPage() {
               {/* Left — Broker Image Card */}
               <div className="md:col-span-5">
                 <div className="relative w-full h-[260px] md:h-[300px] rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-[#0f2d1d]">
-                  <img 
-                    src="/home/eddie-knoell.jpg" 
-                    alt="Eddie Knoell" 
-                    className="w-full h-full object-cover object-top"
+                  <Image
+                    src="/home/eddie-knoell.jpg"
+                    alt="Eddie Knoell, Arizona mortgage broker"
+                    fill
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 420px"
+                    className="object-cover object-top"
                   />
                 </div>
               </div>

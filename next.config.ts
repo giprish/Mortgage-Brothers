@@ -8,7 +8,6 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: [
       "lucide-react",
-      "react-icons",
       "recharts",
       "chart.js",
       "react-chartjs-2",
@@ -21,7 +20,18 @@ const nextConfig: NextConfig = {
     dangerouslyAllowSVG: false,
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-    remotePatterns: [],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "img.youtube.com",
+        pathname: "/vi/**",
+      },
+      {
+        protocol: "https",
+        hostname: "i.ytimg.com",
+        pathname: "/**",
+      },
+    ],
   },
 
   async headers() {
@@ -29,6 +39,30 @@ const nextConfig: NextConfig = {
       { key: "X-Content-Type-Options", value: "nosniff" },
       { key: "X-Frame-Options", value: "SAMEORIGIN" },
       { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+      {
+        key: "Strict-Transport-Security",
+        value: "max-age=63072000; includeSubDomains; preload",
+      },
+      {
+        key: "Permissions-Policy",
+        value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
+      },
+      {
+        key: "Content-Security-Policy",
+        value: [
+          "default-src 'self'",
+          "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://form.jotform.com https://www.youtube.com https://www.google.com",
+          "style-src 'self' 'unsafe-inline'",
+          "img-src 'self' data: blob: https:",
+          "font-src 'self' data:",
+          "connect-src 'self' https:",
+          "frame-src 'self' https://form.jotform.com https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com https://maps.google.com https://smart1003.preapprovemeapp.com",
+          "media-src 'self' https:",
+          "object-src 'none'",
+          "base-uri 'self'",
+          "form-action 'self' https://form.jotform.com https://smart1003.preapprovemeapp.com",
+        ].join("; "),
+      },
     ];
 
     const longCache = [

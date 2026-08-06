@@ -184,7 +184,8 @@ export default function PreApprovalProvider({
             <button
               type="button"
               onClick={close}
-              className="inline-flex items-center gap-1.5 sm:gap-2 bg-white/10 hover:bg-white/15 text-white text-[12px] sm:text-[13px] font-semibold px-3 sm:px-4 py-2 rounded-full transition-colors cursor-pointer shrink-0"
+              aria-label="Close pre-approval dialog"
+              className="inline-flex items-center gap-1.5 sm:gap-2 bg-white/10 hover:bg-white/15 text-white text-[12px] sm:text-[13px] font-semibold px-3 sm:px-4 py-2 rounded-full transition-colors cursor-pointer shrink-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               <svg
                 className="w-4 h-4"

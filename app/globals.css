@@ -442,3 +442,35 @@ textarea {
   background-color: #277a42 !important;
 }
 
+/* Improved contrast on dark sections */
+.text-\[\#8fae9d\] {
+  color: #a8c4b8 !important;
+}
+
+.text-\[\#c8c8b8\] {
+  color: #d8d8cc !important;
+}
+
+.text-\[\#8da684\] {
+  color: #a3b89a !important;
+}
+
+.text-\[\#5d735d\] {
+  color: #7a9478 !important;
+}
+
+.text-\[\#cdd3cd\] {
+  color: #dde2dc !important;
+}
+
+/* Focus visibility for keyboard users */
+:focus-visible {
+  outline: 2px solid #3fb364;
+  outline-offset: 2px;
+}
+
+button:focus:not(:focus-visible),
+a:focus:not(:focus-visible) {
+  outline: none;
+}
+

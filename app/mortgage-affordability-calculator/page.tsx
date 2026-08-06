@@ -4,7 +4,7 @@ import { useMemo, useState, type ReactNode } from "react";
 import Navbar from "../component/Navbar";
 import LoanProgramHero from "../component/LoanProgramHero";
 import Footer from "../component/Footer";
-import { ScenarioBarChart } from "../component/InteractiveCharts";
+import { ScenarioBarChart } from "../component/charts/lazy";
 
 /* ============================================================
    DESIGN TOKENS (matches the suite's shared palette/typography,
