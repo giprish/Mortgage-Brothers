@@ -55,6 +55,7 @@ const Recognition = () => {
                   src={item.image}
                   alt={item.title}
                   fill
+                  loading="lazy"
                   className="object-contain"
                   sizes="64px"
                 />

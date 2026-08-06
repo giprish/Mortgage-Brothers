@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { FaAngleRight, FaArrowLeft } from "react-icons/fa";
 import { COMPANY, LOAN_PROGRAM_LINKS } from "@/lib/company";
@@ -123,12 +124,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-5 xl:px-10 flex items-center justify-between h-[64px] sm:h-[72px]">
         {/* Logo */}
         <Link href="/" className="flex items-center hover:opacity-90 transition-opacity duration-200 shrink-0">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src="/home/mortgage-brothers-logo.png"
             alt="Mortgage Brothers"
-            width={140}
-            height={40}
+            width={150}
+            height={48}
+            priority
             className="h-[40px] sm:h-[48px] w-auto max-w-[150px] object-contain"
           />
         </Link>

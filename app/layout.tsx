@@ -1,21 +1,37 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { headers } from "next/headers";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import { homeSeoMetadata } from "@/lib/seo";
 import { resolveSiteUrlFromHeaders } from "@/lib/site-url";
 import PreApprovalProvider from "./component/PreApprovalProvider";
 import JsonLd from "./component/JsonLd";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+/* ── Fonts ─────────────────────────────────────────────────────────────────
+   next/font self-hosts fonts so there is no render-blocking Google Fonts
+   network request. Subset to latin to minimise payload.
+──────────────────────────────────────────────────────────────────────────── */
+const inter = Inter({
   subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+  preload: true,
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const playfair = Playfair_Display({
   subsets: ["latin"],
+  display: "swap",
+  variable: "--font-playfair",
+  weight: ["400", "500", "600", "700"],
+  preload: true,
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#08271B",
+};
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
@@ -61,13 +77,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
     >
       <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
+        {/* Preconnect to JotForm so the modal iframe loads faster */}
+        <link rel="preconnect" href="https://form.jotform.com" />
+        <link rel="dns-prefetch" href="https://form.jotform.com" />
       </head>
       <body className="min-h-full flex flex-col">
         <JsonLd />

@@ -185,12 +185,12 @@ const Footer = () => {
               href="/"
               className="inline-block mb-5 hover:opacity-90 transition-opacity"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src="/home/mortgage-brothers-logo.png"
                 alt="Mortgage Brothers"
                 width={104}
                 height={34}
+                loading="lazy"
                 className="h-[30px] w-auto max-w-[104px] object-contain"
               />
             </Link>
