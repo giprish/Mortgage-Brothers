@@ -11,7 +11,7 @@ import Reviews from "./component/Reviews";
 
 // ── Below-fold (lazy) ─────────────────────────────────────────────────────────
 // Everything below the first screen is code-split and loaded only after the
-// browser has painted the above-fold content.  This dramatically reduces TBT,
+// browser has painted the above-fold content. This dramatically reduces TBT,
 // improves FCP, and pushes LCP earlier.
 const BrokersAdvocate     = dynamic(() => import("./component/home/BrokersAdvocate"),    { ssr: true });
 const Brothers            = dynamic(() => import("./component/Brothers"),                { ssr: true });
@@ -35,60 +35,63 @@ const SectionSkeleton = () => (
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      {/* ── Critical above-fold (no Suspense) ── */}
+      {/* ── Critical above-fold ── */}
       <Navbar />
-      <Hero />
-      <HomeStatsBar />
-      <Reviews />
 
-      {/* ── Below-fold with Suspense boundaries ── */}
-      <Suspense fallback={<SectionSkeleton />}>
-        <BrokersAdvocate />
-      </Suspense>
+      <main id="main-content" className="flex-1 flex flex-col">
+        <Hero />
+        <HomeStatsBar />
+        <Reviews />
 
-      <Suspense fallback={<SectionSkeleton />}>
-        <Brothers />
-      </Suspense>
+        {/* ── Below-fold with Suspense boundaries ── */}
+        <Suspense fallback={<SectionSkeleton />}>
+          <BrokersAdvocate />
+        </Suspense>
 
-      <Suspense fallback={<SectionSkeleton />}>
-        <Recognition />
-      </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <Brothers />
+        </Suspense>
 
-      <Suspense fallback={<SectionSkeleton />}>
-        <HomeCalculator />
-      </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <Recognition />
+        </Suspense>
 
-      <Suspense fallback={<SectionSkeleton />}>
-        <HomeownershipSteps />
-      </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <HomeCalculator />
+        </Suspense>
 
-      <Suspense fallback={<SectionSkeleton />}>
-        <LoanPrograms />
-      </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <HomeownershipSteps />
+        </Suspense>
 
-      <Suspense fallback={<SectionSkeleton />}>
-        <CreditQuizCta />
-      </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <LoanPrograms />
+        </Suspense>
 
-      <Suspense fallback={<SectionSkeleton />}>
-        <HomeFaq />
-      </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <CreditQuizCta />
+        </Suspense>
 
-      <Suspense fallback={<SectionSkeleton />}>
-        <HomeBlog />
-      </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <HomeFaq />
+        </Suspense>
 
-      <Suspense fallback={<SectionSkeleton />}>
-        <DreamHomeCta />
-      </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <HomeBlog />
+        </Suspense>
 
-      <Suspense fallback={<SectionSkeleton />}>
-        <HomeContact />
-      </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <DreamHomeCta />
+        </Suspense>
 
-      <Suspense fallback={<SectionSkeleton />}>
-        <PreApprovedForm />
-      </Suspense>
+        <Suspense fallback={<SectionSkeleton />}>
+          <HomeContact />
+        </Suspense>
+
+        <Suspense fallback={<SectionSkeleton />}>
+          <PreApprovedForm />
+        </Suspense>
+      </main>
 
       <Suspense fallback={<SectionSkeleton />}>
         <Footer />

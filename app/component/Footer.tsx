@@ -49,7 +49,7 @@ const FooterLink = ({ href, children }: { href: string; children: React.ReactNod
 
 const Footer = () => {
   return (
-    <footer className="w-full bg-[#32353C] text-[#c8cdc8] overflow-x-hidden">
+    <footer aria-label="Site Footer" className="w-full bg-[#32353C] text-[#c8cdc8] overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-12 sm:pt-14 lg:pt-16 pb-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-14 mb-12">
           <div>

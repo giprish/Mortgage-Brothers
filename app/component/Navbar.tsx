@@ -119,7 +119,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="w-full bg-[#08271B] border-b border-[#1a3a1a] fixed top-0 left-0 right-0 z-50">
+    <header className="w-full">
+      <nav aria-label="Main Navigation" className="w-full bg-[#08271B] border-b border-[#1a3a1a] fixed top-0 left-0 right-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-5 xl:px-10 flex items-center justify-between h-[64px] sm:h-[72px]">
         {/* Logo */}
         <Link href="/" className="flex items-center hover:opacity-90 transition-opacity duration-200 shrink-0">
@@ -885,6 +886,7 @@ const Navbar = () => {
         </div>
       )}
     </nav>
+    </header>
   );
 };
 

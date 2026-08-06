@@ -41,8 +41,15 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: new URL(siteUrl),
     ...homeSeoMetadata,
     robots: {
-      index: false,
-      follow: false,
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
     icons: {
       icon: [
@@ -85,6 +92,13 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://form.jotform.com" />
       </head>
       <body className="min-h-full flex flex-col">
+        {/* Accessible Skip Link for screen readers & keyboard navigation */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[999] focus:px-4 focus:py-2 focus:bg-[#3fb364] focus:text-white focus:font-bold focus:rounded-md focus:shadow-xl focus:outline-none"
+        >
+          Skip to main content
+        </a>
         <JsonLd />
         <PreApprovalProvider>{children}</PreApprovalProvider>
       </body>
