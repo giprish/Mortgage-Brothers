@@ -4,7 +4,6 @@ import React, { useState, useCallback, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { FaAngleRight, FaArrowLeft } from "react-icons/fa";
 import { COMPANY, LOAN_PROGRAM_LINKS } from "@/lib/company";
 
 const CALCULATOR_LINKS = [
@@ -639,7 +638,7 @@ const Navbar = () => {
                 onClick={() => setActiveSubmenu(null)}
                 className="w-full bg-[#348e38] text-white font-bold text-[14px] px-5 py-3.5 flex items-center gap-2 tracking-wide uppercase shadow-sm cursor-pointer"
               >
-                <FaArrowLeft className="text-[14px] shrink-0" aria-hidden /> Back
+                <svg className="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 448 512" aria-hidden="true"><path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0 105.4-105.4c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg> Back
               </button>
             ) : (
               <div className="flex items-center justify-between px-5 py-4 bg-[#292e34] border-b border-[#3b4148]">
@@ -710,7 +709,7 @@ const Navbar = () => {
                       className="px-5 py-4 text-[#3fb364] hover:text-white shrink-0 cursor-pointer"
                       aria-label="Open Loan Programs submenu"
                     >
-                      <FaAngleRight className="text-[14px]" aria-hidden />
+                      <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 256 512" aria-hidden="true"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103.5c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 33.5z"/></svg>
                     </button>
                   </div>
 
@@ -730,7 +729,7 @@ const Navbar = () => {
                       className="px-5 py-4 text-[#3fb364] hover:text-white shrink-0 cursor-pointer"
                       aria-label="Open Calculators submenu"
                     >
-                      <FaAngleRight className="text-[14px]" aria-hidden />
+                      <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 256 512" aria-hidden="true"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103.5c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 33.5z"/></svg>
                     </button>
                   </div>
 
@@ -750,7 +749,7 @@ const Navbar = () => {
                       className="px-5 py-4 text-[#3fb364] hover:text-white shrink-0 cursor-pointer"
                       aria-label="Open Areas We Serve submenu"
                     >
-                      <FaAngleRight className="text-[14px]" aria-hidden />
+                      <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 256 512" aria-hidden="true"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103.5c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 33.5z"/></svg>
                     </button>
                   </div>
 
@@ -770,7 +769,7 @@ const Navbar = () => {
                       className="px-5 py-4 text-[#3fb364] hover:text-white shrink-0 cursor-pointer"
                       aria-label="Open About submenu"
                     >
-                      <FaAngleRight className="text-[14px]" aria-hidden />
+                      <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 256 512" aria-hidden="true"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103.5c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 33.5z"/></svg>
                     </button>
                   </div>
 
@@ -790,7 +789,7 @@ const Navbar = () => {
                       className="px-5 py-4 text-[#3fb364] hover:text-white shrink-0 cursor-pointer"
                       aria-label="Open Resources submenu"
                     >
-                      <FaAngleRight className="text-[14px]" aria-hidden />
+                      <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 256 512" aria-hidden="true"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103.5c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 33.5z"/></svg>
                     </button>
                   </div>
 
