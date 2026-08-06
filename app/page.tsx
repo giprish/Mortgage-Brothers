@@ -7,7 +7,11 @@ import { Suspense } from "react";
 import Navbar from "./component/Navbar";
 import Hero from "./component/Hero";
 import HomeStatsBar from "./component/home/HomeStatsBar";
-import Reviews from "./component/Reviews";
+import {
+  DeferredReviews,
+  DeferredHomeCalculator,
+  DeferredPreApprovedForm,
+} from "./component/home/HomeDeferredSections";
 
 // ── Below-fold (lazy) ─────────────────────────────────────────────────────────
 // Everything below the first screen is code-split and loaded only after the
@@ -16,7 +20,6 @@ import Reviews from "./component/Reviews";
 const BrokersAdvocate     = dynamic(() => import("./component/home/BrokersAdvocate"),    { ssr: true });
 const Brothers            = dynamic(() => import("./component/Brothers"),                { ssr: true });
 const Recognition         = dynamic(() => import("./component/home/Recognition"),        { ssr: true });
-const HomeCalculator      = dynamic(() => import("./component/home/HomeCalculator"),     { ssr: true });
 const HomeownershipSteps  = dynamic(() => import("./component/home/HomeownershipSteps"), { ssr: true });
 const LoanPrograms        = dynamic(() => import("./component/LoanPrograms"),            { ssr: true });
 const CreditQuizCta       = dynamic(() => import("./component/home/CreditQuizCta"),      { ssr: true });
@@ -24,7 +27,6 @@ const HomeFaq             = dynamic(() => import("./component/home/HomeFaq"),   
 const HomeBlog            = dynamic(() => import("./component/home/HomeBlog"),           { ssr: true });
 const DreamHomeCta        = dynamic(() => import("./component/home/DreamHomeCta"),       { ssr: true });
 const HomeContact         = dynamic(() => import("./component/home/HomeContact"),        { ssr: true });
-const PreApprovedForm     = dynamic(() => import("./component/PreApprovedForm"),         { ssr: true });
 const Footer              = dynamic(() => import("./component/Footer"),                  { ssr: true });
 
 // Minimal skeleton shown while a lazy section hydrates on the client
@@ -41,7 +43,7 @@ export default function Home() {
       <main id="main-content" className="flex-1 flex flex-col">
         <Hero />
         <HomeStatsBar />
-        <Reviews />
+        <DeferredReviews />
 
         {/* ── Below-fold with Suspense boundaries ── */}
         <Suspense fallback={<SectionSkeleton />}>
@@ -57,7 +59,7 @@ export default function Home() {
         </Suspense>
 
         <Suspense fallback={<SectionSkeleton />}>
-          <HomeCalculator />
+          <DeferredHomeCalculator />
         </Suspense>
 
         <Suspense fallback={<SectionSkeleton />}>
@@ -89,7 +91,7 @@ export default function Home() {
         </Suspense>
 
         <Suspense fallback={<SectionSkeleton />}>
-          <PreApprovedForm />
+          <DeferredPreApprovedForm />
         </Suspense>
       </main>
 

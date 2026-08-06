@@ -11,8 +11,8 @@ const Hero = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1400px] h-[1400px] rounded-full border border-white/5" />
       </div>
 
-      {/* Radial soft lighting effect */}
-      <div className="pointer-events-none absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-[#3fb364]/15 blur-[120px]" />
+      {/* Radial soft lighting — hidden on mobile to reduce paint cost */}
+      <div className="pointer-events-none absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-[#3fb364]/15 blur-3xl hidden sm:block" aria-hidden />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         {/* Rating Pill Badge */}

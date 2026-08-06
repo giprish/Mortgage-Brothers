@@ -69,7 +69,7 @@ const programsData = [
       "Available for primary residences",
     ],
     ctaText: "Talk About FHA",
-    bgColor: "bg-[#fcf9f3]",
+    bgColor: "bg-brand-cream-light",
     cardMeta: {
       downPayment: "As low as 3.5%",
       bestFor: "First-time buyers or those rebuilding credit.",
@@ -138,7 +138,7 @@ const programsData = [
       "No down payment required",
     ],
     ctaText: "Talk About USDA",
-    bgColor: "bg-[#fcf9f3]",
+    bgColor: "bg-brand-cream-light",
     cardMeta: {
       downPayment: "$0 down for eligible properties",
       bestFor: "Buyers in qualifying Arizona communities outside the urban core.",
@@ -213,7 +213,7 @@ const programsData = [
       "Available on most existing loan types",
     ],
     ctaText: "Talk About Refinance",
-    bgColor: "bg-[#fcf9f3]",
+    bgColor: "bg-brand-cream-light",
     cardMeta: {
       downPayment: "N/A — refinance of existing loan",
       bestFor: "Homeowners looking to improve their existing terms.",
@@ -306,7 +306,7 @@ export default function MortgageLoanProgramsArizonaPage() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
+    <div className="flex flex-col min-h-screen bg-brand-cream-light">
       <Navbar />
       <main className="flex-grow">
         {/* Reserves space for fixed navbar */}

@@ -125,11 +125,12 @@ const Navbar = () => {
         {/* Logo */}
         <Link href="/" className="flex items-center hover:opacity-90 transition-opacity duration-200 shrink-0">
           <Image
-            src="/home/mortgage-brothers-logo.png"
+            src={COMPANY.logoSrc}
             alt="Mortgage Brothers"
             width={150}
             height={48}
             priority
+            sizes="150px"
             className="h-[40px] sm:h-[48px] w-auto max-w-[150px] object-contain"
           />
         </Link>

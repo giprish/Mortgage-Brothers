@@ -19,6 +19,9 @@ export const COMPANY = {
   postalCode: "85020",
   streetAddress: "1599 East Orangewood Ave, Suite 200",
   siteUrl: "https://azmortgagebrothers.com",
+  /** Optimized nav/footer logo (~11 KB vs ~169 KB legacy PNG) */
+  logoSrc: "/home/mortgage-brothers-logo-green-new.png",
+  logoSrcLegacy: "/home/mortgage-brothers-logo.png",
   nmlsConsumerAccessUrl:
     "https://www.nmlsconsumeraccess.org/Home.aspx/SubSearch?searchText=1007154",
   equalHousingLabel: "Equal Housing Lender",

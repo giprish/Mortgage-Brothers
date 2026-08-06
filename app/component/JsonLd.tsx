@@ -11,7 +11,7 @@ const organizationSchema = {
   url: COMPANY.siteUrl,
   telephone: COMPANY.phoneDisplay,
   image: `${COMPANY.siteUrl}/home/eddie-knoell.jpg`,
-  logo: `${COMPANY.siteUrl}/home/mortgage-brothers-logo.png`,
+  logo: `${COMPANY.siteUrl}${COMPANY.logoSrc}`,
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",

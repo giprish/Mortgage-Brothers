@@ -186,7 +186,7 @@ const Footer = () => {
               className="inline-block mb-5 hover:opacity-90 transition-opacity"
             >
               <Image
-                src="/home/mortgage-brothers-logo.png"
+                src={COMPANY.logoSrc}
                 alt="Mortgage Brothers"
                 width={104}
                 height={34}
@@ -318,7 +318,7 @@ const Footer = () => {
             {/* <Link href="/" className="shrink-0 hover:opacity-90 transition-opacity">
              
               <img
-                src="/home/mortgage-brothers-logo.png"
+                src={COMPANY.logoSrc}
                 alt="Mortgage Brothers"
                 width={120}
                 height={40}

@@ -15,16 +15,18 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-inter",
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "600", "700"],
   preload: true,
+  adjustFontFallback: true,
 });
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   display: "swap",
   variable: "--font-playfair",
-  weight: ["400", "500", "600", "700"],
-  preload: true,
+  weight: ["400", "600"],
+  preload: false,
+  adjustFontFallback: true,
 });
 
 export const viewport: Viewport = {
