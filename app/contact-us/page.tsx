@@ -113,20 +113,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* Download vCard + immediate help note */}
-          <div className="text-center mb-10">
-            <a
-              href="/contact-brothers.vcf"
-              className="inline-flex items-center gap-2 bg-white border border-[#e8e0d0]/60 rounded-full px-6 py-2.5 text-[#052316] text-[13.5px] font-semibold hover:border-[#3fb364]/50 hover:text-[#3fb364] transition-all shadow-sm"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" className="w-4 h-4">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
-              </svg>
-              Download vCard
-            </a>
-          </div>
-
-          <p className="text-center text-[#8a9a7a] text-[13.5px] leading-relaxed mb-16">
+          <p className="text-center text-[#8a9a7a] text-[13.5px] leading-relaxed mb-16 mt-10">
             If you need immediate help, you can call us at{" "}
             <a href="tel:+16025351288" className="text-[#052316] font-semibold hover:text-[#3fb364] transition-colors">602-535-1288</a>, use our contact form to request a callback.
           </p>

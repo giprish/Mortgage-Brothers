@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 // import PreApprovedForm from "../component/PreApprovedForm";
@@ -43,16 +44,16 @@ export default function AboutPage() {
     <div className="flex flex-col min-h-screen">
       <Navbar />
 
-      <main className="flex-grow ">
-        <section className="w-full bg-brand-green-deep text-white py-24 lg:py-36 text-center relative overflow-hidden">
-          <div className="absolute inset-0 z-0"></div>
+      <main className="flex-grow">
+        <div className="h-[64px] sm:h-[72px] bg-[#08271B]" aria-hidden />
 
-          <div className="absolute inset-0 overflow-hidden pointer-events-none z-10">
-            <div className="absolute -top-36 -right-36 w-[400px] h-[400px] rounded-full border border-white/5 pointer-events-none"></div>
-            <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5 pointer-events-none"></div>
+        <section className="w-full bg-brand-green-deep text-white py-10 sm:py-12 lg:py-14 text-center relative overflow-hidden">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
+            <div className="absolute -top-36 -right-36 w-[min(400px,90vw)] h-[400px] rounded-full border border-white/5 opacity-40" />
+            <div className="absolute -bottom-36 -left-36 w-[min(360px,90vw)] h-[360px] rounded-full border border-white/5 opacity-40" />
           </div>
 
-          <div className="max-w-4xl mx-auto px-6 relative z-20">
+          <div className="max-w-4xl mx-auto px-6 relative z-10">
             {/* Badge */}
             <p className="text-brand-green-accent text-[12px] font-bold tracking-[0.18em] uppercase mb-4">
               ABOUT US
@@ -78,13 +79,34 @@ export default function AboutPage() {
             </div>
 
             {/* Hero CTA */}
-            <a
-              href="#"
-              className="btn-primary inline-flex items-center gap-2 mt-8"
-            >
-              Start my preapproval
-              <span className="text-[11px] font-medium opacity-80">3 min / no credit impact</span>
-            </a>
+            <div className="flex flex-col items-center mt-8">
+              <Link
+                href="/#get-pre-approved"
+                data-preapproval="true"
+                className="w-full sm:w-auto btn-primary hover:shadow-brand-green-accent/20 group text-[15px] font-bold px-7 py-3.5"
+              >
+                Start my preapproval
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="group-hover:translate-x-0.5 transition-transform duration-200"
+                  aria-hidden
+                >
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                  <polyline points="12 5 19 12 12 19" />
+                </svg>
+              </Link>
+              <p className="text-[#8a9a7a] text-[12px] font-medium mt-3">
+                3 min · no credit impact
+              </p>
+            </div>
           </div>
         </section>
 
