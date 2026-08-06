@@ -22,8 +22,8 @@ export default function FaqAccordion({ items, title }: FaqAccordionProps) {
     <div>
       {title && (
         <h2
-          className="text-[#052316] text-[24px] lg:text-[32px] font-bold mb-6"
-          style={{ fontFamily: "'Playfair Display', serif" }}
+          className="font-playfair text-[#052316] text-[24px] lg:text-[32px] font-bold mb-6"
+          
         >
           {title}
         </h2>

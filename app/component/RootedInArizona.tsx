@@ -32,7 +32,7 @@ const RootedInArizona = () => {
               {/* Heading */}
               <h2
                 className="text-[#1a3a1a] text-[30px] lg:text-[38px] font-normal leading-[1.2] mb-5"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                
               >
                 70+ years in Phoenix real estate — and we still pick up the
                 phone.

@@ -32,7 +32,7 @@ export default function StatsBanner({ stats }: StatsBannerProps) {
             >
               <div
                 className="text-[#3fb364] text-[32px] sm:text-[38px] lg:text-[44px] font-bold leading-none mb-2.5 tracking-tight text-center w-full"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                
               >
                 {stat.value}
               </div>

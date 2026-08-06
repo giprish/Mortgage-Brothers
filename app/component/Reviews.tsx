@@ -27,7 +27,7 @@ const reviewsData = [
 
 const Reviews = () => {
   return (
-    <section className="w-full bg-[#faf9f6] pt-6 pb-16 sm:pt-10 sm:pb-20 border-t border-b border-slate-200/50">
+    <section className="no-content-visibility w-full bg-[#faf9f6] pt-6 pb-16 sm:pt-10 sm:pb-20 border-t border-b border-slate-200/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Testimonials Grid */}

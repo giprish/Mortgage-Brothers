@@ -42,8 +42,8 @@ const DreamHomeCta = () => {
         </p>
 
         <h2
-          className="text-white text-[28px] lg:text-[38px] font-normal leading-[1.15] mb-6"
-          style={{ fontFamily: "'Playfair Display', serif" }}
+          className="font-playfair text-white text-[28px] lg:text-[38px] font-normal leading-[1.15] mb-6"
+          
         >
           Your Dream Home in Arizona Is Closer Than You Think
         </h2>
@@ -61,8 +61,8 @@ const DreamHomeCta = () => {
               className="bg-white/[0.03] border border-white/10 rounded-2xl px-5 py-4 hover:border-[#3fb364]/40 transition-colors duration-200"
             >
               <p
-                className="text-[#3fb364] text-[26px] lg:text-[32px] font-semibold leading-none mb-1.5"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                className="font-playfair text-[#3fb364] text-[26px] lg:text-[32px] font-semibold leading-none mb-1.5"
+                
               >
                 {stat.value}
               </p>

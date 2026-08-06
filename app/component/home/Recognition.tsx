@@ -37,8 +37,8 @@ const Recognition = () => {
             Recognized Excellence
           </p>
           <h2
-            className="text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            className="font-playfair text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight"
+            
           >
             Our Recognition &amp; Commitments
           </h2>

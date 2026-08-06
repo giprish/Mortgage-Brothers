@@ -1,8 +1,7 @@
-"use client";
-
-import React, { useState } from "react";
-import Link from "next/link";
+import React from "react";
 import Image from "next/image";
+import Link from "next/link";
+import AccordionItem from "./AccordionItem";
 
 const faqs = [
   {
@@ -23,8 +22,6 @@ const faqs = [
 ];
 
 const HomeFaq = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
-
   return (
     <section className="w-full bg-[#fcf9f3] py-14 sm:py-20 lg:py-24 border-t border-[#e8e0d0]/40">
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
@@ -35,6 +32,7 @@ const HomeFaq = () => {
               src="/home/faq-brothers.jpg"
               alt="The Mortgage Brothers answering client questions"
               fill
+              loading="lazy"
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
@@ -45,66 +43,27 @@ const HomeFaq = () => {
             <p className="text-[#b89a5a] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
               FAQ
             </p>
-            <h2
-              className="text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight mb-8"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
-              Answers to Your Arizona Mortgage Questions
+            <h2 className="font-playfair text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight mb-8">
+              Frequently Asked Questions
             </h2>
 
-            <div className="flex flex-col gap-3 mb-8">
-              {faqs.map((faq, index) => {
-                const isOpen = openIndex === index;
-                return (
-                  <div
-                    key={faq.question}
-                    className="bg-white border border-[#e8e0d0]/70 rounded-xl overflow-hidden"
-                  >
-                    <button
-                      type="button"
-                      onClick={() => setOpenIndex(isOpen ? null : index)}
-                      aria-expanded={isOpen}
-                      className="w-full flex items-center justify-between gap-4 text-left px-5 py-4 cursor-pointer"
-                    >
-                      <h3 className="text-[#08271B] text-[15px] font-semibold m-0">
-                        {faq.question}
-                      </h3>
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className={`text-[#3fb364] shrink-0 transition-transform duration-200 ${
-                          isOpen ? "rotate-180" : ""
-                        }`}
-                      >
-                        <polyline points="6 9 12 15 18 9" />
-                      </svg>
-                    </button>
-                    {isOpen && (
-                      <div className="px-5 pb-5 -mt-1">
-                        <p className="text-[#4e5b4e] text-[14px] leading-relaxed">{faq.answer}</p>
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
+            <div className="flex flex-col gap-3">
+              {faqs.map((faq, i) => (
+                <AccordionItem key={faq.question} faq={faq} index={i} defaultOpen={i === 0} />
+              ))}
             </div>
 
-            <Link
-              href="/contact-us/"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[14.5px] font-semibold px-7 py-3.5 rounded-full transition-all duration-200"
-            >
-              Speak with an Expert
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
-            </Link>
+            <div className="mt-8">
+              <Link
+                href="/faq/"
+                className="inline-flex items-center gap-2 text-[#3fb364] hover:text-[#2d8545] font-semibold text-[14.5px] transition-colors duration-200"
+              >
+                View All FAQs
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

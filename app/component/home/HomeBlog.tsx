@@ -41,8 +41,8 @@ const HomeBlog = () => {
             Resources
           </p>
           <h2
-            className="text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight mb-5"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            className="font-playfair text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight mb-5"
+            
           >
             We are Here to Simplify the Home Loan Process
           </h2>

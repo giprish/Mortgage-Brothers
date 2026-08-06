@@ -50,8 +50,8 @@ const BrokersAdvocate = () => {
             Why Work With Us
           </p>
           <h2
-            className="text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight mb-6"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            className="font-playfair text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight mb-6"
+            
           >
             We Are Brokers Advocating For You
           </h2>
@@ -77,7 +77,7 @@ const BrokersAdvocate = () => {
               </div>
               <h3
                 className="text-[#08271B] text-[19px] font-semibold mb-3"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                
               >
                 {feature.title}
               </h3>
@@ -94,7 +94,7 @@ const BrokersAdvocate = () => {
             <div key={stat.label} className="flex flex-col items-center text-center px-2 py-5 sm:py-0 first:pt-0 last:pb-0 sm:first:pt-0 sm:last:pb-0">
               <span
                 className="text-[#3fb364] text-[28px] sm:text-[32px] lg:text-[42px] font-semibold leading-none"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                
               >
                 {stat.value}
                 <span className="text-[18px] sm:text-[20px] lg:text-[26px]">{stat.suffix}</span>

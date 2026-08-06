@@ -2,7 +2,7 @@ import React from "react";
 
 const HomeStatsBar = () => {
   return (
-    <section className="w-full bg-transparent px-4 sm:px-6 lg:px-8 pb-4 pt-0 -mt-14 sm:-mt-16 lg:-mt-[72px] relative z-20">
+    <section className="no-content-visibility w-full bg-transparent px-4 sm:px-6 lg:px-8 pb-4 pt-0 -mt-14 sm:-mt-16 lg:-mt-[72px] relative z-20">
       <div className="max-w-6xl mx-auto bg-[#031d12] border border-[#0d3f28] rounded-2xl p-5 sm:p-6 lg:p-8 shadow-2xl text-white">
         
         {/* Desktop Layout: 5 columns in a single row */}

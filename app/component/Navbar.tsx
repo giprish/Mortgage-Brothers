@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useCallback, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -90,34 +90,34 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
 
-  const isPathActive = (href: string) => pathsMatch(href, pathname);
-  const isLoanProgramsActive = LOAN_PROGRAM_LINKS.some((item) => isPathActive(item.href));
-  const isCalculatorsActive = CALCULATOR_LINKS.some((item) => isPathActive(item.href));
-  const isAreasActive = AREA_LINKS.some((item) => isPathActive(item.href));
-  const isAboutActive = ABOUT_LINKS.some((item) => isPathActive(item.href));
-  const isResourcesActive = RESOURCE_LINKS.some((item) => isPathActive(item.href));
+  const isPathActive = useCallback((href: string) => pathsMatch(href, pathname), [pathname]);
+  const isLoanProgramsActive = useMemo(() => LOAN_PROGRAM_LINKS.some((item) => isPathActive(item.href)), [isPathActive]);
+  const isCalculatorsActive = useMemo(() => CALCULATOR_LINKS.some((item) => isPathActive(item.href)), [isPathActive]);
+  const isAreasActive = useMemo(() => AREA_LINKS.some((item) => isPathActive(item.href)), [isPathActive]);
+  const isAboutActive = useMemo(() => ABOUT_LINKS.some((item) => isPathActive(item.href)), [isPathActive]);
+  const isResourcesActive = useMemo(() => RESOURCE_LINKS.some((item) => isPathActive(item.href)), [isPathActive]);
 
   // When opening the drawer on a matching page, jump straight into that submenu.
-  const resolveSubmenuForPath = () => {
+  const resolveSubmenuForPath = useCallback(() => {
     if (isCalculatorsActive) return "CALCULATORS";
     if (isLoanProgramsActive) return "LOAN PROGRAMS";
     if (isAreasActive) return "AREAS WE SERVE";
     if (isAboutActive) return "ABOUT";
     if (isResourcesActive) return "RESOURCES";
     return null;
-  };
+  }, [isCalculatorsActive, isLoanProgramsActive, isAreasActive, isAboutActive, isResourcesActive]);
 
-  const closeMobile = () => {
+  const closeMobile = useCallback(() => {
     setMobileMenuOpen(false);
     setActiveSubmenu(null);
-  };
+  }, []);
 
-  const toggleMobileMenu = () => {
+  const toggleMobileMenu = useCallback(() => {
     setMobileMenuOpen((open) => {
       setActiveSubmenu(null);
       return !open;
     });
-  };
+  }, []);
 
   return (
     <nav className="w-full bg-[#08271B] border-b border-[#1a3a1a] fixed top-0 left-0 right-0 z-50">

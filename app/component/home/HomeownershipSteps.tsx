@@ -31,8 +31,8 @@ const HomeownershipSteps = () => {
             The Process
           </p>
           <h2
-            className="text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            className="font-playfair text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight"
+            
           >
             Your Path to Homeownership in 3 Easy Steps
           </h2>
@@ -44,7 +44,7 @@ const HomeownershipSteps = () => {
               <div className="w-16 h-16 rounded-full bg-[#08271B] flex items-center justify-center mb-6 relative z-10">
                 <span
                   className="text-[#3fb364] text-[22px] font-semibold"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
+                  
                 >
                   {step.number}
                 </span>
@@ -54,7 +54,7 @@ const HomeownershipSteps = () => {
               )}
               <h3
                 className="text-[#08271B] text-[19px] font-semibold mb-3"
-                style={{ fontFamily: "'Playfair Display', serif" }}
+                
               >
                 {step.title}
               </h3>

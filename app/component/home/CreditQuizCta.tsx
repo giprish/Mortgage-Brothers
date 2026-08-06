@@ -10,8 +10,8 @@ const CreditQuizCta = () => {
           Know Before You Apply
         </p>
         <h2
-          className="text-white text-[28px] lg:text-[40px] font-normal leading-tight mb-5"
-          style={{ fontFamily: "'Playfair Display', serif" }}
+          className="font-playfair text-white text-[28px] lg:text-[40px] font-normal leading-tight mb-5"
+          
         >
           Is Your Credit Score Ready for Homeownership?
         </h2>

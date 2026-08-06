@@ -137,8 +137,8 @@ const LoanPrograms = () => {
             Loan Programs
           </span>
           <h2
-            className="text-[#08271B] text-[32px] lg:text-[42px] font-normal leading-tight mb-4"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            className="font-playfair text-[#08271B] text-[32px] lg:text-[42px] font-normal leading-tight mb-4"
+            
           >
             Explore Our Mortgage Solutions
           </h2>

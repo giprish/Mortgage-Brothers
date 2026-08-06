@@ -106,8 +106,8 @@ const HomeCalculator = () => {
             Estimate Your Payment
           </p>
           <h2
-            className="text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight mb-4"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            className="font-playfair text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight mb-4"
+            
           >
             Plan Your Arizona Mortgage with Confidence
           </h2>
@@ -282,7 +282,7 @@ const HomeCalculator = () => {
                 <p className="text-[#8a9a7a] text-[12.5px] font-medium mb-1">Monthly Payment</p>
                 <p
                   className="text-white text-[34px] sm:text-[42px] lg:text-[48px] font-semibold leading-none break-all"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
+                  
                 >
                   {fmtCurrency(results.total)}
                 </p>

@@ -31,8 +31,8 @@ const Brothers = () => {
             The Brothers
           </p>
           <h2
-            className="text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight mb-6"
-            style={{ fontFamily: "'Playfair Display', serif" }}
+            className="font-playfair text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight mb-6"
+            
           >
             Meet The Mortgage Brothers — Experts You Can Trust
           </h2>
@@ -58,6 +58,7 @@ const Brothers = () => {
                   src={person.photo}
                   alt={person.name}
                   fill
+                  loading="lazy"
                   className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, 50vw"
                 />
@@ -71,7 +72,7 @@ const Brothers = () => {
                 </span>
                 <h3
                   className="text-[#08271B] text-[22px] sm:text-[24px] font-normal mb-2"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
+                  
                 >
                   {person.name}
                 </h3>
