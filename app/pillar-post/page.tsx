@@ -87,7 +87,7 @@ export default function PillarPostPage() {
             </p>
             <Link
               href="/#get-pre-approved"
-              className="inline-block bg-[#3fb364] hover:bg-[#349b55] text-white font-bold px-8 py-3.5 rounded-full transition-colors text-[15px]"
+              className="btn-primary"
             >
               Get Pre-Approved Today
             </Link>

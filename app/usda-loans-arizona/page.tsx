@@ -48,7 +48,7 @@ export default function UsdaLoansPage() {
                 Buy a home in eligible rural and suburban Arizona with zero down payment, competitive fixed rates, and reduced mortgage insurance through the USDA Rural Development program.
               </p>
               <div className="pt-4 flex flex-wrap items-center gap-4">
-                <Link href="/#get-pre-approved" className="bg-[#3fb364] hover:bg-[#359854] text-white text-[16px] font-bold px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                <Link href="/#get-pre-approved" className="btn-primary">
                   GET PRE-APPROVED NOW →
                 </Link>
                 <a href="tel:+16025352171" className="border border-white/30 hover:border-white text-white text-[15px] font-semibold px-6 py-4 rounded-full transition-all hover:bg-white/10">
@@ -132,7 +132,7 @@ export default function UsdaLoansPage() {
         {/* CTA */}
         <section className="py-16 bg-[#052316] text-white text-center">
           <h2 className="text-[28px] font-bold font-playfair mb-4">See If Your Arizona Home Qualifies for USDA</h2>
-          <Link href="/#get-pre-approved" className="bg-[#3fb364] text-white font-bold px-8 py-4 rounded-full inline-block">GET PRE-APPROVED NOW →</Link>
+          <Link href="/#get-pre-approved" className="btn-primary">GET PRE-APPROVED NOW →</Link>
         </section>
       </main>
       <Footer />

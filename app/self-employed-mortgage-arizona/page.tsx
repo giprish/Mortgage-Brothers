@@ -37,7 +37,7 @@ export default function SelfEmployedMortgagePage() {
                 Qualify for a home loan using 12 to 24 months of bank statement cash deposits — no tax returns required for business owners &amp; entrepreneurs.
               </p>
               <div className="pt-4 flex flex-wrap items-center gap-4">
-                <Link href="/#get-pre-approved" className="bg-[#3fb364] hover:bg-[#359854] text-white text-[16px] font-bold px-8 py-4 rounded-full transition-all shadow-lg">
+                <Link href="/#get-pre-approved" className="btn-primary">
                   GET PRE-APPROVED NOW →
                 </Link>
                 <a href="tel:+16025352171" className="border border-white/30 hover:border-white text-white text-[15px] font-semibold px-6 py-4 rounded-full transition-all hover:bg-white/10">
@@ -87,7 +87,7 @@ export default function SelfEmployedMortgagePage() {
 
         <section className="py-16 bg-[#052316] text-white text-center">
           <h2 className="text-[28px] font-bold font-playfair mb-4">Get Pre-Approved with Your Bank Statements</h2>
-          <Link href="/#get-pre-approved" className="bg-[#3fb364] text-white font-bold px-8 py-4 rounded-full inline-block">GET PRE-APPROVED NOW →</Link>
+          <Link href="/#get-pre-approved" className="btn-primary">GET PRE-APPROVED NOW →</Link>
         </section>
       </main>
       <Footer />

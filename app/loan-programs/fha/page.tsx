@@ -71,7 +71,7 @@ export default function FhaLoanPage() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/#get-pre-approved"
-                  className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-semibold px-6 py-3 rounded-full transition-all duration-200 hover:shadow-lg"
+                  className="btn-primary duration-200 hover:shadow-lg"
                 >
                   Get Pre-Approved &rarr;
                 </Link>
@@ -514,7 +514,7 @@ export default function FhaLoanPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/#get-pre-approved"
-                className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-semibold px-6 py-3 rounded-full transition-all duration-200"
+                className="btn-primary duration-200"
               >
                 Get Pre-Approved &rarr;
               </Link>

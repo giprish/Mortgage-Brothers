@@ -84,7 +84,7 @@ export default function MortgageBrothersShowVideosPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
                 href="/#get-pre-approved"
-                className="inline-flex items-center justify-center bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-7 py-3.5 rounded-full transition-all shadow-md"
+                className="btn-primary"
               >
                 Get Custom Rate Quote
               </Link>

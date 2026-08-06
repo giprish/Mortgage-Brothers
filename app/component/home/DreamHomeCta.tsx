@@ -75,7 +75,7 @@ const DreamHomeCta = () => {
 
         <Link
           href="/#get-pre-approved"
-          className="btn-primary duration-200 shadow-lg shadow-[#3fb364]/20 w-fit"
+          className="btn-primary w-fit"
         >
           Start My Pre-Approval
           <svg

@@ -370,7 +370,7 @@ export default function LoanProgramsDetailPage() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/#get-pre-approved"
-                className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-semibold px-6 py-3.5 rounded-full transition-all duration-200"
+                className="btn-primary"
               >
                 Get Pre-Approved &rarr;
               </Link>

@@ -187,7 +187,7 @@ export default function UltimateGuideFirstMortgagePage() {
                   <Link
                     href="/#get-pre-approved"
                     data-preapproval="true"
-                    className="inline-flex items-center gap-2 bg-[#6ca220] hover:bg-[#5b8a1a] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                    className="btn-primary"
                   >
                     Get Started Today
                   </Link>
@@ -348,7 +348,7 @@ export default function UltimateGuideFirstMortgagePage() {
                     href="https://form.jotform.com/250305896122151"
                     target="_blank"
                     rel="noopener"
-                    className="inline-flex items-center gap-2 bg-[#6ca220] hover:bg-[#5b8a1a] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                    className="btn-primary"
                   >
                     Take the Quiz
                   </a>

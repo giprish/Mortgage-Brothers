@@ -168,7 +168,7 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
                     href="/#Get-in-Touch"
-                    className="inline-flex items-center gap-2 bg-[#6ca220] hover:bg-[#5b8a1a] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                    className="btn-primary"
                   >
                     Get a Free Seller Consultation
                   </Link>

@@ -152,7 +152,7 @@ export default function VideosPage() {
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-[#052316] text-[26px] lg:text-[32px] font-playfair font-normal mb-4">Watching is a great start. Ready for real numbers?</h2>
             <p className="text-[#5a6a5a] text-[15px] leading-relaxed mb-6">Tell us a little about your goals and we&apos;ll shop your scenario so lenders compete for your business.</p>
-            <Link href="/#get-pre-approved" className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full inline-flex items-center gap-2 transition-all shadow-md">
+            <Link href="/#get-pre-approved" className="btn-primary">
               Get My Personalized Quote →
             </Link>
           </div>

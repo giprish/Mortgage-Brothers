@@ -94,7 +94,7 @@ export default function CountyPage() {
           <div className="text-center py-20">
             <h1 className="text-[#052316] text-[32px] font-playfair mb-4">County Not Found</h1>
             <p className="text-[#4e5b4e] text-[15px] mb-8">The county you&apos;re looking for doesn&apos;t exist.</p>
-            <Link href="/service-areas/" className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-semibold px-6 py-3 rounded-full transition-all">
+            <Link href="/service-areas/" className="btn-primary">
               Browse All Areas →
             </Link>
           </div>
@@ -310,7 +310,7 @@ export default function CountyPage() {
             <h2 className="text-white text-[26px] lg:text-[32px] font-playfair font-normal mb-4">Ready to get started in {countyName}?</h2>
             <p className="text-[#c8c8b8] text-[15px] mb-6">Start your pre-approval in about three minutes — no cost, no obligation.</p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/#get-pre-approved" data-preapproval="true" className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full inline-flex items-center gap-2 transition-all shadow-md">
+              <Link href="/#get-pre-approved" data-preapproval="true" className="btn-primary">
                 Start My Pre-Approval →
               </Link>
               <a href="tel:+16025352171" className="bg-white/10 hover:bg-white/20 text-white text-[15px] font-bold px-8 py-3.5 rounded-full inline-flex items-center gap-2 transition-all border border-white/20">

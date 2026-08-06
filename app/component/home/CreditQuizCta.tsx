@@ -21,7 +21,7 @@ const CreditQuizCta = () => {
         </p>
         <Link
           href="/credit-score-quiz/"
-          className="btn-primary duration-200 shadow-lg shadow-[#3fb364]/20"
+          className="btn-primary"
         >
           Take The Quiz
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

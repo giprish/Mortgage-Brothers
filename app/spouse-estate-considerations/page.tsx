@@ -99,7 +99,7 @@ export default function SpouseEstateConsiderationsPage() {
               </p>
               <Link
                 href="/#get-pre-approved"
-                className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200 inline-block shadow-lg hover:shadow-xl"
+                className="btn-primary"
               >
                 Get Pre-Approved &rarr;
               </Link>

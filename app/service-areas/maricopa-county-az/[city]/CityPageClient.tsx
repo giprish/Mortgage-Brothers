@@ -484,7 +484,7 @@ export default function CityDetailPage() {
                 {/* CTA */}
                 <Link
                   href="/#get-pre-approved"
-                  className="inline-flex items-center gap-2.5 bg-[#3fb364] hover:bg-[#34a358] text-white text-[15px] font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-[#3fb364]/20 hover:shadow-xl hover:shadow-[#3fb364]/30 transition-all duration-300 group"
+                  className="btn-primary group"
                 >
                   Start my preapproval
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 transition-transform">

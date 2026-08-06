@@ -150,7 +150,7 @@ function ConsultationCta() {
     <section className="w-full py-6 flex justify-center">
       <Link
         href="/contact-us/"
-        className="inline-flex items-center justify-center bg-[#3fb364] hover:bg-[#349b55] text-white text-[16px] font-bold px-10 py-4 rounded-full transition-all shadow-lg shadow-[#3fb364]/25"
+        className="btn-primary"
       >
         Get Your Free Consultation Now →
       </Link>
