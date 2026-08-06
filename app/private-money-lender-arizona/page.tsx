@@ -306,7 +306,7 @@ export default function PrivateMoneyLenderPage() {
             <div className="text-center">
               <Link
                 href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="btn-primary"
               >
                 Get Your Fast Financing Today
               </Link>
@@ -352,7 +352,7 @@ export default function PrivateMoneyLenderPage() {
             <div className="text-center">
               <Link
                 href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="btn-primary"
               >
                 Get Your Private Money Loan Quote
               </Link>
@@ -396,7 +396,7 @@ export default function PrivateMoneyLenderPage() {
             <div className="text-center">
               <Link
                 href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="btn-primary"
               >
                 Explore Your Portfolio Loan Options
               </Link>
@@ -438,7 +438,7 @@ export default function PrivateMoneyLenderPage() {
             <div className="text-center">
               <Link
                 href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="btn-primary"
               >
                 Check Your Eligibility Now
               </Link>
@@ -461,7 +461,7 @@ export default function PrivateMoneyLenderPage() {
             </p>
             <Link
               href="/credit-score-quiz/"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+              className="btn-primary"
             >
               Take The Quiz
             </Link>
@@ -508,7 +508,7 @@ export default function PrivateMoneyLenderPage() {
             <div className="text-center">
               <Link
                 href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="btn-primary"
               >
                 Start Your Loan Application
               </Link>
@@ -599,7 +599,7 @@ export default function PrivateMoneyLenderPage() {
             <div className="text-center">
               <Link
                 href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="btn-primary"
               >
                 Get Your Free Mortgage Consultation
               </Link>
@@ -689,7 +689,7 @@ export default function PrivateMoneyLenderPage() {
             </div>
             <Link
               href="/#get-pre-approved"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"
+              className="btn-primary"
             >
               Start my preapproval
             </Link>

@@ -127,7 +127,7 @@ export default function PrivateMoneyLendersArticlePage() {
               At <Link href="/" className="text-[#3fb364] font-semibold hover:underline"><strong>Mortgage Brothers</strong></Link>, we help investors close deals that traditional financing would never allow — from fix-and-flip projects to portfolio expansion and bridge loans for time-sensitive acquisitions.
             </p>
             <div className="text-center my-6">
-              <Link href="/contact-us/" className="inline-block bg-[#3fb364] hover:bg-[#2d9e4f] text-white font-bold text-[15px] px-8 py-3.5 rounded-xl transition-colors">
+              <Link href="/contact-us/" className="btn-primary">
                 Talk to an Arizona Private Lending Expert
               </Link>
             </div>
@@ -284,7 +284,7 @@ export default function PrivateMoneyLendersArticlePage() {
               <li>Post-closing support to help plan refinances or sales</li>
             </ul>
             <div className="text-center my-6">
-              <Link href="/contact-us/" className="inline-block bg-[#3fb364] hover:bg-[#2d9e4f] text-white font-bold text-[15px] px-8 py-3.5 rounded-xl transition-colors">
+              <Link href="/contact-us/" className="btn-primary">
                 Start Your Private Loan Application Now
               </Link>
             </div>

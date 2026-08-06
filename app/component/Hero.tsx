@@ -51,19 +51,10 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-3">
           <Link
             href="/#get-pre-approved"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#2f8f4f] hover:bg-[#277a42] text-white text-base font-semibold px-8 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-[#3fb364]/30 hover:scale-[1.02]"
+            data-preapproval="true"
+            className="btn-primary w-full sm:w-auto"
           >
-            <span>Start my preapproval</span>
-            <svg
-              className="w-4 h-4 stroke-current fill-none"
-              viewBox="0 0 24 24"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
+            Start my preapproval →
           </Link>
 
           <a

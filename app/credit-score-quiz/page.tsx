@@ -173,7 +173,7 @@ export default function CreditScoreQuizPage() {
             <div className="text-center">
               <a
                 href="#top"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="btn-primary"
               >
                 Take the Credit Quiz
               </a>

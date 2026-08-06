@@ -331,7 +331,7 @@ export default function ConventionalVsFhaLoansPage() {
             <div className="text-center mt-10">
               <Link
                 href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="btn-primary"
               >
                 Explore Your Loan Options Today!
               </Link>
@@ -456,7 +456,7 @@ export default function ConventionalVsFhaLoansPage() {
             <div className="text-center mt-10">
               <Link
                 href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="btn-primary"
               >
                 Find Your Ideal Loan Match Now!
               </Link>
@@ -580,7 +580,7 @@ export default function ConventionalVsFhaLoansPage() {
             </p>
             <Link
               href="/contact-us/"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+              className="btn-primary"
             >
               Get Your Free Consultation
             </Link>
@@ -656,7 +656,7 @@ export default function ConventionalVsFhaLoansPage() {
             </p>
             <Link
               href="/conventional-vs-fha-calculator/"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+              className="btn-primary"
             >
               Take The Quiz
             </Link>
@@ -691,7 +691,7 @@ export default function ConventionalVsFhaLoansPage() {
             <div className="text-center">
               <a
                 href="tel:+16025352171"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="btn-primary"
               >
                 Call Us Now
               </a>
@@ -753,7 +753,7 @@ export default function ConventionalVsFhaLoansPage() {
             <div className="text-center">
               <Link
                 href="/contact-us/"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="btn-primary"
               >
                 Get Personalized Advice Today!
               </Link>
@@ -786,7 +786,7 @@ export default function ConventionalVsFhaLoansPage() {
             </div>
             <Link
               href="/#get-pre-approved"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"
+              className="btn-primary"
             >
               Start my preapproval
             </Link>

@@ -140,7 +140,7 @@ export default function MortgagePayoffPage() {
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
                   Get expert help understanding your payoff statement, daily interest accrual, and how closing dates impact the final number.
                 </p>
-                <Link href="/#get-pre-approved" className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all">
+                <Link href="/#get-pre-approved" className="btn-primary">
                   Request a Free Mortgage Payoff Review
                 </Link>
               </div>
@@ -282,7 +282,7 @@ export default function MortgagePayoffPage() {
                 <h3 className="text-[#08271B] text-[20px] font-extrabold uppercase tracking-wide leading-snug mt-4 mb-2">Your Dream Home Awaits!</h3>
                 <p className="text-[#6a7a6a] text-[11px] font-semibold uppercase tracking-wide mb-4">Expert mortgage solutions tailored to your needs</p>
                 <p className="text-[#3fb364] text-[14px] font-bold uppercase mb-5">Talk to a Broker Today!</p>
-                <a href="tel:+16025352171" className="inline-flex items-center justify-center gap-2 w-full bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-semibold px-4 py-3 rounded-full transition-all">
+                <a href="tel:+16025352171" className="btn-primary w-full">
                   +1 602-535-2171
                 </a>
               </div>
@@ -337,7 +337,7 @@ export default function MortgagePayoffPage() {
             <p className="text-[#c8c8b8] text-[15.5px] leading-relaxed mb-7">
               Have questions about financing options? Our experts are here to help with personalized advice for any mortgage type. Fill out our form to get started today!
             </p>
-            <Link href="/contact-us/" className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all">
+            <Link href="/contact-us/" className="btn-primary">
               Contact Us
             </Link>
           </div>
@@ -356,7 +356,7 @@ export default function MortgagePayoffPage() {
               <span className="hidden sm:inline text-[#c8c8b8]">|</span>
               <span className="text-center">1599 East Orangewood Ave Suite 200, Phoenix, AZ 85020</span>
             </div>
-            <Link href="/#get-pre-approved" className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all">
+            <Link href="/#get-pre-approved" className="btn-primary">
               Get Your Rate Now
             </Link>
           </div>

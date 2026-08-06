@@ -169,7 +169,7 @@ export default function ReverseMortgageEligibilityArticlePage() {
               Your home must be your primary residence, occupied most of the year (typically 6+ months). Temporary absences for vacations or medical care are generally allowed, but permanent relocation may trigger repayment.
             </p>
             <div className="text-center my-6">
-              <Link href="/contact-us/" className="inline-block bg-[#3fb364] hover:bg-[#2d9e4f] text-white font-bold text-[15px] px-8 py-3.5 rounded-xl transition-colors">
+              <Link href="/contact-us/" className="btn-primary">
                 Speak with a Reverse Mortgage Specialist
               </Link>
             </div>
@@ -228,7 +228,7 @@ export default function ReverseMortgageEligibilityArticlePage() {
               You receive a certificate valid for 180 days to proceed with your application.
             </p>
             <div className="text-center my-6">
-              <Link href="/contact-us/" className="inline-block bg-[#3fb364] hover:bg-[#2d9e4f] text-white font-bold text-[15px] px-8 py-3.5 rounded-xl transition-colors">
+              <Link href="/contact-us/" className="btn-primary">
                 Check Your Reverse Mortgage Eligibility
               </Link>
             </div>

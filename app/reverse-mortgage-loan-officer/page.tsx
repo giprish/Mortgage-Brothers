@@ -180,7 +180,7 @@ export default function ReverseMortgageLoanOfficerPage() {
             <div className="text-center">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="btn-primary"
               >
                 Start Your Application
               </a>
@@ -247,7 +247,7 @@ export default function ReverseMortgageLoanOfficerPage() {
             <div className="text-center">
               <a
                 href="#contact"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="btn-primary"
               >
                 Start Your Application
               </a>

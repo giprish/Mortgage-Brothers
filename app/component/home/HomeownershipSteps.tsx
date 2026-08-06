@@ -68,7 +68,7 @@ const HomeownershipSteps = () => {
         <div className="text-center">
           <Link
             href="/#get-pre-approved"
-            className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full shadow-md hover:shadow-xl transition-all duration-200"
+            className="btn-primary"
           >
             Start Your Journey Today
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

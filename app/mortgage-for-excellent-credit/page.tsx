@@ -284,7 +284,7 @@ export default function MortgageForExcellentCreditPage() {
             <div className="text-center mt-10">
               <Link
                 href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="btn-primary"
               >
                 Discover Your Options
               </Link>
@@ -400,7 +400,7 @@ export default function MortgageForExcellentCreditPage() {
             <div className="text-center mt-10">
               <Link
                 href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="btn-primary"
               >
                 Find Your Best Mortgage Deal
               </Link>
@@ -534,7 +534,7 @@ export default function MortgageForExcellentCreditPage() {
             <div className="text-center">
               <a
                 href="tel:+16025352171"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="btn-primary"
               >
                 Call Us Now
               </a>
@@ -565,7 +565,7 @@ export default function MortgageForExcellentCreditPage() {
             <div className="text-center">
               <Link
                 href="/contact-us/"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="btn-primary"
               >
                 Ask a Mortgage Expert
               </Link>
@@ -605,7 +605,7 @@ export default function MortgageForExcellentCreditPage() {
 
             <Link
               href="/#get-pre-approved"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"
+              className="btn-primary"
             >
               Start my preapproval
             </Link>

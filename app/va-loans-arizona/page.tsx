@@ -498,7 +498,7 @@ export default function VaLoansArizonaPage() {
               </p>
               <Link
                 href="/#get-pre-approved"
-                className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-md inline-block"
+                className="btn-primary"
               >
                 Schedule Your Free VA Loan Consultation! →
               </Link>
@@ -554,7 +554,7 @@ export default function VaLoansArizonaPage() {
             <div className="text-center">
               <Link
                 href="/#get-pre-approved"
-                className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-md inline-block"
+                className="btn-primary"
               >
                 Explore Your VA Loan Options Now! →
               </Link>
@@ -688,7 +688,7 @@ export default function VaLoansArizonaPage() {
               </p>
               <Link
                 href="/#get-pre-approved"
-                className="inline-block bg-[#3fb364] hover:bg-[#359854] text-white font-bold px-8 py-4 rounded-full transition-all"
+                className="btn-primary"
               >
                 Start Your VA Loan Journey Today! →
               </Link>
@@ -821,7 +821,7 @@ export default function VaLoansArizonaPage() {
             <div className="pt-4 flex flex-wrap justify-center gap-4">
               <Link
                 href="/#get-pre-approved"
-                className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-lg"
+                className="btn-primary"
               >
                 GET PRE-APPROVED NOW →
               </Link>

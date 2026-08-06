@@ -112,7 +112,7 @@ export default function DivorceMortgageArticlePage() {
           <div className="bg-[#052316] text-white rounded-2xl p-8 text-center mt-12 shadow-xl">
             <h3 className="text-[24px] font-bold mb-3 font-playfair">Confidential Mortgage Guidance During Divorce</h3>
             <p className="text-[#c8c8b8] text-[15px] max-w-xl mx-auto mb-6">Contact our Arizona mortgage team to evaluate buyout refinances and equity splits.</p>
-            <Link href="/refinancing-arizona/" className="inline-block bg-[#3fb364] hover:bg-[#2d9e4f] text-white font-bold text-[15px] px-8 py-3.5 rounded-xl transition-colors">
+            <Link href="/refinancing-arizona/" className="btn-primary">
               Explore Refinance Buyouts
             </Link>
           </div>

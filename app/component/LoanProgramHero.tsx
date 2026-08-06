@@ -60,25 +60,9 @@ export default function LoanProgramHero({
                 <Link
                   href={ctaHref}
                   data-preapproval="true"
-                  className="w-full sm:w-auto btn-primary hover:shadow-brand-green-accent/20 group text-[15px] font-bold px-7 py-3.5"
+                  className="w-full sm:w-auto btn-primary group"
                 >
-                  {ctaLabel}
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="group-hover:translate-x-0.5 transition-transform duration-200"
-                    aria-hidden
-                  >
-                    <line x1="5" y1="12" x2="19" y2="12" />
-                    <polyline points="12 5 19 12 12 19" />
-                  </svg>
+                  {ctaLabel} →
                 </Link>
               )}
 

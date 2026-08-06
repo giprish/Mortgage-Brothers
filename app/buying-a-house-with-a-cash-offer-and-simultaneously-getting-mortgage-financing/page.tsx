@@ -182,7 +182,7 @@ export default function CashOfferMortgageFinancingPage() {
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
                     href="/#get-pre-approved"
-                    className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                    className="btn-primary"
                   >
                     Get a Free Mortgage Strategy Session &rarr;
                   </Link>
@@ -596,7 +596,7 @@ export default function CashOfferMortgageFinancingPage() {
                 </p>
                 <a
                   href="tel:+16025352171"
-                  className="inline-flex items-center justify-center gap-2 w-full bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-semibold px-4 py-3 rounded-full transition-all"
+                  className="btn-primary w-full"
                 >
                   +1 602-535-2171
                 </a>
@@ -667,7 +667,7 @@ export default function CashOfferMortgageFinancingPage() {
             </p>
             <Link
               href="/contact-us/"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+              className="btn-primary"
             >
               Contact Us
             </Link>
@@ -696,7 +696,7 @@ export default function CashOfferMortgageFinancingPage() {
             </div>
             <Link
               href="/#get-pre-approved"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"
+              className="btn-primary"
             >
               Get Your Rate Now
             </Link>

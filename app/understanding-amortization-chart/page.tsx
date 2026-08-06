@@ -128,7 +128,7 @@ export default function UnderstandingAmortizationChartPage() {
                 </p>
                 <Link
                   href="/#get-pre-approved"
-                  className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                  className="btn-primary"
                 >
                   Get a Free Mortgage Consultation
                 </Link>
@@ -274,7 +274,7 @@ export default function UnderstandingAmortizationChartPage() {
                 </p>
                 <a
                   href="tel:+16025352171"
-                  className="inline-flex items-center justify-center gap-2 w-full bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-semibold px-4 py-3 rounded-full transition-all"
+                  className="btn-primary w-full"
                 >
                   +1 602-535-2171
                 </a>
@@ -346,7 +346,7 @@ export default function UnderstandingAmortizationChartPage() {
             </p>
             <Link
               href="/contact-us/"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+              className="btn-primary"
             >
               Contact Us
             </Link>
@@ -378,7 +378,7 @@ export default function UnderstandingAmortizationChartPage() {
             </div>
             <Link
               href="/#get-pre-approved"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"
+              className="btn-primary"
             >
               Get Your Rate Now
             </Link>

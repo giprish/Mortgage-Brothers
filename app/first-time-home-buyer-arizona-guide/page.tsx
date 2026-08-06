@@ -705,7 +705,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
 
             <Link
               href="/#get-pre-approved"
-              className="inline-block bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-lg"
+              className="inline-block btn-primary"
             >
               GET PRE-APPROVED →
             </Link>

@@ -232,7 +232,7 @@ export default function ContactPage() {
                   {/* Submit Button */}
                   <button
                     type="submit"
-                    className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[14.5px] font-bold px-6 py-3 rounded-xl transition-all duration-200 w-fit cursor-pointer shadow-md hover:shadow-lg shadow-[#3fb364]/10"
+                    className="btn-primary w-fit"
                   >
                     Send message
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3" className="w-3.5 h-3.5">

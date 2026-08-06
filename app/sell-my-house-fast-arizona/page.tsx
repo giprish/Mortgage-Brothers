@@ -237,7 +237,7 @@ export default function SellMyHouseFastArizonaPage() {
             <div className="mt-8 flex flex-col items-center gap-3">
               <Link
                 href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[16px] font-bold px-7 py-3.5 rounded-md transition-all shadow-md"
+                className="btn-primary"
               >
                 Get My Free Home Selling Options Review →
               </Link>
@@ -417,7 +417,7 @@ export default function SellMyHouseFastArizonaPage() {
             <div className="text-center">
               <Link
                 href="/contact-us/"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[15px] px-8 py-3.5 rounded-full transition-all shadow-md"
+                className="btn-primary"
               >
                 Get My Free Comparison Review
               </Link>
@@ -708,7 +708,7 @@ export default function SellMyHouseFastArizonaPage() {
             <div className="pt-4 flex flex-wrap justify-center gap-4">
               <Link
                 href="/#get-pre-approved"
-                className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-lg"
+                className="btn-primary"
               >
                 Get My Free Home Selling Options Review
               </Link>

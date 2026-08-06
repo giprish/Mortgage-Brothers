@@ -303,7 +303,7 @@ export default function RefinancingArizonaPage() {
             <div className="text-center">
               <Link
                 href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="btn-primary"
               >
                 Explore Your Refinancing Options
               </Link>
@@ -385,7 +385,7 @@ export default function RefinancingArizonaPage() {
             <div className="text-center">
               <Link
                 href="/refinance-calculator/"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="btn-primary"
               >
                 Calculate Your Refinancing Savings
               </Link>
@@ -407,7 +407,7 @@ export default function RefinancingArizonaPage() {
             </p>
             <Link
               href="/credit-score-quiz/"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+              className="btn-primary"
             >
               Take The Quiz
             </Link>
@@ -560,7 +560,7 @@ export default function RefinancingArizonaPage() {
                   </div>
                   <button
                     type="submit"
-                    className="w-full bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3.5 rounded-full transition-all"
+                    className="btn-primary w-full"
                   >
                     Calculate Savings
                   </button>
@@ -701,7 +701,7 @@ export default function RefinancingArizonaPage() {
             <div className="text-center">
               <Link
                 href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="btn-primary"
               >
                 Get Your Refinancing Questions Answered
               </Link>
@@ -729,7 +729,7 @@ export default function RefinancingArizonaPage() {
             </div>
             <Link
               href="/#get-pre-approved"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"
+              className="btn-primary"
             >
               Start my preapproval
             </Link>

@@ -402,7 +402,7 @@ export default function ClientMortgageReviewsPage() {
             </p>
             <Link
               href="/contact-us/"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+              className="btn-primary"
             >
               Schedule Your Free Consultation
             </Link>
@@ -445,7 +445,7 @@ export default function ClientMortgageReviewsPage() {
             <div className="text-center mt-10">
               <Link
                 href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="btn-primary"
               >
                 Get Pre-Approved Now
               </Link>
@@ -487,7 +487,7 @@ export default function ClientMortgageReviewsPage() {
             <div className="text-center">
               <Link
                 href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="btn-primary"
               >
                 Get Started Now
               </Link>
@@ -523,7 +523,7 @@ export default function ClientMortgageReviewsPage() {
             <div className="text-center">
               <a
                 href="tel:+16025352171"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="btn-primary"
               >
                 Call Us Now
               </a>
@@ -585,7 +585,7 @@ export default function ClientMortgageReviewsPage() {
             <div className="text-center">
               <Link
                 href="/contact-us/"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="btn-primary"
               >
                 Get Expert Answers Now
               </Link>
@@ -625,7 +625,7 @@ export default function ClientMortgageReviewsPage() {
 
             <Link
               href="/#get-pre-approved"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"
+              className="btn-primary"
             >
               Start my preapproval
             </Link>

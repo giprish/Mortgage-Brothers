@@ -115,7 +115,7 @@ const Brothers = () => {
         <div className="text-center">
           <Link
             href="/about-us/"
-            className="inline-block bg-[#3fb364] hover:bg-[#349b55] text-white font-semibold text-[15px] px-8 py-3.5 rounded-full shadow-md hover:shadow-xl transition-all duration-200"
+            className="btn-primary"
           >
             Get to Know Us
           </Link>
