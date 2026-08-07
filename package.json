@@ -12,7 +12,7 @@
   "dependencies": {
     "chart.js": "^4.5.1",
     "lucide-react": "^1.27.0",
-    "next": "16.2.10",
+    "next": "16.3.0",
     "react": "19.2.4",
     "react-chartjs-2": "^5.3.1",
     "react-dom": "19.2.4",
@@ -25,9 +25,12 @@
     "@types/react-dom": "^19",
     "cheerio": "^1.2.0",
     "eslint": "^9",
-    "eslint-config-next": "16.2.10",
+    "eslint-config-next": "16.3.0",
     "exceljs": "^4.4.0",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "overrides": {
+    "uuid": "^11.1.1"
   }
 }
