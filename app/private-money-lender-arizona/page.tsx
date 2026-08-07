@@ -267,9 +267,9 @@ export default function PrivateMoneyLenderPage() {
         </section>
 
         {/* Flexible financing intro */}
-        <section className="w-full py-14 sm:py-16 lg:py-20">
+        <section className="w-full pt-14 pb-10 sm:pt-16 sm:pb-12 lg:pt-20 lg:pb-12">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="max-w-3xl mx-auto text-center mb-10">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -302,25 +302,26 @@ export default function PrivateMoneyLenderPage() {
                 </div>
               ))}
             </div>
-
-            <div className="text-center">
-              <Link
-                href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
-              >
-                Get Your Fast Financing Today
-              </Link>
-            </div>
           </div>
         </section>
 
-        {/* Stats */}
-        <StatsBanner stats={stats} />
+        {/* CTA + Stats */}
+        <section className="w-full bg-[#fcf9f3] pt-10 pb-10 sm:pt-12 sm:pb-12">
+          <div className="max-w-6xl mx-auto px-6 lg:px-10 text-center mb-10 sm:mb-12">
+            <Link
+              href="/#get-pre-approved"
+              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+            >
+              Get Your Fast Financing Today
+            </Link>
+          </div>
+          <StatsBanner sectionClassName="py-0 bg-transparent" stats={stats} />
+        </section>
 
         {/* Private money loans */}
-        <section className="w-full py-14 sm:py-16 lg:py-20">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+        <section className="w-full loan-section pt-0 pb-0">
+          <div className="max-w-6xl mx-auto">
+            <div className="max-w-3xl mx-auto text-center mb-10">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[38px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -337,7 +338,7 @@ export default function PrivateMoneyLenderPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {privateMoneyCards.map((card) => (
                 <div
                   key={card.title}
@@ -349,10 +350,10 @@ export default function PrivateMoneyLenderPage() {
               ))}
             </div>
 
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="inline-flex items-center justify-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3.5 leading-none rounded-full transition-all"
               >
                 Get Your Private Money Loan Quote
               </Link>
@@ -361,9 +362,9 @@ export default function PrivateMoneyLenderPage() {
         </section>
 
         {/* Portfolio loans */}
-        <section className="w-full bg-[#f5f0e8] py-14 sm:py-16 lg:py-20 border-y border-[#e8e0d0]/50">
+        <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="max-w-3xl mx-auto text-center mb-10">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[38px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -407,7 +408,7 @@ export default function PrivateMoneyLenderPage() {
         {/* Qualifying */}
         <section className="w-full py-14 sm:py-16 lg:py-20">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="max-w-3xl mx-auto text-center mb-10">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[38px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -447,7 +448,7 @@ export default function PrivateMoneyLenderPage() {
         </section>
 
         {/* Credit quiz CTA */}
-        <section className="w-full bg-[#08271B] py-12 sm:py-14 lg:py-16">
+        <section className="w-full bg-[#08271B] py-14 sm:py-16 lg:py-20 px-6 lg:px-12">
           <div className="max-w-3xl mx-auto px-6 text-center">
             <h3
               className="text-white text-[24px] lg:text-[30px] font-normal mb-4"
@@ -471,7 +472,7 @@ export default function PrivateMoneyLenderPage() {
         {/* How to secure */}
         <section className="w-full py-14 sm:py-16 lg:py-20">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="max-w-3xl mx-auto text-center mb-10">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[38px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -519,7 +520,7 @@ export default function PrivateMoneyLenderPage() {
         {/* Reviews */}
         <section className="w-full bg-[#f5f0e8] py-14 sm:py-16 lg:py-20 border-y border-[#e8e0d0]/50">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="max-w-3xl mx-auto text-center mb-10">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -570,7 +571,7 @@ export default function PrivateMoneyLenderPage() {
         {/* Why choose */}
         <section className="w-full py-14 sm:py-16 lg:py-20">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="max-w-3xl mx-auto text-center mb-10">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}

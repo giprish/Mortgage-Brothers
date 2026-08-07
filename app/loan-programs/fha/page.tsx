@@ -45,7 +45,7 @@ export default function FhaLoanPage() {
 
       <main className="flex-grow">
         {/* Section 1: Hero Section */}
-        <section className="bg-[#052316] text-white py-16 px-6 lg:px-10">
+        <section className="bg-[#052316] text-white loan-section px-6 lg:px-12">
           <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             {/* Left side info */}
             <div className="lg:col-span-7 flex flex-col items-start">
@@ -159,8 +159,8 @@ export default function FhaLoanPage() {
         </section>
 
         {/* Section 3: What you get with an FHA loan */}
-        <section className="py-16 px-6 lg:px-10 max-w-5xl mx-auto border-t border-[#e8e0d0]/40">
-          <div className="mb-12">
+        <section className="loan-section px-6 lg:px-12 max-w-5xl mx-auto border-t border-[#e8e0d0]/40">
+          <div className="mb-10">
             <h2 className="text-[#052316] text-[26px] lg:text-[32px] font-playfair font-normal mb-3">
               What you get with an FHA loan
             </h2>
@@ -247,7 +247,7 @@ export default function FhaLoanPage() {
         </section>
 
         {/* Section 4: Two Qualification and Payment Cards */}
-        <section className="py-12 px-6 lg:px-10 max-w-5xl mx-auto">
+        <section className="loan-section px-6 lg:px-12 max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
             
             {/* Left Card: What you'll need to qualify */}
@@ -381,7 +381,7 @@ export default function FhaLoanPage() {
 
         {/* Section 6: FAQ section */}
         <section className="py-20 px-6 lg:px-10 max-w-5xl mx-auto border-t border-[#e8e0d0]/40">
-          <div className="mb-12">
+          <div className="mb-10">
             <h2 className="text-[#052316] text-[28px] lg:text-[34px] font-playfair font-normal">
               FHA loan questions, answered
             </h2>
@@ -434,7 +434,7 @@ export default function FhaLoanPage() {
         </section>
 
         {/* Section 7: Compare with other programs */}
-        <section className="py-16 px-6 lg:px-10 max-w-5xl mx-auto border-t border-[#e8e0d0]/40">
+        <section className="loan-section px-6 lg:px-12 max-w-5xl mx-auto border-t border-[#e8e0d0]/40">
           <div className="mb-8">
             <h2 className="text-[#052316] text-[20px] font-playfair font-normal">
               Compare with other programs
@@ -499,7 +499,7 @@ export default function FhaLoanPage() {
         </section>
 
         {/* Section 8: Bottom Banner */}
-        <section className="bg-[#052316] text-white py-16 text-center border-t border-white/10">
+        <section className="bg-[#052316] text-white loan-section text-center px-6 lg:px-12 border-t border-white/10">
           <div className="max-w-2xl mx-auto px-6 flex flex-col items-center">
             <span className="text-[#b89a5a] text-[10px] font-bold tracking-[0.15em] uppercase block mb-3">
               READY WHEN YOU ARE

@@ -312,7 +312,7 @@ export default function MortgageLoanProgramsArizonaPage() {
         {/* Reserves space for fixed navbar */}
         <div className="h-[64px] sm:h-[72px] bg-[#08271B]" aria-hidden />
 
-        <section className="w-full bg-brand-green-deep text-white py-14 sm:py-16 lg:py-20 text-center relative overflow-hidden">
+        <section className="w-full bg-brand-green-deep text-white loan-section text-center relative overflow-hidden">
           <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
             <div className="absolute -top-36 -right-36 w-[400px] h-[400px] rounded-full border border-white/5 opacity-40 pointer-events-none"></div>
             <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5 opacity-40 pointer-events-none"></div>
@@ -354,7 +354,7 @@ export default function MortgageLoanProgramsArizonaPage() {
             <section
               key={prog.id}
               id={prog.id}
-              className={`w-full py-12 lg:py-16 border-b border-[#e8e0d0]/40 scroll-mt-20 ${prog.bgColor}`}
+              className={`w-full loan-section border-b border-[#e8e0d0]/40 scroll-mt-20 ${prog.bgColor}`}
             >
               <div className="max-w-5xl mx-auto px-6 lg:px-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">

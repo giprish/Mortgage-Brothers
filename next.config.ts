@@ -23,6 +23,11 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "azmortgagebrothers.com",
+        pathname: "/wp-content/uploads/**",
+      },
+      {
+        protocol: "https",
         hostname: "img.youtube.com",
         pathname: "/vi/**",
       },

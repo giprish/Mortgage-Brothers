@@ -7,23 +7,24 @@ export type StatItem = {
 
 type StatsBannerProps = {
   stats: StatItem[];
+  sectionClassName?: string;
 };
 
 /**
  * Standardized Stats Banner used across all website pages.
  * Ensures consistent width, equal column layout, and unified font size for all numbers.
  */
-export default function StatsBanner({ stats }: StatsBannerProps) {
+export default function StatsBanner({ stats, sectionClassName }: StatsBannerProps) {
   const isTriple = stats.length === 3;
   const gridCols = isTriple
     ? "grid-cols-1 sm:grid-cols-3"
     : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4";
 
   return (
-    <section className="w-full bg-[#fcf9f3] py-6 lg:py-8">
+    <section className={`w-full bg-[#fcf9f3] no-content-visibility ${sectionClassName ?? "py-4 lg:py-5"}`}>
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         <div
-          className={`bg-[#08271B] border border-[#143d2b] rounded-2xl px-4 sm:px-8 py-8 lg:py-10 grid ${gridCols} gap-8 sm:gap-6 lg:gap-8 items-center justify-items-center text-center shadow-xl`}
+          className={`bg-[#08271B] border border-[#143d2b] rounded-2xl px-4 sm:px-8 py-6 lg:py-8 grid ${gridCols} gap-6 sm:gap-5 lg:gap-6 items-center justify-items-center text-center shadow-xl`}
         >
           {stats.map((stat, i) => (
             <div

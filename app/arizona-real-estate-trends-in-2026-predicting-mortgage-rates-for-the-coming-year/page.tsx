@@ -313,7 +313,7 @@ export default function ArizonaRealEstateTrends2026Page() {
                     &ldquo;new normal&rdquo; in the 6% range is more realistic — with opportunities to refinance
                     later if we dip into the low 5s.
                   </p>
-                  <div className="text-center">
+                  <div className="loan-btn-wrap">
                     <Link
                       href="/#get-pre-approved"
                       className="btn-primary"

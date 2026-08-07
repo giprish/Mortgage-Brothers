@@ -5,12 +5,85 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
-// import PreApprovedForm from "../component/PreApprovedForm";
+import { COMPANY, LOAN_PROGRAM_LINKS } from "@/lib/company";
+
+const whyChooseCards = [
+  {
+    title: "Local Expertise",
+    desc: "Eddie and Tom Knoell grew up in Phoenix, built careers here, and are raising their families here. That kind of local knowledge isn't something you can replicate — it's the reason our clients trust us with one of the biggest financial decisions of their lives.",
+  },
+  {
+    title: "Extensive Lender Network",
+    desc: "Our partnerships with 50+ lenders allow us to offer you competitive rates and diverse loan products. We shop around so you don't have to.",
+  },
+  {
+    title: "Transparent Process",
+    desc: "We believe in clear communication and no surprises. Our \"no surprises\" closing guarantee ensures you're informed every step of the way.",
+  },
+  {
+    title: "Award-Winning Service",
+    desc: "Our clients say it best. We've earned hundreds of 5-star reviews on Google, Yelp, and Facebook — a reflection of our commitment to clear communication, fast closings, and personalized service on every loan.",
+  },
+  {
+    title: "Personalized Approach",
+    desc: "We're not just brokers; we're your financial partners. Our team takes the time to understand your unique situation and goals, crafting tailored solutions that fit your needs.",
+  },
+];
+
+const teamStats = [
+  { num: "25+", label: "Years of Experience" },
+  { num: "4.9/5", label: "Client Rating" },
+  { num: "2,300+", label: "Loans Funded" },
+  { num: "2,300+", label: "Families Helped" },
+];
+
+const testimonials = [
+  {
+    text: "I was referred to Eddie through my sister-n-law. I had tried a previous company but wasn't satisfied. I have been extremely happy with Eddie's mortgage team. Everything was done online through emails. This was very helpful as both my husband and I work full time during the day and really have no time to do this. Emails were responded to on a daily basis and in a very quick manner. Every step of the process was done very professionally and friendly. I always hesitated to do a refinance because of the large amount of paperwork and meetings. But this didn't happen that way. I highly recommend Eddie's mortgage team for your refinancing needs.",
+    author: "Chris and Vicky Smith",
+    loc: "Avondale, Arizona",
+  },
+  {
+    text: "Eddie and his team are fantastic to work with! They are efficient, friendly and very professional. They communicate to all parties in the transaction; making it a very smooth transaction every time. As a real estate agent, this makes my job that much easier when I have a lender who always performs and most of the time is even ahead of schedule. I can't say enough good things about Eddie as a mortgage lender!",
+    author: "Elizabeth Todd",
+    loc: "H2 Realty, Phoenix, Arizona",
+  },
+  {
+    text: "My wife and I recently decided it was the right time to refinance our home. I had been introduced to Eddie Knoell some years ago and had been periodically in touch with him to get more information on refinancing and interest rates so I would better understand the process as a whole. Eddie walked me through completing all the paperwork in advance so that when he called me and told me interest rates were favorable and we might want to consider locking in, all the paperwork was already completed and on file. Eddie has been an invaluable wealth of knowledge and has always been more than willing to take any time necessary to answer any questions I had. In an economic time where honesty and integrity are a hard to find commodity, especially in the housing industry, Eddie Knoell has proven to be a shining example of those qualities.",
+    author: "Kristine Wilson",
+    loc: "Surprise, Arizona",
+  },
+  {
+    text: "Our mortgage service through Eddie Knoell was seamless throughout. It was like having someone watch over the process without us having any concern in the process. All questions were answered promptly and completely with the correct issues addressed without extra fanfare, like dealing with a trusted family member. Thanks again Eddie!!!",
+    author: "Thomas and Carol Milberry",
+    loc: "Queen Creek, Arizona 85242",
+  },
+  {
+    text: "I met Eddie Knoell in 2012 through a client. He communicates very well, through every step of the process. Before I can even start to wonder what is going on, he's picked up the phone and called to let me know where we are in the process. He closes every deal and communicates through it well. He's patient with the questions and great with every client I have sent his way.",
+    author: "Nancy Perry",
+    loc: "Solutions Real Estate, Avondale, Arizona",
+  },
+];
+
+const aboutLoanLinks = LOAN_PROGRAM_LINKS.filter((link) =>
+  [
+    "/conventional-home-loans-arizona/",
+    "/private-money-lender-arizona/",
+    "/fha-home-loans-arizona/",
+    "/fha-streamline-refinance-arizona/",
+    "/first-time-home-buyer-arizona-guide/",
+    "/reverse-mortgage-arizona/",
+    "/reverse-mortgage-home-purchase-arizona/",
+    "/refinancing-arizona/",
+    "/jumbo-loans-arizona/",
+    "/va-loans-arizona/",
+  ].includes(link.href)
+);
 
 const faqItems = [
   {
     q: "Who are the AZ Mortgage Brothers?",
-    a: "We're Eddie and Tom Knoell, third-generation Phoenix natives with over 22 years of experience in the Arizona mortgage industry. We founded AZ Mortgage Brothers to provide personalized, expert mortgage solutions to our fellow Arizonans.",
+    a: "We're Eddie and Tom Knoell, third-generation Phoenix natives with over 25 years of experience in the Arizona mortgage industry. We founded AZ Mortgage Brothers to provide personalized, expert mortgage solutions to our fellow Arizonans.",
   },
   {
     q: "What types of loans do you offer?",
@@ -47,7 +120,7 @@ export default function AboutPage() {
       <main className="flex-grow">
         <div className="h-[64px] sm:h-[72px] bg-[#08271B]" aria-hidden />
 
-        <section className="w-full bg-brand-green-deep text-white py-10 sm:py-12 lg:py-14 text-center relative overflow-hidden">
+        <section className="w-full bg-brand-green-deep text-white py-8 sm:py-10 lg:py-12 text-center relative overflow-hidden no-content-visibility">
           <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
             <div className="absolute -top-36 -right-36 w-[min(400px,90vw)] h-[400px] rounded-full border border-white/5 opacity-40" />
             <div className="absolute -bottom-36 -left-36 w-[min(360px,90vw)] h-[360px] rounded-full border border-white/5 opacity-40" />
@@ -60,7 +133,7 @@ export default function AboutPage() {
             </p>
 
             {/* Title */}
-            <h1 className="text-white text-[38px] lg:text-[54px] font-playfair font-normal leading-[1.15] mb-6">
+            <h1 className="text-white text-[38px] lg:text-[54px] font-playfair font-normal leading-[1.15] mb-4">
               Your Phoenix Arizona Mortgage Team
             </h1>
 
@@ -70,7 +143,7 @@ export default function AboutPage() {
             </p>
 
             {/* Hero Badges */}
-            <div className="flex flex-wrap items-center justify-center gap-3 mt-8">
+            <div className="flex flex-wrap items-center justify-center gap-3 mt-6">
               {["Third-Generation Arizonans", "Comprehensive Loan Expertise", "Local Family Business"].map((badge) => (
                 <span key={badge} className="text-[11px] font-semibold tracking-wide text-white px-4 py-2 rounded-full bg-white/10 border border-white/15">
                   {badge}
@@ -79,7 +152,7 @@ export default function AboutPage() {
             </div>
 
             {/* Hero CTA */}
-            <div className="flex flex-col items-center mt-8">
+            <div className="flex flex-col items-center mt-6">
               <Link
                 href="/#get-pre-approved"
                 data-preapproval="true"
@@ -110,175 +183,48 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Our Story Section */}
-        <section className="w-full py-16 lg:py-24 bg-white border-b border-[#e8e0d0]/40">
-          <div className="max-w-5xl mx-auto px-6 lg:px-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-              
-              {/* Left Column: Narrative */}
-              <div className="lg:col-span-7 flex flex-col items-start w-full">
-                <span className="text-brand-green-accent text-[10px] font-bold tracking-[0.15em] uppercase mb-3">
-                  OUR STORY
-                </span>
-                <h2 className="text-brand-green-deep text-section-title font-playfair font-normal mb-6 leading-tight">
-                  70+ years in Phoenix real estate, and we still answer our own phone.
-                </h2>
-                <div className="text-brand-text-muted text-[15px] lg:text-[16px] leading-[1.7] flex flex-col gap-6">
-                  <p>
-                    {"Mortgage Brothers started with a simple idea: banks shouldn't be the only ones deciding what's best for you. As independent brokers, we shop your loan across dozens of lenders so the competition works in your favor."}
-                  </p>
-                  <p>
-                    {"We're licensed across Arizona, but our roots are in the Valley — and that local knowledge shows up in every file we handle."}
-                  </p>
-                </div>
-              </div>
-
-              {/* Right Column: Stats Block */}
-              <div className="lg:col-span-5 w-full flex flex-col gap-4">
-                {/* Big Stat Box */}
-                <div className="bg-brand-green-deep text-white rounded-2xl p-7 border border-white/5 shadow-lg">
-                  <span className="block text-[36px] lg:text-[42px] font-bold tracking-tight leading-none mb-1 text-white">
-                    2,300+
-                  </span>
-                  <span className="text-brand-text-light text-[12px] font-medium tracking-wide uppercase">
-                    Arizona families helped home
-                  </span>
-                </div>
-
-                {/* Grid of 2 Smaller Stats */}
-                <div className="grid grid-cols-2 gap-4">
-                  {/* Reviews Card */}
-                  <div className="bg-brand-cream-light rounded-2xl p-5 border border-[#e8e0d0]/40 shadow-sm flex flex-col">
-                    <span className="text-brand-green-deep text-[22px] lg:text-[26px] font-bold leading-tight mb-1">
-                      4.9/5
-                    </span>
-                    <span className="text-brand-text-muted text-[11px] font-semibold tracking-wide uppercase leading-tight">
-                      Client rating
-                    </span>
-                  </div>
-
-                  {/* Satisfaction Card */}
-                  <div className="bg-brand-cream-light rounded-2xl p-5 border border-[#e8e0d0]/40 shadow-sm flex flex-col">
-                    <span className="text-brand-green-deep text-[22px] lg:text-[26px] font-bold leading-tight mb-1">
-                      $650M
-                    </span>
-                    <span className="text-brand-text-muted text-[11px] font-semibold tracking-wide uppercase leading-tight">
-                      in loans funded
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </section>
-
-        {/* Why Us Section */}
-        <section className="w-full py-16 lg:py-24 bg-brand-cream-light border-b border-[#e8e0d0]/40">
-          <div className="max-w-5xl mx-auto px-6 lg:px-10">
-            {/* Header */}
-            <div className="text-center mb-12">
-              <span className="text-brand-green-accent text-[10px] font-bold tracking-[0.15em] uppercase block mb-3">
-                WHY US
-              </span>
-              <h2 className="text-brand-green-deep text-section-title font-playfair font-normal">
+        {/* Why Choose Section */}
+        <section className="w-full about-section bg-white border-b border-[#e8e0d0]/40">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-6">
+              <h2 className="text-brand-green-deep text-section-title font-playfair font-normal mb-4">
                 Why Choose AZ Mortgage Brothers?
               </h2>
-            </div>
-
-            {/* Grid of 4 Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              
-              {/* Advice */}
-              <div className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm flex flex-col items-start hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/35 active:scale-[0.98] active:translate-y-0 transition-all duration-300 cursor-pointer">
-                <div className="w-12 h-12 bg-brand-cream-light text-brand-green-accent rounded-xl flex items-center justify-center mb-5 flex-shrink-0 shadow-inner">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                    <polyline points="9 12 11 14 15 10" />
-                  </svg>
-                </div>
-                <h3 className="text-brand-green-deep text-[16px] font-semibold mb-2">
-                  Local Expertise
-                </h3>
-                <p className="text-brand-text-muted text-[13px] leading-[1.6]">
-                  With over 22 years of average experience, our team knows the Arizona market inside and out. We leverage this knowledge to find you the best loan options tailored to local conditions.
-                </p>
-              </div>
-
-              {/* Lender Network */}
-              <div className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm flex flex-col items-start hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/35 active:scale-[0.98] active:translate-y-0 transition-all duration-300 cursor-pointer">
-                <div className="w-12 h-12 bg-brand-cream-light text-brand-green-accent rounded-xl flex items-center justify-center mb-5 flex-shrink-0 shadow-inner">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z" />
-                    <circle cx="12" cy="10" r="3" />
-                  </svg>
-                </div>
-                <h3 className="text-brand-green-deep text-[16px] font-semibold mb-2">
-                  Extensive Lender Network
-                </h3>
-                <p className="text-brand-text-muted text-[13px] leading-[1.6]">
-                  Our partnerships with 50+ lenders allow us to offer you competitive rates and diverse loan products. We shop around so you don&apos;t have to.
-                </p>
-              </div>
-
-              {/* Transparent Process */}
-              <div className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm flex flex-col items-start hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/35 active:scale-[0.98] active:translate-y-0 transition-all duration-300 cursor-pointer">
-                <div className="w-12 h-12 bg-brand-cream-light text-brand-green-accent rounded-xl flex items-center justify-center mb-5 flex-shrink-0 shadow-inner">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-                  </svg>
-                </div>
-                <h3 className="text-brand-green-deep text-[16px] font-semibold mb-2">
-                  Transparent Process
-                </h3>
-                <p className="text-brand-text-muted text-[13px] leading-[1.6]">
-                  We believe in clear communication and no surprises. Our &ldquo;no surprises&rdquo; closing guarantee ensures you&apos;re informed every step of the way.
-                </p>
-              </div>
-
-              {/* Award-Winning Service */}
-              <div className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm flex flex-col items-start hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/35 active:scale-[0.98] active:translate-y-0 transition-all duration-300 cursor-pointer">
-                <div className="w-12 h-12 bg-brand-cream-light text-brand-green-accent rounded-xl flex items-center justify-center mb-5 flex-shrink-0 shadow-inner">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <polyline points="12 6 12 12 16 14" />
-                  </svg>
-                </div>
-                <h3 className="text-brand-green-deep text-[16px] font-semibold mb-2">
-                  Award-Winning Service
-                </h3>
-                <p className="text-brand-text-muted text-[13px] leading-[1.6]">
-                  Our commitment to excellence has earned us a 4.9/5 average client rating and recognition as the 2024 Arizona Business &ldquo;Best Mortgage Broker.&rdquo;
-                </p>
-              </div>
-
-            </div>
-          </div>
-        </section>
-
-        {/* Personalized Approach + Mortgage Options Section */}
-        <section className="w-full py-16 lg:py-24 bg-white border-b border-[#e8e0d0]/40">
-          <div className="max-w-5xl mx-auto px-6 lg:px-10">
-            <div className="text-center mb-12">
-              <span className="text-brand-green-accent text-[10px] font-bold tracking-[0.15em] uppercase block mb-3">
-                PERSONALIZED APPROACH
-              </span>
-              <h2 className="text-brand-green-deep text-section-title font-playfair font-normal">
-                We&apos;re not just brokers; we&apos;re your financial partners.
-              </h2>
-              <p className="text-brand-text-muted text-[15px] lg:text-[16px] leading-[1.7] max-w-3xl mx-auto mt-4">
-                Our team takes the time to understand your unique situation and goals, crafting tailored solutions that fit your needs.
+              <p className="text-brand-text-muted text-[15px] lg:text-[16px] leading-[1.7] max-w-3xl mx-auto">
+                At AZ Mortgage Brothers, we&apos;re committed to making your home financing journey smooth and successful. Here&apos;s why we stand out in the Arizona mortgage landscape:
               </p>
             </div>
 
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {whyChooseCards.map((card) => (
+                <div
+                  key={card.title}
+                  className="bg-brand-cream-light rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm flex flex-col items-start"
+                >
+                  <h3 className="text-brand-green-deep text-[16px] font-semibold mb-2">
+                    {card.title}
+                  </h3>
+                  <p className="text-brand-text-muted text-[13px] leading-[1.6]">
+                    {card.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="text-center mt-6">
+              <Link href="/mortgage-loan-programs-arizona/" className="btn-primary inline-flex items-center gap-2">
+                Discover Your Mortgage Options
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Stats Section */}
+        <section className="w-full about-section bg-brand-cream-light border-b border-[#e8e0d0]/40">
+          <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-              {[
-                { num: "22+", label: "Years of Experience" },
-                { num: "4.9/5", label: "Client Rating" },
-                { num: "2,300+", label: "Loans Funded" },
-                { num: "2,300+", label: "Families Helped" },
-              ].map((stat) => (
-                <div key={stat.label} className="bg-brand-cream-light rounded-2xl p-6 text-center border border-[#e8e0d0]/40 shadow-sm">
+              {teamStats.map((stat) => (
+                <div key={stat.label} className="bg-white rounded-2xl p-6 text-center border border-[#e8e0d0]/40 shadow-sm">
                   <span className="block text-[32px] lg:text-[38px] font-bold tracking-tight text-brand-green-deep leading-none mb-2">
                     {stat.num}
                   </span>
@@ -291,45 +237,83 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Rebuilt Large Cover Banner Section */}
-        <section className="w-full bg-[#fcf9f3] py-12 border-b border-[#e8e0d0]/40">
-          <div className="max-w-5xl mx-auto px-6 lg:px-10">
-            <div className="relative h-[320px] md:h-[480px] w-full rounded-3xl overflow-hidden shadow-xl border border-[#e8e0d0]/50 group">
-              <Image
-                src="/az-mortgage-brothers.jpg"
-                alt="Arizona Mortgage Brothers - Eddie & Thomas Knoell"
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-[1.015]"
-                sizes="(max-w-1024px) 100vw, 1024px"
-                priority
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex flex-col justify-end p-8 md:p-12">
-                <p className="text-brand-green-accent text-[12px] font-bold tracking-[0.15em] uppercase mb-2">
-                  THE MORTGAGE BROTHERS
+        {/* Brothers Banner */}
+        <section className="w-full bg-[#fcf9f3] py-8 sm:py-10 border-b border-[#e8e0d0]/40 no-content-visibility">
+          <div className="max-w-5xl mx-auto px-6 lg:px-8">
+            <div className="flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-xl border border-[#e8e0d0]/50">
+              {/* Content panel — always visible, solid background */}
+              <div className="w-full md:w-1/2 md:min-w-[50%] shrink-0 bg-[#052316] p-6 sm:p-8 md:p-10 flex flex-col justify-center">
+                <p className="text-[#3fb364] text-[11px] sm:text-[12px] font-bold tracking-[0.15em] uppercase mb-3">
+                  The Mortgage Brothers
                 </p>
-                <h3 className="text-white text-[24px] md:text-[32px] font-playfair font-normal leading-tight max-w-xl">
-                  Eddie Knoell & Thomas Knoell
+                <h3 className="text-white text-[26px] sm:text-[30px] md:text-[32px] font-playfair font-normal leading-tight mb-4">
+                  Eddie Knoell &amp; Thomas Knoell
                 </h3>
+                <p className="text-[#c8c8b8] text-[14px] sm:text-[15px] leading-[1.7] mb-5">
+                  Third-generation Phoenix natives and co-founders of AZ Mortgage Brothers. With more than 25 years in Arizona mortgage lending, they bring local expertise, honest guidance, and a family-run approach to every home loan.
+                </p>
+                <div className="flex flex-wrap gap-2.5 mb-6">
+                  {[
+                    "25+ Years Experience",
+                    "2,300+ Families Helped",
+                    "$650M+ Loans Funded",
+                  ].map((badge) => (
+                    <span
+                      key={badge}
+                      className="text-[11px] font-semibold tracking-wide text-white px-3 py-1.5 rounded-full bg-white/10 border border-white/20"
+                    >
+                      {badge}
+                    </span>
+                  ))}
+                </div>
+                <div className="flex flex-col sm:flex-row flex-wrap gap-3">
+                  <Link
+                    href="/#get-pre-approved"
+                    data-preapproval="true"
+                    className="btn-primary text-[14px] px-6 py-3 text-center"
+                  >
+                    Start My Pre-Approval
+                  </Link>
+                  <a
+                    href={COMPANY.phoneHref}
+                    className="inline-flex items-center justify-center border border-white/30 hover:border-white text-white text-[14px] font-semibold px-6 py-3 rounded-full transition-all hover:bg-white/10 text-center"
+                  >
+                    Call {COMPANY.phoneDisplay}
+                  </a>
+                </div>
+              </div>
+
+              {/* Photo panel */}
+              <div className="relative w-full md:w-1/2 md:min-w-[50%] min-h-[280px] sm:min-h-[320px] md:min-h-0 md:aspect-[4/5] bg-[#03170e]">
+                <Image
+                  src="/home/arizona-mortgage-brothers-thomas-eddie-knoell.jpg"
+                  alt="Thomas and Eddie Knoell of Arizona Mortgage Brothers"
+                  fill
+                  unoptimized
+                  className="object-cover object-top"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
               </div>
             </div>
           </div>
         </section>
 
         {/* The Brothers Profile Section */}
-        <section className="w-full py-16 lg:py-24 bg-white border-b border-[#e8e0d0]/40">
-          <div className="max-w-5xl mx-auto px-6 lg:px-10">
+        <section className="w-full about-section bg-white border-b border-[#e8e0d0]/40">
+          <div className="max-w-5xl mx-auto">
             {/* Header */}
-            <div className="text-center mb-12">
-              <span className="text-brand-green-accent text-[10px] font-bold tracking-[0.15em] uppercase block mb-3">
-                THE BROTHERS
-              </span>
-              <h2 className="text-brand-green-deep text-section-title font-playfair font-normal">
+            <div className="text-center mb-8">
+              <h2 className="text-brand-green-deep text-section-title font-playfair font-normal mb-4">
                 Meet Your Mortgage Advocates
               </h2>
+              <p className="text-brand-text-muted text-[15px] lg:text-[16px] leading-[1.7] max-w-3xl mx-auto">
+                At AZ Mortgage Brothers, our team is the heart of our success. Led by third-generation Phoenix natives Eddie and Tom Knoell, we bring over 25 years of experience in the Arizona mortgage industry. Our deep roots in the community and commitment to exceptional service set us apart as your trusted mortgage partners. Our dedicated professionals include:
+              </p>
             </div>
 
             {/* Profile Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               
               {/* Eddie Profile */}
               <div className="bg-brand-cream-light rounded-2xl p-8 border border-[#e8e0d0]/40 shadow-sm flex flex-col justify-between hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/35 active:scale-[0.98] active:translate-y-0 cursor-pointer transition-all duration-300">
@@ -354,7 +338,7 @@ export default function AboutPage() {
                     </div>
                   </div>
                   <p className="text-brand-text-muted text-[14px] leading-[1.65] mb-8">
-                    Eddie is an owner and Vice President of Mortgage Brothers LLC in Phoenix, Arizona and has been serving Arizona Homeowners as a loan officer for over 22 years. Eddie is a 3rd generation native of Phoenix (the Knoell family has been deeply rooted in real estate for over 70 years in the Valley with an excellent reputation for quality). &ldquo;Loan Professional&rdquo;, the true definition of the title can be found in what Eddie Knoell will bring to the table for you and your clients. Personable, Organized, Ethical and overall a true passion for being able to help his clients turn a stressful time into a memorable moment. Eddie has been committed to specialize in residential mortgages for Valley clients from the beginning and has never strayed away from his belief that helping his customers find their way home is the best gift he can give. Eddie graduated with a Bachelor of Arts Degree from Franciscan University of Steubenville Ohio and holds an Arizona Mortgage Loan Originator&rsquo;s license from the Department of Financial Institutions.
+                    Eddie is an owner and Vice President of Mortgage Brothers LLC in Phoenix, Arizona and has been serving Arizona Homeowners as a loan officer for over 25 years. Eddie is a 3rd generation native of Phoenix (the Knoell family has been deeply rooted in real estate for nearly a century in the Valley with an excellent reputation for quality). &ldquo;Loan Professional&rdquo;, the true definition of the title can be found in what Eddie Knoell will bring to the table for you and your clients. Personable, Organized, Ethical and overall a true passion for being able to help his clients turn a stressful time into a memorable moment. Eddie Knoell has been committed to specialize in residential mortgages for Valley clients from the beginning and he has never strayed away from his belief that helping his customers find their way home is the best gift he can give. Eddie graduated with a Bachelor of Arts Degree from Franciscan University of Steubenville Ohio and holds an Arizona Mortgage Loan Originator&rsquo;s license from the Department of Financial Institutions.
                   </p>
                 </div>
                 
@@ -385,7 +369,7 @@ export default function AboutPage() {
                     </div>
                     <div className="flex flex-col leading-snug">
                       <h3 className="text-brand-green-deep text-[18px] font-bold">
-                        Thomas Knoell
+                        Thomas Knoell, Jr.
                       </h3>
                       <span className="text-brand-gold text-[12px] font-semibold tracking-wide uppercase mt-0.5">
                         Senior Loan Officer / Owner · NMLS #1618695
@@ -479,28 +463,34 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Technology Section */}
+        <section className="w-full about-section bg-brand-cream-light border-b border-[#e8e0d0]/40">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-brand-green-deep text-section-title font-playfair font-normal mb-6">
+              Technology &amp; Professional Experience Working Together
+            </h2>
+            <p className="text-brand-text-muted text-[15px] lg:text-[16px] leading-[1.7]">
+              We&apos;re in a day and age when customers demand technology and automation to make life easier. Customer expectation levels for technology to solve complex problems is increasing daily. Our team embraces technology daily, however we understand the reality of getting a mortgage processed through underwriting, approved, and closed on time requires the collaboration of technology and human effort.
+            </p>
+          </div>
+        </section>
+
         {/* 3rd Generation Natives Section */}
-        <section className="w-full py-16 lg:py-24 bg-brand-cream-light border-b border-[#e8e0d0]/40">
-          <div className="max-w-5xl mx-auto px-6 lg:px-10">
-            <div className="text-center mb-12">
-              <span className="text-brand-green-accent text-[10px] font-bold tracking-[0.15em] uppercase block mb-3">
-                OUR ROOTS
-              </span>
+        <section className="w-full about-section bg-white border-b border-[#e8e0d0]/40">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-6">
               <h2 className="text-brand-green-deep text-section-title font-playfair font-normal">
                 We&apos;re 3rd Generation Natives of Phoenix. Count on Us to Stick Around!
               </h2>
             </div>
             <div className="text-brand-text-muted text-[15px] lg:text-[16px] leading-[1.7] flex flex-col gap-6 max-w-4xl mx-auto">
               <p>
-                We&apos;re in a day and age when customers demand technology and automation to make life easier. Customer expectation levels for technology to solve complex problems is increasing daily. Our team embraces technology daily, however we understand the reality of getting a mortgage processed through underwriting, approved, and closed on time requires the collaboration of technology and human effort.
-              </p>
-              <p>
                 Eddie and Tom both say &ldquo;Customer service is worth nothing if it lacks quality&rdquo;. This simple philosophy that the Mortgage Brothers have is what separates them from the rest. With exceptional customer service, consistent and accurate answers, Eddie and Tom will always be steadfast when it comes to putting your best interest first! For a true &ldquo;Loan Professional&rdquo; who truly understands and sees the whole picture for you and your family, call the Mortgage Brothers today to experience the difference.
               </p>
               <p>
                 All of us were born and raised in Phoenix Arizona. We are now raising our own families here in Phoenix and we are a part of the community. Our work atmosphere is unique and refreshing to our clients. We are always here to answers your questions. You&apos;ll love working with us through your next mortgage for a purchase or a refinance.
               </p>
-              <div className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm mt-2">
+              <div className="bg-brand-cream-light rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm mt-2">
                 <p className="text-brand-text-muted text-[14px] leading-[1.7]">
                   <span className="text-brand-green-deep font-semibold">Mortgage Brothers Team specialties:</span> Originating FHA, VA, Conventional, Jumbo loans, and Reverse Mortgages for Purchases &amp; Refinances. Up to 4 unit properties. Fixed Rates or ARMs. Cashout or Rate/Term. Primary residences, Second homes, and Investment properties.
                 </p>
@@ -510,29 +500,29 @@ export default function AboutPage() {
         </section>
 
         {/* Who are the Mortgage Brothers Section */}
-        <section className="w-full py-16 lg:py-24 bg-white border-b border-[#e8e0d0]/40">
-          <div className="max-w-5xl mx-auto px-6 lg:px-10">
-            <div className="max-w-4xl mx-auto">
-              <span className="text-brand-green-accent text-[10px] font-bold tracking-[0.15em] uppercase block mb-3">
-                WHO WE ARE
-              </span>
+        <section className="w-full about-section bg-brand-cream-light border-b border-[#e8e0d0]/40">
+          <div className="max-w-5xl mx-auto">
+            <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-brand-green-deep text-section-title font-playfair font-normal mb-6">
                 Who are the Mortgage Brothers?
               </h2>
               <p className="text-brand-text-muted text-[15px] lg:text-[16px] leading-[1.7] mb-4">
-                Mortgage Brothers is a family-run mortgage brokerage based in Phoenix, Arizona. Everyone in our company is considered family. The company blends local expertise with a personal touch. Their team of professional brokers is dedicated to providing personalized mortgage solutions that meet each client&rsquo;s unique needs.
+                Mortgage Brothers is a family-run mortgage brokerage based in Phoenix, Arizona. Everyone in our company is considered family. The company blends local expertise with a personal touch. Their team of professional brokers is dedicated to providing personalized mortgage solutions that meet each client&apos;s unique needs. Mortgage Brothers holds the broker&apos;s license in Arizona (MB0922514) and is registered with the Nationwide Mortgage Licensing System (NMLS #1007154).
               </p>
-              <p className="text-brand-text-muted text-[15px] lg:text-[16px] leading-[1.7]">
-                Mortgage Brothers holds the broker&rsquo;s license in Arizona (MB0922514) and is registered with the Nationwide Mortgage Licensing System (NMLS #1007154).
+              <p className="text-brand-text-muted text-[15px] lg:text-[16px] leading-[1.7] mb-8">
+                Want to explore your mortgage options? We&apos;re here to help. Fill out our quick form, and one of our experienced mortgage advisors will get back to you promptly with personalized insights.
               </p>
+              <Link href="/contact-us/" className="btn-primary inline-flex items-center gap-2">
+                Get Your Free Mortgage Consultation
+              </Link>
             </div>
           </div>
         </section>
 
         {/* YouTube Podcasts Section */}
-        <section className="w-full py-16 lg:py-24 bg-brand-cream-light border-b border-[#e8e0d0]/40">
-          <div className="max-w-5xl mx-auto px-6 lg:px-10">
-            <div className="text-center mb-12">
+        <section className="w-full about-section bg-brand-cream-light border-b border-[#e8e0d0]/40">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-8">
               <span className="text-brand-green-accent text-[10px] font-bold tracking-[0.15em] uppercase block mb-3">
                 STAY INFORMED
               </span>
@@ -568,8 +558,8 @@ export default function AboutPage() {
         </section>
 
          {/* Licensing Badges Footer Strip */}
-        <section className="w-full py-8 bg-[#fafafa] border-b border-[#e8e0d0]/20 flex items-center justify-center">
-          <div className="max-w-5xl mx-auto px-6 lg:px-10 flex flex-wrap items-center justify-center gap-4">
+        <section className="w-full py-6 bg-[#fafafa] border-b border-[#e8e0d0]/20 flex items-center justify-center">
+          <div className="max-w-5xl mx-auto px-6 lg:px-8 flex flex-wrap items-center justify-center gap-4">
             <span className="text-[11px] font-semibold text-brand-text-muted px-4 py-2 border border-brand-light bg-[#fcfbf9] rounded-full shadow-sm">
               NMLS #1007154
             </span>
@@ -587,9 +577,9 @@ export default function AboutPage() {
         </section>
 
         {/* Testimonials Section */}
-        <section className="w-full py-16 lg:py-24 bg-brand-cream-light border-b border-[#e8e0d0]/40">
-          <div className="max-w-5xl mx-auto px-6 lg:px-10">
-            <div className="text-center mb-12">
+        <section className="w-full about-section bg-brand-cream-light border-b border-[#e8e0d0]/40">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center mb-8">
               <span className="text-brand-green-accent text-[10px] font-bold tracking-[0.15em] uppercase block mb-3">
                 WHAT OUR CLIENTS SAY
               </span>
@@ -601,35 +591,10 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                {
-                  text: "I was referred to Eddie through my sister-n-law. I had tried a previous company but wasn't satisfied. I have been extremely happy with Eddie's mortgage team. Everything was done online through emails. This was very helpful as both my husband and I work full time during the day and really have no time to do this. Emails were responded to on a daily basis and in a very quick manner. Every step of the process was done very professionally and friendly. I enjoyed meeting Kristi and Bambi. I don't have a face to put with their name, but they were also very nice, professional and helpful. I always hesitated to do a refinance because of the large amount of paperwork and meetings. But this didn't happen that way. I highly recommend Eddie's mortgage team for your refinancing needs.",
-                  author: "Chris and Vicky Smith",
-                  loc: "Avondale, Arizona",
-                },
-                {
-                  text: "Eddie and his team are fantastic to work with! They are efficient, friendly and very professional. They communicate to all parties in the transaction; making it a very smooth transaction every time. As a real estate agent, this makes my job that much easier when I have a lender who always performs and most of the time is even ahead of schedule. I can't say enough good things about Eddie as a mortgage lender!",
-                  author: "Elizabeth Todd",
-                  loc: "H2 Realty, Phoenix, Arizona",
-                },
-                {
-                  text: "My husband and I would like to thank you for an outstanding job you did with our refinance. You are so knowledgeable and kept us updated on each step of the way. Your professionalism was impeccable and your timing was perfect. As you know, I am a Realtor and have dealt with many mortgage people along my career. You are heads and shoulders beyond most I have worked with. Your communication skills are unique in this business. You were reassuring throughout this entire procedure. I just want you to know I will be proud to refer you to my family, friends and Clients.",
-                  author: "Marleen Kapanicas",
-                  loc: "Homesmart, Scottsdale, Arizona",
-                },
-                {
-                  text: "Our mortgage service through Eddie Knoell was seamless throughout. It was like having someone watch over the process without us having any concern in the process. All questions were answered promptly and completely with the correct issues addressed without extra fanfare, like dealing with a trusted family member. Thanks again Eddie!!!",
-                  author: "Thomas and Carol Milberry",
-                  loc: "Queen Creek, Arizona 85242",
-                },
-                {
-                  text: "I met Eddie Knoell in 2012 through a client. He communicates very well, through every step of the process. Before I can even start to wonder what is going on, he's picked up the phone and called to let me know where we are in the process. He closes every deal and communicates through it well. He's patient with the questions and great with every client I have sent his way.",
-                  author: "Nancy Perry",
-                  loc: "Solutions Real Estate, Avondale, Arizona",
-                },
-              ].map((r) => (
+              {testimonials.map((r) => (
                 <div key={r.author} className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm flex flex-col">
-                  <p className="text-brand-text-muted text-[14px] leading-[1.65] flex-1 mb-4">"{r.text}"</p>
+                  <p className="text-brand-text-muted text-[14px] leading-[1.65] flex-1 mb-4">&ldquo;{r.text}&rdquo;</p>
+                  <div className="text-[#3fb364] text-[14px] mb-2 tracking-wider">★★★★★</div>
                   <div>
                     <p className="text-brand-green-deep text-[14px] font-bold">{r.author}</p>
                     <p className="text-brand-text-muted text-[12px] mt-0.5">{r.loc}</p>
@@ -637,18 +602,18 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
-            <div className="text-center mt-10">
-              <a href="/client-mortgage-reviews/" className="btn-primary inline-flex items-center gap-2">
+            <div className="text-center mt-6">
+              <Link href="/client-mortgage-reviews/" className="btn-primary inline-flex items-center gap-2">
                 Explore All Client Testimonials
-              </a>
+              </Link>
             </div>
           </div>
         </section>
 
         {/* FAQ Section */}
-        <section className="w-full py-16 lg:py-24 bg-white border-b border-[#e8e0d0]/40">
-          <div className="max-w-4xl mx-auto px-6 lg:px-10">
-            <div className="text-center mb-12">
+        <section className="w-full about-section bg-white border-b border-[#e8e0d0]/40">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-8">
               <span className="text-brand-green-accent text-[10px] font-bold tracking-[0.15em] uppercase block mb-3">
                 FAQ
               </span>
@@ -690,32 +655,86 @@ export default function AboutPage() {
                 );
               })}
             </div>
-            <div className="text-center mt-10">
-              <a href="/contact-us/" className="btn-primary inline-flex items-center gap-2">
+            <div className="text-center mt-6">
+              <p className="text-brand-text-muted text-[15px] leading-[1.7] max-w-3xl mx-auto mb-6">
+                Still have questions? We&apos;re here to help. Our team of mortgage experts is ready to provide personalized answers and guide you through every step of your home financing journey.
+              </p>
+              <Link href="/contact-us/" className="btn-primary inline-flex items-center gap-2">
                 Get Expert Answers Now
-              </a>
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Get in Touch Section */}
+        <section className="w-full about-section bg-brand-cream-light border-b border-[#e8e0d0]/40">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-brand-green-deep text-section-title font-playfair font-normal mb-6">
+              Get in Touch with AZ Mortgage Brothers
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left max-w-3xl mx-auto">
+              <div className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm">
+                <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.15em] uppercase mb-2">Phone</p>
+                <a href={COMPANY.phoneHref} className="text-brand-green-deep text-[15px] font-semibold hover:text-brand-green-accent transition-colors">
+                  {COMPANY.phoneDisplay}
+                </a>
+              </div>
+              <div className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm">
+                <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.15em] uppercase mb-2">Address</p>
+                <p className="text-brand-text-muted text-[14px] leading-relaxed">
+                  {COMPANY.addressLine1}<br />
+                  {COMPANY.addressLine2}
+                </p>
+              </div>
+              <div className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm">
+                <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.15em] uppercase mb-2">Contact</p>
+                <Link href="/contact-us/" className="text-brand-green-deep text-[15px] font-semibold hover:text-brand-green-accent transition-colors">
+                  Send us a message
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Explore Mortgage Solutions */}
+        <section className="w-full about-section bg-white border-b border-[#e8e0d0]/40">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-brand-green-deep text-section-title font-playfair font-normal text-center mb-6">
+              Explore Our Mortgage Solutions
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {aboutLoanLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="flex items-center gap-3 bg-brand-cream-light border border-[#e8e0d0]/70 rounded-xl px-5 py-4 text-brand-green-deep font-semibold text-[14.5px] hover:border-brand-green-accent/50 hover:text-brand-green-accent transition-all"
+                >
+                  <span className="text-brand-green-accent" aria-hidden>✓</span>
+                  {link.label}
+                </Link>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Let's Talk CTA Section */}
-        <section className="w-full bg-brand-green-deep text-white py-16 text-center relative overflow-hidden border-b border-[#e8e0d0]/20">
+        <section className="w-full bg-brand-green-deep text-white py-10 sm:py-12 text-center relative overflow-hidden border-b border-[#e8e0d0]/20">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute -top-36 -right-36 w-[360px] h-[360px] rounded-full border border-white/5 pointer-events-none"></div>
           </div>
 
           <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">
             <h2 className="text-white text-[28px] lg:text-[34px] font-playfair font-normal leading-tight mb-4">
-              Ready to start your homeownership journey?
+              Speak with a Mortgage Expert
             </h2>
             <p className="text-[#c8c8b8] text-[15px] lg:text-[16px] leading-[1.7] max-w-xl mx-auto mb-8">
-              Our expert team is here to guide you every step of the way. Don&apos;t let mortgage questions keep you up at night &ndash; get personalized answers and solutions tailored to your unique situation.
+              Ready to start your homeownership journey? Our expert team is here to guide you every step of the way. Don&apos;t let mortgage questions keep you up at night – get personalized answers and solutions tailored to your unique situation.
             </p>
             <a
-              href="tel:6025352171"
+              href={COMPANY.phoneHref}
               className="btn-primary hover:shadow-brand-green-accent/20 group"
             >
-              +1 602-535-2171 · Speak with a Mortgage Expert
+              {COMPANY.phoneDisplay} · Speak with a Mortgage Expert
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"

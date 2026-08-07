@@ -86,10 +86,10 @@ export default function SpecialtyLoansPage() {
       <Navbar />
 
       <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="bg-[#052316] text-white pt-[110px] lg:pt-[130px] pb-16 lg:pb-24 px-6 lg:px-10">
-          <div className="max-w-5xl mx-auto text-center flex flex-col items-center">
-            {/* Breadcrumb */}
+        <div className="h-[64px] sm:h-[72px] bg-[#08271B]" aria-hidden />
+
+        <section className="bg-brand-green-deep text-white loan-section text-center">
+          <div className="max-w-5xl mx-auto flex flex-col items-center">
             <div className="flex flex-wrap items-center justify-center gap-2 text-[#8da684] text-[13px] font-medium mb-6">
               <Link href="/blog/" className="hover:text-white transition-colors">Blog</Link>
               <span>&gt;</span>
@@ -100,7 +100,7 @@ export default function SpecialtyLoansPage() {
               TOPIC CATEGORY
             </span>
 
-            <h1 className="text-white text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.1] mb-6 max-w-3xl mx-auto">
+            <h1 className="text-white text-hero-title font-playfair font-normal leading-[1.1] mb-6 max-w-3xl mx-auto">
               Specialty Loans
             </h1>
 
@@ -110,48 +110,48 @@ export default function SpecialtyLoansPage() {
           </div>
         </section>
 
-        {/* Articles Grid Section */}
-        <section className="py-16 px-6 lg:px-10 max-w-6xl mx-auto">
-          <div className="mb-10">
+        <section className="loan-section bg-[#fcf9f3]">
+          <div className="loan-section-inner max-w-6xl mx-auto loan-section-stack">
             <h2 className="text-[#052316] text-[24px] lg:text-[30px] font-playfair font-normal">
               Articles in Specialty Loans
             </h2>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {articles.map((article, idx) => (
-              <ArticleCard
-                key={idx}
-                title={article.title}
-                description={article.description}
-                href={article.href}
-                category={article.category}
-                date={article.date}
-                readTime={article.readTime}
-              />
-            ))}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {articles.map((article, idx) => (
+                <ArticleCard
+                  key={idx}
+                  title={article.title}
+                  description={article.description}
+                  href={article.href}
+                  category={article.category}
+                  date={article.date}
+                  readTime={article.readTime}
+                />
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-12 px-6 lg:px-10 max-w-5xl mx-auto mb-16">
-          <div className="bg-[#052316] text-white rounded-3xl p-10 lg:p-14 text-center relative overflow-hidden shadow-xl">
-            <div className="max-w-2xl mx-auto relative z-10">
-              <span className="text-[#b89a5a] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
-                TAKE THE NEXT STEP
-              </span>
-              <h2 className="text-white text-[28px] lg:text-[38px] font-playfair font-normal mb-4">
-                Explore Your Specialty Loan Options
-              </h2>
-              <p className="text-[#c8c8b8] text-[15px] leading-relaxed mb-8">
-                Connect with our specialized mortgage advisors in Arizona to find custom financing tailored to your exact scenario.
-              </p>
-              <Link
-                href="/#get-pre-approved"
-                className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200 inline-block shadow-lg hover:shadow-xl"
-              >
-                Get Pre-Approved &rarr;
-              </Link>
+        <section className="loan-section bg-white">
+          <div className="loan-section-inner max-w-5xl mx-auto">
+            <div className="bg-[#052316] text-white rounded-3xl p-8 lg:p-10 text-center relative overflow-hidden shadow-xl">
+              <div className="max-w-2xl mx-auto relative z-10">
+                <span className="text-[#b89a5a] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
+                  TAKE THE NEXT STEP
+                </span>
+                <h2 className="text-white text-[28px] lg:text-[38px] font-playfair font-normal mb-4">
+                  Explore Your Specialty Loan Options
+                </h2>
+                <p className="text-[#c8c8b8] text-[15px] leading-relaxed mb-8">
+                  Connect with our specialized mortgage advisors in Arizona to find custom financing tailored to your exact scenario.
+                </p>
+                <Link
+                  href="/#get-pre-approved"
+                  className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200 inline-block shadow-lg hover:shadow-xl"
+                >
+                  Get Pre-Approved &rarr;
+                </Link>
+              </div>
             </div>
           </div>
         </section>

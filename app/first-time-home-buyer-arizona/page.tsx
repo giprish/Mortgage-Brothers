@@ -126,7 +126,7 @@ export default function FirstTimeHomeBuyerPage() {
         </div>
 
         {/* DETAILS SECTION */}
-        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-white">
+        <section className="loan-section bg-white">
           <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6 text-left">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase">
@@ -182,7 +182,7 @@ export default function FirstTimeHomeBuyerPage() {
         />
 
         {/* FAQ ACCORDION */}
-        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-[#fcf9f3]">
+        <section className="loan-section bg-[#fcf9f3]">
           <div className="max-w-4xl mx-auto space-y-10">
             <div className="text-center">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
@@ -200,7 +200,7 @@ export default function FirstTimeHomeBuyerPage() {
         </section>
 
         {/* CTA BANNER */}
-        <section className="py-14 sm:py-16 lg:py-20 px-6 lg:px-12 bg-[#052316] text-white">
+        <section className="loan-section bg-[#052316] text-white">
           <div className="max-w-4xl mx-auto text-center space-y-6">
             <h2 className="text-[28px] lg:text-[40px] font-bold font-playfair">
               Ready to Buy Your First Home in Arizona?
