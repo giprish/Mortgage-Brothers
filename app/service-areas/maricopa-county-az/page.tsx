@@ -120,7 +120,7 @@ export default function MaricopaCounty() {
 
       <main className="flex-grow pt-[64px] sm:pt-[72px]">
         {/* Hero Section */}
-        <section className="w-full bg-brand-green-deep text-white py-16 lg:py-20 text-center relative overflow-hidden">
+        <section className="w-full bg-brand-green-deep text-white py-12 sm:py-14 lg:py-16 text-center relative overflow-hidden">
           {/* Subtle circles background */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5 pointer-events-none opacity-40"></div>
@@ -153,7 +153,7 @@ export default function MaricopaCounty() {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
               <Link
                 href="/#get-pre-approved"
                 className="w-full sm:w-auto btn-primary hover:shadow-brand-green-accent/20 group"
@@ -184,17 +184,17 @@ export default function MaricopaCounty() {
             </div>
 
             {/* Small note */}
-            <p className="text-[#8a9a7a] text-[12px] font-medium">
+            <p className="text-[#8a9a7a] text-[12px] font-medium mt-3">
               3 min - no credit impact
             </p>
           </div>
         </section>
 
         {/* Cities Grid Section */}
-        <section className="w-full py-16 lg:py-24 bg-white">
+        <section className="w-full py-14 sm:py-16 lg:py-20 bg-white">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             {/* Section Header */}
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">
                 Maricopa County mortgage services
               </h2>
@@ -243,7 +243,7 @@ export default function MaricopaCounty() {
           </div>
         </section>
 
-        <section className="w-full py-16 bg-white">
+        <section className="w-full py-14 sm:py-16 lg:py-20 bg-white border-t border-[#e8e0d0]/40">
           <div className="max-w-4xl mx-auto px-6">
             <h2 className="text-brand-green-deep text-[28px] lg:text-[32px] font-playfair mb-6">Home Loans in Maricopa County, Arizona</h2>
             <div className="text-brand-text-muted text-[15px] space-y-4">
@@ -258,7 +258,7 @@ export default function MaricopaCounty() {
           </div>
         </section>
 
-        <section className="w-full py-16 bg-[#fcf9f3]">
+        <section className="w-full py-14 sm:py-16 lg:py-20 bg-[#fcf9f3]">
           <div className="max-w-4xl mx-auto px-6">
             <FaqAccordion
               title="Frequently Asked Questions"
@@ -293,7 +293,7 @@ export default function MaricopaCounty() {
         </section>
 
         {/* Bottom CTA section */}
-        <section className="w-full bg-[#052316] text-white py-16 lg:py-24 text-center relative overflow-hidden border-t border-white/5">
+        <section className="w-full bg-[#052316] text-white py-14 sm:py-16 lg:py-20 text-center relative overflow-hidden border-t border-white/5">
           {/* Decorative shapes */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5 pointer-events-none opacity-40"></div>

@@ -237,73 +237,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Brothers Banner — full photo + interactive hover */}
-        <section className="w-full bg-[#fcf9f3] py-8 sm:py-10 border-b border-[#e8e0d0]/40 no-content-visibility">
-          <div className="max-w-6xl mx-auto px-6 lg:px-8">
-            <div className="group relative overflow-hidden rounded-3xl shadow-xl border border-[#e8e0d0]/50 min-h-[420px] sm:min-h-[460px] lg:min-h-[480px]">
-              {/* Full-bleed photo */}
-              <Image
-                src="/home/arizona-mortgage-brothers-thomas-eddie-knoell.png"
-                alt="Thomas and Eddie Knoell of Arizona Mortgage Brothers"
-                fill
-                priority
-                sizes="(max-width: 768px) 100vw, 1152px"
-                className="object-cover object-[center_20%] transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-              />
-
-              {/* Soft dark veil so faces stay visible on the right */}
-              <div
-                className="absolute inset-0 bg-gradient-to-r from-[#03170e] via-[#03170e]/88 to-[#03170e]/25 sm:to-transparent transition-opacity duration-500"
-                aria-hidden
-              />
-
-              {/* Content */}
-              <div className="relative z-10 flex h-full min-h-[420px] sm:min-h-[460px] lg:min-h-[480px] items-center">
-                <div className="w-full max-w-xl p-7 sm:p-9 lg:p-12 transition-transform duration-500 group-hover:-translate-y-0.5">
-                  <p className="text-[#3fb364] text-[11px] sm:text-[12px] font-bold tracking-[0.15em] uppercase mb-3">
-                    The Mortgage Brothers
-                  </p>
-                  <h3 className="text-white text-[26px] sm:text-[32px] lg:text-[36px] font-playfair font-normal leading-tight mb-4">
-                    Eddie Knoell &amp; Thomas Knoell
-                  </h3>
-                  <p className="text-[#c8c8b8] text-[14px] sm:text-[15px] leading-[1.7] mb-5 max-w-md">
-                    Third-generation Phoenix natives and co-founders of AZ Mortgage Brothers. With more than 25 years in Arizona mortgage lending, they bring local expertise, honest guidance, and a family-run approach to every home loan.
-                  </p>
-                  <div className="flex flex-wrap gap-2.5 mb-6">
-                    {[
-                      "25+ Years Experience",
-                      "2,300+ Families Helped",
-                      "$650M+ Loans Funded",
-                    ].map((badge) => (
-                      <span
-                        key={badge}
-                        className="text-[11px] font-semibold tracking-wide text-white px-3 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm transition-colors duration-300 hover:bg-white/20 hover:border-white/40"
-                      >
-                        {badge}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex flex-col sm:flex-row flex-wrap gap-3">
-                    <Link
-                      href="/#get-pre-approved"
-                      data-preapproval="true"
-                      className="btn-primary text-[14px] px-6 py-3 text-center transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
-                    >
-                      Start My Pre-Approval
-                    </Link>
-                    <a
-                      href={COMPANY.phoneHref}
-                      className="inline-flex items-center justify-center border border-white/30 hover:border-white text-white text-[14px] font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:bg-white/10 hover:scale-[1.03] active:scale-[0.98] text-center"
-                    >
-                      Call {COMPANY.phoneDisplay}
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* The Brothers Profile Section */}
         <section className="w-full about-section bg-white border-b border-[#e8e0d0]/40">
           <div className="max-w-5xl mx-auto">
@@ -404,8 +337,14 @@ export default function AboutPage() {
               <div className="bg-brand-cream-light rounded-2xl p-8 border border-[#e8e0d0]/40 shadow-sm flex flex-col justify-between hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/35 active:scale-[0.98] active:translate-y-0 cursor-pointer transition-all duration-300">
                 <div>
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 rounded-full border-2 border-brand-green-accent overflow-hidden bg-white flex-shrink-0 shadow-sm flex items-center justify-center">
-                      <span className="text-brand-green-deep text-[22px] font-bold font-playfair">SP</span>
+                    <div className="relative w-16 h-16 rounded-full border-2 border-brand-green-accent overflow-hidden bg-white flex-shrink-0 shadow-sm">
+                      <Image
+                        src="/home/steve-perez.jpg"
+                        alt="Steve Perez"
+                        fill
+                        sizes="64px"
+                        className="object-cover object-top"
+                      />
                     </div>
                     <div className="flex flex-col leading-snug">
                       <h3 className="text-brand-green-deep text-[18px] font-bold">
@@ -426,8 +365,14 @@ export default function AboutPage() {
               <div className="bg-brand-cream-light rounded-2xl p-8 border border-[#e8e0d0]/40 shadow-sm flex flex-col justify-between hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/35 active:scale-[0.98] active:translate-y-0 cursor-pointer transition-all duration-300">
                 <div>
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 rounded-full border-2 border-brand-green-accent overflow-hidden bg-white flex-shrink-0 shadow-sm flex items-center justify-center">
-                      <span className="text-brand-green-deep text-[22px] font-bold font-playfair">AS</span>
+                    <div className="relative w-16 h-16 rounded-full border-2 border-brand-green-accent overflow-hidden bg-white flex-shrink-0 shadow-sm">
+                      <Image
+                        src="/home/ann-stoppa.jpg"
+                        alt="Ann Stoppa"
+                        fill
+                        sizes="64px"
+                        className="object-cover object-top"
+                      />
                     </div>
                     <div className="flex flex-col leading-snug">
                       <h3 className="text-brand-green-deep text-[18px] font-bold">
@@ -448,8 +393,14 @@ export default function AboutPage() {
               <div className="bg-brand-cream-light rounded-2xl p-8 border border-[#e8e0d0]/40 shadow-sm flex flex-col justify-between hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/35 active:scale-[0.98] active:translate-y-0 cursor-pointer transition-all duration-300">
                 <div>
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 rounded-full border-2 border-brand-green-accent overflow-hidden bg-white flex-shrink-0 shadow-sm flex items-center justify-center">
-                      <span className="text-brand-green-deep text-[22px] font-bold font-playfair">MM</span>
+                    <div className="relative w-16 h-16 rounded-full border-2 border-brand-green-accent overflow-hidden bg-white flex-shrink-0 shadow-sm">
+                      <Image
+                        src="/home/macy-mclaren.jpg"
+                        alt="Macy McLaren"
+                        fill
+                        sizes="64px"
+                        className="object-cover object-top"
+                      />
                     </div>
                     <div className="flex flex-col leading-snug">
                       <h3 className="text-brand-green-deep text-[18px] font-bold">

@@ -16,9 +16,8 @@ export default function GreenleeCountyPage() {
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
       <main className="flex-grow pt-[64px] sm:pt-[72px]">
-        <section className="w-full bg-brand-green-deep text-white py-16 lg:py-20 text-center relative overflow-hidden">
+        <section className="w-full bg-brand-green-deep text-white py-12 sm:py-14 lg:py-16 text-center relative overflow-hidden">
           <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">
-            {/* Breadcrumb inside Pine Green Section */}
             <div className="flex items-center justify-center gap-2 text-[13px] font-medium text-[#c8c8b8] mb-5">
               <Link href="/service-areas/" className="hover:text-[#3fb364] transition-colors duration-200">Areas We Serve</Link>
               <span className="text-[#3fb364]/60">&gt;</span>
@@ -27,7 +26,7 @@ export default function GreenleeCountyPage() {
             <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-4">SOUTHERN ARIZONA - GREENLEE</p>
             <h1 className="text-white text-hero-title font-playfair font-normal leading-[1.1] mb-6 max-w-3xl">Your trusted Greenlee County mortgage broker.</h1>
             <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">From Clifton to Morenci — 3 communities, one team that knows every one of them.</p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-4">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
               <Link href="/#get-pre-approved" className="w-full sm:w-auto btn-primary hover:shadow-brand-green-accent/20 group">
                 Start My Pre-Approval
               </Link>
@@ -38,9 +37,9 @@ export default function GreenleeCountyPage() {
           </div>
         </section>
 
-        <section className="w-full py-16 lg:py-24 bg-white">
+        <section className="w-full py-14 sm:py-16 lg:py-20 bg-white">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="text-center mb-16">
+            <div className="text-center mb-10">
               <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">Greenlee County mortgage services</h2>
               <p className="text-brand-text-muted text-[15px] lg:text-[16px]">Select your city below for local mortgage expertise.</p>
             </div>
@@ -57,7 +56,7 @@ export default function GreenleeCountyPage() {
           </div>
         </section>
 
-        <section className="w-full py-16 bg-white">
+        <section className="w-full py-14 sm:py-16 lg:py-20 bg-white border-t border-[#e8e0d0]/40">
           <div className="max-w-4xl mx-auto px-6">
             <h2 className="text-brand-green-deep text-[28px] lg:text-[32px] font-playfair mb-6">Home Loans in Greenlee County, Arizona</h2>
             <div className="text-brand-text-muted text-[15px] space-y-4">
@@ -73,7 +72,7 @@ export default function GreenleeCountyPage() {
           </div>
         </section>
 
-        <section className="w-full py-16 bg-[#fcf9f3]">
+        <section className="w-full py-14 sm:py-16 lg:py-20 bg-[#fcf9f3]">
           <div className="max-w-4xl mx-auto px-6">
             <FaqAccordion
               title="Frequently Asked Questions"
