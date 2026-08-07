@@ -192,6 +192,7 @@ const Footer = () => {
                 height={34}
                 loading="lazy"
                 className="h-[30px] w-auto max-w-[104px] object-contain"
+                style={{ width: "auto", height: "auto" }}
               />
             </Link>
 
@@ -274,6 +275,7 @@ const Footer = () => {
                   width={72}
                   height={72}
                   className="object-contain max-h-[56px] w-auto"
+                  style={{ width: "auto" }}
                 />
                 <span className="text-[10px] text-[#c8cdc8] text-center leading-tight">
                   {COMPANY.equalHousingLabel}
@@ -286,6 +288,7 @@ const Footer = () => {
                   width={90}
                   height={72}
                   className="object-contain max-h-[72px] w-auto"
+                  style={{ width: "auto" }}
                 />
               </div>
               <div className="bg-white/5 rounded-lg p-3 flex items-center justify-center min-h-[88px]">
@@ -295,6 +298,7 @@ const Footer = () => {
                   width={72}
                   height={72}
                   className="object-contain max-h-[72px] w-auto"
+                  style={{ width: "auto" }}
                 />
               </div>
               <div className="bg-white/5 rounded-lg p-3 flex items-center justify-center min-h-[88px]">
@@ -304,6 +308,7 @@ const Footer = () => {
                   width={90}
                   height={72}
                   className="object-contain max-h-[72px] w-auto"
+                  style={{ width: "auto" }}
                 />
               </div>
             </div>
@@ -325,7 +330,7 @@ const Footer = () => {
                 className="h-[36px] w-auto object-contain"
               />
             </Link> */}
-            <span className="text-[#d6dbd6] text-[11px] sm:text-[12px] leading-snug break-words">
+            <span className="text-[#d6dbd6] text-[11px] sm:text-[12px] leading-snug break-words" suppressHydrationWarning>
               © {new Date().getFullYear()} {COMPANY.legalName} · {COMPANY.nmlsDisplay}
             </span>
           </div>

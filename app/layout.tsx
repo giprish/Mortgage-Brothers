@@ -87,13 +87,15 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} ${playfair.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <head>
         {/* Preconnect to JotForm so the modal iframe loads faster */}
         <link rel="preconnect" href="https://form.jotform.com" />
         <link rel="dns-prefetch" href="https://form.jotform.com" />
       </head>
-      <body className="min-h-full flex flex-col">
+      {/* suppressHydrationWarning: browser extensions (e.g. ColorZilla) inject attributes onto <body> */}
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>
         {/* Accessible Skip Link for screen readers & keyboard navigation */}
         <a
           href="#main-content"

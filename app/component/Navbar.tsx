@@ -132,6 +132,7 @@ const Navbar = () => {
             priority
             sizes="150px"
             className="h-[40px] sm:h-[48px] w-auto max-w-[150px] object-contain"
+            style={{ width: "auto", height: "auto" }}
           />
         </Link>
 

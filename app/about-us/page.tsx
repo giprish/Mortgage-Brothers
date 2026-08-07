@@ -237,63 +237,68 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Brothers Banner */}
+        {/* Brothers Banner — full photo + interactive hover */}
         <section className="w-full bg-[#fcf9f3] py-8 sm:py-10 border-b border-[#e8e0d0]/40 no-content-visibility">
-          <div className="max-w-5xl mx-auto px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row rounded-3xl overflow-hidden shadow-xl border border-[#e8e0d0]/50">
-              {/* Content panel — always visible, solid background */}
-              <div className="w-full md:w-1/2 md:min-w-[50%] shrink-0 bg-[#052316] p-6 sm:p-8 md:p-10 flex flex-col justify-center">
-                <p className="text-[#3fb364] text-[11px] sm:text-[12px] font-bold tracking-[0.15em] uppercase mb-3">
-                  The Mortgage Brothers
-                </p>
-                <h3 className="text-white text-[26px] sm:text-[30px] md:text-[32px] font-playfair font-normal leading-tight mb-4">
-                  Eddie Knoell &amp; Thomas Knoell
-                </h3>
-                <p className="text-[#c8c8b8] text-[14px] sm:text-[15px] leading-[1.7] mb-5">
-                  Third-generation Phoenix natives and co-founders of AZ Mortgage Brothers. With more than 25 years in Arizona mortgage lending, they bring local expertise, honest guidance, and a family-run approach to every home loan.
-                </p>
-                <div className="flex flex-wrap gap-2.5 mb-6">
-                  {[
-                    "25+ Years Experience",
-                    "2,300+ Families Helped",
-                    "$650M+ Loans Funded",
-                  ].map((badge) => (
-                    <span
-                      key={badge}
-                      className="text-[11px] font-semibold tracking-wide text-white px-3 py-1.5 rounded-full bg-white/10 border border-white/20"
-                    >
-                      {badge}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex flex-col sm:flex-row flex-wrap gap-3">
-                  <Link
-                    href="/#get-pre-approved"
-                    data-preapproval="true"
-                    className="btn-primary text-[14px] px-6 py-3 text-center"
-                  >
-                    Start My Pre-Approval
-                  </Link>
-                  <a
-                    href={COMPANY.phoneHref}
-                    className="inline-flex items-center justify-center border border-white/30 hover:border-white text-white text-[14px] font-semibold px-6 py-3 rounded-full transition-all hover:bg-white/10 text-center"
-                  >
-                    Call {COMPANY.phoneDisplay}
-                  </a>
-                </div>
-              </div>
+          <div className="max-w-6xl mx-auto px-6 lg:px-8">
+            <div className="group relative overflow-hidden rounded-3xl shadow-xl border border-[#e8e0d0]/50 min-h-[420px] sm:min-h-[460px] lg:min-h-[480px]">
+              {/* Full-bleed photo */}
+              <Image
+                src="/home/arizona-mortgage-brothers-thomas-eddie-knoell.png"
+                alt="Thomas and Eddie Knoell of Arizona Mortgage Brothers"
+                fill
+                priority
+                sizes="(max-width: 768px) 100vw, 1152px"
+                className="object-cover object-[center_20%] transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+              />
 
-              {/* Photo panel */}
-              <div className="relative w-full md:w-1/2 md:min-w-[50%] min-h-[280px] sm:min-h-[320px] md:min-h-0 md:aspect-[4/5] bg-[#03170e]">
-                <Image
-                  src="/home/arizona-mortgage-brothers-thomas-eddie-knoell.jpg"
-                  alt="Thomas and Eddie Knoell of Arizona Mortgage Brothers"
-                  fill
-                  unoptimized
-                  className="object-cover object-top"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  priority
-                />
+              {/* Soft dark veil so faces stay visible on the right */}
+              <div
+                className="absolute inset-0 bg-gradient-to-r from-[#03170e] via-[#03170e]/88 to-[#03170e]/25 sm:to-transparent transition-opacity duration-500"
+                aria-hidden
+              />
+
+              {/* Content */}
+              <div className="relative z-10 flex h-full min-h-[420px] sm:min-h-[460px] lg:min-h-[480px] items-center">
+                <div className="w-full max-w-xl p-7 sm:p-9 lg:p-12 transition-transform duration-500 group-hover:-translate-y-0.5">
+                  <p className="text-[#3fb364] text-[11px] sm:text-[12px] font-bold tracking-[0.15em] uppercase mb-3">
+                    The Mortgage Brothers
+                  </p>
+                  <h3 className="text-white text-[26px] sm:text-[32px] lg:text-[36px] font-playfair font-normal leading-tight mb-4">
+                    Eddie Knoell &amp; Thomas Knoell
+                  </h3>
+                  <p className="text-[#c8c8b8] text-[14px] sm:text-[15px] leading-[1.7] mb-5 max-w-md">
+                    Third-generation Phoenix natives and co-founders of AZ Mortgage Brothers. With more than 25 years in Arizona mortgage lending, they bring local expertise, honest guidance, and a family-run approach to every home loan.
+                  </p>
+                  <div className="flex flex-wrap gap-2.5 mb-6">
+                    {[
+                      "25+ Years Experience",
+                      "2,300+ Families Helped",
+                      "$650M+ Loans Funded",
+                    ].map((badge) => (
+                      <span
+                        key={badge}
+                        className="text-[11px] font-semibold tracking-wide text-white px-3 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm transition-colors duration-300 hover:bg-white/20 hover:border-white/40"
+                      >
+                        {badge}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex flex-col sm:flex-row flex-wrap gap-3">
+                    <Link
+                      href="/#get-pre-approved"
+                      data-preapproval="true"
+                      className="btn-primary text-[14px] px-6 py-3 text-center transition-transform duration-300 hover:scale-[1.03] active:scale-[0.98]"
+                    >
+                      Start My Pre-Approval
+                    </Link>
+                    <a
+                      href={COMPANY.phoneHref}
+                      className="inline-flex items-center justify-center border border-white/30 hover:border-white text-white text-[14px] font-semibold px-6 py-3 rounded-full transition-all duration-300 hover:bg-white/10 hover:scale-[1.03] active:scale-[0.98] text-center"
+                    >
+                      Call {COMPANY.phoneDisplay}
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -325,6 +330,7 @@ export default function AboutPage() {
                         src="/home/eddie-knoell.jpg"
                         alt="Eddie Knoell"
                         fill
+                        sizes="64px"
                         className="object-cover object-top"
                       />
                     </div>
@@ -364,6 +370,7 @@ export default function AboutPage() {
                         src="/home/thomas-knoell.jpg"
                         alt="Thomas Knoell"
                         fill
+                        sizes="64px"
                         className="object-cover object-top"
                       />
                     </div>
