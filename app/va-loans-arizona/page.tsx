@@ -347,14 +347,14 @@ export default function VaLoansArizonaPage() {
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
                 From reduced closing costs to no private mortgage insurance, the benefits of VA loans can translate into thousands of dollars saved over the life of your mortgage. Let&apos;s explore the key features that make VA loans an unparalleled opportunity:
               </p>
-              <div className="pt-2">
-                <Link
+              <div className="loan-btn-wrap">
+              <Link
                   href="/#get-pre-approved"
                   className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
                 >
                   Get Your Free VA Loan Consultation →
                 </Link>
-              </div>
+            </div>
             </div>
 
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
@@ -551,7 +551,7 @@ export default function VaLoansArizonaPage() {
               ))}
             </div>
 
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/#get-pre-approved"
                 className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-md inline-block"
@@ -643,14 +643,14 @@ export default function VaLoansArizonaPage() {
                 Veterans receiving VA disability compensation or certain other benefits may be exempt from paying the funding fee. These rates will remain in effect until November 14, 2031.
               </p>
 
-              <div className="text-center">
-                <Link
+              <div className="loan-btn-wrap">
+              <Link
                   href="/va-loan-calculator/"
                   className="bg-[#052316] hover:bg-[#0a3a24] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all inline-block"
                 >
                   Get Your Free VA Loan Cost Estimate →
                 </Link>
-              </div>
+            </div>
             </div>
           </div>
         </section>
@@ -721,7 +721,7 @@ export default function VaLoansArizonaPage() {
               ))}
             </div>
 
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/client-mortgage-reviews/"
                 className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all"

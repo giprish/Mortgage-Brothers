@@ -327,20 +327,22 @@ export default function ConventionalVsFhaLoansPage() {
                 </p>
               </div>
             </div>
-
-            <div className="text-center mt-10">
-              <Link
-                href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
-              >
-                Explore Your Loan Options Today!
-              </Link>
-            </div>
           </div>
         </section>
 
-        {/* Stats */}
-        <StatsBanner stats={stats} />
+        <section className="loan-cta-band bg-[#fcf9f3]">
+          <div className="mx-auto max-w-6xl px-6 text-center loan-block-gap lg:px-10">
+            <Link
+              href="/#get-pre-approved"
+              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+            >
+              Explore Your Loan Options Today!
+            </Link>
+          </div>
+          <div className="loan-block-gap">
+            <StatsBanner sectionClassName="py-0 bg-transparent" stats={stats} />
+          </div>
+        </section>
 
         {/* Key differences */}
         <section className="w-full py-14 sm:py-16 lg:py-20">
@@ -384,7 +386,7 @@ export default function ConventionalVsFhaLoansPage() {
               fhaHeader="FHA Loans"
             />
 
-            <div className="text-center mt-10">
+            <div className="loan-btn-wrap">
               <Link
                 href="/conventional-vs-fha-calculator/"
                 className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
@@ -453,7 +455,7 @@ export default function ConventionalVsFhaLoansPage() {
               </div>
             </div>
 
-            <div className="text-center mt-10">
+            <div className="loan-btn-wrap">
               <Link
                 href="/#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
@@ -525,7 +527,7 @@ export default function ConventionalVsFhaLoansPage() {
               </li>
             </ul>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-[#f5f0e8] rounded-2xl p-6 border border-[#e8e0d0]/60">
                 <h4 className="text-[#08271B] text-[17px] font-bold mb-2">Conventional Loan</h4>
                 <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed">
@@ -543,7 +545,7 @@ export default function ConventionalVsFhaLoansPage() {
               </div>
             </div>
 
-            <div className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 mb-10 text-center">
+            <div className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 text-center">
               <h4 className="text-[#08271B] text-[17px] font-bold mb-3">Interest Rate Comparison</h4>
               <p className="text-[#4e5b4e] text-[15px]">
                 Average 30-year Conventional rate:{" "}
@@ -554,13 +556,13 @@ export default function ConventionalVsFhaLoansPage() {
               </p>
             </div>
 
-            <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center max-w-3xl mx-auto mb-8">
+            <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center max-w-3xl mx-auto">
               For borrowers with excellent credit (760+), Conventional loans offer slight advantages.
               For those with lower credit scores (660), FHA loans can provide substantial monthly savings
               and easier qualification criteria.
             </p>
 
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/conventional-vs-fha-calculator/"
                 className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
@@ -603,7 +605,7 @@ export default function ConventionalVsFhaLoansPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {reviews.map((rev) => (
                 <div
                   key={rev.author}
@@ -627,7 +629,7 @@ export default function ConventionalVsFhaLoansPage() {
               ))}
             </div>
 
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/client-mortgage-reviews/"
                 className="inline-flex items-center gap-2 text-[#08271B] hover:text-[#3fb364] font-semibold text-[15px] transition-colors"
@@ -679,7 +681,7 @@ export default function ConventionalVsFhaLoansPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {expertCards.map((card) => (
                 <div key={card.title} className="bg-white/5 border border-white/10 rounded-2xl p-6">
                   <h3 className="text-[#3fb364] text-[17px] font-bold mb-2">{card.title}</h3>
@@ -688,7 +690,7 @@ export default function ConventionalVsFhaLoansPage() {
               ))}
             </div>
 
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <a
                 href="tel:+16025352171"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
@@ -715,7 +717,7 @@ export default function ConventionalVsFhaLoansPage() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-3 mb-10">
+            <div className="flex flex-col gap-3">
               {faqs.map((faq, index) => {
                 const open = openFaq === index;
                 return (
@@ -750,7 +752,7 @@ export default function ConventionalVsFhaLoansPage() {
               })}
             </div>
 
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/contact-us/"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"

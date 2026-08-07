@@ -300,7 +300,7 @@ export default function RefinancingArizonaPage() {
                 ))}
               </div>
             </div>
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
@@ -371,7 +371,7 @@ export default function RefinancingArizonaPage() {
                 Refinancing can offer numerous benefits, but it&apos;s important to understand if it aligns with your financial goals. Here are some compelling reasons to consider refinancing your mortgage in Arizona:
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {rightForYouCards.map((card) => (
                 <div key={card.title} className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm">
                   <h3 className="text-[#08271B] text-[16px] font-bold mb-3 flex items-start gap-2">
@@ -382,7 +382,7 @@ export default function RefinancingArizonaPage() {
                 </div>
               ))}
             </div>
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/refinance-calculator/"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
@@ -602,7 +602,7 @@ export default function RefinancingArizonaPage() {
                 Don&apos;t just take our word for it—hear from our satisfied clients who have successfully navigated the refinancing process with us. Their experiences highlight the benefits of refinancing and the exceptional service provided by our team. Discover how we&apos;ve helped homeowners like you achieve their financial goals and transform their mortgage experience.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {reviews.map((rev) => (
                 <div
                   key={rev.author}
@@ -622,7 +622,7 @@ export default function RefinancingArizonaPage() {
                 </div>
               ))}
             </div>
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/client-mortgage-reviews/"
                 className="inline-flex items-center gap-2 text-[#08271B] hover:text-[#3fb364] font-semibold text-[15px] transition-colors"
@@ -695,10 +695,10 @@ export default function RefinancingArizonaPage() {
             <div className="mb-10">
               <FaqAccordion items={faqs} />
             </div>
-            <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center mb-8">
+            <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center">
               Still have questions about refinancing? Our team is here to provide personalized guidance and ensure you have all the information you need to make the best decision for your financial future. Let us help you take the next step with confidence.
             </p>
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"

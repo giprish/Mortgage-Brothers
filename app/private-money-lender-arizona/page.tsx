@@ -267,7 +267,7 @@ export default function PrivateMoneyLenderPage() {
         </section>
 
         {/* Flexible financing intro */}
-        <section className="w-full pt-14 pb-10 sm:pt-16 sm:pb-12 lg:pt-20 lg:pb-12">
+        <section className="w-full py-14 sm:py-16 lg:py-20">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="max-w-3xl mx-auto text-center mb-10">
               <h2
@@ -288,7 +288,7 @@ export default function PrivateMoneyLenderPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
               {flexibleCards.map((card) => (
                 <div
                   key={card.title}
@@ -305,9 +305,9 @@ export default function PrivateMoneyLenderPage() {
           </div>
         </section>
 
-        {/* CTA + Stats */}
-        <section className="w-full bg-[#fcf9f3] pt-10 pb-10 sm:pt-12 sm:pb-12">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10 text-center mb-10 sm:mb-12">
+        {/* CTA + Stats — equal band padding above button and below stats */}
+        <section className="loan-cta-band bg-[#fcf9f3]">
+          <div className="mx-auto max-w-6xl px-6 text-center loan-block-gap lg:px-10">
             <Link
               href="/#get-pre-approved"
               className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
@@ -319,7 +319,7 @@ export default function PrivateMoneyLenderPage() {
         </section>
 
         {/* Private money loans */}
-        <section className="w-full loan-section pt-0 pb-0">
+        <section className="w-full loan-section">
           <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mx-auto text-center mb-10">
               <h2
@@ -379,7 +379,7 @@ export default function PrivateMoneyLenderPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {portfolioCards.map((card) => (
                 <div
                   key={card.title}
@@ -394,7 +394,7 @@ export default function PrivateMoneyLenderPage() {
               ))}
             </div>
 
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
@@ -421,7 +421,7 @@ export default function PrivateMoneyLenderPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {qualifyingCards.map((card) => (
                 <div
                   key={card.title}
@@ -436,7 +436,7 @@ export default function PrivateMoneyLenderPage() {
               ))}
             </div>
 
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
@@ -486,7 +486,7 @@ export default function PrivateMoneyLenderPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {processSteps.map((step, i) => (
                 <div
                   key={step.title}
@@ -501,12 +501,12 @@ export default function PrivateMoneyLenderPage() {
               ))}
               </div>
 
-            <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center max-w-3xl mx-auto mb-8">
+            <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center max-w-3xl mx-auto mt-10">
               Ready to start your journey towards flexible financing? Our expert loan officers are here to
               guide you through every step of the process.
             </p>
 
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
@@ -533,7 +533,7 @@ export default function PrivateMoneyLenderPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {reviews.map((rev) => (
                 <div
                   key={rev.author}
@@ -554,7 +554,7 @@ export default function PrivateMoneyLenderPage() {
               ))}
             </div>
 
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/client-mortgage-reviews/"
                 className="inline-flex items-center gap-2 text-[#08271B] hover:text-[#3fb364] font-semibold text-[15px] transition-colors"
@@ -585,7 +585,7 @@ export default function PrivateMoneyLenderPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {whyChoose.map((card) => (
                 <div
                   key={card.title}
@@ -597,7 +597,7 @@ export default function PrivateMoneyLenderPage() {
               ))}
             </div>
 
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
@@ -624,7 +624,7 @@ export default function PrivateMoneyLenderPage() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-3 mb-10">
+            <div className="flex flex-col gap-3">
               {faqs.map((faq, index) => {
                 const open = openFaq === index;
                 return (
@@ -659,7 +659,7 @@ export default function PrivateMoneyLenderPage() {
               })}
             </div>
 
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/contact-us/"
                 className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"

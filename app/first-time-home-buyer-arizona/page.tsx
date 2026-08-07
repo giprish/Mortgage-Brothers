@@ -139,14 +139,14 @@ export default function FirstTimeHomeBuyerPage() {
                 Buying your first home can feel intimidating, but with the right team, it is one of the most rewarding financial milestones of your life. AZ Mortgage Brothers simplifies the process from pre-approval to closing day.
               </p>
 
-              <div className="pt-2">
-                <Link
+              <div className="loan-btn-wrap">
+              <Link
                   href="/#get-pre-approved"
                   className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
                 >
                   GET PRE-APPROVED NOW →
                 </Link>
-              </div>
+            </div>
             </div>
 
             <div className="lg:col-span-5 bg-[#fcf9f3] border border-[#e0e0e0] rounded-3xl p-7 text-left space-y-4 shadow-sm">

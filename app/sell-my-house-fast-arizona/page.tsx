@@ -415,7 +415,7 @@ export default function SellMyHouseFastArizonaPage() {
               </table>
             </div>
 
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/contact-us/"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[15px] px-8 py-3.5 rounded-full transition-all shadow-md"
@@ -670,7 +670,7 @@ export default function SellMyHouseFastArizonaPage() {
               ))}
             </div>
 
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/contact-us/"
                 className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3a24] text-white font-semibold text-[15px] px-7 py-3 rounded-full transition-all"

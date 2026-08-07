@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
       "chart.js",
       "react-chartjs-2",
     ],
+    staleTimes: {
+      dynamic: 0,
+      static: 0,
+    },
   },
 
   images: {

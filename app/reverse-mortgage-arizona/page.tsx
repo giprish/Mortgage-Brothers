@@ -252,8 +252,8 @@ export default function ReverseMortgageArizonaPage() {
           </div>
         </section>
 
-        {/* CTA + Stats */}
-        <section className="loan-cta-band no-content-visibility bg-[#fcf9f3]">
+        {/* CTA + Stats — equal gap above/below the stats card */}
+        <section className="loan-cta-band no-content-visibility bg-[#fcf9f3] !pb-0">
           <div className="mx-auto max-w-6xl px-6 text-center loan-block-gap lg:px-10">
             <Link
               href="/#get-pre-approved"
@@ -263,11 +263,13 @@ export default function ReverseMortgageArizonaPage() {
               Lower Your Payments Now →
             </Link>
           </div>
-          <StatsBanner sectionClassName="bg-transparent py-0" stats={[...STATS]} />
+          <div className="loan-block-gap">
+            <StatsBanner sectionClassName="py-0 bg-transparent" stats={[...STATS]} />
+          </div>
         </section>
 
         {/* ELIGIBILITY */}
-        <section className="loan-section no-content-visibility bg-[#fcf9f3]">
+        <section className="loan-section no-content-visibility bg-[#fcf9f3] !pt-0">
           <div className="mx-auto max-w-5xl space-y-10 text-center">
             <div>
               <span className="mb-3 block text-[11px] font-bold uppercase tracking-[0.2em] text-[#3fb364]">
@@ -296,7 +298,7 @@ export default function ReverseMortgageArizonaPage() {
               ))}
             </div>
 
-            <div className="pt-2">
+            <div className="loan-btn-wrap">
               <Link
                 href="/#get-pre-approved"
                 data-preapproval="true"
@@ -353,7 +355,7 @@ export default function ReverseMortgageArizonaPage() {
               ))}
             </div>
 
-            <div className="pt-2 text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/#get-pre-approved"
                 data-preapproval="true"
@@ -442,7 +444,7 @@ export default function ReverseMortgageArizonaPage() {
               ))}
             </div>
 
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/client-mortgage-reviews/"
                 className="inline-block rounded-full bg-[#052316] px-7 py-3.5 font-bold text-white transition-all hover:bg-[#0a3a24]"

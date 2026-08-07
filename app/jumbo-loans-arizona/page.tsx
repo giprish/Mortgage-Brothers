@@ -301,7 +301,7 @@ export default function JumboLoansPage() {
         {/* Intro */}
         <section className="w-full loan-section">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 mb-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14">
               <div>
                 <h2
                   className="text-[#08271B] text-[28px] lg:text-[38px] font-normal leading-tight mb-4"
@@ -342,19 +342,22 @@ export default function JumboLoansPage() {
                 </div>
               </div>
             </div>
-            <div className="text-center">
-              <Link
-                href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
-              >
-                Get Your Jumbo Loan Quote Now
-              </Link>
-            </div>
           </div>
         </section>
 
-        {/* Stats */}
-        <StatsBanner stats={stats} />
+        <section className="loan-cta-band bg-[#fcf9f3]">
+          <div className="mx-auto max-w-6xl px-6 text-center loan-block-gap lg:px-10">
+            <Link
+              href="/#get-pre-approved"
+              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+            >
+              Get Your Jumbo Loan Quote Now
+            </Link>
+          </div>
+          <div className="loan-block-gap">
+            <StatsBanner sectionClassName="py-0 bg-transparent" stats={stats} />
+          </div>
+        </section>
 
         {/* Why choose a jumbo loan */}
         <section className="w-full loan-section">
@@ -370,7 +373,7 @@ export default function JumboLoansPage() {
                 Jumbo Loans offer unique advantages for homebuyers looking to finance high-value properties in Arizona. These loans provide flexibility and opportunities that conventional loans simply can&apos;t match. Here&apos;s why a Jumbo Loan might be the right choice for your dream home:
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {whyChooseCards.map((card) => (
                 <div key={card.title} className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm">
                   <h3 className="text-[#08271B] text-[16px] font-bold mb-3 flex items-start gap-2">
@@ -381,7 +384,7 @@ export default function JumboLoansPage() {
                 </div>
               ))}
             </div>
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
@@ -406,7 +409,7 @@ export default function JumboLoansPage() {
                 Jumbo Loans are a unique financial product designed for high-value properties. As you navigate the luxury real estate market in Arizona, it&apos;s crucial to understand the key aspects of these loans. Here&apos;s what you need to know:
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {understandingCards.map((card) => (
                 <div key={card.title} className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm">
                   <h3 className="text-[#08271B] text-[16px] font-bold mb-3 flex items-start gap-2">
@@ -417,10 +420,10 @@ export default function JumboLoansPage() {
                 </div>
               ))}
             </div>
-            <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center max-w-3xl mx-auto mb-8">
+            <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center max-w-3xl mx-auto">
               Remember, while Jumbo Loans come with additional complexities, they offer a pathway to financing your dream luxury home in Arizona. Our team is here to guide you through every step of the process.
             </p>
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
@@ -445,7 +448,7 @@ export default function JumboLoansPage() {
                 Qualifying for a Jumbo Loan requires meeting higher standards compared to conventional loans. These stricter requirements ensure that borrowers are financially prepared for the larger loan amounts and monthly payments associated with high-value properties. Below are the key eligibility criteria to consider:
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {eligibilityCards.map((card) => (
                 <div key={card.title} className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm">
                   <h3 className="text-[#08271B] text-[16px] font-bold mb-3 flex items-start gap-2">
@@ -456,7 +459,7 @@ export default function JumboLoansPage() {
                 </div>
               ))}
             </div>
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
@@ -541,7 +544,7 @@ export default function JumboLoansPage() {
                 Understanding the current Arizona real estate market is crucial when considering a Jumbo Loan. Here are some key insights specific to the Arizona market:
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {marketInsights.map((card) => (
                 <div key={card.title} className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm">
                   <h3 className="text-[#08271B] text-[16px] font-bold mb-3">{card.title}</h3>
@@ -549,7 +552,7 @@ export default function JumboLoansPage() {
                 </div>
               ))}
             </div>
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
@@ -574,7 +577,7 @@ export default function JumboLoansPage() {
                 At AZ Mortgage Brothers, we take pride in helping our clients achieve their dreams of owning high-value properties through Jumbo Loans. But don&apos;t just take our word for it - hear from some of the satisfied homeowners we&apos;ve had the pleasure of assisting. These testimonials reflect our commitment to providing expert guidance, personalized service, and successful outcomes in the complex world of Jumbo Loans.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {reviews.map((rev) => (
                 <div
                   key={rev.author}
@@ -594,7 +597,7 @@ export default function JumboLoansPage() {
                 </div>
               ))}
             </div>
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/client-mortgage-reviews/"
                 className="inline-flex items-center gap-2 text-[#08271B] hover:text-[#3fb364] font-semibold text-[15px] transition-colors"
@@ -664,7 +667,7 @@ export default function JumboLoansPage() {
                 Navigating the world of Jumbo Loans can raise many questions, especially for first-time buyers or those unfamiliar with high-value financing. Below are some of the most common inquiries we receive regarding Jumbo Loans in Arizona, along with clear answers to help you understand this unique mortgage option better.
               </p>
             </div>
-            <div className="flex flex-col gap-3 mb-10">
+            <div className="flex flex-col gap-3">
               {faqs.map((faq, index) => {
                 const open = openFaq === index;
                 return (
@@ -689,10 +692,10 @@ export default function JumboLoansPage() {
                 );
               })}
             </div>
-            <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center mb-8">
+            <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center">
               If you have more questions or need personalized assistance with your Jumbo Loan application, feel free to reach out to our team at AZ Mortgage Brothers!
             </p>
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"

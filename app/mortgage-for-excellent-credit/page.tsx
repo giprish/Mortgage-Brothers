@@ -281,7 +281,7 @@ export default function MortgageForExcellentCreditPage() {
               ))}
             </div>
 
-            <div className="text-center mt-10">
+            <div className="loan-btn-wrap">
               <Link
                 href="/#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
@@ -344,25 +344,28 @@ export default function MortgageForExcellentCreditPage() {
               </div>
             </div>
 
-            <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center max-w-3xl mx-auto mb-8">
+            <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center max-w-3xl mx-auto">
               With an excellent credit score, you have access to the most competitive mortgage rates
               and flexible loan options. Lenders see you as a low-risk borrower, which means you can
               qualify for higher loan amounts, lower interest rates, and reduced costs.
             </p>
 
-            <div className="text-center">
-              <Link
-                href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
-              >
-                Get Your Personalized Mortgage Offer
-              </Link>
-            </div>
           </div>
         </section>
 
-        {/* Stats */}
-        <StatsBanner stats={stats} />
+        <section className="loan-cta-band bg-[#fcf9f3]">
+          <div className="mx-auto max-w-6xl px-6 text-center loan-block-gap lg:px-10">
+            <Link
+              href="/#get-pre-approved"
+              className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+            >
+              Get Your Personalized Mortgage Offer
+            </Link>
+          </div>
+          <div className="loan-block-gap">
+            <StatsBanner sectionClassName="py-0 bg-transparent" stats={stats} />
+          </div>
+        </section>
 
         {/* Benefits */}
         <section className="w-full py-16 lg:py-24">
@@ -397,7 +400,7 @@ export default function MortgageForExcellentCreditPage() {
               ))}
             </div>
 
-            <div className="text-center mt-10">
+            <div className="loan-btn-wrap">
               <Link
                 href="/#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
@@ -425,7 +428,7 @@ export default function MortgageForExcellentCreditPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
               {programs.map((p) => (
                 <Link
                   key={p.title}
@@ -440,7 +443,7 @@ export default function MortgageForExcellentCreditPage() {
               ))}
             </div>
 
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <a
                 href="tel:+16025352171"
                 className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
@@ -467,7 +470,7 @@ export default function MortgageForExcellentCreditPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {reviews.map((rev) => (
                 <div
                   key={rev.author}
@@ -491,7 +494,7 @@ export default function MortgageForExcellentCreditPage() {
               ))}
             </div>
 
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/client-mortgage-reviews/"
                 className="inline-flex items-center gap-2 text-[#08271B] hover:text-[#3fb364] font-semibold text-[15px] transition-colors"
@@ -522,7 +525,7 @@ export default function MortgageForExcellentCreditPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {expertCards.map((card) => (
                 <div key={card.title} className="bg-white/5 border border-white/10 rounded-2xl p-6">
                   <h3 className="text-[#3fb364] text-[17px] font-bold mb-2">{card.title}</h3>
@@ -531,7 +534,7 @@ export default function MortgageForExcellentCreditPage() {
               ))}
             </div>
 
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <a
                 href="tel:+16025352171"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
@@ -558,11 +561,11 @@ export default function MortgageForExcellentCreditPage() {
               </p>
             </div>
 
-            <div className="mb-10">
+            <div className="">
               <FaqAccordion items={faqs} />
             </div>
 
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <Link
                 href="/contact-us/"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
