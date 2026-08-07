@@ -259,7 +259,7 @@ export default function ReverseMortgageArizonaPage() {
           <div className="max-w-5xl mx-auto text-center space-y-10">
             <div>
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
-                ELIGIBILITY
+                {/* ELIGIBILITY */}
               </span>
               <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair">
                 Are You Eligible for a Reverse Mortgage?
