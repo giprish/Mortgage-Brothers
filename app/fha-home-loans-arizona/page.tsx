@@ -119,7 +119,7 @@ export default function FhaHomeLoansArizonaPage() {
       twoUnit: "$693,050",
       threeUnit: "$837,700",
       fourUnit: "$1,041,125",
-      note: "Includes Apache, Cochise, Gila, Graham, Greenlee, La Paz, Mohave, Navajo, Pima, Santa Cruz, Yavapai, and Yuma.",
+      note: "Apache, Cochise, Gila, Graham, Greenlee, La Paz, Mohave, Navajo, Pima, Santa Cruz, Yavapai & Yuma",
     },
   ];
 
@@ -342,28 +342,67 @@ export default function FhaHomeLoansArizonaPage() {
 
         {/* LOAN LIMITS */}
         <section className="loan-section bg-[#fcf9f3]">
-          <div className="max-w-5xl mx-auto space-y-10">
-            <div className="text-center space-y-4">
-              <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block">
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center loan-section-heading">
+              <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
                 2026 LIMITS
               </span>
-              <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair">
+              <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair mb-4">
                 FHA Loan Limits in Arizona
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed max-w-3xl mx-auto">
-                FHA loan limits vary by county and property type. For 2026, the Maricopa County single-family FHA loan limit is $557,750. See the table below for limits across key Arizona counties.
+                FHA loan limits vary by county and property type. For 2026, the Maricopa County single-family FHA loan limit is $557,750. See the limits below across key Arizona counties.
               </p>
             </div>
 
-            <div className="overflow-x-auto rounded-2xl border border-[#e0e0e0] bg-white shadow-sm">
-              <table className="w-full text-left text-[14px]">
+            {/* Mobile: card stack — avoids table overflow & tall wrapped note rows */}
+            <div className="md:hidden flex flex-col gap-3">
+              {loanLimitRows.map((row) => (
+                <article
+                  key={row.county}
+                  className="rounded-2xl border border-[#e0e0e0] bg-white shadow-sm overflow-hidden"
+                >
+                  <div className="bg-[#052316] px-4 py-3">
+                    <h3 className="text-white text-[15px] font-bold leading-snug">
+                      {row.county}
+                    </h3>
+                    {"note" in row && row.note ? (
+                      <p className="text-white/65 text-[11.5px] leading-snug mt-1">
+                        {row.note}
+                      </p>
+                    ) : null}
+                  </div>
+                  <div className="grid grid-cols-2 gap-px bg-[#e8e0d0]/70">
+                    {[
+                      { label: "1-Unit", value: row.oneUnit },
+                      { label: "2-Unit", value: row.twoUnit },
+                      { label: "3-Unit", value: row.threeUnit },
+                      { label: "4-Unit", value: row.fourUnit },
+                    ].map((cell) => (
+                      <div key={cell.label} className="bg-white px-4 py-3.5">
+                        <p className="text-[#8da684] text-[10px] font-bold tracking-[0.12em] uppercase mb-1">
+                          {cell.label}
+                        </p>
+                        <p className="text-[#052316] text-[15px] font-semibold tabular-nums">
+                          {cell.value}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
+
+            {/* Desktop / tablet: compact table */}
+            <div className="hidden md:block overflow-x-auto rounded-2xl border border-[#e0e0e0] bg-white shadow-sm -mx-0">
+              <table className="w-full min-w-[640px] text-left text-[14px]">
                 <thead>
                   <tr className="bg-[#052316] text-white">
-                    <th className="px-5 py-4 font-bold">County</th>
-                    <th className="px-5 py-4 font-bold">1-Unit</th>
-                    <th className="px-5 py-4 font-bold">2-Unit</th>
-                    <th className="px-5 py-4 font-bold">3-Unit</th>
-                    <th className="px-5 py-4 font-bold">4-Unit</th>
+                    <th className="px-5 py-3.5 font-bold">County</th>
+                    <th className="px-5 py-3.5 font-bold whitespace-nowrap">1-Unit</th>
+                    <th className="px-5 py-3.5 font-bold whitespace-nowrap">2-Unit</th>
+                    <th className="px-5 py-3.5 font-bold whitespace-nowrap">3-Unit</th>
+                    <th className="px-5 py-3.5 font-bold whitespace-nowrap">4-Unit</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -372,16 +411,26 @@ export default function FhaHomeLoansArizonaPage() {
                       key={row.county}
                       className={idx % 2 === 0 ? "bg-white" : "bg-[#fcf9f3]"}
                     >
-                      <td className="px-5 py-4 font-semibold text-[#052316] border-t border-[#e0e0e0]">
+                      <td className="px-5 py-3.5 font-semibold text-[#052316] border-t border-[#e0e0e0] align-top max-w-[240px]">
                         {row.county}
-                        {"note" in row && (
-                          <span className="block text-[12px] font-normal text-[#8da684] mt-1">{row.note}</span>
-                        )}
+                        {"note" in row && row.note ? (
+                          <span className="block text-[12px] font-normal text-[#8da684] mt-1 leading-snug">
+                            Includes {row.note}.
+                          </span>
+                        ) : null}
                       </td>
-                      <td className="px-5 py-4 text-[#4e5b4e] border-t border-[#e0e0e0]">{row.oneUnit}</td>
-                      <td className="px-5 py-4 text-[#4e5b4e] border-t border-[#e0e0e0]">{row.twoUnit}</td>
-                      <td className="px-5 py-4 text-[#4e5b4e] border-t border-[#e0e0e0]">{row.threeUnit}</td>
-                      <td className="px-5 py-4 text-[#4e5b4e] border-t border-[#e0e0e0]">{row.fourUnit}</td>
+                      <td className="px-5 py-3.5 text-[#4e5b4e] border-t border-[#e0e0e0] whitespace-nowrap tabular-nums align-top">
+                        {row.oneUnit}
+                      </td>
+                      <td className="px-5 py-3.5 text-[#4e5b4e] border-t border-[#e0e0e0] whitespace-nowrap tabular-nums align-top">
+                        {row.twoUnit}
+                      </td>
+                      <td className="px-5 py-3.5 text-[#4e5b4e] border-t border-[#e0e0e0] whitespace-nowrap tabular-nums align-top">
+                        {row.threeUnit}
+                      </td>
+                      <td className="px-5 py-3.5 text-[#4e5b4e] border-t border-[#e0e0e0] whitespace-nowrap tabular-nums align-top">
+                        {row.fourUnit}
+                      </td>
                     </tr>
                   ))}
                 </tbody>

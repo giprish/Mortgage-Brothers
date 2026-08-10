@@ -98,6 +98,23 @@ function ContactJotform() {
 }
 
 export default function ContactPage() {
+  const formRef = useRef<HTMLDivElement>(null);
+
+  // Keep URL as /contact-us/ only (strip any leftover hash)
+  useEffect(() => {
+    if (window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname);
+    }
+  }, []);
+
+  const scrollToForm = (e?: React.MouseEvent) => {
+    e?.preventDefault();
+    formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (window.location.hash) {
+      window.history.replaceState(null, "", window.location.pathname);
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Navbar />
@@ -117,9 +134,10 @@ export default function ContactPage() {
             <p className="text-brand-text-light text-[15px] lg:text-[16px] leading-[1.7] max-w-2xl mx-auto mb-8">
               We&apos;re here to help and we&apos;ll get in touch with you shortly
             </p>
-            <a
-              href="#Get-in-Touch"
-              className="w-full sm:w-auto btn-primary hover:shadow-brand-green-accent/20 group text-[15px] font-bold px-7 py-3.5"
+            <button
+              type="button"
+              onClick={scrollToForm}
+              className="w-full sm:w-auto btn-primary hover:shadow-brand-green-accent/20 group text-[15px] font-bold px-7 py-3.5 cursor-pointer"
             >
               Contact Us
               <svg
@@ -138,7 +156,7 @@ export default function ContactPage() {
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12 5 19 12 12 19" />
               </svg>
-            </a>
+            </button>
           </div>
         </section>
 
@@ -182,12 +200,13 @@ export default function ContactPage() {
                 <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.15em] uppercase mb-2">
                   Contact
                 </p>
-                <a
-                  href="#Get-in-Touch"
-                  className="text-[#08271B] text-[15px] font-semibold hover:text-[#3fb364] transition-colors"
+                <button
+                  type="button"
+                  onClick={scrollToForm}
+                  className="text-[#08271B] text-[15px] font-semibold hover:text-[#3fb364] transition-colors cursor-pointer"
                 >
                   Contact Us
-                </a>
+                </button>
               </div>
 
               <div className="bg-[#fcf9f3] rounded-2xl border border-[#e8e0d0]/60 p-5">
@@ -244,7 +263,7 @@ export default function ContactPage() {
               />
             </div>
 
-            <div id="Get-in-Touch" className="scroll-mt-28 text-left">
+            <div ref={formRef} className="scroll-mt-28 text-left">
               <ContactJotform />
             </div>
           </div>
