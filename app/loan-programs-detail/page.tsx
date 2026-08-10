@@ -285,7 +285,7 @@ export default function LoanProgramsDetailPage() {
 
         {/* Programs List */}
         <section className="loan-section px-6 lg:px-10 max-w-5xl mx-auto">
-          <div className="text-center mb-10">
+          <div className="text-center mb-8">
             <h2 className="text-[#052316] text-[30px] lg:text-[36px] font-playfair font-normal mb-3">
               Find the right loan for your needs
             </h2>

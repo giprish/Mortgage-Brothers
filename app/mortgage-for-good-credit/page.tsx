@@ -205,7 +205,7 @@ export default function MortgageForGoodCreditPage() {
 
       <main className="flex-grow">
         {/* Hero */}
-        <section className="w-full bg-[#08271B] text-white pt-[110px] sm:pt-[130px] pb-12 sm:pb-16 lg:pb-20 text-center relative overflow-hidden">
+        <section className="w-full bg-[#08271B] text-white pt-[110px] sm:pt-[130px] pb-12 sm:pb-14 lg:pb-16 text-center relative overflow-hidden">
           <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
             <h1 className="text-white text-[32px] sm:text-[44px] lg:text-[52px] font-bold font-playfair leading-[1.15] mb-4 text-center tracking-tight">
               Mortgage for Good Credit
@@ -227,7 +227,7 @@ export default function MortgageForGoodCreditPage() {
         </section>
 
         {/* Feature strip */}
-        <section className="w-full bg-white border-b border-[#e8e0d0]/50 py-10 lg:py-12">
+        <section className="w-full bg-white border-b border-[#e8e0d0]/50 loan-strip">
           <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               "Good Credit Means Better Mortgage Rates",
@@ -245,9 +245,9 @@ export default function MortgageForGoodCreditPage() {
         </section>
 
         {/* What good credit means */}
-        <section className="w-full py-16 lg:py-24">
+        <section className="w-full loan-section">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -290,9 +290,9 @@ export default function MortgageForGoodCreditPage() {
         </section>
 
         {/* Credit score table */}
-        <section className="w-full bg-[#f5f0e8] py-16 lg:py-24 border-y border-[#e8e0d0]/50">
+        <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
           <div className="max-w-5xl mx-auto px-6 lg:px-10">
-            <div className="text-center max-w-3xl mx-auto mb-10">
+            <div className="text-center max-w-3xl mx-auto mb-8">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -369,9 +369,9 @@ export default function MortgageForGoodCreditPage() {
         </section>
 
         {/* Full potential */}
-        <section className="w-full py-16 lg:py-24">
+        <section className="w-full loan-section">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -414,9 +414,9 @@ export default function MortgageForGoodCreditPage() {
         </section>
 
         {/* Best mortgage options */}
-        <section className="w-full bg-[#f5f0e8] py-16 lg:py-24 border-y border-[#e8e0d0]/50">
+        <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -457,9 +457,9 @@ export default function MortgageForGoodCreditPage() {
         </section>
 
         {/* Reviews */}
-        <section className="w-full py-16 lg:py-24">
+        <section className="w-full loan-section">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[38px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -511,9 +511,9 @@ export default function MortgageForGoodCreditPage() {
         </section>
 
         {/* Why trust us */}
-        <section className="w-full bg-[#08271B] py-16 lg:py-24 text-white">
+        <section className="w-full bg-[#08271B] loan-section text-white">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-white text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -548,9 +548,9 @@ export default function MortgageForGoodCreditPage() {
         </section>
 
         {/* FAQ */}
-        <section className="w-full py-16 lg:py-24">
+        <section className="w-full loan-section">
           <div className="max-w-3xl mx-auto px-6 lg:px-10">
-            <div className="text-center mb-10">
+            <div className="text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-4"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -610,7 +610,7 @@ export default function MortgageForGoodCreditPage() {
         </section>
 
         {/* Contact CTA */}
-        <section className="w-full bg-[#f5f0e8] py-16 lg:py-20 border-y border-[#e8e0d0]/50">
+        <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
           <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center">
             <h2
               className="text-[#08271B] text-[30px] lg:text-[38px] font-normal leading-tight mb-5"
@@ -649,10 +649,10 @@ export default function MortgageForGoodCreditPage() {
         </section>
 
         {/* Explore solutions */}
-        <section className="w-full py-16 lg:py-20">
+        <section className="w-full loan-section">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <h2
-              className="text-[#08271B] text-[28px] lg:text-[34px] font-normal text-center mb-10"
+              className="text-[#08271B] text-[28px] lg:text-[34px] font-normal text-center mb-8"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Explore Our Mortgage Solutions

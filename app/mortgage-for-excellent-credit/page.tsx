@@ -109,7 +109,7 @@ const expertCards = [
   },
   {
     title: "Personalized Loan Options",
-    text: "Every borrower is unique—our licensed mortgage brokers provide custom financing strategies that align with your goals.",
+    text: "Every borrower is uniqueâ€”our licensed mortgage brokers provide custom financing strategies that align with your goals.",
   },
   {
     title: "Trusted by Arizona Homebuyers",
@@ -117,7 +117,7 @@ const expertCards = [
   },
   {
     title: "Transparent & Reliable Service",
-    text: "No hidden fees, no surprises—just expert guidance and clear communication from start to finish.",
+    text: "No hidden fees, no surprisesâ€”just expert guidance and clear communication from start to finish.",
   },
 ];
 
@@ -162,7 +162,7 @@ const faqs = [
   },
   {
     q: "Should I put more than the minimum down payment if I have excellent credit?",
-    a: "While some programs allow as little as 3% down, a larger down payment (10–20%) can help you secure an even lower interest rate, avoid private mortgage insurance (PMI), and reduce your monthly payment and total loan cost.",
+    a: "While some programs allow as little as 3% down, a larger down payment (10â€“20%) can help you secure an even lower interest rate, avoid private mortgage insurance (PMI), and reduce your monthly payment and total loan cost.",
   },
   {
     q: "Does checking mortgage rates impact my credit score?",
@@ -207,7 +207,7 @@ export default function MortgageForExcellentCreditPage() {
 
       <main className="flex-grow">
         {/* Hero */}
-        <section className="w-full bg-[#08271B] text-white pt-[110px] sm:pt-[130px] pb-12 sm:pb-16 lg:pb-20 text-center relative overflow-hidden">
+        <section className="w-full bg-[#08271B] text-white pt-[110px] sm:pt-[130px] pb-12 sm:pb-14 lg:pb-16 text-center relative overflow-hidden">
           <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
             <h1 className="text-white text-[32px] sm:text-[44px] lg:text-[52px] font-bold font-playfair leading-[1.15] mb-4 text-center tracking-tight">
               Mortgage for Excellent Credit
@@ -229,7 +229,7 @@ export default function MortgageForExcellentCreditPage() {
         </section>
 
         {/* Feature strip */}
-        <section className="w-full bg-white border-b border-[#e8e0d0]/50 py-10 lg:py-12">
+        <section className="w-full bg-white border-b border-[#e8e0d0]/50 loan-strip">
           <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               "Get Access to the Lowest Mortgage Rates for Excellent Credit",
@@ -247,9 +247,9 @@ export default function MortgageForExcellentCreditPage() {
         </section>
 
         {/* What excellent credit means */}
-        <section className="w-full py-16 lg:py-24">
+        <section className="w-full loan-section">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -293,9 +293,9 @@ export default function MortgageForExcellentCreditPage() {
         </section>
 
         {/* Credit score impact table */}
-        <section className="w-full bg-[#f5f0e8] py-16 lg:py-24 border-y border-[#e8e0d0]/50">
+        <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
           <div className="max-w-5xl mx-auto px-6 lg:px-10">
-            <div className="text-center max-w-3xl mx-auto mb-10">
+            <div className="text-center max-w-3xl mx-auto mb-8">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -368,9 +368,9 @@ export default function MortgageForExcellentCreditPage() {
         </section>
 
         {/* Benefits */}
-        <section className="w-full py-16 lg:py-24">
+        <section className="w-full loan-section">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -378,7 +378,7 @@ export default function MortgageForExcellentCreditPage() {
                 How Excellent Credit Maximizes Your Home Loan Benefits
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
-                Your excellent credit score does more than just help you qualify for a mortgage—it
+                Your excellent credit score does more than just help you qualify for a mortgageâ€”it
                 opens doors to exclusive advantages that can significantly impact your financial
                 future. Lenders offer better rates, more flexible terms, and faster approvals to
                 borrowers with high credit scores.
@@ -412,9 +412,9 @@ export default function MortgageForExcellentCreditPage() {
         </section>
 
         {/* Programs */}
-        <section className="w-full bg-[#f5f0e8] py-16 lg:py-24 border-y border-[#e8e0d0]/50">
+        <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -455,9 +455,9 @@ export default function MortgageForExcellentCreditPage() {
         </section>
 
         {/* Reviews */}
-        <section className="w-full py-16 lg:py-24">
+        <section className="w-full loan-section">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[38px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -509,9 +509,9 @@ export default function MortgageForExcellentCreditPage() {
         </section>
 
         {/* Top experts */}
-        <section className="w-full bg-[#08271B] py-16 lg:py-24 text-white">
+        <section className="w-full bg-[#08271B] loan-section text-white">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-white text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -546,9 +546,9 @@ export default function MortgageForExcellentCreditPage() {
         </section>
 
         {/* FAQ */}
-        <section className="w-full py-16 lg:py-24">
+        <section className="w-full loan-section">
           <div className="max-w-3xl mx-auto px-6 lg:px-10">
-            <div className="text-center mb-10">
+            <div className="text-center mb-8">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-4"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -577,7 +577,7 @@ export default function MortgageForExcellentCreditPage() {
         </section>
 
         {/* Contact CTA */}
-        <section className="w-full bg-[#f5f0e8] py-16 lg:py-20 border-y border-[#e8e0d0]/50">
+        <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
           <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center">
             <h2
               className="text-[#08271B] text-[30px] lg:text-[38px] font-normal leading-tight mb-5"
@@ -616,10 +616,10 @@ export default function MortgageForExcellentCreditPage() {
         </section>
 
         {/* Explore solutions */}
-        <section className="w-full py-16 lg:py-20">
+        <section className="w-full loan-section">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <h2
-              className="text-[#08271B] text-[28px] lg:text-[34px] font-normal text-center mb-10"
+              className="text-[#08271B] text-[28px] lg:text-[34px] font-normal text-center mb-8"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Explore Our Mortgage Solutions

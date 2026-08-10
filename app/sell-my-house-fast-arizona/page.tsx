@@ -258,7 +258,7 @@ export default function SellMyHouseFastArizonaPage() {
         </section>
 
         {/* Intro strip */}
-        <div className="w-full bg-[#03170e] text-[#c8c8b8] border-y border-white/10 py-4 px-6">
+        <div className="loan-strip w-full bg-[#03170e] text-[#c8c8b8] border-y border-white/10">
           <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-around gap-6 text-[14px] font-medium">
             <div className="flex items-center gap-2">
               <span className="text-[#3fb364]">✓</span>
@@ -509,8 +509,8 @@ export default function SellMyHouseFastArizonaPage() {
         </section>
 
         {/* Credentials Strip */}
-        <section className="w-full py-8 bg-[#fafafa] border-y border-[#e8e0d0]/40">
-          <div className="max-w-5xl mx-auto px-6 lg:px-10 text-center space-y-4">
+        <section className="loan-strip w-full bg-[#fafafa] border-y border-[#e8e0d0]/40">
+          <div className="max-w-5xl mx-auto text-center space-y-4">
             <h2 className="text-[#052316] text-[20px] font-bold font-playfair">Credentials</h2>
             <p className="text-[#4e5b4e] text-[13px] leading-relaxed">
               {COMPANY.legalName} · {COMPANY.nmlsDisplay} · {COMPANY.azLicenseDisplay} ·{" "}

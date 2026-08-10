@@ -34,7 +34,7 @@ export default function FirstTimeHomeBuyerPage() {
 
       <main className="flex-grow">
         {/* HERO SECTION */}
-        <section className="relative w-full bg-[#052316] text-white pt-[110px] lg:pt-[130px] pb-14 sm:pb-16 lg:pb-20 px-6 lg:px-12 overflow-hidden">
+        <section className="relative w-full bg-[#052316] text-white pt-[110px] lg:pt-[130px] pb-12 sm:pb-14 lg:pb-16 px-6 lg:px-12 overflow-hidden">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#3fb364]/10 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
@@ -108,7 +108,7 @@ export default function FirstTimeHomeBuyerPage() {
         </section>
 
         {/* HIGHLIGHTS BAR */}
-        <div className="w-full bg-[#03170e] text-[#c8c8b8] border-y border-white/10 py-4 px-6">
+        <div className="loan-strip w-full bg-[#03170e] text-[#c8c8b8] border-y border-white/10">
           <div className="max-w-5xl mx-auto flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center justify-center sm:justify-around gap-3 sm:gap-6 text-[13px] sm:text-[14px] font-medium">
             <div className="flex items-start sm:items-center gap-2 w-full sm:w-auto">
               <span className="text-[#3fb364] shrink-0">🎁</span>
@@ -140,13 +140,13 @@ export default function FirstTimeHomeBuyerPage() {
               </p>
 
               <div className="loan-btn-wrap">
-              <Link
+                <Link
                   href="/#get-pre-approved"
                   className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
                 >
                   GET PRE-APPROVED NOW →
                 </Link>
-            </div>
+              </div>
             </div>
 
             <div className="lg:col-span-5 bg-[#fcf9f3] border border-[#e0e0e0] rounded-3xl p-7 text-left space-y-4 shadow-sm">

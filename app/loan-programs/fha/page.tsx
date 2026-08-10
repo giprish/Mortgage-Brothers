@@ -105,8 +105,8 @@ export default function FhaLoanPage() {
         </section>
 
         {/* Section 2: Who an FHA loan is built for */}
-        <section className="py-20 px-6 lg:px-10 max-w-5xl mx-auto">
-          <div className="text-center mb-16">
+        <section className="loan-section px-6 lg:px-10 max-w-5xl mx-auto">
+          <div className="text-center mb-8">
             <span className="text-[#b89a5a] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
               IS THIS YOU?
             </span>
@@ -160,7 +160,7 @@ export default function FhaLoanPage() {
 
         {/* Section 3: What you get with an FHA loan */}
         <section className="loan-section px-6 lg:px-12 max-w-5xl mx-auto border-t border-[#e8e0d0]/40">
-          <div className="mb-10">
+          <div className="mb-8">
             <h2 className="text-[#052316] text-[26px] lg:text-[32px] font-playfair font-normal mb-3">
               What you get with an FHA loan
             </h2>
@@ -322,8 +322,8 @@ export default function FhaLoanPage() {
         </section>
 
         {/* Section 5: Roadmap (How it works) */}
-        <section className="py-20 px-6 lg:px-10 max-w-5xl mx-auto border-t border-[#e8e0d0]/40">
-          <div className="text-center mb-16">
+        <section className="loan-section px-6 lg:px-10 max-w-5xl mx-auto border-t border-[#e8e0d0]/40">
+          <div className="text-center mb-8">
             <span className="text-[#b89a5a] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
               HOW IT WORKS
             </span>
@@ -380,8 +380,8 @@ export default function FhaLoanPage() {
         </section>
 
         {/* Section 6: FAQ section */}
-        <section className="py-20 px-6 lg:px-10 max-w-5xl mx-auto border-t border-[#e8e0d0]/40">
-          <div className="mb-10">
+        <section className="loan-section px-6 lg:px-10 max-w-5xl mx-auto border-t border-[#e8e0d0]/40">
+          <div className="mb-8">
             <h2 className="text-[#052316] text-[28px] lg:text-[34px] font-playfair font-normal">
               FHA loan questions, answered
             </h2>

@@ -25,7 +25,7 @@ const meaningCards = [
   },
   {
     title: "Larger Down Payment Requirements",
-    text: "Some lenders may require a higher down payment (10–20%) to compensate for the lower credit score.",
+    text: "Some lenders may require a higher down payment (10â€“20%) to compensate for the lower credit score.",
   },
   {
     title: "Stricter Debt-to-Income (DTI) Ratios",
@@ -37,7 +37,7 @@ const meaningCards = [
   },
   {
     title: "Improving Your Credit Can Expand Your Options",
-    text: "Even small improvements—like paying off debts, making on-time payments, or reducing credit utilization—can help you qualify for better rates and loan programs.",
+    text: "Even small improvementsâ€”like paying off debts, making on-time payments, or reducing credit utilizationâ€”can help you qualify for better rates and loan programs.",
   },
 ];
 
@@ -70,17 +70,17 @@ const benefitCards = [
 
 const programs = [
   {
-    title: "FHA Loans – Low Credit, Low Down Payment",
+    title: "FHA Loans â€“ Low Credit, Low Down Payment",
     text: "Backed by the Federal Housing Administration, FHA loans allow credit scores as low as 580 with only 3.5% down.",
     href: "/fha-home-loans-arizona/",
   },
   {
-    title: "VA Loans – No Down Payment for Eligible Veterans",
+    title: "VA Loans â€“ No Down Payment for Eligible Veterans",
     text: "For eligible military service members and veterans, VA loans offer no down payment, no PMI, and competitive interest rates, even with a lower credit score.",
     href: "/va-loans-arizona/",
   },
   {
-    title: "USDA Loans – Affordable Homeownership in Rural Areas",
+    title: "USDA Loans â€“ Affordable Homeownership in Rural Areas",
     text: "Designed for low-to-moderate-income buyers in rural areas, USDA loans require no down payment and accept credit scores as low as 580.",
     href: "/fha-home-loans-arizona/",
   },
@@ -95,7 +95,7 @@ const programs = [
     href: "/first-time-home-buyer-arizona-guide/",
   },
   {
-    title: "Co-Signer Mortgages – A Boost for Your Application",
+    title: "Co-Signer Mortgages â€“ A Boost for Your Application",
     text: "Adding a creditworthy co-signer to your mortgage application can increase approval chances and help secure better loan terms.",
     href: "/#get-pre-approved",
   },
@@ -153,11 +153,11 @@ const faqs = [
   },
   {
     q: "What's the minimum credit score required for a mortgage?",
-    a: "FHA loans: as low as 580 (with 3.5% down). VA & USDA loans: no set minimum, but most lenders prefer at least 580–620. Conventional loans: typically 620 or higher.",
+    a: "FHA loans: as low as 580 (with 3.5% down). VA & USDA loans: no set minimum, but most lenders prefer at least 580â€“620. Conventional loans: typically 620 or higher.",
   },
   {
     q: "Will I need a larger down payment with poor credit?",
-    a: "It depends on the loan type. FHA loans require as little as 3.5% down, but some conventional lenders may ask for 10–20% down if your credit score is low.",
+    a: "It depends on the loan type. FHA loans require as little as 3.5% down, but some conventional lenders may ask for 10â€“20% down if your credit score is low.",
   },
   {
     q: "How can I improve my chances of getting approved?",
@@ -212,7 +212,7 @@ export default function MortgageForPoorCreditPage() {
 
       <main className="flex-grow">
         {/* Hero */}
-        <section className="w-full bg-[#08271B] text-white pt-[110px] sm:pt-[130px] pb-12 sm:pb-16 lg:pb-20 text-center relative overflow-hidden">
+        <section className="w-full bg-[#08271B] text-white pt-[110px] sm:pt-[130px] pb-12 sm:pb-14 lg:pb-16 text-center relative overflow-hidden">
           <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center text-center">
             <h1 className="text-white text-[32px] sm:text-[44px] lg:text-[52px] font-bold font-playfair leading-[1.15] mb-4 text-center tracking-tight">
               Mortgage for Poor Credit
@@ -234,7 +234,7 @@ export default function MortgageForPoorCreditPage() {
         </section>
 
         {/* Feature strip */}
-        <section className="w-full bg-[#eeeff4] border-b border-[#e0e2e8] py-10 lg:py-12">
+        <section className="w-full bg-[#eeeff4] border-b border-[#e0e2e8] loan-strip">
           <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               "Home Loans Are Still Possible with Poor Credit",
@@ -252,9 +252,9 @@ export default function MortgageForPoorCreditPage() {
         </section>
 
         {/* What poor credit means */}
-        <section className="w-full py-16 lg:py-24">
+        <section className="w-full loan-section">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -297,9 +297,9 @@ export default function MortgageForPoorCreditPage() {
         </section>
 
         {/* Credit score table */}
-        <section className="w-full bg-[#f5f0e8] py-16 lg:py-24 border-y border-[#e8e0d0]/50">
+        <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
           <div className="max-w-5xl mx-auto px-6 lg:px-10">
-            <div className="text-center max-w-3xl mx-auto mb-10">
+            <div className="text-center max-w-3xl mx-auto mb-8">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -376,9 +376,9 @@ export default function MortgageForPoorCreditPage() {
         </section>
 
         {/* How to get a mortgage */}
-        <section className="w-full py-16 lg:py-24">
+        <section className="w-full loan-section">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -388,7 +388,7 @@ export default function MortgageForPoorCreditPage() {
               <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
                 At first glance, having poor credit may seem like a major obstacle when applying for a
                 mortgage. While it can impact the loan terms you qualify for, there are still advantages
-                to securing a home loan—even with a lower credit score.
+                to securing a home loanâ€”even with a lower credit score.
               </p>
             </div>
 
@@ -419,9 +419,9 @@ export default function MortgageForPoorCreditPage() {
         </section>
 
         {/* Programs */}
-        <section className="w-full bg-[#f5f0e8] py-16 lg:py-24 border-y border-[#e8e0d0]/50">
+        <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -461,9 +461,9 @@ export default function MortgageForPoorCreditPage() {
         </section>
 
         {/* Reviews */}
-        <section className="w-full py-16 lg:py-24">
+        <section className="w-full loan-section">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[38px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -472,7 +472,7 @@ export default function MortgageForPoorCreditPage() {
               </h2>
               <p className="text-[#4e5b4e] text-[15px] leading-relaxed">
                 At AZ Mortgage Brothers, we understand that buying a home with poor credit can feel
-                overwhelming—but we&apos;ve helped many borrowers just like you secure the right
+                overwhelmingâ€”but we&apos;ve helped many borrowers just like you secure the right
                 mortgage.
               </p>
             </div>
@@ -516,9 +516,9 @@ export default function MortgageForPoorCreditPage() {
         </section>
 
         {/* Why choose us */}
-        <section className="w-full bg-[#08271B] py-16 lg:py-24 text-white">
+        <section className="w-full bg-[#08271B] loan-section text-white">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-white text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -553,9 +553,9 @@ export default function MortgageForPoorCreditPage() {
         </section>
 
         {/* FAQ */}
-        <section className="w-full py-16 lg:py-24">
+        <section className="w-full loan-section">
           <div className="max-w-3xl mx-auto px-6 lg:px-10">
-            <div className="text-center mb-10">
+            <div className="text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-4"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -615,7 +615,7 @@ export default function MortgageForPoorCreditPage() {
         </section>
 
         {/* Contact CTA */}
-        <section className="w-full bg-[#f5f0e8] py-16 lg:py-20 border-y border-[#e8e0d0]/50">
+        <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
           <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center">
             <h2
               className="text-[#08271B] text-[30px] lg:text-[38px] font-normal leading-tight mb-5"
@@ -654,10 +654,10 @@ export default function MortgageForPoorCreditPage() {
         </section>
 
         {/* Explore solutions */}
-        <section className="w-full py-16 lg:py-20">
+        <section className="w-full loan-section">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <h2
-              className="text-[#08271B] text-[28px] lg:text-[34px] font-normal text-center mb-10"
+              className="text-[#08271B] text-[28px] lg:text-[34px] font-normal text-center mb-8"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Explore Our Mortgage Solutions

@@ -55,7 +55,7 @@ export default function LoanProgramHero({
           </p>
 
           {hasCta || hasSecondaryCta ? (
-            <div className={`flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full sm:w-auto ${hasNote ? "mb-4" : "mb-0"}`}>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 w-full sm:w-auto">
               {hasCta && (
                 <Link
                   href={ctaHref}
@@ -108,7 +108,7 @@ export default function LoanProgramHero({
           ) : null}
 
           {hasNote ? (
-            <p className="text-[#8a9a7a] text-[12px] font-medium text-center">{note}</p>
+            <p className="text-[#8a9a7a] text-[12px] font-medium text-center mt-3">{note}</p>
           ) : null}
         </div>
       </section>

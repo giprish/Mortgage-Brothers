@@ -285,7 +285,7 @@ export default function JumboLoansPage() {
         />
 
         {/* Feature strip */}
-        <section className="w-full bg-[#eeeff4] border-b border-[#e0e2e8] py-10 lg:py-12">
+        <section className="w-full bg-[#eeeff4] border-b border-[#e0e2e8] loan-strip">
           <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-3 gap-8">
             {featureStrip.map((title) => (
               <div key={title} className="flex items-start gap-3">
@@ -354,15 +354,13 @@ export default function JumboLoansPage() {
               Get Your Jumbo Loan Quote Now
             </Link>
           </div>
-          <div className="loan-block-gap">
-            <StatsBanner sectionClassName="py-0 bg-transparent" stats={stats} />
-          </div>
+          <StatsBanner sectionClassName="py-0 bg-transparent" stats={stats} />
         </section>
 
         {/* Why choose a jumbo loan */}
         <section className="w-full loan-section">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-10">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[38px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -398,7 +396,7 @@ export default function JumboLoansPage() {
         {/* Understanding */}
         <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-10">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[38px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -437,7 +435,7 @@ export default function JumboLoansPage() {
         {/* Eligibility */}
         <section className="w-full loan-section">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-10">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[38px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -494,7 +492,7 @@ export default function JumboLoansPage() {
         {/* Application process */}
         <section className="w-full loan-section">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-10">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[38px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -505,7 +503,7 @@ export default function JumboLoansPage() {
                 Navigating the application process for a Jumbo Loan can seem daunting due to the higher requirements and complexities involved. However, understanding each step can help streamline your experience and increase your chances of approval. Here&apos;s a breakdown of the application process:
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {processSteps.map((step, i) => (
                 <div key={step.title} className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm">
                   <div className="w-10 h-10 rounded-full bg-[#e8f5e9] text-[#3fb364] font-bold text-[16px] flex items-center justify-center mb-4">
@@ -516,16 +514,18 @@ export default function JumboLoansPage() {
                 </div>
               ))}
             </div>
-            <div className="bg-[#3fb364] rounded-2xl p-8 lg:p-10 text-center max-w-3xl mx-auto">
-              <p className="text-white text-[15.5px] leading-relaxed mb-6">
-                By following these steps and staying organized throughout the process, you can navigate the complexities of applying for a Jumbo Loan with confidence. Our team is here to assist you every step of the way!
-              </p>
-              <Link
-                href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-white hover:bg-[#f5f0e8] text-[#08271B] text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
-              >
-                Schedule Your Free Jumbo Loan Consultation
-              </Link>
+            <div className="loan-btn-wrap">
+              <div className="bg-[#3fb364] rounded-2xl p-8 lg:p-10 text-center max-w-3xl mx-auto">
+                <p className="text-white text-[15.5px] leading-relaxed mb-6">
+                  By following these steps and staying organized throughout the process, you can navigate the complexities of applying for a Jumbo Loan with confidence. Our team is here to assist you every step of the way!
+                </p>
+                <Link
+                  href="/#get-pre-approved"
+                  className="inline-flex items-center gap-2 bg-white hover:bg-[#f5f0e8] text-[#08271B] text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                >
+                  Schedule Your Free Jumbo Loan Consultation
+                </Link>
+              </div>
             </div>
           </div>
         </section>
@@ -533,7 +533,7 @@ export default function JumboLoansPage() {
         {/* Market insights */}
         <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-10">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[38px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -566,7 +566,7 @@ export default function JumboLoansPage() {
         {/* Reviews */}
         <section className="w-full loan-section">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-10">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -614,7 +614,7 @@ export default function JumboLoansPage() {
         {/* Why MB */}
         <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-10">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -625,7 +625,7 @@ export default function JumboLoansPage() {
                 At AZ Mortgage Brothers, we specialize in Jumbo Loans, offering unparalleled service and expertise. Here&apos;s what sets us apart:
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {whyMb.map((card) => (
                 <div key={card.title} className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm">
                   <h3 className="text-[#08271B] text-[16px] font-bold mb-3 flex items-start gap-2">
@@ -636,19 +636,21 @@ export default function JumboLoansPage() {
                 </div>
               ))}
             </div>
-            <div className="bg-[#3fb364] rounded-2xl p-8 lg:p-10 text-center max-w-3xl mx-auto">
-              <p className="text-white text-[15.5px] leading-relaxed mb-4">
-                Experience the AZ Mortgage Brothers difference in your home buying journey. Let our expertise guide you to the perfect loan and your dream home in Arizona.
-              </p>
-              <a href="tel:+16025352171" className="text-white text-[28px] lg:text-[32px] font-bold block mb-6 hover:opacity-90 transition-opacity">
-                (602) 535-2171
-              </a>
-              <Link
-                href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-white hover:bg-[#f5f0e8] text-[#08271B] text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
-              >
-                Get Your Free Mortgage Consultation
-              </Link>
+            <div className="loan-btn-wrap">
+              <div className="bg-[#3fb364] rounded-2xl p-8 lg:p-10 text-center max-w-3xl mx-auto">
+                <p className="text-white text-[15.5px] leading-relaxed mb-4">
+                  Experience the AZ Mortgage Brothers difference in your home buying journey. Let our expertise guide you to the perfect loan and your dream home in Arizona.
+                </p>
+                <a href="tel:+16025352171" className="text-white text-[28px] lg:text-[32px] font-bold block mb-6 hover:opacity-90 transition-opacity">
+                  (602) 535-2171
+                </a>
+                <Link
+                  href="/#get-pre-approved"
+                  className="inline-flex items-center gap-2 bg-white hover:bg-[#f5f0e8] text-[#08271B] text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                >
+                  Get Your Free Mortgage Consultation
+                </Link>
+              </div>
             </div>
           </div>
         </section>
@@ -656,7 +658,7 @@ export default function JumboLoansPage() {
         {/* FAQ */}
         <section className="w-full loan-section">
           <div className="max-w-3xl mx-auto px-6 lg:px-10">
-            <div className="text-center mb-10">
+            <div className="text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-4"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -743,7 +745,7 @@ export default function JumboLoansPage() {
         <section className="w-full loan-section">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <h2
-              className="text-[#08271B] text-[28px] lg:text-[34px] font-normal text-center mb-10"
+              className="text-[#08271B] text-[28px] lg:text-[34px] font-normal text-center mb-8"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Explore Our Mortgage Solutions

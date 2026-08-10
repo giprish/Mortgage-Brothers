@@ -257,8 +257,8 @@ export default function ConventionalVsFhaLoansPage() {
         />
 
         {/* Feature strip */}
-        <section className="w-full bg-[#eeeff4] border-b border-[#e0e2e8] py-10 lg:py-12">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <section className="loan-strip w-full bg-[#eeeff4] border-b border-[#e0e2e8]">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
             {featureStrip.map((title) => (
               <div key={title} className="flex items-start gap-3">
                 <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm">
@@ -271,9 +271,9 @@ export default function ConventionalVsFhaLoansPage() {
         </section>
 
         {/* Introduction */}
-        <section className="w-full py-14 sm:py-16 lg:py-20">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+        <section className="loan-section w-full">
+          <div className="max-w-6xl mx-auto">
+            <div className="max-w-3xl mx-auto loan-section-heading">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -330,7 +330,7 @@ export default function ConventionalVsFhaLoansPage() {
           </div>
         </section>
 
-        <section className="loan-cta-band bg-[#fcf9f3]">
+        <section className="loan-cta-band bg-[#fcf9f3] !pb-0">
           <div className="mx-auto max-w-6xl px-6 text-center loan-block-gap lg:px-10">
             <Link
               href="/#get-pre-approved"
@@ -345,9 +345,9 @@ export default function ConventionalVsFhaLoansPage() {
         </section>
 
         {/* Key differences */}
-        <section className="w-full py-14 sm:py-16 lg:py-20">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+        <section className="loan-section w-full !pt-0">
+          <div className="max-w-6xl mx-auto">
+            <div className="max-w-3xl mx-auto loan-section-heading">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -360,7 +360,7 @@ export default function ConventionalVsFhaLoansPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
               {keyDifferences.map((card) => (
                 <div
                   key={card.title}
@@ -398,9 +398,9 @@ export default function ConventionalVsFhaLoansPage() {
         </section>
 
         {/* Who benefits */}
-        <section className="w-full bg-[#f5f0e8] py-14 sm:py-16 lg:py-20 border-y border-[#e8e0d0]/50">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+        <section className="loan-section w-full bg-[#f5f0e8] border-y border-[#e8e0d0]/50">
+          <div className="max-w-6xl mx-auto">
+            <div className="max-w-3xl mx-auto loan-section-heading">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -467,9 +467,9 @@ export default function ConventionalVsFhaLoansPage() {
         </section>
 
         {/* Cost comparisons */}
-        <section className="w-full py-14 sm:py-16 lg:py-20">
-          <div className="max-w-5xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+        <section className="loan-section w-full">
+          <div className="max-w-5xl mx-auto">
+            <div className="max-w-3xl mx-auto loan-section-heading">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -490,7 +490,7 @@ export default function ConventionalVsFhaLoansPage() {
               conventionalHeader="Conventional 30 Year Fixed"
               fhaHeader="Fixed 30 Year FHA"
             />
-            <ul className="mt-5 mb-12 space-y-2 text-[#4e5b4e] text-[14.5px] leading-relaxed list-disc pl-5">
+            <ul className="mt-5 mb-8 space-y-2 text-[#4e5b4e] text-[14.5px] leading-relaxed list-disc pl-5">
               <li>
                 The Conventional loan is the clear winner with a total monthly payment that is $38 less
                 than the FHA loan.
@@ -512,7 +512,7 @@ export default function ConventionalVsFhaLoansPage() {
               conventionalHeader="Conventional 30 Year Fixed"
               fhaHeader="Fixed 30 Year FHA"
             />
-            <ul className="mt-5 mb-10 space-y-2 text-[#4e5b4e] text-[14.5px] leading-relaxed list-disc pl-5">
+            <ul className="mt-5 mb-8 space-y-2 text-[#4e5b4e] text-[14.5px] leading-relaxed list-disc pl-5">
               <li>
                 The FHA loan is significantly more advantageous, with a total monthly payment that is $409
                 less than the Conventional loan.
@@ -574,8 +574,8 @@ export default function ConventionalVsFhaLoansPage() {
         </section>
 
         {/* Mid CTA */}
-        <section className="w-full bg-[#08271B] py-12 sm:py-14 lg:py-16 text-white text-center">
-          <div className="max-w-3xl mx-auto px-6">
+        <section className="loan-section w-full bg-[#08271B] text-white text-center">
+          <div className="max-w-3xl mx-auto">
             <p className="text-[#c8c8b8] text-[15.5px] leading-relaxed mb-6">
               Still weighing the pros and cons of Conventional vs. FHA loans? Let&apos;s simplify the
               process and find the best option for you.
@@ -590,9 +590,9 @@ export default function ConventionalVsFhaLoansPage() {
         </section>
 
         {/* Reviews */}
-        <section className="w-full py-14 sm:py-16 lg:py-20">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+        <section className="loan-section w-full">
+          <div className="max-w-6xl mx-auto">
+            <div className="max-w-3xl mx-auto loan-section-heading">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[38px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -644,8 +644,8 @@ export default function ConventionalVsFhaLoansPage() {
         </section>
 
         {/* Quiz CTA */}
-        <section className="w-full bg-[#f5f0e8] py-12 sm:py-14 lg:py-16 border-y border-[#e8e0d0]/50">
-          <div className="max-w-3xl mx-auto px-6 text-center">
+        <section className="loan-section w-full bg-[#f5f0e8] border-y border-[#e8e0d0]/50">
+          <div className="max-w-3xl mx-auto text-center">
             <h2
               className="text-[#08271B] text-[26px] lg:text-[32px] font-normal leading-tight mb-4"
               style={{ fontFamily: "'Playfair Display', serif" }}
@@ -666,9 +666,9 @@ export default function ConventionalVsFhaLoansPage() {
         </section>
 
         {/* Expert guidance */}
-        <section className="w-full bg-[#08271B] py-14 sm:py-16 lg:py-20 text-white">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
+        <section className="loan-section w-full bg-[#08271B] text-white">
+          <div className="max-w-6xl mx-auto">
+            <div className="max-w-3xl mx-auto loan-section-heading">
               <h2
                 className="text-white text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -702,9 +702,9 @@ export default function ConventionalVsFhaLoansPage() {
         </section>
 
         {/* FAQ */}
-        <section className="w-full py-14 sm:py-16 lg:py-20">
-          <div className="max-w-3xl mx-auto px-6 lg:px-10">
-            <div className="text-center mb-10">
+        <section className="loan-section w-full">
+          <div className="max-w-3xl mx-auto">
+            <div className="loan-section-heading">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-4"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -764,15 +764,15 @@ export default function ConventionalVsFhaLoansPage() {
         </section>
 
         {/* Contact CTA */}
-        <section className="w-full bg-[#f5f0e8] py-14 sm:py-16 lg:py-20 border-y border-[#e8e0d0]/50">
-          <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center">
+        <section className="loan-section w-full bg-[#f5f0e8] border-y border-[#e8e0d0]/50">
+          <div className="max-w-4xl mx-auto text-center">
             <h2
               className="text-[#08271B] text-[30px] lg:text-[38px] font-normal leading-tight mb-5"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Ready to Take the Next Step? Let&apos;s Talk!
             </h2>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 text-[14.5px] text-[#08271B]">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-[14.5px] text-[#08271B]">
               <a href="tel:+16025352171" className="font-semibold hover:text-[#3fb364] transition-colors">
                 +1 602-535-2171
               </a>
@@ -786,20 +786,22 @@ export default function ConventionalVsFhaLoansPage() {
                 1599 East Orangewood Ave Suite 200, Phoenix, AZ 85020
               </a>
             </div>
-            <Link
-              href="/#get-pre-approved"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"
-            >
-              Start my preapproval
-            </Link>
+            <div className="loan-btn-wrap">
+              <Link
+                href="/#get-pre-approved"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"
+              >
+                Start my preapproval
+              </Link>
+            </div>
           </div>
         </section>
 
         {/* Explore solutions */}
-        <section className="w-full py-14 sm:py-16 lg:py-20">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+        <section className="loan-section w-full">
+          <div className="max-w-6xl mx-auto">
             <h2
-              className="text-[#08271B] text-[28px] lg:text-[34px] font-normal text-center mb-10"
+              className="text-[#08271B] text-[28px] lg:text-[34px] font-normal loan-section-heading"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Explore Our Mortgage Solutions

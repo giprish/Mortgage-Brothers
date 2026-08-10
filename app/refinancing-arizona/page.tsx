@@ -254,7 +254,7 @@ export default function RefinancingArizonaPage() {
         />
 
         {/* Feature strip */}
-        <section className="w-full bg-[#eeeff4] border-b border-[#e0e2e8] py-10 lg:py-12">
+        <section className="w-full bg-[#eeeff4] border-b border-[#e0e2e8] loan-strip">
           <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-3 gap-8">
             {featureStrip.map((title) => (
               <div key={title} className="flex items-start gap-3">
@@ -270,7 +270,7 @@ export default function RefinancingArizonaPage() {
         {/* Intro + benefits */}
         <section className="w-full loan-section">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 mb-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
               <div className="lg:col-span-5">
                 <h2
                   className="text-[#08271B] text-[28px] lg:text-[38px] font-normal leading-tight mb-4"
@@ -360,7 +360,7 @@ export default function RefinancingArizonaPage() {
         {/* Is refinancing right for you */}
         <section className="w-full loan-section">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-10">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[38px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -417,7 +417,7 @@ export default function RefinancingArizonaPage() {
         {/* Process */}
         <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-10">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[38px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -574,7 +574,7 @@ export default function RefinancingArizonaPage() {
         </section>
 
         {/* Mid CTA */}
-        <section className="w-full px-6 lg:px-10 pb-16">
+        <section className="w-full loan-section">
           <div className="max-w-3xl mx-auto bg-[#3fb364] rounded-2xl p-8 lg:p-10 text-center">
             <p className="text-white text-[15.5px] leading-relaxed mb-6">
               Ready to start your refinancing journey? Our expert team is here to guide you through every step of the process, ensuring a smooth and beneficial transition to your new mortgage terms.
@@ -591,7 +591,7 @@ export default function RefinancingArizonaPage() {
         {/* Reviews */}
         <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-10">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -639,7 +639,7 @@ export default function RefinancingArizonaPage() {
         {/* Why choose us */}
         <section className="w-full loan-section">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-10">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -653,7 +653,7 @@ export default function RefinancingArizonaPage() {
                 Our commitment to excellence and client satisfaction sets us apart in the competitive mortgage landscape. Here&apos;s why homeowners in Arizona trust us with their refinancing needs:
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {whyChoose.map((card) => (
                 <div key={card.title} className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm">
                   <h3 className="text-[#08271B] text-[16px] font-bold mb-3">{card.title}</h3>
@@ -661,19 +661,21 @@ export default function RefinancingArizonaPage() {
                 </div>
               ))}
             </div>
-            <div className="bg-[#3fb364] rounded-2xl p-8 lg:p-10 text-center max-w-3xl mx-auto">
-              <p className="text-white text-[15.5px] leading-relaxed mb-4">
-                Ready to discuss your refinancing options? Our expert team is just a call away to provide you with personalized assistance and answer any questions you may have.
-              </p>
-              <a href="tel:+16025352171" className="text-white text-[28px] lg:text-[32px] font-bold block mb-6 hover:opacity-90 transition-opacity">
-                (602) 535-2171
-              </a>
-              <a
-                href="tel:+16025352171"
-                className="inline-flex items-center gap-2 bg-white hover:bg-[#f5f0e8] text-[#08271B] text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
-              >
-                Call Us Now for a Free Consultation!
-              </a>
+            <div className="loan-btn-wrap">
+              <div className="bg-[#3fb364] rounded-2xl p-8 lg:p-10 text-center max-w-3xl mx-auto">
+                <p className="text-white text-[15.5px] leading-relaxed mb-4">
+                  Ready to discuss your refinancing options? Our expert team is just a call away to provide you with personalized assistance and answer any questions you may have.
+                </p>
+                <a href="tel:+16025352171" className="text-white text-[28px] lg:text-[32px] font-bold block mb-6 hover:opacity-90 transition-opacity">
+                  (602) 535-2171
+                </a>
+                <a
+                  href="tel:+16025352171"
+                  className="inline-flex items-center gap-2 bg-white hover:bg-[#f5f0e8] text-[#08271B] text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                >
+                  Call Us Now for a Free Consultation!
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -681,7 +683,7 @@ export default function RefinancingArizonaPage() {
         {/* FAQ */}
         <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
           <div className="max-w-3xl mx-auto px-6 lg:px-10">
-            <div className="text-center mb-10">
+            <div className="text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-4"
                 style={{ fontFamily: "'Playfair Display', serif" }}
@@ -692,7 +694,7 @@ export default function RefinancingArizonaPage() {
                 Navigating the refinancing process can raise many questions. Here are some of the most common inquiries we receive from homeowners considering refinancing their mortgages. Understanding these key points can help you make informed decisions about your financial future.
               </p>
             </div>
-            <div className="mb-10">
+            <div>
               <FaqAccordion items={faqs} />
             </div>
             <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center">
@@ -743,7 +745,7 @@ export default function RefinancingArizonaPage() {
         <section className="w-full bg-[#f5f0e8] loan-section border-t border-[#e8e0d0]/50">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <h2
-              className="text-[#08271B] text-[28px] lg:text-[34px] font-normal text-center mb-10"
+              className="text-[#08271B] text-[28px] lg:text-[34px] font-normal text-center mb-8"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
               Explore Our Mortgage Solutions

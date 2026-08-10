@@ -209,7 +209,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
         />
 
         {/* TRUST BAR */}
-        <div className="w-full bg-[#03170e] text-[#c8c8b8] border-y border-white/10 py-4 px-6">
+        <div className="loan-strip w-full bg-[#03170e] text-[#c8c8b8] border-y border-white/10">
           <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-around gap-6 text-[14px] font-medium">
             <div className="flex items-center gap-2">
               <span className="text-[#3fb364]">✓</span>
@@ -272,7 +272,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
           </div>
         </section>
 
-        <section className="loan-cta-band bg-[#fcf9f3]">
+        <section className="loan-cta-band bg-[#fcf9f3] !pb-0">
           <div className="mx-auto max-w-6xl px-6 text-center loan-block-gap lg:px-10">
             <Link
               href="/#get-pre-approved"
@@ -295,7 +295,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
         </section>
 
         {/* ELIGIBILITY */}
-        <section className="loan-section bg-[#fcf9f3]">
+        <section className="loan-section bg-[#fcf9f3] !pt-0">
           <div className="max-w-5xl mx-auto space-y-10">
             <div className="text-center">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">

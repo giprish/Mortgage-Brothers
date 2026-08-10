@@ -186,7 +186,11 @@ section.no-content-visibility {
   }
 }
 
-/* Loan program pages — consistent section rhythm */
+/* ------------------------------------------------------------------
+   Loan program pages — spacing scale
+   Mobile: 2.5rem | sm: 3rem | lg: 3.5rem  (equal top + bottom)
+   ------------------------------------------------------------------ */
+
 @utility loan-section {
   padding-block: 2.5rem;
   padding-inline: 1.5rem;
@@ -209,15 +213,15 @@ section.no-content-visibility {
 @utility loan-section-stack {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 @utility loan-section-heading {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
-/* Equal vertical band for CTA + stats blocks (matches loan-section rhythm) */
+/* Same rhythm as loan-section — use for CTA + Stats bands */
 @utility loan-cta-band {
   padding-block: 2.5rem;
   padding-inline: 1.5rem;
@@ -232,20 +236,27 @@ section.no-content-visibility {
   }
 }
 
-/* Gap between stacked blocks (e.g. CTA button → stats card) */
+/* Gap between stacked blocks inside a band (button → stats) */
 @utility loan-block-gap {
-  margin-bottom: 2rem;
-
-  @media (min-width: 640px) {
-    margin-bottom: 2.5rem;
-  }
+  margin-bottom: 2.5rem;
 }
 
-/* Equal top + bottom spacing around end-of-section CTA buttons.
-   Use instead of grid mb-10 + bare text-center wraps. */
+/* Space above end-of-section CTAs. Bottom air comes from loan-section pb
+   so top/bottom of the section stay equal. */
 @utility loan-btn-wrap {
   text-align: center;
-  padding-block: 2.5rem;
+  padding-top: 2.5rem;
+}
+
+/* Narrow feature / trust strips under the hero */
+@utility loan-strip {
+  padding-block: 2rem;
+  padding-inline: 1.5rem;
+
+  @media (min-width: 1024px) {
+    padding-block: 2.5rem;
+    padding-inline: 2.5rem;
+  }
 }
 
 @utility about-section {

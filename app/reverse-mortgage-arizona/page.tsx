@@ -169,7 +169,7 @@ export default function ReverseMortgageArizonaPage() {
         />
 
         {/* TRUST BAR */}
-        <div className="w-full bg-[#03170e] text-[#c8c8b8] border-y border-white/10 py-4 px-6">
+        <div className="loan-strip w-full bg-[#03170e] text-[#c8c8b8] border-y border-white/10">
           <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-around gap-6 text-[14px] font-medium">
             <div className="flex items-center gap-2">
               <span className="text-[#3fb364]" aria-hidden>

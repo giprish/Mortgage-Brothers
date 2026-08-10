@@ -1,300 +1,278 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef } from "react";
+import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import { COMPANY } from "@/lib/company";
 
-const helpTopics = [
-  "I want to get pre-approved",
-  "I'm refinancing",
-  "I have a question about my loan",
-  "I'm a real estate agent partner",
-  "Something else"
+const JOTFORM_SCRIPT_SRC = "https://form.jotform.com/jsform/250026749097159";
+const MAP_EMBED_SRC =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1662.6593094747534!2d-112.04951486150385!3d33.545097128830214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b72a8a56e5b8f%3A0x32ff520eb58d08d6!2sMortgage%20Brothers!5e0!3m2!1sen!2sin!4v1757943685115!5m2!1sen!2sin";
+
+const loanSolutions = [
+  { label: "Conventional Home Loans", href: "/conventional-home-loans-arizona/" },
+  { label: "Conventional vs FHA Loans", href: "/conventional-vs-fha-loans-arizona/" },
+  { label: "FHA Home Loans", href: "/fha-home-loans-arizona/" },
+  { label: "FHA Streamline Refinance", href: "/fha-streamline-refinance-arizona/" },
+  { label: "First Time Home Buyer", href: "/first-time-home-buyer-arizona-guide/" },
+  { label: "Reverse Mortgage", href: "/reverse-mortgage-arizona/" },
+  { label: "Reverse Mortgage for a Home Purchase", href: "/reverse-mortgage-home-purchase-arizona/" },
+  { label: "Refinancing", href: "/refinancing-arizona/" },
+  { label: "Jumbo Loans", href: "/jumbo-loans-arizona/" },
+  { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-export default function ContactPage() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [selectedTopic, setSelectedTopic] = useState("I want to get pre-approved");
-  const [message, setMessage] = useState("");
-  const [formSubmitted, setFormSubmitted] = useState(false);
+const socialLinks = [
+  {
+    label: "Facebook",
+    href: "https://www.facebook.com/azmortgagebrothers/",
+    icon: (
+      <span className="font-serif font-bold text-[18px]" aria-hidden>
+        f
+      </span>
+    ),
+  },
+  {
+    label: "X (Twitter)",
+    href: "https://x.com/azmortgagebros",
+    icon: (
+      <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden>
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+    ),
+  },
+  {
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/company/azmortgagebrothers/",
+    icon: (
+      <span className="font-sans font-bold text-[14px]" aria-hidden>
+        in
+      </span>
+    ),
+  },
+  {
+    label: "YouTube",
+    href: "https://www.youtube.com/@TheMortgageBrothersTeam/",
+    icon: (
+      <svg className="w-[18px] h-[18px] fill-current" viewBox="0 0 24 24" aria-hidden>
+        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+      </svg>
+    ),
+  },
+];
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Simulate form submission
-    setFormSubmitted(true);
-    setTimeout(() => {
-      // Reset form after some time
-      setFirstName("");
-      setLastName("");
-      setEmail("");
-      setPhone("");
-      setMessage("");
-      setFormSubmitted(false);
-    }, 4000);
-  };
+const CheckIcon = () => (
+  <svg className="w-5 h-5 text-[#3fb364] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+  </svg>
+);
+
+function ContactJotform() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    container.innerHTML = "";
+
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = JOTFORM_SCRIPT_SRC;
+    script.async = true;
+    container.appendChild(script);
+
+    return () => {
+      container.innerHTML = "";
+    };
+  }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
+    <div
+      ref={containerRef}
+      className="w-full min-h-[520px]"
+      aria-label="Contact form"
+    />
+  );
+}
+
+export default function ContactPage() {
+  return (
+    <div className="flex flex-col min-h-screen bg-white">
       <Navbar />
 
-      <main className="flex-grow pt-[110px] lg:pt-[130px] pb-16 px-6 lg:px-10">
-        <div className="max-w-5xl mx-auto">
-          {/* Header Section */}
-          <div className="text-center mb-16">
-            <span className="text-[#b89a5a] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
-              CONTACT US
-            </span>
-            <h1 className="text-[#052316] text-[36px] lg:text-[48px] font-playfair font-normal leading-tight mb-4">
+      <main className="flex-grow">
+        {/* Centered hero — no image, matches other loan pages */}
+        <div className="h-[64px] sm:h-[72px] bg-[#08271B]" aria-hidden />
+        <section className="w-full bg-brand-green-deep text-white py-10 sm:py-12 lg:py-14 text-center relative overflow-hidden">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
+            <div className="absolute -bottom-36 -left-36 w-[min(360px,90vw)] h-[360px] rounded-full border border-white/5 opacity-40" />
+            <div className="absolute -top-36 -right-36 w-[min(400px,90vw)] h-[400px] rounded-full border border-white/5 opacity-40" />
+          </div>
+          <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 flex flex-col items-center text-center">
+            <h1 className="text-white text-hero-title font-playfair font-normal leading-[1.1] mb-4 sm:mb-5 max-w-3xl mx-auto">
               Your Trusted Phoenix Arizona Mortgage Resource
             </h1>
-            <p className="text-[#4e5b4e] text-[15px] lg:text-[16px] leading-[1.7] max-w-2xl mx-auto">
-              We&apos;re here to help and we&apos;ll get in touch with you shortly.
+            <p className="text-brand-text-light text-[15px] lg:text-[16px] leading-[1.7] max-w-2xl mx-auto mb-8">
+              We&apos;re here to help and we&apos;ll get in touch with you shortly
             </p>
+            <a
+              href="#Get-in-Touch"
+              className="w-full sm:w-auto btn-primary hover:shadow-brand-green-accent/20 group text-[15px] font-bold px-7 py-3.5"
+            >
+              Contact Us
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="group-hover:translate-x-0.5 transition-transform duration-200"
+                aria-hidden
+              >
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </a>
           </div>
+        </section>
 
-          {/* Three Contact Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            {/* Card 1 - Call or Text */}
-            <div className="bg-[#faf7f0] rounded-2xl p-6 border border-[#e8e0d0]/60 shadow-sm flex flex-col items-center text-center">
-              <div className="w-10 h-10 rounded-full bg-[#3fb364]/10 flex items-center justify-center text-[#3fb364] mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5" className="w-5 h-5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-                </svg>
-              </div>
-              <span className="text-[#a89a70] text-[10px] font-bold tracking-widest uppercase mb-1.5">
-                CALL OR TEXT
-              </span>
-              <a href="tel:6025352171" className="text-[#052316] text-[18px] font-bold hover:text-[#3fb364] transition-colors mb-1">
-                (602) 535-2171
-              </a>
-              <span className="text-[#8a9a7a] text-[12px]">
-                Mon-Fri 8am–8pm MST
-              </span>
-            </div>
-
-            {/* Card 2 - Email */}
-            <div className="bg-[#faf7f0] rounded-2xl p-6 border border-[#e8e0d0]/60 shadow-sm flex flex-col items-center text-center">
-              <div className="w-10 h-10 rounded-full bg-[#3fb364]/10 flex items-center justify-center text-[#3fb364] mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5" className="w-5 h-5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                </svg>
-              </div>
-              <span className="text-[#a89a70] text-[10px] font-bold tracking-widest uppercase mb-1.5">
-                EMAIL
-              </span>
-              <a href="mailto:team@azmortgagebrothers.com" className="text-[#052316] text-[16px] lg:text-[18px] font-bold hover:text-[#3fb364] transition-colors mb-1 break-all">
-                team@azmortgagebrothers.com
-              </a>
-              <span className="text-[#8a9a7a] text-[12px]">
-                We reply same business day
-              </span>
-            </div>
-
-            {/* Card 3 - Visit */}
-            <div className="bg-[#faf7f0] rounded-2xl p-6 border border-[#e8e0d0]/60 shadow-sm flex flex-col items-center text-center">
-              <div className="w-10 h-10 rounded-full bg-[#3fb364]/10 flex items-center justify-center text-[#3fb364] mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5" className="w-5 h-5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                </svg>
-              </div>
-              <span className="text-[#a89a70] text-[10px] font-bold tracking-widest uppercase mb-1.5">
-                VISIT
-              </span>
-              <span className="text-[#052316] text-[15px] font-bold mb-1">
-                1599 East Orangewood Ave, Suite 200
-              </span>
-              <span className="text-[#8a9a7a] text-[12px]">
-                Phoenix, AZ 85020
-              </span>
-            </div>
-          </div>
-
-          <p className="text-center text-[#8a9a7a] text-[13.5px] leading-relaxed mb-16 mt-10">
-            If you need immediate help, you can call us at{" "}
-            <a href="tel:+16025351288" className="text-[#052316] font-semibold hover:text-[#3fb364] transition-colors">602-535-1288</a>, use our contact form to request a callback.
-          </p>
-
-          {/* Two-Column Form & Details Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            {/* Left Column: Form */}
-            <div className="lg:col-span-7 bg-white rounded-3xl border border-[#e8e0d0]/60 p-8 shadow-sm">
-              <h2 className="text-[#052316] text-[24px] font-playfair font-normal mb-6">
-                Send us a message
+        {/* Get in Touch — centered like other loan pages */}
+        <section className="w-full bg-white loan-section">
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="loan-section-heading">
+              <h2
+                className="text-[#08271B] text-[28px] lg:text-[34px] font-normal leading-tight mb-4"
+                style={{ fontFamily: "'Playfair Display', serif" }}
+              >
+                Get in Touch with AZ Mortgage Brothers
               </h2>
-
-              {formSubmitted ? (
-                <div className="py-12 text-center flex flex-col items-center justify-center gap-4">
-                  <div className="w-14 h-14 rounded-full bg-[#e8f5e9] flex items-center justify-center text-[#3fb364]">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3" className="w-6 h-6">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                  </div>
-                  <h3 className="text-[#052316] text-[18px] font-bold">Message Sent!</h3>
-                  <p className="text-[#4e5b4e] text-[14px] max-w-xs">
-                    Thanks for reaching out. One of the Mortgage Brothers will contact you shortly.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-                  {/* First and Last Name row */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="flex flex-col gap-2">
-                      <label className="text-[#1a3a1a] text-[12px] font-semibold">First name</label>
-                      <input
-                        type="text"
-                        required
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)}
-                        placeholder="Jordan"
-                        className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364] transition-all"
-                      />
-                    </div>
-                    <div className="flex flex-col gap-2">
-                      <label className="text-[#1a3a1a] text-[12px] font-semibold">Last name</label>
-                      <input
-                        type="text"
-                        required
-                        value={lastName}
-                        onChange={(e) => setLastName(e.target.value)}
-                        placeholder="Rivera"
-                        className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364] transition-all"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Email and Phone row */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="flex flex-col gap-2">
-                      <label className="text-[#1a3a1a] text-[12px] font-semibold">Email</label>
-                      <input
-                        type="email"
-                        required
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="you@email.com"
-                        className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364] transition-all"
-                      />
-                    </div>
-                    <div className="flex flex-col gap-2">
-                      <label className="text-[#1a3a1a] text-[12px] font-semibold">Phone</label>
-                      <input
-                        type="tel"
-                        required
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        placeholder="(602) 000-0000"
-                        className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364] transition-all"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Help Topics Selector Pills */}
-                  <div className="flex flex-col gap-3">
-                    <label className="text-[#1a3a1a] text-[12px] font-semibold">What can we help with?</label>
-                    <div className="flex flex-wrap gap-2">
-                      {helpTopics.map((topic) => {
-                        const isSelected = selectedTopic === topic;
-                        return (
-                          <button
-                            key={topic}
-                            type="button"
-                            onClick={() => setSelectedTopic(topic)}
-                            className={`px-4 py-2 text-[12.5px] font-semibold rounded-full border transition-all duration-150 cursor-pointer ${
-                              isSelected
-                                ? "bg-[#3fb364] text-white border-transparent shadow-sm"
-                                : "bg-white border-[#e8e0d0] text-[#1a3a1a] hover:bg-[#faf7f0] hover:text-[#052316]"
-                            }`}
-                          >
-                            {topic}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                  {/* Message Textarea */}
-                  <div className="flex flex-col gap-2">
-                    <label className="text-[#1a3a1a] text-[12px] font-semibold">Message</label>
-                    <textarea
-                      required
-                      rows={4}
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      placeholder="Tell us a bit about your situation..."
-                      className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364] transition-all resize-none"
-                    />
-                  </div>
-
-                  {/* Submit Button */}
-                  <button
-                    type="submit"
-                    className="btn-primary w-fit"
-                  >
-                    Send message
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3" className="w-3.5 h-3.5">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                    </svg>
-                  </button>
-                </form>
-              )}
             </div>
 
-            {/* Right Column: Map & Hours */}
-           <div className="lg:col-span-5 flex flex-col gap-6">
-              {/* Interactive Map Card */}
-              <div className="bg-white border border-[#e8e0d0]/60 rounded-3xl overflow-hidden shadow-sm flex flex-col h-[280px]">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1662.6704041934636!2d-112.04769592261503!3d33.54452047710611!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b72a8a56e5b8f%3A0x32ff520eb58d08d6!2sMortgage%20Brothers!5e0!3m2!1sen!2sin!4v1784288947157!5m2!1sen!2sin"
-                  className="w-full h-full border-0"
-                  loading="lazy"
-                  allowFullScreen
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Mortgage Brothers Office"
-                />
-                <div className="bg-[#faf7f0] px-6 py-4 border-t border-[#e8e0d0]/40 flex justify-between items-center text-[12px] font-sans">
-                  <div>
-                    <span className="text-[#052316] font-bold block">1599 East Orangewood Ave, Suite 200</span>
-                    <span className="text-[#8a9a7a]">Phoenix, AZ 85020</span>
-                  </div>
-                    <a
-                    href="https://www.google.com/maps/place/Mortgage+Brothers/@33.545095,-112.048227,17z/data=!4m6!3m5!1s0x872b72a8a56e5b8f:0x32ff520eb58d08d6!8m2!3d33.5450949!4d-112.0482274!16s%2Fg%2F1tfp2y0l?hl=en&entry=ttu&g_ep=EgoyMDI2MDcxNS4wIKXMDSoASAFQAw%3D%3D"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#3fb364] font-bold hover:text-[#2d5a2d] transition-colors whitespace-nowrap ml-2"
-                  >
-                    Open in Maps →
-                  </a>
-                </div>
+            <p className="text-[#4e5b4e] text-[15px] lg:text-[16px] leading-[1.7] max-w-3xl mx-auto mb-8">
+              Whether you&apos;re buying your first home, refinancing, or exploring a reverse
+              mortgage, our team is here to help. We&apos;re licensed Arizona mortgage brokers
+              serving Phoenix, Scottsdale, and communities across Maricopa County. Reach out —
+              we&apos;ll get back to you the same business day.
+            </p>
+
+            <p className="text-[#08271B] text-[14px] lg:text-[15px] font-bold mb-10">
+              {COMPANY.legalName} | {COMPANY.azLicenseDisplay} & {COMPANY.nmlsDisplay}
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10 text-left">
+              <div className="bg-[#fcf9f3] rounded-2xl border border-[#e8e0d0]/60 p-5">
+                <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.15em] uppercase mb-2">
+                  Phone
+                </p>
+                <a
+                  href={COMPANY.phoneHref}
+                  className="text-[#08271B] text-[15px] font-semibold hover:text-[#3fb364] transition-colors"
+                >
+                  +1 602-535-2171
+                </a>
               </div>
 
-              {/* Office Hours Card */}
-              <div className="bg-[#052316] rounded-3xl p-8 border border-white/5 text-white shadow-lg">
-                <span className="text-[#a89a70] text-[10px] font-bold tracking-[0.15em] uppercase mb-5 block">
-                  OFFICE HOURS
-                </span>
-
-                <div className="flex flex-col gap-4 text-[14px]">
-                  <div className="flex items-center justify-between border-b border-white/10 pb-3">
-                    <span className="text-white font-medium">Monday – Friday</span>
-                    <span className="text-[#c8c8b8]">8:00a – 6:00p</span>
-                  </div>
-                  <div className="flex items-center justify-between border-b border-white/10 pb-3">
-                    <span className="text-white font-medium">Saturday</span>
-                    <span className="text-[#c8c8b8]">By appointment</span>
-                  </div>
-                  <div className="flex items-center justify-between">
-                    <span className="text-white font-medium">Sunday</span>
-                    <span className="text-[#c8c8b8]">Closed</span>
-                  </div>
-                </div>
+              <div className="bg-[#fcf9f3] rounded-2xl border border-[#e8e0d0]/60 p-5">
+                <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.15em] uppercase mb-2">
+                  Contact
+                </p>
+                <a
+                  href="#Get-in-Touch"
+                  className="text-[#08271B] text-[15px] font-semibold hover:text-[#3fb364] transition-colors"
+                >
+                  Contact Us
+                </a>
               </div>
+
+              <div className="bg-[#fcf9f3] rounded-2xl border border-[#e8e0d0]/60 p-5">
+                <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.15em] uppercase mb-2">
+                  Address
+                </p>
+                <a
+                  href={COMPANY.addressMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#08271B] text-[14px] font-semibold leading-relaxed hover:text-[#3fb364] transition-colors"
+                >
+                  1599 East Orangewood Ave Suite 200
+                  <br />
+                  Phoenix, AZ 85020
+                </a>
+              </div>
+
+              <div className="bg-[#fcf9f3] rounded-2xl border border-[#e8e0d0]/60 p-5">
+                <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.15em] uppercase mb-2">
+                  Office Hours
+                </p>
+                <p className="text-[#4e5b4e] text-[14px] leading-relaxed">
+                  Mon – Fri: 8:00 AM – 5:30 PM
+                  <br />
+                  Sat – Sun: Closed
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center justify-center gap-3 mb-10">
+              {socialLinks.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full bg-[#3fb364] hover:bg-[#349b55] text-white flex items-center justify-center transition-colors"
+                  aria-label={item.label}
+                >
+                  {item.icon}
+                </a>
+              ))}
+            </div>
+
+            <div className="w-full rounded-2xl overflow-hidden border border-[#e8e0d0]/60 shadow-sm mb-10 h-[320px] sm:h-[380px] lg:h-[420px]">
+              <iframe
+                src={MAP_EMBED_SRC}
+                className="w-full h-full border-0"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Mortgage Brothers Office Location"
+              />
+            </div>
+
+            <div id="Get-in-Touch" className="scroll-mt-28 text-left">
+              <ContactJotform />
             </div>
           </div>
-        </div>
+        </section>
+
+        {/* Explore solutions — same card grid as other loan pages */}
+        <section className="loan-section w-full bg-[#f5f0e8] border-t border-[#e8e0d0]/50">
+          <div className="max-w-6xl mx-auto">
+            <h2
+              className="text-[#08271B] text-[28px] lg:text-[34px] font-normal loan-section-heading"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              Explore Our Mortgage Solutions
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {loanSolutions.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="flex items-center gap-3 bg-white border border-[#e8e0d0]/70 rounded-xl px-5 py-4 text-[#08271B] font-semibold text-[14.5px] hover:border-[#3fb364]/50 hover:text-[#3fb364] transition-all"
+                >
+                  <CheckIcon />
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />
