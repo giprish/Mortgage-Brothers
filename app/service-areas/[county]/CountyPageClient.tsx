@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
+import HeroCtaButtons from "../../component/HeroCtaButtons";
 import { getCountyName, getCountyCitiesDetails } from "../../../lib/cityData";
 
 const countiesCities: Record<string, string[]> = {
@@ -309,14 +310,7 @@ export default function CountyPage() {
           <div className="max-w-3xl mx-auto">
             <h2 className="text-white text-[26px] lg:text-[32px] font-playfair font-normal mb-4">Ready to get started in {countyName}?</h2>
             <p className="text-[#c8c8b8] text-[15px] mb-6">Start your pre-approval in about three minutes — no cost, no obligation.</p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/#get-pre-approved" data-preapproval="true" className="btn-primary">
-                Start My Pre-Approval →
-              </Link>
-              <a href="tel:+16025352171" className="bg-white/10 hover:bg-white/20 text-white text-[15px] font-bold px-8 py-3.5 rounded-full inline-flex items-center gap-2 transition-all border border-white/20">
-                Talk to a Broker →
-              </a>
-            </div>
+            <HeroCtaButtons className="mb-4" />
           </div>
         </section>
       </main>

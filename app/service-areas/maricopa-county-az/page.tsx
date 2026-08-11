@@ -1,9 +1,14 @@
+import type { Metadata } from "next";
+import { getSeoMetadata } from "@/lib/seo";
 import FaqAccordion from "../../component/FaqAccordion";
 
 import React from "react";
+
+export const metadata: Metadata = getSeoMetadata("/service-areas/maricopa-county-az/");
 import Link from "next/link";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
+import HeroCtaButtons from "../../component/HeroCtaButtons";
 // import PreApprovedForm from "../../component/PreApprovedForm";
 
 const cities = [
@@ -153,35 +158,7 @@ export default function MaricopaCounty() {
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-              <Link
-                href="/#get-pre-approved"
-                className="w-full sm:w-auto btn-primary hover:shadow-brand-green-accent/20 group"
-              >
-                Start My Pre-Approval
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="group-hover:translate-x-0.5 transition-transform duration-200"
-                >
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-              </Link>
-              <Link
-                href="tel:+16025352171"
-                className="w-full sm:w-auto inline-flex items-center justify-center bg-transparent border border-white/30 hover:border-white/60 text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200"
-              >
-                Talk to a Broker
-              </Link>
-            </div>
+            <HeroCtaButtons className="mb-4" />
 
             {/* Small note */}
             <p className="text-[#8a9a7a] text-[12px] font-medium mt-3">
@@ -309,48 +286,7 @@ export default function MaricopaCounty() {
             <p className="text-[#c8c8b8] text-[15px] lg:text-[16px] leading-[1.7] max-w-xl mx-auto mb-8">
               Let&apos;s find the perfect mortgage solution for your Maricopa County home.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-              <Link
-                href="/#get-pre-approved"
-                className="w-full sm:w-auto btn-primary hover:shadow-brand-green-accent/20 group"
-              >
-                Get Pre-Approved
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="group-hover:translate-x-0.5 transition-transform duration-200"
-                >
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-              </Link>
-              <a
-                href="tel:6025352171"
-                className="w-full sm:w-auto inline-flex items-center justify-center bg-transparent border border-white/30 hover:border-white/60 text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200 gap-2"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                </svg>
-                (602) 535-2171
-              </a>
-            </div>
+            <HeroCtaButtons />
           </div>
         </section>
       </main>

@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "next/link";
+import HeroCtaButtons from "./HeroCtaButtons";
 
 const Hero = () => {
   return (
@@ -47,45 +47,8 @@ const Hero = () => {
           We&apos;re independent brokers who shop your scenario across dozens of lenders — so banks compete for your business, not the other way around.
         </p>
 
-        {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-3">
-          <Link
-            href="/#get-pre-approved"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#2f8f4f] hover:bg-[#277a42] text-white text-base font-semibold px-8 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-[#3fb364]/30 hover:scale-[1.02]"
-          >
-            <span>Start my preapproval</span>
-            <svg
-              className="w-4 h-4 stroke-current fill-none"
-              viewBox="0 0 24 24"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
-          </Link>
-
-          <a
-            href="tel:6027301565"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/5 hover:bg-white/10 border border-white/20 hover:border-white/40 text-white text-base font-medium px-6 py-3.5 rounded-full transition-all duration-200"
-          >
-            <svg
-              className="w-4 h-4 text-[#3fb364]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth="2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-              />
-            </svg>
-            <span>Talk to a broker</span>
-          </a>
-        </div>
+        {/* CTAs — shared canonical buttons */}
+        <HeroCtaButtons className="mb-3" />
 
         {/* Micro text */}
         <p className="text-[#8fae9d] text-xs sm:text-sm font-medium">
@@ -97,4 +60,3 @@ const Hero = () => {
 };
 
 export default Hero;
-

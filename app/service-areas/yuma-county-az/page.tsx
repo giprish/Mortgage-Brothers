@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
+import HeroCtaButtons from "../../component/HeroCtaButtons";
 
 const cities = [
   { name: "Yuma", description: "As Yuma County's seat and Sunniest City in the World, Yuma offers thriving agriculture, military bases, and home loans." },
@@ -28,14 +29,7 @@ export default function YumaCountyPage() {
             <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-4">WESTERN ARIZONA - YUMA</p>
             <h1 className="text-white text-hero-title font-playfair font-normal leading-[1.1] mb-6 max-w-3xl">Your trusted Yuma County mortgage broker.</h1>
             <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">From Yuma to San Luis — 4 communities, one team that knows every one of them.</p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-4">
-              <Link href="/#get-pre-approved" className="w-full sm:w-auto btn-primary hover:shadow-brand-green-accent/20 group">
-                Start My Pre-Approval
-              </Link>
-              <Link href="tel:+16025352171" className="w-full sm:w-auto inline-flex items-center justify-center bg-transparent border border-white/30 hover:border-white/60 text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200">
-                Talk to a Broker
-              </Link>
-            </div>
+            <HeroCtaButtons className="mb-4" />
           </div>
         </section>
 
@@ -120,35 +114,7 @@ export default function YumaCountyPage() {
             <p className="text-[#c8c8b8] text-[15px] lg:text-[16px] leading-[1.7] max-w-xl mx-auto mb-8">
               Let&apos;s find the perfect mortgage solution for your Yuma County home.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-              <Link
-                href="/#get-pre-approved"
-                className="w-full sm:w-auto btn-primary hover:shadow-brand-green-accent/20 group"
-              >
-                Get Pre-Approved
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="inline-block ml-2 group-hover:translate-x-1 transition-transform"
-                >
-                  <path d="M5 12h14" />
-                  <path d="m12 5 7 7-7 7" />
-                </svg>
-              </Link>
-              <Link
-                href="/contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center h-12 px-8 rounded-full border border-white/20 text-white font-bold text-[14px] uppercase tracking-wider hover:bg-white/10 transition-colors"
-              >
-                Contact Us
-              </Link>
-            </div>
+            <HeroCtaButtons />
           </div>
         </section>
       </main>

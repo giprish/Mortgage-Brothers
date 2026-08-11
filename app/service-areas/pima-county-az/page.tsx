@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
+import HeroCtaButtons from "../../component/HeroCtaButtons";
 
 const cities = [
   {
@@ -75,35 +76,7 @@ export default function PimaCountyPage() {
               From Tucson to Catalina Foothills — 8 communities, one team that knows every one of them.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto mb-4">
-              <Link
-                href="/#get-pre-approved"
-                className="w-full sm:w-auto btn-primary hover:shadow-brand-green-accent/20 group"
-              >
-                Start My Pre-Approval
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="group-hover:translate-x-0.5 transition-transform duration-200"
-                >
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-              </Link>
-              <Link
-                href="tel:+16025352171"
-                className="w-full sm:w-auto inline-flex items-center justify-center bg-transparent border border-white/30 hover:border-white/60 text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200"
-              >
-                Talk to a Broker
-              </Link>
-            </div>
+            <HeroCtaButtons className="mb-4" />
 
             <p className="text-[#8a9a7a] text-[12px] font-medium">
               3 min - no credit impact

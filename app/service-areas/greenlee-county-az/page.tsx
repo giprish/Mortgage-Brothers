@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
+import HeroCtaButtons from "../../component/HeroCtaButtons";
 
 const cities = [
   { name: "Clifton", description: "As Greenlee County's seat in a dramatic mountain canyon, Clifton offers historic character and affordable home loans." },
@@ -26,14 +27,7 @@ export default function GreenleeCountyPage() {
             <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-4">SOUTHERN ARIZONA - GREENLEE</p>
             <h1 className="text-white text-hero-title font-playfair font-normal leading-[1.1] mb-6 max-w-3xl">Your trusted Greenlee County mortgage broker.</h1>
             <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">From Clifton to Morenci — 3 communities, one team that knows every one of them.</p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-              <Link href="/#get-pre-approved" className="w-full sm:w-auto btn-primary hover:shadow-brand-green-accent/20 group">
-                Start My Pre-Approval
-              </Link>
-              <Link href="tel:+16025352171" className="w-full sm:w-auto inline-flex items-center justify-center bg-transparent border border-white/30 hover:border-white/60 text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200">
-                Talk to a Broker
-              </Link>
-            </div>
+            <HeroCtaButtons className="mb-4" />
           </div>
         </section>
 
