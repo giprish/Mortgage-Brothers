@@ -229,7 +229,7 @@ export default function MortgageBasicsPage() {
         <section className="py-12 px-6 lg:px-10 max-w-5xl mx-auto mb-16">
           <div className="bg-[#052316] text-white rounded-3xl p-10 lg:p-14 text-center relative overflow-hidden shadow-xl">
             <div className="max-w-2xl mx-auto relative z-10">
-              <span className="text-[#b89a5a] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
+              <span className="text-[#7a6638] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
                 TAKE THE NEXT STEP
               </span>
               <h2 className="text-white text-[28px] lg:text-[38px] font-playfair font-normal mb-4">

@@ -141,7 +141,7 @@ export default function CalculatorsPage() {
               </div>
             </div>
 
-            <p className="text-center text-[#b89a5a] text-[12px] mt-6 italic">
+            <p className="text-center text-[#7a6638] text-[12px] mt-6 italic">
               Estimate only — actual payment varies with taxes, insurance, HOA dues, and final lender terms.
             </p>
           </div>

@@ -90,7 +90,7 @@ export default function SpecialtyLoansPage() {
 
         <section className="bg-brand-green-deep text-white loan-section text-center">
           <div className="max-w-5xl mx-auto flex flex-col items-center">
-            <div className="flex flex-wrap items-center justify-center gap-2 text-[#8da684] text-[13px] font-medium mb-6">
+            <div className="flex flex-wrap items-center justify-center gap-2 text-[#b8d4b8] text-[13px] font-medium mb-6">
               <Link href="/blog/" className="hover:text-white transition-colors">Blog</Link>
               <span>&gt;</span>
               <span className="text-[#3fb364]">Specialty Loans</span>
@@ -136,7 +136,7 @@ export default function SpecialtyLoansPage() {
           <div className="loan-section-inner max-w-5xl mx-auto">
             <div className="bg-[#052316] text-white rounded-3xl p-8 lg:p-10 text-center relative overflow-hidden shadow-xl">
               <div className="max-w-2xl mx-auto relative z-10">
-                <span className="text-[#b89a5a] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
+                <span className="text-[#7a6638] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
                   TAKE THE NEXT STEP
                 </span>
                 <h2 className="text-white text-[28px] lg:text-[38px] font-playfair font-normal mb-4">

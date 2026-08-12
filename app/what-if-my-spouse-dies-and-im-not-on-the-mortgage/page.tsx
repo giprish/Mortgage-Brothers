@@ -315,7 +315,7 @@ export default function SpouseDiesNotOnMortgagePage() {
                   </p>
                 </div>
 
-                <p className="text-[#8a9a7a] text-[13px] leading-relaxed">
+                <p className="text-[#5a6b52] text-[13px] leading-relaxed">
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
                   been prepared for informational purposes only. You should consult your own tax, legal, and
                   accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154,
@@ -442,7 +442,7 @@ export default function SpouseDiesNotOnMortgagePage() {
                         </a>
                       </p>
                       <p className="mb-2">NMLS: 1007154</p>
-                      <p className="text-[14px] text-[#8a9a7a]">
+                      <p className="text-[14px] text-[#5a6b52]">
                         Disclaimer: This material is for informational purposes only. Consult your tax,
                         legal, and accounting advisors before taking any action.
                       </p>
@@ -460,7 +460,7 @@ export default function SpouseDiesNotOnMortgagePage() {
                 </Link>
                 <Link
                   href="/navigating-mortgage-options-during-divorce-a-complete-guide/"
-                  className="text-[#8a9a7a] hover:text-[#3fb364] transition-colors"
+                  className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
                 >
                   Next Post →
                 </Link>

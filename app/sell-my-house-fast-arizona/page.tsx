@@ -248,7 +248,7 @@ export default function SellMyHouseFastArizonaPage() {
                   602-535-2171
                 </a>
               </p>
-              <p className="text-[#8da684] text-[12px] leading-relaxed">
+              <p className="text-[#b8d4b8] text-[12px] leading-relaxed">
                 Safe. Secure. No pressure.
                 <br />
                 Reviewed by {LOAN_OFFICERS.eddie.name}, Licensed Mortgage Broker ({LOAN_OFFICERS.eddie.nmlsDisplay})
@@ -722,11 +722,11 @@ export default function SellMyHouseFastArizonaPage() {
               </a>
             </div>
 
-            <p className="text-[#8da684] text-[13px] pt-2">
+            <p className="text-[#b8d4b8] text-[13px] pt-2">
               100% Free · No Obligation · We Don&apos;t Buy Houses · Local Arizona Experts
             </p>
 
-            <p className="text-[#8da684] text-[12px] pt-4">
+            <p className="text-[#b8d4b8] text-[12px] pt-4">
               {COMPANY.equalHousingLabel}
             </p>
           </div>

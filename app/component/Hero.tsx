@@ -27,31 +27,32 @@ const Hero = () => {
           <span className="text-white text-xs sm:text-sm font-semibold tracking-wide">
             4.9 rating
           </span>
-          <span className="bg-[#3fb364] text-[#052316] text-[11px] sm:text-xs font-bold px-2.5 py-0.5 rounded-full ml-1">
+          <span className="bg-[#2d8545] text-white text-[11px] sm:text-xs font-bold px-2.5 py-0.5 rounded-full ml-1">
             500+ reviews
           </span>
         </div>
 
         {/* Main Heading */}
-        <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-playfair font-normal leading-[1.12] mb-3 tracking-tight">
+        <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-semibold leading-[1.12] mb-3 tracking-tight">
           Home Loans Made Simple
         </h1>
 
         {/* Subtitle */}
-        <h2 className="text-[#3fb364] text-xl sm:text-2xl lg:text-3xl font-playfair font-medium mb-4">
+        <h2 className="text-[#6bcf84] text-xl sm:text-2xl lg:text-3xl font-medium mb-4">
           Trusted Mortgage Experts in Arizona
         </h2>
 
         {/* Paragraph */}
-        <p className="text-[#cbdad2] text-base sm:text-lg leading-relaxed max-w-2xl mx-auto mb-7 font-normal">
-          We&apos;re independent brokers who shop your scenario across dozens of lenders — so banks compete for your business, not the other way around.
+        {/* Supporting copy kept short so H1 remains the LCP element on mobile */}
+        <p className="text-[#cbdad2] text-sm sm:text-base leading-relaxed max-w-lg mx-auto mb-7 font-normal">
+          Independent brokers. Dozens of lenders. Banks compete for you.
         </p>
 
         {/* CTAs — shared canonical buttons */}
         <HeroCtaButtons className="mb-3" />
 
         {/* Micro text */}
-        <p className="text-[#8fae9d] text-xs sm:text-sm font-medium">
+        <p className="text-[#b8d4b8] text-xs sm:text-sm font-medium">
           3 min · no credit impact
         </p>
       </div>

@@ -34,7 +34,7 @@ export default function ArticleDetailPage() {
       <main className="flex-grow pt-[110px] lg:pt-[130px] pb-12 px-6 lg:px-10">
         <div className="max-w-5xl mx-auto">
           {/* Breadcrumb */}
-          <div className="flex items-center gap-1.5 text-[12px] text-[#8da684] font-semibold mb-6">
+          <div className="flex items-center gap-1.5 text-[12px] text-[#b8d4b8] font-semibold mb-6">
             <Link href="/blog/" className="hover:text-[#2d5a2d] transition-colors">Resources</Link>
             <span>&gt;</span>
             <Link 
@@ -61,7 +61,7 @@ export default function ArticleDetailPage() {
               </div>
               <div className="flex flex-col items-start leading-tight text-left">
                 <span className="text-[#052316] text-[13.5px] font-bold">Eddie Knoell</span>
-                <span className="text-[#8a9a7a] text-[11px] font-semibold">June 18, 2026 · 9 min read</span>
+                <span className="text-[#5a6b52] text-[11px] font-semibold">June 18, 2026 · 9 min read</span>
               </div>
             </div>
           </div>
@@ -72,7 +72,7 @@ export default function ArticleDetailPage() {
             {/* Left Column: On This Page */}
             <div className="lg:col-span-3 lg:sticky lg:top-8 flex flex-col gap-6">
               <div>
-                <span className="text-[#a89a70] text-[10px] font-bold tracking-[0.15em] uppercase mb-4 block">
+                <span className="text-[#7a6a3d] text-[10px] font-bold tracking-[0.15em] uppercase mb-4 block">
                   ON THIS PAGE
                 </span>
                 <div className="flex flex-col border-l-2 border-[#e8e0d0]/50">
@@ -259,40 +259,40 @@ export default function ArticleDetailPage() {
               {/* Card 1 */}
               <Link href={`/resources/${categorySlug}/conventional-vs-fha/`} className="bg-white border border-[#e8e0d0]/60 p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-brand-green-accent/20 transition-all cursor-pointer flex flex-col justify-between min-h-[140px]">
                 <div>
-                  <span className="text-[#b89a5a] text-[9.5px] font-bold tracking-widest uppercase block mb-2">
+                  <span className="text-[#7a6638] text-[9.5px] font-bold tracking-widest uppercase block mb-2">
                     MORTGAGE BASICS
                   </span>
                   <h4 className="text-[#052316] text-[15px] font-bold leading-snug mb-3">
                     Conventional vs. FHA Loans: Which Is Right for You?
                   </h4>
                 </div>
-                <span className="text-[#8a9a7a] text-[11px]">6 min read</span>
+                <span className="text-[#5a6b52] text-[11px]">6 min read</span>
               </Link>
 
               {/* Card 2 */}
               <Link href="/how-to-calculate-how-much-pmi-mortgage-insurance-will-be/" className="bg-white border border-[#e8e0d0]/60 p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-brand-green-accent/20 transition-all cursor-pointer flex flex-col justify-between min-h-[140px]">
                 <div>
-                  <span className="text-[#b89a5a] text-[9.5px] font-bold tracking-widest uppercase block mb-2">
+                  <span className="text-[#7a6638] text-[9.5px] font-bold tracking-widest uppercase block mb-2">
                     MORTGAGE BASICS
                   </span>
                   <h4 className="text-[#052316] text-[15px] font-bold leading-snug mb-3">
                     How to Calculate How Much PMI Will Be
                   </h4>
                 </div>
-                <span className="text-[#8a9a7a] text-[11px]">5 min read</span>
+                <span className="text-[#5a6b52] text-[11px]">5 min read</span>
               </Link>
 
               {/* Card 3 */}
               <Link href={`/resources/${categorySlug}/rapid-rescore/`} className="bg-white border border-[#e8e0d0]/60 p-6 rounded-2xl shadow-sm hover:shadow-md hover:border-brand-green-accent/20 transition-all cursor-pointer flex flex-col justify-between min-h-[140px]">
                 <div>
-                  <span className="text-[#b89a5a] text-[9.5px] font-bold tracking-widest uppercase block mb-2">
+                  <span className="text-[#7a6638] text-[9.5px] font-bold tracking-widest uppercase block mb-2">
                     PROCESS GUIDANCE
                   </span>
                   <h4 className="text-[#052316] text-[15px] font-bold leading-snug mb-3">
                     How a Rapid Rescore Can Help You Get Qualified
                   </h4>
                 </div>
-                <span className="text-[#8a9a7a] text-[11px]">5 min read</span>
+                <span className="text-[#5a6b52] text-[11px]">5 min read</span>
               </Link>
             </div>
           </div>

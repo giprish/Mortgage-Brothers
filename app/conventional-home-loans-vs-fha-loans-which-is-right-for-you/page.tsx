@@ -477,7 +477,7 @@ export default function ConventionalVsFhaLoansPage() {
                         <li>Works for investment or second homes</li>
                         <li>Lower lifetime cost with strong credit</li>
                       </ul>
-                      <p className="text-[14px] text-[#8a9a7a]">
+                      <p className="text-[14px] text-[#5a6b52]">
                         <strong className="text-[#3a4a3a]">Cons:</strong> stricter credit requirements, larger
                         down payment to avoid PMI.
                       </p>
@@ -491,7 +491,7 @@ export default function ConventionalVsFhaLoansPage() {
                         <li>Easier approval with past financial setbacks</li>
                         <li>Assumable loans (could benefit future buyers if rates rise)</li>
                       </ul>
-                      <p className="text-[14px] text-[#8a9a7a]">
+                      <p className="text-[14px] text-[#5a6b52]">
                         <strong className="text-[#3a4a3a]">Cons:</strong> permanent mortgage insurance in most
                         cases, lower loan limits, stricter appraisal rules.
                       </p>
@@ -643,7 +643,7 @@ export default function ConventionalVsFhaLoansPage() {
                   />
                 </section>
 
-                <p className="text-[#8a9a7a] text-[13px] leading-relaxed pt-4">
+                <p className="text-[#5a6b52] text-[13px] leading-relaxed pt-4">
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
                   prepared for informational purposes only. You should consult your own tax, legal, and accounting
                   advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
@@ -660,7 +660,7 @@ export default function ConventionalVsFhaLoansPage() {
                 </Link>
                 <Link
                   href="/what-is-a-jumbo-loan-everything-you-need-to-know-before-applying/"
-                  className="text-[#8a9a7a] hover:text-[#3fb364] transition-colors"
+                  className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
                 >
                   Next Post →
                 </Link>

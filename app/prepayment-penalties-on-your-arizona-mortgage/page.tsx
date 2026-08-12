@@ -261,7 +261,7 @@ export default function PrepaymentPenaltiesArizonaMortgagePage() {
                   you and help you through the whole process.
                 </p>
 
-                <p className="text-[#8a9a7a] text-[13px] leading-relaxed">
+                <p className="text-[#5a6b52] text-[13px] leading-relaxed">
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
                   been prepared for informational purposes only. You should consult your own tax, legal, and
                   accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
@@ -327,7 +327,7 @@ export default function PrepaymentPenaltiesArizonaMortgagePage() {
                 </Link>
                 <Link
                   href="/buying-down-your-arizona-interest-rate/"
-                  className="text-[#8a9a7a] hover:text-[#3fb364] transition-colors"
+                  className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
                 >
                   Next Post →
                 </Link>

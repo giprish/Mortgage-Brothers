@@ -463,7 +463,7 @@ export default function FAQPage() {
 
           <div className="max-w-4xl mx-auto px-6 relative z-10">
             {/* Subtitle */}
-            <p className="text-[#b89a5a] text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
+            <p className="text-[#7a6638] text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
               HELP CENTER
             </p>
 
@@ -537,7 +537,7 @@ export default function FAQPage() {
                               <p className="text-[#1a3a1a] text-[14px] font-semibold leading-snug">
                                 {q.question}
                               </p>
-                              <p className="text-[#b89a5a] text-[10px] font-bold tracking-wider uppercase mt-0.5">
+                              <p className="text-[#7a6638] text-[10px] font-bold tracking-wider uppercase mt-0.5">
                                 {q.topicTitle}
                               </p>
                             </div>
@@ -545,14 +545,14 @@ export default function FAQPage() {
                         ))}
                       </div>
                     ) : (
-                      <div className="px-5 py-4 text-center text-[#8a9a7a] text-[14px]">
+                      <div className="px-5 py-4 text-center text-[#5a6b52] text-[14px]">
                         No matches found for &ldquo;{searchQuery}&rdquo;
                       </div>
                     )
                   ) : (
                     /* Popular / Suggested Searches */
                     <div className="py-2">
-                      <p className="px-5 py-2 text-[#8a9a7a] text-[11px] font-bold tracking-wider uppercase border-b border-[#e8e0d0]/30 mb-1">
+                      <p className="px-5 py-2 text-[#5a6b52] text-[11px] font-bold tracking-wider uppercase border-b border-[#e8e0d0]/30 mb-1">
                         Popular Searches
                       </p>
                       {[
@@ -583,7 +583,7 @@ export default function FAQPage() {
                             <p className="text-[#1a3a1a] text-[14px] font-semibold leading-snug">
                               {item.question}
                             </p>
-                            <p className="text-[#b89a5a] text-[10px] font-bold tracking-wider uppercase mt-0.5">
+                            <p className="text-[#7a6638] text-[10px] font-bold tracking-wider uppercase mt-0.5">
                               {item.topicTitle}
                             </p>
                           </div>
@@ -596,7 +596,7 @@ export default function FAQPage() {
             </div>
 
             {/* Licensing details */}
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[#8a9a7a] text-[11px] font-medium tracking-wider uppercase">
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[#5a6b52] text-[11px] font-medium tracking-wider uppercase">
               <span>NMLS #1007154</span>
               <span className="hidden sm:inline text-white/20">|</span>
               <span>AZ #MB0922514</span>
@@ -686,7 +686,7 @@ export default function FAQPage() {
                     {topic.icon}
                   </div>
                   <div>
-                    <p className="text-[#b89a5a] text-[11px] font-bold tracking-wider uppercase">
+                    <p className="text-[#7a6638] text-[11px] font-bold tracking-wider uppercase">
                       {topic.topicId}
                     </p>
                     <h2
@@ -745,7 +745,7 @@ export default function FAQPage() {
 
                             {q.quickAnswer && (
                               <div className="bg-[#0f220f] border-l-3 border-[#3fb364] text-white rounded-r-lg p-3.5 flex items-start gap-2.5 mt-3">
-                                <div className="w-4 h-4 flex items-center justify-center flex-shrink-0 text-[#b89a5a] mt-0.5">
+                                <div className="w-4 h-4 flex items-center justify-center flex-shrink-0 text-[#7a6638] mt-0.5">
                                   <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="12"
@@ -758,7 +758,7 @@ export default function FAQPage() {
                                   </svg>
                                 </div>
                                 <div>
-                                  <p className="text-[#b89a5a] text-[9.5px] font-bold tracking-wider uppercase mb-0.5">
+                                  <p className="text-[#7a6638] text-[9.5px] font-bold tracking-wider uppercase mb-0.5">
                                     QUICK SUMMARY
                                   </p>
                                   <p className="text-[#c8c8b8] text-[12.5px] leading-snug">

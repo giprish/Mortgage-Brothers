@@ -275,6 +275,23 @@ export function getCountyName(countySlug: string): string | null {
   return countyMap[norm] || countyMap[countySlug] || null;
 }
 
+/** All county slugs for generateStaticParams. */
+export function getAllCountySlugs(): string[] {
+  return Object.keys(countyMap);
+}
+
+/** City slugs for one county (for generateStaticParams). */
+export function getCitySlugsForCounty(countySlug: string): string[] {
+  return getCountyCitiesDetails(countySlug).map((city) => slugify(city.name));
+}
+
+/** Flat list of { county, city } for nested generateStaticParams. */
+export function getAllCountyCityParams(): { county: string; city: string }[] {
+  return Object.keys(countyMap).flatMap((county) =>
+    getCitySlugsForCounty(county).map((city) => ({ county, city })),
+  );
+}
+
 // Generate realistic pricing based on name (so premium cities get higher valuations)
 function getMedianPrice(cityName: string): string {
   const premiumCities = ["Sedona", "Catalina Foothills", "Flagstaff", "Oro Valley", "Tubac", "Pinetop-Lakeside", "Patagonia"];

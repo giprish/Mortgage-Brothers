@@ -17,6 +17,7 @@ interface SliderInputProps {
 export default function SliderInput({ label, value, prefix, suffix, onChange }: SliderInputProps) {
   // Local string state to allow seamless typing of decimal points (e.g. "6.", "6.5", "0.75")
   const [localStr, setLocalStr] = useState<string | null>(null);
+  const inputId = React.useId();
 
   useEffect(() => {
     if (localStr !== null) {
@@ -67,7 +68,9 @@ export default function SliderInput({ label, value, prefix, suffix, onChange }: 
     <div>
       {label && (
         <div className="flex items-center justify-between mb-2">
-          <label className="text-[#32353C] text-[14px] font-medium">{label}</label>
+          <label htmlFor={inputId} className="text-[#32353C] text-[14px] font-medium">
+            {label}
+          </label>
         </div>
       )}
       <div className="relative w-full">
@@ -77,14 +80,16 @@ export default function SliderInput({ label, value, prefix, suffix, onChange }: 
           </span>
         )}
         <input
+          id={inputId}
           type="text"
           inputMode="decimal"
           value={displayVal}
           onChange={handleInputChange}
           onBlur={handleBlur}
+          aria-label={label || "Numeric value"}
           className={`w-full h-[45px] bg-white border border-[#e0e0e0] rounded-md ${
             prefix ? "pl-8" : "pl-3.5"
-          } ${suffix ? "pr-8" : "pr-3.5"} text-[15px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50]`}
+          } ${suffix ? "pr-8" : "pr-3.5"} text-[15px] font-medium text-[#32353C] focus:outline-none focus:border-[#4CAF50] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3fb364]`}
         />
         {suffix && (
           <span className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#666] font-medium text-[14px] pointer-events-none">

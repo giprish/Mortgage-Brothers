@@ -245,7 +245,7 @@ export default function AreasWeServeDirectoryPage() {
                     setShowSuggestions(true);
                   }}
                   onFocus={() => setShowSuggestions(true)}
-                  className="w-full bg-white border border-[#e8e0d0] rounded-2xl px-5 py-4 pl-12 text-[15.5px] text-[#1a3a1a] placeholder:text-[#8a9a7a]/60 shadow-lg focus:outline-none focus:border-brand-green-accent/50 focus:ring-1 focus:ring-brand-green-accent/20 transition-all"
+                  className="w-full bg-white border border-[#e8e0d0] rounded-2xl px-5 py-4 pl-12 text-[15.5px] text-[#1a3a1a] placeholder:text-[#5a6b52]/60 shadow-lg focus:outline-none focus:border-brand-green-accent/50 focus:ring-1 focus:ring-brand-green-accent/20 transition-all"
                 />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -277,12 +277,12 @@ export default function AreasWeServeDirectoryPage() {
                             {item.name}
                           </span>
                           {item.type === "city" && (
-                            <span className="text-[#a89a70] text-[11px] ml-2 font-bold uppercase tracking-wider">
+                            <span className="text-[#7a6a3d] text-[11px] ml-2 font-bold uppercase tracking-wider">
                               ({item.countyName})
                             </span>
                           )}
                         </div>
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-[#8a9a7a] bg-[#f5f0e8] px-2 py-0.5 rounded-md">
+                        <span className="text-[11px] font-bold uppercase tracking-wider text-[#5a6b52] bg-[#f5f0e8] px-2 py-0.5 rounded-md">
                           {item.type}
                         </span>
                       </button>
@@ -293,7 +293,7 @@ export default function AreasWeServeDirectoryPage() {
             </div>
 
             {/* Serviced Summary strip */}
-            <p className="text-[#8a9a7a] text-[12.5px] font-semibold mt-4">
+            <p className="text-[#5a6b52] text-[12.5px] font-semibold mt-4">
               15 counties - 108 cities & towns served
             </p>
           </div>
@@ -686,7 +686,7 @@ export default function AreasWeServeDirectoryPage() {
               </div>
 
               {/* Bottom tag text */}
-              <p className="text-[#8a9a7a] text-[13px] relative z-10 leading-relaxed font-semibold">
+              <p className="text-[#5a6b52] text-[13px] relative z-10 leading-relaxed font-semibold">
                 Don&apos;t see your town? We&apos;re licensed statewide — just reach out.
               </p>
             </div>
@@ -702,7 +702,7 @@ export default function AreasWeServeDirectoryPage() {
               <h2 className="text-brand-green-deep text-[24px] lg:text-[30px] font-playfair font-normal">
                 All counties & cities
               </h2>
-              <span className="text-[#a89a70] text-[12px] font-bold uppercase tracking-wider">
+              <span className="text-[#7a6a3d] text-[12px] font-bold uppercase tracking-wider">
                 15 of 15 counties
               </span>
             </div>

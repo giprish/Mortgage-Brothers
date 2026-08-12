@@ -264,7 +264,7 @@ export default function ArizonaBinsrPage() {
                   </p>
                 </div>
                 
-                <p className="text-[#8a9a7a] text-[13px] leading-relaxed">
+                <p className="text-[#5a6b52] text-[13px] leading-relaxed">
                   Signature Home Loans LLC does not provide tax, legal, or accounting advice. This material
                   has been prepared for informational purposes only. You should consult your own tax, legal,
                   and accounting advisors before engaging in any transaction. Signature Home Loans NMLS
@@ -518,7 +518,7 @@ export default function ArizonaBinsrPage() {
                 </Link>
                 <Link
                   href="/what-you-need-to-know-about-the-arizona-prequalification-form/"
-                  className="text-[#8a9a7a] hover:text-[#3fb364] transition-colors"
+                  className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
                 >
                   Next Post →
                 </Link>

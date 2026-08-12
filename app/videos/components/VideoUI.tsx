@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import type { VideoItem } from "../videos-data";
 import {
   youtubeEmbedUrl,
@@ -41,13 +42,12 @@ export function VideoCard({
         className="relative aspect-video bg-[#052316] overflow-hidden group cursor-pointer text-left"
         aria-label={`Play ${video.title}`}
       >
-        <img
+        <Image
           src={youtubeThumbnail(video.youtubeId)}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover"
-          onError={(e) => {
-            (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg`;
-          }}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors" />
         <span className="absolute inset-0 flex items-center justify-center">
@@ -97,6 +97,7 @@ export function VideoEmbedCard({
             src={youtubeEmbedUrl(video.youtubeId, true)}
             title={video.title}
             className="absolute inset-0 w-full h-full border-0"
+            loading="lazy"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           />
@@ -107,13 +108,12 @@ export function VideoEmbedCard({
             className="absolute inset-0 w-full h-full group cursor-pointer"
             aria-label={`Play ${video.title}`}
           >
-            <img
+            <Image
               src={youtubeThumbnail(video.youtubeId)}
               alt={video.title}
-              className="absolute inset-0 w-full h-full object-cover"
-              onError={(e) => {
-                (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg`;
-              }}
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover"
             />
             <div className="absolute inset-0 bg-black/15 group-hover:bg-black/30 transition-colors" />
             <span className="absolute inset-0 flex items-center justify-center">

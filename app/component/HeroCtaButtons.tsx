@@ -32,7 +32,7 @@ export default function HeroCtaButtons({
         <Link
           href={primaryHref}
           data-preapproval="true"
-          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#2f8f4f] hover:bg-[#277a42] text-white text-base font-semibold px-8 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-[#3fb364]/30 hover:scale-[1.02]"
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#2d8545] hover:bg-[#246d39] text-white text-base font-semibold px-8 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-[#2d8545]/30 hover:scale-[1.02]"
         >
           <span>{primaryLabel}</span>
           <svg

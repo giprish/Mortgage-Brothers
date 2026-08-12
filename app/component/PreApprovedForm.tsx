@@ -1,28 +1,22 @@
 "use client";
 
 import React from "react";
-import { usePreApprovalModal } from "./PreApprovalProvider";
 
 /**
  * Homepage pre-approval section. Does NOT load JotForm on page load.
- * Opens the deferred JotForm modal only after an intentional click.
+ * Uses data-preapproval so DeferredPreApproval's click interceptor opens the modal.
  */
 const PreApprovedForm = () => {
-  const { open } = usePreApprovalModal();
-
   return (
     <section
       id="get-pre-approved"
       className="w-full bg-[#fcf9f3] py-14 sm:py-16 lg:py-20 border-t border-[#e8e0d0]/40 scroll-mt-20"
     >
       <div className="max-w-3xl mx-auto px-6 text-center">
-        <p className="text-[#b89a5a] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
+        <p className="text-[#7a6638] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
           SECURE APPLICATION
         </p>
-        <h2
-          className="font-playfair text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight mb-4"
-          
-        >
+        <h2 className="font-playfair text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight mb-4">
           Start Your Pre-Approval
         </h2>
         <p className="text-[#4e5b4e] text-[15px] lg:text-[16px] leading-[1.7] max-w-xl mx-auto mb-8">
@@ -32,8 +26,8 @@ const PreApprovedForm = () => {
 
         <button
           type="button"
-          onClick={open}
-          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-[#3fb364]/20 cursor-pointer"
+          data-preapproval="true"
+          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#2d8545] hover:bg-[#246d39] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-[#2d8545]/20 cursor-pointer"
         >
           Get Pre-Approved
           <svg

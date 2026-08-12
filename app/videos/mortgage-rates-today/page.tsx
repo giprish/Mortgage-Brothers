@@ -28,7 +28,7 @@ export default function MortgageRatesTodayVideosPage() {
                 Videos
               </Link>
               <span className="text-white/40">&gt;</span>
-              <span className="text-[#a89a70]">Mortgage Rates Today</span>
+              <span className="text-[#7a6a3d]">Mortgage Rates Today</span>
             </div>
 
             <h1 className="text-white text-[32px] sm:text-[40px] lg:text-[48px] font-bold leading-[1.15] mb-5">

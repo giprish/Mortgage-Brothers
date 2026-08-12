@@ -176,7 +176,7 @@ export default function AboutPage() {
                   <polyline points="12 5 19 12 12 19" />
                 </svg>
               </Link>
-              <p className="text-[#8a9a7a] text-[12px] font-medium mt-3">
+              <p className="text-[#5a6b52] text-[12px] font-medium mt-3">
                 3 min · no credit impact
               </p>
             </div>

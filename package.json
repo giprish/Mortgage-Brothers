@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "validate:sitemap": "node scripts/validate-sitemap.mjs"
+    "validate:sitemap": "node scripts/validate-sitemap.mjs",
+    "lh:all": "node scripts/lighthouse-all.mjs",
+    "lh:sample": "node scripts/lighthouse-all.mjs"
   },
   "dependencies": {
     "chart.js": "^4.5.1",
@@ -24,9 +26,11 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "cheerio": "^1.2.0",
+    "chrome-launcher": "^1.2.1",
     "eslint": "^9",
     "eslint-config-next": "16.3.0",
     "exceljs": "^4.4.0",
+    "lighthouse": "^13.4.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   },

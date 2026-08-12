@@ -323,7 +323,7 @@ export default function GettingMortgageWithEmploymentGapsPage() {
                   might be right for you.
                 </p>
 
-                <p className="text-[#8a9a7a] text-[13px] leading-relaxed">
+                <p className="text-[#5a6b52] text-[13px] leading-relaxed">
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been prepared for informational purposes only.
                   You should consult your own tax, legal, and accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154,
                   NMLS #210917 and 1618695. Equal housing lender.
@@ -524,7 +524,7 @@ export default function GettingMortgageWithEmploymentGapsPage() {
                 </Link>
                 <Link
                   href="/can-i-simply-payoff-credit-cards-to-qualify-for-a-mortgage/"
-                  className="text-[#8a9a7a] hover:text-[#3fb364] transition-colors"
+                  className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
                 >
                   Next Post →
                 </Link>

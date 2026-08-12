@@ -10,7 +10,7 @@ const CTA = () => {
 
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
         {/* Subtitle */}
-        <p className="text-[#b89a5a] text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
+        <p className="text-[#7a6638] text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
           READY WHEN YOU ARE
         </p>
 

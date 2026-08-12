@@ -134,7 +134,7 @@ export default function BlogPage() {
         {/* Header Section */}
         <section className="w-full pt-[110px] lg:pt-[130px] pb-12 px-6 text-center">
           <div className="max-w-4xl mx-auto">
-            <span className="text-[#a89a70] text-[11px] font-bold tracking-[0.2em] uppercase mb-4 block">
+            <span className="text-[#7a6a3d] text-[11px] font-bold tracking-[0.2em] uppercase mb-4 block">
               THE RESOURCE LIBRARY
             </span>
             <h1 className="text-[#052316] text-[36px] lg:text-[50px] font-playfair font-normal leading-tight mb-5">
@@ -190,7 +190,7 @@ export default function BlogPage() {
                   {featuredArticle.description}
                 </p>
                 <div className="pt-4 border-t border-[#ebe4d6] flex items-center justify-between gap-3">
-                  <span className="text-[12px] text-[#8a9a7a]">
+                  <span className="text-[12px] text-[#5a6b52]">
                     {featuredArticle.date} · {featuredArticle.readTime}
                   </span>
                   <span className="text-[#3fb364] text-[13.5px] font-bold inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform">

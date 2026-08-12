@@ -25,7 +25,7 @@ const RootedInArizona = () => {
             {/* Left Content */}
             <div className="flex-1 max-w-xl ">
               {/* Subtitle */}
-              <p className="text-[#b89a5a] text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
+              <p className="text-[#7a6638] text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
                 ROOTED IN ARIZONA
               </p>
 
@@ -69,7 +69,7 @@ const RootedInArizona = () => {
                     5,000+
                   </span>
                 </div>
-                <p className="text-[#8a9a7a] text-[14px]">
+                <p className="text-[#5a6b52] text-[14px]">
                   Arizona families helped home
                 </p>
               </div>
@@ -82,11 +82,11 @@ const RootedInArizona = () => {
                     <span className="text-[#1a3a1a] text-[24px] sm:text-[28px] font-semibold leading-none">
                       4.9
                     </span>
-                    <span className="text-[#b89a5a] text-[14px] font-medium">
+                    <span className="text-[#7a6638] text-[14px] font-medium">
                       /5
                     </span>
                   </div>
-                  <p className="text-[#8a9a7a] text-[12px] flex items-center gap-1">
+                  <p className="text-[#5a6b52] text-[12px] flex items-center gap-1">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="12"
@@ -107,11 +107,11 @@ const RootedInArizona = () => {
                     <span className="text-[#1a3a1a] text-[24px] sm:text-[28px] font-semibold leading-none">
                       25
                     </span>
-                    <span className="text-[#8a9a7a] text-[14px] font-medium">
+                    <span className="text-[#5a6b52] text-[14px] font-medium">
                       days
                     </span>
                   </div>
-                  <p className="text-[#8a9a7a] text-[12px]">Average close</p>
+                  <p className="text-[#5a6b52] text-[12px]">Average close</p>
                 </div>
               </div>
             </div>

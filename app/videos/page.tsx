@@ -2,6 +2,7 @@
 
 import React, { useMemo, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import {
@@ -44,13 +45,12 @@ function VideoCard({
         className="relative aspect-video bg-[#052316] overflow-hidden group cursor-pointer text-left"
         aria-label={`Play ${video.title}`}
       >
-        <img
+        <Image
           src={youtubeThumbnail(video.youtubeId)}
           alt=""
-          className="absolute inset-0 w-full h-full object-cover"
-          onError={(e) => {
-            (e.target as HTMLImageElement).src = `https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg`;
-          }}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors" />
         <span className="absolute inset-0 flex items-center justify-center">
@@ -269,10 +269,13 @@ export default function VideosPage() {
                       className="absolute inset-0 w-full h-full group cursor-pointer"
                       aria-label="Play featured video"
                     >
-                      <img
+                      <Image
                         src={youtubeThumbnail(FEATURED_VIDEO.youtubeId)}
-                        alt=""
-                        className="absolute inset-0 w-full h-full object-cover"
+                        alt={FEATURED_VIDEO.title}
+                        fill
+                        priority
+                        sizes="(max-width: 768px) 100vw, 60vw"
+                        className="object-cover"
                       />
                       <div className="absolute inset-0 bg-black/25 group-hover:bg-black/35 transition-colors" />
                       <span className="absolute inset-0 flex items-center justify-center">

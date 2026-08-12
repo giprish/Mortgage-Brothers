@@ -441,19 +441,19 @@ export default function RealtorTeamPage() {
 
               <div className="lg:col-span-5 flex flex-col justify-between gap-5">
                 <div className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 lg:p-7 shadow-sm">
-                  <p className="text-[#a89a70] text-[10px] font-bold tracking-widest uppercase mb-2">PHONE</p>
+                  <p className="text-[#7a6a3d] text-[10px] font-bold tracking-widest uppercase mb-2">PHONE</p>
                   <a href="tel:6025352171" className="text-[#052316] text-[20px] font-bold hover:text-[#3fb364] transition-colors">
                     +1 602-535-2171
                   </a>
                 </div>
                 <div className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 lg:p-7 shadow-sm">
-                  <p className="text-[#a89a70] text-[10px] font-bold tracking-widest uppercase mb-2">CONTACT US</p>
+                  <p className="text-[#7a6a3d] text-[10px] font-bold tracking-widest uppercase mb-2">CONTACT US</p>
                   <Link href="/contact-us/" className="text-[#052316] text-[16px] font-bold hover:text-[#3fb364] transition-colors">
                     Open contact page →
                   </Link>
                 </div>
                 <div className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 lg:p-7 shadow-sm">
-                  <p className="text-[#a89a70] text-[10px] font-bold tracking-widest uppercase mb-2">ADDRESS</p>
+                  <p className="text-[#7a6a3d] text-[10px] font-bold tracking-widest uppercase mb-2">ADDRESS</p>
                   <p className="text-[#052316] text-[15px] font-bold leading-relaxed">
                     1599 East Orangewood Ave<br />
                     Suite 200<br />

@@ -296,7 +296,7 @@ export default function AirConditioningPhoenixRealEstatePage() {
                 </Link>
                 <Link
                   href="/arizona-real-estate-trends-in-2026-predicting-mortgage-rates-for-the-coming-year/"
-                  className="text-[#8a9a7a] hover:text-[#3fb364] transition-colors"
+                  className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
                 >
                   Next Post →
                 </Link>

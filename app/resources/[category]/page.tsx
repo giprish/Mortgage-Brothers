@@ -214,7 +214,7 @@ export default function ResourceCategoryPage() {
                 Resources
               </Link>
               <span>&gt;</span>
-              <span className="text-[#a89a70]">{categoryInfo.title}</span>
+              <span className="text-[#7a6a3d]">{categoryInfo.title}</span>
             </div>
 
             {/* Icon, Title, and Subtitle description */}
@@ -305,7 +305,7 @@ export default function ResourceCategoryPage() {
               
               {/* Card 1 - IN THIS TOPIC */}
               <div className="bg-white rounded-2xl border border-[#e8e0d0]/60 p-6 shadow-sm">
-                <span className="text-[#a89a70] text-[10px] font-bold tracking-[0.15em] uppercase mb-4 block">
+                <span className="text-[#7a6a3d] text-[10px] font-bold tracking-[0.15em] uppercase mb-4 block">
                   IN THIS TOPIC
                 </span>
                 
@@ -313,7 +313,7 @@ export default function ResourceCategoryPage() {
                   {categoryInfo.subtopics.map((sub, idx) => (
                     <div key={idx} className="py-3.5 flex items-center justify-between text-[13.5px] first:pt-0 last:pb-0">
                       <span className="text-[#1a3a1a] font-medium">{sub.title}</span>
-                      <span className="text-[#8a9a7a] text-[11px] font-bold">{sub.count}</span>
+                      <span className="text-[#5a6b52] text-[11px] font-bold">{sub.count}</span>
                     </div>
                   ))}
                 </div>
@@ -321,7 +321,7 @@ export default function ResourceCategoryPage() {
 
               {/* Card 2 - PREFER TO TALK IT THROUGH? */}
               <div className="bg-[#0b2f1f] rounded-2xl p-6 border border-white/5 flex flex-col gap-4 text-left shadow-lg">
-                <span className="text-[#a89a70] text-[10px] font-bold tracking-[0.12em] uppercase block">
+                <span className="text-[#7a6a3d] text-[10px] font-bold tracking-[0.12em] uppercase block">
                   PREFER TO TALK IT THROUGH?
                 </span>
                 <p className="text-[#c8c8b8] text-[13.5px] leading-relaxed">

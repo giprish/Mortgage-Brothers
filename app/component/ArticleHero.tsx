@@ -56,7 +56,7 @@ export default function ArticleHero({
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10 py-12 lg:py-16 text-center flex flex-col items-center">
         <nav className="flex flex-wrap items-center justify-center gap-2 text-[12.5px] mb-5">
-          <Link href="/blog/" className="text-[#8da684] hover:text-white transition-colors">
+          <Link href="/blog/" className="text-[#b8d4b8] hover:text-white transition-colors">
             Resources
           </Link>
           <span className="text-[#5d735d]" aria-hidden>
@@ -94,12 +94,12 @@ export default function ArticleHero({
             </span>
             <span className="flex flex-col items-start leading-tight text-left">
               <span className="text-white text-[13.5px] font-bold">{author}</span>
-              <span className="text-[#8da684] text-[12px]">{authorRole}</span>
+              <span className="text-[#b8d4b8] text-[12px]">{authorRole}</span>
             </span>
           </div>
 
           {(dateLabel || readTime) && (
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[#8da684] text-[12.5px]">
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[#b8d4b8] text-[12.5px]">
               {dateLabel && (
                 <span className="inline-flex items-center gap-1.5">
                   <svg

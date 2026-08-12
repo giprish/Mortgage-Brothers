@@ -27,7 +27,7 @@ const HomeownershipSteps = () => {
     <section className="w-full bg-[#f5f0e8] py-14 sm:py-20 lg:py-24 border-t border-[#e8e0d0]/50">
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         <div className="text-center max-w-2xl mx-auto mb-12 lg:mb-14">
-          <p className="text-[#b89a5a] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
+          <p className="text-[#7a6638] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
             The Process
           </p>
           <h2
@@ -42,10 +42,7 @@ const HomeownershipSteps = () => {
           {steps.map((step, index) => (
             <div key={step.number} className="relative flex flex-col items-center text-center px-4">
               <div className="w-16 h-16 rounded-full bg-[#08271B] flex items-center justify-center mb-6 relative z-10">
-                <span
-                  className="text-[#3fb364] text-[22px] font-semibold"
-                  
-                >
+                <span className="text-[#6bcf84] text-[22px] font-semibold">
                   {step.number}
                 </span>
               </div>
@@ -68,7 +65,7 @@ const HomeownershipSteps = () => {
         <div className="text-center">
           <Link
             href="/#get-pre-approved"
-            className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full shadow-md hover:shadow-xl transition-all duration-200"
+            className="inline-flex items-center gap-2 bg-[#2d8545] hover:bg-[#246d39] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full shadow-md hover:shadow-xl transition-all duration-200 min-h-[44px]"
           >
             Start Your Journey Today
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

@@ -9,7 +9,7 @@ const HomeContact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16">
           {/* Info Column — static, server-rendered */}
           <div className="lg:col-span-2">
-            <p className="text-[#8c6f36] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
+            <p className="text-[#6b5420] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
               Contact Us
             </p>
             <h2 className="font-playfair text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight mb-5">

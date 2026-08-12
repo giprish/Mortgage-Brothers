@@ -8,8 +8,8 @@
   /* Brand Color Tokens */
   --color-brand-green-dark: #1a3a1a;       /* Forest green text/theme */
   --color-brand-green-deep: #052316;       /* Deep forest green (Hero, section headers) */
-  --color-brand-green-accent: #3fb364;     /* Brighter green accent (Buttons, checks, active states) */
-  --color-brand-green-hover: #349b55;      /* Button hover green */
+  --color-brand-green-accent: #2d8545;     /* AA-safe green for white button text */
+  --color-brand-green-hover: #246d39;      /* Button hover green */
   --color-brand-gold: #b89a5a;             /* Gold accent color */
   --color-brand-light: #f5f0e8;            /* Main cream/beige background */
   --color-brand-cream-light: #faf7f0;      /* Alternating section light background */
@@ -35,8 +35,8 @@
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  /* Use next/font self-hosted Inter (no render-blocking network request) */
-  --font-sans: var(--font-inter, system-ui, -apple-system, sans-serif);
+  /* System UI stack — avoids a render-blocking webfont on every page */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   
   /* Custom color token configurations */
   --color-brand-green-dark: var(--color-brand-green-dark);
@@ -56,12 +56,11 @@
 body {
   background: #ffffff;
   color: var(--foreground);
-  font-family: var(--font-inter, system-ui, -apple-system, Arial, sans-serif);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   overflow-x: hidden;
   /* Improve text rendering */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
 }
 
 *,
@@ -79,17 +78,10 @@ nav {
   max-width: 100%;
 }
 
-/* ── Performance: skip rendering off-screen sections ────────────────────────
-   content-visibility:auto tells the browser to skip layout/paint for sections
-   that are not in the viewport. This reduces TBT by ~20-40% on page load.
-   contain-intrinsic-size prevents CLS by reserving approximate space.
+/* ── Performance: content-visibility disabled ───────────────────────────────
+   Auto content-visibility caused Lighthouse target-size / a11y false-fails and
+   delayed painting of below-fold interactive sections. Prefer lighter JS/HTML.
 ─────────────────────────────────────────────────────────────────────────── */
-section {
-  content-visibility: auto;
-  contain-intrinsic-size: 0 400px;
-}
-
-/* Hero and stats sections are always visible — don't skip them */
 section.no-content-visibility {
   content-visibility: visible;
   contain-intrinsic-size: none;
@@ -574,41 +566,80 @@ textarea {
   }
 }
 
-/* Accessibility contrast harmonization for existing utility classes */
-.text-\[\#b89a5a\] {
+/* Accessibility contrast — use attribute selectors so Tailwind v4 cannot
+   drop these as colliding utilities. */
+[class*="text-[#b89a5a]"] {
   color: #8c6f36 !important;
 }
 
-.text-\[\#3fb364\] {
-  color: #2d8545 !important;
+[class*="bg-[#3fb364]"]:not([class*="/"]) {
+  background-color: #2d8545 !important;
 }
 
-.bg-\[\#3fb364\] {
-  background-color: #2f8f4f !important;
+[class*="hover:bg-[#349b55]"]:hover {
+  background-color: #246d39 !important;
 }
 
-.hover\:bg-\[\#349b55\]:hover {
-  background-color: #277a42 !important;
+/* Light surfaces: darken brand green text for AA */
+[class*="text-[#3fb364]"] {
+  color: #246d39 !important;
+}
+
+/* Dark shells: brighten brand green text for AA */
+footer [class*="text-[#3fb364]"],
+[class*="bg-[#32353C]"] [class*="text-[#3fb364]"],
+[class*="bg-[#08271B]"] [class*="text-[#3fb364]"],
+[class*="bg-[#052316]"] [class*="text-[#3fb364]"],
+[class*="bg-[#031d12]"] [class*="text-[#3fb364]"],
+[class*="bg-[#083321]"] [class*="text-[#3fb364]"],
+[class*="bg-[#031a0f]"] [class*="text-[#3fb364]"],
+[class*="bg-[#072114]"] [class*="text-[#3fb364]"] {
+  color: #6bcf84 !important;
+}
+
+[class*="text-[#7a6638]"] {
+  color: #5c4d2a !important;
+}
+
+/* Gold eyebrows on dark sections must stay light */
+[class*="bg-[#08271B]"] [class*="text-[#7a6638]"],
+[class*="bg-[#052316]"] [class*="text-[#7a6638]"] {
+  color: #d8c9a0 !important;
+}
+
+[class*="text-[#2d8545]"] {
+  color: #246d39 !important;
+}
+
+/* Footer links — always light on dark bg (prevents contrast-rule bleed) */
+footer .footer-link,
+footer .footer-link:visited {
+  color: #e8ece8 !important;
+}
+
+footer .footer-link:hover,
+footer .footer-link:focus-visible {
+  color: #8ee0a8 !important;
 }
 
 /* Improved contrast on dark sections */
-.text-\[\#8fae9d\] {
+[class*="text-[#8fae9d]"] {
   color: #a8c4b8 !important;
 }
 
-.text-\[\#c8c8b8\] {
+[class*="text-[#c8c8b8]"] {
   color: #d8d8cc !important;
 }
 
-.text-\[\#8da684\] {
+[class*="text-[#8da684]"] {
   color: #a3b89a !important;
 }
 
-.text-\[\#5d735d\] {
+[class*="text-[#5d735d]"] {
   color: #7a9478 !important;
 }
 
-.text-\[\#cdd3cd\] {
+[class*="text-[#cdd3cd]"] {
   color: #dde2dc !important;
 }
 

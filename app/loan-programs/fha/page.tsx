@@ -50,7 +50,7 @@ export default function FhaLoanPage() {
             {/* Left side info */}
             <div className="lg:col-span-7 flex flex-col items-start">
               {/* Breadcrumb */}
-              <div className="flex items-center gap-2 text-[#8da684] text-[12px] font-semibold mb-6">
+              <div className="flex items-center gap-2 text-[#b8d4b8] text-[12px] font-semibold mb-6">
                 <Link href="/mortgage-loan-programs-arizona/" className="hover:text-white transition-colors">Loan Programs</Link>
                 <span>&gt;</span>
                 <span className="text-[#3fb364]">FHA Home Loans</span>
@@ -107,7 +107,7 @@ export default function FhaLoanPage() {
         {/* Section 2: Who an FHA loan is built for */}
         <section className="loan-section px-6 lg:px-10 max-w-5xl mx-auto">
           <div className="text-center mb-8">
-            <span className="text-[#b89a5a] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
+            <span className="text-[#7a6638] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
               IS THIS YOU?
             </span>
             <h2 className="text-[#052316] text-[28px] lg:text-[34px] font-playfair font-normal">
@@ -290,10 +290,10 @@ export default function FhaLoanPage() {
               <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "repeating-linear-gradient(45deg, #ffffff 0px, #ffffff 8px, transparent 8px, transparent 16px)" }}></div>
               
               <div className="relative z-10">
-                <span className="text-[#b89a5a] text-[10px] font-bold tracking-widest uppercase block mb-1">
+                <span className="text-[#7a6638] text-[10px] font-bold tracking-widest uppercase block mb-1">
                   EXAMPLE PAYMENT
                 </span>
-                <span className="text-[#8da684] text-[13px] block mb-6">
+                <span className="text-[#b8d4b8] text-[13px] block mb-6">
                   $400,000 home · 3.5% down · 30-yr fixed
                 </span>
                 <div className="flex items-baseline gap-2 mb-2">
@@ -324,7 +324,7 @@ export default function FhaLoanPage() {
         {/* Section 5: Roadmap (How it works) */}
         <section className="loan-section px-6 lg:px-10 max-w-5xl mx-auto border-t border-[#e8e0d0]/40">
           <div className="text-center mb-8">
-            <span className="text-[#b89a5a] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
+            <span className="text-[#7a6638] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
               HOW IT WORKS
             </span>
             <h2 className="text-[#052316] text-[28px] lg:text-[34px] font-playfair font-normal">
@@ -501,7 +501,7 @@ export default function FhaLoanPage() {
         {/* Section 8: Bottom Banner */}
         <section className="bg-[#052316] text-white loan-section text-center px-6 lg:px-12 border-t border-white/10">
           <div className="max-w-2xl mx-auto px-6 flex flex-col items-center">
-            <span className="text-[#b89a5a] text-[10px] font-bold tracking-[0.15em] uppercase block mb-3">
+            <span className="text-[#7a6638] text-[10px] font-bold tracking-[0.15em] uppercase block mb-3">
               READY WHEN YOU ARE
             </span>
             <h2 className="text-white text-[28px] lg:text-[34px] font-playfair font-normal leading-tight mb-3">

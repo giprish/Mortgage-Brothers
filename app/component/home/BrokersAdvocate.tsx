@@ -46,7 +46,7 @@ const BrokersAdvocate = () => {
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
-          <p className="text-[#b89a5a] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
+          <p className="text-[#7a6638] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
             Why Work With Us
           </p>
           <h2

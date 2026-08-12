@@ -41,7 +41,7 @@ const loanLinks = [
 const FooterLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
   <Link
     href={href}
-    className="block text-[#e8ece8] hover:text-[#3fb364] text-[14px] leading-snug transition-colors duration-200"
+    className="footer-link block text-[14px] leading-snug py-1 transition-colors duration-200"
   >
     {children}
   </Link>
@@ -53,11 +53,11 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-12 sm:pt-14 lg:pt-16 pb-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-14 mb-12">
           <div>
-            <h3 className="text-[#3fb364] text-[16px] font-semibold mb-3">
+            <h3 className="text-[#6bcf84] text-[16px] font-semibold mb-3">
               Inside Mortgage Brothers
             </h3>
             <div className="w-full h-px bg-[#3fb364]/70 mb-5" />
-            <ul className="flex flex-col gap-1.5">
+            <ul className="flex flex-col">
               {insideLinks.map((item) => (
                 <li key={item.label}>
                   <FooterLink href={item.href}>{item.label}</FooterLink>
@@ -70,13 +70,13 @@ const Footer = () => {
             <h3 className="mb-3">
               <Link
                 href="/mortgage-loan-programs-arizona/"
-                className="text-[#3fb364] text-[16px] font-semibold hover:text-[#6bcf84] transition-colors"
+                className="text-[#6bcf84] text-[16px] font-semibold hover:text-[#6bcf84] transition-colors"
               >
                 Arizona Loan Services
               </Link>
             </h3>
             <div className="w-full h-px bg-[#3fb364]/70 mb-5" />
-            <ul className="flex flex-col gap-1.5">
+            <ul className="flex flex-col">
               {loanLinks.map((item) => (
                 <li key={item.label}>
                   <FooterLink href={item.href}>{item.label}</FooterLink>
@@ -86,7 +86,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-[#3fb364] text-[16px] font-semibold mb-3">
+            <h3 className="text-[#6bcf84] text-[16px] font-semibold mb-3">
               {COMPANY.legalName}
             </h3>
             <div className="w-full h-px bg-[#3fb364]/70 mb-5" />
@@ -99,7 +99,7 @@ const Footer = () => {
                   href={COMPANY.addressMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-[#3fb364] transition-colors"
+                  className="hover:text-[#6bcf84] transition-colors"
                 >
                   {COMPANY.addressLine1}
                   <br />
@@ -109,7 +109,7 @@ const Footer = () => {
               <p className="mt-2 mb-5">
                 <a
                   href={COMPANY.phoneHref}
-                  className="hover:text-[#3fb364] transition-colors font-medium"
+                  className="hover:text-[#6bcf84] transition-colors font-medium"
                 >
                   {COMPANY.phoneDisplay}
                 </a>
@@ -200,7 +200,7 @@ const Footer = () => {
             <div className="border border-white/10 rounded-xl p-5 mb-6 bg-white/5">
               <div className="flex items-start gap-3">
                 <div className="mt-0.5 flex-shrink-0 w-7 h-7 rounded-full bg-[#3fb364]/20 flex items-center justify-center">
-                  <svg className="w-4 h-4 text-[#3fb364]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+                  <svg className="w-4 h-4 text-[#6bcf84]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
@@ -212,7 +212,7 @@ const Footer = () => {
                       href={COMPANY.nmlsConsumerAccessUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#2d8545] underline underline-offset-2 hover:text-[#246d39]"
+                      className="text-[#6bcf84] underline underline-offset-2 hover:text-[#6bcf84]"
                     >
                       official NMLS Consumer Access website
                     </a>
@@ -221,7 +221,7 @@ const Footer = () => {
                       href={COMPANY.nmlsConsumerAccessUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#2d8545] underline underline-offset-2 hover:text-[#246d39]"
+                      className="text-[#6bcf84] underline underline-offset-2 hover:text-[#6bcf84]"
                     >
                       NMLS Consumer Access
                     </a>{" "}
@@ -230,7 +230,7 @@ const Footer = () => {
                       href="https://azdifi.portalus.thentiacloud.net/webs/portal/register/#/profile/LO-0911422/0/20/all/all/false/66185b7fa32d990aef41475d"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#2d8545] underline underline-offset-2 hover:text-[#246d39]"
+                      className="text-[#6bcf84] underline underline-offset-2 hover:text-[#6bcf84]"
                     >
                       Loan Originator License
                     </a>
@@ -242,14 +242,14 @@ const Footer = () => {
 
             {/* Information Disclaimer */}
             <div className="text-[13px] leading-[1.75] text-[#cdd3cd]">
-              <p className="text-[#3fb364] font-bold tracking-wide text-[11px] uppercase mb-2">
+              <p className="text-[#6bcf84] font-bold tracking-wide text-[11px] uppercase mb-2">
                 Information Disclaimer
               </p>
               <p className="mb-4">
                 Content on this website is provided for informational purposes only and does not
                 constitute an offer to lend. Rates, terms, and program availability may change
                 without notice.{" "}
-                <Link href="/contact-us/" className="text-[#2d8545] underline underline-offset-2 hover:text-[#246d39]">
+                <Link href="/contact-us/" className="text-[#6bcf84] underline underline-offset-2 hover:text-[#6bcf84]">
                   Contact our loan officers
                 </Link>{" "}
                 for the most up-to-date information. All loans subject to underwriter approval.
@@ -303,10 +303,12 @@ const Footer = () => {
               </div>
               <div className="bg-white/5 rounded-lg p-3 flex items-center justify-center min-h-[88px]">
                 <Image
-                  src="/home/fha-approved.png"
+                  src="/home/fha-approved-sm.webp"
                   alt="FHA Approved Lending Partner"
                   width={90}
-                  height={72}
+                  height={67}
+                  loading="lazy"
+                  decoding="async"
                   className="object-contain max-h-[72px] w-auto"
                   style={{ width: "auto" }}
                 />
@@ -335,11 +337,11 @@ const Footer = () => {
             </span>
           </div>
           <div className="flex items-center gap-2 text-[12px] shrink-0">
-            <Link href="/privacy-policy/" className="text-[#3fb364] hover:underline font-medium">
+            <Link href="/privacy-policy/" className="text-[#6bcf84] hover:underline font-medium">
               Privacy Policy
             </Link>
             <span className="text-[#6a706a]">·</span>
-            <Link href="/terms-of-use/" className="text-[#3fb364] hover:underline font-medium">
+            <Link href="/terms-of-use/" className="text-[#6bcf84] hover:underline font-medium">
               Terms of Use
             </Link>
           </div>

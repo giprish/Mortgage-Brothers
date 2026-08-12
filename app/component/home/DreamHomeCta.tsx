@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import YoutubeLiteEmbed from "../YoutubeLiteEmbed";
 
 const stats = [
   { value: "5,000+", label: "Loans Approved" },
@@ -19,20 +20,11 @@ const DreamHomeCta = () => {
 
   <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-16 sm:pt-24 lg:pt-32 pb-14 sm:pb-20 lg:pb-24 relative z-10">
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-      {/* YouTube video */}
+      {/* YouTube — click-to-play (no player JS until interaction) */}
       <div className="order-2 lg:order-1">
         <div className="relative w-full aspect-[4/3] lg:aspect-[5/4] rounded-3xl overflow-hidden shadow-2xl ring-1 ring-white/10">
-          {/* glow frame */}
           <div className="absolute -inset-1 rounded-[28px] bg-gradient-to-br from-[#3fb364]/30 via-transparent to-transparent blur-md -z-10" />
-          <iframe
-            src={`https://www.youtube-nocookie.com/embed/${HOME_VIDEO_ID}?rel=0`}
-            title={HOME_VIDEO_TITLE}
-            className="absolute inset-0 w-full h-full border-0"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-          />
+          <YoutubeLiteEmbed videoId={HOME_VIDEO_ID} title={HOME_VIDEO_TITLE} />
         </div>
       </div>
 

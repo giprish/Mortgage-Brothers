@@ -64,7 +64,7 @@ export default function LoanProgramHero({
           ) : null}
 
           {hasNote ? (
-            <p className="text-[#8a9a7a] text-[12px] font-medium text-center mt-3">{note}</p>
+            <p className="text-[#5a6b52] text-[12px] font-medium text-center mt-3">{note}</p>
           ) : null}
         </div>
       </section>

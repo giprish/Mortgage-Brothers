@@ -5,6 +5,8 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
 
+  // Do not set output: 'export' — Route Handlers (sitemap/robots) need Node.
+
   experimental: {
     optimizePackageImports: [
       "lucide-react",
@@ -12,15 +14,11 @@ const nextConfig: NextConfig = {
       "chart.js",
       "react-chartjs-2",
     ],
-    staleTimes: {
-      dynamic: 0,
-      static: 0,
-    },
   },
 
   images: {
     formats: ["image/avif", "image/webp"],
-    minimumCacheTTL: 31536000, // 1 year
+    minimumCacheTTL: 31536000,
     dangerouslyAllowSVG: false,
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
@@ -82,26 +80,11 @@ const nextConfig: NextConfig = {
     ];
 
     return [
-      {
-        source: "/:path*",
-        headers: securityHeaders,
-      },
-      {
-        source: "/home/:path*",
-        headers: longCache,
-      },
-      {
-        source: "/_next/static/:path*",
-        headers: longCache,
-      },
-      {
-        source: "/favicon-:size.jpg",
-        headers: longCache,
-      },
-      {
-        source: "/apple-touch-icon.jpg",
-        headers: longCache,
-      },
+      { source: "/:path*", headers: securityHeaders },
+      { source: "/home/:path*", headers: longCache },
+      { source: "/_next/static/:path*", headers: longCache },
+      { source: "/favicon-:size.jpg", headers: longCache },
+      { source: "/apple-touch-icon.jpg", headers: longCache },
     ];
   },
   async redirects() {
@@ -111,16 +94,8 @@ const nextConfig: NextConfig = {
         destination: "/service-areas/:path*",
         permanent: true,
       },
-      {
-        source: "/term-condition",
-        destination: "/team/",
-        permanent: true,
-      },
-      {
-        source: "/term-condition/",
-        destination: "/team/",
-        permanent: true,
-      },
+      { source: "/term-condition", destination: "/team/", permanent: true },
+      { source: "/term-condition/", destination: "/team/", permanent: true },
       {
         source: "/fha-loans",
         destination: "/fha-home-loans-arizona/",
@@ -141,6 +116,18 @@ const nextConfig: NextConfig = {
         destination: "/mortgage-loan-programs-arizona/",
         permanent: true,
       },
+      {
+        source: "/loan-programs",
+        destination: "/mortgage-loan-programs-arizona/",
+        permanent: true,
+      },
+      {
+        source: "/loan-programs/",
+        destination: "/mortgage-loan-programs-arizona/",
+        permanent: true,
+      },
+      { source: "/resources", destination: "/blog/", permanent: true },
+      { source: "/resources/", destination: "/blog/", permanent: true },
       {
         source: "/resources/mortgage-basics",
         destination: "/mortgage-basics/",

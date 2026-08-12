@@ -98,7 +98,7 @@ export default function FirstTimeHomeBuyerPage() {
                   </li>
                 </ul>
 
-                <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between text-[13px] text-[#8da684]">
+                <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between text-[13px] text-[#b8d4b8]">
                   <span>AZ Mortgage Brothers</span>
                   <span className="font-semibold text-[#3fb364]">NMLS #1007154</span>
                 </div>

@@ -74,7 +74,7 @@ export default function VideosPage() {
             <div className="flex items-center gap-1.5 text-[12px] text-[#3fb364] font-medium mb-6">
               <Link href="/blog/" className="hover:underline">Resources</Link>
               <span>&gt;</span>
-              <span className="text-[#a89a70]">Videos</span>
+              <span className="text-[#7a6a3d]">Videos</span>
             </div>
             <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">WATCH & LEARN</span>
             <h1 className="text-white text-[38px] lg:text-[50px] font-playfair font-normal leading-[1.15] mb-5">Real Advice. Real Numbers. Straight Talk.</h1>
@@ -106,7 +106,7 @@ export default function VideosPage() {
           <div className="max-w-5xl mx-auto">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-[#052316] text-[20px] lg:text-[24px] font-playfair font-normal">{activeSeries}</h2>
-              <span className="text-[#8a9a7a] text-[13px]">{currentSeries.videos.length} video{currentSeries.videos.length !== 1 ? "s" : ""}</span>
+              <span className="text-[#5a6b52] text-[13px]">{currentSeries.videos.length} video{currentSeries.videos.length !== 1 ? "s" : ""}</span>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {currentSeries.videos.map((video) => (
@@ -138,7 +138,7 @@ export default function VideosPage() {
                     <div className="w-9 h-9 rounded-xl bg-white shadow-sm flex items-center justify-center mb-4">{item.icon}</div>
                     <div>
                       <h3 className="text-[#052316] text-[15px] font-bold mb-1 group-hover:text-[#3fb364] transition-colors">{seriesName}</h3>
-                      <span className="text-[#8a9a7a] text-[12px]">{item.videos.length} video{item.videos.length !== 1 ? "s" : ""}</span>
+                      <span className="text-[#5a6b52] text-[12px]">{item.videos.length} video{item.videos.length !== 1 ? "s" : ""}</span>
                     </div>
                   </button>
                 );

@@ -10,14 +10,14 @@ const HomeStatsBar = () => {
           
           {/* Main 4.9 Score Column */}
           <div className="flex items-center gap-3.5 pr-2">
-            <span className="text-4xl lg:text-5xl font-playfair font-bold text-white tracking-tight leading-none">
+            <span className="text-4xl lg:text-5xl font-bold text-white tracking-tight leading-none">
               4.9
             </span>
             <div className="flex flex-col min-w-0">
               <span className="font-bold text-xs lg:text-sm text-white leading-tight">
                 Rated 4.9 / 5
               </span>
-              <span className="text-[11px] lg:text-xs text-[#8fae9d] leading-tight mt-0.5">
+              <span className="text-[11px] lg:text-xs text-[#b8d4b8] leading-tight mt-0.5">
                 from 500+ verified Arizona homeowners
               </span>
               <div className="flex text-[#f5c518] gap-0.5 mt-1">
@@ -39,7 +39,7 @@ const HomeStatsBar = () => {
               <span className="font-bold text-base lg:text-lg text-white leading-none">
                 4.9
               </span>
-              <span className="text-[11px] lg:text-xs text-[#8fae9d] font-medium mt-0.5">
+              <span className="text-[11px] lg:text-xs text-[#b8d4b8] font-medium mt-0.5">
                 Google
               </span>
             </div>
@@ -56,7 +56,7 @@ const HomeStatsBar = () => {
               <span className="font-bold text-base lg:text-lg text-white leading-none">
                 5.0
               </span>
-              <span className="text-[11px] lg:text-xs text-[#8fae9d] font-medium mt-0.5">
+              <span className="text-[11px] lg:text-xs text-[#b8d4b8] font-medium mt-0.5">
                 Zillow
               </span>
             </div>
@@ -73,7 +73,7 @@ const HomeStatsBar = () => {
               <span className="font-bold text-base lg:text-lg text-white leading-none">
                 4.9
               </span>
-              <span className="text-[11px] lg:text-xs text-[#8fae9d] font-medium mt-0.5">
+              <span className="text-[11px] lg:text-xs text-[#b8d4b8] font-medium mt-0.5">
                 Experience
               </span>
             </div>
@@ -90,7 +90,7 @@ const HomeStatsBar = () => {
               <span className="font-bold text-base lg:text-lg text-white leading-none">
                 A+
               </span>
-              <span className="text-[11px] lg:text-xs text-[#8fae9d] font-medium mt-0.5">
+              <span className="text-[11px] lg:text-xs text-[#b8d4b8] font-medium mt-0.5">
                 BBB
               </span>
             </div>
@@ -102,14 +102,14 @@ const HomeStatsBar = () => {
         <div className="flex flex-col md:hidden gap-4 divide-y divide-[#0e422b]">
           {/* Top overall score (Centered on mobile) */}
           <div className="flex items-center gap-4 pb-3 justify-center sm:justify-start">
-            <span className="text-5xl font-playfair font-bold text-white tracking-tight leading-none">
+            <span className="text-5xl font-bold text-white tracking-tight leading-none">
               4.9
             </span>
             <div className="flex flex-col">
               <span className="font-bold text-sm text-white leading-tight">
                 Rated 4.9 / 5
               </span>
-              <span className="text-xs text-[#8fae9d] leading-tight mt-0.5">
+              <span className="text-xs text-[#b8d4b8] leading-tight mt-0.5">
                 from 500+ verified Arizona homeowners
               </span>
               <div className="flex text-[#f5c518] gap-0.5 mt-1.5">
@@ -132,7 +132,7 @@ const HomeStatsBar = () => {
               </div>
               <div className="flex flex-col">
                 <span className="font-bold text-base text-white leading-none">4.9</span>
-                <span className="text-[11px] text-[#8fae9d] font-medium mt-0.5">Google</span>
+                <span className="text-[11px] text-[#b8d4b8] font-medium mt-0.5">Google</span>
               </div>
             </div>
 
@@ -145,7 +145,7 @@ const HomeStatsBar = () => {
               </div>
               <div className="flex flex-col">
                 <span className="font-bold text-base text-white leading-none">5.0</span>
-                <span className="text-[11px] text-[#8fae9d] font-medium mt-0.5">Zillow</span>
+                <span className="text-[11px] text-[#b8d4b8] font-medium mt-0.5">Zillow</span>
               </div>
             </div>
 
@@ -158,7 +158,7 @@ const HomeStatsBar = () => {
               </div>
               <div className="flex flex-col">
                 <span className="font-bold text-base text-white leading-none">4.9</span>
-                <span className="text-[11px] text-[#8fae9d] font-medium mt-0.5">Experience</span>
+                <span className="text-[11px] text-[#b8d4b8] font-medium mt-0.5">Experience</span>
               </div>
             </div>
 
@@ -171,7 +171,7 @@ const HomeStatsBar = () => {
               </div>
               <div className="flex flex-col">
                 <span className="font-bold text-base text-white leading-none">A+</span>
-                <span className="text-[11px] text-[#8fae9d] font-medium mt-0.5">BBB</span>
+                <span className="text-[11px] text-[#b8d4b8] font-medium mt-0.5">BBB</span>
               </div>
             </div>
 

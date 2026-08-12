@@ -173,7 +173,7 @@ export default function MortgageRatesToolArizonaPage() {
                 </Link>
                 <Link
                   href="/arizona-mortgage-insights/"
-                  className="text-[#8a9a7a] hover:text-[#3fb364] transition-colors"
+                  className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
                 >
                   Arizona Mortgage Insights →
                 </Link>

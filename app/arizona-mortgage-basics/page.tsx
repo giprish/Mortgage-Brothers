@@ -330,7 +330,7 @@ export default function ArizonaMortgageBasicsPage() {
                 </Link>
                 <Link
                   href="/why-use-an-arizona-mortgage-broker/"
-                  className="text-[#8a9a7a] hover:text-[#3fb364] transition-colors"
+                  className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
                 >
                   Next Post →
                 </Link>

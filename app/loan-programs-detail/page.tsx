@@ -359,7 +359,7 @@ export default function LoanProgramsDetailPage() {
         {/* Bottom CTA Banner */}
         <section className="bg-[#052316] text-white loan-section text-center border-t border-white/10">
           <div className="max-w-2xl mx-auto px-6 flex flex-col items-center">
-            <span className="text-[#b89a5a] text-[10px] font-bold tracking-[0.15em] uppercase block mb-3">
+            <span className="text-[#7a6638] text-[10px] font-bold tracking-[0.15em] uppercase block mb-3">
               NOT SURE WHICH FITS?
             </span>
             <h2 className="text-white text-[30px] lg:text-[36px] font-playfair font-normal leading-tight mb-3">

@@ -81,6 +81,7 @@ function ContactJotform() {
     script.type = "text/javascript";
     script.src = JOTFORM_SCRIPT_SRC;
     script.async = true;
+    script.defer = true;
     container.appendChild(script);
 
     return () => {
@@ -93,6 +94,7 @@ function ContactJotform() {
       ref={containerRef}
       className="w-full min-h-[520px]"
       aria-label="Contact form"
+      role="form"
     />
   );
 }

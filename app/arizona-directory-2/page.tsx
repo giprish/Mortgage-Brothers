@@ -267,7 +267,7 @@ export default function ArizonaDirectory2Page() {
                       setShowSuggestions(true);
                     }}
                     onFocus={() => setShowSuggestions(true)}
-                    className="w-full bg-white border border-[#e8e0d0]/10 rounded-2xl px-5 py-4 pl-12 text-[15px] text-[#1a3a1a] placeholder:text-[#8a9a7a]/60 shadow-lg focus:outline-none focus:border-brand-green-accent/50 focus:ring-1 focus:ring-brand-green-accent/20 transition-all"
+                    className="w-full bg-white border border-[#e8e0d0]/10 rounded-2xl px-5 py-4 pl-12 text-[15px] text-[#1a3a1a] placeholder:text-[#5a6b52]/60 shadow-lg focus:outline-none focus:border-brand-green-accent/50 focus:ring-1 focus:ring-brand-green-accent/20 transition-all"
                   />
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -299,12 +299,12 @@ export default function ArizonaDirectory2Page() {
                               {item.name}
                             </span>
                             {item.type === "city" && (
-                              <span className="text-[#a89a70] text-[11px] ml-2 font-bold uppercase tracking-wider">
+                              <span className="text-[#7a6a3d] text-[11px] ml-2 font-bold uppercase tracking-wider">
                                 ({item.countyName})
                               </span>
                             )}
                           </div>
-                          <span className="text-[10px] font-bold uppercase tracking-wider text-[#8a9a7a] bg-[#f5f0e8] px-2 py-0.5 rounded-md">
+                          <span className="text-[10px] font-bold uppercase tracking-wider text-[#5a6b52] bg-[#f5f0e8] px-2 py-0.5 rounded-md">
                             {item.type}
                           </span>
                         </button>
@@ -613,7 +613,7 @@ export default function ArizonaDirectory2Page() {
               <h2 className="text-brand-green-deep text-[26px] lg:text-[34px] font-playfair font-normal leading-tight">
                 Browse all counties
               </h2>
-              <span className="text-[#a89a70] text-[12.5px] font-bold uppercase tracking-wider">
+              <span className="text-[#7a6a3d] text-[12.5px] font-bold uppercase tracking-wider">
                 15 of 15 counties
               </span>
             </div>

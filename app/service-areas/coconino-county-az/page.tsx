@@ -65,7 +65,7 @@ export default function CoconinoCountyPage() {
 
             <HeroCtaButtons className="mb-4" />
 
-            <p className="text-[#8a9a7a] text-[12px] font-medium">
+            <p className="text-[#5a6b52] text-[12px] font-medium">
               3 min - no credit impact
             </p>
           </div>

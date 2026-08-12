@@ -64,7 +64,7 @@ export default function ContactForm() {
             required
             value={form.name}
             onChange={handleChange}
-            className="w-full h-[48px] px-3.5 rounded-lg border border-[#e0d8c8] text-[14.5px] text-[#08271B] placeholder:text-[#6f786f] focus:outline-none focus:border-[#2d8545]"
+            className="w-full h-[48px] px-3.5 rounded-lg border border-[#e0d8c8] text-[14.5px] text-[#08271B] placeholder:text-[#3f4640] placeholder:opacity-100 focus:outline-none focus:border-[#2d8545]"
             placeholder="Jane Doe"
           />
         </div>
@@ -78,7 +78,7 @@ export default function ContactForm() {
             type="tel"
             value={form.phone}
             onChange={handleChange}
-            className="w-full h-[48px] px-3.5 rounded-lg border border-[#e0d8c8] text-[14.5px] text-[#08271B] placeholder:text-[#6f786f] focus:outline-none focus:border-[#2d8545]"
+            className="w-full h-[48px] px-3.5 rounded-lg border border-[#e0d8c8] text-[14.5px] text-[#08271B] placeholder:text-[#3f4640] placeholder:opacity-100 focus:outline-none focus:border-[#2d8545]"
             placeholder="(602) 555-0123"
           />
         </div>
@@ -95,8 +95,8 @@ export default function ContactForm() {
           required
           value={form.email}
           onChange={handleChange}
-          className="w-full h-[48px] px-3.5 rounded-lg border border-[#e0d8c8] text-[14.5px] text-[#08271B] placeholder:text-[#6f786f] focus:outline-none focus:border-[#2d8545]"
-          placeholder="jane@example.com"
+          autoComplete="email"
+          className="w-full h-[48px] px-3.5 rounded-lg border border-[#c5bba8] bg-white text-[14.5px] text-[#08271B] focus:outline-none focus:border-[#2d8545]"
         />
       </div>
 
@@ -111,14 +111,13 @@ export default function ContactForm() {
           required
           value={form.message}
           onChange={handleChange}
-          className="w-full px-3.5 py-3 rounded-lg border border-[#e0d8c8] text-[14.5px] text-[#08271B] placeholder:text-[#6f786f] focus:outline-none focus:border-[#2d8545] resize-none"
-          placeholder="Tell us about your mortgage goals..."
+          className="w-full px-3.5 py-3 rounded-lg border border-[#c5bba8] bg-white text-[14.5px] text-[#08271B] focus:outline-none focus:border-[#2d8545] resize-none"
         />
       </div>
 
       <button
         type="submit"
-        className="inline-flex items-center justify-center gap-2 bg-[#2f8f4f] hover:bg-[#277a42] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200 shadow-md cursor-pointer mt-1 min-h-[44px]"
+        className="inline-flex items-center justify-center gap-2 bg-[#2d8545] hover:bg-[#246d39] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200 shadow-md cursor-pointer mt-1 min-h-[48px]"
       >
         Send Message
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

@@ -112,7 +112,7 @@ export default function TeamPage() {
         {/* Section 1: Meet the Team */}
         <section className="mt-10 lg:mt-20 py-20 px-6 lg:px-10 max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-[#b89a5a] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
+            <span className="text-[#7a6638] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
               MEET THE TEAM
             </span>
             <h1 className="text-[#052316] text-[36px] lg:text-[48px] font-playfair font-normal leading-tight mb-4">
@@ -144,7 +144,7 @@ export default function TeamPage() {
                     <h3 className="text-[#052316] text-[16px] font-bold mb-1">
                       {member.name}
                     </h3>
-                    <span className="text-[#b89a5a] text-[11px] font-semibold tracking-wide block mb-3 uppercase leading-tight">
+                    <span className="text-[#7a6638] text-[11px] font-semibold tracking-wide block mb-3 uppercase leading-tight">
                       {member.title}
                     </span>
                     <p className="text-[#4e5b4e] text-[13px] leading-[1.6]">
@@ -152,7 +152,7 @@ export default function TeamPage() {
                     </p>
                   </div>
                   {member.nmls && (
-                    <span className="text-[#8a9a7a] text-[11px] font-medium mt-4 block">
+                    <span className="text-[#5a6b52] text-[11px] font-medium mt-4 block">
                       {member.nmls}
                     </span>
                   )}
@@ -169,7 +169,7 @@ export default function TeamPage() {
             {/* Left Column - Careers Intro */}
             <div className="lg:col-span-5 flex flex-col gap-6 lg:sticky lg:top-8">
               <div>
-                <span className="text-[#b89a5a] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
+                <span className="text-[#7a6638] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
                   CAREERS
                 </span>
                 <h2 className="text-white text-[32px] lg:text-[40px] font-playfair font-normal leading-tight mb-4">
@@ -208,7 +208,7 @@ export default function TeamPage() {
                     {/* Tags row */}
                     <div className="flex gap-2 items-center mb-2">
                       <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded ${
-                        job.department === "Sales" ? "bg-[#3fb364]/10 text-[#3fb364]" : "bg-[#b89a5a]/10 text-[#b89a5a]"
+                        job.department === "Sales" ? "bg-[#3fb364]/10 text-[#3fb364]" : "bg-[#b89a5a]/10 text-[#7a6638]"
                       }`}>
                         {job.department}
                       </span>

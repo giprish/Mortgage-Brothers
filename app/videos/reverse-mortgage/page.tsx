@@ -28,7 +28,7 @@ export default function ReverseMortgageVideosPage() {
                 Videos
               </Link>
               <span className="text-white/40">&gt;</span>
-              <span className="text-[#a89a70]">Reverse Mortgage</span>
+              <span className="text-[#7a6a3d]">Reverse Mortgage</span>
             </div>
 
             <h1 className="text-white text-[32px] sm:text-[40px] lg:text-[48px] font-bold leading-[1.15] mb-5">

@@ -611,7 +611,7 @@ export default function ConventionalVsFhaLoansPage() {
                   key={rev.author}
                   className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm flex flex-col"
                 >
-                  <div className="flex gap-0.5 mb-4 text-[#b89a5a]">
+                  <div className="flex gap-0.5 mb-4 text-[#7a6638]">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
@@ -623,7 +623,7 @@ export default function ConventionalVsFhaLoansPage() {
                   </p>
                   <div>
                     <p className="text-[#08271B] text-[14px] font-bold">{rev.author}</p>
-                    <p className="text-[#8a9a7a] text-[12px] mt-0.5">{rev.location}</p>
+                    <p className="text-[#5a6b52] text-[12px] mt-0.5">{rev.location}</p>
                   </div>
                 </div>
               ))}

@@ -210,7 +210,7 @@ export default function CountyPage() {
                   placeholder={`Search cities in ${countyName}...`}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-white border border-[#e8e0d0] rounded-2xl px-5 py-4 pl-12 text-[15px] text-[#1a3a1a] placeholder:text-[#8a9a7a]/60 shadow-sm focus:outline-none focus:border-brand-green-accent/50 focus:ring-1 focus:ring-brand-green-accent/20 transition-all"
+                  className="w-full bg-white border border-[#e8e0d0] rounded-2xl px-5 py-4 pl-12 text-[15px] text-[#1a3a1a] placeholder:text-[#5a6b52]/60 shadow-sm focus:outline-none focus:border-brand-green-accent/50 focus:ring-1 focus:ring-brand-green-accent/20 transition-all"
                 />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -256,7 +256,7 @@ export default function CountyPage() {
                                 <h3 className="text-[#052316] text-[15.5px] font-bold leading-tight tracking-tight group-hover:text-[#3fb364] transition-colors">
                                   {city.name}
                                 </h3>
-                                <span className="text-[#a89a70] text-[10px] font-bold uppercase tracking-wider mt-0.5 block">
+                                <span className="text-[#7a6a3d] text-[10px] font-bold uppercase tracking-wider mt-0.5 block">
                                   {countyName}
                                 </span>
                               </div>
@@ -294,7 +294,7 @@ export default function CountyPage() {
                   })}
                 </div>
               ) : (
-                <div className="bg-white rounded-2xl p-12 border border-[#e8e0d0]/50 text-center text-[#8a9a7a]">
+                <div className="bg-white rounded-2xl p-12 border border-[#e8e0d0]/50 text-center text-[#5a6b52]">
                   <p className="text-[15px] font-medium mb-1">No matching communities found in {countyName}.</p>
                   <p className="text-[13px]">Try refining your search term.</p>
                 </div>

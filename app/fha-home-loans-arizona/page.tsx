@@ -380,7 +380,7 @@ export default function FhaHomeLoansArizonaPage() {
                       { label: "4-Unit", value: row.fourUnit },
                     ].map((cell) => (
                       <div key={cell.label} className="bg-white px-4 py-3.5">
-                        <p className="text-[#8da684] text-[10px] font-bold tracking-[0.12em] uppercase mb-1">
+                        <p className="text-[#b8d4b8] text-[10px] font-bold tracking-[0.12em] uppercase mb-1">
                           {cell.label}
                         </p>
                         <p className="text-[#052316] text-[15px] font-semibold tabular-nums">
@@ -414,7 +414,7 @@ export default function FhaHomeLoansArizonaPage() {
                       <td className="px-5 py-3.5 font-semibold text-[#052316] border-t border-[#e0e0e0] align-top max-w-[240px]">
                         {row.county}
                         {"note" in row && row.note ? (
-                          <span className="block text-[12px] font-normal text-[#8da684] mt-1 leading-snug">
+                          <span className="block text-[12px] font-normal text-[#b8d4b8] mt-1 leading-snug">
                             Includes {row.note}.
                           </span>
                         ) : null}
@@ -512,7 +512,7 @@ export default function FhaHomeLoansArizonaPage() {
                   <div className="text-[#3fb364] text-[14px] mb-3 tracking-wider">★★★★★</div>
                   <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed mb-4 italic">&ldquo;{t.text}&rdquo;</p>
                   <p className="text-[#052316] text-[14px] font-bold">{t.author}</p>
-                  <p className="text-[#8da684] text-[13px]">{t.location}</p>
+                  <p className="text-[#b8d4b8] text-[13px]">{t.location}</p>
                 </div>
               ))}
             </div>
@@ -584,7 +584,7 @@ export default function FhaHomeLoansArizonaPage() {
               <div className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-[#3fb364] mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-[13px] text-[#8da684] uppercase tracking-wider font-bold mb-1">Phone</p>
+                  <p className="text-[13px] text-[#b8d4b8] uppercase tracking-wider font-bold mb-1">Phone</p>
                   <a href="tel:+16025352171" className="text-white font-semibold hover:text-[#3fb364] transition-colors">
                     (602) 535-2171
                   </a>
@@ -593,7 +593,7 @@ export default function FhaHomeLoansArizonaPage() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#3fb364] mt-1 flex-shrink-0" />
                 <div>
-                  <p className="text-[13px] text-[#8da684] uppercase tracking-wider font-bold mb-1">Address</p>
+                  <p className="text-[13px] text-[#b8d4b8] uppercase tracking-wider font-bold mb-1">Address</p>
                   <p className="text-white text-[14px] leading-relaxed">
                     1599 East Orangewood Ave Suite 200, Phoenix, AZ 85020
                   </p>
@@ -640,7 +640,7 @@ export default function FhaHomeLoansArizonaPage() {
         {/* DISCLAIMER */}
         <section className="loan-section-footer bg-[#fcf9f3] border-t border-[#e0e0e0]">
           <div className="max-w-5xl mx-auto text-center">
-            <p className="text-[#8da684] text-[12.5px] leading-relaxed">
+            <p className="text-[#b8d4b8] text-[12.5px] leading-relaxed">
               Equal Housing Lender. Mortgage Brothers LLC NMLS #1007154. Eddie Knoell NMLS #210917, Thomas Knoell NMLS #1618695.
             </p>
           </div>

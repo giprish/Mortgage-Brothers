@@ -27,7 +27,7 @@ const Brothers = () => {
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-14">
-          <p className="text-[#b89a5a] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
+          <p className="text-[#7a6638] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
             The Brothers
           </p>
           <h2
@@ -67,7 +67,7 @@ const Brothers = () => {
 
               {/* Content Area */}
               <div className="p-5 sm:p-8 flex-1 flex flex-col min-w-0">
-                <span className="inline-block text-[#b89a5a] text-[11px] font-bold uppercase tracking-wider mb-2">
+                <span className="inline-block text-[#7a6638] text-[11px] font-bold uppercase tracking-wider mb-2">
                   {person.role}
                 </span>
                 <h3
@@ -76,7 +76,7 @@ const Brothers = () => {
                 >
                   {person.name}
                 </h3>
-                <p className="text-[#8a9a7a] text-[12px] sm:text-[12.5px] font-medium mb-4 leading-snug">
+                <p className="text-[#5a6b52] text-[12px] sm:text-[12.5px] font-medium mb-4 leading-snug">
                   <span className="block sm:inline">{person.nmls}</span>
                   <span className="hidden sm:inline"> &bull; </span>
                   <span className="block sm:inline">{person.license}</span>
@@ -100,7 +100,7 @@ const Brothers = () => {
                       strokeWidth="2.5"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="text-[#b89a5a] group-hover:text-[#3fb364] transition-colors duration-200"
+                      className="text-[#7a6638] group-hover:text-[#3fb364] transition-colors duration-200"
                     >
                       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                     </svg>
@@ -115,7 +115,7 @@ const Brothers = () => {
         <div className="text-center">
           <Link
             href="/about-us/"
-            className="inline-block bg-[#3fb364] hover:bg-[#349b55] text-white font-semibold text-[15px] px-8 py-3.5 rounded-full shadow-md hover:shadow-xl transition-all duration-200"
+            className="inline-block bg-[#2d8545] hover:bg-[#246d39] text-white font-semibold text-[15px] px-8 py-3.5 rounded-full shadow-md hover:shadow-xl transition-all duration-200"
           >
             Get to Know Us
           </Link>

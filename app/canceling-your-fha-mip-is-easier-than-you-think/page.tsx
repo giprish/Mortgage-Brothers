@@ -402,7 +402,7 @@ export default function CancelingFhaMipPage() {
                   .
                 </p>
 
-                <p className="text-[#8a9a7a] text-[13px] leading-relaxed">
+                <p className="text-[#5a6b52] text-[13px] leading-relaxed">
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
                   prepared for informational purposes only. You should consult your own tax, legal, and accounting
                   advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
@@ -419,7 +419,7 @@ export default function CancelingFhaMipPage() {
                 </Link>
                 <Link
                   href="/conventional-home-loans-vs-fha-loans-which-is-right-for-you/"
-                  className="text-[#8a9a7a] hover:text-[#3fb364] transition-colors"
+                  className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
                 >
                   Next Post →
                 </Link>

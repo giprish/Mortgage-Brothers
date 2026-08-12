@@ -289,7 +289,7 @@ export default function MortgageLateApprovalPage() {
                   </p>
                 </div>
 
-                <p className="text-[#8a9a7a] text-[13px] leading-relaxed">
+                <p className="text-[#5a6b52] text-[13px] leading-relaxed">
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
                   prepared for informational purposes only. You should consult your own tax, legal, and accounting
                   advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
@@ -443,7 +443,7 @@ export default function MortgageLateApprovalPage() {
                         </Link>
                         .
                       </p>
-                      <p className="text-[#8a9a7a] text-[13px]">
+                      <p className="text-[#5a6b52] text-[13px]">
                         Disclaimer: This material is for informational purposes only. Consult your tax, legal, and
                         accounting advisors before taking action. NMLS: 1007154
                       </p>
@@ -453,7 +453,7 @@ export default function MortgageLateApprovalPage() {
               </div>
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">
-                <span className="text-[#8a9a7a]">← Previous Post</span>
+                <span className="text-[#5a6b52]">← Previous Post</span>
                 <Link
                   href="/getting-a-mortgage-with-employment-gaps/"
                   className="text-[#3fb364] font-semibold hover:underline"

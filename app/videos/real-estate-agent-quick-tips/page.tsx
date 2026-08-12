@@ -27,7 +27,7 @@ export default function RealEstateAgentTipsVideosPage() {
                 Videos
               </Link>
               <span className="text-white/40">&gt;</span>
-              <span className="text-[#a89a70]">Agent Quick Tips</span>
+              <span className="text-[#7a6a3d]">Agent Quick Tips</span>
             </div>
 
             <h1 className="text-white text-[28px] sm:text-[36px] lg:text-[44px] font-bold leading-[1.15] mb-5">

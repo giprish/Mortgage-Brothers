@@ -830,7 +830,7 @@ export default function VaLoansArizonaPage() {
                 Call (602) 535-2171
               </a>
             </div>
-            <p className="text-[#8da684] text-[12px] leading-relaxed pt-6 max-w-3xl mx-auto">
+            <p className="text-[#b8d4b8] text-[12px] leading-relaxed pt-6 max-w-3xl mx-auto">
               Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been prepared for informational purposes only. You should consult your own tax, legal, and accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and #1618695. Equal housing lender.
             </p>
           </div>

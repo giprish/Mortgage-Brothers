@@ -17,7 +17,7 @@ const loanSolutions = [
   {
     title: "Jumbo Loans",
     description: "For high-value properties that exceed conforming loan limits, providing flexible financing options.",
-    linkText: "Learn more",
+    linkText: "View Jumbo Loan Options",
     href: "/jumbo-loans-arizona/",
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -83,7 +83,7 @@ const loanSolutions = [
   {
     title: "Private Money Lender",
     description: "Access alternative financing options through private lenders for unique situations. No income verification in some cases.",
-    linkText: "Find Out",
+    linkText: "Explore Private Money Options",
     href: "/private-money-lender-arizona/",
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -94,7 +94,7 @@ const loanSolutions = [
   {
     title: "First Time Home Buyer",
     description: "Specialized programs and guidance designed to help first-time buyers navigate the mortgage process confidently.",
-    linkText: "Start Here",
+    linkText: "First-Time Buyer Guide",
     href: "/first-time-home-buyer-arizona-guide/",
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -159,30 +159,30 @@ const LoanPrograms = () => {
           {loanSolutions.map((item, index) => (
             <div
               key={index}
-              className="group bg-white rounded-2xl p-5 sm:p-6 border border-slate-100/80 shadow-[0_1px_3px_rgba(0,0,0,0.02),0_6px_16px_rgba(0,0,0,0.015)] hover:-translate-y-1.5 hover:shadow-[0_12px_28px_rgba(63,179,100,0.08)] hover:border-[#3fb364]/20 transition-all duration-300 ease-out flex flex-col justify-between"
+              className="group bg-white rounded-2xl p-5 sm:p-6 border border-slate-100/80 shadow-[0_1px_3px_rgba(0,0,0,0.02),0_6px_16px_rgba(0,0,0,0.015)] hover:-translate-y-1.5 hover:shadow-[0_12px_28px_rgba(63,179,100,0.08)] hover:border-[#3fb364]/20 transition-all duration-300 ease-out flex flex-col"
             >
               <div>
                 {/* Icon Container with Hover Animation */}
-                <div className="w-11 h-11 rounded-xl bg-[#e8f6ed] text-[#3fb364] flex items-center justify-center mb-3 transition-all duration-300 group-hover:bg-[#3fb364] group-hover:text-white group-hover:scale-110">
+                <div className="w-11 h-11 rounded-xl bg-[#e8f6ed] text-[#2d8545] flex items-center justify-center mb-3 transition-all duration-300 group-hover:bg-[#2d8545] group-hover:text-white group-hover:scale-110">
                   {item.icon}
                 </div>
 
                 {/* Title */}
-                <h3 className="text-[#08271B] font-bold text-[18px] sm:text-[19px] leading-snug mb-2 transition-colors duration-200 group-hover:text-[#3fb364]">
+                <h3 className="text-[#08271B] font-bold text-[18px] sm:text-[19px] leading-snug mb-2 transition-colors duration-200 group-hover:text-[#246d39]">
                   {item.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-[#4e5b4e] text-[14px] sm:text-[14.5px] leading-[1.65] mb-3.5">
+                <p className="text-[#3a443a] text-[14px] sm:text-[14.5px] leading-[1.6] mb-2">
                   {item.description}
                 </p>
               </div>
 
-              <div>
+              <div className="mt-1">
                 {/* Link with translate arrow micro-animation */}
                 <Link
                   href={item.href}
-                  className="inline-flex items-center gap-1.5 text-[#2d8545] text-[14.5px] font-semibold transition-colors duration-200 hover:text-[#246d39] [-webkit-tap-highlight-color:transparent] no-underline min-h-[44px] py-2"
+                  className="inline-flex items-center gap-1.5 text-[#246d39] text-[14.5px] font-semibold transition-colors duration-200 hover:text-[#1a5c2e] [-webkit-tap-highlight-color:transparent] no-underline"
                 >
                   <span>{item.linkText}</span>
                   <svg
@@ -201,10 +201,10 @@ const LoanPrograms = () => {
         </div>
 
         {/* Bottom CTA Button */}
-        <div className="text-center">
+        <div className="text-center pt-2">
           <Link
             href="/mortgage-loan-programs-arizona/"
-            className="inline-block bg-[#2f8f4f] hover:bg-[#277a42] active:bg-[#277a42] text-white font-bold text-[15.5px] px-9 py-4 rounded-full shadow-lg shadow-[#3fb364]/20 hover:shadow-xl hover:shadow-[#3fb364]/30 hover:scale-[1.03] transition-all duration-200 [-webkit-tap-highlight-color:transparent]"
+            className="inline-flex items-center justify-center bg-[#2d8545] hover:bg-[#246d39] active:bg-[#246d39] text-white font-bold text-[15.5px] px-9 py-4 min-h-[48px] rounded-full shadow-lg shadow-[#2d8545]/20 hover:shadow-xl hover:shadow-[#2d8545]/30 transition-all duration-200 [-webkit-tap-highlight-color:transparent]"
           >
             Find Your Perfect Loan
           </Link>

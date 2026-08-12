@@ -590,7 +590,7 @@ export default function ArizonaMortgageApprovalProcessPage() {
                   </Link>
                   <Link
                     href="/mortgage-rates-tool-arizona/"
-                    className="text-[#8a9a7a] hover:text-[#3fb364] transition-colors"
+                    className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
                   >
                     Next Post →
                   </Link>

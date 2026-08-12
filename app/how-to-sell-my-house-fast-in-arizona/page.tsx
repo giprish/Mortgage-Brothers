@@ -15,7 +15,7 @@ export default function HowToSellMyHouseFastInArizonaPage() {
         {/* Article Hero Banner */}
         <section className="bg-[#052316] text-white py-16 px-6 lg:px-10 relative overflow-hidden">
           <div className="max-w-4xl mx-auto text-center relative z-10">
-            <div className="flex items-center justify-center gap-2 text-[#8da684] text-[13px] font-semibold mb-6">
+            <div className="flex items-center justify-center gap-2 text-[#b8d4b8] text-[13px] font-semibold mb-6">
               <Link href="/blog/" className="hover:text-white transition-colors">
                 Blog
               </Link>

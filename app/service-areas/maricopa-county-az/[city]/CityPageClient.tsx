@@ -465,10 +465,10 @@ export default function CityDetailPage() {
           <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10 pt-[110px] lg:pt-[130px] pb-16 lg:pb-20">
             {/* Breadcrumbs */}
             <div className="flex items-center gap-2 text-[12px] font-semibold mb-8">
-              <Link href="/service-areas/" className="text-[#8da684] hover:text-white transition-colors">Areas We Serve</Link>
-              <span className="text-[#8da684]/50">&gt;</span>
-              <Link href="/service-areas/maricopa-county-az/" className="text-[#8da684] hover:text-white transition-colors">Maricopa County</Link>
-              <span className="text-[#8da684]/50">&gt;</span>
+              <Link href="/service-areas/" className="text-[#b8d4b8] hover:text-white transition-colors">Areas We Serve</Link>
+              <span className="text-[#b8d4b8]">&gt;</span>
+              <Link href="/service-areas/maricopa-county-az/" className="text-[#b8d4b8] hover:text-white transition-colors">Maricopa County</Link>
+              <span className="text-[#b8d4b8]">&gt;</span>
               <span className="text-[#3fb364]">{city}</span>
             </div>
 
@@ -492,7 +492,7 @@ export default function CityDetailPage() {
                     <polyline points="9 18 15 12 9 6" />
                   </svg>
                 </Link>
-                <p className="text-[#8da684] text-[11px] mt-3 font-medium">✓ 3 min, no credit impact</p>
+                <p className="text-[#b8d4b8] text-[11px] mt-3 font-medium">✓ 3 min, no credit impact</p>
               </div>
 
               {/* Right — Image placeholder card */}
@@ -506,9 +506,9 @@ export default function CityDetailPage() {
                 <div className="absolute bottom-0 left-1/4 w-[200px] h-[70px] bg-[#062419] rounded-t-[40%] blur-sm opacity-50 z-[5]" />
                 
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-20 px-6">
-                  <span className="text-[#b89a5a] text-[10px] font-bold tracking-[0.3em] uppercase mb-2">WELCOME TO</span>
+                  <span className="text-[#7a6638] text-[10px] font-bold tracking-[0.3em] uppercase mb-2">WELCOME TO</span>
                   <span className="text-white text-[28px] lg:text-[34px] font-playfair">{city}, Arizona</span>
-                  <span className="text-[#8da684] text-[13px] mt-2">Your Home Loan Destination</span>
+                  <span className="text-[#b8d4b8] text-[13px] mt-2">Your Home Loan Destination</span>
                 </div>
               </div>
             </div>
@@ -523,7 +523,7 @@ export default function CityDetailPage() {
               ].map((stat, i) => (
                 <div key={i} className="bg-white/[0.06] backdrop-blur-sm border border-white/[0.08] rounded-2xl px-5 py-4 text-center">
                   <span className="text-white text-[18px] lg:text-[20px] font-bold block">{stat.value}</span>
-                  <span className="text-[#8da684] text-[11px] uppercase tracking-wider font-medium">{stat.label}</span>
+                  <span className="text-[#b8d4b8] text-[11px] uppercase tracking-wider font-medium">{stat.label}</span>
                 </div>
               ))}
             </div>
@@ -626,10 +626,10 @@ export default function CityDetailPage() {
               <div className="bg-[#052316] rounded-3xl p-8 lg:p-10 relative overflow-hidden shadow-xl border border-white/5">
                 <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "repeating-linear-gradient(45deg, #fff 0px, #fff 1px, transparent 1px, transparent 10px)" }} />
                 <div className="relative z-10">
-                  <span className="text-[#b89a5a] text-[10px] font-bold tracking-[0.2em] uppercase block mb-3">OUTSTANDING</span>
+                  <span className="text-[#7a6638] text-[10px] font-bold tracking-[0.2em] uppercase block mb-3">OUTSTANDING</span>
                   <div className="flex items-baseline gap-2 mb-4">
                     <span className="text-white text-[52px] font-bold leading-none">5</span>
-                    <span className="text-[#8da684] text-[14px] font-medium">/5 Rating</span>
+                    <span className="text-[#b8d4b8] text-[14px] font-medium">/5 Rating</span>
                   </div>
                   <div className="flex gap-1 mb-6">
                     {[...Array(5)].map((_, i) => (
@@ -642,11 +642,11 @@ export default function CityDetailPage() {
                   <div className="space-y-4 border-t border-white/10 pt-5">
                     <div className="bg-white/[0.06] rounded-xl px-4 py-3">
                       <p className="text-[#c8c8b8] text-[12.5px] leading-[1.6] italic">&ldquo;Professional, responsive, and extremely knowledgeable about ${city} market conditions. Highly recommend!&rdquo;</p>
-                      <p className="text-[#8da684] text-[11px] mt-2 font-semibold">— Recent ${city} Homebuyer</p>
+                      <p className="text-[#b8d4b8] text-[11px] mt-2 font-semibold">— Recent ${city} Homebuyer</p>
                     </div>
                     <div className="bg-white/[0.06] rounded-xl px-4 py-3">
                       <p className="text-[#c8c8b8] text-[12.5px] leading-[1.6] italic">&ldquo;We have financed hundreds of homes in ${city} and love this community. We know the local appraisers, brokers, and can tailor your experience.&rdquo;</p>
-                      <p className="text-[#8da684] text-[11px] mt-2 font-semibold">— AZ Mortgage Brothers Team</p>
+                      <p className="text-[#b8d4b8] text-[11px] mt-2 font-semibold">— AZ Mortgage Brothers Team</p>
                     </div>
                   </div>
                 </div>

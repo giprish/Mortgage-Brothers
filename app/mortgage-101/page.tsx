@@ -181,7 +181,7 @@ export default function Mortgage101Page() {
                 </Link>
                 <Link
                   href="/mortgage-basics/"
-                  className="text-[#8a9a7a] hover:text-[#3fb364] transition-colors"
+                  className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
                 >
                   Mortgage Basics →
                 </Link>

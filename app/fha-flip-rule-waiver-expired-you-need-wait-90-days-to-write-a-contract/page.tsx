@@ -248,7 +248,7 @@ export default function FhaFlipRuleWaiverExpiredPage() {
                   can work for you.
                 </p>
 
-                <p className="text-[#8a9a7a] text-[13px] leading-relaxed">
+                <p className="text-[#5a6b52] text-[13px] leading-relaxed">
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
                   been prepared for informational purposes only. You should consult your own tax, legal, and
                   accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
@@ -262,7 +262,7 @@ export default function FhaFlipRuleWaiverExpiredPage() {
                 </Link>
                 <Link
                   href="/delayed-financing-how-to-get-cashout-without-waiting-6-months-seasoning/"
-                  className="text-[#8a9a7a] hover:text-[#3fb364] transition-colors"
+                  className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
                 >
                   Next Post →
                 </Link>

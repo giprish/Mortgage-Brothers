@@ -18,7 +18,7 @@ export default function TermsOfUsePage() {
       <Navbar />
       <main className="flex-grow pt-[110px] lg:pt-[130px] pb-16">
         <div className="max-w-3xl mx-auto px-6 lg:px-10">
-          <p className="text-[#b89a5a] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
+          <p className="text-[#7a6638] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
             Legal
           </p>
           <h1
@@ -89,7 +89,7 @@ export default function TermsOfUsePage() {
             <p>
               By using this Website, you acknowledge that you have read, understood, and agreed to these Terms of Use.
             </p>
-            <p className="text-[13px] text-[#8a9a7a] pt-4">
+            <p className="text-[13px] text-[#5a6b52] pt-4">
               Copyright © {new Date().getFullYear()} Mortgage Brothers LLC. All rights reserved.
             </p>
           </div>
