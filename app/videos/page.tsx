@@ -136,6 +136,7 @@ function MidCtaBanner() {
         </p>
         <Link
           href="/#get-pre-approved"
+          data-preapproval="true"
           className="inline-flex items-center justify-center bg-white hover:bg-[#f5f5f5] text-[#1a251c] text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
         >
           Get My Personalized Quote →
@@ -148,12 +149,13 @@ function MidCtaBanner() {
 function ConsultationCta() {
   return (
     <section className="w-full py-6 flex justify-center">
-      <Link
-        href="/contact-us/"
-        className="inline-flex items-center justify-center bg-[#3fb364] hover:bg-[#349b55] text-white text-[16px] font-bold px-10 py-4 rounded-full transition-all shadow-lg shadow-[#3fb364]/25"
+      <button
+        type="button"
+        data-preapproval="true"
+        className="inline-flex items-center justify-center bg-[#2d8545] hover:bg-[#246d39] text-white text-[16px] font-bold px-10 py-4 rounded-full transition-all shadow-lg shadow-[#2d8545]/25 cursor-pointer"
       >
-        Get Your Free Consultation Now →
-      </Link>
+        Get Pre-Approved →
+      </button>
     </section>
   );
 }
@@ -162,12 +164,6 @@ export default function VideosPage() {
   const [activeFilter, setActiveFilter] = useState<string>("all");
   const [playingVideo, setPlayingVideo] = useState<VideoItem | null>(null);
   const [featuredPlaying, setFeaturedPlaying] = useState(false);
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [goal, setGoal] = useState("");
 
   const filters = useMemo(
     () => [{ id: "all", label: "All Videos" }, ...VIDEO_CATEGORIES.map((c) => ({ id: c.id, label: c.label }))],
@@ -188,19 +184,6 @@ export default function VideosPage() {
     } else {
       document.getElementById("browse-library")?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  };
-
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setFirstName("");
-      setLastName("");
-      setEmail("");
-      setPhone("");
-      setGoal("");
-      setFormSubmitted(false);
-    }, 4000);
   };
 
   return (
@@ -231,7 +214,8 @@ export default function VideosPage() {
 
             <Link
               href="/#get-pre-approved"
-              className="mt-8 inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-7 py-3.5 rounded-xl transition-all shadow-lg shadow-[#3fb364]/25"
+              data-preapproval="true"
+              className="mt-8 inline-flex items-center gap-2 bg-[#2d8545] hover:bg-[#246d39] text-white text-[15px] font-bold px-7 py-3.5 rounded-xl transition-all shadow-lg shadow-[#2d8545]/25"
             >
               Get Custom Rate Quote
               <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -375,102 +359,57 @@ export default function VideosPage() {
           </div>
         </section>
 
-        {/* Bottom contact / conventional CTA */}
-        <section id="contact" className="w-full bg-[#052316] py-16 lg:py-20 px-6 lg:px-10">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-10">
-              <h2 className="text-white text-[30px] lg:text-[40px] font-bold leading-tight mb-4">
-                Get Started with Your Conventional Today
-              </h2>
-              <p className="text-[#c8c8b8] text-[15px] lg:text-[16px] leading-relaxed max-w-2xl mx-auto">
-                Ready to move from watching videos to running real numbers? Share a few details and
-                we&apos;ll help you compare conventional loan options tailored to your Arizona goals.
-              </p>
-            </div>
+        {/* Bottom pre-approval CTA */}
+        <section id="get-pre-approved" className="w-full bg-[#052316] py-16 lg:py-20 px-6 lg:px-10 scroll-mt-20">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-[#d8c9a0] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
+              Secure Application
+            </p>
+            <h2 className="text-white text-[30px] lg:text-[40px] font-bold leading-tight mb-4">
+              Get Started with Your Conventional Today
+            </h2>
+            <p className="text-[#c8c8b8] text-[15px] lg:text-[16px] leading-relaxed max-w-2xl mx-auto mb-8">
+              Ready to move from watching videos to running real numbers? Start a short, secure
+              pre-approval — about 3 minutes, no credit impact, no obligation.
+            </p>
 
-            <div className="bg-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl">
-              {formSubmitted ? (
-                <div className="py-10 text-center flex flex-col items-center gap-3">
-                  <div className="w-14 h-14 rounded-full bg-[#e8f5e9] text-[#3fb364] flex items-center justify-center">
-                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="3">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                    </svg>
-                  </div>
-                  <h3 className="text-[#052316] text-[18px] font-bold">Request received</h3>
-                  <p className="text-[#4e5b4e] text-[14px] max-w-sm">
-                    Thanks — a Mortgage Brothers loan officer will follow up shortly with next steps.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleFormSubmit} className="flex flex-col gap-5">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="flex flex-col gap-2">
-                      <label className="text-[#1a3a1a] text-[12px] font-semibold">First name</label>
-                      <input
-                        required
-                        value={firstName}
-                        onChange={(e) => setFirstName(e.target.value)}
-                        placeholder="Jane"
-                        className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364]"
-                      />
-                    </div>
-                    <div className="flex flex-col gap-2">
-                      <label className="text-[#1a3a1a] text-[12px] font-semibold">Last name</label>
-                      <input
-                        required
-                        value={lastName}
-                        onChange={(e) => setLastName(e.target.value)}
-                        placeholder="Doe"
-                        className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364]"
-                      />
-                    </div>
-                  </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="flex flex-col gap-2">
-                      <label className="text-[#1a3a1a] text-[12px] font-semibold">Email</label>
-                      <input
-                        type="email"
-                        required
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="jane@example.com"
-                        className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364]"
-                      />
-                    </div>
-                    <div className="flex flex-col gap-2">
-                      <label className="text-[#1a3a1a] text-[12px] font-semibold">Phone</label>
-                      <input
-                        type="tel"
-                        required
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        placeholder="(602) 555-0123"
-                        className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364]"
-                      />
-                    </div>
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <label className="text-[#1a3a1a] text-[12px] font-semibold">
-                      What are you looking to do?
-                    </label>
-                    <textarea
-                      required
-                      rows={3}
-                      value={goal}
-                      onChange={(e) => setGoal(e.target.value)}
-                      placeholder="Purchase, refinance, reverse mortgage, investment property..."
-                      className="w-full bg-[#faf7f0] border border-[#e8e0d0] rounded-xl px-4 py-3 text-[14.5px] focus:outline-none focus:border-[#3fb364] focus:ring-1 focus:ring-[#3fb364] resize-none"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="inline-flex w-fit items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[14.5px] font-bold px-7 py-3.5 rounded-xl transition-all cursor-pointer"
-                  >
-                    Get started
-                  </button>
-                </form>
-              )}
-            </div>
+            <button
+              type="button"
+              data-preapproval="true"
+              className="inline-flex items-center justify-center gap-2 bg-[#2d8545] hover:bg-[#246d39] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-[#2d8545]/20 cursor-pointer"
+            >
+              Get Pre-Approved
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden
+              >
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </button>
+
+            <ul className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-8 text-[13.5px] text-[#c8c8b8]">
+              <li className="flex items-center gap-2">
+                <span className="text-[#6bcf84] font-bold">✓</span>
+                About 3 minutes
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="text-[#6bcf84] font-bold">✓</span>
+                No credit impact to start
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="text-[#6bcf84] font-bold">✓</span>
+                No cost, no obligation
+              </li>
+            </ul>
           </div>
         </section>
       </main>

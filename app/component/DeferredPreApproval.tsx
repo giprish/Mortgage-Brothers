@@ -1,16 +1,23 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { InteractionGate } from "./InteractionGate";
+import { useEffect, useState } from "react";
 
 const PreApprovalProvider = dynamic(() => import("./PreApprovalProvider"), {
   ssr: false,
 });
 
+/**
+ * Load pre-approval click interceptor right after hydration.
+ * InteractionGate delayed this past the first click, so data-preapproval buttons did nothing.
+ */
 export default function DeferredPreApproval() {
-  return (
-    <InteractionGate fallbackMs={12000} placeholder={null}>
-      <PreApprovalProvider>{null}</PreApprovalProvider>
-    </InteractionGate>
-  );
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    setReady(true);
+  }, []);
+
+  if (!ready) return null;
+  return <PreApprovalProvider>{null}</PreApprovalProvider>;
 }
