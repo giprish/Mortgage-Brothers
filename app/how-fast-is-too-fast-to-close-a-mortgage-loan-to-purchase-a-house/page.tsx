@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
+import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
 
 export const metadata: Metadata = getSeoMetadata("/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house/");
 
@@ -162,12 +163,9 @@ export default function HowFastIsTooFastToClosePage() {
               </p>
 
               <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#08271B] mb-10 shadow-sm">
-                <iframe
-                  src="https://www.youtube.com/embed/zzJvzWer3ec"
+                <YoutubeLiteEmbed
+                  videoId="zzJvzWer3ec"
                   title="How Fast is Too Fast to Close a Mortgage Loan to Purchase a House?"
-                  className="absolute inset-0 w-full h-full border-0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
                 />
               </div>
 

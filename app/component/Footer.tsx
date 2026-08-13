@@ -190,9 +190,9 @@ const Footer = () => {
                 alt="Mortgage Brothers"
                 width={104}
                 height={34}
+                sizes="104px"
                 loading="lazy"
                 className="h-[30px] w-auto max-w-[104px] object-contain"
-                style={{ width: "auto", height: "auto" }}
               />
             </Link>
 
@@ -274,8 +274,9 @@ const Footer = () => {
                   alt="Equal Housing Opportunity"
                   width={72}
                   height={72}
+                  sizes="72px"
+                  loading="lazy"
                   className="object-contain max-h-[56px] w-auto"
-                  style={{ width: "auto" }}
                 />
                 <span className="text-[10px] text-[#c8cdc8] text-center leading-tight">
                   {COMPANY.equalHousingLabel}
@@ -287,8 +288,9 @@ const Footer = () => {
                   alt="Angie's List Super Service Award"
                   width={90}
                   height={72}
+                  sizes="90px"
+                  loading="lazy"
                   className="object-contain max-h-[72px] w-auto"
-                  style={{ width: "auto" }}
                 />
               </div>
               <div className="bg-white/5 rounded-lg p-3 flex items-center justify-center min-h-[88px]">
@@ -297,8 +299,9 @@ const Footer = () => {
                   alt="Shop Local"
                   width={72}
                   height={72}
+                  sizes="72px"
+                  loading="lazy"
                   className="object-contain max-h-[72px] w-auto"
-                  style={{ width: "auto" }}
                 />
               </div>
               <div className="bg-white/5 rounded-lg p-3 flex items-center justify-center min-h-[88px]">
@@ -307,10 +310,10 @@ const Footer = () => {
                   alt="FHA Approved Lending Partner"
                   width={90}
                   height={67}
+                  sizes="90px"
                   loading="lazy"
                   decoding="async"
                   className="object-contain max-h-[72px] w-auto"
-                  style={{ width: "auto" }}
                 />
               </div>
             </div>

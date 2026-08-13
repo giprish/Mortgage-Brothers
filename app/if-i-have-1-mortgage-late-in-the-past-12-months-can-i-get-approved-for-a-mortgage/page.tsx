@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
+import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
 
 export const metadata: Metadata = getSeoMetadata("/if-i-have-1-mortgage-late-in-the-past-12-months-can-i-get-approved-for-a-mortgage/");
 
@@ -141,12 +142,9 @@ export default function MortgageLateApprovalPage() {
               </p>
 
               <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#08271B] mb-10 shadow-sm">
-                <iframe
-                  src="https://www.youtube.com/embed/TU3XCAC8BY0"
+                <YoutubeLiteEmbed
+                  videoId="TU3XCAC8BY0"
                   title="If I have 1 Mortgage Late in the Past 12 Months, Can I Get Approved for a Mortgage?"
-                  className="absolute inset-0 w-full h-full border-0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
                 />
               </div>
 

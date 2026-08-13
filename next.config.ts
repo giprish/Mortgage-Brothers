@@ -20,8 +20,9 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 31536000,
     dangerouslyAllowSVG: false,
+    // Keep a large breakpoint for true full-bleed heroes; small logos use imageSizes via `sizes`.
     deviceSizes: [640, 750, 828, 1080, 1200, 1920],
-    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+    imageSizes: [16, 32, 48, 64, 72, 90, 96, 104, 128, 150, 256, 384],
     remotePatterns: [
       {
         protocol: "https",

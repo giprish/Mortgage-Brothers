@@ -6,6 +6,7 @@ import FaqAccordion from "../component/FaqAccordion";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
+import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
 
 export const metadata: Metadata = getSeoMetadata("/delayed-financing-how-to-get-cashout-without-waiting-6-months-seasoning/");
 
@@ -158,12 +159,9 @@ export default function DelayedFinancingPage() {
               </p>
 
               <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#08271B] mb-10 shadow-sm">
-                <iframe
-                  src="https://www.youtube.com/embed/JZGQGVLTYKI"
+                <YoutubeLiteEmbed
+                  videoId="JZGQGVLTYKI"
                   title="Delayed Financing – how to get cashout without waiting 6 months seasoning"
-                  className="absolute inset-0 w-full h-full border-0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
                 />
               </div>
 

@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
+import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
 
 export const metadata: Metadata = getSeoMetadata("/what-if-my-spouse-dies-and-im-not-on-the-mortgage/");
 
@@ -149,12 +150,9 @@ export default function SpouseDiesNotOnMortgagePage() {
 
               {/* Video */}
               <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#08271B] mb-10 shadow-sm">
-                <iframe
-                  src="https://www.youtube.com/embed/xrLRwmxdc-I"
-                  title="What If My Spouse Dies and I'm Not On The Mortgage?"
-                  className="absolute inset-0 w-full h-full border-0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
+                <YoutubeLiteEmbed
+                  videoId="xrLRwmxdc-I"
+                  title="What If My Spouse Dies and I"
                 />
               </div>
 

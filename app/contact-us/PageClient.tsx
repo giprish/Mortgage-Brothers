@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
@@ -68,49 +68,62 @@ const CheckIcon = () => (
   </svg>
 );
 
-function ContactJotform() {
+/** Click-to-load map — avoids Google Maps JS until user intent. */
+function OfficeMapEmbed() {
+  const [active, setActive] = useState(false);
+
+  if (active) {
+    return (
+      <iframe
+        src={MAP_EMBED_SRC}
+        className="w-full h-full border-0"
+        loading="lazy"
+        allowFullScreen
+        referrerPolicy="no-referrer-when-downgrade"
+        title="Mortgage Brothers Office Location"
+      />
+    );
+  }
+
+  return (
+    <button
+      type="button"
+      onClick={() => setActive(true)}
+      className="w-full h-full flex flex-col items-center justify-center gap-3 bg-[#e8efe9] hover:bg-[#dfe8e0] transition-colors cursor-pointer text-[#08271B] px-6"
+      aria-label="Load interactive map of Mortgage Brothers office"
+    >
+      <span className="w-12 h-12 rounded-full bg-[#2d8545] text-white flex items-center justify-center shadow-md" aria-hidden>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+          <circle cx="12" cy="10" r="3" />
+        </svg>
+      </span>
+      <span className="text-[15px] font-semibold">View office map</span>
+      <span className="text-[13px] text-[#4e5b4e]">1599 E Orangewood Ave, Phoenix, AZ</span>
+    </button>
+  );
+}
+
+function ContactJotform({ loadToken }: { loadToken: number }) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (loadToken < 1) return;
     const container = containerRef.current;
     if (!container) return;
 
-    let script: HTMLScriptElement | null = null;
-    let loaded = false;
-
-    const load = () => {
-      if (loaded) return;
-      loaded = true;
-      container.innerHTML = "";
-      script = document.createElement("script");
-      script.type = "text/javascript";
-      script.src = JOTFORM_SCRIPT_SRC;
-      script.async = true;
-      script.defer = true;
-      container.appendChild(script);
-    };
-
-    const io =
-      typeof IntersectionObserver !== "undefined"
-        ? new IntersectionObserver(
-            (entries) => {
-              if (entries.some((e) => e.isIntersecting)) {
-                load();
-                io?.disconnect();
-              }
-            },
-            { rootMargin: "240px" },
-          )
-        : null;
-
-    if (io) io.observe(container);
-    else load();
+    container.innerHTML = "";
+    const script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = JOTFORM_SCRIPT_SRC;
+    script.async = true;
+    script.defer = true;
+    container.appendChild(script);
 
     return () => {
-      io?.disconnect();
       container.innerHTML = "";
     };
-  }, []);
+  }, [loadToken]);
 
   return (
     <div
@@ -124,28 +137,49 @@ function ContactJotform() {
 
 export default function ContactPage() {
   const formRef = useRef<HTMLDivElement>(null);
+  const [formLoadToken, setFormLoadToken] = useState(0);
 
-  // Keep URL as /contact-us/ only (strip any leftover hash)
   useEffect(() => {
     if (window.location.hash) {
       window.history.replaceState(null, "", window.location.pathname);
     }
   }, []);
 
+  const ensureFormLoaded = useCallback(() => {
+    setFormLoadToken((n) => (n < 1 ? 1 : n));
+  }, []);
+
   const scrollToForm = (e?: React.MouseEvent) => {
     e?.preventDefault();
+    ensureFormLoaded();
     formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
     if (window.location.hash) {
       window.history.replaceState(null, "", window.location.pathname);
     }
   };
 
+  // Load form only when near viewport — not on initial critical path.
+  useEffect(() => {
+    const el = formRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          ensureFormLoaded();
+          io.disconnect();
+        }
+      },
+      { rootMargin: "0px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [ensureFormLoaded]);
+
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Navbar />
 
       <main className="flex-grow">
-        {/* Centered hero — no image, matches other loan pages */}
         <div className="h-[64px] sm:h-[72px] bg-[#08271B]" aria-hidden />
         <section className="w-full bg-brand-green-deep text-white py-10 sm:py-12 lg:py-14 text-center relative overflow-hidden">
           <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
@@ -185,7 +219,6 @@ export default function ContactPage() {
           </div>
         </section>
 
-        {/* Get in Touch — centered like other loan pages */}
         <section className="w-full bg-white loan-section">
           <div className="max-w-5xl mx-auto text-center">
             <div className="loan-section-heading">
@@ -278,23 +311,19 @@ export default function ContactPage() {
             </div>
 
             <div className="w-full rounded-2xl overflow-hidden border border-[#e8e0d0]/60 shadow-sm mb-10 h-[320px] sm:h-[380px] lg:h-[420px]">
-              <iframe
-                src={MAP_EMBED_SRC}
-                className="w-full h-full border-0"
-                loading="lazy"
-                allowFullScreen
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Mortgage Brothers Office Location"
-              />
+              <OfficeMapEmbed />
             </div>
 
             <div ref={formRef} className="scroll-mt-28 text-left">
-              <ContactJotform />
+              {formLoadToken < 1 ? (
+                <div className="w-full min-h-[520px]" aria-hidden />
+              ) : (
+                <ContactJotform loadToken={formLoadToken} />
+              )}
             </div>
           </div>
         </section>
 
-        {/* Explore solutions — same card grid as other loan pages */}
         <section className="loan-section w-full bg-[#f5f0e8] border-t border-[#e8e0d0]/50">
           <div className="max-w-6xl mx-auto">
             <h2

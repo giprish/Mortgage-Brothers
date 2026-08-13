@@ -6,6 +6,7 @@ import Image from "next/image";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
+import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
 
 export const metadata: Metadata = getSeoMetadata("/how-to-calculate-how-much-pmi-mortgage-insurance-will-be/");
 
@@ -103,12 +104,9 @@ export default function PmiMortgageInsurancePage() {
 
               {/* Video */}
               <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#08271B] mb-10 shadow-sm">
-                <iframe
-                  src="https://www.youtube.com/embed/P8IXHTy-F4s"
+                <YoutubeLiteEmbed
+                  videoId="P8IXHTy-F4s"
                   title="How To Calculate PMI (Private Mortgage Insurance) and How PMI Works?"
-                  className="absolute inset-0 w-full h-full border-0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
                 />
               </div>
 

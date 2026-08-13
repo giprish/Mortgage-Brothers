@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
+import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
 
 export const metadata: Metadata = getSeoMetadata("/buying-a-house-with-a-cash-offer-and-simultaneously-getting-mortgage-financing/");
 
@@ -163,12 +164,9 @@ export default function CashOfferMortgageFinancingPage() {
               </p>
 
               <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#08271B] mb-10 shadow-sm">
-                <iframe
-                  src="https://www.youtube.com/embed/5EuUXP20CTQ"
+                <YoutubeLiteEmbed
+                  videoId="5EuUXP20CTQ"
                   title="Buying a House with a Cash Offer and Simultaneously getting Mortgage Financing"
-                  className="absolute inset-0 w-full h-full border-0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
                 />
               </div>
 

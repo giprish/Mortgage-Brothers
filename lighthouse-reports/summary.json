@@ -1,0 +1,144 @@
+{
+  "generatedAt": "2026-08-13T06:53:43.192Z",
+  "baseUrl": "http://127.0.0.1:3000",
+  "threshold": 95,
+  "pageCount": 6,
+  "runCount": 6,
+  "elapsedMs": 207931,
+  "results": [
+    {
+      "url": "http://127.0.0.1:3000/",
+      "formFactor": "desktop",
+      "ok": true,
+      "scores": {
+        "performance": 100,
+        "accessibility": 100,
+        "bestPractices": 100,
+        "seo": 100
+      },
+      "failed": [],
+      "failedAuditIds": [
+        "max-potential-fid",
+        "unused-javascript",
+        "forced-reflow-insight",
+        "legacy-javascript-insight",
+        "network-dependency-tree-insight",
+        "render-blocking-insight"
+      ],
+      "pass": true,
+      "path": "/"
+    },
+    {
+      "url": "http://127.0.0.1:3000/about-us/",
+      "formFactor": "desktop",
+      "ok": true,
+      "scores": {
+        "performance": 99,
+        "accessibility": 96,
+        "bestPractices": 100,
+        "seo": 100
+      },
+      "failed": [],
+      "failedAuditIds": [
+        "max-potential-fid",
+        "color-contrast",
+        "unused-javascript",
+        "forced-reflow-insight",
+        "legacy-javascript-insight",
+        "network-dependency-tree-insight",
+        "render-blocking-insight"
+      ],
+      "pass": true,
+      "path": "/about-us"
+    },
+    {
+      "url": "http://127.0.0.1:3000/air-conditionings-impact-phoenix-valley-real-estate/",
+      "formFactor": "desktop",
+      "ok": true,
+      "scores": {
+        "performance": 100,
+        "accessibility": 96,
+        "bestPractices": 100,
+        "seo": 100
+      },
+      "failed": [],
+      "failedAuditIds": [
+        "color-contrast",
+        "unused-javascript",
+        "forced-reflow-insight",
+        "legacy-javascript-insight",
+        "network-dependency-tree-insight",
+        "render-blocking-insight"
+      ],
+      "pass": true,
+      "path": "/air-conditionings-impact-phoenix-valley-real-estate"
+    },
+    {
+      "url": "http://127.0.0.1:3000/arizona-binsr-buyer-inspection-notice-and-seller-response/",
+      "formFactor": "desktop",
+      "ok": true,
+      "scores": {
+        "performance": 100,
+        "accessibility": 96,
+        "bestPractices": 100,
+        "seo": 100
+      },
+      "failed": [],
+      "failedAuditIds": [
+        "max-potential-fid",
+        "color-contrast",
+        "unused-javascript",
+        "legacy-javascript-insight",
+        "network-dependency-tree-insight",
+        "render-blocking-insight"
+      ],
+      "pass": true,
+      "path": "/arizona-binsr-buyer-inspection-notice-and-seller-response"
+    },
+    {
+      "url": "http://127.0.0.1:3000/arizona-directory/",
+      "formFactor": "desktop",
+      "ok": true,
+      "scores": {
+        "performance": 100,
+        "accessibility": 97,
+        "bestPractices": 100,
+        "seo": 100
+      },
+      "failed": [],
+      "failedAuditIds": [
+        "color-contrast",
+        "unused-javascript",
+        "legacy-javascript-insight",
+        "network-dependency-tree-insight",
+        "render-blocking-insight"
+      ],
+      "pass": true,
+      "path": "/arizona-directory"
+    },
+    {
+      "url": "http://127.0.0.1:3000/arizona-home-buying-process/",
+      "formFactor": "desktop",
+      "ok": true,
+      "scores": {
+        "performance": 100,
+        "accessibility": 96,
+        "bestPractices": 100,
+        "seo": 100
+      },
+      "failed": [],
+      "failedAuditIds": [
+        "color-contrast",
+        "unused-javascript",
+        "legacy-javascript-insight",
+        "network-dependency-tree-insight",
+        "render-blocking-insight"
+      ],
+      "pass": true,
+      "path": "/arizona-home-buying-process"
+    }
+  ],
+  "failing": [],
+  "errors": [],
+  "topFailedAudits": []
+}

@@ -98,6 +98,17 @@ export function DeferredPreApprovedForm() {
   );
 }
 
+/** Below-fold video CTA — defers YoutubeLiteEmbed client chunk until near viewport. */
+export function DeferredDreamHomeCta() {
+  return (
+    <LazyWhenVisible
+      minHeight={520}
+      rootMargin="120px"
+      loader={() => import("./DreamHomeCta")}
+    />
+  );
+}
+
 // Keep dynamic exports for any import sites that still expect next/dynamic shapes
 export const DeferredReviewsDynamic = dynamic(() => import("../Reviews"), {
   ssr: false,

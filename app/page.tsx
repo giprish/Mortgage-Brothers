@@ -7,6 +7,7 @@ import {
   DeferredReviews,
   DeferredHomeCalculator,
   DeferredPreApprovedForm,
+  DeferredDreamHomeCta,
 } from "./component/home/HomeDeferredSections";
 import BrokersAdvocate from "./component/home/BrokersAdvocate";
 import Brothers from "./component/Brothers";
@@ -16,7 +17,6 @@ import LoanPrograms from "./component/LoanPrograms";
 import CreditQuizCta from "./component/home/CreditQuizCta";
 import HomeFaq from "./component/home/HomeFaq";
 import HomeBlog from "./component/home/HomeBlog";
-import DreamHomeCta from "./component/home/DreamHomeCta";
 import HomeContact from "./component/home/HomeContact";
 import Footer from "./component/Footer";
 
@@ -45,7 +45,7 @@ export default function Home() {
         <CreditQuizCta />
         <HomeFaq />
         <HomeBlog />
-        <DreamHomeCta />
+        <DeferredDreamHomeCta />
         <HomeContact />
         <DeferredPreApprovedForm />
       </main>

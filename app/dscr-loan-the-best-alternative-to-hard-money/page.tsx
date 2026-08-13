@@ -6,6 +6,7 @@ import FaqAccordion from "../component/FaqAccordion";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
+import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
 
 export const metadata: Metadata = getSeoMetadata("/dscr-loan-the-best-alternative-to-hard-money/");
 
@@ -154,12 +155,9 @@ export default function DscrLoanHardMoneyPage() {
               </p>
 
               <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#08271B] mb-10 shadow-sm">
-                <iframe
-                  src="https://www.youtube.com/embed/qRBCUt_C2is"
+                <YoutubeLiteEmbed
+                  videoId="qRBCUt_C2is"
                   title="DSCR Loan: The Best Alternative to Hard Money"
-                  className="absolute inset-0 w-full h-full border-0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
                 />
               </div>
 

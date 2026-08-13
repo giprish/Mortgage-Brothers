@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
+import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
 
 export const metadata: Metadata = getSeoMetadata("/arizona-binsr-buyer-inspection-notice-and-seller-response/");
 
@@ -166,12 +167,9 @@ export default function ArizonaBinsrPage() {
               </ol>
 
               <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#08271B] mb-10 shadow-sm">
-                <iframe
-                  src="https://www.youtube.com/embed/vShVhawZyn4"
+                <YoutubeLiteEmbed
+                  videoId="vShVhawZyn4"
                   title="Arizona BINSR Buyer Inspection Notice and Seller Response"
-                  className="absolute inset-0 w-full h-full border-0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
                 />
               </div>
 

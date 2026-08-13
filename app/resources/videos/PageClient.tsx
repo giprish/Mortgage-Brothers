@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
+import YoutubeLiteEmbed from "@/app/component/YoutubeLiteEmbed";
 
 // Video data matching the real YouTube channel
 const seriesData = {
@@ -112,8 +113,7 @@ export default function VideosPage() {
               {currentSeries.videos.map((video) => (
                 <div key={video.id} className="bg-white rounded-3xl border border-[#e8e0d0]/60 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300">
                   <div className="aspect-video bg-black relative">
-                    <iframe src={`https://www.youtube.com/embed/${video.youtubeId}`} title={video.title}
-                      className="absolute inset-0 w-full h-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                    <YoutubeLiteEmbed videoId={video.youtubeId} title={video.title} />
                   </div>
                   <div className="p-5">
                     <h3 className="text-[#052316] text-[15px] font-bold leading-snug line-clamp-2">{video.title}</h3>

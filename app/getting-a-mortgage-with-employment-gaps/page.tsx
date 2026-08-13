@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
+import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
 
 export const metadata: Metadata = getSeoMetadata("/getting-a-mortgage-with-employment-gaps/");
 
@@ -149,12 +150,9 @@ export default function GettingMortgageWithEmploymentGapsPage() {
 
               {/* Video */}
               <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#08271B] mb-10 shadow-sm">
-                <iframe
-                  src="https://www.youtube.com/embed/MCFlkfZ3Cr4"
+                <YoutubeLiteEmbed
+                  videoId="MCFlkfZ3Cr4"
                   title="Getting a Mortgage with Employment Gaps"
-                  className="absolute inset-0 w-full h-full border-0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
                 />
               </div>
 

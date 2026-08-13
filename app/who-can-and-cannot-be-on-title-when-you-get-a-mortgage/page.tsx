@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
+import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
 
 export const metadata: Metadata = getSeoMetadata("/who-can-and-cannot-be-on-title-when-you-get-a-mortgage/");
 
@@ -146,12 +147,9 @@ export default function WhoCanAndCannotBeOnTitlePage() {
               </p>
 
               <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#08271B] mb-10 shadow-sm">
-                <iframe
-                  src="https://www.youtube.com/embed/KscsU0aDsqM"
+                <YoutubeLiteEmbed
+                  videoId="KscsU0aDsqM"
                   title="Who CAN and CANNOT Be On Title When you Get A Mortgage?"
-                  className="absolute inset-0 w-full h-full border-0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
                 />
               </div>
 

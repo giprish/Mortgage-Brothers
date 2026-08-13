@@ -129,9 +129,8 @@ const Navbar = () => {
             alt="Mortgage Brothers"
             width={150}
             height={48}
-            sizes="150px"
+            sizes="(max-width: 640px) 120px, 150px"
             className="h-[40px] sm:h-[48px] w-auto max-w-[150px] object-contain"
-            style={{ width: "auto", height: "auto" }}
           />
         </Link>
 
