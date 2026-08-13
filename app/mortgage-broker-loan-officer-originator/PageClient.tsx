@@ -1,10 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
-
-const JOB_FORM_SRC = "https://form.jotform.com/250414406228146";
 
 const featureStrip = [
   "Build a Rewarding Mortgage Career with Growth Opportunities",
@@ -119,8 +117,6 @@ const CheckIcon = () => (
 );
 
 export default function MortgageBrokerLoanOfficerPage() {
-  const [isLoading, setIsLoading] = useState(true);
-
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
@@ -360,7 +356,7 @@ export default function MortgageBrokerLoanOfficerPage() {
                 more about building a career in the mortgage industry, we&apos;re here to help.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-10 text-[14.5px] text-[#08271B]">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 text-[14.5px] text-[#08271B]">
                 <a href="tel:+16025352171" className="font-semibold hover:text-[#3fb364] transition-colors">
                   Phone +1 602-535-2171
                 </a>
@@ -369,23 +365,14 @@ export default function MortgageBrokerLoanOfficerPage() {
                   Address 1599 East Orangewood Ave Suite 200 Phoenix, AZ 85020
                 </span>
               </div>
-            </div>
 
-            <div className="relative bg-white rounded-2xl shadow-sm overflow-hidden">
-              {isLoading && (
-                <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 min-h-[400px]">
-                  <div className="w-10 h-10 border-[3px] border-[#3fb364]/25 border-t-[#3fb364] rounded-full animate-spin" />
-                  <p className="text-[#4e5b4e] text-[14px] font-medium">Loading application form…</p>
-                </div>
-              )}
-              <iframe
-                src={JOB_FORM_SRC}
-                title="Mortgage Broker Loan Officer Application"
-                className="w-full border-0"
-                style={{ minHeight: "640px", height: "720px" }}
-                onLoad={() => setIsLoading(false)}
-                allow="clipboard-write"
-              />
+              <button
+                type="button"
+                data-contact="true"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md cursor-pointer"
+              >
+                Contact Us →
+              </button>
             </div>
           </div>
         </section>

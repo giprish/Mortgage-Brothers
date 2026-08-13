@@ -356,12 +356,13 @@ export default function JobOpportunitiesPage() {
             </div>
 
             <div className="text-center">
-              <Link
-                href="/contact-us/"
-                className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+              <button
+                type="button"
+                data-contact="true"
+                className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all cursor-pointer"
               >
                 Contact our HR team
-              </Link>
+              </button>
             </div>
           </div>
         </section>
@@ -383,7 +384,7 @@ export default function JobOpportunitiesPage() {
 
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
               Interested? If you are interested in any job opportunity please call 602-535-2171 and ask
-              for Eddie Knoell or fill out our contact form.
+              for Eddie Knoell.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 text-[14.5px] text-[#08271B]">
@@ -401,12 +402,13 @@ export default function JobOpportunitiesPage() {
               </a>
             </div>
 
-            <Link
-              href="/contact-us/"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"
+            <button
+              type="button"
+              data-contact="true"
+              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md cursor-pointer"
             >
-              Reach Out Today
-            </Link>
+              Contact Us →
+            </button>
           </div>
         </section>
       </main>
