@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../../../component/Navbar";
 import Footer from "../../../component/Footer";
@@ -403,11 +404,15 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
             <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
               {/* Left — Broker Image Card */}
               <div className="md:col-span-5">
-                <div className="relative w-full h-[260px] md:h-[300px] rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-gradient-to-br from-[#0f2d1d] via-[#1a4a30] to-[#052316] flex items-center justify-center">
-                  <div className="text-center px-6">
-                    <span className="text-[#7a6638] text-[10px] font-bold tracking-[0.2em] uppercase block mb-2">YOUR LOCAL BROKER</span>
-                    <span className="text-white text-[22px] font-playfair block">AZ Mortgage Brothers</span>
-                  </div>
+                <div className="relative w-full h-[260px] md:h-[300px] rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-[#2b3531]">
+                  <Image
+                    src="/home/thomas-knoell.jpg"
+                    alt="Thomas Knoell, AZ Mortgage Brothers loan officer"
+                    fill
+                    loading="lazy"
+                    className="object-cover object-top"
+                    sizes="(max-width: 768px) 100vw, 420px"
+                  />
                 </div>
               </div>
 
