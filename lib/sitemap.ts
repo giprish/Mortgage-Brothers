@@ -33,7 +33,6 @@ type AuthorPost = {
 const EXCLUDED_PATHS = new Set([
   "/thank-you",
   "/term-condition",
-  "/fha-loans",
   "/loan-programs-detail",
   "/arizona-directory-2",
   "/down-payment-calculator-1",

@@ -15,7 +15,6 @@ Disallow: /pillar-posts/
 Disallow: /down-payment-calculator-1/
 Disallow: /arizona-directory-2/
 Disallow: /service-areas/maricopa-county-az-2/
-Disallow: /fha-loans
 Disallow: /resources/videos
 Disallow: /resources/mortgage-basics
 

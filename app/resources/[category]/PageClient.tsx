@@ -45,13 +45,49 @@ const articlesData = [
     readTime: "7 min read"
   },
   {
+    id: "conventional-vs-fha",
+    category: "FHA Loans",
+    categorySlug: "fha-loans",
+    title: "Conventional Home Loans vs. FHA Loans: Which Is Right for You?",
+    description: "Side-by-side comparison of down payments, credit requirements, PMI vs. MIP, and loan limits for Arizona homebuyers.",
+    date: "Oct 8, 2025",
+    readTime: "10 min read"
+  },
+  {
     id: "cancel-fha-mip",
     category: "FHA Loans",
     categorySlug: "fha-loans",
     title: "Canceling Your FHA MIP Is Easier Than You Think",
     description: "You may not be stuck with mortgage insurance forever. Here are the rules to drop MIP and lower your payment.",
-    date: "May 26, 2026",
+    date: "Feb 6, 2025",
+    readTime: "10 min read"
+  },
+  {
+    id: "fha-loan-gift-guide",
+    category: "FHA Loans",
+    categorySlug: "fha-loans",
+    title: "Put A Bow On It: FHA Loan Gift Guide",
+    description: "FHA loans allow 3.5% down and gift funds for the down payment — how gift money works for first-time buyers.",
+    date: "Feb 5, 2025",
+    readTime: "8 min read"
+  },
+  {
+    id: "fha-flip-rule",
+    category: "FHA Loans",
+    categorySlug: "fha-loans",
+    title: "FHA Flip Rule Waiver Expired – You need to wait 90 days to write a contract",
+    description: "Homes owned by the seller for less than 90 days are not eligible for FHA financing.",
+    date: "Feb 4, 2025",
     readTime: "5 min read"
+  },
+  {
+    id: "assumable-mortgage",
+    category: "FHA Loans",
+    categorySlug: "fha-loans",
+    title: "What Is An Assumable Mortgage?",
+    description: "How an assumable mortgage works, what the clause looks like, and why FHA loans can be a selling-point advantage.",
+    date: "Feb 4, 2025",
+    readTime: "6 min read"
   },
   {
     id: "arizona-binsr-form",
@@ -248,6 +284,11 @@ export default function ResourceCategoryPage() {
                     "understanding-amortization-chart": "/understanding-amortization-chart/",
                     "calculate-pmi": "/how-to-calculate-how-much-pmi-mortgage-insurance-will-be/",
                     "mortgage-trigger-leads": "/what-are-mortgage-trigger-leads/",
+                    "conventional-vs-fha": "/conventional-home-loans-vs-fha-loans-which-is-right-for-you/",
+                    "cancel-fha-mip": "/canceling-your-fha-mip-is-easier-than-you-think/",
+                    "fha-loan-gift-guide": "/put-bow-fha-loan-gift-guide/",
+                    "fha-flip-rule": "/fha-flip-rule-waiver-expired-you-need-wait-90-days-to-write-a-contract/",
+                    "assumable-mortgage": "/assumable-mortgage/",
                   };
                   const articleHref =
                     topLevelRoutes[art.id] ??

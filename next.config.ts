@@ -98,13 +98,13 @@ const nextConfig: NextConfig = {
       { source: "/term-condition", destination: "/team/", permanent: true },
       { source: "/term-condition/", destination: "/team/", permanent: true },
       {
-        source: "/fha-loans",
-        destination: "/fha-home-loans-arizona/",
+        source: "/resources/fha-loans",
+        destination: "/fha-loans/",
         permanent: true,
       },
       {
-        source: "/fha-loans/",
-        destination: "/fha-home-loans-arizona/",
+        source: "/resources/fha-loans/",
+        destination: "/fha-loans/",
         permanent: true,
       },
       {

@@ -15,6 +15,7 @@ export const CATEGORY_HREF_MAP: Record<string, string> = {
   "Pillar Post": "/pillar-post/",
   "Arizona Mortgage Insights": "/arizona-mortgage-insights/",
   "Mortgage Basics": "/mortgage-basics/",
+  "FHA Loans": "/fha-loans/",
   "Real Estate & Mortgages": "/real-estate-mortgages/",
   "Process Guidance": "/mortgage-process-guidance/",
 };
@@ -28,6 +29,8 @@ export const CATEGORY_FROM_PATH: Record<string, string> = {
   "/arizona-mortgage-insights/": "Arizona Mortgage Insights",
   "/mortgage-basics": "Mortgage Basics",
   "/mortgage-basics/": "Mortgage Basics",
+  "/fha-loans": "FHA Loans",
+  "/fha-loans/": "FHA Loans",
   "/real-estate-mortgages": "Real Estate & Mortgages",
   "/real-estate-mortgages/": "Real Estate & Mortgages",
   "/mortgage-process-guidance": "Process Guidance",
@@ -68,9 +71,64 @@ export const blogArticles: BlogArticle[] = [
     "categories": [
       "Pillar Post",
       "Mortgage Basics",
-      "Process Guidance"
+      "Process Guidance",
+      "FHA Loans"
     ],
     "id": "conventional-home-loans-vs-fha-loans-which-is-right-for-you",
+    "isFeatured": false
+  },
+  {
+    "title": "Canceling your FHA MIP is Easier than you think",
+    "description": "If you are still paying Mortgage Insurance Premiums (MIP) on an FHA-backed loan you may be paying more than you need to. Canceling this type of mortgage insurance can also be easier than many homeowners believe.",
+    "href": "/canceling-your-fha-mip-is-easier-than-you-think/",
+    "date": "Feb 6, 2025",
+    "readTime": "10 min read",
+    "category": "FHA Loans",
+    "categories": [
+      "FHA Loans",
+      "Homeownership Tips"
+    ],
+    "id": "canceling-your-fha-mip-is-easier-than-you-think",
+    "isFeatured": false
+  },
+  {
+    "title": "Put A Bow On It: FHA Loan Gift Guide",
+    "description": "Many first-time homebuyers do not have the savings on hand for a large down payment. FHA loans require as little as 3.5% down and allow gift funds to cover it.",
+    "href": "/put-bow-fha-loan-gift-guide/",
+    "date": "Feb 5, 2025",
+    "readTime": "8 min read",
+    "category": "FHA Loans",
+    "categories": [
+      "FHA Loans"
+    ],
+    "id": "put-bow-fha-loan-gift-guide",
+    "isFeatured": false
+  },
+  {
+    "title": "FHA Flip Rule Waiver Expired – You need to wait 90 days to write a contract",
+    "description": "If you are getting FHA financing, check whether the seller has owned the home for less than 90 days. Those properties are not eligible for FHA financing.",
+    "href": "/fha-flip-rule-waiver-expired-you-need-wait-90-days-to-write-a-contract/",
+    "date": "Feb 4, 2025",
+    "readTime": "5 min read",
+    "category": "FHA Loans",
+    "categories": [
+      "FHA Loans"
+    ],
+    "id": "fha-flip-rule-waiver-expired-you-need-wait-90-days-to-write-a-contract",
+    "isFeatured": false
+  },
+  {
+    "title": "What Is An Assumable Mortgage?",
+    "description": "An assumable mortgage lets a buyer take over the seller’s existing loan, including the rate and remaining term, when the lender consents.",
+    "href": "/assumable-mortgage/",
+    "date": "Feb 4, 2025",
+    "readTime": "6 min read",
+    "category": "FHA Loans",
+    "categories": [
+      "FHA Loans",
+      "Specialty Loans"
+    ],
+    "id": "assumable-mortgage",
     "isFeatured": false
   },
   {
