@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { getSeoMetadata } from "@/lib/seo";
 import FaqAccordion from "../../component/FaqAccordion";
 
 import React from "react";
@@ -5,6 +7,8 @@ import Link from "next/link";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
+
+export const metadata: Metadata = getSeoMetadata("/service-areas/la-paz-county-az/");
 
 const cities = [
   { name: "Parker", description: "As La Paz County's seat on the Colorado River, Parker offers water recreation, resort homes, and home loans." },

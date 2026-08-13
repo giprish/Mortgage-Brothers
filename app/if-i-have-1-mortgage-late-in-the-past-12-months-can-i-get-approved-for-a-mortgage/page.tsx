@@ -1,8 +1,12 @@
+import type { Metadata } from "next";
+import { getSeoMetadata } from "@/lib/seo";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
+
+export const metadata: Metadata = getSeoMetadata("/if-i-have-1-mortgage-late-in-the-past-12-months-can-i-get-approved-for-a-mortgage/");
 
 const relatedLinks = [
   {

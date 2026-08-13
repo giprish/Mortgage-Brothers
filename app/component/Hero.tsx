@@ -17,7 +17,7 @@ const Hero = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
         {/* Rating Pill Badge */}
         <div className="inline-flex items-center gap-2 bg-[#08311f]/90 border border-[#144f33] rounded-full px-3.5 py-1.5 mb-6 shadow-sm">
-          <div className="flex items-center gap-1 text-[#f5c518] text-sm">
+          <div className="flex items-center gap-1 text-[#f5c518] text-sm" aria-hidden>
             {Array.from({ length: 5 }).map((_, i) => (
               <svg key={i} className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />

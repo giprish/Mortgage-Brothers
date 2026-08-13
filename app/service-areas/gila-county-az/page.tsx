@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { getSeoMetadata } from "@/lib/seo";
 import FaqAccordion from "../../component/FaqAccordion";
 
 import React from "react";
@@ -5,6 +7,8 @@ import Link from "next/link";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
+
+export const metadata: Metadata = getSeoMetadata("/service-areas/gila-county-az/");
 
 const cities = [
   { name: "Payson", description: "Popular Rim Country retreat nestled in the Mogollon Rim pine forests with mountain home financing options." },

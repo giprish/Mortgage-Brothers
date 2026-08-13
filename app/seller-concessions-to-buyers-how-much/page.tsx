@@ -1,9 +1,13 @@
+import type { Metadata } from "next";
+import { getSeoMetadata } from "@/lib/seo";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import FaqAccordion from "../component/FaqAccordion";
+
+export const metadata: Metadata = getSeoMetadata("/seller-concessions-to-buyers-how-much/");
 
 const relatedLinks = [
   {

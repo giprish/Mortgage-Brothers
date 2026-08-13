@@ -1,8 +1,12 @@
+import type { Metadata } from "next";
+import { getSeoMetadata } from "@/lib/seo";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
+
+export const metadata: Metadata = getSeoMetadata("/canceling-your-fha-mip-is-easier-than-you-think/");
 
 const relatedLinks = [
   {

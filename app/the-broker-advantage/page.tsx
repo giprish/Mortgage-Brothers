@@ -1,9 +1,13 @@
+import type { Metadata } from "next";
+import { getSeoMetadata } from "@/lib/seo";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
+
+export const metadata: Metadata = getSeoMetadata("/the-broker-advantage/");
 
 const loanSolutions = [
   { label: "Conventional Home Loans", href: "/conventional-home-loans-arizona/" },

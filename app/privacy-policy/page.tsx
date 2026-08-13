@@ -16,7 +16,7 @@ export default function PrivacyPolicyPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
-      <main className="flex-grow pt-[110px] lg:pt-[130px] pb-16">
+      <main id="main-content" className="flex-grow pt-[110px] lg:pt-[130px] pb-16">
         <div className="max-w-3xl mx-auto px-6 lg:px-10">
           <p className="text-[#7a6638] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">
             Legal

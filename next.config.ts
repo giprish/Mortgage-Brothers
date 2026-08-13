@@ -182,4 +182,16 @@ const nextConfig: NextConfig = {
   },
 };
 
-export default nextConfig;
+const withBundleAnalyzer = (() => {
+  try {
+    // Optional: npm i -D @next/bundle-analyzer && npm run analyze
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    return require("@next/bundle-analyzer")({
+      enabled: process.env.ANALYZE === "true",
+    });
+  } catch {
+    return (config: NextConfig) => config;
+  }
+})();
+
+export default withBundleAnalyzer(nextConfig);

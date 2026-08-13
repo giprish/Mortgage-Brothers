@@ -1,8 +1,12 @@
+import type { Metadata } from "next";
+import { getSeoMetadata } from "@/lib/seo";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import FaqAccordion from "../component/FaqAccordion";
+
+export const metadata: Metadata = getSeoMetadata("/top-7-reasons-arizona-investment-home-buyers-choose-private-money-lenders/");
 
 const faqSchema = {
   "@context": "https://schema.org",

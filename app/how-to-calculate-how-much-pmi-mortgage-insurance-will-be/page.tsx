@@ -1,9 +1,13 @@
+import type { Metadata } from "next";
+import { getSeoMetadata } from "@/lib/seo";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
+
+export const metadata: Metadata = getSeoMetadata("/how-to-calculate-how-much-pmi-mortgage-insurance-will-be/");
 
 const pmiFactors = [
   "Down payment percentage (e.g., 5%, 10%, 15%)",

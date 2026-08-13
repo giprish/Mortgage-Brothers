@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 
 type YoutubeLiteEmbedProps = {
   videoId: string;
@@ -44,14 +45,12 @@ export default function YoutubeLiteEmbed({
       className={`absolute inset-0 w-full h-full group cursor-pointer border-0 p-0 bg-black ${className}`.trim()}
       aria-label={`Play video: ${title}`}
     >
-      {/* eslint-disable-next-line @next/next/no-img-element -- external YT poster; avoid next/image remote config churn */}
-      <img
+      <Image
         src={poster}
         alt=""
         width={480}
         height={360}
-        loading="lazy"
-        decoding="async"
+        sizes="(max-width: 768px) 100vw, 640px"
         className="absolute inset-0 w-full h-full object-cover"
       />
       <span className="absolute inset-0 bg-black/35 group-hover:bg-black/25 transition-colors" aria-hidden />

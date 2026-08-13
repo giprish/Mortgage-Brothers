@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { getSeoMetadata } from "@/lib/seo";
 import FaqAccordion from "../../component/FaqAccordion";
 
 import React from "react";
@@ -5,6 +7,8 @@ import Link from "next/link";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
+
+export const metadata: Metadata = getSeoMetadata("/service-areas/yuma-county-az/");
 
 const cities = [
   { name: "Yuma", description: "As Yuma County's seat and Sunniest City in the World, Yuma offers thriving agriculture, military bases, and home loans." },

@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { getSeoMetadata } from "@/lib/seo";
 import FaqAccordion from "../../component/FaqAccordion";
 
 import React from "react";
@@ -5,6 +7,8 @@ import Link from "next/link";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
+
+export const metadata: Metadata = getSeoMetadata("/service-areas/santa-cruz-county-az/");
 
 const cities = [
   { name: "Nogales", description: "As Santa Cruz County's seat on the international border, Nogales offers commerce, historic homes, and home loans." },

@@ -1,9 +1,13 @@
+import type { Metadata } from "next";
+import { getSeoMetadata } from "@/lib/seo";
 import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
+
+export const metadata: Metadata = getSeoMetadata("/ultimate-guide-first-mortgage/");
 
 const relatedLinks = [
   {

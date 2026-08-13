@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { getSeoMetadata } from "@/lib/seo";
 import Navbar from "./component/Navbar";
 import Hero from "./component/Hero";
 import HomeStatsBar from "./component/home/HomeStatsBar";
@@ -17,6 +19,8 @@ import HomeBlog from "./component/home/HomeBlog";
 import DreamHomeCta from "./component/home/DreamHomeCta";
 import HomeContact from "./component/home/HomeContact";
 import Footer from "./component/Footer";
+
+export const metadata: Metadata = getSeoMetadata("/");
 
 /**
  * Homepage: static server sections (no next/dynamic wrappers) for SEO + low TBT.

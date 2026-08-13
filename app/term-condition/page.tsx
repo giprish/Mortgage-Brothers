@@ -1,6 +1,10 @@
+import type { Metadata } from "next";
+import { getSeoMetadata } from "@/lib/seo";
 import React from "react";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+
+export const metadata: Metadata = getSeoMetadata("/term-condition/");
 
 const teamMembers = [
   {

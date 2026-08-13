@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { getSeoMetadata } from "@/lib/seo";
 import FaqAccordion from "../../component/FaqAccordion";
 
 import React from "react";
@@ -6,6 +8,8 @@ import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
 import { getCountyCitiesDetails, slugify } from "../../../lib/cityData";
+
+export const metadata: Metadata = getSeoMetadata("/service-areas/apache-county-az/");
 
 const cities = getCountyCitiesDetails("apache-county-az");
 

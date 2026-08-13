@@ -9,7 +9,7 @@ import "./globals.css";
 /* Body uses system UI (no Inter download). Playfair only for display headings. */
 const playfair = Playfair_Display({
   subsets: ["latin"],
-  display: "optional",
+  display: "swap",
   variable: "--font-playfair",
   weight: ["400"],
   preload: false,
@@ -80,7 +80,13 @@ export default function RootLayout({
           Skip to main content
         </a>
         <JsonLd />
-        {children}
+        <div
+          id="main-content"
+          tabIndex={-1}
+          className="flex flex-col flex-1 w-full min-h-0 outline-none"
+        >
+          {children}
+        </div>
         <DeferredPreApproval />
       </body>
     </html>

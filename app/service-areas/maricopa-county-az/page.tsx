@@ -4,11 +4,13 @@ import FaqAccordion from "../../component/FaqAccordion";
 
 import React from "react";
 
-export const metadata: Metadata = getSeoMetadata("/service-areas/maricopa-county-az/");
 import Link from "next/link";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
+
+export const metadata: Metadata = getSeoMetadata("/service-areas/maricopa-county-az/");
+
 // import PreApprovedForm from "../../component/PreApprovedForm";
 
 const cities = [

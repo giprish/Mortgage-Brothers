@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build --webpack",
+    "analyze": "node -e \"process.env.ANALYZE='true'; require('child_process').spawnSync('npx',['next','build','--webpack'],{stdio:'inherit',env:process.env,shell:true})\"",
     "start": "next start",
     "lint": "eslint",
     "validate:sitemap": "node scripts/validate-sitemap.mjs",

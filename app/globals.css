@@ -8,9 +8,9 @@
   /* Brand Color Tokens */
   --color-brand-green-dark: #1a3a1a;       /* Forest green text/theme */
   --color-brand-green-deep: #052316;       /* Deep forest green (Hero, section headers) */
-  --color-brand-green-accent: #2d8545;     /* AA-safe green for white button text */
+  --color-brand-green-accent: #26753c;     /* AA-safe green text/buttons on cream & white */
   --color-brand-green-hover: #246d39;      /* Button hover green */
-  --color-brand-gold: #b89a5a;             /* Gold accent color */
+  --color-brand-gold: #8a6f3a;             /* Gold text on cream — WCAG AA ≥4.5:1 */
   --color-brand-light: #f5f0e8;            /* Main cream/beige background */
   --color-brand-cream-light: #faf7f0;      /* Alternating section light background */
   --color-brand-card-bg: #072114;          /* Dark card background */

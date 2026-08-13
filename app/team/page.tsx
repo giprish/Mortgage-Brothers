@@ -1,9 +1,13 @@
+import type { Metadata } from "next";
+import { getSeoMetadata } from "@/lib/seo";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import { LOAN_OFFICERS } from "@/lib/company";
+
+export const metadata: Metadata = getSeoMetadata("/team/");
 
 const teamMembers = [
   {

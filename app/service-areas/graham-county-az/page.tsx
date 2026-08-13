@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+import { getSeoMetadata } from "@/lib/seo";
 import FaqAccordion from "../../component/FaqAccordion";
 
 import React from "react";
@@ -5,6 +7,8 @@ import Link from "next/link";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
+
+export const metadata: Metadata = getSeoMetadata("/service-areas/graham-county-az/");
 
 const cities = [
   { name: "Safford", description: "As Graham County's seat in the Gila Valley, Safford offers vibrant agriculture, Mount Graham views, and home loans." },
