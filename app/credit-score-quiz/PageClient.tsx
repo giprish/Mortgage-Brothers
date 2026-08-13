@@ -1,11 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
-
-const QUIZ_SRC = "https://form.jotform.com/250305896122151";
 
 function HomeIcon() {
   return (
@@ -85,8 +83,6 @@ const learnMore = [
 ];
 
 export default function CreditScoreQuizPage() {
-  const [isLoading, setIsLoading] = useState(true);
-
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
@@ -116,23 +112,24 @@ export default function CreditScoreQuizPage() {
           </div>
         </section>
 
-        {/* JotForm quiz embed */}
+        {/* Quiz CTA — opens same full-screen modal as Pre-Approval (no iframe on load) */}
         <section id="top" className="w-full bg-[#fcf9f3] py-10 lg:py-14 scroll-mt-[90px]">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 relative">
-            {isLoading && (
-              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-3 min-h-[400px]">
-                <div className="w-10 h-10 border-[3px] border-[#3fb364]/25 border-t-[#3fb364] rounded-full animate-spin" />
-                <p className="text-[#4e5b4e] text-[14px] font-medium">Loading credit score quiz…</p>
-              </div>
-            )}
-            <iframe
-              src={QUIZ_SRC}
-              title="Credit Score Quiz"
-              className="w-full border-0 rounded-2xl bg-white shadow-sm"
-              style={{ minHeight: "640px", height: "720px" }}
-              onLoad={() => setIsLoading(false)}
-              allow="clipboard-write"
-            />
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+            <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-8">
+              Ready when you are. Start the free credit quiz in a secure form — no credit pull,
+              no obligation.
+            </p>
+            <button
+              type="button"
+              data-quiz="true"
+              className="inline-flex items-center gap-2 bg-[#2d8545] hover:bg-[#246d39] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-[#2d8545]/20 cursor-pointer"
+            >
+              Take The Quiz
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </button>
           </div>
         </section>
 
@@ -171,12 +168,13 @@ export default function CreditScoreQuizPage() {
             </p>
 
             <div className="text-center">
-              <a
-                href="#top"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+              <button
+                type="button"
+                data-quiz="true"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all cursor-pointer"
               >
                 Take the Credit Quiz
-              </a>
+              </button>
             </div>
           </div>
         </section>

@@ -611,6 +611,18 @@ footer [class*="text-[#3fb364]"],
   color: #246d39 !important;
 }
 
+/* Mobile drawer links — do not use class*="text-[#3fb364]" (matches hover: too and paints every item green) */
+.nav-mobile-link {
+  color: #ffffff !important;
+}
+.nav-mobile-link:hover {
+  color: #6bcf84 !important;
+}
+.nav-mobile-link-active {
+  color: #6bcf84 !important;
+  background-color: #343a42;
+}
+
 /* Footer links — always light on dark bg (prevents contrast-rule bleed) */
 footer .footer-link,
 footer .footer-link:visited {

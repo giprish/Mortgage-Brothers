@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import { COMPANY } from "@/lib/company";
 
-const JOTFORM_SCRIPT_SRC = "https://form.jotform.com/jsform/250026749097159";
 const MAP_EMBED_SRC =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1662.6593094747534!2d-112.04951486150385!3d33.545097128830214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b72a8a56e5b8f%3A0x32ff520eb58d08d6!2sMortgage%20Brothers!5e0!3m2!1sen!2sin!4v1757943685115!5m2!1sen!2sin";
 
@@ -104,77 +103,7 @@ function OfficeMapEmbed() {
   );
 }
 
-function ContactJotform({ loadToken }: { loadToken: number }) {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (loadToken < 1) return;
-    const container = containerRef.current;
-    if (!container) return;
-
-    container.innerHTML = "";
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = JOTFORM_SCRIPT_SRC;
-    script.async = true;
-    script.defer = true;
-    container.appendChild(script);
-
-    return () => {
-      container.innerHTML = "";
-    };
-  }, [loadToken]);
-
-  return (
-    <div
-      ref={containerRef}
-      className="w-full min-h-[520px]"
-      aria-label="Contact form"
-      role="form"
-    />
-  );
-}
-
 export default function ContactPage() {
-  const formRef = useRef<HTMLDivElement>(null);
-  const [formLoadToken, setFormLoadToken] = useState(0);
-
-  useEffect(() => {
-    if (window.location.hash) {
-      window.history.replaceState(null, "", window.location.pathname);
-    }
-  }, []);
-
-  const ensureFormLoaded = useCallback(() => {
-    setFormLoadToken((n) => (n < 1 ? 1 : n));
-  }, []);
-
-  const scrollToForm = (e?: React.MouseEvent) => {
-    e?.preventDefault();
-    ensureFormLoaded();
-    formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-    if (window.location.hash) {
-      window.history.replaceState(null, "", window.location.pathname);
-    }
-  };
-
-  // Load form only when near viewport — not on initial critical path.
-  useEffect(() => {
-    const el = formRef.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((e) => e.isIntersecting)) {
-          ensureFormLoaded();
-          io.disconnect();
-        }
-      },
-      { rootMargin: "0px" },
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, [ensureFormLoaded]);
-
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Navbar />
@@ -195,7 +124,7 @@ export default function ContactPage() {
             </p>
             <button
               type="button"
-              onClick={scrollToForm}
+              data-contact="true"
               className="w-full sm:w-auto btn-primary hover:shadow-brand-green-accent/20 group text-[15px] font-bold px-7 py-3.5 cursor-pointer"
             >
               Contact Us
@@ -260,7 +189,7 @@ export default function ContactPage() {
                 </p>
                 <button
                   type="button"
-                  onClick={scrollToForm}
+                  data-contact="true"
                   className="text-[#08271B] text-[15px] font-semibold hover:text-[#3fb364] transition-colors cursor-pointer"
                 >
                   Contact Us
@@ -314,12 +243,14 @@ export default function ContactPage() {
               <OfficeMapEmbed />
             </div>
 
-            <div ref={formRef} className="scroll-mt-28 text-left">
-              {formLoadToken < 1 ? (
-                <div className="w-full min-h-[520px]" aria-hidden />
-              ) : (
-                <ContactJotform loadToken={formLoadToken} />
-              )}
+            <div className="text-center">
+              <button
+                type="button"
+                data-contact="true"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md cursor-pointer"
+              >
+                Contact Us →
+              </button>
             </div>
           </div>
         </section>

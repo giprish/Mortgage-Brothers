@@ -1,43 +1,13 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { COMPANY } from "@/lib/company";
 
-const CONTACT_JOTFORM_SRC = "https://form.jotform.com/jsform/250026749097159";
-
-function ContactJotformEmbed() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    container.innerHTML = "";
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = CONTACT_JOTFORM_SRC;
-    script.async = true;
-    script.defer = true;
-    container.appendChild(script);
-
-    return () => {
-      container.innerHTML = "";
-    };
-  }, []);
-
-  return (
-    <div
-      ref={containerRef}
-      className="w-full min-h-[520px]"
-      aria-label="Contact form"
-      role="form"
-    />
-  );
-}
-
+/**
+ * Homepage contact CTA. Opens the same full-screen JotForm modal as Pre-Approval
+ * (via data-contact + sitewide click interceptor). No script on page load.
+ */
 const HomeContact = () => {
-  const [showContactForm, setShowContactForm] = useState(false);
-
   return (
     <section
       id="contact"
@@ -64,15 +34,13 @@ const HomeContact = () => {
             Scottsdale.
           </p>
 
-          {!showContactForm && (
-            <button
-              type="button"
-              onClick={() => setShowContactForm(true)}
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md cursor-pointer"
-            >
-              Contact Us →
-            </button>
-          )}
+          <button
+            type="button"
+            data-contact="true"
+            className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md cursor-pointer"
+          >
+            Contact Us →
+          </button>
 
           <p className="mt-8 text-[#5f6f54] text-[13px]">
             Or call{" "}
@@ -84,15 +52,6 @@ const HomeContact = () => {
             </a>
           </p>
         </div>
-
-        {showContactForm && (
-          <div className="max-w-3xl mx-auto mt-10 bg-white border border-[#e8e0d0]/70 rounded-3xl p-7 sm:p-9 shadow-lg scroll-mt-28">
-            <h3 className="font-playfair text-[#08271B] text-[22px] font-normal mb-6 text-center">
-              Contact Us
-            </h3>
-            <ContactJotformEmbed />
-          </div>
-        )}
       </div>
     </section>
   );

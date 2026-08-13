@@ -74,14 +74,26 @@ function pathsMatch(href: string, pathname: string) {
   return normalizePath(pathname) === normalizePath(href);
 }
 
+/**
+ * Highlight the open page only.
+ * Hub URLs (/service-areas/, /blog/, …) match exactly so they don't light up every child.
+ * Nested URLs (county, article) also match their child paths (e.g. a city under that county).
+ */
+function pathIsActive(href: string, pathname: string) {
+  const h = normalizePath(href);
+  const p = normalizePath(pathname);
+  if (p === h) return true;
+  const segments = h.split("/").filter(Boolean);
+  if (segments.length < 2) return false;
+  return p.startsWith(h);
+}
+
 function mobileItemClass(active: boolean, size: "main" | "sub" = "sub") {
   const base =
     size === "main"
-      ? "font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 border-b border-[#3b4148] transition-colors block"
-      : "font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] transition-colors";
-  return active
-    ? `${base} text-[#3fb364] hover:text-white`
-    : `${base} text-white hover:text-[#3fb364]`;
+      ? "nav-mobile-link font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 border-b border-[#3b4148] transition-colors block"
+      : "nav-mobile-link font-bold text-[13px] uppercase tracking-wider px-5 py-3.5 border-b border-[#3b4148] transition-colors block";
+  return active ? `${base} nav-mobile-link-active` : base;
 }
 
 const Navbar = () => {
@@ -89,12 +101,39 @@ const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
 
-  const isPathActive = useCallback((href: string) => pathsMatch(href, pathname), [pathname]);
-  const isLoanProgramsActive = useMemo(() => LOAN_PROGRAM_LINKS.some((item) => isPathActive(item.href)), [isPathActive]);
-  const isCalculatorsActive = useMemo(() => CALCULATOR_LINKS.some((item) => isPathActive(item.href)), [isPathActive]);
-  const isAreasActive = useMemo(() => AREA_LINKS.some((item) => isPathActive(item.href)), [isPathActive]);
-  const isAboutActive = useMemo(() => ABOUT_LINKS.some((item) => isPathActive(item.href)), [isPathActive]);
-  const isResourcesActive = useMemo(() => RESOURCE_LINKS.some((item) => isPathActive(item.href)), [isPathActive]);
+  const isPathActive = useCallback((href: string) => pathIsActive(href, pathname), [pathname]);
+  const isExactPathActive = useCallback((href: string) => pathsMatch(href, pathname), [pathname]);
+
+  const isLoanProgramsActive = useMemo(
+    () =>
+      isExactPathActive("/mortgage-loan-programs-arizona/") ||
+      LOAN_PROGRAM_LINKS.some((item) => isExactPathActive(item.href)),
+    [isExactPathActive],
+  );
+  const isCalculatorsActive = useMemo(
+    () =>
+      isExactPathActive("/mortgage-calculator-arizona/") ||
+      CALCULATOR_LINKS.some((item) => isExactPathActive(item.href)),
+    [isExactPathActive],
+  );
+  const isAreasActive = useMemo(
+    () => normalizePath(pathname).startsWith("/service-areas/"),
+    [pathname],
+  );
+  const isAboutActive = useMemo(
+    () => ABOUT_LINKS.some((item) => isExactPathActive(item.href)),
+    [isExactPathActive],
+  );
+  const isResourcesActive = useMemo(() => {
+    const p = normalizePath(pathname);
+    return (
+      RESOURCE_LINKS.some((item) => isExactPathActive(item.href)) ||
+      p.startsWith("/blog/") ||
+      p.startsWith("/mortgage-basics/") ||
+      p.startsWith("/videos/") ||
+      p.startsWith("/resources/")
+    );
+  }, [pathname, isExactPathActive]);
 
   // When opening the drawer on a matching page, jump straight into that submenu.
   const resolveSubmenuForPath = useCallback(() => {
@@ -113,10 +152,15 @@ const Navbar = () => {
 
   const toggleMobileMenu = useCallback(() => {
     setMobileMenuOpen((open) => {
-      setActiveSubmenu(null);
-      return !open;
+      if (open) {
+        setActiveSubmenu(null);
+        return false;
+      }
+      // Opening: show the submenu that contains the current page (highlight active item)
+      setActiveSubmenu(resolveSubmenuForPath());
+      return true;
     });
-  }, []);
+  }, [resolveSubmenuForPath]);
 
   return (
     <header className="w-full">

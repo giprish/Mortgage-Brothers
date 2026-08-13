@@ -1,41 +1,9 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import { COMPANY } from "@/lib/company";
-
-const CONTACT_JOTFORM_SRC = "https://form.jotform.com/jsform/250026749097159";
-
-function ContactJotformEmbed() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    container.innerHTML = "";
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = CONTACT_JOTFORM_SRC;
-    script.async = true;
-    script.defer = true;
-    container.appendChild(script);
-
-    return () => {
-      container.innerHTML = "";
-    };
-  }, []);
-
-  return (
-    <div
-      ref={containerRef}
-      className="w-full min-h-[520px]"
-      aria-label="Contact form"
-      role="form"
-    />
-  );
-}
 
 const featureStrip = [
   "Build a Rewarding Mortgage Career with Growth Opportunities",
@@ -139,8 +107,6 @@ const CheckIcon = () => (
 );
 
 export default function ReverseMortgageLoanOfficerPage() {
-  const [showContactForm, setShowContactForm] = useState(false);
-
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
@@ -307,25 +273,14 @@ export default function ReverseMortgageLoanOfficerPage() {
                 <span className="text-center">Address {COMPANY.addressFull}</span>
               </div>
 
-              {!showContactForm && (
-                <button
-                  type="button"
-                  onClick={() => setShowContactForm(true)}
-                  className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md cursor-pointer"
-                >
-                  Contact Us →
-                </button>
-              )}
+              <button
+                type="button"
+                data-contact="true"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md cursor-pointer"
+              >
+                Contact Us →
+              </button>
             </div>
-
-            {showContactForm && (
-              <div className="relative bg-white rounded-2xl shadow-sm overflow-hidden p-6 sm:p-8">
-                <h3 className="text-[#08271B] text-[22px] font-playfair font-normal mb-6 text-center">
-                  Contact Us
-                </h3>
-                <ContactJotformEmbed />
-              </div>
-            )}
           </div>
         </section>
       </main>

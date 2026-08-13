@@ -7,125 +7,130 @@ import React, {
   useEffect,
   useState,
 } from "react";
+import { useRouter } from "next/navigation";
+import { resolveFormKind, type FormKind } from "./formModalTargets";
 
-const JOTFORM_ID = "250065764860157";
-const JOTFORM_SRC = `https://form.jotform.com/${JOTFORM_ID}`;
-
-type PreApprovalContextValue = {
-  open: () => void;
-  close: () => void;
-  isOpen: boolean;
+const FORMS: Record<
+  FormKind,
+  {
+    id: string;
+    src: string;
+    eyebrow: string;
+    title: string;
+    iframeTitle: string;
+    loadingLabel: string;
+  }
+> = {
+  preapproval: {
+    id: "250065764860157",
+    src: "https://form.jotform.com/250065764860157",
+    eyebrow: "Secure application",
+    title: "Start Your Pre-Approval",
+    iframeTitle: "Arizona Mortgage Pre-Approval Form",
+    loadingLabel: "Loading secure application form...",
+  },
+  quiz: {
+    id: "250305896122151",
+    src: "https://form.jotform.com/250305896122151",
+    eyebrow: "Free credit check-in",
+    title: "Credit Score Quiz",
+    iframeTitle: "Credit Score Quiz",
+    loadingLabel: "Loading credit score quiz...",
+  },
+  contact: {
+    id: "250026749097159",
+    src: "https://form.jotform.com/250026749097159",
+    eyebrow: "Get in touch",
+    title: "Contact Us",
+    iframeTitle: "Contact Form",
+    loadingLabel: "Loading contact form...",
+  },
 };
 
-const PreApprovalContext = createContext<PreApprovalContextValue | null>(null);
+type FormModalContextValue = {
+  open: (kind?: FormKind) => void;
+  close: () => void;
+  isOpen: boolean;
+  kind: FormKind | null;
+};
+
+const FormModalContext = createContext<FormModalContextValue | null>(null);
 
 export function usePreApprovalModal() {
-  const ctx = useContext(PreApprovalContext);
+  const ctx = useContext(FormModalContext);
   if (!ctx) {
     throw new Error("usePreApprovalModal must be used within PreApprovalProvider");
   }
-  return ctx;
+  return {
+    open: () => ctx.open("preapproval"),
+    close: ctx.close,
+    isOpen: ctx.isOpen && ctx.kind === "preapproval",
+  };
 }
 
-/** Optional hook that returns null outside the provider (for defensive use). */
 export function usePreApprovalModalOptional() {
-  return useContext(PreApprovalContext);
-}
-
-function isPreApprovalTarget(element: Element | null): boolean {
-  if (!element) return false;
-  const clickable = element.closest("a[href], button, [role='button']") as HTMLElement | null;
-  if (!clickable) return false;
-
-  const href = (clickable.getAttribute("href") || "").toLowerCase().trim();
-  const text = (clickable.textContent || "").toLowerCase().trim();
-  const id = (clickable.id || "").toLowerCase().trim();
-
-  if (id === "get-pre-approved" || id === "preapproval" || id === "pre-approval" || id === "get-started") return true;
-  if (clickable.hasAttribute("data-preapproval") || clickable.hasAttribute("data-open-preapproval")) return true;
-
-  if (
-    href === "#get-pre-approved" ||
-    href === "/#get-pre-approved" ||
-    href.includes("#get-pre-approved") ||
-    href.includes("get-pre-approved") ||
-    href.includes("/loan-applications") ||
-    href.includes("/pre-approval") ||
-    href.includes("/preapproval") ||
-    href.includes("get-started") ||
-    href.includes("#get-in-touch") ||
-    href.includes("/#get-in-touch")
-  ) {
-    return true;
-  }
-
-  if (text.length > 0 && text.length < 120) {
-    if (
-      text.includes("start my preapproval") ||
-      text.includes("start my pre-approval") ||
-      text.includes("start your pre-approval") ||
-      text.includes("start your preapproval") ||
-      text.includes("get pre-approved") ||
-      text.includes("get preapproved") ||
-      text.includes("get pre approved") ||
-      text.includes("start pre-approval") ||
-      text.includes("start preapproval") ||
-      text.includes("get started today") ||
-      text.includes("get started now") ||
-      text.includes("get started") ||
-      (text.includes("pre-approval") && (text.includes("start") || text.includes("get") || text.includes("apply"))) ||
-      (text.includes("preapproval") && (text.includes("start") || text.includes("get") || text.includes("apply")))
-    ) {
-      return true;
-    }
-  }
-
-  return false;
+  const ctx = useContext(FormModalContext);
+  if (!ctx) return null;
+  return {
+    open: () => ctx.open("preapproval"),
+    close: ctx.close,
+    isOpen: ctx.isOpen && ctx.kind === "preapproval",
+  };
 }
 
 export default function PreApprovalProvider({
   children,
+  initialKind = null,
 }: {
   children: React.ReactNode;
+  initialKind?: FormKind | null;
 }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [shouldLoadForm, setShouldLoadForm] = useState(false);
+  const router = useRouter();
+  const [kind, setKind] = useState<FormKind | null>(initialKind);
+  const [shouldLoadForm, setShouldLoadForm] = useState(!!initialKind);
   const [isLoading, setIsLoading] = useState(true);
 
-  const open = useCallback(() => {
-    setIsOpen(true);
+  const isOpen = kind !== null;
+  const active = kind ? FORMS[kind] : null;
+
+  const open = useCallback((next: FormKind = "preapproval") => {
+    setKind(next);
     setShouldLoadForm(true);
     setIsLoading(true);
     document.body.style.overflow = "hidden";
   }, []);
 
+  useEffect(() => {
+    if (initialKind) {
+      document.body.style.overflow = "hidden";
+    }
+  }, [initialKind]);
+
   const close = useCallback(() => {
-    setIsOpen(false);
+    setKind(null);
     document.body.style.overflow = "";
     setShouldLoadForm(false);
     setIsLoading(true);
   }, []);
 
-  // Intercept all Get Pre-Approved / Start My Preapproval elements sitewide.
   useEffect(() => {
     const onClick = (event: MouseEvent) => {
       if (event.defaultPrevented) return;
       if (event.button !== 0) return;
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
 
-      const target = event.target as Element | null;
-      if (!isPreApprovalTarget(target)) return;
+      const next = resolveFormKind(event.target as Element | null);
+      if (!next) return;
 
       event.preventDefault();
       event.stopPropagation();
-      open();
+      open(next);
     };
 
     document.addEventListener("click", onClick, true);
     return () => document.removeEventListener("click", onClick, true);
   }, [open]);
 
-  // JotForm submission completed → return home and close modal
   useEffect(() => {
     if (!isOpen) return;
 
@@ -136,19 +141,19 @@ export default function PreApprovalProvider({
         event.data &&
         (event.data.action === "submission-completed" ||
           event.data === "submission-completed" ||
-          (typeof event.data === "string" &&
-            event.data.includes("submission-completed")))
+          (typeof event.data === "string" && event.data.includes("submission-completed")))
       ) {
         close();
-        window.location.href = "/";
+        if (kind === "preapproval") {
+          router.push("/");
+        }
       }
     };
 
     window.addEventListener("message", handleMessage);
     return () => window.removeEventListener("message", handleMessage);
-  }, [isOpen, close]);
+  }, [isOpen, close, kind, router]);
 
-  // Escape to close
   useEffect(() => {
     if (!isOpen) return;
     const onKey = (e: KeyboardEvent) => {
@@ -159,32 +164,32 @@ export default function PreApprovalProvider({
   }, [isOpen, close]);
 
   return (
-    <PreApprovalContext.Provider value={{ open, close, isOpen }}>
+    <FormModalContext.Provider value={{ open, close, isOpen, kind }}>
       {children}
 
-      {isOpen && (
+      {isOpen && active && (
         <div
           className="fixed inset-0 z-[200] flex flex-col bg-[#04160f]/70 backdrop-blur-sm"
           role="dialog"
           aria-modal="true"
-          aria-labelledby="preapproval-modal-title"
+          aria-labelledby="site-form-modal-title"
         >
           <div className="flex-shrink-0 bg-[#052316] border-b border-white/10 px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
             <div className="min-w-0">
               <p className="text-[#3fb364] text-[10px] font-bold uppercase tracking-wider">
-                Secure application
+                {active.eyebrow}
               </p>
               <h2
-                id="preapproval-modal-title"
+                id="site-form-modal-title"
                 className="text-white text-[15px] sm:text-[16px] font-semibold truncate"
               >
-                Start Your Pre-Approval
+                {active.title}
               </h2>
             </div>
             <button
               type="button"
               onClick={close}
-              aria-label="Close pre-approval dialog"
+              aria-label={`Close ${active.title} dialog`}
               className="inline-flex items-center gap-1.5 sm:gap-2 bg-white/10 hover:bg-white/15 text-white text-[12px] sm:text-[13px] font-semibold px-3 sm:px-4 py-2 rounded-full transition-colors cursor-pointer shrink-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               <svg
@@ -207,17 +212,16 @@ export default function PreApprovalProvider({
               <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-[#fcf9f3] p-6">
                 <div className="w-12 h-12 border-4 border-[#3fb364]/20 border-t-[#3fb364] rounded-full animate-spin mb-4" />
                 <p className="text-[#4e5b4e] text-[15px] font-medium animate-pulse">
-                  Loading secure application form...
+                  {active.loadingLabel}
                 </p>
               </div>
             )}
 
-            {/* JotForm iframe mounts ONLY after intentional open */}
             {shouldLoadForm && (
               <iframe
-                id={`JotFormIFrame-${JOTFORM_ID}`}
-                title="Arizona Mortgage Pre-Approval Form"
-                src={JOTFORM_SRC}
+                id={`JotFormIFrame-${active.id}`}
+                title={active.iframeTitle}
+                src={active.src}
                 className="absolute inset-0 w-full h-full border-0"
                 allow="geolocation; microphone; camera; fullscreen"
                 onLoad={() => setIsLoading(false)}
@@ -226,6 +230,6 @@ export default function PreApprovalProvider({
           </div>
         </div>
       )}
-    </PreApprovalContext.Provider>
+    </FormModalContext.Provider>
   );
 }
