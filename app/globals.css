@@ -580,21 +580,48 @@ textarea {
   background-color: #246d39 !important;
 }
 
-/* Light surfaces: darken brand green text for AA */
-[class*="text-[#3fb364]"] {
+/* Light surfaces: darken brand green text for AA.
+   Exclude hover:/group-hover: — class*="text-[#3fb364]" also matches
+   hover:text-[#3fb364] and paints the default (non-hover) color dark green. */
+[class*="text-[#3fb364]"]:not([class*="hover:text-[#3fb364]"]):not([class*="group-hover:text-[#3fb364]"]) {
   color: #246d39 !important;
 }
 
 /* Dark shells: brighten brand green text for AA */
-footer [class*="text-[#3fb364]"],
-[class*="bg-[#32353C]"] [class*="text-[#3fb364]"],
-[class*="bg-[#08271B]"] [class*="text-[#3fb364]"],
-[class*="bg-[#052316]"] [class*="text-[#3fb364]"],
-[class*="bg-[#031d12]"] [class*="text-[#3fb364]"],
-[class*="bg-[#083321]"] [class*="text-[#3fb364]"],
-[class*="bg-[#031a0f]"] [class*="text-[#3fb364]"],
-[class*="bg-[#072114]"] [class*="text-[#3fb364]"] {
+footer [class*="text-[#3fb364]"]:not([class*="hover:text-[#3fb364]"]):not([class*="group-hover:text-[#3fb364]"]),
+[class*="bg-[#32353C]"] [class*="text-[#3fb364]"]:not([class*="hover:text-[#3fb364]"]):not([class*="group-hover:text-[#3fb364]"]),
+[class*="bg-[#08271B]"] [class*="text-[#3fb364]"]:not([class*="hover:text-[#3fb364]"]):not([class*="group-hover:text-[#3fb364]"]),
+[class*="bg-[#052316]"] [class*="text-[#3fb364]"]:not([class*="hover:text-[#3fb364]"]):not([class*="group-hover:text-[#3fb364]"]),
+[class*="bg-[#031d12]"] [class*="text-[#3fb364]"]:not([class*="hover:text-[#3fb364]"]):not([class*="group-hover:text-[#3fb364]"]),
+[class*="bg-[#083321]"] [class*="text-[#3fb364]"]:not([class*="hover:text-[#3fb364]"]):not([class*="group-hover:text-[#3fb364]"]),
+[class*="bg-[#031a0f]"] [class*="text-[#3fb364]"]:not([class*="hover:text-[#3fb364]"]):not([class*="group-hover:text-[#3fb364]"]),
+[class*="bg-[#072114]"] [class*="text-[#3fb364]"]:not([class*="hover:text-[#3fb364]"]):not([class*="group-hover:text-[#3fb364]"]),
+[class*="bg-brand-green-deep"] [class*="text-[#3fb364]"]:not([class*="hover:text-[#3fb364]"]):not([class*="group-hover:text-[#3fb364]"]) {
   color: #6bcf84 !important;
+}
+
+/* Accent green is AA-safe on cream, not on deep forest heroes / CTAs */
+[class*="bg-brand-green-deep"] [class*="text-brand-green-accent"],
+[class*="bg-[#052316]"] [class*="text-brand-green-accent"],
+[class*="bg-[#08271B]"] [class*="text-brand-green-accent"],
+[class*="bg-[#031d12]"] [class*="text-brand-green-accent"],
+[class*="bg-[#083321]"] [class*="text-brand-green-accent"],
+[class*="bg-[#031a0f]"] [class*="text-brand-green-accent"],
+[class*="bg-[#072114]"] [class*="text-brand-green-accent"] {
+  color: #6bcf84 !important;
+}
+
+/* White cards nested inside dark shells keep the cream-safe accent */
+[class*="bg-brand-green-deep"] [class*="bg-white"] [class*="text-brand-green-accent"],
+[class*="bg-[#052316]"] [class*="bg-white"] [class*="text-brand-green-accent"],
+[class*="bg-[#08271B]"] [class*="bg-white"] [class*="text-brand-green-accent"] {
+  color: #26753c !important;
+}
+
+/* Muted notes on dark heroes (e.g. "3 min - no credit impact") */
+[class*="bg-brand-green-deep"] [class*="text-[#5a6b52]"],
+[class*="bg-[#052316]"] [class*="text-[#5a6b52]"] {
+  color: #c8d4c8 !important;
 }
 
 [class*="text-[#7a6638]"] {

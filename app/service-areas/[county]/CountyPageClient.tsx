@@ -146,8 +146,8 @@ export default function CountyPage({
                 <div className="relative z-10">
                   {/* Breadcrumb inside Pine Green Container */}
                   <div className="flex items-center gap-2 text-[13px] font-medium text-[#c8c8b8] mb-4">
-                    <Link href="/service-areas/" className="hover:text-[#3fb364] transition-colors">Areas We Serve</Link>
-                    <span className="text-[#3fb364]/60">&gt;</span>
+                    <Link href="/service-areas/" className="text-[#b8d4b8] hover:text-white transition-colors">Areas We Serve</Link>
+                    <span className="text-white/40">&gt;</span>
                     <span className="text-white font-semibold">{countyName}</span>
                   </div>
 

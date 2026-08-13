@@ -61,10 +61,10 @@ export default function PimaCountyPage() {
           <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">
             {/* Breadcrumb inside Pine Green Section */}
             <div className="flex items-center justify-center gap-2 text-[13px] font-medium text-[#c8c8b8] mb-5">
-              <Link href="/service-areas/" className="hover:text-[#3fb364] transition-colors duration-200">
+              <Link href="/service-areas/" className="text-[#b8d4b8] hover:text-white transition-colors duration-200">
                 Areas We Serve
               </Link>
-              <span className="text-[#3fb364]/60">&gt;</span>
+              <span className="text-white/40">&gt;</span>
               <span className="text-white font-semibold">Pima County</span>
             </div>
 
