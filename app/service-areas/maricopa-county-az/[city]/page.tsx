@@ -25,5 +25,5 @@ export default async function Page({ params }: Props) {
   if (!getCityData("maricopa-county-az", city)) {
     notFound();
   }
-  return <CityPageClient />;
+  return <CityPageClient citySlug={city} />;
 }

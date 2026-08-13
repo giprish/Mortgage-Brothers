@@ -24,8 +24,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function Page({ params }: Props) {
   const { county, city } = await params;
-  if (!getCityData(county, city)) {
+  const cityData = getCityData(county, city);
+  if (!cityData) {
     notFound();
   }
-  return <CityPageClient />;
+  return <CityPageClient cityData={cityData} />;
 }

@@ -1,13 +1,10 @@
-"use client";
-
-import React, { useState, useMemo } from "react";
+import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { useParams } from "next/navigation";
 import Navbar from "../../../component/Navbar";
 import Footer from "../../../component/Footer";
 import HeroCtaButtons from "../../../component/HeroCtaButtons";
-import { getCityData, getCountyName } from "../../../../lib/cityData";
+import FaqAccordion from "../../../component/FaqAccordion";
+import type { CityData } from "../../../../lib/cityData";
 
 /* ─── Loan Programs Data ─── */
 const loanPrograms = [
@@ -126,41 +123,16 @@ const whyChooseItems = [
   "Local experience in the",
 ];
 
-export default function GenericCityDetailPage() {
-  const params = useParams();
-  const countySlug = (params?.county as string) || "";
-  const citySlug = (params?.city as string) || "";
-
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
-
-  const cityData = useMemo(() => getCityData(countySlug, citySlug), [countySlug, citySlug]);
-  const countyName = useMemo(() => getCountyName(countySlug), [countySlug]);
-
-  if (!cityData || !countyName) {
-    return (
-      <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-        <Navbar />
-        <main className="flex-grow flex items-center justify-center">
-          <div className="text-center py-20">
-            <h1 className="text-[#052316] text-[32px] font-playfair mb-4">City Not Found</h1>
-            <p className="text-[#4e5b4e] text-[15px] mb-8">The city you&apos;re looking for doesn&apos;t exist in our directory.</p>
-            <Link href="/service-areas/" className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-semibold px-6 py-3 rounded-full transition-all">
-              Browse All Areas →
-            </Link>
-          </div>
-        </main>
-        <Footer />
-      </div>
-    );
-  }
-
+export default function GenericCityDetailPage({ cityData }: { cityData: CityData }) {
+  const countySlug = cityData.countySlug;
+  const countyName = cityData.countyName;
   const city = cityData.name;
 
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
 
-      <main className="flex-grow">
+      <main id="main-content" className="flex-grow">
 
         {/* ════════════════════════════════════════════════════════════
             SECTION 1 — HERO
@@ -168,69 +140,62 @@ export default function GenericCityDetailPage() {
         <section className="relative w-full overflow-hidden">
           {/* Background gradient */}
           <div className="absolute inset-0 bg-gradient-to-br from-[#052316] via-[#073a22] to-[#052316]" />
-          {/* Subtle texture overlay */}
-          <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }} />
+          {/* Subtle texture overlay — desktop only to reduce mobile paint cost */}
+          <div className="absolute inset-0 opacity-[0.03] hidden sm:block" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }} />
 
-          <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10 pt-[110px] lg:pt-[130px] pb-16 lg:pb-20">
-            {/* Breadcrumbs */}
-            <div className="flex items-center gap-2 text-[12px] font-semibold mb-8">
-              <Link href="/service-areas/" className="text-[#b8d4b8] hover:text-white transition-colors">Areas We Serve</Link>
-              <span className="text-[#b8d4b8]">&gt;</span>
-              <Link href={`/service-areas/${countySlug}/`} className="text-[#b8d4b8] hover:text-white transition-colors">{countyName}</Link>
-              <span className="text-[#b8d4b8]">&gt;</span>
-              <span className="text-[#3fb364]">{city}</span>
-            </div>
-
+          <div className="relative z-10 max-w-6xl mx-auto px-6 lg:px-10 pt-[96px] lg:pt-[130px] pb-12 lg:pb-20">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-              {/* Left — Text */}
+              {/* Left — Text (h1 first in DOM for faster mobile LCP) */}
               <div>
-                <h1 className="text-white text-[32px] lg:text-[46px] font-playfair font-normal leading-[1.12] mb-5">
-                  <span className="text-[#3fb364]">{city}</span> Mortgage Experts&nbsp;– Your Local Home Loan Partners
+                <h1 className="text-white text-[32px] lg:text-[46px] font-semibold leading-[1.12] mb-4 lg:mb-5">
+                  <span className="text-[#63cd85]">{city}</span> Mortgage Experts&nbsp;– Your Local Home Loan Partners
                 </h1>
+                {/* Breadcrumbs */}
+                <div className="flex items-center gap-2 text-[12px] font-semibold mb-6 lg:mb-8">
+                  <Link prefetch={false} href="/service-areas/" className="text-[#b8d4b8] hover:text-white transition-colors">Areas We Serve</Link>
+                  <span className="text-[#b8d4b8]">&gt;</span>
+                  <Link prefetch={false} href={`/service-areas/${countySlug}/`} className="text-[#b8d4b8] hover:text-white transition-colors">{countyName}</Link>
+                  <span className="text-[#b8d4b8]">&gt;</span>
+                  <span className="text-[#3fb364]">{city}</span>
+                </div>
                 <p className="text-[#c8c8b8] text-[15px] lg:text-[16px] leading-[1.75] mb-8 max-w-lg">
                   AZ Mortgage Brothers provides trusted {city} mortgage solutions for homebuyers and homeowners throughout the area. Our experienced mortgage brokers in {city} AZ work with multiple lenders.
                 </p>
 
                 {/* CTA */}
-                <Link
+                <Link prefetch={false}
                   href="/#get-pre-approved"
-                  className="inline-flex items-center gap-2.5 bg-[#3fb364] hover:bg-[#34a358] text-white text-[15px] font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-[#3fb364]/20 hover:shadow-xl hover:shadow-[#3fb364]/30 transition-all duration-300 group"
+                  data-preapproval="true"
+                  className="inline-flex items-center gap-2.5 bg-[#2d8545] hover:bg-[#246d39] text-white text-[15px] font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-[#2d8545]/20 hover:shadow-xl hover:shadow-[#2d8545]/30 transition-all duration-300 group"
                 >
                   Start my preapproval
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 transition-transform">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 transition-transform" aria-hidden>
                     <polyline points="9 18 15 12 9 6" />
                   </svg>
                 </Link>
-                <p className="text-[#b8d4b8] text-[11px] mt-3 font-medium">✓ 3 min, no credit impact</p>
+                <p className="text-[#c8d4c8] text-[11px] mt-3 font-medium">✓ 3 min, no credit impact</p>
               </div>
 
-              {/* Right — Image placeholder card */}
-              <div className="relative rounded-3xl overflow-hidden h-[320px] lg:h-[380px] bg-gradient-to-br from-[#0d3d24] to-[#062419] border border-white/5 shadow-2xl">
-                {/* Decorative overlay */}
+              {/* Right — Image placeholder card (desktop only — keeps mobile LCP on h1) */}
+              <div className="relative hidden lg:block rounded-3xl overflow-hidden h-[340px] bg-gradient-to-br from-[#0d3d24] to-[#062419] border border-white/5 shadow-2xl">
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10" />
-                <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: "repeating-linear-gradient(45deg, #fff 0px, #fff 1px, transparent 1px, transparent 10px)" }} />
-                
-                {/* City-themed decorative elements */}
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[300px] h-[100px] bg-[#0a3320] rounded-t-[50%] blur-sm opacity-60 z-[5]" />
-                <div className="absolute bottom-0 left-1/4 w-[200px] h-[70px] bg-[#062419] rounded-t-[40%] blur-sm opacity-50 z-[5]" />
-                
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-20 px-6">
-                  <span className="text-[#7a6638] text-[10px] font-bold tracking-[0.3em] uppercase mb-2">WELCOME TO</span>
-                  <span className="text-white text-[28px] lg:text-[34px] font-playfair">{city}, Arizona</span>
-                  <span className="text-[#b8d4b8] text-[13px] mt-2">Your Home Loan Destination</span>
+                  <span className="text-[#d8c9a0] text-[10px] font-bold tracking-[0.3em] uppercase mb-2">WELCOME TO</span>
+                  <span className="text-white text-[28px] lg:text-[34px] font-sans font-semibold">{city}, Arizona</span>
+                  <span className="text-[#c8d4c8] text-[13px] mt-2">Your Home Loan Destination</span>
                 </div>
               </div>
             </div>
 
-            {/* Stats row */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+            {/* Stats row — below fold on mobile */}
+            <div className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
               {[
                 { value: "4.9/5", label: "Client Rating" },
                 { value: "Thousands", label: "Homes Financed" },
                 { value: "4-8 hrs", label: "Pre-Approval Time" },
                 { value: "Competitive", label: "Local Rates" },
               ].map((stat, i) => (
-                <div key={i} className="bg-white/[0.06] backdrop-blur-sm border border-white/[0.08] rounded-2xl px-5 py-4 text-center">
+                <div key={i} className="bg-white/[0.06] border border-white/[0.08] rounded-2xl px-5 py-4 text-center">
                   <span className="text-white text-[18px] lg:text-[20px] font-bold block">{stat.value}</span>
                   <span className="text-[#b8d4b8] text-[11px] uppercase tracking-wider font-medium">{stat.label}</span>
                 </div>
@@ -247,7 +212,7 @@ export default function GenericCityDetailPage() {
             <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-4">
               LOCAL MORTGAGE EXPERTS
             </span>
-            <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-playfair font-normal leading-tight mb-6">
+            <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-semibold leading-tight mb-6">
               {city}, AZ Mortgage Brokers – Local Home Loan Experts
             </h2>
             <p className="text-[#4e5b4e] text-[15px] lg:text-[16px] leading-[1.8] max-w-3xl mx-auto">
@@ -265,7 +230,7 @@ export default function GenericCityDetailPage() {
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-4">
                 LOCAL KNOWLEDGE
               </span>
-              <h2 className="text-[#052316] text-[28px] lg:text-[36px] font-playfair font-normal leading-tight mb-4">
+              <h2 className="text-[#052316] text-[28px] lg:text-[36px] font-semibold leading-tight mb-4">
                 Popular Communities We Serve in {city}, AZ
               </h2>
               <p className="text-[#4e5b4e] text-[14px] lg:text-[15px] leading-[1.7] max-w-2xl mx-auto">
@@ -386,6 +351,7 @@ export default function GenericCityDetailPage() {
                 <Link
                   key={i}
                   href={program.href}
+                  prefetch={false}
                   className="bg-white border border-[#3fb364]/30 hover:border-[#3fb364] rounded-2xl p-6 flex flex-col items-center text-center shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer group relative min-h-[190px] justify-between"
                 >
                   {/* Top Green Accent Bar */}
@@ -437,15 +403,11 @@ export default function GenericCityDetailPage() {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
               {/* Left — Broker Image Card */}
               <div className="md:col-span-5">
-                <div className="relative w-full h-[260px] md:h-[300px] rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-[#0f2d1d]">
-                  <Image
-                    src="/home/eddie-knoell.jpg"
-                    alt="Eddie Knoell, Arizona mortgage broker"
-                    fill
-                    loading="lazy"
-                    sizes="(max-width: 768px) 100vw, 420px"
-                    className="object-cover object-top"
-                  />
+                <div className="relative w-full h-[260px] md:h-[300px] rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-gradient-to-br from-[#0f2d1d] via-[#1a4a30] to-[#052316] flex items-center justify-center">
+                  <div className="text-center px-6">
+                    <span className="text-[#7a6638] text-[10px] font-bold tracking-[0.2em] uppercase block mb-2">YOUR LOCAL BROKER</span>
+                    <span className="text-white text-[22px] font-playfair block">AZ Mortgage Brothers</span>
+                  </div>
                 </div>
               </div>
 
@@ -458,13 +420,14 @@ export default function GenericCityDetailPage() {
                   Our {city} mortgage specialists are here to help you move forward with confidence. We compare lenders, review your financial profile, and recommend the best loan programs for your goals.
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <Link
+                  <Link prefetch={false}
                     href="/#get-pre-approved"
-                    className="bg-[#2d8a2d] hover:bg-[#247024] text-white text-[14.5px] font-bold px-6 py-3.5 rounded-lg transition-all duration-300 shadow-md"
+                    data-preapproval="true"
+                    className="bg-[#2d8545] hover:bg-[#246d39] text-white text-[14.5px] font-bold px-6 py-3.5 rounded-lg transition-all duration-300 shadow-md"
                   >
                     Get Expert Mortgage Advice
                   </Link>
-                  <Link
+                  <Link prefetch={false}
                     href="/contact-us/"
                     className="border border-white text-white font-bold text-[14.5px] px-6 py-3.5 rounded-lg hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
                   >
@@ -499,7 +462,7 @@ export default function GenericCityDetailPage() {
               </div>
 
               {/* Right — What You Can Expect card */}
-              <div className="bg-[#3fb364] rounded-3xl p-8 lg:p-10 text-white shadow-lg relative overflow-hidden">
+              <div className="bg-[#2d8545] rounded-3xl p-8 lg:p-10 text-white shadow-lg relative overflow-hidden">
                 <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "repeating-linear-gradient(45deg, #fff 0px, #fff 1px, transparent 1px, transparent 10px)" }} />
                 <div className="relative z-10">
                   <h3 className="text-white text-[20px] font-bold mb-6">What You Can Expect</h3>
@@ -539,38 +502,16 @@ export default function GenericCityDetailPage() {
               </h2>
             </div>
 
-            <div className="flex flex-col gap-0 border-t border-[#e8e0d0]">
-              {cityData.faqs.map((faq, i) => (
-                <div key={i} className="border-b border-[#e8e0d0]">
-                  <button
-                    onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full flex items-center justify-between py-5 text-left cursor-pointer group"
-                  >
-                    <span className="text-[#052316] text-[15px] font-semibold pr-4 group-hover:text-[#3fb364] transition-colors">
-                      {faq.question}
-                    </span>
-                    <div className={`w-7 h-7 rounded-full border border-[#e8e0d0] flex items-center justify-center flex-shrink-0 transition-all duration-300 ${openFaq === i ? "bg-[#3fb364] border-[#3fb364] rotate-45" : "bg-white group-hover:border-[#3fb364]/40"}`}>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke={openFaq === i ? "white" : "#4e5b4e"} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <line x1="12" y1="5" x2="12" y2="19" />
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                      </svg>
-                    </div>
-                  </button>
-                  <div className={`overflow-hidden transition-all duration-300 ${openFaq === i ? "max-h-[300px] pb-5" : "max-h-0"}`}>
-                    <p className="text-[#4e5b4e] text-[14px] leading-[1.7] pr-10">
-                      {faq.answer}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <FaqAccordion
+              items={cityData.faqs.map((faq) => ({ q: faq.question, a: faq.answer }))}
+            />
           </div>
         </section>
 
         {/* ════════════════════════════════════════════════════════════
             SECTION 9 — BOTTOM CTA
         ════════════════════════════════════════════════════════════ */}
-        <section className="w-full bg-[#3fb364] py-12 lg:py-14 text-center relative overflow-hidden">
+        <section className="w-full bg-[#2d8545] py-12 lg:py-14 text-center relative overflow-hidden">
           <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "repeating-linear-gradient(-45deg, #fff 0px, #fff 1px, transparent 1px, transparent 8px)" }} />
           <div className="relative z-10 max-w-3xl mx-auto px-6">
             <h2 className="text-white text-[22px] lg:text-[28px] font-playfair font-normal mb-3">

@@ -2,7 +2,6 @@
 
 import React, { useState, useCallback, useMemo, memo } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { COMPANY, LOAN_PROGRAM_LINKS } from "@/lib/company";
 
@@ -123,16 +122,14 @@ const Navbar = () => {
       <nav aria-label="Main Navigation" className="w-full bg-[#08271B] border-b border-[#1a3a1a] fixed top-0 left-0 right-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-5 xl:px-10 flex items-center justify-between h-[64px] sm:h-[72px]">
         {/* Logo */}
-        <Link href="/" className="flex items-center hover:opacity-90 transition-opacity duration-200 shrink-0">
-          <Image
+        <Link prefetch={false} href="/" className="flex items-center hover:opacity-90 transition-opacity duration-200 shrink-0">
+          <img
             src={COMPANY.logoSrc}
             alt="Mortgage Brothers"
             width={150}
             height={48}
-            priority
-            sizes="150px"
             className="h-[40px] sm:h-[48px] w-auto max-w-[150px] object-contain"
-            style={{ width: "auto", height: "auto" }}
+            decoding="async"
           />
         </Link>
 
@@ -140,7 +137,7 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center gap-3 xl:gap-5 xl:px-3 whitespace-nowrap">
           {/* Loan Programs Megamenu */}
           <div className="relative group py-2">
-            <Link
+            <Link prefetch={false}
               href="/mortgage-loan-programs-arizona/"
               className="flex items-center gap-1.5 text-white text-[13px] xl:text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
             >
@@ -171,16 +168,16 @@ const Navbar = () => {
                     HOME LOANS
                   </h4>
                   <div className="flex flex-col gap-2.5">
-                    <Link href="/conventional-home-loans-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link prefetch={false} href="/conventional-home-loans-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Conventional Home Loans
                     </Link>
-                    <Link href="/fha-home-loans-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link prefetch={false} href="/fha-home-loans-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       FHA Home Loans
                     </Link>
-                    <Link href="/jumbo-loans-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link prefetch={false} href="/jumbo-loans-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Jumbo Loans
                     </Link>
-                    <Link href="/va-loans-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link prefetch={false} href="/va-loans-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       VA Loans
                     </Link>
                   </div>
@@ -192,16 +189,16 @@ const Navbar = () => {
                     SPECIALTY PROGRAMS
                   </h4>
                   <div className="flex flex-col gap-2.5">
-                    <Link href="/reverse-mortgage-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link prefetch={false} href="/reverse-mortgage-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Reverse Mortgage
                     </Link>
-                    <Link href="/reverse-mortgage-home-purchase-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link prefetch={false} href="/reverse-mortgage-home-purchase-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Reverse Mortgage for Purchase
                     </Link>
-                    <Link href="/private-money-lender-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link prefetch={false} href="/private-money-lender-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Private Money Lender
                     </Link>
-                    <Link href="/sell-my-house-fast-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link prefetch={false} href="/sell-my-house-fast-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Sell Home for Cash
                     </Link>
                   </div>
@@ -213,13 +210,13 @@ const Navbar = () => {
                     REFINANCING
                   </h4>
                   <div className="flex flex-col gap-2.5">
-                    <Link href="/fha-streamline-refinance-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link prefetch={false} href="/fha-streamline-refinance-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       FHA Streamline Refinance
                     </Link>
-                    <Link href="/refinancing-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link prefetch={false} href="/refinancing-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Mortgage Refinancing
                     </Link>
-                    <Link href="/conventional-vs-fha-loans-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link prefetch={false} href="/conventional-vs-fha-loans-arizona/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Conventional vs FHA Loans
                     </Link>
                   </div>
@@ -230,7 +227,7 @@ const Navbar = () => {
           </div>
           {/* Calculators Megamenu Dropdown */}
           <div className="relative group py-2">
-            <Link
+            <Link prefetch={false}
               href="/mortgage-calculator-arizona/"
               className="flex items-center gap-1.5 text-white text-[13px] xl:text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
             >
@@ -260,13 +257,13 @@ const Navbar = () => {
                     BASIC CALCULATORS
                   </h4>
                   <div className="flex flex-col gap-2.5">
-                    <Link href="/basic-mortgage-payment-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link prefetch={false} href="/basic-mortgage-payment-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Basic Mortgage Payment
                     </Link>
-                    <Link href="/mortgage-affordability-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link prefetch={false} href="/mortgage-affordability-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Mortgage Affordability
                     </Link>
-                    <Link href="/refinance-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link prefetch={false} href="/refinance-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Refinance Calculator
                     </Link>
                   </div>
@@ -278,16 +275,16 @@ const Navbar = () => {
                     COMPARISON TOOLS
                   </h4>
                   <div className="flex flex-col gap-2.5">
-                    <Link href="/rent-vs-buy-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link prefetch={false} href="/rent-vs-buy-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Rent vs. Buy Calculator
                     </Link>
-                    <Link href="/conventional-vs-fha-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link prefetch={false} href="/conventional-vs-fha-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Conventional vs. FHA Calculator
                     </Link>
-                    <Link href="/down-payment-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link prefetch={false} href="/down-payment-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Down Payment Calculator
                     </Link>
-                    <Link href="/debt-to-income-ratio-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link prefetch={false} href="/debt-to-income-ratio-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Debt-to-Income Ratio
                     </Link>
                   </div>
@@ -299,16 +296,16 @@ const Navbar = () => {
                     SPECIALIZED
                   </h4>
                   <div className="flex flex-col gap-2.5">
-                    <Link href="/extra-payment-mortgage-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link prefetch={false} href="/extra-payment-mortgage-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Extra Payment Mortgage
                     </Link>
-                    <Link href="/fha-loan-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link prefetch={false} href="/fha-loan-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       FHA Loan Calculator
                     </Link>
-                    <Link href="/va-loan-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link prefetch={false} href="/va-loan-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       VA Loan Calculator
                     </Link>
-                    <Link href="/home-purchase-closing-cost-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
+                    <Link prefetch={false} href="/home-purchase-closing-cost-calculator/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">
                       Home Purchase Closing Cost
                     </Link>
                   </div>
@@ -319,7 +316,7 @@ const Navbar = () => {
 
           {/* Areas We Serve Dropdown — matches live site mega menu */}
           <div className="relative group py-2">
-            <Link
+            <Link prefetch={false}
               href="/service-areas/"
               className="flex items-center gap-1.5 text-white text-[13px] xl:text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
             >
@@ -347,10 +344,10 @@ const Navbar = () => {
                     MAJOR COUNTIES
                   </h4>
                   <div className="flex flex-col gap-2.5">
-                    <Link href="/service-areas/maricopa-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Maricopa County</Link>
-                    <Link href="/service-areas/pima-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Pima County</Link>
-                    <Link href="/service-areas/pinal-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Pinal County</Link>
-                    <Link href="/service-areas/yavapai-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Yavapai County</Link>
+                    <Link prefetch={false} href="/service-areas/maricopa-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Maricopa County</Link>
+                    <Link prefetch={false} href="/service-areas/pima-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Pima County</Link>
+                    <Link prefetch={false} href="/service-areas/pinal-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Pinal County</Link>
+                    <Link prefetch={false} href="/service-areas/yavapai-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Yavapai County</Link>
                   </div>
                 </div>
 
@@ -359,10 +356,10 @@ const Navbar = () => {
                     NORTHERN AZ
                   </h4>
                   <div className="flex flex-col gap-2.5">
-                    <Link href="/service-areas/coconino-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Coconino County</Link>
-                    <Link href="/service-areas/navajo-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Navajo County</Link>
-                    <Link href="/service-areas/apache-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Apache County</Link>
-                    <Link href="/service-areas/gila-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Gila County</Link>
+                    <Link prefetch={false} href="/service-areas/coconino-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Coconino County</Link>
+                    <Link prefetch={false} href="/service-areas/navajo-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Navajo County</Link>
+                    <Link prefetch={false} href="/service-areas/apache-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Apache County</Link>
+                    <Link prefetch={false} href="/service-areas/gila-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Gila County</Link>
                   </div>
                 </div>
 
@@ -371,10 +368,10 @@ const Navbar = () => {
                     SOUTHERN AZ
                   </h4>
                   <div className="flex flex-col gap-2.5">
-                    <Link href="/service-areas/cochise-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Cochise County</Link>
-                    <Link href="/service-areas/graham-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Graham County</Link>
-                    <Link href="/service-areas/greenlee-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Greenlee County</Link>
-                    <Link href="/service-areas/santa-cruz-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Santa Cruz County</Link>
+                    <Link prefetch={false} href="/service-areas/cochise-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Cochise County</Link>
+                    <Link prefetch={false} href="/service-areas/graham-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Graham County</Link>
+                    <Link prefetch={false} href="/service-areas/greenlee-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Greenlee County</Link>
+                    <Link prefetch={false} href="/service-areas/santa-cruz-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Santa Cruz County</Link>
                   </div>
                 </div>
 
@@ -383,10 +380,10 @@ const Navbar = () => {
                     WESTERN AZ
                   </h4>
                   <div className="flex flex-col gap-2.5">
-                    <Link href="/service-areas/mohave-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Mohave County</Link>
-                    <Link href="/service-areas/la-paz-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">La Paz County</Link>
-                    <Link href="/service-areas/yuma-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Yuma County</Link>
-                    {/* <Link href="/service-areas/" className="text-[#3fb364] text-[13.5px] font-bold hover:text-[#2d5a2d] transition-colors mt-1">View All Areas →</Link> */}
+                    <Link prefetch={false} href="/service-areas/mohave-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Mohave County</Link>
+                    <Link prefetch={false} href="/service-areas/la-paz-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">La Paz County</Link>
+                    <Link prefetch={false} href="/service-areas/yuma-county-az/" className="text-[#1a3a1a] text-[13.5px] font-medium hover:text-[#2d5a2d] transition-colors">Yuma County</Link>
+                    {/* <Link prefetch={false} href="/service-areas/" className="text-[#3fb364] text-[13.5px] font-bold hover:text-[#2d5a2d] transition-colors mt-1">View All Areas →</Link> */}
                   </div>
                 </div>
               </div>
@@ -395,7 +392,7 @@ const Navbar = () => {
 
           {/* About Dropdown */}
           <div className="relative group py-2">
-            <Link
+            <Link prefetch={false}
               href="/about-us/"
               className="flex items-center gap-1.5 text-white text-[13px] xl:text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
             >
@@ -417,19 +414,19 @@ const Navbar = () => {
             </Link>
             <div className="absolute left-[-12px] top-full pt-3 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
               <div className="bg-white border border-[#e8e0d0] rounded-xl shadow-xl py-2">
-                <Link
+                <Link prefetch={false}
                   href="/contact-us/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Contact Us
                 </Link>
-                <Link
+                <Link prefetch={false}
                   href="/team/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Team & Careers
                 </Link>
-                <Link
+                <Link prefetch={false}
                   href="/job-opportunities/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
@@ -441,7 +438,7 @@ const Navbar = () => {
 
           {/* Resources Dropdown */}
           <div className="relative group py-2">
-            <Link
+            <Link prefetch={false}
               href="/blog/"
               className="flex items-center gap-1.5 text-white text-[13px] xl:text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
             >
@@ -463,73 +460,73 @@ const Navbar = () => {
             </Link>
             <div className="absolute left-[-12px] top-full pt-3 w-60 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0 z-50 pointer-events-none group-hover:pointer-events-auto">
               <div className="bg-white border border-[#e8e0d0] rounded-xl shadow-xl py-2">
-                <Link
+                <Link prefetch={false}
                   href="/blog/"
                   className="block px-4 py-2.5 text-[14px] text-[#3fb364] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-bold"
                 >
                   Blog
                 </Link>
-                <Link
+                <Link prefetch={false}
                   href="/mortgage-basics/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Mortgage Basics
                 </Link>
-                <Link
+                <Link prefetch={false}
                   href="/videos/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Videos
                 </Link>
-                <Link
+                <Link prefetch={false}
                   href="/mortgage-basics/conventional-loan-basics/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Conventional Loans
                 </Link>
-                <Link
+                <Link prefetch={false}
                   href="/client-mortgage-reviews/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Reviews
                 </Link>
-                <Link
+                <Link prefetch={false}
                   href="/faq/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   FAQ
-                </Link>{/*  <Link
+                </Link>{/*  <Link prefetch={false}
                   href="/resources/fha-loans/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   FHA Loans
                 </Link>
-                <Link
+                <Link prefetch={false}
                   href="/resources/real-estate-mortgages/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Real Estate & Mortgages
                 </Link>
-                <Link
+                <Link prefetch={false}
                   href="/resources/specialty-loans/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Specialty Loans
                 </Link>
-                <Link
+                <Link prefetch={false}
                   href="/resources/homeownership-tips/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Homeownership Tips
                 </Link>
-                <Link
+                <Link prefetch={false}
                   href="/resources/process-guidance/"
                   className="block px-4 py-2.5 text-[14px] text-[#1a3a1a] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-medium"
                 >
                   Process Guidance
                 </Link>
                 <div className="border-t border-[#e8e0d0]/40 my-1"></div>
-                <Link
+                <Link prefetch={false}
                   href="/blog/"
                   className="block px-4 py-2 text-[14px] text-[#3fb364] hover:bg-[#f5f0e8] hover:text-[#2d5a2d] transition-colors duration-150 font-semibold"
                 >
@@ -540,7 +537,7 @@ const Navbar = () => {
           </div>
 
           {/* Realtors */}
-          <Link
+          <Link prefetch={false}
             href="/realtorteam/"
             className="text-white text-[13px] xl:text-[14px] font-medium hover:text-[#3fb364] transition-colors duration-200 cursor-pointer"
           >
@@ -570,7 +567,7 @@ const Navbar = () => {
             </svg>
             {COMPANY.phoneDisplay}
           </a>
-          <Link
+          <Link prefetch={false}
             href="/#get-pre-approved"
             className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[12.5px] xl:text-[13px] font-semibold px-3.5 xl:px-4.5 py-2 rounded-full transition-all duration-200 hover:shadow-lg shrink-0"
           >
@@ -700,7 +697,7 @@ const Navbar = () => {
                 <div className="flex flex-col">
                   {/* Loan Programs */}
                   <div className="flex items-center justify-between border-b border-[#3b4148] hover:bg-[#343a42]">
-                    <Link
+                    <Link prefetch={false}
                       href="/mortgage-loan-programs-arizona/"
                       onClick={closeMobile}
                       className={`flex-1 font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 ${
@@ -720,7 +717,7 @@ const Navbar = () => {
 
                   {/* Calculators */}
                   <div className="flex items-center justify-between border-b border-[#3b4148] hover:bg-[#343a42]">
-                    <Link
+                    <Link prefetch={false}
                       href="/mortgage-calculator-arizona/"
                       onClick={closeMobile}
                       className={`flex-1 font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 ${
@@ -740,7 +737,7 @@ const Navbar = () => {
 
                   {/* Areas We Serve */}
                   <div className="flex items-center justify-between border-b border-[#3b4148] hover:bg-[#343a42]">
-                    <Link
+                    <Link prefetch={false}
                       href="/service-areas/"
                       onClick={closeMobile}
                       className={`flex-1 font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 ${
@@ -760,7 +757,7 @@ const Navbar = () => {
 
                   {/* About */}
                   <div className="flex items-center justify-between border-b border-[#3b4148] hover:bg-[#343a42]">
-                    <Link
+                    <Link prefetch={false}
                       href="/about-us/"
                       onClick={closeMobile}
                       className={`flex-1 font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 ${
@@ -780,7 +777,7 @@ const Navbar = () => {
 
                   {/* Resources */}
                   <div className="flex items-center justify-between border-b border-[#3b4148] hover:bg-[#343a42]">
-                    <Link
+                    <Link prefetch={false}
                       href="/blog/"
                       onClick={closeMobile}
                       className={`flex-1 font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 ${
@@ -799,7 +796,7 @@ const Navbar = () => {
                   </div>
 
                   {/* Contact Us */}
-                  <Link
+                  <Link prefetch={false}
                     href="/contact-us/"
                     onClick={closeMobile}
                     className={`${mobileItemClass(isPathActive("/contact-us/"), "main")} hover:bg-[#343a42]`}
@@ -808,7 +805,7 @@ const Navbar = () => {
                   </Link>
 
                   {/* Realtors */}
-                  <Link
+                  <Link prefetch={false}
                     href="/realtorteam/"
                     onClick={closeMobile}
                     className={`${mobileItemClass(isPathActive("/realtorteam/"), "main")} hover:bg-[#343a42]`}
@@ -826,7 +823,7 @@ const Navbar = () => {
 
                   {activeSubmenu === "LOAN PROGRAMS" &&
                     LOAN_PROGRAM_MOBILE_LINKS.map((item) => (
-                      <Link
+                      <Link prefetch={false}
                         key={item.href}
                         href={item.href}
                         onClick={closeMobile}
@@ -838,7 +835,7 @@ const Navbar = () => {
 
                   {activeSubmenu === "CALCULATORS" &&
                     CALCULATOR_MOBILE_LINKS.map((item) => (
-                      <Link
+                      <Link prefetch={false}
                         key={item.href}
                         href={item.href}
                         onClick={closeMobile}
@@ -850,7 +847,7 @@ const Navbar = () => {
 
                   {activeSubmenu === "AREAS WE SERVE" &&
                     AREA_LINKS.map((item) => (
-                      <Link
+                      <Link prefetch={false}
                         key={item.href}
                         href={item.href}
                         onClick={closeMobile}
@@ -862,7 +859,7 @@ const Navbar = () => {
 
                   {activeSubmenu === "ABOUT" &&
                     ABOUT_LINKS.map((item) => (
-                      <Link
+                      <Link prefetch={false}
                         key={item.href}
                         href={item.href}
                         onClick={closeMobile}
@@ -874,7 +871,7 @@ const Navbar = () => {
 
                   {activeSubmenu === "RESOURCES" &&
                     RESOURCE_LINKS.map((item) => (
-                      <Link
+                      <Link prefetch={false}
                         key={item.href}
                         href={item.href}
                         onClick={closeMobile}

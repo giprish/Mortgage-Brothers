@@ -128,9 +128,8 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
       />
 
       <Navbar />
-      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
-      <main className="flex-grow relative z-0">
+      <main id="main-content" className="flex-grow relative z-0">
         <ArticleHero
           title={<>Seller Concessions To Buyers - How Much?</>}
           excerpt="See Phoenix Metro seller concession averages by city and price range from ARMLS data—what buyers typically receive at closing."
@@ -184,7 +183,7 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
 
                 <ul className="list-disc pl-6 space-y-3">
                   <li>
-                    <a href="https://finance.yahoo.com/personal-finance/mortgages/article/seller-concessions-165151738.html" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">Seller concessions to buyers</a> of single family attached and detached products ranged from a low of
+                    <a href="https://finance.yahoo.com/personal-finance/mortgages/article/seller-concessions-165151738.html" target="_blank" rel="noopener" className="text-[#2d8545] font-semibold hover:underline">Seller concessions to buyers</a> of single family attached and detached products ranged from a low of
                     .9% to a high of 2.6% for 2,112 closings in the previous 30 days as of 2/9/2019 in the Greater
                     Phoenix Metro Area.
                   </li>
@@ -209,21 +208,21 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
                     negotiations. For more insights, check out our{" "}
                     <Link
                       href="/buying-or-selling-personal-property-with-your-home-sale-must-watch-this-first/"
-                      className="text-[#3fb364] font-semibold hover:underline"
+                      className="text-[#2d8545] font-semibold hover:underline"
                     >
                       personal property guide
                     </Link>
                     , find out{" "}
                     <Link
                       href="/how-to-skip-2-payments-on-your-mortgage/"
-                      className="text-[#3fb364] font-semibold hover:underline"
+                      className="text-[#2d8545] font-semibold hover:underline"
                     >
                       how to skip two mortgage payments
                     </Link>
                     , and review our{" "}
                     <Link
                       href="/put-bow-fha-loan-gift-guide/"
-                      className="text-[#3fb364] font-semibold hover:underline"
+                      className="text-[#2d8545] font-semibold hover:underline"
                     >
                       FHA loan gift guide
                     </Link>
@@ -247,7 +246,7 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">
                 <Link
                   href="/difference-between-owner-occupied-second-home-and-investment-property/"
-                  className="text-[#3fb364] font-semibold hover:underline"
+                  className="text-[#2d8545] font-semibold hover:underline"
                 >
                   ← Previous Post
                 </Link>
@@ -268,10 +267,10 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
                 <h3 className="text-[#08271B] text-[20px] font-extrabold uppercase tracking-wide leading-snug mt-4 mb-2">
                   Your Dream Home Awaits!
                 </h3>
-                <p className="text-[#6a7a6a] text-[11px] font-semibold uppercase tracking-wide mb-4">
+                <p className="text-[#4e5b4e] text-[11px] font-semibold uppercase tracking-wide mb-4">
                   Expert mortgage solutions tailored to your needs
                 </p>
-                <p className="text-[#3fb364] text-[14px] font-bold uppercase mb-5">Talk to a Broker Today!</p>
+                <p className="text-[#2d8545] text-[14px] font-bold uppercase mb-5">Talk to a Broker Today!</p>
                 <a
                   href="tel:+16025352171"
                   className="btn-primary w-full"

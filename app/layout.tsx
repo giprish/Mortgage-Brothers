@@ -12,7 +12,7 @@ const playfair = Playfair_Display({
   display: "optional",
   variable: "--font-playfair",
   weight: ["400"],
-  preload: true,
+  preload: false,
   adjustFontFallback: true,
 });
 
@@ -76,10 +76,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[999] focus:px-4 focus:py-2 focus:bg-[#2d8545] focus:text-white focus:font-bold focus:rounded-md focus:shadow-xl focus:outline-none"
-        >
+        <a href="#main-content" className="skip-to-content">
           Skip to main content
         </a>
         <JsonLd />

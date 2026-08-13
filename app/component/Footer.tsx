@@ -39,7 +39,7 @@ const loanLinks = [
 ];
 
 const FooterLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-  <Link
+  <Link prefetch={false}
     href={href}
     className="footer-link block text-[14px] leading-snug py-1 transition-colors duration-200"
   >
@@ -68,7 +68,7 @@ const Footer = () => {
 
           <div>
             <h3 className="mb-3">
-              <Link
+              <Link prefetch={false}
                 href="/mortgage-loan-programs-arizona/"
                 className="text-[#6bcf84] text-[16px] font-semibold hover:text-[#6bcf84] transition-colors"
               >
@@ -181,7 +181,7 @@ const Footer = () => {
           {/* Left: Logo + Verify Licenses card + Disclaimer */}
           <div>
             {/* Mortgage Brothers Logo */}
-            <Link
+            <Link prefetch={false}
               href="/"
               className="inline-block mb-5 hover:opacity-90 transition-opacity"
             >
@@ -249,7 +249,7 @@ const Footer = () => {
                 Content on this website is provided for informational purposes only and does not
                 constitute an offer to lend. Rates, terms, and program availability may change
                 without notice.{" "}
-                <Link href="/contact-us/" className="text-[#6bcf84] underline underline-offset-2 hover:text-[#6bcf84]">
+                <Link prefetch={false} href="/contact-us/" className="text-[#6bcf84] underline underline-offset-2 hover:text-[#6bcf84]">
                   Contact our loan officers
                 </Link>{" "}
                 for the most up-to-date information. All loans subject to underwriter approval.
@@ -322,7 +322,7 @@ const Footer = () => {
         <div className="w-full h-px bg-white/10 mb-5" />
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
           <div className="flex items-center justify-center sm:justify-start gap-4 min-w-0">
-            {/* <Link href="/" className="shrink-0 hover:opacity-90 transition-opacity">
+            {/* <Link prefetch={false} href="/" className="shrink-0 hover:opacity-90 transition-opacity">
              
               <img
                 src={COMPANY.logoSrc}
@@ -337,11 +337,11 @@ const Footer = () => {
             </span>
           </div>
           <div className="flex items-center gap-2 text-[12px] shrink-0">
-            <Link href="/privacy-policy/" className="text-[#6bcf84] hover:underline font-medium">
+            <Link prefetch={false} href="/privacy-policy/" className="text-[#6bcf84] hover:underline font-medium">
               Privacy Policy
             </Link>
             <span className="text-[#6a706a]">·</span>
-            <Link href="/terms-of-use/" className="text-[#6bcf84] hover:underline font-medium">
+            <Link prefetch={false} href="/terms-of-use/" className="text-[#6bcf84] hover:underline font-medium">
               Terms of Use
             </Link>
           </div>

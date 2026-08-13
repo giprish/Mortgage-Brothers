@@ -2,47 +2,10 @@
 
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
-import { useParams } from "next/navigation";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
-import { getCountyName, getCountyCitiesDetails } from "../../../lib/cityData";
-
-const countiesCities: Record<string, string[]> = {
-  "maricopa-county-az": ["Phoenix","Scottsdale","Mesa","Chandler","Gilbert","Glendale","Tempe","Peoria","Surprise","Goodyear","Avondale","Buckeye","Queen Creek","Fountain Hills","Paradise Valley","Cave Creek","Carefree","Anthem","Sun City","Sun City West","Litchfield Park","Wickenburg","Apache Junction","Guadalupe","El Mirage","Tolleson","Youngtown","Gila Bend"],
-  "pima-county-az": ["Tucson","Oro Valley","Marana","Sahuarita","Vail","Green Valley","Catalina Foothills","South Tucson"],
-  "pinal-county-az": ["Casa Grande","Maricopa","San Tan Valley","Florence","Coolidge","Eloy","Apache Junction","Superior","Kearny","Mammoth"],
-  "yavapai-county-az": ["Prescott","Prescott Valley","Sedona","Cottonwood","Chino Valley","Camp Verde","Dewey-Humboldt","Clarkdale","Jerome"],
-  "coconino-county-az": ["Flagstaff","Sedona","Williams","Page","Fredonia","Tusayan"],
-  "navajo-county-az": ["Show Low","Pinetop-Lakeside","Holbrook","Taylor","Snowflake","Winslow"],
-  "apache-county-az": ["St. Johns","Eagar","Springerville","Chinle","Window Rock"],
-  "gila-county-az": ["Payson","Globe","Miami","Star Valley","Hayden"],
-  "cochise-county-az": ["Sierra Vista","Douglas","Bisbee","Benson","Willcox","Tombstone","Huachuca City"],
-  "graham-county-az": ["Safford","Thatcher","Pima"],
-  "greenlee-county-az": ["Clifton","Duncan","Morenci"],
-  "santa-cruz-county-az": ["Nogales","Rio Rico","Tubac","Patagonia"],
-  "mohave-county-az": ["Lake Havasu City","Kingman","Bullhead City","Fort Mohave","Golden Valley","Colorado City"],
-  "la-paz-county-az": ["Parker","Quartzsite","Salome","Bouse"],
-  "yuma-county-az": ["Yuma","San Luis","Somerton","Wellton"]
-};
-
-const regionMap: Record<string, string> = {
-  "maricopa-county-az": "Greater Phoenix",
-  "pima-county-az": "Southern Arizona",
-  "pinal-county-az": "Greater Phoenix",
-  "yavapai-county-az": "Northern Arizona",
-  "coconino-county-az": "Northern Arizona",
-  "navajo-county-az": "Northern Arizona",
-  "apache-county-az": "Northern Arizona",
-  "gila-county-az": "Northern Arizona",
-  "cochise-county-az": "Southern Arizona",
-  "graham-county-az": "Southern Arizona",
-  "greenlee-county-az": "Southern Arizona",
-  "santa-cruz-county-az": "Southern Arizona",
-  "mohave-county-az": "Western Arizona",
-  "la-paz-county-az": "Western Arizona",
-  "yuma-county-az": "Western Arizona"
-};
+import type { CountyCityDetail } from "../../../lib/cityData";
 
 const sidebarCounties = [
   { name: "All", count: 108, href: "/service-areas/" },
@@ -63,31 +26,26 @@ const sidebarCounties = [
   { name: "Yuma", count: 4, href: "/service-areas/yuma-county-az/" }
 ];
 
-export default function CountyPage() {
-  const params = useParams();
-  const rawCountySlug = (params?.county as string) || "";
+export default function CountyPage({
+  countySlug,
+  countyName,
+  region,
+  cityDetails,
+}: {
+  countySlug: string;
+  countyName: string;
+  region: string;
+  cityDetails: CountyCityDetail[];
+}) {
   const [searchQuery, setSearchQuery] = useState("");
-
-  const countySlug = useMemo(() => {
-    if (!rawCountySlug) return "";
-    const clean = rawCountySlug.toLowerCase().trim().replace(/\/$/, "");
-    if (countiesCities[clean]) return clean;
-    let base = clean.endsWith("-az") ? clean.slice(0, -3) : clean;
-    if (!base.endsWith("-county")) base = `${base}-county`;
-    return `${base}-az`;
-  }, [rawCountySlug]);
-
-  const countyName = useMemo(() => getCountyName(countySlug), [countySlug]);
-  const cityDetails = useMemo(() => getCountyCitiesDetails(countySlug), [countySlug]);
-  const region = regionMap[countySlug] || "";
 
   const filteredCities = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
     if (!q) return cityDetails;
-    return cityDetails.filter(c => c.name.toLowerCase().includes(q));
+    return cityDetails.filter((c) => c.name.toLowerCase().includes(q));
   }, [cityDetails, searchQuery]);
 
-  if (!countyName || cityDetails.length === 0) {
+  if (cityDetails.length === 0) {
     return (
       <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
         <Navbar />
