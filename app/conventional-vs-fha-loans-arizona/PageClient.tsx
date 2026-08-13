@@ -339,13 +339,11 @@ export default function ConventionalVsFhaLoansPage() {
               Explore Your Loan Options Today!
             </Link>
           </div>
-          <div className="loan-block-gap">
-            <StatsBanner sectionClassName="py-0 bg-transparent" stats={stats} />
-          </div>
+          <StatsBanner sectionClassName="py-0 bg-transparent" stats={stats} />
         </section>
 
         {/* Key differences */}
-        <section className="loan-section w-full !pt-0">
+        <section className="loan-section w-full !pt-8 sm:!pt-10 lg:!pt-12">
           <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mx-auto loan-section-heading">
               <h2

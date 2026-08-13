@@ -263,13 +263,11 @@ export default function ReverseMortgageArizonaPage() {
               Lower Your Payments Now →
             </Link>
           </div>
-          <div className="loan-block-gap">
-            <StatsBanner sectionClassName="py-0 bg-transparent" stats={[...STATS]} />
-          </div>
+          <StatsBanner sectionClassName="py-0 bg-transparent" stats={[...STATS]} />
         </section>
 
         {/* ELIGIBILITY */}
-        <section className="loan-section no-content-visibility bg-[#fcf9f3] !pt-0">
+        <section className="loan-section no-content-visibility bg-[#fcf9f3] !pt-8 sm:!pt-10 lg:!pt-12">
           <div className="mx-auto max-w-5xl space-y-10 text-center">
             <div>
               <span className="mb-3 block text-[11px] font-bold uppercase tracking-[0.2em] text-[#3fb364]">

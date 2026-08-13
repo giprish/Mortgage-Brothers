@@ -345,7 +345,7 @@ export default function JumboLoansPage() {
           </div>
         </section>
 
-        <section className="loan-cta-band bg-[#fcf9f3]">
+        <section className="loan-cta-band bg-[#fcf9f3] !pb-0">
           <div className="mx-auto max-w-6xl px-6 text-center loan-block-gap lg:px-10">
             <Link
               href="/#get-pre-approved"
@@ -358,7 +358,7 @@ export default function JumboLoansPage() {
         </section>
 
         {/* Why choose a jumbo loan */}
-        <section className="w-full loan-section">
+        <section className="w-full loan-section !pt-8 sm:!pt-10 lg:!pt-12">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="max-w-3xl mx-auto text-center mb-8">
               <h2

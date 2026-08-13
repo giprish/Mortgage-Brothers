@@ -315,13 +315,11 @@ export default function PrivateMoneyLenderPage() {
               Get Your Fast Financing Today
             </Link>
           </div>
-          <div className="loan-block-gap">
-            <StatsBanner sectionClassName="py-0 bg-transparent" stats={stats} />
-          </div>
+          <StatsBanner sectionClassName="py-0 bg-transparent" stats={stats} />
         </section>
 
         {/* Private money loans */}
-        <section className="w-full loan-section !pt-0">
+        <section className="w-full loan-section !pt-8 sm:!pt-10 lg:!pt-12">
           <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mx-auto loan-section-heading">
               <h2

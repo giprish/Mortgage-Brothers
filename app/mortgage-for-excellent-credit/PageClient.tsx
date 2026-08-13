@@ -109,7 +109,7 @@ const expertCards = [
   },
   {
     title: "Personalized Loan Options",
-    text: "Every borrower is uniqueâ€”our licensed mortgage brokers provide custom financing strategies that align with your goals.",
+    text: "Every borrower is unique — our licensed mortgage brokers provide custom financing strategies that align with your goals.",
   },
   {
     title: "Trusted by Arizona Homebuyers",
@@ -117,7 +117,7 @@ const expertCards = [
   },
   {
     title: "Transparent & Reliable Service",
-    text: "No hidden fees, no surprisesâ€”just expert guidance and clear communication from start to finish.",
+    text: "No hidden fees, no surprises — just expert guidance and clear communication from start to finish.",
   },
 ];
 
@@ -162,7 +162,7 @@ const faqs = [
   },
   {
     q: "Should I put more than the minimum down payment if I have excellent credit?",
-    a: "While some programs allow as little as 3% down, a larger down payment (10â€“20%) can help you secure an even lower interest rate, avoid private mortgage insurance (PMI), and reduce your monthly payment and total loan cost.",
+    a: "While some programs allow as little as 3% down, a larger down payment (10–20%) can help you secure an even lower interest rate, avoid private mortgage insurance (PMI), and reduce your monthly payment and total loan cost.",
   },
   {
     q: "Does checking mortgage rates impact my credit score?",
@@ -353,7 +353,7 @@ export default function MortgageForExcellentCreditPage() {
           </div>
         </section>
 
-        <section className="loan-cta-band bg-[#fcf9f3]">
+        <section className="loan-cta-band bg-[#fcf9f3] !pb-0">
           <div className="mx-auto max-w-6xl px-6 text-center loan-block-gap lg:px-10">
             <Link
               href="/#get-pre-approved"
@@ -362,13 +362,11 @@ export default function MortgageForExcellentCreditPage() {
               Get Your Personalized Mortgage Offer
             </Link>
           </div>
-          <div className="loan-block-gap">
-            <StatsBanner sectionClassName="py-0 bg-transparent" stats={stats} />
-          </div>
+          <StatsBanner sectionClassName="py-0 bg-transparent" stats={stats} />
         </section>
 
         {/* Benefits */}
-        <section className="w-full loan-section">
+        <section className="w-full loan-section !pt-8 sm:!pt-10 lg:!pt-12">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
@@ -378,7 +376,7 @@ export default function MortgageForExcellentCreditPage() {
                 How Excellent Credit Maximizes Your Home Loan Benefits
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
-                Your excellent credit score does more than just help you qualify for a mortgageâ€”it
+                Your excellent credit score does more than just help you qualify for a mortgage — it
                 opens doors to exclusive advantages that can significantly impact your financial
                 future. Lenders offer better rates, more flexible terms, and faster approvals to
                 borrowers with high credit scores.

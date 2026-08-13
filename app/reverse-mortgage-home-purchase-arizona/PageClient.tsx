@@ -281,8 +281,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
               Get Personalized Advice →
             </Link>
           </div>
-          <div className="loan-block-gap">
-            <StatsBanner
+          <StatsBanner
               sectionClassName="py-0 bg-transparent"
               stats={[
                 { value: "$0", label: "Monthly Payments?" },
@@ -291,11 +290,10 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
                 { value: "100%", label: "Full Ownership" },
               ]}
             />
-          </div>
         </section>
 
         {/* ELIGIBILITY */}
-        <section className="loan-section bg-[#fcf9f3] !pt-0">
+        <section className="loan-section bg-[#fcf9f3] !pt-8 sm:!pt-10 lg:!pt-12">
           <div className="max-w-5xl mx-auto space-y-10">
             <div className="text-center">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">

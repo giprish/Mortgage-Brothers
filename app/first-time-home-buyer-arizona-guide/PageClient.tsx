@@ -435,7 +435,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
         />
 
         {/* ESSENTIAL QUESTIONS */}
-        <section className="loan-section bg-[#fcf9f3]">
+        <section className="loan-section bg-[#fcf9f3] !pt-8 sm:!pt-10 lg:!pt-12">
           <div className="max-w-5xl mx-auto space-y-10">
             <div className="text-center space-y-4">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block">

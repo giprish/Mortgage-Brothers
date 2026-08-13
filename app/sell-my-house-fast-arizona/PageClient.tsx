@@ -306,7 +306,7 @@ export default function SellMyHouseFastArizonaPage() {
         />
 
         {/* What It Means */}
-        <section className="loan-section bg-[#fcf9f3]">
+        <section className="loan-section bg-[#fcf9f3] !pt-8 sm:!pt-10 lg:!pt-12">
           <div className="max-w-5xl mx-auto space-y-6">
             <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair leading-tight">
               What It Means to Sell Your Home for Cash

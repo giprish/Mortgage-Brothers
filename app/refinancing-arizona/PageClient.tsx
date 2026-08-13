@@ -358,7 +358,7 @@ export default function RefinancingArizonaPage() {
         <StatsBanner stats={stats} />
 
         {/* Is refinancing right for you */}
-        <section className="w-full loan-section">
+        <section className="w-full loan-section !pt-8 sm:!pt-10 lg:!pt-12">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
