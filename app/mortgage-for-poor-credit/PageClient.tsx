@@ -235,7 +235,7 @@ export default function MortgageForPoorCreditPage() {
 
         {/* Feature strip */}
         <section className="w-full bg-[#eeeff4] border-b border-[#e0e2e8] loan-strip">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               "Home Loans Are Still Possible with Poor Credit",
               "Government-Backed Loans Help Borrowers with Poor Credit",
@@ -253,7 +253,7 @@ export default function MortgageForPoorCreditPage() {
 
         {/* What poor credit means */}
         <section className="w-full loan-section">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
@@ -298,7 +298,7 @@ export default function MortgageForPoorCreditPage() {
 
         {/* Credit score table */}
         <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
-          <div className="max-w-5xl mx-auto px-6 lg:px-10">
+          <div className="max-w-5xl mx-auto">
             <div className="text-center max-w-3xl mx-auto mb-8">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
@@ -362,7 +362,7 @@ export default function MortgageForPoorCreditPage() {
         </section>
 
         <section className="loan-cta-band bg-[#fcf9f3] !pb-0">
-          <div className="mx-auto max-w-6xl px-6 text-center loan-block-gap lg:px-10">
+          <div className="mx-auto max-w-6xl text-center loan-block-gap">
             <Link
               href="/#get-pre-approved"
               className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
@@ -375,7 +375,7 @@ export default function MortgageForPoorCreditPage() {
 
         {/* How to get a mortgage */}
         <section className="w-full loan-section !pt-8 sm:!pt-10 lg:!pt-12">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
@@ -418,7 +418,7 @@ export default function MortgageForPoorCreditPage() {
 
         {/* Programs */}
         <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
@@ -460,7 +460,7 @@ export default function MortgageForPoorCreditPage() {
 
         {/* Reviews */}
         <section className="w-full loan-section">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[30px] lg:text-[38px] font-normal leading-tight mb-5"
@@ -515,7 +515,7 @@ export default function MortgageForPoorCreditPage() {
 
         {/* Why choose us */}
         <section className="w-full bg-[#08271B] loan-section text-white">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-white text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
@@ -552,7 +552,7 @@ export default function MortgageForPoorCreditPage() {
 
         {/* FAQ */}
         <section className="w-full loan-section">
-          <div className="max-w-3xl mx-auto px-6 lg:px-10">
+          <div className="max-w-3xl mx-auto">
             <div className="text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-4"
@@ -614,7 +614,7 @@ export default function MortgageForPoorCreditPage() {
 
         {/* Contact CTA */}
         <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
-          <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center">
+          <div className="max-w-4xl mx-auto text-center">
             <h2
               className="text-[#08271B] text-[30px] lg:text-[38px] font-normal leading-tight mb-5"
               style={{ fontFamily: "'Playfair Display', serif" }}
@@ -653,7 +653,7 @@ export default function MortgageForPoorCreditPage() {
 
         {/* Explore solutions */}
         <section className="w-full loan-section">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="max-w-6xl mx-auto">
             <h2
               className="text-[#08271B] text-[28px] lg:text-[34px] font-normal text-center mb-8"
               style={{ fontFamily: "'Playfair Display', serif" }}

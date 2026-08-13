@@ -273,7 +273,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
         </section>
 
         <section className="loan-cta-band bg-[#fcf9f3] !pb-0">
-          <div className="mx-auto max-w-6xl px-6 text-center loan-block-gap lg:px-10">
+          <div className="mx-auto max-w-6xl text-center loan-block-gap">
             <Link
               href="/#get-pre-approved"
               className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-md inline-block"

@@ -254,7 +254,7 @@ export default function ReverseMortgageArizonaPage() {
 
         {/* CTA + Stats — equal gap above/below the stats card */}
         <section className="loan-cta-band no-content-visibility bg-[#fcf9f3] !pb-0">
-          <div className="mx-auto max-w-6xl px-6 text-center loan-block-gap lg:px-10">
+          <div className="mx-auto max-w-6xl text-center loan-block-gap">
             <Link
               href="/#get-pre-approved"
               data-preapproval="true"

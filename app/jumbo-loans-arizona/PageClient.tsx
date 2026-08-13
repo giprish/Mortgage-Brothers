@@ -286,7 +286,7 @@ export default function JumboLoansPage() {
 
         {/* Feature strip */}
         <section className="w-full bg-[#eeeff4] border-b border-[#e0e2e8] loan-strip">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
             {featureStrip.map((title) => (
               <div key={title} className="flex items-start gap-3">
                 <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm">
@@ -300,7 +300,7 @@ export default function JumboLoansPage() {
 
         {/* Intro */}
         <section className="w-full loan-section">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14">
               <div>
                 <h2
@@ -346,7 +346,7 @@ export default function JumboLoansPage() {
         </section>
 
         <section className="loan-cta-band bg-[#fcf9f3] !pb-0">
-          <div className="mx-auto max-w-6xl px-6 text-center loan-block-gap lg:px-10">
+          <div className="mx-auto max-w-6xl text-center loan-block-gap">
             <Link
               href="/#get-pre-approved"
               className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
@@ -359,7 +359,7 @@ export default function JumboLoansPage() {
 
         {/* Why choose a jumbo loan */}
         <section className="w-full loan-section !pt-8 sm:!pt-10 lg:!pt-12">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[38px] font-normal leading-tight mb-5"
@@ -395,7 +395,7 @@ export default function JumboLoansPage() {
 
         {/* Understanding */}
         <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[38px] font-normal leading-tight mb-5"
@@ -434,7 +434,7 @@ export default function JumboLoansPage() {
 
         {/* Eligibility */}
         <section className="w-full loan-section">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[38px] font-normal leading-tight mb-5"
@@ -470,7 +470,7 @@ export default function JumboLoansPage() {
 
         {/* Credit quiz CTA */}
         <section className="w-full bg-[#08271B] loan-section">
-          <div className="max-w-3xl mx-auto px-6 text-center">
+          <div className="max-w-3xl mx-auto text-center">
             <h3
               className="text-white text-[24px] lg:text-[30px] font-normal mb-4"
               style={{ fontFamily: "'Playfair Display', serif" }}
@@ -491,7 +491,7 @@ export default function JumboLoansPage() {
 
         {/* Application process */}
         <section className="w-full loan-section">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[38px] font-normal leading-tight mb-5"
@@ -532,7 +532,7 @@ export default function JumboLoansPage() {
 
         {/* Market insights */}
         <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[38px] font-normal leading-tight mb-5"
@@ -565,7 +565,7 @@ export default function JumboLoansPage() {
 
         {/* Reviews */}
         <section className="w-full loan-section">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-5"
@@ -613,7 +613,7 @@ export default function JumboLoansPage() {
 
         {/* Why MB */}
         <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-5"
@@ -657,7 +657,7 @@ export default function JumboLoansPage() {
 
         {/* FAQ */}
         <section className="w-full loan-section">
-          <div className="max-w-3xl mx-auto px-6 lg:px-10">
+          <div className="max-w-3xl mx-auto">
             <div className="text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-4"
@@ -710,7 +710,7 @@ export default function JumboLoansPage() {
 
         {/* Contact */}
         <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
-          <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center">
+          <div className="max-w-4xl mx-auto text-center">
             <h2
               className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-5"
               style={{ fontFamily: "'Playfair Display', serif" }}
@@ -743,7 +743,7 @@ export default function JumboLoansPage() {
 
         {/* Explore solutions */}
         <section className="w-full loan-section">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="max-w-6xl mx-auto">
             <h2
               className="text-[#08271B] text-[28px] lg:text-[34px] font-normal text-center mb-8"
               style={{ fontFamily: "'Playfair Display', serif" }}

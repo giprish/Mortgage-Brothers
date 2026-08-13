@@ -255,7 +255,7 @@ export default function RefinancingArizonaPage() {
 
         {/* Feature strip */}
         <section className="w-full bg-[#eeeff4] border-b border-[#e0e2e8] loan-strip">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
             {featureStrip.map((title) => (
               <div key={title} className="flex items-start gap-3">
                 <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm">
@@ -269,7 +269,7 @@ export default function RefinancingArizonaPage() {
 
         {/* Intro + benefits */}
         <section className="w-full loan-section">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14">
               <div className="lg:col-span-5">
                 <h2
@@ -313,7 +313,7 @@ export default function RefinancingArizonaPage() {
 
         {/* Refinance considerations + math */}
         <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mx-auto">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[34px] font-normal leading-tight mb-5"
@@ -359,7 +359,7 @@ export default function RefinancingArizonaPage() {
 
         {/* Is refinancing right for you */}
         <section className="w-full loan-section !pt-8 sm:!pt-10 lg:!pt-12">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[38px] font-normal leading-tight mb-5"
@@ -395,7 +395,7 @@ export default function RefinancingArizonaPage() {
 
         {/* Credit quiz CTA */}
         <section className="w-full bg-[#08271B] loan-section">
-          <div className="max-w-3xl mx-auto px-6 text-center">
+          <div className="max-w-3xl mx-auto text-center">
             <h3
               className="text-white text-[24px] lg:text-[30px] font-normal mb-4"
               style={{ fontFamily: "'Playfair Display', serif" }}
@@ -416,7 +416,7 @@ export default function RefinancingArizonaPage() {
 
         {/* Process */}
         <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[38px] font-normal leading-tight mb-5"
@@ -475,7 +475,7 @@ export default function RefinancingArizonaPage() {
 
         {/* Calculator */}
         <section className="w-full loan-section">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
               <div className="lg:col-span-5">
                 <h2
@@ -590,7 +590,7 @@ export default function RefinancingArizonaPage() {
 
         {/* Reviews */}
         <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-5"
@@ -638,7 +638,7 @@ export default function RefinancingArizonaPage() {
 
         {/* Why choose us */}
         <section className="w-full loan-section">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mx-auto text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-5"
@@ -682,7 +682,7 @@ export default function RefinancingArizonaPage() {
 
         {/* FAQ */}
         <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
-          <div className="max-w-3xl mx-auto px-6 lg:px-10">
+          <div className="max-w-3xl mx-auto">
             <div className="text-center mb-8">
               <h2
                 className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-4"
@@ -713,7 +713,7 @@ export default function RefinancingArizonaPage() {
 
         {/* Contact */}
         <section className="w-full loan-section">
-          <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center">
+          <div className="max-w-4xl mx-auto text-center">
             <h2
               className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-5"
               style={{ fontFamily: "'Playfair Display', serif" }}
@@ -743,7 +743,7 @@ export default function RefinancingArizonaPage() {
 
         {/* Explore solutions */}
         <section className="w-full bg-[#f5f0e8] loan-section border-t border-[#e8e0d0]/50">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="max-w-6xl mx-auto">
             <h2
               className="text-[#08271B] text-[28px] lg:text-[34px] font-normal text-center mb-8"
               style={{ fontFamily: "'Playfair Display', serif" }}
