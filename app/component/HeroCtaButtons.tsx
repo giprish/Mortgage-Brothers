@@ -6,6 +6,8 @@ type HeroCtaButtonsProps = {
   primaryHref?: string;
   secondaryLabel?: string | null;
   secondaryHref?: string;
+  /** Use on the bright green city CTA band so buttons stay visible. */
+  variant?: "default" | "onGreen";
 };
 
 /**
@@ -19,10 +21,20 @@ export default function HeroCtaButtons({
   primaryHref = "/#get-pre-approved",
   secondaryLabel = "Talk to a broker",
   secondaryHref = "tel:+16025352171",
+  variant = "default",
 }: HeroCtaButtonsProps) {
   const showPrimary = Boolean(primaryLabel);
   const showSecondary = Boolean(secondaryLabel);
   if (!showPrimary && !showSecondary) return null;
+
+  const onGreen = variant === "onGreen";
+  const primaryClass = onGreen
+    ? "w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white hover:bg-[#f5f0e8] text-[#052316] text-base font-semibold px-8 py-3.5 rounded-full transition-all duration-200 shadow-lg hover:scale-[1.02]"
+    : "w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#2d8545] hover:bg-[#246d39] text-white text-base font-semibold px-8 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-[#2d8545]/30 hover:scale-[1.02]";
+  const secondaryClass = onGreen
+    ? "w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/10 hover:bg-white/20 border-2 border-white text-white text-base font-semibold px-6 py-3.5 rounded-full transition-all duration-200"
+    : "w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/5 hover:bg-white/10 border border-white/20 hover:border-white/40 text-white text-base font-medium px-6 py-3.5 rounded-full transition-all duration-200";
+  const phoneIconClass = onGreen ? "w-4 h-4 text-white" : "w-4 h-4 text-[#3fb364]";
 
   return (
     <div
@@ -32,7 +44,7 @@ export default function HeroCtaButtons({
         <Link
           href={primaryHref}
           data-preapproval="true"
-          className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#2d8545] hover:bg-[#246d39] text-white text-base font-semibold px-8 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-[#2d8545]/30 hover:scale-[1.02]"
+          className={primaryClass}
         >
           <span>{primaryLabel}</span>
           <svg
@@ -51,10 +63,10 @@ export default function HeroCtaButtons({
       {showSecondary ? (
         <a
           href={secondaryHref}
-          className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/5 hover:bg-white/10 border border-white/20 hover:border-white/40 text-white text-base font-medium px-6 py-3.5 rounded-full transition-all duration-200"
+          className={secondaryClass}
         >
           <svg
-            className="w-4 h-4 text-[#3fb364]"
+            className={phoneIconClass}
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

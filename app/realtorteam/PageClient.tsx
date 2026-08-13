@@ -114,8 +114,8 @@ export default function RealtorTeamPage() {
         />
 
         {/* Highlight strip */}
-        <section className="w-full bg-[#052316] py-7 border-b border-white/5">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
+        <section className="w-full bg-[#052316] loan-strip border-b border-white/5">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
             {HIGHLIGHTS.map((item) => (
               <div key={item} className="flex items-center justify-center md:justify-start gap-3">
                 <span className="w-2 h-2 rounded-full bg-[#3fb364] flex-shrink-0" />
@@ -126,8 +126,8 @@ export default function RealtorTeamPage() {
         </section>
 
         {/* We Are Brokers Advocating For You */}
-        <section className="w-full py-14 lg:py-20 bg-white border-b border-[#e8e0d0]/50">
-          <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center">
+        <section className="w-full loan-section bg-white border-b border-[#e8e0d0]/50">
+          <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-[#052316] text-[30px] sm:text-[36px] lg:text-[40px] font-playfair font-normal leading-tight mb-5">
               We Are Brokers Advocating For You.
             </h2>
@@ -155,8 +155,8 @@ export default function RealtorTeamPage() {
         </section>
 
         {/* We are Here to Simplify the Home Loan Process */}
-        <section className="w-full py-14 lg:py-20 bg-[#fcf9f3] border-b border-[#e8e0d0]/50">
-          <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center">
+        <section className="w-full loan-section bg-[#fcf9f3] border-b border-[#e8e0d0]/50">
+          <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-[#052316] text-[30px] sm:text-[36px] lg:text-[40px] font-playfair font-normal leading-tight mb-5">
               We are Here to Simplify the Home Loan Process.
             </h2>
@@ -175,9 +175,9 @@ export default function RealtorTeamPage() {
         </section>
 
         {/* Why Partner */}
-        <section className="w-full py-16 lg:py-24 bg-white border-b border-[#e8e0d0]/50">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
+        <section className="w-full loan-section bg-white border-b border-[#e8e0d0]/50">
+          <div className="max-w-6xl mx-auto">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">WHY PARTNER</p>
               <h2 className="text-[#052316] text-[30px] sm:text-[36px] lg:text-[40px] font-playfair font-normal leading-tight mb-5">
                 Why Partner With AZ Mortgage Brothers?
@@ -190,7 +190,7 @@ export default function RealtorTeamPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {WHY_PARTNER.map((item) => (
                 <div
                   key={item.title}
@@ -207,7 +207,7 @@ export default function RealtorTeamPage() {
               ))}
             </div>
 
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <a
                 href="#contact"
                 className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
@@ -222,9 +222,9 @@ export default function RealtorTeamPage() {
         <StatsBanner stats={STATS} />
 
         {/* Specialized audiences */}
-        <section className="w-full py-16 lg:py-24 bg-[#fcf9f3] border-b border-[#e8e0d0]/50">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
+        <section className="w-full loan-section bg-[#fcf9f3] border-b border-[#e8e0d0]/50 !pt-8 sm:!pt-10 lg:!pt-12">
+          <div className="max-w-6xl mx-auto">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">WHO WE SERVE</p>
               <h2 className="text-[#052316] text-[30px] sm:text-[36px] lg:text-[40px] font-playfair font-normal leading-tight mb-5">
                 Specialized Solutions for Industry Professionals
@@ -234,7 +234,7 @@ export default function RealtorTeamPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {AUDIENCES.map((item) => (
                 <div key={item.title} className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 lg:p-7 shadow-sm hover:border-[#3fb364]/40 hover:shadow-md transition-all text-left">
                   <h3 className="text-[#052316] text-[18px] font-bold mb-3">{item.title}</h3>
@@ -243,7 +243,7 @@ export default function RealtorTeamPage() {
               ))}
             </div>
 
-            <div className="text-center">
+            <div className="loan-btn-wrap">
               <a
                 href="#contact"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
@@ -255,9 +255,9 @@ export default function RealtorTeamPage() {
         </section>
 
         {/* Four steps */}
-        <section className="w-full py-16 lg:py-24 bg-white border-b border-[#e8e0d0]/50">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
+        <section className="w-full loan-section bg-white border-b border-[#e8e0d0]/50">
+          <div className="max-w-6xl mx-auto">
+            <div className="max-w-3xl mx-auto text-center mb-8">
               <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">HOW IT WORKS</p>
               <h2 className="text-[#052316] text-[30px] sm:text-[36px] lg:text-[40px] font-playfair font-normal leading-tight mb-5">
                 Four Simple Steps to a Powerful Partnership
@@ -267,7 +267,7 @@ export default function RealtorTeamPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
               {STEPS.map((item) => (
                 <div key={item.step} className="relative bg-[#faf7f0] border border-[#e8e0d0]/70 rounded-2xl p-6 lg:p-7 text-left">
                   <div className="text-[#3fb364] text-[28px] font-bold mb-3">{item.step}</div>
@@ -277,47 +277,47 @@ export default function RealtorTeamPage() {
               ))}
             </div>
 
-            <div className="bg-[#052316] rounded-3xl p-8 lg:p-12 text-center shadow-xl">
-              <p className="text-[#c8c8b8] text-[15.5px] lg:text-[16.5px] leading-[1.75] max-w-3xl mx-auto mb-8">
-                Ready to elevate your business? Join hundreds of successful partners who have grown their business with AZ Mortgage Brothers. Our team is ready to answer your questions and help you get started.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
-                >
-                  Schedule Your Partnership Consultation →
-                </a>
-                <a
-                  href="tel:+16025352171"
-                  className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all border border-white/20"
-                >
-                  Talk to a Broker →
-                </a>
+            <div className="loan-btn-wrap">
+              <div className="bg-[#052316] rounded-3xl p-6 sm:p-8 lg:p-10 text-center shadow-xl">
+                <p className="text-[#c8c8b8] text-[15.5px] lg:text-[16.5px] leading-[1.75] max-w-3xl mx-auto mb-8">
+                  Ready to elevate your business? Join hundreds of successful partners who have grown their business with AZ Mortgage Brothers. Our team is ready to answer your questions and help you get started.
+                </p>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <a
+                    href="#contact"
+                    className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
+                  >
+                    Schedule Your Partnership Consultation →
+                  </a>
+                  <a
+                    href="tel:+16025352171"
+                    className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all border border-white/20"
+                  >
+                    Talk to a Broker →
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
         {/* Contact / form */}
-        <section id="contact" className="w-full py-16 lg:py-24 bg-[#fcf9f3] scroll-mt-24">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
-              <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">GET IN TOUCH</p>
-              <h2 className="text-[#052316] text-[30px] sm:text-[36px] lg:text-[40px] font-playfair font-normal leading-tight mb-5">
-                Let&apos;s Build Something Great Together
-              </h2>
-              <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75] mb-8">
-                Ready to explore how a partnership with AZ Mortgage Brothers can benefit your business? Reach out below, and one of our partnership specialists will get back to you within one business day.
-              </p>
-              <button
-                type="button"
-                data-contact="true"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md cursor-pointer"
-              >
-                Contact Us →
-              </button>
-            </div>
+        <section id="contact" className="w-full loan-section bg-[#fcf9f3] scroll-mt-24">
+          <div className="max-w-3xl mx-auto text-center">
+            <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">GET IN TOUCH</p>
+            <h2 className="text-[#052316] text-[30px] sm:text-[36px] lg:text-[40px] font-playfair font-normal leading-tight mb-5">
+              Let&apos;s Build Something Great Together
+            </h2>
+            <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75] mb-8">
+              Ready to explore how a partnership with AZ Mortgage Brothers can benefit your business? Reach out below, and one of our partnership specialists will get back to you within one business day.
+            </p>
+            <button
+              type="button"
+              data-contact="true"
+              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md cursor-pointer"
+            >
+              Contact Us →
+            </button>
           </div>
         </section>
       </main>

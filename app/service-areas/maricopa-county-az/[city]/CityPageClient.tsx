@@ -828,7 +828,7 @@ export default function CityDetailPage({ citySlug }: { citySlug: string }) {
             <p className="text-white/80 text-[14px] mb-6">
               Start your pre-approval in about three minutes — no cost, no obligation.
             </p>
-            <HeroCtaButtons />
+            <HeroCtaButtons variant="onGreen" />
           </div>
         </section>
       </main>
