@@ -5,7 +5,7 @@ import { getSeoMetadata } from "@/lib/seo";
 export const metadata: Metadata = {
   ...getSeoMetadata("/blog/"),
   alternates: { canonical: "/blog/" },
-  robots: { index: false, follow: true },
+  robots: { index: false, follow: false },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

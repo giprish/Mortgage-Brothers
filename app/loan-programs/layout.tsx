@@ -5,7 +5,7 @@ import { getSeoMetadata } from "@/lib/seo";
 export const metadata: Metadata = {
   ...getSeoMetadata("/mortgage-loan-programs-arizona/"),
   alternates: { canonical: "/mortgage-loan-programs-arizona/" },
-  robots: { index: false, follow: true },
+  robots: { index: false, follow: false },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

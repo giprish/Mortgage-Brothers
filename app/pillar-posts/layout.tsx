@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     "In-depth Arizona mortgage guides and pillar resources from Arizona Mortgage Brothers.",
   alternates: { canonical: "/blog/" },
-  robots: { index: false, follow: true },
+  robots: { index: false, follow: false },
 };
 
 export default function Layout({ children }: { children: React.ReactNode }) {

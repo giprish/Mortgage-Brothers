@@ -9,7 +9,7 @@ const MAIN_SITEMAP_XSL = `<?xml version="1.0" encoding="UTF-8"?>
 <head>
 	<title>XML Sitemap</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="robots" content="noindex,follow" />
+	<meta name="robots" content="noindex, nofollow" />
 	<style type="text/css">
 		body {
 			font-family: Helvetica, Arial, sans-serif;
