@@ -31,7 +31,7 @@ export default function ArticleHero({
     .toUpperCase();
 
   return (
-    <section className="relative w-full bg-[#08271B] overflow-hidden">
+    <section className="relative w-full bg-[#08271B] overflow-hidden pt-[64px] sm:pt-[72px]">
       <div className="absolute inset-0 pointer-events-none hidden sm:block" aria-hidden>
         <div className="absolute -top-24 -right-24 w-[min(360px,70vw)] h-[360px] rounded-full border border-white/[0.06]" />
         <div className="absolute -top-10 right-16 w-[min(240px,55vw)] h-[240px] rounded-full border border-white/[0.05]" />
