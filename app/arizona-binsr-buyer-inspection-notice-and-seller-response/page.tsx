@@ -136,7 +136,6 @@ export default function ArizonaBinsrPage() {
       />
 
       <Navbar />
-      <div className="h-[64px] sm:h-[72px] bg-[#08271B] w-full shrink-0" aria-hidden />
 
       <main className="flex-grow relative z-0">
         <ArticleHero
