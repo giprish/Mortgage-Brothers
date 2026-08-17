@@ -80,8 +80,8 @@ export default function PrivateMoneyLendersArticlePage() {
               <Link href="/blog/" className="hover:text-white transition-colors">Blog</Link>
               <span>&gt;</span>
               <Link href="/arizona-mortgage-insights/" className="hover:text-white transition-colors">Arizona Mortgage Insights</Link>
-              <span>, </span>
-              <Link href="/real-estate-mortgages/" className="hover:text-white transition-colors">Real Estate &amp; Mortgages</Link>
+              <span></span>
+            
             </div>
 
             <span className="bg-[#103020] border border-[#205030] text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase px-3.5 py-1.5 rounded-full inline-block mb-4">
