@@ -1,9 +1,7 @@
 import React from "react";
+import Link from "next/link";
 
-/**
- * Homepage quiz CTA. Does NOT load JotForm on page load.
- * Click is intercepted sitewide (data-quiz) and opens the same modal pattern as Pre-Approval.
- */
+/** Homepage quiz CTA — goes to /credit-score-quiz/, not the quiz modal. */
 const CreditQuizCta = () => {
   return (
     <section className="w-full bg-[#08271B] py-14 sm:py-16 lg:py-20 relative overflow-hidden">
@@ -19,17 +17,16 @@ const CreditQuizCta = () => {
           Your credit score is the gateway to mortgage approval and better rates. Discover where
           you stand and how it impacts your home buying journey.
         </p>
-        <button
-          type="button"
-          data-quiz="true"
-          className="inline-flex items-center gap-2 bg-[#2d8545] hover:bg-[#246d39] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-[#2d8545]/20 cursor-pointer"
+        <Link
+          href="/credit-score-quiz/"
+          className="inline-flex items-center gap-2 bg-[#2d8545] hover:bg-[#246d39] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-[#2d8545]/20"
         >
           Take The Quiz
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
             <line x1="5" y1="12" x2="19" y2="12" />
             <polyline points="12 5 19 12 12 19" />
           </svg>
-        </button>
+        </Link>
       </div>
     </section>
   );

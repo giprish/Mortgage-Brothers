@@ -52,7 +52,6 @@ function isQuizTarget(clickable: HTMLElement): boolean {
 
   const href = (clickable.getAttribute("href") || "").toLowerCase().trim();
   return (
-    href.includes("/credit-score-quiz") ||
     href.includes("250305896122151") ||
     href.includes("form.jotform.com/250305896122151")
   );
