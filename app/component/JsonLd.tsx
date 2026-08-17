@@ -1,7 +1,5 @@
 import { COMPANY, LOAN_OFFICERS } from "@/lib/company";
 
-type FaqItem = { question: string; answer: string };
-
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": ["MortgageBroker", "LocalBusiness", "FinancialService"],
@@ -65,51 +63,11 @@ const organizationSchema = {
   ],
 };
 
-const homeFaqs: FaqItem[] = [
-  {
-    question: "What's the advantage of working with a mortgage broker instead of a bank?",
-    answer:
-      "As brokers, we can shop around multiple lenders to find you the best deal. We're not limited to one bank's products and can often find creative solutions for unique circumstances. We ask 'Where can we get this loan approved?' instead of 'Can we approve this loan?'",
-  },
-  {
-    question: "What loan options are available for first-time buyers in Gilbert?",
-    answer:
-      "FHA loans and local programs for first-time buyers are great options. We'll guide you through the process and find the best fit.",
-  },
-  {
-    question: "How does refinancing work in Mesa?",
-    answer:
-      "Refinancing replaces your current mortgage with a new one, often with better terms. It's a great way to save money on your Arizona home loan.",
-  },
-];
-
-function faqSchema(faqs: FaqItem[]) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  };
-}
-
 export default function JsonLd() {
-  const schemas = [organizationSchema, faqSchema(homeFaqs)];
-
   return (
-    <>
-      {schemas.map((schema, i) => (
-        <script
-          key={i}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-      ))}
-    </>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+    />
   );
 }

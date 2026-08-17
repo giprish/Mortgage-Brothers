@@ -1,56 +1,47 @@
-import type { Metadata } from "next";
-import { getSeoMetadata } from "@/lib/seo";
 import Navbar from "./component/Navbar";
 import Hero from "./component/Hero";
 import HomeStatsBar from "./component/home/HomeStatsBar";
 import {
-  DeferredReviews,
-  DeferredHomeCalculator,
-  DeferredPreApprovedForm,
+  DeferredBrokersAdvocate,
+  DeferredBrothers,
+  DeferredCreditQuizCta,
   DeferredDreamHomeCta,
+  DeferredFooter,
+  DeferredHomeBlog,
+  DeferredHomeCalculator,
+  DeferredHomeContact,
+  DeferredHomeFaq,
+  DeferredHomeownershipSteps,
+  DeferredLoanPrograms,
+  DeferredPreApprovedForm,
+  DeferredRecognition,
+  DeferredReviews,
 } from "./component/home/HomeDeferredSections";
-import BrokersAdvocate from "./component/home/BrokersAdvocate";
-import Brothers from "./component/Brothers";
-import Recognition from "./component/home/Recognition";
-import HomeownershipSteps from "./component/home/HomeownershipSteps";
-import LoanPrograms from "./component/LoanPrograms";
-import CreditQuizCta from "./component/home/CreditQuizCta";
-import HomeFaq from "./component/home/HomeFaq";
-import HomeBlog from "./component/home/HomeBlog";
-import HomeContact from "./component/home/HomeContact";
-import Footer from "./component/Footer";
+import HomeFaqJsonLd from "./component/home/HomeFaqJsonLd";
 
-export const metadata: Metadata = getSeoMetadata("/");
-
-/**
- * Homepage: static server sections (no next/dynamic wrappers) for SEO + low TBT.
- * Only interactive / heavy islands are client-deferred.
- */
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
+      <HomeFaqJsonLd />
       <Navbar />
-
-      <main id="main-content" className="flex-1 flex flex-col">
+      <main className="flex-1 flex flex-col">
         <Hero />
         <HomeStatsBar />
         <DeferredReviews />
-
-        <BrokersAdvocate />
-        <Brothers />
-        <Recognition />
+        <DeferredBrokersAdvocate />
+        <DeferredBrothers />
+        <DeferredRecognition />
+        <DeferredHomeownershipSteps />
+        <DeferredLoanPrograms />
         <DeferredHomeCalculator />
-        <HomeownershipSteps />
-        <LoanPrograms />
-        <CreditQuizCta />
-        <HomeFaq />
-        <HomeBlog />
-        <DeferredDreamHomeCta />
-        <HomeContact />
+        <DeferredCreditQuizCta />
         <DeferredPreApprovedForm />
+        <DeferredHomeFaq />
+        <DeferredHomeBlog />
+        <DeferredDreamHomeCta />
+        <DeferredHomeContact />
       </main>
-
-      <Footer />
+      <DeferredFooter />
     </div>
   );
 }
