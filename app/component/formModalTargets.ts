@@ -1,19 +1,71 @@
 export type FormKind = "preapproval" | "quiz" | "contact";
 
+function asElement(target: EventTarget | Element | null): Element | null {
+  if (!target) return null;
+  if (target instanceof Element) return target;
+  if (target instanceof Node) return target.parentElement;
+  return null;
+}
+
+function isInternalPageHref(href: string): boolean {
+  const raw = (href || "").trim().toLowerCase();
+  if (!raw) return false;
+  if (raw.startsWith("#")) return false;
+  if (
+    raw.startsWith("mailto:") ||
+    raw.startsWith("tel:") ||
+    raw.startsWith("sms:") ||
+    raw.startsWith("javascript:")
+  ) {
+    return false;
+  }
+  if (raw.includes("jotform.com") || raw.includes("jsform/")) return false;
+
+  let pathname = "";
+  if (raw.startsWith("http://") || raw.startsWith("https://") || raw.startsWith("//")) {
+    try {
+      const url = new URL(raw.startsWith("//") ? `https:${raw}` : raw);
+      pathname = url.pathname;
+    } catch {
+      return false;
+    }
+  } else if (raw.startsWith("/")) {
+    pathname = raw.split("#")[0].split("?")[0];
+  } else {
+    return false;
+  }
+
+  const path = pathname.replace(/\/+$/, "") || "/";
+  return path !== "/";
+}
+
+function isProtectedPageHref(href: string): boolean {
+  const h = (href || "").toLowerCase();
+  return (
+    h.includes("/loan-applications") ||
+    h.includes("/credit-score-quiz") ||
+    h.includes("/sell-my-house-fast-arizona") ||
+    h.includes("/how-to-sell-my-house-fast-in-arizona")
+  );
+}
+
 function isPreApprovalTarget(clickable: HTMLElement): boolean {
   const href = (clickable.getAttribute("href") || "").toLowerCase().trim();
-  const text = (clickable.textContent || "").toLowerCase().trim();
+  const text = (clickable.textContent || "").toLowerCase().replace(/\s+/g, " ").trim();
   const id = (clickable.id || "").toLowerCase().trim();
 
-  if (id === "get-pre-approved" || id === "preapproval" || id === "pre-approval" || id === "get-started") return true;
-  if (clickable.hasAttribute("data-preapproval") || clickable.hasAttribute("data-open-preapproval")) return true;
+  if (id === "get-pre-approved" || id === "preapproval" || id === "pre-approval" || id === "get-started") {
+    return true;
+  }
+  if (clickable.hasAttribute("data-preapproval") || clickable.hasAttribute("data-open-preapproval")) {
+    return true;
+  }
 
   if (
     href === "#get-pre-approved" ||
     href === "/#get-pre-approved" ||
     href.includes("#get-pre-approved") ||
     href.includes("get-pre-approved") ||
-    href.includes("/loan-applications") ||
     href.includes("/pre-approval") ||
     href.includes("/preapproval") ||
     href.includes("get-started") ||
@@ -67,8 +119,19 @@ function isContactTarget(clickable: HTMLElement): boolean {
   );
 }
 
-export function resolveFormKind(element: Element | null): FormKind | null {
+export function resolveFormKind(target: EventTarget | Element | null): FormKind | null {
+  const element = asElement(target);
   if (!element) return null;
+
+  // Footer / explicit page links must always navigate.
+  if (element.closest("footer, [data-no-form-modal]")) return null;
+
+  const pageAnchor = element.closest("a[href]") as HTMLAnchorElement | null;
+  if (pageAnchor) {
+    const href = pageAnchor.getAttribute("href") || "";
+    if (isProtectedPageHref(href) || isInternalPageHref(href)) return null;
+  }
+
   const clickable = element.closest("a[href], button, [role='button']") as HTMLElement | null;
   if (!clickable) return null;
 

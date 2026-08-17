@@ -35,6 +35,9 @@ export default function HeroCtaButtons({
     ? "w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/10 hover:bg-white/20 border-2 border-white text-white text-base font-semibold px-6 py-3.5 rounded-full transition-all duration-200"
     : "w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/5 hover:bg-white/10 border border-white/20 hover:border-white/40 text-white text-base font-medium px-6 py-3.5 rounded-full transition-all duration-200";
   const phoneIconClass = onGreen ? "w-4 h-4 text-white" : "w-4 h-4 text-[#3fb364]";
+  const opensPreapprovalModal = /get-pre-approved|jotform\.com|jsform\//i.test(
+    primaryHref,
+  );
 
   return (
     <div
@@ -43,7 +46,7 @@ export default function HeroCtaButtons({
       {showPrimary ? (
         <Link
           href={primaryHref}
-          data-preapproval="true"
+          {...(opensPreapprovalModal ? { "data-preapproval": "true" as const } : {})}
           className={primaryClass}
         >
           <span>{primaryLabel}</span>

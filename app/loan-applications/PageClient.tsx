@@ -15,8 +15,7 @@ export default function LoanApplicationsPage() {
       <Navbar />
 
       <main className="flex-grow pt-[64px] sm:pt-[72px]">
-        {/* Secure loan application — matches live PreApproveMe embed */}
-        <section className="relative w-full min-h-[calc(100vh-72px)] bg-[#e8eaed]">
+        <section className="w-full min-h-[calc(100vh-72px)] bg-[#e8eaed]">
           <div className="max-w-4xl mx-auto px-6 pt-8 pb-6 text-center">
             <h1 className="text-[#08271B] text-[26px] sm:text-[32px] font-bold mb-2">
               Secure Online Arizona Loan Application
@@ -43,24 +42,25 @@ export default function LoanApplicationsPage() {
             </div>
           </div>
 
-          {isLoading && (
-            <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 bg-[#e8eaed]">
-              <div className="w-10 h-10 border-3 border-[#3fb364]/25 border-t-[#3fb364] rounded-full animate-spin" />
-              <p className="text-[#4e5b4e] text-[14px] font-medium">
-                Loading secure loan application…
-              </p>
-            </div>
-          )}
-
-          <iframe
-            src={PREAPPROVE_SRC}
-            title="Mortgage Brothers Loan Application"
-            className="w-full border-0 block bg-[#e8eaed]"
-            style={{ minHeight: "calc(100vh - 72px)", height: "800px" }}
-            onLoad={() => setIsLoading(false)}
-            allow="clipboard-write; camera; microphone; geolocation"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
+          <div className="relative w-full">
+            {isLoading && (
+              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 bg-[#e8eaed]/90 pointer-events-none">
+                <div className="w-10 h-10 border-3 border-[#3fb364]/25 border-t-[#3fb364] rounded-full animate-spin" />
+                <p className="text-[#4e5b4e] text-[14px] font-medium">
+                  Loading secure loan application…
+                </p>
+              </div>
+            )}
+            <iframe
+              src={PREAPPROVE_SRC}
+              title="Mortgage Brothers Loan Application"
+              className="w-full border-0 block bg-[#e8eaed]"
+              style={{ minHeight: "calc(100vh - 72px)", height: "800px" }}
+              onLoad={() => setIsLoading(false)}
+              allow="clipboard-write; camera; microphone; geolocation"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </section>
       </main>
 

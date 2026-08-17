@@ -119,7 +119,7 @@ export default function PreApprovalProvider({
       if (event.button !== 0) return;
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
 
-      const next = resolveFormKind(event.target as Element | null);
+      const next = resolveFormKind(event.target);
       if (!next) return;
 
       event.preventDefault();
