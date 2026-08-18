@@ -127,6 +127,12 @@ section.no-content-visibility {
   &:hover::after {
     transform: translateX(2px);
   }
+
+  /* Keep a single arrow when the button already has an SVG icon */
+  &:has(svg)::after {
+    content: none;
+    display: none;
+  }
 }
 
 /* Compact primary button for navbar / tight spaces */
@@ -166,6 +172,11 @@ section.no-content-visibility {
 
   &:hover::after {
     transform: translateX(2px);
+  }
+
+  &:has(svg)::after {
+    content: none;
+    display: none;
   }
 }
 

@@ -54,7 +54,7 @@ export default function CountyPage({
             <h1 className="text-[#052316] text-[32px] font-playfair mb-4">County Not Found</h1>
             <p className="text-[#4e5b4e] text-[15px] mb-8">The county you&apos;re looking for doesn&apos;t exist.</p>
             <Link href="/service-areas/" className="btn-primary">
-              Browse All Areas →
+              Browse All Areas
             </Link>
           </div>
         </main>

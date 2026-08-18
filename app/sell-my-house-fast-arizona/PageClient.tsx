@@ -240,7 +240,7 @@ export default function SellMyHouseFastArizonaPage() {
                 data-preapproval="true"
                 className="btn-primary px-7 py-3.5 text-[16px]"
               >
-                Get My Free Home Selling Options Review →
+                Get My Free Home Selling Options Review
               </Link>
               <p className="text-[#63cd85] text-[15px] font-medium">
                 or call{" "}

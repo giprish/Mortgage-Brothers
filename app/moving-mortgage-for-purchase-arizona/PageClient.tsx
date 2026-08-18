@@ -38,7 +38,7 @@ export default function MovingMortgagePage() {
               </p>
               <div className="pt-4 flex flex-wrap items-center gap-4">
                 <Link href="/#get-pre-approved" className="btn-primary">
-                  GET PRE-APPROVED NOW →
+                  GET PRE-APPROVED NOW
                 </Link>
                 <a href="tel:+16025352171" className="border border-white/30 hover:border-white text-white text-[15px] font-semibold px-6 py-4 rounded-full transition-all hover:bg-white/10">
                   Call (602) 535-2171

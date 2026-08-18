@@ -213,7 +213,7 @@ export default function FirstTimeHomeBuyerPage() {
                 href="/#get-pre-approved"
                 className="btn-primary"
               >
-                GET PRE-APPROVED NOW →
+                GET PRE-APPROVED NOW
               </Link>
               <a
                 href="tel:+16025352171"
