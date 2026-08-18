@@ -182,7 +182,7 @@ export default function ArizonaSecondMortgagesPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get a Free Second Mortgage Consultation &rarr;
+                    Get a Free Second Mortgage Consultation
                   </Link>
                 </div>
               </div>

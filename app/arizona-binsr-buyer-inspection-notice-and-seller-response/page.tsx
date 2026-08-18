@@ -188,7 +188,7 @@ export default function ArizonaBinsrPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get Expert Advice &rarr;
+                    Get Expert Advice
                   </Link>
                 </div>
               </div>

@@ -176,7 +176,7 @@ export default function DscrLoanHardMoneyPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get a Free DSCR Loan Consultation &rarr;
+                    Get a Free DSCR Loan Consultation
                   </Link>
                 </div>
               </div>

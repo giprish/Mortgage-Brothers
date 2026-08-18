@@ -168,7 +168,7 @@ export default function WhoCanAndCannotBeOnTitlePage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get Expert Mortgage Advice &rarr;
+                    Get Expert Mortgage Advice
                   </Link>
                 </div>
               </div>

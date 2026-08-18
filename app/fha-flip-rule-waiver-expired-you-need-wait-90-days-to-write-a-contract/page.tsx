@@ -154,7 +154,7 @@ export default function FhaFlipRuleWaiverExpiredPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get Expert FHA Loan Advice &rarr;
+                    Get Expert FHA Loan Advice
                   </Link>
                 </div>
               </div>

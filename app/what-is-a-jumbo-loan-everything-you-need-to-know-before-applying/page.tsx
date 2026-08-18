@@ -185,7 +185,7 @@ export default function WhatIsAJumboLoanPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get Your Jumbo Loan Quote Now &rarr;
+                    Get Your Jumbo Loan Quote Now
                   </Link>
                   <Link
                     href="/jumbo-loans-arizona/"

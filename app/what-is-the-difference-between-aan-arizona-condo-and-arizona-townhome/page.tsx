@@ -170,7 +170,7 @@ export default function CondoVsTownhomePage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get a Free Homebuying Consultation &rarr;
+                    Get a Free Homebuying Consultation
                   </Link>
                 </div>
               </div>

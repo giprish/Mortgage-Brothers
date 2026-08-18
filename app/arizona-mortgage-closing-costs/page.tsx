@@ -173,7 +173,7 @@ export default function ArizonaMortgageClosingCostsPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get in Touch &rarr;
+                    Get in Touch
                   </Link>
                 </div>
               </div>

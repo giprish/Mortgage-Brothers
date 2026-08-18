@@ -177,7 +177,7 @@ export default function ArizonaMortgagePaymentsPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get Pre-Approved &rarr;
+                    Get Pre-Approved
                   </Link>
                 </div>
               </div>

@@ -174,7 +174,7 @@ export default function ConventionalHomeLoanGuidePage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Start My Pre-Approval &rarr;
+                    Start My Pre-Approval
                   </Link>
                 </div>
               </div>

@@ -168,7 +168,7 @@ export default function IsHomeownershipHereditaryPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get Started &rarr;
+                    Get Started
                   </Link>
                 </div>
               </div>

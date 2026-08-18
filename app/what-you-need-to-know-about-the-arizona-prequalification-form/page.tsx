@@ -174,7 +174,7 @@ export default function ArizonaPrequalificationFormPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Start Your Prequalification Today &rarr;
+                    Start Your Prequalification Today
                   </Link>
                 </div>
               </div>

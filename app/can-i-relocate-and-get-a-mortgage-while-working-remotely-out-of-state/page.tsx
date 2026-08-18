@@ -181,7 +181,7 @@ export default function RelocateRemoteMortgagePage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get Personalized Help Now &rarr;
+                    Get Personalized Help Now
                   </Link>
                 </div>
               </div>

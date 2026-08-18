@@ -173,7 +173,7 @@ export default function WhenIsAMortgagePaymentActuallyConsideredLatePage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Ask an Expert Now &rarr;
+                    Ask an Expert Now
                   </Link>
                 </div>
               </div>

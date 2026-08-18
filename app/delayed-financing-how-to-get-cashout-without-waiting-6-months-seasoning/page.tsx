@@ -180,7 +180,7 @@ export default function DelayedFinancingPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get a Free Cash-Out Consultation &rarr;
+                    Get a Free Cash-Out Consultation
                   </Link>
                 </div>
               </div>

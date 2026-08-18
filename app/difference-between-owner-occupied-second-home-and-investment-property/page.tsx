@@ -170,7 +170,7 @@ export default function OwnerOccupiedSecondHomeInvestmentPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get a Free Property Classification Review &rarr;
+                    Get a Free Property Classification Review
                   </Link>
                 </div>
               </div>

@@ -175,7 +175,7 @@ export default function CountCommissionsBonusesTipsPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get Help with Mortgage Income Requirements &rarr;
+                    Get Help with Mortgage Income Requirements
                   </Link>
                 </div>
               </div>

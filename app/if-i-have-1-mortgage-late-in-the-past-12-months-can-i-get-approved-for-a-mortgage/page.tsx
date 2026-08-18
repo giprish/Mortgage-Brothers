@@ -163,7 +163,7 @@ export default function MortgageLateApprovalPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Find Out Your Options &rarr;
+                    Find Out Your Options
                   </Link>
                 </div>
               </div>
