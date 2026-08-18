@@ -167,7 +167,7 @@ export default function HowToSkip2PaymentsPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get a Free Mortgage Consultation &rarr;
+                    Get a Free Mortgage Consultation
                   </Link>
                 </div>
               </div>

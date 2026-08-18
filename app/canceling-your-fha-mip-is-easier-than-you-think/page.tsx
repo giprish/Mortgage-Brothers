@@ -184,7 +184,7 @@ export default function CancelingFhaMipPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get FHA MIP Cancellation Help &rarr;
+                    Get FHA MIP Cancellation Help
                   </Link>
                 </div>
               </div>

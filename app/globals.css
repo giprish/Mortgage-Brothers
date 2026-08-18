@@ -180,6 +180,17 @@ section.no-content-visibility {
   }
 }
 
+/* Phone number CTAs should not show the default btn-primary arrow.
+   Keep this outside @utility — Tailwind v4 can drop attribute selectors
+   nested inside utilities. */
+a[href^="tel:"].btn-primary::after,
+a[href^="tel:"].btn-primary-sm::after,
+.btn-primary:has(svg)::after,
+.btn-primary-sm:has(svg)::after {
+  content: none !important;
+  display: none !important;
+}
+
 /* "or call" phone link under primary CTAs on dark backgrounds */
 @utility cta-phone-link {
   color: #63cd85;

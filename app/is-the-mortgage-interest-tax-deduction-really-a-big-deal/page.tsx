@@ -161,7 +161,7 @@ export default function IsTheMortgageInterestTaxDeductionReallyABigDealPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get Expert Mortgage Advice &rarr;
+                    Get Expert Mortgage Advice
                   </Link>
                 </div>
               </div>

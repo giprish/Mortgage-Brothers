@@ -169,7 +169,7 @@ export default function CanIGetA3rdMortgagePage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get a Free Mortgage Consultation &rarr;
+                    Get a Free Mortgage Consultation
                   </Link>
                 </div>
               </div>

@@ -164,7 +164,7 @@ export default function ConnectingGuestHouseAddValuePage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get a Free Home Value Assessment &rarr;
+                    Get a Free Home Value Assessment
                   </Link>
                 </div>
               </div>

@@ -190,7 +190,7 @@ export default function BuyingDownArizonaInterestRatePage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get a Free Rate Analysis &rarr;
+                    Get a Free Rate Analysis
                   </Link>
                 </div>
               </div>

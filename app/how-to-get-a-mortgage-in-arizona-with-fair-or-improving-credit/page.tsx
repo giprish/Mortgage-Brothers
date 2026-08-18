@@ -178,7 +178,7 @@ export default function FairOrImprovingCreditPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get Your Mortgage Consultation &rarr;
+                    Get Your Mortgage Consultation
                   </Link>
                 </div>
               </div>

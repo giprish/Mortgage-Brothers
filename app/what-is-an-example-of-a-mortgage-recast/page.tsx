@@ -177,7 +177,7 @@ export default function MortgageRecastExamplePage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get Personalized Mortgage Advice &rarr;
+                    Get Personalized Mortgage Advice
                   </Link>
                 </div>
               </div>

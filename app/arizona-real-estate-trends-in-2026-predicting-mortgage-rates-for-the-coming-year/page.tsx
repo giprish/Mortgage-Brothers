@@ -179,7 +179,7 @@ export default function ArizonaRealEstateTrends2026Page() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Speak with an Expert &rarr;
+                    Speak with an Expert
                   </Link>
                 </div>
               </div>

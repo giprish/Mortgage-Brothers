@@ -193,6 +193,7 @@ export default function VideosPage() {
       <main className="flex-grow">
         {/* Hero */}
         <section className="w-full bg-brand-green-deep pt-[110px] lg:pt-[130px] pb-12 lg:pb-16 px-6 text-center relative overflow-hidden">
+          <div className="pointer-events-none absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-[#3fb364]/15 blur-3xl hidden sm:block" aria-hidden />
           <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
             <div className="absolute -bottom-36 -left-36 w-[min(360px,90vw)] h-[360px] rounded-full border border-white/5 opacity-40" />
             <div className="absolute -top-36 -right-36 w-[min(400px,90vw)] h-[400px] rounded-full border border-white/5 opacity-40" />

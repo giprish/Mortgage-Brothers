@@ -189,7 +189,7 @@ export default function DetachedGuestHomeCasitaAppraisalPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get a Free Home Appraisal Review &rarr;
+                    Get a Free Home Appraisal Review
                   </Link>
                 </div>
               </div>

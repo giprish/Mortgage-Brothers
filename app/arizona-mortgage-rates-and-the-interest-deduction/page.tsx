@@ -182,7 +182,7 @@ export default function ArizonaMortgageRatesInterestDeductionPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get a Free Mortgage Consultation &rarr;
+                    Get a Free Mortgage Consultation
                   </Link>
                 </div>
               </div>

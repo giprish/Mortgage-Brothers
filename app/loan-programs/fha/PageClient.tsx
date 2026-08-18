@@ -73,7 +73,7 @@ export default function FhaLoanPage() {
                   href="/#get-pre-approved"
                   className="btn-primary duration-200 hover:shadow-lg"
                 >
-                  Get Pre-Approved &rarr;
+                  Get Pre-Approved
                 </Link>
                 <Link
                   href="/mortgage-calculator-arizona/"
@@ -516,7 +516,7 @@ export default function FhaLoanPage() {
                 href="/#get-pre-approved"
                 className="btn-primary duration-200"
               >
-                Get Pre-Approved &rarr;
+                Get Pre-Approved
               </Link>
               <Link
                 href="tel:+16025352171"

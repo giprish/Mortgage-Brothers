@@ -171,7 +171,7 @@ export default function RapidRescoreMortgagePage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get a Free Credit Review &rarr;
+                    Get a Free Credit Review
                   </Link>
                 </div>
               </div>

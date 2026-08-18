@@ -169,7 +169,7 @@ export default function AssumableMortgagePage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Find Out If You Qualify &rarr;
+                    Find Out If You Qualify
                   </Link>
                 </div>
               </div>

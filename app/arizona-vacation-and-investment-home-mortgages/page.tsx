@@ -187,7 +187,7 @@ export default function ArizonaVacationAndInvestmentHomeMortgagesPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get Expert Mortgage Advice &rarr;
+                    Get Expert Mortgage Advice
                   </Link>
                 </div>
               </div>

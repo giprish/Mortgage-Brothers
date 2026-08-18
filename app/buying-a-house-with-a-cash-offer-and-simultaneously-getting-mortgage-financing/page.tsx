@@ -185,7 +185,7 @@ export default function CashOfferMortgageFinancingPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get a Free Mortgage Strategy Session &rarr;
+                    Get a Free Mortgage Strategy Session
                   </Link>
                 </div>
               </div>

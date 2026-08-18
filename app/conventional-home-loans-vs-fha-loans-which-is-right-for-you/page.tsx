@@ -190,7 +190,7 @@ export default function ConventionalVsFhaLoansPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get Your Free Loan Comparison &rarr;
+                    Get Your Free Loan Comparison
                   </Link>
                   <Link
                     href="/fha-home-loans-arizona/"

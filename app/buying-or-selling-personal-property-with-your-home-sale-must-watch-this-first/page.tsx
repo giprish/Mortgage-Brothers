@@ -180,7 +180,7 @@ export default function BuyingOrSellingPersonalPropertyPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get Expert Real Estate Advice &rarr;
+                    Get Expert Real Estate Advice
                   </Link>
                 </div>
               </div>

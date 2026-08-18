@@ -182,7 +182,7 @@ export default function ArizonaRealEstateCapitalGainsPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get a Free Capital Gains Tax Consultation &rarr;
+                    Get a Free Capital Gains Tax Consultation
                   </Link>
                 </div>
               </div>

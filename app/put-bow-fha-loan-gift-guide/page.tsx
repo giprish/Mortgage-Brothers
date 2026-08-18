@@ -206,7 +206,7 @@ export default function PutBowFhaLoanGiftGuidePage() {
                     href="/fha-home-loans-arizona/"
                     className="btn-primary"
                   >
-                    Get FHA Loan Guidance &rarr;
+                    Get FHA Loan Guidance
                   </Link>
                 </div>
               </div>

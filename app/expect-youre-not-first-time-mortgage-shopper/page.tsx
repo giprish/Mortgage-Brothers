@@ -190,7 +190,7 @@ export default function ExpectYoureNotFirstTimeMortgageShopperPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Enhance Your Strategy &rarr;
+                    Enhance Your Strategy
                   </Link>
                 </div>
               </div>

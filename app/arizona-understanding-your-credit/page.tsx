@@ -189,7 +189,7 @@ export default function ArizonaUnderstandingYourCreditPage() {
                     href="/#get-pre-approved"
                     className="btn-primary"
                   >
-                    Contact Us Now &rarr;
+                    Contact Us Now
                   </Link>
                 </div>
               </div>

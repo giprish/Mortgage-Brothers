@@ -21,20 +21,28 @@ export default function ReverseMortgageVideosPage() {
 
       <main className="flex-grow">
         {/* Hero — matches live reverse mortgage archive */}
-        <section className="w-full bg-[#1a1a1a] text-white pt-[110px] lg:pt-[120px] pb-14 lg:pb-16 px-6 lg:px-10 text-center">
-          <div className="max-w-4xl mx-auto">
-            <div className="flex items-center justify-center gap-2 text-[12px] text-[#3fb364] font-medium mb-6">
-              <Link href="/videos/" className="hover:underline">
+        <section className="w-full bg-brand-green-deep text-white pt-[110px] lg:pt-[120px] pb-14 lg:pb-16 px-6 text-center relative overflow-hidden">
+          <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
+            <div className="absolute -bottom-36 -left-36 w-[min(360px,90vw)] h-[360px] rounded-full border border-white/5 opacity-40" />
+            <div className="absolute -top-36 -right-36 w-[min(400px,90vw)] h-[400px] rounded-full border border-white/5 opacity-40" />
+          </div>
+          <div className="max-w-4xl mx-auto relative z-10 flex flex-col items-center">
+            <div className="flex items-center justify-center gap-2 text-[13px] font-medium text-[#c8c8b8] mb-5">
+              <Link href="/videos/" className="text-[#b8d4b8] hover:text-white transition-colors duration-200">
                 Videos
               </Link>
               <span className="text-white/40">&gt;</span>
-              <span className="text-[#7a6a3d]">Reverse Mortgage</span>
+              <span className="text-white font-semibold">Reverse Mortgage</span>
             </div>
 
-            <h1 className="text-white text-[32px] sm:text-[40px] lg:text-[48px] font-bold leading-[1.15] mb-5">
+            <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
+              REVERSE MORTGAGE
+            </p>
+
+            <h1 className="text-white text-hero-title font-playfair font-normal leading-[1.1] mb-6 max-w-3xl">
               Reverse Mortgage
             </h1>
-            <p className="text-white/85 text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto">
+            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto">
               Find our videos all about Reverse Mortgages right here.
             </p>
           </div>
