@@ -11,8 +11,8 @@ const HomeFaq = () => {
   return (
     <section className="w-full bg-[#fcf9f3] py-14 sm:py-20 lg:py-24 border-t border-[#e8e0d0]/40">
       <div className="max-w-6xl mx-auto px-6 lg:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div className="order-2 lg:order-1 relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+          <div className="order-2 lg:order-1 relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-xl lg:sticky lg:top-24">
             <Image
               src="/home/faq-brothers.jpg"
               alt="The Mortgage Brothers answering client questions"
@@ -43,11 +43,11 @@ const HomeFaq = () => {
                       {faq.question}
                     </span>
                     <span
-                      className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center bg-[#08271B]/5 group-open:bg-[#3fb364] group-open:rotate-180 transition-all duration-300"
+                      className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center bg-[#08271B]/5 group-open:bg-[#3fb364] group-open:rotate-180 transition-all duration-[250ms] ease-out"
                       aria-hidden
                     >
                       <svg
-                        className="w-4 h-4 text-[#08271B] group-open:text-white transition-colors"
+                        className="w-4 h-4 text-[#08271B] group-open:text-white transition-colors duration-[250ms] ease-out"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
@@ -61,9 +61,11 @@ const HomeFaq = () => {
                   </summary>
                   <div
                     id={`faq-answer-${i}`}
-                    className="px-6 pb-5 text-[#4e5b4e] text-[14.5px] leading-relaxed border-t border-[#e8e0d0]/40"
+                    className="max-h-0 opacity-0 overflow-hidden transition-all duration-[250ms] ease-out group-open:max-h-[420px] group-open:opacity-100"
                   >
-                    <p className="pt-4">{faq.answer}</p>
+                    <p className="px-6 pt-4 pb-5 text-[#4e5b4e] text-[14.5px] leading-relaxed border-t border-[#e8e0d0]/40">
+                      {faq.answer}
+                    </p>
                   </div>
                 </details>
               ))}

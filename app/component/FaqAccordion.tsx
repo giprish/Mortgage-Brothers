@@ -40,14 +40,14 @@ export default function FaqAccordion({ items, title }: FaqAccordionProps) {
                 strokeWidth="2.5"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="text-[#3fb364] shrink-0 transition-transform duration-200 group-open:rotate-180"
+                className="text-[#3fb364] shrink-0 transition-transform duration-[250ms] ease-out group-open:rotate-180"
                 aria-hidden
               >
                 <polyline points="6 9 12 15 18 9" />
               </svg>
             </summary>
-            <div className="px-5 pb-5 border-t border-[#e8e0d0]/50">
-              <div className="text-[#4e5b4e] text-[14.5px] leading-relaxed pt-4">
+            <div className="max-h-0 opacity-0 overflow-hidden transition-all duration-[250ms] ease-out group-open:max-h-[520px] group-open:opacity-100">
+              <div className="px-5 pb-5 border-t border-[#e8e0d0]/50 text-[#4e5b4e] text-[14.5px] leading-relaxed pt-4">
                 {item.a}
               </div>
             </div>
