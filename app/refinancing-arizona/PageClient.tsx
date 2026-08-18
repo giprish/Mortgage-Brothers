@@ -209,37 +209,58 @@ export default function RefinancingArizonaPage() {
   const [calcTerm, setCalcTerm] = useState("30");
   const [calcResult, setCalcResult] = useState<string | null>(null);
 
+  function parseAmount(value: string) {
+    return parseFloat(value.replace(/,/g, "").replace(/[^0-9.]/g, ""));
+  }
+
   function monthlyPayment(principal: number, annualRate: number, years: number) {
     const r = annualRate / 100 / 12;
     const n = years * 12;
+    if (n <= 0) return 0;
     if (r === 0) return principal / n;
     return (principal * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
   }
 
+  function money(value: number) {
+    return value.toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+      maximumFractionDigits: 0,
+    });
+  }
+
   function handleCalculate(e: React.FormEvent) {
     e.preventDefault();
-    const balance = parseFloat(calcBalance);
-    const currentRate = parseFloat(calcCurrentRate);
-    const newRate = parseFloat(calcNewRate);
-    const term = parseFloat(calcTerm);
-    if (!balance || !currentRate || !newRate || !term || balance <= 0 || currentRate < 0 || newRate < 0 || term <= 0) {
+    const balance = parseAmount(calcBalance);
+    const currentRate = parseAmount(calcCurrentRate);
+    const newRate = parseAmount(calcNewRate);
+    const term = parseAmount(calcTerm);
+    if (
+      !Number.isFinite(balance) ||
+      !Number.isFinite(currentRate) ||
+      !Number.isFinite(newRate) ||
+      !Number.isFinite(term) ||
+      balance <= 0 ||
+      currentRate < 0 ||
+      newRate < 0 ||
+      term <= 0
+    ) {
       setCalcResult("Please enter valid loan details to estimate your savings.");
       return;
     }
     const currentPayment = monthlyPayment(balance, currentRate, term);
     const newPayment = monthlyPayment(balance, newRate, term);
     const monthlySavings = currentPayment - newPayment;
-    const formatted = monthlySavings.toLocaleString("en-US", {
-      style: "currency",
-      currency: "USD",
-      maximumFractionDigits: 0,
-    });
     if (monthlySavings > 0) {
-      setCalcResult(`Estimated monthly savings: ${formatted}`);
+      setCalcResult(
+        `Current payment ${money(currentPayment)} → new payment ${money(newPayment)}. Estimated monthly savings: ${money(monthlySavings)}`,
+      );
     } else if (monthlySavings < 0) {
-      setCalcResult(`Estimated monthly increase: ${Math.abs(monthlySavings).toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 })}`);
+      setCalcResult(
+        `Current payment ${money(currentPayment)} → new payment ${money(newPayment)}. Estimated monthly increase: ${money(Math.abs(monthlySavings))}`,
+      );
     } else {
-      setCalcResult("Estimated monthly savings: $0");
+      setCalcResult(`Estimated monthly payment stays ${money(currentPayment)}`);
     }
   }
 
@@ -492,6 +513,7 @@ export default function RefinancingArizonaPage() {
               <div className="lg:col-span-7">
                 <form
                   onSubmit={handleCalculate}
+                  noValidate
                   className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 lg:p-8 shadow-sm space-y-5"
                 >
                   <h3
@@ -506,43 +528,44 @@ export default function RefinancingArizonaPage() {
                     </label>
                     <input
                       id="calc-balance"
-                      type="number"
-                      min="0"
-                      step="1000"
+                      type="text"
+                      inputMode="decimal"
+                      autoComplete="off"
+                      placeholder="350000"
                       value={calcBalance}
                       onChange={(e) => setCalcBalance(e.target.value)}
                       className="w-full border border-[#e0e0e0] rounded-xl px-4 py-3 text-[15px] text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                     />
                   </div>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                      <label htmlFor="calc-current-rate" className="block text-[#08271B] text-[13px] font-semibold mb-1.5">
-                        Current Interest Rate (%)
-                      </label>
-                      <input
-                        id="calc-current-rate"
-                        type="number"
-                        min="0"
-                        step="0.01"
-                        value={calcCurrentRate}
-                        onChange={(e) => setCalcCurrentRate(e.target.value)}
-                        className="w-full border border-[#e0e0e0] rounded-xl px-4 py-3 text-[15px] text-[#08271B] focus:outline-none focus:border-[#3fb364]"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="calc-new-rate" className="block text-[#08271B] text-[13px] font-semibold mb-1.5">
-                        New Interest Rate (%)
-                      </label>
-                      <input
-                        id="calc-new-rate"
-                        type="number"
-                        min="0"
-                        step="0.01"
-                        value={calcNewRate}
-                        onChange={(e) => setCalcNewRate(e.target.value)}
-                        className="w-full border border-[#e0e0e0] rounded-xl px-4 py-3 text-[15px] text-[#08271B] focus:outline-none focus:border-[#3fb364]"
-                      />
-                    </div>
+                  <div>
+                    <label htmlFor="calc-current-rate" className="block text-[#08271B] text-[13px] font-semibold mb-1.5">
+                      Current Interest Rate (%)
+                    </label>
+                    <input
+                      id="calc-current-rate"
+                      type="text"
+                      inputMode="decimal"
+                      autoComplete="off"
+                      placeholder="6.75"
+                      value={calcCurrentRate}
+                      onChange={(e) => setCalcCurrentRate(e.target.value)}
+                      className="w-full border border-[#e0e0e0] rounded-xl px-4 py-3 text-[15px] text-[#08271B] focus:outline-none focus:border-[#3fb364]"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="calc-new-rate" className="block text-[#08271B] text-[13px] font-semibold mb-1.5">
+                      New Interest Rate (%)
+                    </label>
+                    <input
+                      id="calc-new-rate"
+                      type="text"
+                      inputMode="decimal"
+                      autoComplete="off"
+                      placeholder="5.99"
+                      value={calcNewRate}
+                      onChange={(e) => setCalcNewRate(e.target.value)}
+                      className="w-full border border-[#e0e0e0] rounded-xl px-4 py-3 text-[15px] text-[#08271B] focus:outline-none focus:border-[#3fb364]"
+                    />
                   </div>
                   <div>
                     <label htmlFor="calc-term" className="block text-[#08271B] text-[13px] font-semibold mb-1.5">
@@ -550,9 +573,10 @@ export default function RefinancingArizonaPage() {
                     </label>
                     <input
                       id="calc-term"
-                      type="number"
-                      min="1"
-                      max="40"
+                      type="text"
+                      inputMode="numeric"
+                      autoComplete="off"
+                      placeholder="30"
                       value={calcTerm}
                       onChange={(e) => setCalcTerm(e.target.value)}
                       className="w-full border border-[#e0e0e0] rounded-xl px-4 py-3 text-[15px] text-[#08271B] focus:outline-none focus:border-[#3fb364]"
