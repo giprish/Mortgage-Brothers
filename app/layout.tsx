@@ -96,17 +96,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       />
       {/* Google tag (gtag.js) — once on every page, in <head> */}
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-CQ4C5WS1YT"
+        id="google_gtagjs-js"
+        src="https://www.googletagmanager.com/gtag/js?id=GT-NS9R5SN"
         strategy="beforeInteractive"
       />
       <Script
-        id="google-analytics"
+        id="google_gtagjs-js-after"
         strategy="beforeInteractive"
         dangerouslySetInnerHTML={{
-          __html: `window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-CQ4C5WS1YT');`,
+          __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
+gtag("set","linker",{"domains":["azmortgagebrothers.com"]});
+gtag("js", new Date());
+gtag("set", "developer_id.dZTNiMT", true);
+gtag("config", "GT-NS9R5SN");
+gtag("config", "AW-1015684940");
+gtag("config", "G-CQ4C5WS1YT");
+ window._googlesitekit = window._googlesitekit || {}; window._googlesitekit.throttledEvents = []; window._googlesitekit.gtagEvent = (name, data) => { var key = JSON.stringify( { name, data } ); if ( !! window._googlesitekit.throttledEvents[ key ] ) { return; } window._googlesitekit.throttledEvents[ key ] = true; setTimeout( () => { delete window._googlesitekit.throttledEvents[ key ]; }, 5 ); gtag( "event", name, { ...data, event_source: "site-kit" } ); };
+//# sourceURL=google_gtagjs-js-after`,
         }}
       />
       <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>

@@ -255,7 +255,9 @@ const requiredRoutes = [
   "app/locations.kml/route.ts",
   "app/main-sitemap.xsl/route.ts",
   "app/robots.txt/route.ts",
+  "app/llms.txt/route.ts",
   "lib/sitemap.ts",
+  "lib/llms.ts",
 ];
 for (const file of requiredRoutes) {
   if (!existsSync(join(root, file))) fail(`missing ${file}`);
@@ -270,6 +272,12 @@ if (/Disallow:\s*\/author/.test(robotsRoute)) {
   fail("robots.txt still disallows /author");
 }
 ok("robots.txt route points at sitemap.xml and allows all");
+
+const llmsRoute = readFileSync(join(root, "app/llms.txt/route.ts"), "utf8");
+if (!llmsRoute.includes("buildLlmsTxt(siteUrl)")) {
+  fail("llms.txt route is not host-aware");
+}
+ok("llms.txt route is present and host-aware");
 
 if (process.exitCode) {
   console.error("\nSitemap validation failed.");
