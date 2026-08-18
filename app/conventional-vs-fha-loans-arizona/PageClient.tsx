@@ -525,48 +525,50 @@ export default function ConventionalVsFhaLoansPage() {
               </li>
             </ul>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-[#f5f0e8] rounded-2xl p-6 border border-[#e8e0d0]/60">
-                <h4 className="text-[#08271B] text-[17px] font-bold mb-2">Conventional Loan</h4>
-                <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed">
-                  Mortgage insurance can be removed once you reach 20% equity in your home, potentially
-                  leading to lower monthly payments over time.
+            <div className="flex flex-col gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-[#f5f0e8] rounded-2xl p-6 md:p-7 border border-[#e8e0d0]/60 h-full">
+                  <h4 className="text-[#08271B] text-[17px] font-bold mb-2">Conventional Loan</h4>
+                  <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed">
+                    Mortgage insurance can be removed once you reach 20% equity in your home, potentially
+                    leading to lower monthly payments over time.
+                  </p>
+                </div>
+                <div className="bg-[#f5f0e8] rounded-2xl p-6 md:p-7 border border-[#e8e0d0]/60 h-full">
+                  <h4 className="text-[#08271B] text-[17px] font-bold mb-2">FHA Loan</h4>
+                  <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed">
+                    For loans with less than 10% down payment, mortgage insurance is required for the life
+                    of the loan. If you put down 10% or more, you can remove mortgage insurance after 11
+                    years.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 md:p-8 text-center">
+                <h4 className="text-[#08271B] text-[17px] font-bold mb-4">Interest Rate Comparison</h4>
+                <p className="text-[#4e5b4e] text-[15px]">
+                  Average 30-year Conventional rate:{" "}
+                  <span className="font-bold text-[#08271B]">7.01%</span>
+                </p>
+                <p className="text-[#4e5b4e] text-[15px] mt-2">
+                  Average 30-year FHA rate: <span className="font-bold text-[#08271B]">6.94%</span>
                 </p>
               </div>
-              <div className="bg-[#f5f0e8] rounded-2xl p-6 border border-[#e8e0d0]/60">
-                <h4 className="text-[#08271B] text-[17px] font-bold mb-2">FHA Loan</h4>
-                <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed">
-                  For loans with less than 10% down payment, mortgage insurance is required for the life
-                  of the loan. If you put down 10% or more, you can remove mortgage insurance after 11
-                  years.
-                </p>
+
+              <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center max-w-3xl mx-auto">
+                For borrowers with excellent credit (760+), Conventional loans offer slight advantages.
+                For those with lower credit scores (660), FHA loans can provide substantial monthly savings
+                and easier qualification criteria.
+              </p>
+
+              <div className="flex justify-center">
+                <Link
+                  href="/conventional-vs-fha-calculator/"
+                  className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                >
+                  Compare Your Loan Options Now!
+                </Link>
               </div>
-            </div>
-
-            <div className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 text-center">
-              <h4 className="text-[#08271B] text-[17px] font-bold mb-3">Interest Rate Comparison</h4>
-              <p className="text-[#4e5b4e] text-[15px]">
-                Average 30-year Conventional rate:{" "}
-                <span className="font-bold text-[#08271B]">7.01%</span>
-              </p>
-              <p className="text-[#4e5b4e] text-[15px] mt-1">
-                Average 30-year FHA rate: <span className="font-bold text-[#08271B]">6.94%</span>
-              </p>
-            </div>
-
-            <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center max-w-3xl mx-auto">
-              For borrowers with excellent credit (760+), Conventional loans offer slight advantages.
-              For those with lower credit scores (660), FHA loans can provide substantial monthly savings
-              and easier qualification criteria.
-            </p>
-
-            <div className="loan-btn-wrap">
-              <Link
-                href="/conventional-vs-fha-calculator/"
-                className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
-              >
-                Compare Your Loan Options Now!
-              </Link>
             </div>
           </div>
         </section>
