@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Playfair_Display } from "next/font/google";
+import Script from "next/script";
 import { homeSeoMetadata } from "@/lib/seo";
-import { COMPANY } from "@/lib/company";
+import { getConfiguredSiteUrl } from "@/lib/site-url";
 import DeferredPreApproval from "./component/DeferredPreApproval";
 import JsonLd from "./component/JsonLd";
 import "./globals.css";
@@ -27,7 +28,7 @@ export const viewport: Viewport = {
  * becomes dynamically rendered and Lighthouse TTFB collapses.
  */
 export const metadata: Metadata = {
-  metadataBase: new URL(COMPANY.siteUrl),
+  metadataBase: new URL(getConfiguredSiteUrl()),
   ...homeSeoMetadata,
   robots: {
     index: false,
@@ -39,6 +40,12 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
+  },
+  verification: {
+    google: [
+      "sc-domain%3Aazmortgagebrothers.com",
+      "o0jlxMZZWCtr8DV0PYRSpPo3Vi7R8SV3yiEFaAT85Ac",
+    ],
   },
   icons: {
     icon: [
@@ -75,7 +82,44 @@ export default function RootLayout({
       className={`${playfair.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      {/* Google Tag Manager — injected as high in <head> as possible */}
+      <Script
+        id="google-tag-manager"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PF5LK3F');`,
+        }}
+      />
+      {/* Google tag (gtag.js) — once on every page, in <head> */}
+      <Script
+        src="https://www.googletagmanager.com/gtag/js?id=G-CQ4C5WS1YT"
+        strategy="beforeInteractive"
+      />
+      <Script
+        id="google-analytics"
+        strategy="beforeInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-CQ4C5WS1YT');`,
+        }}
+      />
       <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-PF5LK3F"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+            title="Google Tag Manager"
+          />
+        </noscript>
         <a href="#main-content" className="skip-to-content">
           Skip to main content
         </a>

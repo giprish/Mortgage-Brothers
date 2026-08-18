@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
+import { getSeoMetadata } from "@/lib/seo";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy | Mortgage Brothers",
-  description:
-    "Privacy Policy for Mortgage Brothers LLC — how we collect, use, and protect your information.",
-  alternates: {
-    canonical: "/privacy-policy/",
-  },
-};
+export const metadata: Metadata = getSeoMetadata("/privacy-policy/");
 
 export default function PrivacyPolicyPage() {
   return (

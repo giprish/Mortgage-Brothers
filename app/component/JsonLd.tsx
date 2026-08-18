@@ -1,15 +1,18 @@
 import { COMPANY, LOAN_OFFICERS } from "@/lib/company";
+import { getConfiguredSiteUrl } from "@/lib/site-url";
+
+const siteUrl = getConfiguredSiteUrl();
 
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": ["MortgageBroker", "LocalBusiness", "FinancialService"],
-  "@id": `${COMPANY.siteUrl}/#organization`,
+  "@id": `${siteUrl}/#organization`,
   name: COMPANY.brandName,
   legalName: COMPANY.legalName,
-  url: COMPANY.siteUrl,
+  url: siteUrl,
   telephone: COMPANY.phoneDisplay,
-  image: `${COMPANY.siteUrl}/home/eddie-knoell.jpg`,
-  logo: `${COMPANY.siteUrl}${COMPANY.logoSrc}`,
+  image: `${siteUrl}/home/eddie-knoell.jpg`,
+  logo: `${siteUrl}${COMPANY.logoSrc}`,
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",

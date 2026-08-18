@@ -1,0 +1,2606 @@
+{
+  "live_paths": 251,
+  "compared": 251,
+  "errors": [],
+  "full_match": 0,
+  "only_missing_sitewide_tags": 183,
+  "content_mismatches": [
+    {
+      "path": "/understanding-amortization-chart/",
+      "diffs": [
+        "description",
+        "og:description",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "description": "Learn how an amortization schedule helps you track mortgage payments, interest, and principal over time to make informed financial decisions.",
+        "og:description": "Learn how an amortization schedule helps you track mortgage payments, interest, and principal over time to make informed financial decisions.",
+        "twitter:description": "Learn how an amortization schedule helps you track mortgage payments, interest, and principal over time to make informed financial decisions.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "description": "Learn how a mortgage amortization schedule works, how principal and interest change over time, and how extra payments can shorten your loan.",
+        "og:description": "Learn how a mortgage amortization schedule works, how principal and interest change over time, and how extra payments can shorten your loan.",
+        "twitter:description": "Learn how a mortgage amortization schedule works, how principal and interest change over time, and how extra payments can shorten your loan.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/what-are-mortgage-trigger-leads/",
+      "diffs": [
+        "description",
+        "og:description",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "description": "Learn how mortgage trigger leads work, why lenders use them, and how to protect your privacy from unwanted sales calls.",
+        "og:description": "Learn how mortgage trigger leads work, why lenders use them, and how to protect your privacy from unwanted sales calls.",
+        "twitter:description": "Learn how mortgage trigger leads work, why lenders use them, and how to protect your privacy from unwanted sales calls.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "description": "Learn what mortgage trigger leads are, why strangers call after you apply, and how to stop unwanted calls and mail with Do Not Call and DMA Choice.",
+        "og:description": "Learn what mortgage trigger leads are, why strangers call after you apply, and how to stop unwanted calls and mail with Do Not Call and DMA Choice.",
+        "twitter:description": "Learn what mortgage trigger leads are, why strangers call after you apply, and how to stop unwanted calls and mail with Do Not Call and DMA Choice.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/when-is-a-mortgage-payment-actually-considered-late/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "When is a mortgage payment considered late by bank or lender?",
+        "description": "Learn when a mortgage payment is considered late, key deadlines, grace periods, and how to avoid late fees or credit score impacts.",
+        "og:title": "When is a mortgage payment considered late by bank or lender?",
+        "og:description": "Learn when a mortgage payment is considered late, key deadlines, grace periods, and how to avoid late fees or credit score impacts.",
+        "twitter:title": "When is a mortgage payment considered late by bank or lender?",
+        "twitter:description": "Learn when a mortgage payment is considered late, key deadlines, grace periods, and how to avoid late fees or credit score impacts.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "When is a mortgage payment actually considered late?",
+        "description": "So, the short answer is that every mortgage is due on the first of the month. Now, where it gets a little trickier is that there are two different ways to think about if it\u2019s late: When the bank or lender thinks you\u2019re late Now, the lender doesn\u2019t consider your payment late until after the",
+        "og:title": "When is a mortgage payment actually considered late?",
+        "og:description": "So, the short answer is that every mortgage is due on the first of the month. Now, where it gets a little trickier is that there are two different ways to think about if it\u2019s late: When the bank or lender thinks you\u2019re late Now, the lender doesn\u2019t consider your payment late until after the",
+        "twitter:title": "When is a mortgage payment actually considered late?",
+        "twitter:description": "So, the short answer is that every mortgage is due on the first of the month. Now, where it gets a little trickier is that there are two different ways to think about if it\u2019s late: When the bank or lender thinks you\u2019re late Now, the lender doesn\u2019t consider your payment late until after the",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/what-are-closing-costs-on-a-home-purchase/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "What are The Closing Costs on a Home Purchase?",
+        "description": "Learn what closing costs are, how much they typically cost, and ways to reduce expenses when buying a home.",
+        "og:title": "What are The Closing Costs on a Home Purchase?",
+        "og:description": "Learn what closing costs are, how much they typically cost, and ways to reduce expenses when buying a home.",
+        "twitter:title": "What are The Closing Costs on a Home Purchase?",
+        "twitter:description": "Learn what closing costs are, how much they typically cost, and ways to reduce expenses when buying a home.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "What Are Closing Costs on a Home Purchase? A Clear Breakdown",
+        "description": "Learn what closing costs are on a home purchase, what fees are included, what is considered prepaid, and why total cash-to-close can differ from lender fees.",
+        "og:title": "What Are Closing Costs on a Home Purchase? A Clear Breakdown",
+        "og:description": "Learn what closing costs are on a home purchase, what fees are included, what is considered prepaid, and why total cash-to-close can differ from lender fees.",
+        "twitter:title": "What Are Closing Costs on a Home Purchase? A Clear Breakdown",
+        "twitter:description": "Learn what closing costs are on a home purchase, what fees are included, what is considered prepaid, and why total cash-to-close can differ from lender fees.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/how-does-a-mortgage-apr-work-and-what-does-it-mean/",
+      "diffs": [
+        "description",
+        "og:description",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "description": "Learn what mortgage APR is, how it affects your loan, and why comparing APRs can save you money on your mortgage.",
+        "og:description": "Learn what mortgage APR is, how it affects your loan, and why comparing APRs can save you money on your mortgage.",
+        "twitter:description": "Learn what mortgage APR is, how it affects your loan, and why comparing APRs can save you money on your mortgage.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "description": "Learn how mortgage APR differs from interest rate, how closing costs affect APR, and how to compare loan offers by focusing on fees\u2014not just the rate.",
+        "og:description": "Learn how mortgage APR differs from interest rate, how closing costs affect APR, and how to compare loan offers by focusing on fees\u2014not just the rate.",
+        "twitter:description": "Learn how mortgage APR differs from interest rate, how closing costs affect APR, and how to compare loan offers by focusing on fees\u2014not just the rate.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/getting-a-mortgage-with-employment-gaps/",
+      "diffs": [
+        "description",
+        "og:description",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "description": "Learn how employment gaps impact mortgage approval and what lenders look for when evaluating loan applications.",
+        "og:description": "Learn how employment gaps impact mortgage approval and what lenders look for when evaluating loan applications.",
+        "twitter:description": "Learn how employment gaps impact mortgage approval and what lenders look for when evaluating loan applications.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "description": "Learn how employment gaps affect mortgage approval and what Conventional, FHA, and VA loan programs require to qualify.",
+        "og:description": "Learn how employment gaps affect mortgage approval and what Conventional, FHA, and VA loan programs require to qualify.",
+        "twitter:description": "Learn how employment gaps affect mortgage approval and what Conventional, FHA, and VA loan programs require to qualify.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/what-if-my-spouse-dies-and-im-not-on-the-mortgage/",
+      "diffs": [
+        "description",
+        "og:description",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "description": "Learn your options if your spouse passes and you're not on the mortgage, including legal rights, financial steps, and ways to protect your home.",
+        "og:description": "Learn your options if your spouse passes and you're not on the mortgage, including legal rights, financial steps, and ways to protect your home.",
+        "twitter:description": "Learn your options if your spouse passes and you're not on the mortgage, including legal rights, financial steps, and ways to protect your home.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "description": "Learn what happens to a mortgage when a spouse dies if you are not on the loan, including title, St. Germain Act protections, community property, and refinance options.",
+        "og:description": "Learn what happens to a mortgage when a spouse dies if you are not on the loan, including title, St. Germain Act protections, community property, and refinance options.",
+        "twitter:description": "Learn what happens to a mortgage when a spouse dies if you are not on the loan, including title, St. Germain Act protections, community property, and refinance options.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/better-getting-mortgage-couple-vs-single-applicant/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Mortgage as a Couple vs. Single Applicant: Which Is Better?",
+        "description": "Discover the pros and cons of applying for a mortgage alone or with a partner, and which option is best for you.",
+        "og:title": "Mortgage as a Couple vs. Single Applicant: Which Is Better?",
+        "og:description": "Discover the pros and cons of applying for a mortgage alone or with a partner, and which option is best for you.",
+        "twitter:title": "Mortgage as a Couple vs. Single Applicant: Which Is Better?",
+        "twitter:description": "Discover the pros and cons of applying for a mortgage alone or with a partner, and which option is best for you.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Which Is Better: Getting a Mortgage As a Couple vs. As a Single Applicant?",
+        "description": "Compare applying as a couple versus a single applicant and see how credit and underwriting may affect mortgage approval and terms.",
+        "og:title": "Which Is Better: Getting a Mortgage As a Couple vs. As a Single Applicant?",
+        "og:description": "Compare applying as a couple versus a single applicant and see how credit and underwriting may affect mortgage approval and terms.",
+        "twitter:title": "Which Is Better: Getting a Mortgage As a Couple vs. As a Single Applicant?",
+        "twitter:description": "Compare applying as a couple versus a single applicant and see how credit and underwriting may affect mortgage approval and terms.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/what-you-need-to-know-about-the-arizona-prequalification-form/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Arizona Prequalification Form: Key Facts for Homebuyers",
+        "description": "Learn how the Arizona Prequalification Form works, why it\u2019s required, and how it impacts your homebuying process.",
+        "og:title": "Arizona Prequalification Form: Key Facts for Homebuyers",
+        "og:description": "Learn how the Arizona Prequalification Form works, why it\u2019s required, and how it impacts your homebuying process.",
+        "twitter:title": "Arizona Prequalification Form: Key Facts for Homebuyers",
+        "twitter:description": "Learn how the Arizona Prequalification Form works, why it\u2019s required, and how it impacts your homebuying process.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "What You Need to Know About the Arizona Prequalification Form",
+        "description": "Learn how the Arizona Prequalification Form works, key line items buyers and agents should review, and how a strong form helps in competitive markets.",
+        "og:title": "What You Need to Know About the Arizona Prequalification Form",
+        "og:description": "Learn how the Arizona Prequalification Form works, key line items buyers and agents should review, and how a strong form helps in competitive markets.",
+        "twitter:title": "What You Need to Know About the Arizona Prequalification Form",
+        "twitter:description": "Learn how the Arizona Prequalification Form works, key line items buyers and agents should review, and how a strong form helps in competitive markets.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/arizona-mortgage-rates-and-the-interest-deduction/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Arizona Mortgage Rates & Interest Deduction: What to Know",
+        "description": "Learn how Arizona mortgage rates affect home loans and how the mortgage interest deduction can help you save on taxes.",
+        "og:title": "Arizona Mortgage Rates & Interest Deduction: What to Know",
+        "og:description": "Learn how Arizona mortgage rates affect home loans and how the mortgage interest deduction can help you save on taxes.",
+        "twitter:title": "Arizona Mortgage Rates & Interest Deduction: What to Know",
+        "twitter:description": "Learn how Arizona mortgage rates affect home loans and how the mortgage interest deduction can help you save on taxes.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Arizona Mortgage Rates and the Interest Deduction",
+        "description": "Understand the mortgage interest tax deduction, why many homeowners skip it, and how claiming it can save money alongside Arizona mortgage rates.",
+        "og:title": "Arizona Mortgage Rates and the Interest Deduction",
+        "og:description": "Understand the mortgage interest tax deduction, why many homeowners skip it, and how claiming it can save money alongside Arizona mortgage rates.",
+        "twitter:title": "Arizona Mortgage Rates and the Interest Deduction",
+        "twitter:description": "Understand the mortgage interest tax deduction, why many homeowners skip it, and how claiming it can save money alongside Arizona mortgage rates.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/what-is-an-example-of-a-mortgage-recast/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "What Is a Mortgage Recast? Example & Benefits Explained",
+        "description": "Learn how a mortgage recast works with a real example and see how it can lower your monthly payments without refinancing.",
+        "og:title": "What Is a Mortgage Recast? Example & Benefits Explained",
+        "og:description": "Learn how a mortgage recast works with a real example and see how it can lower your monthly payments without refinancing.",
+        "twitter:title": "What Is a Mortgage Recast? Example & Benefits Explained",
+        "twitter:description": "Learn how a mortgage recast works with a real example and see how it can lower your monthly payments without refinancing.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "What is an Example of a Mortgage Recast?",
+        "description": "See a clear mortgage recast example, how lump-sum payments lower monthly payments, and when paying down principal without a recast is better.",
+        "og:title": "What is an Example of a Mortgage Recast?",
+        "og:description": "See a clear mortgage recast example, how lump-sum payments lower monthly payments, and when paying down principal without a recast is better.",
+        "twitter:title": "What is an Example of a Mortgage Recast?",
+        "twitter:description": "See a clear mortgage recast example, how lump-sum payments lower monthly payments, and when paying down principal without a recast is better.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/prepayment-penalties-on-your-arizona-mortgage/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Prepayment Penalties on Your Arizona Mortgage: What to Know",
+        "description": "Learn how Arizona mortgage prepayment penalties work, when they apply, and how to avoid extra fees when paying off your loan early.",
+        "og:title": "Prepayment Penalties on Your Arizona Mortgage: What to Know",
+        "og:description": "Learn how Arizona mortgage prepayment penalties work, when they apply, and how to avoid extra fees when paying off your loan early.",
+        "twitter:title": "Prepayment Penalties on Your Arizona Mortgage: What to Know",
+        "twitter:description": "Learn how Arizona mortgage prepayment penalties work, when they apply, and how to avoid extra fees when paying off your loan early.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Prepayment Penalties on Your Arizona Mortgage",
+        "description": "Learn how optional prepayment penalties work on Arizona mortgages, when they may lower your rate, and how to negotiate terms or avoid surprise fees.",
+        "og:title": "Prepayment Penalties on Your Arizona Mortgage",
+        "og:description": "Learn how optional prepayment penalties work on Arizona mortgages, when they may lower your rate, and how to negotiate terms or avoid surprise fees.",
+        "twitter:title": "Prepayment Penalties on Your Arizona Mortgage",
+        "twitter:description": "Learn how optional prepayment penalties work on Arizona mortgages, when they may lower your rate, and how to negotiate terms or avoid surprise fees.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/buying-a-house-with-a-cash-offer-and-simultaneously-getting-mortgage-financing/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Buy a Home with a Cash Offer & Mortgage Financing",
+        "description": "Learn how to make a competitive cash offer on a home while securing mortgage financing at the same time.",
+        "og:title": "Buy a Home with a Cash Offer & Mortgage Financing",
+        "og:description": "Learn how to make a competitive cash offer on a home while securing mortgage financing at the same time.",
+        "twitter:title": "Buy a Home with a Cash Offer & Mortgage Financing",
+        "twitter:description": "Learn how to make a competitive cash offer on a home while securing mortgage financing at the same time.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Buying a House with a Cash Offer and Simultaneously getting Mortgage Financing",
+        "description": "How to make a competitive cash offer using family or private funds, then refinance into a traditional mortgage after closing.",
+        "og:title": "Buying a House with a Cash Offer and Simultaneously getting Mortgage Financing",
+        "og:description": "How to make a competitive cash offer using family or private funds, then refinance into a traditional mortgage after closing.",
+        "twitter:title": "Buying a House with a Cash Offer and Simultaneously getting Mortgage Financing",
+        "twitter:description": "How to make a competitive cash offer using family or private funds, then refinance into a traditional mortgage after closing.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/arizona-real-estate-capital-gains-is-back/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Arizona Real Estate Capital Gains is Back - Mortgage Brothers",
+        "description": "Learn how Arizona real estate capital gains taxes work, what exemptions exist, and how to reduce your tax liability when selling a home.",
+        "og:title": "Arizona Real Estate Capital Gains is Back - Mortgage Brothers",
+        "og:description": "Learn how Arizona real estate capital gains taxes work, what exemptions exist, and how to reduce your tax liability when selling a home.",
+        "twitter:title": "Arizona Real Estate Capital Gains is Back - Mortgage Brothers",
+        "twitter:description": "Learn how Arizona real estate capital gains taxes work, what exemptions exist, and how to reduce your tax liability when selling a home.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Arizona Real Estate Capital Gains is back",
+        "description": "A recap of capital gains rules for Arizona home sellers, main-home exclusions, and special situations that can reduce tax liability.",
+        "og:title": "Arizona Real Estate Capital Gains is back",
+        "og:description": "A recap of capital gains rules for Arizona home sellers, main-home exclusions, and special situations that can reduce tax liability.",
+        "twitter:title": "Arizona Real Estate Capital Gains is back",
+        "twitter:description": "A recap of capital gains rules for Arizona home sellers, main-home exclusions, and special situations that can reduce tax liability.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/arizona-second-mortgages/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Arizona Second Mortgages: How They Work & When to Use One",
+        "description": "Learn how Arizona second mortgages work, their benefits, risks, and how they can help you access home equity.",
+        "og:title": "Arizona Second Mortgages: How They Work & When to Use One",
+        "og:description": "Learn how Arizona second mortgages work, their benefits, risks, and how they can help you access home equity.",
+        "twitter:title": "Arizona Second Mortgages: How They Work & When to Use One",
+        "twitter:description": "Learn how Arizona second mortgages work, their benefits, risks, and how they can help you access home equity.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Arizona Second Mortgages",
+        "description": "Understand Arizona second mortgages, home equity loans, HELOCs, and how homeowners can qualify to access equity.",
+        "og:title": "Arizona Second Mortgages",
+        "og:description": "Understand Arizona second mortgages, home equity loans, HELOCs, and how homeowners can qualify to access equity.",
+        "twitter:title": "Arizona Second Mortgages",
+        "twitter:description": "Understand Arizona second mortgages, home equity loans, HELOCs, and how homeowners can qualify to access equity.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/grossing-up-your-income-what-does-that-mean/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Grossing Up Your Income - What Does That Mean?",
+        "description": "Learn how grossing up income works, when it applies, and how it can help you qualify for a mortgage with non-taxable income.",
+        "og:title": "Grossing Up Your Income - What Does That Mean?",
+        "og:description": "Learn how grossing up income works, when it applies, and how it can help you qualify for a mortgage with non-taxable income.",
+        "twitter:title": "Grossing Up Your Income - What Does That Mean?",
+        "twitter:description": "Learn how grossing up income works, when it applies, and how it can help you qualify for a mortgage with non-taxable income.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Grossing Up Your Income\u2026 what does that mean?",
+        "description": "Understand how lenders gross up non-taxable income by 15\u201325% for FHA and conventional loans to improve mortgage qualification.",
+        "og:title": "Grossing Up Your Income\u2026 what does that mean?",
+        "og:description": "Understand how lenders gross up non-taxable income by 15\u201325% for FHA and conventional loans to improve mortgage qualification.",
+        "twitter:title": "Grossing Up Your Income\u2026 what does that mean?",
+        "twitter:description": "Understand how lenders gross up non-taxable income by 15\u201325% for FHA and conventional loans to improve mortgage qualification.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/mortgage-payoff-higher-than-mortgage-balance/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Why Is My Mortgage Payoff Higher Than My Statement Balance?",
+        "description": "Learn why your mortgage payoff amount is higher than your balance, including interest, fees, and how to calculate the total cost.",
+        "og:title": "Why Is My Mortgage Payoff Higher Than My Statement Balance?",
+        "og:description": "Learn why your mortgage payoff amount is higher than your balance, including interest, fees, and how to calculate the total cost.",
+        "twitter:title": "Why Is My Mortgage Payoff Higher Than My Statement Balance?",
+        "twitter:description": "Learn why your mortgage payoff amount is higher than your balance, including interest, fees, and how to calculate the total cost.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Why Mortgage Payoff Is Higher Than Statement Balance",
+        "description": "Understand why your mortgage payoff can be higher than your statement balance, including daily accrued interest, timing effects, and payoff date calculations.",
+        "og:title": "Why Mortgage Payoff Is Higher Than Statement Balance",
+        "og:description": "Understand why your mortgage payoff can be higher than your statement balance, including daily accrued interest, timing effects, and payoff date calculations.",
+        "twitter:title": "Why Mortgage Payoff Is Higher Than Statement Balance",
+        "twitter:description": "Understand why your mortgage payoff can be higher than your statement balance, including daily accrued interest, timing effects, and payoff date calculations.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/can-i-get-a-3rd-mortgage/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Can You Get a Third Mortgage? Requirements & Options",
+        "description": "Learn if you can qualify for a third mortgage, what lenders look for, and how to use home equity strategically.",
+        "og:title": "Can You Get a Third Mortgage? Requirements & Options",
+        "og:description": "Learn if you can qualify for a third mortgage, what lenders look for, and how to use home equity strategically.",
+        "twitter:title": "Can You Get a Third Mortgage? Requirements & Options",
+        "twitter:description": "Learn if you can qualify for a third mortgage, what lenders look for, and how to use home equity strategically.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Can I Get a 3rd Mortgage?",
+        "description": "Find out why third-position residential mortgages are rarely available and how refinancing a first or second loan can unlock more equity.",
+        "og:title": "Can I Get a 3rd Mortgage?",
+        "og:description": "Find out why third-position residential mortgages are rarely available and how refinancing a first or second loan can unlock more equity.",
+        "twitter:title": "Can I Get a 3rd Mortgage?",
+        "twitter:description": "Find out why third-position residential mortgages are rarely available and how refinancing a first or second loan can unlock more equity.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "How Fast Is Too Fast to Close a Mortgage?",
+        "description": "Learn how to close a mortgage quickly without mistakes, avoid risks, and ensure a smooth home purchase process.",
+        "og:title": "How Fast Is Too Fast to Close a Mortgage?",
+        "og:description": "Learn how to close a mortgage quickly without mistakes, avoid risks, and ensure a smooth home purchase process.",
+        "twitter:title": "How Fast Is Too Fast to Close a Mortgage?",
+        "twitter:description": "Learn how to close a mortgage quickly without mistakes, avoid risks, and ensure a smooth home purchase process.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "How Fast is Too Fast to Close a Mortgage Loan to Purchase a House?",
+        "description": "Learn why a 30-day mortgage close is ideal, when 20\u201325 days is reasonable, and the risks of rushing a 10\u201315 day closing.",
+        "og:title": "How Fast is Too Fast to Close a Mortgage Loan to Purchase a House?",
+        "og:description": "Learn why a 30-day mortgage close is ideal, when 20\u201325 days is reasonable, and the risks of rushing a 10\u201315 day closing.",
+        "twitter:title": "How Fast is Too Fast to Close a Mortgage Loan to Purchase a House?",
+        "twitter:description": "Learn why a 30-day mortgage close is ideal, when 20\u201325 days is reasonable, and the risks of rushing a 10\u201315 day closing.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/what-is-the-difference-between-aan-arizona-condo-and-arizona-townhome/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "What\u2019s the Difference Between a Condo and a Townhome?",
+        "description": "Learn the key differences between a condo and a townhome, including ownership rules, costs, and which option suits your lifestyle best.",
+        "og:title": "What\u2019s the Difference Between a Condo and a Townhome?",
+        "og:description": "Learn the key differences between a condo and a townhome, including ownership rules, costs, and which option suits your lifestyle best.",
+        "twitter:title": "What\u2019s the Difference Between a Condo and a Townhome?",
+        "twitter:description": "Learn the key differences between a condo and a townhome, including ownership rules, costs, and which option suits your lifestyle best.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "What Is The Difference Between A Condo And A Townhome?",
+        "description": "Compare Arizona condo vs townhome ownership, HOA structure, and why lenders treat condos with stricter financing guidelines.",
+        "og:title": "What Is The Difference Between A Condo And A Townhome?",
+        "og:description": "Compare Arizona condo vs townhome ownership, HOA structure, and why lenders treat condos with stricter financing guidelines.",
+        "twitter:title": "What Is The Difference Between A Condo And A Townhome?",
+        "twitter:description": "Compare Arizona condo vs townhome ownership, HOA structure, and why lenders treat condos with stricter financing guidelines.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/detached-guest-home-casita-appraisal-issues/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Detached Guest Home Appraisal Issues Explained",
+        "description": "Learn how detached guest homes (casitas) impact home appraisals, property value, and mortgage approval.",
+        "og:title": "Detached Guest Home Appraisal Issues Explained",
+        "og:description": "Learn how detached guest homes (casitas) impact home appraisals, property value, and mortgage approval.",
+        "twitter:title": "Detached Guest Home Appraisal Issues Explained",
+        "twitter:description": "Learn how detached guest homes (casitas) impact home appraisals, property value, and mortgage approval.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Detached Guest Home (Casita) Appraisal Issues",
+        "description": "Understand how detached guest homes and casitas are appraised, why they get low line-item adjustments, and what that means for financing.",
+        "og:title": "Detached Guest Home (Casita) Appraisal Issues",
+        "og:description": "Understand how detached guest homes and casitas are appraised, why they get low line-item adjustments, and what that means for financing.",
+        "twitter:title": "Detached Guest Home (Casita) Appraisal Issues",
+        "twitter:description": "Understand how detached guest homes and casitas are appraised, why they get low line-item adjustments, and what that means for financing.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/difference-between-owner-occupied-second-home-and-investment-property/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Owner-Occupied vs. Second Home vs. Investment Property",
+        "description": "Learn the differences between owner-occupied, second homes, and investment properties, including mortgage rules and tax implications.",
+        "og:title": "Owner-Occupied vs. Second Home vs. Investment Property",
+        "og:description": "Learn the differences between owner-occupied, second homes, and investment properties, including mortgage rules and tax implications.",
+        "twitter:title": "Owner-Occupied vs. Second Home vs. Investment Property",
+        "twitter:description": "Learn the differences between owner-occupied, second homes, and investment properties, including mortgage rules and tax implications.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Difference Between Owner-Occupied, Second Home, and Investment Property?",
+        "description": "When applying for a Arizona mortgage, a borrower's \"Occupancy Type\" is a major factor in the amount of down payment required, loan program available, and mortgage interest rate. Whether you are purchasing, doing a rate/term refinance or taking equity out of your property through a cash out refinance, occupancy type is always considered by the underwriter.",
+        "og:title": "Difference Between Owner-Occupied, Second Home, and Investment Property?",
+        "og:description": "When applying for a Arizona mortgage, a borrower's \"Occupancy Type\" is a major factor in the amount of down payment required, loan program available, and mortgage interest rate. Whether you are purchasing, doing a rate/term refinance or taking equity out of your property through a cash out refinance, occupancy type is always considered by the underwriter.",
+        "twitter:title": "Difference Between Owner-Occupied, Second Home, and Investment Property?",
+        "twitter:description": "When applying for a Arizona mortgage, a borrower's \"Occupancy Type\" is a major factor in the amount of down payment required, loan program available, and mortgage interest rate. Whether you are purchasing, doing a rate/term refinance or taking equity out of your property through a cash out refinance, occupancy type is always considered by the underwriter.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/how-to-skip-2-payments-on-your-mortgage/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "How to Skip Two Payments On Your Mortgage?",
+        "description": "Learn how to skip 2 payments on your mortgage, the steps involved, and how this option can provide financial flexibility.",
+        "og:title": "How to Skip Two Payments On Your Mortgage?",
+        "og:description": "Learn how to skip 2 payments on your mortgage, the steps involved, and how this option can provide financial flexibility.",
+        "twitter:title": "How to Skip Two Payments On Your Mortgage?",
+        "twitter:description": "Learn how to skip 2 payments on your mortgage, the steps involved, and how this option can provide financial flexibility.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "How to Skip 2 Payments On Your Mortgage?",
+        "description": "See how refinancing can let you skip two mortgage payments, why interest is prepaid or rolled forward, and why it does not save money.",
+        "og:title": "How to Skip 2 Payments On Your Mortgage?",
+        "og:description": "See how refinancing can let you skip two mortgage payments, why interest is prepaid or rolled forward, and why it does not save money.",
+        "twitter:title": "How to Skip 2 Payments On Your Mortgage?",
+        "twitter:description": "See how refinancing can let you skip two mortgage payments, why interest is prepaid or rolled forward, and why it does not save money.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/how-does-my-car-loan-payment-affect-my-mortgage/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "How Your Car Loan Payment Affects Your Mortgage Approval",
+        "description": "Learn how your car loan payment impacts mortgage approval, your debt-to-income ratio, and your chances of securing a home loan.",
+        "og:title": "How Your Car Loan Payment Affects Your Mortgage Approval",
+        "og:description": "Learn how your car loan payment impacts mortgage approval, your debt-to-income ratio, and your chances of securing a home loan.",
+        "twitter:title": "How Your Car Loan Payment Affects Your Mortgage Approval",
+        "twitter:description": "Learn how your car loan payment impacts mortgage approval, your debt-to-income ratio, and your chances of securing a home loan.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "How Does My Car Loan Payment Affect My Mortgage?",
+        "description": "Learn how car loan payments reduce mortgage approval power, with examples for $250, $400, $600, and $1,000 monthly auto payments.",
+        "og:title": "How Does My Car Loan Payment Affect My Mortgage?",
+        "og:description": "Learn how car loan payments reduce mortgage approval power, with examples for $250, $400, $600, and $1,000 monthly auto payments.",
+        "twitter:title": "How Does My Car Loan Payment Affect My Mortgage?",
+        "twitter:description": "Learn how car loan payments reduce mortgage approval power, with examples for $250, $400, $600, and $1,000 monthly auto payments.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/lsu-forms-loan-status-updates-and-what-you-need-to-know/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "LSU Forms: Loan Status Updates & What You Need to Know",
+        "description": "Learn how LSU Forms Loan Status Updates work, why they matter, and how they help buyers and sellers stay informed during the mortgage process.",
+        "og:title": "LSU Forms: Loan Status Updates & What You Need to Know",
+        "og:description": "Learn how LSU Forms Loan Status Updates work, why they matter, and how they help buyers and sellers stay informed during the mortgage process.",
+        "twitter:title": "LSU Forms: Loan Status Updates & What You Need to Know",
+        "twitter:description": "Learn how LSU Forms Loan Status Updates work, why they matter, and how they help buyers and sellers stay informed during the mortgage process.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "LSU Forms \u2013 Loan Status Updates and what you need to know",
+        "description": "We go through the LSU (Loan Status Updates) which is an Arizona specific form. This is an important form that lenders will need to send to the sellers throughout the purchase transaction. We give our insight on the form and highlight the items we think are important for seller, buyers, and Realtors to be looking at.",
+        "og:title": "LSU Forms \u2013 Loan Status Updates and what you need to know",
+        "og:description": "We go through the LSU (Loan Status Updates) which is an Arizona specific form. This is an important form that lenders will need to send to the sellers throughout the purchase transaction.",
+        "twitter:title": "LSU Forms \u2013 Loan Status Updates and what you need to know",
+        "twitter:description": "We go through the LSU (Loan Status Updates) which is an Arizona specific form. This is an important form that lenders will need to send to the sellers throughout the purchase transaction.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/how-do-solar-panels-affect-the-mortgage-and-closing-process/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "How do Solar Panels affects mortgage and closing process?",
+        "description": "Learn how solar panels affect the mortgage and closing process, including financing options, appraisal impact, and lender requirements.",
+        "og:title": "How do Solar Panels affects mortgage and closing process?",
+        "og:description": "Learn how solar panels affect the mortgage and closing process, including financing options, appraisal impact, and lender requirements.",
+        "twitter:title": "How do Solar Panels affects mortgage and closing process?",
+        "twitter:description": "Learn how solar panels affect the mortgage and closing process, including financing options, appraisal impact, and lender requirements.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "How do Solar Panels affect the mortgage and closing process?",
+        "description": "In this episode, we covered solar panels and how borrowers should view them when looking to buy. How do lenders view solar panels? Are they even allowed? Yes, in most cases, solar panels are allowed. When we do the loan, we want to make sure that the buyer gets a copy of the solar agreement.",
+        "og:title": "How do Solar Panels affect the mortgage and closing process?",
+        "og:description": "In this episode, we covered solar panels and how borrowers should view them when looking to buy. How do lenders view solar panels? Are they even allowed?",
+        "twitter:title": "How do Solar Panels affect the mortgage and closing process?",
+        "twitter:description": "In this episode, we covered solar panels and how borrowers should view them when looking to buy. How do lenders view solar panels? Are they even allowed?",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/buying-down-your-arizona-interest-rate/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Buying Down Your Home Loan Interest Rate: Is It Worth It?",
+        "description": "Learn how buying down your interest rate works, when it makes sense, and how it can save you money on your mortgage.",
+        "og:title": "Buying Down Your Home Loan Interest Rate: Is It Worth It?",
+        "og:description": "Learn how buying down your interest rate works, when it makes sense, and how it can save you money on your mortgage.",
+        "twitter:title": "Buying Down Your Home Loan Interest Rate: Is It Worth It?",
+        "twitter:description": "Learn how buying down your interest rate works, when it makes sense, and how it can save you money on your mortgage.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Buying Down Your Home Loan Interest Rate",
+        "description": "Learn how mortgage buydowns and discount points work in Arizona, including simple, 2-1, and 3-2-1 options that can lower your rate.",
+        "og:title": "Buying Down Your Home Loan Interest Rate",
+        "og:description": "Learn how mortgage buydowns and discount points work in Arizona, including simple, 2-1, and 3-2-1 options that can lower your rate.",
+        "twitter:title": "Buying Down Your Home Loan Interest Rate",
+        "twitter:description": "Learn how mortgage buydowns and discount points work in Arizona, including simple, 2-1, and 3-2-1 options that can lower your rate.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/delayed-financing-how-to-get-cashout-without-waiting-6-months-seasoning/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Delayed Financing: Get Cash Out Without the 6-Month Wait",
+        "description": "Learn how delayed financing helps homebuyers access cash quickly without the six-month seasoning requirement.",
+        "og:title": "Delayed Financing: Get Cash Out Without the 6-Month Wait",
+        "og:description": "Learn how delayed financing helps homebuyers access cash quickly without the six-month seasoning requirement.",
+        "twitter:title": "Delayed Financing: Get Cash Out Without the 6-Month Wait",
+        "twitter:description": "Learn how delayed financing helps homebuyers access cash quickly without the six-month seasoning requirement.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Delayed Financing \u2013 how to get cashout without waiting 6 months seasoning",
+        "description": "Learn how delayed financing lets you buy with cash and cash out soon after closing without waiting the standard 6-month seasoning period.",
+        "og:title": "Delayed Financing \u2013 how to get cashout without waiting 6 months seasoning",
+        "og:description": "Learn how delayed financing lets you buy with cash and cash out soon after closing without waiting the standard 6-month seasoning period.",
+        "twitter:title": "Delayed Financing \u2013 how to get cashout without waiting 6 months seasoning",
+        "twitter:description": "Learn how delayed financing lets you buy with cash and cash out soon after closing without waiting the standard 6-month seasoning period.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/buying-or-selling-personal-property-with-your-home-sale-must-watch-this-first/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Buying or Selling Personal Property with Your Home Sale?",
+        "description": "Learn the rules and risks of including personal property in a home sale, and how it affects taxes, appraisals, and closing costs.",
+        "og:title": "Buying or Selling Personal Property with Your Home Sale?",
+        "og:description": "Learn the rules and risks of including personal property in a home sale, and how it affects taxes, appraisals, and closing costs.",
+        "twitter:title": "Buying or Selling Personal Property with Your Home Sale?",
+        "twitter:description": "Learn the rules and risks of including personal property in a home sale, and how it affects taxes, appraisals, and closing costs.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Buying or Selling personal property with your home sale? Must Watch this First!",
+        "description": "Learn why personal property in a purchase contract can trigger lender issues and which Arizona items can transfer with the home sale.",
+        "og:title": "Buying or Selling personal property with your home sale? Must Watch this First!",
+        "og:description": "Learn why personal property in a purchase contract can trigger lender issues and which Arizona items can transfer with the home sale.",
+        "twitter:title": "Buying or Selling personal property with your home sale? Must Watch this First!",
+        "twitter:description": "Learn why personal property in a purchase contract can trigger lender issues and which Arizona items can transfer with the home sale.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/put-bow-fha-loan-gift-guide/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Put a Bow On It: Your Complete FHA Loan Gift Guide",
+        "description": "This FHA Loan Gift Guide explains how gift funds work, who can provide them, and how to use them for your down payment.",
+        "og:title": "Put a Bow On It: Your Complete FHA Loan Gift Guide",
+        "og:description": "This FHA Loan Gift Guide explains how gift funds work, who can provide them, and how to use them for your down payment.",
+        "twitter:title": "Put a Bow On It: Your Complete FHA Loan Gift Guide",
+        "twitter:description": "This FHA Loan Gift Guide explains how gift funds work, who can provide them, and how to use them for your down payment.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Put A Bow On It: FHA Loan Gift Guide",
+        "description": "Learn FHA gift fund rules for down payments\u2014gift letters, documented transfers, acceptable donors, and why cash gifts are not allowed.",
+        "og:title": "Put A Bow On It: FHA Loan Gift Guide",
+        "og:description": "Learn FHA gift fund rules for down payments\u2014gift letters, documented transfers, acceptable donors, and why cash gifts are not allowed.",
+        "twitter:title": "Put A Bow On It: FHA Loan Gift Guide",
+        "twitter:description": "Learn FHA gift fund rules for down payments\u2014gift letters, documented transfers, acceptable donors, and why cash gifts are not allowed.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/get-part-income-commission-can-use-qualify-loan/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Will Commissions Count Towards a Loan? What You Need to Know",
+        "description": "Learn how commissions are calculated for mortgage loans, the requirements, and what lenders look for when considering variable income.",
+        "og:title": "Will Commissions Count Towards a Loan? What You Need to Know",
+        "og:description": "Learn how commissions are calculated for mortgage loans, the requirements, and what lenders look for when considering variable income.",
+        "twitter:title": "Will Commissions Count Towards a Loan? What You Need to Know",
+        "twitter:description": "Learn how commissions are calculated for mortgage loans, the requirements, and what lenders look for when considering variable income.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Will Commissions Count Towards a Loan?",
+        "description": "One of the most common questions I hear from prospective home buyers goes something like this: \u201cI made $40,000 last year and $20,000 of that was commission/bonus income. Can I use that the commission income to qualify for a home loan?\u201d For many people who work in sales positions, commission-based income is a fact of life.",
+        "og:title": "Will Commissions Count Towards a Loan?",
+        "og:description": "One of the most common questions I hear from prospective home buyers: can I use commission/bonus income to qualify for a home loan? See FHA, VA, and Conventional rules.",
+        "twitter:title": "Will Commissions Count Towards a Loan?",
+        "twitter:description": "One of the most common questions I hear from prospective home buyers: can I use commission/bonus income to qualify for a home loan? See FHA, VA, and Conventional rules.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/how-to-count-commissions-and-bonuses-and-tips/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "How to Count Commissions, Bonuses, & Tips for Your Mortgage",
+        "description": "Learn how to count commissions, bonuses, and tips as income for a mortgage, including lender requirements and eligibility criteria.",
+        "og:title": "How to Count Commissions, Bonuses, & Tips for Your Mortgage",
+        "og:description": "Learn how to count commissions, bonuses, and tips as income for a mortgage, including lender requirements and eligibility criteria.",
+        "twitter:title": "How to Count Commissions, Bonuses, & Tips for Your Mortgage",
+        "twitter:description": "Learn how to count commissions, bonuses, and tips as income for a mortgage, including lender requirements and eligibility criteria.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "How to Count Commissions and Bonuses and Tips",
+        "description": "This episode covers how to count commissions, bonuses, and tips when it comes to getting conventional, VA, or FHA loans. Conventional Loans What\u2019s important to know is that you need to have 12 months of history receiving commission or bonus income.",
+        "og:title": "How to Count Commissions and Bonuses and Tips",
+        "og:description": "This episode covers how to count commissions, bonuses, and tips when it comes to getting conventional, VA, or FHA loans.",
+        "twitter:title": "How to Count Commissions and Bonuses and Tips",
+        "twitter:description": "This episode covers how to count commissions, bonuses, and tips when it comes to getting conventional, VA, or FHA loans.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/who-can-and-cannot-be-on-title-when-you-get-a-mortgage/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "A Comprehensive Guide to Mortgage Title Eligibility",
+        "description": "Learn who qualifies for a mortgage title and the eligibility requirements with expert guidance from Arizona Mortgage Brothers.",
+        "og:title": "A Comprehensive Guide to Mortgage Title Eligibility",
+        "og:description": "Learn who qualifies for a mortgage title and the eligibility requirements with expert guidance from Arizona Mortgage Brothers.",
+        "twitter:title": "A Comprehensive Guide to Mortgage Title Eligibility",
+        "twitter:description": "Learn who qualifies for a mortgage title and the eligibility requirements with expert guidance from Arizona Mortgage Brothers.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Who CAN and CANNOT Be On Title When you Get A Mortgage?",
+        "description": "In this post, we\u2019re going to be answering the question: who can you add on a title when you\u2019re getting a mortgage? You might be surprised how many times, when you\u2019re in the middle of a mortgage, this question comes up.",
+        "og:title": "Who CAN and CANNOT Be On Title When you Get A Mortgage?",
+        "og:description": "In this post, we\u2019re going to be answering the question: who can you add on a title when you\u2019re getting a mortgage? You might be surprised how many times, when you\u2019re in the middle of a mortgage, this question comes up.",
+        "twitter:title": "Who CAN and CANNOT Be On Title When you Get A Mortgage?",
+        "twitter:description": "In this post, we\u2019re going to be answering the question: who can you add on a title when you\u2019re getting a mortgage? You might be surprised how many times, when you\u2019re in the middle of a mortgage, this question comes up.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/how-high-will-a-lender-allow-your-deductible-to-be/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "How High Will A Lender Allows Your Deductible To Be?",
+        "description": "Discover the impact of lender deductible limits on your mortgage insurance and overall costs with expert insights.",
+        "og:title": "How High Will A Lender Allows Your Deductible To Be?",
+        "og:description": "Discover the impact of lender deductible limits on your mortgage insurance and overall costs with expert insights.",
+        "twitter:title": "How High Will A Lender Allows Your Deductible To Be?",
+        "twitter:description": "Discover the impact of lender deductible limits on your mortgage insurance and overall costs with expert insights.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "How High Will A Lender Allow Your Deductible To Be?",
+        "description": "In this episode, we went over homeowners insurance deductibles and a quick tip on how to get lower premiums. For single-family residential homes in the range from $200,000 to $400,000 or so, premiums are going to range from about $600 to maybe $1,200 annually. So, about $50-$100 a month.",
+        "og:title": "How High Will A Lender Allow Your Deductible To Be?",
+        "og:description": "In this episode, we went over homeowners insurance deductibles and a quick tip on how to get lower premiums. For single-family residential homes in the range from $200,000 to $400,000 or so, premiums are going to range from about $600 to maybe $1,200 annually.",
+        "twitter:title": "How High Will A Lender Allow Your Deductible To Be?",
+        "twitter:description": "In this episode, we went over homeowners insurance deductibles and a quick tip on how to get lower premiums. For single-family residential homes in the range from $200,000 to $400,000 or so, premiums are going to range from about $600 to maybe $1,200 annually.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/arizona-vacation-and-investment-home-mortgages/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Arizona Vacation &Investment Home Mortgages",
+        "description": "Learn about Arizona vacation and investment home mortgages, including rates, options, and expert financing tips.",
+        "og:title": "Arizona Vacation &Investment Home Mortgages",
+        "og:description": "Learn about Arizona vacation and investment home mortgages, including rates, options, and expert financing tips.",
+        "twitter:title": "Arizona Vacation &Investment Home Mortgages",
+        "twitter:description": "Learn about Arizona vacation and investment home mortgages, including rates, options, and expert financing tips.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Arizona Vacation and Investment Home Mortgages",
+        "description": "If you are looking for an Arizona mortgage for a second home, vacation home or investment property, there are still some good products available. You will need at least a 10% down payment for a second home or vacation home. For investment property loans, figure between 20% to 25% down payment.",
+        "og:title": "Arizona Vacation and Investment Home Mortgages",
+        "og:description": "If you are looking for an Arizona mortgage for a second home, vacation home or investment property, there are still some good products available. You will need at least a 10% down payment for a second home or vacation home.",
+        "twitter:title": "Arizona Vacation and Investment Home Mortgages",
+        "twitter:description": "If you are looking for an Arizona mortgage for a second home, vacation home or investment property, there are still some good products available. You will need at least a 10% down payment for a second home or vacation home.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/if-i-have-1-mortgage-late-in-the-past-12-months-can-i-get-approved-for-a-mortgage/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Mortgage Approval with One Late Payment: What to Know",
+        "description": "Discover how one late mortgage payment in the past year affects your chances of approval and explore tips to strengthen your mortgage application.",
+        "og:title": "Mortgage Approval with One Late Payment: What to Know",
+        "og:description": "Discover how one late mortgage payment in the past year affects your chances of approval and explore tips to strengthen your mortgage application.",
+        "twitter:title": "Mortgage Approval with One Late Payment: What to Know",
+        "twitter:description": "Discover how one late mortgage payment in the past year affects your chances of approval and explore tips to strengthen your mortgage application.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "If I have 1 Mortgage Late in the Past 12 Months, Can I Get Approved for a Mortgage?",
+        "description": "In this post, we're talking about mortgage rates and if you can qualify if you have a late mortgage in your payment history. This is a situation that happens to a lot of folks, and we get calls all the time asking this question. In short, absolutely. It's still possible to get a mortgage if you've been late on one in the past.",
+        "og:title": "If I have 1 Mortgage Late in the Past 12 Months, Can I Get Approved for a Mortgage?",
+        "og:description": "In this post, we're talking about mortgage rates and if you can qualify if you have a late mortgage in your payment history. This is a situation that happens to a lot of folks, and we get calls all the time asking this question. In short, absolutely. It's still possible to get a mortgage if you've been late on one in the past.",
+        "twitter:title": "If I have 1 Mortgage Late in the Past 12 Months, Can I Get Approved for a Mortgage?",
+        "twitter:description": "In this post, we're talking about mortgage rates and if you can qualify if you have a late mortgage in your payment history. This is a situation that happens to a lot of folks, and we get calls all the time asking this question. In short, absolutely. It's still possible to get a mortgage if you've been late on one in the past.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/arizona-real-estate-trends-in-2026-predicting-mortgage-rates-for-the-coming-year/",
+      "diffs": [
+        "title",
+        "og:title",
+        "twitter:title",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Arizona Real Estate Trends in 2026: Predicting Mortgage Rates",
+        "og:title": "Arizona Real Estate Trends in 2026: Predicting Mortgage Rates",
+        "twitter:title": "Arizona Real Estate Trends in 2026: Predicting Mortgage Rates",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Arizona Real Estate Trends in 2026: Predicting Mortgage Rates for the Coming Year",
+        "og:title": "Arizona Real Estate Trends in 2026: Predicting Mortgage Rates for the Coming Year",
+        "twitter:title": "Arizona Real Estate Trends in 2026: Predicting Mortgage Rates for the Coming Year",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/is-the-mortgage-interest-tax-deduction-really-a-big-deal/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Exploring the Impact of the Mortgage Interest Deduction",
+        "description": "Explore the significance of the mortgage interest deduction and its influence on financial planning with insights from Arizona Mortgage Brothers",
+        "og:title": "Exploring the Impact of the Mortgage Interest Deduction",
+        "og:description": "Explore the significance of the mortgage interest deduction and its influence on financial planning with insights from Arizona Mortgage Brothers",
+        "twitter:title": "Exploring the Impact of the Mortgage Interest Deduction",
+        "twitter:description": "Explore the significance of the mortgage interest deduction and its influence on financial planning with insights from Arizona Mortgage Brothers",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Is The Mortgage Interest Tax Deduction Really a Big Deal?",
+        "description": "In this episode, we\u2019re answering a question we\u2019re asked about pretty frequently, especially around tax season, \u201cIf I have a mortgage, do I get a mortgage interest write-off?\u201d We\u2019re sharing why mortgage interest tax deductions are a big deal, and how your mortgage interest can help you during tax season!",
+        "og:title": "Is The Mortgage Interest Tax Deduction Really a Big Deal?",
+        "og:description": "In this episode, we\u2019re answering a question we\u2019re asked about pretty frequently, especially around tax season, \u201cIf I have a mortgage, do I get a mortgage interest write-off?\u201d We\u2019re sharing why mortgage interest tax deductions are a big deal.",
+        "twitter:title": "Is The Mortgage Interest Tax Deduction Really a Big Deal?",
+        "twitter:description": "In this episode, we\u2019re answering a question we\u2019re asked about pretty frequently, especially around tax season, \u201cIf I have a mortgage, do I get a mortgage interest write-off?\u201d We\u2019re sharing why mortgage interest tax deductions are a big deal.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/what-is-a-conventional-home-loan-the-complete-first-time-buyer-mortgage-guide/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "What Is a Conventional Home Loan? First-Time Buyer's Guide",
+        "description": "A conventional home loan is any mortgage that isn\u2019t insured or guaranteed by the federal government. Instead, it\u2019s offered by private lenders such as banks.",
+        "og:title": "What Is a Conventional Home Loan? First-Time Buyer's Guide",
+        "og:description": "A conventional home loan is any mortgage that isn\u2019t insured or guaranteed by the federal government. Instead, it\u2019s offered by private lenders such as banks.",
+        "twitter:title": "What Is a Conventional Home Loan? First-Time Buyer's Guide",
+        "twitter:description": "A conventional home loan is any mortgage that isn\u2019t insured or guaranteed by the federal government. Instead, it\u2019s offered by private lenders such as banks.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "What Is a Conventional Home Loan? The Complete First-Time Buyer Mortgage Guide",
+        "description": "Buying your first home in Arizona is an exciting milestone \u2014 but it can also feel overwhelming. From choosing the right neighborhood to securing financing, there are a lot of moving parts. One of the biggest decisions you'll face is which type of mortgage loan to use. For many buyers, a conventional home loan is the best fit.",
+        "og:title": "What Is a Conventional Home Loan? The Complete First-Time Buyer Mortgage Guide",
+        "og:description": "Buying your first home in Arizona is an exciting milestone \u2014 but it can also feel overwhelming. From choosing the right neighborhood to securing financing, there are a lot of moving parts. One of the biggest decisions you'll face is which type of mortgage loan to use. For many buyers, a conventional home loan is the best fit.",
+        "twitter:title": "What Is a Conventional Home Loan? The Complete First-Time Buyer Mortgage Guide",
+        "twitter:description": "Buying your first home in Arizona is an exciting milestone \u2014 but it can also feel overwhelming. From choosing the right neighborhood to securing financing, there are a lot of moving parts. One of the biggest decisions you'll face is which type of mortgage loan to use. For many buyers, a conventional home loan is the best fit.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/arizona-home-buying-process/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Unlocking Your Path: Arizona Home Buying Process",
+        "description": "Explore our comprehensive guide to the Arizona Home Buying Process, offering expert insights and actionable steps for a smooth home purchase.",
+        "og:title": "Unlocking Your Path: Arizona Home Buying Process",
+        "og:description": "Explore our comprehensive guide to the Arizona Home Buying Process, offering expert insights and actionable steps for a smooth home purchase.",
+        "twitter:title": "Unlocking Your Path: Arizona Home Buying Process",
+        "twitter:description": "Explore our comprehensive guide to the Arizona Home Buying Process, offering expert insights and actionable steps for a smooth home purchase.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Arizona Home Buying Process",
+        "description": "What is the overall Home Buying Process? Of course there are lot of moving parts, but the entire process can be broken down into a few major points that you will need to understand and be prepared for as you start working with your agent and your Arizona mortgage lender.",
+        "og:title": "Arizona Home Buying Process",
+        "og:description": "What is the overall Home Buying Process? Of course there are lot of moving parts, but the entire process can be broken down into a few major points that you will need to understand and be prepared for as you start working with your agent and your Arizona mortgage lender.",
+        "twitter:title": "Arizona Home Buying Process",
+        "twitter:description": "What is the overall Home Buying Process? Of course there are lot of moving parts, but the entire process can be broken down into a few major points that you will need to understand and be prepared for as you start working with your agent and your Arizona mortgage lender.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/arizona-mortgage-approval-process/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Simplify with Arizona Mortgage Approval Process",
+        "description": "Master each step of the Arizona Mortgage Approval Process with expert guidance from Arizona Mortgage Brothers for a seamless financing journey.",
+        "og:title": "Simplify with Arizona Mortgage Approval Process",
+        "og:description": "Master each step of the Arizona Mortgage Approval Process with expert guidance from Arizona Mortgage Brothers for a seamless financing journey.",
+        "twitter:title": "Simplify with Arizona Mortgage Approval Process",
+        "twitter:description": "Master each step of the Arizona Mortgage Approval Process with expert guidance from Arizona Mortgage Brothers for a seamless financing journey.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Learn About the Home Mortgage Approval Process",
+        "description": "There's no question that the entire approval process for home loans in Arizona can be confusing and slightly overwhelming! For the first-time home buyer the process can be a stressful situation so we want to provide you a road map to help you navigate the event, but be sure that you always take the time.",
+        "og:title": "Learn About the Home Mortgage Approval Process",
+        "og:description": "There's no question that the entire approval process for home loans in Arizona can be confusing and slightly overwhelming! For the first-time home buyer the process can be a stressful situation so we want to provide you a road map to help you navigate the event.",
+        "twitter:title": "Learn About the Home Mortgage Approval Process",
+        "twitter:description": "There's no question that the entire approval process for home loans in Arizona can be confusing and slightly overwhelming! For the first-time home buyer the process can be a stressful situation so we want to provide you a road map to help you navigate the event.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/can-i-simply-payoff-credit-cards-to-qualify-for-a-mortgage/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Can Paying Off Credit Cards Help You Qualify for a Mortgage?",
+        "description": "Discover how paying off credit cards impacts your mortgage approval and whether it's the right move for your financial situation.",
+        "og:title": "Can Paying Off Credit Cards Help You Qualify for a Mortgage?",
+        "og:description": "Discover how paying off credit cards impacts your mortgage approval and whether it's the right move for your financial situation.",
+        "twitter:title": "Can Paying Off Credit Cards Help You Qualify for a Mortgage?",
+        "twitter:description": "Discover how paying off credit cards impacts your mortgage approval and whether it's the right move for your financial situation.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Can I simply payoff credit cards to qualify for a mortgage?",
+        "description": "It Depends on whether you trying to get a Conventional, FHA, or VA home loan Finally some good news. As of June 30th 2015, loan guidelines are finally loosening on allowing borrower to payoff mortgage balances to qualify for a mortgage. Conventional Mortgage past rules As you might know, a credit report takes a snapshot",
+        "og:title": "Can I simply payoff credit cards to qualify for a mortgage?",
+        "og:description": "It Depends on whether you trying to get a Conventional, FHA, or VA home loan Finally some good news. As of June 30th 2015, loan guidelines are finally loosening on allowing borrower to payoff mortgage balances to qualify for a mortgage.",
+        "twitter:title": "Can I simply payoff credit cards to qualify for a mortgage?",
+        "twitter:description": "It Depends on whether you trying to get a Conventional, FHA, or VA home loan Finally some good news. As of June 30th 2015, loan guidelines are finally loosening on allowing borrower to payoff mortgage balances to qualify for a mortgage.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/canceling-your-fha-mip-is-easier-than-you-think/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Canceling FHA MIP Is Easier Than You Think",
+        "description": "Learn how canceling FHA MIP works, the requirements, and how it can save you money on your mortgage payments.",
+        "og:title": "Canceling FHA MIP Is Easier Than You Think",
+        "og:description": "Learn how canceling FHA MIP works, the requirements, and how it can save you money on your mortgage payments.",
+        "twitter:title": "Canceling FHA MIP Is Easier Than You Think",
+        "twitter:description": "Learn how canceling FHA MIP works, the requirements, and how it can save you money on your mortgage payments.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Canceling your FHA MIP is Easier than you think",
+        "description": "If you are still paying Mortgage Insurance Premiums (MIP) on a Federal Housing Administration (FHA) backed loan you may be paying more than you need to. Canceling this type of mortgage insurance can also be easier than many homeowners believe. Many homeowners were forced into a FHA backed mortgage and its resulting MIP when the",
+        "og:title": "Canceling your FHA MIP is Easier than you think",
+        "og:description": "If you are still paying Mortgage Insurance Premiums (MIP) on a Federal Housing Administration (FHA) backed loan you may be paying more than you need to. Canceling this type of mortgage insurance can also be easier than many homeowners believe.",
+        "twitter:title": "Canceling your FHA MIP is Easier than you think",
+        "twitter:description": "If you are still paying Mortgage Insurance Premiums (MIP) on a Federal Housing Administration (FHA) backed loan you may be paying more than you need to. Canceling this type of mortgage insurance can also be easier than many homeowners believe.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/arizona-refinance-process/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Expert Tips for a Smooth Arizona Refinance Process",
+        "description": "Explore expert insights and actionable steps to simplify your refinancing journey with guidance from Arizona Mortgage Brothers.",
+        "og:title": "Expert Tips for a Smooth Arizona Refinance Process",
+        "og:description": "Explore expert insights and actionable steps to simplify your refinancing journey with guidance from Arizona Mortgage Brothers.",
+        "twitter:title": "Expert Tips for a Smooth Arizona Refinance Process",
+        "twitter:description": "Explore expert insights and actionable steps to simplify your refinancing journey with guidance from Arizona Mortgage Brothers.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Arizona Refinance Process",
+        "description": "Refinancing an Arizona mortgage loan is simply the process of acquiring a new loan to pay off an existing lender. Four Reasons to Refinance A mortgage loan is generally the largest debt that most homeowners will need to manage. It's a good idea to review your real estate finance portfolio a check-up annually.",
+        "og:title": "Arizona Refinance Process",
+        "og:description": "Refinancing an Arizona mortgage loan is simply the process of acquiring a new loan to pay off an existing lender. Four Reasons to Refinance A mortgage loan is generally the largest debt that most homeowners will need to manage.",
+        "twitter:title": "Arizona Refinance Process",
+        "twitter:description": "Refinancing an Arizona mortgage loan is simply the process of acquiring a new loan to pay off an existing lender. Four Reasons to Refinance A mortgage loan is generally the largest debt that most homeowners will need to manage.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/arizona-mortgage-closing-costs/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Understanding Arizona Mortgage Closing Costs",
+        "description": "Explore expert insights and a clear breakdown of Arizona Mortgage Closing Costs to simplify your closing process with our guidance.",
+        "og:title": "Understanding Arizona Mortgage Closing Costs",
+        "og:description": "Explore expert insights and a clear breakdown of Arizona Mortgage Closing Costs to simplify your closing process with our guidance.",
+        "twitter:title": "Understanding Arizona Mortgage Closing Costs",
+        "twitter:description": "Explore expert insights and a clear breakdown of Arizona Mortgage Closing Costs to simplify your closing process with our guidance.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Arizona Mortgage Closing Costs",
+        "description": "Lender Fees These are generated by your lender, as the cost of creating and funding your mortgage. People who buy houses for cash won\u2019t need to pay these fees, but most people have a mortgage on their home. You can shop around for different lenders if you want your closing costs to be a little",
+        "og:title": "Arizona Mortgage Closing Costs",
+        "og:description": "Lender Fees These are generated by your lender, as the cost of creating and funding your mortgage. People who buy houses for cash won\u2019t need to pay these fees, but most people have a mortgage on their home. You can shop around for different lenders if you want your closing costs to be a little",
+        "twitter:title": "Arizona Mortgage Closing Costs",
+        "twitter:description": "Lender Fees These are generated by your lender, as the cost of creating and funding your mortgage. People who buy houses for cash won\u2019t need to pay these fees, but most people have a mortgage on their home. You can shop around for different lenders if you want your closing costs to be a little",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/arizona-mortgage-basics/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Arizona Mortgage Basics: Start Your Journey",
+        "description": "Get expert advice and essential steps on Arizona Mortgage Basics from Arizona Mortgage Brothers for smooth home financing.",
+        "og:title": "Arizona Mortgage Basics: Start Your Journey",
+        "og:description": "Get expert advice and essential steps on Arizona Mortgage Basics from Arizona Mortgage Brothers for smooth home financing.",
+        "twitter:title": "Arizona Mortgage Basics: Start Your Journey",
+        "twitter:description": "Get expert advice and essential steps on Arizona Mortgage Basics from Arizona Mortgage Brothers for smooth home financing.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Arizona Mortgage Basics",
+        "description": "What exactly is a mortgage anyway? In simple terms a mortgage is a loan that is secured or backed by real property. It is then paid back over a set period of time. The term \u201csecured\u201d means that the lender is protected by the piece of property that he can take ownership of in the",
+        "og:title": "Arizona Mortgage Basics",
+        "og:description": "What exactly is a mortgage anyway? In simple terms a mortgage is a loan that is secured or backed by real property. It is then paid back over a set period of time. The term \u201csecured\u201d means that the lender is protected by the piece of property that he can take ownership of in the",
+        "twitter:title": "Arizona Mortgage Basics",
+        "twitter:description": "What exactly is a mortgage anyway? In simple terms a mortgage is a loan that is secured or backed by real property. It is then paid back over a set period of time. The term \u201csecured\u201d means that the lender is protected by the piece of property that he can take ownership of in the",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/arizona-mortgage-payments/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Ultimate Guide: Optimize Your Arizona Mortgage Payments",
+        "description": "Gain comprehensive insights into optimizing your Mortgage Payments through expert strategies and actionable advice provided by Arizona Mortgage Brothers",
+        "og:title": "Ultimate Guide: Optimize Your Arizona Mortgage Payments",
+        "og:description": "Gain comprehensive insights into optimizing your Mortgage Payments through expert strategies and actionable advice provided by Arizona Mortgage Brothers",
+        "twitter:title": "Ultimate Guide: Optimize Your Arizona Mortgage Payments",
+        "twitter:description": "Gain comprehensive insights into optimizing your Mortgage Payments through expert strategies and actionable advice provided by Arizona Mortgage Brothers",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Arizona Mortgage Payments",
+        "description": "Unfortunately a major side effect of having a mortgage loan is that you\u2019ll have to pay it back! We wanted to highlight a few points about your upcoming mortgage payment so you can understand what it is you\u2019re paying. See my payment calculator to play around with scenarios. You should receive a mortgage payment booklet",
+        "og:title": "Arizona Mortgage Payments",
+        "og:description": "Unfortunately a major side effect of having a mortgage loan is that you\u2019ll have to pay it back! We wanted to highlight a few points about your upcoming mortgage payment so you can understand what it is you\u2019re paying.",
+        "twitter:title": "Arizona Mortgage Payments",
+        "twitter:description": "Unfortunately a major side effect of having a mortgage loan is that you\u2019ll have to pay it back! We wanted to highlight a few points about your upcoming mortgage payment so you can understand what it is you\u2019re paying.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/arizona-mortgage-closing-process/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Mastering the Arizona Mortgage Closing Process",
+        "description": "Explore expert advice and streamlined steps to master the Arizona Mortgage Closing Process for a smooth, successful home closing",
+        "og:title": "Mastering the Arizona Mortgage Closing Process",
+        "og:description": "Explore expert advice and streamlined steps to master the Arizona Mortgage Closing Process for a smooth, successful home closing",
+        "twitter:title": "Mastering the Arizona Mortgage Closing Process",
+        "twitter:description": "Explore expert advice and streamlined steps to master the Arizona Mortgage Closing Process for a smooth, successful home closing",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Arizona Mortgage Closing Process",
+        "description": "As we've mentioned in other helpful articles, the home buying process is packed full of paperwork, key dates and contracts plus daily market movements and checklists that can fluster even the most experienced real estate investor! We've also mentioned before how important it is to have a solid, professional real estate buying team assembled.",
+        "og:title": "Arizona Mortgage Closing Process",
+        "og:description": "As we've mentioned in other helpful articles, the home buying process is packed full of paperwork, key dates and contracts plus daily market movements and checklists that can fluster even the most experienced real estate investor!",
+        "twitter:title": "Arizona Mortgage Closing Process",
+        "twitter:description": "As we've mentioned in other helpful articles, the home buying process is packed full of paperwork, key dates and contracts plus daily market movements and checklists that can fluster even the most experienced real estate investor!",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/connecting-guest-house-main-house-add-value/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Does Connecting a Guest House to The Main House Add Values?",
+        "description": "Learn how connecting a guest house to the main house can impact property value, functionality, and resale potential.",
+        "og:title": "Does Connecting a Guest House to The Main House Add Values?",
+        "og:description": "Learn how connecting a guest house to the main house can impact property value, functionality, and resale potential.",
+        "twitter:title": "Does Connecting a Guest House to The Main House Add Values?",
+        "twitter:description": "Learn how connecting a guest house to the main house can impact property value, functionality, and resale potential.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Does connecting a guest house to the main house add value?",
+        "description": "Should You Connect a Guest House to the Main House? Here is Borrower\u2019s question about connecting a detached guest house to his main house: \u201cLooks like we will be staying here a bit longer and are thinking of doing some more things to make it nicer. We were thinking of adding a structure that connects",
+        "og:title": "Does connecting a guest house to the main house add value?",
+        "og:description": "Should You Connect a Guest House to the Main House? Here is Borrower\u2019s question about connecting a detached guest house to his main house: \u201cLooks like we will be staying here a bit longer and are thinking of doing some more things to make it nicer. We were thinking of adding a structure that connects",
+        "twitter:title": "Does connecting a guest house to the main house add value?",
+        "twitter:description": "Should You Connect a Guest House to the Main House? Here is Borrower\u2019s question about connecting a detached guest house to his main house: \u201cLooks like we will be staying here a bit longer and are thinking of doing some more things to make it nicer. We were thinking of adding a structure that connects",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/arizona-understanding-your-credit/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Master Your Credit: Key Tips for Arizona Homebuyers",
+        "description": "Unlock expert strategies to understand and improve your credit in Arizona, paving the way for better mortgage options with our guidance.",
+        "og:title": "Master Your Credit: Key Tips for Arizona Homebuyers",
+        "og:description": "Unlock expert strategies to understand and improve your credit in Arizona, paving the way for better mortgage options with our guidance.",
+        "twitter:title": "Master Your Credit: Key Tips for Arizona Homebuyers",
+        "twitter:description": "Unlock expert strategies to understand and improve your credit in Arizona, paving the way for better mortgage options with our guidance.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Understanding Your Credit",
+        "description": "As you know, one's credit scores and history play a huge role in the Arizona mortgage loan approval process so it's important that you understand credit in general and what you can do today that will put you in a better position to purchase a home tomorrow! Lenders will look at your open accounts, payment",
+        "og:title": "Understanding Your Credit",
+        "og:description": "As you know, one's credit scores and history play a huge role in the Arizona mortgage loan approval process so it's important that you understand credit in general and what you can do today that will put you in a better position to purchase a home tomorrow! Lenders will look at your open accounts, payment",
+        "twitter:title": "Understanding Your Credit",
+        "twitter:description": "As you know, one's credit scores and history play a huge role in the Arizona mortgage loan approval process so it's important that you understand credit in general and what you can do today that will put you in a better position to purchase a home tomorrow! Lenders will look at your open accounts, payment",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/air-conditionings-impact-phoenix-valley-real-estate/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Air Conditioning Impact on Phoenix Valley Real Estate",
+        "description": "Learn how air conditioning impacts Phoenix real estate values, buyer preferences, and home affordability in the desert climate.",
+        "og:title": "Air Conditioning Impact on Phoenix Valley Real Estate",
+        "og:description": "Learn how air conditioning impacts Phoenix real estate values, buyer preferences, and home affordability in the desert climate.",
+        "twitter:title": "Air Conditioning Impact on Phoenix Valley Real Estate",
+        "twitter:description": "Learn how air conditioning impacts Phoenix real estate values, buyer preferences, and home affordability in the desert climate.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Air Conditioning\u2019s Impact on Phoenix Valley Real Estate",
+        "description": "Perhaps more than any other city, Phoenix owes its existence as a modern city to air conditioning; a relatively recent invention. Although Phoenix was incorporated in 1888, it really wasn\u2019t until the 1950s that the city began growing in earnest. That is when air conditioning became available for residential use. How Air Conditioning Shapes Phoenix",
+        "og:title": "Air Conditioning\u2019s Impact on Phoenix Valley Real Estate",
+        "og:description": "Perhaps more than any other city, Phoenix owes its existence as a modern city to air conditioning; a relatively recent invention. Although Phoenix was incorporated in 1888, it really wasn\u2019t until the 1950s that the city began growing in earnest.",
+        "twitter:title": "Air Conditioning\u2019s Impact on Phoenix Valley Real Estate",
+        "twitter:description": "Perhaps more than any other city, Phoenix owes its existence as a modern city to air conditioning; a relatively recent invention. Although Phoenix was incorporated in 1888, it really wasn\u2019t until the 1950s that the city began growing in earnest.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/seller-concessions-to-buyers-how-much/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Seller Concessions to Buyers: How Much Is Too Much?",
+        "description": "Learn how seller concessions to buyers work, how much is typical, and how they affect home sales and closing costs.",
+        "og:title": "Seller Concessions to Buyers: How Much Is Too Much?",
+        "og:description": "Learn how seller concessions to buyers work, how much is typical, and how they affect home sales and closing costs.",
+        "twitter:title": "Seller Concessions to Buyers: How Much Is Too Much?",
+        "twitter:description": "Learn how seller concessions to buyers work, how much is typical, and how they affect home sales and closing costs.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Seller Concessions To Buyers - How Much?",
+        "description": "Attached and Detached Resales in the Greater Phoenix Metro Area for prior 30 day period as of 2/9/19 The above graph represents the average seller concession to buyers within the prior 30 day period as of 2/9/2019 for closings in the Greater Phoenix Metro Market area. The graph above shows the number of closings by",
+        "og:title": "Seller Concessions To Buyers - How Much?",
+        "og:description": "Attached and Detached Resales in the Greater Phoenix Metro Area for prior 30 day period as of 2/9/19 The above graph represents the average seller concession to buyers within the prior 30 day period as of 2/9/2019 for closings in the Greater Phoenix Metro Market area. The graph above shows the number of closings by",
+        "twitter:title": "Seller Concessions To Buyers - How Much?",
+        "twitter:description": "Attached and Detached Resales in the Greater Phoenix Metro Area for prior 30 day period as of 2/9/19 The above graph represents the average seller concession to buyers within the prior 30 day period as of 2/9/2019 for closings in the Greater Phoenix Metro Market area. The graph above shows the number of closings by",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/expect-youre-not-first-time-mortgage-shopper/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Expert Tips for Not-First-Time Mortgage Shoppers",
+        "description": "Explore advanced strategies and expert advice for seasoned mortgage shoppers, tailored by Arizona Mortgage Brothers.",
+        "og:title": "Expert Tips for Not-First-Time Mortgage Shoppers",
+        "og:description": "Explore advanced strategies and expert advice for seasoned mortgage shoppers, tailored by Arizona Mortgage Brothers.",
+        "twitter:title": "Expert Tips for Not-First-Time Mortgage Shoppers",
+        "twitter:description": "Explore advanced strategies and expert advice for seasoned mortgage shoppers, tailored by Arizona Mortgage Brothers.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "What to Expect When You\u2019re Not a First Time Mortgage Shopper",
+        "description": "When you\u2019re moving to Phoenix, or moving up to a new home within the area, one of the first things you need to do before visiting open houses, before finding a real estate agent or even deciding on a neighborhood, is to find a mortgage lender and understand how to secure a loan to buy",
+        "og:title": "What to Expect When You\u2019re Not a First Time Mortgage Shopper",
+        "og:description": "When you\u2019re moving to Phoenix, or moving up to a new home within the area, one of the first things you need to do before visiting open houses, before finding a real estate agent or even deciding on a neighborhood, is to find a mortgage lender and understand how to secure a loan to buy",
+        "twitter:title": "What to Expect When You\u2019re Not a First Time Mortgage Shopper",
+        "twitter:description": "When you\u2019re moving to Phoenix, or moving up to a new home within the area, one of the first things you need to do before visiting open houses, before finding a real estate agent or even deciding on a neighborhood, is to find a mortgage lender and understand how to secure a loan to buy",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/is-homeownership-hereditary/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Exploring Generational Homeownership Trends",
+        "description": "Discover how family legacy influences homeownership and mortgage opportunities with insights from Arizona Mortgage Brothers.",
+        "og:title": "Exploring Generational Homeownership Trends",
+        "og:description": "Discover how family legacy influences homeownership and mortgage opportunities with insights from Arizona Mortgage Brothers.",
+        "twitter:title": "Exploring Generational Homeownership Trends",
+        "twitter:description": "Discover how family legacy influences homeownership and mortgage opportunities with insights from Arizona Mortgage Brothers.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Is Homeownership Hereditary?",
+        "description": "Everyone knows that houses can be inherited, but can homeownership? It would seem that the answer to that question is \u201cyes.\u201d Homeownership is a Family Trait Recently, the Urban Institute conducted research on homeownership rates among millennials. They found that homeownership appears to be a trait that can be passed from one generation to another.",
+        "og:title": "Is Homeownership Hereditary?",
+        "og:description": "Everyone knows that houses can be inherited, but can homeownership? It would seem that the answer to that question is \u201cyes.\u201d Homeownership is a Family Trait Recently, the Urban Institute conducted research on homeownership rates among millennials. They found that homeownership appears to be a trait that can be passed from one generation to another.",
+        "twitter:title": "Is Homeownership Hereditary?",
+        "twitter:description": "Everyone knows that houses can be inherited, but can homeownership? It would seem that the answer to that question is \u201cyes.\u201d Homeownership is a Family Trait Recently, the Urban Institute conducted research on homeownership rates among millennials. They found that homeownership appears to be a trait that can be passed from one generation to another.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/why-use-an-arizona-mortgage-broker/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Why Use an Arizona Mortgage Broker for Smart Solutions",
+        "description": "Learn expert reasons why using an Arizona Mortgage Broker offers tailored solutions and simplifies home financing.",
+        "og:title": "Why Use an Arizona Mortgage Broker for Smart Solutions",
+        "og:description": "Learn expert reasons why using an Arizona Mortgage Broker offers tailored solutions and simplifies home financing.",
+        "twitter:title": "Why Use an Arizona Mortgage Broker for Smart Solutions",
+        "twitter:description": "Learn expert reasons why using an Arizona Mortgage Broker offers tailored solutions and simplifies home financing.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "Why Use an Arizona Mortgage Broker",
+        "description": "An Arizona Mortgage broker can assist you with finding the best Arizona mortgage rates because the broker works with many lenders. If you just go down to your local bank branch, you are limited by the Mortgage products for that particular bank. Your Arizona mortgage broker will pre-qualify you for a mortgage, assist you with",
+        "og:title": "Why Use an Arizona Mortgage Broker",
+        "og:description": "An Arizona Mortgage broker can assist you with finding the best Arizona mortgage rates because the broker works with many lenders. If you just go down to your local bank branch, you are limited by the Mortgage products for that particular bank. Your Arizona mortgage broker will pre-qualify you for a mortgage, assist you with",
+        "twitter:title": "Why Use an Arizona Mortgage Broker",
+        "twitter:description": "An Arizona Mortgage broker can assist you with finding the best Arizona mortgage rates because the broker works with many lenders. If you just go down to your local bank branch, you are limited by the Mortgage products for that particular bank. Your Arizona mortgage broker will pre-qualify you for a mortgage, assist you with",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/assumable-mortgage/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "What Is an Assumable Mortgage & How Does It Work?",
+        "description": "Learn how an assumable mortgage allows buyers to take over a seller\u2019s loan, its benefits, and how to qualify for one.",
+        "og:title": "What Is an Assumable Mortgage & How Does It Work?",
+        "og:description": "Learn how an assumable mortgage allows buyers to take over a seller\u2019s loan, its benefits, and how to qualify for one.",
+        "twitter:title": "What Is an Assumable Mortgage & How Does It Work?",
+        "twitter:description": "Learn how an assumable mortgage allows buyers to take over a seller\u2019s loan, its benefits, and how to qualify for one.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "What Is An Assumable Mortgage?",
+        "description": "An assumable mortgage is one in which the lender (the mortgage company) has included a provision or clause which stipulates that the mortgage may be assumed by a third party. Typically, this third party would be the person who is purchasing your home from you, the seller. If the mortgage is not assumable, there will",
+        "og:title": "What Is An Assumable Mortgage?",
+        "og:description": "An assumable mortgage is one in which the lender (the mortgage company) has included a provision or clause which stipulates that the mortgage may be assumed by a third party. Typically, this third party would be the person who is purchasing your home from you, the seller. If the mortgage is not assumable, there will",
+        "twitter:title": "What Is An Assumable Mortgage?",
+        "twitter:description": "An assumable mortgage is one in which the lender (the mortgage company) has included a provision or clause which stipulates that the mortgage may be assumed by a third party. Typically, this third party would be the person who is purchasing your home from you, the seller. If the mortgage is not assumable, there will",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/fha-flip-rule-waiver-expired-you-need-wait-90-days-to-write-a-contract/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "FHA Flip Rule Waiver Expired: 90-Day Waiting Period Returns",
+        "description": "The FHA flip rule waiver has expired\u2014learn what this means for homebuyers, sellers, and real estate investors.",
+        "og:title": "FHA Flip Rule Waiver Expired: 90-Day Waiting Period Returns",
+        "og:description": "The FHA flip rule waiver has expired\u2014learn what this means for homebuyers, sellers, and real estate investors.",
+        "twitter:title": "FHA Flip Rule Waiver Expired: 90-Day Waiting Period Returns",
+        "twitter:description": "The FHA flip rule waiver has expired\u2014learn what this means for homebuyers, sellers, and real estate investors.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "FHA Flip Rule Waiver Expired \u2013 You need to wait 90 days to write a contract",
+        "description": "Are you a buyer getting FHA financing? Make sure to check whether the home you are interested in has been owned by the seller for less than 90 days. Why? Because starting on January 1st 2015, those properties will not be eligible for FHA financing. In 2011, with so many investors purchasing short sale and",
+        "og:title": "FHA Flip Rule Waiver Expired \u2013 You need to wait 90 days to write a contract",
+        "og:description": "Are you a buyer getting FHA financing? Make sure to check whether the home you are interested in has been owned by the seller for less than 90 days. Why? Because starting on January 1st 2015, those properties will not be eligible for FHA financing. In 2011, with so many investors purchasing short sale and",
+        "twitter:title": "FHA Flip Rule Waiver Expired \u2013 You need to wait 90 days to write a contract",
+        "twitter:description": "Are you a buyer getting FHA financing? Make sure to check whether the home you are interested in has been owned by the seller for less than 90 days. Why? Because starting on January 1st 2015, those properties will not be eligible for FHA financing. In 2011, with so many investors purchasing short sale and",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/",
+      "diffs": [
+        "description",
+        "og:description",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "description": "We live here, we work here, and we know this market better than anyone. Mortgage broker serving all of Arziona \u2014 Conventional, FHA, VA, Jumbo & Reverse Mortgage",
+        "og:description": "We live here, we work here, and we know this market better than anyone. Mortgage broker serving all of Arziona \u2014 Conventional, FHA, VA, Jumbo & Reverse Mortgage",
+        "twitter:description": "We live here, we work here, and we know this market better than anyone. Mortgage broker serving all of Arziona \u2014 Conventional, FHA, VA, Jumbo & Reverse Mortgage",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "description": "We live here, we work here, and we know this market better than anyone. Mortgage broker serving all of Arizona \u2014 Conventional, FHA, VA, Jumbo & Reverse Mortgage",
+        "og:description": "We live here, we work here, and we know this market better than anyone. Mortgage broker serving all of Arizona \u2014 Conventional, FHA, VA, Jumbo & Reverse Mortgage",
+        "twitter:description": "We live here, we work here, and we know this market better than anyone. Mortgage broker serving all of Arizona \u2014 Conventional, FHA, VA, Jumbo & Reverse Mortgage",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/ultimate-guide-first-mortgage/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "Ultimate Guide: Pro Tips to Secure Your First Mortgage",
+        "description": "Discover expert advice and actionable strategies to navigate your first mortgage with confidence in our ultimate guide.",
+        "og:title": "Ultimate Guide: Pro Tips to Secure Your First Mortgage",
+        "og:description": "Discover expert advice and actionable strategies to navigate your first mortgage with confidence in our ultimate guide.",
+        "twitter:title": "Ultimate Guide: Pro Tips to Secure Your First Mortgage",
+        "twitter:description": "Discover expert advice and actionable strategies to navigate your first mortgage with confidence in our ultimate guide.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "The Ultimate Guide to Your First Mortgage",
+        "description": "The Phoenix Valley was recently voted out of the top 20 markets for first time buyers, highlighting a fact that most first time buyers have probably already noticed on their own: it's getting more expensive to buy your first home. But don't despair. You can still buy the home of your dreams, even if it",
+        "og:title": "The Ultimate Guide to Your First Mortgage",
+        "og:description": "The Phoenix Valley was recently voted out of the top 20 markets for first time buyers, highlighting a fact that most first time buyers have probably already noticed on their own: it's getting more expensive to buy your first home. But don't despair. You can still buy the home of your dreams, even if it",
+        "twitter:title": "The Ultimate Guide to Your First Mortgage",
+        "twitter:description": "The Phoenix Valley was recently voted out of the top 20 markets for first time buyers, highlighting a fact that most first time buyers have probably already noticed on their own: it's getting more expensive to buy your first home. But don't despair. You can still buy the home of your dreams, even if it",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/videos/real-estate-agent-quick-tips/",
+      "diffs": [
+        "description",
+        "og:description",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "description": null,
+        "og:description": null,
+        "twitter:description": null,
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "description": "Short, practical mortgage tips for Arizona real estate agents \u2014 buydowns, cash offers, Homebot, and how to close faster for your clients.",
+        "og:description": "Short, practical mortgage tips for Arizona real estate agents \u2014 buydowns, cash offers, Homebot, and how to close faster for your clients.",
+        "twitter:description": "Short, practical mortgage tips for Arizona real estate agents \u2014 buydowns, cash offers, Homebot, and how to close faster for your clients.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/videos/mortgage-loan-products/",
+      "diffs": [
+        "description",
+        "og:description",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "description": null,
+        "og:description": null,
+        "twitter:description": null,
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "description": "Learn about FHA, VA, conventional, manufactured home, reverse mortgage, and other loan programs \u2014 explained clearly for Arizona buyers and homeowners.",
+        "og:description": "Learn about FHA, VA, conventional, manufactured home, reverse mortgage, and other loan programs \u2014 explained clearly for Arizona buyers and homeowners.",
+        "twitter:description": "Learn about FHA, VA, conventional, manufactured home, reverse mortgage, and other loan programs \u2014 explained clearly for Arizona buyers and homeowners.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/videos/important-mortgage-home-loan-topics/",
+      "diffs": [
+        "description",
+        "og:description",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "description": null,
+        "og:description": null,
+        "twitter:description": null,
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "description": "Find our videos on important mortgage and home loan topics \u2014 scams to avoid, buydowns, credit tips, and more \u2014 right here.",
+        "og:description": "Find our videos on important mortgage and home loan topics \u2014 scams to avoid, buydowns, credit tips, and more \u2014 right here.",
+        "twitter:description": "Find our videos on important mortgage and home loan topics \u2014 scams to avoid, buydowns, credit tips, and more \u2014 right here.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/how-a-rapid-rescore-can-help-to-get-qualified-for-a-mortgage/",
+      "diffs": [
+        "title",
+        "description",
+        "og:title",
+        "og:description",
+        "twitter:title",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "title": "How a Rapid Rescore Can Help You Qualify for Mortgage?",
+        "description": "Learn how a rapid rescore for a mortgage can quickly boost your credit score and improve your loan approval chances.",
+        "og:title": "How a Rapid Rescore Can Help You Qualify for Mortgage?",
+        "og:description": "Learn how a rapid rescore for a mortgage can quickly boost your credit score and improve your loan approval chances.",
+        "twitter:title": "How a Rapid Rescore Can Help You Qualify for Mortgage?",
+        "twitter:description": "Learn how a rapid rescore for a mortgage can quickly boost your credit score and improve your loan approval chances.",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "title": "How a Rapid Rescore Can Help You Qualify for a Mortgage",
+        "description": "A Rapid Rescore is one of the simplest methods to improve your credit score in less time by submitting proof of positive credit behaviors to the three major credit bureaus. This is extremely beneficial and can help you in improving your credit score by 100 points and more within a day as soon as the",
+        "og:title": "How a Rapid Rescore Can Help You Qualify for a Mortgage",
+        "og:description": "A Rapid Rescore is one of the simplest methods to improve your credit score in less time by submitting proof of positive credit behaviors to the three major credit bureaus. This is extremely beneficial and can help you in improving your credit score by 100 points and more within a day as soon as the",
+        "twitter:title": "How a Rapid Rescore Can Help You Qualify for a Mortgage",
+        "twitter:description": "A Rapid Rescore is one of the simplest methods to improve your credit score in less time by submitting proof of positive credit behaviors to the three major credit bureaus. This is extremely beneficial and can help you in improving your credit score by 100 points and more within a day as soon as the",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/mortgage-processor/",
+      "diffs": [
+        "description",
+        "og:description",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "description": "Kickstart your career as a Mortgage Processor\u2014entry level with or without experience. Join Arizona Mortgage Brothers and thrive!",
+        "og:description": "Kickstart your career as a Mortgage Processor\u2014entry level with or without experience. Join Arizona Mortgage Brothers and thrive!",
+        "twitter:description": "Kickstart your career as a Mortgage Processor\u2014entry level with or without experience. Join Arizona Mortgage Brothers and thrive!",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "description": "Kickstart your career as a Mortgage Processor-entry level with or without experience. Join Arizona Mortgage Brothers and thrive!",
+        "og:description": "Kickstart your career as a Mortgage Processor-entry level with or without experience. Join Arizona Mortgage Brothers and thrive!",
+        "twitter:description": "Kickstart your career as a Mortgage Processor-entry level with or without experience. Join Arizona Mortgage Brothers and thrive!",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/mortgage-for-excellent-credit/",
+      "diffs": [
+        "description",
+        "og:description",
+        "og:image",
+        "twitter:description",
+        "twitter:image",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "description": "Get the best mortgage for excellent credit and secure low interest rates. Compare top home loan options and start your journey to homeownership today.",
+        "og:description": "Get the best mortgage for excellent credit and secure low interest rates. Compare top home loan options and start your journey to homeownership today.",
+        "og:image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/mortgage-for-excellent-credit-ultimate-guide.jpg",
+        "twitter:description": "Get the best mortgage for excellent credit and secure low interest rates. Compare top home loan options and start your journey to homeownership today.",
+        "twitter:image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/mortgage-for-excellent-credit-ultimate-guide.jpg",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "description": "Unlock exclusive mortgage options with the lowest interest rates for excellent credit borrowers. Arizona mortgage experts at Mortgage Brothers.",
+        "og:description": "Unlock exclusive mortgage options with the lowest interest rates for excellent credit borrowers. Arizona mortgage experts at Mortgage Brothers.",
+        "og:image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/mortgage-for-excellent-credit.jpg",
+        "twitter:description": "Unlock exclusive mortgage options with the lowest interest rates for excellent credit borrowers. Arizona mortgage experts at Mortgage Brothers.",
+        "twitter:image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/mortgage-for-excellent-credit.jpg",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/mortgage-for-good-credit/",
+      "diffs": [
+        "description",
+        "og:description",
+        "og:image",
+        "twitter:description",
+        "twitter:image",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "description": "Find a mortgage for good credit and get a competitive interest rate. Explore the best home loan options for buyers with solid credit history.",
+        "og:description": "Find a mortgage for good credit and get a competitive interest rate. Explore the best home loan options for buyers with solid credit history.",
+        "og:image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/mortgage-for-good-credit-ultimate-guide.jpg",
+        "twitter:description": "Find a mortgage for good credit and get a competitive interest rate. Explore the best home loan options for buyers with solid credit history.",
+        "twitter:image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/mortgage-for-good-credit-ultimate-guide.jpg",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "description": "Unlock competitive mortgage rates with good credit. Compare loan options and get personalized guidance from Arizona Mortgage Brothers.",
+        "og:description": "Unlock competitive mortgage rates with good credit. Compare loan options and get personalized guidance from Arizona Mortgage Brothers.",
+        "og:image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/mortgage-good-credit.jpg",
+        "twitter:description": "Unlock competitive mortgage rates with good credit. Compare loan options and get personalized guidance from Arizona Mortgage Brothers.",
+        "twitter:image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/mortgage-good-credit.jpg",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/realtorteam/",
+      "diffs": [
+        "description",
+        "og:description",
+        "og:image",
+        "twitter:description",
+        "twitter:image",
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "description": "Discover tailored Mortgage Brothers Partnership programs for real estate pros in Arizona. Enhance services and streamline financing to drive success.",
+        "og:description": "Discover tailored Mortgage Brothers Partnership programs for real estate pros in Arizona. Enhance services and streamline financing to drive success.",
+        "og:image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/your-phoenix-arizona-mortgage-team.jpg",
+        "twitter:description": "Discover tailored Mortgage Brothers Partnership programs for real estate pros in Arizona. Enhance services and streamline financing to drive success.",
+        "twitter:image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/your-phoenix-arizona-mortgage-team.jpg",
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "description": "Partner with AZ Mortgage Brothers for fast closings, dedicated support, competitive loan programs, and co-branded marketing resources built for real estate professionals.",
+        "og:description": "Partner with AZ Mortgage Brothers for fast closings, dedicated support, competitive loan programs, and co-branded marketing resources built for real estate professionals.",
+        "og:image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/arizona-mortgage-office-building.jpg",
+        "twitter:description": "Partner with AZ Mortgage Brothers for fast closings, dedicated support, competitive loan programs, and co-branded marketing resources built for real estate professionals.",
+        "twitter:image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/arizona-mortgage-office-building.jpg",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/pillar-post/",
+      "diffs": [
+        "description",
+        "og:description",
+        "twitter:description",
+        "og:site_name",
+        "og:locale",
+        "twitter:site"
+      ],
+      "live": {
+        "description": null,
+        "og:description": null,
+        "twitter:description": null,
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros"
+      },
+      "new": {
+        "description": "Please click the link to complete this form.",
+        "og:description": "Please click the link to complete this form.",
+        "twitter:description": "Please click the link to complete this form.",
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null
+      }
+    }
+  ],
+  "sitewide_sample": [
+    {
+      "path": "/conventional-home-loans-vs-fha-loans-which-is-right-for-you/",
+      "diffs": [
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/how-to-sell-my-house-fast-in-arizona/",
+      "diffs": [
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    },
+    {
+      "path": "/how-to-calculate-how-much-pmi-mortgage-insurance-will-be/",
+      "diffs": [
+        "og:site_name",
+        "og:locale",
+        "twitter:site",
+        "twitter:creator"
+      ],
+      "live": {
+        "og:site_name": "Arizona Home Loans | The Mortgage Brothers",
+        "og:locale": "en_US",
+        "twitter:site": "@azmortgagebros",
+        "twitter:creator": "@azmortgagebros"
+      },
+      "new": {
+        "og:site_name": null,
+        "og:locale": null,
+        "twitter:site": null,
+        "twitter:creator": null
+      }
+    }
+  ]
+}
