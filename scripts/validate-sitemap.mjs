@@ -24,7 +24,7 @@ function normalizePathname(pathname) {
 const EXCLUDED = new Set([
   "/thank-you",
   "/term-condition",
-  "/fha-loans",
+  "/loan-programs",
   "/loan-programs-detail",
   "/arizona-directory-2",
   "/down-payment-calculator-1",
@@ -34,6 +34,9 @@ const EXCLUDED = new Set([
   "/resources/mortgage-basics",
   "/service-areas/maricopa-county-az-2",
 ]);
+
+const EXTRA_PAGE_PATHS = ["/privacy-policy", "/terms-of-use"];
+const FALLBACK_AUTHOR_PATHS = ["/author/eddie-knoell"];
 
 const RAW_CITIES = {
   "maricopa-county-az": [
@@ -148,17 +151,42 @@ const categoryPaths = new Set(
 );
 
 const authorDir = join(appDir, "author");
-const authorPaths = existsSync(authorDir)
-  ? readdirSync(authorDir)
-      .filter((slug) => existsSync(join(authorDir, slug, "page.tsx")))
-      .map((slug) => `/author/${slug}`)
-  : [];
+const authorPaths = [
+  ...new Set([
+    ...(existsSync(authorDir)
+      ? readdirSync(authorDir)
+          .filter((slug) => existsSync(join(authorDir, slug, "page.tsx")))
+          .map((slug) => `/author/${slug}`)
+      : []),
+    ...FALLBACK_AUTHOR_PATHS,
+  ]),
+];
 
-const cityPaths = Object.entries(RAW_CITIES).flatMap(([county, cities]) =>
-  cities.map((c) => `/service-areas/${county}/${slugify(c)}`),
-);
+const cityPaths = [
+  ...new Set([
+    ...Object.entries(RAW_CITIES).flatMap(([county, cities]) =>
+      cities.map((c) => `/service-areas/${county}/${slugify(c)}`),
+    ),
+    ...Object.keys(seoMetadata)
+      .map(normalizePathname)
+      .filter((p) => {
+        const parts = p.split("/").filter(Boolean);
+        return (
+          parts.length === 3 &&
+          parts[0] === "service-areas" &&
+          Object.prototype.hasOwnProperty.call(RAW_CITIES, parts[1])
+        );
+      }),
+  ]),
+];
 
-const allPageCandidates = [...new Set([...staticPaths, ...cityPaths])].filter((p) => {
+const seoPagePaths = Object.entries(seoMetadata)
+  .filter(([, e]) => !e.section || e.section === "pages")
+  .map(([p]) => normalizePathname(p));
+
+const allPageCandidates = [
+  ...new Set([...staticPaths, ...seoPagePaths, ...cityPaths, ...EXTRA_PAGE_PATHS]),
+].filter((p) => {
   if (EXCLUDED.has(p)) return false;
   if (postPaths.has(p)) return false;
   if (categoryPaths.has(p)) return false;
@@ -172,7 +200,7 @@ else ok(`posts: ${postPaths.size}`);
 if (categoryPaths.size < 10) fail(`expected ~10 categories, got ${categoryPaths.size}`);
 else ok(`categories: ${categoryPaths.size}`);
 
-if (cityPaths.length !== 108) fail(`expected 108 cities, got ${cityPaths.length}`);
+if (cityPaths.length < 108) fail(`expected 108+ cities, got ${cityPaths.length}`);
 else ok(`service-area cities: ${cityPaths.length}`);
 
 if (allPageCandidates.length < 100) {
@@ -197,9 +225,25 @@ for (const excluded of EXCLUDED) {
     fail(`excluded path in pages: ${excluded}`);
   }
 }
-if (allPageCandidates.includes("/fha-loans")) fail("redirect /fha-loans in pages");
-if (categoryPaths.has("/fha-loans")) fail("redirect /fha-loans in categories");
+if (allPageCandidates.includes("/loan-programs")) fail("redirect /loan-programs in pages");
+if (allPageCandidates.includes("/fha-loans")) fail("/fha-loans should be a category, not a page");
+if (!categoryPaths.has("/fha-loans")) fail("missing category /fha-loans");
 ok("excluded redirect/duplicate paths absent");
+
+const requiredPages = [
+  "/",
+  "/about-us",
+  "/videos",
+  "/privacy-policy",
+  "/terms-of-use",
+  "/service-areas",
+  "/contact-us",
+  "/blog",
+];
+for (const path of requiredPages) {
+  if (!allPageCandidates.includes(path)) fail(`missing core page ${path}`);
+}
+ok(`core marketing pages present (${requiredPages.join(", ")})`);
 
 const requiredRoutes = [
   "app/sitemap.xml/route.ts",
@@ -211,7 +255,9 @@ const requiredRoutes = [
   "app/locations.kml/route.ts",
   "app/main-sitemap.xsl/route.ts",
   "app/robots.txt/route.ts",
+  "app/llms.txt/route.ts",
   "lib/sitemap.ts",
+  "lib/llms.ts",
 ];
 for (const file of requiredRoutes) {
   if (!existsSync(join(root, file))) fail(`missing ${file}`);
@@ -226,6 +272,12 @@ if (/Disallow:\s*\/author/.test(robotsRoute)) {
   fail("robots.txt still disallows /author");
 }
 ok("robots.txt route points at sitemap.xml and allows all");
+
+const llmsRoute = readFileSync(join(root, "app/llms.txt/route.ts"), "utf8");
+if (!llmsRoute.includes("buildLlmsTxt(siteUrl)")) {
+  fail("llms.txt route is not host-aware");
+}
+ok("llms.txt route is present and host-aware");
 
 if (process.exitCode) {
   console.error("\nSitemap validation failed.");

@@ -1,6 +1,16 @@
 import { COMPANY } from "@/lib/company";
 
-const FALLBACK_SITE_URL = COMPANY.siteUrl;
+/**
+ * Build-time origin for canonical / OG / metadataBase.
+ * `NEXT_PUBLIC_SITE_URL` is inlined at build (Preview vs Production on Vercel).
+ */
+export function getConfiguredSiteUrl(): string {
+  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.trim().replace(/\/+$/, "");
+  if (fromEnv) return fromEnv;
+  return COMPANY.siteUrl;
+}
+
+const FALLBACK_SITE_URL = getConfiguredSiteUrl();
 
 function firstCommaSeparatedValue(value: string | null): string | undefined {
   if (!value) return undefined;
@@ -11,7 +21,7 @@ function firstCommaSeparatedValue(value: string | null): string | undefined {
  * Resolve the externally-visible site origin for the current request.
  *
  * Uses proxy headers when present (Vercel / reverse-proxies), and falls back to
- * `COMPANY.siteUrl` when host/proto headers are not available (e.g. build-time).
+ * `getConfiguredSiteUrl()` when host/proto headers are not available (e.g. build-time).
  */
 export function resolveSiteUrlFromHeaders(headers: Headers): string {
   const forwardedHost = firstCommaSeparatedValue(headers.get("x-forwarded-host"));

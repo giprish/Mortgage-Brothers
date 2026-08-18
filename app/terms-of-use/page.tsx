@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
+import { getSeoMetadata } from "@/lib/seo";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import Link from "next/link";
 
-export const metadata: Metadata = {
-  title: "Terms of Use | Mortgage Brothers",
-  description:
-    "Terms of Use for the Mortgage Brothers LLC website and online mortgage resources.",
-  alternates: {
-    canonical: "/terms-of-use/",
-  },
-};
+export const metadata: Metadata = getSeoMetadata("/terms-of-use/");
 
 export default function TermsOfUsePage() {
   return (

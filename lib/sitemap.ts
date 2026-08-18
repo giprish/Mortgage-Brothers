@@ -1,7 +1,10 @@
 import { existsSync, readdirSync, statSync } from "fs";
 import { join, relative, sep } from "path";
 import { COMPANY } from "@/lib/company";
-import { resolveSiteUrlFromHeaders } from "@/lib/site-url";
+import {
+  FALLBACK_SITE_URL,
+  resolveSiteUrlFromHeaders,
+} from "@/lib/site-url";
 import {
   countyMap,
   getCountyCitiesDetails,
@@ -10,7 +13,7 @@ import {
 import { normalizePathname, seoMetadata, toTrailingSlashPath } from "@/lib/seo";
 import eddiePosts from "@/lib/eddie-knoell-posts.json";
 
-export const FALLBACK_SITE_URL = COMPANY.siteUrl;
+export { FALLBACK_SITE_URL };
 
 const XML_STYLESHEET_PI =
   '<?xml-stylesheet type="text/xsl" href="/main-sitemap.xsl"?>';
@@ -33,6 +36,7 @@ type AuthorPost = {
 const EXCLUDED_PATHS = new Set([
   "/thank-you",
   "/term-condition",
+  "/loan-programs",
   "/loan-programs-detail",
   "/arizona-directory-2",
   "/down-payment-calculator-1",
@@ -42,6 +46,14 @@ const EXCLUDED_PATHS = new Set([
   "/resources/mortgage-basics",
   "/service-areas/maricopa-county-az-2",
 ]);
+
+/**
+ * Pages that exist as routes but are missing from seo-metadata.json.
+ * Bundled so they still appear on Vercel, where `app/` is not on disk.
+ */
+const EXTRA_PAGE_PATHS = ["/privacy-policy", "/terms-of-use"];
+
+const FALLBACK_AUTHOR_PATHS = ["/author/eddie-knoell"];
 
 const CHILD_SITEMAPS = [
   "post-sitemap.xml",
@@ -147,11 +159,30 @@ function discoverStaticPagePaths(appDir: string): string[] {
 }
 
 function getServiceAreaCityPaths(): string[] {
-  return Object.keys(countyMap).flatMap((countySlug) =>
+  const fromCounties = Object.keys(countyMap).flatMap((countySlug) =>
     getCountyCitiesDetails(countySlug).map(
       (city) => `/service-areas/${countySlug}/${slugify(city.name)}`,
     ),
   );
+
+  const fromSeo: string[] = [];
+  for (const rawPath of Object.keys(seoMetadata)) {
+    const path = normalizePathname(rawPath);
+    const parts = path.split("/").filter(Boolean);
+    if (parts.length !== 3) continue;
+    if (parts[0] !== "service-areas") continue;
+    if (!countyMap[parts[1]]) continue;
+    fromSeo.push(path);
+  }
+
+  return dedupePaths([...fromCounties, ...fromSeo]);
+}
+
+/** Catalog pages from bundled SEO JSON — available in serverless runtimes. */
+function getSeoPagePaths(): string[] {
+  return Object.entries(seoMetadata)
+    .filter(([, entry]) => !entry.section || entry.section === "pages")
+    .map(([path]) => normalizePathname(path));
 }
 
 function getPostPathSet(): Map<string, string | undefined> {
@@ -182,15 +213,18 @@ function getCategoryPaths(): string[] {
 }
 
 function getAuthorPaths(appDir: string): string[] {
+  const discovered: string[] = [];
   const authorDir = join(appDir, "author");
-  if (!existsSync(authorDir)) return [];
+  if (existsSync(authorDir)) {
+    for (const slug of readdirSync(authorDir)) {
+      if (slug.startsWith("[")) continue;
+      if (existsSync(join(authorDir, slug, "page.tsx"))) {
+        discovered.push(`/author/${slug}`);
+      }
+    }
+  }
 
-  return readdirSync(authorDir)
-    .filter((slug) => {
-      if (slug.startsWith("[")) return false;
-      return existsSync(join(authorDir, slug, "page.tsx"));
-    })
-    .map((slug) => `/author/${slug}`);
+  return dedupePaths([...discovered, ...FALLBACK_AUTHOR_PATHS]);
 }
 
 function dedupePaths(paths: string[]): string[] {
@@ -214,10 +248,18 @@ export function collectSitemapEntries(
   const authorPaths = getAuthorPaths(appDir);
   const authorSet = new Set(authorPaths.map(normalizePathname));
 
+  // `app/` is present in local/dev but not in Vercel serverless bundles, so
+  // filesystem discovery is merged with bundled SEO/city/extra catalogs.
   const staticPaths = discoverStaticPagePaths(appDir);
   const cityPaths = getServiceAreaCityPaths();
+  const seoPagePaths = getSeoPagePaths();
 
-  const pagePaths = dedupePaths([...staticPaths, ...cityPaths]).filter((path) => {
+  const pagePaths = dedupePaths([
+    ...staticPaths,
+    ...seoPagePaths,
+    ...cityPaths,
+    ...EXTRA_PAGE_PATHS,
+  ]).filter((path) => {
     if (isExcludedPath(path)) return false;
     if (postMap.has(path)) return false;
     if (categorySet.has(path)) return false;
