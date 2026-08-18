@@ -87,7 +87,7 @@ export default function MovingMortgagePage() {
 
         <section className="py-16 bg-[#052316] text-white text-center">
           <h2 className="text-[28px] font-bold font-playfair mb-4">Plan Your Move-Up Home Purchase Today</h2>
-          <Link href="/#get-pre-approved" className="btn-primary">GET PRE-APPROVED NOW →</Link>
+          <Link href="/#get-pre-approved" className="btn-primary">GET PRE-APPROVED NOW</Link>
         </section>
       </main>
       <Footer />

@@ -614,7 +614,7 @@ const Navbar = () => {
           </a>
           <Link prefetch={false}
             href="/#get-pre-approved"
-            className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[12.5px] xl:text-[13px] font-semibold px-3.5 xl:px-4.5 py-2 rounded-full transition-all duration-200 hover:shadow-lg shrink-0"
+            className="btn-primary-sm text-[12.5px] xl:text-[13px] px-3.5 xl:px-4.5 py-2 hover:shadow-lg shrink-0"
           >
             Get Pre-Approved
           </Link>
