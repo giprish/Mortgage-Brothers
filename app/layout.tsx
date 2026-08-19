@@ -82,6 +82,11 @@ export default function RootLayout({
       className={`${playfair.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <link rel="preconnect" href="https://form.jotform.com" />
+        <link rel="preconnect" href="https://cdn.jotfor.ms" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://www.jotform.com" />
+      </head>
       <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
         {/* Google Tag Manager (noscript) */}
         <noscript>

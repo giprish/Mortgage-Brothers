@@ -3,7 +3,10 @@ import type { NextConfig } from "next";
 /** JotForm embed origins — iframe, script handler, submissions (see csp-guide.com/posts/csp-for-jotform/) */
 const JOTFORM_CSP = [
   "https://form.jotform.com",
-  "https://*.jotform.com",
+  "https://www.jotform.com",
+  "https://submit.jotform.com",
+  "https://events.jotform.com",
+  "https://render.jotform.com",
   "https://cdn.jotfor.ms",
 ].join(" ");
 

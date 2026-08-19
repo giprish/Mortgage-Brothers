@@ -5,11 +5,40 @@ import React, {
   useCallback,
   useContext,
   useEffect,
+  useRef,
   useState,
 } from "react";
 import { useRouter } from "next/navigation";
-import Script from "next/script";
 import { resolveFormKind, type FormKind } from "./formModalTargets";
+
+/**
+ * Spinner that auto-hides after 2.5s using a DOM timer — immune to React
+ * Strict Mode double-invoke and effect cancellation.
+ */
+function SpinnerOverlay({ label }: { label: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const id = window.setTimeout(() => {
+      if (el) el.style.display = "none";
+    }, 2500);
+    return () => window.clearTimeout(id);
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-[#fcf9f3] p-6 pointer-events-none"
+    >
+      <div className="w-12 h-12 border-4 border-[#3fb364]/20 border-t-[#3fb364] rounded-full animate-spin mb-4" />
+      <p className="text-[#4e5b4e] text-[15px] font-medium animate-pulse">
+        {label}
+      </p>
+    </div>
+  );
+}
 
 const FORMS: Record<
   FormKind,
@@ -88,22 +117,20 @@ export default function PreApprovalProvider({
 }) {
   const router = useRouter();
   const [kind, setKind] = useState<FormKind | null>(initialKind);
-  const [shouldLoadForm, setShouldLoadForm] = useState(!!initialKind);
-  const [isLoading, setIsLoading] = useState(true);
+  const [mounted, setMounted] = useState<Set<FormKind>>(
+    () => new Set(initialKind ? [initialKind] : [])
+  );
 
   const isOpen = kind !== null;
-  const active = kind ? FORMS[kind] : null;
-
-  const initJotformEmbed = useCallback(() => {
-    if (!active) return;
-    if (typeof window === "undefined" || typeof window.jotformEmbedHandler !== "function") return;
-    window.jotformEmbedHandler(`iframe[id='JotFormIFrame-${active.id}']`, "https://form.jotform.com/");
-  }, [active]);
 
   const open = useCallback((next: FormKind = "preapproval") => {
+    setMounted((prev) => {
+      if (prev.has(next)) return prev;
+      const copy = new Set(prev);
+      copy.add(next);
+      return copy;
+    });
     setKind(next);
-    setShouldLoadForm(true);
-    setIsLoading(true);
     document.body.style.overflow = "hidden";
   }, []);
 
@@ -111,13 +138,12 @@ export default function PreApprovalProvider({
     if (initialKind) {
       document.body.style.overflow = "hidden";
     }
-  }, [initialKind]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const close = useCallback(() => {
     setKind(null);
     document.body.style.overflow = "";
-    setShouldLoadForm(false);
-    setIsLoading(true);
   }, []);
 
   useEffect(() => {
@@ -170,92 +196,86 @@ export default function PreApprovalProvider({
     return () => window.removeEventListener("keydown", onKey);
   }, [isOpen, close]);
 
+  const formKinds = Object.keys(FORMS) as FormKind[];
+
   return (
     <FormModalContext.Provider value={{ open, close, isOpen, kind }}>
       {children}
 
-      {isOpen && active && (
-        <div
-          className="fixed inset-0 z-[200] flex flex-col bg-[#04160f]/70 backdrop-blur-sm"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="site-form-modal-title"
-        >
-          <div className="flex-shrink-0 bg-[#052316] border-b border-white/10 px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
-            <div className="min-w-0">
-              <p className="text-[#3fb364] text-[10px] font-bold uppercase tracking-wider">
-                {active.eyebrow}
-              </p>
-              <h2
-                id="site-form-modal-title"
-                className="text-white text-[15px] sm:text-[16px] font-semibold truncate"
-              >
-                {active.title}
-              </h2>
-            </div>
-            <button
-              type="button"
-              onClick={close}
-              aria-label={`Close ${active.title} dialog`}
-              className="inline-flex items-center gap-1.5 sm:gap-2 bg-white/10 hover:bg-white/15 text-white text-[12px] sm:text-[13px] font-semibold px-3 sm:px-4 py-2 rounded-full transition-colors cursor-pointer shrink-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-            >
-              <svg
-                className="w-4 h-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                aria-hidden
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-              </svg>
-              <span className="sm:hidden">Back</span>
-              <span className="hidden sm:inline">Back to Website</span>
-            </button>
-          </div>
+      {formKinds.map((formKind) => {
+        if (!mounted.has(formKind)) return null;
+        const form = FORMS[formKind];
+        const visible = isOpen && kind === formKind;
 
-          <div className="flex-1 relative bg-[#fcf9f3] min-h-0">
-            {shouldLoadForm && isLoading && (
-              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-[#fcf9f3] p-6">
-                <div className="w-12 h-12 border-4 border-[#3fb364]/20 border-t-[#3fb364] rounded-full animate-spin mb-4" />
-                <p className="text-[#4e5b4e] text-[15px] font-medium animate-pulse">
-                  {active.loadingLabel}
+        return (
+          <div
+            key={formKind}
+            className={
+              visible
+                ? "fixed inset-0 z-[200] flex flex-col bg-[#04160f]/70 backdrop-blur-sm"
+                : "hidden"
+            }
+            role={visible ? "dialog" : undefined}
+            aria-modal={visible ? true : undefined}
+            aria-hidden={!visible}
+            aria-labelledby={visible ? "site-form-modal-title" : undefined}
+          >
+            <div className="flex-shrink-0 bg-[#052316] border-b border-white/10 px-4 sm:px-6 py-3 flex items-center justify-between gap-3">
+              <div className="min-w-0">
+                <p className="text-[#3fb364] text-[10px] font-bold uppercase tracking-wider">
+                  {form.eyebrow}
                 </p>
+                <h2
+                  id={visible ? "site-form-modal-title" : undefined}
+                  className="text-white text-[15px] sm:text-[16px] font-semibold truncate"
+                >
+                  {form.title}
+                </h2>
               </div>
-            )}
+              <button
+                type="button"
+                onClick={close}
+                tabIndex={visible ? 0 : -1}
+                aria-label={`Close ${form.title} dialog`}
+                className="inline-flex items-center gap-1.5 sm:gap-2 bg-white/10 hover:bg-white/15 text-white text-[12px] sm:text-[13px] font-semibold px-3 sm:px-4 py-2 rounded-full transition-colors cursor-pointer shrink-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  aria-hidden
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+                </svg>
+                <span className="sm:hidden">Back</span>
+                <span className="hidden sm:inline">Back to Website</span>
+              </button>
+            </div>
 
-            {shouldLoadForm && (
-              <iframe
-                id={`JotFormIFrame-${active.id}`}
-                title={active.iframeTitle}
-                src={active.src}
-                className="absolute inset-0 w-full h-full border-0"
-                allow="geolocation; microphone; camera; fullscreen; payment"
-                scrolling="no"
-                onLoad={() => {
-                  window.scrollTo(0, 0);
-                  setIsLoading(false);
-                  initJotformEmbed();
-                }}
-              />
-            )}
+            <div className="flex-1 relative bg-[#fcf9f3] min-h-0">
+              {visible && (
+                <SpinnerOverlay label={form.loadingLabel} />
+              )}
+
+              {visible && (
+                <iframe
+                  id={`JotFormIFrame-${form.id}`}
+                  title={form.iframeTitle}
+                  src={form.src}
+                  className="absolute inset-0 w-full h-full border-0"
+                  allow="geolocation; microphone; camera; fullscreen; payment"
+                  scrolling="yes"
+                  onLoad={() => {
+                    window.scrollTo(0, 0);
+                  }}
+                />
+              )}
+            </div>
           </div>
-        </div>
-      )}
-      {isOpen && shouldLoadForm && (
-        <Script
-          id="jotform-embed-handler"
-          src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"
-          strategy="afterInteractive"
-          onLoad={initJotformEmbed}
-        />
-      )}
+        );
+      })}
     </FormModalContext.Provider>
   );
-}
-
-declare global {
-  interface Window {
-    jotformEmbedHandler?: (selector: string, domain: string) => void;
-  }
 }

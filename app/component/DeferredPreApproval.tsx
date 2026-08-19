@@ -9,9 +9,8 @@ const PreApprovalProvider = dynamic(() => import("./PreApprovalProvider"), {
 });
 
 /**
- * Load site form modals (Pre-Approval / Quiz / Contact) after idle.
- * Form CTAs still open the modal on first click.
- * Do not setState during a normal page-link click — that cancels Next.js navigation.
+ * Mount form modals immediately on the client so Quiz / Pre-Approval can
+ * prefetch in the background. First click still opens the matching modal.
  */
 export default function DeferredPreApproval() {
   const [ready, setReady] = useState(false);
@@ -21,15 +20,9 @@ export default function DeferredPreApproval() {
     if (ready) return;
 
     let done = false;
-    let idleId: number | null = null;
-    let timeoutId: number | null = null;
 
     const cleanup = () => {
       document.removeEventListener("click", onClick, true);
-      if (idleId != null && typeof window.cancelIdleCallback === "function") {
-        window.cancelIdleCallback(idleId);
-      }
-      if (timeoutId != null) window.clearTimeout(timeoutId);
     };
 
     const arm = (kind: FormKind | null) => {
@@ -53,17 +46,12 @@ export default function DeferredPreApproval() {
     };
 
     document.addEventListener("click", onClick, true);
+    const timeoutId = window.setTimeout(() => arm(null), 0);
 
-    const w = window as Window & {
-      requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
+    return () => {
+      cleanup();
+      window.clearTimeout(timeoutId);
     };
-    if (typeof w.requestIdleCallback === "function") {
-      idleId = w.requestIdleCallback(() => arm(null), { timeout: 4000 });
-    } else {
-      timeoutId = window.setTimeout(() => arm(null), 2500);
-    }
-
-    return cleanup;
   }, [ready]);
 
   if (!ready) return null;
