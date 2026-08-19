@@ -347,14 +347,13 @@ export default function UltimateGuideFirstMortgagePage() {
                     Take our quick quiz to assess your credit profile and receive personalized insights to guide
                     your mortgage journey.
                   </p>
-                  <a
-                    href="https://form.jotform.com/250305896122151"
-                    target="_blank"
-                    rel="noopener"
+                  <button
+                    type="button"
+                    data-quiz="true"
                     className="btn-primary"
                   >
                     Take the Quiz
-                  </a>
+                  </button>
                 </div>
 
                 <section id="finding-a-lender">

@@ -8,6 +8,7 @@ import React, {
   useState,
 } from "react";
 import { useRouter } from "next/navigation";
+import Script from "next/script";
 import { resolveFormKind, type FormKind } from "./formModalTargets";
 
 const FORMS: Record<
@@ -26,7 +27,7 @@ const FORMS: Record<
     src: "https://form.jotform.com/250065764860157",
     eyebrow: "Secure application",
     title: "Start Your Pre-Approval",
-    iframeTitle: "Arizona Mortgage Pre-Approval Form",
+    iframeTitle: "A - New All in One Form for purchase and refinances",
     loadingLabel: "Loading secure application form...",
   },
   quiz: {
@@ -34,7 +35,7 @@ const FORMS: Record<
     src: "https://form.jotform.com/250305896122151",
     eyebrow: "Free credit check-in",
     title: "Credit Score Quiz",
-    iframeTitle: "Credit Score Quiz",
+    iframeTitle: "A - New Credit Score Quiz",
     loadingLabel: "Loading credit score quiz...",
   },
   contact: {
@@ -42,7 +43,7 @@ const FORMS: Record<
     src: "https://form.jotform.com/250026749097159",
     eyebrow: "Get in touch",
     title: "Contact Us",
-    iframeTitle: "Contact Form",
+    iframeTitle: "New Contact Us Form",
     loadingLabel: "Loading contact form...",
   },
 };
@@ -92,6 +93,12 @@ export default function PreApprovalProvider({
 
   const isOpen = kind !== null;
   const active = kind ? FORMS[kind] : null;
+
+  const initJotformEmbed = useCallback(() => {
+    if (!active) return;
+    if (typeof window === "undefined" || typeof window.jotformEmbedHandler !== "function") return;
+    window.jotformEmbedHandler(`iframe[id='JotFormIFrame-${active.id}']`, "https://form.jotform.com/");
+  }, [active]);
 
   const open = useCallback((next: FormKind = "preapproval") => {
     setKind(next);
@@ -223,13 +230,32 @@ export default function PreApprovalProvider({
                 title={active.iframeTitle}
                 src={active.src}
                 className="absolute inset-0 w-full h-full border-0"
-                allow="geolocation; microphone; camera; fullscreen"
-                onLoad={() => setIsLoading(false)}
+                allow="geolocation; microphone; camera; fullscreen; payment"
+                scrolling="no"
+                onLoad={() => {
+                  window.scrollTo(0, 0);
+                  setIsLoading(false);
+                  initJotformEmbed();
+                }}
               />
             )}
           </div>
         </div>
       )}
+      {isOpen && shouldLoadForm && (
+        <Script
+          id="jotform-embed-handler"
+          src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"
+          strategy="afterInteractive"
+          onLoad={initJotformEmbed}
+        />
+      )}
     </FormModalContext.Provider>
   );
+}
+
+declare global {
+  interface Window {
+    jotformEmbedHandler?: (selector: string, domain: string) => void;
+  }
 }

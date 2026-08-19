@@ -105,7 +105,8 @@ function isQuizTarget(clickable: HTMLElement): boolean {
   const href = (clickable.getAttribute("href") || "").toLowerCase().trim();
   return (
     href.includes("250305896122151") ||
-    href.includes("form.jotform.com/250305896122151")
+    href.includes("form.jotform.com/250305896122151") ||
+    href.includes("jsform/250305896122151")
   );
 }
 
@@ -116,6 +117,15 @@ function isContactTarget(clickable: HTMLElement): boolean {
   return (
     href.includes("form.jotform.com/250026749097159") ||
     href.includes("jsform/250026749097159")
+  );
+}
+
+function isPreapprovalJotformHref(clickable: HTMLElement): boolean {
+  const href = (clickable.getAttribute("href") || "").toLowerCase().trim();
+  return (
+    href.includes("250065764860157") ||
+    href.includes("form.jotform.com/250065764860157") ||
+    href.includes("jsform/250065764860157")
   );
 }
 
@@ -146,6 +156,7 @@ export function resolveFormKind(target: EventTarget | Element | null): FormKind 
   }
 
   if (isPreApprovalTarget(clickable)) return "preapproval";
+  if (isPreapprovalJotformHref(clickable)) return "preapproval";
   if (isQuizTarget(clickable)) return "quiz";
   if (isContactTarget(clickable)) return "contact";
   return null;

@@ -88,6 +88,29 @@ function pathIsActive(href: string, pathname: string) {
   return p.startsWith(h);
 }
 
+const PREAPPROVE_BTN_CLASS =
+  "btn-primary-sm shrink-0 px-3.5 py-2 text-[12.5px] hover:shadow-lg xl:px-[18px] xl:text-[13px]";
+
+function NavbarLogo() {
+  return (
+    <Link
+      prefetch={false}
+      href="/"
+      className="flex items-center hover:opacity-90 transition-opacity duration-200 shrink-0"
+    >
+      <span className="relative block h-[40px] w-[125px] sm:h-[48px] sm:w-[150px]">
+        <Image
+          src={COMPANY.logoSrc}
+          alt="Mortgage Brothers"
+          fill
+          sizes="(max-width: 640px) 125px, 150px"
+          className="object-contain object-left"
+        />
+      </span>
+    </Link>
+  );
+}
+
 function mobileItemClass(active: boolean, size: "main" | "sub" = "sub") {
   const base =
     size === "main"
@@ -166,17 +189,7 @@ const Navbar = () => {
     <header className="w-full">
       <nav aria-label="Main Navigation" className="w-full bg-[#08271B] border-b border-[#1a3a1a] fixed top-0 left-0 right-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-5 xl:px-10 flex items-center justify-between h-[64px] sm:h-[72px]">
-        {/* Logo */}
-        <Link prefetch={false} href="/" className="flex items-center hover:opacity-90 transition-opacity duration-200 shrink-0">
-          <Image
-            src={COMPANY.logoSrc}
-            alt="Mortgage Brothers"
-            width={150}
-            height={48}
-            sizes="(max-width: 640px) 120px, 150px"
-            className="h-[40px] sm:h-[48px] w-auto max-w-[150px] object-contain"
-          />
-        </Link>
+        <NavbarLogo />
 
         {/* Desktop Nav Links */}
         <div className="hidden lg:flex items-center gap-3 xl:gap-5 xl:px-3 whitespace-nowrap">
@@ -612,9 +625,11 @@ const Navbar = () => {
             </svg>
             {COMPANY.phoneDisplay}
           </a>
-          <Link prefetch={false}
+          <Link
+            prefetch={false}
             href="/#get-pre-approved"
-            className="btn-primary-sm text-[12.5px] xl:text-[13px] px-3.5 xl:px-4.5 py-2 hover:shadow-lg shrink-0"
+            data-preapproval="true"
+            className={PREAPPROVE_BTN_CLASS}
           >
             Get Pre-Approved
           </Link>

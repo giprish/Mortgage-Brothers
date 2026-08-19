@@ -1,5 +1,12 @@
 import type { NextConfig } from "next";
 
+/** JotForm embed origins — iframe, script handler, submissions (see csp-guide.com/posts/csp-for-jotform/) */
+const JOTFORM_CSP = [
+  "https://form.jotform.com",
+  "https://*.jotform.com",
+  "https://cdn.jotfor.ms",
+].join(" ");
+
 const nextConfig: NextConfig = {
   trailingSlash: true,
   compress: true,
@@ -53,22 +60,23 @@ const nextConfig: NextConfig = {
       },
       {
         key: "Permissions-Policy",
-        value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
+        value:
+          'camera=(self "https://form.jotform.com" "https://www.jotform.com"), microphone=(self "https://form.jotform.com" "https://www.jotform.com"), geolocation=(self "https://form.jotform.com" "https://www.jotform.com"), payment=(self "https://form.jotform.com" "https://www.jotform.com"), interest-cohort=()',
       },
       {
         key: "Content-Security-Policy",
         value: [
           "default-src 'self'",
-          "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://form.jotform.com https://www.youtube.com https://www.google.com",
+          `script-src 'self' 'unsafe-inline' 'unsafe-eval' ${JOTFORM_CSP} https://www.youtube.com https://www.google.com https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://www.googleadservices.com https://googleads.g.doubleclick.net`,
           "style-src 'self' 'unsafe-inline'",
           "img-src 'self' data: blob: https:",
           "font-src 'self' data:",
           "connect-src 'self' https:",
-          "frame-src 'self' https://form.jotform.com https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com https://maps.google.com https://smart1003.preapprovemeapp.com",
+          `frame-src 'self' ${JOTFORM_CSP} https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com https://maps.google.com https://www.googletagmanager.com https://smart1003.preapprovemeapp.com`,
           "media-src 'self' https:",
           "object-src 'none'",
           "base-uri 'self'",
-          "form-action 'self' https://form.jotform.com https://smart1003.preapprovemeapp.com",
+          `form-action 'self' ${JOTFORM_CSP} https://smart1003.preapprovemeapp.com`,
         ].join("; "),
       },
     ];
