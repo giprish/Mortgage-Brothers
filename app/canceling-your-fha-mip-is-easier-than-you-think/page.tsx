@@ -229,9 +229,10 @@ export default function CancelingFhaMipPage() {
                     market uncertainty between 2008 and 2013, they changed 8 times.
                   </p>
                   <p>
-                    The last market change was in 2015 when the annual MIP dropped from the previous 1.35% to 0.85%
-                    annual premium. The premium has ranged from 0.5% to 1.35% during this period. Depending on when
-                    you took out your mortgage you may be paying the maximum premium on your mortgage and now is a
+                    The last market change was in March 2023, when HUD reduced the annual MIP from 0.85% to 0.55%
+                    for most new FHA loans (following an earlier 2015 reduction from 1.35% to 0.85%). The premium
+                    has ranged from 0.55% to 1.35% historically. Depending on when
+                    you took out your mortgage you may be paying a higher premium on your mortgage and now is a
                     good time to get out of it.
                   </p>
                 </section>
@@ -534,13 +535,6 @@ export default function CancelingFhaMipPage() {
               will get back to you promptly with personalized solutions tailored to your unique financial
               situation.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 text-[14.5px] text-[#08271B]">
-              <a href="tel:+16025352171" className="font-semibold hover:text-[#3fb364] transition-colors">
-                +1 602-535-2171
-              </a>
-              <span className="hidden sm:inline text-[#c8c8b8]">|</span>
-              <span className="text-center">1599 East Orangewood Ave Suite 200, Phoenix, AZ 85020</span>
-            </div>
             <Link
               href="/#get-pre-approved"
               className="btn-primary"

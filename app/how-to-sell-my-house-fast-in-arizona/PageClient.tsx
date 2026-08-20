@@ -734,8 +734,8 @@ export default function HowToSellMyHouseFastInArizonaPage() {
               14. Why Arizona Homeowners Trust Mortgage Brothers LLC
             </h2>
             <ul className="list-disc pl-6 space-y-2 text-[15px] leading-[1.7] text-[#3a4a3a] mb-4">
-              <li><strong>Third-generation Arizona roots.</strong> Led by Phoenix natives Eddie and Tom Knoell, whose family has been part of Valley real estate for over 70 years.</li>
-              <li><strong>20+ years of mortgage experience</strong> and a brokerage established in 2003.</li>
+              <li><strong>Third-generation Arizona roots.</strong> Led by Phoenix natives Eddie and Tom Knoell, whose family has been part of Valley real estate for nearly a century.</li>
+              <li><strong>25+ years of mortgage experience</strong> and a brokerage established in 2003.</li>
               <li><strong>Thousands of Arizona families helped</strong> across purchases, refinances, and major home decisions.</li>
               <li><strong>Deep local market knowledge</strong>, from Phoenix and Scottsdale to the East and West Valley and Tucson.</li>
               <li><strong>The broker advantage.</strong> As independent brokers, we compare across many lenders rather than pushing one bank&apos;s products — and we compare <em>selling</em> options the same independent way. We don&apos;t buy houses, so our only goal is your clarity.</li>

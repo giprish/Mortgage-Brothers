@@ -582,15 +582,6 @@ export default function FhaHomeLoansArizonaPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left max-w-xl mx-auto">
               <div className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-[#3fb364] mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-[13px] text-[#b8d4b8] uppercase tracking-wider font-bold mb-1">Phone</p>
-                  <a href="tel:+16025352171" className="text-white font-semibold hover:text-[#3fb364] transition-colors">
-                    (602) 535-2171
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#3fb364] mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-[13px] text-[#b8d4b8] uppercase tracking-wider font-bold mb-1">Address</p>

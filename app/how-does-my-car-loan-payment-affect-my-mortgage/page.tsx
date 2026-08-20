@@ -89,7 +89,7 @@ const faqSchema = {
       name: "How much more home can I get if I don't have a $400 car payment?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "If your car payment is $400 a month, that equates to roughly $90,000 that could go into buying a new home.",
+        text: "If your car payment is $400 a month, that equates to roughly $80,000 that could go into buying a new home.",
       },
     },
     {
@@ -97,7 +97,7 @@ const faqSchema = {
       name: "How much more home can I get if I don't have a $600 car payment?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "If your car payment is $600 a month, that equates to roughly $140,000 that could go into buying a new home.",
+        text: "If your car payment is $600 a month, that equates to roughly $120,000 that could go into buying a new home.",
       },
     },
     {
@@ -105,7 +105,7 @@ const faqSchema = {
       name: "How much more home can I get if I don't have a $1000 car payment?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "If your car payment is $1000 a month, that equates to roughly $235,000 that could go into buying a new home.",
+        text: "If your car payment is $1000 a month, that equates to roughly $200,000 that could go into buying a new home.",
       },
     },
   ],
@@ -239,7 +239,7 @@ export default function CarLoanPaymentAffectMortgagePage() {
                     How much more home can I get if I don&apos;t have a $400 car payment?
                   </h2>
                   <p>
-                    If your car payment is $400 a month, that equates to roughly $90,000 that could go into
+                    If your car payment is $400 a month, that equates to roughly $80,000 that could go into
                     buying a new home.
                   </p>
                 </section>
@@ -252,7 +252,7 @@ export default function CarLoanPaymentAffectMortgagePage() {
                     How much more home can I get if I don&apos;t have a $600 car payment?
                   </h2>
                   <p>
-                    If your car payment is $600 a month, that equates to roughly $140,000 that could go into
+                    If your car payment is $600 a month, that equates to roughly $120,000 that could go into
                     buying a new home.
                   </p>
                 </section>
@@ -265,7 +265,7 @@ export default function CarLoanPaymentAffectMortgagePage() {
                     How much more home can I get if I don&apos;t have a $1000 car payment?
                   </h2>
                   <p>
-                    If your car payment is $1000 a month, that equates to roughly $235,000 that could go into
+                    If your car payment is $1000 a month, that equates to roughly $200,000 that could go into
                     buying a new home.
                   </p>
                 </section>
@@ -451,9 +451,9 @@ export default function CarLoanPaymentAffectMortgagePage() {
                       </p>
                       <ul className="list-disc pl-6 space-y-2 mb-3">
                         <li>$250/mo → Lose $50,000 in home affordability</li>
-                        <li>$400/mo → Lose $90,000 in home affordability</li>
-                        <li>$600/mo → Lose $140,000 in home affordability</li>
-                        <li>$1,000/mo → Lose $235,000 in home affordability</li>
+                        <li>$400/mo → Lose $80,000 in home affordability</li>
+                        <li>$600/mo → Lose $120,000 in home affordability</li>
+                        <li>$1,000/mo → Lose $200,000 in home affordability</li>
                       </ul>
                       <p>
                         For every $100 in car payment, you lose about $20,000 in mortgage approval!
@@ -470,7 +470,7 @@ export default function CarLoanPaymentAffectMortgagePage() {
                       </p>
                       <ul className="list-disc pl-6 space-y-2 mb-3">
                         <li>Bought a new car with a $600 monthly payment.</li>
-                        <li>Lost $140,000 in home affordability.</li>
+                        <li>Lost $120,000 in home affordability.</li>
                         <li>Could no longer qualify for the home they wanted.</li>
                       </ul>
                       <p>
@@ -670,13 +670,6 @@ export default function CarLoanPaymentAffectMortgagePage() {
               professionals will get back to you promptly with personalized solutions tailored to your unique
               financial situation.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 text-[14.5px] text-[#08271B]">
-              <a href="tel:+16025352171" className="font-semibold hover:text-[#3fb364] transition-colors">
-                +1 602-535-2171
-              </a>
-              <span className="hidden sm:inline text-[#c8c8b8]">|</span>
-              <span className="text-center">1599 East Orangewood Ave Suite 200, Phoenix, AZ 85020</span>
-            </div>
             <Link
               href="/#get-pre-approved"
               className="btn-primary"

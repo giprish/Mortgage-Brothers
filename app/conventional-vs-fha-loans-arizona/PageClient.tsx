@@ -51,27 +51,27 @@ const comparisonRows = [
 const scenarioExcellent = [
   { feature: "Sales Price", conventional: "$300,000", fha: "$300,000" },
   { feature: "Down Payment", conventional: "5%", fha: "5%" },
-  { feature: "Interest Rate", conventional: "3.875%", fha: "3.250%" },
+  { feature: "Interest Rate", conventional: "6.70%", fha: "6.65%" },
   { feature: "Financed Upfront MI", conventional: "$0.00", fha: "$4,987" },
   { feature: "Loan Amount", conventional: "$285,000", fha: "$289,987" },
-  { feature: "Principal & Interest Payment", conventional: "$1,340", fha: "$1,262" },
+  { feature: "Principal & Interest Payment", conventional: "$1,839", fha: "$1,862" },
   { feature: "Taxes", conventional: "$150", fha: "$150" },
   { feature: "Homeowners Insurance", conventional: "$60", fha: "$60" },
   { feature: "Mortgage Insurance", conventional: "$85", fha: "$201" },
-  { feature: "Total Monthly Payment", conventional: "$1,635", fha: "$1,637" },
+  { feature: "Total Monthly Payment", conventional: "$2,134", fha: "$2,273" },
   { feature: "Estimated Cash to Close", conventional: "$19,100", fha: "$19,100" },
 ];
 
 const scenarioBelowAvg = [
   { feature: "Sales Price", conventional: "$300,000", fha: "$300,000" },
   { feature: "Down Payment", conventional: "5%", fha: "5%" },
-  { feature: "Interest Rate", conventional: "4.990% (+1.115%)", fha: "3.250%", highlight: "conventional" },
+  { feature: "Interest Rate", conventional: "7.80% (+1.10%)", fha: "6.65%", highlight: "conventional" },
   { feature: "Financed Upfront MI", conventional: "$0.00", fha: "$4,987" },
   { feature: "Loan Amount", conventional: "$285,000", fha: "$289,987" },
   {
     feature: "Principal & Interest Payment",
-    conventional: "$1,528 (+$188)",
-    fha: "$1,262",
+    conventional: "$2,052 (+$190)",
+    fha: "$1,862",
     highlight: "conventional",
   },
   { feature: "Taxes", conventional: "$150", fha: "$150" },
@@ -84,8 +84,8 @@ const scenarioBelowAvg = [
   },
   {
     feature: "Total Monthly Payment",
-    conventional: "$2,046 (+$411)",
-    fha: "$1,637",
+    conventional: "$2,570 (+$297)",
+    fha: "$2,273",
     highlight: "conventional",
   },
   { feature: "Estimated Cash to Close", conventional: "$19,100", fha: "$19,100" },
@@ -98,7 +98,7 @@ const expertCards = [
   },
   {
     title: "Arizona Market Specialists",
-    text: "With over 22 years of experience in the Arizona mortgage industry, we understand the unique challenges and opportunities of the local real estate landscape. Our expertise covers diverse markets from Phoenix to Tucson and beyond.",
+    text: "With over 25 years of experience in the Arizona mortgage industry, we understand the unique challenges and opportunities of the local real estate landscape. Our expertise covers diverse markets from Phoenix to Tucson and beyond.",
   },
   {
     title: "Personalized Service",
@@ -548,10 +548,10 @@ export default function ConventionalVsFhaLoansPage() {
                 <h4 className="text-[#08271B] text-[17px] font-bold mb-4">Interest Rate Comparison</h4>
                 <p className="text-[#4e5b4e] text-[15px]">
                   Average 30-year Conventional rate:{" "}
-                  <span className="font-bold text-[#08271B]">7.01%</span>
+                  <span className="font-bold text-[#08271B]">6.70%</span>
                 </p>
                 <p className="text-[#4e5b4e] text-[15px] mt-2">
-                  Average 30-year FHA rate: <span className="font-bold text-[#08271B]">6.94%</span>
+                  Average 30-year FHA rate: <span className="font-bold text-[#08271B]">6.65%</span>
                 </p>
               </div>
 

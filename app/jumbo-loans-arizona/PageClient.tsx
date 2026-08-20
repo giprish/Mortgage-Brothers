@@ -717,15 +717,6 @@ export default function JumboLoansPage() {
             >
               Get Expert Jumbo Loan Guidance Today
             </h2>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-6 text-[14.5px] text-[#08271B]">
-              <a href="tel:+16025352171" className="font-semibold hover:text-[#3fb364] transition-colors">
-                Phone (602) 535-2171
-              </a>
-              <span className="hidden sm:inline text-[#c8c8b8]">|</span>
-              <span className="text-center">
-                Address 1599 East Orangewood Ave Suite 200 Phoenix, AZ 85020
-              </span>
-            </div>
             <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-8 max-w-3xl mx-auto">
               Ready to take the next step in securing your dream home with a Jumbo Loan? Our team of experienced mortgage professionals at Mortgage Brothers LLC is here to guide you through every aspect of the Jumbo Loan process. Whether you have questions about eligibility, documentation requirements, or current market conditions, we&apos;re committed to providing you with personalized assistance and expert advice. Don&apos;t navigate the complexities of Jumbo Loans alone. Reach out to us today for a free consultation and let us help you turn your high-value property dreams into reality.
             </p>

@@ -38,7 +38,7 @@ const Brothers = () => {
           </h2>
           <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
             As third-generation Arizona natives, the Knoell family has been deeply rooted in
-            Phoenix real estate for over 70 years, earning an excellent reputation for quality and
+            Phoenix real estate for nearly a century, earning an excellent reputation for quality and
             trust. Both Eddie and Thomas are co-founders of Mortgage Brothers LLC and hold
             Nationwide Mortgage Licensing System (NMLS) IDs and Arizona Loan Originator Licenses,
             ensuring they meet all federal and state requirements for mortgage lending.

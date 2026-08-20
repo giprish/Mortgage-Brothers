@@ -209,7 +209,7 @@ export default function FairOrImprovingCreditPage() {
                       <strong>Fair:</strong> 620-679
                     </li>
                     <li>
-                      <strong>Below 620:</strong> Typically not eligible for most loan programs
+                      <strong>Below 620:</strong> Conventional programs typically start at 620, but FHA loans may qualify with scores as low as 580
                     </li>
                   </ul>
                   <p className="mb-5">
@@ -286,8 +286,8 @@ export default function FairOrImprovingCreditPage() {
                     keeping it below 30%.
                   </p>
                   <p className="mb-8">
-                    Even small improvements can raise your score by 20â€“40 points, helping you move into the 620+
-                    range needed for most loans.
+                    Even small improvements can raise your score by 20–40 points, helping you move into the 580+
+                    range needed for FHA or the 620+ range for most conventional loans.
                   </p>
 
                   <h3 className="text-[#052316] text-[18px] font-bold mb-3">
@@ -318,7 +318,7 @@ export default function FairOrImprovingCreditPage() {
 
                   <h4 className="text-[#052316] text-[17px] font-bold mb-2">Conventional Loans</h4>
                   <ul className="list-disc pl-6 space-y-2 mb-5">
-                    <li>Minimum score: 640â€“660+</li>
+                    <li>Minimum score: 620+ recommended</li>
                     <li>Better rates with stronger credit</li>
                     <li>Suitable for buyers with steady income and savings</li>
                   </ul>
@@ -347,7 +347,7 @@ export default function FairOrImprovingCreditPage() {
                   </p>
                   <ul className="list-disc pl-6 space-y-2 mb-5">
                     <li>
-                      <strong>Credit readiness planning</strong> â€“ how to reach 620+ quickly
+                      <strong>Credit readiness planning</strong> – how to reach 580+ for FHA or 620+ for conventional loans quickly
                     </li>
                     <li>
                       <strong>Loan comparison</strong> â€“ FHA vs. conventional options
@@ -405,9 +405,10 @@ export default function FairOrImprovingCreditPage() {
                     Your Arizona Homeownership Path Starts Here
                   </h2>
                   <p className="mb-6">
-                    If your credit is <strong>620 or above</strong>, you&apos;re already on track to qualify. If
-                    it&apos;s close, our advisors can help you fine-tune your profile to get there faster â€” so you
-                    can buy with confidence and secure better loan terms.
+                    If your credit is <strong>580 or above</strong>, you may already be on track to qualify for FHA,
+                    and 620+ is typically the conventional threshold. If it&apos;s close, our advisors can help you
+                    fine-tune your profile to get there faster — so you can buy with confidence and secure better
+                    loan terms.
                   </p>
                   <div className="text-center my-6">
                     <Link
@@ -427,9 +428,10 @@ export default function FairOrImprovingCreditPage() {
                     Your Arizona Homeownership Path Starts Here
                   </h2>
                   <p className="mb-6">
-                    If your credit is <strong>620 or above</strong>, you&apos;re already on track to qualify. If
-                    it&apos;s close, our advisors can help you fine-tune your profile to get there faster â€” so you
-                    can buy with confidence and secure better loan terms.
+                    If your credit is <strong>580 or above</strong>, you may already be on track to qualify for FHA,
+                    and 620+ is typically the conventional threshold. If it&apos;s close, our advisors can help you
+                    fine-tune your profile to get there faster — so you can buy with confidence and secure better
+                    loan terms.
                   </p>
                   <div className="text-center my-6">
                     <Link
@@ -457,7 +459,7 @@ export default function FairOrImprovingCreditPage() {
                       <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
-                      <span>Credit readiness review (620+)</span>
+                      <span>Credit readiness review (580+ FHA / 620+ conventional)</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
@@ -492,7 +494,7 @@ export default function FairOrImprovingCreditPage() {
                     </svg>
                     <strong>Visit:</strong>{" "}
                     <Link href="/" className="text-[#3fb364] font-semibold hover:underline">
-                      https://azmortgagebrothers.com
+                      Mortgage Brothers
                     </Link>
                   </p>
                 </section>
@@ -501,10 +503,8 @@ export default function FairOrImprovingCreditPage() {
                   <FaqAccordion
                     title="Frequently Asked Questions"
                     items={[
-                    { q: "What's the minimum credit score to buy a home in Arizona?", a: <>Most loan programs require <strong>620 or higher</strong>. This threshold opens the door
-                        to FHA, VA, and conventional loan options.</> },
-                    { q: "Can I qualify if my credit is below 620 or even below 580?", a: <>Not at this time. We recommend improving your score first â€” our team can review your
-                        credit and create a quick action plan to reach 620+.</> },
+                    { q: "What's the minimum credit score to buy a home in Arizona?", a: <>Most conventional loan programs look for 620 or higher, but FHA loans may qualify with scores as low as 580.</> },
+                    { q: "Can I qualify if my credit is below 620 or even below 580?", a: <>Most conventional loan programs look for 620 or higher, but FHA loans may qualify with scores as low as 580. If your score is below 580, we recommend improving it first — our team can review your credit and create a quick action plan.</> },
                     { q: "How long does credit improvement take?", a: <>Depending on your situation, meaningful progress can occur in{" "}
                         <strong>30â€“90 days</strong> by paying down debt, correcting errors, and managing
                         utilization.</> }
@@ -643,13 +643,6 @@ export default function FairOrImprovingCreditPage() {
               will get back to you promptly with personalized solutions tailored to your unique financial
               situation.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 text-[14.5px] text-[#08271B]">
-              <a href="tel:+16025352171" className="font-semibold hover:text-[#3fb364] transition-colors">
-                +1 602-535-2171
-              </a>
-              <span className="hidden sm:inline text-[#c8c8b8]">|</span>
-              <span className="text-center">1599 East Orangewood Ave Suite 200, Phoenix, AZ 85020</span>
-            </div>
             <Link
               href="/#get-pre-approved"
               className="btn-primary"

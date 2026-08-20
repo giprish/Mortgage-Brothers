@@ -427,21 +427,6 @@ export default function GlossaryPage() {
               homeownership goals in Arizona.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 text-[14.5px] text-[#08271B]">
-              <a href="tel:+16025352171" className="font-semibold hover:text-[#3fb364] transition-colors">
-                Phone +1 602-535-2171
-              </a>
-              <span className="hidden sm:inline text-[#c8c8b8]">|</span>
-              <a
-                href="https://maps.google.com/?q=1599+East+Orangewood+Ave+Suite+200+Phoenix+AZ+85020"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#3fb364] transition-colors text-center"
-              >
-                Address 1599 East Orangewood Ave Suite 200 Phoenix, AZ 85020
-              </a>
-            </div>
-
             <Link
               href="/#get-pre-approved"
               className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"

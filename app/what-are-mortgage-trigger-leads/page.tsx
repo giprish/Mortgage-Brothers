@@ -201,7 +201,12 @@ export default function MortgageTriggerLeadsPage() {
                   </h2>
                   <p className="mb-5">How do we get these calls to stop?</p>
                   <p className="mb-5">
-                    The trick is to sign up with the Do Not Call registry. You can do that at{" "}
+                    Federal law now directly restricts the practice. The Homebuyers Privacy Protection Act
+                    (signed September 2025, effective March 2026) limits credit bureaus from selling trigger
+                    leads except in narrow circumstances. That is the most important change for borrowers today.
+                  </p>
+                  <p className="mb-5">
+                    As a supplement, you can still sign up with the Do Not Call registry at{" "}
                     <a
                       href="https://www.donotcall.gov"
                       target="_blank"
@@ -563,15 +568,6 @@ export default function MortgageTriggerLeadsPage() {
               professionals will get back to you promptly with personalized solutions tailored to your
               unique financial situation.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 text-[14.5px] text-[#08271B]">
-              <a href="tel:+16025352171" className="font-semibold hover:text-[#3fb364] transition-colors">
-                +1 602-535-2171
-              </a>
-              <span className="hidden sm:inline text-[#c8c8b8]">|</span>
-              <span className="text-center">
-                1599 East Orangewood Ave Suite 200, Phoenix, AZ 85020
-              </span>
-            </div>
             <Link
               href="/#get-pre-approved"
               className="btn-primary"

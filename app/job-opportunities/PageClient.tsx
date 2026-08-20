@@ -130,8 +130,8 @@ const faqs = [
 const stats = [
   { value: "$86k", label: "Avg. Broker Salary" },
   { value: "258", label: "Avg. Broker Openings" },
-  { value: "1.7%", label: "AZ Job Growth" },
-  { value: "3.8%", label: "AZ Unemployment" },
+  { value: "~0.6%", label: "AZ Job Growth" },
+  { value: "~4.9%", label: "AZ Unemployment" },
 ];
 
 const CheckIcon = () => (
@@ -386,21 +386,6 @@ export default function JobOpportunitiesPage() {
               Interested? If you are interested in any job opportunity please call 602-535-2171 and ask
               for Eddie Knoell.
             </p>
-
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 text-[14.5px] text-[#08271B]">
-              <a href="tel:+16025352171" className="font-semibold hover:text-[#3fb364] transition-colors">
-                +1 602-535-2171
-              </a>
-              <span className="hidden sm:inline text-[#c8c8b8]">|</span>
-              <a
-                href="https://goo.gl/maps/GVLYa"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#3fb364] transition-colors text-center"
-              >
-                1599 East Orangewood Ave Suite 200, Phoenix, AZ 85020
-              </a>
-            </div>
 
             <button
               type="button"

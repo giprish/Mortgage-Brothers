@@ -350,7 +350,7 @@ export default function PrivateMoneyLendersArticlePage() {
               </svg>
               <strong>Visit:</strong>{" "}
               <Link href="/" className="text-[#3fb364] font-semibold hover:underline">
-                https://azmortgagebrothers.com
+                Mortgage Brothers
               </Link>
             </p>
           </section>

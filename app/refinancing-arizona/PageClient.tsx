@@ -369,7 +369,7 @@ export default function RefinancingArizonaPage() {
                 Quick, Easy, and No-Hassle Mortgage Refinance
               </h3>
               <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
-                During our initial visit, we can also discuss affordable refinance programs, refinance interest rates and the current refinance programs (if this applies to you). Home refinance rates are still at historically low levels.
+                During our initial visit, we can also discuss affordable refinance programs and current refinance interest rates.
               </p>
             </div>
           </div>
@@ -744,15 +744,6 @@ export default function RefinancingArizonaPage() {
             >
               Contact Us for Expert Refinancing Advice in Arizona
             </h2>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 text-[14.5px] text-[#08271B]">
-              <a href="tel:+16025352171" className="font-semibold hover:text-[#3fb364] transition-colors">
-                Phone (602) 535-2171
-              </a>
-              <span className="hidden sm:inline text-[#c8c8b8]">|</span>
-              <span className="text-center">
-                Address 1599 East Orangewood Ave Suite 200 Phoenix, AZ 85020
-              </span>
-            </div>
             <Link
               href="/#get-pre-approved"
               className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"

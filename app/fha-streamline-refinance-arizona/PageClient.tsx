@@ -254,7 +254,7 @@ export default function FhaStreamlineRefinanceArizonaPage() {
         {/* STATS BANNER */}
         <StatsBanner
           stats={[
-            { value: "600", label: "Minimum Credit Score" },
+            { value: "No Credit Check", label: "Typically Required" },
             { value: "$0", label: "Upfront Cost" },
             { value: "30%", label: "Potential Payment Reduction" },
             { value: "210", label: "Original Loan Days Old" },

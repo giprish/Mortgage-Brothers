@@ -284,13 +284,6 @@ export default function MortgageProcessorPage() {
                 Interested? If you are interested in any job opportunity please call 602-535-2171 and
                 ask for Eddie Knoell.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 text-[14.5px] text-[#08271B]">
-                <a href="tel:+16025352171" className="font-semibold hover:text-[#3fb364] transition-colors">
-                  Phone +1 602-535-2171
-                </a>
-                <span className="hidden sm:inline text-[#c8c8b8]">|</span>
-                <span className="text-center">Address 1599 East Orangewood Ave Suite 200 Phoenix, AZ 85020</span>
-              </div>
 
               <button
                 type="button"

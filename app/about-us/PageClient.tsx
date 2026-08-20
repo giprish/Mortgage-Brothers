@@ -22,7 +22,7 @@ const whyChooseCards = [
   },
   {
     title: "Award-Winning Service",
-    desc: "Our clients say it best. We've earned hundreds of 5-star reviews on Google, Yelp, and Facebook â€” a reflection of our commitment to clear communication, fast closings, and personalized service on every loan.",
+    desc: "Our clients say it best. We've earned over 100 five-star reviews on Google, Yelp, and Facebook — a reflection of our commitment to clear communication, fast closings, and personalized service on every loan.",
   },
   {
     title: "Personalized Approach",
@@ -280,17 +280,6 @@ export default function AboutPage() {
                     Eddie is an owner and Vice President of Mortgage Brothers LLC in Phoenix, Arizona and has been serving Arizona Homeowners as a loan officer for over 25 years. Eddie is a 3rd generation native of Phoenix (the Knoell family has been deeply rooted in real estate for nearly a century in the Valley with an excellent reputation for quality). &ldquo;Loan Professional&rdquo;, the true definition of the title can be found in what Eddie Knoell will bring to the table for you and your clients. Personable, Organized, Ethical and overall a true passion for being able to help his clients turn a stressful time into a memorable moment. Eddie Knoell has been committed to specialize in residential mortgages for Valley clients from the beginning and he has never strayed away from his belief that helping his customers find their way home is the best gift he can give. Eddie graduated with a Bachelor of Arts Degree from Franciscan University of Steubenville Ohio and holds an Arizona Mortgage Loan Originator&rsquo;s license from the Department of Financial Institutions.
                   </p>
                 </div>
-                
-                {/* Phone Contact */}
-                <a
-                  href="tel:6025352171"
-                  className="flex items-center gap-2.5 text-brand-green-deep hover:text-brand-green-accent text-[14px] font-semibold transition-colors duration-200"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-brand-green-accent">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                  </svg>
-                  (602) 535-2171
-                </a>
               </div>
 
               {/* Thomas Profile */}
@@ -320,17 +309,6 @@ export default function AboutPage() {
                     Tom is an owner and Vice President of Mortgage Brothers LLC in Phoenix, Arizona. Tom is a 3rd generation native to Phoenix, Arizona with deep family roots in the local market and community. Tom has over 25 years of experience in and around real estate / finance and has been involved in large scale complex projects. Tom understands the need for both vision and plan execution in order to deliver the best product and customer service experience for the client. Tom understands the importance of relationships and works with a high degree of integrity, ethics, and professionalism. Tom graduated with a Bachelor of Arts Degree from Franciscan University of Steubenville Ohio and holds an Arizona Mortgage Loan Originator&rsquo;s license from the Department of Financial Institutions. He is a past member of the Phoenix Men&rsquo;s Art Council, Urban Land Institute and NAIOP, Board of Directors for Great Hearts Veritas Prep Academy.
                   </p>
                 </div>
-
-                {/* Phone Contact */}
-                <a
-                  href="tel:6025352171"
-                  className="flex items-center gap-2.5 text-brand-green-deep hover:text-brand-green-accent text-[14px] font-semibold transition-colors duration-200"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-brand-green-accent">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                  </svg>
-                  (602) 535-2171
-                </a>
               </div>
 
               {/* Steve Perez Profile */}
@@ -630,13 +608,7 @@ export default function AboutPage() {
             <h2 className="text-brand-green-deep text-section-title font-playfair font-normal mb-6">
               Get in Touch with Mortgage Brothers LLC
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left max-w-3xl mx-auto">
-              <div className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm">
-                <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.15em] uppercase mb-2">Phone</p>
-                <a href={COMPANY.phoneHref} className="text-brand-green-deep text-[15px] font-semibold hover:text-brand-green-accent transition-colors">
-                  {COMPANY.phoneDisplay}
-                </a>
-              </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left max-w-3xl mx-auto">
               <div className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm">
                 <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.15em] uppercase mb-2">Address</p>
                 <p className="text-brand-text-muted text-[14px] leading-relaxed">

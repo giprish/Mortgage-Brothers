@@ -246,6 +246,8 @@ export function getCountyCitiesDetails(countySlug: string): CountyCityDetail[] {
 
   for (const seoCity of getSeoCityEntriesForCounty(norm)) {
     if (seenSlugs.has(seoCity.slug)) continue;
+    // Santa Cruz is a county, not an incorporated city — skip the phantom city page.
+    if (norm === "santa-cruz-county-az" && seoCity.slug === "santa-cruz") continue;
     seenSlugs.add(seoCity.slug);
     details.push({
       name: seoCity.name,
@@ -331,6 +333,10 @@ export function getCityData(countySlug: string, citySlug: string): CityData | nu
 
   const citiesList = rawCitiesByCounty[normCounty] || rawCitiesByCounty[countySlug];
   const cityName = citiesList?.find((c) => slugify(c) === citySlug);
+
+  if (normCounty === "santa-cruz-county-az" && citySlug === "santa-cruz") {
+    return null;
+  }
 
   if (cityName) {
     return buildCityData({ cityName, citySlug, countyName, countySlug });

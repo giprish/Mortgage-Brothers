@@ -170,6 +170,16 @@ const nextConfig: NextConfig = {
         destination: "/sitemap.xml",
         permanent: true,
       },
+      {
+        source: "/service-areas/santa-cruz-county-az/santa-cruz",
+        destination: "/service-areas/santa-cruz-county-az/",
+        permanent: true,
+      },
+      {
+        source: "/service-areas/santa-cruz-county-az/santa-cruz/",
+        destination: "/service-areas/santa-cruz-county-az/",
+        permanent: true,
+      },
     ];
   },
   async rewrites() {

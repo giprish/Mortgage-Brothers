@@ -177,7 +177,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
     },
     {
       q: "What credit score do I need to buy a home?",
-      a: "A credit score of 620 is often the minimum for most loan programs. FHA loans may accept scores below 620 in some cases. Higher scores generally lead to better rates and more loan options.",
+      a: "A credit score of 620 is often the minimum for conventional loan programs. FHA loans can qualify with scores as low as 580. Higher scores generally lead to better rates and more loan options.",
     },
     {
       q: "How long does the home buying process take?",
@@ -683,15 +683,6 @@ export default function FirstTimeHomeBuyerGuidePage() {
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left max-w-xl mx-auto">
-              <div className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-[#3fb364] mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-[13px] text-[#b8d4b8] uppercase tracking-wider font-bold mb-1">Phone</p>
-                  <a href="tel:+16025352171" className="text-white font-semibold hover:text-[#3fb364] transition-colors">
-                    (602) 535-2171
-                  </a>
-                </div>
-              </div>
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#3fb364] mt-1 flex-shrink-0" />
                 <div>

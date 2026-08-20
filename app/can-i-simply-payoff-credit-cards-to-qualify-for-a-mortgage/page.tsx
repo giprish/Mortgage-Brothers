@@ -151,14 +151,14 @@ export default function PayoffCreditCardsQualifyPage() {
               </p>
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
-                Finally some good news. As of June 30th 2015,{" "}
+                Since June 30, 2015,{" "}
                 <Link
                   href="/mortgage-qualifications/"
                   className="text-[#3fb364] font-semibold hover:underline"
                 >
                   loan guidelines
                 </Link>{" "}
-                are finally loosening on allowing borrower to payoff mortgage balances to qualify for a mortgage.
+                have allowed borrowers to pay off credit card and other revolving balances to qualify for a mortgage — a rule that remains in place today.
               </p>
 
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
@@ -240,7 +240,8 @@ export default function PayoffCreditCardsQualifyPage() {
                     <Link href="/va-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
                       VA home loan
                     </Link>{" "}
-                    rules were identical to Conventional before June 30th 2015. Lender would require the credit
+                    rules have allowed borrowers to pay revolving balances down to qualify since June 30, 2015.
+                    Before that date, lenders required the credit
                     card balance to be paid down to $0 and the credit card would need to be closed in order for the
                     minimum payment to count against the borrower&apos;s debt to income ratio (DTI) on the mortgage
                     application.
@@ -458,13 +459,6 @@ export default function PayoffCreditCardsQualifyPage() {
               will get back to you promptly with personalized solutions tailored to your unique financial
               situation.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 text-[14.5px] text-[#08271B]">
-              <a href="tel:+16025352171" className="font-semibold hover:text-[#3fb364] transition-colors">
-                +1 602-535-2171
-              </a>
-              <span className="hidden sm:inline text-[#c8c8b8]">|</span>
-              <span className="text-center">1599 East Orangewood Ave Suite 200, Phoenix, AZ 85020</span>
-            </div>
             <Link
               href="/#get-pre-approved"
               className="btn-primary"

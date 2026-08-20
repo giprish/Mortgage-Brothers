@@ -134,8 +134,9 @@ export default function FhaFlipRuleWaiverExpiredPage() {
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
                 Are you a buyer getting FHA financing? Make sure to check whether the home you are interested
-                in has been owned by the seller for less than 90 days. Why? Because starting on January 1st
-                2015, those properties will not be eligible for FHA financing.
+                in has been owned by the seller for less than 90 days. FHA still requires a 90-day waiting
+                period after a seller acquires a property before a buyer can use FHA financing — a rule in
+                place since the 2015 flip-rule waiver expired and was never renewed.
               </p>
 
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
@@ -377,13 +378,6 @@ export default function FhaFlipRuleWaiverExpiredPage() {
               will get back to you promptly with personalized solutions tailored to your unique financial
               situation.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 text-[14.5px] text-[#08271B]">
-              <a href="tel:+16025352171" className="font-semibold hover:text-[#3fb364] transition-colors">
-                +1 602-535-2171
-              </a>
-              <span className="hidden sm:inline text-[#c8c8b8]">|</span>
-              <span className="text-center">1599 East Orangewood Ave Suite 200, Phoenix, AZ 85020</span>
-            </div>
             <Link
               href="/#get-pre-approved"
               className="btn-primary"

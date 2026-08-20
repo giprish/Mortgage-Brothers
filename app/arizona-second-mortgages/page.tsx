@@ -160,10 +160,7 @@ export default function ArizonaSecondMortgagesPage() {
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
                 Equity is the difference between the appraised value of your Arizona home and the amount of
-                equity you have in the property. Interest on second mortgages is also deductible. Most people
-                take out second mortgages for home repairs and improvements, debt consolidation, to pay
-                college expenses, for retirement, a vacation, to pay medical bills or for other family
-                expenses.
+                equity you have in the property. Interest on a second mortgage may be tax-deductible, but only if the loan proceeds are used to buy, build, or substantially improve the home securing the loan. Interest is generally not deductible when proceeds are used for debt consolidation, college expenses, vacations, medical bills, or other family expenses. Consult a tax advisor to determine your specific situation.
               </p>
 
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
@@ -454,13 +451,6 @@ export default function ArizonaSecondMortgagesPage() {
               professionals will get back to you promptly with personalized solutions tailored to your unique
               financial situation.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 text-[14.5px] text-[#08271B]">
-              <a href="tel:+16025352171" className="font-semibold hover:text-[#3fb364] transition-colors">
-                +1 602-535-2171
-              </a>
-              <span className="hidden sm:inline text-[#c8c8b8]">|</span>
-              <span className="text-center">1599 East Orangewood Ave Suite 200, Phoenix, AZ 85020</span>
-            </div>
             <Link
               href="/#get-pre-approved"
               className="btn-primary"

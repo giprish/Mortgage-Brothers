@@ -90,7 +90,7 @@ const faqSchema = {
       name: "What is the 2026 conforming loan limit in Arizona?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "For 2026, the conforming loan limit for a single-family home in Arizona is $806,500.",
+        text: "For 2026, the conforming loan limit for a single-family home in Arizona is $832,750.",
       },
     },
     {
@@ -212,18 +212,18 @@ export default function ConventionalHomeLoanGuidePage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    2025 Arizona Loan Limits
+                    2026 Arizona Loan Limits
                   </h2>
                   <p className="mb-5">
                     Loan limits determine how large a loan can be while still being considered
-                    &ldquo;conforming.&rdquo; For 2025, the conforming loan limit for a single-family home in
-                    Arizona is <strong>$806,500</strong> (<a href="https://www.fhfa.gov/sites/default/files/2024-11/FullCountyLoanLimitList2025_HERA-BASED_FINAL_FLAT.pdf" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">FHFA 2025 Loan Limits PDF</a>).
+                    &ldquo;conforming.&rdquo; For 2026, the conforming loan limit for a single-family home in
+                    Arizona is <strong>$832,750</strong> (<a href="https://www.fhfa.gov/data/dashboard/conforming-loan-limit-values" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">FHFA conforming loan limits</a>).
                   </p>
                   <ul className="list-disc pl-6 space-y-2 mb-5">
                     <li>
-                      <strong>Conventional (Conforming) Loan</strong> → Up to <strong>$806,500</strong>
+                      <strong>Conventional (Conforming) Loan</strong> → Up to <strong>$832,750</strong>
                     </li>
-                    <li><strong>Jumbo Loan → $806,501 and above</strong></li>
+                    <li><strong>Jumbo Loan → $832,751 and above</strong></li>
                   </ul>
                   <p>
                     These limits apply to most Arizona counties, including Maricopa, Pima, Pinal, and Mohave.
@@ -347,10 +347,10 @@ export default function ConventionalHomeLoanGuidePage() {
                         </tr>
                         <tr>
                           <td className="py-3 pr-3 font-semibold">Loan Limit</td>
-                          <td className="py-3 pr-3">$806,500</td>
-                          <td className="py-3 pr-3">~$498,257 (varies)</td>
+                          <td className="py-3 pr-3">$832,750</td>
+                          <td className="py-3 pr-3">~$557,750 (Maricopa/Pinal County, 2026; varies by county)</td>
                           <td className="py-3 pr-3">No cap with entitlement</td>
-                          <td className="py-3">$806,501+</td>
+                          <td className="py-3">$832,751+</td>
                         </tr>
                       </tbody>
                     </table>
@@ -369,18 +369,18 @@ export default function ConventionalHomeLoanGuidePage() {
                   </p>
                   <ul className="list-disc pl-6 space-y-3">
                     <li>
-                      <strong>Excellent Credit (740+)</strong> → Best rates, lowest PMI.
+                      <strong>Excellent Credit (760+)</strong> → Best rates, lowest PMI.
                     </li>
                     <li>
-                      <strong>Good Credit (680–739)</strong> → Competitive rates with manageable PMI.
+                      <strong>Good Credit (720–759)</strong> → Competitive rates with manageable PMI.
                     </li>
                     <li>
-                      <strong>Fair Credit (620–679)</strong> → Still eligible for conventional, though FHA may
+                      <strong>Fair Credit (680–719)</strong> → Still eligible for conventional, though FHA may
                       provide more leniency.
                     </li>
                     <li>
                       <strong>Below 620</strong> → May need to improve credit before qualifying, or consider FHA
-                      options.
+                      options starting at 580.
                     </li>
                   </ul>
                 </section>
@@ -471,7 +471,7 @@ export default function ConventionalHomeLoanGuidePage() {
                     items={[
                     { q: "What exactly is a conventional home loan?", a: <>A conventional home loan is a mortgage not insured by the federal government, offered by
                         private lenders like banks or credit unions.</> },
-                    { q: "What is the 2026 conforming loan limit in Arizona?", a: <>For 2026, the conforming loan limit for a single-family home in Arizona is $806,500.</> },
+                    { q: "What is the 2026 conforming loan limit in Arizona?", a: <>For 2026, the conforming loan limit for a single-family home in Arizona is $832,750.</> },
                     { q: "What credit score is needed for a conventional loan?", a: <>A minimum credit score of 620 is usually required to qualify for a conventional loan.</> }
                     ]}
                   />
@@ -629,13 +629,6 @@ export default function ConventionalHomeLoanGuidePage() {
               will get back to you promptly with personalized solutions tailored to your unique financial
               situation.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 text-[14.5px] text-[#08271B]">
-              <a href="tel:+16025352171" className="font-semibold hover:text-[#3fb364] transition-colors">
-                +1 602-535-2171
-              </a>
-              <span className="hidden sm:inline text-[#c8c8b8]">|</span>
-              <span className="text-center">1599 East Orangewood Ave Suite 200, Phoenix, AZ 85020</span>
-            </div>
             <Link
               href="/#get-pre-approved"
               className="btn-primary"

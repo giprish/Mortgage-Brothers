@@ -221,7 +221,7 @@ export default function ArizonaMortgageRatesInterestDeductionPage() {
                     In fact, 37% of the taxpayers in Maryland take the deduction while less than 15% in North
                     Dakota claim it. Perhaps it&apos;s because people consider this deduction to be more for
                     wealthy individuals, even though it&apos;s available to anyone who has a home loan. In
-                    general, the standard tax deduction for married couples filing jointly is $11,900. In
+                    general, the standard tax deduction for married couples filing jointly is $32,200 for the 2026 tax year (up from $31,500 in 2025). In
                     several states, such as Virginia, Maryland, California, and Washington, the average
                     mortgage interest deduction is over $12,000 and that&apos;s before any other deductions
                     are listed or charitable contributions calculated in.
@@ -342,7 +342,7 @@ export default function ArizonaMortgageRatesInterestDeductionPage() {
                 <p className="text-[#5a6b52] text-[13px] leading-relaxed">
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
                   been prepared for informational purposes only. You should consult your own tax, legal, and
-                  accounting advisors before engaging in any transaction. Signature Home Loans NMLS 1007154,
+                  accounting advisors before engaging in any transaction. Mortgage Brothers LLC NMLS 1007154,
                   NMLS #210917 and 1618695. Equal housing lender.
                 </p>
               </div>
@@ -470,13 +470,6 @@ export default function ArizonaMortgageRatesInterestDeductionPage() {
               professionals will get back to you promptly with personalized solutions tailored to your unique
               financial situation.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 text-[14.5px] text-[#08271B]">
-              <a href="tel:+16025352171" className="font-semibold hover:text-[#3fb364] transition-colors">
-                +1 602-535-2171
-              </a>
-              <span className="hidden sm:inline text-[#c8c8b8]">|</span>
-              <span className="text-center">1599 East Orangewood Ave Suite 200, Phoenix, AZ 85020</span>
-            </div>
             <Link
               href="/#get-pre-approved"
               className="btn-primary"

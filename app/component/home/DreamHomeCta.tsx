@@ -4,7 +4,7 @@ import YoutubeLiteEmbed from "../YoutubeLiteEmbed";
 
 const stats = [
   { value: "5,000+", label: "Loans Approved" },
-  { value: "22+", label: "Years Experience" },
+  { value: "25+", label: "Years Experience" },
   { value: "99%", label: "Client Satisfaction" },
   { value: "100%", label: "Personalized Service" },
 ];

@@ -170,19 +170,7 @@ export default function ContactPage() {
               {COMPANY.legalName} | {COMPANY.azLicenseDisplay} & {COMPANY.nmlsDisplay}
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10 text-left">
-              <div className="bg-[#fcf9f3] rounded-2xl border border-[#e8e0d0]/60 p-5">
-                <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.15em] uppercase mb-2">
-                  Phone
-                </p>
-                <a
-                  href={COMPANY.phoneHref}
-                  className="text-[#08271B] text-[15px] font-semibold hover:text-[#3fb364] transition-colors"
-                >
-                  +1 602-535-2171
-                </a>
-              </div>
-
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10 text-left">
               <div className="bg-[#fcf9f3] rounded-2xl border border-[#e8e0d0]/60 p-5">
                 <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.15em] uppercase mb-2">
                   Contact

@@ -230,12 +230,12 @@ export default function WhatIsAJumboLoanPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Arizona&apos;s 2025 Jumbo Loan Limit
+                    Arizona&apos;s 2026 Jumbo Loan Limit
                   </h2>
                   <p className="mb-5">
-                    For 2025, the <strong>conforming loan limit in most Arizona counties is $806,500</strong> for
-                    single-family homes. <strong>In 2026</strong>, the conforming loan limit is estimated to be
-                    over $825,000.
+                    For 2025, the <strong>conforming loan limit in most Arizona counties was $806,500</strong> for
+                    single-family homes. <strong>For 2026</strong>, the FHFA set the conforming loan limit at
+                    $832,750.
                   </p>
                   <p className="mb-5">
                     That includes Maricopa County (Phoenix, Scottsdale, Mesa), Pinal County, and Coconino County.
@@ -647,13 +647,6 @@ export default function WhatIsAJumboLoanPage() {
               will get back to you promptly with personalized solutions tailored to your unique financial
               situation.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 text-[14.5px] text-[#08271B]">
-              <a href="tel:+16025352171" className="font-semibold hover:text-[#3fb364] transition-colors">
-                +1 602-535-2171
-              </a>
-              <span className="hidden sm:inline text-[#c8c8b8]">|</span>
-              <span className="text-center">1599 East Orangewood Ave Suite 200, Phoenix, AZ 85020</span>
-            </div>
             <Link
               href="/#get-pre-approved"
               className="btn-primary"

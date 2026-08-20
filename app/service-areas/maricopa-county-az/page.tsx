@@ -227,9 +227,9 @@ export default function MaricopaCounty() {
             <h2 className="text-brand-green-deep text-[28px] lg:text-[32px] font-playfair mb-6">Home Loans in Maricopa County, Arizona</h2>
             <div className="text-brand-text-muted text-[15px] space-y-4">
               <p>We are here to make the home loan process a whole lot easier, with tools and expertise that will help guide you.</p>
-              <p>Maricopa County is home to over 4.3 million residents and continues to attract families, retirees, and professionals from across the country. With a diverse mix of urban neighborhoods, master-planned communities, and desert retreats, the county offers something for every type of buyer. The Mortgage Brothers have served Maricopa County homeowners for over 25 years — helping clients navigate everything from first-time purchases in Mesa to luxury buys in Paradise Valley.</p>
+              <p>Maricopa County is home to nearly 4.79 million residents and continues to attract families, retirees, and professionals from across the country. With a diverse mix of urban neighborhoods, master-planned communities, and desert retreats, the county offers something for every type of buyer. The Mortgage Brothers have served Maricopa County homeowners for over 25 years — helping clients navigate everything from first-time purchases in Mesa to luxury buys in Paradise Valley.</p>
               <ul className="list-disc pl-6 space-y-2 mt-4">
-                <li><strong>4.3 Million Residents:</strong> Maricopa County is Arizona&apos;s most populous county and one of the fastest-growing in the nation.</li>
+                <li><strong>~4.79 Million Residents:</strong> Maricopa County is Arizona&apos;s most populous county and one of the fastest-growing in the nation.</li>
                 <li><strong>26 Cities and Towns:</strong> From Phoenix to Queen Creek, Maricopa County offers a diverse range of communities for every lifestyle and budget.</li>
                 <li><strong>$832,750 Loan Limit:</strong> The 2026 conforming loan limit gives Maricopa County buyers significant purchasing power for conventional financing.</li>
               </ul>

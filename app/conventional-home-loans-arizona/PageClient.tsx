@@ -60,7 +60,7 @@ export default function ConventionalHomeLoansPage() {
     },
     {
       title: "Loan Limits",
-      desc: "The conventional loan limit in Arizona is $832,750 for single-family homes. Higher limits are available for multi-unit properties: $981,500 for duplexes, $1,186,350 for triplexes, and $1,474,400 for four-unit properties.",
+      desc: "The conventional loan limit in Arizona is $832,750 for single-family homes. Higher limits are available for multi-unit properties: $1,066,250 for duplexes, $1,288,800 for triplexes, and $1,601,750 for four-unit properties.",
     },
     {
       title: "Employment and Income",
@@ -221,7 +221,7 @@ export default function ConventionalHomeLoansPage() {
                 href="/#get-pre-approved"
                 className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
               >
-                GET PRE-APPROVED â†’
+                GET PRE-APPROVED →
               </Link>
             </div>
 
@@ -285,7 +285,7 @@ export default function ConventionalHomeLoansPage() {
                 href="/#get-pre-approved"
                 className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-md inline-block"
               >
-                GET PRE-APPROVED â†’
+                GET PRE-APPROVED →
               </Link>
             </div>
           </div>
@@ -466,15 +466,6 @@ export default function ConventionalHomeLoansPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left max-w-xl mx-auto">
               <div className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-[#3fb364] mt-1 flex-shrink-0" />
-                <div>
-                  <p className="text-[13px] text-[#b8d4b8] uppercase tracking-wider font-bold mb-1">Phone</p>
-                  <a href="tel:+16025352171" className="text-white font-semibold hover:text-[#3fb364] transition-colors">
-                    (602) 535-2171
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-[#3fb364] mt-1 flex-shrink-0" />
                 <div>
                   <p className="text-[13px] text-[#b8d4b8] uppercase tracking-wider font-bold mb-1">Address</p>
@@ -489,7 +480,7 @@ export default function ConventionalHomeLoansPage() {
               href="/#get-pre-approved"
               className="inline-block bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-lg"
             >
-              GET PRE-APPROVED â†’
+              GET PRE-APPROVED →
             </Link>
           </div>
         </section>

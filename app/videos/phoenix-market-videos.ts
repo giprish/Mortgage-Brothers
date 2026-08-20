@@ -148,11 +148,6 @@ export const PHOENIX_MARKET_FULL_VIDEOS: VideoItem[] = [
     "youtubeId": "dNqnZBSrFqE"
   },
   {
-    "id": "phoenix-30",
-    "title": "Learn how to use two effective trading indicators (VWAP & AVWAP)",
-    "youtubeId": "cYN4ZgGvR84"
-  },
-  {
     "id": "phoenix-31",
     "title": "July 13th Inflation and Mortgage Rate Update with forecast for 2024",
     "youtubeId": "TUoPUir7Vmc"
@@ -221,11 +216,6 @@ export const PHOENIX_MARKET_FULL_VIDEOS: VideoItem[] = [
     "id": "phoenix-44",
     "title": "Phoenix Market Update - Prices, Supply, Seller Concessions, and Inflation",
     "youtubeId": "l5QNSNI0yYA"
-  },
-  {
-    "id": "phoenix-45",
-    "title": "Rocket ad 2",
-    "youtubeId": "AeK06vmhRvs"
   },
   {
     "id": "phoenix-46",

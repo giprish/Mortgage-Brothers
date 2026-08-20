@@ -12,7 +12,7 @@ import ArticleCard from "../../component/ArticleCard";
 const PER_PAGE = 9;
 
 const bioParagraphs = [
-  "Eddie Knoell is the owner and Vice President of Mortgage Brothers LLC, based in Phoenix, Arizona. With over 18 years of experience as a loan officer, Eddie has been dedicated to serving Arizona homeowners with professionalism and expertise. As a third-generation native of Phoenix, Eddie comes from a family deeply rooted in real estate for over 70 years, known for their exceptional reputation and commitment to quality.",
+  "Eddie Knoell is the owner and Vice President of Mortgage Brothers LLC, based in Phoenix, Arizona. With over 25 years of experience as a loan officer, Eddie has been dedicated to serving Arizona homeowners with professionalism and expertise. As a third-generation native of Phoenix, Eddie comes from a family deeply rooted in real estate for nearly a century, known for their exceptional reputation and commitment to quality.",
   'Eddie embodies the true definition of a "Loan Professional," bringing a personable, organized, and ethical approach to his work. His passion lies in helping clients navigate the mortgage process, transforming what can be a stressful experience into a memorable milestone. Specializing in residential mortgages, Eddie has remained steadfast in his belief that helping customers find their way home is the most rewarding gift he can offer.',
   "A graduate of Franciscan University of Steubenville, Ohio, Eddie holds a Bachelor of Arts degree and an Arizona Mortgage Loan Originator's license from the Department of Financial Institutions. Whether you're purchasing your first home or refinancing, Eddie Knoell's expertise and commitment make him a trusted partner in achieving your homeownership goals.",
 ];

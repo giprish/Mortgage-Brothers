@@ -263,17 +263,17 @@ export default function ArizonaRealEstateTrends2026Page() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Mortgage Rates in Arizona Currently as of November 2025:
+                    Mortgage Rates in Arizona Currently as of August 2026:
                   </h2>
                   <p className="mb-4">
                     Mortgage rates remain the elephant in the room. Right now, Arizona borrowers are seeing:
                   </p>
                   <ul className="list-disc pl-6 space-y-3 mb-5">
                     <li>
-                      Around <strong>5.75% - 6.25% for a 30-year fixed mortgage</strong>
+                      Around <strong>6.6%–6.75% for a 30-year fixed mortgage</strong>
                     </li>
                     <li>
-                      Some lenders are offering slightly better deals (closer to 6.0%) for well-qualified buyers.
+                      Some lenders are offering slightly better deals (closer to 6.5%) for well-qualified buyers.
                     </li>
                   </ul>
                   <p>
@@ -308,7 +308,8 @@ export default function ArizonaRealEstateTrends2026Page() {
                       before the Fed actually cuts rates, as markets price in those expectations early.
                     </li>
                     <li>
-                      The Mortgage Brothers predict rates to trend around <strong>5.5% by mid 2026</strong>
+                      The Mortgage Brothers&apos; earlier mid-2026 forecast of around 5.5% did not materialize; rates
+                        have remained in the mid-to-high 6% range. Future moves depend on inflation and Fed policy.
                     </li>
                   </ul>
                   <p className="mb-6">
@@ -601,13 +602,6 @@ export default function ArizonaRealEstateTrends2026Page() {
               will get back to you promptly with personalized solutions tailored to your unique financial
               situation.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 text-[14.5px] text-[#08271B]">
-              <a href="tel:+16025352171" className="font-semibold hover:text-[#3fb364] transition-colors">
-                +1 602-535-2171
-              </a>
-              <span className="hidden sm:inline text-[#c8c8b8]">|</span>
-              <span className="text-center">1599 East Orangewood Ave Suite 200, Phoenix, AZ 85020</span>
-            </div>
             <Link
               href="/#get-pre-approved"
               className="btn-primary"

@@ -679,15 +679,6 @@ export default function PrivateMoneyLenderPage() {
             >
               Contact Mortgage Brothers LLC for Your Loan Needs
             </h2>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-[14.5px] text-[#08271B]">
-              <a href="tel:+16025352171" className="font-semibold hover:text-[#3fb364] transition-colors">
-                Phone +1 602-535-2171
-              </a>
-              <span className="hidden sm:inline text-[#c8c8b8]">|</span>
-              <span className="text-center">
-                Address 1599 East Orangewood Ave Suite 200 Phoenix, AZ 85020
-              </span>
-            </div>
             <div className="loan-btn-wrap">
               <Link
                 href="/#get-pre-approved"

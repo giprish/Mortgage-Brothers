@@ -182,13 +182,13 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
                 <p>
                   The graph above shows the number of closings by amount of concession to the buyers in the Greater
                   Phoenix Metro Market area. The total number of closings for the period was 2,112. Data gathered
-                  from ARMLS closings for prior 30 days as of 2/9/19
+                  from ARMLS closings for the prior 30 days as of February 9, 2019 — a pre-pandemic snapshot, not current market conditions.
                 </p>
 
                 <ul className="list-disc pl-6 space-y-3">
                   <li>
                     <a href="https://finance.yahoo.com/personal-finance/mortgages/article/seller-concessions-165151738.html" target="_blank" rel="noopener" className="text-[#2d8545] font-semibold hover:underline">Seller concessions to buyers</a> of single family attached and detached products ranged from a low of
-                    .9% to a high of 2.6% for 2,112 closings in the previous 30 days as of 2/9/2019 in the Greater
+                    .9% to a high of 2.6% for 2,112 closings in the previous 30 days as of February 9, 2019 (historical data) in the Greater
                     Phoenix Metro Area.
                   </li>
                   <li>
@@ -368,13 +368,6 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
               will get back to you promptly with personalized solutions tailored to your unique financial
               situation.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 text-[14.5px] text-[#08271B]">
-              <a href="tel:+16025352171" className="font-semibold hover:text-[#3fb364] transition-colors">
-                +1 602-535-2171
-              </a>
-              <span className="hidden sm:inline text-[#c8c8b8]">|</span>
-              <span className="text-center">1599 East Orangewood Ave Suite 200, Phoenix, AZ 85020</span>
-            </div>
             <Link
               href="/#get-pre-approved"
               className="btn-primary"

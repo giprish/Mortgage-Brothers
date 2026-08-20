@@ -39,7 +39,7 @@ const articles = [
   {
     title: "FHA Flip Rule Waiver Expired – You need to wait 90 days to write a contract",
     description:
-      "Are you a buyer getting FHA financing? Make sure to check whether the home you are interested in has been owned by the seller for less than 90 days. Why? Because starting on January 1st 2015, those properties will not be eligible for FHA financing.",
+      "Are you a buyer getting FHA financing? Make sure to check whether the home you are interested in has been owned by the seller for less than 90 days. FHA still requires a 90-day waiting period after a seller acquires a property before a buyer can use FHA financing — a rule in place since the 2015 flip-rule waiver expired.",
     href: "/fha-flip-rule-waiver-expired-you-need-wait-90-days-to-write-a-contract/",
     date: "Feb 4, 2025",
     readTime: "5 min read",
