@@ -10,7 +10,7 @@ import LoanProgramHero from "../component/LoanProgramHero";
 const faqs = [
   {
     q: "How much can I borrow with a reverse mortgage?",
-    a: "The amount you can borrow depends on your age and current interest rates â€” typically between 30% and 60% of your home's appraised value (or $1,249,125, whichever is lower). For example, on a $500,000 home, a borrower might access anywhere from $150,000 to $300,000. The exact loan amount requires a review by a reverse mortgage loan officer. Give us a call and we can walk you through your specific numbers.",
+    a: "The amount you can borrow depends on your age and current interest rates — typically between 30% and 60% of your home's appraised value (or $1,249,125, whichever is lower). For example, on a $500,000 home, a borrower might access anywhere from $150,000 to $300,000. The exact loan amount requires a review by a reverse mortgage loan officer. Give us a call and we can walk you through your specific numbers.",
   },
   {
     q: "Can I use a reverse mortgage to purchase a home?",
@@ -173,26 +173,26 @@ export default function ReverseMortgageArizonaPage() {
           <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-around gap-6 text-[14px] font-medium">
             <div className="flex items-center gap-2">
               <span className="text-[#3fb364]" aria-hidden>
-                âœ“
+                ✓
               </span>
               <span>19.3% of Arizonans are 62+</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-[#3fb364]" aria-hidden>
-                âœ“
+                ✓
               </span>
               <span>No Monthly Payments Required</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-[#3fb364]" aria-hidden>
-                âœ“
+                ✓
               </span>
               <span>Use Funds Any Way You Choose</span>
             </div>
           </div>
         </div>
 
-        {/* OVERVIEW â€” heading above; card aligns with body copy */}
+        {/* OVERVIEW — heading above; card aligns with body copy */}
         <section className="loan-section bg-white no-content-visibility">
           <div className="max-w-5xl mx-auto">
             <header className="mb-6 lg:mb-8 text-left">
@@ -207,13 +207,13 @@ export default function ReverseMortgageArizonaPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
               <div className="lg:col-span-7 space-y-5 text-left">
                 <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                  A reverse mortgage is a powerful financial tool for Arizona homeowners 62 and older who want to access the equity they&apos;ve built in their home â€” without selling it or making monthly mortgage payments. The most common type is the HECM (Home Equity Conversion Mortgage), which is federally insured by the FHA and designed to give seniors greater financial flexibility in retirement.
+                  A reverse mortgage is a powerful financial tool for Arizona homeowners 62 and older who want to access the equity they&apos;ve built in their home — without selling it or making monthly mortgage payments. The most common type is the HECM (Home Equity Conversion Mortgage), which is federally insured by the FHA and designed to give seniors greater financial flexibility in retirement.
                 </p>
                 <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
                   Whether you want to eliminate your existing mortgage payment, supplement your monthly income, cover healthcare costs, or simply have a financial cushion for life&apos;s unexpected expenses, a reverse mortgage lets you unlock your home&apos;s value on your terms. You remain the owner of your home, and the loan doesn&apos;t come due until you sell, move out, or pass away.
                 </p>
                 <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                  For Arizona seniors â€” whether you&apos;re in Phoenix, Scottsdale, Tucson, or anywhere across the state â€” a reverse mortgage can be a smart way to enjoy your retirement years with less financial stress. Our team specializes in HECM reverse mortgages and will walk you through every step so you fully understand how it works before making any decisions.
+                  For Arizona seniors — whether you&apos;re in Phoenix, Scottsdale, Tucson, or anywhere across the state — a reverse mortgage can be a smart way to enjoy your retirement years with less financial stress. Our team specializes in HECM reverse mortgages and will walk you through every step so you fully understand how it works before making any decisions.
                 </p>
                 <div className="pt-1">
                   <Link
@@ -221,7 +221,7 @@ export default function ReverseMortgageArizonaPage() {
                     data-preapproval="true"
                     className="inline-flex items-center justify-center bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 leading-none rounded-full transition-all shadow"
                   >
-                    GET PRE-APPROVED NOW â†’
+                    GET PRE-APPROVED NOW →
                   </Link>
                 </div>
               </div>
@@ -238,10 +238,10 @@ export default function ReverseMortgageArizonaPage() {
                           className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#3fb364]/15 text-[12px] font-bold text-[#3fb364]"
                           aria-hidden
                         >
-                          âœ“
+                          ✓
                         </span>
                         <span>
-                          <strong>{b.title}</strong> â€” {b.desc}
+                          <strong>{b.title}</strong> — {b.desc}
                         </span>
                       </li>
                     ))}
@@ -252,7 +252,7 @@ export default function ReverseMortgageArizonaPage() {
           </div>
         </section>
 
-        {/* CTA + Stats â€” equal gap above/below the stats card */}
+        {/* CTA + Stats — equal gap above/below the stats card */}
         <section className="loan-cta-band no-content-visibility bg-[#fcf9f3] !pb-0">
           <div className="mx-auto max-w-6xl text-center loan-block-gap">
             <Link
@@ -260,7 +260,7 @@ export default function ReverseMortgageArizonaPage() {
               data-preapproval="true"
               className="inline-flex items-center justify-center rounded-full bg-[#3fb364] px-8 py-3.5 text-[16px] font-bold leading-none text-white shadow-md transition-all hover:bg-[#359854]"
             >
-              Lower Your Payments Now â†’
+              Lower Your Payments Now →
             </Link>
           </div>
           <StatsBanner sectionClassName="py-0 bg-transparent" stats={[...STATS]} />
@@ -302,7 +302,7 @@ export default function ReverseMortgageArizonaPage() {
                 data-preapproval="true"
                 className="inline-block rounded-full bg-[#3fb364] px-8 py-4 text-[16px] font-bold text-white shadow-md transition-all hover:bg-[#359854]"
               >
-                Speak with a Reverse Mortgage Expert â†’
+                Speak with a Reverse Mortgage Expert →
               </Link>
             </div>
           </div>
@@ -359,7 +359,7 @@ export default function ReverseMortgageArizonaPage() {
                 data-preapproval="true"
                 className="inline-block rounded-full bg-[#3fb364] px-8 py-4 text-[16px] font-bold text-white shadow-md transition-all hover:bg-[#359854]"
               >
-                Schedule Your No-Obligation Consultation â†’
+                Schedule Your No-Obligation Consultation →
               </Link>
             </div>
           </div>
@@ -393,7 +393,7 @@ export default function ReverseMortgageArizonaPage() {
                     >
                       <span>{faq.q}</span>
                       <span className="ml-4 text-[20px] font-bold text-[#3fb364]" aria-hidden>
-                        {isOpen ? "âˆ’" : "+"}
+                        {isOpen ? "−" : "+"}
                       </span>
                     </button>
                     {isOpen ? (
@@ -434,7 +434,7 @@ export default function ReverseMortgageArizonaPage() {
               {testimonials.map((t) => (
                 <div key={t.name} className="space-y-4 rounded-2xl border border-[#e0e0e0] bg-white p-6 shadow-sm">
                   <p className="text-[14px] text-[#3fb364]" aria-label="5 star rating">
-                    â˜…â˜…â˜…â˜…â˜…
+                    ★★★★★
                   </p>
                   <p className="text-[14px] leading-relaxed text-[#4e5b4e]">&ldquo;{t.quote}&rdquo;</p>
                   <p className="text-[13px] font-bold text-[#052316]">{t.name}</p>
@@ -500,7 +500,7 @@ export default function ReverseMortgageArizonaPage() {
                 data-preapproval="true"
                 className="rounded-full bg-[#3fb364] px-8 py-4 text-[16px] font-bold text-white shadow-lg transition-all hover:bg-[#359854]"
               >
-                GET PRE-APPROVED NOW â†’
+                GET PRE-APPROVED NOW →
               </Link>
               <a
                 href="tel:+16025352171"
@@ -531,7 +531,7 @@ export default function ReverseMortgageArizonaPage() {
                   className="flex items-center gap-3 rounded-xl border border-[#e0e0e0] bg-white px-5 py-4 text-[14.5px] font-semibold text-[#052316] transition-all hover:border-[#3fb364] hover:text-[#3fb364]"
                 >
                   <span className="text-[#3fb364]" aria-hidden>
-                    âœ“
+                    ✓
                   </span>
                   {item.label}
                 </Link>

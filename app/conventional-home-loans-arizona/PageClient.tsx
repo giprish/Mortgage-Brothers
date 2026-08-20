@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Phone, MapPin } from "lucide-react";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import StatsBanner from "../component/StatsBanner";
@@ -124,7 +123,7 @@ export default function ConventionalHomeLoansPage() {
 
   const testimonials = [
     {
-      text: "You closed our house loan in 17 days!!! When we asked Chase how long escrow would take, we were told one to two months. We will never go to a large bank for a home loan again â€” you are our loan guy, period!",
+      text: "You closed our house loan in 17 days!!! When we asked Chase how long escrow would take, we were told one to two months. We will never go to a large bank for a home loan again — you are our loan guy, period!",
       author: "James Robbins",
       location: "Phoenix, Arizona",
     },
@@ -191,7 +190,7 @@ export default function ConventionalHomeLoansPage() {
           <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-around gap-6 text-[14px] font-medium">
             {highlights.map((item) => (
               <div key={item} className="flex items-center gap-2">
-                <span className="text-[#3fb364]">âœ“</span>
+                <span className="text-[#3fb364]">✓</span>
                 <span>{item}</span>
               </div>
             ))}
@@ -212,7 +211,7 @@ export default function ConventionalHomeLoansPage() {
                 Discover the advantages that make conventional home loans an excellent choice for Arizona homebuyers. These loans offer a powerful combination of flexibility, competitive rates, and accessibility that can help you achieve your homeownership dreams.
               </p>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                With features like low down payments, high loan limits, and favorable terms for various property types, conventional home loans stand out as a versatile financing solution. They&apos;re designed to serve primary residences, vacation homes, and investment properties â€” and offer unique benefits such as the ability to finance manufactured homes and condos with ease.
+                With features like low down payments, high loan limits, and favorable terms for various property types, conventional home loans stand out as a versatile financing solution. They&apos;re designed to serve primary residences, vacation homes, and investment properties — and offer unique benefits such as the ability to finance manufactured homes and condos with ease.
               </p>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
                 One of the most compelling aspects of conventional home loans is that they represent some of the cheapest money you can borrow. Thanks to the backing of Fannie Mae and Freddie Mac, these loans offer interest rates that often outcompete other financing options.
@@ -352,7 +351,7 @@ export default function ConventionalHomeLoansPage() {
 
             <div className="bg-[#052316] rounded-3xl p-8 lg:p-10 text-center text-white space-y-4">
               <p className="text-[16px] text-[#c8c8b8] max-w-2xl mx-auto leading-relaxed">
-                At Mortgage Brothers LLC, we&apos;re not just lenders â€” we&apos;re your partners in achieving homeownership. Let our experience and dedication work for you in securing the best conventional loan for your needs.
+                At Mortgage Brothers LLC, we&apos;re not just lenders — we&apos;re your partners in achieving homeownership. Let our experience and dedication work for you in securing the best conventional loan for your needs.
               </p>
               <a
                 href="tel:+16025352171"
@@ -393,7 +392,7 @@ export default function ConventionalHomeLoansPage() {
                   key={idx}
                   className="bg-[#fcf9f3] border border-[#e0e0e0] rounded-2xl p-6 shadow-sm"
                 >
-                  <div className="text-[#3fb364] text-[14px] mb-3 tracking-wider">â˜…â˜…â˜…â˜…â˜…</div>
+                  <div className="text-[#3fb364] text-[14px] mb-3 tracking-wider">★★★★★</div>
                   <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed mb-4 italic">&ldquo;{t.text}&rdquo;</p>
                   <p className="text-[#052316] text-[14px] font-bold">{t.author}</p>
                   <p className="text-[#b8d4b8] text-[13px]">{t.location}</p>
@@ -406,7 +405,7 @@ export default function ConventionalHomeLoansPage() {
                 href="/client-mortgage-reviews/"
                 className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
               >
-                Explore All Client Testimonials â†’
+                Explore All Client Testimonials →
               </Link>
             </div>
           </div>
@@ -439,7 +438,7 @@ export default function ConventionalHomeLoansPage() {
                   >
                     <span>{faq.q}</span>
                     <span className="text-[#3fb364] text-[20px] ml-4 font-bold shrink-0">
-                      {openFaq === idx ? "âˆ’" : "+"}
+                      {openFaq === idx ? "−" : "+"}
                     </span>
                   </button>
 
@@ -466,7 +465,10 @@ export default function ConventionalHomeLoansPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left max-w-xl mx-auto">
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#3fb364] mt-1 flex-shrink-0" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3fb364" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 mt-1 flex-shrink-0" aria-hidden>
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
                 <div>
                   <p className="text-[13px] text-[#b8d4b8] uppercase tracking-wider font-bold mb-1">Address</p>
                   <p className="text-white text-[14px] leading-relaxed">
@@ -504,7 +506,7 @@ export default function ConventionalHomeLoansPage() {
                   href={program.href}
                   className="flex items-center gap-3 bg-[#fcf9f3] border border-[#e0e0e0] hover:border-[#3fb364] rounded-xl px-5 py-4 text-[#052316] font-semibold text-[14.5px] transition-all hover:shadow-sm group"
                 >
-                  <span className="text-[#3fb364] font-bold group-hover:translate-x-0.5 transition-transform">â†’</span>
+                  <span className="text-[#3fb364] font-bold group-hover:translate-x-0.5 transition-transform">→</span>
                   {program.label}
                 </Link>
               ))}

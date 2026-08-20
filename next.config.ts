@@ -91,13 +91,20 @@ const nextConfig: NextConfig = {
       },
     ];
 
-    return [
+    const headerList = [
       { source: "/:path*", headers: securityHeaders },
       { source: "/home/:path*", headers: longCache },
-      { source: "/_next/static/:path*", headers: longCache },
       { source: "/favicon-:size.jpg", headers: longCache },
       { source: "/apple-touch-icon.jpg", headers: longCache },
     ];
+
+    // Never immutable-cache Turbopack/webpack chunks in `next dev` — that keeps
+    // stale HMR modules (e.g. a removed lucide-react icon) after file edits.
+    if (process.env.NODE_ENV !== "development") {
+      headerList.splice(2, 0, { source: "/_next/static/:path*", headers: longCache });
+    }
+
+    return headerList;
   },
   async redirects() {
     return [

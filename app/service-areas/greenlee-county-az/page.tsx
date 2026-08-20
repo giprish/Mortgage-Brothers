@@ -30,7 +30,7 @@ export default function GreenleeCountyPage() {
             </div>
             <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-4">SOUTHERN ARIZONA - GREENLEE</p>
             <h1 className="text-white text-hero-title font-playfair font-normal leading-[1.1] mb-6 max-w-3xl">Your trusted Greenlee County mortgage broker.</h1>
-            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">From Clifton to Morenci â€” 3 communities, one team that knows every one of them.</p>
+            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">From Clifton to Morenci — 3 communities, one team that knows every one of them.</p>
             <HeroCtaButtons className="mb-4" />
           </div>
         </section>
@@ -59,7 +59,7 @@ export default function GreenleeCountyPage() {
             <h2 className="text-brand-green-deep text-[28px] lg:text-[32px] font-playfair mb-6">Home Loans in Greenlee County, Arizona</h2>
             <div className="text-brand-text-muted text-[15px] space-y-4">
               <p>Greenlee County is one of Arizona&apos;s most tight-knit communities. When you need a Greenlee County mortgage with straightforward guidance and no runaround, Mortgage Brothers delivers.</p>
-              <p>Greenlee County is Arizona&apos;s smallest and least-populated county, nestled in the mountains of eastern Arizona along the New Mexico border. The county is dominated by the massive Morenci copper mine â€” one of the largest open-pit copper mines in the world â€” and the charming historic town of Clifton along the San Francisco River. Greenlee offers extremely affordable real estate and a close-knit community feel for buyers who want true small-town Arizona living.</p>
+              <p>Greenlee County is Arizona&apos;s smallest and least-populated county, nestled in the mountains of eastern Arizona along the New Mexico border. The county is dominated by the massive Morenci copper mine — one of the largest open-pit copper mines in the world — and the charming historic town of Clifton along the San Francisco River. Greenlee offers extremely affordable real estate and a close-knit community feel for buyers who want true small-town Arizona living.</p>
               <ul className="list-disc pl-6 space-y-2 mt-4">
                 <li><strong>Major Cities:</strong> Clifton, Morenci, Duncan, York</li>
                 <li><strong>2026 Conforming Loan Limit:</strong> $832,750</li>

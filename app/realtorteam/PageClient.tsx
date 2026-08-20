@@ -87,7 +87,7 @@ const STEPS = [
 const STATS = [
   { value: "25 Days", label: "Average Closing Time" },
   { value: "25+ Yrs", label: "Industry Experience" },
-  { value: "4.9 â˜…", label: "Realtor Star Rating" },
+  { value: "4.9 ★", label: "Realtor Star Rating" },
   { value: "99%", label: "Communication Satisfaction" },
 ];
 
@@ -105,7 +105,7 @@ export default function RealtorTeamPage() {
       <main className="flex-grow">
         <LoanProgramHero
           title="We Want to be Your Mortgage Team"
-          subtitle="Our #1 Priority is giving RealtorsÂ® and their buyer clients exceptional service on â€œPurchaseâ€ transactions."
+          subtitle="Our #1 Priority is giving RealtorsÂ® and their buyer clients exceptional service on “Purchase” transactions."
           ctaLabel="Start My Pre-Approval"
           ctaHref="/#get-pre-approved"
           secondaryCtaLabel="Talk to a Broker"
@@ -142,13 +142,13 @@ export default function RealtorTeamPage() {
                 data-preapproval="true"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
               >
-                Start My Pre-Approval â†’
+                Start My Pre-Approval →
               </Link>
               <a
                 href="tel:+16025352171"
                 className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all"
               >
-                Talk to a Broker â†’
+                Talk to a Broker →
               </a>
             </div>
           </div>
@@ -169,7 +169,7 @@ export default function RealtorTeamPage() {
               href="/loan-programs/"
               className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
             >
-              VIEW LOAN PROGRAMS â†’
+              VIEW LOAN PROGRAMS →
             </Link>
           </div>
         </section>
@@ -186,7 +186,7 @@ export default function RealtorTeamPage() {
                 We&apos;ve built our reputation on creating meaningful partnerships that drive success for everyone involved. Our approach combines industry expertise, personalized service, and innovative mortgage solutions that help your business thrive.
               </p>
               <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
-                When you partner with Mortgage Brothers LLC, you&apos;re not just gaining a mortgage resource â€“ you&apos;re joining a team committed to your growth and your clients&apos; satisfaction.
+                When you partner with Mortgage Brothers LLC, you&apos;re not just gaining a mortgage resource – you&apos;re joining a team committed to your growth and your clients&apos; satisfaction.
               </p>
             </div>
 
@@ -212,7 +212,7 @@ export default function RealtorTeamPage() {
                 href="#contact"
                 className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
               >
-                Join Our Partner Network â†’
+                Join Our Partner Network →
               </a>
             </div>
           </div>
@@ -248,7 +248,7 @@ export default function RealtorTeamPage() {
                 href="#contact"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
               >
-                Contact Our Partnership Team â†’
+                Contact Our Partnership Team →
               </a>
             </div>
           </div>
@@ -287,13 +287,13 @@ export default function RealtorTeamPage() {
                     href="#contact"
                     className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
                   >
-                    Schedule Your Partnership Consultation â†’
+                    Schedule Your Partnership Consultation →
                   </a>
                   <a
                     href="tel:+16025352171"
                     className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all border border-white/20"
                   >
-                    Talk to a Broker â†’
+                    Talk to a Broker →
                   </a>
                 </div>
               </div>
@@ -316,7 +316,7 @@ export default function RealtorTeamPage() {
               data-contact="true"
               className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md cursor-pointer"
             >
-              Contact Us â†’
+              Contact Us →
             </button>
           </div>
         </section>

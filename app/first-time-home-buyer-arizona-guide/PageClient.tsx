@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Phone, MapPin } from "lucide-react";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import StatsBanner from "../component/StatsBanner";
@@ -37,7 +36,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
     },
     {
       title: "Long-term Success",
-      desc: "We focus on setting you up for sustainable homeownership, not just closing a loan â€” your financial well-being is our priority.",
+      desc: "We focus on setting you up for sustainable homeownership, not just closing a loan — your financial well-being is our priority.",
     },
   ];
 
@@ -83,7 +82,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
     },
     {
       title: "Understand Additional Costs",
-      desc: "Budget for closing costs (typically 1â€“8% of the purchase price), property taxes, homeowners insurance, ongoing maintenance, and potential HOA fees beyond your down payment.",
+      desc: "Budget for closing costs (typically 1–8% of the purchase price), property taxes, homeowners insurance, ongoing maintenance, and potential HOA fees beyond your down payment.",
     },
   ];
 
@@ -112,7 +111,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
     },
     {
       title: "Set Your Standards",
-      desc: "Define your must-haves and nice-to-haves for your first home â€” location, size, features, and price range â€” to focus your search efficiently.",
+      desc: "Define your must-haves and nice-to-haves for your first home — location, size, features, and price range — to focus your search efficiently.",
     },
     {
       title: "Work with a Real Estate Agent",
@@ -181,7 +180,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
     },
     {
       q: "How long does the home buying process take?",
-      a: "From accepted offer to closing typically takes 30â€“45 days. The full process â€” including saving, pre-approval, house hunting, and closing â€” often spans several months depending on your readiness and market conditions.",
+      a: "From accepted offer to closing typically takes 30–45 days. The full process — including saving, pre-approval, house hunting, and closing — often spans several months depending on your readiness and market conditions.",
     },
     {
       q: "Can I use gift money for my down payment?",
@@ -189,7 +188,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
     },
     {
       q: "What additional costs should I budget for beyond the down payment?",
-      a: "Plan for closing costs (1â€“8% of the purchase price), property taxes, homeowners insurance, potential HOA fees, and ongoing maintenance and repair costs as a homeowner.",
+      a: "Plan for closing costs (1–8% of the purchase price), property taxes, homeowners insurance, potential HOA fees, and ongoing maintenance and repair costs as a homeowner.",
     },
     {
       q: "How do I choose the right neighborhood?",
@@ -216,7 +215,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
           <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-around gap-6 text-[14px] font-medium">
             {highlights.map((item) => (
               <div key={item} className="flex items-center gap-2">
-                <span className="text-[#3fb364]">âœ“</span>
+                <span className="text-[#3fb364]">✓</span>
                 <span>{item}</span>
               </div>
             ))}
@@ -240,13 +239,13 @@ export default function FirstTimeHomeBuyerGuidePage() {
                 Understanding your credit score, down payment options, and specialized loan programs is key to a successful purchase. Arizona first-time buyers can access programs with as little as 1% down, making homeownership more attainable than ever before.
               </p>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                At Mortgage Brothers LLC, we guide you through every step â€” from assessing your financial readiness to selecting the right loan program and closing on your dream home.
+                At Mortgage Brothers LLC, we guide you through every step — from assessing your financial readiness to selecting the right loan program and closing on your dream home.
               </p>
               <Link
                 href="/#get-pre-approved"
                 className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
               >
-                GET PRE-APPROVED â†’
+                GET PRE-APPROVED →
               </Link>
             </div>
 
@@ -522,7 +521,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
                   </h3>
                   <p className="text-[#4e5b4e] text-[14px] leading-relaxed mb-4">{program.desc}</p>
                   <span className="text-[#3fb364] font-bold text-[14px] group-hover:translate-x-0.5 inline-block transition-transform">
-                    Learn More â†’
+                    Learn More →
                   </span>
                 </Link>
               ))}
@@ -583,7 +582,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
                   key={idx}
                   className="bg-white border border-[#e0e0e0] rounded-2xl p-6 shadow-sm"
                 >
-                  <div className="text-[#3fb364] text-[14px] mb-3 tracking-wider">â˜…â˜…â˜…â˜…â˜…</div>
+                  <div className="text-[#3fb364] text-[14px] mb-3 tracking-wider">★★★★★</div>
                   <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed mb-4 italic">&ldquo;{t.text}&rdquo;</p>
                   <p className="text-[#052316] text-[14px] font-bold">{t.author}</p>
                   <p className="text-[#b8d4b8] text-[13px]">{t.location}</p>
@@ -596,7 +595,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
                 href="/client-mortgage-reviews/"
                 className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
               >
-                Explore All Client Testimonials â†’
+                Explore All Client Testimonials →
               </Link>
             </div>
           </div>
@@ -684,7 +683,10 @@ export default function FirstTimeHomeBuyerGuidePage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left max-w-xl mx-auto">
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#3fb364] mt-1 flex-shrink-0" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3fb364" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 mt-1 flex-shrink-0" aria-hidden>
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
                 <div>
                   <p className="text-[13px] text-[#b8d4b8] uppercase tracking-wider font-bold mb-1">Address</p>
                   <p className="text-white text-[14px] leading-relaxed">
@@ -698,7 +700,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
               href="/#get-pre-approved"
               className="inline-block bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-lg"
             >
-              GET PRE-APPROVED â†’
+              GET PRE-APPROVED →
             </Link>
           </div>
         </section>
@@ -722,7 +724,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
                   href={program.href}
                   className="flex items-center gap-3 bg-[#fcf9f3] border border-[#e0e0e0] hover:border-[#3fb364] rounded-xl px-5 py-4 text-[#052316] font-semibold text-[14.5px] transition-all hover:shadow-sm group"
                 >
-                  <span className="text-[#3fb364] font-bold group-hover:translate-x-0.5 transition-transform">â†’</span>
+                  <span className="text-[#3fb364] font-bold group-hover:translate-x-0.5 transition-transform">→</span>
                   {program.label}
                 </Link>
               ))}

@@ -109,7 +109,7 @@ const expertCards = [
   },
   {
     title: "Personalized Loan Options",
-    text: "Every borrower is unique â€” our licensed mortgage brokers provide custom financing strategies that align with your goals.",
+    text: "Every borrower is unique — our licensed mortgage brokers provide custom financing strategies that align with your goals.",
   },
   {
     title: "Trusted by Arizona Homebuyers",
@@ -117,7 +117,7 @@ const expertCards = [
   },
   {
     title: "Transparent & Reliable Service",
-    text: "No hidden fees, no surprises â€” just expert guidance and clear communication from start to finish.",
+    text: "No hidden fees, no surprises — just expert guidance and clear communication from start to finish.",
   },
 ];
 
@@ -376,7 +376,7 @@ export default function MortgageForExcellentCreditPage() {
                 How Excellent Credit Maximizes Your Home Loan Benefits
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
-                Your excellent credit score does more than just help you qualify for a mortgage â€” it
+                Your excellent credit score does more than just help you qualify for a mortgage — it
                 opens doors to exclusive advantages that can significantly impact your financial
                 future. Lenders offer better rates, more flexible terms, and faster approvals to
                 borrowers with high credit scores.

@@ -24,7 +24,7 @@ const flexibleCards = [
   },
   {
     title: "Non-Traditional Property Financing",
-    text: "From investment properties to unique real estate, we specialize in financing options for properties that donâ€™t fit the conventional mold.",
+    text: "From investment properties to unique real estate, we specialize in financing options for properties that don’t fit the conventional mold.",
   },
   {
     title: "Competitive Interest Rates",
@@ -33,10 +33,10 @@ const flexibleCards = [
 ];
 
 const stats = [
-  { value: "1â€“3", label: "Average Point Cost" },
-  { value: "7â€“14", label: "Average Days to Close" },
+  { value: "1–3", label: "Average Point Cost" },
+  { value: "7–14", label: "Average Days to Close" },
   { value: "$250k+", label: "Typical Private Loan Size" },
-  { value: "65â€“75%", label: "Average Loan to Value" },
+  { value: "65–75%", label: "Average Loan to Value" },
 ];
 
 const privateMoneyCards = [
@@ -46,7 +46,7 @@ const privateMoneyCards = [
   },
   {
     title: "Flexible Underwriting Criteria",
-    text: "These loans focus more on the propertyâ€™s value and your exit strategy rather than strict credit score or income requirements.",
+    text: "These loans focus more on the property’s value and your exit strategy rather than strict credit score or income requirements.",
   },
   {
     title: "Short-Term Financing Options",
@@ -73,7 +73,7 @@ const portfolioCards = [
   },
   {
     title: "Non-Conforming Property Types",
-    text: "Finance unique properties that donâ€™t meet conventional loan standards, such as mixed-use buildings or properties with acreage.",
+    text: "Finance unique properties that don’t meet conventional loan standards, such as mixed-use buildings or properties with acreage.",
   },
   {
     title: "Customized Loan Terms",
@@ -89,7 +89,7 @@ const portfolioCards = [
   },
   {
     title: "No Mortgage Insurance",
-    text: "Many portfolio loans donâ€™t require private mortgage insurance, even with a down payment of less than 20%.",
+    text: "Many portfolio loans don’t require private mortgage insurance, even with a down payment of less than 20%.",
   },
 ];
 
@@ -100,7 +100,7 @@ const qualifyingCards = [
   },
   {
     title: "Down Payment",
-    text: "Expect to provide a down payment of 20% to 35% of the propertyâ€™s value, depending on the loan-to-value (LTV) ratio.",
+    text: "Expect to provide a down payment of 20% to 35% of the property’s value, depending on the loan-to-value (LTV) ratio.",
   },
   {
     title: "Debt-to-Income Ratio",
@@ -108,7 +108,7 @@ const qualifyingCards = [
   },
   {
     title: "Property Valuation",
-    text: "The propertyâ€™s value and potential profitability are crucial factors, particularly for investment or renovation projects.",
+    text: "The property’s value and potential profitability are crucial factors, particularly for investment or renovation projects.",
   },
   {
     title: "Financial Reserves",
@@ -123,7 +123,7 @@ const qualifyingCards = [
 const processSteps = [
   {
     title: "Initial Consultation",
-    text: "Weâ€™ll discuss your financial goals, property details, and loan requirements to determine the best financing solution for your needs.",
+    text: "We’ll discuss your financial goals, property details, and loan requirements to determine the best financing solution for your needs.",
   },
   {
     title: "Loan Application",
@@ -131,19 +131,19 @@ const processSteps = [
   },
   {
     title: "Property Evaluation",
-    text: "Our team will assess the propertyâ€™s value and potential, which is crucial for determining loan terms and approval.",
+    text: "Our team will assess the property’s value and potential, which is crucial for determining loan terms and approval.",
   },
   {
     title: "Underwriting Review",
-    text: "Weâ€™ll analyze your application, financial situation, and property details to structure a loan that fits your unique circumstances.",
+    text: "We’ll analyze your application, financial situation, and property details to structure a loan that fits your unique circumstances.",
   },
   {
     title: "Loan Approval",
-    text: "Once approved, weâ€™ll present you with a detailed loan offer outlining the terms, interest rate, and repayment schedule.",
+    text: "Once approved, we’ll present you with a detailed loan offer outlining the terms, interest rate, and repayment schedule.",
   },
   {
     title: "Closing and Funding",
-    text: "After accepting the offer, weâ€™ll guide you through the closing process and quickly disburse your funds, typically within 7-14 days.",
+    text: "After accepting the offer, we’ll guide you through the closing process and quickly disburse your funds, typically within 7-14 days.",
   },
 ];
 
@@ -153,11 +153,11 @@ const reviews = [
     author: "Michael and Vory Flis, Phoenix, Arizona",
   },
   {
-    text: "Eddie and his entire staff were wonderful. They helped us through the very intense process of purchasing a second home, while trying to sell the first home. Eddie was always EXTREMELY helpful, and very prompt to respond to any requests from either me, or the real estate agents to help make sure our mortgage went smoothly, and helped us to find and buy a new home in under three months!!! We couldnâ€™t have completed this daunting task with the help given to us by Eddie. Also our mortgage was such a good rate, and closing fees were so fair that the closing agent actually commented on how wonderful our mortgage broker must be! I considered that a sign we had made a great decision to go with this company for our mortgage needs.",
+    text: "Eddie and his entire staff were wonderful. They helped us through the very intense process of purchasing a second home, while trying to sell the first home. Eddie was always EXTREMELY helpful, and very prompt to respond to any requests from either me, or the real estate agents to help make sure our mortgage went smoothly, and helped us to find and buy a new home in under three months!!! We couldn’t have completed this daunting task with the help given to us by Eddie. Also our mortgage was such a good rate, and closing fees were so fair that the closing agent actually commented on how wonderful our mortgage broker must be! I considered that a sign we had made a great decision to go with this company for our mortgage needs.",
     author: "Michelle Blank, Glendale, Arizona",
   },
   {
-    text: "We canâ€™t thank you enough for the hard work you did to get us approved and helping us close our vacation home. This is something we have been talking about for at least 5 years and became a reality after you were highly recommended to us by Carolin and Bob Benjamin. From the start, I felt well informed during the pre-approval phase and during the loan process. From the start of this process in April, everything has fallen into place like it was meant to be. Again, thanks for everything and I tell everybody that wants to buy a home in the Phoenix area to contact you for help.",
+    text: "We can’t thank you enough for the hard work you did to get us approved and helping us close our vacation home. This is something we have been talking about for at least 5 years and became a reality after you were highly recommended to us by Carolin and Bob Benjamin. From the start, I felt well informed during the pre-approval phase and during the loan process. From the start of this process in April, everything has fallen into place like it was meant to be. Again, thanks for everything and I tell everybody that wants to buy a home in the Phoenix area to contact you for help.",
     author: "Bryan and Heather Collins, San Tan Valley, Arizona",
   },
   {
@@ -212,7 +212,7 @@ const whyChoose = [
   },
   {
     q: "How quickly can a private money loan close in Arizona?",
-    a: "Private money loans can typically close much faster than traditional bank loans â€” often in as little as 7 to 14 days. At Mortgage Brothers, we work efficiently to help investors and buyers who need speed and flexibility.",
+    a: "Private money loans can typically close much faster than traditional bank loans — often in as little as 7 to 14 days. At Mortgage Brothers, we work efficiently to help investors and buyers who need speed and flexibility.",
   },
   {
     q: "How much down payment is required for a portfolio loan?",
@@ -281,7 +281,7 @@ export default function PrivateMoneyLenderPage() {
                 flexibility beyond traditional lending options.
               </p>
               <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
-                Whether youâ€™re an investor, self-employed, or have a unique financial situation, these
+                Whether you’re an investor, self-employed, or have a unique financial situation, these
                 loans provide fast approvals, customized terms, and the ability to finance non-traditional
                 properties. Discover how Mortgage Brothers LLC can help you achieve your financial goals
                 with personalized service and local expertise.
@@ -305,7 +305,7 @@ export default function PrivateMoneyLenderPage() {
           </div>
         </section>
 
-        {/* CTA + Stats â€” equal band padding above button and below stats */}
+        {/* CTA + Stats — equal band padding above button and below stats */}
         <section className="loan-cta-band bg-[#fcf9f3] !pb-0">
           <div className="mx-auto max-w-6xl text-center loan-block-gap">
             <Link
@@ -332,8 +332,8 @@ export default function PrivateMoneyLenderPage() {
                 Private Money Loans offer a versatile financing solution for real estate investors and
                 borrowers with unique needs. These loans, provided by private individuals or
                 organizations, offer greater flexibility and faster approval processes compared to
-                traditional bank loans. Whether youâ€™re looking to fund a fix-and-flip project, secure a
-                bridge loan, or finance a property that doesnâ€™t meet conventional lending criteria,
+                traditional bank loans. Whether you’re looking to fund a fix-and-flip project, secure a
+                bridge loan, or finance a property that doesn’t meet conventional lending criteria,
                 private money loans can be an excellent option.
               </p>
             </div>
@@ -481,7 +481,7 @@ export default function PrivateMoneyLenderPage() {
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
                 Obtaining a private money or portfolio loan is a straightforward process designed to get
-                you the funding you need quickly and efficiently. Hereâ€™s what you can expect when working
+                you the funding you need quickly and efficiently. Here’s what you can expect when working
                 with Mortgage Brothers LLC:
               </p>
             </div>
@@ -528,7 +528,7 @@ export default function PrivateMoneyLenderPage() {
                 What Our Clients Say About Private Money and Portfolio Loans
           </h2>
           <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                Donâ€™t just take our word for it. Hear from real Arizona borrowers who have successfully
+                Don’t just take our word for it. Hear from real Arizona borrowers who have successfully
                 leveraged our private money and portfolio loan options.
               </p>
             </div>

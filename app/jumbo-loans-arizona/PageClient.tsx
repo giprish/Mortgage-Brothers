@@ -94,7 +94,7 @@ const eligibilityCards = [
   },
   {
     title: "Cash Reserves",
-    text: "Lenders often require borrowers to have 9â€“12 months of cash reserves to cover mortgage payments. This ensures you have financial stability beyond the initial transaction.",
+    text: "Lenders often require borrowers to have 9–12 months of cash reserves to cover mortgage payments. This ensures you have financial stability beyond the initial transaction.",
   },
   {
     title: "Income Verification",

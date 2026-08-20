@@ -34,7 +34,7 @@ const Brothers = () => {
             className="font-playfair text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight mb-6"
             
           >
-            Meet The Mortgage Brothers â€” Experts You Can Trust
+            Meet The Mortgage Brothers — Experts You Can Trust
           </h2>
           <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
             As third-generation Arizona natives, the Knoell family has been deeply rooted in

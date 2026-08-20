@@ -71,7 +71,7 @@ const rightForYouCards = [
 const processSteps = [
   {
     title: "Assess Your Goals",
-    text: "Determine why you want to refinanceâ€”whether it's to lower payments, access equity, or shorten your loan termâ€”and evaluate if it aligns with your financial objectives.",
+    text: "Determine why you want to refinance—whether it's to lower payments, access equity, or shorten your loan term—and evaluate if it aligns with your financial objectives.",
   },
   {
     title: "Review Your Finances",
@@ -253,11 +253,11 @@ export default function RefinancingArizonaPage() {
     const monthlySavings = currentPayment - newPayment;
     if (monthlySavings > 0) {
       setCalcResult(
-        `Current payment ${money(currentPayment)} â†’ new payment ${money(newPayment)}. Estimated monthly savings: ${money(monthlySavings)}`,
+        `Current payment ${money(currentPayment)} → new payment ${money(newPayment)}. Estimated monthly savings: ${money(monthlySavings)}`,
       );
     } else if (monthlySavings < 0) {
       setCalcResult(
-        `Current payment ${money(currentPayment)} â†’ new payment ${money(newPayment)}. Estimated monthly increase: ${money(Math.abs(monthlySavings))}`,
+        `Current payment ${money(currentPayment)} → new payment ${money(newPayment)}. Estimated monthly increase: ${money(Math.abs(monthlySavings))}`,
       );
     } else {
       setCalcResult(`Estimated monthly payment stays ${money(currentPayment)}`);
@@ -623,7 +623,7 @@ export default function RefinancingArizonaPage() {
                 What Our Clients Say
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                Don&apos;t just take our word for itâ€”hear from our satisfied clients who have successfully navigated the refinancing process with us. Their experiences highlight the benefits of refinancing and the exceptional service provided by our team. Discover how we&apos;ve helped homeowners like you achieve their financial goals and transform their mortgage experience.
+                Don&apos;t just take our word for it—hear from our satisfied clients who have successfully navigated the refinancing process with us. Their experiences highlight the benefits of refinancing and the exceptional service provided by our team. Discover how we&apos;ve helped homeowners like you achieve their financial goals and transform their mortgage experience.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

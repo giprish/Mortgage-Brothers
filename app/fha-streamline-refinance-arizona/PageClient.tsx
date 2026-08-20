@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Phone, MapPin } from "lucide-react";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import StatsBanner from "../component/StatsBanner";
@@ -617,34 +616,22 @@ export default function FhaStreamlineRefinanceArizonaPage() {
               Take the first step toward lower monthly payments with Mortgage Brothers LLC. Our team of experienced mortgage professionals is ready to guide you through the FHA Streamline Refinance process.
             </p>
 
-           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left max-w-xl mx-auto">
-  <div className="flex items-start gap-3">
-    <Phone className="w-5 h-5 text-[#3fb364] mt-1 flex-shrink-0" />
-    <div>
-      <p className="text-[13px] text-[#b8d4b8] uppercase tracking-wider font-bold mb-1">
-        Phone
-      </p>
-      <a
-        href="tel:+16025352171"
-        className="text-white font-semibold hover:text-[#3fb364] transition-colors"
-      >
-        (602) 535-2171
-      </a>
-    </div>
-  </div>
-
-  <div className="flex items-start gap-3">
-    <MapPin className="w-5 h-5 text-[#3fb364] mt-1 flex-shrink-0" />
-    <div>
-      <p className="text-[13px] text-[#b8d4b8] uppercase tracking-wider font-bold mb-1">
-        Address
-      </p>
-      <p className="text-white text-[14px] leading-relaxed">
-        1599 East Orangewood Ave Suite 200, Phoenix, AZ 85020
-      </p>
-    </div>
-  </div>
-</div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left max-w-xl mx-auto">
+              <div className="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3fb364" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 mt-1 flex-shrink-0" aria-hidden>
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <div>
+                  <p className="text-[13px] text-[#b8d4b8] uppercase tracking-wider font-bold mb-1">
+                    Address
+                  </p>
+                  <p className="text-white text-[14px] leading-relaxed">
+                    1599 East Orangewood Ave Suite 200, Phoenix, AZ 85020
+                  </p>
+                </div>
+              </div>
+            </div>
             <Link
               href="/#get-pre-approved"
               className="inline-block bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-lg"

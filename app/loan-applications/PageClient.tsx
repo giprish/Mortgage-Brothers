@@ -47,7 +47,7 @@ export default function LoanApplicationsPage() {
               <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 bg-[#e8eaed]/90 pointer-events-none">
                 <div className="w-10 h-10 border-3 border-[#3fb364]/25 border-t-[#3fb364] rounded-full animate-spin" />
                 <p className="text-[#4e5b4e] text-[14px] font-medium">
-                  Loading secure loan applicationâ€¦
+                  Loading secure loan application…
                 </p>
               </div>
             )}

@@ -2,7 +2,6 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import { Phone, MapPin } from "lucide-react";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import StatsBanner from "../component/StatsBanner";
@@ -215,7 +214,7 @@ export default function FhaHomeLoansArizonaPage() {
           <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-around gap-6 text-[14px] font-medium">
             {highlights.map((item) => (
               <div key={item} className="flex items-center gap-2">
-                <span className="text-[#3fb364]">âœ“</span>
+                <span className="text-[#3fb364]">✓</span>
                 <span>{item}</span>
               </div>
             ))}
@@ -245,7 +244,7 @@ export default function FhaHomeLoansArizonaPage() {
                 href="/#get-pre-approved"
                 className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
               >
-                GET PRE-APPROVED â†’
+                GET PRE-APPROVED →
               </Link>
             </div>
 
@@ -334,7 +333,7 @@ export default function FhaHomeLoansArizonaPage() {
                 href="/#get-pre-approved"
                 className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-md inline-block"
               >
-                GET PRE-APPROVED â†’
+                GET PRE-APPROVED →
               </Link>
             </div>
           </div>
@@ -355,7 +354,7 @@ export default function FhaHomeLoansArizonaPage() {
               </p>
             </div>
 
-            {/* Mobile: card stack â€” avoids table overflow & tall wrapped note rows */}
+            {/* Mobile: card stack — avoids table overflow & tall wrapped note rows */}
             <div className="md:hidden flex flex-col gap-3">
               {loanLimitRows.map((row) => (
                 <article
@@ -509,7 +508,7 @@ export default function FhaHomeLoansArizonaPage() {
                   key={idx}
                   className="bg-white border border-[#e0e0e0] rounded-2xl p-6 shadow-sm"
                 >
-                  <div className="text-[#3fb364] text-[14px] mb-3 tracking-wider">â˜…â˜…â˜…â˜…â˜…</div>
+                  <div className="text-[#3fb364] text-[14px] mb-3 tracking-wider">★★★★★</div>
                   <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed mb-4 italic">&ldquo;{t.text}&rdquo;</p>
                   <p className="text-[#052316] text-[14px] font-bold">{t.author}</p>
                   <p className="text-[#b8d4b8] text-[13px]">{t.location}</p>
@@ -522,7 +521,7 @@ export default function FhaHomeLoansArizonaPage() {
                 href="/client-mortgage-reviews/"
                 className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
               >
-                Explore All Client Testimonials â†’
+                Explore All Client Testimonials →
               </Link>
             </div>
           </div>
@@ -555,7 +554,7 @@ export default function FhaHomeLoansArizonaPage() {
                   >
                     <span>{faq.q}</span>
                     <span className="text-[#3fb364] text-[20px] ml-4 font-bold shrink-0">
-                      {openFaq === idx ? "âˆ’" : "+"}
+                      {openFaq === idx ? "−" : "+"}
                     </span>
                   </button>
 
@@ -582,7 +581,10 @@ export default function FhaHomeLoansArizonaPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left max-w-xl mx-auto">
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-[#3fb364] mt-1 flex-shrink-0" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3fb364" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 mt-1 flex-shrink-0" aria-hidden>
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
                 <div>
                   <p className="text-[13px] text-[#b8d4b8] uppercase tracking-wider font-bold mb-1">Address</p>
                   <p className="text-white text-[14px] leading-relaxed">
@@ -596,7 +598,7 @@ export default function FhaHomeLoansArizonaPage() {
               href="/#get-pre-approved"
               className="inline-block bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-lg"
             >
-              GET PRE-APPROVED â†’
+              GET PRE-APPROVED →
             </Link>
           </div>
         </section>
@@ -620,7 +622,7 @@ export default function FhaHomeLoansArizonaPage() {
                   href={program.href}
                   className="flex items-center gap-3 bg-white border border-[#e0e0e0] hover:border-[#3fb364] rounded-xl px-5 py-4 text-[#052316] font-semibold text-[14.5px] transition-all hover:shadow-sm group"
                 >
-                  <span className="text-[#3fb364] font-bold group-hover:translate-x-0.5 transition-transform">â†’</span>
+                  <span className="text-[#3fb364] font-bold group-hover:translate-x-0.5 transition-transform">→</span>
                   {program.label}
                 </Link>
               ))}

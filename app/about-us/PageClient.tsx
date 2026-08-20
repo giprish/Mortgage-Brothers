@@ -10,7 +10,7 @@ import { COMPANY, LOAN_PROGRAM_LINKS } from "@/lib/company";
 const whyChooseCards = [
   {
     title: "Local Expertise",
-    desc: "Eddie and Tom Knoell grew up in Phoenix, built careers here, and are raising their families here. That kind of local knowledge isn't something you can replicate â€” it's the reason our clients trust us with one of the biggest financial decisions of their lives.",
+    desc: "Eddie and Tom Knoell grew up in Phoenix, built careers here, and are raising their families here. That kind of local knowledge isn't something you can replicate — it's the reason our clients trust us with one of the biggest financial decisions of their lives.",
   },
   {
     title: "Extensive Lender Network",
@@ -530,7 +530,7 @@ export default function AboutPage() {
               {testimonials.map((r) => (
                 <div key={r.author} className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm flex flex-col">
                   <p className="text-brand-text-muted text-[14px] leading-[1.65] flex-1 mb-4">&ldquo;{r.text}&rdquo;</p>
-                  <div className="text-[#3fb364] text-[14px] mb-2 tracking-wider">â˜…â˜…â˜…â˜…â˜…</div>
+                  <div className="text-[#3fb364] text-[14px] mb-2 tracking-wider">★★★★★</div>
                   <div>
                     <p className="text-brand-green-deep text-[14px] font-bold">{r.author}</p>
                     <p className="text-brand-text-muted text-[12px] mt-0.5">{r.loc}</p>
@@ -639,7 +639,7 @@ export default function AboutPage() {
                   href={link.href}
                   className="flex items-center gap-3 bg-brand-cream-light border border-[#e8e0d0]/70 rounded-xl px-5 py-4 text-brand-green-deep font-semibold text-[14.5px] hover:border-brand-green-accent/50 hover:text-brand-green-accent transition-all"
                 >
-                  <span className="text-brand-green-accent" aria-hidden>âœ“</span>
+                  <span className="text-brand-green-accent" aria-hidden>✓</span>
                   {link.label}
                 </Link>
               ))}
@@ -658,7 +658,7 @@ export default function AboutPage() {
               Speak with a Mortgage Expert
             </h2>
             <p className="text-[#c8c8b8] text-[15px] lg:text-[16px] leading-[1.7] max-w-xl mx-auto mb-8">
-              Ready to start your homeownership journey? Our expert team is here to guide you every step of the way. Don&apos;t let mortgage questions keep you up at night â€“ get personalized answers and solutions tailored to your unique situation.
+              Ready to start your homeownership journey? Our expert team is here to guide you every step of the way. Don&apos;t let mortgage questions keep you up at night – get personalized answers and solutions tailored to your unique situation.
             </p>
             <a
               href={COMPANY.phoneHref}
