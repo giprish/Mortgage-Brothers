@@ -86,6 +86,8 @@ const rawCitiesByCounty: Record<string, string[]> = {
 
 export interface CountyCityDetail {
   name: string;
+  /** Canonical URL slug — always prefer this over slugify(name). */
+  slug: string;
   desc: string;
   badge?: string;
 }
@@ -120,13 +122,21 @@ function parseCityNameFromSeo(entry: SeoEntry | undefined, citySlug: string): st
   const title = entry?.title || entry?.openGraph?.title;
   if (title) {
     const match = title.match(/^(.+?)\s*-\s*Arizona Home Loans/i);
-    if (match) return match[1].trim();
+    if (match) {
+      const name = match[1].trim();
+      // Only trust title-derived names that match the URL slug.
+      if (slugify(name) === citySlug) return name;
+    }
   }
 
   const description = entry?.description || entry?.openGraph?.description;
   if (description) {
     const match = description.match(/in\s+([^,]+),\s*AZ/i);
-    if (match) return match[1].trim();
+    if (match) {
+      const name = match[1].trim();
+      // Reject bad SEO copy like "Pine Mortgage, AZ" for slug `pine`.
+      if (slugify(name) === citySlug) return name;
+    }
   }
 
   return slugToDisplayName(citySlug);
@@ -220,7 +230,8 @@ export function getCountyCitiesDetails(countySlug: string): CountyCityDetail[] {
   const seenSlugs = new Set<string>();
 
   const details: CountyCityDetail[] = cities.map((cityName) => {
-    seenSlugs.add(slugify(cityName));
+    const citySlug = slugify(cityName);
+    seenSlugs.add(citySlug);
 
     let badge: string | undefined;
     if (cityName === "Phoenix" || cityName === "Tucson") {
@@ -230,7 +241,7 @@ export function getCountyCitiesDetails(countySlug: string): CountyCityDetail[] {
     }
 
     const desc = cityCustomDescriptions[cityName] || `Home loans, refinancing, and pre-approvals for ${cityName} buyers.`;
-    return { name: cityName, desc, badge };
+    return { name: cityName, slug: citySlug, desc, badge };
   });
 
   for (const seoCity of getSeoCityEntriesForCounty(norm)) {
@@ -238,6 +249,7 @@ export function getCountyCitiesDetails(countySlug: string): CountyCityDetail[] {
     seenSlugs.add(seoCity.slug);
     details.push({
       name: seoCity.name,
+      slug: seoCity.slug,
       desc: seoCity.description || `Home loans, refinancing, and pre-approvals for ${seoCity.name} buyers.`,
     });
   }
@@ -282,7 +294,7 @@ export function getAllCountySlugs(): string[] {
 
 /** City slugs for one county (for generateStaticParams). */
 export function getCitySlugsForCounty(countySlug: string): string[] {
-  return getCountyCitiesDetails(countySlug).map((city) => slugify(city.name));
+  return getCountyCitiesDetails(countySlug).map((city) => city.slug);
 }
 
 /** Flat list of { county, city } for nested generateStaticParams. */

@@ -8,7 +8,6 @@ import {
 import {
   countyMap,
   getCountyCitiesDetails,
-  slugify,
 } from "@/lib/cityData";
 import { normalizePathname, seoMetadata, toTrailingSlashPath } from "@/lib/seo";
 import eddiePosts from "@/lib/eddie-knoell-posts.json";
@@ -45,6 +44,8 @@ const EXCLUDED_PATHS = new Set([
   "/resources/videos",
   "/resources/mortgage-basics",
   "/service-areas/maricopa-county-az-2",
+  // Bad SEO-derived slug (not a real city page; real page is /pine/)
+  "/service-areas/gila-county-az/pine-mortgage",
 ]);
 
 /**
@@ -161,7 +162,7 @@ function discoverStaticPagePaths(appDir: string): string[] {
 function getServiceAreaCityPaths(): string[] {
   const fromCounties = Object.keys(countyMap).flatMap((countySlug) =>
     getCountyCitiesDetails(countySlug).map(
-      (city) => `/service-areas/${countySlug}/${slugify(city.name)}`,
+      (city) => `/service-areas/${countySlug}/${city.slug}`,
     ),
   );
 
