@@ -11,7 +11,7 @@ export const metadata: Metadata = getSeoMetadata("/real-estate-mortgages/");
 const articles = [
   {
     title: "Arizona Real Estate Trends in 2026: Predicting Mortgage Rates & Market Shifts",
-    description: "Market analysis on 2026 Phoenix mortgage rate forecasts, housing inventory recovery, and home appreciation trends.",
+    description: "As of August 2026, Arizona 30-year rates are around 6.6%–6.75%. Inventory is healthier; the mid-2026 5.5% rate call did not happen.",
     href: "/arizona-real-estate-trends-in-2026-predicting-mortgage-rates-for-the-coming-year/",
     date: "May 5, 2026",
     readTime: "10 min read",

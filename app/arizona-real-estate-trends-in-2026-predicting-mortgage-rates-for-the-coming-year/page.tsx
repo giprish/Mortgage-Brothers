@@ -90,7 +90,7 @@ const faqSchema = {
       name: "What are mortgage rates in Arizona right now?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Most buyers are seeing rates between 6.0%–6.375%, depending on credit and loan type.",
+        text: "As of August 2026, most Arizona buyers are seeing 30-year fixed rates around 6.6%–6.75%, depending on credit, loan type, and points. An earlier mid-2026 call of about 5.5% did not happen.",
       },
     },
     {
@@ -129,7 +129,7 @@ export default function ArizonaRealEstateTrends2026Page() {
       <main className="flex-grow relative z-0">
         <ArticleHero
           title={<>Arizona Real Estate Trends in 2026: Predicting Mortgage Rates for the Coming Year</>}
-          excerpt="Market analysis on 2026 Phoenix mortgage rate forecasts, housing inventory recovery, and home appreciation trends."
+          excerpt="As of August 2026, Arizona 30-year rates are around 6.6%–6.75%—not the mid-5s some forecasts hoped for. Here’s the current market, inventory, and what that means for buyers."
           category="Real Estate & Mortgages"
           categoryHref="/real-estate-mortgages/"
           dateLabel="May 5, 2026"
@@ -258,27 +258,35 @@ export default function ArizonaRealEstateTrends2026Page() {
                   </p>
                 </section>
 
-                <section id="mortgage-rates-arizona-november-2025">
+                <section id="mortgage-rates-arizona-august-2026">
                   <h2
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Mortgage Rates in Arizona Currently as of August 2026:
+                    Mortgage Rates in Arizona Currently as of August 2026
                   </h2>
                   <p className="mb-4">
-                    Mortgage rates remain the elephant in the room. Right now, Arizona borrowers are seeing:
+                    Mortgage rates remain the elephant in the room. As of August 2026, Arizona borrowers are
+                    typically seeing:
                   </p>
                   <ul className="list-disc pl-6 space-y-3 mb-5">
                     <li>
-                      Around <strong>6.6%–6.75% for a 30-year fixed mortgage</strong>
+                      Around <strong>6.6%–6.75% for a 30-year fixed mortgage</strong>, depending on credit, loan
+                      type, and points
                     </li>
                     <li>
-                      Some lenders are offering slightly better deals (closer to 6.5%) for well-qualified buyers.
+                      Well-qualified buyers may land near the lower end of that range, depending on credit,
+                      down payment, and whether they pay points.
                     </li>
                   </ul>
-                  <p>
+                  <p className="mb-5">
                     It might not feel &ldquo;low,&rdquo; especially if you remember 3% loans, but compared to
-                    late 2023–24 when rates spiked near 7.5%, this is an improvement.
+                    late 2023–24 when rates spiked near 7.5%, this is still better than the peak. It is not,
+                    however, the 5.5% mid-2026 level we had hoped for.
+                  </p>
+                  <p>
+                    The Mortgage Brothers&apos; earlier forecast that rates would trend around 5.5% by mid-2026
+                    did not materialize. Treat that call as historical, not guidance for today.
                   </p>
                 </section>
 
@@ -308,14 +316,14 @@ export default function ArizonaRealEstateTrends2026Page() {
                       before the Fed actually cuts rates, as markets price in those expectations early.
                     </li>
                     <li>
-                      The Mortgage Brothers&apos; earlier mid-2026 forecast of around 5.5% did not materialize; rates
-                        have remained in the mid-to-high 6% range. Future moves depend on inflation and Fed policy.
+                      We no longer project a mid-2026 drop to around 5.5%. That call missed; rates stayed in the
+                      mid-to-high 6% range. Any move from here still depends on inflation and Fed policy.
                     </li>
                   </ul>
                   <p className="mb-6">
-                    👉 <strong>Translation:</strong> Don&apos;t expect rates to crash back to 3% or 4%. A
-                    &ldquo;new normal&rdquo; in the 6% range is more realistic — with opportunities to refinance
-                    later if we dip into the low 5s.
+                    👉 <strong>Translation:</strong> Don&apos;t expect rates to crash back to 3% or 4%, and
+                    don&apos;t budget around a return to the low 5s this year. Mid-6% has been the 2026
+                    reality. Refinance later if rates do ease—not because a 5.5% landing is guaranteed.
                   </p>
                   <div className="loan-btn-wrap">
                     <Link
@@ -443,10 +451,10 @@ export default function ArizonaRealEstateTrends2026Page() {
                   <FaqAccordion
                     title="FAQ: Arizona Real Estate Trends in 2026"
                     items={[
-                    { q: "Q: Are Arizona home prices dropping in 2026?", a: <>Not significantly. Prices are stabilizing, with some growth in suburbs like Buckeye,
+                    { q: "Are Arizona home prices dropping in 2026?", a: <>Not significantly. Prices are stabilizing, with some growth in suburbs like Buckeye,
                         Marana, and Casa Grande.</> },
-                    { q: "Q: What are mortgage rates in Arizona right now?", a: <>Most buyers are seeing rates between 6.0%–6.375%, depending on credit and loan type.</> },
-                    { q: "Q: Is 2026 a good time to buy in Arizona?", a: <>Yes, especially with more inventory and fewer bidding wars. Down payment assistance can
+                    { q: "What are mortgage rates in Arizona right now?", a: <>As of August 2026, most Arizona buyers are seeing 30-year fixed rates around 6.6%–6.75%, depending on credit, loan type, and points. An earlier mid-2026 call of about 5.5% did not happen.</> },
+                    { q: "Is 2026 a good time to buy in Arizona?", a: <>Yes, especially with more inventory and fewer bidding wars. Down payment assistance can
                         also help first-time buyers.</> }
                     ]}
                   />

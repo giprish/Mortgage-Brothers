@@ -123,7 +123,7 @@ const articles = [
   },
   {
     title: "What Are Mortgage Trigger Leads? Why Are Strangers Calling Your phone?",
-    description: "Learn what mortgage trigger leads are, why strangers call after you apply, and how to stop unwanted calls and mail with Do Not Call and DMA Choice.",
+    description: "As of March 2026, federal law restricts credit bureaus from selling mortgage trigger leads except in narrow cases. Do Not Call and DMA Choice remain useful extras.",
     href: "/what-are-mortgage-trigger-leads/",
     date: "Feb 3, 2025",
     readTime: "6 min read",

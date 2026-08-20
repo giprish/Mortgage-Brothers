@@ -106,7 +106,7 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     "title": "FHA Flip Rule Waiver Expired – You need to wait 90 days to write a contract",
-    "description": "If you are getting FHA financing, check whether the seller has owned the home for less than 90 days. Those properties are not eligible for FHA financing.",
+    "description": "FHA still requires a 90-day wait after a seller acquires a home before a buyer can write an FHA contract. The 2011–2014 flip-rule waiver was never renewed.",
     "href": "/fha-flip-rule-waiver-expired-you-need-wait-90-days-to-write-a-contract/",
     "date": "Feb 4, 2025",
     "readTime": "5 min read",
@@ -401,7 +401,7 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     "title": "What Are Mortgage Trigger Leads? Why Are Strangers Calling Your phone?",
-    "description": "Learn what mortgage trigger leads are, why strangers call after you apply, and how to stop unwanted calls and mail with Do Not Call and DMA Choice.",
+    "description": "As of March 2026, federal law restricts credit bureaus from selling mortgage trigger leads except in narrow cases. Do Not Call and DMA Choice remain useful extras.",
     "href": "/what-are-mortgage-trigger-leads/",
     "date": "Feb 3, 2025",
     "readTime": "6 min read",
@@ -466,7 +466,7 @@ export const blogArticles: BlogArticle[] = [
   },
   {
     "title": "Arizona Real Estate Trends in 2026: Predicting Mortgage Rates & Market Shifts",
-    "description": "Market analysis on 2026 Phoenix mortgage rate forecasts, housing inventory recovery, and home appreciation trends.",
+    "description": "As of August 2026, Arizona 30-year rates are around 6.6%–6.75%. Inventory is healthier; the mid-2026 5.5% rate call did not happen.",
     "href": "/arizona-real-estate-trends-in-2026-predicting-mortgage-rates-for-the-coming-year/",
     "date": "May 5, 2026",
     "readTime": "10 min read",

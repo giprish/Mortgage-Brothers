@@ -82,7 +82,7 @@ const faqSchema = {
       name: "Are homes owned by the seller for less than 90 days eligible for FHA financing?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No, homes that have been owned by the seller for less than 90 days are not eligible for FHA financing as of January 1, 2015.",
+        text: "No. Under current FHA policy, a home the seller has owned for less than 90 days is not eligible for FHA financing. A temporary waiver expired on January 1, 2015 and was never renewed.",
       },
     },
     {
@@ -121,7 +121,7 @@ export default function FhaFlipRuleWaiverExpiredPage() {
       <main className="flex-grow relative z-0">
         <ArticleHero
           title={<>FHA Flip Rule Waiver Expired – You need to wait 90 days to write a contract</>}
-          excerpt="Homes owned less than 90 days are not eligible for FHA financing after the flip-rule waiver expired—contracts cannot be written before 90 days."
+          excerpt="FHA still requires a 90-day wait after a seller acquires a home before a buyer can write an FHA contract. The 2011–2014 flip-rule waiver was never renewed."
           category="Mortgage Payments & Strategies"
           categoryHref="/mortgage-payments-strategies/"
           dateLabel="Feb 4, 2025"
@@ -133,10 +133,10 @@ export default function FhaFlipRuleWaiverExpiredPage() {
             <article className="min-w-0">
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
-                Are you a buyer getting FHA financing? Make sure to check whether the home you are interested
-                in has been owned by the seller for less than 90 days. FHA still requires a 90-day waiting
-                period after a seller acquires a property before a buyer can use FHA financing — a rule in
-                place since the 2015 flip-rule waiver expired and was never renewed.
+                Buying with FHA financing? Confirm how long the seller has owned the home. If it has been fewer
+                than 90 days, the property is not eligible for an FHA loan. That 90-day flip rule is current
+                FHA policy. A temporary waiver ran from 2011 through December 31, 2014; it expired on January
+                1, 2015 and was never renewed.
               </p>
 
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
@@ -147,8 +147,8 @@ export default function FhaFlipRuleWaiverExpiredPage() {
                   Buying a Flipped Home? Know the FHA 90-Day Rule
                 </h2>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
-                  The FHA flip rule waiver is gone, and waiting periods are back. Get expert guidance on
-                  navigating the new rules.
+                  The FHA 90-day flip rule is established policy, not a new announcement. Get guidance before
+                  you write a contract on a recently purchased home.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
@@ -172,14 +172,14 @@ export default function FhaFlipRuleWaiverExpiredPage() {
                     >
                       FHA announced
                     </a>{" "}
-                    a temporary waiver to the FHA 90 day flip rule allowing financing on flip properties
-                    through December 31st 2014.
+                    a temporary waiver of the 90-day flip rule, allowing FHA financing on flipped properties
+                    through December 31, 2014. That waiver ended and has not been reinstated. The 90-day
+                    restriction remains current FHA policy in 2026.
                   </p>
                   <p className="mb-5">
-                    What this means is that FHA buyers will have to wait until the seller has owned the home
-                    for 90 days before they can write a contract on the home. That is important to note. The 90
-                    day waiting period does not mean the buyers have to wait 90 days to close on a FHA, the
-                    contract cannot be written before 90 days.
+                    What this means in practice: FHA buyers must wait until the seller has owned the home for
+                    90 days before they can write a contract. That wait applies to writing the contract, not
+                    to closing the loan. You do not have to wait 90 days after the contract to close.
                   </p>
                   <p>
                     Please contact us if you need any clarification or questions on the FHA 90 day flip rule.
@@ -191,8 +191,7 @@ export default function FhaFlipRuleWaiverExpiredPage() {
                   <FaqAccordion
                     title="Frequently Asked Questions"
                     items={[
-                    { q: "Are homes owned by the seller for less than 90 days eligible for FHA financing?", a: <>No, homes that have been owned by the seller for less than 90 days are not eligible for
-                        FHA financing as of January 1, 2015.</> },
+                    { q: "Are homes owned by the seller for less than 90 days eligible for FHA financing?", a: <>No. Under current FHA policy, a home the seller has owned for less than 90 days is not eligible for FHA financing. A temporary waiver expired on January 1, 2015 and was never renewed.</> },
                     { q: "When can FHA buyers write a contract on a home owned by the seller?", a: <>FHA buyers can write a contract only after the seller has owned the home for at least
                         90 days. The 90-day waiting period applies to writing the contract, not to closing the
                         loan.</> }
@@ -220,8 +219,7 @@ export default function FhaFlipRuleWaiverExpiredPage() {
                 </div>
 
                 <p className="text-[15px]">
-                  Stay updated on the FHA flip rule waiver and why a 90-day wait is required before writing a
-                  contract. For additional context, read about{" "}
+                  The FHA 90-day flip rule is still in force. For additional context, read about{" "}
                   <Link
                     href="/delayed-financing-how-to-get-cashout-without-waiting-6-months-seasoning/"
                     className="text-[#3fb364] font-semibold hover:underline"

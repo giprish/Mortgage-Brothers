@@ -248,10 +248,10 @@ export default function ConventionalVsFhaLoansPage() {
                       removable once you hit 20% equity.
                     </li>
                     <li>
-                      <strong>Loan limits:</strong> higher than FHA in most Arizona counties — up to $1,041,125
-                      in 2026 (
+                      <strong>Loan limits:</strong> higher than FHA in most Arizona counties — up to $832,750
+                      for a single-family home in 2026 (
                       <a
-                        href="https://www.fhfa.gov/"
+                        href="https://www.fhfa.gov/data/dashboard/conforming-loan-limit-values"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-[#3fb364] font-semibold hover:underline"
@@ -360,7 +360,7 @@ export default function ConventionalVsFhaLoansPage() {
                           <td className="p-4">MIP (usually for life of loan)</td>
                         </tr>
                         <tr className="hover:bg-[#f9f7f2]">
-                          <td className="p-4 font-bold text-[#052316]">Loan Limits (Maricopa, 2026)</td>
+                          <td className="p-4 font-bold text-[#052316]">Loan Limits (Maricopa 1-unit, 2026)</td>
                           <td className="p-4">$832,750</td>
                           <td className="p-4">$557,750</td>
                         </tr>
