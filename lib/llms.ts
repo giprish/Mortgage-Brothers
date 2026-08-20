@@ -57,7 +57,7 @@ function stripSiteSuffix(title: string): string {
       "",
     )
     .replace(/\s*\|\s*The Mortgage Brothers\s*$/i, "")
-    .replace(/\s*\|\s*Arizona Mortgage Brothers\s*$/i, "")
+    .replace(/\s*\|\s*Mortgage Brothers LLC\s*$/i, "")
     .trim();
 }
 

@@ -17,10 +17,10 @@ const comparisonRows = [
   },
   {
     feature: "Time to Close",
-    cash: "7–14 Days",
-    asIs: "30–60 Days",
-    repairs: "60–120+ Days",
-    traditional: "30–60 Days",
+    cash: "7â€“14 Days",
+    asIs: "30â€“60 Days",
+    repairs: "60â€“120+ Days",
+    traditional: "30â€“60 Days",
   },
   {
     feature: "Repairs Needed",
@@ -81,7 +81,7 @@ const whySellReasons = [
   {
     title: "You're simply exploring options",
     text: "Many homeowners just want to know what their home is worth and how a cash offer measures up.",
-    compare: "Worth comparing: that's exactly what our free review is for — no commitment required.",
+    compare: "Worth comparing: that's exactly what our free review is for â€” no commitment required.",
   },
 ];
 
@@ -89,7 +89,7 @@ const cashOfferQuestions = [
   "What is the offer based on? Ask for the comparable sales and repair assumptions behind the number, not just a headline figure.",
   "Are there any fees? Some buyers advertise \"no commissions\" but deduct service fees, closing costs, or repair credits later. Get the net amount in writing.",
   "Can you prove funds? A credible cash buyer can show proof of funds. If they can't, the \"cash\" offer may not be cash at all.",
-  "Who handles closing? Insist on a licensed Arizona title or escrow company — never close directly with a buyer outside of escrow.",
+  "Who handles closing? Insist on a licensed Arizona title or escrow company â€” never close directly with a buyer outside of escrow.",
   "Is the offer truly no-obligation? You should be free to walk away and compare other options without penalty.",
 ];
 
@@ -100,7 +100,7 @@ const trustPoints = [
   },
   {
     title: "Experience helping homeowners",
-    text: "We've worked with thousands of Arizona families through purchases, refinances, and major decisions — so we know the real-world trade-offs behind a cash offer.",
+    text: "We've worked with thousands of Arizona families through purchases, refinances, and major decisions â€” so we know the real-world trade-offs behind a cash offer.",
   },
   {
     title: "Independent, unbiased advice",
@@ -108,49 +108,49 @@ const trustPoints = [
   },
   {
     title: "No-obligation consultation",
-    text: "The Home Selling Options Review is 100% free with zero obligation. You leave with information and a clear comparison — never a contract.",
+    text: "The Home Selling Options Review is 100% free with zero obligation. You leave with information and a clear comparison â€” never a contract.",
   },
   {
     title: "Local market knowledge",
-    text: "From Phoenix and Scottsdale to the East and West Valley, we know how Arizona neighborhoods, price tiers, and timelines behave — so guidance reflects your market, not a national average.",
+    text: "From Phoenix and Scottsdale to the East and West Valley, we know how Arizona neighborhoods, price tiers, and timelines behave â€” so guidance reflects your market, not a national average.",
   },
   {
     title: "Explore your options",
-    text: "Beyond selling, you can explore all our Arizona mortgage programs — from refinancing to reverse mortgages — to find the path that fits.",
+    text: "Beyond selling, you can explore all our Arizona mortgage programs â€” from refinancing to reverse mortgages â€” to find the path that fits.",
   },
 ];
 
 const quickAnswers = [
   {
     q: "What is the best way to sell a house for cash?",
-    a: "Get offers from reputable Arizona cash buyers, verify they can fund the purchase, then compare each offer against what your home would bring on the open market. The \"best\" choice depends on your timeline, your home's condition, and whether speed matters more than price. AZ Mortgage Brothers helps Arizona homeowners run that comparison for free.",
+    a: "Get offers from reputable Arizona cash buyers, verify they can fund the purchase, then compare each offer against what your home would bring on the open market. The \"best\" choice depends on your timeline, your home's condition, and whether speed matters more than price. Mortgage Brothers LLC helps Arizona homeowners run that comparison for free.",
   },
   {
     q: "Is a cash offer better than listing?",
-    a: "Not always. A cash offer is faster and skips repairs and showings, but it usually comes in below market value. Listing — even as-is with an agent — often nets more if your home is in decent shape and you have time. The right answer comes from comparing the actual numbers for your property.",
+    a: "Not always. A cash offer is faster and skips repairs and showings, but it usually comes in below market value. Listing â€” even as-is with an agent â€” often nets more if your home is in decent shape and you have time. The right answer comes from comparing the actual numbers for your property.",
   },
   {
     q: "How do cash buyers work?",
-    a: "Cash buyers (investors, \"We Buy Houses\" companies, and iBuyers) assess your home using local data and a walkthrough, then make a no-obligation offer, often within 24–48 hours. If you accept, they close through a title company without mortgage financing — sometimes in 7 to 14 days. In exchange for that speed, they typically pay less than full market value.",
+    a: "Cash buyers (investors, \"We Buy Houses\" companies, and iBuyers) assess your home using local data and a walkthrough, then make a no-obligation offer, often within 24â€“48 hours. If you accept, they close through a title company without mortgage financing â€” sometimes in 7 to 14 days. In exchange for that speed, they typically pay less than full market value.",
   },
   {
     q: "What should homeowners compare before accepting a cash offer?",
-    a: "Compare the cash offer's net price, closing speed, repair requirements, fees or commissions, and the buyer's credibility against your other options: a traditional sale, an as-is agent sale, or keeping and refinancing the home. AZ Mortgage Brothers — which does not buy houses — provides an unbiased, free comparison so you can decide with confidence.",
+    a: "Compare the cash offer's net price, closing speed, repair requirements, fees or commissions, and the buyer's credibility against your other options: a traditional sale, an as-is agent sale, or keeping and refinancing the home. Mortgage Brothers LLC â€” which does not buy houses â€” provides an unbiased, free comparison so you can decide with confidence.",
   },
 ];
 
 const faqs = [
   {
     q: "How do I sell my home for cash?",
-    a: "You can sell your home for cash by contacting a cash-buying company, investor, or iBuyer, or by attracting a cash buyer through a traditional listing. The buyer reviews your property, makes a no-obligation offer (often within 24–48 hours), and closes through a title company — sometimes in as little as 7 to 14 days, since no mortgage financing is involved. Before choosing, it's wise to compare the cash offer against listing on the open market to see which nets you more.",
+    a: "You can sell your home for cash by contacting a cash-buying company, investor, or iBuyer, or by attracting a cash buyer through a traditional listing. The buyer reviews your property, makes a no-obligation offer (often within 24â€“48 hours), and closes through a title company â€” sometimes in as little as 7 to 14 days, since no mortgage financing is involved. Before choosing, it's wise to compare the cash offer against listing on the open market to see which nets you more.",
   },
   {
     q: "Who pays cash for houses in Arizona?",
-    a: "Cash for houses in Arizona typically comes from real estate investors, \"We Buy Houses\" companies, and iBuyers. They buy quickly and often as-is, but usually pay below full market value in exchange for speed and convenience. AZ Mortgage Brothers does not buy houses — as independent mortgage experts, we help you compare those cash offers against your other options at no cost.",
+    a: "Cash for houses in Arizona typically comes from real estate investors, \"We Buy Houses\" companies, and iBuyers. They buy quickly and often as-is, but usually pay below full market value in exchange for speed and convenience. Mortgage Brothers LLC does not buy houses â€” as independent mortgage experts, we help you compare those cash offers against your other options at no cost.",
   },
   {
     q: "Is selling a house for cash a good idea?",
-    a: "It can be — when speed and certainty matter more than maximizing price. A cash sale skips repairs, showings, and financing delays. But because cash offers are often lower, it isn't automatically the best financial choice. Comparing a cash offer to a traditional or as-is sale is the only way to know what's right for your situation.",
+    a: "It can be â€” when speed and certainty matter more than maximizing price. A cash sale skips repairs, showings, and financing delays. But because cash offers are often lower, it isn't automatically the best financial choice. Comparing a cash offer to a traditional or as-is sale is the only way to know what's right for your situation.",
   },
   {
     q: "How much less do cash buyers pay?",
@@ -166,7 +166,7 @@ const faqs = [
   },
   {
     q: "How fast can a cash sale close?",
-    a: "Cash sales can often close in as little as 7 to 14 days, depending on the buyer, title work, and required documentation — much faster than a typical financed sale that takes 30 to 60 days.",
+    a: "Cash sales can often close in as little as 7 to 14 days, depending on the buyer, title work, and required documentation â€” much faster than a typical financed sale that takes 30 to 60 days.",
   },
   {
     q: "Should I accept a cash offer?",
@@ -177,7 +177,7 @@ const faqs = [
 const processSteps = [
   { step: "1", title: "You request an offer", text: "You share basic details about the property online or by phone." },
   { step: "2", title: "The buyer assesses value", text: "They review local comps and usually do a walkthrough." },
-  { step: "3", title: "You receive a no-obligation cash offer", text: "Often within 24–48 hours." },
+  { step: "3", title: "You receive a no-obligation cash offer", text: "Often within 24â€“48 hours." },
   { step: "4", title: "You decide", text: "If you accept, the buyer opens escrow with a licensed Arizona title company." },
   { step: "5", title: "You close", text: "Frequently in as little as 7 to 14 days, on a date you choose." },
 ];
@@ -202,7 +202,7 @@ export default function SellMyHouseFastArizonaPage() {
       <Navbar />
 
       <main className="flex-grow">
-        {/* Hero — centered, matches the Areas We Serve page */}
+        {/* Hero â€” centered, matches the Areas We Serve page */}
         <section className="w-full bg-brand-green-deep pt-[110px] lg:pt-[130px] pb-12 sm:pb-14 lg:pb-16 text-center relative overflow-hidden">
           <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">
             <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
@@ -214,11 +214,11 @@ export default function SellMyHouseFastArizonaPage() {
             </h1>
 
             <p className="text-[#63cd85] text-[17px] lg:text-[20px] font-medium leading-snug mb-5 max-w-2xl mx-auto">
-              Before you accept a cash offer, compare it to every other way you could sell — with local experts who don&apos;t buy houses.
+              Before you accept a cash offer, compare it to every other way you could sell â€” with local experts who don&apos;t buy houses.
             </p>
 
             <p className="text-[#c8c8b8] text-[15px] lg:text-[16px] leading-[1.7] max-w-2xl mx-auto">
-              See how a cash sale really stacks up against listing traditionally, selling as-is, repairing first, or keeping your home — in plain numbers, with no pressure and no obligation.
+              See how a cash sale really stacks up against listing traditionally, selling as-is, repairing first, or keeping your home â€” in plain numbers, with no pressure and no obligation.
             </p>
 
             <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2.5 text-[15px] font-semibold text-white text-left">
@@ -261,15 +261,15 @@ export default function SellMyHouseFastArizonaPage() {
         <div className="loan-strip w-full bg-[#03170e] text-[#c8c8b8] border-y border-white/10">
           <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-around gap-6 text-[14px] font-medium">
             <div className="flex items-center gap-2">
-              <span className="text-[#3fb364]">✓</span>
+              <span className="text-[#3fb364]">âœ“</span>
               <span>We Are Not Cash Buyers</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-[#3fb364]">✓</span>
+              <span className="text-[#3fb364]">âœ“</span>
               <span>Compare Every Selling Option</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-[#3fb364]">✓</span>
+              <span className="text-[#3fb364]">âœ“</span>
               <span>Free, Unbiased Review</span>
             </div>
           </div>
@@ -282,16 +282,16 @@ export default function SellMyHouseFastArizonaPage() {
               INDEPENDENT ADVICE
             </span>
             <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair leading-tight">
-              We Are Not Cash Buyers — We Help You Compare
+              We Are Not Cash Buyers â€” We Help You Compare
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
               If you&apos;ve been searching for how to sell your home for cash in Arizona, you&apos;re not alone. Every month, thousands of homeowners across Phoenix and the surrounding Valley look into a cash sale, hoping for a fast, simple closing with no repairs, no showings, and no financing to fall through.
             </p>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-              A cash offer can absolutely be the right move — but &ldquo;I want to sell my home for cash&rdquo; and &ldquo;a cash sale is my best financial option&rdquo; are not always the same thing. At AZ Mortgage Brothers, we are not a cash home buying company. We will never make an offer on your house, and we have no stake in which path you choose. We&apos;re licensed Arizona mortgage experts whose only goal is to help you understand what selling for cash would really put in your pocket — compared to listing traditionally, selling as-is with an agent, making a few repairs first, or tapping your home&apos;s equity instead of selling.
+              A cash offer can absolutely be the right move â€” but &ldquo;I want to sell my home for cash&rdquo; and &ldquo;a cash sale is my best financial option&rdquo; are not always the same thing. At Mortgage Brothers LLC, we are not a cash home buying company. We will never make an offer on your house, and we have no stake in which path you choose. We&apos;re licensed Arizona mortgage experts whose only goal is to help you understand what selling for cash would really put in your pocket â€” compared to listing traditionally, selling as-is with an agent, making a few repairs first, or tapping your home&apos;s equity instead of selling.
             </p>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-              Most pages that show up when you look for cash for your house are the buyers themselves: &ldquo;We Buy Houses&rdquo; companies, investors, and iBuyers. Their job is to acquire your home as cheaply as the deal allows. Our job is different. Because we don&apos;t buy houses, we can give you straight information about how a cash home sale in Arizona actually compares to your alternatives — and help you avoid leaving money on the table. The review is 100% free, carries no obligation, and ends with you holding clear numbers, not a signed contract.
+              Most pages that show up when you look for cash for your house are the buyers themselves: &ldquo;We Buy Houses&rdquo; companies, investors, and iBuyers. Their job is to acquire your home as cheaply as the deal allows. Our job is different. Because we don&apos;t buy houses, we can give you straight information about how a cash home sale in Arizona actually compares to your alternatives â€” and help you avoid leaving money on the table. The review is 100% free, carries no obligation, and ends with you holding clear numbers, not a signed contract.
             </p>
           </div>
         </section>
@@ -312,20 +312,20 @@ export default function SellMyHouseFastArizonaPage() {
               What It Means to Sell Your Home for Cash
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-              A cash sale simply means the buyer purchases your home without mortgage financing. There&apos;s no lender, no loan underwriting, and no appraisal contingency tied to a bank — so the deal can close in days rather than weeks. In Arizona, the people paying cash for houses generally fall into three groups:
+              A cash sale simply means the buyer purchases your home without mortgage financing. There&apos;s no lender, no loan underwriting, and no appraisal contingency tied to a bank â€” so the deal can close in days rather than weeks. In Arizona, the people paying cash for houses generally fall into three groups:
             </p>
             <ul className="space-y-3 text-[#4e5b4e] text-[15px]">
               <li className="flex items-start gap-3">
                 <CheckIcon />
-                <span><strong className="text-[#052316]">&ldquo;We Buy Houses&rdquo; investors</strong> — buy in as-is condition, often target distressed or inherited properties, and prioritize speed.</span>
+                <span><strong className="text-[#052316]">&ldquo;We Buy Houses&rdquo; investors</strong> â€” buy in as-is condition, often target distressed or inherited properties, and prioritize speed.</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckIcon />
-                <span><strong className="text-[#052316]">iBuyers (the large national platforms)</strong> — make algorithm-driven offers on homes in good condition and typically charge a service fee.</span>
+                <span><strong className="text-[#052316]">iBuyers (the large national platforms)</strong> â€” make algorithm-driven offers on homes in good condition and typically charge a service fee.</span>
               </li>
               <li className="flex items-start gap-3">
                 <CheckIcon />
-                <span><strong className="text-[#052316]">Individual cash buyers</strong> — occasionally a traditional buyer simply pays cash, usually through a standard agent listing.</span>
+                <span><strong className="text-[#052316]">Individual cash buyers</strong> â€” occasionally a traditional buyer simply pays cash, usually through a standard agent listing.</span>
               </li>
             </ul>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
@@ -367,10 +367,10 @@ export default function SellMyHouseFastArizonaPage() {
               What Cash Buyers Typically Pay (the Honest Trade-Off)
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-              This is the part many &ldquo;sell fast&rdquo; sites gloss over. Investor and &ldquo;We Buy Houses&rdquo; offers usually come in below full market value, because the buyer has to factor in repairs, holding costs, and their own profit margin. iBuyers often pay closer to market value but typically deduct a service fee. How big that gap is depends entirely on the buyer, your home&apos;s condition, and how quickly you need to sell — which is exactly why putting offers side by side matters so much.
+              This is the part many &ldquo;sell fast&rdquo; sites gloss over. Investor and &ldquo;We Buy Houses&rdquo; offers usually come in below full market value, because the buyer has to factor in repairs, holding costs, and their own profit margin. iBuyers often pay closer to market value but typically deduct a service fee. How big that gap is depends entirely on the buyer, your home&apos;s condition, and how quickly you need to sell â€” which is exactly why putting offers side by side matters so much.
             </p>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-              The practical takeaway: a cash sale can save you weeks of effort and thousands in repairs — but it can also cost you tens of thousands compared with the open market. Whether that trade-off is worth it depends entirely on your situation, which is what the comparison below is for.
+              The practical takeaway: a cash sale can save you weeks of effort and thousands in repairs â€” but it can also cost you tens of thousands compared with the open market. Whether that trade-off is worth it depends entirely on your situation, which is what the comparison below is for.
             </p>
           </div>
         </section>
@@ -386,7 +386,7 @@ export default function SellMyHouseFastArizonaPage() {
                 How Selling for Cash Compares to Your Other Options
               </h2>
               <p className="text-[#4e5b4e] text-[15px] mt-4 max-w-2xl mx-auto">
-                Every situation is different. Here&apos;s how the most common options stack up. There&apos;s no single &ldquo;best&rdquo; row — only the best fit for your timeline, your home&apos;s condition, and your financial goals.
+                Every situation is different. Here&apos;s how the most common options stack up. There&apos;s no single &ldquo;best&rdquo; row â€” only the best fit for your timeline, your home&apos;s condition, and your financial goals.
               </p>
             </div>
 
@@ -437,7 +437,7 @@ export default function SellMyHouseFastArizonaPage() {
                 Why Arizona Homeowners Consider Selling for Cash
               </h2>
               <p className="text-[#4e5b4e] text-[15px] mt-4 max-w-2xl mx-auto">
-                Most homeowners who look into a cash sale fall into one of a few situations — here&apos;s how a cash offer tends to fit each, and what&apos;s worth comparing first.
+                Most homeowners who look into a cash sale fall into one of a few situations â€” here&apos;s how a cash offer tends to fit each, and what&apos;s worth comparing first.
               </p>
             </div>
 
@@ -460,7 +460,7 @@ export default function SellMyHouseFastArizonaPage() {
               Who Should Sell a House for Cash?
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-              A cash sale tends to make the most sense when speed and certainty matter more than squeezing out the last dollar — for example, when you&apos;re facing a tight deadline, the home needs major work, or the property is vacant and costing you money each month. If, on the other hand, your home is in decent shape and you have a little time, listing it (even as-is with an agent) often nets meaningfully more. For some owners — especially those 62 and older — a reverse mortgage may let you access cash without selling at all. The only way to know which is true for you is to put the numbers side by side. That&apos;s the free review we offer — no pressure, no obligation, and no one trying to buy your house at the end of it.
+              A cash sale tends to make the most sense when speed and certainty matter more than squeezing out the last dollar â€” for example, when you&apos;re facing a tight deadline, the home needs major work, or the property is vacant and costing you money each month. If, on the other hand, your home is in decent shape and you have a little time, listing it (even as-is with an agent) often nets meaningfully more. For some owners â€” especially those 62 and older â€” a reverse mortgage may let you access cash without selling at all. The only way to know which is true for you is to put the numbers side by side. That&apos;s the free review we offer â€” no pressure, no obligation, and no one trying to buy your house at the end of it.
             </p>
           </div>
         </section>
@@ -472,18 +472,18 @@ export default function SellMyHouseFastArizonaPage() {
               Questions to Ask Before You Accept Any Cash Offer
             </h2>
             <p className="text-[#c8c8b8] text-[15px] leading-relaxed">
-              Whether an offer comes from an investor, an iBuyer, or a &ldquo;We Buy Houses&rdquo; company, a few questions will tell you quickly whether it&apos;s fair — and whether the buyer is legitimate:
+              Whether an offer comes from an investor, an iBuyer, or a &ldquo;We Buy Houses&rdquo; company, a few questions will tell you quickly whether it&apos;s fair â€” and whether the buyer is legitimate:
             </p>
             <ul className="space-y-4">
               {cashOfferQuestions.map((q) => (
                 <li key={q} className="flex items-start gap-3 text-[#c8c8b8] text-[14.5px] leading-relaxed">
-                  <span className="text-[#3fb364] font-bold text-[16px] shrink-0">✓</span>
+                  <span className="text-[#3fb364] font-bold text-[16px] shrink-0">âœ“</span>
                   {q}
                 </li>
               ))}
             </ul>
             <p className="text-[#c8c8b8] text-[15px] leading-relaxed">
-              These are exactly the kinds of details a neutral expert can help you read. Because AZ Mortgage Brothers doesn&apos;t buy homes, we can look at any cash offer for your house alongside you and explain — in plain numbers — how it compares to selling on the open market, selling as-is, or holding the property.
+              These are exactly the kinds of details a neutral expert can help you read. Because Mortgage Brothers LLC doesn&apos;t buy homes, we can look at any cash offer for your house alongside you and explain â€” in plain numbers â€” how it compares to selling on the open market, selling as-is, or holding the property.
             </p>
           </div>
         </section>
@@ -493,7 +493,7 @@ export default function SellMyHouseFastArizonaPage() {
           <div className="max-w-5xl mx-auto space-y-12">
             <div className="text-center">
               <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair">
-                Why Arizona Homeowners Trust AZ Mortgage Brothers
+                Why Arizona Homeowners Trust Mortgage Brothers LLC
               </h2>
             </div>
 
@@ -513,10 +513,10 @@ export default function SellMyHouseFastArizonaPage() {
           <div className="max-w-5xl mx-auto text-center space-y-4">
             <h2 className="text-[#052316] text-[20px] font-bold font-playfair">Credentials</h2>
             <p className="text-[#4e5b4e] text-[13px] leading-relaxed">
-              {COMPANY.legalName} · {COMPANY.nmlsDisplay} · {COMPANY.azLicenseDisplay} ·{" "}
-              {LOAN_OFFICERS.eddie.name} {LOAN_OFFICERS.eddie.nmlsDisplay} ·{" "}
-              {LOAN_OFFICERS.thomas.name} {LOAN_OFFICERS.thomas.nmlsDisplay} ·{" "}
-              {COMPANY.addressFull} ·{" "}
+              {COMPANY.legalName} Â· {COMPANY.nmlsDisplay} Â· {COMPANY.azLicenseDisplay} Â·{" "}
+              {LOAN_OFFICERS.eddie.name} {LOAN_OFFICERS.eddie.nmlsDisplay} Â·{" "}
+              {LOAN_OFFICERS.thomas.name} {LOAN_OFFICERS.thomas.nmlsDisplay} Â·{" "}
+              {COMPANY.addressFull} Â·{" "}
               <a href={COMPANY.phoneHref} className="text-[#3fb364] hover:underline font-semibold">
                 {COMPANY.phoneDisplay}
               </a>
@@ -532,7 +532,7 @@ export default function SellMyHouseFastArizonaPage() {
               .
             </p>
             <p className="text-[#4e5b4e] text-[13px] leading-relaxed max-w-3xl mx-auto">
-              Reviewed by {LOAN_OFFICERS.eddie.name} — Owner &amp; Vice President, {COMPANY.legalName}. Licensed Arizona Mortgage Loan Originator ({LOAN_OFFICERS.eddie.nmlsDisplay}, {LOAN_OFFICERS.eddie.azLicenseDisplay}). A third-generation Phoenix native, Eddie has guided Arizona homeowners through home financing and selling decisions for more than 20 years.
+              Reviewed by {LOAN_OFFICERS.eddie.name} â€” Owner &amp; Vice President, {COMPANY.legalName}. Licensed Arizona Mortgage Loan Originator ({LOAN_OFFICERS.eddie.nmlsDisplay}, {LOAN_OFFICERS.eddie.azLicenseDisplay}). A third-generation Phoenix native, Eddie has guided Arizona homeowners through home financing and selling decisions for more than 20 years.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
               <span className="text-[11px] font-semibold text-[#4e5b4e] px-4 py-2 border border-[#e8e0d0] bg-[#fcfbf9] rounded-full">
@@ -559,7 +559,7 @@ export default function SellMyHouseFastArizonaPage() {
               Serving Homeowners Across the Phoenix Metro &amp; Arizona
             </h2>
             <p className="text-[#4e5b4e] text-[15px] text-center max-w-3xl mx-auto leading-relaxed">
-              Arizona isn&apos;t one housing market — it&apos;s many, and a smart selling decision starts with knowing yours. Wherever your home sits — a starter house in Avondale, an inherited property in Mesa, or a longtime family home in Scottsdale — the right move depends on local comps, your timeline, and the home&apos;s condition.
+              Arizona isn&apos;t one housing market â€” it&apos;s many, and a smart selling decision starts with knowing yours. Wherever your home sits â€” a starter house in Avondale, an inherited property in Mesa, or a longtime family home in Scottsdale â€” the right move depends on local comps, your timeline, and the home&apos;s condition.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -569,11 +569,11 @@ export default function SellMyHouseFastArizonaPage() {
               </div>
               <div className="bg-[#fcf9f3] border border-[#e0e0e0] rounded-2xl p-6">
                 <h3 className="text-[17px] font-bold text-[#052316] mb-2 font-playfair">East Valley</h3>
-                <p className="text-[#4e5b4e] text-[14px] leading-relaxed">Mesa, Chandler, Gilbert, and Tempe — family neighborhoods and steady demand mean condition and timing strongly affect what a cash sale costs you versus listing.</p>
+                <p className="text-[#4e5b4e] text-[14px] leading-relaxed">Mesa, Chandler, Gilbert, and Tempe â€” family neighborhoods and steady demand mean condition and timing strongly affect what a cash sale costs you versus listing.</p>
               </div>
               <div className="bg-[#fcf9f3] border border-[#e0e0e0] rounded-2xl p-6">
                 <h3 className="text-[17px] font-bold text-[#052316] mb-2 font-playfair">West Valley</h3>
-                <p className="text-[#4e5b4e] text-[14px] leading-relaxed">Glendale, Peoria, Surprise, Goodyear, Avondale, and Buckeye — fast-growing communities where newer inventory and rising values make an apples-to-apples comparison especially worthwhile.</p>
+                <p className="text-[#4e5b4e] text-[14px] leading-relaxed">Glendale, Peoria, Surprise, Goodyear, Avondale, and Buckeye â€” fast-growing communities where newer inventory and rising values make an apples-to-apples comparison especially worthwhile.</p>
               </div>
             </div>
 
@@ -616,7 +616,7 @@ export default function SellMyHouseFastArizonaPage() {
                   >
                     <h3 className="font-bold text-[#052316] text-[16.5px] pr-4 font-playfair">{item.q}</h3>
                     <span className="text-[#3fb364] text-[20px] ml-4 font-bold shrink-0">
-                      {openQuickAnswer === idx ? "−" : "+"}
+                      {openQuickAnswer === idx ? "âˆ’" : "+"}
                     </span>
                   </button>
 
@@ -657,7 +657,7 @@ export default function SellMyHouseFastArizonaPage() {
                   >
                     <h3 className="font-semibold text-[#052316] text-[16px] pr-4">{faq.q}</h3>
                     <span className="text-[#3fb364] text-[20px] ml-4 font-bold shrink-0">
-                      {openFaq === idx ? "−" : "+"}
+                      {openFaq === idx ? "âˆ’" : "+"}
                     </span>
                   </button>
 
@@ -693,15 +693,15 @@ export default function SellMyHouseFastArizonaPage() {
 
             <ul className="text-left max-w-xl mx-auto space-y-3 text-[#c8c8b8] text-[14.5px]">
               <li className="flex items-start gap-3">
-                <span className="text-[#3fb364] font-bold">✓</span>
-                Compare every option side by side — cash sale, as-is listing, repair-then-sell, traditional sale, or keeping and refinancing.
+                <span className="text-[#3fb364] font-bold">âœ“</span>
+                Compare every option side by side â€” cash sale, as-is listing, repair-then-sell, traditional sale, or keeping and refinancing.
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#3fb364] font-bold">✓</span>
+                <span className="text-[#3fb364] font-bold">âœ“</span>
                 See your realistic net proceeds for each path, not just a headline offer.
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#3fb364] font-bold">✓</span>
+                <span className="text-[#3fb364] font-bold">âœ“</span>
                 Get a straight, honest recommendation from someone who doesn&apos;t buy houses and has nothing to sell you on this page.
               </li>
             </ul>
@@ -723,7 +723,7 @@ export default function SellMyHouseFastArizonaPage() {
             </div>
 
             <p className="text-[#b8d4b8] text-[13px] pt-2">
-              100% Free · No Obligation · We Don&apos;t Buy Houses · Local Arizona Experts
+              100% Free Â· No Obligation Â· We Don&apos;t Buy Houses Â· Local Arizona Experts
             </p>
 
             <p className="text-[#b8d4b8] text-[12px] pt-4">

@@ -48,7 +48,7 @@ export default function TheBrokerAdvantagePage() {
       <Navbar />
 
       <main className="flex-grow relative z-0">
-        {/* Featured hero — full 16:9 image, no crop (matches live) */}
+        {/* Featured hero â€” full 16:9 image, no crop (matches live) */}
         <ArticleHero
           title={<>The Broker Advantage</>}
           excerpt="Understanding the advantages of using a mortgage broker instead of a mortgage banker can make a world of difference when you are financing a new home."
@@ -69,7 +69,7 @@ export default function TheBrokerAdvantagePage() {
                   between a mortgage broker and a mortgage banker?&quot; really can&apos;t compete with
                   &quot;What do you want to be when you grow up?&quot; and &quot;Will you marry me?&quot;
                   Compared to these classics, the question sounds like the set up for a joke, but
-                  it&apos;s not—at least, not when you&apos;re trying to figure out the best way to
+                  it&apos;s notâ€”at least, not when you&apos;re trying to figure out the best way to
                   finance a new home. If you are in the market for a new home, understanding the
                   advantages of using a mortgage broker instead of a mortgage banker can make a world
                   of difference.
@@ -85,7 +85,7 @@ export default function TheBrokerAdvantagePage() {
                   Unlock Your Broker Advantage Today!
                 </h2>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
-                  Contact Arizona Mortgage Brothers to leverage The Broker Advantage for a competitive
+                  Contact Mortgage Brothers LLC to leverage The Broker Advantage for a competitive
                   edge in mortgage solutions.
                 </p>
                 <Link
@@ -150,7 +150,7 @@ export default function TheBrokerAdvantagePage() {
                     the potential homeowner. Because they are not limited to offering the products of just
                     one bank, brokers are able to find their clients the best deal possible. They
                     don&apos;t get paid unless their client gets a loan. This means they are
-                    motivated—and able—to find innovative solutions for buyers in unique circumstances or
+                    motivatedâ€”and ableâ€”to find innovative solutions for buyers in unique circumstances or
                     who fall outside the parameters banks typically adhere to for borrowers.
                   </p>
                 </section>
@@ -166,7 +166,7 @@ export default function TheBrokerAdvantagePage() {
                     When you work with a banker, you are working directly with a particular bank. In
                     contrast, when you work through a broker, your broker serves as an intermediary
                     between you and the loan provider. At first glance, it might seem like using a broker
-                    complicates things unnecessarily—why insert a middleman into the process when you
+                    complicates things unnecessarilyâ€”why insert a middleman into the process when you
                     could work directly with a lender? But the banker doesn&apos;t personally approve your
                     loan; they have to pass it on to another department. In other words, they&apos;re a
                     middle man, too.
@@ -203,12 +203,12 @@ export default function TheBrokerAdvantagePage() {
                     fly and continue shopping around until he gets a &quot;yes&quot;.
                   </p>
                   <p>
-                    AZ Mortgage Brothers are proud to be mortgage brokers and have been coming up with
+                    Mortgage Brothers LLC are proud to be mortgage brokers and have been coming up with
                     innovative mortgage solutions for our clients for years.{" "}
                     <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
                       Contact us today
                     </Link>{" "}
-                    if you want to experience the broker advantage (and the AZ Mortgage Brothers
+                    if you want to experience the broker advantage (and the Mortgage Brothers LLC
                     advantage!) for yourself. You&apos;ll be glad you did!
                   </p>
                 </section>
@@ -216,13 +216,13 @@ export default function TheBrokerAdvantagePage() {
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">
                 <Link href="/blog/" className="text-[#3fb364] font-semibold hover:underline">
-                  ← Back to Blog
+                  â† Back to Blog
                 </Link>
                 <Link
                   href="/arizona-mortgage-insights/"
                   className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
                 >
-                  Arizona Mortgage Insights →
+                  Arizona Mortgage Insights â†’
                 </Link>
               </div>
             </article>

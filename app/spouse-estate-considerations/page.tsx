@@ -19,7 +19,7 @@ const articles = [
   },
   {
     title: "Is Homeownership Hereditary?",
-    description: "Everyone knows that houses can be inherited, but can homeownership? It would seem that the answer to that question is “yes.” Ready to Build Your Legacy? Connect with Arizona Mortgage Brothers today to start your journey toward lasting homeownership and secure mortgage...",
+    description: "Everyone knows that houses can be inherited, but can homeownership? It would seem that the answer to that question is “yes.” Ready to Build Your Legacy? Connect with Mortgage Brothers LLC today to start your journey toward lasting homeownership and secure mortgage...",
     href: "/is-homeownership-hereditary/",
     date: "Feb 12, 2025",
     readTime: "",

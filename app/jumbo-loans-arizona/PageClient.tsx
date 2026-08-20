@@ -28,7 +28,7 @@ const whyConsider = [
 const whyChooseCards = [
   {
     title: "Access to Luxury Real Estate",
-    text: "Jumbo Loans allow you to purchase properties that exceed the conventional loan limit of $765,500, opening doors to Arizona's most desirable neighborhoods and luxury homes",
+    text: "Jumbo Loans allow you to purchase properties that exceed the conventional loan limit of $832,750, opening doors to Arizona's most desirable neighborhoods and luxury homes",
   },
   {
     title: "Competitive Interest Rates",
@@ -55,7 +55,7 @@ const whyChooseCards = [
 const understandingCards = [
   {
     title: "Definition and Threshold",
-    text: "A Jumbo Loan is any mortgage that exceeds the conventional loan limit of $765,500 set by Fannie Mae and Freddie Mac. This threshold distinguishes Jumbo Loans from conforming loans and affects their terms and requirements.",
+    text: "A Jumbo Loan is any mortgage that exceeds the conventional loan limit of $832,750 set by Fannie Mae and Freddie Mac. This threshold distinguishes Jumbo Loans from conforming loans and affects their terms and requirements.",
   },
   {
     title: "Higher Risk, Different Terms",
@@ -94,7 +94,7 @@ const eligibilityCards = [
   },
   {
     title: "Cash Reserves",
-    text: "Lenders often require borrowers to have 9–12 months of cash reserves to cover mortgage payments. This ensures you have financial stability beyond the initial transaction.",
+    text: "Lenders often require borrowers to have 9â€“12 months of cash reserves to cover mortgage payments. This ensures you have financial stability beyond the initial transaction.",
   },
   {
     title: "Income Verification",
@@ -213,7 +213,7 @@ const whyMb = [
 const faqs = [
   {
     q: "What is a Jumbo Loan?",
-    a: "A Jumbo Loan is a type of mortgage that exceeds the conventional loan limit set by Fannie Mae and Freddie Mac, which is currently $765,500. Because these loans are not eligible for purchase by these government-sponsored enterprises, they come with different requirements and higher risks for lenders.",
+    a: "A Jumbo Loan is a type of mortgage that exceeds the conventional loan limit set by Fannie Mae and Freddie Mac, which is currently $832,750. Because these loans are not eligible for purchase by these government-sponsored enterprises, they come with different requirements and higher risks for lenders.",
   },
   {
     q: "How do I qualify for a Jumbo Loan?",
@@ -314,7 +314,7 @@ export default function JumboLoansPage() {
                   Jumbo Loans offer a unique opportunity for homebuyers looking to purchase high-value properties in Arizona.
                 </p>
                 <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
-                  These loans exceed the conventional loan limit of $765,500, opening doors to luxurious homes and prime real estate that might otherwise be out of reach.
+                  These loans exceed the conventional loan limit of $832,750, opening doors to luxurious homes and prime real estate that might otherwise be out of reach.
                 </p>
               </div>
               <div className="space-y-6">
@@ -574,7 +574,7 @@ export default function JumboLoansPage() {
                 What Our Clients Say About Jumbo Loans
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                At AZ Mortgage Brothers, we take pride in helping our clients achieve their dreams of owning high-value properties through Jumbo Loans. But don&apos;t just take our word for it - hear from some of the satisfied homeowners we&apos;ve had the pleasure of assisting. These testimonials reflect our commitment to providing expert guidance, personalized service, and successful outcomes in the complex world of Jumbo Loans.
+                At Mortgage Brothers LLC, we take pride in helping our clients achieve their dreams of owning high-value properties through Jumbo Loans. But don&apos;t just take our word for it - hear from some of the satisfied homeowners we&apos;ve had the pleasure of assisting. These testimonials reflect our commitment to providing expert guidance, personalized service, and successful outcomes in the complex world of Jumbo Loans.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -619,10 +619,10 @@ export default function JumboLoansPage() {
                 className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
-                AZ Mortgage Brothers: Your Jumbo Loan Experts
+                Mortgage Brothers LLC: Your Jumbo Loan Experts
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                At AZ Mortgage Brothers, we specialize in Jumbo Loans, offering unparalleled service and expertise. Here&apos;s what sets us apart:
+                At Mortgage Brothers LLC, we specialize in Jumbo Loans, offering unparalleled service and expertise. Here&apos;s what sets us apart:
               </p>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -639,7 +639,7 @@ export default function JumboLoansPage() {
             <div className="loan-btn-wrap">
               <div className="bg-[#3fb364] rounded-2xl p-8 lg:p-10 text-center max-w-3xl mx-auto">
                 <p className="text-white text-[15.5px] leading-relaxed mb-4">
-                  Experience the AZ Mortgage Brothers difference in your home buying journey. Let our expertise guide you to the perfect loan and your dream home in Arizona.
+                  Experience the Mortgage Brothers LLC difference in your home buying journey. Let our expertise guide you to the perfect loan and your dream home in Arizona.
                 </p>
                 <a href="tel:+16025352171" className="text-white text-[28px] lg:text-[32px] font-bold block mb-6 hover:opacity-90 transition-opacity">
                   (602) 535-2171
@@ -695,7 +695,7 @@ export default function JumboLoansPage() {
               })}
             </div>
             <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center">
-              If you have more questions or need personalized assistance with your Jumbo Loan application, feel free to reach out to our team at AZ Mortgage Brothers!
+              If you have more questions or need personalized assistance with your Jumbo Loan application, feel free to reach out to our team at Mortgage Brothers LLC!
             </p>
             <div className="loan-btn-wrap">
               <Link
@@ -727,7 +727,7 @@ export default function JumboLoansPage() {
               </span>
             </div>
             <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-8 max-w-3xl mx-auto">
-              Ready to take the next step in securing your dream home with a Jumbo Loan? Our team of experienced mortgage professionals at AZ Mortgage Brothers is here to guide you through every aspect of the Jumbo Loan process. Whether you have questions about eligibility, documentation requirements, or current market conditions, we&apos;re committed to providing you with personalized assistance and expert advice. Don&apos;t navigate the complexities of Jumbo Loans alone. Reach out to us today for a free consultation and let us help you turn your high-value property dreams into reality.
+              Ready to take the next step in securing your dream home with a Jumbo Loan? Our team of experienced mortgage professionals at Mortgage Brothers LLC is here to guide you through every aspect of the Jumbo Loan process. Whether you have questions about eligibility, documentation requirements, or current market conditions, we&apos;re committed to providing you with personalized assistance and expert advice. Don&apos;t navigate the complexities of Jumbo Loans alone. Reach out to us today for a free consultation and let us help you turn your high-value property dreams into reality.
             </p>
             <Link
               href="/#get-pre-approved"

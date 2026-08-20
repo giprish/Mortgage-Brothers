@@ -25,7 +25,7 @@ const meaningCards = [
   },
   {
     title: "Larger Down Payment Requirements",
-    text: "Some lenders may require a higher down payment (10â€“20%) to compensate for the lower credit score.",
+    text: "Some lenders may require a higher down payment (10Ã¢â‚¬â€œ20%) to compensate for the lower credit score.",
   },
   {
     title: "Stricter Debt-to-Income (DTI) Ratios",
@@ -37,7 +37,7 @@ const meaningCards = [
   },
   {
     title: "Improving Your Credit Can Expand Your Options",
-    text: "Even small improvementsâ€”like paying off debts, making on-time payments, or reducing credit utilizationâ€”can help you qualify for better rates and loan programs.",
+    text: "Even small improvementsÃ¢â‚¬â€like paying off debts, making on-time payments, or reducing credit utilizationÃ¢â‚¬â€can help you qualify for better rates and loan programs.",
   },
 ];
 
@@ -70,18 +70,18 @@ const benefitCards = [
 
 const programs = [
   {
-    title: "FHA Loans â€“ Low Credit, Low Down Payment",
+    title: "FHA Loans Ã¢â‚¬â€œ Low Credit, Low Down Payment",
     text: "Backed by the Federal Housing Administration, FHA loans allow credit scores as low as 580 with only 3.5% down.",
     href: "/fha-home-loans-arizona/",
   },
   {
-    title: "VA Loans â€“ No Down Payment for Eligible Veterans",
+    title: "VA Loans Ã¢â‚¬â€œ No Down Payment for Eligible Veterans",
     text: "For eligible military service members and veterans, VA loans offer no down payment, no PMI, and competitive interest rates, even with a lower credit score.",
     href: "/va-loans-arizona/",
   },
   {
-    title: "USDA Loans â€“ Affordable Homeownership in Rural Areas",
-    text: "Designed for low-to-moderate-income buyers in rural areas, USDA loans require no down payment and accept credit scores as low as 580.",
+    title: "USDA Loans Ã¢â‚¬â€œ Affordable Homeownership in Rural Areas",
+    text: "Designed for low-to-moderate-income buyers in rural areas, USDA loans require no down payment and most lenders look for a credit score of at least 640 for automated approval, though scores as low as 620 may still qualify with manual underwriting and strong compensating factors.",
     href: "/fha-home-loans-arizona/",
   },
   {
@@ -95,7 +95,7 @@ const programs = [
     href: "/first-time-home-buyer-arizona-guide/",
   },
   {
-    title: "Co-Signer Mortgages â€“ A Boost for Your Application",
+    title: "Co-Signer Mortgages Ã¢â‚¬â€œ A Boost for Your Application",
     text: "Adding a creditworthy co-signer to your mortgage application can increase approval chances and help secure better loan terms.",
     href: "/#get-pre-approved",
   },
@@ -153,11 +153,11 @@ const faqs = [
   },
   {
     q: "What's the minimum credit score required for a mortgage?",
-    a: "FHA loans: as low as 580 (with 3.5% down). VA & USDA loans: no set minimum, but most lenders prefer at least 580â€“620. Conventional loans: typically 620 or higher.",
+    a: "FHA loans: as low as 580 (with 3.5% down). VA & USDA loans: no set minimum, but most lenders prefer at least 580Ã¢â‚¬â€œ620. Conventional loans: typically 620 or higher.",
   },
   {
     q: "Will I need a larger down payment with poor credit?",
-    a: "It depends on the loan type. FHA loans require as little as 3.5% down, but some conventional lenders may ask for 10â€“20% down if your credit score is low.",
+    a: "It depends on the loan type. FHA loans require as little as 3.5% down, but some conventional lenders may ask for 10Ã¢â‚¬â€œ20% down if your credit score is low.",
   },
   {
     q: "How can I improve my chances of getting approved?",
@@ -191,9 +191,9 @@ const loanSolutions = [
 ];
 
 const stats = [
-  { value: "$261,706", label: "Average Mortgage Balance in Arizona" },
+  { value: "$283,115", label: "Average Mortgage Balance in Arizona" },
   { value: "3%", label: "Minimum Down Payment for Conventional Loans" },
-  { value: "684", label: "Average Credit Score in Arizona" },
+  { value: "666", label: "Average Credit Score in Arizona" },
   { value: "80.6%", label: "Super-Prime Mortgage Borrowers" },
 ];
 
@@ -386,7 +386,7 @@ export default function MortgageForPoorCreditPage() {
               <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
                 At first glance, having poor credit may seem like a major obstacle when applying for a
                 mortgage. While it can impact the loan terms you qualify for, there are still advantages
-                to securing a home loanâ€”even with a lower credit score.
+                to securing a home loanÃ¢â‚¬â€even with a lower credit score.
               </p>
             </div>
 
@@ -469,8 +469,8 @@ export default function MortgageForPoorCreditPage() {
                 Real Clients. Real Success. Homeownership Is Possible.
               </h2>
               <p className="text-[#4e5b4e] text-[15px] leading-relaxed">
-                At AZ Mortgage Brothers, we understand that buying a home with poor credit can feel
-                overwhelmingâ€”but we&apos;ve helped many borrowers just like you secure the right
+                At Mortgage Brothers LLC, we understand that buying a home with poor credit can feel
+                overwhelmingÃ¢â‚¬â€but we&apos;ve helped many borrowers just like you secure the right
                 mortgage.
               </p>
             </div>

@@ -35,7 +35,7 @@ export default function CochiseCountyPage() {
             </div>
             <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-4">SOUTHERN ARIZONA - COCHISE</p>
             <h1 className="text-white text-hero-title font-playfair font-normal leading-[1.1] mb-6 max-w-3xl">Your trusted Cochise County mortgage broker.</h1>
-            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">From Sierra Vista to Bisbee — 7 communities, one team that knows every one of them.</p>
+            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">From Sierra Vista to Bisbee â€” 7 communities, one team that knows every one of them.</p>
             <HeroCtaButtons className="mb-4" />
           </div>
         </section>
@@ -82,7 +82,7 @@ export default function CochiseCountyPage() {
               items={[
                 {
                   q: "What mortgage loan options are available in Cochise County, AZ?",
-                  a: "AZ Mortgage Brothers provides a full suite of home loan solutions throughout Cochise County, including Conventional, FHA, VA, and Jumbo loans. We also offer private money lending, refinancing, and reverse mortgages for primary residences and investment properties."
+                  a: "Mortgage Brothers LLC provides a full suite of home loan solutions throughout Cochise County, including Conventional, FHA, VA, and Jumbo loans. We also offer private money lending, refinancing, and reverse mortgages for primary residences and investment properties."
                 },
                 {
                   q: "Do you offer VA loans for military personnel moving to Sierra Vista?",
@@ -101,7 +101,7 @@ export default function CochiseCountyPage() {
                   a: "Our fast, streamlined digital pre-approval process takes as little as 3 minutes to begin and does not impact your credit score. Once your financial documents are submitted, you can typically expect a formal pre-approval letter in a matter of hours."
                 },
                 {
-                  q: "Which cities in Cochise County does AZ Mortgage Brothers serve?",
+                  q: "Which cities in Cochise County does Mortgage Brothers LLC serve?",
                   a: "We serve all major cities and rural communities across Cochise County, including Sierra Vista, Bisbee, Tombstone, and Douglas. We help buyers finance everything from historic mining town properties to new residential developments."
                 }
               ]}

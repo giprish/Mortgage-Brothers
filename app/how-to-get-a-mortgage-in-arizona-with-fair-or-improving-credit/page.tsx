@@ -82,15 +82,15 @@ const faqSchema = {
       name: "What's the minimum credit score to buy a home in Arizona?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Most loan programs require 620 or higher. This threshold opens the door to FHA, VA, and conventional loan options.",
+        text: "Most conventional loan programs require 620 or higher, while FHA loans can qualify with credit scores as low as 580.",
       },
     },
     {
       "@type": "Question",
-      name: "Can I qualify if my credit is below 620?",
+      name: "Can I qualify if my credit is below 620 or even below 580?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Not at this time. We recommend improving your score first — our team can review your credit and create a quick action plan to reach 620+.",
+        text: "Conventional programs often require 620+, but FHA loans may qualify borrowers with scores as low as 580. If you are below 580, we recommend improving your score first — our team can help with a quick action plan.",
       },
     },
     {
@@ -98,7 +98,7 @@ const faqSchema = {
       name: "How long does credit improvement take?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Depending on your situation, meaningful progress can occur in 30–90 days by paying down debt, correcting errors, and managing utilization.",
+        text: "Depending on your situation, meaningful progress can occur in 30-90 days by paying down debt, correcting errors, and managing utilization.",
       },
     },
   ],
@@ -141,14 +141,14 @@ export default function FairOrImprovingCreditPage() {
             <article className="min-w-0">
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-5">
-                You&apos;ve been dreaming of owning a home in Arizona — maybe a starter home in Mesa, a family
+                You&apos;ve been dreaming of owning a home in Arizona â€” maybe a starter home in Mesa, a family
                 house in Gilbert, or a desert getaway in Tucson. But if your credit isn&apos;t perfect, you might
                 wonder whether you can still qualify for a mortgage.
               </p>
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-5">
                 Here&apos;s the truth: you don&apos;t need a spotless credit score to buy a home. In 2026, Arizona
-                lenders evaluate more than just your score — they look at your full financial picture: income
+                lenders evaluate more than just your score â€” they look at your full financial picture: income
                 stability, savings, employment history, and overall readiness for homeownership.
               </p>
 
@@ -170,7 +170,7 @@ export default function FairOrImprovingCreditPage() {
                   Get Your Mortgage Consultation
                 </h2>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
-                  Talk with Arizona Mortgage Brothers about credit readiness, loan options, and the steps to
+                  Talk with Mortgage Brothers LLC about credit readiness, loan options, and the steps to
                   pre-approval.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -213,8 +213,8 @@ export default function FairOrImprovingCreditPage() {
                     </li>
                   </ul>
                   <p className="mb-5">
-                    If your score is <strong>620 or higher</strong>, you&apos;re in a good position to qualify for
-                    an FHA or conventional mortgage — especially with strong income and a manageable
+                    If your score is <strong>620 or higher</strong>, you are in a strong position for conventional financing, and FHA options may be available down to 580 depending on your full profile and lender guidelines. You may qualify for
+                    an FHA or conventional mortgage â€” especially with strong income and a manageable
                     debt-to-income (DTI) ratio.
                   </p>
                   <p>
@@ -247,7 +247,7 @@ export default function FairOrImprovingCreditPage() {
                       approval odds.
                     </li>
                     <li>
-                      <strong>Savings &amp; reserves:</strong> Showing 2–6 months of mortgage payments saved
+                      <strong>Savings &amp; reserves:</strong> Showing 2â€“6 months of mortgage payments saved
                       builds lender confidence
                     </li>
                     <li>
@@ -257,7 +257,7 @@ export default function FairOrImprovingCreditPage() {
                   </ul>
                   <blockquote className="border-l-4 border-[#3fb364] bg-white/70 pl-5 pr-4 py-4 rounded-r-xl mb-6 italic text-[#052316]">
                     &ldquo;Your credit score is one part of your financial story. We help you strengthen every part
-                    that lenders evaluate — not just the number.&rdquo;
+                    that lenders evaluate â€” not just the number.&rdquo;
                   </blockquote>
                   <div className="text-center my-6">
                     <Link
@@ -282,11 +282,11 @@ export default function FairOrImprovingCreditPage() {
                   </h3>
                   <p className="mb-5">
                     Check your credit reports from all three bureaus via AnnualCreditReport.com. Dispute any
-                    errors, ensure all paid accounts are reported correctly, and monitor your utilization —
+                    errors, ensure all paid accounts are reported correctly, and monitor your utilization â€”
                     keeping it below 30%.
                   </p>
                   <p className="mb-8">
-                    Even small improvements can raise your score by 20–40 points, helping you move into the 620+
+                    Even small improvements can raise your score by 20â€“40 points, helping you move into the 620+
                     range needed for most loans.
                   </p>
 
@@ -305,12 +305,12 @@ export default function FairOrImprovingCreditPage() {
                     Step 3: Explore Loan Programs for Fair to Good Credit
                   </h3>
                   <p className="mb-5">
-                    Mortgage options for Arizona buyers with credit <strong>620+</strong> include:
+                    Mortgage options for Arizona buyers include:
                   </p>
 
                   <h4 className="text-[#052316] text-[17px] font-bold mb-2">FHA Loans</h4>
                   <ul className="list-disc pl-6 space-y-2 mb-5">
-                    <li>Minimum score: 620+ recommended</li>
+                    <li>Minimum score: 580+ with FHA backing (lender overlays may apply)</li>
                     <li>Low down payments (3.5%)</li>
                     <li>Flexible debt ratios</li>
                     <li>Ideal for first-time buyers improving their credit</li>
@@ -318,7 +318,7 @@ export default function FairOrImprovingCreditPage() {
 
                   <h4 className="text-[#052316] text-[17px] font-bold mb-2">Conventional Loans</h4>
                   <ul className="list-disc pl-6 space-y-2 mb-5">
-                    <li>Minimum score: 640–660+</li>
+                    <li>Minimum score: 640â€“660+</li>
                     <li>Better rates with stronger credit</li>
                     <li>Suitable for buyers with steady income and savings</li>
                   </ul>
@@ -347,17 +347,17 @@ export default function FairOrImprovingCreditPage() {
                   </p>
                   <ul className="list-disc pl-6 space-y-2 mb-5">
                     <li>
-                      <strong>Credit readiness planning</strong> – how to reach 620+ quickly
+                      <strong>Credit readiness planning</strong> â€“ how to reach 620+ quickly
                     </li>
                     <li>
-                      <strong>Loan comparison</strong> – FHA vs. conventional options
+                      <strong>Loan comparison</strong> â€“ FHA vs. conventional options
                     </li>
                     <li>
-                      <strong>Pre-approval strategy</strong> – knowing what you can afford before you shop
+                      <strong>Pre-approval strategy</strong> â€“ knowing what you can afford before you shop
                     </li>
                   </ul>
                   <p className="mb-8">
-                    Our team doesn&apos;t focus on subprime or low-credit borrowers — we focus on helping
+                    Our team doesn&apos;t focus on subprime or low-credit borrowers â€” we focus on helping
                     responsible buyers <strong>qualify confidently</strong> and{" "}
                     <strong>close efficiently</strong>.
                   </p>
@@ -366,7 +366,7 @@ export default function FairOrImprovingCreditPage() {
                     Step 5: Get Pre-Approved and Start Shopping
                   </h3>
                   <p className="mb-5">
-                    Once your credit and finances are in place, pre-approval shows sellers you&apos;re serious —
+                    Once your credit and finances are in place, pre-approval shows sellers you&apos;re serious â€”
                     and helps you move fast when you find the right home.
                   </p>
                   <p className="mb-3">You&apos;ll need:</p>
@@ -406,7 +406,7 @@ export default function FairOrImprovingCreditPage() {
                   </h2>
                   <p className="mb-6">
                     If your credit is <strong>620 or above</strong>, you&apos;re already on track to qualify. If
-                    it&apos;s close, our advisors can help you fine-tune your profile to get there faster — so you
+                    it&apos;s close, our advisors can help you fine-tune your profile to get there faster â€” so you
                     can buy with confidence and secure better loan terms.
                   </p>
                   <div className="text-center my-6">
@@ -428,7 +428,7 @@ export default function FairOrImprovingCreditPage() {
                   </h2>
                   <p className="mb-6">
                     If your credit is <strong>620 or above</strong>, you&apos;re already on track to qualify. If
-                    it&apos;s close, our advisors can help you fine-tune your profile to get there faster — so you
+                    it&apos;s close, our advisors can help you fine-tune your profile to get there faster â€” so you
                     can buy with confidence and secure better loan terms.
                   </p>
                   <div className="text-center my-6">
@@ -503,10 +503,10 @@ export default function FairOrImprovingCreditPage() {
                     items={[
                     { q: "What's the minimum credit score to buy a home in Arizona?", a: <>Most loan programs require <strong>620 or higher</strong>. This threshold opens the door
                         to FHA, VA, and conventional loan options.</> },
-                    { q: "Can I qualify if my credit is below 620?", a: <>Not at this time. We recommend improving your score first — our team can review your
+                    { q: "Can I qualify if my credit is below 620 or even below 580?", a: <>Not at this time. We recommend improving your score first â€” our team can review your
                         credit and create a quick action plan to reach 620+.</> },
                     { q: "How long does credit improvement take?", a: <>Depending on your situation, meaningful progress can occur in{" "}
-                        <strong>30–90 days</strong> by paying down debt, correcting errors, and managing
+                        <strong>30â€“90 days</strong> by paying down debt, correcting errors, and managing
                         utilization.</> }
                     ]}
                   />
@@ -525,13 +525,13 @@ export default function FairOrImprovingCreditPage() {
                   href="/who-qualifies-for-a-reverse-mortgage-understanding-eligibility-requirements/"
                   className="text-[#3fb364] font-semibold hover:underline"
                 >
-                  ← Previous Post
+                  â† Previous Post
                 </Link>
                 <Link
                   href="/top-7-reasons-arizona-investment-home-buyers-choose-private-money-lenders/"
                   className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
                 >
-                  Next Post →
+                  Next Post â†’
                 </Link>
               </div>
             </article>

@@ -177,7 +177,7 @@ export default function WhatIsAJumboLoanPage() {
                   Ready to Explore Jumbo Financing?
                 </h2>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
-                  Connect with Arizona Mortgage Brothers for personalized jumbo loan guidance and a free quote
+                  Connect with Mortgage Brothers LLC for personalized jumbo loan guidance and a free quote
                   tailored to your luxury home purchase.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">

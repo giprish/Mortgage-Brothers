@@ -10,7 +10,7 @@ import { COMPANY, LOAN_PROGRAM_LINKS } from "@/lib/company";
 const whyChooseCards = [
   {
     title: "Local Expertise",
-    desc: "Eddie and Tom Knoell grew up in Phoenix, built careers here, and are raising their families here. That kind of local knowledge isn't something you can replicate — it's the reason our clients trust us with one of the biggest financial decisions of their lives.",
+    desc: "Eddie and Tom Knoell grew up in Phoenix, built careers here, and are raising their families here. That kind of local knowledge isn't something you can replicate â€” it's the reason our clients trust us with one of the biggest financial decisions of their lives.",
   },
   {
     title: "Extensive Lender Network",
@@ -22,7 +22,7 @@ const whyChooseCards = [
   },
   {
     title: "Award-Winning Service",
-    desc: "Our clients say it best. We've earned hundreds of 5-star reviews on Google, Yelp, and Facebook — a reflection of our commitment to clear communication, fast closings, and personalized service on every loan.",
+    desc: "Our clients say it best. We've earned hundreds of 5-star reviews on Google, Yelp, and Facebook â€” a reflection of our commitment to clear communication, fast closings, and personalized service on every loan.",
   },
   {
     title: "Personalized Approach",
@@ -82,8 +82,8 @@ const aboutLoanLinks = LOAN_PROGRAM_LINKS.filter((link) =>
 
 const faqItems = [
   {
-    q: "Who are the AZ Mortgage Brothers?",
-    a: "We're Eddie and Tom Knoell, third-generation Phoenix natives with over 25 years of experience in the Arizona mortgage industry. We founded AZ Mortgage Brothers to provide personalized, expert mortgage solutions to our fellow Arizonans.",
+    q: "Who are the Mortgage Brothers LLC?",
+    a: "We're Eddie and Tom Knoell, third-generation Phoenix natives with over 25 years of experience in the Arizona mortgage industry. We founded Mortgage Brothers LLC to provide personalized, expert mortgage solutions to our fellow Arizonans.",
   },
   {
     q: "What types of loans do you offer?",
@@ -94,7 +94,7 @@ const faqItems = [
     a: "While every situation is unique, we generally aim to close loans within 30 days. Our efficient processes and digital tools help streamline the experience, keeping you informed every step of the way.",
   },
   {
-    q: "What sets AZ Mortgage Brothers apart from other brokers?",
+    q: "What sets Mortgage Brothers LLC apart from other brokers?",
     a: "Our deep local roots, veteran-led team, and commitment to transparency set us apart. We combine cutting-edge technology with personalized service to ensure you get the best rates and a smooth, stress-free experience.",
   },
   {
@@ -102,7 +102,7 @@ const faqItems = [
     a: "Absolutely! We specialize in guiding first-time buyers through the process, offering educational resources and patient support to help you make informed decisions.",
   },
   {
-    q: "How can I get started with AZ Mortgage Brothers?",
+    q: "How can I get started with Mortgage Brothers LLC?",
     a: "It's easy! You can call us directly at (602) 535-2171 or fill out our quick online form for a free consultation. We'll then match you with an expert loan officer to discuss your needs and options.",
   },
 ];
@@ -177,7 +177,7 @@ export default function AboutPage() {
                 </svg>
               </Link>
               <p className="text-[#b8d4b8] text-[12px] font-medium mt-3">
-                3 min · no credit impact
+                3 min Â· no credit impact
               </p>
             </div>
           </div>
@@ -188,10 +188,10 @@ export default function AboutPage() {
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-6">
               <h2 className="text-brand-green-deep text-section-title font-playfair font-normal mb-4">
-                Why Choose AZ Mortgage Brothers?
+                Why Choose Mortgage Brothers LLC?
               </h2>
               <p className="text-brand-text-muted text-[15px] lg:text-[16px] leading-[1.7] max-w-3xl mx-auto">
-                At AZ Mortgage Brothers, we&apos;re committed to making your home financing journey smooth and successful. Here&apos;s why we stand out in the Arizona mortgage landscape:
+                At Mortgage Brothers LLC, we&apos;re committed to making your home financing journey smooth and successful. Here&apos;s why we stand out in the Arizona mortgage landscape:
               </p>
             </div>
 
@@ -246,7 +246,7 @@ export default function AboutPage() {
                 Meet Your Mortgage Advocates
               </h2>
               <p className="text-brand-text-muted text-[15px] lg:text-[16px] leading-[1.7] max-w-3xl mx-auto">
-                At AZ Mortgage Brothers, our team is the heart of our success. Led by third-generation Phoenix natives Eddie and Tom Knoell, we bring over 25 years of experience in the Arizona mortgage industry. Our deep roots in the community and commitment to exceptional service set us apart as your trusted mortgage partners. Our dedicated professionals include:
+                At Mortgage Brothers LLC, our team is the heart of our success. Led by third-generation Phoenix natives Eddie and Tom Knoell, we bring over 25 years of experience in the Arizona mortgage industry. Our deep roots in the community and commitment to exceptional service set us apart as your trusted mortgage partners. Our dedicated professionals include:
               </p>
             </div>
 
@@ -272,7 +272,7 @@ export default function AboutPage() {
                         Eddie Knoell
                       </h3>
                       <span className="text-brand-gold text-[12px] font-semibold tracking-wide uppercase mt-0.5">
-                        Senior Loan Officer / Owner · NMLS #210917
+                        Senior Loan Officer / Owner Â· NMLS #210917
                       </span>
                     </div>
                   </div>
@@ -312,7 +312,7 @@ export default function AboutPage() {
                         Thomas Knoell, Jr.
                       </h3>
                       <span className="text-brand-gold text-[12px] font-semibold tracking-wide uppercase mt-0.5">
-                        Senior Loan Officer / Owner · NMLS #1618695
+                        Senior Loan Officer / Owner Â· NMLS #1618695
                       </span>
                     </div>
                   </div>
@@ -351,7 +351,7 @@ export default function AboutPage() {
                         Steve Perez
                       </h3>
                       <span className="text-brand-gold text-[12px] font-semibold tracking-wide uppercase mt-0.5">
-                        Loan Officer · NMLS #2074623
+                        Loan Officer Â· NMLS #2074623
                       </span>
                     </div>
                   </div>
@@ -379,12 +379,12 @@ export default function AboutPage() {
                         Ann Stoppa
                       </h3>
                       <span className="text-brand-gold text-[12px] font-semibold tracking-wide uppercase mt-0.5">
-                        Loan Officer · NMLS #1816024
+                        Loan Officer Â· NMLS #1816024
                       </span>
                     </div>
                   </div>
                   <p className="text-brand-text-muted text-[14px] leading-[1.65] mb-8">
-                    Ann Stoppa is a dedicated loan officer specializing in Reverse Mortgages. With a passion for customer service and a deep commitment to her clients, Ann goes above and beyond to ensure they receive exceptional care. Her expertise in working with senior borrowers and their families, combined with her drive to understand market trends, makes her an invaluable asset to the AZ Mortgage Brothers team.
+                    Ann Stoppa is a dedicated loan officer specializing in Reverse Mortgages. With a passion for customer service and a deep commitment to her clients, Ann goes above and beyond to ensure they receive exceptional care. Her expertise in working with senior borrowers and their families, combined with her drive to understand market trends, makes her an invaluable asset to the Mortgage Brothers LLC team.
                   </p>
                 </div>
               </div>
@@ -407,7 +407,7 @@ export default function AboutPage() {
                         Macy McLaren
                       </h3>
                       <span className="text-brand-gold text-[12px] font-semibold tracking-wide uppercase mt-0.5">
-                        Production Manager · Licensed LO · NMLS #2096310
+                        Production Manager Â· Licensed LO Â· NMLS #2096310
                       </span>
                     </div>
                   </div>
@@ -488,7 +488,7 @@ export default function AboutPage() {
                 Stay Informed with Our YouTube Podcasts
               </h2>
               <p className="text-brand-text-muted text-[15px] lg:text-[16px] leading-[1.7] max-w-3xl mx-auto mt-4">
-                At AZ Mortgage Brothers, we&apos;re committed to educating and empowering our clients beyond the mortgage process. That&apos;s why we&apos;ve launched our YouTube channel, where we regularly share valuable insights and expert advice through our engaging podcast series.
+                At Mortgage Brothers LLC, we&apos;re committed to educating and empowering our clients beyond the mortgage process. That&apos;s why we&apos;ve launched our YouTube channel, where we regularly share valuable insights and expert advice through our engaging podcast series.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto mb-8">
@@ -545,14 +545,14 @@ export default function AboutPage() {
                 What Our Clients Say
               </h2>
               <p className="text-brand-text-muted text-[15px] lg:text-[16px] leading-[1.7] max-w-3xl mx-auto mt-4">
-                At AZ Mortgage Brothers, our clients&rsquo; success stories are the true measure of our commitment. We&rsquo;re proud to have helped thousands of Arizona families achieve their homeownership dreams. Here&rsquo;s what some of our satisfied clients have to say about their experience working with us:
+                At Mortgage Brothers LLC, our clients&rsquo; success stories are the true measure of our commitment. We&rsquo;re proud to have helped thousands of Arizona families achieve their homeownership dreams. Here&rsquo;s what some of our satisfied clients have to say about their experience working with us:
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {testimonials.map((r) => (
                 <div key={r.author} className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm flex flex-col">
                   <p className="text-brand-text-muted text-[14px] leading-[1.65] flex-1 mb-4">&ldquo;{r.text}&rdquo;</p>
-                  <div className="text-[#3fb364] text-[14px] mb-2 tracking-wider">★★★★★</div>
+                  <div className="text-[#3fb364] text-[14px] mb-2 tracking-wider">â˜…â˜…â˜…â˜…â˜…</div>
                   <div>
                     <p className="text-brand-green-deep text-[14px] font-bold">{r.author}</p>
                     <p className="text-brand-text-muted text-[12px] mt-0.5">{r.loc}</p>
@@ -579,7 +579,7 @@ export default function AboutPage() {
                 Frequently Asked Questions
               </h2>
               <p className="text-brand-text-muted text-[15px] lg:text-[16px] leading-[1.7] max-w-3xl mx-auto mt-4">
-                We understand that choosing a mortgage broker is a big decision. To help you get to know us better, we&rsquo;ve compiled answers to some of the most common questions we receive about AZ Mortgage Brothers and our services.
+                We understand that choosing a mortgage broker is a big decision. To help you get to know us better, we&rsquo;ve compiled answers to some of the most common questions we receive about Mortgage Brothers LLC and our services.
               </p>
             </div>
             <div className="flex flex-col gap-3">
@@ -628,7 +628,7 @@ export default function AboutPage() {
         <section className="w-full about-section bg-brand-cream-light border-b border-[#e8e0d0]/40">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-brand-green-deep text-section-title font-playfair font-normal mb-6">
-              Get in Touch with AZ Mortgage Brothers
+              Get in Touch with Mortgage Brothers LLC
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left max-w-3xl mx-auto">
               <div className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm">
@@ -667,7 +667,7 @@ export default function AboutPage() {
                   href={link.href}
                   className="flex items-center gap-3 bg-brand-cream-light border border-[#e8e0d0]/70 rounded-xl px-5 py-4 text-brand-green-deep font-semibold text-[14.5px] hover:border-brand-green-accent/50 hover:text-brand-green-accent transition-all"
                 >
-                  <span className="text-brand-green-accent" aria-hidden>✓</span>
+                  <span className="text-brand-green-accent" aria-hidden>âœ“</span>
                   {link.label}
                 </Link>
               ))}
@@ -686,13 +686,13 @@ export default function AboutPage() {
               Speak with a Mortgage Expert
             </h2>
             <p className="text-[#c8c8b8] text-[15px] lg:text-[16px] leading-[1.7] max-w-xl mx-auto mb-8">
-              Ready to start your homeownership journey? Our expert team is here to guide you every step of the way. Don&apos;t let mortgage questions keep you up at night – get personalized answers and solutions tailored to your unique situation.
+              Ready to start your homeownership journey? Our expert team is here to guide you every step of the way. Don&apos;t let mortgage questions keep you up at night â€“ get personalized answers and solutions tailored to your unique situation.
             </p>
             <a
               href={COMPANY.phoneHref}
               className="btn-primary hover:shadow-brand-green-accent/20 group"
             >
-              {COMPANY.phoneDisplay} · Speak with a Mortgage Expert
+              {COMPANY.phoneDisplay} Â· Speak with a Mortgage Expert
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"

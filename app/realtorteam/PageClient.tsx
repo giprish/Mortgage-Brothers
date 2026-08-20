@@ -86,8 +86,8 @@ const STEPS = [
 
 const STATS = [
   { value: "25 Days", label: "Average Closing Time" },
-  { value: "22+ Yrs", label: "Industry Experience" },
-  { value: "4.9 ★", label: "Realtor Star Rating" },
+  { value: "25+ Yrs", label: "Industry Experience" },
+  { value: "4.9 â˜…", label: "Realtor Star Rating" },
   { value: "99%", label: "Communication Satisfaction" },
 ];
 
@@ -105,7 +105,7 @@ export default function RealtorTeamPage() {
       <main className="flex-grow">
         <LoanProgramHero
           title="We Want to be Your Mortgage Team"
-          subtitle="Our #1 Priority is giving Realtors® and their buyer clients exceptional service on “Purchase” transactions."
+          subtitle="Our #1 Priority is giving RealtorsÂ® and their buyer clients exceptional service on â€œPurchaseâ€ transactions."
           ctaLabel="Start My Pre-Approval"
           ctaHref="/#get-pre-approved"
           secondaryCtaLabel="Talk to a Broker"
@@ -142,13 +142,13 @@ export default function RealtorTeamPage() {
                 data-preapproval="true"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
               >
-                Start My Pre-Approval →
+                Start My Pre-Approval â†’
               </Link>
               <a
                 href="tel:+16025352171"
                 className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all"
               >
-                Talk to a Broker →
+                Talk to a Broker â†’
               </a>
             </div>
           </div>
@@ -169,7 +169,7 @@ export default function RealtorTeamPage() {
               href="/loan-programs/"
               className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
             >
-              VIEW LOAN PROGRAMS →
+              VIEW LOAN PROGRAMS â†’
             </Link>
           </div>
         </section>
@@ -180,13 +180,13 @@ export default function RealtorTeamPage() {
             <div className="max-w-3xl mx-auto text-center mb-8">
               <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-3">WHY PARTNER</p>
               <h2 className="text-[#052316] text-[30px] sm:text-[36px] lg:text-[40px] font-playfair font-normal leading-tight mb-5">
-                Why Partner With AZ Mortgage Brothers?
+                Why Partner With Mortgage Brothers LLC?
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75] mb-4">
                 We&apos;ve built our reputation on creating meaningful partnerships that drive success for everyone involved. Our approach combines industry expertise, personalized service, and innovative mortgage solutions that help your business thrive.
               </p>
               <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
-                When you partner with AZ Mortgage Brothers, you&apos;re not just gaining a mortgage resource – you&apos;re joining a team committed to your growth and your clients&apos; satisfaction.
+                When you partner with Mortgage Brothers LLC, you&apos;re not just gaining a mortgage resource â€“ you&apos;re joining a team committed to your growth and your clients&apos; satisfaction.
               </p>
             </div>
 
@@ -212,7 +212,7 @@ export default function RealtorTeamPage() {
                 href="#contact"
                 className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
               >
-                Join Our Partner Network →
+                Join Our Partner Network â†’
               </a>
             </div>
           </div>
@@ -248,7 +248,7 @@ export default function RealtorTeamPage() {
                 href="#contact"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
               >
-                Contact Our Partnership Team →
+                Contact Our Partnership Team â†’
               </a>
             </div>
           </div>
@@ -263,7 +263,7 @@ export default function RealtorTeamPage() {
                 Four Simple Steps to a Powerful Partnership
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
-                Becoming an AZ Mortgage Brothers partner is straightforward and designed to get you up and running quickly. Our streamlined onboarding process ensures you&apos;ll have all the resources you need to start referring clients and growing your business right away.
+                Becoming an Mortgage Brothers LLC partner is straightforward and designed to get you up and running quickly. Our streamlined onboarding process ensures you&apos;ll have all the resources you need to start referring clients and growing your business right away.
               </p>
             </div>
 
@@ -280,20 +280,20 @@ export default function RealtorTeamPage() {
             <div className="loan-btn-wrap">
               <div className="bg-[#052316] rounded-3xl p-6 sm:p-8 lg:p-10 text-center shadow-xl">
                 <p className="text-[#c8c8b8] text-[15.5px] lg:text-[16.5px] leading-[1.75] max-w-3xl mx-auto mb-8">
-                  Ready to elevate your business? Join hundreds of successful partners who have grown their business with AZ Mortgage Brothers. Our team is ready to answer your questions and help you get started.
+                  Ready to elevate your business? Join hundreds of successful partners who have grown their business with Mortgage Brothers LLC. Our team is ready to answer your questions and help you get started.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <a
                     href="#contact"
                     className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
                   >
-                    Schedule Your Partnership Consultation →
+                    Schedule Your Partnership Consultation â†’
                   </a>
                   <a
                     href="tel:+16025352171"
                     className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all border border-white/20"
                   >
-                    Talk to a Broker →
+                    Talk to a Broker â†’
                   </a>
                 </div>
               </div>
@@ -309,14 +309,14 @@ export default function RealtorTeamPage() {
               Let&apos;s Build Something Great Together
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75] mb-8">
-              Ready to explore how a partnership with AZ Mortgage Brothers can benefit your business? Reach out below, and one of our partnership specialists will get back to you within one business day.
+              Ready to explore how a partnership with Mortgage Brothers LLC can benefit your business? Reach out below, and one of our partnership specialists will get back to you within one business day.
             </p>
             <button
               type="button"
               data-contact="true"
               className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md cursor-pointer"
             >
-              Contact Us →
+              Contact Us â†’
             </button>
           </div>
         </section>

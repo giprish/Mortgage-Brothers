@@ -48,7 +48,7 @@ export default function EddieKnoellAuthorPage() {
               <div className="mx-auto lg:mx-0 w-full max-w-[280px]">
                 <Image
                   src="/home/Knoell-Eddie-Co-Founder.jpg"
-                  alt="Eddie Knoell, co-founder of AZ Mortgage Brothers, trusted mortgage professional"
+                  alt="Eddie Knoell, co-founder of Mortgage Brothers LLC, trusted mortgage professional"
                   width={500}
                   height={500}
                   loading="lazy"

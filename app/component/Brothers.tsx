@@ -6,15 +6,15 @@ const brothers = [
   {
     name: "Thomas Knoell",
     photo: "/home/thomas-knoell.jpg",
-    role: "Co-Founder · Loan Officer",
+    role: "Co-Founder Â· Loan Officer",
     nmls: "NMLS ID #1618695",
     license: "AZ Loan Originator License #LO-0942229",
-    bio: "Co-founder of AZ Mortgage Brothers and a leading expert in mortgage lending. Thomas's deep understanding of first-time buyer needs makes him a favorite among clients in Gilbert and Tucson.",
+    bio: "Co-founder of Mortgage Brothers LLC and a leading expert in mortgage lending. Thomas's deep understanding of first-time buyer needs makes him a favorite among clients in Gilbert and Tucson.",
   },
   {
     name: "Eddie Knoell",
     photo: "/home/eddie-knoell.jpg",
-    role: "Co-Founder · Managing Broker",
+    role: "Co-Founder Â· Managing Broker",
     nmls: "NMLS ID #210917",
     license: "AZ Loan Originator License #LO-0911422",
     bio: "Co-founder with decades of experience, Eddie has helped thousands of families navigate the mortgage process. His expertise simplifies the journey to homeownership for clients across Arizona.",
@@ -34,12 +34,12 @@ const Brothers = () => {
             className="font-playfair text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight mb-6"
             
           >
-            Meet The Mortgage Brothers — Experts You Can Trust
+            Meet The Mortgage Brothers â€” Experts You Can Trust
           </h2>
           <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
             As third-generation Arizona natives, the Knoell family has been deeply rooted in
             Phoenix real estate for over 70 years, earning an excellent reputation for quality and
-            trust. Both Eddie and Thomas are co-founders of AZ Mortgage Brothers and hold
+            trust. Both Eddie and Thomas are co-founders of Mortgage Brothers LLC and hold
             Nationwide Mortgage Licensing System (NMLS) IDs and Arizona Loan Originator Licenses,
             ensuring they meet all federal and state requirements for mortgage lending.
           </p>

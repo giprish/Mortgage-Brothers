@@ -56,7 +56,7 @@ export default function FirstTimeHomeBuyerPage() {
                   href="/#get-pre-approved"
                   className="bg-[#3fb364] hover:bg-[#359854] text-white text-[16px] font-bold px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
                 >
-                  GET PRE-APPROVED NOW →
+                  GET PRE-APPROVED NOW â†’
                 </Link>
                 <a
                   href="tel:+16025352171"
@@ -81,25 +81,25 @@ export default function FirstTimeHomeBuyerPage() {
                 </h3>
                 <ul className="space-y-3 text-[14.5px] text-[#c8c8b8]">
                   <li className="flex items-start gap-2.5">
-                    <span className="text-[#3fb364] font-bold text-[16px]">✓</span>
+                    <span className="text-[#3fb364] font-bold text-[16px]">âœ“</span>
                     <span>As little as 3% down payment required</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <span className="text-[#3fb364] font-bold text-[16px]">✓</span>
+                    <span className="text-[#3fb364] font-bold text-[16px]">âœ“</span>
                     <span>Arizona Down Payment Assistance grants available</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <span className="text-[#3fb364] font-bold text-[16px]">✓</span>
+                    <span className="text-[#3fb364] font-bold text-[16px]">âœ“</span>
                     <span>Gift funds allowed for 100% of down payment</span>
                   </li>
                   <li className="flex items-start gap-2.5">
-                    <span className="text-[#3fb364] font-bold text-[16px]">✓</span>
+                    <span className="text-[#3fb364] font-bold text-[16px]">âœ“</span>
                     <span>Flexible credit requirements &amp; personalized coaching</span>
                   </li>
                 </ul>
 
                 <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-between text-[13px] text-[#b8d4b8]">
-                  <span>AZ Mortgage Brothers</span>
+                  <span>Mortgage Brothers LLC</span>
                   <span className="font-semibold text-[#3fb364]">NMLS #1007154</span>
                 </div>
               </div>
@@ -111,15 +111,15 @@ export default function FirstTimeHomeBuyerPage() {
         <div className="loan-strip w-full bg-[#03170e] text-[#c8c8b8] border-y border-white/10">
           <div className="max-w-5xl mx-auto flex flex-col sm:flex-row sm:flex-wrap items-start sm:items-center justify-center sm:justify-around gap-3 sm:gap-6 text-[13px] sm:text-[14px] font-medium">
             <div className="flex items-start sm:items-center gap-2 w-full sm:w-auto">
-              <span className="text-[#3fb364] shrink-0">🎁</span>
+              <span className="text-[#3fb364] shrink-0">ðŸŽ</span>
               <span>Down Payment Assistance Available</span>
             </div>
             <div className="flex items-start sm:items-center gap-2 w-full sm:w-auto">
-              <span className="text-[#3fb364] shrink-0">⚡</span>
+              <span className="text-[#3fb364] shrink-0">âš¡</span>
               <span>Fast 24-Hour Pre-Approval</span>
             </div>
             <div className="flex items-start sm:items-center gap-2 w-full sm:w-auto">
-              <span className="text-[#3fb364] shrink-0">🏡</span>
+              <span className="text-[#3fb364] shrink-0">ðŸ¡</span>
               <span>3% Down Conventional &amp; 3.5% FHA</span>
             </div>
           </div>
@@ -136,7 +136,7 @@ export default function FirstTimeHomeBuyerPage() {
                 Navigating Your First Home Purchase in Arizona
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                Buying your first home can feel intimidating, but with the right team, it is one of the most rewarding financial milestones of your life. AZ Mortgage Brothers simplifies the process from pre-approval to closing day.
+                Buying your first home can feel intimidating, but with the right team, it is one of the most rewarding financial milestones of your life. Mortgage Brothers LLC simplifies the process from pre-approval to closing day.
               </p>
 
               <div className="loan-btn-wrap">
@@ -144,7 +144,7 @@ export default function FirstTimeHomeBuyerPage() {
                   href="/#get-pre-approved"
                   className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
                 >
-                  GET PRE-APPROVED NOW →
+                  GET PRE-APPROVED NOW â†’
                 </Link>
               </div>
             </div>
@@ -155,15 +155,15 @@ export default function FirstTimeHomeBuyerPage() {
               </h3>
               <div className="space-y-3.5 text-[14px] text-[#32353C]">
                 <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#3fb364]/15 text-[#3fb364] flex items-center justify-center font-bold text-[12px] mt-0.5">✓</div>
+                  <div className="w-5 h-5 rounded-full bg-[#3fb364]/15 text-[#3fb364] flex items-center justify-center font-bold text-[12px] mt-0.5">âœ“</div>
                   <span><strong>Get Pre-Approved:</strong> Know your exact budget before shopping</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#3fb364]/15 text-[#3fb364] flex items-center justify-center font-bold text-[12px] mt-0.5">✓</div>
+                  <div className="w-5 h-5 rounded-full bg-[#3fb364]/15 text-[#3fb364] flex items-center justify-center font-bold text-[12px] mt-0.5">âœ“</div>
                   <span><strong>Review Assistance Grants:</strong> See if you qualify for AZ Home Plus</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-[#3fb364]/15 text-[#3fb364] flex items-center justify-center font-bold text-[12px] mt-0.5">✓</div>
+                  <div className="w-5 h-5 rounded-full bg-[#3fb364]/15 text-[#3fb364] flex items-center justify-center font-bold text-[12px] mt-0.5">âœ“</div>
                   <span><strong>Calculate Total Payment:</strong> Principal, Interest, Taxes &amp; Insurance</span>
                 </div>
               </div>
@@ -206,7 +206,7 @@ export default function FirstTimeHomeBuyerPage() {
               Ready to Buy Your First Home in Arizona?
             </h2>
             <p className="text-[#c8c8b8] text-[16px] max-w-2xl mx-auto leading-relaxed">
-              Contact AZ Mortgage Brothers today for clear answers, personalized rate quotes, and local guidance.
+              Contact Mortgage Brothers LLC today for clear answers, personalized rate quotes, and local guidance.
             </p>
             <div className="pt-4 flex flex-wrap justify-center gap-4">
               <Link

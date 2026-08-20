@@ -146,7 +146,7 @@ const reviews = [
 const faqs = [
   {
     q: "What credit score is considered 'good' for a mortgage?",
-    a: "A credit score between 700 and 759 is typically considered good. While it's not \"excellent,\" this score range still qualifies you for competitive rates and favorable loan terms.",
+    a: "A credit score between 720 and 759 is typically considered good. While it's not \"excellent,\" this score range still qualifies you for competitive rates and favorable loan terms.",
   },
   {
     q: "Can I qualify for a mortgage with a lower down payment if I have good credit?",
@@ -184,9 +184,9 @@ const loanSolutions = [
 ];
 
 const stats = [
-  { value: "$261,706", label: "Average Mortgage Balance in Arizona" },
+  { value: "$283,115", label: "Average Mortgage Balance in Arizona" },
   { value: "3%", label: "Minimum Down Payment for Conventional Loans" },
-  { value: "684", label: "Average Credit Score in Arizona" },
+  { value: "666", label: "Average Credit Score in Arizona" },
   { value: "80.6%", label: "Super-Prime Mortgage Borrowers" },
 ];
 
@@ -465,7 +465,7 @@ export default function MortgageForGoodCreditPage() {
                 Hear from Our Satisfied Clients
               </h2>
               <p className="text-[#4e5b4e] text-[15px] leading-relaxed">
-                At AZ Mortgage Brothers, we believe that every client deserves a seamless, stress-free
+                At Mortgage Brothers LLC, we believe that every client deserves a seamless, stress-free
                 mortgage experience. Read what our clients have to say about working with us.
               </p>
             </div>
@@ -516,10 +516,10 @@ export default function MortgageForGoodCreditPage() {
                 className="text-white text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
-                Why Borrowers with Good Credit Trust AZ Mortgage Brothers
+                Why Borrowers with Good Credit Trust Mortgage Brothers LLC
               </h2>
               <p className="text-[#c8c8b8] text-[15.5px] leading-relaxed">
-                At AZ Mortgage Brothers, we know that borrowers with good credit deserve a mortgage
+                At Mortgage Brothers LLC, we know that borrowers with good credit deserve a mortgage
                 experience that matches their financial responsibility. Here&apos;s why we&apos;re the top
                 choice for mortgage borrowers with good credit in Arizona:
               </p>
@@ -614,7 +614,7 @@ export default function MortgageForGoodCreditPage() {
               className="text-[#08271B] text-[30px] lg:text-[38px] font-normal leading-tight mb-5"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              Connect with AZ Mortgage Brothers
+              Connect with Mortgage Brothers LLC
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
               Ready to take the next step in your homeownership journey? Whether you&apos;re exploring

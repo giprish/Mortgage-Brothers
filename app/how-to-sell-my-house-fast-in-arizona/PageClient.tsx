@@ -288,7 +288,7 @@ export default function HowToSellMyHouseFastInArizonaPage() {
               <table className="w-full text-left text-[14px]">
                 <thead className="bg-[#052316] text-white">
                   <tr>
-                    <th className="p-4 font-semibold text-red-300">Red Flag 🚩</th>
+                    <th className="p-4 font-semibold text-red-300">Red Flag ðŸš©</th>
                     <th className="p-4 font-semibold text-emerald-300">Green Flag ✅</th>
                   </tr>
                 </thead>
@@ -731,7 +731,7 @@ export default function HowToSellMyHouseFastInArizonaPage() {
 
           <section className="mb-14">
             <h2 className="text-[#052316] text-[26px] sm:text-[32px] font-bold mb-5 font-playfair border-b border-[#e8e0d0] pb-3">
-              14. Why Arizona Homeowners Trust AZ Mortgage Brothers
+              14. Why Arizona Homeowners Trust Mortgage Brothers LLC
             </h2>
             <ul className="list-disc pl-6 space-y-2 text-[15px] leading-[1.7] text-[#3a4a3a] mb-4">
               <li><strong>Third-generation Arizona roots.</strong> Led by Phoenix natives Eddie and Tom Knoell, whose family has been part of Valley real estate for over 70 years.</li>
@@ -773,7 +773,7 @@ export default function HowToSellMyHouseFastInArizonaPage() {
                 },
                 {
                   q: "Who pays cash for houses in Arizona?",
-                  a: "Local investors, \"We Buy Houses\" companies, iBuyers, occasionally individual buyers, and (less than before) institutional firms. AZ Mortgage Brothers does not buy houses — we help you compare offers."
+                  a: "Local investors, \"We Buy Houses\" companies, iBuyers, occasionally individual buyers, and (less than before) institutional firms. Mortgage Brothers LLC does not buy houses — we help you compare offers."
                 },
                 {
                   q: "Is selling a house for cash a good idea?",

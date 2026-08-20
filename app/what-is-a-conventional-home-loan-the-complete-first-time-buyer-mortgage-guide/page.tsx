@@ -405,7 +405,7 @@ export default function ConventionalHomeLoanGuidePage() {
                       income (<a href="https://www.consumerfinance.gov/owning-a-home/process/prepare/determine-your-budget/" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">CFPB Mortgage Affordability</a>).
                     </li>
                     <li>
-                      <strong>Get Pre-Approved</strong> – A pre-approval from AZ Mortgage Brothers helps you shop
+                      <strong>Get Pre-Approved</strong> – A pre-approval from Mortgage Brothers LLC helps you shop
                       with confidence.
                     </li>
                     <li>
@@ -420,10 +420,10 @@ export default function ConventionalHomeLoanGuidePage() {
                     className="text-[#052316] text-[22px] sm:text-[24px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Why Choose AZ Mortgage Brothers?
+                    Why Choose Mortgage Brothers LLC?
                   </h3>
                   <p className="mb-5">
-                    AZ Mortgage Brothers specialize in conventional loans,{" "}
+                    Mortgage Brothers LLC specialize in conventional loans,{" "}
                     <Link
                       href="/fha-home-loans-arizona/"
                       className="text-[#3fb364] font-semibold hover:underline"

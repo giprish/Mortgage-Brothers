@@ -160,7 +160,7 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
                   <span className="text-[#3fb364]">{city}</span>
                 </div>
                 <p className="text-[#c8c8b8] text-[15px] lg:text-[16px] leading-[1.75] mb-8 max-w-lg">
-                  AZ Mortgage Brothers provides trusted {city} mortgage solutions for homebuyers and homeowners throughout the area. Our experienced mortgage brokers in {city} AZ work with multiple lenders.
+                  Mortgage Brothers LLC provides trusted {city} mortgage solutions for homebuyers and homeowners throughout the area. Our experienced mortgage brokers in {city} AZ work with multiple lenders.
                 </p>
 
                 {/* CTA */}
@@ -275,7 +275,7 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
               {/* Left — Checklist */}
               <div>
                 <h2 className="text-[#052316] text-[26px] lg:text-[34px] font-playfair font-normal leading-tight mb-8">
-                  Why Choose AZ Mortgage Brothers
+                  Why Choose Mortgage Brothers LLC
                 </h2>
                 <div className="flex flex-col gap-4">
                   {[
@@ -321,7 +321,7 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
                     </div>
                     <div className="bg-white/[0.06] rounded-xl px-4 py-3">
                       <p className="text-[#c8c8b8] text-[12.5px] leading-[1.6] italic">&ldquo;We have financed hundreds of homes in {city} and love this community. We know the local appraisers, brokers, and can tailor your experience.&rdquo;</p>
-                      <p className="text-[#b8d4b8] text-[11px] mt-2 font-semibold">— AZ Mortgage Brothers Team</p>
+                      <p className="text-[#b8d4b8] text-[11px] mt-2 font-semibold">— Mortgage Brothers LLC Team</p>
                     </div>
                   </div>
                 </div>
@@ -407,7 +407,7 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
                 <div className="relative w-full h-[260px] md:h-[300px] rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-[#2b3531]">
                   <Image
                     src="/home/thomas-knoell.jpg"
-                    alt="Thomas Knoell, AZ Mortgage Brothers loan officer"
+                    alt="Thomas Knoell, Mortgage Brothers LLC loan officer"
                     fill
                     loading="lazy"
                     className="object-cover object-top"
@@ -459,7 +459,7 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
                   Trusted Mortgage Guidance in {city}
                 </h2>
                 <p className="text-[#4e5b4e] text-[14px] lg:text-[15px] leading-[1.8] mb-4">
-                  When you work with AZ Mortgage Brothers, you receive trusted advice and dependable support throughout your mortgage journey.
+                  When you work with Mortgage Brothers LLC, you receive trusted advice and dependable support throughout your mortgage journey.
                 </p>
                 <p className="text-[#4e5b4e] text-[14px] lg:text-[15px] leading-[1.8]">
                   Whether you&apos;re looking to buy your first home, refinancing, or exploring a reverse mortgage in {city}, our team guides you through the process with local advice and expert guidance.

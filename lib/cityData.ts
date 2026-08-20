@@ -206,7 +206,7 @@ function buildCityData(params: {
     countyName,
     countySlug,
     description: seoDescription || cityCustomDescriptions[cityName] || defaultDescription,
-    longDescription: `${cityName} is a vibrant and growing community located in ${countyName}, offering a diverse real estate market with various neighborhood choices. AZ Mortgage Brothers provides local expertise to help residents and newcomers navigate home financing with confidence, offering tailored mortgage solutions for every buyer.`,
+    longDescription: `${cityName} is a vibrant and growing community located in ${countyName}, offering a diverse real estate market with various neighborhood choices. Mortgage Brothers LLC provides local expertise to help residents and newcomers navigate home financing with confidence, offering tailored mortgage solutions for every buyer.`,
     medianPrice,
     daysOnMarket,
     communities,

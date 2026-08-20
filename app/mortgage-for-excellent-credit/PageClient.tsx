@@ -109,7 +109,7 @@ const expertCards = [
   },
   {
     title: "Personalized Loan Options",
-    text: "Every borrower is unique — our licensed mortgage brokers provide custom financing strategies that align with your goals.",
+    text: "Every borrower is unique â€” our licensed mortgage brokers provide custom financing strategies that align with your goals.",
   },
   {
     title: "Trusted by Arizona Homebuyers",
@@ -117,7 +117,7 @@ const expertCards = [
   },
   {
     title: "Transparent & Reliable Service",
-    text: "No hidden fees, no surprises — just expert guidance and clear communication from start to finish.",
+    text: "No hidden fees, no surprises â€” just expert guidance and clear communication from start to finish.",
   },
 ];
 
@@ -259,7 +259,7 @@ export default function MortgageForExcellentCreditPage() {
               <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
                 Your credit score is one of the most important factors lenders consider when determining
                 your mortgage eligibility and the interest rates you qualify for. Having an excellent
-                credit score (typically 720 and above) means you are viewed as a low-risk borrower,
+                credit score (typically 760 and above) means you are viewed as a low-risk borrower,
                 making you eligible for the best mortgage rates, higher loan amounts, and more flexible
                 repayment terms. This can lead to significant savings over the life of your mortgage
                 and give you a strong negotiating position when securing financing for your home.
@@ -376,7 +376,7 @@ export default function MortgageForExcellentCreditPage() {
                 How Excellent Credit Maximizes Your Home Loan Benefits
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
-                Your excellent credit score does more than just help you qualify for a mortgage — it
+                Your excellent credit score does more than just help you qualify for a mortgage â€” it
                 opens doors to exclusive advantages that can significantly impact your financial
                 future. Lenders offer better rates, more flexible terms, and faster approvals to
                 borrowers with high credit scores.
@@ -463,7 +463,7 @@ export default function MortgageForExcellentCreditPage() {
                 Real Clients. Real Success. Your Homeownership Journey Starts Here.
               </h2>
               <p className="text-[#4e5b4e] text-[15px] leading-relaxed">
-                At AZ Mortgage Brothers, we take pride in helping high-credit borrowers secure the
+                At Mortgage Brothers LLC, we take pride in helping high-credit borrowers secure the
                 best mortgage rates and smoothest loan experiences. Here&apos;s what they have to say.
               </p>
             </div>
@@ -584,7 +584,7 @@ export default function MortgageForExcellentCreditPage() {
               Let&apos;s Make Your Mortgage Process Simple &amp; Stress-Free
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              At AZ Mortgage Brothers, we&apos;re here to help you secure the best mortgage for your
+              At Mortgage Brothers LLC, we&apos;re here to help you secure the best mortgage for your
               financial goals. Whether you&apos;re buying a new home, refinancing, or just exploring
               your options, our experienced team is ready to guide you every step of the way.
             </p>

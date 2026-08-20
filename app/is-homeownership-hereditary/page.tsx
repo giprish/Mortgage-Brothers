@@ -160,7 +160,7 @@ export default function IsHomeownershipHereditaryPage() {
                   Ready to Build Your Legacy?
                 </h2>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
-                  Connect with Arizona Mortgage Brothers today to start your journey toward lasting
+                  Connect with Mortgage Brothers LLC today to start your journey toward lasting
                   homeownership and secure mortgage solutions.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -253,7 +253,7 @@ export default function IsHomeownershipHereditaryPage() {
                     passing on a greater likelihood that their children will build wealth for themselves.
                   </p>
                   <p>
-                    If you want create this kind of legacy for your children, contact AZ Mortgage Brothers today
+                    If you want create this kind of legacy for your children, contact Mortgage Brothers LLC today
                     and we&apos;ll help you get on your way!
                   </p>
                 </section>

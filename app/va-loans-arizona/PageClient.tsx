@@ -178,7 +178,7 @@ export default function VaLoansArizonaPage() {
   const costs = [
     {
       title: "VA Funding Fee",
-      desc: "A one-time charge ranging from 1.4% to 3.6% of the loan amount, which can be financed into the loan."
+      desc: "A one-time charge ranging from 0.5% to 3.3% of the loan amount, which can be financed into the loan."
     },
     {
       title: "Origination Fee",
@@ -314,15 +314,15 @@ export default function VaLoansArizonaPage() {
         <div className="w-full bg-[#03170e] text-[#c8c8b8] border-y border-white/10 py-4 px-6">
           <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-around gap-6 text-[14px] font-medium">
             <div className="flex items-center gap-2">
-              <span className="text-[#3fb364]">✓</span>
+              <span className="text-[#3fb364]">âœ“</span>
               <span>VA Loans Offer Zero Down Payment for Arizona Veterans</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-[#3fb364]">✓</span>
+              <span className="text-[#3fb364]">âœ“</span>
               <span>Lower Rates, No PMI, Flexible Requirements</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-[#3fb364]">✓</span>
+              <span className="text-[#3fb364]">âœ“</span>
               <span>Up to $2 million VA Loan with 0% down</span>
             </div>
           </div>
@@ -351,7 +351,7 @@ export default function VaLoansArizonaPage() {
                 href="/#get-pre-approved"
                 className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
               >
-                Get Your Free VA Loan Consultation →
+                Get Your Free VA Loan Consultation â†’
               </Link>
             </div>
 
@@ -462,7 +462,7 @@ export default function VaLoansArizonaPage() {
                     "Continued service in Selected Reserve"
                   ].map((li) => (
                     <li key={li} className="flex items-start gap-2">
-                      <span className="text-[#3fb364] font-bold">✓</span>
+                      <span className="text-[#3fb364] font-bold">âœ“</span>
                       <span>{li}</span>
                     </li>
                   ))}
@@ -482,7 +482,7 @@ export default function VaLoansArizonaPage() {
                     "Active cadet/midshipman at U.S. military academy"
                   ].map((li) => (
                     <li key={li} className="flex items-start gap-2">
-                      <span className="text-[#3fb364] font-bold">✓</span>
+                      <span className="text-[#3fb364] font-bold">âœ“</span>
                       <span>{li}</span>
                     </li>
                   ))}
@@ -498,7 +498,7 @@ export default function VaLoansArizonaPage() {
                 href="/#get-pre-approved"
                 className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-md inline-block"
               >
-                Schedule Your Free VA Loan Consultation! →
+                Schedule Your Free VA Loan Consultation! â†’
               </Link>
             </div>
           </div>
@@ -554,7 +554,7 @@ export default function VaLoansArizonaPage() {
                 href="/#get-pre-approved"
                 className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-md inline-block"
               >
-                Explore Your VA Loan Options Now! →
+                Explore Your VA Loan Options Now! â†’
               </Link>
             </div>
           </div>
@@ -597,7 +597,7 @@ export default function VaLoansArizonaPage() {
                   "No mortgage insurance premiums required"
                 ].map((li) => (
                   <li key={li} className="flex items-start gap-2">
-                    <span className="text-[#3fb364] font-bold">✓</span>
+                    <span className="text-[#3fb364] font-bold">âœ“</span>
                     <span>{li}</span>
                   </li>
                 ))}
@@ -646,7 +646,7 @@ export default function VaLoansArizonaPage() {
                   href="/va-loan-calculator/"
                   className="bg-[#052316] hover:bg-[#0a3a24] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all inline-block"
                 >
-                  Get Your Free VA Loan Cost Estimate →
+                  Get Your Free VA Loan Cost Estimate â†’
                 </Link>
               </div>
             </div>
@@ -688,7 +688,7 @@ export default function VaLoansArizonaPage() {
                 href="/#get-pre-approved"
                 className="inline-block bg-[#3fb364] hover:bg-[#359854] text-white font-bold px-8 py-4 rounded-full transition-all"
               >
-                Start Your VA Loan Journey Today! →
+                Start Your VA Loan Journey Today! â†’
               </Link>
             </div>
           </div>
@@ -712,7 +712,7 @@ export default function VaLoansArizonaPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
               {testimonials.map((t) => (
                 <div key={t.name} className="bg-[#fcf9f3] border border-[#e0e0e0] rounded-2xl p-6 shadow-sm space-y-4">
-                  <p className="text-[#3fb364] text-[14px]">★★★★★</p>
+                  <p className="text-[#3fb364] text-[14px]">â˜…â˜…â˜…â˜…â˜…</p>
                   <p className="text-[#4e5b4e] text-[14px] leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
                   <p className="text-[#052316] text-[13px] font-bold">{t.name}</p>
                 </div>
@@ -738,7 +738,7 @@ export default function VaLoansArizonaPage() {
                 WHY MORTGAGE BROTHERS
               </span>
               <h2 className="text-[#052316] text-[28px] lg:text-[36px] font-bold font-playfair leading-tight">
-                Why Choose AZ Mortgage Brothers for Your VA Loan?
+                Why Choose Mortgage Brothers LLC for Your VA Loan?
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
                 Choosing the right lender for your VA loan is crucial for a smooth homebuying experience. While many lenders offer VA loans, few truly specialize in them or understand the unique requirements of veteran borrowers.
@@ -786,7 +786,7 @@ export default function VaLoansArizonaPage() {
                   >
                     <span>{faq.q}</span>
                     <span className="text-[#3fb364] text-[20px] ml-4 font-bold">
-                      {openFaq === idx ? "−" : "+"}
+                      {openFaq === idx ? "âˆ’" : "+"}
                     </span>
                   </button>
                   {openFaq === idx && (
@@ -811,7 +811,7 @@ export default function VaLoansArizonaPage() {
               Need expert guidance with your VA loan?
             </h2>
             <p className="text-[#c8c8b8] text-[16px] max-w-2xl mx-auto leading-relaxed">
-              Our team is ready to help. Contact AZ Mortgage Brothers for personalized VA loan guidance.
+              Our team is ready to help. Contact Mortgage Brothers LLC for personalized VA loan guidance.
             </p>
             <p className="text-[#c8c8b8] text-[15px]">
               1599 East Orangewood Ave Suite 200, Phoenix, AZ 85020
@@ -821,7 +821,7 @@ export default function VaLoansArizonaPage() {
                 href="/#get-pre-approved"
                 className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-lg"
               >
-                GET PRE-APPROVED NOW →
+                GET PRE-APPROVED NOW â†’
               </Link>
               <a
                 href="tel:+16025352171"
@@ -851,7 +851,7 @@ export default function VaLoansArizonaPage() {
                   href={item.href}
                   className="flex items-center gap-3 bg-white border border-[#e0e0e0] rounded-xl px-5 py-4 text-[#052316] font-semibold text-[14.5px] hover:border-[#3fb364] hover:text-[#3fb364] transition-all"
                 >
-                  <span className="text-[#3fb364]">✓</span>
+                  <span className="text-[#3fb364]">âœ“</span>
                   {item.label}
                 </Link>
               ))}

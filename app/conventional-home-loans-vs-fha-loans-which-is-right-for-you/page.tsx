@@ -182,7 +182,7 @@ export default function ConventionalVsFhaLoansPage() {
                   Ready to Compare Conventional and FHA Loans?
                 </h2>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
-                  Connect with Arizona Mortgage Brothers for a personalized side-by-side comparison and a free
+                  Connect with Mortgage Brothers LLC for a personalized side-by-side comparison and a free
                   quote tailored to your home purchase.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -214,7 +214,7 @@ export default function ConventionalVsFhaLoansPage() {
                   </p>
                   <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
                     <p className="text-[16px] font-bold text-[#052316] mb-1">
-                      👉 &quot;Should I go with a Conventional Loan or an FHA Loan?&quot;
+                      ðŸ‘‰ &quot;Should I go with a Conventional Loan or an FHA Loan?&quot;
                     </p>
                     <p className="text-[14.5px] text-[#3a4a3a]">
                       This guide breaks it down clearly—so you&apos;ll know which option fits your situation best.
@@ -266,7 +266,7 @@ export default function ConventionalVsFhaLoansPage() {
                     </li>
                   </ul>
                   <p className="font-semibold text-[#052316]">
-                    👉 <strong>Best for:</strong> Buyers with strong credit and stable income who want flexibility
+                    ðŸ‘‰ <strong>Best for:</strong> Buyers with strong credit and stable income who want flexibility
                     and lower long-term costs.
                   </p>
                 </section>
@@ -313,7 +313,7 @@ export default function ConventionalVsFhaLoansPage() {
                     </li>
                   </ul>
                   <p className="font-semibold text-[#052316] mb-6">
-                    👉 <strong>Best for:</strong> First-time buyers or those with lower credit scores and smaller
+                    ðŸ‘‰ <strong>Best for:</strong> First-time buyers or those with lower credit scores and smaller
                     down payments.
                   </p>
 
@@ -361,7 +361,7 @@ export default function ConventionalVsFhaLoansPage() {
                         </tr>
                         <tr className="hover:bg-[#f9f7f2]">
                           <td className="p-4 font-bold text-[#052316]">Loan Limits (Maricopa, 2026)</td>
-                          <td className="p-4">$1,072,600</td>
+                          <td className="p-4">$832,750</td>
                           <td className="p-4">$557,750</td>
                         </tr>
                         <tr className="hover:bg-[#f9f7f2]">
@@ -451,7 +451,7 @@ export default function ConventionalVsFhaLoansPage() {
 
                   <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl mb-6">
                     <p className="text-[15px] text-[#052316]">
-                      👉 <strong>Key Takeaway:</strong> FHA is easier to qualify for upfront, but Conventional
+                      ðŸ‘‰ <strong>Key Takeaway:</strong> FHA is easier to qualify for upfront, but Conventional
                       often saves money long-term because PMI eventually goes away.
                     </p>
                   </div>
@@ -518,7 +518,7 @@ export default function ConventionalVsFhaLoansPage() {
                   <p className="mb-3">
                     At{" "}
                     <Link href="/about-us/" className="text-[#3fb364] font-semibold hover:underline">
-                      Arizona Mortgage Brothers
+                      Mortgage Brothers LLC
                     </Link>
                     , we:
                   </p>
@@ -580,7 +580,7 @@ export default function ConventionalVsFhaLoansPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Why Work with Arizona Mortgage Brothers?
+                    Why Work with Mortgage Brothers LLC?
                   </h2>
                   <ul className="list-disc pl-6 space-y-3">
                     <li>
@@ -616,11 +616,11 @@ export default function ConventionalVsFhaLoansPage() {
                   </ul>
                   <p className="mb-6">
                     No matter where you&apos;re buying — in Phoenix, Tucson, Scottsdale, or anywhere in Arizona
-                    — the Arizona Mortgage Brothers team can help you choose the loan that gets you into your
+                    — the Mortgage Brothers LLC team can help you choose the loan that gets you into your
                     home with confidence.
                   </p>
                   <p className="font-semibold text-[#052316] mb-6">
-                    👉 Ready to find out which loan is right for you? Contact us today for a free consultation.
+                    ðŸ‘‰ Ready to find out which loan is right for you? Contact us today for a free consultation.
                   </p>
                   <div className="text-center">
                     <Link

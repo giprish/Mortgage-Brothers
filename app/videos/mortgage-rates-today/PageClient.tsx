@@ -20,7 +20,7 @@ export default function MortgageRatesTodayVideosPage() {
       <Navbar />
 
       <main className="flex-grow">
-        {/* Hero — matches live mortgage rates archive */}
+        {/* Hero â€” matches live mortgage rates archive */}
         <section className="w-full bg-brand-green-deep text-white pt-[110px] lg:pt-[120px] pb-14 lg:pb-16 px-6 text-center relative overflow-hidden">
           <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden>
             <div className="absolute -bottom-36 -left-36 w-[min(360px,90vw)] h-[360px] rounded-full border border-white/5 opacity-40" />
@@ -43,7 +43,7 @@ export default function MortgageRatesTodayVideosPage() {
               Mortgage Rates Today
             </h1>
             <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto">
-              Find our latest updates and insights on Mortgage Rates Today right here.
+              Browse our mortgage rate update archive here.
             </p>
           </div>
         </section>
@@ -64,7 +64,7 @@ export default function MortgageRatesTodayVideosPage() {
                 href="/videos/"
                 className="text-[#3fb364] hover:text-[#2d9e4f] text-[14px] font-semibold inline-flex items-center gap-1 transition-colors"
               >
-                ← Back to all videos
+                â† Back to all videos
               </Link>
             </div>
 
@@ -85,7 +85,7 @@ export default function MortgageRatesTodayVideosPage() {
         <section className="w-full py-14 lg:py-16 px-6 lg:px-10 bg-white border-t border-[#e8e0d0]/50">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-[#1a251c] text-[28px] lg:text-[34px] font-bold leading-tight mb-4">
-              Want rates that fit your scenario — not a headline?
+              Want rates that fit your scenario â€” not a headline?
             </h2>
             <p className="text-[#556355] text-[15px] lg:text-[16px] leading-relaxed mb-8">
               Mortgage rates move with the market every day. Tell us your purchase or refinance goals

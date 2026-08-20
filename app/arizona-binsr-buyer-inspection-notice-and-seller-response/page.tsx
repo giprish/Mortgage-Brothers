@@ -266,7 +266,7 @@ export default function ArizonaBinsrPage() {
                 </div>
                 
                 <p className="text-[#5a6b52] text-[13px] leading-relaxed">
-                  Signature Home Loans LLC does not provide tax, legal, or accounting advice. This material
+                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material
                   has been prepared for informational purposes only. You should consult your own tax, legal,
                   and accounting advisors before engaging in any transaction. Signature Home Loans NMLS
                   1007154, NMLS #210917 and 1618695. Equal housing lender.

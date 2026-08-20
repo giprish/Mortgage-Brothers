@@ -181,7 +181,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
     },
     {
       title: "Commitment to Your Long-Term Financial Well-being",
-      desc: "Our goal isn't just to help you buy a home — it's to support your overall financial health in retirement. We'll help you understand how a Reverse Mortgage for Home Purchase fits into your broader financial picture and long-term goals."
+      desc: "Our goal isn't just to help you buy a home â€” it's to support your overall financial health in retirement. We'll help you understand how a Reverse Mortgage for Home Purchase fits into your broader financial picture and long-term goals."
     }
   ];
 
@@ -212,15 +212,15 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
         <div className="loan-strip w-full bg-[#03170e] text-[#c8c8b8] border-y border-white/10">
           <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-around gap-6 text-[14px] font-medium">
             <div className="flex items-center gap-2">
-              <span className="text-[#3fb364]">✓</span>
+              <span className="text-[#3fb364]">âœ“</span>
               <span>Buy Your Dream Home with No Monthly Payments</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-[#3fb364]">✓</span>
+              <span className="text-[#3fb364]">âœ“</span>
               <span>Keep More Cash While Buying Your New Home</span>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-[#3fb364]">✓</span>
+              <span className="text-[#3fb364]">âœ“</span>
               <span>Flexible Homeownership for Retirement Living</span>
             </div>
           </div>
@@ -250,7 +250,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
                   This program not only helps you secure a new home but also provides financial freedom in retirement. You can allocate funds towards healthcare, travel, or simply enjoying your golden years to the fullest, all while living in a home that meets your current needs and preferences.
                 </p>
                 <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                  With a Reverse Mortgage for Home Purchase, you&apos;re not just buying a house – you&apos;re investing in your quality of life and securing a comfortable future in a home that truly feels like yours.
+                  With a Reverse Mortgage for Home Purchase, you&apos;re not just buying a house â€“ you&apos;re investing in your quality of life and securing a comfortable future in a home that truly feels like yours.
                 </p>
               </div>
 
@@ -278,7 +278,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
               href="/#get-pre-approved"
               className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-md inline-block"
             >
-              Get Personalized Advice →
+              Get Personalized Advice â†’
             </Link>
           </div>
           <StatsBanner
@@ -329,7 +329,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
                     {["Property taxes", "Homeowners insurance", "HOA fees (if applicable)", "Home maintenance"].map(
                       (li) => (
                         <li key={li} className="flex items-start gap-2">
-                          <span className="text-[#3fb364] font-bold">✓</span>
+                          <span className="text-[#3fb364] font-bold">âœ“</span>
                           <span>{li}</span>
                         </li>
                       )
@@ -352,7 +352,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
                       "Manufactured homes (built after 1976 and HUD compliant)"
                     ].map((li) => (
                       <li key={li} className="flex items-start gap-2">
-                        <span className="text-[#3fb364] font-bold">✓</span>
+                        <span className="text-[#3fb364] font-bold">âœ“</span>
                         <span>{li}</span>
                       </li>
                     ))}
@@ -366,7 +366,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
                 href="/#get-pre-approved"
                 className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-md inline-block"
               >
-                Contact Our Reverse Mortgage Specialists →
+                Contact Our Reverse Mortgage Specialists â†’
               </Link>
             </div>
           </div>
@@ -422,7 +422,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
                 href="/#get-pre-approved"
                 className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-md inline-block"
               >
-                Schedule Your No-Obligation Consultation →
+                Schedule Your No-Obligation Consultation â†’
               </Link>
             </div>
           </div>
@@ -446,7 +446,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
               {testimonials.map((t) => (
                 <div key={t.name} className="bg-[#fcf9f3] border border-[#e0e0e0] rounded-2xl p-6 shadow-sm space-y-4">
-                  <p className="text-[#3fb364] text-[14px]">★★★★★</p>
+                  <p className="text-[#3fb364] text-[14px]">â˜…â˜…â˜…â˜…â˜…</p>
                   <p className="text-[#4e5b4e] text-[14px] leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
                   <p className="text-[#052316] text-[13px] font-bold">{t.name}</p>
                 </div>
@@ -485,7 +485,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
                 <ul className="space-y-3">
                   {pros.map((p) => (
                     <li key={p} className="flex items-start gap-2.5 text-[14px] text-[#4e5b4e]">
-                      <span className="text-[#3fb364] font-bold">✓</span>
+                      <span className="text-[#3fb364] font-bold">âœ“</span>
                       <span>{p}</span>
                     </li>
                   ))}
@@ -506,7 +506,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
                 <ul className="space-y-3">
                   {cons.map((c) => (
                     <li key={c} className="flex items-start gap-2.5 text-[14px] text-[#4e5b4e]">
-                      <span className="text-[#052316] font-bold">–</span>
+                      <span className="text-[#052316] font-bold">â€“</span>
                       <span>{c}</span>
                     </li>
                   ))}
@@ -552,15 +552,15 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
               </p>
               <ul className="space-y-2 text-[14.5px] text-[#4e5b4e]">
                 <li className="flex items-start gap-2">
-                  <span className="text-[#3fb364]">✓</span>
+                  <span className="text-[#3fb364]">âœ“</span>
                   <span>Your long-term financial goals</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[#3fb364]">✓</span>
+                  <span className="text-[#3fb364]">âœ“</span>
                   <span>Your health and potential future care needs</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-[#3fb364]">✓</span>
+                  <span className="text-[#3fb364]">âœ“</span>
                   <span>Your desire to leave an inheritance</span>
                 </li>
               </ul>
@@ -610,7 +610,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
                   >
                     <span>{faq.q}</span>
                     <span className="text-[#3fb364] text-[20px] ml-4 font-bold">
-                      {openFaq === idx ? "−" : "+"}
+                      {openFaq === idx ? "âˆ’" : "+"}
                     </span>
                   </button>
                   {openFaq === idx && (
@@ -638,7 +638,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
                 Are you ready to explore how a Reverse Mortgage for Home Purchase can open doors to your ideal retirement home? Whether you&apos;re looking to downsize, move closer to family, or find a home that better suits your current lifestyle, our team of specialists is here to guide you every step of the way.
               </p>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                At AZ Mortgage Brothers, we understand that this is more than just a financial decision – it&apos;s about finding the perfect place to enjoy your retirement years. Our experienced professionals are dedicated to helping you navigate the unique opportunities and considerations of using a Reverse Mortgage for Home Purchase in Arizona.
+                At Mortgage Brothers LLC, we understand that this is more than just a financial decision â€“ it&apos;s about finding the perfect place to enjoy your retirement years. Our experienced professionals are dedicated to helping you navigate the unique opportunities and considerations of using a Reverse Mortgage for Home Purchase in Arizona.
               </p>
             </div>
 
@@ -660,7 +660,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
               Schedule Your Free, No-Obligation Consultation
             </h2>
             <p className="text-[#c8c8b8] text-[16px] max-w-2xl mx-auto leading-relaxed">
-              Let&apos;s work together to turn your retirement home dreams into reality. With AZ Mortgage Brothers, you&apos;re not just getting a mortgage – you&apos;re gaining a trusted partner in your retirement journey.
+              Let&apos;s work together to turn your retirement home dreams into reality. With Mortgage Brothers LLC, you&apos;re not just getting a mortgage â€“ you&apos;re gaining a trusted partner in your retirement journey.
             </p>
             <p className="text-[#c8c8b8] text-[15px]">
               1599 East Orangewood Ave Suite 200, Phoenix, AZ 85020
@@ -670,7 +670,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
                 href="/#get-pre-approved"
                 className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-lg"
               >
-                GET PRE-APPROVED NOW →
+                GET PRE-APPROVED NOW â†’
               </Link>
               <a
                 href="tel:+16025352171"
@@ -700,7 +700,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
                   href={item.href}
                   className="flex items-center gap-3 bg-white border border-[#e0e0e0] rounded-xl px-5 py-4 text-[#052316] font-semibold text-[14.5px] hover:border-[#3fb364] hover:text-[#3fb364] transition-all"
                 >
-                  <span className="text-[#3fb364]">✓</span>
+                  <span className="text-[#3fb364]">âœ“</span>
                   {item.label}
                 </Link>
               ))}

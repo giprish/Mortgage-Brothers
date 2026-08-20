@@ -124,7 +124,7 @@ export default function ConventionalHomeLoansPage() {
 
   const testimonials = [
     {
-      text: "You closed our house loan in 17 days!!! When we asked Chase how long escrow would take, we were told one to two months. We will never go to a large bank for a home loan again — you are our loan guy, period!",
+      text: "You closed our house loan in 17 days!!! When we asked Chase how long escrow would take, we were told one to two months. We will never go to a large bank for a home loan again â€” you are our loan guy, period!",
       author: "James Robbins",
       location: "Phoenix, Arizona",
     },
@@ -191,7 +191,7 @@ export default function ConventionalHomeLoansPage() {
           <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-around gap-6 text-[14px] font-medium">
             {highlights.map((item) => (
               <div key={item} className="flex items-center gap-2">
-                <span className="text-[#3fb364]">✓</span>
+                <span className="text-[#3fb364]">âœ“</span>
                 <span>{item}</span>
               </div>
             ))}
@@ -212,7 +212,7 @@ export default function ConventionalHomeLoansPage() {
                 Discover the advantages that make conventional home loans an excellent choice for Arizona homebuyers. These loans offer a powerful combination of flexibility, competitive rates, and accessibility that can help you achieve your homeownership dreams.
               </p>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                With features like low down payments, high loan limits, and favorable terms for various property types, conventional home loans stand out as a versatile financing solution. They&apos;re designed to serve primary residences, vacation homes, and investment properties — and offer unique benefits such as the ability to finance manufactured homes and condos with ease.
+                With features like low down payments, high loan limits, and favorable terms for various property types, conventional home loans stand out as a versatile financing solution. They&apos;re designed to serve primary residences, vacation homes, and investment properties â€” and offer unique benefits such as the ability to finance manufactured homes and condos with ease.
               </p>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
                 One of the most compelling aspects of conventional home loans is that they represent some of the cheapest money you can borrow. Thanks to the backing of Fannie Mae and Freddie Mac, these loans offer interest rates that often outcompete other financing options.
@@ -221,7 +221,7 @@ export default function ConventionalHomeLoansPage() {
                 href="/#get-pre-approved"
                 className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
               >
-                GET PRE-APPROVED →
+                GET PRE-APPROVED â†’
               </Link>
             </div>
 
@@ -277,7 +277,7 @@ export default function ConventionalHomeLoansPage() {
             </div>
 
             <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center max-w-3xl mx-auto">
-              Remember, meeting these criteria doesn&apos;t guarantee approval, but it puts you in a strong position. Our team at AZ Mortgage Brothers can help you assess your eligibility and find the best conventional loan option for your unique situation.
+              Remember, meeting these criteria doesn&apos;t guarantee approval, but it puts you in a strong position. Our team at Mortgage Brothers LLC can help you assess your eligibility and find the best conventional loan option for your unique situation.
             </p>
 
             <div className="loan-btn-wrap">
@@ -285,7 +285,7 @@ export default function ConventionalHomeLoansPage() {
                 href="/#get-pre-approved"
                 className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-md inline-block"
               >
-                GET PRE-APPROVED →
+                GET PRE-APPROVED â†’
               </Link>
             </div>
           </div>
@@ -302,7 +302,7 @@ export default function ConventionalHomeLoansPage() {
                 Your Path to Homeownership: Simple Steps to Success
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed max-w-3xl mx-auto">
-                Securing a conventional loan with AZ Mortgage Brothers is a straightforward process designed to get you into your dream home quickly and efficiently.
+                Securing a conventional loan with Mortgage Brothers LLC is a straightforward process designed to get you into your dream home quickly and efficiently.
               </p>
             </div>
 
@@ -331,10 +331,10 @@ export default function ConventionalHomeLoansPage() {
                 LOCAL EXPERTISE
               </span>
               <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair">
-                Why Choose AZ Mortgage Brothers for Your Conventional Home Loan?
+                Why Choose Mortgage Brothers LLC for Your Conventional Home Loan?
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed max-w-3xl mx-auto">
-                At AZ Mortgage Brothers, we&apos;re committed to making your homeownership dreams a reality. Our expertise in conventional loans and deep understanding of the Arizona real estate market set us apart.
+                At Mortgage Brothers LLC, we&apos;re committed to making your homeownership dreams a reality. Our expertise in conventional loans and deep understanding of the Arizona real estate market set us apart.
               </p>
             </div>
 
@@ -352,7 +352,7 @@ export default function ConventionalHomeLoansPage() {
 
             <div className="bg-[#052316] rounded-3xl p-8 lg:p-10 text-center text-white space-y-4">
               <p className="text-[16px] text-[#c8c8b8] max-w-2xl mx-auto leading-relaxed">
-                At AZ Mortgage Brothers, we&apos;re not just lenders — we&apos;re your partners in achieving homeownership. Let our experience and dedication work for you in securing the best conventional loan for your needs.
+                At Mortgage Brothers LLC, we&apos;re not just lenders â€” we&apos;re your partners in achieving homeownership. Let our experience and dedication work for you in securing the best conventional loan for your needs.
               </p>
               <a
                 href="tel:+16025352171"
@@ -383,7 +383,7 @@ export default function ConventionalHomeLoansPage() {
                 What Our Clients Say About Us
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed max-w-3xl mx-auto">
-                At AZ Mortgage Brothers, we take pride in helping Arizona residents achieve their homeownership dreams through conventional loans. Hear from some of our satisfied clients who have experienced our commitment to excellence firsthand.
+                At Mortgage Brothers LLC, we take pride in helping Arizona residents achieve their homeownership dreams through conventional loans. Hear from some of our satisfied clients who have experienced our commitment to excellence firsthand.
               </p>
             </div>
 
@@ -393,7 +393,7 @@ export default function ConventionalHomeLoansPage() {
                   key={idx}
                   className="bg-[#fcf9f3] border border-[#e0e0e0] rounded-2xl p-6 shadow-sm"
                 >
-                  <div className="text-[#3fb364] text-[14px] mb-3 tracking-wider">★★★★★</div>
+                  <div className="text-[#3fb364] text-[14px] mb-3 tracking-wider">â˜…â˜…â˜…â˜…â˜…</div>
                   <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed mb-4 italic">&ldquo;{t.text}&rdquo;</p>
                   <p className="text-[#052316] text-[14px] font-bold">{t.author}</p>
                   <p className="text-[#b8d4b8] text-[13px]">{t.location}</p>
@@ -406,7 +406,7 @@ export default function ConventionalHomeLoansPage() {
                 href="/client-mortgage-reviews/"
                 className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
               >
-                Explore All Client Testimonials →
+                Explore All Client Testimonials â†’
               </Link>
             </div>
           </div>
@@ -439,7 +439,7 @@ export default function ConventionalHomeLoansPage() {
                   >
                     <span>{faq.q}</span>
                     <span className="text-[#3fb364] text-[20px] ml-4 font-bold shrink-0">
-                      {openFaq === idx ? "−" : "+"}
+                      {openFaq === idx ? "âˆ’" : "+"}
                     </span>
                   </button>
 
@@ -461,7 +461,7 @@ export default function ConventionalHomeLoansPage() {
               Get Started with Your Conventional Home Loan Today
             </h2>
             <p className="text-[#c8c8b8] text-[16px] max-w-2xl mx-auto leading-relaxed">
-              Take the first step towards your dream home with AZ Mortgage Brothers. Our team of experienced mortgage professionals is ready to guide you through the conventional loan process and help you secure the best possible terms.
+              Take the first step towards your dream home with Mortgage Brothers LLC. Our team of experienced mortgage professionals is ready to guide you through the conventional loan process and help you secure the best possible terms.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left max-w-xl mx-auto">
@@ -489,7 +489,7 @@ export default function ConventionalHomeLoansPage() {
               href="/#get-pre-approved"
               className="inline-block bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-lg"
             >
-              GET PRE-APPROVED →
+              GET PRE-APPROVED â†’
             </Link>
           </div>
         </section>
@@ -513,7 +513,7 @@ export default function ConventionalHomeLoansPage() {
                   href={program.href}
                   className="flex items-center gap-3 bg-[#fcf9f3] border border-[#e0e0e0] hover:border-[#3fb364] rounded-xl px-5 py-4 text-[#052316] font-semibold text-[14.5px] transition-all hover:shadow-sm group"
                 >
-                  <span className="text-[#3fb364] font-bold group-hover:translate-x-0.5 transition-transform">→</span>
+                  <span className="text-[#3fb364] font-bold group-hover:translate-x-0.5 transition-transform">â†’</span>
                   {program.label}
                 </Link>
               ))}

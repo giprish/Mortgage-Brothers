@@ -49,7 +49,7 @@ export default function UsdaLoansPage() {
                   Zero-Down Homeownership in Rural Arizona
                 </h2>
                 <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                  Backed by the U.S. Department of Agriculture, USDA loans make homeownership possible for low-to-moderate income families in eligible communities across Arizona. With no down payment required and reduced insurance costs, it&apos;s one of the most affordable ways to buy. AZ Mortgage Brothers will confirm your address eligibility and shop lenders to find your best USDA rate.
+                  Backed by the U.S. Department of Agriculture, USDA loans make homeownership possible for low-to-moderate income families in eligible communities across Arizona. With no down payment required and reduced insurance costs, it&apos;s one of the most affordable ways to buy. Mortgage Brothers LLC will confirm your address eligibility and shop lenders to find your best USDA rate.
                 </p>
               </div>
               <div className="lg:col-span-5">

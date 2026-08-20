@@ -34,7 +34,7 @@ export default function LoanApplicationsPage() {
               prior to the seven (7) day mark or you may have to start over.
             </p>
             <div className="text-[#4e5b4e] text-[13px] leading-relaxed mb-2">
-              <p className="font-semibold text-[#08271B]">SIGNATURE HOME LOANS LLC</p>
+              <p className="font-semibold text-[#08271B]">MORTGAGE BROTHERS LLC</p>
               <p>1599 East Orangewood Ave</p>
               <p>Suite 200 Phoenix, AZ 85020</p>
               <p>Company NMLS# 1007154</p>
@@ -47,7 +47,7 @@ export default function LoanApplicationsPage() {
               <div className="absolute inset-0 z-10 flex flex-col items-center justify-center gap-4 bg-[#e8eaed]/90 pointer-events-none">
                 <div className="w-10 h-10 border-3 border-[#3fb364]/25 border-t-[#3fb364] rounded-full animate-spin" />
                 <p className="text-[#4e5b4e] text-[14px] font-medium">
-                  Loading secure loan application…
+                  Loading secure loan applicationâ€¦
                 </p>
               </div>
             )}

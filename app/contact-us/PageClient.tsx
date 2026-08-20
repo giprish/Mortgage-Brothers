@@ -67,7 +67,7 @@ const CheckIcon = () => (
   </svg>
 );
 
-/** Click-to-load map — avoids Google Maps JS until user intent. */
+/** Click-to-load map â€” avoids Google Maps JS until user intent. */
 function OfficeMapEmbed() {
   const [active, setActive] = useState(false);
 
@@ -155,14 +155,14 @@ export default function ContactPage() {
                 className="text-[#08271B] text-[28px] lg:text-[34px] font-normal leading-tight mb-4"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
-                Get in Touch with AZ Mortgage Brothers
+                Get in Touch with Mortgage Brothers LLC
               </h2>
             </div>
 
             <p className="text-[#4e5b4e] text-[15px] lg:text-[16px] leading-[1.7] max-w-3xl mx-auto mb-8">
               Whether you&apos;re buying your first home, refinancing, or exploring a reverse
               mortgage, our team is here to help. We&apos;re licensed Arizona mortgage brokers
-              serving Phoenix, Scottsdale, and communities across Maricopa County. Reach out —
+              serving Phoenix, Scottsdale, and communities across Maricopa County. Reach out â€”
               we&apos;ll get back to you the same business day.
             </p>
 
@@ -217,9 +217,9 @@ export default function ContactPage() {
                   Office Hours
                 </p>
                 <p className="text-[#4e5b4e] text-[14px] leading-relaxed">
-                  Mon – Fri: 8:00 AM – 5:30 PM
+                  Mon â€“ Fri: 8:00 AM â€“ 5:30 PM
                   <br />
-                  Sat – Sun: Closed
+                  Sat â€“ Sun: Closed
                 </p>
               </div>
             </div>
@@ -249,7 +249,7 @@ export default function ContactPage() {
                 data-contact="true"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md cursor-pointer"
               >
-                Contact Us →
+                Contact Us â†’
               </button>
             </div>
           </div>

@@ -67,7 +67,7 @@ export default function FhaHomeLoansArizonaPage() {
   const eligibilityItems = [
     {
       title: "Credit Score",
-      desc: "Most Arizona lenders typically require a credit score of 600, though some may accept scores as low as 580 with FHA backing.",
+      desc: "Most Arizona lenders typically require a credit score of 580, though FHA backing may allow flexibility depending on the lender.",
     },
     {
       title: "Down Payment",
@@ -176,7 +176,7 @@ export default function FhaHomeLoansArizonaPage() {
     },
     {
       q: "What credit score do I need for an FHA loan in Arizona?",
-      a: "Most Arizona lenders require a credit score of 620, though some may accept scores as low as 580 with FHA backing.",
+      a: "Most Arizona lenders require a credit score of 580 with FHA backing.",
     },
     {
       q: "How long do I have to pay mortgage insurance on an FHA loan?",
@@ -215,7 +215,7 @@ export default function FhaHomeLoansArizonaPage() {
           <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-around gap-6 text-[14px] font-medium">
             {highlights.map((item) => (
               <div key={item} className="flex items-center gap-2">
-                <span className="text-[#3fb364]">✓</span>
+                <span className="text-[#3fb364]">âœ“</span>
                 <span>{item}</span>
               </div>
             ))}
@@ -245,7 +245,7 @@ export default function FhaHomeLoansArizonaPage() {
                 href="/#get-pre-approved"
                 className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
               >
-                GET PRE-APPROVED →
+                GET PRE-APPROVED â†’
               </Link>
             </div>
 
@@ -334,7 +334,7 @@ export default function FhaHomeLoansArizonaPage() {
                 href="/#get-pre-approved"
                 className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-md inline-block"
               >
-                GET PRE-APPROVED →
+                GET PRE-APPROVED â†’
               </Link>
             </div>
           </div>
@@ -355,7 +355,7 @@ export default function FhaHomeLoansArizonaPage() {
               </p>
             </div>
 
-            {/* Mobile: card stack — avoids table overflow & tall wrapped note rows */}
+            {/* Mobile: card stack â€” avoids table overflow & tall wrapped note rows */}
             <div className="md:hidden flex flex-col gap-3">
               {loanLimitRows.map((row) => (
                 <article
@@ -509,7 +509,7 @@ export default function FhaHomeLoansArizonaPage() {
                   key={idx}
                   className="bg-white border border-[#e0e0e0] rounded-2xl p-6 shadow-sm"
                 >
-                  <div className="text-[#3fb364] text-[14px] mb-3 tracking-wider">★★★★★</div>
+                  <div className="text-[#3fb364] text-[14px] mb-3 tracking-wider">â˜…â˜…â˜…â˜…â˜…</div>
                   <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed mb-4 italic">&ldquo;{t.text}&rdquo;</p>
                   <p className="text-[#052316] text-[14px] font-bold">{t.author}</p>
                   <p className="text-[#b8d4b8] text-[13px]">{t.location}</p>
@@ -522,7 +522,7 @@ export default function FhaHomeLoansArizonaPage() {
                 href="/client-mortgage-reviews/"
                 className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
               >
-                Explore All Client Testimonials →
+                Explore All Client Testimonials â†’
               </Link>
             </div>
           </div>
@@ -555,7 +555,7 @@ export default function FhaHomeLoansArizonaPage() {
                   >
                     <span>{faq.q}</span>
                     <span className="text-[#3fb364] text-[20px] ml-4 font-bold shrink-0">
-                      {openFaq === idx ? "−" : "+"}
+                      {openFaq === idx ? "âˆ’" : "+"}
                     </span>
                   </button>
 
@@ -605,7 +605,7 @@ export default function FhaHomeLoansArizonaPage() {
               href="/#get-pre-approved"
               className="inline-block bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-lg"
             >
-              GET PRE-APPROVED →
+              GET PRE-APPROVED â†’
             </Link>
           </div>
         </section>
@@ -629,7 +629,7 @@ export default function FhaHomeLoansArizonaPage() {
                   href={program.href}
                   className="flex items-center gap-3 bg-white border border-[#e0e0e0] hover:border-[#3fb364] rounded-xl px-5 py-4 text-[#052316] font-semibold text-[14.5px] transition-all hover:shadow-sm group"
                 >
-                  <span className="text-[#3fb364] font-bold group-hover:translate-x-0.5 transition-transform">→</span>
+                  <span className="text-[#3fb364] font-bold group-hover:translate-x-0.5 transition-transform">â†’</span>
                   {program.label}
                 </Link>
               ))}

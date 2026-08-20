@@ -7,22 +7,22 @@ import { COMPANY } from "@/lib/company";
 
 const featureStrip = [
   "Build a Rewarding Mortgage Career with Growth Opportunities",
-  "Join Arizona’s Leading Team in Mortgage Lending Success",
+  "Join Arizonaâ€™s Leading Team in Mortgage Lending Success",
   "Competitive Pay, Career Growth, and Impactful Work in Arizona",
 ];
 
 const jobBlocks = [
   {
     title: "We have Reverse Mortgage Leads",
-    text: "Currently our team does not any Reverse Mortgage loan officer handling our reverse mortgage leads. We are interesting in hiring a reverse mortgage specialist who can take our leads and close the loans.",
+    text: "Currently our team does not have any Reverse Mortgage loan officer handling our reverse mortgage leads. We are interested in hiring a reverse mortgage specialist who can take our leads and close the loans.",
   },
   {
     title: "Our Company Culture",
-    text: "We are not your run of the mill team that has loan officers coming and going with the wind. We are ‘lifers’ who are committed to making a great living for the long haul of our careers. Our excellent reputation with our customers, realtors, and wholesale banks give us so many advantages that other mortgage companies don’t have. Our office is located in Central Phoenix, right at 16th Street and Orangewood.",
+    text: "We are not your run of the mill team that has loan officers coming and going with the wind. We are â€˜lifersâ€™ who are committed to making a great living for the long haul of our careers. Our excellent reputation with our customers, realtors, and wholesale banks give us so many advantages that other mortgage companies donâ€™t have. Our office is located in Central Phoenix, right at 16th Street and Orangewood.",
   },
   {
     title: "Benefits",
-    text: "You’ll have access to all our company benefits, including, medical and dental coverage, and our company 401K plan with a company match.",
+    text: "Youâ€™ll have access to all our company benefits, including, medical and dental coverage, and our company 401K plan with a company match.",
   },
   {
     title: "Requirements",
@@ -233,7 +233,7 @@ export default function ReverseMortgageLoanOfficerPage() {
                   <ul className="space-y-2">
                     {step.items.map((item) => (
                       <li key={item} className="flex items-start gap-2 text-[#4e5b4e] text-[14px] leading-relaxed">
-                        <span className="text-[#3fb364] mt-1 shrink-0">•</span>
+                        <span className="text-[#3fb364] mt-1 shrink-0">â€¢</span>
                         <span>{item}</span>
                       </li>
                     ))}
@@ -278,7 +278,7 @@ export default function ReverseMortgageLoanOfficerPage() {
                 data-contact="true"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md cursor-pointer"
               >
-                Contact Us →
+                Contact Us â†’
               </button>
             </div>
           </div>

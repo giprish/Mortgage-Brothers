@@ -2,7 +2,7 @@
 
 export const COMPANY = {
   legalName: "Mortgage Brothers LLC",
-  brandName: "Arizona Mortgage Brothers",
+  brandName: "Mortgage Brothers LLC",
   nmls: "1007154",
   nmlsDisplay: "NMLS #1007154",
   azLicense: "MB0922514",
