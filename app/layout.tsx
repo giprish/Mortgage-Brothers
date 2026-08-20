@@ -1,11 +1,14 @@
 import type { Metadata, Viewport } from "next";
 import { Playfair_Display } from "next/font/google";
+import { isGoogleTagsEnabled } from "@/lib/google-tags-enabled";
 import { homeSeoMetadata } from "@/lib/seo";
 import { getConfiguredSiteUrl } from "@/lib/site-url";
 import DeferredPreApproval from "./component/DeferredPreApproval";
 import GoogleTags from "./component/GoogleTags";
 import JsonLd from "./component/JsonLd";
 import "./globals.css";
+
+const googleTagsEnabled = isGoogleTagsEnabled();
 
 /* Body uses system UI (no Inter download). Playfair only for display headings. */
 const playfair = Playfair_Display({
@@ -41,12 +44,16 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: [
-      "sc-domain%3Aazmortgagebrothers.com",
-      "o0jlxMZZWCtr8DV0PYRSpPo3Vi7R8SV3yiEFaAT85Ac",
-    ],
-  },
+  ...(googleTagsEnabled
+    ? {
+        verification: {
+          google: [
+            "sc-domain%3Aazmortgagebrothers.com",
+            "o0jlxMZZWCtr8DV0PYRSpPo3Vi7R8SV3yiEFaAT85Ac",
+          ],
+        },
+      }
+    : {}),
   icons: {
     icon: [
       {
@@ -88,16 +95,17 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://www.jotform.com" />
       </head>
       <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-PF5LK3F"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-            title="Google Tag Manager"
-          />
-        </noscript>
+        {googleTagsEnabled ? (
+          <noscript>
+            <iframe
+              src="https://www.googletagmanager.com/ns.html?id=GTM-PF5LK3F"
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+              title="Google Tag Manager"
+            />
+          </noscript>
+        ) : null}
         <a href="#main-content" className="skip-to-content">
           Skip to main content
         </a>
@@ -110,7 +118,7 @@ export default function RootLayout({
           {children}
         </div>
         <DeferredPreApproval />
-        <GoogleTags />
+        {googleTagsEnabled ? <GoogleTags /> : null}
       </body>
     </html>
   );

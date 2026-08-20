@@ -1,9 +1,14 @@
 "use client";
 
 import Script from "next/script";
+import { isGoogleTagsEnabled } from "@/lib/google-tags-enabled";
 
 /** GTM + gtag via next/script afterInteractive (does not render <script> into the React tree). */
 export default function GoogleTags() {
+  if (!isGoogleTagsEnabled()) {
+    return null;
+  }
+
   return (
     <>
       <Script id="google-tag-manager" strategy="afterInteractive">

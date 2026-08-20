@@ -36,6 +36,7 @@ const EXCLUDED_PATHS = new Set([
   "/thank-you",
   "/term-condition",
   "/loan-programs",
+  "/loan-programs/fha",
   "/loan-programs-detail",
   "/arizona-directory-2",
   "/down-payment-calculator-1",
@@ -46,6 +47,11 @@ const EXCLUDED_PATHS = new Set([
   "/service-areas/maricopa-county-az-2",
   // Bad SEO-derived slug (not a real city page; real page is /pine/)
   "/service-areas/gila-county-az/pine-mortgage",
+  // Removed staging-only pages (not kept on the new site)
+  "/first-time-home-buyer-arizona",
+  "/moving-mortgage-for-purchase-arizona",
+  "/self-employed-mortgage-arizona",
+  "/usda-loans-arizona",
 ]);
 
 /**

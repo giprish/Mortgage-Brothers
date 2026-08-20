@@ -4822,74 +4822,6 @@
       "description": "Answers to common Arizona mortgage questions about loan programs, rates, closing timelines, and working with a broker."
     }
   },
-  "/first-time-home-buyer-arizona": {
-    "section": "pages",
-    "sourceUrl": "https://azmortgagebrothers.com/first-time-home-buyer-arizona/",
-    "title": "First-Time Home Buyer Arizona | Mortgage Brothers",
-    "description": "First-time home buyer guide for Arizona — loan programs, down payment options, and how to get pre-approved with a local broker.",
-    "openGraph": {
-      "title": "First-Time Home Buyer Arizona | Mortgage Brothers",
-      "description": "First-time home buyer guide for Arizona — loan programs, down payment options, and how to get pre-approved with a local broker.",
-      "url": "https://azmortgagebrothers.com/first-time-home-buyer-arizona/",
-      "type": "article"
-    },
-    "twitter": {
-      "card": "summary_large_image",
-      "title": "First-Time Home Buyer Arizona | Mortgage Brothers",
-      "description": "First-time home buyer guide for Arizona — loan programs, down payment options, and how to get pre-approved with a local broker."
-    }
-  },
-  "/usda-loans-arizona": {
-    "section": "pages",
-    "sourceUrl": "https://azmortgagebrothers.com/usda-loans-arizona/",
-    "title": "USDA Loans Arizona | Zero Down Rural Home Financing",
-    "description": "USDA rural development loans in Arizona with zero down payment for eligible buyers. See if your area qualifies and get pre-approved.",
-    "openGraph": {
-      "title": "USDA Loans Arizona | Zero Down Rural Home Financing",
-      "description": "USDA rural development loans in Arizona with zero down payment for eligible buyers. See if your area qualifies and get pre-approved.",
-      "url": "https://azmortgagebrothers.com/usda-loans-arizona/",
-      "type": "article"
-    },
-    "twitter": {
-      "card": "summary_large_image",
-      "title": "USDA Loans Arizona | Zero Down Rural Home Financing",
-      "description": "USDA rural development loans in Arizona with zero down payment for eligible buyers."
-    }
-  },
-  "/moving-mortgage-for-purchase-arizona": {
-    "section": "pages",
-    "sourceUrl": "https://azmortgagebrothers.com/moving-mortgage-for-purchase-arizona/",
-    "title": "Moving to Arizona? Home Purchase Mortgage Guide",
-    "description": "Relocating to Arizona? Learn how to qualify for a purchase mortgage while moving, including remote work and out-of-state income.",
-    "openGraph": {
-      "title": "Moving to Arizona? Home Purchase Mortgage Guide",
-      "description": "Relocating to Arizona? Learn how to qualify for a purchase mortgage while moving.",
-      "url": "https://azmortgagebrothers.com/moving-mortgage-for-purchase-arizona/",
-      "type": "article"
-    },
-    "twitter": {
-      "card": "summary_large_image",
-      "title": "Moving to Arizona? Home Purchase Mortgage Guide",
-      "description": "Relocating to Arizona? Learn how to qualify for a purchase mortgage while moving."
-    }
-  },
-  "/self-employed-mortgage-arizona": {
-    "section": "pages",
-    "sourceUrl": "https://azmortgagebrothers.com/self-employed-mortgage-arizona/",
-    "title": "Self-Employed Mortgage Arizona | Broker Solutions",
-    "description": "Self-employed in Arizona? We specialize in bank statement, P&L, and alternative income documentation for home loans.",
-    "openGraph": {
-      "title": "Self-Employed Mortgage Arizona | Broker Solutions",
-      "description": "Self-employed in Arizona? We specialize in bank statement, P&L, and alternative income documentation.",
-      "url": "https://azmortgagebrothers.com/self-employed-mortgage-arizona/",
-      "type": "article"
-    },
-    "twitter": {
-      "card": "summary_large_image",
-      "title": "Self-Employed Mortgage Arizona | Broker Solutions",
-      "description": "Self-employed in Arizona? We specialize in alternative income documentation for home loans."
-    }
-  },
   "/arizona-directory": {
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/arizona-directory/",
@@ -4951,23 +4883,6 @@
     "twitter": {
       "card": "summary",
       "title": "Maricopa County AZ Mortgage Service Areas"
-    }
-  },
-  "/loan-programs/fha": {
-    "section": "pages",
-    "sourceUrl": "https://azmortgagebrothers.com/loan-programs/fha/",
-    "title": "FHA Loan Programs Arizona | Mortgage Brothers",
-    "description": "FHA home loan programs in Arizona — low down payment options for first-time and credit-challenged buyers.",
-    "openGraph": {
-      "title": "FHA Loan Programs Arizona | Mortgage Brothers",
-      "description": "FHA home loan programs in Arizona with low down payment options.",
-      "url": "https://azmortgagebrothers.com/loan-programs/fha/",
-      "type": "article"
-    },
-    "twitter": {
-      "card": "summary_large_image",
-      "title": "FHA Loan Programs Arizona | Mortgage Brothers",
-      "description": "FHA home loan programs in Arizona with low down payment options."
     }
   },
   "/privacy-policy": {
