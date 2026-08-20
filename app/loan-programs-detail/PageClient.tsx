@@ -47,7 +47,7 @@ const programs = [
       "Flexible credit requirements (as low as 580)",
       "Government-backed for added security"
     ],
-    link: "/loan-programs/fha/",
+    link: "/fha-home-loans-arizona/",
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
         <path strokeLinecap="round" strokeLinejoin="round" d="M15 7a2 2 0 012 2m-5-2a2 2 0 012 2m-5-2a2 2 0 012 2m-5-2a2 2 0 012 2m-5-2a2 2 0 012 2m-5 12h14a2 2 0 002-2V9a2 2 0 00-2-2h-14a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -95,7 +95,7 @@ const programs = [
       "Reduced mortgage insurance premiums",
       "Simplified documentation process"
     ],
-    link: "/loan-programs/fha/",
+    link: "/fha-streamline-refinance-arizona/",
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
         <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -143,7 +143,7 @@ const programs = [
       "Assistance with closing costs available through certain programs",
       "Guidance through every step of the process"
     ],
-    link: "/loan-programs/fha/",
+    link: "/first-time-home-buyer-arizona-guide/",
     icon: (
       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
         <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />

@@ -32,8 +32,6 @@ const PATH_ALIASES: Record<string, string> = {
   // Next typo/extra "in" vs live WP slug
   "/who-qualifies-for-a-reverse-mortgage-understanding-eligibility-in-requirements":
     "/who-qualifies-for-a-reverse-mortgage-understanding-eligibility-requirements",
-  // Live WP 301s this slug to the guide
-  "/first-time-home-buyer-arizona": "/first-time-home-buyer-arizona-guide",
 };
 
 export const seoMetadata = seoMetadataJson as Record<string, SeoEntry>;
