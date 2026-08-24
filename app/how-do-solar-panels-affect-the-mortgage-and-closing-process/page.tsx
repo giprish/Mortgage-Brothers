@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -72,36 +74,27 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How do Solar Panels affect the mortgage and closing process?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, in most cases, solar panels are allowed. Lenders require the buyer to get a copy of the solar agreement, ensure there is a warranty against malfunctions or defects, and confirm that the lease is transferable to the new buyer. If panels are leased, they must be transferred by the solar company to the buyer. Owned panels are treated as real estate fixtures, though if a loan exists, it becomes a lien on the property that must be transferable.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do solar panels impact property value?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Leased solar panels generally do not add value to a property because institutions like Fannie Mae, Freddie Mac, FHA, and VA only recognize ownership. Owned solar panels can increase value modestly, but not equal to the full installation cost. For example, a $20,000 system might only add about $5,000 in appraised value, depending on neighborhood sales comparables.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do solar panel payments affect loan qualifications?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "If your solar lease or ownership agreement includes a production guarantee, lenders typically do not count the loan or lease payment against you. However, buyers must still pay their utility bill plus any solar payments. At closing, any lien from a solar loan or lease must be released before the lender places their lien, a process handled by the title company that may involve a modest fee.",
-      },
-    },
+const articleFaqs = [
+  { question: "How do Solar Panels affect the mortgage and closing process?", answer: "Yes, in most cases, solar panels are allowed. Lenders require the buyer to get a copy of the solar agreement, ensure there is a warranty against malfunctions or defects, and confirm that the lease is transferable to the new buyer. If panels are leased, they must be transferred by the solar company to the buyer. Owned panels are treated as real estate fixtures, though if a loan exists, it becomes a lien on the property that must be transferable." },
+  { question: "How do solar panels impact property value?", answer: "Leased solar panels generally do not add value to a property because institutions like Fannie Mae, Freddie Mac, FHA, and VA only recognize ownership. Owned solar panels can increase value modestly, but not equal to the full installation cost. For example, a $20,000 system might only add about $5,000 in appraised value, depending on neighborhood sales comparables." },
+  { question: "How do solar panel payments affect loan qualifications?", answer: "If your solar lease or ownership agreement includes a production guarantee, lenders typically do not count the loan or lease payment against you. However, buyers must still pay their utility bill plus any solar payments. At closing, any lien from a solar loan or lease must be released before the lender places their lien, a process handled by the title company that may involve a modest fee." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/how-do-solar-panels-affect-the-mortgage-and-closing-process/",
+    headline: "How do Solar Panels affect the mortgage and closing process?",
+    description: "Learn how lenders view owned vs. leased solar panels, how they impact appraised value, and whether solar payments affect mortgage qualifications.",
+    datePublished: "2025-02-06",
+    articleSection: "Mortgage Process Guidance",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Process Guidance", path: "/mortgage-process-guidance/" },
+    { name: "How do Solar Panels affect the mortgage and closing process?", path: "/how-do-solar-panels-affect-the-mortgage-and-closing-process/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -118,10 +111,7 @@ const CheckIcon = () => (
 export default function SolarPanelsMortgagePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

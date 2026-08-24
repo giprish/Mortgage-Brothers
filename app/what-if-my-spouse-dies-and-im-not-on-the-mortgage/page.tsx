@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -76,36 +78,27 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Will the bank let us make payments on this mortgage?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "If you are on the title, you can generally continue making mortgage payments even if you are not on the loan. The bank's primary concern is receiving payments on time, not forcing a sale or payoff from a surviving spouse.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do we have to refinance?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No, refinancing is not required. You can stay on the current loan if you prefer, or refinance into your own name if you qualify and want better terms or sole ownership of the debt.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do we have to sell the home?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No, you do not have to sell the home. As long as you continue making on-time payments and understand your rights regarding title and the mortgage, selling is one option among several—not a requirement.",
-      },
-    },
+const articleFaqs = [
+  { question: "Will the bank let us make payments on this mortgage?", answer: "If you are on the title, you can generally continue making mortgage payments even if you are not on the loan. The bank's primary concern is receiving payments on time, not forcing a sale or payoff from a surviving spouse." },
+  { question: "Do we have to refinance?", answer: "No, refinancing is not required. You can stay on the current loan if you prefer, or refinance into your own name if you qualify and want better terms or sole ownership of the debt." },
+  { question: "Do we have to sell the home?", answer: "No, you do not have to sell the home. As long as you continue making on-time payments and understand your rights regarding title and the mortgage, selling is one option among several—not a requirement." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/what-if-my-spouse-dies-and-im-not-on-the-mortgage/",
+    headline: "What If My Spouse Dies and I'm Not On The Mortgage?",
+    description: "Learn what happens to a mortgage when a spouse dies if you are not on the loan, including title, St. Germain Act protections, community property, and refinance options.",
+    datePublished: "2024-12-30",
+    articleSection: "Spouse & Estate Considerations",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Spouse & Estate Considerations", path: "/spouse-estate-considerations/" },
+    { name: "What If My Spouse Dies and I'm Not On The Mortgage?", path: "/what-if-my-spouse-dies-and-im-not-on-the-mortgage/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg className="w-5 h-5 text-[#3fb364] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
@@ -116,10 +109,7 @@ const CheckIcon = () => (
 export default function SpouseDiesNotOnMortgagePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

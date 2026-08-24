@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -8,68 +10,35 @@ import FaqAccordion from "../component/FaqAccordion";
 
 export const metadata: Metadata = getSeoMetadata("/top-7-reasons-arizona-investment-home-buyers-choose-private-money-lenders/");
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is a private money lender?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "An individual or private company that lends its own funds, offering faster closings (7–14 days), flexible underwriting, and property-based approvals — perfect for investors who need speed and flexibility."
-      }
-    },
-    {
-      "@type": "Question",
-      name: "How much does private money cost?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Typically 8–15% interest with 2–5% points. While higher than bank rates, the speed and access to capital often outweigh the cost for investment opportunities."
-      }
-    },
-    {
-      "@type": "Question",
-      name: "What credit score is needed?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Private lenders prioritize property value, down payment (20–30%), and investor experience — often approving loans with credit scores as low as 500–550."
-      }
-    },
-    {
-      "@type": "Question",
-      name: "Can I use private money for my primary residence or second home?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No. Private money loans are available only for investment properties. They are designed for flips, rentals, and short-term investment purposes."
-      }
-    },
-    {
-      "@type": "Question",
-      name: "How fast can I close?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Simple deals close within 7–10 days, complex or large loans may take 10–14 days, and auction purchases can fund in as little as 3–5 days."
-      }
-    },
-    {
-      "@type": "Question",
-      name: "Are private money loans regulated differently than banks?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Private lenders follow Arizona lending laws but operate with greater flexibility. Mortgage Brothers ensures all loans remain compliant while maintaining speed and transparency."
-      }
-    }
-  ]
-};
+const articleFaqs = [
+  { question: "What is a private money lender?", answer: "An individual or private company that lends its own funds, offering faster closings (7–14 days), flexible underwriting, and property-based approvals — perfect for investors who need speed and flexibility." },
+  { question: "How much does private money cost?", answer: "Typically 8–15% interest with 2–5% points. While higher than bank rates, the speed and access to capital often outweigh the cost for investment opportunities." },
+  { question: "What credit score is needed?", answer: "Private lenders prioritize property value, down payment (20–30%), and investor experience — often approving loans with credit scores as low as 500–550." },
+  { question: "Can I use private money for my primary residence or second home?", answer: "No. Private money loans are available only for investment properties. They are designed for flips, rentals, and short-term investment purposes." },
+  { question: "How fast can I close?", answer: "Simple deals close within 7–10 days, complex or large loans may take 10–14 days, and auction purchases can fund in as little as 3–5 days." },
+  { question: "Are private money loans regulated differently than banks?", answer: "Yes. Private lenders follow Arizona lending laws but operate with greater flexibility. Mortgage Brothers ensures all loans remain compliant while maintaining speed and transparency." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/top-7-reasons-arizona-investment-home-buyers-choose-private-money-lenders/",
+    headline: "Top 7 Reasons Arizona Investment Home Buyers Choose Private Money Lenders",
+    description: "Important Note: Private money loans are available only for investment properties. We cannot provide private money loans for primary residences or second homes.",
+    datePublished: "2026-06-15",
+    articleSection: "Arizona Mortgage Insights",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Arizona Mortgage Insights", path: "/arizona-mortgage-insights/" },
+    { name: "Top 7 Reasons Arizona Investment Home Buyers Choose Private Money Lenders", path: "/top-7-reasons-arizona-investment-home-buyers-choose-private-money-lenders/" },
+  ],
+});
 
 export default function PrivateMoneyLendersArticlePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
       <Navbar />
 
       <main className="flex-grow pt-[64px] sm:pt-[72px]">

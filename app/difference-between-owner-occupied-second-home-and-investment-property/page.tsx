@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import FaqAccordion from "../component/FaqAccordion";
@@ -72,44 +74,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is a primary or owner-occupied residence?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "An owner-occupied or primary residence is a residential property where the borrower intends to live for the majority of the calendar year. To qualify under this occupancy type, at least one borrower listed on the mortgage must physically occupy the home, signing both the mortgage note and the security instrument.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What criteria must a property meet to qualify as a second home?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "To classify a property as a second home for underwriting purposes, the real estate must typically be located at least 50 miles away from the borrower's primary residence. Additionally, the borrower must intend to occupy it for part of the year, and it cannot appear to be purchased for rental or investment purposes.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How does an investment property differ from a second home?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Unlike a second home, an investment property is a residential space that the owner does not occupy. Instead, it is acquired primarily to generate rental income or future financial profits. Because of the vacancy and rental risks, lenders enforce different underwriting standards for investment loans.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do down payment requirements vary across different occupancy types?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Down payment guidelines change significantly by occupancy type. Primary residences offer low-down options, such as 0% for VA/USDA, 3.5% for FHA, and 5% to 25% for conventional loans. Second homes generally require an average of a 10% down payment, while investment properties demand the highest reserves, typically requiring a 20% to 25% down payment depending on the number of units.",
-      },
-    },
+const articleFaqs = [
+  { question: "What is a primary or owner-occupied residence?", answer: "An owner-occupied or primary residence is a residential property where the borrower intends to live for the majority of the calendar year. To qualify under this occupancy type, at least one borrower listed on the mortgage must physically occupy the home, signing both the mortgage note and the security instrument." },
+  { question: "What criteria must a property meet to qualify as a second home?", answer: "To classify a property as a second home for underwriting purposes, the real estate must typically be located at least 50 miles away from the borrower's primary residence. Additionally, the borrower must intend to occupy it for part of the year, and it cannot appear to be purchased for rental or investment purposes." },
+  { question: "How does an investment property differ from a second home?", answer: "Unlike a second home, an investment property is a residential space that the owner does not occupy. Instead, it is acquired primarily to generate rental income or future financial profits. Because of the vacancy and rental risks, lenders enforce different underwriting standards for investment loans." },
+  { question: "How do down payment requirements vary across different occupancy types?", answer: "Down payment guidelines change significantly by occupancy type. Primary residences offer low-down options, such as 0% for VA/USDA, 3.5% for FHA, and 5% to 25% for conventional loans. Second homes generally require an average of a 10% down payment, while investment properties demand the highest reserves, typically requiring a 20% to 25% down payment depending on the number of units." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/difference-between-owner-occupied-second-home-and-investment-property/",
+    headline: "Difference Between Owner-Occupied, Second Home, and Investment Property?",
+    description: "Occupancy type drives down payment, loan programs, and rates. Compare owner-occupied, second home, and investment property requirements.",
+    datePublished: "2025-02-05",
+    articleSection: "Real Estate & Mortgages",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Real Estate & Mortgages", path: "/real-estate-mortgages/" },
+    { name: "Difference Between Owner-Occupied, Second Home, and Investment Property?", path: "/difference-between-owner-occupied-second-home-and-investment-property/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -126,10 +112,7 @@ const CheckIcon = () => (
 export default function OwnerOccupiedSecondHomeInvestmentPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

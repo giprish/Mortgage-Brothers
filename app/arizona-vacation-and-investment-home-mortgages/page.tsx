@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -71,44 +73,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is the difference between a vacation home and an investment property mortgage?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A vacation home (second home) is a property you intend to occupy for a portion of the year, meaning it cannot be a multi-unit property or managed by a rental pool. An investment property is purchased strictly to generate rental income, and the buyer does not intend to live there. Because investment properties carry higher risk, they typically come with slightly higher interest rates and stricter underwriting guidelines.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How much down payment is required for an Arizona vacation home?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "For a vacation home or second home in Arizona, standard conventional guidelines generally require a minimum down payment of 10%. However, putting down 20% or more is often recommended to eliminate the requirement for private mortgage insurance (PMI) and to secure more competitive financing terms.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What down payment do I need for an Arizona investment property?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Purchasing a single-family investment property typically requires a minimum down payment of 15% to 20%. For multi-unit investment properties (2 to 4 units), lenders standardly require a down payment of 20% to 25% to offset the added vacancy and financial risks associated with rental real estate.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can I use future rental income to qualify for an investment mortgage?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, lenders frequently allow you to use a portion of the projected rental income from the target property to help qualify for the mortgage. The lender will require an appraisal supplement, typically Fannie Mae Form 1007, to verify the fair market rent of the area, and will generally count up to 75% of that gross expected income toward your qualifying debt-to-income (DTI) ratio.",
-      },
-    },
+const articleFaqs = [
+  { question: "What is the difference between a vacation home and an investment property mortgage?", answer: "A vacation home (second home) is a property you intend to occupy for a portion of the year, meaning it cannot be a multi-unit property or managed by a rental pool. An investment property is purchased strictly to generate rental income, and the buyer does not intend to live there. Because investment properties carry higher risk, they typically come with slightly higher interest rates and stricter underwriting guidelines." },
+  { question: "How much down payment is required for an Arizona vacation home?", answer: "For a vacation home or second home in Arizona, standard conventional guidelines generally require a minimum down payment of 10%. However, putting down 20% or more is often recommended to eliminate the requirement for private mortgage insurance (PMI) and to secure more competitive financing terms." },
+  { question: "What down payment do I need for an Arizona investment property?", answer: "Purchasing a single-family investment property typically requires a minimum down payment of 15% to 20%. For multi-unit investment properties (2 to 4 units), lenders standardly require a down payment of 20% to 25% to offset the added vacancy and financial risks associated with rental real estate." },
+  { question: "Can I use future rental income to qualify for an investment mortgage?", answer: "Yes, lenders frequently allow you to use a portion of the projected rental income from the target property to help qualify for the mortgage. The lender will require an appraisal supplement, typically Fannie Mae Form 1007, to verify the fair market rent of the area, and will generally count up to 75% of that gross expected income toward your qualifying debt-to-income (DTI) ratio." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/arizona-vacation-and-investment-home-mortgages/",
+    headline: "Arizona Vacation and Investment Home Mortgages",
+    description: "Learn down payment rules for Arizona vacation and investment homes, and why working with a local mortgage broker helps.",
+    datePublished: "2025-02-14",
+    articleSection: "Arizona Mortgage Insights",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Arizona Mortgage Insights", path: "/arizona-mortgage-insights/" },
+    { name: "Arizona Vacation and Investment Home Mortgages", path: "/arizona-vacation-and-investment-home-mortgages/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -125,10 +111,7 @@ const CheckIcon = () => (
 export default function ArizonaVacationAndInvestmentHomeMortgagesPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

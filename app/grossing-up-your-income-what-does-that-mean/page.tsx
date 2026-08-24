@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -72,36 +74,27 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What's an example of grossing up?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "For example, if you make $1000 a month from foster care income, since it is non-taxable, it can usually be grossed up. For a conventional loan, the gross-up is 25% ($1250) and for an FHA loan, it's 15% ($1150).",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What other incomes are typically allowed to be grossed up?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Other non-taxable incomes that can usually be grossed up include child support payments, VA benefits, workers' compensation, supplemental social security, adoption income, and foster care income. Documentation is required to show continuation for at least three years.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What income may be partially grossed up?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Incomes that may be partially grossed up include social security income, retirement income, pension income, annuity income, IRA distributions, housing allowance, and long-term disability income. The non-taxable portion can be grossed up by 25% for conventional loans and 15% for FHA loans.",
-      },
-    },
+const articleFaqs = [
+  { question: "What's an example of grossing up?", answer: "For example, if you make $1000 a month from foster care income, since it is non-taxable, it can usually be grossed up. For a conventional loan, the gross-up is 25% ($1250) and for an FHA loan, it's 15% ($1150)." },
+  { question: "What other incomes are typically allowed to be grossed up?", answer: "Other non-taxable incomes that can usually be grossed up include child support payments, VA benefits, workers' compensation, supplemental social security, adoption income, and foster care income. Documentation is required to show continuation for at least three years." },
+  { question: "What income may be partially grossed up?", answer: "Incomes that may be partially grossed up include social security income, retirement income, pension income, annuity income, IRA distributions, housing allowance, and long-term disability income. The non-taxable portion can be grossed up by 25% for conventional loans and 15% for FHA loans." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/grossing-up-your-income-what-does-that-mean/",
+    headline: "Grossing Up Your Income… what does that mean?",
+    description: "Learn how lenders gross up non-taxable income like foster care, child support, and Social Security to boost qualifying income.",
+    datePublished: "2025-02-04",
+    articleSection: "Specialty Loans",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Specialty Loans", path: "/specialty-loans/" },
+    { name: "Grossing Up Your Income… what does that mean?", path: "/grossing-up-your-income-what-does-that-mean/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -118,10 +111,7 @@ const CheckIcon = () => (
 export default function GrossingUpIncomePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -71,44 +73,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Can paying off credit card debt help you qualify for a mortgage?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, paying off credit card balances is one of the most effective ways to lower your Debt-to-Income (DTI) ratio. By eliminating or reducing your monthly minimum credit card payments, you clear up more qualifying income, which can directly increase your maximum home purchasing power.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How does lowering credit card balances impact your credit score for a home loan?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Paying down your credit cards reduces your overall credit utilization ratio, which measures how much of your available credit limit you are actively using. Lowering this ratio is a primary driver for boosting your credit score, potentially qualifying you for better mortgage interest rates.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Will a lender immediately see that a credit card has been paid off?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No, credit bureaus typically operate on a standard 30 to 45-day reporting cycle. If you need the updated balance to reflect immediately to qualify for a time-sensitive mortgage pre-approval, your lender can pull a rapid rescore or submit a supplement to update your credit profile in just a few business days.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Should you close a credit card account after paying off the balance?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Generally, it is advised not to close your credit card accounts right before or during the mortgage application process. Closing an account lowers your total available credit and shortens your credit history length, both of which can accidentally cause your credit score to drop.",
-      },
-    },
+const articleFaqs = [
+  { question: "Can paying off credit card debt help you qualify for a mortgage?", answer: "Yes, paying off credit card balances is one of the most effective ways to lower your Debt-to-Income (DTI) ratio. By eliminating or reducing your monthly minimum credit card payments, you clear up more qualifying income, which can directly increase your maximum home purchasing power." },
+  { question: "How does lowering credit card balances impact your credit score for a home loan?", answer: "Paying down your credit cards reduces your overall credit utilization ratio, which measures how much of your available credit limit you are actively using. Lowering this ratio is a primary driver for boosting your credit score, potentially qualifying you for better mortgage interest rates." },
+  { question: "Will a lender immediately see that a credit card has been paid off?", answer: "No, credit bureaus typically operate on a standard 30 to 45-day reporting cycle. If you need the updated balance to reflect immediately to qualify for a time-sensitive mortgage pre-approval, your lender can pull a rapid rescore or submit a supplement to update your credit profile in just a few business days." },
+  { question: "Should you close a credit card account after paying off the balance?", answer: "Generally, it is advised not to close your credit card accounts right before or during the mortgage application process. Closing an account lowers your total available credit and shortens your credit history length, both of which can accidentally cause your credit score to drop." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/can-i-simply-payoff-credit-cards-to-qualify-for-a-mortgage/",
+    headline: "Can I simply payoff credit cards to qualify for a mortgage?",
+    description: "See how Conventional, FHA, and VA guidelines treat paying off credit cards—and whether you still need to close the account to lower DTI.",
+    datePublished: "2025-02-03",
+    articleSection: "Mortgage Qualifications",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Qualifications", path: "/mortgage-qualifications/" },
+    { name: "Can I simply payoff credit cards to qualify for a mortgage?", path: "/can-i-simply-payoff-credit-cards-to-qualify-for-a-mortgage/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -125,10 +111,7 @@ const CheckIcon = () => (
 export default function PayoffCreditCardsQualifyPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

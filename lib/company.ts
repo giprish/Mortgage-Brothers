@@ -3,6 +3,8 @@
 export const COMPANY = {
   legalName: "Mortgage Brothers LLC",
   brandName: "Mortgage Brothers LLC",
+  /** Public-facing / OG site name used in SEO metadata */
+  siteName: "Arizona Home Loans | The Mortgage Brothers",
   nmls: "1007154",
   nmlsDisplay: "NMLS #1007154",
   azLicense: "MB0922514",
@@ -10,6 +12,7 @@ export const COMPANY = {
   phoneDisplay: "(602) 535-2171",
   phoneTel: "+16025352171",
   phoneHref: "tel:+16025352171",
+  email: "team@azmortgagebrothers.com",
   addressLine1: "1599 East Orangewood Ave, Suite 200",
   addressLine2: "Phoenix, AZ 85020",
   addressFull: "1599 East Orangewood Ave, Suite 200, Phoenix, AZ 85020",
@@ -18,13 +21,25 @@ export const COMPANY = {
   state: "AZ",
   postalCode: "85020",
   streetAddress: "1599 East Orangewood Ave, Suite 200",
+  /** Verified office coordinates (matches live Place schema for Orangewood Ave). */
+  geo: {
+    latitude: 33.547046,
+    longitude: -112.046049,
+  },
   siteUrl: "https://azmortgagebrothers.com",
   /** Optimized nav/footer logo (~11 KB vs ~169 KB legacy PNG) */
   logoSrc: "/home/mortgage-brothers-logo-green-new.png",
   logoSrcLegacy: "/home/mortgage-brothers-logo.png",
+  imageSrc: "/home/eddie-knoell.jpg",
   nmlsConsumerAccessUrl:
     "https://www.nmlsconsumeraccess.org/Home.aspx/SubSearch?searchText=1007154",
   equalHousingLabel: "Equal Housing Lender",
+  sameAs: [
+    "https://www.facebook.com/azmortgagebrothers/",
+    "https://x.com/azmortgagebros",
+    "https://www.linkedin.com/company/azmortgagebrothers/",
+    "https://www.youtube.com/@TheMortgageBrothersTeam",
+  ] as const,
   disclaimer:
     "Content on this website is provided for informational purposes only and does not constitute an offer to lend. Information presented may not reflect current rates, terms, or program availability. Please contact our loan officers for the most up-to-date information.",
 } as const;
@@ -37,6 +52,7 @@ export const LOAN_OFFICERS = {
     azLicense: "LO-0911422",
     azLicenseDisplay: "AZ License #LO-0911422",
     title: "Co-Founder · Managing Broker",
+    authorPath: "/author/eddie-knoell/",
   },
   thomas: {
     name: "Thomas Knoell",

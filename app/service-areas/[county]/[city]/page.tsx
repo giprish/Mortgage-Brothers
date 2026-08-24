@@ -5,6 +5,11 @@ import {
   getAllCountyCityParams,
   getCityData,
 } from "@/lib/cityData";
+import JsonLd from "@/app/component/JsonLd";
+import {
+  buildBreadcrumbListSchema,
+  buildFaqPageSchema,
+} from "@/lib/seo/structured-data";
 import CityPageClient from "./CityPageClient";
 
 type Props = {
@@ -28,5 +33,24 @@ export default async function Page({ params }: Props) {
   if (!cityData) {
     notFound();
   }
-  return <CityPageClient cityData={cityData} />;
+
+  const pathname = `/service-areas/${county}/${city}/`;
+  const schemas = [
+    buildBreadcrumbListSchema([
+      { name: "Areas We Serve", path: "/service-areas/" },
+      {
+        name: cityData.countyName,
+        path: `/service-areas/${cityData.countySlug}/`,
+      },
+      { name: cityData.name, path: pathname },
+    ]),
+    buildFaqPageSchema(cityData.faqs),
+  ].flatMap((schema) => (schema ? [schema] : []));
+
+  return (
+    <>
+      {schemas.length > 0 ? <JsonLd data={schemas} /> : null}
+      <CityPageClient cityData={cityData} />
+    </>
+  );
 }

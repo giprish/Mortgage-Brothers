@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
@@ -73,44 +75,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What are the primary operational steps in the Arizona home buying process?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The entire home buying process can be broken down into five major sequential phases. It begins with filling out a mortgage application for pre-approval, followed by assembling your real estate team, submitting a formal purchase offer, clearing underwriting conditions and paperwork, and finally attending the closing appointment.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Why is a personalized strategy session required before shopping for an Arizona home?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A personalized strategy session with a trusted mortgage lender ensures you clearly understand how much home you can afford, establishes your exact down payment budget, and identifies the best mortgage program for your needs. It also allows the lender to uncover and resolve any potential loan approval issues early in the process.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What happens during the due diligence period after a purchase offer is accepted?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Once the seller accepts your offer, the official due diligence period begins. This phase triggers a series of time-sensitive real estate events, including completing property home inspections to ensure the structure is sound, ordering the bank appraisal, and processing final mortgage approvals before signing closing documents.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do Homeowners Associations (HOAs) impact buyers in Arizona?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "HOAs hold significant regulatory power over a property and can dictate specific rules regarding home paint colors, pet limits, landscaping choices, and architectural changes. Because they can assess financial penalties for non-compliance, buyers must thoroughly review the scope, guidelines, and monthly premiums of the HOA during escrow.",
-      },
-    },
+const articleFaqs = [
+  { question: "What are the primary operational steps in the Arizona home buying process?", answer: "The entire home buying process can be broken down into five major sequential phases. It begins with filling out a mortgage application for pre-approval, followed by assembling your real estate team, submitting a formal purchase offer, clearing underwriting conditions and paperwork, and finally attending the closing appointment." },
+  { question: "Why is a personalized strategy session required before shopping for an Arizona home?", answer: "A personalized strategy session with a trusted mortgage lender ensures you clearly understand how much home you can afford, establishes your exact down payment budget, and identifies the best mortgage program for your needs. It also allows the lender to uncover and resolve any potential loan approval issues early in the process." },
+  { question: "What happens during the due diligence period after a purchase offer is accepted?", answer: "Once the seller accepts your offer, the official due diligence period begins. This phase triggers a series of time-sensitive real estate events, including completing property home inspections to ensure the structure is sound, ordering the bank appraisal, and processing final mortgage approvals before signing closing documents." },
+  { question: "How do Homeowners Associations (HOAs) impact buyers in Arizona?", answer: "HOAs hold significant regulatory power over a property and can dictate specific rules regarding home paint colors, pet limits, landscaping choices, and architectural changes. Because they can assess financial penalties for non-compliance, buyers must thoroughly review the scope, guidelines, and monthly premiums of the HOA during escrow." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/arizona-home-buying-process/",
+    headline: "Arizona Home Buying Process",
+    description: "Walk through the five major steps of buying a home in Arizona—from pre-approval and your buying team to offer, paperwork, and closing.",
+    datePublished: "2025-02-10",
+    articleSection: "Mortgage Basics",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Basics", path: "/mortgage-basics/" },
+    { name: "Arizona Home Buying Process", path: "/arizona-home-buying-process/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -127,10 +113,7 @@ const CheckIcon = () => (
 export default function ArizonaHomeBuyingProcessPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

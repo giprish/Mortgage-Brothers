@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -59,44 +61,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is a mortgage trigger lead?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A trigger lead is generated when your credit is pulled for a mortgage application. Credit bureaus historically sold your contact information to lenders and marketing companies, who then called you trying to win your business—even though you never contacted them directly.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Why am I getting calls from strangers after applying for a mortgage?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "That used to happen within a day or two of a credit pull: bureaus sold trigger leads and competing lenders called. As of March 4, 2026, the Homebuyers Privacy Protection Act restricts those sales except in narrow cases, such as a pre-existing relationship or documented consumer consent.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do I stop unwanted mortgage trigger lead calls?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The main protection is now federal: the Homebuyers Privacy Protection Act (signed September 5, 2025, effective March 4, 2026) limits credit bureaus from selling mortgage trigger leads except in narrow circumstances. As a supplement, register at www.donotcall.gov; it takes about 30 days to take effect.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do I stop unwanted mortgage mail solicitations?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Federal trigger-lead limits do not replace mail opt-outs. Visit www.dmachoice.org to reduce promotional mail. DMA Choice is a supplement to the Homebuyers Privacy Protection Act, not the primary protection.",
-      },
-    },
+const articleFaqs = [
+  { question: "What is a mortgage trigger lead?", answer: "A trigger lead is generated when your credit is pulled for a mortgage application. Credit bureaus historically sold your contact information to lenders and marketing companies, who then called you trying to win your business—even though you never contacted them directly." },
+  { question: "Why am I getting calls from strangers after applying for a mortgage?", answer: "That used to happen within a day or two of a credit pull: bureaus sold trigger leads and competing lenders called. As of March 4, 2026, the Homebuyers Privacy Protection Act restricts those sales except in narrow cases, such as a pre-existing relationship or documented consumer consent." },
+  { question: "How do I stop unwanted mortgage trigger lead calls?", answer: "The main protection is now federal: the Homebuyers Privacy Protection Act (signed September 5, 2025, effective March 4, 2026) limits credit bureaus from selling mortgage trigger leads except in narrow circumstances. As a supplement, register at www.donotcall.gov; it takes about 30 days to take effect." },
+  { question: "How do I stop unwanted mortgage mail solicitations?", answer: "Federal trigger-lead limits do not replace mail opt-outs. Visit www.dmachoice.org to reduce promotional mail. DMA Choice is a supplement to the Homebuyers Privacy Protection Act, not the primary protection." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/what-are-mortgage-trigger-leads/",
+    headline: "What Are Mortgage Trigger Leads? Why Are Strangers Calling Your phone?",
+    description: "Trigger leads are the calls that used to follow a mortgage credit pull. Federal law now restricts the practice; Do Not Call and DMA Choice are still useful extras.",
+    datePublished: "2025-02-03",
+    articleSection: "Mortgage Basics",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Basics", path: "/mortgage-basics/" },
+    { name: "What Are Mortgage Trigger Leads? Why Are Strangers Calling Your phone?", path: "/what-are-mortgage-trigger-leads/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg className="w-5 h-5 text-[#3fb364] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
@@ -107,10 +93,7 @@ const CheckIcon = () => (
 export default function MortgageTriggerLeadsPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

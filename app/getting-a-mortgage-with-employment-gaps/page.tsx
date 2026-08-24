@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -72,36 +74,27 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What are some typical employment gap scenarios?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Employment gaps typically occur when someone loses a job and is searching for a new one. For executives, it may take up to a year to find the right fit, while entry-level workers may take only a few months. Other common scenarios include parents returning to the workforce after staying home to care for children.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do conventional, FHA, and VA loans treat job gaps?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Conventional loans are the most flexible and can work with borrowers who recently rejoined the workforce, even after long gaps, as long as credit is decent. FHA loans require a two-year consecutive work history if the job gap exceeds six months and at least six months with the current employer. VA loans are stricter, requiring at least a 12-month history on the current job if there are job gaps of more than 60 days in the last two years.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do all loan programs accept short job gaps?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, all programs generally accept employment gaps of less than 30 days without issue. However, longer gaps have different requirements depending on whether you are applying for a Conventional, FHA, or VA loan.",
-      },
-    },
+const articleFaqs = [
+  { question: "What are some typical employment gap scenarios?", answer: "Employment gaps typically occur when someone loses a job and is searching for a new one. For executives, it may take up to a year to find the right fit, while entry-level workers may take only a few months. Other common scenarios include parents returning to the workforce after staying home to care for children." },
+  { question: "How do conventional, FHA, and VA loans treat job gaps?", answer: "Conventional loans are the most flexible and can work with borrowers who recently rejoined the workforce, even after long gaps, as long as credit is decent. FHA loans require a two-year consecutive work history if the job gap exceeds six months and at least six months with the current employer. VA loans are stricter, requiring at least a 12-month history on the current job if there are job gaps of more than 60 days in the last two years." },
+  { question: "Do all loan programs accept short job gaps?", answer: "Yes, all programs generally accept employment gaps of less than 30 days without issue. However, longer gaps have different requirements depending on whether you are applying for a Conventional, FHA, or VA loan." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/getting-a-mortgage-with-employment-gaps/",
+    headline: "Getting a Mortgage with Employment Gaps",
+    description: "Learn how employment gaps can affect mortgage approval and what Conventional, FHA, and VA loan programs require.",
+    datePublished: "2025-02-03",
+    articleSection: "Mortgage Qualifications",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Qualifications", path: "/mortgage-qualifications/" },
+    { name: "Getting a Mortgage with Employment Gaps", path: "/getting-a-mortgage-with-employment-gaps/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -118,10 +111,7 @@ const CheckIcon = () => (
 export default function GettingMortgageWithEmploymentGapsPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

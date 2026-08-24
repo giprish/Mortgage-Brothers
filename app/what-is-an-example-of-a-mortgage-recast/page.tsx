@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -72,36 +74,27 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is a mortgage recast?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A mortgage recast is when you make a large payment toward the principal of your existing loan, and your lender recalculates your monthly payments based on the reduced balance. The loan term and interest rate remain the same, but your monthly payments go down. Most lenders require at least $10,000 as a principal reduction and charge a small administrative fee between $200 and $300.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What happens if you just pay down your mortgage without recasting?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "If you make a lump-sum payment toward your mortgage without doing a recast, your monthly payments stay the same, but your loan will be paid off sooner. This reduces the total interest you pay over time because you've shortened the repayment timeline.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "When is it better to do a mortgage recast instead of just paying down your loan?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A mortgage recast is best suited for borrowers on a fixed budget or fixed income who need lower monthly payments. On the other hand, if your goal is to pay off the loan faster, simply applying extra funds directly toward the principal may be a better option.",
-      },
-    },
+const articleFaqs = [
+  { question: "What is a mortgage recast?", answer: "A mortgage recast is when you make a large payment toward the principal of your existing loan, and your lender recalculates your monthly payments based on the reduced balance. The loan term and interest rate remain the same, but your monthly payments go down. Most lenders require at least $10,000 as a principal reduction and charge a small administrative fee between $200 and $300." },
+  { question: "What happens if you just pay down your mortgage without recasting?", answer: "If you make a lump-sum payment toward your mortgage without doing a recast, your monthly payments stay the same, but your loan will be paid off sooner. This reduces the total interest you pay over time because you've shortened the repayment timeline." },
+  { question: "When is it better to do a mortgage recast instead of just paying down your loan?", answer: "A mortgage recast is best suited for borrowers on a fixed budget or fixed income who need lower monthly payments. On the other hand, if your goal is to pay off the loan faster, simply applying extra funds directly toward the principal may be a better option." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/what-is-an-example-of-a-mortgage-recast/",
+    headline: "What is an Example of a Mortgage Recast?",
+    description: "See a clear mortgage recast example, how lump-sum payments lower monthly payments, and when paying down principal without a recast is better.",
+    datePublished: "2025-02-04",
+    articleSection: "Mortgage Payments & Strategies",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Payments & Strategies", path: "/mortgage-payments-strategies/" },
+    { name: "What is an Example of a Mortgage Recast?", path: "/what-is-an-example-of-a-mortgage-recast/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -118,10 +111,7 @@ const CheckIcon = () => (
 export default function MortgageRecastExamplePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -72,36 +74,27 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Can I Get a 3rd Mortgage",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, mortgages have lien positions such as first, second, and so on. Each mortgage is considered a standalone loan, and even if you borrow from the same lender again, it is treated as a brand-new loan in a new position.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How many mortgages can I have on my home?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "In most cases, you can only have two mortgages — a first and a second. It is highly unlikely that a bank will approve a third mortgage. The second mortgage is often from a different lender than the first.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Why does the position of a mortgage matter?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The position of a mortgage determines the order of repayment if foreclosure occurs. The first-position lender is paid first from the sale of the home, and the second mortgage is paid only if there are remaining funds. During the 2008 financial crisis, many second mortgages were wiped out because foreclosure sales didn't generate enough to cover even the first lien.",
-      },
-    },
+const articleFaqs = [
+  { question: "Can I Get a 3rd Mortgage", answer: "Yes, mortgages have lien positions such as first, second, and so on. Each mortgage is considered a standalone loan, and even if you borrow from the same lender again, it is treated as a brand-new loan in a new position." },
+  { question: "How many mortgages can I have on my home?", answer: "In most cases, you can only have two mortgages — a first and a second. It is highly unlikely that a bank will approve a third mortgage. The second mortgage is often from a different lender than the first." },
+  { question: "Why does the position of a mortgage matter?", answer: "The position of a mortgage determines the order of repayment if foreclosure occurs. The first-position lender is paid first from the sale of the home, and the second mortgage is paid only if there are remaining funds. During the 2008 financial crisis, many second mortgages were wiped out because foreclosure sales didn't generate enough to cover even the first lien." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/can-i-get-a-3rd-mortgage/",
+    headline: "Can I Get a 3rd Mortgage?",
+    description: "Understand lien positions, why third mortgages are rarely available, and how to access more equity by refinancing instead.",
+    datePublished: "2025-02-04",
+    articleSection: "Specialty Loans",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Specialty Loans", path: "/specialty-loans/" },
+    { name: "Can I Get a 3rd Mortgage?", path: "/can-i-get-a-3rd-mortgage/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -118,10 +111,7 @@ const CheckIcon = () => (
 export default function CanIGetA3rdMortgagePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

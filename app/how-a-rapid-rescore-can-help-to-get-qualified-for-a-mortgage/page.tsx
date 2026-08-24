@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
@@ -73,44 +75,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is a rapid rescore and how does it work?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A rapid rescore is an expedited process where a mortgage lender or broker submits proof of recent positive financial behavior or corrected errors directly to the three major credit bureaus. This method bypasses the traditional 30 to 45-day credit reporting cycle, updating your credit report profile in just a matter of days.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How quickly can a rapid rescore improve your credit score?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "While traditional credit report updates can take months, a rapid rescore allows a mortgage lender to receive an updated credit report and fresh credit score typically within three to seven business days after submitting the necessary documentation.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can an individual request a rapid rescore on their own?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No, individuals cannot initiate a rapid rescore independently. The process must be handled directly through a credentialed mortgage lender or financial broker who has an active relationship with the credit bureaus' expedited rescoring systems.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How does a rapid rescore process differ from standard credit repair?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Unlike traditional credit repair companies that focus on disputing long-term negative items, rapid rescoring is intended to quickly update clear, accurate information. It is used after specific actions have occurred—such as paying down high credit card balances, resolving charge-offs, or correcting obvious clerical errors—to reflect your true credit standing immediately for mortgage pre-approval.",
-      },
-    },
+const articleFaqs = [
+  { question: "What is a rapid rescore and how does it work?", answer: "A rapid rescore is an expedited process where a mortgage lender or broker submits proof of recent positive financial behavior or corrected errors directly to the three major credit bureaus. This method bypasses the traditional 30 to 45-day credit reporting cycle, updating your credit report profile in just a matter of days." },
+  { question: "How quickly can a rapid rescore improve your credit score?", answer: "While traditional credit report updates can take months, a rapid rescore allows a mortgage lender to receive an updated credit report and fresh credit score typically within three to seven business days after submitting the necessary documentation." },
+  { question: "Can an individual request a rapid rescore on their own?", answer: "No, individuals cannot initiate a rapid rescore independently. The process must be handled directly through a credentialed mortgage lender or financial broker who has an active relationship with the credit bureaus' expedited rescoring systems." },
+  { question: "How does a rapid rescore process differ from standard credit repair?", answer: "Unlike traditional credit repair companies that focus on disputing long-term negative items, rapid rescoring is intended to quickly update clear, accurate information. It is used after specific actions have occurred—such as paying down high credit card balances, resolving charge-offs, or correcting obvious clerical errors—to reflect your true credit standing immediately for mortgage pre-approval." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/how-a-rapid-rescore-can-help-to-get-qualified-for-a-mortgage/",
+    headline: "How a Rapid Rescore Can Help You Qualify for a Mortgage",
+    description: "Learn how a rapid rescore can quickly update your credit profile, boost your score in days, and help you qualify for a mortgage.",
+    datePublished: "2025-02-03",
+    articleSection: "Mortgage Qualifications",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Qualifications", path: "/mortgage-qualifications/" },
+    { name: "How a Rapid Rescore Can Help You Qualify for a Mortgage", path: "/how-a-rapid-rescore-can-help-to-get-qualified-for-a-mortgage/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -127,10 +113,7 @@ const CheckIcon = () => (
 export default function RapidRescoreMortgagePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -58,28 +60,26 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Do closing costs vary a lot?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Closing costs usually do not vary as much as people think by loan size, because they mostly reflect the work needed to close the loan. The difference between a $200,000 loan and a $500,000 loan can be only a few hundred dollars.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What’s an average closing cost?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A common purchase estimate is around $3,500, with many loans landing between $3,000 and $3,800. In the featured example, total closing costs were $3,563 before prepaids like taxes and insurance.",
-      },
-    },
+const articleFaqs = [
+  { question: "Do closing costs vary a lot?", answer: "Closing costs usually do not vary as much as people think by loan size, because they mostly reflect the work needed to close the loan. The difference between a $200,000 loan and a $500,000 loan can be only a few hundred dollars." },
+  { question: "What’s an average closing cost?", answer: "A common purchase estimate is around $3,500, with many loans landing between $3,000 and $3,800. In the featured example, total closing costs were $3,563 before prepaids like taxes and insurance." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/what-are-closing-costs-on-a-home-purchase/",
+    headline: "What are Closing Costs on a Home Purchase",
+    description: "Learn what closing costs are on a home purchase, what fees are true lender costs, and how prepaids like taxes and insurance affect cash-to-close.",
+    datePublished: "2025-02-03",
+    articleSection: "Mortgage Basics",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Basics", path: "/mortgage-basics/" },
+    { name: "What are Closing Costs on a Home Purchase", path: "/what-are-closing-costs-on-a-home-purchase/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg className="w-5 h-5 text-[#3fb364] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
@@ -90,10 +90,7 @@ const CheckIcon = () => (
 export default function ClosingCostsPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -76,44 +78,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is the Arizona BINSR in a real estate transaction?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The BINSR, which stands for Buyer Inspection Notice and Seller Response, is a standard legal document used in Arizona real estate transactions. It serves as the official platform for the buyer to notify the seller of any physical items or property conditions they disapprove of following their home inspection period.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How long does a buyer have to submit the BINSR in Arizona?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Under the standard Arizona Real Estate Purchase Contract, a buyer has a default inspection period of 10 days from contract acceptance to complete all physical inspections, review reports, and formally deliver the completed BINSR document to the seller.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What options does a buyer have when completing their portion of the BINSR?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "When submitting the BINSR, the buyer must choose one of three primary options: accept the premises in its current condition with no repairs, reject the premises entirely and cancel the contract (reclaiming their earnest money), or provide a specific list of disapproved items and give the seller an opportunity to correct them.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How long does a seller have to respond to a buyer's BINSR repair requests?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Once the seller receives the BINSR containing repair requests, they have a strict timeline of 5 days to respond. The seller can agree to correct all disapproved items, refuse to make any repairs, or offer a compromise by agreeing to fix only specific items listed by the buyer.",
-      },
-    },
+const articleFaqs = [
+  { question: "What is the Arizona BINSR in a real estate transaction?", answer: "The BINSR, which stands for Buyer Inspection Notice and Seller Response, is a standard legal document used in Arizona real estate transactions. It serves as the official platform for the buyer to notify the seller of any physical items or property conditions they disapprove of following their home inspection period." },
+  { question: "How long does a buyer have to submit the BINSR in Arizona?", answer: "Under the standard Arizona Real Estate Purchase Contract, a buyer has a default inspection period of 10 days from contract acceptance to complete all physical inspections, review reports, and formally deliver the completed BINSR document to the seller." },
+  { question: "What options does a buyer have when completing their portion of the BINSR?", answer: "When submitting the BINSR, the buyer must choose one of three primary options: accept the premises in its current condition with no repairs, reject the premises entirely and cancel the contract (reclaiming their earnest money), or provide a specific list of disapproved items and give the seller an opportunity to correct them." },
+  { question: "How long does a seller have to respond to a buyer's BINSR repair requests?", answer: "Once the seller receives the BINSR containing repair requests, they have a strict timeline of 5 days to respond. The seller can agree to correct all disapproved items, refuse to make any repairs, or offer a compromise by agreeing to fix only specific items listed by the buyer." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/arizona-binsr-buyer-inspection-notice-and-seller-response/",
+    headline: "Arizona BINSR Buyer Inspection Notice and Seller Response",
+    description: "Learn how the Arizona BINSR process works, what buyers and sellers need to know, and how to handle repair requests in a home sale.",
+    datePublished: "2025-02-04",
+    articleSection: "Real Estate & Mortgages",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Real Estate & Mortgages", path: "/real-estate-mortgages/" },
+    { name: "Arizona BINSR Buyer Inspection Notice and Seller Response", path: "/arizona-binsr-buyer-inspection-notice-and-seller-response/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -130,10 +116,7 @@ const CheckIcon = () => (
 export default function ArizonaBinsrPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

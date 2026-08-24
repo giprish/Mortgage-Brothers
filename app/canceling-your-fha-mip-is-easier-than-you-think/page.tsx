@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -71,44 +73,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How does FHA Mortgage Insurance Premium (MIP) usually appear on a mortgage statement?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "FHA mortgage insurance premiums are broken down into 12 monthly installments. On your monthly mortgage statement, this expense rarely uses the acronym 'MIP'—instead, it standardly appears under labels such as Monthly Mortgage Insurance, Risk-based HUD, or HUD Escrow.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Under what specific loan-to-value (LTV) rules will an FHA MIP automatically cancel?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "For older FHA loans that qualify for automatic cancellation based on loan-to-value milestones, MIP payments cease once the principal balance hits 78% LTV. For a 30-year mortgage, you must also have paid on the loan for at least 60 months, a benchmark typically reached within 11 years, whereas a 15-year mortgage can hit this point in about 2 years.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How can grandfathered FHA borrowers utilize an FHA Streamline Refinance to lower insurance costs?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Borrowers who have maintained their FHA home loan since before 2009 are grandfathered into unique rate exemptions. By executing an FHA Streamline Refinance, they can dramatically lower their upfront mortgage premium down to 0.01% and reduce their annual MIP rate to a flat 0.55%, regardless of their current loan-to-value calculation.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How can homeowners with newer FHA loans eliminate their monthly mortgage insurance completely?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "If your FHA loan originated after 2013, the monthly mortgage insurance is typically structured to remain for the entire life of the loan. The most effective strategy to get rid of it is to leverage your rising home equity and refinance out of the FHA program into a conventional home loan backed by Fannie Mae or Freddie Mac. Once you transition to a conventional loan and achieve 20% equity, mortgage insurance is eliminated entirely.",
-      },
-    },
+const articleFaqs = [
+  { question: "How does FHA Mortgage Insurance Premium (MIP) usually appear on a mortgage statement?", answer: "FHA mortgage insurance premiums are broken down into 12 monthly installments. On your monthly mortgage statement, this expense rarely uses the acronym 'MIP'—instead, it standardly appears under labels such as Monthly Mortgage Insurance, Risk-based HUD, or HUD Escrow." },
+  { question: "Under what specific loan-to-value (LTV) rules will an FHA MIP automatically cancel?", answer: "For older FHA loans that qualify for automatic cancellation based on loan-to-value milestones, MIP payments cease once the principal balance hits 78% LTV. For a 30-year mortgage, you must also have paid on the loan for at least 60 months, a benchmark typically reached within 11 years, whereas a 15-year mortgage can hit this point in about 2 years." },
+  { question: "How can grandfathered FHA borrowers utilize an FHA Streamline Refinance to lower insurance costs?", answer: "Borrowers who have maintained their FHA home loan since before 2009 are grandfathered into unique rate exemptions. By executing an FHA Streamline Refinance, they can dramatically lower their upfront mortgage premium down to 0.01% and reduce their annual MIP rate to a flat 0.55%, regardless of their current loan-to-value calculation." },
+  { question: "How can homeowners with newer FHA loans eliminate their monthly mortgage insurance completely?", answer: "If your FHA loan originated after 2013, the monthly mortgage insurance is typically structured to remain for the entire life of the loan. The most effective strategy to get rid of it is to leverage your rising home equity and refinance out of the FHA program into a conventional home loan backed by Fannie Mae or Freddie Mac. Once you transition to a conventional loan and achieve 20% equity, mortgage insurance is eliminated entirely." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/canceling-your-fha-mip-is-easier-than-you-think/",
+    headline: "Canceling your FHA MIP is Easier than you think",
+    description: "Learn when FHA MIP can cancel, how Streamline refinance helps pre-2009 loans, and how refinancing to conventional can eliminate mortgage insurance.",
+    datePublished: "2025-02-06",
+    articleSection: "Homeownership Tips",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Homeownership Tips", path: "/homeownership-tips/" },
+    { name: "Canceling your FHA MIP is Easier than you think", path: "/canceling-your-fha-mip-is-easier-than-you-think/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -125,10 +111,7 @@ const CheckIcon = () => (
 export default function CancelingFhaMipPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

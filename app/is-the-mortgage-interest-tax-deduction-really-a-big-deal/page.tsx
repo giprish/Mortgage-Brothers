@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -72,28 +74,26 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What are mortgage interest write-offs?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Mortgage interest write-offs allow homeowners to deduct the interest they pay on their mortgage from their taxable income. Each year, homeowners receive a 1098 form showing the total interest paid, and this amount can be reported to the IRS to reduce taxable income and overall taxes owed.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How does a home mortgage help reduce taxable income?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A home mortgage provides a tax incentive by letting you deduct mortgage interest payments from your taxable income. This lowers the total income the government can tax, ultimately reducing how much you owe each year. The savings vary based on your income, loan size, and tax bracket.",
-      },
-    },
+const articleFaqs = [
+  { question: "What are mortgage interest write-offs?", answer: "Mortgage interest write-offs allow homeowners to deduct the interest they pay on their mortgage from their taxable income. Each year, homeowners receive a 1098 form showing the total interest paid, and this amount can be reported to the IRS to reduce taxable income and overall taxes owed." },
+  { question: "How does a home mortgage help reduce taxable income?", answer: "A home mortgage provides a tax incentive by letting you deduct mortgage interest payments from your taxable income. This lowers the total income the government can tax, ultimately reducing how much you owe each year. The savings vary based on your income, loan size, and tax bracket." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/is-the-mortgage-interest-tax-deduction-really-a-big-deal/",
+    headline: "Is The Mortgage Interest Tax Deduction Really a Big Deal?",
+    description: "See how the mortgage interest tax deduction works with four income examples and what those tax savings look like day to day.",
+    datePublished: "2025-02-12",
+    articleSection: "Mortgage Payments & Strategies",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Payments & Strategies", path: "/mortgage-payments-strategies/" },
+    { name: "Is The Mortgage Interest Tax Deduction Really a Big Deal?", path: "/is-the-mortgage-interest-tax-deduction-really-a-big-deal/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -110,10 +110,7 @@ const CheckIcon = () => (
 export default function IsTheMortgageInterestTaxDeductionReallyABigDealPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

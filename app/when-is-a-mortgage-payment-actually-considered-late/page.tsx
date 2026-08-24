@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
@@ -74,36 +76,27 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "When is a mortgage payment considered late by the bank?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Lenders typically consider your mortgage payment late if it's received after the 15th of the month. Payments made within the first 15 days are not penalized, but if your payment is made on the 16th or later, you may incur a 5% late fee. This does not affect your credit score.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "When does a late mortgage payment impact your credit score?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A late mortgage payment impacts your credit score if it is 30 or more days past due. At that point, the credit bureau will mark your report with a '30-day late,' which can make it harder to get approved for future loans. A 90-day late could trigger foreclosure proceedings, depending on state laws.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can I still get a mortgage with a 30-day late payment on your credit report?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, it's still possible to get approved for a mortgage even with a 30-day late payment on your credit report. However, it may make the approval process more difficult and could affect your interest rate or loan terms.",
-      },
-    },
+const articleFaqs = [
+  { question: "When is a mortgage payment considered late by the bank?", answer: "Lenders typically consider your mortgage payment late if it's received after the 15th of the month. Payments made within the first 15 days are not penalized, but if your payment is made on the 16th or later, you may incur a 5% late fee. This does not affect your credit score." },
+  { question: "When does a late mortgage payment impact your credit score?", answer: "A late mortgage payment impacts your credit score if it is 30 or more days past due. At that point, the credit bureau will mark your report with a '30-day late,' which can make it harder to get approved for future loans. A 90-day late could trigger foreclosure proceedings, depending on state laws." },
+  { question: "Can I still get a mortgage with a 30-day late payment on your credit report?", answer: "Yes, it's still possible to get approved for a mortgage even with a 30-day late payment on your credit report. However, it may make the approval process more difficult and could affect your interest rate or loan terms." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/when-is-a-mortgage-payment-actually-considered-late/",
+    headline: "When is a mortgage payment actually considered late?",
+    description: "Learn when lenders vs. credit bureaus consider a mortgage payment late, grace periods, 5% late fees, and 30-day credit reporting.",
+    datePublished: "2024-12-29",
+    articleSection: "Mortgage Basics",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Basics", path: "/mortgage-basics/" },
+    { name: "When is a mortgage payment actually considered late?", path: "/when-is-a-mortgage-payment-actually-considered-late/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -120,10 +113,7 @@ const CheckIcon = () => (
 export default function WhenIsAMortgagePaymentActuallyConsideredLatePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

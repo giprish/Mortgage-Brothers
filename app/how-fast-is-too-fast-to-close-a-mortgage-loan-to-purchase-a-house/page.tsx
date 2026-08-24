@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -72,44 +74,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is considered the ideal and standard timeline to close a mortgage loan?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The industry standard and most ideal timeline to close a mortgage loan is 30 days. This timeframe provides a realistic window of about 20 to 21 business days, which is enough time to complete underwriting, the home appraisal, and the title review without forcing any party into a rush.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How fast can a mortgage safely close and what is considered a super-fast close?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A closing timeframe of 20 to 25 days is considered a fast but entirely reasonable close. Closing a loan in 15 days or less is categorized as a super-fast close, which is extremely rushed, highly stressful, and typically only occurs in rare cases where all financial and logistical variables perfectly align.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What are the primary risks of trying to close a home loan too quickly?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Closing too fast significantly increases stress for both the buyer and the seller, which can lead to poor decision-making. Logistically, it greatly increases the risk of human error and typos in critical legal paperwork, and it may force buyers to rush or skip essential steps like detailed home inspections or negotiated rate locks.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Why should buyers be cautious of lenders advertising guaranteed 10 or 15-day closings?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Lenders who aggressively market guaranteed 10 to 15-day turnarounds are often highly priced, charge much higher interest rates, or are simply not busy. A 30-day target is safer because it allows the homebuyer to perform necessary due diligence rather than rushing into a major long-term financial commitment.",
-      },
-    },
+const articleFaqs = [
+  { question: "What is considered the ideal and standard timeline to close a mortgage loan?", answer: "The industry standard and most ideal timeline to close a mortgage loan is 30 days. This timeframe provides a realistic window of about 20 to 21 business days, which is enough time to complete underwriting, the home appraisal, and the title review without forcing any party into a rush." },
+  { question: "How fast can a mortgage safely close and what is considered a super-fast close?", answer: "A closing timeframe of 20 to 25 days is considered a fast but entirely reasonable close. Closing a loan in 15 days or less is categorized as a super-fast close, which is extremely rushed, highly stressful, and typically only occurs in rare cases where all financial and logistical variables perfectly align." },
+  { question: "What are the primary risks of trying to close a home loan too quickly?", answer: "Closing too fast significantly increases stress for both the buyer and the seller, which can lead to poor decision-making. Logistically, it greatly increases the risk of human error and typos in critical legal paperwork, and it may force buyers to rush or skip essential steps like detailed home inspections or negotiated rate locks." },
+  { question: "Why should buyers be cautious of lenders advertising guaranteed 10 or 15-day closings?", answer: "Lenders who aggressively market guaranteed 10 to 15-day turnarounds are often highly priced, charge much higher interest rates, or are simply not busy. A 30-day target is safer because it allows the homebuyer to perform necessary due diligence rather than rushing into a major long-term financial commitment." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house/",
+    headline: "How Fast is Too Fast to Close a Mortgage Loan to Purchase a House?",
+    description: "Learn why a 30-day close is ideal, when 20–25 days is reasonable, and the risks of rushing a super-fast mortgage closing.",
+    datePublished: "2025-02-04",
+    articleSection: "Mortgage Process Guidance",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Process Guidance", path: "/mortgage-process-guidance/" },
+    { name: "How Fast is Too Fast to Close a Mortgage Loan to Purchase a House?", path: "/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -126,10 +112,7 @@ const CheckIcon = () => (
 export default function HowFastIsTooFastToClosePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
@@ -73,52 +75,29 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Can I switch from FHA to Conventional later?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes—many refinance into Conventional loans once they've built equity to drop mortgage insurance.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do FHA loans always cost more long-term?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Usually. FHA's lifetime MIP adds up, unless you refinance.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Which loan is better for investors?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Conventional—FHA is only for primary residences.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Which loan closes faster?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Conventional, since FHA requires stricter inspections.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can I use Conventional with less than 20% down?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. You'll pay PMI, but it's temporary—unlike FHA's MIP.",
-      },
-    },
+const articleFaqs = [
+  { question: "Can I switch from FHA to Conventional later?", answer: "Yes—many refinance into Conventional loans once they've built equity to drop mortgage insurance." },
+  { question: "Do FHA loans always cost more long-term?", answer: "Usually. FHA's lifetime MIP adds up, unless you refinance." },
+  { question: "Which loan is better for investors?", answer: "Conventional—FHA is only for primary residences." },
+  { question: "Which loan closes faster?", answer: "Conventional, since FHA requires stricter inspections." },
+  { question: "Can I use Conventional with less than 20% down?", answer: "Yes. You'll pay PMI, but it's temporary—unlike FHA's MIP." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/conventional-home-loans-vs-fha-loans-which-is-right-for-you/",
+    headline: "Conventional Home Loans vs. FHA Loans: Which Is Right for You?",
+    description: "Detailed side-by-side comparison of credit score rules, down payments, PMI vs. MIP, and total 30-year costs for Arizona buyers.",
+    datePublished: "2026-06-20",
+    articleSection: "Mortgage Basics",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Basics", path: "/mortgage-basics/" },
+    { name: "Conventional Home Loans vs. FHA Loans: Which Is Right for You?", path: "/conventional-home-loans-vs-fha-loans-which-is-right-for-you/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -135,10 +114,7 @@ const CheckIcon = () => (
 export default function ConventionalVsFhaLoansPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

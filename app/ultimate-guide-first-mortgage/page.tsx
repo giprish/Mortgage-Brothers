@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
@@ -72,60 +74,30 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What do lenders look for when approving a mortgage?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Lenders typically assess several key factors when approving a mortgage, including your credit score and payment history, reliable income, debt-to-income ratio, and available assets. They want to ensure you have a strong record of repaying debts, a stable income source, manageable debt levels, and financial reserves to cover unforeseen circumstances.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How does my credit score affect my mortgage approval?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Your credit score plays a major role in determining the interest rate and loan options available to you. A score around 700 or higher is considered good and often qualifies for the best rates. Scores as low as 620 may still be accepted, but they typically result in higher rates. Lenders also consider your credit utilization and full credit history, not just the score.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How much down payment do I need for my first home?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The required down payment depends on the type of loan and home price. Conventional loans generally need 20% down, though some allow as little as 5%. FHA loans require a minimum of 3.5% down, and VA loans for veterans can go as low as 0%. A larger down payment helps reduce your monthly payments and total loan cost.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What types of home loans are available for first-time buyers?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Common loan types include conventional loans, FHA loans, and VA loans. Conventional loans are widely available and often sold on the secondary market. FHA loans are backed by the Federal Housing Administration and offer lower down payments, while VA loans are guaranteed by the Department of Veterans Affairs and provide benefits like no down payment for eligible veterans.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the difference between pre-approval and pre-qualification?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A pre-qualification is an initial estimate of how much you may be able to borrow based on basic information you provide. A pre-approval is a more detailed process that requires financial verification, such as proof of income, tax returns, and bank statements. Pre-approval carries more weight when making an offer on a home.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What happens after my mortgage is approved?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Once your mortgage is approved, the lender will finalize the loan documents and schedule your closing. You'll complete a final home inspection, sign paperwork with your closing agent or attorney, and arrange for the key transfer. Staying in close contact with your lender and real estate agent ensures a smooth closing process.",
-      },
-    },
+const articleFaqs = [
+  { question: "What do lenders look for when approving a mortgage?", answer: "Lenders typically assess several key factors when approving a mortgage, including your credit score and payment history, reliable income, debt-to-income ratio, and available assets. They want to ensure you have a strong record of repaying debts, a stable income source, manageable debt levels, and financial reserves to cover unforeseen circumstances." },
+  { question: "How does my credit score affect my mortgage approval?", answer: "Your credit score plays a major role in determining the interest rate and loan options available to you. A score around 700 or higher is considered good and often qualifies for the best rates. Scores as low as 620 may still be accepted, but they typically result in higher rates. Lenders also consider your credit utilization and full credit history, not just the score." },
+  { question: "How much down payment do I need for my first home?", answer: "The required down payment depends on the type of loan and home price. Conventional loans generally need 20% down, though some allow as little as 5%. FHA loans require a minimum of 3.5% down, and VA loans for veterans can go as low as 0%. A larger down payment helps reduce your monthly payments and total loan cost." },
+  { question: "What types of home loans are available for first-time buyers?", answer: "Common loan types include conventional loans, FHA loans, and VA loans. Conventional loans are widely available and often sold on the secondary market. FHA loans are backed by the Federal Housing Administration and offer lower down payments, while VA loans are guaranteed by the Department of Veterans Affairs and provide benefits like no down payment for eligible veterans." },
+  { question: "What is the difference between pre-approval and pre-qualification?", answer: "A pre-qualification is an initial estimate of how much you may be able to borrow based on basic information you provide. A pre-approval is a more detailed process that requires financial verification, such as proof of income, tax returns, and bank statements. Pre-approval carries more weight when making an offer on a home." },
+  { question: "What happens after my mortgage is approved?", answer: "Once your mortgage is approved, the lender will finalize the loan documents and schedule your closing. You'll complete a final home inspection, sign paperwork with your closing agent or attorney, and arrange for the key transfer. Staying in close contact with your lender and real estate agent ensures a smooth closing process." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/ultimate-guide-first-mortgage/",
+    headline: "The Ultimate Guide to Your First Mortgage",
+    description: "A complete first-time buyer guide covering credit, down payments, loan types, pre-approval, rate locks, and closing in Arizona.",
+    datePublished: "2025-02-11",
+    articleSection: "Mortgage Basics",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Basics", path: "/mortgage-basics/" },
+    { name: "The Ultimate Guide to Your First Mortgage", path: "/ultimate-guide-first-mortgage/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -142,10 +114,7 @@ const CheckIcon = () => (
 export default function UltimateGuideFirstMortgagePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

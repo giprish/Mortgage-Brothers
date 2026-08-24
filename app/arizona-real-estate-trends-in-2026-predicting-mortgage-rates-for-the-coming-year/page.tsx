@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
@@ -73,36 +75,27 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Are Arizona home prices dropping in 2026?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Not significantly. Prices are stabilizing, with some growth in suburbs like Buckeye, Marana, and Casa Grande.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What are mortgage rates in Arizona right now?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "As of August 2026, most Arizona buyers are seeing 30-year fixed rates around 6.6%–6.75%, depending on credit, loan type, and points. An earlier mid-2026 call of about 5.5% did not happen.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is 2026 a good time to buy in Arizona?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, especially with more inventory and fewer bidding wars. Down payment assistance can also help first-time buyers.",
-      },
-    },
+const articleFaqs = [
+  { question: "Are Arizona home prices dropping in 2026?", answer: "Not significantly. Prices are stabilizing, with some growth in suburbs like Buckeye, Marana, and Casa Grande." },
+  { question: "What are mortgage rates in Arizona right now?", answer: "As of August 2026, most Arizona buyers are seeing 30-year fixed rates around 6.6%–6.75%, depending on credit, loan type, and points. An earlier mid-2026 call of about 5.5% did not happen." },
+  { question: "Is 2026 a good time to buy in Arizona?", answer: "Yes, especially with more inventory and fewer bidding wars. Down payment assistance can also help first-time buyers." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/arizona-real-estate-trends-in-2026-predicting-mortgage-rates-for-the-coming-year/",
+    headline: "Arizona Real Estate Trends in 2026: Predicting Mortgage Rates for the Coming Year",
+    description: "As of August 2026, Arizona 30-year rates are around 6.6%–6.75%—not the mid-5s some forecasts hoped for. Here’s the current market, inventory, and what that means for buyers.",
+    datePublished: "2026-05-05",
+    articleSection: "Real Estate & Mortgages",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Real Estate & Mortgages", path: "/real-estate-mortgages/" },
+    { name: "Arizona Real Estate Trends in 2026: Predicting Mortgage Rates for the Coming Year", path: "/arizona-real-estate-trends-in-2026-predicting-mortgage-rates-for-the-coming-year/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -119,10 +112,7 @@ const CheckIcon = () => (
 export default function ArizonaRealEstateTrends2026Page() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

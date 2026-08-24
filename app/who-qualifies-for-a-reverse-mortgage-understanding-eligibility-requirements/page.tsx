@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -8,60 +10,34 @@ import FaqAccordion from "../component/FaqAccordion";
 
 export const metadata: Metadata = getSeoMetadata("/who-qualifies-for-a-reverse-mortgage-understanding-eligibility-requirements/");
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is the minimum age to qualify for a reverse mortgage?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "At least one borrower must be 62 years old. Spouses younger than 62 may have protections under the non-borrowing spouse rule.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can I get a reverse mortgage if I still have a mortgage?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, the reverse mortgage will first pay off your existing mortgage, provided there is enough equity remaining to access funds.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Which properties are eligible for a reverse mortgage?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Eligible properties include single-family homes, 1–4 unit homes you occupy, FHA-approved condos, and manufactured homes meeting HUD standards. Vacation homes, co-ops, and homes on leased land are generally not eligible.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do I need counseling before applying?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, HUD-approved counseling is mandatory to ensure you understand the reverse mortgage process, costs, and alternatives.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What financial obligations must I meet?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "You must demonstrate the ability to pay property taxes, insurance, and maintain the home. Lenders also review your credit and federal debt status.",
-      },
-    }
+const articleFaqs = [
+  { question: "What is the minimum age to qualify for a reverse mortgage?", answer: "At least one borrower must be 62 years old. Spouses younger than 62 may have protections under the non-borrowing spouse rule." },
+  { question: "Can I get a reverse mortgage if I still have a mortgage?", answer: "Yes, the reverse mortgage will first pay off your existing mortgage, provided there is enough equity remaining to access funds." },
+  { question: "Which properties are eligible for a reverse mortgage?", answer: "Eligible properties include single-family homes, 1–4 unit homes you occupy, FHA-approved condos, and manufactured homes meeting HUD standards. Vacation homes, co-ops, and homes on leased land are generally not eligible." },
+  { question: "Do I need counseling before applying?", answer: "Yes, HUD-approved counseling is mandatory to ensure you understand the reverse mortgage process, costs, and alternatives." },
+  { question: "What financial obligations must I meet?", answer: "You must demonstrate the ability to pay property taxes, insurance, and maintain the home. Lenders also review your credit and federal debt status." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/who-qualifies-for-a-reverse-mortgage-understanding-eligibility-requirements/",
+    headline: "Who Qualifies for a Reverse Mortgage? Understanding Eligibility & Requirements",
+    description: "A reverse mortgage allows homeowners aged 62 and older to convert home equity into cash without selling their home. However, not everyone qualifies. Understanding the eligibility requirements is essential before considering this financial option.",
+    datePublished: "2026-06-05",
+    articleSection: "Arizona Mortgage Insights",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Arizona Mortgage Insights", path: "/arizona-mortgage-insights/" },
+    { name: "Who Qualifies for a Reverse Mortgage? Understanding Eligibility & Requirements", path: "/who-qualifies-for-a-reverse-mortgage-understanding-eligibility-requirements/" },
   ],
-};
+});
 
 export default function ReverseMortgageEligibilityArticlePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
       <Navbar />
 
       <main className="flex-grow pt-[64px] sm:pt-[72px]">

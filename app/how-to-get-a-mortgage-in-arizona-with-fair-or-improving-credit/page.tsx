@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
@@ -73,36 +75,27 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What's the minimum credit score to buy a home in Arizona?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Most conventional loan programs require 620 or higher, while FHA loans can qualify with credit scores as low as 580.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can I qualify if my credit is below 620 or even below 580?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Conventional programs often require 620+, but FHA loans may qualify borrowers with scores as low as 580. If you are below 580, we recommend improving your score first — our team can help with a quick action plan.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How long does credit improvement take?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Depending on your situation, meaningful progress can occur in 30-90 days by paying down debt, correcting errors, and managing utilization.",
-      },
-    },
+const articleFaqs = [
+  { question: "What's the minimum credit score to buy a home in Arizona?", answer: "Most conventional loan programs require 620 or higher, while FHA loans can qualify with credit scores as low as 580." },
+  { question: "Can I qualify if my credit is below 620 or even below 580?", answer: "Conventional programs often require 620+, but FHA loans may qualify borrowers with scores as low as 580. If you are below 580, we recommend improving your score first — our team can help with a quick action plan." },
+  { question: "How long does credit improvement take?", answer: "Depending on your situation, meaningful progress can occur in 30-90 days by paying down debt, correcting errors, and managing utilization." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/how-to-get-a-mortgage-in-arizona-with-fair-or-improving-credit/",
+    headline: "How to Get a Mortgage in Arizona with Fair or Improving Credit",
+    description: "Learn how buyers with credit scores between 580 and 660 qualify for home loans in Arizona with FHA programs and rapid rescoring.",
+    datePublished: "2026-06-10",
+    articleSection: "Arizona Mortgage Insights",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Arizona Mortgage Insights", path: "/arizona-mortgage-insights/" },
+    { name: "How to Get a Mortgage in Arizona with Fair or Improving Credit", path: "/how-to-get-a-mortgage-in-arizona-with-fair-or-improving-credit/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -119,10 +112,7 @@ const CheckIcon = () => (
 export default function FairOrImprovingCreditPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

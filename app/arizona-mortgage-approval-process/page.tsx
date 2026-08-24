@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
@@ -85,44 +87,28 @@ const tocLinks = [
   { label: "Arizona Mortgage Approval Process FAQ's", href: "#arizona-mortgage-approval-process-faqs" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What basic background information is required during the initial mortgage application?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "When a loan officer takes your initial application, you must provide your full legal name, a complete two-year residence and employment history, documentation of your assets and income, a list of any other properties you own, and disclosures regarding past credit events like collections, bankruptcies, or foreclosures.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do automated underwriting systems evaluate an Arizona mortgage file?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Once your credit profile and application are loaded, the file is typically submitted through online automated underwriting platforms like Desktop Underwriter (DU) or Loan Product Advisor (LPA). These systems generate automated 'findings' that determine initial approval status and list the explicit documentation requirements needed for the loan file.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Should I expect the underwriter to request more documents after initial submission?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Nearly 99% of all mortgage files receive an initial approval that is conditional, meaning it contains conditional requirements. Homebuyers should fully anticipate that the underwriter will ask for additional supporting documents, asset verifications, or letters of explanation before issuing a final approval.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What are the final operational steps required to fund an Arizona mortgage?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Once all conditional requirements are cleared, the lender issues a final approval and delivers the closing loan documents to the title company for your signing appointment. After signing, the package is reviewed by the lender's funder, who authorizes and sends the final wire transfer to the title company to fund the transaction.",
-      },
-    },
+const articleFaqs = [
+  { question: "What basic background information is required during the initial mortgage application?", answer: "When a loan officer takes your initial application, you must provide your full legal name, a complete two-year residence and employment history, documentation of your assets and income, a list of any other properties you own, and disclosures regarding past credit events like collections, bankruptcies, or foreclosures." },
+  { question: "How do automated underwriting systems evaluate an Arizona mortgage file?", answer: "Once your credit profile and application are loaded, the file is typically submitted through online automated underwriting platforms like Desktop Underwriter (DU) or Loan Product Advisor (LPA). These systems generate automated 'findings' that determine initial approval status and list the explicit documentation requirements needed for the loan file." },
+  { question: "Should I expect the underwriter to request more documents after initial submission?", answer: "Yes. Nearly 99% of all mortgage files receive an initial approval that is conditional, meaning it contains conditional requirements. Homebuyers should fully anticipate that the underwriter will ask for additional supporting documents, asset verifications, or letters of explanation before issuing a final approval." },
+  { question: "What are the final operational steps required to fund an Arizona mortgage?", answer: "Once all conditional requirements are cleared, the lender issues a final approval and delivers the closing loan documents to the title company for your signing appointment. After signing, the package is reviewed by the lender's funder, who authorizes and sends the final wire transfer to the title company to fund the transaction." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/arizona-mortgage-approval-process/",
+    headline: "Learn About the Home Mortgage Approval Process",
+    description: "A step-by-step roadmap of the Arizona mortgage approval process, plus key concepts like DTI, LTV, credit, and pre-approval letters.",
+    datePublished: "2025-02-10",
+    articleSection: "Mortgage Basics",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Basics", path: "/mortgage-basics/" },
+    { name: "Learn About the Home Mortgage Approval Process", path: "/arizona-mortgage-approval-process/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -139,10 +125,7 @@ const CheckIcon = () => (
 export default function ArizonaMortgageApprovalProcessPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

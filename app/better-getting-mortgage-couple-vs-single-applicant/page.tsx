@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -71,44 +73,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What are the primary financial benefits of applying for a mortgage as a couple?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Applying for a mortgage as a couple allows lenders to combine both applicants' incomes and assets. This joint financial profile typically lowers the overall debt-to-income (DTI) ratio, helping the couple qualify for a larger loan amount or secure better mortgage terms than they might individually.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do mortgage lenders evaluate credit scores when a couple applies together?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "When a couple applies jointly, both credit histories carry equal weight. Lenders do not average the scores together; instead, underwriting guidelines dictate that they typically use the lower middle credit score of the two applicants to determine eligibility and pricing.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What are the advantages of applying for a home loan as a single applicant?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "As a single applicant, your qualification rests entirely on your own financial profile. This eliminates any negative surprises or impact from a partner's poor credit history, high individual debt loads, or erratic employment records, allowing you to maintain control over the application process.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Should a couple apply solo if one partner has a poor credit history?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "If one partner has a low credit score or significant debt, it may be beneficial to apply as a single applicant using only the spouse with strong financial credentials. However, doing so means the lender will exclude the non-applying partner's income, which could reduce the maximum home purchase budget.",
-      },
-    },
+const articleFaqs = [
+  { question: "What are the primary financial benefits of applying for a mortgage as a couple?", answer: "Applying for a mortgage as a couple allows lenders to combine both applicants' incomes and assets. This joint financial profile typically lowers the overall debt-to-income (DTI) ratio, helping the couple qualify for a larger loan amount or secure better mortgage terms than they might individually." },
+  { question: "How do mortgage lenders evaluate credit scores when a couple applies together?", answer: "When a couple applies jointly, both credit histories carry equal weight. Lenders do not average the scores together; instead, underwriting guidelines dictate that they typically use the lower middle credit score of the two applicants to determine eligibility and pricing." },
+  { question: "What are the advantages of applying for a home loan as a single applicant?", answer: "As a single applicant, your qualification rests entirely on your own financial profile. This eliminates any negative surprises or impact from a partner's poor credit history, high individual debt loads, or erratic employment records, allowing you to maintain control over the application process." },
+  { question: "Should a couple apply solo if one partner has a poor credit history?", answer: "If one partner has a low credit score or significant debt, it may be beneficial to apply as a single applicant using only the spouse with strong financial credentials. However, doing so means the lender will exclude the non-applying partner's income, which could reduce the maximum home purchase budget." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/better-getting-mortgage-couple-vs-single-applicant/",
+    headline: "Which Is Better: Getting a Mortgage As a Couple vs. As a Single Applicant?",
+    description: "Compare applying for a mortgage as a couple versus a single applicant and understand how underwriting may treat your credit.",
+    datePublished: "2025-02-03",
+    articleSection: "Mortgage Qualifications",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Qualifications", path: "/mortgage-qualifications/" },
+    { name: "Which Is Better: Getting a Mortgage As a Couple vs. As a Single Applicant?", path: "/better-getting-mortgage-couple-vs-single-applicant/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -125,10 +111,7 @@ const CheckIcon = () => (
 export default function MortgageCoupleVsSingleApplicantPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

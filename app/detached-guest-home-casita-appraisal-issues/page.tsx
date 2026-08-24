@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import FaqAccordion from "../component/FaqAccordion";
@@ -73,44 +75,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Detached Guest Home (Casita) appraisal issues",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No, a detached guest home (casita) does not count toward the main house square footage. Instead, it is listed as a line item adjustment in the appraisal report.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How are detached guest homes appraised when refinancing?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "When refinancing, appraisers typically do not include casitas in the main living area. They add a separate line item adjustment, which may impact the loan-to-value ratio for rate and term refinances.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Why are detached guest homes difficult to appraise when purchasing?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Detached guest homes are difficult to appraise because there are fewer comparable sales available. The limited sample size and variations in age, quality, and size make it harder for appraisers to determine accurate values.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the cost to build a detached guest home compared to its appraised value?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Building a detached guest home often costs between $70,000 and $120,000, but appraisers may only assign a line item adjustment of around $20,000, which is significantly lower than the construction cost.",
-      },
-    },
+const articleFaqs = [
+  { question: "Detached Guest Home (Casita) appraisal issues", answer: "No, a detached guest home (casita) does not count toward the main house square footage. Instead, it is listed as a line item adjustment in the appraisal report." },
+  { question: "How are detached guest homes appraised when refinancing?", answer: "When refinancing, appraisers typically do not include casitas in the main living area. They add a separate line item adjustment, which may impact the loan-to-value ratio for rate and term refinances." },
+  { question: "Why are detached guest homes difficult to appraise when purchasing?", answer: "Detached guest homes are difficult to appraise because there are fewer comparable sales available. The limited sample size and variations in age, quality, and size make it harder for appraisers to determine accurate values." },
+  { question: "What is the cost to build a detached guest home compared to its appraised value?", answer: "Building a detached guest home often costs between $70,000 and $120,000, but appraisers may only assign a line item adjustment of around $20,000, which is significantly lower than the construction cost." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/detached-guest-home-casita-appraisal-issues/",
+    headline: "Detached Guest Home (Casita) Appraisal Issues",
+    description: "Learn how casitas are appraised as line-item adjustments, why values often lag build cost, and what that means for buyers and refinancers.",
+    datePublished: "2025-02-05",
+    articleSection: "Real Estate & Mortgages",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Real Estate & Mortgages", path: "/real-estate-mortgages/" },
+    { name: "Detached Guest Home (Casita) Appraisal Issues", path: "/detached-guest-home-casita-appraisal-issues/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -127,10 +113,7 @@ const CheckIcon = () => (
 export default function DetachedGuestHomeCasitaAppraisalPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

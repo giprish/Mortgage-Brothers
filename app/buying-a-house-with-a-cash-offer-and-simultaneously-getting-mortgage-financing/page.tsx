@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -72,44 +74,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Buying a House with Cash Offer and Simultaneously Getting Mortgage Financing",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, you can. One way to do this is by using a family member's cash as a private loan to make the initial cash offer. Once you close on the home, you can refinance it into a traditional mortgage under your name.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How does using a family member's cash work in a home purchase?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A family member can act as a private lender by providing the funds to buy the home. A note and deed of trust are created to formalize the loan. After closing, you can refinance the property to pay back the family member and transfer the loan into your name.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What steps are involved in setting up a private loan for a cash offer?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Start by discussing the plan with your mortgage lender to ensure they support the approach. Then, work with an escrow officer to draft a note and deed of trust that outlines the loan amount, interest rate, and repayment terms. Make sure the note uses standard market terms.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What if part of the funds is a gift from a relative?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "If part of the funds is a gift, you will need to decide what amount you want to refinance. For example, if you buy a home for $200,000 and your relative gifts 20% as a down payment, you would only refinance $160,000. The remaining 20% would be considered a gift and not part of the loan amount.",
-      },
-    },
+const articleFaqs = [
+  { question: "Buying a House with Cash Offer and Simultaneously Getting Mortgage Financing", answer: "Yes, you can. One way to do this is by using a family member's cash as a private loan to make the initial cash offer. Once you close on the home, you can refinance it into a traditional mortgage under your name." },
+  { question: "How does using a family member's cash work in a home purchase?", answer: "A family member can act as a private lender by providing the funds to buy the home. A note and deed of trust are created to formalize the loan. After closing, you can refinance the property to pay back the family member and transfer the loan into your name." },
+  { question: "What steps are involved in setting up a private loan for a cash offer?", answer: "Start by discussing the plan with your mortgage lender to ensure they support the approach. Then, work with an escrow officer to draft a note and deed of trust that outlines the loan amount, interest rate, and repayment terms. Make sure the note uses standard market terms." },
+  { question: "What if part of the funds is a gift from a relative?", answer: "If part of the funds is a gift, you will need to decide what amount you want to refinance. For example, if you buy a home for $200,000 and your relative gifts 20% as a down payment, you would only refinance $160,000. The remaining 20% would be considered a gift and not part of the loan amount." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/buying-a-house-with-a-cash-offer-and-simultaneously-getting-mortgage-financing/",
+    headline: "Buying a House with a Cash Offer and Simultaneously getting Mortgage Financing",
+    description: "How to make a competitive cash offer using family or private funds, then refinance into a traditional mortgage after closing.",
+    datePublished: "2025-02-04",
+    articleSection: "Mortgage Payments & Strategies",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Payments & Strategies", path: "/mortgage-payments-strategies/" },
+    { name: "Buying a House with a Cash Offer and Simultaneously getting Mortgage Financing", path: "/buying-a-house-with-a-cash-offer-and-simultaneously-getting-mortgage-financing/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -126,10 +112,7 @@ const CheckIcon = () => (
 export default function CashOfferMortgageFinancingPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

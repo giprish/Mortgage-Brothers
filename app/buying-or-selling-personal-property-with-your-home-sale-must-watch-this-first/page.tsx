@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -72,36 +74,27 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Buying or Selling personal property with your home sale? Must Watch this First!",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "When personal property is included in a purchase contract, lenders may see it as a seller concession or inducement for purchase, which can cause issues. Lenders want the house itself to be the sole reason for the purchase, as it is the asset that secures the loan.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the difference between Real Estate and Personal Property?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Real Estate includes buildings, land, and items affixed to the property, such as built-in bookcases or chandeliers. Personal Property refers to non-affixed items like furniture, paintings, grills, lawnmowers, dishes, and other movable possessions.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What restrictions should buyers know about Personal Property in contracts?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "In most cases, non-affixed personal property should be handled outside of the purchase contract. However, in Arizona purchase contracts, certain items such as dishwashers, washer-dryers, refrigerators, and window treatments may be included.",
-      },
-    },
+const articleFaqs = [
+  { question: "Buying or Selling personal property with your home sale? Must Watch this First!", answer: "When personal property is included in a purchase contract, lenders may see it as a seller concession or inducement for purchase, which can cause issues. Lenders want the house itself to be the sole reason for the purchase, as it is the asset that secures the loan." },
+  { question: "What is the difference between Real Estate and Personal Property?", answer: "Real Estate includes buildings, land, and items affixed to the property, such as built-in bookcases or chandeliers. Personal Property refers to non-affixed items like furniture, paintings, grills, lawnmowers, dishes, and other movable possessions." },
+  { question: "What restrictions should buyers know about Personal Property in contracts?", answer: "In most cases, non-affixed personal property should be handled outside of the purchase contract. However, in Arizona purchase contracts, certain items such as dishwashers, washer-dryers, refrigerators, and window treatments may be included." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/buying-or-selling-personal-property-with-your-home-sale-must-watch-this-first/",
+    headline: "Buying or Selling personal property with your home sale? Must Watch this First!",
+    description: "Learn why personal property in a purchase contract can trigger lender issues and which Arizona items can transfer with the home sale.",
+    datePublished: "2025-02-05",
+    articleSection: "Mortgage Payments & Strategies",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Payments & Strategies", path: "/mortgage-payments-strategies/" },
+    { name: "Buying or Selling personal property with your home sale? Must Watch this First!", path: "/buying-or-selling-personal-property-with-your-home-sale-must-watch-this-first/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -118,10 +111,7 @@ const CheckIcon = () => (
 export default function BuyingOrSellingPersonalPropertyPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

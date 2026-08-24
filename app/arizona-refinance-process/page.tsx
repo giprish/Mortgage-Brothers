@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
@@ -73,52 +75,29 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What are the primary reasons an Arizona homeowner should consider refinancing?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A mortgage is typically a homeowner's largest debt, making an annual review essential. The top four reasons to refinance an Arizona home loan include taking advantage of a drop in market interest rates, lowering your existing monthly payment, consolidating high-interest debts, or changing your specific mortgage program type.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do you accurately calculate the net benefit of refinancing a home loan?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "To calculate the true benefit, homeowners must look past simple 'cash flow' savings and focus on total interest savings over the life of the loan. While comparing monthly payments reveals immediate monthly breathing room, your long-term savings depend directly on your current amortization schedule and the upfront cost of refinancing.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the difference between a Cash-Out Refinance and a HELOC for home improvements?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A cash-out refinance replaces your existing primary mortgage with a completely new, larger first loan, allowing you to pocket the equity difference. In contrast, a Home Equity Line of Credit (HELOC) or Home Equity Loan acts as a separate 'second mortgage' that holds a subordinate position on your property title, typically carrying slightly higher interest rates due to the increased risk to the lender.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is there truly such a thing as a 'No Cost' mortgage refinance?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Technically, no. Every mortgage refinance incurs processing and closing costs. In a heavily advertised 'no cost' refinance, the lender simply structures the loan with a slightly higher interest rate, using that premium to cover your closing fees on your behalf rather than requiring cash out of pocket.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How soon can you refinance after purchasing or previously refinancing a home?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "As a standard rule of thumb, lenders prefer that you wait until after making your 6th scheduled monthly payment before executing a new refinance. However, exceptions do exist depending on the loan program, and it is highly recommended to review your initial loan terms to ensure no short-term prepayment penalties apply.",
-      },
-    },
+const articleFaqs = [
+  { question: "What are the primary reasons an Arizona homeowner should consider refinancing?", answer: "A mortgage is typically a homeowner's largest debt, making an annual review essential. The top four reasons to refinance an Arizona home loan include taking advantage of a drop in market interest rates, lowering your existing monthly payment, consolidating high-interest debts, or changing your specific mortgage program type." },
+  { question: "How do you accurately calculate the net benefit of refinancing a home loan?", answer: "To calculate the true benefit, homeowners must look past simple 'cash flow' savings and focus on total interest savings over the life of the loan. While comparing monthly payments reveals immediate monthly breathing room, your long-term savings depend directly on your current amortization schedule and the upfront cost of refinancing." },
+  { question: "What is the difference between a Cash-Out Refinance and a HELOC for home improvements?", answer: "A cash-out refinance replaces your existing primary mortgage with a completely new, larger first loan, allowing you to pocket the equity difference. In contrast, a Home Equity Line of Credit (HELOC) or Home Equity Loan acts as a separate 'second mortgage' that holds a subordinate position on your property title, typically carrying slightly higher interest rates due to the increased risk to the lender." },
+  { question: "Is there truly such a thing as a 'No Cost' mortgage refinance?", answer: "Technically, no. Every mortgage refinance incurs processing and closing costs. In a heavily advertised 'no cost' refinance, the lender simply structures the loan with a slightly higher interest rate, using that premium to cover your closing fees on your behalf rather than requiring cash out of pocket." },
+  { question: "How soon can you refinance after purchasing or previously refinancing a home?", answer: "As a standard rule of thumb, lenders prefer that you wait until after making your 6th scheduled monthly payment before executing a new refinance. However, exceptions do exist depending on the loan program, and it is highly recommended to review your initial loan terms to ensure no short-term prepayment penalties apply." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/arizona-refinance-process/",
+    headline: "Arizona Refinance Process",
+    description: "Learn the Arizona refinance process, four top reasons to refinance, how to calculate net benefit, and HELOC vs cash-out options.",
+    datePublished: "2025-02-10",
+    articleSection: "Mortgage Basics",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Basics", path: "/mortgage-basics/" },
+    { name: "Arizona Refinance Process", path: "/arizona-refinance-process/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -135,10 +114,7 @@ const CheckIcon = () => (
 export default function ArizonaRefinanceProcessPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

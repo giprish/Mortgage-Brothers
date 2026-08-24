@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
@@ -73,28 +75,26 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Are homes owned by the seller for less than 90 days eligible for FHA financing?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No. Under current FHA policy, a home the seller has owned for less than 90 days is not eligible for FHA financing. A temporary waiver expired on January 1, 2015 and was never renewed.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "When can FHA buyers write a contract on a home owned by the seller?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "FHA buyers can write a contract only after the seller has owned the home for at least 90 days. The 90-day waiting period applies to writing the contract, not to closing the loan.",
-      },
-    },
+const articleFaqs = [
+  { question: "Are homes owned by the seller for less than 90 days eligible for FHA financing?", answer: "No. Under current FHA policy, a home the seller has owned for less than 90 days is not eligible for FHA financing. A temporary waiver expired on January 1, 2015 and was never renewed." },
+  { question: "When can FHA buyers write a contract on a home owned by the seller?", answer: "FHA buyers can write a contract only after the seller has owned the home for at least 90 days. The 90-day waiting period applies to writing the contract, not to closing the loan." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/fha-flip-rule-waiver-expired-you-need-wait-90-days-to-write-a-contract/",
+    headline: "FHA Flip Rule Waiver Expired – You need to wait 90 days to write a contract",
+    description: "FHA still requires a 90-day wait after a seller acquires a home before a buyer can write an FHA contract. The 2011–2014 flip-rule waiver was never renewed.",
+    datePublished: "2025-02-04",
+    articleSection: "Mortgage Payments & Strategies",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Payments & Strategies", path: "/mortgage-payments-strategies/" },
+    { name: "FHA Flip Rule Waiver Expired – You need to wait 90 days to write a contract", path: "/fha-flip-rule-waiver-expired-you-need-wait-90-days-to-write-a-contract/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -111,10 +111,7 @@ const CheckIcon = () => (
 export default function FhaFlipRuleWaiverExpiredPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -75,44 +77,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is the mortgage interest tax deduction and how does it work?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The mortgage interest deduction is a federal tax incentive designed to reduce the cost of homeownership. If you itemize your deductions, it allows you to subtract the total amount of interest paid on your home loan from your gross income, actively lowering your overall taxable income balance for the year.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do I know exactly how much mortgage interest I paid over the tax year?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Every January, your mortgage servicer is legally required to send you an IRS Form 1098. This official document states the precise dollar amount of mortgage interest and any deductible loan points you paid during the prior calendar year, which your tax professional will use to calculate your write-off.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Does a higher annual income increase the value of the mortgage interest deduction?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, because tax savings scale directly with your federal income tax bracket. For example, a homeowner in a 12% marginal tax bracket who pays $12,000 in annual mortgage interest will save roughly $1,400 on their tax bill, whereas a higher-earning homeowner paying the same interest in a 22% tax bracket will save closer to $3,500.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What are the limitations on writing off home loan interest under current tax laws?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "To claim the mortgage interest write-off, your total itemized deductions must exceed the standard deduction set by the IRS. Additionally, federal tax guidelines limit the deduction to the interest paid on the first $750,000 of indebtedness for properties purchased after December 15, 2017.",
-      },
-    },
+const articleFaqs = [
+  { question: "What is the mortgage interest tax deduction and how does it work?", answer: "The mortgage interest deduction is a federal tax incentive designed to reduce the cost of homeownership. If you itemize your deductions, it allows you to subtract the total amount of interest paid on your home loan from your gross income, actively lowering your overall taxable income balance for the year." },
+  { question: "How do I know exactly how much mortgage interest I paid over the tax year?", answer: "Every January, your mortgage servicer is legally required to send you an IRS Form 1098. This official document states the precise dollar amount of mortgage interest and any deductible loan points you paid during the prior calendar year, which your tax professional will use to calculate your write-off." },
+  { question: "Does a higher annual income increase the value of the mortgage interest deduction?", answer: "Yes, because tax savings scale directly with your federal income tax bracket. For example, a homeowner in a 12% marginal tax bracket who pays $12,000 in annual mortgage interest will save roughly $1,400 on their tax bill, whereas a higher-earning homeowner paying the same interest in a 22% tax bracket will save closer to $3,500." },
+  { question: "What are the limitations on writing off home loan interest under current tax laws?", answer: "To claim the mortgage interest write-off, your total itemized deductions must exceed the standard deduction set by the IRS. Additionally, federal tax guidelines limit the deduction to the interest paid on the first $750,000 of indebtedness for properties purchased after December 15, 2017." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/arizona-mortgage-rates-and-the-interest-deduction/",
+    headline: "Arizona Mortgage Rates and the Interest Deduction",
+    description: "Understand the mortgage interest tax deduction, why few homeowners claim it, and how demographics affect usage across states including Arizona.",
+    datePublished: "2025-02-04",
+    articleSection: "Real Estate & Mortgages",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Real Estate & Mortgages", path: "/real-estate-mortgages/" },
+    { name: "Arizona Mortgage Rates and the Interest Deduction", path: "/arizona-mortgage-rates-and-the-interest-deduction/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -129,10 +115,7 @@ const CheckIcon = () => (
 export default function ArizonaMortgageRatesInterestDeductionPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

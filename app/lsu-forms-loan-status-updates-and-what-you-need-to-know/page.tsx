@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -72,28 +74,26 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Arizona LSU Forms (Loan Status Updates) and what you need to know",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "When you're buying or selling a home, the LSU is a critical document that updates the seller on how far along the buyer's loan process is.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Breaking Down the LSU Form",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The LSU form is two pages long and contains two key sections: Page 1 mostly repeats the information from the pre-qualification form (loan type, amount, property address, buyer & seller details). Page 2 is a detailed checklist of loan milestones, showing what's been completed and what's still pending.",
-      },
-    },
+const articleFaqs = [
+  { question: "Arizona LSU Forms (Loan Status Updates) and what you need to know", answer: "When you're buying or selling a home, the LSU is a critical document that updates the seller on how far along the buyer's loan process is." },
+  { question: "Breaking Down the LSU Form", answer: "The LSU form is two pages long and contains two key sections: Page 1 mostly repeats the information from the pre-qualification form (loan type, amount, property address, buyer & seller details). Page 2 is a detailed checklist of loan milestones, showing what's been completed and what's still pending." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/lsu-forms-loan-status-updates-and-what-you-need-to-know/",
+    headline: "LSU Forms – Loan Status Updates and what you need to know",
+    description: "We go through the Arizona LSU (Loan Status Updates) form lenders send to sellers throughout a purchase—and what buyers, sellers, and Realtors should watch for.",
+    datePublished: "2025-02-06",
+    articleSection: "Real Estate & Mortgages",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Real Estate & Mortgages", path: "/real-estate-mortgages/" },
+    { name: "LSU Forms – Loan Status Updates and what you need to know", path: "/lsu-forms-loan-status-updates-and-what-you-need-to-know/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -110,10 +110,7 @@ const CheckIcon = () => (
 export default function LsuFormsPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

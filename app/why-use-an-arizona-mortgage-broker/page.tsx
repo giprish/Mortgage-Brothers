@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
@@ -73,44 +75,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Why should I use an Arizona mortgage broker?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "An Arizona mortgage broker can help you find the best mortgage rates by working with multiple lenders, unlike banks that offer only their own loan products. They assist with pre-qualification, completing your mortgage application, locking your loan rate, and guiding you through the entire loan process.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What are the benefits of working with an Arizona mortgage broker instead of a bank loan officer?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Mortgage brokers offer flexible hours, often working evenings and weekends, while bank loan officers typically work 9 a.m. to 5 p.m. Brokers can compare rates across lenders to save you time and money and find solutions for unique financial situations. Bank loan officers can only offer products from their own institution.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can a Realtor help me find a reliable Arizona mortgage broker?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, Realtors often have established relationships with trusted Arizona mortgage brokers. They can refer you to brokers who have a proven track record of helping clients close their deals smoothly and on time.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the difference between pre-qualification and pre-approval for a mortgage?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Pre-qualification provides an estimate of how much you can borrow based on your financial information, while pre-approval means your income, assets, credit, and loan application have been reviewed and approved by a lender. A pre-approval letter carries more weight with sellers and helps you close faster when you find a home.",
-      },
-    },
+const articleFaqs = [
+  { question: "Why should I use an Arizona mortgage broker?", answer: "An Arizona mortgage broker can help you find the best mortgage rates by working with multiple lenders, unlike banks that offer only their own loan products. They assist with pre-qualification, completing your mortgage application, locking your loan rate, and guiding you through the entire loan process." },
+  { question: "What are the benefits of working with an Arizona mortgage broker instead of a bank loan officer?", answer: "Mortgage brokers offer flexible hours, often working evenings and weekends, while bank loan officers typically work 9 a.m. to 5 p.m. Brokers can compare rates across lenders to save you time and money and find solutions for unique financial situations. Bank loan officers can only offer products from their own institution." },
+  { question: "Can a Realtor help me find a reliable Arizona mortgage broker?", answer: "Yes, Realtors often have established relationships with trusted Arizona mortgage brokers. They can refer you to brokers who have a proven track record of helping clients close their deals smoothly and on time." },
+  { question: "What is the difference between pre-qualification and pre-approval for a mortgage?", answer: "Pre-qualification provides an estimate of how much you can borrow based on your financial information, while pre-approval means your income, assets, credit, and loan application have been reviewed and approved by a lender. A pre-approval letter carries more weight with sellers and helps you close faster when you find a home." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/why-use-an-arizona-mortgage-broker/",
+    headline: "Why Use an Arizona Mortgage Broker",
+    description: "Learn why an Arizona mortgage broker can shop multiple lenders, compare rates, and guide you from pre-qualification through closing.",
+    datePublished: "2025-02-10",
+    articleSection: "Mortgage Basics",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Basics", path: "/mortgage-basics/" },
+    { name: "Why Use an Arizona Mortgage Broker", path: "/why-use-an-arizona-mortgage-broker/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -127,10 +113,7 @@ const CheckIcon = () => (
 export default function WhyUseAnArizonaMortgageBrokerPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

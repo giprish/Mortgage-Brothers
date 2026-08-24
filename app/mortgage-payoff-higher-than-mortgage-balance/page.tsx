@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -58,36 +60,27 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How do mortgage payoffs work?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A payoff amount includes your principal balance plus interest that accrues daily through the exact payoff date, and sometimes other adjustments. That is why payoff is usually higher than the statement balance snapshot.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "I made my payment on time, why is it still going up?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Mortgage interest is paid in arrears, so after your monthly payment posts, interest continues accruing each day. Your payoff amount rises day by day until the loan is fully paid off.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How does your closing date impact your mortgage payoff?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Closing later in the month usually means more accrued daily interest is added to payoff. Closing timing affects the exact amount required because lenders calculate payoff through the date funds are received.",
-      },
-    },
+const articleFaqs = [
+  { question: "How do mortgage payoffs work?", answer: "A payoff amount includes your principal balance plus interest that accrues daily through the exact payoff date, and sometimes other adjustments. That is why payoff is usually higher than the statement balance snapshot." },
+  { question: "I made my payment on time, why is it still going up?", answer: "Mortgage interest is paid in arrears, so after your monthly payment posts, interest continues accruing each day. Your payoff amount rises day by day until the loan is fully paid off." },
+  { question: "How does your closing date impact your mortgage payoff?", answer: "Closing later in the month usually means more accrued daily interest is added to payoff. Closing timing affects the exact amount required because lenders calculate payoff through the date funds are received." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/mortgage-payoff-higher-than-mortgage-balance/",
+    headline: "Why Is My Mortgage Payoff Higher Than My Mortgage Statement Balance?",
+    description: "Understand why mortgage payoff amounts can exceed statement balances, including daily accrued interest, payoff timing, and closing date impacts.",
+    datePublished: "2025-02-03",
+    articleSection: "Mortgage Basics",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Basics", path: "/mortgage-basics/" },
+    { name: "Why Is My Mortgage Payoff Higher Than My Mortgage Statement Balance?", path: "/mortgage-payoff-higher-than-mortgage-balance/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg className="w-5 h-5 text-[#3fb364] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
@@ -98,10 +91,7 @@ const CheckIcon = () => (
 export default function MortgagePayoffPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

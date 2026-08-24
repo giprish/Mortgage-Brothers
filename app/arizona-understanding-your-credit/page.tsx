@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
@@ -73,44 +75,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Why is understanding credit important for getting a mortgage loan in Arizona?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Understanding credit is crucial because lenders evaluate your credit history, open accounts, payment behavior, and types of credit to determine your risk level. Even small changes in your credit score can influence your down payment, loan programs, and interest rates.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What factors make up a credit score?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Credit scores are calculated based on several components: 35% payment history, 30% amount owed compared to available credit, 15% length of credit history, 10% mix of credit, and 10% new credit applications.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Where can I get a free copy of my credit report?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Consumers are entitled by law to one free credit report annually from each of the three major credit bureaus—Equifax, Experian, and TransUnion. You can access your free credit report at www.AnnualCreditReport.com.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What factors do not affect my credit score?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Factors such as your age, race, sex, employment history, income, marital status, length of employment, and occupancy status do not impact your credit score.",
-      },
-    },
+const articleFaqs = [
+  { question: "Why is understanding credit important for getting a mortgage loan in Arizona?", answer: "Understanding credit is crucial because lenders evaluate your credit history, open accounts, payment behavior, and types of credit to determine your risk level. Even small changes in your credit score can influence your down payment, loan programs, and interest rates." },
+  { question: "What factors make up a credit score?", answer: "Credit scores are calculated based on several components: 35% payment history, 30% amount owed compared to available credit, 15% length of credit history, 10% mix of credit, and 10% new credit applications." },
+  { question: "Where can I get a free copy of my credit report?", answer: "Consumers are entitled by law to one free credit report annually from each of the three major credit bureaus—Equifax, Experian, and TransUnion. You can access your free credit report at www.AnnualCreditReport.com." },
+  { question: "What factors do not affect my credit score?", answer: "Factors such as your age, race, sex, employment history, income, marital status, length of employment, and occupancy status do not impact your credit score." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/arizona-understanding-your-credit/",
+    headline: "Understanding Your Credit",
+    description: "Understand FICO score components, free credit reports, and what does—and doesn’t—impact your score when applying for an Arizona mortgage.",
+    datePublished: "2025-02-10",
+    articleSection: "Mortgage Basics",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Basics", path: "/mortgage-basics/" },
+    { name: "Understanding Your Credit", path: "/arizona-understanding-your-credit/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -127,10 +113,7 @@ const CheckIcon = () => (
 export default function ArizonaUnderstandingYourCreditPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

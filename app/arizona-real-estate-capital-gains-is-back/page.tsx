@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -75,44 +77,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is real estate capital gains tax?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Capital gains tax is a tax levied on the profit realized from the sale of a non-inventory asset, such as real estate. It is calculated by taking the difference between the final selling price and the original purchase price (along with adjusted cost basis improvements).",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How does the IRS Section 121 exclusion protect Arizona primary residences from capital gains?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Under IRS Section 121, if the property was your primary residence, you can exclude up to $250,000 of capital gains profit if you are a single filer, and up to $500,000 if you are married filing jointly. To qualify, you must meet the ownership and use tests, meaning you owned and lived in the home for at least two out of the five years prior to the sale date.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Are investment properties and vacation homes exempt from Arizona capital gains tax?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No. Investment properties and secondary vacation homes do not qualify for the standard primary residence Section 121 tax exclusion. When you sell an investment property or second home, the entire realized profit is subject to applicable state and federal capital gains taxes.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How can real estate investors defer capital gains tax on Arizona properties?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Real estate investors can legally defer paying capital gains taxes by utilizing a Section 1031 exchange. This strategy allows an investor to defer the tax liabilities by reinvesting the net cash proceeds from the sale of their current investment property into a new, 'like-kind' replacement property within strict IRS timeline guidelines.",
-      },
-    },
+const articleFaqs = [
+  { question: "What is real estate capital gains tax?", answer: "Capital gains tax is a tax levied on the profit realized from the sale of a non-inventory asset, such as real estate. It is calculated by taking the difference between the final selling price and the original purchase price (along with adjusted cost basis improvements)." },
+  { question: "How does the IRS Section 121 exclusion protect Arizona primary residences from capital gains?", answer: "Under IRS Section 121, if the property was your primary residence, you can exclude up to $250,000 of capital gains profit if you are a single filer, and up to $500,000 if you are married filing jointly. To qualify, you must meet the ownership and use tests, meaning you owned and lived in the home for at least two out of the five years prior to the sale date." },
+  { question: "Are investment properties and vacation homes exempt from Arizona capital gains tax?", answer: "No. Investment properties and secondary vacation homes do not qualify for the standard primary residence Section 121 tax exclusion. When you sell an investment property or second home, the entire realized profit is subject to applicable state and federal capital gains taxes." },
+  { question: "How can real estate investors defer capital gains tax on Arizona properties?", answer: "Real estate investors can legally defer paying capital gains taxes by utilizing a Section 1031 exchange. This strategy allows an investor to defer the tax liabilities by reinvesting the net cash proceeds from the sale of their current investment property into a new, 'like-kind' replacement property within strict IRS timeline guidelines." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/arizona-real-estate-capital-gains-is-back/",
+    headline: "Arizona Real Estate Capital Gains is back",
+    description: "A recap of capital gains rules for Arizona home sellers, main-home exclusions, and special situations that can reduce tax liability.",
+    datePublished: "2025-02-04",
+    articleSection: "Real Estate & Mortgages",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Real Estate & Mortgages", path: "/real-estate-mortgages/" },
+    { name: "Arizona Real Estate Capital Gains is back", path: "/arizona-real-estate-capital-gains-is-back/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -129,10 +115,7 @@ const CheckIcon = () => (
 export default function ArizonaRealEstateCapitalGainsPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

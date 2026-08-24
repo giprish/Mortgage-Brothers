@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -71,44 +73,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How did the invention of residential air conditioning affect the growth of Phoenix?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The widespread availability of residential air conditioning in the 1950s catalyzed the rapid modernization and growth of Phoenix. Prior to this, population growth was slow, but after cooling systems became widely accessible, the city's population quadrupled from 106,818 in 1950 to 439,170 residents by 1960.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What percentage of homes in the Phoenix Valley utilize central air conditioning?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "While approximately three-quarters of homes across the entire United States feature central air conditioning, that figure rises to 86% for residential properties located in Phoenix. The remaining homes primarily rely on evaporative cooling units, a combination of both systems, or basic fans.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Why do some Arizona homeowners still prefer evaporative cooling or swamp coolers?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Evaporative cooling remains popular in some older and historic Phoenix homes because it consumes significantly less electricity than standard central air conditioning units. Additionally, modern upgraded evaporative cooling systems are highly efficient, using a tenth of the water of older models—sometimes as little as one gallon of water per day.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do Phoenix residents spend more on overall utility energy bills than the national average?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No. Because Phoenix homes do not require heavy heating systems for most of the year, the city actually consumes 26% less total energy than the U.S. average. However, because electricity in Arizona is relatively expensive, residents end up spending roughly the same total dollar amount on heating and cooling utilities as the average American.",
-      },
-    },
+const articleFaqs = [
+  { question: "How did the invention of residential air conditioning affect the growth of Phoenix?", answer: "The widespread availability of residential air conditioning in the 1950s catalyzed the rapid modernization and growth of Phoenix. Prior to this, population growth was slow, but after cooling systems became widely accessible, the city's population quadrupled from 106,818 in 1950 to 439,170 residents by 1960." },
+  { question: "What percentage of homes in the Phoenix Valley utilize central air conditioning?", answer: "While approximately three-quarters of homes across the entire United States feature central air conditioning, that figure rises to 86% for residential properties located in Phoenix. The remaining homes primarily rely on evaporative cooling units, a combination of both systems, or basic fans." },
+  { question: "Why do some Arizona homeowners still prefer evaporative cooling or swamp coolers?", answer: "Evaporative cooling remains popular in some older and historic Phoenix homes because it consumes significantly less electricity than standard central air conditioning units. Additionally, modern upgraded evaporative cooling systems are highly efficient, using a tenth of the water of older models—sometimes as little as one gallon of water per day." },
+  { question: "Do Phoenix residents spend more on overall utility energy bills than the national average?", answer: "No. Because Phoenix homes do not require heavy heating systems for most of the year, the city actually consumes 26% less total energy than the U.S. average. However, because electricity in Arizona is relatively expensive, residents end up spending roughly the same total dollar amount on heating and cooling utilities as the average American." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/air-conditionings-impact-phoenix-valley-real-estate/",
+    headline: "Air Conditioning's Impact on Phoenix Valley Real Estate",
+    description: "How residential AC shaped Phoenix growth, swamp coolers vs central air, and what cooling systems mean for Valley home values and energy costs.",
+    datePublished: "2025-02-06",
+    articleSection: "Real Estate & Mortgages",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Real Estate & Mortgages", path: "/real-estate-mortgages/" },
+    { name: "Air Conditioning's Impact on Phoenix Valley Real Estate", path: "/air-conditionings-impact-phoenix-valley-real-estate/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -125,10 +111,7 @@ const CheckIcon = () => (
 export default function AirConditioningPhoenixRealEstatePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

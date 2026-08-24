@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -76,36 +78,27 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What you need to know about the Arizona Prequalification Form",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The Arizona Prequalification Form is a document required in real estate transactions in Arizona. It is issued by lenders and shows that a buyer has been reviewed and is financially capable of purchasing a home.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Why does the Arizona Prequalification Form matter to buyers?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "For buyers, the Arizona Prequalification Form acts like a resume. It shows sellers that they are serious and financially qualified, which can strengthen their chances of getting their offer accepted in a competitive market.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Why is the Arizona Prequalification Form important for sellers?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "For sellers, reviewing a buyer's prequalification form helps assess risk before accepting an offer. A strong form gives sellers confidence in the buyer's ability to qualify and can make the buyer's offer more attractive.",
-      },
-    },
+const articleFaqs = [
+  { question: "What you need to know about the Arizona Prequalification Form", answer: "The Arizona Prequalification Form is a document required in real estate transactions in Arizona. It is issued by lenders and shows that a buyer has been reviewed and is financially capable of purchasing a home." },
+  { question: "Why does the Arizona Prequalification Form matter to buyers?", answer: "For buyers, the Arizona Prequalification Form acts like a resume. It shows sellers that they are serious and financially qualified, which can strengthen their chances of getting their offer accepted in a competitive market." },
+  { question: "Why is the Arizona Prequalification Form important for sellers?", answer: "For sellers, reviewing a buyer's prequalification form helps assess risk before accepting an offer. A strong form gives sellers confidence in the buyer's ability to qualify and can make the buyer's offer more attractive." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/what-you-need-to-know-about-the-arizona-prequalification-form/",
+    headline: "What you need to know about the Arizona Prequalification Form",
+    description: "Highlight key line items on the Arizona Prequalification Form, how it strengthens offers in competitive markets, and why income and asset docs matter.",
+    datePublished: "2025-02-04",
+    articleSection: "Real Estate & Mortgages",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Real Estate & Mortgages", path: "/real-estate-mortgages/" },
+    { name: "What you need to know about the Arizona Prequalification Form", path: "/what-you-need-to-know-about-the-arizona-prequalification-form/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -122,10 +115,7 @@ const CheckIcon = () => (
 export default function ArizonaPrequalificationFormPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

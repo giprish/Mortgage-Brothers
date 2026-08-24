@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
@@ -73,44 +75,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What are the common prior-to-closing conditions that can cause mortgage delays?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Even after initial loan approval, several factors can delay closing. These include lenders requesting updated income or asset documentation, new credit inquiries or opened accounts, employment verification issues, delays in liquidating funds for closing, newly uncovered liens during title and judgment searches, and difficulties securing adequate homeowners or flood insurance coverage.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What essential items must a homebuyer bring to their closing appointment?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The two most critical items to bring to your mortgage closing are proper funds to close and proof of identification. Required funds must be in the form of a certified bank check or wire transfer instructions, as personal checks or cash are not accepted. For identification, an unexpired, valid state driver's license, state ID card, or passport is required.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How does the timing of a mortgage closing date affect the transaction?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Closing early to mid-month is generally recommended to minimize transaction stress and streamline funding. However, for an FHA loan refinance, it is highly advantageous to close at the very end of the month, because FHA guidelines require the borrower to pay the entire month's interest regardless of the specific day they close. Additionally, borrowers should avoid closing on a Friday, as delays could make them responsible for paying interest on both the old and new loans over the weekend.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What are the final legal steps required to officially close on an Arizona property?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "After the buyer and seller sign all legal closing documents—including the final loan application, Closing Disclosure, Promissory Note, and the Deed of Trust—the title company returns the package to the lender for final review. Once approved, the lender releases the funds to the title company, and the escrow agent submits the deed to the county recorder's office. Ownership officially transfers to the buyer only after the deed is recorded.",
-      },
-    },
+const articleFaqs = [
+  { question: "What are the common prior-to-closing conditions that can cause mortgage delays?", answer: "Even after initial loan approval, several factors can delay closing. These include lenders requesting updated income or asset documentation, new credit inquiries or opened accounts, employment verification issues, delays in liquidating funds for closing, newly uncovered liens during title and judgment searches, and difficulties securing adequate homeowners or flood insurance coverage." },
+  { question: "What essential items must a homebuyer bring to their closing appointment?", answer: "The two most critical items to bring to your mortgage closing are proper funds to close and proof of identification. Required funds must be in the form of a certified bank check or wire transfer instructions, as personal checks or cash are not accepted. For identification, an unexpired, valid state driver's license, state ID card, or passport is required." },
+  { question: "How does the timing of a mortgage closing date affect the transaction?", answer: "Closing early to mid-month is generally recommended to minimize transaction stress and streamline funding. However, for an FHA loan refinance, it is highly advantageous to close at the very end of the month, because FHA guidelines require the borrower to pay the entire month's interest regardless of the specific day they close. Additionally, borrowers should avoid closing on a Friday, as delays could make them responsible for paying interest on both the old and new loans over the weekend." },
+  { question: "What are the final legal steps required to officially close on an Arizona property?", answer: "After the buyer and seller sign all legal closing documents—including the final loan application, Closing Disclosure, Promissory Note, and the Deed of Trust—the title company returns the package to the lender for final review. Once approved, the lender releases the funds to the title company, and the escrow agent submits the deed to the county recorder's office. Ownership officially transfers to the buyer only after the deed is recorded." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/arizona-mortgage-closing-process/",
+    headline: "Arizona Mortgage Closing Process",
+    description: "Understand prior-to-closing conditions, what to bring on signing day, and how closing timing affects your Arizona mortgage.",
+    datePublished: "2025-02-10",
+    articleSection: "Mortgage Basics",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Basics", path: "/mortgage-basics/" },
+    { name: "Arizona Mortgage Closing Process", path: "/arizona-mortgage-closing-process/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -127,10 +113,7 @@ const CheckIcon = () => (
 export default function ArizonaMortgageClosingProcessPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

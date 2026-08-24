@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
@@ -73,44 +75,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What credit score do I need for a jumbo loan in Arizona?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Most lenders require at least a 700–720 credit score, but higher scores can unlock better rates and more flexible terms.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can I use a jumbo loan for a vacation home or investment property?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes. Many Arizona lenders offer jumbo financing for second homes and investment properties, though down payment and reserve requirements are typically higher.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Are jumbo loan rates higher than conventional mortgage rates?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "They used to be, but not always today. In competitive markets, jumbo rates can be similar or even slightly lower than conforming rates depending on your profile.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How can I increase my chances of jumbo loan approval?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Focus on strengthening your credit, maintaining low debt levels, and building substantial liquid reserves before applying.",
-      },
-    },
+const articleFaqs = [
+  { question: "What credit score do I need for a jumbo loan in Arizona?", answer: "Most lenders require at least a 700–720 credit score, but higher scores can unlock better rates and more flexible terms." },
+  { question: "Can I use a jumbo loan for a vacation home or investment property?", answer: "Yes. Many Arizona lenders offer jumbo financing for second homes and investment properties, though down payment and reserve requirements are typically higher." },
+  { question: "Are jumbo loan rates higher than conventional mortgage rates?", answer: "They used to be, but not always today. In competitive markets, jumbo rates can be similar or even slightly lower than conforming rates depending on your profile." },
+  { question: "How can I increase my chances of jumbo loan approval?", answer: "Focus on strengthening your credit, maintaining low debt levels, and building substantial liquid reserves before applying." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/what-is-a-jumbo-loan-everything-you-need-to-know-before-applying/",
+    headline: "What Is a Jumbo Loan? Everything You Need to Know Before Applying",
+    description: "Understanding non-conforming luxury home financing, qualification rules, and 2026 limits in Scottsdale and Phoenix.",
+    datePublished: "2026-05-12",
+    articleSection: "Arizona Mortgage Insights",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Arizona Mortgage Insights", path: "/arizona-mortgage-insights/" },
+    { name: "What Is a Jumbo Loan? Everything You Need to Know Before Applying", path: "/what-is-a-jumbo-loan-everything-you-need-to-know-before-applying/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -127,10 +113,7 @@ const CheckIcon = () => (
 export default function WhatIsAJumboLoanPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

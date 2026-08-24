@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -72,36 +74,27 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How High Is Your Insurance Deductible Allowed to be?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "For single-family residential homes valued between $200,000 and $400,000, homeowners insurance premiums usually range from $600 to $1,200 annually, which breaks down to about $50 to $100 per month.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How can I lower my homeowners insurance premium?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "One of the most effective ways to lower your homeowners insurance premium is by choosing a higher deductible. For example, raising the deductible from $1,000 to $5,000 can significantly reduce annual premiums, in some cases from around $800 down to $350.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is choosing a higher deductible a good idea for everyone?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A higher deductible can be a smart strategy for homeowners who rarely file insurance claims. Since frequent claims can raise premiums, those who don't make many claims may benefit from lower monthly costs by selecting a higher deductible, using insurance mainly for major or catastrophic events.",
-      },
-    },
+const articleFaqs = [
+  { question: "How High Is Your Insurance Deductible Allowed to be?", answer: "For single-family residential homes valued between $200,000 and $400,000, homeowners insurance premiums usually range from $600 to $1,200 annually, which breaks down to about $50 to $100 per month." },
+  { question: "How can I lower my homeowners insurance premium?", answer: "One of the most effective ways to lower your homeowners insurance premium is by choosing a higher deductible. For example, raising the deductible from $1,000 to $5,000 can significantly reduce annual premiums, in some cases from around $800 down to $350." },
+  { question: "Is choosing a higher deductible a good idea for everyone?", answer: "A higher deductible can be a smart strategy for homeowners who rarely file insurance claims. Since frequent claims can raise premiums, those who don't make many claims may benefit from lower monthly costs by selecting a higher deductible, using insurance mainly for major or catastrophic events." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/how-high-will-a-lender-allow-your-deductible-to-be/",
+    headline: "How High Will A Lender Allow Your Deductible To Be?",
+    description: "See how raising your homeowners insurance deductible can lower premiums and what lenders typically allow.",
+    datePublished: "2025-02-12",
+    articleSection: "Arizona Mortgage Insights",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Arizona Mortgage Insights", path: "/arizona-mortgage-insights/" },
+    { name: "How High Will A Lender Allow Your Deductible To Be?", path: "/how-high-will-a-lender-allow-your-deductible-to-be/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -118,10 +111,7 @@ const CheckIcon = () => (
 export default function HowHighWillALenderAllowYourDeductibleToBePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

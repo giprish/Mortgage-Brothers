@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
@@ -73,36 +75,27 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What exactly is a conventional home loan?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A conventional home loan is a mortgage not insured by the federal government, offered by private lenders like banks or credit unions.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the 2026 conforming loan limit in Arizona?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "For 2026, the conforming loan limit for a single-family home in Arizona is $832,750.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What credit score is needed for a conventional loan?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A minimum credit score of 620 is usually required to qualify for a conventional loan.",
-      },
-    },
+const articleFaqs = [
+  { question: "What exactly is a conventional home loan?", answer: "A conventional home loan is a mortgage not insured by the federal government, offered by private lenders like banks or credit unions." },
+  { question: "What is the 2026 conforming loan limit in Arizona?", answer: "For 2026, the conforming loan limit for a single-family home in Arizona is $832,750." },
+  { question: "What credit score is needed for a conventional loan?", answer: "A minimum credit score of 620 is usually required to qualify for a conventional loan." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/what-is-a-conventional-home-loan-the-complete-first-time-buyer-mortgage-guide/",
+    headline: "What Is a Conventional Home Loan? The Complete First-Time Buyer Mortgage Guide",
+    description: "Learn what a conventional home loan is, 2025 Arizona loan limits, qualification requirements, and how it compares to FHA, VA, and jumbo options.",
+    datePublished: "2025-09-16",
+    articleSection: "Mortgage Process Guidance",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Process Guidance", path: "/mortgage-process-guidance/" },
+    { name: "What Is a Conventional Home Loan? The Complete First-Time Buyer Mortgage Guide", path: "/what-is-a-conventional-home-loan-the-complete-first-time-buyer-mortgage-guide/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -119,10 +112,7 @@ const CheckIcon = () => (
 export default function ConventionalHomeLoanGuidePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

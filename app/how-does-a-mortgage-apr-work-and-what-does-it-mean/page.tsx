@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -58,36 +60,27 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How does a mortgage APR work and what does it mean?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "An APR, or Annual Percentage Rate, represents the total yearly cost of a mortgage, including the interest rate, lender fees, and most closing costs. Unlike the interest rate, which only reflects the cost of borrowing the loan amount, APR provides a more comprehensive view of your total mortgage cost.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is the difference between interest rate and APR?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The interest rate is the percentage charged by the lender on the principal loan amount, excluding fees and closing costs. APR, on the other hand, includes the interest rate plus additional costs like lender fees and closing costs, making it slightly higher and a better indicator of the true cost of the loan.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do closing costs and interest rates affect APR?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Closing costs and interest rates have an inverse relationship when it comes to APR. A no-closing-cost loan usually comes with a higher interest rate, leading to a lower APR. Conversely, paying more upfront in closing costs or discount points to reduce the interest rate typically increases the APR.",
-      },
-    },
+const articleFaqs = [
+  { question: "How does a mortgage APR work and what does it mean?", answer: "An APR, or Annual Percentage Rate, represents the total yearly cost of a mortgage, including the interest rate, lender fees, and most closing costs. Unlike the interest rate, which only reflects the cost of borrowing the loan amount, APR provides a more comprehensive view of your total mortgage cost." },
+  { question: "What is the difference between interest rate and APR?", answer: "The interest rate is the percentage charged by the lender on the principal loan amount, excluding fees and closing costs. APR, on the other hand, includes the interest rate plus additional costs like lender fees and closing costs, making it slightly higher and a better indicator of the true cost of the loan." },
+  { question: "How do closing costs and interest rates affect APR?", answer: "Closing costs and interest rates have an inverse relationship when it comes to APR. A no-closing-cost loan usually comes with a higher interest rate, leading to a lower APR. Conversely, paying more upfront in closing costs or discount points to reduce the interest rate typically increases the APR." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/how-does-a-mortgage-apr-work-and-what-does-it-mean/",
+    headline: "How Does a Mortgage APR Work and What Does It Mean?",
+    description: "Learn how mortgage APR differs from interest rate, how closing costs affect APR, and how to compare loan offers by focusing on fees—not just the rate.",
+    datePublished: "2025-02-03",
+    articleSection: "Mortgage Basics",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Basics", path: "/mortgage-basics/" },
+    { name: "How Does a Mortgage APR Work and What Does It Mean?", path: "/how-does-a-mortgage-apr-work-and-what-does-it-mean/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg className="w-5 h-5 text-[#3fb364] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
@@ -98,10 +91,7 @@ const CheckIcon = () => (
 export default function MortgageAprPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

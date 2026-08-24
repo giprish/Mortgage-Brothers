@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
@@ -73,44 +75,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What temporary documents can I use if my official mortgage bill doesn't arrive before the first payment is due?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "If your official mortgage statement or payment booklet does not arrive in time, you can use the temporary payment coupons provided within your closing documentation package to submit your initial monthly payment.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What are the core components that make up a standard monthly mortgage payment?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A standard monthly mortgage payment, often referred to as PITI, is composed of principal reduction, interest charges, real estate property taxes, hazard homeowners insurance, and any applicable mortgage insurance premiums (PMI/MIP).",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What is an escrow or impound account and how does it affect my monthly payment?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "An escrow or impound account is a specialized financial account managed by your loan servicer. It collects a portion of your monthly payment specifically designated for real estate property taxes and hazard insurance, ensuring those annual bills are paid automatically on your behalf.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Are homeowners required to maintain an escrow account for their mortgage?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Escrow accounts are mandatory for government-backed financing programs like FHA and VA loans. For conventional loans, buyers can request an escrow waiver if their loan-to-value (LTV) ratio is low enough, though lenders may charge a slightly higher interest rate due to the increased risk.",
-      },
-    },
+const articleFaqs = [
+  { question: "What temporary documents can I use if my official mortgage bill doesn't arrive before the first payment is due?", answer: "If your official mortgage statement or payment booklet does not arrive in time, you can use the temporary payment coupons provided within your closing documentation package to submit your initial monthly payment." },
+  { question: "What are the core components that make up a standard monthly mortgage payment?", answer: "A standard monthly mortgage payment, often referred to as PITI, is composed of principal reduction, interest charges, real estate property taxes, hazard homeowners insurance, and any applicable mortgage insurance premiums (PMI/MIP)." },
+  { question: "What is an escrow or impound account and how does it affect my monthly payment?", answer: "An escrow or impound account is a specialized financial account managed by your loan servicer. It collects a portion of your monthly payment specifically designated for real estate property taxes and hazard insurance, ensuring those annual bills are paid automatically on your behalf." },
+  { question: "Are homeowners required to maintain an escrow account for their mortgage?", answer: "Escrow accounts are mandatory for government-backed financing programs like FHA and VA loans. For conventional loans, buyers can request an escrow waiver if their loan-to-value (LTV) ratio is low enough, though lenders may charge a slightly higher interest rate due to the increased risk." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/arizona-mortgage-payments/",
+    headline: "Arizona Mortgage Payments",
+    description: "Understand what’s in your Arizona mortgage payment—principal, interest, taxes, insurance, MIP/PMI—and how escrow and impound accounts work.",
+    datePublished: "2025-02-10",
+    articleSection: "Mortgage Basics",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Basics", path: "/mortgage-basics/" },
+    { name: "Arizona Mortgage Payments", path: "/arizona-mortgage-payments/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -127,10 +113,7 @@ const CheckIcon = () => (
 export default function ArizonaMortgagePaymentsPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

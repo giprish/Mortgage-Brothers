@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -72,36 +74,27 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Who CAN and CANNOT Be On Title When You Get A Mortgage?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Of course you can. If you're getting a mortgage, you can absolutely add your spouse to the title.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can your spouse be on the title even if they're not on the mortgage?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "You can have your spouse on the title even if they're not on the mortgage. However, if they're on the mortgage, if they're on the loan, they have to be on the title because you have to have rights to the home in order to encumber the home by getting a loan on it. This is true for any co-borrower, even if it's not your spouse.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Are you in a community property state?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "This is another thing that's good to be aware of. If you're in a community property state this means that if your spouse dies and you're not on the title then the house would go to you. Arizona, for example, is a community state property.",
-      },
-    },
+const articleFaqs = [
+  { question: "Who CAN and CANNOT Be On Title When You Get A Mortgage?", answer: "Of course you can. If you're getting a mortgage, you can absolutely add your spouse to the title." },
+  { question: "Can your spouse be on the title even if they're not on the mortgage?", answer: "You can have your spouse on the title even if they're not on the mortgage. However, if they're on the mortgage, if they're on the loan, they have to be on the title because you have to have rights to the home in order to encumber the home by getting a loan on it. This is true for any co-borrower, even if it's not your spouse." },
+  { question: "Are you in a community property state?", answer: "This is another thing that's good to be aware of. If you're in a community property state this means that if your spouse dies and you're not on the title then the house would go to you. Arizona, for example, is a community state property." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/who-can-and-cannot-be-on-title-when-you-get-a-mortgage/",
+    headline: "Who CAN and CANNOT Be On Title When you Get A Mortgage?",
+    description: "Learn who can be added to a mortgage title, spouse and co-borrower rules, community property, and closing in a trust.",
+    datePublished: "2025-02-12",
+    articleSection: "Spouse & Estate Considerations",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Spouse & Estate Considerations", path: "/spouse-estate-considerations/" },
+    { name: "Who CAN and CANNOT Be On Title When you Get A Mortgage?", path: "/who-can-and-cannot-be-on-title-when-you-get-a-mortgage/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -118,10 +111,7 @@ const CheckIcon = () => (
 export default function WhoCanAndCannotBeOnTitlePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

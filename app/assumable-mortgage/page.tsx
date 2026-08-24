@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
@@ -73,36 +75,27 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is an assumable mortgage?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "An assumable mortgage is one where the lender includes a clause allowing a third party, typically the homebuyer, to take over the existing mortgage. If the mortgage is not assumable, the clause will clearly state so.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What does an assumable clause look like?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A typical assumable clause may read: 'If all or any part of the property is sold or transferred without the lender’s prior consent, the lender may require immediate payment in full of the loan.' This means the mortgage may be assumed if the lender is notified and consents to the transfer.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Are FHA mortgages assumable?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, one of the advantages of FHA mortgages is that they are assumable. This can be a strong selling point if you decide to sell your home in the future.",
-      },
-    },
+const articleFaqs = [
+  { question: "What is an assumable mortgage?", answer: "An assumable mortgage is one where the lender includes a clause allowing a third party, typically the homebuyer, to take over the existing mortgage. If the mortgage is not assumable, the clause will clearly state so." },
+  { question: "What does an assumable clause look like?", answer: "A typical assumable clause may read: 'If all or any part of the property is sold or transferred without the lender’s prior consent, the lender may require immediate payment in full of the loan.' This means the mortgage may be assumed if the lender is notified and consents to the transfer." },
+  { question: "Are FHA mortgages assumable?", answer: "Yes, one of the advantages of FHA mortgages is that they are assumable. This can be a strong selling point if you decide to sell your home in the future." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/assumable-mortgage/",
+    headline: "What Is An Assumable Mortgage?",
+    description: "Learn what an assumable mortgage is, how the assumption clause works, and why FHA loans can be a selling-point advantage.",
+    datePublished: "2025-02-04",
+    articleSection: "Mortgage Payments & Strategies",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Payments & Strategies", path: "/mortgage-payments-strategies/" },
+    { name: "What Is An Assumable Mortgage?", path: "/assumable-mortgage/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -119,10 +112,7 @@ const CheckIcon = () => (
 export default function AssumableMortgagePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

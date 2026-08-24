@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -75,44 +77,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is a second mortgage in Arizona?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A second Arizona mortgage is secured by the same property as a first lien mortgage. The first lien has priority and gets paid first if you default. The second lien only gets paid if funds remain after the first lien is satisfied. These loans are usually based on the equity in your home.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What are the common uses of a second mortgage?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Homeowners often use second mortgages for home repairs, debt consolidation, paying college expenses, retirement, vacations, medical bills, or other family expenses.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What types of second mortgages are available in Arizona?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Types of second mortgages include home equity loans (lump sum loan at a fixed rate), home equity lines of credit (HELOCs) with variable interest rates, and traditional second mortgages.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What are the requirements for qualifying for a second mortgage?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "To qualify, you need good credit, equity in your Arizona home, and must pay closing costs. The lender will order an appraisal, review your credit, and provide an estimate of the costs at application. Working with a mortgage broker can also help you find the right loan product and interest rate.",
-      },
-    },
+const articleFaqs = [
+  { question: "What is a second mortgage in Arizona?", answer: "A second Arizona mortgage is secured by the same property as a first lien mortgage. The first lien has priority and gets paid first if you default. The second lien only gets paid if funds remain after the first lien is satisfied. These loans are usually based on the equity in your home." },
+  { question: "What are the common uses of a second mortgage?", answer: "Homeowners often use second mortgages for home repairs, debt consolidation, paying college expenses, retirement, vacations, medical bills, or other family expenses." },
+  { question: "What types of second mortgages are available in Arizona?", answer: "Types of second mortgages include home equity loans (lump sum loan at a fixed rate), home equity lines of credit (HELOCs) with variable interest rates, and traditional second mortgages." },
+  { question: "What are the requirements for qualifying for a second mortgage?", answer: "To qualify, you need good credit, equity in your Arizona home, and must pay closing costs. The lender will order an appraisal, review your credit, and provide an estimate of the costs at application. Working with a mortgage broker can also help you find the right loan product and interest rate." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/arizona-second-mortgages/",
+    headline: "Arizona Second Mortgages",
+    description: "Understand Arizona second mortgages, home equity loans, HELOCs, and how homeowners can qualify to access equity.",
+    datePublished: "2025-02-04",
+    articleSection: "Real Estate & Mortgages",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Real Estate & Mortgages", path: "/real-estate-mortgages/" },
+    { name: "Arizona Second Mortgages", path: "/arizona-second-mortgages/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -129,10 +115,7 @@ const CheckIcon = () => (
 export default function ArizonaSecondMortgagesPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

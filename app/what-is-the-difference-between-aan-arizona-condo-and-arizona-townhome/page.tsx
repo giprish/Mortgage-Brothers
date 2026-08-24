@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -71,44 +73,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is the primary difference in legal ownership between an Arizona condo and a townhome?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The fundamental difference lies in how ownership is legally structured. Condo owners have 'horizontal ownership,' meaning they own the interior space from floor to ceiling and wall to wall, plus a pro-rated shared interest in the community's land. Townhome owners have 'vertical ownership,' meaning they legally own the specific plot of earth beneath the structure, the structure itself, and the air rights above the roof.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do Arizona condo properties differ physically from townhomes or patio homes?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Condominiums can be configured into stacked units spanning multiple stories where owners may live above or below one another. Townhomes in Arizona—often referred to locally as 'Patio Homes'—are built side-by-side with shared common walls, ensuring that a townhouse owner will never have another resident living directly above or below their unit.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Why do mortgage lenders view Arizona condos as higher risk than townhomes?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Lenders view condominiums as higher risk due to the joint, prorated ownership structure of the land and common areas. Because the financial health of the entire development relies on all owners paying their dues, issues within the Homeowners Association (HOA) can negatively impact individual property values and complicate the foreclosure process.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do financing guidelines differ when applying for a mortgage on an Arizona condo vs. a townhome?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Townhomes are treated like standard single-family residences, making them easier to finance under standard guidelines. Condos face much stricter rules: FHA financing requires individual communities to pass a dedicated condo approval process, and conventional loans back by Fannie Mae or Freddie Mac require the project to be deemed 'warrantable' by meeting specific HOA health and stability benchmarks.",
-      },
-    },
+const articleFaqs = [
+  { question: "What is the primary difference in legal ownership between an Arizona condo and a townhome?", answer: "The fundamental difference lies in how ownership is legally structured. Condo owners have 'horizontal ownership,' meaning they own the interior space from floor to ceiling and wall to wall, plus a pro-rated shared interest in the community's land. Townhome owners have 'vertical ownership,' meaning they legally own the specific plot of earth beneath the structure, the structure itself, and the air rights above the roof." },
+  { question: "How do Arizona condo properties differ physically from townhomes or patio homes?", answer: "Condominiums can be configured into stacked units spanning multiple stories where owners may live above or below one another. Townhomes in Arizona—often referred to locally as 'Patio Homes'—are built side-by-side with shared common walls, ensuring that a townhouse owner will never have another resident living directly above or below their unit." },
+  { question: "Why do mortgage lenders view Arizona condos as higher risk than townhomes?", answer: "Lenders view condominiums as higher risk due to the joint, prorated ownership structure of the land and common areas. Because the financial health of the entire development relies on all owners paying their dues, issues within the Homeowners Association (HOA) can negatively impact individual property values and complicate the foreclosure process." },
+  { question: "How do financing guidelines differ when applying for a mortgage on an Arizona condo vs. a townhome?", answer: "Townhomes are treated like standard single-family residences, making them easier to finance under standard guidelines. Condos face much stricter rules: FHA financing requires individual communities to pass a dedicated condo approval process, and conventional loans back by Fannie Mae or Freddie Mac require the project to be deemed 'warrantable' by meeting specific HOA health and stability benchmarks." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/what-is-the-difference-between-aan-arizona-condo-and-arizona-townhome/",
+    headline: "What Is The Difference Between A Condo And A Townhome?",
+    description: "Compare Arizona condo vs townhome ownership structures and why lenders treat condos with stricter financing guidelines.",
+    datePublished: "2025-02-05",
+    articleSection: "Real Estate & Mortgages",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Real Estate & Mortgages", path: "/real-estate-mortgages/" },
+    { name: "What Is The Difference Between A Condo And A Townhome?", path: "/what-is-the-difference-between-aan-arizona-condo-and-arizona-townhome/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -125,10 +111,7 @@ const CheckIcon = () => (
 export default function CondoVsTownhomePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

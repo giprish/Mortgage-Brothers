@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -71,44 +73,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Can FHA loans be funded with gift money?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, FHA loans allow gift money to be used toward the down payment. A gift is defined as funds from a private donor that do not have to be repaid, such as parents giving money to their child for the purchase.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Are cash gifts acceptable for an FHA loan down payment?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No, cash gifts are not acceptable for FHA loan funding. Lenders must be able to document the origins of the gift funds, which is why direct deposits from the donor’s bank account are required.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What documentation is required for FHA loan gift funds?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Lenders require a signed gift letter from the donor stating the dollar amount of the gift, confirmation that repayment is not required, and the donor’s name, address, phone number, and relationship to the homebuyer. Additionally, documentation of the transfer of funds is necessary.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Who can provide gift funds for an FHA loan?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Acceptable gift donors include the homebuyer’s relatives, employer, labor union, governmental agency or public entity with homeownership assistance programs, charitable organizations, and close friends with a documented interest in the buyer.",
-      },
-    },
+const articleFaqs = [
+  { question: "Can FHA loans be funded with gift money?", answer: "Yes, FHA loans allow gift money to be used toward the down payment. A gift is defined as funds from a private donor that do not have to be repaid, such as parents giving money to their child for the purchase." },
+  { question: "Are cash gifts acceptable for an FHA loan down payment?", answer: "No, cash gifts are not acceptable for FHA loan funding. Lenders must be able to document the origins of the gift funds, which is why direct deposits from the donor’s bank account are required." },
+  { question: "What documentation is required for FHA loan gift funds?", answer: "Lenders require a signed gift letter from the donor stating the dollar amount of the gift, confirmation that repayment is not required, and the donor’s name, address, phone number, and relationship to the homebuyer. Additionally, documentation of the transfer of funds is necessary." },
+  { question: "Who can provide gift funds for an FHA loan?", answer: "Acceptable gift donors include the homebuyer’s relatives, employer, labor union, governmental agency or public entity with homeownership assistance programs, charitable organizations, and close friends with a documented interest in the buyer." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/put-bow-fha-loan-gift-guide/",
+    headline: "Put A Bow On It: FHA Loan Gift Guide",
+    description: "Learn FHA gift fund rules for down payments—gift letters, documented transfers, acceptable donors, and why cash gifts are not allowed.",
+    datePublished: "2025-02-05",
+    articleSection: "Mortgage Payments & Strategies",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Payments & Strategies", path: "/mortgage-payments-strategies/" },
+    { name: "Put A Bow On It: FHA Loan Gift Guide", path: "/put-bow-fha-loan-gift-guide/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -125,10 +111,7 @@ const CheckIcon = () => (
 export default function PutBowFhaLoanGiftGuidePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

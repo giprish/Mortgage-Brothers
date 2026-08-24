@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -75,44 +77,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Are prepayment penalties mandatory on Arizona mortgages?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No, prepayment penalties are never mandatory on Arizona mortgages. They are optional and typically disappear after five years. The penalty amount is usually a percentage of the outstanding loan balance or equivalent to a few months of interest.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can a prepayment penalty lower my mortgage interest rate?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, choosing a loan with a prepayment penalty may reduce your interest rate by about ¼%. However, borrowers with good credit usually receive favorable interest rates without needing to opt for a prepayment penalty.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How can I avoid issues with prepayment penalties in Arizona?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "To avoid issues, carefully read all loan documents and ask your Arizona mortgage broker or attorney to review the terms before signing. Ensure you understand any prepayment penalty clauses and their duration, and confirm whether they apply only to refinancing or full repayment.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What should I consider before choosing a mortgage with a prepayment penalty?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "If you decide on a mortgage with a prepayment penalty, try to negotiate a short penalty period, such as five months, and the flexibility to prepay up to 20% of your loan balance without penalty. Also, compare loans without prepayment penalties to determine the best option for your financial goals.",
-      },
-    },
+const articleFaqs = [
+  { question: "Are prepayment penalties mandatory on Arizona mortgages?", answer: "No, prepayment penalties are never mandatory on Arizona mortgages. They are optional and typically disappear after five years. The penalty amount is usually a percentage of the outstanding loan balance or equivalent to a few months of interest." },
+  { question: "Can a prepayment penalty lower my mortgage interest rate?", answer: "Yes, choosing a loan with a prepayment penalty may reduce your interest rate by about ¼%. However, borrowers with good credit usually receive favorable interest rates without needing to opt for a prepayment penalty." },
+  { question: "How can I avoid issues with prepayment penalties in Arizona?", answer: "To avoid issues, carefully read all loan documents and ask your Arizona mortgage broker or attorney to review the terms before signing. Ensure you understand any prepayment penalty clauses and their duration, and confirm whether they apply only to refinancing or full repayment." },
+  { question: "What should I consider before choosing a mortgage with a prepayment penalty?", answer: "If you decide on a mortgage with a prepayment penalty, try to negotiate a short penalty period, such as five months, and the flexibility to prepay up to 20% of your loan balance without penalty. Also, compare loans without prepayment penalties to determine the best option for your financial goals." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/prepayment-penalties-on-your-arizona-mortgage/",
+    headline: "Prepayment Penalties on Your Arizona Mortgage",
+    description: "Learn how optional prepayment penalties work on Arizona mortgages, when they may lower your rate, and how to negotiate or avoid surprise fees.",
+    datePublished: "2025-02-04",
+    articleSection: "Real Estate & Mortgages",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Real Estate & Mortgages", path: "/real-estate-mortgages/" },
+    { name: "Prepayment Penalties on Your Arizona Mortgage", path: "/prepayment-penalties-on-your-arizona-mortgage/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -129,10 +115,7 @@ const CheckIcon = () => (
 export default function PrepaymentPenaltiesArizonaMortgagePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

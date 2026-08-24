@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -72,52 +74,29 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What are seller concessions in real estate?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Seller concessions are closing cost contributions from the seller to help buyers complete the purchase.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How common are seller concessions in Phoenix in 2026?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Redfin reported seller concessions in 65.6% of Phoenix-area home sales in the three months ending May 31, 2026, up from 50.7% a year earlier. That measures how often a concession appeared, not the dollar amount.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How much were seller concessions in Phoenix Metro?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "In a February 9, 2019 ARMLS snapshot—not current market guidance—concessions ranged from 0.9% to 2.6% of sale prices across 2,112 Greater Phoenix closings in the prior 30 days.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Which city had the highest seller concessions?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "In that same February 2019 ARMLS snapshot, Glendale recorded the highest average seller concessions at about 2.3%. City rankings change with inventory and rates.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Which price range had the most closings?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "In the February 2019 ARMLS period, homes priced between $200,000 and $300,000 had the most closings, with average concessions of 1.9%. Those price bands and averages are historical.",
-      },
-    },
+const articleFaqs = [
+  { question: "What are seller concessions in real estate?", answer: "Seller concessions are closing cost contributions from the seller to help buyers complete the purchase." },
+  { question: "How common are seller concessions in Phoenix in 2026?", answer: "Redfin reported seller concessions in 65.6% of Phoenix-area home sales in the three months ending May 31, 2026, up from 50.7% a year earlier. That measures how often a concession appeared, not the dollar amount." },
+  { question: "How much were seller concessions in Phoenix Metro?", answer: "In a February 9, 2019 ARMLS snapshot—not current market guidance—concessions ranged from 0.9% to 2.6% of sale prices across 2,112 Greater Phoenix closings in the prior 30 days." },
+  { question: "Which city had the highest seller concessions?", answer: "In that same February 2019 ARMLS snapshot, Glendale recorded the highest average seller concessions at about 2.3%. City rankings change with inventory and rates." },
+  { question: "Which price range had the most closings?", answer: "In the February 2019 ARMLS period, homes priced between $200,000 and $300,000 had the most closings, with average concessions of 1.9%. Those price bands and averages are historical." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/seller-concessions-to-buyers-how-much/",
+    headline: "Seller Concessions To Buyers - How Much?",
+    description: "Seller concessions in Phoenix move with rates and inventory. Here is 2026 frequency data, plus a clearly dated February 2019 ARMLS snapshot of concession size—not a current target.",
+    datePublished: "2025-02-05",
+    articleSection: "Mortgage Payments & Strategies",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Payments & Strategies", path: "/mortgage-payments-strategies/" },
+    { name: "Seller Concessions To Buyers - How Much?", path: "/seller-concessions-to-buyers-how-much/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -134,10 +113,7 @@ const CheckIcon = () => (
 export default function SellerConcessionsToBuyersHowMuchPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

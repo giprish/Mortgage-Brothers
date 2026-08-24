@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -72,44 +74,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How to count Commissions and Bonuses and Tips",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "For Conventional loans, you need to have 12 months of history receiving commission or bonus income. It can come from multiple employers as long as they are in a similar industry. There should be no job gap greater than 30 days. Conventional loans also require 24 months of tip income with no gaps, and the employer must confirm that the tip income is expected to continue.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What are the commission and bonus income requirements for VA financing?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "VA financing requires 24 months of commission or bonus income from the same employer, with no job gaps. It also requires 24 months of tip income with no gaps, and the employer must confirm that the tip income is expected to continue.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What are the commission and bonus income requirements for FHA financing?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "FHA financing requires 12 months of commission or bonus income from the same employer, with no job gaps greater than 30 days. It also requires 12 months of tip income with no gaps, and the employer must confirm that the tip income is expected to continue.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How is tip income considered for different loan types?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Tip income typically requires 24 months of history for Conventional and VA loans, and 12 months for FHA loans. There must be no gaps in tip income, and the employer needs to confirm that the tip income is expected to continue.",
-      },
-    },
+const articleFaqs = [
+  { question: "How to count Commissions and Bonuses and Tips", answer: "For Conventional loans, you need to have 12 months of history receiving commission or bonus income. It can come from multiple employers as long as they are in a similar industry. There should be no job gap greater than 30 days. Conventional loans also require 24 months of tip income with no gaps, and the employer must confirm that the tip income is expected to continue." },
+  { question: "What are the commission and bonus income requirements for VA financing?", answer: "VA financing requires 24 months of commission or bonus income from the same employer, with no job gaps. It also requires 24 months of tip income with no gaps, and the employer must confirm that the tip income is expected to continue." },
+  { question: "What are the commission and bonus income requirements for FHA financing?", answer: "FHA financing requires 12 months of commission or bonus income from the same employer, with no job gaps greater than 30 days. It also requires 12 months of tip income with no gaps, and the employer must confirm that the tip income is expected to continue." },
+  { question: "How is tip income considered for different loan types?", answer: "Tip income typically requires 24 months of history for Conventional and VA loans, and 12 months for FHA loans. There must be no gaps in tip income, and the employer needs to confirm that the tip income is expected to continue." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/how-to-count-commissions-and-bonuses-and-tips/",
+    headline: "How to Count Commissions and Bonuses and Tips",
+    description: "Learn how lenders count commissions, bonuses, and tip income for Conventional, VA, and FHA loans—and how long of a history you need.",
+    datePublished: "2025-02-06",
+    articleSection: "Mortgage Qualifications",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Qualifications", path: "/mortgage-qualifications/" },
+    { name: "How to Count Commissions and Bonuses and Tips", path: "/how-to-count-commissions-and-bonuses-and-tips/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -126,10 +112,7 @@ const CheckIcon = () => (
 export default function CountCommissionsBonusesTipsPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

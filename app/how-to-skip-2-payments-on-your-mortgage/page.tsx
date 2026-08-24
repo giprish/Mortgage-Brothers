@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -72,36 +74,27 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How to Skip 2 Mortgage Payments",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, when refinancing, you typically skip 2 payments. There is no payment the month you close and no payment on the final month of the mortgage. For example, if you close on November 10th, you won’t make a December payment since mortgage payments are paid in arrears.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How does skipping 2 mortgage payments work?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "When you close on your loan, the interest for that month is prepaid at closing. Since mortgage payments are paid in arrears, your next payment isn’t due until the following month. Essentially, the interest gets rolled into either the old loan or the new loan, but it’s not free—just shifted.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Does skipping mortgage payments save money?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "No, skipping payments does not save money. It’s more like shifting payments. The total amount you owe remains the same—it just gets prepaid or delayed depending on the timing of your loan closing.",
-      },
-    },
+const articleFaqs = [
+  { question: "How to Skip 2 Mortgage Payments", answer: "Yes, when refinancing, you typically skip 2 payments. There is no payment the month you close and no payment on the final month of the mortgage. For example, if you close on November 10th, you won’t make a December payment since mortgage payments are paid in arrears." },
+  { question: "How does skipping 2 mortgage payments work?", answer: "When you close on your loan, the interest for that month is prepaid at closing. Since mortgage payments are paid in arrears, your next payment isn’t due until the following month. Essentially, the interest gets rolled into either the old loan or the new loan, but it’s not free—just shifted." },
+  { question: "Does skipping mortgage payments save money?", answer: "No, skipping payments does not save money. It’s more like shifting payments. The total amount you owe remains the same—it just gets prepaid or delayed depending on the timing of your loan closing." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/how-to-skip-2-payments-on-your-mortgage/",
+    headline: "How to Skip 2 Payments On Your Mortgage?",
+    description: "See how refinancing can let you skip two mortgage payments, why interest is prepaid or rolled forward, and why it does not save money.",
+    datePublished: "2025-02-05",
+    articleSection: "Mortgage Payments & Strategies",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Payments & Strategies", path: "/mortgage-payments-strategies/" },
+    { name: "How to Skip 2 Payments On Your Mortgage?", path: "/how-to-skip-2-payments-on-your-mortgage/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -118,10 +111,7 @@ const CheckIcon = () => (
 export default function HowToSkip2PaymentsPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

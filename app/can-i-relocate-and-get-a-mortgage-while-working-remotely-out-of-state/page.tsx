@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -72,44 +74,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Do a lot of our borrowers work remotely?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Remote work is becoming more common, especially since COVID. Around 5% of our borrowers currently work remotely. It's possible to get a mortgage while working from home as long as you meet underwriting requirements.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Do I need to talk to my employer?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, it's very important to talk to your employer. You'll need documentation, such as a signed letter from your employer confirming your remote work arrangement, job details, and salary information. Many underwriters require this before approving a mortgage.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do I talk to my employer about moving?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Have a clear conversation with your boss or HR department about your remote work or relocation. To satisfy underwriting, you'll need a signed and dated letter from your employer stating approval to work remotely, your job position, start date, and salary details. The agreement must be permanent and without conditions.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Does remote working impact investment properties?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Remote work considerations mainly apply to primary homes, not investment properties. If you have questions regarding investment properties and remote work, you can contact us directly for guidance.",
-      },
-    },
+const articleFaqs = [
+  { question: "Do a lot of our borrowers work remotely?", answer: "Remote work is becoming more common, especially since COVID. Around 5% of our borrowers currently work remotely. It's possible to get a mortgage while working from home as long as you meet underwriting requirements." },
+  { question: "Do I need to talk to my employer?", answer: "Yes, it's very important to talk to your employer. You'll need documentation, such as a signed letter from your employer confirming your remote work arrangement, job details, and salary information. Many underwriters require this before approving a mortgage." },
+  { question: "How do I talk to my employer about moving?", answer: "Have a clear conversation with your boss or HR department about your remote work or relocation. To satisfy underwriting, you'll need a signed and dated letter from your employer stating approval to work remotely, your job position, start date, and salary details. The agreement must be permanent and without conditions." },
+  { question: "Does remote working impact investment properties?", answer: "Remote work considerations mainly apply to primary homes, not investment properties. If you have questions regarding investment properties and remote work, you can contact us directly for guidance." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/can-i-relocate-and-get-a-mortgage-while-working-remotely-out-of-state/",
+    headline: "Can I Relocate and Get a Mortgage While Working Remotely Out of State?",
+    description: "Learn how to qualify for a mortgage while working remotely, meet lender requirements, and secure financing when relocating to a new state.",
+    datePublished: "2025-02-03",
+    articleSection: "Mortgage Qualifications",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Qualifications", path: "/mortgage-qualifications/" },
+    { name: "Can I Relocate and Get a Mortgage While Working Remotely Out of State?", path: "/can-i-relocate-and-get-a-mortgage-while-working-remotely-out-of-state/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -126,10 +112,7 @@ const CheckIcon = () => (
 export default function RelocateRemoteMortgagePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

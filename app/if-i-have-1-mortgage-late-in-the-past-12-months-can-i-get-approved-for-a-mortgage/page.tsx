@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -72,28 +74,26 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "If I have 1 late mortgage payment in the past 12 months can I get approved for a mortgage?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Conventional Financing is a bit stricter than FHA. They only allow for one 30-day late. However, you are not guaranteed to be approved if you're under this line, but you will be eligible as long as you don't have no more than one 30-day late.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How are VA Loans impacted by late mortgage payments?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "VA loans have the same policy as Conventional Financing when it comes to past late mortgage payments. You can only have one 30-day late.",
-      },
-    },
+const articleFaqs = [
+  { question: "If I have 1 late mortgage payment in the past 12 months can I get approved for a mortgage?", answer: "Conventional Financing is a bit stricter than FHA. They only allow for one 30-day late. However, you are not guaranteed to be approved if you're under this line, but you will be eligible as long as you don't have no more than one 30-day late." },
+  { question: "How are VA Loans impacted by late mortgage payments?", answer: "VA loans have the same policy as Conventional Financing when it comes to past late mortgage payments. You can only have one 30-day late." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/if-i-have-1-mortgage-late-in-the-past-12-months-can-i-get-approved-for-a-mortgage/",
+    headline: "If I have 1 Mortgage Late in the Past 12 Months, Can I Get Approved for a Mortgage?",
+    description: "One late mortgage payment doesn’t always mean denial. See how FHA, Conventional, and VA treat 30-day lates—and what underwriters look for.",
+    datePublished: "2024-12-30",
+    articleSection: "Mortgage Qualifications",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Qualifications", path: "/mortgage-qualifications/" },
+    { name: "If I have 1 Mortgage Late in the Past 12 Months, Can I Get Approved for a Mortgage?", path: "/if-i-have-1-mortgage-late-in-the-past-12-months-can-i-get-approved-for-a-mortgage/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -110,10 +110,7 @@ const CheckIcon = () => (
 export default function MortgageLateApprovalPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

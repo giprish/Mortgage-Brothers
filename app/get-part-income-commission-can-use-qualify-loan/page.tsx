@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -72,44 +74,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How to count Commissions and Bonuses and Tips",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, commissions can count towards a home loan, but it depends on the loan program. Lenders typically require consistent commission income for at least 12–24 months, proof of employment, and tax returns to verify income stability.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can I use commission income to qualify for an FHA loan?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, FHA loans allow commission income if the borrower has received at least one commission check from their current employer, has 12 months of consistent commission income, no job gaps over 30 days, works in a similar line of work, and can provide two years of tax returns along with their most recent pay stub.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What are the VA loan requirements for commission income?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "For VA loans, borrowers must have received at least one commission check from their current employer, have at least 2 years of consistent commission income, no job gaps greater than 30 days, work in a similar field if they changed jobs, and provide two years of tax returns along with their most recent pay stub.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can commission income be used for a Conventional loan?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, commission income can be used for a Conventional loan if the borrower has at least 12 months of consistent commission income, no job gaps greater than 30 days, works in a similar line of work if they changed jobs, provides two years of tax returns if commissions make up 25% or more of total income, and submits their most recent pay stub.",
-      },
-    },
+const articleFaqs = [
+  { question: "How to count Commissions and Bonuses and Tips", answer: "Yes, commissions can count towards a home loan, but it depends on the loan program. Lenders typically require consistent commission income for at least 12–24 months, proof of employment, and tax returns to verify income stability." },
+  { question: "Can I use commission income to qualify for an FHA loan?", answer: "Yes, FHA loans allow commission income if the borrower has received at least one commission check from their current employer, has 12 months of consistent commission income, no job gaps over 30 days, works in a similar line of work, and can provide two years of tax returns along with their most recent pay stub." },
+  { question: "What are the VA loan requirements for commission income?", answer: "For VA loans, borrowers must have received at least one commission check from their current employer, have at least 2 years of consistent commission income, no job gaps greater than 30 days, work in a similar field if they changed jobs, and provide two years of tax returns along with their most recent pay stub." },
+  { question: "Can commission income be used for a Conventional loan?", answer: "Yes, commission income can be used for a Conventional loan if the borrower has at least 12 months of consistent commission income, no job gaps greater than 30 days, works in a similar line of work if they changed jobs, provides two years of tax returns if commissions make up 25% or more of total income, and submits their most recent pay stub." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/get-part-income-commission-can-use-qualify-loan/",
+    headline: "Will Commissions Count Towards a Loan?",
+    description: "Can commission and bonus income help you qualify? See FHA, VA, and Conventional requirements for using variable income on a home loan.",
+    datePublished: "2025-02-06",
+    articleSection: "Mortgage Qualifications",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Qualifications", path: "/mortgage-qualifications/" },
+    { name: "Will Commissions Count Towards a Loan?", path: "/get-part-income-commission-can-use-qualify-loan/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -126,10 +112,7 @@ const CheckIcon = () => (
 export default function CommissionQualifyLoanPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 

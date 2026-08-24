@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import FaqAccordion from "../component/FaqAccordion";
@@ -73,44 +75,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const faqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Delayed Financing - how to get cashout without waiting 6 months seasoning",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Delayed Financing is a mortgage strategy that allows a buyer to purchase a property with cash (or a HELOC/secured loan) and then refinance shortly after closing, without waiting the standard 6-month seasoning requirement for a cash-out refinance.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Why would someone use Delayed Financing?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The main benefits of Delayed Financing include avoiding the 6-month seasoning requirement for cash-out refinancing, saving time by closing quickly with cash, and having a stronger negotiating position by offering a cash purchase.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What are the requirements for Delayed Financing?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Requirements include following standard cash-out LTV and interest rate guidelines, obtaining a new appraisal, and ensuring that the funds are replenished to the original source of payment.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Can Delayed Financing be used when parents buy a home for their child?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, an alternate use of Delayed Financing is when parents purchase a home with cash for their child, and then the child refinances to pay the parents back. This requires a standard loan agreement, a new appraisal, and the refinance would follow typical rate and LTV rules.",
-      },
-    },
+const articleFaqs = [
+  { question: "Delayed Financing - how to get cashout without waiting 6 months seasoning", answer: "Delayed Financing is a mortgage strategy that allows a buyer to purchase a property with cash (or a HELOC/secured loan) and then refinance shortly after closing, without waiting the standard 6-month seasoning requirement for a cash-out refinance." },
+  { question: "Why would someone use Delayed Financing?", answer: "The main benefits of Delayed Financing include avoiding the 6-month seasoning requirement for cash-out refinancing, saving time by closing quickly with cash, and having a stronger negotiating position by offering a cash purchase." },
+  { question: "What are the requirements for Delayed Financing?", answer: "Requirements include following standard cash-out LTV and interest rate guidelines, obtaining a new appraisal, and ensuring that the funds are replenished to the original source of payment." },
+  { question: "Can Delayed Financing be used when parents buy a home for their child?", answer: "Yes, an alternate use of Delayed Financing is when parents purchase a home with cash for their child, and then the child refinances to pay the parents back. This requires a standard loan agreement, a new appraisal, and the refinance would follow typical rate and LTV rules." },
+] as const;
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/delayed-financing-how-to-get-cashout-without-waiting-6-months-seasoning/",
+    headline: "Delayed Financing – how to get cashout without waiting 6 months seasoning",
+    description: "Learn how delayed financing lets you buy with cash and cash out soon after closing—without waiting the standard 6-month seasoning period.",
+    datePublished: "2025-02-04",
+    articleSection: "Mortgage Payments & Strategies",
+  },
+  faqs: [...articleFaqs],
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Payments & Strategies", path: "/mortgage-payments-strategies/" },
+    { name: "Delayed Financing – how to get cashout without waiting 6 months seasoning", path: "/delayed-financing-how-to-get-cashout-without-waiting-6-months-seasoning/" },
   ],
-};
+});
 
 const CheckIcon = () => (
   <svg
@@ -127,10 +113,7 @@ const CheckIcon = () => (
 export default function DelayedFinancingPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <JsonLd data={articleJsonLd} />
 
       <Navbar />
 
