@@ -15,7 +15,14 @@ const cities = [
   { name: "Globe", description: "As Gila County's seat, Globe features historic copper mining heritage, hillside homes, and home loans." },
   { name: "Miami", description: "Historic mining town neighboring Globe with affordable character housing and competitive rates." },
   { name: "Star Valley", description: "Rim Country community bordering Payson with mountain views and spacious property financing." },
-  { name: "Hayden", description: "Small Gila River valley town offering quiet rural residential home financing." }
+  { name: "Hayden", description: "Small Gila River valley town offering quiet rural residential home financing." },
+  { name: "Pine", description: "Mogollon Rim mountain town with cabins, second homes, and pine-forest property financing." },
+  { name: "Strawberry", description: "Neighboring Pine along the Rim with cabin retreats and mountain home loan options." },
+  { name: "Christopher Creek", description: "Rim Country community east of Payson with creek-side cabins and recreational home financing." },
+  { name: "Forest Lakes", description: "High-country pine community with cabin and vacation-home mortgage options near the Mogollon Rim." },
+  { name: "Kohls Ranch", description: "Payson-area Rim Country neighborhood with mountain cabins and recreational property loans." },
+  { name: "Washington Park", description: "Quiet Rim Country community with forested lots and mountain home financing." },
+  { name: "Whispering Pines", description: "Pine-forest neighborhood near Payson offering cabin and primary-home mortgage options." }
 ];
 
 export default function GilaCountyPage() {
@@ -33,7 +40,7 @@ export default function GilaCountyPage() {
             </div>
             <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-4">NORTHERN ARIZONA - GILA</p>
             <h1 className="text-white text-hero-title font-playfair font-normal leading-[1.1] mb-6 max-w-3xl">Your trusted Gila County mortgage broker.</h1>
-            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">From Payson to Globe — 5 communities, one team that knows every one of them.</p>
+            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">From Payson to Globe — 12 communities, one team that knows every one of them.</p>
             <HeroCtaButtons className="mb-4" />
           </div>
         </section>

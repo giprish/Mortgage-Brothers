@@ -47,10 +47,13 @@ const rawCitiesByCounty: Record<string, string[]> = {
     "Casa Grande", "Maricopa", "San Tan Valley", "Florence", "Coolidge", "Eloy", "Apache Junction", "Superior", "Kearny", "Mammoth"
   ],
   "yavapai-county-az": [
-    "Prescott", "Prescott Valley", "Sedona", "Cottonwood", "Chino Valley", "Camp Verde", "Dewey-Humboldt", "Clarkdale", "Jerome"
+    "Prescott", "Prescott Valley", "Sedona", "Cottonwood", "Chino Valley", "Camp Verde", "Dewey-Humboldt", "Clarkdale", "Jerome",
+    "Cornville", "Yavapai Hills"
   ],
   "coconino-county-az": [
-    "Flagstaff", "Sedona", "Williams", "Page", "Fredonia", "Tusayan"
+    "Flagstaff", "Sedona", "Williams", "Page", "Fredonia", "Tusayan",
+    "Bellemont", "Doney Park", "Happy Jack", "Kachina Village", "Mormon Lake",
+    "Mountainaire", "Munds Park", "Parks", "Timberline"
   ],
   "navajo-county-az": [
     "Show Low", "Pinetop-Lakeside", "Holbrook", "Taylor", "Snowflake", "Winslow"
@@ -59,7 +62,9 @@ const rawCitiesByCounty: Record<string, string[]> = {
     "St. Johns", "Eagar", "Springerville", "Chinle", "Window Rock"
   ],
   "gila-county-az": [
-    "Payson", "Globe", "Miami", "Star Valley", "Hayden"
+    "Payson", "Globe", "Miami", "Star Valley", "Hayden",
+    "Christopher Creek", "Forest Lakes", "Kohls Ranch", "Pine", "Strawberry",
+    "Washington Park", "Whispering Pines"
   ],
   "cochise-county-az": [
     "Sierra Vista", "Douglas", "Bisbee", "Benson", "Willcox", "Tombstone", "Huachuca City"
@@ -74,7 +79,7 @@ const rawCitiesByCounty: Record<string, string[]> = {
     "Nogales", "Rio Rico", "Tubac", "Patagonia"
   ],
   "mohave-county-az": [
-    "Lake Havasu City", "Kingman", "Bullhead City", "Fort Mohave", "Golden Valley", "Colorado City"
+    "Lake Havasu City", "Kingman", "Bullhead City", "Fort Mohave", "Golden Valley", "Colorado City", "Chloride"
   ],
   "la-paz-county-az": [
     "Parker", "Quartzsite", "Salome", "Bouse"

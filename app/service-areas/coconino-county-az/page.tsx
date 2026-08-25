@@ -34,6 +34,42 @@ const cities = [
   {
     name: "Tusayan",
     description: "Grand Canyon South Rim community providing housing solutions for local workforce and residents."
+  },
+  {
+    name: "Bellemont",
+    description: "I-40 community west of Flagstaff with pine-forest homes and high-country mortgage options."
+  },
+  {
+    name: "Doney Park",
+    description: "East Flagstaff neighborhood with mountain views, acreage, and competitive home loan programs."
+  },
+  {
+    name: "Happy Jack",
+    description: "Mogollon Rim high-country community with cabins, second homes, and recreational property financing."
+  },
+  {
+    name: "Kachina Village",
+    description: "South Flagstaff pine-forest neighborhood with family homes and mountain-town mortgage options."
+  },
+  {
+    name: "Mormon Lake",
+    description: "Lakeside cabin community south of Flagstaff offering recreational and second-home financing."
+  },
+  {
+    name: "Mountainaire",
+    description: "Quiet forested community near Flagstaff with cabin-style homes and local mortgage programs."
+  },
+  {
+    name: "Munds Park",
+    description: "I-17 mountain community between Flagstaff and Sedona with cabins and vacation-home loans."
+  },
+  {
+    name: "Parks",
+    description: "Rural high-country community west of Flagstaff with acreage, cabins, and USDA-friendly financing."
+  },
+  {
+    name: "Timberline",
+    description: "Flagstaff-area pine neighborhood offering mountain homes and competitive mortgage rates."
   }
 ];
 
@@ -64,7 +100,7 @@ export default function CoconinoCountyPage() {
             </h1>
 
             <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">
-              From Flagstaff to Lake Powell — 6 communities, one team that knows every one of them.
+              From Flagstaff to Lake Powell — 15 communities, one team that knows every one of them.
             </p>
 
             <HeroCtaButtons className="mb-4" />

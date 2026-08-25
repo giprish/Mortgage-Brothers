@@ -16,7 +16,8 @@ const cities = [
   { name: "Bullhead City", description: "Located along the Colorado River opposite Laughlin, offering riverfront homes and competitive loan rates." },
   { name: "Fort Mohave", description: "Growing residential community south of Bullhead City with new construction and golf properties." },
   { name: "Golden Valley", description: "Spacious desert valley living between Kingman and Bullhead City with affordable acreage options." },
-  { name: "Colorado City", description: "Northern Mohave County community near the Utah border with mountain views and rural loans." }
+  { name: "Colorado City", description: "Northern Mohave County community near the Utah border with mountain views and rural loans." },
+  { name: "Chloride", description: "Historic mining town near Kingman offering small-town character homes and rural financing." }
 ];
 
 export default function MohaveCountyPage() {
@@ -34,7 +35,7 @@ export default function MohaveCountyPage() {
             </div>
             <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-3">WESTERN ARIZONA - MOHAVE</p>
             <h1 className="text-white text-hero-title font-playfair font-normal leading-[1.1] mb-4 max-w-3xl">Your trusted Mohave County mortgage broker.</h1>
-            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-6">From Lake Havasu to Kingman — 6 communities, one team that knows every one of them.</p>
+            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-6">From Lake Havasu to Kingman — 7 communities, one team that knows every one of them.</p>
             <HeroCtaButtons className="mb-2" />
           </div>
         </section>

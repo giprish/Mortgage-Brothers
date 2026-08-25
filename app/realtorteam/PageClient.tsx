@@ -105,7 +105,7 @@ export default function RealtorTeamPage() {
       <main className="flex-grow">
         <LoanProgramHero
           title="We Want to be Your Mortgage Team"
-          subtitle="Our #1 Priority is giving RealtorsÂ® and their buyer clients exceptional service on “Purchase” transactions."
+          subtitle="Our #1 Priority is giving Realtors® and their buyer clients exceptional service on “Purchase” transactions."
           ctaLabel="Start My Pre-Approval"
           ctaHref="/#get-pre-approved"
           secondaryCtaLabel="Talk to a Broker"

@@ -46,6 +46,18 @@ const cities = [
   {
     name: "Jerome",
     description: "Historic hillside mining town with breathtaking Verde Valley views and unique property financing."
+  },
+  {
+    name: "Cornville",
+    description: "Verde Valley community with vineyards, acreage, and rural home financing near Cottonwood."
+  },
+  {
+    name: "Dewey",
+    description: "Highway 69 community with spacious lots, mountain views, and custom home mortgage options."
+  },
+  {
+    name: "Yavapai Hills",
+    description: "Prescott-area neighborhood with golf-community living and competitive home loan programs."
   }
 ];
 
@@ -76,7 +88,7 @@ export default function YavapaiCountyPage() {
             </h1>
 
             <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">
-              From Prescott to Sedona — 9 communities, one team that knows every one of them.
+              From Prescott to Sedona — 12 communities, one team that knows every one of them.
             </p>
 
             <HeroCtaButtons className="mb-4" />

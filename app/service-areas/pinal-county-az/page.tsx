@@ -50,6 +50,10 @@ const cities = [
   {
     name: "Mammoth",
     description: "Quiet desert community in southern Pinal County offering affordable single-family home financing."
+  },
+  {
+    name: "Queen Creek",
+    description: "East Valley growth corridor spanning Pinal County with new construction and family-friendly mortgage options."
   }
 ];
 
@@ -85,7 +89,7 @@ export default function PinalCountyPage() {
             </h1>
 
             <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">
-              From San Tan Valley to Casa Grande — 10 communities, one team that knows every one of them.
+              From San Tan Valley to Casa Grande — 11 communities, one team that knows every one of them.
             </p>
 
             <HeroCtaButtons className="mb-4" />

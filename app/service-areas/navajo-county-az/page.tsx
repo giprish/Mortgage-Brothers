@@ -13,6 +13,7 @@ export const metadata: Metadata = getSeoMetadata("/service-areas/navajo-county-a
 const cities = [
   { name: "Show Low", description: "Commercial hub of the White Mountains offering cool pine forest living, cabin retreats, and home loans." },
   { name: "Pinetop-Lakeside", description: "Resort town in the White Mountains featuring golf communities, mountain cabins, and second-home financing." },
+  { name: "Pinetop", description: "White Mountains community with pine-forest homes, cabins, and competitive mortgage rates." },
   { name: "Holbrook", description: "As Navajo County's seat along historic Route 66, Holbrook offers affordable small-town home purchase options." },
   { name: "Taylor", description: "Family-centered White Mountain area town with ranch properties and flexible home loan choices." },
   { name: "Snowflake", description: "Historic pioneer heritage town offering family neighborhoods, acreage, and competitive mortgage rates." },
@@ -34,7 +35,7 @@ export default function NavajoCountyPage() {
             </div>
             <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-4">NORTHERN ARIZONA - NAVAJO</p>
             <h1 className="text-white text-hero-title font-playfair font-normal leading-[1.1] mb-6 max-w-3xl">Your trusted Navajo County mortgage broker.</h1>
-            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">From Show Low to Winslow — 6 communities, one team that knows every one of them.</p>
+            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">From Show Low to Winslow — 7 communities, one team that knows every one of them.</p>
             <HeroCtaButtons className="mb-4" />
           </div>
         </section>

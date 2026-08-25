@@ -177,7 +177,7 @@ export default function AboutPage() {
                 </svg>
               </Link>
               <p className="text-[#b8d4b8] text-[12px] font-medium mt-3">
-                3 min Â· no credit impact
+                3 min · no credit impact
               </p>
             </div>
           </div>
@@ -272,7 +272,7 @@ export default function AboutPage() {
                         Eddie Knoell
                       </h3>
                       <span className="text-brand-gold text-[12px] font-semibold tracking-wide uppercase mt-0.5">
-                        Senior Loan Officer / Owner Â· NMLS #210917
+                        Senior Loan Officer / Owner · NMLS #210917
                       </span>
                     </div>
                   </div>
@@ -301,7 +301,7 @@ export default function AboutPage() {
                         Thomas Knoell, Jr.
                       </h3>
                       <span className="text-brand-gold text-[12px] font-semibold tracking-wide uppercase mt-0.5">
-                        Senior Loan Officer / Owner Â· NMLS #1618695
+                        Senior Loan Officer / Owner · NMLS #1618695
                       </span>
                     </div>
                   </div>
@@ -329,7 +329,7 @@ export default function AboutPage() {
                         Steve Perez
                       </h3>
                       <span className="text-brand-gold text-[12px] font-semibold tracking-wide uppercase mt-0.5">
-                        Loan Officer Â· NMLS #2074623
+                        Loan Officer · NMLS #2074623
                       </span>
                     </div>
                   </div>
@@ -357,7 +357,7 @@ export default function AboutPage() {
                         Ann Stoppa
                       </h3>
                       <span className="text-brand-gold text-[12px] font-semibold tracking-wide uppercase mt-0.5">
-                        Loan Officer Â· NMLS #1816024
+                        Loan Officer · NMLS #1816024
                       </span>
                     </div>
                   </div>
@@ -385,7 +385,7 @@ export default function AboutPage() {
                         Macy McLaren
                       </h3>
                       <span className="text-brand-gold text-[12px] font-semibold tracking-wide uppercase mt-0.5">
-                        Production Manager Â· Licensed LO Â· NMLS #2096310
+                        Production Manager · Licensed LO · NMLS #2096310
                       </span>
                     </div>
                   </div>
@@ -664,7 +664,7 @@ export default function AboutPage() {
               href={COMPANY.phoneHref}
               className="btn-primary hover:shadow-brand-green-accent/20 group"
             >
-              {COMPANY.phoneDisplay} Â· Speak with a Mortgage Expert
+              {COMPANY.phoneDisplay} · Speak with a Mortgage Expert
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="16"

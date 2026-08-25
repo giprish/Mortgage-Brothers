@@ -482,10 +482,10 @@ export default function SellMyHouseFastArizonaPage() {
           <div className="max-w-5xl mx-auto text-center space-y-4">
             <h2 className="text-[#052316] text-[20px] font-bold font-playfair">Credentials</h2>
             <p className="text-[#4e5b4e] text-[13px] leading-relaxed">
-              {COMPANY.legalName} Â· {COMPANY.nmlsDisplay} Â· {COMPANY.azLicenseDisplay} Â·{" "}
-              {LOAN_OFFICERS.eddie.name} {LOAN_OFFICERS.eddie.nmlsDisplay} Â·{" "}
-              {LOAN_OFFICERS.thomas.name} {LOAN_OFFICERS.thomas.nmlsDisplay} Â·{" "}
-              {COMPANY.addressFull} Â·{" "}
+              {COMPANY.legalName} · {COMPANY.nmlsDisplay} · {COMPANY.azLicenseDisplay} ·{" "}
+              {LOAN_OFFICERS.eddie.name} {LOAN_OFFICERS.eddie.nmlsDisplay} ·{" "}
+              {LOAN_OFFICERS.thomas.name} {LOAN_OFFICERS.thomas.nmlsDisplay} ·{" "}
+              {COMPANY.addressFull} ·{" "}
               <a href={COMPANY.phoneHref} className="text-[#3fb364] hover:underline font-semibold">
                 {COMPANY.phoneDisplay}
               </a>
@@ -692,7 +692,7 @@ export default function SellMyHouseFastArizonaPage() {
             </div>
 
             <p className="text-[#b8d4b8] text-[13px] pt-2">
-              100% Free Â· No Obligation Â· We Don&apos;t Buy Houses Â· Local Arizona Experts
+              100% Free · No Obligation · We Don&apos;t Buy Houses · Local Arizona Experts
             </p>
 
             <p className="text-[#b8d4b8] text-[12px] pt-4">

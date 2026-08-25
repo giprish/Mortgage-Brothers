@@ -6,7 +6,7 @@ const brothers = [
   {
     name: "Thomas Knoell",
     photo: "/home/thomas-knoell.jpg",
-    role: "Co-Founder Â· Loan Officer",
+    role: "Co-Founder · Loan Officer",
     nmls: "NMLS ID #1618695",
     license: "AZ Loan Originator License #LO-0942229",
     bio: "Co-founder of Mortgage Brothers LLC and a leading expert in mortgage lending. Thomas's deep understanding of first-time buyer needs makes him a favorite among clients in Gilbert and Tucson.",
@@ -14,7 +14,7 @@ const brothers = [
   {
     name: "Eddie Knoell",
     photo: "/home/eddie-knoell.jpg",
-    role: "Co-Founder Â· Managing Broker",
+    role: "Co-Founder · Managing Broker",
     nmls: "NMLS ID #210917",
     license: "AZ Loan Originator License #LO-0911422",
     bio: "Co-founder with decades of experience, Eddie has helped thousands of families navigate the mortgage process. His expertise simplifies the journey to homeownership for clients across Arizona.",
@@ -81,32 +81,9 @@ const Brothers = () => {
                   <span className="hidden sm:inline"> &bull; </span>
                   <span className="block sm:inline">{person.license}</span>
                 </p>
-                <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed mb-8">
+                <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed">
                   {person.bio}
                 </p>
-
-                <a
-                  href="tel:+16025352171"
-                  className="inline-flex items-center gap-2 text-[#08271B] group-hover:text-[#3fb364] font-semibold text-[14.5px] transition-colors duration-200 mt-auto w-fit"
-                >
-                  <div className="w-8 h-8 rounded-full bg-[#fcf9f3] group-hover:bg-[#3fb364]/10 flex items-center justify-center transition-colors duration-200">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="text-[#7a6638] group-hover:text-[#3fb364] transition-colors duration-200"
-                    >
-                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                    </svg>
-                  </div>
-                  <span>(602) 535-2171</span>
-                </a>
               </div>
             </div>
           ))}

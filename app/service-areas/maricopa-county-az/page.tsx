@@ -117,6 +117,22 @@ const cities = [
   {
     name: "Guadalupe",
     description: "Guadalupe offers a close-knit community with convenient access to Tempe and Phoenix. We support local buyers with affordable home loan options and personalized mortgage guidance."
+  },
+  {
+    name: "El Mirage",
+    description: "West Valley community with affordable housing, family neighborhoods, and first-time buyer loan programs."
+  },
+  {
+    name: "Tolleson",
+    description: "Growing West Valley city with convenient freeway access, established neighborhoods, and competitive mortgage rates."
+  },
+  {
+    name: "Youngtown",
+    description: "Historic West Valley community offering affordable homes and refinance options near Sun City."
+  },
+  {
+    name: "Gila Bend",
+    description: "Southwest Maricopa County town with desert living, agricultural roots, and accessible home financing."
   }
 ];
 
@@ -156,7 +172,7 @@ export default function MaricopaCounty() {
 
             {/* Subtitle */}
             <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">
-              From downtown Phoenix to the far West Valley — 26 cities, one team that knows every one of them.
+              From downtown Phoenix to the far West Valley — 30 cities, one team that knows every one of them.
             </p>
 
             {/* CTA Buttons */}

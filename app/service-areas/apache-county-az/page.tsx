@@ -7,7 +7,7 @@ import Link from "next/link";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
-import { getCountyCitiesDetails, slugify } from "../../../lib/cityData";
+import { getCountyCitiesDetails } from "../../../lib/cityData";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/apache-county-az/");
 
@@ -41,7 +41,7 @@ export default function ApacheCountyPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
               {cities.map((city) => (
-                <Link key={city.name} href={`/service-areas/apache-county-az/${slugify(city.name)}/`} className="bg-[#faf7f0] rounded-2xl p-6 lg:p-7 border border-[#e8e0d0]/50 shadow-sm flex flex-col hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl transition-all duration-300">
+                <Link key={city.name} href={`/service-areas/apache-county-az/${city.slug}/`} className="bg-[#faf7f0] rounded-2xl p-6 lg:p-7 border border-[#e8e0d0]/50 shadow-sm flex flex-col hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl transition-all duration-300">
                   <div className="flex items-center gap-2 mb-4 text-brand-green-deep">
                     <h3 className="text-[17px] font-bold tracking-tight">{city.name}</h3>
                   </div>
