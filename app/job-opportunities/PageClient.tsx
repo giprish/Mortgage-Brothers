@@ -123,7 +123,7 @@ const faqs = [
   },
   {
     q: "Is remote work an option?",
-    a: "We offer flexible work arrangements for many positions, including hybrid and remote options, depending on the role and individual circumstances.",
+    a: "We offer flexible work arrangements for many positions, including hybrid and remote options, depending on the role and individual circumstances. Our team is always ready to provide more information and support your career journey. Whether you have specific questions about a role, want to learn more about our company culture, or need guidance on the application process, we're just a click away. Contact our HR team",
   },
 ];
 

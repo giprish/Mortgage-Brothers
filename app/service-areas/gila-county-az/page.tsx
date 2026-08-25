@@ -8,6 +8,7 @@ import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
 import CountyCityCards from "../../component/CountyCityCards";
+import MortgageSolutionsGrid from "../../component/MortgageSolutionsGrid";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/gila-county-az/");
 
@@ -73,11 +74,14 @@ export default function GilaCountyPage() {
           </div>
         </section>
 
+        <MortgageSolutionsGrid placeName="Gila County" />
+
         <section className="w-full py-16 bg-[#fcf9f3]">
           <div className="max-w-4xl mx-auto px-6">
             <FaqAccordion
               title="Frequently Asked Questions"
-              items={[
+              items={
+              [
                 {
                   q: "What home loan programs are available to Gila County homebuyers?",
                   a: "Gila County buyers have access to the full range of mortgage programs including Conventional, FHA, VA (for eligible veterans), Jumbo, FHA Streamline Refinance, First-Time Homebuyer programs, Reverse Mortgage (for homeowners 62+), and Refinancing. Our team can walk you through all your options at no cost."
@@ -102,7 +106,8 @@ export default function GilaCountyPage() {
                   q: "How long does it take to close on a home in Gila County?",
                   a: "Most purchase transactions close in 21 to 30 days when all documentation is submitted promptly. Our team is known for fast, smooth closings with no surprises at the closing table."
                 }
-              ]}
+              ]
+            }
             />
           </div>
         </section>

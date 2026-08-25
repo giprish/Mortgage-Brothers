@@ -11,11 +11,11 @@ import FaqAccordion from "../component/FaqAccordion";
 export const metadata: Metadata = getSeoMetadata("/who-qualifies-for-a-reverse-mortgage-understanding-eligibility-requirements/");
 
 const articleFaqs = [
-  { question: "What is the minimum age to qualify for a reverse mortgage?", answer: "At least one borrower must be 62 years old. Spouses younger than 62 may have protections under the non-borrowing spouse rule." },
-  { question: "Can I get a reverse mortgage if I still have a mortgage?", answer: "Yes, the reverse mortgage will first pay off your existing mortgage, provided there is enough equity remaining to access funds." },
-  { question: "Which properties are eligible for a reverse mortgage?", answer: "Eligible properties include single-family homes, 1–4 unit homes you occupy, FHA-approved condos, and manufactured homes meeting HUD standards. Vacation homes, co-ops, and homes on leased land are generally not eligible." },
-  { question: "Do I need counseling before applying?", answer: "Yes, HUD-approved counseling is mandatory to ensure you understand the reverse mortgage process, costs, and alternatives." },
-  { question: "What financial obligations must I meet?", answer: "You must demonstrate the ability to pay property taxes, insurance, and maintain the home. Lenders also review your credit and federal debt status." },
+  { question: "What is the minimum age to qualify for a reverse mortgage?", answer: "**A:** At least one borrower must be 62 years old. Spouses younger than 62 may have protections under the non-borrowing spouse rule." },
+  { question: "Can I get a reverse mortgage if I still have a mortgage?", answer: "**A:** Yes, the reverse mortgage will first pay off your existing mortgage, provided there is enough equity remaining to access funds." },
+  { question: "Which properties are eligible for a reverse mortgage?", answer: "**A:** Eligible properties include single-family homes, 1–4 unit homes you occupy, FHA-approved condos, and manufactured homes meeting HUD standards. Vacation homes, co-ops, and homes on leased land are generally not eligible." },
+  { question: "Do I need counseling before applying?", answer: "**A:** Yes, HUD-approved counseling is mandatory to ensure you understand the reverse mortgage process, costs, and alternatives." },
+  { question: "What financial obligations must I meet?", answer: "**A:** You must demonstrate the ability to pay property taxes, insurance, and maintain the home. Lenders also review your credit and federal debt status. ← Previous PostNext Post → Start Your Home Loan Journey You can always press Enter⏎ to continue" },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({

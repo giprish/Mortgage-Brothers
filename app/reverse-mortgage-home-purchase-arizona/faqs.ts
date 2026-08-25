@@ -1,4 +1,4 @@
-/** Shared FAQ copy — used by PageClient UI and JSON-LD. */
+/** Shared FAQ copy — used by PageClient UI and JSON-LD. Matched to LIVE. */
 export const faqs = [
   { q: "How does a Reverse Mortgage for Home Purchase differ from a traditional reverse mortgage?", a: "While both allow homeowners 62+ to tap into home equity, a Reverse Mortgage for Home Purchase is specifically used to buy a new home. Traditional reverse mortgages are for current homeowners who want to access their existing home's equity." },
   { q: "What happens to the home after I pass away?", a: "Your heirs have options. They can keep the home by paying off the loan balance, sell the home to repay the loan, or turn the home over to the lender. Any remaining equity after the loan is repaid belongs to your heirs." },

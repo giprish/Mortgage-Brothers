@@ -766,64 +766,66 @@ export default function HowToSellMyHouseFastInArizonaPage() {
           <section className="mb-14">
             <FaqAccordion
               title="16. Frequently Asked Questions"
-              items={[
+              items={
+              [
                 {
                   q: "How do I sell my home for cash in Arizona?",
-                  a: "Contact a reputable cash buyer, investor, or iBuyer (or attract a cash buyer via a listing), get a written no-obligation offer, and close through a licensed title company — often in 7–14 days. Compare the offer to the open market before deciding."
+                  a: "Contact a reputable cash buyer, investor, or iBuyer (or attract a cash buyer via a listing), get a written no-obligation offer, and close through a licensed title company — often in 7–14 days. Compare the offer to the open market before deciding.",
                 },
                 {
                   q: "Who pays cash for houses in Arizona?",
-                  a: "Local investors, \"We Buy Houses\" companies, iBuyers, occasionally individual buyers, and (less than before) institutional firms. Mortgage Brothers LLC does not buy houses — we help you compare offers."
+                  a: "Local investors, “We Buy Houses” companies, iBuyers, occasionally individual buyers, and (less than before) institutional firms. AZ Mortgage Brothers does not buy houses — we help you compare offers.",
                 },
                 {
                   q: "Is selling a house for cash a good idea?",
-                  a: "It can be when speed and certainty matter more than price. Because cash offers are often lower, compare against alternatives first."
+                  a: "It can be when speed and certainty matter more than price. Because cash offers are often lower, compare against alternatives first.",
                 },
                 {
                   q: "How much do cash buyers pay?",
-                  a: "It varies widely by buyer and condition. Investors price below market to cover repairs and profit; iBuyers often pay closer to market but charge a service fee. There's no fixed percentage — always compare to open-market value."
+                  a: "It varies widely by buyer and condition. Investors price below market to cover repairs and profit; iBuyers often pay closer to market but charge a service fee. There's no fixed percentage — always compare to open-market value.",
                 },
                 {
                   q: "Can I sell my house as-is in Arizona?",
-                  a: "Yes — to a cash buyer or through an agent. As-is saves repair time and money, though the price may be lower."
+                  a: "Yes — to a cash buyer or through an agent. As-is saves repair time and money, though the price may be lower.",
                 },
                 {
                   q: "How fast can a cash sale close?",
-                  a: "Often 7–14 days, versus 30–60 for a financed sale, depending on title work and documentation."
+                  a: "Often 7–14 days, versus 30–60 for a financed sale, depending on title work and documentation.",
                 },
                 {
                   q: "Are cash home buyers legitimate?",
-                  a: "Many are. Verify proof of funds, reviews, and a real track record, and always close through a licensed title company."
+                  a: "Many are. Verify proof of funds, reviews, and a real track record, and always close through a licensed title company.",
                 },
                 {
                   q: "What are the risks of cash buyers?",
-                  a: "Lowball offers, high-pressure tactics, \"re-trades\" after a walkthrough, and wholesalers reselling your contract. Due diligence protects you."
+                  a: "Lowball offers, high-pressure tactics, “re-trades” after a walkthrough, and wholesalers reselling your contract. Due diligence protects you.",
                 },
                 {
                   q: "Should I accept a cash offer?",
-                  a: "Only after comparing it to a traditional sale, an as-is listing, and keep-the-home options."
+                  a: "Only after comparing it to a traditional sale, an as-is listing, and keep-the-home options.",
                 },
                 {
                   q: "Do I pay commissions on a cash sale?",
-                  a: "Many cash buyers advertise no commission, but service fees or repair credits can apply. Get the net in writing."
+                  a: "Many cash buyers advertise no commission, but service fees or repair credits can apply. Get the net in writing.",
                 },
                 {
                   q: "What's the difference between a cash buyer and an iBuyer?",
-                  a: "An iBuyer is a tech-driven company making algorithmic offers on turnkey homes; a \"cash buyer\" is often a local investor buying distressed homes as-is."
+                  a: "An iBuyer is a tech-driven company making algorithmic offers on turnkey homes; a “cash buyer” is often a local investor buying distressed homes as-is.",
                 },
                 {
                   q: "Can I sell an inherited house for cash in Arizona?",
-                  a: "Yes, and many heirs do for convenience. Confirm probate/authority to sell first, and compare a quick prep-and-list option."
+                  a: "Yes, and many heirs do for convenience. Confirm probate/authority to sell first, and compare a quick prep-and-list option.",
                 },
                 {
                   q: "Can I sell during foreclosure?",
-                  a: "Often yes, before the sale date — but explore alternatives like refinancing that might let you keep the home."
+                  a: "Often yes, before the sale date — but explore alternatives like refinancing that might let you keep the home.",
                 },
                 {
                   q: "Will a cash buyer purchase a home that needs major repairs?",
-                  a: "Yes — that's their specialty — but expect a lower offer that prices in the work."
+                  a: "Yes — that's their specialty — but expect a lower offer that prices in the work.",
                 }
-              ]}
+              ]
+            }
             />
           </section>
 

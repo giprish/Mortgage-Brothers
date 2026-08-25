@@ -76,9 +76,9 @@ const loanSolutions = [
 ];
 
 const articleFaqs = [
-  { question: "What exactly is a conventional home loan?", answer: "A conventional home loan is a mortgage not insured by the federal government, offered by private lenders like banks or credit unions." },
-  { question: "What is the 2026 conforming loan limit in Arizona?", answer: "For 2026, the conforming loan limit for a single-family home in Arizona is $832,750." },
-  { question: "What credit score is needed for a conventional loan?", answer: "A minimum credit score of 620 is usually required to qualify for a conventional loan." },
+  { question: "1: What exactly is a conventional home loan?", answer: "A conventional home loan is a mortgage not insured by the federal government, offered by private lenders like banks or credit unions." },
+  { question: "2: What is the 2026 conforming loan limit in Arizona?", answer: "For 2026, the conforming loan limit for a single-family home in Arizona is $806,500." },
+  { question: "3: What credit score is needed for a conventional loan?", answer: "A minimum credit score of 620 is usually required to qualify for a conventional loan. ← Previous PostNext Post → Start Your Home Loan Journey You can always press Enter⏎ to continue" },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({

@@ -4,7 +4,9 @@ import { useMemo, useState, type CSSProperties, type ReactNode } from "react";
 import Navbar from "../component/Navbar";
 import LoanProgramHero from "../component/LoanProgramHero";
 import Footer from "../component/Footer";
+import FaqAccordion from "../component/FaqAccordion";
 import { InteractivePieChart } from "../component/charts/lazy";
+import { faqs as pageFaqs } from "./faqs";
 
 /* ============================================================
    DESIGN TOKENS (shared across the suite)
@@ -504,6 +506,14 @@ export default function ClosingCostCalculator() {
           .ccc-input:focus { background: #ffffff; border-color: ${C.greenBright}; box-shadow: 0 0 0 3px ${C.greenWash}; }
         `}</style>
       </main>
+      <section className="w-full py-14 sm:py-16 lg:py-20 bg-[#fcf9f3] border-t border-[#e8e0d0]/40">
+        <div className="max-w-4xl mx-auto px-6 lg:px-10">
+          <FaqAccordion
+            title="Addressing Common Questions About Paying for Closing Costs"
+            items={pageFaqs}
+          />
+        </div>
+      </section>
       <Footer />
     </div>
   );

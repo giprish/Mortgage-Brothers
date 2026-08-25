@@ -1,4 +1,5 @@
 import { getSeoEntry, seoMetadata, type SeoEntry } from "./seo";
+import { getLiveCityFaqs } from "./liveCityFaqs";
 
 export interface CityData {
   name: string;
@@ -198,7 +199,8 @@ function buildCityData(params: {
     },
   ];
 
-  const faqs = [
+  const liveFaqs = getLiveCityFaqs(countySlug, citySlug);
+  const faqs = liveFaqs?.items ?? [
     {
       question: `How do I find competitive mortgage rates in ${cityName}?`,
       answer: `Our experienced mortgage brokers compare loan options from multiple wholesale lenders to help borrowers secure competitive mortgage rates in ${cityName} based on their credit profile and down payment.`,

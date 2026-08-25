@@ -4,6 +4,8 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import FaqAccordion from "../component/FaqAccordion";
+import { faqs as pageFaqs } from "./faqs";
 
 const programsData = [
   {
@@ -429,6 +431,12 @@ export default function MortgageLoanProgramsArizonaPage() {
             </section>
           ))}
         </div>
+
+        <section className="w-full py-14 sm:py-16 lg:py-20 bg-[#fcf9f3] border-t border-[#e8e0d0]/40">
+          <div className="max-w-4xl mx-auto px-6 lg:px-10">
+            <FaqAccordion title="Frequently Asked Questions" items={pageFaqs} />
+          </div>
+        </section>
       </main>
       <Footer />
     </div>

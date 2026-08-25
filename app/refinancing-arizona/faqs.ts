@@ -1,4 +1,4 @@
-/** Shared FAQ copy — used by PageClient UI and JSON-LD. */
+/** Shared FAQ copy — used by PageClient UI and JSON-LD. Matched to LIVE. */
 export const faqs = [
   { q: "How much equity do I need to refinance?", a: "Most lenders require you to have at least 20% equity in your home to qualify for a refinance. This ensures that you have a sufficient buffer against fluctuations in property value." },
   { q: "What credit score is needed for refinancing?", a: "While specific requirements vary by lender, a credit score of 620 or higher is generally recommended for conventional loans. A higher score may qualify you for better rates and terms." },

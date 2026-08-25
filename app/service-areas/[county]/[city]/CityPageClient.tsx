@@ -69,7 +69,7 @@ const loanPrograms = [
     )
   },
   {
-    title: "Moving Mortgage for Purchase",
+    title: "Reverse Mortgage for Purchase",
     href: "/reverse-mortgage-home-purchase-arizona/",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3fb364" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -90,7 +90,7 @@ const loanPrograms = [
     )
   },
   {
-    title: "Self-Employed",
+    title: "Refinancing",
     href: "/refinancing-arizona/",
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3fb364" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -191,7 +191,7 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
             {/* Stats row — below fold on mobile */}
             <div className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
               {[
-                { value: "4.9/5", label: "Client Rating" },
+                { value: "5.0/5", label: "Client Rating" },
                 { value: "Thousands", label: "Homes Financed" },
                 { value: "4-8 hrs", label: "Pre-Approval Time" },
                 { value: "Competitive", label: "Local Rates" },

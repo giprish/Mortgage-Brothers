@@ -135,7 +135,7 @@ const Footer = () => {
 
             <div className="flex items-center gap-3">
               <a
-                href="https://www.facebook.com/azmortgagebrothers/"
+                href={COMPANY.facebookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-[#ebf1f5] hover:bg-white text-[#22632d] flex items-center justify-center font-serif font-bold text-[20px] transition-transform hover:scale-105"

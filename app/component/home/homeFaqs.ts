@@ -1,33 +1,20 @@
-/** Homepage FAQ copy — aligned with live Organization mainEntity FAQs. */
+/** Homepage FAQ copy — matched to LIVE site. */
 export const homeFaqs = [
   {
-    question: "Who are the AZ Mortgage Brothers?",
+    question:
+      "What's the advantage of working with a mortgage broker instead of a bank?",
     answer:
-      "We're Eddie and Tom Knoell, third-generation Phoenix natives with over 22 years of experience in the Arizona mortgage industry. We founded AZ Mortgage Brothers to provide personalized, expert mortgage solutions to our fellow Arizonans.",
+      "As brokers, we can shop around multiple lenders to find you the best deal. We're not limited to one bank's products and can often find creative solutions for unique circumstances. We ask 'Where can we get this loan approved?' instead of 'Can we approve this loan?'",
   },
   {
-    question: "What types of loans do you offer?",
+    question:
+      "What loan options are available for first-time buyers in Gilbert?",
     answer:
-      "We offer a wide range of loan products, including conventional, FHA, VA, Jumbo loans, and Refinancing options. Our extensive lender network allows us to find the best fit for your unique situation.",
+      "FHA loans and local programs for first-time buyers are great options. We'll guide you through the process and find the best fit.",
   },
   {
-    question: "How long does the mortgage process typically take?",
+    question: "How does refinancing work in Mesa?",
     answer:
-      "While every situation is unique, we generally aim to close loans within 30 days. Our efficient processes and digital tools help streamline the experience, keeping you informed every step of the way.",
-  },
-  {
-    question: "What sets AZ Mortgage Brothers apart from other brokers?",
-    answer:
-      "Our deep local roots, veteran-led team, and commitment to transparency set us apart. We combine cutting-edge technology with personalized service to ensure you get the best rates and a smooth, stress-free experience.",
-  },
-  {
-    question: "Do you work with first-time homebuyers?",
-    answer:
-      "Absolutely! We specialize in guiding first-time buyers through the process, offering educational resources and patient support to help you make informed decisions.",
-  },
-  {
-    question: "How can I get started with AZ Mortgage Brothers?",
-    answer:
-      "It's easy! You can call us directly at (602) 535-2171 or fill out our quick online form for a free consultation. We'll then match you with an expert loan officer to discuss your needs and options.",
+      "Refinancing replaces your current mortgage with a new one, often with better terms. It's a great way to save money on your Arizona home loan.",
   },
 ];

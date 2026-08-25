@@ -361,7 +361,7 @@ export default function ClientMortgageReviewsPage() {
       <main className="flex-grow">
         <LoanProgramHero
           title="Client Mortgage Reviews"
-          subtitle="Aggregate Review of All 104 Reviews: 4.9 out of 5"
+          subtitle="Aggregate Review of All 104 Reviews: 5.0 out of 5"
         />
 
         {/* Feature strip */}

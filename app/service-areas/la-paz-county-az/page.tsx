@@ -8,6 +8,7 @@ import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
 import CountyCityCards from "../../component/CountyCityCards";
+import MortgageSolutionsGrid from "../../component/MortgageSolutionsGrid";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/la-paz-county-az/");
 
@@ -63,36 +64,40 @@ export default function LaPazCountyPage() {
           </div>
         </section>
 
+        <MortgageSolutionsGrid placeName="La Paz County" />
+
         <section className="w-full py-14 sm:py-16 lg:py-20 bg-[#fcf9f3]">
           <div className="max-w-4xl mx-auto px-6">
             <FaqAccordion
               title="Frequently Asked Questions"
-              items={[
+              items={
+              [
                 {
-                  q: "What mortgage loan options are available in La Paz County, AZ?",
-                  a: "Mortgage Brothers LLC provides a comprehensive range of home loan programs throughout La Paz County. Our offerings include Conventional, FHA, VA, and Jumbo loans, as well as refinancing and reverse mortgages tailored for primary residences and seasonal homes."
+                  q: "What home loan programs are available to La Paz County homebuyers?",
+                  a: "La Paz County buyers have access to the full range of mortgage programs including Conventional, FHA, VA (for eligible veterans), Jumbo, FHA Streamline Refinance, First-Time Homebuyer programs, Reverse Mortgage (for homeowners 62+), and Refinancing. Our team can walk you through all your options at no cost."
                 },
                 {
-                  q: "What is the 2026 FHA loan limit for La Paz County?",
-                  a: "For 2026, the FHA loan limit for a single-family residence in La Paz County is $541,287. These accessible loan limits provide great options for first-time homebuyers looking to settle in Western Arizona with lower down payment requirements."
+                  q: "What is the conforming loan limit in La Paz County for 2026?",
+                  a: "The 2026 conforming loan limit for La Paz County is $832,750 – the same baseline limit that applies across all Arizona counties. If your loan exceeds this amount, you will need a jumbo loan."
                 },
                 {
-                  q: "Do you provide mortgages for vacation homes near the Colorado River?",
-                  a: "Yes, we specialize in financing for secondary residences and vacation properties. Whether you are looking for a riverside home in Parker or exploring residential communities in Quartzsite, we have Conventional and Jumbo loan programs designed for seasonal and vacation homebuyers."
+                  q: "What is the FHA loan limit in La Paz County for 2026?",
+                  a: "The 2026 FHA loan limit for La Paz County is $541,287. This means you can finance a home up to that purchase price using an FHA loan with as little as 3.5% down (with a 580+ credit score)."
                 },
                 {
-                  q: "What is the 2026 Conventional loan limit in La Paz County, Arizona?",
-                  a: "The 2026 baseline conforming (Conventional) loan limit for a single-unit property in La Paz County is $832,750. For property purchases that exceed this baseline, we offer competitive Jumbo mortgage products."
+                  q: "Why are people buying homes in La Paz County?",
+                  a: "La Paz County attracts retirees and snowbirds looking for warm winters and affordable homes along the Colorado River. Parker offers waterfront living at a fraction of the cost of larger markets. Quartzsite draws a large seasonal population each winter. For buyers seeking affordable, low-key living in a warm climate, La Paz County is hard to beat."
                 },
                 {
-                  q: "How fast can I get pre-approved for a home in La Paz County?",
-                  a: "Our streamlined digital pre-approval process takes as little as 3 minutes to begin, with absolutely no impact on your credit score. Once your financial documents are submitted, we work quickly to provide you with a formal pre-approval letter so you can shop with confidence."
+                  q: "How much do I need for a down payment on a La Paz County home?",
+                  a: "FHA loans require as little as 3.5% down. Conventional loans can go as low as 3%-5% for qualified buyers. VA loans require zero down payment for eligible veterans. We also work with down payment assistance programs. Contact us to find out which programs you qualify for."
                 },
                 {
-                  q: "Which cities in La Paz County do you serve?",
-                  a: "As licensed Arizona mortgage brokers, we serve all communities within La Paz County. Our most popular local markets include Parker, the county seat along the Colorado River, and Quartzsite, known for its unique desert landscapes and seasonal residential communities."
+                  q: "How long does it take to close on a home in La Paz County?",
+                  a: "Most purchase transactions close in 21 to 30 days when all documentation is submitted promptly. Our team is known for fast, smooth closings with no surprises at the closing table."
                 }
-              ]}
+              ]
+            }
             />
           </div>
         </section>

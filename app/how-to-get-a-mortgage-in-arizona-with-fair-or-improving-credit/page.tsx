@@ -76,9 +76,9 @@ const loanSolutions = [
 ];
 
 const articleFaqs = [
-  { question: "What's the minimum credit score to buy a home in Arizona?", answer: "Most conventional loan programs require 620 or higher, while FHA loans can qualify with credit scores as low as 580." },
-  { question: "Can I qualify if my credit is below 620 or even below 580?", answer: "Conventional programs often require 620+, but FHA loans may qualify borrowers with scores as low as 580. If you are below 580, we recommend improving your score first — our team can help with a quick action plan." },
-  { question: "How long does credit improvement take?", answer: "Depending on your situation, meaningful progress can occur in 30-90 days by paying down debt, correcting errors, and managing utilization." },
+  { question: "What's the minimum credit score to buy a home in Arizona?", answer: "Most loan programs require **620 or higher**. This threshold opens the door to FHA, VA, and conventional loan options." },
+  { question: "Can I qualify if my credit is below 620?", answer: "Not at this time. We recommend improving your score first — our team can review your credit and create a quick action plan to reach 620+." },
+  { question: "How long does credit improvement take?", answer: "**Depending on your situation, meaningful progress can occur in 30–90 days by paying down debt, correcting errors, and managing utilization.** ← Previous PostNext Post → Start Your Home Loan Journey You can always press Enter⏎ to continue" },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({

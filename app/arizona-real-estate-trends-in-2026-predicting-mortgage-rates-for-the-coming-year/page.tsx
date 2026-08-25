@@ -77,8 +77,8 @@ const loanSolutions = [
 
 const articleFaqs = [
   { question: "Are Arizona home prices dropping in 2026?", answer: "Not significantly. Prices are stabilizing, with some growth in suburbs like Buckeye, Marana, and Casa Grande." },
-  { question: "What are mortgage rates in Arizona right now?", answer: "As of August 2026, most Arizona buyers are seeing 30-year fixed rates around 6.6%–6.75%, depending on credit, loan type, and points. An earlier mid-2026 call of about 5.5% did not happen." },
-  { question: "Is 2026 a good time to buy in Arizona?", answer: "Yes, especially with more inventory and fewer bidding wars. Down payment assistance can also help first-time buyers." },
+  { question: "What are mortgage rates in Arizona right now?", answer: "Most buyers are seeing rates between 6.0%–6.375%, depending on credit and loan type." },
+  { question: "Is 2026 a good time to buy in Arizona?", answer: "Yes, especially with more inventory and fewer bidding wars. Down payment assistance can also help first-time buyers. ← Previous PostNext Post → Start Your Home Loan Journey You can always press Enter⏎ to continue" },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({

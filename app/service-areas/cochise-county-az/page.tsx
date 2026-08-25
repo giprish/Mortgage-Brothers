@@ -8,6 +8,7 @@ import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
 import CountyCityCards from "../../component/CountyCityCards";
+import MortgageSolutionsGrid from "../../component/MortgageSolutionsGrid";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/cochise-county-az/");
 
@@ -67,36 +68,40 @@ export default function CochiseCountyPage() {
           </div>
         </section>
 
+        <MortgageSolutionsGrid placeName="Cochise County" />
+
         <section className="w-full py-16 bg-[#fcf9f3]">
           <div className="max-w-4xl mx-auto px-6">
             <FaqAccordion
               title="Frequently Asked Questions"
-              items={[
+              items={
+              [
                 {
-                  q: "What mortgage loan options are available in Cochise County, AZ?",
-                  a: "Mortgage Brothers LLC provides a full suite of home loan solutions throughout Cochise County, including Conventional, FHA, VA, and Jumbo loans. We also offer private money lending, refinancing, and reverse mortgages for primary residences and investment properties."
+                  q: "What home loan programs are available to Cochise County homebuyers?",
+                  a: "Cochise County buyers have access to the full range of mortgage programs including Conventional, FHA, VA (for eligible veterans), Jumbo, FHA Streamline Refinance, First-Time Homebuyer programs, Reverse Mortgage (for homeowners 62+), and Refinancing. Our team can walk you through all your options at no cost."
                 },
                 {
-                  q: "Do you offer VA loans for military personnel moving to Sierra Vista?",
-                  a: "Yes, we proudly support military families relocating to the Fort Huachuca area in Sierra Vista. We offer competitive VA home loans, which often provide zero down payment options and excellent rates for eligible veterans and active-duty service members."
+                  q: "What is the conforming loan limit in Cochise County for 2026?",
+                  a: "The 2026 conforming loan limit for Cochise County is $832,750 – the same baseline limit that applies across all Arizona counties. If your loan exceeds this amount, you will need a jumbo loan."
                 },
                 {
-                  q: "What is the 2026 FHA loan limit for Cochise County?",
-                  a: "For 2026, the FHA loan limit for a single-family residence in Cochise County is $541,287. This makes FHA loans highly accessible for first-time homebuyers and families looking for lower down payment requirements in Southeastern Arizona."
+                  q: "What is the FHA loan limit in Cochise County for 2026?",
+                  a: "The 2026 FHA loan limit for Cochise County is $541,287. This means you can finance a home up to that purchase price using an FHA loan with as little as 3.5% down (with a 580+ credit score)."
                 },
                 {
-                  q: "What is the 2026 Conventional loan limit in Cochise County, Arizona?",
-                  a: "The 2026 baseline conforming (Conventional) loan limit for a single-unit property in Cochise County is $832,750. For loan amounts exceeding this limit, we offer robust Jumbo loan programs."
+                  q: "Why are people buying homes in Cochise County?",
+                  a: "Cochise County attracts military families stationed at Fort Huachuca in Sierra Vista, retirees drawn by the mild climate and low home prices, and buyers seeking the charm of historic towns like Bisbee and Tombstone. The county offers some of the most affordable home prices in Arizona with a strong sense of community and history."
                 },
                 {
-                  q: "How quickly can I get pre-approved for a home in Cochise County?",
-                  a: "Our fast, streamlined digital pre-approval process takes as little as 3 minutes to begin and does not impact your credit score. Once your financial documents are submitted, you can typically expect a formal pre-approval letter in a matter of hours."
+                  q: "How much do I need for a down payment on a Cochise County home?",
+                  a: "FHA loans require as little as 3.5% down. Conventional loans can go as low as 3%-5% for qualified buyers. VA loans require zero down payment for eligible veterans. We also work with down payment assistance programs. Contact us to find out which programs you qualify for."
                 },
                 {
-                  q: "Which cities in Cochise County does Mortgage Brothers LLC serve?",
-                  a: "We serve all major cities and rural communities across Cochise County, including Sierra Vista, Bisbee, Tombstone, and Douglas. We help buyers finance everything from historic mining town properties to new residential developments."
+                  q: "How long does it take to close on a home in Cochise County?",
+                  a: "Most purchase transactions close in 21 to 30 days when all documentation is submitted promptly. Our team is known for fast, smooth closings with no surprises at the closing table."
                 }
-              ]}
+              ]
+            }
             />
           </div>
         </section>

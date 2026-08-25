@@ -92,8 +92,11 @@ export default function VaLoansArticlePage() {
             <h2 className="text-[#052316] text-[26px] font-bold mb-6 font-playfair border-b border-[#e8e0d0] pb-3">Frequently Asked Questions</h2>
             <div className="space-y-4">
               {[
-                { q: "Is there a maximum loan limit on VA loans in Arizona?", a: "For veterans with full entitlement, there is NO maximum VA loan limit for 0% down financing!" },
-                { q: "What is the VA funding fee?", a: "The VA funding fee is a one-time fee that helps sustain the program. It can be rolled directly into your loan amount, or waived if you have a service-connected disability rating." }
+                { q: "What credit score do I need?", a: "Most lenders accept 580+, though 620+ gives better terms." },
+                { q: "Can active-duty members qualify?", a: "Yes—after 90 consecutive days of service." },
+                { q: "Are there income limits?", a: "No. You just need sufficient income to support your mortgage." },
+                { q: "Can I buy a condo or duplex?", a: "Yes! VA loans work for single-family homes, VA-approved condos, and even 2–4 unit properties (if you live in one)." },
+                { q: "How long does the process take?", a: "Typically 30–45 days, depending on property type and appraisal timing. ← Previous PostNext Post → Start Your Home Loan Journey You can always press Enter⏎ to continue" }
               ].map((faq, idx) => (
                 <div key={idx} className="bg-white border border-[#e8e0d0] rounded-xl overflow-hidden shadow-sm">
                   <button onClick={() => toggleFaq(idx)} className="w-full text-left p-5 font-bold text-[#052316] text-[16px] flex justify-between hover:bg-[#f9f7f2]">

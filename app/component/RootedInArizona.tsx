@@ -1,4 +1,5 @@
 import React from "react";
+import { COMPANY } from "@/lib/company";
 
 const cities = [
   "Phoenix",
@@ -77,10 +78,16 @@ const RootedInArizona = () => {
               {/* Two small stat cards */}
               <div className="grid grid-cols-2 gap-3 sm:gap-4">
                 {/* Google Reviews */}
-                <div className="bg-white rounded-xl p-3 sm:p-5 border border-[#e8e0d0] min-w-0">
+                <a
+                  href={COMPANY.googleReviewsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white rounded-xl p-3 sm:p-5 border border-[#e8e0d0] min-w-0 hover:border-[#b89a5a] transition-colors"
+                  aria-label="5.0 Google Reviews"
+                >
                   <div className="flex items-baseline gap-1 mb-1">
                     <span className="text-[#1a3a1a] text-[24px] sm:text-[28px] font-semibold leading-none">
-                      4.9
+                      5.0
                     </span>
                     <span className="text-[#7a6638] text-[14px] font-medium">
                       /5
@@ -99,7 +106,7 @@ const RootedInArizona = () => {
                     </svg>
                     Google Reviews
                   </p>
-                </div>
+                </a>
 
                 {/* Average Close */}
                 <div className="bg-white rounded-xl p-3 sm:p-5 border border-[#e8e0d0] min-w-0">

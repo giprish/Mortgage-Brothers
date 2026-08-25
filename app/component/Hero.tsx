@@ -25,7 +25,7 @@ const Hero = () => {
             ))}
           </div>
           <span className="text-white text-xs sm:text-sm font-semibold tracking-wide">
-            4.9 rating
+            5.0 rating
           </span>
           <span className="bg-[#2d8545] text-white text-[11px] sm:text-xs font-bold px-2.5 py-0.5 rounded-full ml-1">
             500+ reviews

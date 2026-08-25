@@ -112,7 +112,7 @@ const whyUs = [
   },
   {
     title: "Trusted Reputation",
-    desc: "With hundreds of satisfied clients and a 4.9/5 rating on Google Reviews, our reputation speaks for itself.",
+    desc: "With hundreds of satisfied clients and a 5.0/5 rating on Google Reviews, our reputation speaks for itself.",
   },
 ] as const;
 

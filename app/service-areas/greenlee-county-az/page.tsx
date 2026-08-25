@@ -8,6 +8,7 @@ import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
 import CountyCityCards from "../../component/CountyCityCards";
+import MortgageSolutionsGrid from "../../component/MortgageSolutionsGrid";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/greenlee-county-az/");
 
@@ -62,36 +63,40 @@ export default function GreenleeCountyPage() {
           </div>
         </section>
 
+        <MortgageSolutionsGrid placeName="Greenlee County" />
+
         <section className="w-full py-14 sm:py-16 lg:py-20 bg-[#fcf9f3]">
           <div className="max-w-4xl mx-auto px-6">
             <FaqAccordion
               title="Frequently Asked Questions"
-              items={[
+              items={
+              [
                 {
-                  q: "What mortgage loan options are available in Greenlee County, AZ?",
-                  a: "Mortgage Brothers LLC provides a comprehensive suite of home loan programs throughout Greenlee County. Our options include Conventional, FHA, VA, and Jumbo loans, as well as refinancing, private money lending, and reverse mortgages."
+                  q: "What home loan programs are available to Greenlee County homebuyers?",
+                  a: "Greenlee County buyers have access to the full range of mortgage programs including Conventional, FHA, VA (for eligible veterans), Jumbo, FHA Streamline Refinance, First-Time Homebuyer programs, Reverse Mortgage (for homeowners 62+), and Refinancing. Our team can walk you through all your options at no cost."
                 },
                 {
-                  q: "What is the 2026 FHA loan limit for Greenlee County?",
-                  a: "For 2026, the FHA loan limit for a single-family residence in Greenlee County is $541,287. These loan limits provide an accessible path to homeownership for first-time buyers and those seeking lower down payment requirements in Eastern Arizona."
+                  q: "What is the conforming loan limit in Greenlee County for 2026?",
+                  a: "The 2026 conforming loan limit for Greenlee County is $832,750 – the same baseline limit that applies across all Arizona counties. If your loan exceeds this amount, you will need a jumbo loan."
                 },
                 {
-                  q: "Do you provide mortgages for rural homes and acreage properties in Greenlee County?",
-                  a: "Yes, we specialize in financing for a variety of property types. Whether you are looking for a home in the close-knit mining community of Morenci or seeking rural landscapes and acreage properties in Duncan, we have flexible loan options to fit your needs."
+                  q: "What is the FHA loan limit in Greenlee County for 2026?",
+                  a: "The 2026 FHA loan limit for Greenlee County is $541,287. This means you can finance a home up to that purchase price using an FHA loan with as little as 3.5% down (with a 580+ credit score)."
                 },
                 {
-                  q: "What is the 2026 Conventional loan limit in Greenlee County, Arizona?",
-                  a: "The 2026 baseline conforming (Conventional) loan limit for a single-unit property in Greenlee County is $832,750. If you are purchasing a property that exceeds this amount, we offer competitive Jumbo loan programs."
+                  q: "Why are people buying homes in Greenlee County?",
+                  a: "Greenlee County is ideal for buyers seeking maximum affordability and small-town community. Clifton and Duncan offer some of the lowest home prices in the state. The area attracts mining industry workers, retirees, and buyers priced out of larger markets who value quiet living and wide-open landscapes."
                 },
                 {
-                  q: "How fast can I get pre-approved for a home in Greenlee County?",
-                  a: "Our streamlined digital pre-approval process takes as little as 3 minutes to start and has zero impact on your credit score. After submitting your financial documents, we typically provide a formal pre-approval letter within 4 to 8 hours."
+                  q: "How much do I need for a down payment on a Greenlee County home?",
+                  a: "FHA loans require as little as 3.5% down. Conventional loans can go as low as 3%-5% for qualified buyers. VA loans require zero down payment for eligible veterans. We also work with down payment assistance programs. Contact us to find out which programs you qualify for."
                 },
                 {
-                  q: "Which cities and towns in Greenlee County do you serve?",
-                  a: "As licensed Arizona mortgage brokers, we serve all communities across Greenlee County. Our most popular local markets include Clifton (the county seat), Morenci, and Duncan."
+                  q: "How long does it take to close on a home in Greenlee County?",
+                  a: "Most purchase transactions close in 21 to 30 days when all documentation is submitted promptly. Our team is known for fast, smooth closings with no surprises at the closing table."
                 }
-              ]}
+              ]
+            }
             />
           </div>
         </section>

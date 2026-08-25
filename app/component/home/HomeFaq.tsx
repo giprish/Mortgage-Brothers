@@ -28,7 +28,7 @@ const HomeFaq = () => {
               FAQ
             </p>
             <h2 className="font-playfair text-[#08271B] text-[28px] lg:text-[40px] font-normal leading-tight mb-8">
-              Frequently Asked Questions
+              Answers to Your Arizona Mortgage Questions
             </h2>
 
             <div className="flex flex-col gap-3">

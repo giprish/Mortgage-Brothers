@@ -87,7 +87,7 @@ const STEPS = [
 const STATS = [
   { value: "25 Days", label: "Average Closing Time" },
   { value: "25+ Yrs", label: "Industry Experience" },
-  { value: "4.9 ★", label: "Realtor Star Rating" },
+  { value: "5.0 ★", label: "Realtor Star Rating" },
   { value: "99%", label: "Communication Satisfaction" },
 ];
 

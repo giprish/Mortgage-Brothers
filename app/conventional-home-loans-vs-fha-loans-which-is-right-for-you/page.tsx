@@ -80,7 +80,7 @@ const articleFaqs = [
   { question: "Do FHA loans always cost more long-term?", answer: "Usually. FHA's lifetime MIP adds up, unless you refinance." },
   { question: "Which loan is better for investors?", answer: "Conventional—FHA is only for primary residences." },
   { question: "Which loan closes faster?", answer: "Conventional, since FHA requires stricter inspections." },
-  { question: "Can I use Conventional with less than 20% down?", answer: "Yes. You'll pay PMI, but it's temporary—unlike FHA's MIP." },
+  { question: "Can I use Conventional with less than 20% down?", answer: "Yes. You'll pay PMI, but it's temporary—unlike FHA's MIP. ← Previous PostNext Post → Start Your Home Loan Journey You can always press Enter⏎ to continue" },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({

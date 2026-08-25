@@ -163,7 +163,7 @@ const LoanPrograms = () => {
             >
               <div>
                 {/* Icon Container with Hover Animation */}
-                <div className="w-11 h-11 rounded-xl bg-[#e8f6ed] text-[#2d8545] flex items-center justify-center mb-3 transition-all duration-300 group-hover:bg-[#2d8545] group-hover:text-white group-hover:scale-110">
+                <div className="w-11 h-11 rounded-xl bg-[#e8f6ed] text-[#2d8545] flex items-center justify-center mb-3 transition-all duration-300 group-hover:bg-[#2d8545] group-hover:text-[#ffffff] group-hover:[&_svg]:stroke-[#ffffff] group-hover:scale-110">
                   {item.icon}
                 </div>
 

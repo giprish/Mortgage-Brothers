@@ -16,7 +16,11 @@ export const COMPANY = {
   addressLine1: "1599 East Orangewood Ave, Suite 200",
   addressLine2: "Phoenix, AZ 85020",
   addressFull: "1599 East Orangewood Ave, Suite 200, Phoenix, AZ 85020",
-  addressMapsUrl: "https://goo.gl/maps/GVLYa",
+  addressMapsUrl: "https://www.google.com/maps?cid=3674746044086552790",
+  /** Google Business Profile / reviews listing */
+  googleReviewsUrl: "https://www.google.com/maps?cid=3674746044086552790",
+  /** Facebook page (matches live site) */
+  facebookUrl: "https://www.facebook.com/azmortgagebrothers/",
   city: "Phoenix",
   state: "AZ",
   postalCode: "85020",

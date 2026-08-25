@@ -8,6 +8,7 @@ import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
 import CountyCityCards from "../../component/CountyCityCards";
+import MortgageSolutionsGrid from "../../component/MortgageSolutionsGrid";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/santa-cruz-county-az/");
 
@@ -69,18 +70,21 @@ export default function SantaCruzCountyPage() {
           </div>
         </section>
 
+        <MortgageSolutionsGrid placeName="Santa Cruz County" />
+
         <section className="w-full py-16 bg-[#fcf9f3]">
           <div className="max-w-4xl mx-auto px-6">
             <FaqAccordion
               title="Frequently Asked Questions"
-              items={[
+              items={
+              [
                 {
                   q: "What home loan programs are available to Santa Cruz County homebuyers?",
                   a: "Santa Cruz County buyers have access to the full range of mortgage programs including Conventional, FHA, VA (for eligible veterans), Jumbo, FHA Streamline Refinance, First-Time Homebuyer programs, Reverse Mortgage (for homeowners 62+), and Refinancing. Our team can walk you through all your options at no cost."
                 },
                 {
                   q: "What is the conforming loan limit in Santa Cruz County for 2026?",
-                  a: "The 2026 conforming loan limit for Santa Cruz County is $832,750 - the same baseline limit that applies across all Arizona counties. If your loan exceeds this amount, you will need a jumbo loan."
+                  a: "The 2026 conforming loan limit for Santa Cruz County is $832,750 – the same baseline limit that applies across all Arizona counties. If your loan exceeds this amount, you will need a jumbo loan."
                 },
                 {
                   q: "What is the FHA loan limit in Santa Cruz County for 2026?",
@@ -88,7 +92,7 @@ export default function SantaCruzCountyPage() {
                 },
                 {
                   q: "Why are people buying homes in Santa Cruz County?",
-                  a: "Santa Cruz County attracts buyers drawn by the area&apos;s cultural richness, scenic landscapes, and affordable home prices. Rio Rico is especially popular with families and first-time buyers looking for newer homes at lower prices than Tucson. Tubac and Patagonia draw artists, retirees, and second-home buyers seeking a quiet, scenic retreat. The area also benefits from strong cross-border commerce through Nogales."
+                  a: "Santa Cruz County attracts buyers drawn by the area's cultural richness, scenic landscapes, and affordable home prices. Rio Rico is especially popular with families and first-time buyers looking for newer homes at lower prices than Tucson. Tubac and Patagonia draw artists, retirees, and second-home buyers seeking a quiet, scenic retreat. The area also benefits from strong cross-border commerce through Nogales."
                 },
                 {
                   q: "How much do I need for a down payment on a Santa Cruz County home?",
@@ -98,7 +102,8 @@ export default function SantaCruzCountyPage() {
                   q: "How long does it take to close on a home in Santa Cruz County?",
                   a: "Most purchase transactions close in 21 to 30 days when all documentation is submitted promptly. Our team is known for fast, smooth closings with no surprises at the closing table."
                 }
-              ]}
+              ]
+            }
             />
           </div>
         </section>

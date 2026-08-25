@@ -1,4 +1,5 @@
 import React from "react";
+import { COMPANY } from "@/lib/company";
 
 const HomeStatsBar = () => {
   return (
@@ -8,19 +9,19 @@ const HomeStatsBar = () => {
         {/* Desktop Layout: 5 columns in a single row */}
         <div className="hidden md:grid grid-cols-5 gap-4 divide-x divide-[#0e422b] items-center">
           
-          {/* Main 4.9 Score Column */}
+          {/* Main 5.0 Score Column */}
           <div className="flex items-center gap-3.5 pr-2">
             <span className="text-4xl lg:text-5xl font-bold text-white tracking-tight leading-none">
-              4.9
+              5.0
             </span>
             <div className="flex flex-col min-w-0">
               <span className="font-bold text-xs lg:text-sm text-white leading-tight">
-                Rated 4.9 / 5
+                Rated 5 / 5
               </span>
               <span className="text-[11px] lg:text-xs text-[#b8d4b8] leading-tight mt-0.5">
                 from 500+ verified Arizona homeowners
               </span>
-              <div className="flex text-[#f5c518] gap-0.5 mt-1">
+              <div className="flex text-[#f5c518] gap-0.5 mt-1" aria-label="5 out of 5 stars">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <svg key={i} className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
@@ -31,50 +32,58 @@ const HomeStatsBar = () => {
           </div>
 
           {/* Google */}
-          <div className="flex items-center justify-center gap-3 pl-4">
+          <a
+            href={COMPANY.googleReviewsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-3 pl-4 hover:opacity-90 transition-opacity"
+            aria-label="5.0 Google reviews"
+          >
             <div className="w-8 h-8 rounded-full bg-[#083321] flex items-center justify-center text-[#3fb364] font-bold text-sm shrink-0 border border-[#144f33]">
               G
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-base lg:text-lg text-white leading-none">
-                4.9
-              </span>
-              <span className="text-[11px] lg:text-xs text-[#b8d4b8] font-medium mt-0.5">
-                Google
-              </span>
-            </div>
-          </div>
-
-          {/* Zillow */}
-          <div className="flex items-center justify-center gap-3 pl-4">
-            <div className="w-8 h-8 rounded-full bg-[#083321] flex items-center justify-center text-[#3fb364] shrink-0 border border-[#144f33]">
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-              </svg>
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-base lg:text-lg text-white leading-none">
                 5.0
               </span>
               <span className="text-[11px] lg:text-xs text-[#b8d4b8] font-medium mt-0.5">
-                Zillow
+                Google
               </span>
             </div>
-          </div>
+          </a>
 
-          {/* Experience */}
-          <div className="flex items-center justify-center gap-3 pl-4">
-            <div className="w-8 h-8 rounded-full bg-[#083321] flex items-center justify-center text-[#3fb364] shrink-0 border border-[#144f33]">
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138z" />
-              </svg>
+          {/* Facebook (matches live) */}
+          <a
+            href={COMPANY.facebookUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-3 pl-4 hover:opacity-90 transition-opacity"
+            aria-label="5.0 Facebook reviews"
+          >
+            <div className="w-8 h-8 rounded-full bg-[#083321] flex items-center justify-center text-[#3fb364] font-bold text-sm shrink-0 border border-[#144f33]">
+              f
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-base lg:text-lg text-white leading-none">
-                4.9
+                5.0
               </span>
               <span className="text-[11px] lg:text-xs text-[#b8d4b8] font-medium mt-0.5">
-                Experience
+                Facebook
+              </span>
+            </div>
+          </a>
+
+          {/* Others */}
+          <div className="flex items-center justify-center gap-3 pl-4">
+            <div className="w-8 h-8 rounded-full bg-[#083321] flex items-center justify-center text-[#3fb364] font-bold text-sm shrink-0 border border-[#144f33]">
+              O
+            </div>
+            <div className="flex flex-col">
+              <span className="font-bold text-base lg:text-lg text-white leading-none">
+                5.0
+              </span>
+              <span className="text-[11px] lg:text-xs text-[#b8d4b8] font-medium mt-0.5">
+                Others
               </span>
             </div>
           </div>
@@ -103,16 +112,16 @@ const HomeStatsBar = () => {
           {/* Top overall score (Centered on mobile) */}
           <div className="flex items-center gap-4 pb-3 justify-center sm:justify-start">
             <span className="text-5xl font-bold text-white tracking-tight leading-none">
-              4.9
+              5.0
             </span>
             <div className="flex flex-col">
               <span className="font-bold text-sm text-white leading-tight">
-                Rated 4.9 / 5
+                Rated 5 / 5
               </span>
               <span className="text-xs text-[#b8d4b8] leading-tight mt-0.5">
                 from 500+ verified Arizona homeowners
               </span>
-              <div className="flex text-[#f5c518] gap-0.5 mt-1.5">
+              <div className="flex text-[#f5c518] gap-0.5 mt-1.5" aria-label="5 out of 5 stars">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <svg key={i} className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
@@ -126,39 +135,47 @@ const HomeStatsBar = () => {
           <div className="grid grid-cols-2 gap-y-4 gap-x-6 pt-3 max-w-[280px] sm:max-w-[320px] mx-auto w-full">
             
             {/* Google */}
-            <div className="flex items-center gap-3">
+            <a
+              href={COMPANY.googleReviewsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 hover:opacity-90 transition-opacity"
+              aria-label="5.0 Google reviews"
+            >
               <div className="w-8 h-8 rounded-full bg-[#083321] flex items-center justify-center text-[#3fb364] font-bold text-xs shrink-0 border border-[#144f33]">
                 G
               </div>
               <div className="flex flex-col">
-                <span className="font-bold text-base text-white leading-none">4.9</span>
+                <span className="font-bold text-base text-white leading-none">5.0</span>
                 <span className="text-[11px] text-[#b8d4b8] font-medium mt-0.5">Google</span>
               </div>
-            </div>
+            </a>
 
-            {/* Zillow */}
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-[#083321] flex items-center justify-center text-[#3fb364] shrink-0 border border-[#144f33]">
-                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                </svg>
+            {/* Facebook */}
+            <a
+              href={COMPANY.facebookUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 hover:opacity-90 transition-opacity"
+              aria-label="5.0 Facebook reviews"
+            >
+              <div className="w-8 h-8 rounded-full bg-[#083321] flex items-center justify-center text-[#3fb364] font-bold text-xs shrink-0 border border-[#144f33]">
+                f
               </div>
               <div className="flex flex-col">
                 <span className="font-bold text-base text-white leading-none">5.0</span>
-                <span className="text-[11px] text-[#b8d4b8] font-medium mt-0.5">Zillow</span>
+                <span className="text-[11px] text-[#b8d4b8] font-medium mt-0.5">Facebook</span>
               </div>
-            </div>
+            </a>
 
-            {/* Experience */}
+            {/* Others */}
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-[#083321] flex items-center justify-center text-[#3fb364] shrink-0 border border-[#144f33]">
-                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138z" />
-                </svg>
+              <div className="w-8 h-8 rounded-full bg-[#083321] flex items-center justify-center text-[#3fb364] font-bold text-xs shrink-0 border border-[#144f33]">
+                O
               </div>
               <div className="flex flex-col">
-                <span className="font-bold text-base text-white leading-none">4.9</span>
-                <span className="text-[11px] text-[#b8d4b8] font-medium mt-0.5">Experience</span>
+                <span className="font-bold text-base text-white leading-none">5.0</span>
+                <span className="text-[11px] text-[#b8d4b8] font-medium mt-0.5">Others</span>
               </div>
             </div>
 

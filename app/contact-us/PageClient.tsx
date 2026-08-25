@@ -25,7 +25,7 @@ const loanSolutions = [
 const socialLinks = [
   {
     label: "Facebook",
-    href: "https://www.facebook.com/azmortgagebrothers/",
+    href: COMPANY.facebookUrl,
     icon: (
       <span className="font-serif font-bold text-[18px]" aria-hidden>
         f

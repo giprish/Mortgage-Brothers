@@ -8,6 +8,7 @@ import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
 import CountyCityCards from "../../component/CountyCityCards";
+import MortgageSolutionsGrid from "../../component/MortgageSolutionsGrid";
 import { getCountyCitiesDetails } from "../../../lib/cityData";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/apache-county-az/");
@@ -60,32 +61,40 @@ export default function ApacheCountyPage() {
           </div>
         </section>
 
+        <MortgageSolutionsGrid placeName="Apache County" />
+
         <section className="w-full py-16 bg-[#fcf9f3]">
           <div className="max-w-4xl mx-auto px-6">
             <FaqAccordion
               title="Frequently Asked Questions"
-              items={[
+              items={
+              [
                 {
-                  q: "What types of mortgage loans are available in Apache County, AZ?",
-                  a: "Mortgage Brothers LLC offers a comprehensive range of mortgage products in Apache County, including Conventional, FHA, VA, USDA, and Jumbo loans, as well as refinancing options for current homeowners."
+                  q: "What home loan programs are available to Apache County homebuyers?",
+                  a: "Apache County buyers have access to the full range of mortgage programs including Conventional, FHA, VA (for eligible veterans), Jumbo, FHA Streamline Refinance, First-Time Homebuyer programs, Reverse Mortgage (for homeowners 62+), and Refinancing. Our team can walk you through all your options at no cost."
                 },
                 {
-                  q: "What is the FHA loan limit for Apache County in 2026?",
-                  a: "For 2026, the FHA loan limit for a single-family home in Apache County is $541,287. These limits are updated annually and vary depending on the property type (e.g., duplex, triplex, or fourplex)."
+                  q: "What is the conforming loan limit in Apache County for 2026?",
+                  a: "The 2026 conforming loan limit for Apache County is $832,750 – the same baseline limit that applies across all Arizona counties. This is the maximum loan amount eligible for conventional financing backed by Fannie Mae or Freddie Mac. If your loan exceeds this amount, you will need a jumbo loan."
                 },
                 {
-                  q: "How fast can I get a mortgage pre-approval?",
-                  a: "Mortgage Brothers LLC provides a streamlined pre-approval process, often delivering a pre-approval letter within a few hours after receiving your completed application and necessary financial documentation."
+                  q: "What is the FHA loan limit in Apache County for 2026?",
+                  a: "The 2026 FHA loan limit for Apache County is $541,287. This means you can finance a home up to that purchase price using an FHA loan with as little as 3.5% down (with a 580+ credit score). FHA loans are a popular option in Apache County given the more affordable home prices throughout the White Mountains region."
                 },
                 {
-                  q: "What is the minimum credit score required for a mortgage in Apache County?",
-                  a: "Credit score requirements depend on the loan program. Generally, FHA loans may be available for scores as low as 580, while Conventional loans typically require a minimum score of 620."
+                  q: "Why are people buying homes in Apache County?",
+                  a: "Apache County attracts buyers who love the outdoors and want a quieter lifestyle in the White Mountains of eastern Arizona. Snowflake and Eagar offer affordable family neighborhoods, while Greer and Alpine draw buyers looking for cabin retreats and vacation properties. The area offers four seasons, excellent fishing and hiking, and a strong sense of community."
                 },
                 {
-                  q: "Does Mortgage Brothers LLC offer down payment assistance in Apache County?",
-                  a: "Yes, we work with various programs that offer down payment assistance to eligible homebuyers in Apache County, helping to make homeownership more accessible for first-time buyers and those with limited savings."
+                  q: "How much do I need for a down payment on an Apache County home?",
+                  a: "FHA loans require as little as 3.5% down. Conventional loans can go as low as 3%-5% for qualified buyers. VA loans require zero down payment for eligible veterans. We also work with down payment assistance programs. Contact us to find out which programs you qualify for."
+                },
+                {
+                  q: "How long does it take to close on a home in Apache County?",
+                  a: "Most purchase transactions close in 21 to 30 days when all documentation is submitted promptly. Our team is known for fast, smooth closings with no surprises at the closing table."
                 }
-              ]}
+              ]
+            }
             />
           </div>
         </section>

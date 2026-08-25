@@ -94,8 +94,12 @@ export default function DivorceMortgageArticlePage() {
             <h2 className="text-[#052316] text-[26px] font-bold mb-6 font-playfair border-b border-[#e8e0d0] pb-3">Frequently Asked Questions</h2>
             <div className="space-y-4">
               {[
-                { q: "Does a quitclaim deed remove my responsibility for the mortgage?", a: "NO! A quitclaim deed removes your name from property TITLE, but leaves you 100% liable for the MORTGAGE debt until refinanced or paid off." },
-                { q: "Can alimony or child support count as income for a buyout refinance?", a: "Yes, provided there is a documented court order and at least 6 months of consistent receipt history." }
+                { q: "Can I remove my ex-spouse's name from the mortgage without refinancing?", a: "Usually, no. Lenders require refinancing to release one party from liability. In rare cases, an assumption may be allowed, but most lenders prefer a full refinance." },
+                { q: "How long after divorce can I refinance my mortgage?", a: "You can refinance as soon as your divorce is finalized and you meet lender requirements for credit, income, and documentation. Many people refinance immediately after receiving their divorce decree." },
+                { q: "What documents are required for an equity buyout refinance?", a: "You'll typically need your **divorce decree**, **property settlement agreement**, recent **pay stubs**, **tax returns**, and proof of the equity amount owed to your former spouse." },
+                { q: "Can I buy a new home before my divorce is final?", a: "Yes, but it's more complex. You'll need a signed separation agreement and proof of separate finances. Some lenders prefer to wait until finalization, but others specialize in pre-divorce lending." },
+                { q: "Will alimony or child support help or hurt my mortgage approval?", a: "It depends. If you **receive** alimony or support, it can count as income (with documentation). If you **pay** it, it's counted as a debt, which may affect your debt-to-income ratio." },
+                { q: "Is an equity buyout refinance the same as a cash-out refinance?", a: "No — and that's a key advantage. Court-ordered equity buyouts through conventional loans are treated as **rate-and-term refinances**, which means **lower interest rates and better terms**. ← Previous PostNext Post → Start Your Home Loan Journey You can always press Enter⏎ to continue" }
               ].map((faq, idx) => (
                 <div key={idx} className="bg-white border border-[#e8e0d0] rounded-xl overflow-hidden shadow-sm">
                   <button onClick={() => toggleFaq(idx)} className="w-full text-left p-5 font-bold text-[#052316] text-[16px] flex justify-between hover:bg-[#f9f7f2]">

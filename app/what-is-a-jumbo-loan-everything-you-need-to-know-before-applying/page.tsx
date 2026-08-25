@@ -76,10 +76,10 @@ const loanSolutions = [
 ];
 
 const articleFaqs = [
-  { question: "What credit score do I need for a jumbo loan in Arizona?", answer: "Most lenders require at least a 700–720 credit score, but higher scores can unlock better rates and more flexible terms." },
-  { question: "Can I use a jumbo loan for a vacation home or investment property?", answer: "Yes. Many Arizona lenders offer jumbo financing for second homes and investment properties, though down payment and reserve requirements are typically higher." },
-  { question: "Are jumbo loan rates higher than conventional mortgage rates?", answer: "They used to be, but not always today. In competitive markets, jumbo rates can be similar or even slightly lower than conforming rates depending on your profile." },
-  { question: "How can I increase my chances of jumbo loan approval?", answer: "Focus on strengthening your credit, maintaining low debt levels, and building substantial liquid reserves before applying." },
+  { question: "What credit score do I need for a jumbo loan in Arizona?", answer: "Most lenders require at least a **700–720 credit score**, but higher scores can unlock better rates and more flexible terms." },
+  { question: "Can I use a jumbo loan for a vacation home or investment property?", answer: "Yes. Many Arizona lenders offer jumbo financing for **second homes and investment properties**, though down payment and reserve requirements are typically higher." },
+  { question: "Are jumbo loan rates higher than conventional mortgage rates?", answer: "They used to be, but not always today. In competitive markets, jumbo rates can be **similar or even slightly lower** than conforming rates depending on your profile." },
+  { question: "How can I increase my chances of jumbo loan approval?", answer: "Focus on strengthening your credit, maintaining low debt levels, and building substantial liquid reserves before applying. ← Previous PostNext Post → Start Your Home Loan Journey You can always press Enter⏎ to continue" },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({

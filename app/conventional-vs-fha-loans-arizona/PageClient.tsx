@@ -8,6 +8,7 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import StatsBanner from "../component/StatsBanner";
 import LoanProgramHero from "../component/LoanProgramHero";
+import { COMPANY } from "@/lib/company";
 
 const featureStrip = [
   "Conventional and FHA loans serve different borrower needs",
@@ -747,7 +748,7 @@ export default function ConventionalVsFhaLoansPage() {
               </a>
               <span className="hidden sm:inline text-[#c8c8b8]">|</span>
               <a
-                href="https://goo.gl/maps/GVLYa"
+                href={COMPANY.addressMapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-[#3fb364] transition-colors text-center"

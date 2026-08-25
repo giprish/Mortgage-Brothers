@@ -9,6 +9,7 @@ import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
 import CountyCityCards from "../../component/CountyCityCards";
+import MortgageSolutionsGrid from "../../component/MortgageSolutionsGrid";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/maricopa-county-az/");
 
@@ -219,11 +220,14 @@ export default function MaricopaCounty() {
           </div>
         </section>
 
+        <MortgageSolutionsGrid placeName="Maricopa County" />
+
         <section className="w-full py-14 sm:py-16 lg:py-20 bg-[#fcf9f3]">
           <div className="max-w-4xl mx-auto px-6">
             <FaqAccordion
               title="Frequently Asked Questions"
-              items={[
+              items={
+              [
                 {
                   q: "What loan programs are available to Maricopa County homebuyers?",
                   a: "Maricopa County homebuyers have access to a full range of loan programs including Conventional, FHA, VA, Jumbo, and Reverse Mortgage loans. First-time buyers may also qualify for down payment assistance programs. We help you compare options and match you with the program that best fits your situation."
@@ -248,7 +252,8 @@ export default function MaricopaCounty() {
                   q: "How long does it take to close on a home in Maricopa County?",
                   a: "With Mortgage Brothers, most purchases close in 21 to 30 days. Having your documents ready and getting preapproved early are the two biggest factors in a fast closing. Call us to get started and we will keep things moving from day one."
                 }
-              ]}
+              ]
+            }
             />
           </div>
         </section>

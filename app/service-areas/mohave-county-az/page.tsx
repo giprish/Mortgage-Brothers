@@ -8,6 +8,7 @@ import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
 import CountyCityCards from "../../component/CountyCityCards";
+import MortgageSolutionsGrid from "../../component/MortgageSolutionsGrid";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/mohave-county-az/");
 
@@ -67,18 +68,21 @@ export default function MohaveCountyPage() {
           </div>
         </section>
 
+        <MortgageSolutionsGrid placeName="Mohave County" />
+
         <section className="w-full py-10 lg:py-12 bg-[#fcf9f3]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             <FaqAccordion
               title="Frequently Asked Questions"
-              items={[
+              items={
+              [
                 {
                   q: "What home loan programs are available to Mohave County homebuyers?",
                   a: "Mohave County buyers have access to the full range of mortgage programs including Conventional, FHA, VA (for eligible veterans), Jumbo, FHA Streamline Refinance, First-Time Homebuyer programs, Reverse Mortgage (for homeowners 62+), and Refinancing. Our team can walk you through all your options at no cost."
                 },
                 {
                   q: "What is the conforming loan limit in Mohave County for 2026?",
-                  a: "The 2026 conforming loan limit for Mohave County is $832,750 - the same baseline limit that applies across all Arizona counties. If your loan exceeds this amount, you will need a jumbo loan."
+                  a: "The 2026 conforming loan limit for Mohave County is $832,750 – the same baseline limit that applies across all Arizona counties. If your loan exceeds this amount, you will need a jumbo loan."
                 },
                 {
                   q: "What is the FHA loan limit in Mohave County for 2026?",
@@ -96,7 +100,8 @@ export default function MohaveCountyPage() {
                   q: "How long does it take to close on a home in Mohave County?",
                   a: "Most purchase transactions close in 21 to 30 days when all documentation is submitted promptly. Our team is known for fast, smooth closings with no surprises at the closing table."
                 }
-              ]}
+              ]
+            }
             />
           </div>
         </section>
