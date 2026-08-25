@@ -162,8 +162,41 @@ export function buildRichOrganizationSchema(
   schema.name = COMPANY.brandName;
   schema.legalName = COMPANY.legalName;
   schema.telephone = COMPANY.phoneDisplay;
+  // Keep social + map pin in sync with footer / COMPANY (not Instagram-only drift).
+  schema.sameAs = [...COMPANY.sameAs];
+  schema.geo = {
+    "@type": "GeoCoordinates",
+    latitude: COMPANY.geo.latitude,
+    longitude: COMPANY.geo.longitude,
+  };
   if (typeof schema.email !== "string") {
     schema.email = COMPANY.email;
+  }
+
+  // Mortgages are not shippable goods — strip e-commerce shipping/return fields.
+  const mortgageProducts = schema.mortgageProducts;
+  if (
+    mortgageProducts &&
+    typeof mortgageProducts === "object" &&
+    !Array.isArray(mortgageProducts)
+  ) {
+    const list = (mortgageProducts as JsonLdObject).itemListElement;
+    if (Array.isArray(list)) {
+      for (const item of list) {
+        if (!item || typeof item !== "object" || Array.isArray(item)) continue;
+        const offers = (item as JsonLdObject).offers;
+        const offerList = Array.isArray(offers)
+          ? offers
+          : offers && typeof offers === "object"
+            ? [offers]
+            : [];
+        for (const offer of offerList) {
+          if (!offer || typeof offer !== "object" || Array.isArray(offer)) continue;
+          delete (offer as JsonLdObject).shippingDetails;
+          delete (offer as JsonLdObject).hasMerchantReturnPolicy;
+        }
+      }
+    }
   }
 
   return schema;

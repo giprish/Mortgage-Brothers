@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildFaqPageSchema, normalizeFaqs } from "@/lib/seo/structured-data";
 import FaqAccordion from "../../component/FaqAccordion";
 
 import React from "react";
@@ -27,9 +29,40 @@ const cities = [
   { name: "Whispering Pines", description: "Pine-forest neighborhood near Payson offering cabin and primary-home mortgage options." }
 ];
 
+const countyFaqs = [
+  {
+    q: "What home loan programs are available to Gila County homebuyers?",
+    a: "Gila County buyers have access to the full range of mortgage programs including Conventional, FHA, VA (for eligible veterans), Jumbo, FHA Streamline Refinance, First-Time Homebuyer programs, Reverse Mortgage (for homeowners 62+), and Refinancing. Our team can walk you through all your options at no cost."
+  },
+  {
+    q: "What is the conforming loan limit in Gila County for 2026?",
+    a: "The 2026 conforming loan limit for Gila County is $832,750 – the same baseline limit that applies across all Arizona counties. This is the maximum loan amount eligible for conventional financing backed by Fannie Mae or Freddie Mac. If your loan exceeds this amount, you will need a jumbo loan."
+  },
+  {
+    q: "What is the FHA loan limit in Gila County for 2026?",
+    a: "The 2026 FHA loan limit for Gila County is $541,287. This means you can finance a home up to that purchase price using an FHA loan with as little as 3.5% down (with a 580+ credit score). FHA loans are a great option in Gila County given the more affordable home prices throughout Payson, Globe, and surrounding communities."
+  },
+  {
+    q: "Why are people buying homes in Gila County?",
+    a: "Gila County attracts buyers who want the beauty of Arizona without the heat and congestion of the Valley. Payson and the Rim Country area are especially popular with Phoenix-area residents looking for a cooler mountain retreat or a full-time relocation. Globe and Miami offer some of the most affordable home prices in Arizona with a strong sense of history and community."
+  },
+  {
+    q: "How much do I need for a down payment on a Gila County home?",
+    a: "FHA loans require as little as 3.5% down. Conventional loans can go as low as 3%-5% for qualified buyers. VA loans require zero down payment for eligible veterans. We also work with down payment assistance programs. Contact us to find out which programs you qualify for."
+  },
+  {
+    q: "How long does it take to close on a home in Gila County?",
+    a: "Most purchase transactions close in 21 to 30 days when all documentation is submitted promptly. Our team is known for fast, smooth closings with no surprises at the closing table."
+  }
+];
+
+const faqJsonLd = buildFaqPageSchema(normalizeFaqs(countyFaqs));
+
 export default function GilaCountyPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
+      
+      {faqJsonLd ? <JsonLd data={faqJsonLd} /> : null}
       <Navbar />
       <main className="flex-grow pt-[64px] sm:pt-[72px]">
         <section className="w-full bg-brand-green-deep text-white py-16 lg:py-20 text-center relative overflow-hidden">
@@ -80,34 +113,7 @@ export default function GilaCountyPage() {
           <div className="max-w-4xl mx-auto px-6">
             <FaqAccordion
               title="Frequently Asked Questions"
-              items={
-              [
-                {
-                  q: "What home loan programs are available to Gila County homebuyers?",
-                  a: "Gila County buyers have access to the full range of mortgage programs including Conventional, FHA, VA (for eligible veterans), Jumbo, FHA Streamline Refinance, First-Time Homebuyer programs, Reverse Mortgage (for homeowners 62+), and Refinancing. Our team can walk you through all your options at no cost."
-                },
-                {
-                  q: "What is the conforming loan limit in Gila County for 2026?",
-                  a: "The 2026 conforming loan limit for Gila County is $832,750 – the same baseline limit that applies across all Arizona counties. This is the maximum loan amount eligible for conventional financing backed by Fannie Mae or Freddie Mac. If your loan exceeds this amount, you will need a jumbo loan."
-                },
-                {
-                  q: "What is the FHA loan limit in Gila County for 2026?",
-                  a: "The 2026 FHA loan limit for Gila County is $541,287. This means you can finance a home up to that purchase price using an FHA loan with as little as 3.5% down (with a 580+ credit score). FHA loans are a great option in Gila County given the more affordable home prices throughout Payson, Globe, and surrounding communities."
-                },
-                {
-                  q: "Why are people buying homes in Gila County?",
-                  a: "Gila County attracts buyers who want the beauty of Arizona without the heat and congestion of the Valley. Payson and the Rim Country area are especially popular with Phoenix-area residents looking for a cooler mountain retreat or a full-time relocation. Globe and Miami offer some of the most affordable home prices in Arizona with a strong sense of history and community."
-                },
-                {
-                  q: "How much do I need for a down payment on a Gila County home?",
-                  a: "FHA loans require as little as 3.5% down. Conventional loans can go as low as 3%-5% for qualified buyers. VA loans require zero down payment for eligible veterans. We also work with down payment assistance programs. Contact us to find out which programs you qualify for."
-                },
-                {
-                  q: "How long does it take to close on a home in Gila County?",
-                  a: "Most purchase transactions close in 21 to 30 days when all documentation is submitted promptly. Our team is known for fast, smooth closings with no surprises at the closing table."
-                }
-              ]
-            }
+              items={countyFaqs}
             />
           </div>
         </section>

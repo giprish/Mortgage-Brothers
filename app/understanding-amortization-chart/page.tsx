@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -7,6 +9,25 @@ import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 
 export const metadata: Metadata = getSeoMetadata("/understanding-amortization-chart/");
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/understanding-amortization-chart/",
+    headline: "Understanding An Amortization Schedule",
+    description:
+      "Learn how an amortization schedule helps you track mortgage payments, interest, and principal over time to make informed financial decisions.",
+    datePublished: "2025-02-03",
+    articleSection: "Mortgage Basics",
+  },
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Basics", path: "/mortgage-basics/" },
+    {
+      name: "Understanding An Amortization Schedule",
+      path: "/understanding-amortization-chart/",
+    },
+  ],
+});
 
 const relatedLinks = [
   { label: "When is a mortgage payment actually considered late?", href: "/when-is-a-mortgage-payment-actually-considered-late/" },
@@ -66,6 +87,8 @@ const CheckIcon = () => (
 export default function UnderstandingAmortizationChartPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
+      <JsonLd data={articleJsonLd} />
+
       <Navbar />
 
       <main className="flex-grow relative z-0">

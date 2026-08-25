@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildFaqPageSchema, normalizeFaqs } from "@/lib/seo/structured-data";
 import FaqAccordion from "../../component/FaqAccordion";
 
 import React from "react";
@@ -59,9 +61,40 @@ const cities = [
   }
 ];
 
+const countyFaqs = [
+  {
+    q: "What home loan programs are available to Pinal County homebuyers?",
+    a: "Pinal County buyers have access to the full range of mortgage programs including Conventional, FHA, VA (for eligible veterans), Jumbo, FHA Streamline Refinance, First-Time Homebuyer programs, Reverse Mortgage (for homeowners 62+), and Refinancing. The best program depends on your credit score, down payment, and financial goals. Our team can walk you through all your options at no cost."
+  },
+  {
+    q: "What is the conforming loan limit in Pinal County for 2026?",
+    a: "The 2026 conforming loan limit for Pinal County is $832,750 – the same baseline limit that applies across all Arizona counties. This is the maximum loan amount eligible for conventional financing backed by Fannie Mae or Freddie Mac. If your loan exceeds this amount, you will need a jumbo loan."
+  },
+  {
+    q: "What is the FHA loan limit in Pinal County for 2026?",
+    a: "The 2026 FHA loan limit for Pinal County is $557,750. This means you can finance a home up to that purchase price using an FHA loan with as little as 3.5% down (with a 580+ credit score). FHA loans are a popular choice in Pinal County because of the flexible credit requirements and low down payment."
+  },
+  {
+    q: "Why are so many people moving to Pinal County?",
+    a: "Pinal County has become one of the top relocation destinations in the country, largely because of more affordable home prices compared to Maricopa County, newer master-planned communities, excellent schools, and shorter commute times to both Phoenix and Tucson. Cities like San Tan Valley, Queen Creek, and Casa Grande offer a great quality of life without the higher price tag of the Phoenix metro core."
+  },
+  {
+    q: "How much do I need for a down payment on a Pinal County home?",
+    a: "It depends on the loan type. FHA loans require as little as 3.5% down. Conventional loans can go as low as 3%-5% for qualified buyers. VA loans require zero down payment for eligible veterans. We also work with down payment assistance programs that may help reduce your out-of-pocket costs."
+  },
+  {
+    q: "How long does it take to close on a home in Pinal County?",
+    a: "Most purchase transactions close in 21 to 30 days when all documentation is submitted promptly. Our team is known for fast, smooth closings – we will keep you informed every step of the way so there are no surprises at the closing table."
+  }
+];
+
+const faqJsonLd = buildFaqPageSchema(normalizeFaqs(countyFaqs));
+
 export default function PinalCountyPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
+      
+      {faqJsonLd ? <JsonLd data={faqJsonLd} /> : null}
       <Navbar />
 
       <main className="flex-grow pt-[64px] sm:pt-[72px]">
@@ -141,34 +174,7 @@ export default function PinalCountyPage() {
           <div className="max-w-4xl mx-auto px-6">
             <FaqAccordion
               title="Frequently Asked Questions"
-              items={
-              [
-                {
-                  q: "What home loan programs are available to Pinal County homebuyers?",
-                  a: "Pinal County buyers have access to the full range of mortgage programs including Conventional, FHA, VA (for eligible veterans), Jumbo, FHA Streamline Refinance, First-Time Homebuyer programs, Reverse Mortgage (for homeowners 62+), and Refinancing. The best program depends on your credit score, down payment, and financial goals. Our team can walk you through all your options at no cost."
-                },
-                {
-                  q: "What is the conforming loan limit in Pinal County for 2026?",
-                  a: "The 2026 conforming loan limit for Pinal County is $832,750 – the same baseline limit that applies across all Arizona counties. This is the maximum loan amount eligible for conventional financing backed by Fannie Mae or Freddie Mac. If your loan exceeds this amount, you will need a jumbo loan."
-                },
-                {
-                  q: "What is the FHA loan limit in Pinal County for 2026?",
-                  a: "The 2026 FHA loan limit for Pinal County is $557,750. This means you can finance a home up to that purchase price using an FHA loan with as little as 3.5% down (with a 580+ credit score). FHA loans are a popular choice in Pinal County because of the flexible credit requirements and low down payment."
-                },
-                {
-                  q: "Why are so many people moving to Pinal County?",
-                  a: "Pinal County has become one of the top relocation destinations in the country, largely because of more affordable home prices compared to Maricopa County, newer master-planned communities, excellent schools, and shorter commute times to both Phoenix and Tucson. Cities like San Tan Valley, Queen Creek, and Casa Grande offer a great quality of life without the higher price tag of the Phoenix metro core."
-                },
-                {
-                  q: "How much do I need for a down payment on a Pinal County home?",
-                  a: "It depends on the loan type. FHA loans require as little as 3.5% down. Conventional loans can go as low as 3%-5% for qualified buyers. VA loans require zero down payment for eligible veterans. We also work with down payment assistance programs that may help reduce your out-of-pocket costs."
-                },
-                {
-                  q: "How long does it take to close on a home in Pinal County?",
-                  a: "Most purchase transactions close in 21 to 30 days when all documentation is submitted promptly. Our team is known for fast, smooth closings – we will keep you informed every step of the way so there are no surprises at the closing table."
-                }
-              ]
-            }
+              items={countyFaqs}
             />
           </div>
         </section>

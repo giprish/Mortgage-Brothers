@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,6 +11,25 @@ import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
 
 export const metadata: Metadata = getSeoMetadata("/how-to-calculate-how-much-pmi-mortgage-insurance-will-be/");
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/how-to-calculate-how-much-pmi-mortgage-insurance-will-be/",
+    headline: "How to Calculate How Much PMI Mortgage Insurance Will Be",
+    description:
+      "Learn how to calculate PMI costs based on loan-to-value ratio, credit score, and rates to effectively manage your mortgage expenses and plan finances.",
+    datePublished: "2024-12-30",
+    articleSection: "Mortgage Basics",
+  },
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Basics", path: "/mortgage-basics/" },
+    {
+      name: "How to Calculate How Much PMI Mortgage Insurance Will Be",
+      path: "/how-to-calculate-how-much-pmi-mortgage-insurance-will-be/",
+    },
+  ],
+});
 
 const pmiFactors = [
   "Down payment percentage (e.g., 5%, 10%, 15%)",
@@ -77,6 +98,8 @@ const CheckIcon = () => (
 export default function PmiMortgageInsurancePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
+      <JsonLd data={articleJsonLd} />
+
       <Navbar />
 
       <main className="flex-grow relative z-0">

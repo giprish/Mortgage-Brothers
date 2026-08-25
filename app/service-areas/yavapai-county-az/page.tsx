@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildFaqPageSchema, normalizeFaqs } from "@/lib/seo/structured-data";
 import FaqAccordion from "../../component/FaqAccordion";
 
 import React from "react";
@@ -63,9 +65,40 @@ const cities = [
   }
 ];
 
+const countyFaqs = [
+  {
+    q: "What home loan programs are available to Yavapai County homebuyers?",
+    a: "Yavapai County buyers have access to the full range of mortgage programs including Conventional, FHA, VA (for eligible veterans), Jumbo, FHA Streamline Refinance, First-Time Homebuyer programs, Reverse Mortgage (for homeowners 62+), and Refinancing. The best program depends on your credit score, down payment, and financial goals. Our team can walk you through all your options at no cost."
+  },
+  {
+    q: "What is the conforming loan limit in Yavapai County for 2026?",
+    a: "The 2026 conforming loan limit for Yavapai County is $832,750 – the same baseline limit that applies across all Arizona counties. This is the maximum loan amount eligible for conventional financing backed by Fannie Mae or Freddie Mac. If your loan exceeds this amount, you will need a jumbo loan."
+  },
+  {
+    q: "What is the FHA loan limit in Yavapai County for 2026?",
+    a: "The 2026 FHA loan limit for Yavapai County is $541,287. This means you can finance a home up to that purchase price using an FHA loan with as little as 3.5% down (with a 580+ credit score). FHA loans are popular with Yavapai County buyers because of the flexible credit requirements and low down payment."
+  },
+  {
+    q: "Why are people moving to Yavapai County?",
+    a: "Yavapai County attracts buyers from across Arizona and the country for its cooler climate, scenic landscapes, and more affordable home prices compared to the Phoenix metro. Prescott and Prescott Valley are especially popular with retirees and remote workers, while Cottonwood and the Verde Valley draw buyers looking for a quieter lifestyle with easy access to outdoor recreation."
+  },
+  {
+    q: "How much do I need for a down payment on a Yavapai County home?",
+    a: "It depends on the loan type. FHA loans require as little as 3.5% down. Conventional loans can go as low as 3%-5% for qualified buyers. VA loans require zero down payment for eligible veterans. We also work with down payment assistance programs that may reduce your out-of-pocket costs. Contact us to find out which programs you qualify for."
+  },
+  {
+    q: "How long does it take to close on a home in Yavapai County?",
+    a: "Most purchase transactions close in 21 to 30 days when all documentation is submitted promptly. Our team is known for fast, smooth closings – we will keep you informed every step of the way so there are no surprises at the closing table."
+  }
+];
+
+const faqJsonLd = buildFaqPageSchema(normalizeFaqs(countyFaqs));
+
 export default function YavapaiCountyPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
+      
+      {faqJsonLd ? <JsonLd data={faqJsonLd} /> : null}
       <Navbar />
 
       <main className="flex-grow pt-[64px] sm:pt-[72px]">
@@ -140,34 +173,7 @@ export default function YavapaiCountyPage() {
           <div className="max-w-4xl mx-auto px-6">
             <FaqAccordion
               title="Frequently Asked Questions"
-              items={
-              [
-                {
-                  q: "What home loan programs are available to Yavapai County homebuyers?",
-                  a: "Yavapai County buyers have access to the full range of mortgage programs including Conventional, FHA, VA (for eligible veterans), Jumbo, FHA Streamline Refinance, First-Time Homebuyer programs, Reverse Mortgage (for homeowners 62+), and Refinancing. The best program depends on your credit score, down payment, and financial goals. Our team can walk you through all your options at no cost."
-                },
-                {
-                  q: "What is the conforming loan limit in Yavapai County for 2026?",
-                  a: "The 2026 conforming loan limit for Yavapai County is $832,750 – the same baseline limit that applies across all Arizona counties. This is the maximum loan amount eligible for conventional financing backed by Fannie Mae or Freddie Mac. If your loan exceeds this amount, you will need a jumbo loan."
-                },
-                {
-                  q: "What is the FHA loan limit in Yavapai County for 2026?",
-                  a: "The 2026 FHA loan limit for Yavapai County is $541,287. This means you can finance a home up to that purchase price using an FHA loan with as little as 3.5% down (with a 580+ credit score). FHA loans are popular with Yavapai County buyers because of the flexible credit requirements and low down payment."
-                },
-                {
-                  q: "Why are people moving to Yavapai County?",
-                  a: "Yavapai County attracts buyers from across Arizona and the country for its cooler climate, scenic landscapes, and more affordable home prices compared to the Phoenix metro. Prescott and Prescott Valley are especially popular with retirees and remote workers, while Cottonwood and the Verde Valley draw buyers looking for a quieter lifestyle with easy access to outdoor recreation."
-                },
-                {
-                  q: "How much do I need for a down payment on a Yavapai County home?",
-                  a: "It depends on the loan type. FHA loans require as little as 3.5% down. Conventional loans can go as low as 3%-5% for qualified buyers. VA loans require zero down payment for eligible veterans. We also work with down payment assistance programs that may reduce your out-of-pocket costs. Contact us to find out which programs you qualify for."
-                },
-                {
-                  q: "How long does it take to close on a home in Yavapai County?",
-                  a: "Most purchase transactions close in 21 to 30 days when all documentation is submitted promptly. Our team is known for fast, smooth closings – we will keep you informed every step of the way so there are no surprises at the closing table."
-                }
-              ]
-            }
+              items={countyFaqs}
             />
           </div>
         </section>

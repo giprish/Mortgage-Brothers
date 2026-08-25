@@ -144,7 +144,7 @@ const Footer = () => {
                 f
               </a>
               <a
-                href="https://x.com/azmortgagebros"
+                href={COMPANY.xUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-[#ebf1f5] hover:bg-white text-[#22632d] flex items-center justify-center transition-transform hover:scale-105"
@@ -155,7 +155,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://www.linkedin.com/company/azmortgagebrothers/"
+                href={COMPANY.linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-[#ebf1f5] hover:bg-white text-[#22632d] flex items-center justify-center font-sans font-bold text-[15px] transition-transform hover:scale-105"
@@ -164,7 +164,7 @@ const Footer = () => {
                 in
               </a>
               <a
-                href="https://www.youtube.com/@TheMortgageBrothersTeam"
+                href={COMPANY.youtubeUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-[#ebf1f5] hover:bg-white text-[#22632d] flex items-center justify-center transition-transform hover:scale-105"

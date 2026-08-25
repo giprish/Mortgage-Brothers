@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildFaqPageSchema, normalizeFaqs } from "@/lib/seo/structured-data";
 import FaqAccordion from "../../component/FaqAccordion";
 
 import React from "react";
@@ -15,9 +17,40 @@ export const metadata: Metadata = getSeoMetadata("/service-areas/apache-county-a
 
 const cities = getCountyCitiesDetails("apache-county-az");
 
+const countyFaqs = [
+  {
+    q: "What home loan programs are available to Apache County homebuyers?",
+    a: "Apache County buyers have access to the full range of mortgage programs including Conventional, FHA, VA (for eligible veterans), Jumbo, FHA Streamline Refinance, First-Time Homebuyer programs, Reverse Mortgage (for homeowners 62+), and Refinancing. Our team can walk you through all your options at no cost."
+  },
+  {
+    q: "What is the conforming loan limit in Apache County for 2026?",
+    a: "The 2026 conforming loan limit for Apache County is $832,750 – the same baseline limit that applies across all Arizona counties. This is the maximum loan amount eligible for conventional financing backed by Fannie Mae or Freddie Mac. If your loan exceeds this amount, you will need a jumbo loan."
+  },
+  {
+    q: "What is the FHA loan limit in Apache County for 2026?",
+    a: "The 2026 FHA loan limit for Apache County is $541,287. This means you can finance a home up to that purchase price using an FHA loan with as little as 3.5% down (with a 580+ credit score). FHA loans are a popular option in Apache County given the more affordable home prices throughout the White Mountains region."
+  },
+  {
+    q: "Why are people buying homes in Apache County?",
+    a: "Apache County attracts buyers who love the outdoors and want a quieter lifestyle in the White Mountains of eastern Arizona. Snowflake and Eagar offer affordable family neighborhoods, while Greer and Alpine draw buyers looking for cabin retreats and vacation properties. The area offers four seasons, excellent fishing and hiking, and a strong sense of community."
+  },
+  {
+    q: "How much do I need for a down payment on an Apache County home?",
+    a: "FHA loans require as little as 3.5% down. Conventional loans can go as low as 3%-5% for qualified buyers. VA loans require zero down payment for eligible veterans. We also work with down payment assistance programs. Contact us to find out which programs you qualify for."
+  },
+  {
+    q: "How long does it take to close on a home in Apache County?",
+    a: "Most purchase transactions close in 21 to 30 days when all documentation is submitted promptly. Our team is known for fast, smooth closings with no surprises at the closing table."
+  }
+];
+
+const faqJsonLd = buildFaqPageSchema(normalizeFaqs(countyFaqs));
+
 export default function ApacheCountyPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
+      
+      {faqJsonLd ? <JsonLd data={faqJsonLd} /> : null}
       <Navbar />
       <main className="flex-grow pt-[64px] sm:pt-[72px]">
         <section className="w-full bg-brand-green-deep text-white py-16 lg:py-20 text-center relative overflow-hidden">
@@ -67,34 +100,7 @@ export default function ApacheCountyPage() {
           <div className="max-w-4xl mx-auto px-6">
             <FaqAccordion
               title="Frequently Asked Questions"
-              items={
-              [
-                {
-                  q: "What home loan programs are available to Apache County homebuyers?",
-                  a: "Apache County buyers have access to the full range of mortgage programs including Conventional, FHA, VA (for eligible veterans), Jumbo, FHA Streamline Refinance, First-Time Homebuyer programs, Reverse Mortgage (for homeowners 62+), and Refinancing. Our team can walk you through all your options at no cost."
-                },
-                {
-                  q: "What is the conforming loan limit in Apache County for 2026?",
-                  a: "The 2026 conforming loan limit for Apache County is $832,750 – the same baseline limit that applies across all Arizona counties. This is the maximum loan amount eligible for conventional financing backed by Fannie Mae or Freddie Mac. If your loan exceeds this amount, you will need a jumbo loan."
-                },
-                {
-                  q: "What is the FHA loan limit in Apache County for 2026?",
-                  a: "The 2026 FHA loan limit for Apache County is $541,287. This means you can finance a home up to that purchase price using an FHA loan with as little as 3.5% down (with a 580+ credit score). FHA loans are a popular option in Apache County given the more affordable home prices throughout the White Mountains region."
-                },
-                {
-                  q: "Why are people buying homes in Apache County?",
-                  a: "Apache County attracts buyers who love the outdoors and want a quieter lifestyle in the White Mountains of eastern Arizona. Snowflake and Eagar offer affordable family neighborhoods, while Greer and Alpine draw buyers looking for cabin retreats and vacation properties. The area offers four seasons, excellent fishing and hiking, and a strong sense of community."
-                },
-                {
-                  q: "How much do I need for a down payment on an Apache County home?",
-                  a: "FHA loans require as little as 3.5% down. Conventional loans can go as low as 3%-5% for qualified buyers. VA loans require zero down payment for eligible veterans. We also work with down payment assistance programs. Contact us to find out which programs you qualify for."
-                },
-                {
-                  q: "How long does it take to close on a home in Apache County?",
-                  a: "Most purchase transactions close in 21 to 30 days when all documentation is submitted promptly. Our team is known for fast, smooth closings with no surprises at the closing table."
-                }
-              ]
-            }
+              items={countyFaqs}
             />
           </div>
         </section>

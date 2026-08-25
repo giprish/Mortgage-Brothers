@@ -19,13 +19,16 @@ export const COMPANY = {
   addressMapsUrl: "https://www.google.com/maps?cid=3674746044086552790",
   /** Google Business Profile / reviews listing */
   googleReviewsUrl: "https://www.google.com/maps?cid=3674746044086552790",
-  /** Facebook page (matches live site) */
+  /** Social profiles (footer + schema sameAs — keep identical everywhere) */
   facebookUrl: "https://www.facebook.com/azmortgagebrothers/",
+  xUrl: "https://x.com/azmortgagebros",
+  linkedinUrl: "https://www.linkedin.com/company/azmortgagebrothers/",
+  youtubeUrl: "https://www.youtube.com/@TheMortgageBrothersTeam",
   city: "Phoenix",
   state: "AZ",
   postalCode: "85020",
   streetAddress: "1599 East Orangewood Ave, Suite 200",
-  /** Verified office coordinates (matches live Place schema for Orangewood Ave). */
+  /** Canonical office pin — used by Place schema, rich org, and sitemap geo. */
   geo: {
     latitude: 33.547046,
     longitude: -112.046049,

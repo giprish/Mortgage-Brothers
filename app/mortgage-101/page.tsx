@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -7,6 +9,22 @@ import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 
 export const metadata: Metadata = getSeoMetadata("/mortgage-101/");
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/mortgage-101/",
+    headline: "Arizona Mortgage 101",
+    description:
+      "Discover Mortgage 101 fundamentals with expert insights from Mortgage Brothers LLC to kickstart your home financing journey.",
+    datePublished: "2025-02-10",
+    articleSection: "Mortgage Basics",
+  },
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Basics", path: "/mortgage-basics/" },
+    { name: "Arizona Mortgage 101", path: "/mortgage-101/" },
+  ],
+});
 
 const topics = [
   {
@@ -107,6 +125,8 @@ const CheckIcon = () => (
 export default function Mortgage101Page() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
+      <JsonLd data={articleJsonLd} />
+
       <Navbar />
 
       <main className="flex-grow relative z-0">

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
+import JsonLd from "@/app/component/JsonLd";
+import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,6 +10,22 @@ import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 
 export const metadata: Metadata = getSeoMetadata("/the-broker-advantage/");
+
+const articleJsonLd = buildArticleSchemas({
+  blog: {
+    pathname: "/the-broker-advantage/",
+    headline: "The Broker Advantage",
+    description:
+      "Discover expert insights and strategies defining The Broker Advantage for superior mortgage solutions with Mortgage Brothers LLC",
+    datePublished: "2025-02-10",
+    articleSection: "Mortgage Basics",
+  },
+  breadcrumbs: [
+    { name: "Home", path: "/" },
+    { name: "Mortgage Basics", path: "/mortgage-basics/" },
+    { name: "The Broker Advantage", path: "/the-broker-advantage/" },
+  ],
+});
 
 const loanSolutions = [
   { label: "Conventional Home Loans", href: "/conventional-home-loans-arizona/" },
@@ -45,6 +63,8 @@ const CheckIcon = () => (
 export default function TheBrokerAdvantagePage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
+      <JsonLd data={articleJsonLd} />
+
       <Navbar />
 
       <main className="flex-grow relative z-0">
