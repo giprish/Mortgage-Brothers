@@ -3,7 +3,7 @@ import { getConfiguredSiteUrl } from "@/lib/site-url";
 import seoMetadataJson from "./seo-metadata.json";
 
 /** Rank Math site-wide tags from azmortgagebrothers.com */
-export const OG_SITE_NAME = "Arizona Home Loans | The Mortgage Brothers";
+export const OG_SITE_NAME = "Mortgage Brothers LLC";
 export const OG_LOCALE = "en_US";
 export const TWITTER_HANDLE = "@azmortgagebros";
 

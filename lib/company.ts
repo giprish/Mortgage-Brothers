@@ -4,7 +4,7 @@ export const COMPANY = {
   legalName: "Mortgage Brothers LLC",
   brandName: "Mortgage Brothers LLC",
   /** Public-facing / OG site name used in SEO metadata */
-  siteName: "Arizona Home Loans | The Mortgage Brothers",
+  siteName: "Mortgage Brothers LLC",
   nmls: "1007154",
   nmlsDisplay: "NMLS #1007154",
   azLicense: "MB0922514",

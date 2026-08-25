@@ -176,7 +176,7 @@ export function buildOrganizationSchema(
   return {
     "@type": ["Organization", "LocalBusiness", "FinancialService", "MortgageBroker"],
     "@id": organizationId(siteUrl),
-    name: COMPANY.siteName,
+    name: COMPANY.brandName,
     legalName: COMPANY.legalName,
     url: siteUrl,
     sameAs: [...COMPANY.sameAs, COMPANY.nmlsConsumerAccessUrl],
@@ -194,7 +194,7 @@ export function buildOrganizationSchema(
     telephone: COMPANY.phoneTel,
     priceRange: "$$",
     description:
-      "Explore mortgage options with Arizona Mortgage Brothers. Get personalized advice and competitive rates for home loans in Arizona. Contact us today!",
+      "Explore mortgage options with Mortgage Brothers LLC. Get personalized advice and competitive rates for home loans in Arizona. Contact us today!",
   };
 }
 
@@ -224,14 +224,9 @@ export function buildWebSiteSchema(siteUrl = getConfiguredSiteUrl()): JsonLdObje
     "@type": "WebSite",
     "@id": websiteId(siteUrl),
     url: siteUrl,
-    name: COMPANY.siteName,
+    name: COMPANY.brandName,
     publisher: { "@id": organizationId(siteUrl) },
     inLanguage: "en-US",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: `${siteUrl}/?s={search_term_string}`,
-      "query-input": "required name=search_term_string",
-    },
   };
 }
 

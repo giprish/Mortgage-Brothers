@@ -774,7 +774,7 @@ export default function HowToSellMyHouseFastInArizonaPage() {
                 },
                 {
                   q: "Who pays cash for houses in Arizona?",
-                  a: "Local investors, “We Buy Houses” companies, iBuyers, occasionally individual buyers, and (less than before) institutional firms. AZ Mortgage Brothers does not buy houses — we help you compare offers.",
+                  a: "Local investors, “We Buy Houses” companies, iBuyers, occasionally individual buyers, and (less than before) institutional firms. Mortgage Brothers LLC does not buy houses — we help you compare offers.",
                 },
                 {
                   q: "Is selling a house for cash a good idea?",
