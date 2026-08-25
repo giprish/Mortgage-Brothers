@@ -7,7 +7,10 @@ type ArticleHeroProps = {
   excerpt?: string;
   category?: string;
   categoryHref?: string;
+  /** Original publish date shown in the hero (e.g. "Feb 3, 2025"). */
   dateLabel?: string;
+  /** Last content update — shown when the article was rewritten after publish. */
+  updatedLabel?: string;
   readTime?: string;
   author?: string;
   authorRole?: string;
@@ -19,6 +22,7 @@ export default function ArticleHero({
   category = "Resources",
   categoryHref = "/blog/",
   dateLabel,
+  updatedLabel,
   readTime,
   author = "Eddie Knoell",
   authorRole = "Co-Founder · Senior Loan Officer",
@@ -83,7 +87,7 @@ export default function ArticleHero({
             </span>
           </div>
 
-          {(dateLabel || readTime) && (
+          {(dateLabel || updatedLabel || readTime) && (
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[#c8d4c8] text-[12.5px]">
               {dateLabel && (
                 <span className="inline-flex items-center gap-1.5">
@@ -99,6 +103,26 @@ export default function ArticleHero({
                     <path d="M16 2v4M8 2v4M3 10h18" strokeLinecap="round" />
                   </svg>
                   {dateLabel}
+                </span>
+              )}
+              {updatedLabel && (
+                <span className="inline-flex items-center gap-1.5">
+                  <svg
+                    className="w-3.5 h-3.5 text-[#63cd85]"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    aria-hidden
+                  >
+                    <path d="M23 4v6h-6" strokeLinecap="round" strokeLinejoin="round" />
+                    <path
+                      d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                  Updated {updatedLabel}
                 </span>
               )}
               {readTime && (

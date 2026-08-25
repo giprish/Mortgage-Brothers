@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
-import { buildFaqPageSchema, normalizeFaqs } from "@/lib/seo/structured-data";
+import { buildFaqPageSchema, buildReviewsSchema, normalizeFaqs } from "@/lib/seo/structured-data";
 import FaqAccordion from "../../component/FaqAccordion";
 
 import React from "react";
@@ -11,6 +11,7 @@ import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
 import CountyCityCards from "../../component/CountyCityCards";
 import MortgageSolutionsGrid from "../../component/MortgageSolutionsGrid";
+import CountyTestimonials from "../../component/CountyTestimonials";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/coconino-county-az/");
 
@@ -104,13 +105,54 @@ const countyFaqs = [
   }
 ];
 
+const testimonials = [
+  {
+    name: "Paxton Gray",
+    quote:
+      "Eddie and his team were incredible throughout the entire process. As a first-time buyer I had a lot of questions and they answered every single one. We closed on time and I could not be happier with the rate we got.",
+    attribution: "Paxton Gray, Arizona Homebuyer",
+  },
+  {
+    name: "Michelle Buck",
+    quote:
+      "The Mortgage Brothers team made what could have been a stressful process completely seamless. They were responsive, knowledgeable, and fought hard to get us the best deal possible. Highly recommend!",
+    attribution: "Michelle Buck, Arizona Homebuyer",
+  },
+  {
+    name: "Denise Roeder",
+    quote:
+      "I cannot say enough good things about Mortgage Brothers. From the first call to closing day, they were professional, communicative, and genuinely cared about getting us into our home. Five stars without hesitation.",
+    attribution: "Denise Roeder, Arizona",
+  },
+  {
+    name: "Spencer Adams",
+    quote:
+      "Eddie helped us close on our new home faster than we thought possible. His knowledge of the market and loan programs saved us thousands. We will be recommending Mortgage Brothers to everyone we know.",
+    attribution: "Spencer Adams, Arizona Homebuyer",
+  },
+  {
+    name: "Amy Giebrich",
+    quote:
+      "Working with Mortgage Brothers was the best decision we made during our home purchase. They were honest, fast, and incredibly helpful. I felt like I was in great hands the entire time.",
+    attribution: "Amy Giebrich, Arizona Homebuyer",
+  },
+];
+
 const faqJsonLd = buildFaqPageSchema(normalizeFaqs(countyFaqs));
+const reviewsJsonLd = buildReviewsSchema(
+  testimonials.map((t) => ({ author: t.name, reviewBody: t.quote })),
+);
 
 export default function CoconinoCountyPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       
-      {faqJsonLd ? <JsonLd data={faqJsonLd} /> : null}
+      <JsonLd
+        data={[
+          ...(faqJsonLd ? [faqJsonLd] : []),
+          ...reviewsJsonLd,
+        ]}
+      />
       <Navbar />
 
       <main className="flex-grow pt-[64px] sm:pt-[72px]">
@@ -179,6 +221,8 @@ export default function CoconinoCountyPage() {
         </section>
 
         <MortgageSolutionsGrid placeName="Coconino County" />
+
+        <CountyTestimonials testimonials={testimonials} />
 
         <section className="w-full py-16 bg-[#fcf9f3]">
           <div className="max-w-4xl mx-auto px-6">

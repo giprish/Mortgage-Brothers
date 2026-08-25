@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
-import { buildFaqPageSchema, normalizeFaqs } from "@/lib/seo/structured-data";
+import { buildFaqPageSchema, buildReviewsSchema, normalizeFaqs } from "@/lib/seo/structured-data";
 import FaqAccordion from "../../component/FaqAccordion";
 
 import React from "react";
@@ -11,6 +11,7 @@ import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
 import CountyCityCards from "../../component/CountyCityCards";
 import MortgageSolutionsGrid from "../../component/MortgageSolutionsGrid";
+import CountyTestimonials from "../../component/CountyTestimonials";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/pinal-county-az/");
 
@@ -88,13 +89,54 @@ const countyFaqs = [
   }
 ];
 
+const testimonials = [
+  {
+    name: "Sean Cassidy",
+    quote:
+      "The team at Mortgage Brothers made our first home purchase an amazing experience. They were patient with all our questions and got us a great rate. We could not have done this without them.",
+    attribution: "Sean Cassidy, Arizona Homebuyer",
+  },
+  {
+    name: "Jaclyn Lindsey",
+    quote:
+      "Eddie and his team went above and beyond for us. As first-time buyers we were nervous, but they walked us through every step. Closed on time with no surprises. Highly recommend!",
+    attribution: "Jaclyn Lindsey, Arizona Homebuyer",
+  },
+  {
+    name: "Thomas and Carol Milberry",
+    quote:
+      "We have worked with Mortgage Brothers on two home purchases now. Every time they deliver – fast closings, clear communication, and rates that beat the competition. They are our go-to mortgage team.",
+    attribution: "Thomas and Carol Milberry, Queen Creek, AZ",
+  },
+  {
+    name: "Michael and Donna Hawkins",
+    quote:
+      "Outstanding service from start to finish. They made the whole process stress-free and got us into our dream home. We will definitely be referring all our friends and family to Mortgage Brothers.",
+    attribution: "Michael and Donna Hawkins, Arizona",
+  },
+  {
+    name: "Mona Collins",
+    quote:
+      "Mortgage Brothers took the time to explain every option available to us. We never felt rushed or confused. Closing was smooth and the rate was better than any other lender we talked to.",
+    attribution: "Mona Collins, Arizona Homebuyer",
+  },
+];
+
 const faqJsonLd = buildFaqPageSchema(normalizeFaqs(countyFaqs));
+const reviewsJsonLd = buildReviewsSchema(
+  testimonials.map((t) => ({ author: t.name, reviewBody: t.quote })),
+);
 
 export default function PinalCountyPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       
-      {faqJsonLd ? <JsonLd data={faqJsonLd} /> : null}
+      <JsonLd
+        data={[
+          ...(faqJsonLd ? [faqJsonLd] : []),
+          ...reviewsJsonLd,
+        ]}
+      />
       <Navbar />
 
       <main className="flex-grow pt-[64px] sm:pt-[72px]">
@@ -169,6 +211,8 @@ export default function PinalCountyPage() {
         </section>
 
         <MortgageSolutionsGrid placeName="Pinal County" />
+
+        <CountyTestimonials testimonials={testimonials} />
 
         <section className="w-full py-16 bg-[#fcf9f3]">
           <div className="max-w-4xl mx-auto px-6">

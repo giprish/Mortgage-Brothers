@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
-import { buildFaqPageSchema, normalizeFaqs } from "@/lib/seo/structured-data";
+import { buildFaqPageSchema, buildReviewsSchema, normalizeFaqs } from "@/lib/seo/structured-data";
 import FaqAccordion from "../../component/FaqAccordion";
 
 import React from "react";
@@ -11,6 +11,7 @@ import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
 import CountyCityCards from "../../component/CountyCityCards";
 import MortgageSolutionsGrid from "../../component/MortgageSolutionsGrid";
+import CountyTestimonials from "../../component/CountyTestimonials";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/santa-cruz-county-az/");
 
@@ -53,13 +54,54 @@ const countyFaqs = [
   }
 ];
 
+const testimonials = [
+  {
+    name: "Tracy Larson",
+    quote:
+      "Eddie was wonderful to work with. He communicated every step of the way and made the entire process so easy. I would highly recommend him to anyone looking for a mortgage in Arizona.",
+    attribution: "Tracy Larson, Arizona",
+  },
+  {
+    name: "Paxton Gray",
+    quote:
+      "Eddie and his team were incredible throughout the entire process. As a first-time buyer I had a lot of questions and they answered every single one. We closed on time and I could not be happier with the rate we got.",
+    attribution: "Paxton Gray, Arizona Homebuyer",
+  },
+  {
+    name: "Anita Sanda",
+    quote:
+      "The Mortgage Brothers team made buying our home so much easier than we expected. They were knowledgeable, responsive, and got us a great rate. Could not be happier!",
+    attribution: "Anita Sanda, Surprise, AZ",
+  },
+  {
+    name: "Gregory LeBeau",
+    quote:
+      "Eddie made our refinance process so simple. He found us a better rate than we thought possible and closed everything on time. We have already recommended him to three neighbors.",
+    attribution: "Gregory LeBeau, Arizona",
+  },
+  {
+    name: "Mona Collins",
+    quote:
+      "Mortgage Brothers took the time to explain every option available to us. We never felt rushed or confused. Closing was smooth and the rate was better than any other lender we talked to.",
+    attribution: "Mona Collins, Arizona Homebuyer",
+  },
+];
+
 const faqJsonLd = buildFaqPageSchema(normalizeFaqs(countyFaqs));
+const reviewsJsonLd = buildReviewsSchema(
+  testimonials.map((t) => ({ author: t.name, reviewBody: t.quote })),
+);
 
 export default function SantaCruzCountyPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       
-      {faqJsonLd ? <JsonLd data={faqJsonLd} /> : null}
+      <JsonLd
+        data={[
+          ...(faqJsonLd ? [faqJsonLd] : []),
+          ...reviewsJsonLd,
+        ]}
+      />
       <Navbar />
       <main className="flex-grow pt-[64px] sm:pt-[72px]">
         <section className="w-full bg-brand-green-deep text-white py-16 lg:py-20 text-center relative overflow-hidden">
@@ -104,6 +146,8 @@ export default function SantaCruzCountyPage() {
         </section>
 
         <MortgageSolutionsGrid placeName="Santa Cruz County" />
+
+        <CountyTestimonials testimonials={testimonials} />
 
         <section className="w-full py-16 bg-[#fcf9f3]">
           <div className="max-w-4xl mx-auto px-6">

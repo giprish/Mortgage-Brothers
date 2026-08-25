@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
-import { buildFaqPageSchema, normalizeFaqs } from "@/lib/seo/structured-data";
+import { buildFaqPageSchema, buildReviewsSchema, normalizeFaqs } from "@/lib/seo/structured-data";
 import FaqAccordion from "../../component/FaqAccordion";
 
 import React from "react";
@@ -11,6 +11,7 @@ import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
 import CountyCityCards from "../../component/CountyCityCards";
 import MortgageSolutionsGrid from "../../component/MortgageSolutionsGrid";
+import CountyTestimonials from "../../component/CountyTestimonials";
 import { getCountyCitiesDetails } from "../../../lib/cityData";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/apache-county-az/");
@@ -44,13 +45,54 @@ const countyFaqs = [
   }
 ];
 
+const testimonials = [
+  {
+    name: "Christian Holt",
+    quote:
+      "Mortgage Brothers helped me close on my first home faster than I thought possible. The process was clear and they were always available to answer my questions. Incredible team!",
+    attribution: "Christian Holt, Arizona Homebuyer",
+  },
+  {
+    name: "Mona Collins",
+    quote:
+      "Mortgage Brothers took the time to explain every option available to us. We never felt rushed or confused. Closing was smooth and the rate was better than any other lender we talked to.",
+    attribution: "Mona Collins, Arizona Homebuyer",
+  },
+  {
+    name: "Tracy Larson",
+    quote:
+      "Eddie was wonderful to work with. He communicated every step of the way and made the entire process so easy. I would highly recommend him to anyone looking for a mortgage in Arizona.",
+    attribution: "Tracy Larson, Arizona",
+  },
+  {
+    name: "Spencer Adams",
+    quote:
+      "Eddie helped us close on our new home faster than we thought possible. His knowledge of the market and loan programs saved us thousands. We will be recommending Mortgage Brothers to everyone we know.",
+    attribution: "Spencer Adams, Arizona Homebuyer",
+  },
+  {
+    name: "Jaclyn Lindsey",
+    quote:
+      "Eddie and his team went above and beyond for us. As first-time buyers we were nervous, but they walked us through every step. Closed on time with no surprises. Highly recommend!",
+    attribution: "Jaclyn Lindsey, Arizona Homebuyer",
+  },
+];
+
 const faqJsonLd = buildFaqPageSchema(normalizeFaqs(countyFaqs));
+const reviewsJsonLd = buildReviewsSchema(
+  testimonials.map((t) => ({ author: t.name, reviewBody: t.quote })),
+);
 
 export default function ApacheCountyPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       
-      {faqJsonLd ? <JsonLd data={faqJsonLd} /> : null}
+      <JsonLd
+        data={[
+          ...(faqJsonLd ? [faqJsonLd] : []),
+          ...reviewsJsonLd,
+        ]}
+      />
       <Navbar />
       <main className="flex-grow pt-[64px] sm:pt-[72px]">
         <section className="w-full bg-brand-green-deep text-white py-16 lg:py-20 text-center relative overflow-hidden">
@@ -95,6 +137,8 @@ export default function ApacheCountyPage() {
         </section>
 
         <MortgageSolutionsGrid placeName="Apache County" />
+
+        <CountyTestimonials testimonials={testimonials} />
 
         <section className="w-full py-16 bg-[#fcf9f3]">
           <div className="max-w-4xl mx-auto px-6">

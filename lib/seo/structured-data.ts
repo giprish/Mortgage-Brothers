@@ -27,6 +27,7 @@ export type BlogPostingInput = {
   headline: string;
   description: string;
   datePublished: string;
+  /** ISO date when the article was last substantially rewritten (falls back to datePublished). */
   dateModified?: string;
   image?: string;
   authorName?: string;
@@ -427,6 +428,43 @@ export function buildFaqPageSchema(faqs: FaqQa[]): JsonLdObject | null {
   };
 }
 
+export type TestimonialReview = {
+  author: string;
+  reviewBody: string;
+  ratingValue?: string | number;
+};
+
+/** Schema.org Review objects for testimonials shown on a page (no AggregateRating). */
+export function buildReviewsSchema(
+  reviews: TestimonialReview[],
+  siteUrl = getConfiguredSiteUrl(),
+): JsonLdObject[] {
+  return reviews
+    .map((review) => ({
+      author: review.author?.trim() ?? "",
+      reviewBody: review.reviewBody?.trim() ?? "",
+      ratingValue: String(review.ratingValue ?? "5"),
+    }))
+    .filter((review) => review.author && review.reviewBody)
+    .map((review) => ({
+      "@context": "https://schema.org",
+      "@type": "Review",
+      author: {
+        "@type": "Person",
+        name: review.author,
+      },
+      reviewBody: review.reviewBody,
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: review.ratingValue,
+        bestRating: "5",
+      },
+      itemReviewed: {
+        "@id": organizationId(siteUrl),
+      },
+    }));
+}
+
 /** Accepts either `{ question, answer }` or FaqAccordion-style `{ q, a: string }`. */
 export function normalizeFaqs(
   items: Array<{ question?: string; answer?: string; q?: string; a?: string }>,
@@ -497,6 +535,7 @@ export function buildBlogPostingSchema(input: BlogPostingInput): JsonLdObject {
     name: input.headline,
     description: input.description,
     datePublished: input.datePublished,
+    // Prefer an explicit dateModified when the article was rewritten after publish.
     dateModified,
     ...(input.articleSection ? { articleSection: input.articleSection } : {}),
     ...(input.keywords ? { keywords: input.keywords } : {}),

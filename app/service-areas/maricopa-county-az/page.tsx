@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
-import { buildFaqPageSchema, normalizeFaqs } from "@/lib/seo/structured-data";
+import { buildFaqPageSchema, buildReviewsSchema, normalizeFaqs } from "@/lib/seo/structured-data";
 import FaqAccordion from "../../component/FaqAccordion";
 
 import React from "react";
@@ -12,6 +12,7 @@ import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
 import CountyCityCards from "../../component/CountyCityCards";
 import MortgageSolutionsGrid from "../../component/MortgageSolutionsGrid";
+import CountyTestimonials from "../../component/CountyTestimonials";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/maricopa-county-az/");
 
@@ -167,13 +168,54 @@ const countyFaqs = [
   }
 ];
 
+const testimonials = [
+  {
+    name: "Denise Roeder",
+    quote:
+      "This is my 8th home purchase and mortgage. Working with Eddie has been by far, the most simple, straight forward experience I have ever had obtaining a mortgage.",
+    attribution: "Denise Roeder, Chandler, Arizona",
+  },
+  {
+    name: "Thomas and Carol Milberry",
+    quote:
+      "Our mortgage service through Eddie Knoell was seamless throughout. It was like having someone watch over the process without us having any concern. All questions were answered promptly and completely, like dealing with a trusted family member.",
+    attribution: "Thomas and Carol Milberry, Queen Creek, Arizona",
+  },
+  {
+    name: "Michael and Donna Hawkins",
+    quote:
+      "Eddie saved us over $500 a month! He explained in great detail the program options, locked us into a great rate, and made it happen for us. We will definitely be referring our family and friends.",
+    attribution: "Michael and Donna Hawkins, Glendale, Arizona",
+  },
+  {
+    name: "Anita Sanda",
+    quote:
+      "Eddie went above the call of duty on 3 separate transactions for us. Each time we challenged him to work under different circumstances and each time he came through and exceeded our expectations!",
+    attribution: "Anita Sanda, Surprise, Arizona",
+  },
+  {
+    name: "Eric and Joy Stevens",
+    quote:
+      "Eddie has been a great help to me. He has refinanced many properties for me and is always very professional. I have recommended him to many people.",
+    attribution: "Eric and Joy Stevens, Phoenix, Arizona",
+  },
+];
+
 const faqJsonLd = buildFaqPageSchema(normalizeFaqs(countyFaqs));
+const reviewsJsonLd = buildReviewsSchema(
+  testimonials.map((t) => ({ author: t.name, reviewBody: t.quote })),
+);
 
 export default function MaricopaCounty() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       
-      {faqJsonLd ? <JsonLd data={faqJsonLd} /> : null}
+      <JsonLd
+        data={[
+          ...(faqJsonLd ? [faqJsonLd] : []),
+          ...reviewsJsonLd,
+        ]}
+      />
       <Navbar />
 
       <main className="flex-grow pt-[64px] sm:pt-[72px]">
@@ -254,6 +296,11 @@ export default function MaricopaCounty() {
         </section>
 
         <MortgageSolutionsGrid placeName="Maricopa County" />
+
+        <CountyTestimonials
+          title="What Maricopa County Clients Say About Us"
+          testimonials={testimonials}
+        />
 
         <section className="w-full py-14 sm:py-16 lg:py-20 bg-[#fcf9f3]">
           <div className="max-w-4xl mx-auto px-6">

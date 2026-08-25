@@ -87,6 +87,7 @@ const articleJsonLd = buildArticleSchemas({
     headline: "Arizona Real Estate Trends in 2026: Predicting Mortgage Rates for the Coming Year",
     description: "As of August 2026, Arizona 30-year rates are around 6.6%–6.75%—not the mid-5s some forecasts hoped for. Here’s the current market, inventory, and what that means for buyers.",
     datePublished: "2026-05-05",
+    dateModified: "2026-08-01",
     articleSection: "Real Estate & Mortgages",
   },
   faqs: [...articleFaqs],
@@ -123,6 +124,7 @@ export default function ArizonaRealEstateTrends2026Page() {
           category="Real Estate & Mortgages"
           categoryHref="/real-estate-mortgages/"
           dateLabel="May 5, 2026"
+          updatedLabel="Aug 1, 2026"
           readTime="10 min read"
         />
 

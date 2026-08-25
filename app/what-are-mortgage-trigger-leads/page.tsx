@@ -74,6 +74,7 @@ const articleJsonLd = buildArticleSchemas({
     headline: "What Are Mortgage Trigger Leads? Why Are Strangers Calling Your phone?",
     description: "Trigger leads are the calls that used to follow a mortgage credit pull. Federal law now restricts the practice; Do Not Call and DMA Choice are still useful extras.",
     datePublished: "2025-02-03",
+    dateModified: "2026-03-04",
     articleSection: "Mortgage Basics",
   },
   faqs: [...articleFaqs],
@@ -105,6 +106,7 @@ export default function MortgageTriggerLeadsPage() {
           category="Mortgage Basics"
           categoryHref="/mortgage-basics/"
           dateLabel="Feb 3, 2025"
+          updatedLabel="Mar 4, 2026"
           readTime="6 min read"
         />
 
