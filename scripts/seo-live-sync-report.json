@@ -1,0 +1,1576 @@
+{
+  "scrapedAt": "2026-08-25T06:12:59.444Z",
+  "origin": "https://azmortgagebrothers.com",
+  "targets": 250,
+  "scraped": 138,
+  "updated": 38,
+  "unchanged": 100,
+  "failures": [
+    {
+      "pathname": "/service-areas/maricopa-county-az/peoria",
+      "url": "https://azmortgagebrothers.com/service-areas/maricopa-county-az/peoria/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 11, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 1s, resets at Tue Aug 25 2026 06:07:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/maricopa-county-az/phoenix",
+      "url": "https://azmortgagebrothers.com/service-areas/maricopa-county-az/phoenix/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 12, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 1s, resets at Tue Aug 25 2026 06:07:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/maricopa-county-az/queen-creek",
+      "url": "https://azmortgagebrothers.com/service-areas/maricopa-county-az/queen-creek/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 13, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 1s, resets at Tue Aug 25 2026 06:07:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/mohave-county-az",
+      "url": "https://azmortgagebrothers.com/service-areas/mohave-county-az/",
+      "error": "SyntaxError: Unexpected token 'B', \"Bad Gateway\" is not valid JSON"
+    },
+    {
+      "pathname": "/service-areas/mohave-county-az/bullhead-city",
+      "url": "https://azmortgagebrothers.com/service-areas/mohave-county-az/bullhead-city/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 11, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 11s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/mohave-county-az/chloride",
+      "url": "https://azmortgagebrothers.com/service-areas/mohave-county-az/chloride/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 12, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 11s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/mohave-county-az/colorado-city",
+      "url": "https://azmortgagebrothers.com/service-areas/mohave-county-az/colorado-city/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 13, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 10s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/mohave-county-az/fort-mohave",
+      "url": "https://azmortgagebrothers.com/service-areas/mohave-county-az/fort-mohave/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 14, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 10s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/mohave-county-az/kingman",
+      "url": "https://azmortgagebrothers.com/service-areas/mohave-county-az/kingman/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 15, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 10s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/mohave-county-az/lake-havasu-city",
+      "url": "https://azmortgagebrothers.com/service-areas/mohave-county-az/lake-havasu-city/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 16, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 9s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/navajo-county-az",
+      "url": "https://azmortgagebrothers.com/service-areas/navajo-county-az/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 17, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 9s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/navajo-county-az/holbrook",
+      "url": "https://azmortgagebrothers.com/service-areas/navajo-county-az/holbrook/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 18, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 8s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/navajo-county-az/pinetop",
+      "url": "https://azmortgagebrothers.com/service-areas/navajo-county-az/pinetop/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 19, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 8s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/navajo-county-az/show-low",
+      "url": "https://azmortgagebrothers.com/service-areas/navajo-county-az/show-low/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 20, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 7s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/navajo-county-az/taylor",
+      "url": "https://azmortgagebrothers.com/service-areas/navajo-county-az/taylor/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 21, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 7s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/navajo-county-az/winslow",
+      "url": "https://azmortgagebrothers.com/service-areas/navajo-county-az/winslow/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 22, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 7s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/pima-county-az",
+      "url": "https://azmortgagebrothers.com/service-areas/pima-county-az/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 23, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 6s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/pima-county-az/oro-valley",
+      "url": "https://azmortgagebrothers.com/service-areas/pima-county-az/oro-valley/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 24, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 6s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/pima-county-az/sahuarita",
+      "url": "https://azmortgagebrothers.com/service-areas/pima-county-az/sahuarita/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 25, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 6s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/pima-county-az/tucson",
+      "url": "https://azmortgagebrothers.com/service-areas/pima-county-az/tucson/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 26, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 5s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/pima-county-az/vail",
+      "url": "https://azmortgagebrothers.com/service-areas/pima-county-az/vail/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 27, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 5s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/pinal-county-az",
+      "url": "https://azmortgagebrothers.com/service-areas/pinal-county-az/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 29, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 4s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/pinal-county-az/apache-junction",
+      "url": "https://azmortgagebrothers.com/service-areas/pinal-county-az/apache-junction/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 30, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 4s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/pinal-county-az/casa-grande",
+      "url": "https://azmortgagebrothers.com/service-areas/pinal-county-az/casa-grande/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 31, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 3s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/pinal-county-az/coolidge",
+      "url": "https://azmortgagebrothers.com/service-areas/pinal-county-az/coolidge/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 32, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 3s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/pinal-county-az/florence",
+      "url": "https://azmortgagebrothers.com/service-areas/pinal-county-az/florence/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 33, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 3s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/pinal-county-az/queen-creek",
+      "url": "https://azmortgagebrothers.com/service-areas/pinal-county-az/queen-creek/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 34, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 2s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/pinal-county-az/san-tan-valley",
+      "url": "https://azmortgagebrothers.com/service-areas/pinal-county-az/san-tan-valley/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 35, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 2s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/santa-cruz-county-az",
+      "url": "https://azmortgagebrothers.com/service-areas/santa-cruz-county-az/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 36, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 2s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/yavapai-county-az",
+      "url": "https://azmortgagebrothers.com/service-areas/yavapai-county-az/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 37, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 1s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/yavapai-county-az/chino-valley",
+      "url": "https://azmortgagebrothers.com/service-areas/yavapai-county-az/chino-valley/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 38, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 1s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/yavapai-county-az/clarkdale",
+      "url": "https://azmortgagebrothers.com/service-areas/yavapai-county-az/clarkdale/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 39, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 1s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/yavapai-county-az/cornville",
+      "url": "https://azmortgagebrothers.com/service-areas/yavapai-county-az/cornville/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 40, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 1s, resets at Tue Aug 25 2026 06:08:07 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/yavapai-county-az/dewey",
+      "url": "https://azmortgagebrothers.com/service-areas/yavapai-county-az/dewey/",
+      "error": "Error: {\"success\":false,\"code\":\"SCRAPE_TIMEOUT\",\"error\":\"The scrape operation timed out before completing. This happens when a page takes too long to load, render, or process. Possible causes: (1) The website is slow or unresponsive, (2) The page has heavy JavaScript that takes time to execute, (3) The page is very large or has many resources to load, (4) Network latency is high. To fix this, try increasing the timeout parameter in your scrape request, or if using actions, ensure your selectors are correct and the page is ready before actions are executed.\"}"
+    },
+    {
+      "pathname": "/mortgage-broker-loan-officer-originator",
+      "url": "https://azmortgagebrothers.com/mortgage-broker-loan-officer-originator/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 11, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 22s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/mortgage-calculator-arizona",
+      "url": "https://azmortgagebrothers.com/mortgage-calculator-arizona/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 12, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 21s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/mortgage-for-excellent-credit",
+      "url": "https://azmortgagebrothers.com/mortgage-for-excellent-credit/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 13, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 21s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/mortgage-for-good-credit",
+      "url": "https://azmortgagebrothers.com/mortgage-for-good-credit/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 14, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 21s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/mortgage-for-poor-credit",
+      "url": "https://azmortgagebrothers.com/mortgage-for-poor-credit/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 15, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 20s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/mortgage-processor",
+      "url": "https://azmortgagebrothers.com/mortgage-processor/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 16, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 20s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/realtorteam",
+      "url": "https://azmortgagebrothers.com/realtorteam/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 17, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 20s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/reverse-mortgage-loan-officer",
+      "url": "https://azmortgagebrothers.com/reverse-mortgage-loan-officer/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 18, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 19s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/videos/important-mortgage-home-loan-topics",
+      "url": "https://azmortgagebrothers.com/videos/important-mortgage-home-loan-topics/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 19, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 19s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/videos/mortgage-loan-products",
+      "url": "https://azmortgagebrothers.com/videos/mortgage-loan-products/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 20, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 19s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/videos/mortgage-rates-today",
+      "url": "https://azmortgagebrothers.com/videos/mortgage-rates-today/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 21, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 18s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/videos/phoenix-market-and-real-estate-updates",
+      "url": "https://azmortgagebrothers.com/videos/phoenix-market-and-real-estate-updates/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 23, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 18s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/videos/real-estate-agent-quick-tips",
+      "url": "https://azmortgagebrothers.com/videos/real-estate-agent-quick-tips/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 24, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 17s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/videos/reverse-mortgage",
+      "url": "https://azmortgagebrothers.com/videos/reverse-mortgage/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 25, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 17s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/videos/video-podcast-for-the-mortgage-brothers-show",
+      "url": "https://azmortgagebrothers.com/videos/video-podcast-for-the-mortgage-brothers-show/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 26, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 17s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/when-is-a-mortgage-payment-actually-considered-late",
+      "url": "https://azmortgagebrothers.com/when-is-a-mortgage-payment-actually-considered-late/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 27, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 17s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/understanding-amortization-chart",
+      "url": "https://azmortgagebrothers.com/understanding-amortization-chart/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 28, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 16s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-refinance-process",
+      "url": "https://azmortgagebrothers.com/arizona-refinance-process/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 29, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 16s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-mortgage-closing-process",
+      "url": "https://azmortgagebrothers.com/arizona-mortgage-closing-process/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 30, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 16s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-mortgage-closing-costs",
+      "url": "https://azmortgagebrothers.com/arizona-mortgage-closing-costs/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 31, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 15s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/ultimate-guide-first-mortgage",
+      "url": "https://azmortgagebrothers.com/ultimate-guide-first-mortgage/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 32, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 15s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/how-to-sell-my-house-fast-in-arizona",
+      "url": "https://azmortgagebrothers.com/how-to-sell-my-house-fast-in-arizona/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 33, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 15s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-real-estate-trends-in-2026-predicting-mortgage-rates-for-the-coming-year",
+      "url": "https://azmortgagebrothers.com/arizona-real-estate-trends-in-2026-predicting-mortgage-rates-for-the-coming-year/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 34, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 15s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/what-is-a-jumbo-loan-everything-you-need-to-know-before-applying",
+      "url": "https://azmortgagebrothers.com/what-is-a-jumbo-loan-everything-you-need-to-know-before-applying/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 35, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 14s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/how-to-get-a-mortgage-in-arizona-with-fair-or-improving-credit",
+      "url": "https://azmortgagebrothers.com/how-to-get-a-mortgage-in-arizona-with-fair-or-improving-credit/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 36, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 14s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/top-7-reasons-arizona-investment-home-buyers-choose-private-money-lenders",
+      "url": "https://azmortgagebrothers.com/top-7-reasons-arizona-investment-home-buyers-choose-private-money-lenders/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 37, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 14s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/who-qualifies-for-a-reverse-mortgage-understanding-eligibility-requirements",
+      "url": "https://azmortgagebrothers.com/who-qualifies-for-a-reverse-mortgage-understanding-eligibility-requirements/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 38, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 13s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/how-to-calculate-how-much-pmi-mortgage-insurance-will-be",
+      "url": "https://azmortgagebrothers.com/how-to-calculate-how-much-pmi-mortgage-insurance-will-be/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 39, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 13s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/what-are-mortgage-trigger-leads",
+      "url": "https://azmortgagebrothers.com/what-are-mortgage-trigger-leads/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 40, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 13s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/what-are-closing-costs-on-a-home-purchase",
+      "url": "https://azmortgagebrothers.com/what-are-closing-costs-on-a-home-purchase/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 41, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 12s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/mortgage-payoff-higher-than-mortgage-balance",
+      "url": "https://azmortgagebrothers.com/mortgage-payoff-higher-than-mortgage-balance/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 42, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 12s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/how-does-my-car-loan-payment-affect-my-mortgage",
+      "url": "https://azmortgagebrothers.com/how-does-my-car-loan-payment-affect-my-mortgage/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 43, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 12s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/how-high-will-a-lender-allow-your-deductible-to-be",
+      "url": "https://azmortgagebrothers.com/how-high-will-a-lender-allow-your-deductible-to-be/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 44, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 12s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-vacation-and-investment-home-mortgages",
+      "url": "https://azmortgagebrothers.com/arizona-vacation-and-investment-home-mortgages/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 45, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 11s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-home-buying-process",
+      "url": "https://azmortgagebrothers.com/arizona-home-buying-process/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 46, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 11s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-mortgage-approval-process",
+      "url": "https://azmortgagebrothers.com/arizona-mortgage-approval-process/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 47, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 9s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-mortgage-payments",
+      "url": "https://azmortgagebrothers.com/arizona-mortgage-payments/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 48, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 8s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-mortgage-basics",
+      "url": "https://azmortgagebrothers.com/arizona-mortgage-basics/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 49, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 8s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/why-use-an-arizona-mortgage-broker",
+      "url": "https://azmortgagebrothers.com/why-use-an-arizona-mortgage-broker/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 50, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 8s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-understanding-your-credit",
+      "url": "https://azmortgagebrothers.com/arizona-understanding-your-credit/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 51, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 8s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/expect-youre-not-first-time-mortgage-shopper",
+      "url": "https://azmortgagebrothers.com/expect-youre-not-first-time-mortgage-shopper/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 52, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 7s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/va-loans-for-first-time-homebuyers-in-arizona-your-path-to-affordable-homeownership",
+      "url": "https://azmortgagebrothers.com/va-loans-for-first-time-homebuyers-in-arizona-your-path-to-affordable-homeownership/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 53, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 7s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/navigating-mortgage-options-during-divorce-a-complete-guide",
+      "url": "https://azmortgagebrothers.com/navigating-mortgage-options-during-divorce-a-complete-guide/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 54, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 7s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/what-if-my-spouse-dies-and-im-not-on-the-mortgage",
+      "url": "https://azmortgagebrothers.com/what-if-my-spouse-dies-and-im-not-on-the-mortgage/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 55, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 6s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/how-does-a-mortgage-apr-work-and-what-does-it-mean",
+      "url": "https://azmortgagebrothers.com/how-does-a-mortgage-apr-work-and-what-does-it-mean/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 56, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 6s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/getting-a-mortgage-with-employment-gaps",
+      "url": "https://azmortgagebrothers.com/getting-a-mortgage-with-employment-gaps/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 57, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 6s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/better-getting-mortgage-couple-vs-single-applicant",
+      "url": "https://azmortgagebrothers.com/better-getting-mortgage-couple-vs-single-applicant/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 58, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 5s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/can-i-relocate-and-get-a-mortgage-while-working-remotely-out-of-state",
+      "url": "https://azmortgagebrothers.com/can-i-relocate-and-get-a-mortgage-while-working-remotely-out-of-state/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 59, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 5s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/dscr-loan-the-best-alternative-to-hard-money",
+      "url": "https://azmortgagebrothers.com/dscr-loan-the-best-alternative-to-hard-money/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 60, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 5s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-binsr-buyer-inspection-notice-and-seller-response",
+      "url": "https://azmortgagebrothers.com/arizona-binsr-buyer-inspection-notice-and-seller-response/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 61, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 4s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/what-you-need-to-know-about-the-arizona-prequalification-form",
+      "url": "https://azmortgagebrothers.com/what-you-need-to-know-about-the-arizona-prequalification-form/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 62, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 4s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-mortgage-rates-and-the-interest-deduction",
+      "url": "https://azmortgagebrothers.com/arizona-mortgage-rates-and-the-interest-deduction/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 64, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 4s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/prepayment-penalties-on-your-arizona-mortgage",
+      "url": "https://azmortgagebrothers.com/prepayment-penalties-on-your-arizona-mortgage/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 65, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 3s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/buying-down-your-arizona-interest-rate",
+      "url": "https://azmortgagebrothers.com/buying-down-your-arizona-interest-rate/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 66, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 3s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-second-mortgages",
+      "url": "https://azmortgagebrothers.com/arizona-second-mortgages/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 67, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 3s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-real-estate-capital-gains-is-back",
+      "url": "https://azmortgagebrothers.com/arizona-real-estate-capital-gains-is-back/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 68, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 2s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/delayed-financing-how-to-get-cashout-without-waiting-6-months-seasoning",
+      "url": "https://azmortgagebrothers.com/delayed-financing-how-to-get-cashout-without-waiting-6-months-seasoning/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 69, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 2s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/what-is-an-example-of-a-mortgage-recast",
+      "url": "https://azmortgagebrothers.com/what-is-an-example-of-a-mortgage-recast/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 70, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 2s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/buying-a-house-with-a-cash-offer-and-simultaneously-getting-mortgage-financing",
+      "url": "https://azmortgagebrothers.com/buying-a-house-with-a-cash-offer-and-simultaneously-getting-mortgage-financing/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 71, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 1s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/grossing-up-your-income-what-does-that-mean",
+      "url": "https://azmortgagebrothers.com/grossing-up-your-income-what-does-that-mean/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 72, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 1s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/can-i-get-a-3rd-mortgage",
+      "url": "https://azmortgagebrothers.com/can-i-get-a-3rd-mortgage/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 73, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 1s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house",
+      "url": "https://azmortgagebrothers.com/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 74, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 1s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/what-is-the-difference-between-aan-arizona-condo-and-arizona-townhome",
+      "url": "https://azmortgagebrothers.com/what-is-the-difference-between-aan-arizona-condo-and-arizona-townhome/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 75, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 1s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/detached-guest-home-casita-appraisal-issues",
+      "url": "https://azmortgagebrothers.com/detached-guest-home-casita-appraisal-issues/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 76, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 1s, resets at Tue Aug 25 2026 06:10:10 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/how-to-count-commissions-and-bonuses-and-tips",
+      "url": "https://azmortgagebrothers.com/how-to-count-commissions-and-bonuses-and-tips/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 12, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 29s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/who-can-and-cannot-be-on-title-when-you-get-a-mortgage",
+      "url": "https://azmortgagebrothers.com/who-can-and-cannot-be-on-title-when-you-get-a-mortgage/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 13, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 28s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/is-the-mortgage-interest-tax-deduction-really-a-big-deal",
+      "url": "https://azmortgagebrothers.com/is-the-mortgage-interest-tax-deduction-really-a-big-deal/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 15, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 28s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/if-i-have-1-mortgage-late-in-the-past-12-months-can-i-get-approved-for-a-mortgage",
+      "url": "https://azmortgagebrothers.com/if-i-have-1-mortgage-late-in-the-past-12-months-can-i-get-approved-for-a-mortgage/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 16, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 28s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/what-is-a-conventional-home-loan-the-complete-first-time-buyer-mortgage-guide",
+      "url": "https://azmortgagebrothers.com/what-is-a-conventional-home-loan-the-complete-first-time-buyer-mortgage-guide/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 17, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 27s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/glossary",
+      "url": "https://azmortgagebrothers.com/glossary/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 18, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 27s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/the-broker-advantage",
+      "url": "https://azmortgagebrothers.com/the-broker-advantage/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 20, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 27s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/can-i-simply-payoff-credit-cards-to-qualify-for-a-mortgage",
+      "url": "https://azmortgagebrothers.com/can-i-simply-payoff-credit-cards-to-qualify-for-a-mortgage/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 21, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 26s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/air-conditionings-impact-phoenix-valley-real-estate",
+      "url": "https://azmortgagebrothers.com/air-conditionings-impact-phoenix-valley-real-estate/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 22, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 26s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/canceling-your-fha-mip-is-easier-than-you-think",
+      "url": "https://azmortgagebrothers.com/canceling-your-fha-mip-is-easier-than-you-think/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 23, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 26s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/connecting-guest-house-main-house-add-value",
+      "url": "https://azmortgagebrothers.com/connecting-guest-house-main-house-add-value/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 24, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 25s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/how-a-rapid-rescore-can-help-to-get-qualified-for-a-mortgage",
+      "url": "https://azmortgagebrothers.com/how-a-rapid-rescore-can-help-to-get-qualified-for-a-mortgage/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 25, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 25s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/seller-concessions-to-buyers-how-much",
+      "url": "https://azmortgagebrothers.com/seller-concessions-to-buyers-how-much/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 26, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 25s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/fha-flip-rule-waiver-expired-you-need-wait-90-days-to-write-a-contract",
+      "url": "https://azmortgagebrothers.com/fha-flip-rule-waiver-expired-you-need-wait-90-days-to-write-a-contract/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 27, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 24s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/is-homeownership-hereditary",
+      "url": "https://azmortgagebrothers.com/is-homeownership-hereditary/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 28, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 24s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/mortgage-101",
+      "url": "https://azmortgagebrothers.com/mortgage-101/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 29, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 24s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/mortgage-rates-tool-arizona",
+      "url": "https://azmortgagebrothers.com/mortgage-rates-tool-arizona/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 30, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 23s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/assumable-mortgage",
+      "url": "https://azmortgagebrothers.com/assumable-mortgage/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 31, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 23s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/mortgage-basics",
+      "url": "https://azmortgagebrothers.com/mortgage-basics/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 32, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 23s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/fha-loans",
+      "url": "https://azmortgagebrothers.com/fha-loans/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 33, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 22s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/mortgage-qualifications",
+      "url": "https://azmortgagebrothers.com/mortgage-qualifications/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 35, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 22s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-mortgage-insights",
+      "url": "https://azmortgagebrothers.com/arizona-mortgage-insights/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 36, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 22s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/mortgage-payments-strategies",
+      "url": "https://azmortgagebrothers.com/mortgage-payments-strategies/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 37, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 21s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/real-estate-mortgages",
+      "url": "https://azmortgagebrothers.com/real-estate-mortgages/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 38, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 21s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/specialty-loans",
+      "url": "https://azmortgagebrothers.com/specialty-loans/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 39, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 21s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/homeownership-tips",
+      "url": "https://azmortgagebrothers.com/homeownership-tips/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 40, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 20s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/mortgage-process-guidance",
+      "url": "https://azmortgagebrothers.com/mortgage-process-guidance/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 41, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 20s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/spouse-estate-considerations",
+      "url": "https://azmortgagebrothers.com/spouse-estate-considerations/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 42, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 20s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/pillar-post",
+      "url": "https://azmortgagebrothers.com/pillar-post/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 43, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 19s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/author/eddie-knoell",
+      "url": "https://azmortgagebrothers.com/author/eddie-knoell/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 44, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 19s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/maricopa-county-az/peoria",
+      "url": "https://azmortgagebrothers.com/service-areas/maricopa-county-az/peoria/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 45, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 19s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/maricopa-county-az/phoenix",
+      "url": "https://azmortgagebrothers.com/service-areas/maricopa-county-az/phoenix/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 46, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 18s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/maricopa-county-az/queen-creek",
+      "url": "https://azmortgagebrothers.com/service-areas/maricopa-county-az/queen-creek/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 47, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 18s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/mohave-county-az",
+      "url": "https://azmortgagebrothers.com/service-areas/mohave-county-az/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 48, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 18s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/mohave-county-az/bullhead-city",
+      "url": "https://azmortgagebrothers.com/service-areas/mohave-county-az/bullhead-city/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 49, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 18s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/mohave-county-az/chloride",
+      "url": "https://azmortgagebrothers.com/service-areas/mohave-county-az/chloride/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 50, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 17s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/mohave-county-az/colorado-city",
+      "url": "https://azmortgagebrothers.com/service-areas/mohave-county-az/colorado-city/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 51, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 17s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/mohave-county-az/fort-mohave",
+      "url": "https://azmortgagebrothers.com/service-areas/mohave-county-az/fort-mohave/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 52, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 17s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/mohave-county-az/kingman",
+      "url": "https://azmortgagebrothers.com/service-areas/mohave-county-az/kingman/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 53, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 16s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/mohave-county-az/lake-havasu-city",
+      "url": "https://azmortgagebrothers.com/service-areas/mohave-county-az/lake-havasu-city/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 54, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 16s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/navajo-county-az",
+      "url": "https://azmortgagebrothers.com/service-areas/navajo-county-az/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 55, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 16s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/navajo-county-az/holbrook",
+      "url": "https://azmortgagebrothers.com/service-areas/navajo-county-az/holbrook/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 56, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 15s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/navajo-county-az/pinetop",
+      "url": "https://azmortgagebrothers.com/service-areas/navajo-county-az/pinetop/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 57, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 15s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/navajo-county-az/show-low",
+      "url": "https://azmortgagebrothers.com/service-areas/navajo-county-az/show-low/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 58, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 15s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/navajo-county-az/taylor",
+      "url": "https://azmortgagebrothers.com/service-areas/navajo-county-az/taylor/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 59, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 15s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/navajo-county-az/winslow",
+      "url": "https://azmortgagebrothers.com/service-areas/navajo-county-az/winslow/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 60, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 14s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/pima-county-az",
+      "url": "https://azmortgagebrothers.com/service-areas/pima-county-az/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 61, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 14s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/pima-county-az/oro-valley",
+      "url": "https://azmortgagebrothers.com/service-areas/pima-county-az/oro-valley/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 62, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 14s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/pima-county-az/sahuarita",
+      "url": "https://azmortgagebrothers.com/service-areas/pima-county-az/sahuarita/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 63, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 13s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/pima-county-az/tucson",
+      "url": "https://azmortgagebrothers.com/service-areas/pima-county-az/tucson/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 64, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 13s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/pima-county-az/vail",
+      "url": "https://azmortgagebrothers.com/service-areas/pima-county-az/vail/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 65, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 13s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/pinal-county-az",
+      "url": "https://azmortgagebrothers.com/service-areas/pinal-county-az/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 66, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 12s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/pinal-county-az/apache-junction",
+      "url": "https://azmortgagebrothers.com/service-areas/pinal-county-az/apache-junction/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 67, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 12s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/pinal-county-az/casa-grande",
+      "url": "https://azmortgagebrothers.com/service-areas/pinal-county-az/casa-grande/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 68, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 12s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/pinal-county-az/coolidge",
+      "url": "https://azmortgagebrothers.com/service-areas/pinal-county-az/coolidge/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 69, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 12s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/pinal-county-az/florence",
+      "url": "https://azmortgagebrothers.com/service-areas/pinal-county-az/florence/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 70, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 11s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/pinal-county-az/queen-creek",
+      "url": "https://azmortgagebrothers.com/service-areas/pinal-county-az/queen-creek/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 71, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 11s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/pinal-county-az/san-tan-valley",
+      "url": "https://azmortgagebrothers.com/service-areas/pinal-county-az/san-tan-valley/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 72, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 11s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/santa-cruz-county-az",
+      "url": "https://azmortgagebrothers.com/service-areas/santa-cruz-county-az/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 73, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 10s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/yavapai-county-az",
+      "url": "https://azmortgagebrothers.com/service-areas/yavapai-county-az/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 74, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 10s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/yavapai-county-az/chino-valley",
+      "url": "https://azmortgagebrothers.com/service-areas/yavapai-county-az/chino-valley/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 75, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 10s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/yavapai-county-az/clarkdale",
+      "url": "https://azmortgagebrothers.com/service-areas/yavapai-county-az/clarkdale/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 76, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 9s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/yavapai-county-az/cornville",
+      "url": "https://azmortgagebrothers.com/service-areas/yavapai-county-az/cornville/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 77, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 9s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/service-areas/yavapai-county-az/dewey",
+      "url": "https://azmortgagebrothers.com/service-areas/yavapai-county-az/dewey/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 78, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 9s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/mortgage-broker-loan-officer-originator",
+      "url": "https://azmortgagebrothers.com/mortgage-broker-loan-officer-originator/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 79, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 8s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/mortgage-calculator-arizona",
+      "url": "https://azmortgagebrothers.com/mortgage-calculator-arizona/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 80, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 8s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/mortgage-for-excellent-credit",
+      "url": "https://azmortgagebrothers.com/mortgage-for-excellent-credit/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 81, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 8s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/mortgage-for-good-credit",
+      "url": "https://azmortgagebrothers.com/mortgage-for-good-credit/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 82, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 8s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/mortgage-for-poor-credit",
+      "url": "https://azmortgagebrothers.com/mortgage-for-poor-credit/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 83, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 7s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/mortgage-processor",
+      "url": "https://azmortgagebrothers.com/mortgage-processor/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 84, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 7s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/realtorteam",
+      "url": "https://azmortgagebrothers.com/realtorteam/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 85, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 7s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/reverse-mortgage-loan-officer",
+      "url": "https://azmortgagebrothers.com/reverse-mortgage-loan-officer/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 86, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 6s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/videos/important-mortgage-home-loan-topics",
+      "url": "https://azmortgagebrothers.com/videos/important-mortgage-home-loan-topics/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 87, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 6s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/videos/mortgage-loan-products",
+      "url": "https://azmortgagebrothers.com/videos/mortgage-loan-products/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 88, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 6s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/videos/mortgage-rates-today",
+      "url": "https://azmortgagebrothers.com/videos/mortgage-rates-today/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 89, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 6s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/videos/phoenix-market-and-real-estate-updates",
+      "url": "https://azmortgagebrothers.com/videos/phoenix-market-and-real-estate-updates/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 90, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 5s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/videos/real-estate-agent-quick-tips",
+      "url": "https://azmortgagebrothers.com/videos/real-estate-agent-quick-tips/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 91, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 5s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/videos/reverse-mortgage",
+      "url": "https://azmortgagebrothers.com/videos/reverse-mortgage/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 92, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 5s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/videos/video-podcast-for-the-mortgage-brothers-show",
+      "url": "https://azmortgagebrothers.com/videos/video-podcast-for-the-mortgage-brothers-show/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 93, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 4s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/when-is-a-mortgage-payment-actually-considered-late",
+      "url": "https://azmortgagebrothers.com/when-is-a-mortgage-payment-actually-considered-late/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 94, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 4s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/understanding-amortization-chart",
+      "url": "https://azmortgagebrothers.com/understanding-amortization-chart/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 95, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 4s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-refinance-process",
+      "url": "https://azmortgagebrothers.com/arizona-refinance-process/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 96, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 3s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-mortgage-closing-process",
+      "url": "https://azmortgagebrothers.com/arizona-mortgage-closing-process/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 97, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 3s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-mortgage-closing-costs",
+      "url": "https://azmortgagebrothers.com/arizona-mortgage-closing-costs/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 98, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 3s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/ultimate-guide-first-mortgage",
+      "url": "https://azmortgagebrothers.com/ultimate-guide-first-mortgage/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 99, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 2s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/how-to-sell-my-house-fast-in-arizona",
+      "url": "https://azmortgagebrothers.com/how-to-sell-my-house-fast-in-arizona/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 100, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 2s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-real-estate-trends-in-2026-predicting-mortgage-rates-for-the-coming-year",
+      "url": "https://azmortgagebrothers.com/arizona-real-estate-trends-in-2026-predicting-mortgage-rates-for-the-coming-year/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 101, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 2s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/what-is-a-jumbo-loan-everything-you-need-to-know-before-applying",
+      "url": "https://azmortgagebrothers.com/what-is-a-jumbo-loan-everything-you-need-to-know-before-applying/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 102, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 1s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/how-to-get-a-mortgage-in-arizona-with-fair-or-improving-credit",
+      "url": "https://azmortgagebrothers.com/how-to-get-a-mortgage-in-arizona-with-fair-or-improving-credit/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 103, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 1s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/top-7-reasons-arizona-investment-home-buyers-choose-private-money-lenders",
+      "url": "https://azmortgagebrothers.com/top-7-reasons-arizona-investment-home-buyers-choose-private-money-lenders/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 104, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 1s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/who-qualifies-for-a-reverse-mortgage-understanding-eligibility-requirements",
+      "url": "https://azmortgagebrothers.com/who-qualifies-for-a-reverse-mortgage-understanding-eligibility-requirements/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 105, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 1s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/how-to-calculate-how-much-pmi-mortgage-insurance-will-be",
+      "url": "https://azmortgagebrothers.com/how-to-calculate-how-much-pmi-mortgage-insurance-will-be/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 106, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 1s, resets at Tue Aug 25 2026 06:11:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-mortgage-basics",
+      "url": "https://azmortgagebrothers.com/arizona-mortgage-basics/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 12, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 14s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/why-use-an-arizona-mortgage-broker",
+      "url": "https://azmortgagebrothers.com/why-use-an-arizona-mortgage-broker/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 13, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 14s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-understanding-your-credit",
+      "url": "https://azmortgagebrothers.com/arizona-understanding-your-credit/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 14, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 14s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/expect-youre-not-first-time-mortgage-shopper",
+      "url": "https://azmortgagebrothers.com/expect-youre-not-first-time-mortgage-shopper/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 15, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 13s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/va-loans-for-first-time-homebuyers-in-arizona-your-path-to-affordable-homeownership",
+      "url": "https://azmortgagebrothers.com/va-loans-for-first-time-homebuyers-in-arizona-your-path-to-affordable-homeownership/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 16, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 13s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/navigating-mortgage-options-during-divorce-a-complete-guide",
+      "url": "https://azmortgagebrothers.com/navigating-mortgage-options-during-divorce-a-complete-guide/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 17, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 13s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/what-if-my-spouse-dies-and-im-not-on-the-mortgage",
+      "url": "https://azmortgagebrothers.com/what-if-my-spouse-dies-and-im-not-on-the-mortgage/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 18, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 12s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/how-does-a-mortgage-apr-work-and-what-does-it-mean",
+      "url": "https://azmortgagebrothers.com/how-does-a-mortgage-apr-work-and-what-does-it-mean/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 19, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 12s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/getting-a-mortgage-with-employment-gaps",
+      "url": "https://azmortgagebrothers.com/getting-a-mortgage-with-employment-gaps/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 20, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 12s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/better-getting-mortgage-couple-vs-single-applicant",
+      "url": "https://azmortgagebrothers.com/better-getting-mortgage-couple-vs-single-applicant/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 21, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 11s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/can-i-relocate-and-get-a-mortgage-while-working-remotely-out-of-state",
+      "url": "https://azmortgagebrothers.com/can-i-relocate-and-get-a-mortgage-while-working-remotely-out-of-state/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 22, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 11s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/dscr-loan-the-best-alternative-to-hard-money",
+      "url": "https://azmortgagebrothers.com/dscr-loan-the-best-alternative-to-hard-money/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 23, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 11s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-binsr-buyer-inspection-notice-and-seller-response",
+      "url": "https://azmortgagebrothers.com/arizona-binsr-buyer-inspection-notice-and-seller-response/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 24, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 11s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/what-you-need-to-know-about-the-arizona-prequalification-form",
+      "url": "https://azmortgagebrothers.com/what-you-need-to-know-about-the-arizona-prequalification-form/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 25, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 10s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-mortgage-rates-and-the-interest-deduction",
+      "url": "https://azmortgagebrothers.com/arizona-mortgage-rates-and-the-interest-deduction/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 26, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 10s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/prepayment-penalties-on-your-arizona-mortgage",
+      "url": "https://azmortgagebrothers.com/prepayment-penalties-on-your-arizona-mortgage/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 27, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 10s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/buying-down-your-arizona-interest-rate",
+      "url": "https://azmortgagebrothers.com/buying-down-your-arizona-interest-rate/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 28, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 9s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-second-mortgages",
+      "url": "https://azmortgagebrothers.com/arizona-second-mortgages/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 29, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 9s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/arizona-real-estate-capital-gains-is-back",
+      "url": "https://azmortgagebrothers.com/arizona-real-estate-capital-gains-is-back/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 30, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 9s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/delayed-financing-how-to-get-cashout-without-waiting-6-months-seasoning",
+      "url": "https://azmortgagebrothers.com/delayed-financing-how-to-get-cashout-without-waiting-6-months-seasoning/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 31, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 8s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/what-is-an-example-of-a-mortgage-recast",
+      "url": "https://azmortgagebrothers.com/what-is-an-example-of-a-mortgage-recast/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 32, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 8s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/buying-a-house-with-a-cash-offer-and-simultaneously-getting-mortgage-financing",
+      "url": "https://azmortgagebrothers.com/buying-a-house-with-a-cash-offer-and-simultaneously-getting-mortgage-financing/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 33, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 8s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/grossing-up-your-income-what-does-that-mean",
+      "url": "https://azmortgagebrothers.com/grossing-up-your-income-what-does-that-mean/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 34, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 7s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/can-i-get-a-3rd-mortgage",
+      "url": "https://azmortgagebrothers.com/can-i-get-a-3rd-mortgage/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 35, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 7s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house",
+      "url": "https://azmortgagebrothers.com/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 36, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 7s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/what-is-the-difference-between-aan-arizona-condo-and-arizona-townhome",
+      "url": "https://azmortgagebrothers.com/what-is-the-difference-between-aan-arizona-condo-and-arizona-townhome/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 37, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 7s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/detached-guest-home-casita-appraisal-issues",
+      "url": "https://azmortgagebrothers.com/detached-guest-home-casita-appraisal-issues/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 38, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 6s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/how-to-count-commissions-and-bonuses-and-tips",
+      "url": "https://azmortgagebrothers.com/how-to-count-commissions-and-bonuses-and-tips/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 39, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 6s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/who-can-and-cannot-be-on-title-when-you-get-a-mortgage",
+      "url": "https://azmortgagebrothers.com/who-can-and-cannot-be-on-title-when-you-get-a-mortgage/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 40, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 6s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/is-the-mortgage-interest-tax-deduction-really-a-big-deal",
+      "url": "https://azmortgagebrothers.com/is-the-mortgage-interest-tax-deduction-really-a-big-deal/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 41, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 5s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/if-i-have-1-mortgage-late-in-the-past-12-months-can-i-get-approved-for-a-mortgage",
+      "url": "https://azmortgagebrothers.com/if-i-have-1-mortgage-late-in-the-past-12-months-can-i-get-approved-for-a-mortgage/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 42, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 5s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/what-is-a-conventional-home-loan-the-complete-first-time-buyer-mortgage-guide",
+      "url": "https://azmortgagebrothers.com/what-is-a-conventional-home-loan-the-complete-first-time-buyer-mortgage-guide/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 43, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 5s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/glossary",
+      "url": "https://azmortgagebrothers.com/glossary/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 44, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 4s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/the-broker-advantage",
+      "url": "https://azmortgagebrothers.com/the-broker-advantage/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 45, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 4s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/can-i-simply-payoff-credit-cards-to-qualify-for-a-mortgage",
+      "url": "https://azmortgagebrothers.com/can-i-simply-payoff-credit-cards-to-qualify-for-a-mortgage/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 46, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 4s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/air-conditionings-impact-phoenix-valley-real-estate",
+      "url": "https://azmortgagebrothers.com/air-conditionings-impact-phoenix-valley-real-estate/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 47, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 3s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/canceling-your-fha-mip-is-easier-than-you-think",
+      "url": "https://azmortgagebrothers.com/canceling-your-fha-mip-is-easier-than-you-think/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 48, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 3s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/connecting-guest-house-main-house-add-value",
+      "url": "https://azmortgagebrothers.com/connecting-guest-house-main-house-add-value/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 49, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 3s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/how-a-rapid-rescore-can-help-to-get-qualified-for-a-mortgage",
+      "url": "https://azmortgagebrothers.com/how-a-rapid-rescore-can-help-to-get-qualified-for-a-mortgage/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 50, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 3s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/seller-concessions-to-buyers-how-much",
+      "url": "https://azmortgagebrothers.com/seller-concessions-to-buyers-how-much/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 51, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 2s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/fha-flip-rule-waiver-expired-you-need-wait-90-days-to-write-a-contract",
+      "url": "https://azmortgagebrothers.com/fha-flip-rule-waiver-expired-you-need-wait-90-days-to-write-a-contract/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 52, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 2s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/is-homeownership-hereditary",
+      "url": "https://azmortgagebrothers.com/is-homeownership-hereditary/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 53, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 2s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/mortgage-101",
+      "url": "https://azmortgagebrothers.com/mortgage-101/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 54, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 1s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/mortgage-rates-tool-arizona",
+      "url": "https://azmortgagebrothers.com/mortgage-rates-tool-arizona/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 55, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 1s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/assumable-mortgage",
+      "url": "https://azmortgagebrothers.com/assumable-mortgage/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 56, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 1s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/mortgage-basics",
+      "url": "https://azmortgagebrothers.com/mortgage-basics/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 57, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 1s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/fha-loans",
+      "url": "https://azmortgagebrothers.com/fha-loans/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 58, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 1s, resets at Tue Aug 25 2026 06:12:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/spouse-estate-considerations",
+      "url": "https://azmortgagebrothers.com/spouse-estate-considerations/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 11, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 12s, resets at Tue Aug 25 2026 06:13:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/pillar-post",
+      "url": "https://azmortgagebrothers.com/pillar-post/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 12, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 12s, resets at Tue Aug 25 2026 06:13:11 GMT+0000 (Coordinated Universal Time)\"}"
+    },
+    {
+      "pathname": "/author/eddie-knoell",
+      "url": "https://azmortgagebrothers.com/author/eddie-knoell/",
+      "error": "Error: {\"success\":false,\"error\":\"Rate limit exceeded. Consumed (req/min): 13, Remaining (req/min): 0. Upgrade your plan at https://firecrawl.dev/pricing for increased rate limits or please retry after 12s, resets at Tue Aug 25 2026 06:13:11 GMT+0000 (Coordinated Universal Time)\"}"
+    }
+  ],
+  "changes": [
+    {
+      "pathname": "/refinancing-arizona",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Mortgage Refinancing in Arizona - Lower Your Payments",
+      "newTitle": "Mortgage Refinancing in Arizona - Lower Your Payments",
+      "oldDesc": "Save money with mortgage refinancing in Arizona. Mortgage Brothers LLC offer com",
+      "newDesc": "Save money with mortgage refinancing in Arizona. Arizona Mortgage Brothers offer"
+    },
+    {
+      "pathname": "/private-money-lender-arizona",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Private Money and Portfolio Loans Arizona",
+      "newTitle": "Private Money and Portfolio Loans Arizona",
+      "oldDesc": "Secure private money and portfolio loans in Arizona with Mortgage Brothers LLC. ",
+      "newDesc": "Secure private money and portfolio loans in Arizona with Arizona Mortgage Brothe"
+    },
+    {
+      "pathname": "/mortgage-loan-programs-arizona",
+      "titleChanged": true,
+      "descChanged": true,
+      "oldTitle": "Unlock 6 Amazing Loan Programs in Arizona Today!",
+      "newTitle": "Unlock 10 Amazing Loan Programs in Arizona Today!",
+      "oldDesc": "Discover tailored loan programs in Arizona with Mortgage Brothers LLC. Find the ",
+      "newDesc": "Discover tailored loan programs in Arizona with Arizona Mortgage Brothers. Find "
+    },
+    {
+      "pathname": "/about-us",
+      "titleChanged": true,
+      "descChanged": true,
+      "oldTitle": "About Us: Mortgage Brothers LLC Story",
+      "newTitle": "About Us: Arizona Mortgage Brothers Story",
+      "oldDesc": "Discover the story behind Mortgage Brothers LLC. Learn about our team, values, a",
+      "newDesc": "Discover the story behind Arizona Mortgage Brothers. Learn about our team, value"
+    },
+    {
+      "pathname": "/contact-us",
+      "titleChanged": true,
+      "descChanged": true,
+      "oldTitle": "Contact Mortgage Brothers LLC – Get in Touch",
+      "newTitle": "Contact Arizona Mortgage Brothers – Get in Touch",
+      "oldDesc": "Reach out to our experienced team at Contact Mortgage Brothers LLC. We’re here t",
+      "newDesc": "Reach out to our experienced team at Contact Arizona Mortgage Brothers. We’re he"
+    },
+    {
+      "pathname": "/job-opportunities",
+      "titleChanged": true,
+      "descChanged": true,
+      "oldTitle": "Mortgage Job Opportunities | Mortgage Brothers LLC Team",
+      "newTitle": "Mortgage Job Opportunities | Arizona Mortgage Brothers Team",
+      "oldDesc": "Explore rewarding job opportunities at Mortgage Brothers LLC and take the next s",
+      "newDesc": "Explore rewarding job opportunities at Arizona Mortgage Brothers and take the ne"
+    },
+    {
+      "pathname": "/blog",
+      "titleChanged": true,
+      "descChanged": true,
+      "oldTitle": "Mortgage Brothers LLC Blog: Expert Tips & Insights",
+      "newTitle": "Arizona Mortgage Brothers Blog: Expert Tips & Insights",
+      "oldDesc": "Stay informed with the Mortgage Brothers LLC blog. Explore expert tips, industry",
+      "newDesc": "Stay informed with the Arizona Mortgage Brothers blog. Explore expert tips, indu"
+    },
+    {
+      "pathname": "/conventional-home-loans-arizona",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Conventional Home Loans in Arizona - Easy & Affordable",
+      "newTitle": "Conventional Home Loans in Arizona - Easy & Affordable",
+      "oldDesc": "Simplify your path to homeownership with conventional home loans in Arizona. Mor",
+      "newDesc": "Simplify your path to homeownership with conventional home loans in Arizona. AZ "
+    },
+    {
+      "pathname": "/fha-home-loans-arizona",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "FHA Home Loans in Arizona - Affordable Homeownership",
+      "newTitle": "FHA Home Loans in Arizona - Affordable Homeownership",
+      "oldDesc": "Explore FHA home loans in Arizona with Mortgage Brothers LLC. Low down payments ",
+      "newDesc": "Explore FHA home loans in Arizona with Arizona Mortgage Brothers. Low down payme"
+    },
+    {
+      "pathname": "/fha-streamline-refinance-arizona",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "FHA Streamline Refinance in Arizona - Save on Your Loan",
+      "newTitle": "FHA Streamline Refinance in Arizona - Save on Your Loan",
+      "oldDesc": "Simplify your mortgage with FHA Streamline Refinance in Arizona. Lower your paym",
+      "newDesc": "Simplify your mortgage with FHA Streamline Refinance in Arizona. Lower your paym"
+    },
+    {
+      "pathname": "/first-time-home-buyer-arizona-guide",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "First-time Home Buyer in Arizona - Your Complete Guide",
+      "newTitle": "First-time Home Buyer in Arizona - Your Complete Guide",
+      "oldDesc": "Navigate the home buying process with ease! Mortgage Brothers LLC provide a step",
+      "newDesc": "Navigate the home buying process with ease! Arizona Mortgage Brothers provide a "
+    },
+    {
+      "pathname": "/jumbo-loans-arizona",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Jumbo Loans in Arizona - Finance Your Dream Home",
+      "newTitle": "Jumbo Loans in Arizona - Finance Your Dream Home",
+      "oldDesc": "Need a larger loan? Mortgage Brothers LLC offer competitive rates on jumbo loans",
+      "newDesc": "Need a larger loan? Arizona Mortgage Brothers offer competitive rates on jumbo l"
+    },
+    {
+      "pathname": "/reverse-mortgage-home-purchase-arizona",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Reverse Mortgage for a Home Purchase in Arizona",
+      "newTitle": "Reverse Mortgage for a Home Purchase in Arizona",
+      "oldDesc": "Buy your dream home with a reverse mortgage for a home purchase. Mortgage Brothe",
+      "newDesc": "Buy your dream home with a reverse mortgage for a home purchase. Arizona Mortgag"
+    },
+    {
+      "pathname": "/service-areas/cochise-county-az",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Cochise County - Arizona Home Loans | The Mortgage Brothers",
+      "newTitle": "Cochise County - Arizona Home Loans | The Mortgage Brothers",
+      "oldDesc": "Get trusted mortgage solutions in Cochise County, AZ. Mortgage Brothers LLC offe",
+      "newDesc": "Get trusted mortgage solutions in Cochise County, AZ. AZ Mortgage Brothers offer"
+    },
+    {
+      "pathname": "/service-areas/coconino-county-az/doney-park",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Doney Park Mortgages: Get Mortgage Broker in Doney Park Az",
+      "newTitle": "Doney Park Mortgages: Get Mortgage Broker in Doney Park Az",
+      "oldDesc": "Mortgage Brothers LLC provides Doney Park Mortgages solutions, helping buyers an",
+      "newDesc": "AZ Mortgage Brothers provides Doney Park Mortgages solutions, helping buyers and"
+    },
+    {
+      "pathname": "/service-areas/coconino-county-az/happy-jack",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Happy Jack Mortgages: Get Mortgage Brokers in Happy Jack Az",
+      "newTitle": "Happy Jack Mortgages: Get Mortgage Brokers in Happy Jack Az",
+      "oldDesc": "Mortgage Brothers LLC provides expert guidance on Happy Jack mortgages, helping ",
+      "newDesc": "AZ Mortgage Brothers provides expert guidance on Happy Jack mortgages, helping b"
+    },
+    {
+      "pathname": "/service-areas/coconino-county-az/sedona",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Sedona Mortgages: Get Trusted Mortgage Broker in Sedona Az",
+      "newTitle": "Sedona Mortgages: Get Trusted Mortgage Broker in Sedona Az",
+      "oldDesc": "Mortgage Brothers LLC provides expert guidance on Sedona mortgages solutions, he",
+      "newDesc": "AZ Mortgage Brothers provides expert guidance on Sedona mortgages solutions, hel"
+    },
+    {
+      "pathname": "/service-areas/gila-county-az",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Gila County - Arizona Home Loans | The Mortgage Brothers",
+      "newTitle": "Gila County - Arizona Home Loans | The Mortgage Brothers",
+      "oldDesc": "Get expert home loan services in Gila County, AZ with Mortgage Brothers LLC. Exp",
+      "newDesc": "Get expert home loan services in Gila County, AZ with AZ Mortgage Brothers. Expl"
+    },
+    {
+      "pathname": "/service-areas/gila-county-az/christopher-creek",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Christopher Creek - Arizona Home Loans | The Mortgage Brothers",
+      "newTitle": "Christopher Creek - Arizona Home Loans | The Mortgage Brothers",
+      "oldDesc": "Get trusted home loan services in Christopher Creek, Arizona with Mortgage Broth",
+      "newDesc": "Get trusted home loan services in Christopher Creek, Arizona with AZ Mortgage Br"
+    },
+    {
+      "pathname": "/service-areas/gila-county-az/globe",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Globe - Arizona Home Loans | The Mortgage Brothers",
+      "newTitle": "Globe - Arizona Home Loans | The Mortgage Brothers",
+      "oldDesc": "Get expert home loan services in Globe, Arizona with Mortgage Brothers LLC. Comp",
+      "newDesc": "Get expert home loan services in Globe, Arizona with AZ Mortgage Brothers. Compa"
+    },
+    {
+      "pathname": "/service-areas/gila-county-az/pine",
+      "titleChanged": true,
+      "descChanged": true,
+      "oldTitle": "Pine - Arizona Home Loans | The Mortgage Brothers",
+      "newTitle": "Pine Mortgage Experts – Your Local Home Loan Partners",
+      "oldDesc": "Looking for a home loan in Pine, AZ? Our local experts help with mortgages for p",
+      "newDesc": "Looking for a home loan in Pine Mortgage, AZ? Our local experts help with mortga"
+    },
+    {
+      "pathname": "/service-areas/gila-county-az/star-valley",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Star Valley - Arizona Home Loans | The Mortgage Brothers",
+      "newTitle": "Star Valley - Arizona Home Loans | The Mortgage Brothers",
+      "oldDesc": "Get expert home loan services in Star Valley, Arizona with Mortgage Brothers LLC",
+      "newDesc": "Get expert home loan services in Star Valley, Arizona with AZ Mortgage Brothers."
+    },
+    {
+      "pathname": "/service-areas/gila-county-az/washington-park",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Washington Park - Arizona Home Loans | The Mortgage Brothers",
+      "newTitle": "Washington Park - Arizona Home Loans | The Mortgage Brothers",
+      "oldDesc": "Get expert home loan services in Washington Park, Arizona with Mortgage Brothers",
+      "newDesc": "Get expert home loan services in Washington Park, Arizona with AZ Mortgage Broth"
+    },
+    {
+      "pathname": "/service-areas/graham-county-az/pima",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Pima Mortgage Experts – Your Trusted Home Loan Partners",
+      "newTitle": "Pima Mortgage Experts – Your Trusted Home Loan Partners",
+      "oldDesc": "Looking for Pima Mortgage solutions? Mortgage Brothers LLC offers expert home lo",
+      "newDesc": "Looking for Pima Mortgage solutions? AZ Mortgage Brothers offers expert home loa"
+    },
+    {
+      "pathname": "/service-areas/graham-county-az/thatcher",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Thatcher - Arizona Home Loans | The Mortgage Brothers",
+      "newTitle": "Thatcher - Arizona Home Loans | The Mortgage Brothers",
+      "oldDesc": "Need a mortgage in Thatcher, AZ? Mortgage Brothers LLC provides expert home loan",
+      "newDesc": "Need a mortgage in Thatcher, AZ? AZ Mortgage Brothers provides expert home loans"
+    },
+    {
+      "pathname": "/service-areas/maricopa-county-az/avondale",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Avondale Mortgage Experts: Trusted Home Loan Partners",
+      "newTitle": "Avondale Mortgage Experts: Trusted Home Loan Partners",
+      "oldDesc": "Looking for a mortgage broker in Avondale, AZ? Mortgage Brothers LLC helps homeb",
+      "newDesc": "Looking for a mortgage broker in Avondale, AZ? AZ Mortgage Brothers helps homebu"
+    },
+    {
+      "pathname": "/service-areas/maricopa-county-az/rio-verde",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Rio Verde Mortgage Experts: Your Best Home Loan Partners",
+      "newTitle": "Rio Verde Mortgage Experts: Your Best Home Loan Partners",
+      "oldDesc": "Get expert Rio Verde mortgage services with Mortgage Brothers LLC. Explore home ",
+      "newDesc": "Get expert Rio Verde mortgage services with AZ Mortgage Brothers. Explore home l"
+    },
+    {
+      "pathname": "/service-areas/yuma-county-az",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Yuma County - Arizona Home Loans | The Mortgage Brothers",
+      "newTitle": "Yuma County - Arizona Home Loans | The Mortgage Brothers",
+      "oldDesc": "Looking for a mortgage in Yuma County, AZ? Mortgage Brothers LLC offers expert h",
+      "newDesc": "Looking for a mortgage in Yuma County, AZ? AZ Mortgage Brothers offers expert ho"
+    },
+    {
+      "pathname": "/service-areas/yuma-county-az/san-luis",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "San Luis - Arizona Home Loans | The Mortgage Brothers",
+      "newTitle": "San Luis - Arizona Home Loans | The Mortgage Brothers",
+      "oldDesc": "Looking for a mortgage in San Luis, AZ? Mortgage Brothers LLC offers expert home",
+      "newDesc": "Looking for a mortgage in San Luis, AZ? AZ Mortgage Brothers offers expert home "
+    },
+    {
+      "pathname": "/service-areas/yuma-county-az/yuma",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Yuma Mortgage Experts: Your Local Home Loans Partners",
+      "newTitle": "Yuma Mortgage Experts: Your Local Home Loans Partners",
+      "oldDesc": "Looking for a trusted mortgage broker in Yuma, AZ? Mortgage Brothers LLC offers ",
+      "newDesc": "Looking for a trusted mortgage broker in Yuma, AZ? AZ Mortgage Brothers offers h"
+    },
+    {
+      "pathname": "/va-loans-arizona",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "VA Loans in Arizona - Benefits for Veterans",
+      "newTitle": "VA Loans in Arizona - Benefits for Veterans",
+      "oldDesc": "Unlock the benefits of VA loans in Arizona with Mortgage Brothers LLC. No down p",
+      "newDesc": "Unlock the benefits of VA loans in Arizona with Arizona Mortgage Brothers. No do"
+    },
+    {
+      "pathname": "/service-areas/santa-cruz-county-az/santa-cruz",
+      "titleChanged": true,
+      "descChanged": true,
+      "newTitle": "Santa Cruz AZ Mortgage Experts – Your Home Loan Partners",
+      "oldDesc": "",
+      "newDesc": "Get expert mortgage solutions in Santa Cruz, AZ. Mortgage Brothers offers home l"
+    },
+    {
+      "pathname": "/conventional-vs-fha-loans-arizona",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Conventional vs FHA Loans in Arizona - Compare & Choose",
+      "newTitle": "Conventional vs FHA Loans in Arizona - Compare & Choose",
+      "oldDesc": "Unsure which loan is right for you? Mortgage Brothers LLC break down Conventiona",
+      "newDesc": "Unsure which loan is right for you? Arizona Mortgage Brothers break down Convent"
+    },
+    {
+      "pathname": "/loan-applications",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Simplify Your Loan Applications Process Today",
+      "newTitle": "Simplify Your Loan Applications Process Today",
+      "oldDesc": "Streamline your journey with our secure Loan Applications process at Mortgage Br",
+      "newDesc": "Streamline your journey with our secure Loan Applications process at Arizona Mor"
+    },
+    {
+      "pathname": "/loan-officer-assistant",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Loan Officer Assistant | The Mortgage Brothers Team",
+      "newTitle": "Loan Officer Assistant | The Mortgage Brothers Team",
+      "oldDesc": "Jumpstart your career as a Loan Officer Assistant at Mortgage Brothers LLC. No e",
+      "newDesc": "Jumpstart your career as a Loan Officer Assistant at Arizona Mortgage Brothers. "
+    },
+    {
+      "pathname": "/what-are-mortgage-trigger-leads",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "What Are Mortgage Trigger Leads & How to Stop Unwanted Calls",
+      "newTitle": "What Are Mortgage Trigger Leads & How to Stop Unwanted Calls",
+      "oldDesc": "As of March 2026, federal law restricts credit bureaus from selling mortgage tri",
+      "newDesc": "Learn how mortgage trigger leads work, why lenders use them, and how to protect "
+    },
+    {
+      "pathname": "/arizona-mortgage-approval-process",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Simplify with Arizona Mortgage Approval Process",
+      "newTitle": "Simplify with Arizona Mortgage Approval Process",
+      "oldDesc": "Master each step of the Arizona Mortgage Approval Process with expert guidance f",
+      "newDesc": "Master each step of the Arizona Mortgage Approval Process with expert guidance f"
+    },
+    {
+      "pathname": "/arizona-mortgage-payments",
+      "titleChanged": false,
+      "descChanged": true,
+      "oldTitle": "Ultimate Guide: Optimize Your Arizona Mortgage Payments",
+      "newTitle": "Ultimate Guide: Optimize Your Arizona Mortgage Payments",
+      "oldDesc": "Gain comprehensive insights into optimizing your Mortgage Payments through exper",
+      "newDesc": "Gain comprehensive insights into optimizing your Mortgage Payments through exper"
+    }
+  ],
+  "homepage": {
+    "section": "pages",
+    "sourceUrl": "https://azmortgagebrothers.com/",
+    "title": "Arizona Mortgage Brothers | Phoenix Home Loan Broker",
+    "description": "We live here, we work here, and we know this market better than anyone. Mortgage broker serving all of Arziona — Conventional, FHA, VA, Jumbo & Reverse Mortgage",
+    "openGraph": {
+      "title": "Arizona Mortgage Brothers | Phoenix Home Loan Broker",
+      "description": "We live here, we work here, and we know this market better than anyone. Mortgage broker serving all of Arziona — Conventional, FHA, VA, Jumbo & Reverse Mortgage",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/your-trusted-mortgage-experts.jpg",
+      "url": "https://azmortgagebrothers.com/",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Arizona Mortgage Brothers | Phoenix Home Loan Broker",
+      "description": "We live here, we work here, and we know this market better than anyone. Mortgage broker serving all of Arziona — Conventional, FHA, VA, Jumbo & Reverse Mortgage",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/your-trusted-mortgage-experts.jpg"
+    }
+  },
+  "aboutUs": {
+    "title": "About Us: Arizona Mortgage Brothers Story",
+    "description": "Discover the story behind Arizona Mortgage Brothers. Learn about our team, values, and commitment to your mortgage success."
+  }
+}

@@ -7,6 +7,7 @@ import Link from "next/link";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
+import CountyCityCards from "../../component/CountyCityCards";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/graham-county-az/");
 
@@ -42,16 +43,7 @@ export default function GrahamCountyPage() {
               <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">Graham County mortgage services</h2>
               <p className="text-brand-text-muted text-[15px] lg:text-[16px]">Select your city below for local mortgage expertise.</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-              {cities.map((city, index) => (
-                <Link key={index} href={`/service-areas/graham-county-az/${city.name.toLowerCase().replace(/\./g, "").replace(/\s+/g, "-")}/`} className="bg-[#faf7f0] rounded-2xl p-6 lg:p-7 border border-[#e8e0d0]/50 shadow-sm flex flex-col hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl transition-all duration-300">
-                  <div className="flex items-center gap-2 mb-4 text-brand-green-deep">
-                    <h3 className="text-[17px] font-bold tracking-tight">{city.name}</h3>
-                  </div>
-                  <p className="text-brand-text-muted text-[13.5px] lg:text-[14px] leading-relaxed">{city.description}</p>
-                </Link>
-              ))}
-            </div>
+            <CountyCityCards countySlug="graham-county-az" cities={cities} />
           </div>
         </section>
 

@@ -21,19 +21,19 @@
   "/about-us": {
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/about-us/",
-    "title": "About Us: Arizona Mortgage Brothers Story",
-    "description": "Discover the story behind Arizona Mortgage Brothers. Learn about our team, values, and commitment to your mortgage success.",
+    "title": "About Us: Mortgage Brothers LLC Story",
+    "description": "Discover the story behind Mortgage Brothers LLC. Learn about our team, values, and commitment to your mortgage success.",
     "openGraph": {
-      "title": "About Us: Arizona Mortgage Brothers Story",
-      "description": "Discover the story behind Arizona Mortgage Brothers. Learn about our team, values, and commitment to your mortgage success.",
+      "title": "About Us: Mortgage Brothers LLC Story",
+      "description": "Discover the story behind Mortgage Brothers LLC. Learn about our team, values, and commitment to your mortgage success.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/your-phoenix-arizona-mortgage-team.jpg",
       "url": "https://azmortgagebrothers.com/about-us/",
       "type": "article"
     },
     "twitter": {
       "card": "summary_large_image",
-      "title": "About Us: Arizona Mortgage Brothers Story",
-      "description": "Discover the story behind Arizona Mortgage Brothers. Learn about our team, values, and commitment to your mortgage success.",
+      "title": "About Us: Mortgage Brothers LLC Story",
+      "description": "Discover the story behind Mortgage Brothers LLC. Learn about our team, values, and commitment to your mortgage success.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/your-phoenix-arizona-mortgage-team.jpg"
     }
   },
@@ -76,7 +76,7 @@
     }
   },
   "/arizona-mortgage-insights": {
-    "section": "pages",
+    "section": "cats",
     "sourceUrl": "https://azmortgagebrothers.com/arizona-mortgage-insights/",
     "title": "Arizona Mortgage Insights and Market Tips",
     "description": "Discover Arizona mortgage insights, including trends and tax benefits, for smarter real estate decisions in Arizona.",
@@ -135,19 +135,19 @@
   "/blog": {
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/blog/",
-    "title": "Arizona Mortgage Brothers Blog: Expert Tips & Insights",
-    "description": "Stay informed with the Arizona Mortgage Brothers blog. Explore expert tips, industry updates, and insights on mortgages and home loans in Arizona.",
+    "title": "Mortgage Brothers LLC Blog: Expert Tips & Insights",
+    "description": "Stay informed with the Mortgage Brothers LLC blog. Explore expert tips, industry updates, and insights on mortgages and home loans in Arizona.",
     "openGraph": {
-      "title": "Arizona Mortgage Brothers Blog: Expert Tips & Insights",
-      "description": "Stay informed with the Arizona Mortgage Brothers blog. Explore expert tips, industry updates, and insights on mortgages and home loans in Arizona.",
+      "title": "Mortgage Brothers LLC Blog: Expert Tips & Insights",
+      "description": "Stay informed with the Mortgage Brothers LLC blog. Explore expert tips, industry updates, and insights on mortgages and home loans in Arizona.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/mortgage-tips-insights-arizona-blog.jpg",
       "url": "https://azmortgagebrothers.com/blog/",
       "type": "article"
     },
     "twitter": {
       "card": "summary_large_image",
-      "title": "Arizona Mortgage Brothers Blog: Expert Tips & Insights",
-      "description": "Stay informed with the Arizona Mortgage Brothers blog. Explore expert tips, industry updates, and insights on mortgages and home loans in Arizona.",
+      "title": "Mortgage Brothers LLC Blog: Expert Tips & Insights",
+      "description": "Stay informed with the Mortgage Brothers LLC blog. Explore expert tips, industry updates, and insights on mortgages and home loans in Arizona.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/mortgage-tips-insights-arizona-blog.jpg"
     }
   },
@@ -231,10 +231,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/what-are-mortgage-trigger-leads/",
     "title": "What Are Mortgage Trigger Leads & How to Stop Unwanted Calls",
-    "description": "Learn how mortgage trigger leads work, why lenders use them, and how to protect your privacy from unwanted sales calls.",
+    "description": "As of March 2026, federal law restricts credit bureaus from selling mortgage trigger leads except in narrow cases. Do Not Call and DMA Choice remain useful extras.",
     "openGraph": {
       "title": "What Are Mortgage Trigger Leads & How to Stop Unwanted Calls",
-      "description": "Learn how mortgage trigger leads work, why lenders use them, and how to protect your privacy from unwanted sales calls.",
+      "description": "As of March 2026, federal law restricts credit bureaus from selling mortgage trigger leads except in narrow cases. Do Not Call and DMA Choice remain useful extras.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/what-are-mortgage-trigger-leads.jpg",
       "url": "https://azmortgagebrothers.com/what-are-mortgage-trigger-leads/",
       "type": "article"
@@ -242,7 +242,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "What Are Mortgage Trigger Leads & How to Stop Unwanted Calls",
-      "description": "Learn how mortgage trigger leads work, why lenders use them, and how to protect your privacy from unwanted sales calls.",
+      "description": "As of March 2026, federal law restricts credit bureaus from selling mortgage trigger leads except in narrow cases. Do Not Call and DMA Choice remain useful extras.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/what-are-mortgage-trigger-leads.jpg"
     }
   },
@@ -364,10 +364,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/loan-applications/",
     "title": "Simplify Your Loan Applications Process Today",
-    "description": "Streamline your journey with our secure Loan Applications process at Arizona Mortgage Brothers. Apply quickly and confidently!",
+    "description": "Streamline your journey with our secure Loan Applications process at Mortgage Brothers LLC. Apply quickly and confidently!",
     "openGraph": {
       "title": "Simplify Your Loan Applications Process Today",
-      "description": "Streamline your journey with our secure Loan Applications process at Arizona Mortgage Brothers. Apply quickly and confidently!",
+      "description": "Streamline your journey with our secure Loan Applications process at Mortgage Brothers LLC. Apply quickly and confidently!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/your-phoenix-arizona-mortgage-team.jpg",
       "url": "https://azmortgagebrothers.com/loan-applications/",
       "type": "article"
@@ -375,26 +375,26 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Simplify Your Loan Applications Process Today",
-      "description": "Streamline your journey with our secure Loan Applications process at Arizona Mortgage Brothers. Apply quickly and confidently!",
+      "description": "Streamline your journey with our secure Loan Applications process at Mortgage Brothers LLC. Apply quickly and confidently!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/your-phoenix-arizona-mortgage-team.jpg"
     }
   },
   "/job-opportunities": {
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/job-opportunities/",
-    "title": "Mortgage Job Opportunities | Arizona Mortgage Brothers Team",
-    "description": "Explore rewarding job opportunities at Arizona Mortgage Brothers and take the next step in your mortgage industry career.",
+    "title": "Mortgage Job Opportunities | Mortgage Brothers LLC Team",
+    "description": "Explore rewarding job opportunities at Mortgage Brothers LLC and take the next step in your mortgage industry career.",
     "openGraph": {
-      "title": "Mortgage Job Opportunities | Arizona Mortgage Brothers Team",
-      "description": "Explore rewarding job opportunities at Arizona Mortgage Brothers and take the next step in your mortgage industry career.",
+      "title": "Mortgage Job Opportunities | Mortgage Brothers LLC Team",
+      "description": "Explore rewarding job opportunities at Mortgage Brothers LLC and take the next step in your mortgage industry career.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/mortgage-career-opportunities-in-arizona.jpg",
       "url": "https://azmortgagebrothers.com/job-opportunities/",
       "type": "article"
     },
     "twitter": {
       "card": "summary_large_image",
-      "title": "Mortgage Job Opportunities | Arizona Mortgage Brothers Team",
-      "description": "Explore rewarding job opportunities at Arizona Mortgage Brothers and take the next step in your mortgage industry career.",
+      "title": "Mortgage Job Opportunities | Mortgage Brothers LLC Team",
+      "description": "Explore rewarding job opportunities at Mortgage Brothers LLC and take the next step in your mortgage industry career.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/mortgage-career-opportunities-in-arizona.jpg"
     }
   },
@@ -402,10 +402,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/loan-officer-assistant/",
     "title": "Loan Officer Assistant | The Mortgage Brothers Team",
-    "description": "Jumpstart your career as a Loan Officer Assistant at Arizona Mortgage Brothers. No experience needed. Apply today!",
+    "description": "Jumpstart your career as a Loan Officer Assistant at Mortgage Brothers LLC. No experience needed. Apply today!",
     "openGraph": {
       "title": "Loan Officer Assistant | The Mortgage Brothers Team",
-      "description": "Jumpstart your career as a Loan Officer Assistant at Arizona Mortgage Brothers. No experience needed. Apply today!",
+      "description": "Jumpstart your career as a Loan Officer Assistant at Mortgage Brothers LLC. No experience needed. Apply today!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/loan-officer-assistant-entry-level.jpg",
       "url": "https://azmortgagebrothers.com/loan-officer-assistant/",
       "type": "article"
@@ -413,7 +413,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Loan Officer Assistant | The Mortgage Brothers Team",
-      "description": "Jumpstart your career as a Loan Officer Assistant at Arizona Mortgage Brothers. No experience needed. Apply today!",
+      "description": "Jumpstart your career as a Loan Officer Assistant at Mortgage Brothers LLC. No experience needed. Apply today!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/loan-officer-assistant-entry-level.jpg"
     }
   },
@@ -496,19 +496,19 @@
   "/contact-us": {
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/contact-us/",
-    "title": "Contact Arizona Mortgage Brothers – Get in Touch",
-    "description": "Reach out to our experienced team at Contact Arizona Mortgage Brothers. We’re here to answer your mortgage inquiries and guide you to success!",
+    "title": "Contact Mortgage Brothers LLC – Get in Touch",
+    "description": "Reach out to our experienced team at Contact Mortgage Brothers LLC. We’re here to answer your mortgage inquiries and guide you to success!",
     "openGraph": {
-      "title": "Contact Arizona Mortgage Brothers – Get in Touch",
-      "description": "Reach out to our experienced team at Contact Arizona Mortgage Brothers. We’re here to answer your mortgage inquiries and guide you to success!",
+      "title": "Contact Mortgage Brothers LLC – Get in Touch",
+      "description": "Reach out to our experienced team at Contact Mortgage Brothers LLC. We’re here to answer your mortgage inquiries and guide you to success!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/contact-us/",
       "type": "article"
     },
     "twitter": {
       "card": "summary_large_image",
-      "title": "Contact Arizona Mortgage Brothers – Get in Touch",
-      "description": "Reach out to our experienced team at Contact Arizona Mortgage Brothers. We’re here to answer your mortgage inquiries and guide you to success!",
+      "title": "Contact Mortgage Brothers LLC – Get in Touch",
+      "description": "Reach out to our experienced team at Contact Mortgage Brothers LLC. We’re here to answer your mortgage inquiries and guide you to success!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -516,10 +516,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/conventional-home-loans-arizona/",
     "title": "Conventional Home Loans in Arizona - Easy & Affordable",
-    "description": "Simplify your path to homeownership with conventional home loans in Arizona. AZ Mortgage Brothers offer flexible terms and great rates.",
+    "description": "Simplify your path to homeownership with conventional home loans in Arizona. Mortgage Brothers LLC offer flexible terms and great rates.",
     "openGraph": {
       "title": "Conventional Home Loans in Arizona - Easy & Affordable",
-      "description": "Simplify your path to homeownership with conventional home loans in Arizona. AZ Mortgage Brothers offer flexible terms and great rates.",
+      "description": "Simplify your path to homeownership with conventional home loans in Arizona. Mortgage Brothers LLC offer flexible terms and great rates.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/conventional-home-loans-arizona.jpg",
       "url": "https://azmortgagebrothers.com/conventional-home-loans-arizona/",
       "type": "article"
@@ -527,7 +527,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Conventional Home Loans in Arizona - Easy & Affordable",
-      "description": "Simplify your path to homeownership with conventional home loans in Arizona. AZ Mortgage Brothers offer flexible terms and great rates.",
+      "description": "Simplify your path to homeownership with conventional home loans in Arizona. Mortgage Brothers LLC offer flexible terms and great rates.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/conventional-home-loans-arizona.jpg"
     }
   },
@@ -554,10 +554,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/conventional-vs-fha-loans-arizona/",
     "title": "Conventional vs FHA Loans in Arizona - Compare & Choose",
-    "description": "Unsure which loan is right for you? Arizona Mortgage Brothers break down Conventional vs FHA loans in Arizona. Find the best option for your needs today!",
+    "description": "Unsure which loan is right for you? Mortgage Brothers LLC break down Conventional vs FHA loans in Arizona. Find the best option for your needs today!",
     "openGraph": {
       "title": "Conventional vs FHA Loans in Arizona - Compare & Choose",
-      "description": "Unsure which loan is right for you? Arizona Mortgage Brothers break down Conventional vs FHA loans in Arizona. Find the best option for your needs today!",
+      "description": "Unsure which loan is right for you? Mortgage Brothers LLC break down Conventional vs FHA loans in Arizona. Find the best option for your needs today!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/conventional-vs-fha-loans-arizona.jpg",
       "url": "https://azmortgagebrothers.com/conventional-vs-fha-loans-arizona/",
       "type": "article"
@@ -565,7 +565,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Conventional vs FHA Loans in Arizona - Compare & Choose",
-      "description": "Unsure which loan is right for you? Arizona Mortgage Brothers break down Conventional vs FHA loans in Arizona. Find the best option for your needs today!",
+      "description": "Unsure which loan is right for you? Mortgage Brothers LLC break down Conventional vs FHA loans in Arizona. Find the best option for your needs today!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/conventional-vs-fha-loans-arizona.jpg"
     }
   },
@@ -649,10 +649,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/fha-home-loans-arizona/",
     "title": "FHA Home Loans in Arizona - Affordable Homeownership",
-    "description": "Explore FHA home loans in Arizona with Arizona Mortgage Brothers. Low down payments and flexible terms make buying your dream home easier. Contact us now!",
+    "description": "Explore FHA home loans in Arizona with Mortgage Brothers LLC. Low down payments and flexible terms make buying your dream home easier. Contact us now!",
     "openGraph": {
       "title": "FHA Home Loans in Arizona - Affordable Homeownership",
-      "description": "Explore FHA home loans in Arizona with Arizona Mortgage Brothers. Low down payments and flexible terms make buying your dream home easier. Contact us now!",
+      "description": "Explore FHA home loans in Arizona with Mortgage Brothers LLC. Low down payments and flexible terms make buying your dream home easier. Contact us now!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/fha-home-loans-arizona-affordable-options.jpg",
       "url": "https://azmortgagebrothers.com/fha-home-loans-arizona/",
       "type": "article"
@@ -660,7 +660,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "FHA Home Loans in Arizona - Affordable Homeownership",
-      "description": "Explore FHA home loans in Arizona with Arizona Mortgage Brothers. Low down payments and flexible terms make buying your dream home easier. Contact us now!",
+      "description": "Explore FHA home loans in Arizona with Mortgage Brothers LLC. Low down payments and flexible terms make buying your dream home easier. Contact us now!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/fha-home-loans-arizona-affordable-options.jpg"
     }
   },
@@ -706,10 +706,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/fha-streamline-refinance-arizona/",
     "title": "FHA Streamline Refinance in Arizona - Save on Your Loan",
-    "description": "Simplify your mortgage with FHA Streamline Refinance in Arizona. Lower your payments quickly with Arizona Mortgage Brothers. Contact us to learn more!",
+    "description": "Simplify your mortgage with FHA Streamline Refinance in Arizona. Lower your payments quickly with Mortgage Brothers LLC. Contact us to learn more!",
     "openGraph": {
       "title": "FHA Streamline Refinance in Arizona - Save on Your Loan",
-      "description": "Simplify your mortgage with FHA Streamline Refinance in Arizona. Lower your payments quickly with Arizona Mortgage Brothers. Contact us to learn more!",
+      "description": "Simplify your mortgage with FHA Streamline Refinance in Arizona. Lower your payments quickly with Mortgage Brothers LLC. Contact us to learn more!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/fha-streamline-refinance.jpg",
       "url": "https://azmortgagebrothers.com/fha-streamline-refinance-arizona/",
       "type": "article"
@@ -717,7 +717,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "FHA Streamline Refinance in Arizona - Save on Your Loan",
-      "description": "Simplify your mortgage with FHA Streamline Refinance in Arizona. Lower your payments quickly with Arizona Mortgage Brothers. Contact us to learn more!",
+      "description": "Simplify your mortgage with FHA Streamline Refinance in Arizona. Lower your payments quickly with Mortgage Brothers LLC. Contact us to learn more!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/fha-streamline-refinance.jpg"
     }
   },
@@ -725,10 +725,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/first-time-home-buyer-arizona-guide/",
     "title": "First-time Home Buyer in Arizona - Your Complete Guide",
-    "description": "Navigate the home buying process with ease! Arizona Mortgage Brothers provide a step-by-step guide for first-time home buyers in Arizona. Start today!",
+    "description": "Navigate the home buying process with ease! Mortgage Brothers LLC provide a step-by-step guide for first-time home buyers in Arizona. Start today!",
     "openGraph": {
       "title": "First-time Home Buyer in Arizona - Your Complete Guide",
-      "description": "Navigate the home buying process with ease! Arizona Mortgage Brothers provide a step-by-step guide for first-time home buyers in Arizona. Start today!",
+      "description": "Navigate the home buying process with ease! Mortgage Brothers LLC provide a step-by-step guide for first-time home buyers in Arizona. Start today!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/guide-for-the-first-time-home-buyer.jpg",
       "url": "https://azmortgagebrothers.com/first-time-home-buyer-arizona-guide/",
       "type": "article"
@@ -736,7 +736,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "First-time Home Buyer in Arizona - Your Complete Guide",
-      "description": "Navigate the home buying process with ease! Arizona Mortgage Brothers provide a step-by-step guide for first-time home buyers in Arizona. Start today!",
+      "description": "Navigate the home buying process with ease! Mortgage Brothers LLC provide a step-by-step guide for first-time home buyers in Arizona. Start today!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/guide-for-the-first-time-home-buyer.jpg"
     }
   },
@@ -760,7 +760,7 @@
     }
   },
   "/homeownership-tips": {
-    "section": "pages",
+    "section": "cats",
     "sourceUrl": "https://azmortgagebrothers.com/homeownership-tips/",
     "title": "Get Expert Homeownership Tips and Advice",
     "description": "Discover homeownership tips on property types, tax deductions, and how features like guest houses affect your home's value.",
@@ -820,10 +820,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/jumbo-loans-arizona/",
     "title": "Jumbo Loans in Arizona - Finance Your Dream Home",
-    "description": "Need a larger loan? Arizona Mortgage Brothers offer competitive rates on jumbo loans in Arizona. Get personalized support for high-value properties today!",
+    "description": "Need a larger loan? Mortgage Brothers LLC offer competitive rates on jumbo loans in Arizona. Get personalized support for high-value properties today!",
     "openGraph": {
       "title": "Jumbo Loans in Arizona - Finance Your Dream Home",
-      "description": "Need a larger loan? Arizona Mortgage Brothers offer competitive rates on jumbo loans in Arizona. Get personalized support for high-value properties today!",
+      "description": "Need a larger loan? Mortgage Brothers LLC offer competitive rates on jumbo loans in Arizona. Get personalized support for high-value properties today!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/jumbo-loans-arizona-high-value-homes.jpg",
       "url": "https://azmortgagebrothers.com/jumbo-loans-arizona/",
       "type": "article"
@@ -831,7 +831,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Jumbo Loans in Arizona - Finance Your Dream Home",
-      "description": "Need a larger loan? Arizona Mortgage Brothers offer competitive rates on jumbo loans in Arizona. Get personalized support for high-value properties today!",
+      "description": "Need a larger loan? Mortgage Brothers LLC offer competitive rates on jumbo loans in Arizona. Get personalized support for high-value properties today!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/jumbo-loans-arizona-high-value-homes.jpg"
     }
   },
@@ -839,10 +839,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/private-money-lender-arizona/",
     "title": "Private Money and Portfolio Loans Arizona",
-    "description": "Secure private money and portfolio loans in Arizona with Arizona Mortgage Brothers. Flexible, fast, and tailored to your unique needs. Contact us today!",
+    "description": "Secure private money and portfolio loans in Arizona with Mortgage Brothers LLC. Flexible, fast, and tailored to your unique needs. Contact us today!",
     "openGraph": {
       "title": "Private Money and Portfolio Loans Arizona",
-      "description": "Secure private money and portfolio loans in Arizona with Arizona Mortgage Brothers. Flexible, fast, and tailored to your unique needs. Contact us today!",
+      "description": "Secure private money and portfolio loans in Arizona with Mortgage Brothers LLC. Flexible, fast, and tailored to your unique needs. Contact us today!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/private-money-portfolio-loans-arizona.jpg",
       "url": "https://azmortgagebrothers.com/private-money-lender-arizona/",
       "type": "article"
@@ -850,7 +850,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Private Money and Portfolio Loans Arizona",
-      "description": "Secure private money and portfolio loans in Arizona with Arizona Mortgage Brothers. Flexible, fast, and tailored to your unique needs. Contact us today!",
+      "description": "Secure private money and portfolio loans in Arizona with Mortgage Brothers LLC. Flexible, fast, and tailored to your unique needs. Contact us today!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/private-money-portfolio-loans-arizona.jpg"
     }
   },
@@ -950,7 +950,7 @@
     }
   },
   "/mortgage-payments-strategies": {
-    "section": "pages",
+    "section": "cats",
     "sourceUrl": "https://azmortgagebrothers.com/mortgage-payments-strategies/",
     "title": "Optimize Your Mortgage Payments Strategies",
     "description": "Learn about mortgage payments strategies, including skipping payments, recasting, and payoff techniques, for better management.",
@@ -969,7 +969,7 @@
     }
   },
   "/mortgage-process-guidance": {
-    "section": "pages",
+    "section": "cats",
     "sourceUrl": "https://azmortgagebrothers.com/mortgage-process-guidance/",
     "title": "Simplify and Master the Mortgage Process Today",
     "description": "Follow our mortgage process guidance to streamline steps, documentation, and requirements for easier home financing.",
@@ -988,7 +988,7 @@
     }
   },
   "/mortgage-qualifications": {
-    "section": "pages",
+    "section": "cats",
     "sourceUrl": "https://azmortgagebrothers.com/mortgage-qualifications/",
     "title": "Understand Mortgage Qualifications Easily",
     "description": "Explore mortgage qualifications, including income, credit, and employment requirements, to improve your approval chances.",
@@ -1044,7 +1044,7 @@
     }
   },
   "/real-estate-mortgages": {
-    "section": "pages",
+    "section": "cats",
     "sourceUrl": "https://azmortgagebrothers.com/real-estate-mortgages/",
     "title": "Explore Real Estate Mortgages and Insights",
     "description": "Learn how real estate mortgages impact buying, selling, and investments, including options like cash offers and remote work.",
@@ -1104,10 +1104,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/refinancing-arizona/",
     "title": "Mortgage Refinancing in Arizona - Lower Your Payments",
-    "description": "Save money with mortgage refinancing in Arizona. Arizona Mortgage Brothers offer competitive rates and expert guidance. Refinance your home loan today!",
+    "description": "Save money with mortgage refinancing in Arizona. Mortgage Brothers LLC offer competitive rates and expert guidance. Refinance your home loan today!",
     "openGraph": {
       "title": "Mortgage Refinancing in Arizona - Lower Your Payments",
-      "description": "Save money with mortgage refinancing in Arizona. Arizona Mortgage Brothers offer competitive rates and expert guidance. Refinance your home loan today!",
+      "description": "Save money with mortgage refinancing in Arizona. Mortgage Brothers LLC offer competitive rates and expert guidance. Refinance your home loan today!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/mortgage-refinancing-arizona-save-money.jpg",
       "url": "https://azmortgagebrothers.com/refinancing-arizona/",
       "type": "article"
@@ -1115,7 +1115,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Mortgage Refinancing in Arizona - Lower Your Payments",
-      "description": "Save money with mortgage refinancing in Arizona. Arizona Mortgage Brothers offer competitive rates and expert guidance. Refinance your home loan today!",
+      "description": "Save money with mortgage refinancing in Arizona. Mortgage Brothers LLC offer competitive rates and expert guidance. Refinance your home loan today!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/mortgage-refinancing-arizona-save-money.jpg"
     }
   },
@@ -1161,10 +1161,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/reverse-mortgage-home-purchase-arizona/",
     "title": "Reverse Mortgage for a Home Purchase in Arizona",
-    "description": "Buy your dream home with a reverse mortgage for a home purchase. Arizona Mortgage Brothers will guide you through every step. Start your journey now!",
+    "description": "Buy your dream home with a reverse mortgage for a home purchase. Mortgage Brothers LLC will guide you through every step. Start your journey now!",
     "openGraph": {
       "title": "Reverse Mortgage for a Home Purchase in Arizona",
-      "description": "Buy your dream home with a reverse mortgage for a home purchase. Arizona Mortgage Brothers will guide you through every step. Start your journey now!",
+      "description": "Buy your dream home with a reverse mortgage for a home purchase. Mortgage Brothers LLC will guide you through every step. Start your journey now!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/reverse-mortgage-home-purchase-arizona.jpg",
       "url": "https://azmortgagebrothers.com/reverse-mortgage-home-purchase-arizona/",
       "type": "article"
@@ -1172,7 +1172,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Reverse Mortgage for a Home Purchase in Arizona",
-      "description": "Buy your dream home with a reverse mortgage for a home purchase. Arizona Mortgage Brothers will guide you through every step. Start your journey now!",
+      "description": "Buy your dream home with a reverse mortgage for a home purchase. Mortgage Brothers LLC will guide you through every step. Start your journey now!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/reverse-mortgage-home-purchase-arizona.jpg"
     }
   },
@@ -1332,10 +1332,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/cochise-county-az/",
     "title": "Cochise County - Arizona Home Loans | The Mortgage Brothers",
-    "description": "Get trusted mortgage solutions in Cochise County, AZ. AZ Mortgage Brothers offers home loans, refinancing, FHA, VA, and expert local guidance for buyers today.",
+    "description": "Get trusted mortgage solutions in Cochise County, AZ. Mortgage Brothers LLC offers home loans, refinancing, FHA, VA, and expert local guidance for buyers today.",
     "openGraph": {
       "title": "Cochise County - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get trusted mortgage solutions in Cochise County, AZ. AZ Mortgage Brothers offers home loans, refinancing, FHA, VA, and expert local guidance for buyers today.",
+      "description": "Get trusted mortgage solutions in Cochise County, AZ. Mortgage Brothers LLC offers home loans, refinancing, FHA, VA, and expert local guidance for buyers today.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/cochise-county-az/",
       "type": "article"
@@ -1343,7 +1343,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Cochise County - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get trusted mortgage solutions in Cochise County, AZ. AZ Mortgage Brothers offers home loans, refinancing, FHA, VA, and expert local guidance for buyers today.",
+      "description": "Get trusted mortgage solutions in Cochise County, AZ. Mortgage Brothers LLC offers home loans, refinancing, FHA, VA, and expert local guidance for buyers today.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -1465,10 +1465,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/coconino-county-az/doney-park/",
     "title": "Doney Park Mortgages: Get Mortgage Broker in Doney Park Az",
-    "description": "AZ Mortgage Brothers provides Doney Park Mortgages solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
+    "description": "Mortgage Brothers LLC provides Doney Park Mortgages solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
     "openGraph": {
       "title": "Doney Park Mortgages: Get Mortgage Broker in Doney Park Az",
-      "description": "AZ Mortgage Brothers provides Doney Park Mortgages solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
+      "description": "Mortgage Brothers LLC provides Doney Park Mortgages solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/coconino-county-az/doney-park/",
       "type": "article"
@@ -1476,7 +1476,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Doney Park Mortgages: Get Mortgage Broker in Doney Park Az",
-      "description": "AZ Mortgage Brothers provides Doney Park Mortgages solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
+      "description": "Mortgage Brothers LLC provides Doney Park Mortgages solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -1503,10 +1503,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/coconino-county-az/happy-jack/",
     "title": "Happy Jack Mortgages: Get Mortgage Brokers in Happy Jack Az",
-    "description": "AZ Mortgage Brothers provides expert guidance on Happy Jack mortgages, helping buyers and homeowners secure the right loan with clarity and confidence.",
+    "description": "Mortgage Brothers LLC provides expert guidance on Happy Jack mortgages, helping buyers and homeowners secure the right loan with clarity and confidence.",
     "openGraph": {
       "title": "Happy Jack Mortgages: Get Mortgage Brokers in Happy Jack Az",
-      "description": "AZ Mortgage Brothers provides expert guidance on Happy Jack mortgages, helping buyers and homeowners secure the right loan with clarity and confidence.",
+      "description": "Mortgage Brothers LLC provides expert guidance on Happy Jack mortgages, helping buyers and homeowners secure the right loan with clarity and confidence.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/coconino-county-az/happy-jack/",
       "type": "article"
@@ -1514,7 +1514,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Happy Jack Mortgages: Get Mortgage Brokers in Happy Jack Az",
-      "description": "AZ Mortgage Brothers provides expert guidance on Happy Jack mortgages, helping buyers and homeowners secure the right loan with clarity and confidence.",
+      "description": "Mortgage Brothers LLC provides expert guidance on Happy Jack mortgages, helping buyers and homeowners secure the right loan with clarity and confidence.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -1636,10 +1636,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/coconino-county-az/sedona/",
     "title": "Sedona Mortgages: Get Trusted Mortgage Broker in Sedona Az",
-    "description": "AZ Mortgage Brothers provides expert guidance on Sedona mortgages solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
+    "description": "Mortgage Brothers LLC provides expert guidance on Sedona mortgages solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
     "openGraph": {
       "title": "Sedona Mortgages: Get Trusted Mortgage Broker in Sedona Az",
-      "description": "AZ Mortgage Brothers provides expert guidance on Sedona mortgages solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
+      "description": "Mortgage Brothers LLC provides expert guidance on Sedona mortgages solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/coconino-county-az/sedona/",
       "type": "article"
@@ -1647,7 +1647,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Sedona Mortgages: Get Trusted Mortgage Broker in Sedona Az",
-      "description": "AZ Mortgage Brothers provides expert guidance on Sedona mortgages solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
+      "description": "Mortgage Brothers LLC provides expert guidance on Sedona mortgages solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -1693,10 +1693,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/gila-county-az/",
     "title": "Gila County - Arizona Home Loans | The Mortgage Brothers",
-    "description": "Get expert home loan services in Gila County, AZ with AZ Mortgage Brothers. Explore FHA, VA, jumbo & refinance options with fast pre-approval and great rates.",
+    "description": "Get expert home loan services in Gila County, AZ with Mortgage Brothers LLC. Explore FHA, VA, jumbo & refinance options with fast pre-approval and great rates.",
     "openGraph": {
       "title": "Gila County - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get expert home loan services in Gila County, AZ with AZ Mortgage Brothers. Explore FHA, VA, jumbo & refinance options with fast pre-approval and great rates.",
+      "description": "Get expert home loan services in Gila County, AZ with Mortgage Brothers LLC. Explore FHA, VA, jumbo & refinance options with fast pre-approval and great rates.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/gila-county-az/",
       "type": "article"
@@ -1704,7 +1704,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Gila County - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get expert home loan services in Gila County, AZ with AZ Mortgage Brothers. Explore FHA, VA, jumbo & refinance options with fast pre-approval and great rates.",
+      "description": "Get expert home loan services in Gila County, AZ with Mortgage Brothers LLC. Explore FHA, VA, jumbo & refinance options with fast pre-approval and great rates.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -1712,10 +1712,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/gila-county-az/christopher-creek/",
     "title": "Christopher Creek - Arizona Home Loans | The Mortgage Brothers",
-    "description": "Get trusted home loan services in Christopher Creek, Arizona with AZ Mortgage Brothers. Compare mortgage rates, fast pre-approvals, and expert lending guidance.",
+    "description": "Get trusted home loan services in Christopher Creek, Arizona with Mortgage Brothers LLC. Compare mortgage rates, fast pre-approvals, and expert lending guidance.",
     "openGraph": {
       "title": "Christopher Creek - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get trusted home loan services in Christopher Creek, Arizona with AZ Mortgage Brothers. Compare mortgage rates, fast pre-approvals, and expert lending guidance.",
+      "description": "Get trusted home loan services in Christopher Creek, Arizona with Mortgage Brothers LLC. Compare mortgage rates, fast pre-approvals, and expert lending guidance.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/gila-county-az/christopher-creek/",
       "type": "article"
@@ -1723,7 +1723,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Christopher Creek - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get trusted home loan services in Christopher Creek, Arizona with AZ Mortgage Brothers. Compare mortgage rates, fast pre-approvals, and expert lending guidance.",
+      "description": "Get trusted home loan services in Christopher Creek, Arizona with Mortgage Brothers LLC. Compare mortgage rates, fast pre-approvals, and expert lending guidance.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -1750,10 +1750,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/gila-county-az/globe/",
     "title": "Globe - Arizona Home Loans | The Mortgage Brothers",
-    "description": "Get expert home loan services in Globe, Arizona with AZ Mortgage Brothers. Compare mortgage rates, fast pre-approvals, and personalized lending solutions.",
+    "description": "Get expert home loan services in Globe, Arizona with Mortgage Brothers LLC. Compare mortgage rates, fast pre-approvals, and personalized lending solutions.",
     "openGraph": {
       "title": "Globe - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get expert home loan services in Globe, Arizona with AZ Mortgage Brothers. Compare mortgage rates, fast pre-approvals, and personalized lending solutions.",
+      "description": "Get expert home loan services in Globe, Arizona with Mortgage Brothers LLC. Compare mortgage rates, fast pre-approvals, and personalized lending solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/gila-county-az/globe/",
       "type": "article"
@@ -1761,7 +1761,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Globe - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get expert home loan services in Globe, Arizona with AZ Mortgage Brothers. Compare mortgage rates, fast pre-approvals, and personalized lending solutions.",
+      "description": "Get expert home loan services in Globe, Arizona with Mortgage Brothers LLC. Compare mortgage rates, fast pre-approvals, and personalized lending solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -1825,19 +1825,19 @@
   "/service-areas/gila-county-az/pine": {
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/gila-county-az/pine/",
-    "title": "Pine Mortgage Experts – Your Local Home Loan Partners",
-    "description": "Looking for a home loan in Pine Mortgage, AZ? Our local experts help with mortgages for primary and second homes. Get fast pre-approval & the best Pine rates.",
+    "title": "Pine - Arizona Home Loans | The Mortgage Brothers",
+    "description": "Looking for a home loan in Pine, AZ? Our local experts help with mortgages for primary and second homes. Get fast pre-approval & the best Pine rates.",
     "openGraph": {
-      "title": "Pine Mortgage Experts – Your Local Home Loan Partners",
-      "description": "Looking for a home loan in Pine Mortgage, AZ? Our local experts help with mortgages for primary and second homes. Get fast pre-approval & the best Pine rates.",
+      "title": "Pine - Arizona Home Loans | The Mortgage Brothers",
+      "description": "Looking for a home loan in Pine, AZ? Our local experts help with mortgages for primary and second homes. Get fast pre-approval & the best Pine rates.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/gila-county-az/pine/",
       "type": "article"
     },
     "twitter": {
       "card": "summary_large_image",
-      "title": "Pine Mortgage Experts – Your Local Home Loan Partners",
-      "description": "Looking for a home loan in Pine Mortgage, AZ? Our local experts help with mortgages for primary and second homes. Get fast pre-approval & the best Pine rates.",
+      "title": "Pine - Arizona Home Loans | The Mortgage Brothers",
+      "description": "Looking for a home loan in Pine, AZ? Our local experts help with mortgages for primary and second homes. Get fast pre-approval & the best Pine rates.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -1845,10 +1845,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/gila-county-az/star-valley/",
     "title": "Star Valley - Arizona Home Loans | The Mortgage Brothers",
-    "description": "Get expert home loan services in Star Valley, Arizona with AZ Mortgage Brothers. Explore competitive mortgage rates, quick pre-approvals, and personalized lending guidance.",
+    "description": "Get expert home loan services in Star Valley, Arizona with Mortgage Brothers LLC. Explore competitive mortgage rates, quick pre-approvals, and personalized lending guidance.",
     "openGraph": {
       "title": "Star Valley - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get expert home loan services in Star Valley, Arizona with AZ Mortgage Brothers. Explore competitive mortgage rates, quick pre-approvals, and personalized lending guidance.",
+      "description": "Get expert home loan services in Star Valley, Arizona with Mortgage Brothers LLC. Explore competitive mortgage rates, quick pre-approvals, and personalized lending guidance.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/gila-county-az/star-valley/",
       "type": "article"
@@ -1856,7 +1856,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Star Valley - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get expert home loan services in Star Valley, Arizona with AZ Mortgage Brothers. Explore competitive mortgage rates, quick pre-approvals, and personalized lending guidance.",
+      "description": "Get expert home loan services in Star Valley, Arizona with Mortgage Brothers LLC. Explore competitive mortgage rates, quick pre-approvals, and personalized lending guidance.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -1883,10 +1883,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/gila-county-az/washington-park/",
     "title": "Washington Park - Arizona Home Loans | The Mortgage Brothers",
-    "description": "Get expert home loan services in Washington Park, Arizona with AZ Mortgage Brothers. Compare mortgage rates, quick pre-approvals, and personalized lending guidance.",
+    "description": "Get expert home loan services in Washington Park, Arizona with Mortgage Brothers LLC. Compare mortgage rates, quick pre-approvals, and personalized lending guidance.",
     "openGraph": {
       "title": "Washington Park - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get expert home loan services in Washington Park, Arizona with AZ Mortgage Brothers. Compare mortgage rates, quick pre-approvals, and personalized lending guidance.",
+      "description": "Get expert home loan services in Washington Park, Arizona with Mortgage Brothers LLC. Compare mortgage rates, quick pre-approvals, and personalized lending guidance.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/gila-county-az/washington-park/",
       "type": "article"
@@ -1894,7 +1894,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Washington Park - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get expert home loan services in Washington Park, Arizona with AZ Mortgage Brothers. Compare mortgage rates, quick pre-approvals, and personalized lending guidance.",
+      "description": "Get expert home loan services in Washington Park, Arizona with Mortgage Brothers LLC. Compare mortgage rates, quick pre-approvals, and personalized lending guidance.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -1940,10 +1940,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/graham-county-az/pima/",
     "title": "Pima Mortgage Experts – Your Trusted Home Loan Partners",
-    "description": "Looking for Pima Mortgage solutions? AZ Mortgage Brothers offers expert home loan, refinance, and mortgage guidance with competitive rates in Pima, AZ.",
+    "description": "Looking for Pima Mortgage solutions? Mortgage Brothers LLC offers expert home loan, refinance, and mortgage guidance with competitive rates in Pima, AZ.",
     "openGraph": {
       "title": "Pima Mortgage Experts – Your Trusted Home Loan Partners",
-      "description": "Looking for Pima Mortgage solutions? AZ Mortgage Brothers offers expert home loan, refinance, and mortgage guidance with competitive rates in Pima, AZ.",
+      "description": "Looking for Pima Mortgage solutions? Mortgage Brothers LLC offers expert home loan, refinance, and mortgage guidance with competitive rates in Pima, AZ.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/graham-county-az/pima/",
       "type": "article"
@@ -1951,7 +1951,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Pima Mortgage Experts – Your Trusted Home Loan Partners",
-      "description": "Looking for Pima Mortgage solutions? AZ Mortgage Brothers offers expert home loan, refinance, and mortgage guidance with competitive rates in Pima, AZ.",
+      "description": "Looking for Pima Mortgage solutions? Mortgage Brothers LLC offers expert home loan, refinance, and mortgage guidance with competitive rates in Pima, AZ.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -1978,10 +1978,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/graham-county-az/thatcher/",
     "title": "Thatcher - Arizona Home Loans | The Mortgage Brothers",
-    "description": "Need a mortgage in Thatcher, AZ? AZ Mortgage Brothers provides expert home loans and refinancing in the Gila Valley. Get a free rate quote today!",
+    "description": "Need a mortgage in Thatcher, AZ? Mortgage Brothers LLC provides expert home loans and refinancing in the Gila Valley. Get a free rate quote today!",
     "openGraph": {
       "title": "Thatcher - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Need a mortgage in Thatcher, AZ? AZ Mortgage Brothers provides expert home loans and refinancing in the Gila Valley. Get a free rate quote today!",
+      "description": "Need a mortgage in Thatcher, AZ? Mortgage Brothers LLC provides expert home loans and refinancing in the Gila Valley. Get a free rate quote today!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/graham-county-az/thatcher/",
       "type": "article"
@@ -1989,7 +1989,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Thatcher - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Need a mortgage in Thatcher, AZ? AZ Mortgage Brothers provides expert home loans and refinancing in the Gila Valley. Get a free rate quote today!",
+      "description": "Need a mortgage in Thatcher, AZ? Mortgage Brothers LLC provides expert home loans and refinancing in the Gila Valley. Get a free rate quote today!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -2187,10 +2187,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/maricopa-county-az/avondale/",
     "title": "Avondale Mortgage Experts: Trusted Home Loan Partners",
-    "description": "Looking for a mortgage broker in Avondale, AZ? AZ Mortgage Brothers helps homebuyers with tailored home loans, refinancing, FHA, VA, and more.",
+    "description": "Looking for a mortgage broker in Avondale, AZ? Mortgage Brothers LLC helps homebuyers with tailored home loans, refinancing, FHA, VA, and more.",
     "openGraph": {
       "title": "Avondale Mortgage Experts: Trusted Home Loan Partners",
-      "description": "Looking for a mortgage broker in Avondale, AZ? AZ Mortgage Brothers helps homebuyers with tailored home loans, refinancing, FHA, VA, and more.",
+      "description": "Looking for a mortgage broker in Avondale, AZ? Mortgage Brothers LLC helps homebuyers with tailored home loans, refinancing, FHA, VA, and more.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/maricopa-county-az/avondale/",
       "type": "article"
@@ -2198,7 +2198,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Avondale Mortgage Experts: Trusted Home Loan Partners",
-      "description": "Looking for a mortgage broker in Avondale, AZ? AZ Mortgage Brothers helps homebuyers with tailored home loans, refinancing, FHA, VA, and more.",
+      "description": "Looking for a mortgage broker in Avondale, AZ? Mortgage Brothers LLC helps homebuyers with tailored home loans, refinancing, FHA, VA, and more.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -2510,10 +2510,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/maricopa-county-az/rio-verde/",
     "title": "Rio Verde Mortgage Experts: Your Best Home Loan Partners",
-    "description": "Get expert Rio Verde mortgage services with AZ Mortgage Brothers. Explore home loans, refinancing, and personalized financing options for your Arizona home.",
+    "description": "Get expert Rio Verde mortgage services with Mortgage Brothers LLC. Explore home loans, refinancing, and personalized financing options for your Arizona home.",
     "openGraph": {
       "title": "Rio Verde Mortgage Experts: Your Best Home Loan Partners",
-      "description": "Get expert Rio Verde mortgage services with AZ Mortgage Brothers. Explore home loans, refinancing, and personalized financing options for your Arizona home.",
+      "description": "Get expert Rio Verde mortgage services with Mortgage Brothers LLC. Explore home loans, refinancing, and personalized financing options for your Arizona home.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/maricopa-county-az/rio-verde/",
       "type": "article"
@@ -2521,7 +2521,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Rio Verde Mortgage Experts: Your Best Home Loan Partners",
-      "description": "Get expert Rio Verde mortgage services with AZ Mortgage Brothers. Explore home loans, refinancing, and personalized financing options for your Arizona home.",
+      "description": "Get expert Rio Verde mortgage services with Mortgage Brothers LLC. Explore home loans, refinancing, and personalized financing options for your Arizona home.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -2643,10 +2643,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/mohave-county-az/",
     "title": "Mohave County Mortgage Broker - Mortgage Brothers",
-    "description": "Get expert mortgage services in Mohave County, AZ with AZ Mortgage Brothers. Compare home loan options, competitive rates, and fast pre-approvals.",
+    "description": "Get expert mortgage services in Mohave County, AZ with Mortgage Brothers LLC. Compare home loan options, competitive rates, and fast pre-approvals.",
     "openGraph": {
       "title": "Mohave County Mortgage Broker - Mortgage Brothers",
-      "description": "Get expert mortgage services in Mohave County, AZ with AZ Mortgage Brothers. Compare home loan options, competitive rates, and fast pre-approvals.",
+      "description": "Get expert mortgage services in Mohave County, AZ with Mortgage Brothers LLC. Compare home loan options, competitive rates, and fast pre-approvals.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/mohave-county-az/",
       "type": "article"
@@ -2654,7 +2654,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Mohave County Mortgage Broker - Mortgage Brothers",
-      "description": "Get expert mortgage services in Mohave County, AZ with AZ Mortgage Brothers. Compare home loan options, competitive rates, and fast pre-approvals.",
+      "description": "Get expert mortgage services in Mohave County, AZ with Mortgage Brothers LLC. Compare home loan options, competitive rates, and fast pre-approvals.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -2662,10 +2662,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/mohave-county-az/bullhead-city/",
     "title": "Bullhead City - Arizona Home Loans | The Mortgage Brothers",
-    "description": "Get expert mortgage services in Bullhead City, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates & personalized home loan solutions.",
+    "description": "Get expert mortgage services in Bullhead City, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates & personalized home loan solutions.",
     "openGraph": {
       "title": "Bullhead City - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get expert mortgage services in Bullhead City, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates & personalized home loan solutions.",
+      "description": "Get expert mortgage services in Bullhead City, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates & personalized home loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/mohave-county-az/bullhead-city/",
       "type": "article"
@@ -2673,7 +2673,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Bullhead City - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get expert mortgage services in Bullhead City, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates & personalized home loan solutions.",
+      "description": "Get expert mortgage services in Bullhead City, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates & personalized home loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -2681,10 +2681,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/mohave-county-az/chloride/",
     "title": "Chloride - Arizona Home Loans | The Mortgage Brothers",
-    "description": "Get reliable mortgage services in Chloride, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates & personalized home loan solutions.",
+    "description": "Get reliable mortgage services in Chloride, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates & personalized home loan solutions.",
     "openGraph": {
       "title": "Chloride - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get reliable mortgage services in Chloride, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates & personalized home loan solutions.",
+      "description": "Get reliable mortgage services in Chloride, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates & personalized home loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/mohave-county-az/chloride/",
       "type": "article"
@@ -2692,7 +2692,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Chloride - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get reliable mortgage services in Chloride, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates & personalized home loan solutions.",
+      "description": "Get reliable mortgage services in Chloride, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates & personalized home loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -2700,10 +2700,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/mohave-county-az/colorado-city/",
     "title": "Colorado City - Arizona Home Loans | The Mortgage Brothers",
-    "description": "Get expert mortgage services in Colorado City, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates & personalized home loan solutions.",
+    "description": "Get expert mortgage services in Colorado City, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates & personalized home loan solutions.",
     "openGraph": {
       "title": "Colorado City - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get expert mortgage services in Colorado City, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates & personalized home loan solutions.",
+      "description": "Get expert mortgage services in Colorado City, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates & personalized home loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/mohave-county-az/colorado-city/",
       "type": "article"
@@ -2711,7 +2711,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Colorado City - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get expert mortgage services in Colorado City, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates & personalized home loan solutions.",
+      "description": "Get expert mortgage services in Colorado City, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates & personalized home loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -2719,10 +2719,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/mohave-county-az/fort-mohave/",
     "title": "Fort Mohave - Arizona Home Loans | The Mortgage Brothers",
-    "description": "Get trusted mortgage services in Fort Mohave, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates & personalized home loan solutions.",
+    "description": "Get trusted mortgage services in Fort Mohave, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates & personalized home loan solutions.",
     "openGraph": {
       "title": "Fort Mohave - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get trusted mortgage services in Fort Mohave, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates & personalized home loan solutions.",
+      "description": "Get trusted mortgage services in Fort Mohave, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates & personalized home loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/mohave-county-az/fort-mohave/",
       "type": "article"
@@ -2730,7 +2730,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Fort Mohave - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get trusted mortgage services in Fort Mohave, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates & personalized home loan solutions.",
+      "description": "Get trusted mortgage services in Fort Mohave, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates & personalized home loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -2738,10 +2738,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/mohave-county-az/kingman/",
     "title": "Kingman - Arizona Home Loans | The Mortgage Brothers",
-    "description": "Get expert mortgage services in Kingman, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates, and personalized home loan solutions.",
+    "description": "Get expert mortgage services in Kingman, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates, and personalized home loan solutions.",
     "openGraph": {
       "title": "Kingman - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get expert mortgage services in Kingman, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates, and personalized home loan solutions.",
+      "description": "Get expert mortgage services in Kingman, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates, and personalized home loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/mohave-county-az/kingman/",
       "type": "article"
@@ -2749,7 +2749,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Kingman - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get expert mortgage services in Kingman, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates, and personalized home loan solutions.",
+      "description": "Get expert mortgage services in Kingman, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates, and personalized home loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -2757,10 +2757,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/mohave-county-az/lake-havasu-city/",
     "title": "Lake Havasu City - Arizona Home Loans | The Mortgage Brothers",
-    "description": "Get trusted mortgage services in Lake Havasu City, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates & personalized home loan solutions.",
+    "description": "Get trusted mortgage services in Lake Havasu City, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates & personalized home loan solutions.",
     "openGraph": {
       "title": "Lake Havasu City - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get trusted mortgage services in Lake Havasu City, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates & personalized home loan solutions.",
+      "description": "Get trusted mortgage services in Lake Havasu City, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates & personalized home loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/mohave-county-az/lake-havasu-city/",
       "type": "article"
@@ -2768,7 +2768,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Lake Havasu City - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get trusted mortgage services in Lake Havasu City, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates & personalized home loan solutions.",
+      "description": "Get trusted mortgage services in Lake Havasu City, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates & personalized home loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -2776,10 +2776,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/navajo-county-az/",
     "title": "Navajo County - Arizona Home Loans | The Mortgage Brothers",
-    "description": "Get expert mortgage services in Navajo County, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates, and tailored loan solutions.",
+    "description": "Get expert mortgage services in Navajo County, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates, and tailored loan solutions.",
     "openGraph": {
       "title": "Navajo County - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get expert mortgage services in Navajo County, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates, and tailored loan solutions.",
+      "description": "Get expert mortgage services in Navajo County, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates, and tailored loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/navajo-county-az/",
       "type": "article"
@@ -2787,7 +2787,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Navajo County - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get expert mortgage services in Navajo County, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates, and tailored loan solutions.",
+      "description": "Get expert mortgage services in Navajo County, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates, and tailored loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -2795,10 +2795,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/navajo-county-az/holbrook/",
     "title": "Holbrook - Arizona Home Loans | The Mortgage Brothers",
-    "description": "Get trusted mortgage services in Holbrook, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates, and personalized loan solutions.",
+    "description": "Get trusted mortgage services in Holbrook, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates, and personalized loan solutions.",
     "openGraph": {
       "title": "Holbrook - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get trusted mortgage services in Holbrook, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates, and personalized loan solutions.",
+      "description": "Get trusted mortgage services in Holbrook, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates, and personalized loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/navajo-county-az/holbrook/",
       "type": "article"
@@ -2806,7 +2806,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Holbrook - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get trusted mortgage services in Holbrook, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates, and personalized loan solutions.",
+      "description": "Get trusted mortgage services in Holbrook, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates, and personalized loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -2814,10 +2814,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/navajo-county-az/pinetop/",
     "title": "Pinetop - Arizona Home Loans | The Mortgage Brothers",
-    "description": "Get trusted mortgage services in Pinetop, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates, and tailored loan solutions.",
+    "description": "Get trusted mortgage services in Pinetop, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates, and tailored loan solutions.",
     "openGraph": {
       "title": "Pinetop - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get trusted mortgage services in Pinetop, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates, and tailored loan solutions.",
+      "description": "Get trusted mortgage services in Pinetop, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates, and tailored loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/navajo-county-az/pinetop/",
       "type": "article"
@@ -2825,7 +2825,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Pinetop - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get trusted mortgage services in Pinetop, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates, and tailored loan solutions.",
+      "description": "Get trusted mortgage services in Pinetop, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates, and tailored loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -2833,10 +2833,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/navajo-county-az/show-low/",
     "title": "Show Low - Arizona Home Loans | The Mortgage Brothers",
-    "description": "Get trusted mortgage services in Show Low, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates, and personalized loan solutions.",
+    "description": "Get trusted mortgage services in Show Low, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates, and personalized loan solutions.",
     "openGraph": {
       "title": "Show Low - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get trusted mortgage services in Show Low, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates, and personalized loan solutions.",
+      "description": "Get trusted mortgage services in Show Low, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates, and personalized loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/navajo-county-az/show-low/",
       "type": "article"
@@ -2844,7 +2844,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Show Low - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get trusted mortgage services in Show Low, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates, and personalized loan solutions.",
+      "description": "Get trusted mortgage services in Show Low, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates, and personalized loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -2852,10 +2852,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/navajo-county-az/taylor/",
     "title": "Taylor - Arizona Home Loans | The Mortgage Brothers",
-    "description": "Get expert mortgage services in Taylor, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates, and personalized loan solutions.",
+    "description": "Get expert mortgage services in Taylor, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates, and personalized loan solutions.",
     "openGraph": {
       "title": "Taylor - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get expert mortgage services in Taylor, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates, and personalized loan solutions.",
+      "description": "Get expert mortgage services in Taylor, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates, and personalized loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/navajo-county-az/taylor/",
       "type": "article"
@@ -2863,7 +2863,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Taylor - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get expert mortgage services in Taylor, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates, and personalized loan solutions.",
+      "description": "Get expert mortgage services in Taylor, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates, and personalized loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -2871,10 +2871,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/navajo-county-az/winslow/",
     "title": "Winslow - Arizona Home Loans | The Mortgage Brothers",
-    "description": "Get trusted mortgage services in Winslow, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates, and tailored loan solutions.",
+    "description": "Get trusted mortgage services in Winslow, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates, and tailored loan solutions.",
     "openGraph": {
       "title": "Winslow - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get trusted mortgage services in Winslow, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates, and tailored loan solutions.",
+      "description": "Get trusted mortgage services in Winslow, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates, and tailored loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/navajo-county-az/winslow/",
       "type": "article"
@@ -2882,7 +2882,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Winslow - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get trusted mortgage services in Winslow, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates, and tailored loan solutions.",
+      "description": "Get trusted mortgage services in Winslow, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates, and tailored loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -2890,10 +2890,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/pima-county-az/",
     "title": "Pima County Mortgage Broker - Mortgage Brothers",
-    "description": "Get expert mortgage services in Pima County, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates, and personalized home loan solutions.",
+    "description": "Get expert mortgage services in Pima County, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates, and personalized home loan solutions.",
     "openGraph": {
       "title": "Pima County Mortgage Broker - Mortgage Brothers",
-      "description": "Get expert mortgage services in Pima County, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates, and personalized home loan solutions.",
+      "description": "Get expert mortgage services in Pima County, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates, and personalized home loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/pima-county-az/",
       "type": "article"
@@ -2901,7 +2901,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Pima County Mortgage Broker - Mortgage Brothers",
-      "description": "Get expert mortgage services in Pima County, AZ with AZ Mortgage Brothers. Fast pre-approvals, competitive rates, and personalized home loan solutions.",
+      "description": "Get expert mortgage services in Pima County, AZ with Mortgage Brothers LLC. Fast pre-approvals, competitive rates, and personalized home loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -2909,10 +2909,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/pima-county-az/oro-valley/",
     "title": "Oro Valley - Arizona Home Loans | The Mortgage Brothers",
-    "description": "Get expert mortgage services in Oro Valley, AZ with AZ Mortgage Brothers. Fast pre-approvals, low rates, and personalized home loan solutions.",
+    "description": "Get expert mortgage services in Oro Valley, AZ with Mortgage Brothers LLC. Fast pre-approvals, low rates, and personalized home loan solutions.",
     "openGraph": {
       "title": "Oro Valley - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get expert mortgage services in Oro Valley, AZ with AZ Mortgage Brothers. Fast pre-approvals, low rates, and personalized home loan solutions.",
+      "description": "Get expert mortgage services in Oro Valley, AZ with Mortgage Brothers LLC. Fast pre-approvals, low rates, and personalized home loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/pima-county-az/oro-valley/",
       "type": "article"
@@ -2920,7 +2920,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Oro Valley - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get expert mortgage services in Oro Valley, AZ with AZ Mortgage Brothers. Fast pre-approvals, low rates, and personalized home loan solutions.",
+      "description": "Get expert mortgage services in Oro Valley, AZ with Mortgage Brothers LLC. Fast pre-approvals, low rates, and personalized home loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -2928,10 +2928,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/pima-county-az/sahuarita/",
     "title": "Sahuarita - Arizona Home Loans | The Mortgage Brothers",
-    "description": "Get trusted mortgage services in Sahuarita, AZ with AZ Mortgage Brothers. Fast pre-approvals, great rates, and personalized home loan solutions.",
+    "description": "Get trusted mortgage services in Sahuarita, AZ with Mortgage Brothers LLC. Fast pre-approvals, great rates, and personalized home loan solutions.",
     "openGraph": {
       "title": "Sahuarita - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get trusted mortgage services in Sahuarita, AZ with AZ Mortgage Brothers. Fast pre-approvals, great rates, and personalized home loan solutions.",
+      "description": "Get trusted mortgage services in Sahuarita, AZ with Mortgage Brothers LLC. Fast pre-approvals, great rates, and personalized home loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/pima-county-az/sahuarita/",
       "type": "article"
@@ -2939,7 +2939,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Sahuarita - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Get trusted mortgage services in Sahuarita, AZ with AZ Mortgage Brothers. Fast pre-approvals, great rates, and personalized home loan solutions.",
+      "description": "Get trusted mortgage services in Sahuarita, AZ with Mortgage Brothers LLC. Fast pre-approvals, great rates, and personalized home loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -2947,10 +2947,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/pima-county-az/tucson/",
     "title": "Tucson - Arizona Home Loans | The Mortgage Brothers",
-    "description": "Find trusted mortgage services in Tucson, AZ with AZ Mortgage Brothers. Get fast pre-approvals, low rates, and personalized home loan solutions.",
+    "description": "Find trusted mortgage services in Tucson, AZ with Mortgage Brothers LLC. Get fast pre-approvals, low rates, and personalized home loan solutions.",
     "openGraph": {
       "title": "Tucson - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Find trusted mortgage services in Tucson, AZ with AZ Mortgage Brothers. Get fast pre-approvals, low rates, and personalized home loan solutions.",
+      "description": "Find trusted mortgage services in Tucson, AZ with Mortgage Brothers LLC. Get fast pre-approvals, low rates, and personalized home loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/pima-county-az/tucson/",
       "type": "article"
@@ -2958,7 +2958,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Tucson - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Find trusted mortgage services in Tucson, AZ with AZ Mortgage Brothers. Get fast pre-approvals, low rates, and personalized home loan solutions.",
+      "description": "Find trusted mortgage services in Tucson, AZ with Mortgage Brothers LLC. Get fast pre-approvals, low rates, and personalized home loan solutions.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -3327,10 +3327,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/yuma-county-az/",
     "title": "Yuma County - Arizona Home Loans | The Mortgage Brothers",
-    "description": "Looking for a mortgage in Yuma County, AZ? AZ Mortgage Brothers offers expert home loan services in Yuma, Somerton, and San Luis. Get a free rate quote today!",
+    "description": "Looking for a mortgage in Yuma County, AZ? Mortgage Brothers LLC offers expert home loan services in Yuma, Somerton, and San Luis. Get a free rate quote today!",
     "openGraph": {
       "title": "Yuma County - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Looking for a mortgage in Yuma County, AZ? AZ Mortgage Brothers offers expert home loan services in Yuma, Somerton, and San Luis. Get a free rate quote today!",
+      "description": "Looking for a mortgage in Yuma County, AZ? Mortgage Brothers LLC offers expert home loan services in Yuma, Somerton, and San Luis. Get a free rate quote today!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/yuma-county-az/",
       "type": "article"
@@ -3338,7 +3338,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Yuma County - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Looking for a mortgage in Yuma County, AZ? AZ Mortgage Brothers offers expert home loan services in Yuma, Somerton, and San Luis. Get a free rate quote today!",
+      "description": "Looking for a mortgage in Yuma County, AZ? Mortgage Brothers LLC offers expert home loan services in Yuma, Somerton, and San Luis. Get a free rate quote today!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -3346,10 +3346,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/yuma-county-az/san-luis/",
     "title": "San Luis - Arizona Home Loans | The Mortgage Brothers",
-    "description": "Looking for a mortgage in San Luis, AZ? AZ Mortgage Brothers offers expert home loans, refinancing, and first-time buyer programs. Get a free quote today!",
+    "description": "Looking for a mortgage in San Luis, AZ? Mortgage Brothers LLC offers expert home loans, refinancing, and first-time buyer programs. Get a free quote today!",
     "openGraph": {
       "title": "San Luis - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Looking for a mortgage in San Luis, AZ? AZ Mortgage Brothers offers expert home loans, refinancing, and first-time buyer programs. Get a free quote today!",
+      "description": "Looking for a mortgage in San Luis, AZ? Mortgage Brothers LLC offers expert home loans, refinancing, and first-time buyer programs. Get a free quote today!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/yuma-county-az/san-luis/",
       "type": "article"
@@ -3357,7 +3357,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "San Luis - Arizona Home Loans | The Mortgage Brothers",
-      "description": "Looking for a mortgage in San Luis, AZ? AZ Mortgage Brothers offers expert home loans, refinancing, and first-time buyer programs. Get a free quote today!",
+      "description": "Looking for a mortgage in San Luis, AZ? Mortgage Brothers LLC offers expert home loans, refinancing, and first-time buyer programs. Get a free quote today!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
@@ -3365,10 +3365,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/service-areas/yuma-county-az/yuma/",
     "title": "Yuma Mortgage Experts: Your Local Home Loans Partners",
-    "description": "Looking for a trusted mortgage broker in Yuma, AZ? AZ Mortgage Brothers offers home loans, refinancing, FHA, VA, and mortgage solutions with expert local guidance.",
+    "description": "Looking for a trusted mortgage broker in Yuma, AZ? Mortgage Brothers LLC offers home loans, refinancing, FHA, VA, and mortgage solutions with expert local guidance.",
     "openGraph": {
       "title": "Yuma Mortgage Experts: Your Local Home Loans Partners",
-      "description": "Looking for a trusted mortgage broker in Yuma, AZ? AZ Mortgage Brothers offers home loans, refinancing, FHA, VA, and mortgage solutions with expert local guidance.",
+      "description": "Looking for a trusted mortgage broker in Yuma, AZ? Mortgage Brothers LLC offers home loans, refinancing, FHA, VA, and mortgage solutions with expert local guidance.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
       "url": "https://azmortgagebrothers.com/service-areas/yuma-county-az/yuma/",
       "type": "article"
@@ -3376,12 +3376,12 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Yuma Mortgage Experts: Your Local Home Loans Partners",
-      "description": "Looking for a trusted mortgage broker in Yuma, AZ? AZ Mortgage Brothers offers home loans, refinancing, FHA, VA, and mortgage solutions with expert local guidance.",
+      "description": "Looking for a trusted mortgage broker in Yuma, AZ? Mortgage Brothers LLC offers home loans, refinancing, FHA, VA, and mortgage solutions with expert local guidance.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   },
   "/specialty-loans": {
-    "section": "pages",
+    "section": "cats",
     "sourceUrl": "https://azmortgagebrothers.com/specialty-loans/",
     "title": "Specialty Loans for All Your Unique Needs",
     "description": "Explore specialty loans like DSCR loans, delayed financing, and assumable mortgages tailored for special financial needs.",
@@ -3460,10 +3460,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/va-loans-arizona/",
     "title": "VA Loans in Arizona - Benefits for Veterans",
-    "description": "Unlock the benefits of VA loans in Arizona with Arizona Mortgage Brothers. No down payment and competitive rates for veterans. Contact us to get started!",
+    "description": "Unlock the benefits of VA loans in Arizona with Mortgage Brothers LLC. No down payment and competitive rates for veterans. Contact us to get started!",
     "openGraph": {
       "title": "VA Loans in Arizona - Benefits for Veterans",
-      "description": "Unlock the benefits of VA loans in Arizona with Arizona Mortgage Brothers. No down payment and competitive rates for veterans. Contact us to get started!",
+      "description": "Unlock the benefits of VA loans in Arizona with Mortgage Brothers LLC. No down payment and competitive rates for veterans. Contact us to get started!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/va-loans-arizona-veteran-homebuyers.jpg",
       "url": "https://azmortgagebrothers.com/va-loans-arizona/",
       "type": "article"
@@ -3471,7 +3471,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "VA Loans in Arizona - Benefits for Veterans",
-      "description": "Unlock the benefits of VA loans in Arizona with Arizona Mortgage Brothers. No down payment and competitive rates for veterans. Contact us to get started!",
+      "description": "Unlock the benefits of VA loans in Arizona with Mortgage Brothers LLC. No down payment and competitive rates for veterans. Contact us to get started!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/va-loans-arizona-veteran-homebuyers.jpg"
     }
   },
@@ -4372,10 +4372,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/arizona-mortgage-approval-process/",
     "title": "Simplify with Arizona Mortgage Approval Process",
-    "description": "Master each step of the Arizona Mortgage Approval Process with expert guidance from Arizona Mortgage Brothers for a seamless financing journey.",
+    "description": "Master each step of the Arizona Mortgage Approval Process with expert guidance from Mortgage Brothers LLC for a seamless financing journey.",
     "openGraph": {
       "title": "Simplify with Arizona Mortgage Approval Process",
-      "description": "Master each step of the Arizona Mortgage Approval Process with expert guidance from Arizona Mortgage Brothers for a seamless financing journey.",
+      "description": "Master each step of the Arizona Mortgage Approval Process with expert guidance from Mortgage Brothers LLC for a seamless financing journey.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/learn-about-the-home-mortgage-approval-process.jpg",
       "url": "https://azmortgagebrothers.com/arizona-mortgage-approval-process/",
       "type": "article"
@@ -4383,7 +4383,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Simplify with Arizona Mortgage Approval Process",
-      "description": "Master each step of the Arizona Mortgage Approval Process with expert guidance from Arizona Mortgage Brothers for a seamless financing journey.",
+      "description": "Master each step of the Arizona Mortgage Approval Process with expert guidance from Mortgage Brothers LLC for a seamless financing journey.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/learn-about-the-home-mortgage-approval-process.jpg"
     }
   },
@@ -4410,10 +4410,10 @@
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/arizona-mortgage-payments/",
     "title": "Ultimate Guide: Optimize Your Arizona Mortgage Payments",
-    "description": "Gain comprehensive insights into optimizing your Mortgage Payments through expert strategies and actionable advice provided by Arizona Mortgage Brothers",
+    "description": "Gain comprehensive insights into optimizing your Mortgage Payments through expert strategies and actionable advice provided by Mortgage Brothers LLC",
     "openGraph": {
       "title": "Ultimate Guide: Optimize Your Arizona Mortgage Payments",
-      "description": "Gain comprehensive insights into optimizing your Mortgage Payments through expert strategies and actionable advice provided by Arizona Mortgage Brothers",
+      "description": "Gain comprehensive insights into optimizing your Mortgage Payments through expert strategies and actionable advice provided by Mortgage Brothers LLC",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/arizona-mortgage-payments.jpg",
       "url": "https://azmortgagebrothers.com/arizona-mortgage-payments/",
       "type": "article"
@@ -4421,7 +4421,7 @@
     "twitter": {
       "card": "summary_large_image",
       "title": "Ultimate Guide: Optimize Your Arizona Mortgage Payments",
-      "description": "Gain comprehensive insights into optimizing your Mortgage Payments through expert strategies and actionable advice provided by Arizona Mortgage Brothers",
+      "description": "Gain comprehensive insights into optimizing your Mortgage Payments through expert strategies and actionable advice provided by Mortgage Brothers LLC",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/arizona-mortgage-payments.jpg"
     }
   },
@@ -4770,19 +4770,19 @@
   "/mortgage-loan-programs-arizona": {
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/mortgage-loan-programs-arizona/",
-    "title": "Unlock 10 Amazing Loan Programs in Arizona Today!",
-    "description": "Discover tailored loan programs in Arizona with Arizona Mortgage Brothers. Find the perfect home loan to fit your needs. Start exploring now!",
+    "title": "Unlock 6 Amazing Loan Programs in Arizona Today!",
+    "description": "Discover tailored loan programs in Arizona with Mortgage Brothers LLC. Find the perfect home loan to fit your needs. Start exploring now!",
     "openGraph": {
-      "title": "Unlock 10 Amazing Loan Programs in Arizona Today!",
-      "description": "Discover tailored loan programs in Arizona with Arizona Mortgage Brothers. Find the perfect home loan to fit your needs. Start exploring now!",
+      "title": "Unlock 6 Amazing Loan Programs in Arizona Today!",
+      "description": "Discover tailored loan programs in Arizona with Mortgage Brothers LLC. Find the perfect home loan to fit your needs. Start exploring now!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/mortgage-loan-programs-in-arizona.jpg",
       "url": "https://azmortgagebrothers.com/mortgage-loan-programs-arizona/",
       "type": "article"
     },
     "twitter": {
       "card": "summary_large_image",
-      "title": "Unlock 10 Amazing Loan Programs in Arizona Today!",
-      "description": "Discover tailored loan programs in Arizona with Arizona Mortgage Brothers. Find the perfect home loan to fit your needs. Start exploring now!",
+      "title": "Unlock 6 Amazing Loan Programs in Arizona Today!",
+      "description": "Discover tailored loan programs in Arizona with Mortgage Brothers LLC. Find the perfect home loan to fit your needs. Start exploring now!",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/mortgage-loan-programs-in-arizona.jpg"
     }
   },
@@ -4901,25 +4901,6 @@
       "card": "summary_large_image",
       "title": "Terms of Use for Mortgage Brothers LLC",
       "description": "Review the Terms of Use for Mortgage Brothers LLC. Understand our guidelines and conditions for using our services.",
-      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
-    }
-  },
-  "/service-areas/santa-cruz-county-az/santa-cruz": {
-    "section": "pages",
-    "sourceUrl": "https://azmortgagebrothers.com/service-areas/santa-cruz-county-az/santa-cruz/",
-    "title": "Santa Cruz AZ Mortgage Experts – Your Home Loan Partners",
-    "description": "Get expert mortgage solutions in Santa Cruz, AZ. Mortgage Brothers offers home loans, refinancing, competitive rates, and personalized guidance.",
-    "openGraph": {
-      "title": "Santa Cruz AZ Mortgage Experts – Your Home Loan Partners",
-      "description": "Get expert mortgage solutions in Santa Cruz, AZ. Mortgage Brothers offers home loans, refinancing, competitive rates, and personalized guidance.",
-      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg",
-      "url": "https://azmortgagebrothers.com/service-areas/santa-cruz-county-az/santa-cruz/",
-      "type": "article"
-    },
-    "twitter": {
-      "card": "summary_large_image",
-      "title": "Santa Cruz AZ Mortgage Experts – Your Home Loan Partners",
-      "description": "Get expert mortgage solutions in Santa Cruz, AZ. Mortgage Brothers offers home loans, refinancing, competitive rates, and personalized guidance.",
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/contact-arizona-mortgage-brothers.jpg"
     }
   }

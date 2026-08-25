@@ -7,6 +7,7 @@ import Link from "next/link";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
+import CountyCityCards from "../../component/CountyCityCards";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/yavapai-county-az/");
 
@@ -111,40 +112,7 @@ export default function YavapaiCountyPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-              {cities.map((city, index) => (
-                <Link
-                  key={index}
-                  href={`/service-areas/yavapai-county-az/${city.name.toLowerCase().replace(/\./g, "").replace(/\s+/g, "-")}/`}
-                  className="bg-[#faf7f0] rounded-2xl p-6 lg:p-7 border border-[#e8e0d0]/50 shadow-sm flex flex-col hover:-translate-y-1 hover:scale-[1.02] hover:shadow-xl hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/30 active:scale-[0.98] active:translate-y-0 cursor-pointer transition-all duration-300"
-                >
-                  <div className="flex items-center gap-2 mb-4 text-brand-green-deep">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="text-brand-green-accent flex-shrink-0"
-                    >
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                      <circle cx="12" cy="10" r="3" />
-                    </svg>
-                    <h3 className="text-[17px] font-bold tracking-tight">
-                      {city.name}
-                    </h3>
-                  </div>
-
-                  <p className="text-brand-text-muted text-[13.5px] lg:text-[14px] leading-relaxed">
-                    {city.description}
-                  </p>
-                </Link>
-              ))}
-            </div>
+            <CountyCityCards countySlug="yavapai-county-az" cities={cities} />
           </div>
         </section>
 
