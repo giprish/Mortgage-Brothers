@@ -4749,6 +4749,25 @@
       "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/02/Knoell-Eddie-Co-Founder.jpg"
     }
   },
+  "/author/thomas-knoell": {
+    "section": "pages",
+    "sourceUrl": "https://azmortgagebrothers.com/author/thomas-knoell/",
+    "title": "Thomas Knoell: Local Phoenix Mortgage Broker",
+    "description": "Meet Thomas Knoell, Co-Founder and Loan Officer at Mortgage Brothers LLC in Phoenix, with 25+ years' experience and a 3rd generation real estate legacy.",
+    "openGraph": {
+      "title": "Thomas Knoell: Local Phoenix Mortgage Broker",
+      "description": "Meet Thomas Knoell, Co-Founder and Loan Officer at Mortgage Brothers LLC in Phoenix, with 25+ years' experience and a 3rd generation real estate legacy.",
+      "image": "https://azmortgagebrothers.com/home/thomas-knoell.jpg",
+      "url": "https://azmortgagebrothers.com/author/thomas-knoell/",
+      "type": "profile"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Thomas Knoell: Local Phoenix Mortgage Broker",
+      "description": "Meet Thomas Knoell, Co-Founder and Loan Officer at Mortgage Brothers LLC in Phoenix, with 25+ years' experience and a 3rd generation real estate legacy.",
+      "image": "https://azmortgagebrothers.com/home/thomas-knoell.jpg"
+    }
+  },
   "/mortgage-calculator-arizona": {
     "section": "pages",
     "sourceUrl": "https://azmortgagebrothers.com/mortgage-calculator-arizona/",

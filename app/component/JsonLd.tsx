@@ -11,7 +11,8 @@ type JsonLdProps = {
 
 /**
  * Renders one or more JSON-LD script tags.
- * When `data` is omitted, emits the sitewide Yoast-style graph + rich Organization.
+ * When `data` is omitted, emits the Yoast-style @graph (every page) plus the
+ * rich Organization (products / offers / reviews) on the homepage only.
  */
 export default async function JsonLd({ data }: JsonLdProps) {
   let blocks: JsonLdObject[];

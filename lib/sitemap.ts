@@ -60,7 +60,7 @@ const EXCLUDED_PATHS = new Set([
  */
 const EXTRA_PAGE_PATHS = ["/privacy-policy", "/terms-of-use"];
 
-const FALLBACK_AUTHOR_PATHS = ["/author/eddie-knoell"];
+const FALLBACK_AUTHOR_PATHS = ["/author/eddie-knoell", "/author/thomas-knoell"];
 
 const CHILD_SITEMAPS = [
   "post-sitemap.xml",

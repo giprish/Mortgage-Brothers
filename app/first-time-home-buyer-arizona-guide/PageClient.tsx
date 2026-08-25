@@ -713,7 +713,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
         <section className="loan-section-footer bg-[#fcf9f3] border-t border-[#e0e0e0]">
           <div className="max-w-5xl mx-auto text-center">
             <p className="text-[#b8d4b8] text-[12.5px] leading-relaxed">
-              Equal Housing Lender. Mortgage Brothers LLC NMLS #1007154. Eddie Knoell NMLS #210917, Thomas Knoell NMLS #1618695.
+              Mortgage Brothers LLC NMLS #1007154. Eddie Knoell NMLS #210917, Thomas Knoell NMLS #1618695.
             </p>
           </div>
         </section>

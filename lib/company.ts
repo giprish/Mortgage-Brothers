@@ -40,7 +40,7 @@ export const COMPANY = {
   imageSrc: "/home/eddie-knoell.jpg",
   nmlsConsumerAccessUrl:
     "https://www.nmlsconsumeraccess.org/Home.aspx/SubSearch?searchText=1007154",
-  equalHousingLabel: "Equal Housing Lender",
+  equalHousingLabel: "Equal Housing Opportunity",
   sameAs: [
     "https://www.facebook.com/azmortgagebrothers/",
     "https://x.com/azmortgagebros",
@@ -68,6 +68,7 @@ export const LOAN_OFFICERS = {
     azLicense: "LO-0942229",
     azLicenseDisplay: "AZ License #LO-0942229",
     title: "Co-Founder · Loan Officer",
+    authorPath: "/author/thomas-knoell/",
   },
 } as const;
 

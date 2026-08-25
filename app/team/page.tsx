@@ -17,6 +17,7 @@ const teamMembers = [
     nmls: LOAN_OFFICERS.eddie.nmlsDisplay,
     azLicense: LOAN_OFFICERS.eddie.azLicenseDisplay,
     image: "/home/eddie-knoell.jpg",
+    href: LOAN_OFFICERS.eddie.authorPath,
   },
   {
     name: LOAN_OFFICERS.thomas.name,
@@ -25,6 +26,7 @@ const teamMembers = [
     nmls: LOAN_OFFICERS.thomas.nmlsDisplay,
     azLicense: LOAN_OFFICERS.thomas.azLicenseDisplay,
     image: "/home/thomas-knoell.jpg",
+    href: LOAN_OFFICERS.thomas.authorPath,
   },
 ];
 
@@ -125,7 +127,12 @@ export default function TeamPage() {
           {/* Grid of Team Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
             {teamMembers.map((member) => (
-              <div key={member.name} className="bg-[#faf7f0] rounded-2xl overflow-hidden border border-[#e8e0d0]/60 shadow-sm flex flex-col hover:-translate-y-1 hover:shadow-md transition-all duration-300">
+              <Link
+                key={member.name}
+                href={member.href}
+                className="bg-[#faf7f0] rounded-2xl overflow-hidden border border-[#e8e0d0]/60 shadow-sm flex flex-col hover:-translate-y-1 hover:shadow-md transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3fb364] focus-visible:ring-offset-2"
+                aria-label={`View ${member.name}'s profile`}
+              >
                 <div className="relative bg-[#052316] h-56 sm:h-64 overflow-hidden">
                   <Image
                     src={member.image}
@@ -159,7 +166,7 @@ export default function TeamPage() {
                     </span>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>

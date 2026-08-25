@@ -614,7 +614,7 @@ export default function FAQPage() {
                 >
                   <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                 </svg>
-                Equal Housing Lender
+                Equal Housing Opportunity
               </span>
               <span className="hidden sm:inline text-white/20">|</span>
               <span>Licensed in Arizona</span>

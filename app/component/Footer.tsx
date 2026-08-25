@@ -261,7 +261,6 @@ const Footer = () => {
               </p>
               <p>
                 {COMPANY.legalName} is an{" "}
-                <strong className="text-white font-semibold">Equal Housing Lender</strong> and an{" "}
                 <strong className="text-white font-semibold">Equal Opportunity Employer</strong>.
               </p>
             </div>

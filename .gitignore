@@ -39,3 +39,17 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# SEO parity audit tooling — local-only (not needed for Vercel)
+/audit/
+
+# Local QA / crawl / lighthouse artifacts (not needed for Vercel)
+/lighthouse-reports/
+/tmp-wp-articles/
+/.playwright-cli/
+/output/
+/content.zip
+/QA_Blog_Content_Audit_Report.html
+/QA_Blog_Content_Audit_Report.xlsx
+/tsc.log
+/dev-check-out.txt

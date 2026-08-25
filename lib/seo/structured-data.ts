@@ -376,8 +376,8 @@ export function buildGlobalGraph(
 
 /**
  * All JSON-LD documents for the root layout:
- * 1) Yoast-style @graph
- * 2) Live rich Organization (reviews / products / articles)
+ * 1) Yoast-style @graph (every page)
+ * 2) Live rich Organization with products / offers / reviews (homepage only)
  */
 export function buildGlobalJsonLdDocuments(
   options: GlobalGraphOptions = {},
@@ -387,13 +387,19 @@ export function buildGlobalJsonLdDocuments(
     "",
   );
   const pathname = options.pathname || "/";
-  return [
+  const documents: JsonLdObject[] = [
     buildGlobalGraph({ siteUrl, pathname }),
-    {
+  ];
+
+  // Match live: Product / Offer / Review blob only on the homepage.
+  if (normalizePathname(pathname) === "/") {
+    documents.push({
       "@context": "https://schema.org",
       ...buildRichOrganizationSchema(siteUrl),
-    },
-  ];
+    });
+  }
+
+  return documents;
 }
 
 

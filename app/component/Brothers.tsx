@@ -1,22 +1,25 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { LOAN_OFFICERS } from "@/lib/company";
 
 const brothers = [
   {
-    name: "Thomas Knoell",
+    name: LOAN_OFFICERS.thomas.name,
     photo: "/home/thomas-knoell.jpg",
-    role: "Co-Founder · Loan Officer",
-    nmls: "NMLS ID #1618695",
-    license: "AZ Loan Originator License #LO-0942229",
+    role: LOAN_OFFICERS.thomas.title,
+    nmls: LOAN_OFFICERS.thomas.nmlsDisplay,
+    license: LOAN_OFFICERS.thomas.azLicenseDisplay,
+    href: LOAN_OFFICERS.thomas.authorPath,
     bio: "Co-founder of Mortgage Brothers LLC and a leading expert in mortgage lending. Thomas's deep understanding of first-time buyer needs makes him a favorite among clients in Gilbert and Tucson.",
   },
   {
-    name: "Eddie Knoell",
+    name: LOAN_OFFICERS.eddie.name,
     photo: "/home/eddie-knoell.jpg",
-    role: "Co-Founder · Managing Broker",
-    nmls: "NMLS ID #210917",
-    license: "AZ Loan Originator License #LO-0911422",
+    role: LOAN_OFFICERS.eddie.title,
+    nmls: LOAN_OFFICERS.eddie.nmlsDisplay,
+    license: LOAN_OFFICERS.eddie.azLicenseDisplay,
+    href: LOAN_OFFICERS.eddie.authorPath,
     bio: "Co-founder with decades of experience, Eddie has helped thousands of families navigate the mortgage process. His expertise simplifies the journey to homeownership for clients across Arizona.",
   },
 ];
@@ -48,9 +51,11 @@ const Brothers = () => {
         {/* Profiles Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 max-w-4xl mx-auto mb-14">
           {brothers.map((person) => (
-            <div
+            <Link
               key={person.name}
-              className="group bg-white border border-[#e8e0d0]/60 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col"
+              href={person.href}
+              className="group bg-white border border-[#e8e0d0]/60 rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 flex flex-col focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2d8545] focus-visible:ring-offset-2"
+              aria-label={`View ${person.name}'s profile`}
             >
               {/* Image Container */}
               <div className="h-[280px] sm:h-[360px] w-full overflow-hidden bg-[#2b3531] relative">
@@ -71,7 +76,7 @@ const Brothers = () => {
                   {person.role}
                 </span>
                 <h3
-                  className="text-[#08271B] text-[22px] sm:text-[24px] font-normal mb-2"
+                  className="text-[#08271B] text-[22px] sm:text-[24px] font-normal mb-2 group-hover:text-[#2d8545] transition-colors"
                   
                 >
                   {person.name}
@@ -85,7 +90,7 @@ const Brothers = () => {
                   {person.bio}
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

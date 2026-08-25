@@ -228,7 +228,11 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               
               {/* Eddie Profile */}
-              <div className="bg-brand-cream-light rounded-2xl p-8 border border-[#e8e0d0]/40 shadow-sm flex flex-col justify-between hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/35 active:scale-[0.98] active:translate-y-0 cursor-pointer transition-all duration-300">
+              <Link
+                href="/author/eddie-knoell/"
+                className="bg-brand-cream-light rounded-2xl p-8 border border-[#e8e0d0]/40 shadow-sm flex flex-col justify-between hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/35 active:scale-[0.98] active:translate-y-0 cursor-pointer transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green-accent focus-visible:ring-offset-2"
+                aria-label="View Eddie Knoell's profile"
+              >
                 <div>
                   <div className="flex items-center gap-4 mb-6">
                     {/* High-res Image Avatar */}
@@ -254,10 +258,14 @@ export default function AboutPage() {
                     Eddie is an owner and Vice President of Mortgage Brothers LLC in Phoenix, Arizona and has been serving Arizona Homeowners as a loan officer for over 25 years. Eddie is a 3rd generation native of Phoenix (the Knoell family has been deeply rooted in real estate for nearly a century in the Valley with an excellent reputation for quality). &ldquo;Loan Professional&rdquo;, the true definition of the title can be found in what Eddie Knoell will bring to the table for you and your clients. Personable, Organized, Ethical and overall a true passion for being able to help his clients turn a stressful time into a memorable moment. Eddie Knoell has been committed to specialize in residential mortgages for Valley clients from the beginning and he has never strayed away from his belief that helping his customers find their way home is the best gift he can give. Eddie graduated with a Bachelor of Arts Degree from Franciscan University of Steubenville Ohio and holds an Arizona Mortgage Loan Originator&rsquo;s license from the Department of Financial Institutions.
                   </p>
                 </div>
-              </div>
+              </Link>
 
               {/* Thomas Profile */}
-              <div className="bg-brand-cream-light rounded-2xl p-8 border border-[#e8e0d0]/40 shadow-sm flex flex-col justify-between hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/35 active:scale-[0.98] active:translate-y-0 cursor-pointer transition-all duration-300">
+              <Link
+                href="/author/thomas-knoell/"
+                className="bg-brand-cream-light rounded-2xl p-8 border border-[#e8e0d0]/40 shadow-sm flex flex-col justify-between hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/35 active:scale-[0.98] active:translate-y-0 cursor-pointer transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green-accent focus-visible:ring-offset-2"
+                aria-label="View Thomas Knoell's profile"
+              >
                 <div>
                   <div className="flex items-center gap-4 mb-6">
                     {/* High-res Image Avatar */}
@@ -283,7 +291,7 @@ export default function AboutPage() {
                     Tom is an owner and Vice President of Mortgage Brothers LLC in Phoenix, Arizona. Tom is a 3rd generation native to Phoenix, Arizona with deep family roots in the local market and community. Tom has over 25 years of experience in and around real estate / finance and has been involved in large scale complex projects. Tom understands the need for both vision and plan execution in order to deliver the best product and customer service experience for the client. Tom understands the importance of relationships and works with a high degree of integrity, ethics, and professionalism. Tom graduated with a Bachelor of Arts Degree from Franciscan University of Steubenville Ohio and holds an Arizona Mortgage Loan Originator&rsquo;s license from the Department of Financial Institutions. He is a past member of the Phoenix Men&rsquo;s Art Council, Urban Land Institute and NAIOP, Board of Directors for Great Hearts Veritas Prep Academy.
                   </p>
                 </div>
-              </div>
+              </Link>
 
               {/* Steve Perez Profile */}
               <div className="bg-brand-cream-light rounded-2xl p-8 border border-[#e8e0d0]/40 shadow-sm flex flex-col justify-between hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg hover:shadow-[#1a3a1a]/5 hover:border-brand-green-accent/35 active:scale-[0.98] active:translate-y-0 cursor-pointer transition-all duration-300">
@@ -481,7 +489,7 @@ export default function AboutPage() {
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
                 <polyline points="9 22 9 12 15 12 15 22" />
               </svg>
-              Equal Housing Lender
+              Equal Housing Opportunity
             </span>
           </div>
         </section>
