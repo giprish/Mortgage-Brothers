@@ -1,5 +1,13 @@
 import { COMPANY, LOAN_OFFICERS } from "@/lib/company";
-import { canonicalUrl, getSeoEntry, toTrailingSlashPath } from "@/lib/seo";
+import {
+  canonicalUrl,
+  getSeoEntry,
+  normalizePathname,
+  OG_SITE_NAME,
+  toTrailingSlashPath,
+} from "@/lib/seo";
+import liveOrganization from "@/lib/seo/live-organization.json";
+import { HOMEPAGE_VIDEO, LOAN_PROGRAM_VIDEOS } from "@/lib/seo/loan-videos";
 import { getConfiguredSiteUrl } from "@/lib/site-url";
 
 export type JsonLdObject = Record<string, unknown>;
@@ -25,6 +33,21 @@ export type BlogPostingInput = {
   authorPath?: string;
   articleSection?: string;
   keywords?: string | string[];
+};
+
+export type GlobalGraphOptions = {
+  pathname?: string;
+  siteUrl?: string;
+};
+
+const LIVE_ORIGIN = "https://azmortgagebrothers.com";
+
+/** Live WP paths that differ on Next.js. */
+const LIVE_PATH_ALIASES: Record<string, string> = {
+  "/mortgage-glossary": "/glossary/",
+  "/mortgage-glossary/": "/glossary/",
+  "/first-time-homebuyer-guide": "/first-time-home-buyer-arizona-guide/",
+  "/first-time-homebuyer-guide/": "/first-time-home-buyer-arizona-guide/",
 };
 
 const MONTHS: Record<string, string> = {
@@ -67,71 +90,132 @@ export function websiteId(siteUrl = getConfiguredSiteUrl()): string {
   return `${siteUrl}/#website`;
 }
 
+export function placeId(siteUrl = getConfiguredSiteUrl()): string {
+  return `${siteUrl}/#place`;
+}
+
 export function absoluteUrl(pathOrUrl: string, siteUrl = getConfiguredSiteUrl()): string {
   if (/^https?:\/\//i.test(pathOrUrl)) return pathOrUrl;
   const path = pathOrUrl.startsWith("/") ? pathOrUrl : `/${pathOrUrl}`;
   return `${siteUrl}${path}`;
 }
 
+function pageUrl(pathname: string, siteUrl: string): string {
+  const origin = siteUrl.replace(/\/+$/, "");
+  const path = toTrailingSlashPath(pathname);
+  return path === "/" ? `${origin}/` : `${origin}${path}`;
+}
+
+/**
+ * Rewrite live site URLs to the current deployment origin.
+ * Leaves `/wp-content/` media on the production WordPress CDN.
+ */
+export function rewriteLiveSiteUrls<T>(value: T, siteUrl: string): T {
+  const origin = siteUrl.replace(/\/+$/, "");
+
+  const walk = (node: unknown): unknown => {
+    if (typeof node === "string") {
+      if (node.includes("/wp-content/")) return node;
+      if (!node.startsWith(LIVE_ORIGIN)) return node;
+
+      const rest = node.slice(LIVE_ORIGIN.length) || "/";
+      const hashIndex = rest.indexOf("#");
+      const pathPart = hashIndex >= 0 ? rest.slice(0, hashIndex) : rest;
+      const hash = hashIndex >= 0 ? rest.slice(hashIndex) : "";
+      const aliased =
+        LIVE_PATH_ALIASES[pathPart] ??
+        LIVE_PATH_ALIASES[pathPart.replace(/\/+$/, "")] ??
+        pathPart;
+      const normalized =
+        aliased === "/"
+          ? "/"
+          : aliased.endsWith("/")
+            ? aliased
+            : `${aliased}/`;
+      return `${origin}${normalized === "/" ? "/" : normalized}${hash}`;
+    }
+    if (Array.isArray(node)) return node.map(walk);
+    if (node && typeof node === "object") {
+      const out: Record<string, unknown> = {};
+      for (const [key, child] of Object.entries(node)) {
+        out[key] = walk(child);
+      }
+      return out;
+    }
+    return node;
+  };
+
+  return walk(value) as T;
+}
+
+/** Full live homepage Organization block (reviews, products, articles, HowTo). */
+export function buildRichOrganizationSchema(
+  siteUrl = getConfiguredSiteUrl(),
+): JsonLdObject {
+  const origin = siteUrl.replace(/\/+$/, "");
+  const schema = rewriteLiveSiteUrls(
+    structuredClone(liveOrganization) as JsonLdObject,
+    origin,
+  );
+
+  schema.url = origin;
+  schema.name = COMPANY.brandName;
+  schema.legalName = COMPANY.legalName;
+  schema.telephone = COMPANY.phoneDisplay;
+  if (typeof schema.email !== "string") {
+    schema.email = COMPANY.email;
+  }
+
+  return schema;
+}
+
+/** Slim publisher org used inside the Yoast-style @graph. */
 export function buildOrganizationSchema(
   siteUrl = getConfiguredSiteUrl(),
 ): JsonLdObject {
   return {
-    "@type": ["MortgageBroker", "LocalBusiness", "FinancialService"],
+    "@type": ["Organization", "LocalBusiness", "FinancialService", "MortgageBroker"],
     "@id": organizationId(siteUrl),
-    name: COMPANY.brandName,
+    name: COMPANY.siteName,
     legalName: COMPANY.legalName,
     url: siteUrl,
-    telephone: COMPANY.phoneTel,
+    sameAs: [...COMPANY.sameAs, COMPANY.nmlsConsumerAccessUrl],
     email: COMPANY.email,
-    image: absoluteUrl(COMPANY.imageSrc, siteUrl),
-    logo: absoluteUrl(COMPANY.logoSrc, siteUrl),
-    priceRange: "$$",
     address: {
       "@type": "PostalAddress",
       streetAddress: COMPANY.streetAddress,
       addressLocality: COMPANY.city,
-      addressRegion: COMPANY.state,
+      addressRegion: "Arizona",
       postalCode: COMPANY.postalCode,
       addressCountry: "US",
     },
+    logo: absoluteUrl(COMPANY.logoSrc, siteUrl),
+    image: absoluteUrl(COMPANY.imageSrc, siteUrl),
+    telephone: COMPANY.phoneTel,
+    priceRange: "$$",
+    description:
+      "Explore mortgage options with Arizona Mortgage Brothers. Get personalized advice and competitive rates for home loans in Arizona. Contact us today!",
+  };
+}
+
+export function buildPlaceSchema(siteUrl = getConfiguredSiteUrl()): JsonLdObject {
+  return {
+    "@type": "Place",
+    "@id": placeId(siteUrl),
     geo: {
       "@type": "GeoCoordinates",
-      latitude: COMPANY.geo.latitude,
-      longitude: COMPANY.geo.longitude,
+      latitude: String(COMPANY.geo.latitude),
+      longitude: String(COMPANY.geo.longitude),
     },
-    areaServed: {
-      "@type": "State",
-      name: "Arizona",
+    hasMap: COMPANY.addressMapsUrl,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: COMPANY.streetAddress,
+      addressLocality: COMPANY.city,
+      addressRegion: "Arizona",
+      postalCode: COMPANY.postalCode,
+      addressCountry: "US",
     },
-    identifier: [
-      {
-        "@type": "PropertyValue",
-        name: "NMLS",
-        value: COMPANY.nmls,
-      },
-      {
-        "@type": "PropertyValue",
-        name: "Arizona Mortgage Broker License",
-        value: COMPANY.azLicense,
-      },
-    ],
-    sameAs: [...COMPANY.sameAs, COMPANY.nmlsConsumerAccessUrl],
-    employee: [
-      {
-        "@type": "Person",
-        "@id": canonicalUrl(LOAN_OFFICERS.eddie.authorPath),
-        name: LOAN_OFFICERS.eddie.name,
-        jobTitle: LOAN_OFFICERS.eddie.title,
-        identifier: LOAN_OFFICERS.eddie.nmlsDisplay,
-      },
-      {
-        "@type": "Person",
-        name: LOAN_OFFICERS.thomas.name,
-        jobTitle: LOAN_OFFICERS.thomas.title,
-        identifier: LOAN_OFFICERS.thomas.nmlsDisplay,
-      },
-    ],
   };
 }
 
@@ -143,16 +227,147 @@ export function buildWebSiteSchema(siteUrl = getConfiguredSiteUrl()): JsonLdObje
     name: COMPANY.siteName,
     publisher: { "@id": organizationId(siteUrl) },
     inLanguage: "en-US",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${siteUrl}/?s={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
   };
 }
 
-/** Global graph for the root layout (organization + website). */
-export function buildGlobalGraph(siteUrl = getConfiguredSiteUrl()): JsonLdObject {
+function pageEntityType(pathname: string): string {
+  const path = normalizePathname(pathname);
+  if (path === "/about-us") return "AboutPage";
+  if (path === "/contact-us") return "ContactPage";
+  return "WebPage";
+}
+
+function buildImageObject(pathname: string, siteUrl: string): JsonLdObject {
+  const url = pageUrl(pathname, siteUrl);
+  const seo = getSeoEntry(pathname);
+  const image = absoluteUrl(
+    seo?.openGraph?.image || COMPANY.imageSrc,
+    siteUrl,
+  );
   return {
-    "@context": "https://schema.org",
-    "@graph": [buildOrganizationSchema(siteUrl), buildWebSiteSchema(siteUrl)],
+    "@type": "ImageObject",
+    "@id": `${url}#primaryimage`,
+    url: image,
+    contentUrl: image,
+    caption: seo?.title || OG_SITE_NAME,
+    inLanguage: "en-US",
   };
 }
+
+function buildPageEntity(pathname: string, siteUrl: string): JsonLdObject {
+  const url = pageUrl(pathname, siteUrl);
+  const seo = getSeoEntry(pathname);
+  const title =
+    (typeof seo?.title === "string" && seo.title) ||
+    (typeof seo?.openGraph?.title === "string" && seo.openGraph.title) ||
+    OG_SITE_NAME;
+  const description =
+    (typeof seo?.description === "string" && seo.description) ||
+    (typeof seo?.openGraph?.description === "string" &&
+      seo.openGraph.description) ||
+    undefined;
+
+  return {
+    "@type": pageEntityType(pathname),
+    "@id": `${url}#webpage`,
+    url,
+    name: title,
+    ...(description ? { description } : {}),
+    isPartOf: { "@id": websiteId(siteUrl) },
+    about: { "@id": organizationId(siteUrl) },
+    primaryImageOfPage: { "@id": `${url}#primaryimage` },
+    inLanguage: "en-US",
+  };
+}
+
+function buildHomepageVideo(siteUrl: string): JsonLdObject {
+  const origin = siteUrl.replace(/\/+$/, "");
+  const webpageId = `${origin}/#webpage`;
+  return {
+    ...HOMEPAGE_VIDEO,
+    "@id": `${origin}/#schema-video`,
+    isPartOf: { "@id": webpageId },
+    publisher: { "@id": organizationId(origin) },
+    mainEntityOfPage: { "@id": webpageId },
+  };
+}
+
+export function buildVideoObjectSchema(
+  pathname: string,
+  siteUrl = getConfiguredSiteUrl(),
+): JsonLdObject | null {
+  const path = toTrailingSlashPath(pathname);
+  const video = LOAN_PROGRAM_VIDEOS[path];
+  if (!video) return null;
+  return {
+    "@context": "https://schema.org",
+    ...video,
+  };
+}
+
+/**
+ * Yoast/Rank-Math style @graph for every page.
+ * Pathname drives WebPage vs AboutPage vs ContactPage and homepage VideoObject.
+ */
+export function buildGlobalGraph(
+  siteUrlOrOptions?: string | GlobalGraphOptions,
+  maybeOptions?: GlobalGraphOptions,
+): JsonLdObject {
+  const options: GlobalGraphOptions =
+    typeof siteUrlOrOptions === "string"
+      ? { siteUrl: siteUrlOrOptions, ...(maybeOptions || {}) }
+      : siteUrlOrOptions || {};
+  const siteUrl = (options.siteUrl || getConfiguredSiteUrl()).replace(
+    /\/+$/,
+    "",
+  );
+  const pathname = options.pathname || "/";
+
+  const graph: JsonLdObject[] = [
+    buildPlaceSchema(siteUrl),
+    buildOrganizationSchema(siteUrl),
+    buildWebSiteSchema(siteUrl),
+    buildImageObject(pathname, siteUrl),
+    buildPageEntity(pathname, siteUrl),
+  ];
+
+  if (normalizePathname(pathname) === "/") {
+    graph.push(buildHomepageVideo(siteUrl));
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": graph,
+  };
+}
+
+/**
+ * All JSON-LD documents for the root layout:
+ * 1) Yoast-style @graph
+ * 2) Live rich Organization (reviews / products / articles)
+ */
+export function buildGlobalJsonLdDocuments(
+  options: GlobalGraphOptions = {},
+): JsonLdObject[] {
+  const siteUrl = (options.siteUrl || getConfiguredSiteUrl()).replace(
+    /\/+$/,
+    "",
+  );
+  const pathname = options.pathname || "/";
+  return [
+    buildGlobalGraph({ siteUrl, pathname }),
+    {
+      "@context": "https://schema.org",
+      ...buildRichOrganizationSchema(siteUrl),
+    },
+  ];
+}
+
 
 export function buildFaqPageSchema(faqs: FaqQa[]): JsonLdObject | null {
   const entities = faqs

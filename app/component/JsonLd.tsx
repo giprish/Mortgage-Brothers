@@ -1,7 +1,9 @@
+import { headers } from "next/headers";
 import {
-  buildGlobalGraph,
+  buildGlobalJsonLdDocuments,
   type JsonLdObject,
 } from "@/lib/seo/structured-data";
+import { getConfiguredSiteUrl } from "@/lib/site-url";
 
 type JsonLdProps = {
   data?: JsonLdObject | JsonLdObject[];
@@ -9,11 +11,21 @@ type JsonLdProps = {
 
 /**
  * Renders one or more JSON-LD script tags.
- * When `data` is omitted, emits the sitewide Organization + WebSite graph.
+ * When `data` is omitted, emits the sitewide Yoast-style graph + rich Organization.
  */
-export default function JsonLd({ data }: JsonLdProps) {
-  const payload = data ?? buildGlobalGraph();
-  const blocks = Array.isArray(payload) ? payload : [payload];
+export default async function JsonLd({ data }: JsonLdProps) {
+  let blocks: JsonLdObject[];
+
+  if (data) {
+    blocks = Array.isArray(data) ? data : [data];
+  } else {
+    const headerStore = await headers();
+    const pathname = headerStore.get("x-pathname") || "/";
+    blocks = buildGlobalJsonLdDocuments({
+      pathname,
+      siteUrl: getConfiguredSiteUrl(),
+    });
+  }
 
   return (
     <>

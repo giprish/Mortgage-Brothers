@@ -9,6 +9,7 @@
     "start": "next start",
     "lint": "eslint",
     "validate:sitemap": "node scripts/validate-sitemap.mjs",
+    "compare:jsonld": "node scripts/compare-jsonld.mjs",
     "lh:all": "node scripts/lighthouse-all.mjs",
     "lh:sample": "node scripts/lighthouse-all.mjs"
   },
