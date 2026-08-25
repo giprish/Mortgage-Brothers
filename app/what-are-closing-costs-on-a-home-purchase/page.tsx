@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
+import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -61,8 +62,8 @@ const loanSolutions = [
 ];
 
 const articleFaqs = [
-  { question: "Do closing costs vary a lot?", answer: "Closing costs usually do not vary as much as people think by loan size, because they mostly reflect the work needed to close the loan. The difference between a $200,000 loan and a $500,000 loan can be only a few hundred dollars." },
-  { question: "What’s an average closing cost?", answer: "A common purchase estimate is around $3,500, with many loans landing between $3,000 and $3,800. In the featured example, total closing costs were $3,563 before prepaids like taxes and insurance." },
+  { question: "Do closing costs vary a lot?", answer: "There’s not much of an extra cost to do a $200,000 loan than a $500,000 loan. The same amount of work is generally going into it. The difference for closing costs between a $200,000 loan and a $500,000 loan might only be about $800." },
+  { question: "What’s an average closing cost?", answer: "If someone asks us as, say, we’re headed to a meeting, what the closing costs are on a loan, we’ll typically throw out $3500. Closing costs are usually going to be between $3000 and $3800." },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({
@@ -404,6 +405,17 @@ export default function ClosingCostsPage() {
                       </p>
                     </div>
                   </div>
+                </section>
+
+                
+                <section id="frequently-asked-questions">
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={articleFaqs.map((faq) => ({
+                      q: faq.question,
+                      a: faq.answer,
+                    }))}
+                  />
                 </section>
 
                 <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">

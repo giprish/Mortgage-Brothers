@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
+import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -79,9 +80,9 @@ const loanSolutions = [
 ];
 
 const articleFaqs = [
-  { question: "What you need to know about the Arizona Prequalification Form", answer: "The Arizona Prequalification Form is a document required in real estate transactions in Arizona. It is issued by lenders and shows that a buyer has been reviewed and is financially capable of purchasing a home." },
+  { question: "What is the Arizona Prequalification Form?", answer: "The Arizona Prequalification Form is a document required in real estate transactions in Arizona. It is issued by lenders and shows that a buyer has been reviewed and is financially capable of purchasing a home." },
   { question: "Why does the Arizona Prequalification Form matter to buyers?", answer: "For buyers, the Arizona Prequalification Form acts like a resume. It shows sellers that they are serious and financially qualified, which can strengthen their chances of getting their offer accepted in a competitive market." },
-  { question: "Why is the Arizona Prequalification Form important for sellers?", answer: "For sellers, reviewing a buyer's prequalification form helps assess risk before accepting an offer. A strong form gives sellers confidence in the buyer's ability to qualify and can make the buyer's offer more attractive." },
+  { question: "Why is the Arizona Prequalification Form important for sellers?", answer: "For sellers, reviewing a buyer’s prequalification form helps assess risk before accepting an offer. A strong form gives sellers confidence in the buyer’s ability to qualify and can make the buyer’s offer more attractive." },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({
@@ -392,6 +393,17 @@ export default function ArizonaPrequalificationFormPage() {
                   . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
                   you and help you through the whole process.
                 </p>
+
+                
+                <section id="frequently-asked-questions">
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={articleFaqs.map((faq) => ({
+                      q: faq.question,
+                      a: faq.answer,
+                    }))}
+                  />
+                </section>
 
                 <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
                   <p className="text-[15px] text-[#052316] leading-relaxed">

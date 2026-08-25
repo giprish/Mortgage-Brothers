@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
+import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -75,8 +76,10 @@ const loanSolutions = [
 ];
 
 const articleFaqs = [
-  { question: "**Final Thoughts: Should You Use This Strategy?**", answer: "\[09:20\] **This works best if:** ✅ You're **competing in a tough housing market**. ✅ You have **a family member or private lender** willing to help. ✅ You **need a mortgage** but also want to **win with a cash offer**. 🚨 **Make sure you work with a lender who understands how to structure this properly!**" },
-  { question: "**Need Help? Contact Us Today!**", answer: "\[09:45\] If you're thinking about using this strategy, **reach out to the Mortgage Brothers Team** for a **free consultation**. 📞 **Contact us:** Contact Form 📞 **Call us for a personalized mortgage review** If you found this video helpful, **like, subscribe, and hit the notification button** for more mortgage insights. Thanks for tuning in! ← Previous PostNext Post → [](tel:+16025352171) Categories Arizona Mortgage Insights FHA Loans Homeownership Tips Mortgage Basics Mortgage Payments & Strategies Mortgage Process Guidance Mortgage Qualifications Real Estate & Mortgages Specialty Loans Spouse & Estate Considerations" },
+  { question: "Can I buy a house with a cash offer and still get mortgage financing later?", answer: "Yes, you can. One way to do this is by using a family member’s cash as a private loan to make the initial cash offer. Once you close on the home, you can refinance it into a traditional mortgage under your name." },
+  { question: "How does using a family member’s cash work in a home purchase?", answer: "A family member can act as a private lender by providing the funds to buy the home. A note and deed of trust are created to formalize the loan. After closing, you can refinance the property to pay back the family member and transfer the loan into your name." },
+  { question: "What steps are involved in setting up a private loan for a cash offer?", answer: "Start by discussing the plan with your mortgage lender to ensure they support the approach. Then, work with an escrow officer to draft a note and deed of trust that outlines the loan amount, interest rate, and repayment terms. Make sure the note uses standard market terms." },
+  { question: "What if part of the funds is a gift from a relative?", answer: "If part of the funds is a gift, you will need to decide what amount you want to refinance. For example, if you buy a home for $200,000 and your relative gifts 20% as a down payment, you would only refinance $160,000. The remaining 20% would be considered a gift and not part of the loan amount." },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({
@@ -257,6 +260,17 @@ export default function CashOfferMortgageFinancingPage() {
                   </p>
 
                   <p className="mb-5 text-center text-[20px]">&bull;&bull;&bull;</p>
+
+                
+                <section id="frequently-asked-questions">
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={articleFaqs.map((faq) => ({
+                      q: faq.question,
+                      a: faq.answer,
+                    }))}
+                  />
+                </section>
 
                 <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
                   <p className="text-[15px] text-[#052316] leading-relaxed">

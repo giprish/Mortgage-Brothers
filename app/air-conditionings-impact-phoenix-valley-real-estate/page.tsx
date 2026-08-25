@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
+import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -242,7 +243,15 @@ export default function AirConditioningPhoenixRealEstatePage() {
                   </p>
                 </section>
 
-
+                <section id="frequently-asked-questions">
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={articleFaqs.map((faq) => ({
+                      q: faq.question,
+                      a: faq.answer,
+                    }))}
+                  />
+                </section>
 
                 <p className="text-[15px]">
                   Discover how air conditioning influences real estate trends in the Phoenix Valley. Enhance your

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
+import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -75,8 +76,8 @@ const loanSolutions = [
 ];
 
 const articleFaqs = [
-  { question: "What's an example of grossing up?", answer: "For example, if you make $1000 a month from foster care income, since it is non-taxable, it can usually be grossed up. For a conventional loan, the gross-up is 25% ($1250) and for an FHA loan, it's 15% ($1150)." },
-  { question: "What other incomes are typically allowed to be grossed up?", answer: "Other non-taxable incomes that can usually be grossed up include child support payments, VA benefits, workers' compensation, supplemental social security, adoption income, and foster care income. Documentation is required to show continuation for at least three years." },
+  { question: "What’s an example of grossing up?", answer: "For example, if you make $1000 a month from foster care income, since it is non-taxable, it can usually be grossed up. For a conventional loan, the gross-up is 25% ($1250) and for an FHA loan, it’s 15% ($1150)." },
+  { question: "What other incomes are typically allowed to be grossed up?", answer: "Other non-taxable incomes that can usually be grossed up include child support payments, VA benefits, workers’ compensation, supplemental social security, adoption income, and foster care income. Documentation is required to show continuation for at least three years." },
   { question: "What income may be partially grossed up?", answer: "Incomes that may be partially grossed up include social security income, retirement income, pension income, annuity income, IRA distributions, housing allowance, and long-term disability income. The non-taxable portion can be grossed up by 25% for conventional loans and 15% for FHA loans." },
 ] as const;
 
@@ -260,6 +261,17 @@ export default function GrossingUpIncomePage() {
                     . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work
                     with you and help you through the whole process.
                   </p>
+                </section>
+
+                
+                <section id="frequently-asked-questions">
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={articleFaqs.map((faq) => ({
+                      q: faq.question,
+                      a: faq.answer,
+                    }))}
+                  />
                 </section>
 
                 <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
+import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -75,7 +76,7 @@ const loanSolutions = [
 ];
 
 const articleFaqs = [
-  { question: "How to Skip 2 Mortgage Payments", answer: "Yes, when refinancing, you typically skip 2 payments. There is no payment the month you close and no payment on the final month of the mortgage. For example, if you close on November 10th, you won’t make a December payment since mortgage payments are paid in arrears." },
+  { question: "Is it possible to skip 2 payments on your mortgage?", answer: "Yes, when refinancing, you typically skip 2 payments. There is no payment the month you close and no payment on the final month of the mortgage. For example, if you close on November 10th, you won’t make a December payment since mortgage payments are paid in arrears." },
   { question: "How does skipping 2 mortgage payments work?", answer: "When you close on your loan, the interest for that month is prepaid at closing. Since mortgage payments are paid in arrears, your next payment isn’t due until the following month. Essentially, the interest gets rolled into either the old loan or the new loan, but it’s not free—just shifted." },
   { question: "Does skipping mortgage payments save money?", answer: "No, skipping payments does not save money. It’s more like shifting payments. The total amount you owe remains the same—it just gets prepaid or delayed depending on the timing of your loan closing." },
 ] as const;
@@ -236,6 +237,17 @@ export default function HowToSkip2PaymentsPage() {
                   . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
                   you and help you through the whole process.
                 </p>
+
+                
+                <section id="frequently-asked-questions">
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={articleFaqs.map((faq) => ({
+                      q: faq.question,
+                      a: faq.answer,
+                    }))}
+                  />
+                </section>
 
                 <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
                   <p className="text-[15px] text-[#052316] leading-relaxed">

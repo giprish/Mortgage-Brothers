@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
+import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -79,9 +80,9 @@ const loanSolutions = [
 ];
 
 const articleFaqs = [
-  { question: "Will the bank let us make payments on this mortgage?", answer: "If you are on the title, you can generally continue making mortgage payments even if you are not on the loan. The bank's primary concern is receiving payments on time, not forcing a sale or payoff from a surviving spouse." },
-  { question: "Do we have to refinance?", answer: "No, refinancing is not required. You can stay on the current loan if you prefer, or refinance into your own name if you qualify and want better terms or sole ownership of the debt." },
-  { question: "Do we have to sell the home?", answer: "No, you do not have to sell the home. As long as you continue making on-time payments and understand your rights regarding title and the mortgage, selling is one option among several—not a requirement." },
+  { question: "Will the bank let us make payments on the mortgage if a spouse dies?", answer: "Yes, in many cases the bank will allow you to continue making payments on the mortgage. However, whether you are on the title or not matters, and it’s important to confirm your legal rights with your attorney." },
+  { question: "Do we have to refinance the mortgage after a spouse dies?", answer: "Refinancing is not always required. If you are on the title, you can usually continue with the current loan or choose to refinance into your name. It’s recommended to speak with an attorney and notify the bank of the spouse’s passing." },
+  { question: "What happens if I live in a community property state and my spouse dies?", answer: "In community property states such as California, Texas, and Arizona, property is treated differently when a spouse passes away. The classification as community or separate property will impact inheritance and mortgage rights. It’s essential to consult with an attorney to understand your obligations." },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({
@@ -297,6 +298,17 @@ export default function SpouseDiesNotOnMortgagePage() {
                     </a>
                     .
                   </p>
+                </section>
+
+                
+                <section id="frequently-asked-questions">
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={articleFaqs.map((faq) => ({
+                      q: faq.question,
+                      a: faq.answer,
+                    }))}
+                  />
                 </section>
 
                 <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">

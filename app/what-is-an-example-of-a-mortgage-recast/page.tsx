@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
+import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -76,7 +77,7 @@ const loanSolutions = [
 
 const articleFaqs = [
   { question: "What is a mortgage recast?", answer: "A mortgage recast is when you make a large payment toward the principal of your existing loan, and your lender recalculates your monthly payments based on the reduced balance. The loan term and interest rate remain the same, but your monthly payments go down. Most lenders require at least $10,000 as a principal reduction and charge a small administrative fee between $200 and $300." },
-  { question: "What happens if you just pay down your mortgage without recasting?", answer: "If you make a lump-sum payment toward your mortgage without doing a recast, your monthly payments stay the same, but your loan will be paid off sooner. This reduces the total interest you pay over time because you've shortened the repayment timeline." },
+  { question: "What happens if you just pay down your mortgage without recasting?", answer: "If you make a lump-sum payment toward your mortgage without doing a recast, your monthly payments stay the same, but your loan will be paid off sooner. This reduces the total interest you pay over time because you’ve shortened the repayment timeline." },
   { question: "When is it better to do a mortgage recast instead of just paying down your loan?", answer: "A mortgage recast is best suited for borrowers on a fixed budget or fixed income who need lower monthly payments. On the other hand, if your goal is to pay off the loan faster, simply applying extra funds directly toward the principal may be a better option." },
 ] as const;
 
@@ -258,6 +259,17 @@ export default function MortgageRecastExamplePage() {
                     quote on your next mortgage. We&apos;ll personally work with you and help you through the
                     whole process.
                   </p>
+                </section>
+
+                
+                <section id="frequently-asked-questions">
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={articleFaqs.map((faq) => ({
+                      q: faq.question,
+                      a: faq.answer,
+                    }))}
+                  />
                 </section>
 
                 <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">

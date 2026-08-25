@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
+import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -61,9 +62,9 @@ const loanSolutions = [
 ];
 
 const articleFaqs = [
-  { question: "How do mortgage payoffs work?", answer: "A payoff amount includes your principal balance plus interest that accrues daily through the exact payoff date, and sometimes other adjustments. That is why payoff is usually higher than the statement balance snapshot." },
-  { question: "I made my payment on time, why is it still going up?", answer: "Mortgage interest is paid in arrears, so after your monthly payment posts, interest continues accruing each day. Your payoff amount rises day by day until the loan is fully paid off." },
-  { question: "How does your closing date impact your mortgage payoff?", answer: "Closing later in the month usually means more accrued daily interest is added to payoff. Closing timing affects the exact amount required because lenders calculate payoff through the date funds are received." },
+  { question: "How do mortgage payoffs work?", answer: "When refinancing, you can’t just use the balance shown on your mortgage statement. You must account for interest. Many borrowers confuse the mortgage payoff with the statement balance, but they are different. Your monthly payments are based on your loan amount, interest, and the timing of your payoff." },
+  { question: "I made my payment on time, why is it still going up?", answer: "Mortgage payments are paid in arrears, meaning the payment you make at the start of the month covers the previous month. Interest accrues daily, so your balance increases until your payment is applied. If charted, it looks like a stair-step pattern rather than a straight downward line." },
+  { question: "How does your closing date impact your mortgage payoff?", answer: "Your closing date determines how much daily interest you must cover. If you close mid-month, you’re responsible for the accrued interest for the remaining days. If closing at the start of the month, title companies may add a few extra days of interest to avoid shortages. Closing at the end of the month may delay your first payment, but you’ll still owe daily interest." },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({
@@ -217,6 +218,17 @@ export default function MortgagePayoffPage() {
                   on your next mortgage. We&apos;ll personally work with you and help you through the whole
                   process.
                 </p>
+
+                
+                <section id="frequently-asked-questions">
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={articleFaqs.map((faq) => ({
+                      q: faq.question,
+                      a: faq.answer,
+                    }))}
+                  />
+                </section>
 
                 <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
                   <p className="text-[15px] text-[#052316] leading-relaxed">

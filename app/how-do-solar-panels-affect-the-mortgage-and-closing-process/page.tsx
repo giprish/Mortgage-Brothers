@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
+import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -75,7 +76,7 @@ const loanSolutions = [
 ];
 
 const articleFaqs = [
-  { question: "How do Solar Panels affect the mortgage and closing process?", answer: "Yes, in most cases, solar panels are allowed. Lenders require the buyer to get a copy of the solar agreement, ensure there is a warranty against malfunctions or defects, and confirm that the lease is transferable to the new buyer. If panels are leased, they must be transferred by the solar company to the buyer. Owned panels are treated as real estate fixtures, though if a loan exists, it becomes a lien on the property that must be transferable." },
+  { question: "How do lenders view solar panels? Are they even allowed?", answer: "Yes, in most cases, solar panels are allowed. Lenders require the buyer to get a copy of the solar agreement, ensure there is a warranty against malfunctions or defects, and confirm that the lease is transferable to the new buyer. If panels are leased, they must be transferred by the solar company to the buyer. Owned panels are treated as real estate fixtures, though if a loan exists, it becomes a lien on the property that must be transferable." },
   { question: "How do solar panels impact property value?", answer: "Leased solar panels generally do not add value to a property because institutions like Fannie Mae, Freddie Mac, FHA, and VA only recognize ownership. Owned solar panels can increase value modestly, but not equal to the full installation cost. For example, a $20,000 system might only add about $5,000 in appraised value, depending on neighborhood sales comparables." },
   { question: "How do solar panel payments affect loan qualifications?", answer: "If your solar lease or ownership agreement includes a production guarantee, lenders typically do not count the loan or lease payment against you. However, buyers must still pay their utility bill plus any solar payments. At closing, any lien from a solar loan or lease must be released before the lender places their lien, a process handled by the title company that may involve a modest fee." },
 ] as const;
@@ -262,6 +263,17 @@ export default function SolarPanelsMortgagePage() {
                   . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
                   you and help you through the whole process.
                 </p>
+
+                
+                <section id="frequently-asked-questions">
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={articleFaqs.map((faq) => ({
+                      q: faq.question,
+                      a: faq.answer,
+                    }))}
+                  />
+                </section>
 
                 <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
                   <p className="text-[15px] text-[#052316] leading-relaxed">

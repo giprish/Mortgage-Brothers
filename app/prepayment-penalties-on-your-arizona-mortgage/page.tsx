@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
+import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -226,6 +227,18 @@ export default function PrepaymentPenaltiesArizonaMortgagePage() {
                   </p>
                   <p className="text-[#4e5b4e] text-[15px] leading-relaxed">Or Complete our Inquiry Form</p>
                 </div>
+
+                <section id="frequently-asked-questions">
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={articleFaqs.map((faq) => ({
+                      q: faq.question,
+                      a: faq.answer,
+                    }))}
+                  />
+                </section>
+
+
 
                 <p>
                   If you have any questions about this or if you have any questions you&apos;d like us to

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
+import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -224,6 +225,18 @@ export default function LsuFormsPage() {
                   accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
                   #210917 and 1618695. Equal housing lender.
                 </p>
+
+                <section id="frequently-asked-questions">
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={articleFaqs.map((faq) => ({
+                      q: faq.question,
+                      a: faq.answer,
+                    }))}
+                  />
+                </section>
+
+
 
                 <section id="podcast-transcript">
                   <h2

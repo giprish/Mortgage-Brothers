@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
+import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -75,7 +76,7 @@ const loanSolutions = [
 ];
 
 const articleFaqs = [
-  { question: "Buying or Selling personal property with your home sale? Must Watch this First!", answer: "When personal property is included in a purchase contract, lenders may see it as a seller concession or inducement for purchase, which can cause issues. Lenders want the house itself to be the sole reason for the purchase, as it is the asset that secures the loan." },
+  { question: "How does Personal Property in a Purchase Contract affect Lenders?", answer: "When personal property is included in a purchase contract, lenders may see it as a seller concession or inducement for purchase, which can cause issues. Lenders want the house itself to be the sole reason for the purchase, as it is the asset that secures the loan." },
   { question: "What is the difference between Real Estate and Personal Property?", answer: "Real Estate includes buildings, land, and items affixed to the property, such as built-in bookcases or chandeliers. Personal Property refers to non-affixed items like furniture, paintings, grills, lawnmowers, dishes, and other movable possessions." },
   { question: "What restrictions should buyers know about Personal Property in contracts?", answer: "In most cases, non-affixed personal property should be handled outside of the purchase contract. However, in Arizona purchase contracts, certain items such as dishwashers, washer-dryers, refrigerators, and window treatments may be included." },
 ] as const;
@@ -235,6 +236,18 @@ export default function BuyingOrSellingPersonalPropertyPage() {
                     Lines 56–60: Dishwasher; Washer-Dryer; Refrigerator; Window Treatments.
                   </p>
                 </section>
+
+                <section id="frequently-asked-questions">
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={articleFaqs.map((faq) => ({
+                      q: faq.question,
+                      a: faq.answer,
+                    }))}
+                  />
+                </section>
+
+
 
                 <p>
                   If you have any questions about this or if you have any questions you&apos;d like us to

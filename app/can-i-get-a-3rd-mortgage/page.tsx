@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
+import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -75,9 +76,9 @@ const loanSolutions = [
 ];
 
 const articleFaqs = [
-  { question: "Can I Get a 3rd Mortgage", answer: "Yes, mortgages have lien positions such as first, second, and so on. Each mortgage is considered a standalone loan, and even if you borrow from the same lender again, it is treated as a brand-new loan in a new position." },
+  { question: "Do mortgages have positions?", answer: "Yes, mortgages have lien positions such as first, second, and so on. Each mortgage is considered a standalone loan, and even if you borrow from the same lender again, it is treated as a brand-new loan in a new position." },
   { question: "How many mortgages can I have on my home?", answer: "In most cases, you can only have two mortgages — a first and a second. It is highly unlikely that a bank will approve a third mortgage. The second mortgage is often from a different lender than the first." },
-  { question: "Why does the position of a mortgage matter?", answer: "The position of a mortgage determines the order of repayment if foreclosure occurs. The first-position lender is paid first from the sale of the home, and the second mortgage is paid only if there are remaining funds. During the 2008 financial crisis, many second mortgages were wiped out because foreclosure sales didn't generate enough to cover even the first lien." },
+  { question: "Why does the position of a mortgage matter?", answer: "The position of a mortgage determines the order of repayment if foreclosure occurs. The first-position lender is paid first from the sale of the home, and the second mortgage is paid only if there are remaining funds. During the 2008 financial crisis, many second mortgages were wiped out because foreclosure sales didn’t generate enough to cover even the first lien." },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({
@@ -275,6 +276,17 @@ export default function CanIGetA3rdMortgagePage() {
                     . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work
                     with you and help you through the whole process.
                   </p>
+                </section>
+
+                
+                <section id="frequently-asked-questions">
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={articleFaqs.map((faq) => ({
+                      q: faq.question,
+                      a: faq.answer,
+                    }))}
+                  />
                 </section>
 
                 <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">

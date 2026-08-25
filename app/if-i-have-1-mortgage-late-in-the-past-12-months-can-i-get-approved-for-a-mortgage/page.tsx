@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
+import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -75,7 +76,7 @@ const loanSolutions = [
 ];
 
 const articleFaqs = [
-  { question: "If I have 1 late mortgage payment in the past 12 months can I get approved for a mortgage?", answer: "Conventional Financing is a bit stricter than FHA. They only allow for one 30-day late. However, you are not guaranteed to be approved if you're under this line, but you will be eligible as long as you don't have no more than one 30-day late." },
+  { question: "How does Conventional Financing handle late payments?", answer: "Conventional Financing is a bit stricter than FHA. They only allow for one 30-day late. However, you are not guaranteed to be approved if you’re under this line, but you will be eligible as long as you don’t have no more than one 30-day late." },
   { question: "How are VA Loans impacted by late mortgage payments?", answer: "VA loans have the same policy as Conventional Financing when it comes to past late mortgage payments. You can only have one 30-day late." },
 ] as const;
 
@@ -279,6 +280,17 @@ export default function MortgageLateApprovalPage() {
                   . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you
                   and help you through the whole process.
                 </p>
+
+                
+                <section id="frequently-asked-questions">
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={articleFaqs.map((faq) => ({
+                      q: faq.question,
+                      a: faq.answer,
+                    }))}
+                  />
+                </section>
 
                 <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
                   <p className="text-[15px] text-[#052316] leading-relaxed">

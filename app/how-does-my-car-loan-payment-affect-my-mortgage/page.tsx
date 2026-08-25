@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
+import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -75,10 +76,10 @@ const loanSolutions = [
 ];
 
 const articleFaqs = [
-  { question: "How much more home can I get if I don't have a $250 car payment?", answer: "A $250 car payment equates to about a $50,000 mortgage. Not many people are buying houses for $50,000, but what this really means is you can add this to your potential home buying power, your purchasing power. So, with the car payment of $250, you can afford a $200,000 house, but without that $250 car payment, you could afford a $250,000 house. And today, that's a big deal." },
-  { question: "How much more home can I get if I don't have a $400 car payment?", answer: "If your car payment is $400 a month, that equates to roughly $80,000 that could go into buying a new home." },
-  { question: "How much more home can I get if I don't have a $600 car payment?", answer: "If your car payment is $600 a month, that equates to roughly $120,000 that could go into buying a new home." },
-  { question: "How much more home can I get if I don't have a $1000 car payment?", answer: "If your car payment is $1000 a month, that equates to roughly $200,000 that could go into buying a new home." },
+  { question: "How much more home can I get if I don’t have a $250 car payment?", answer: "A $250 car payment equates to about a $50,000 mortgage. Not many people are buying houses for $50,000, but what this really means is you can add this to your potential home buying power, your purchasing power. So, with the car payment of $250, you can afford a $200,000 house, but without that $250 car payment, you could afford a $250,000 house. And today, that’s a big deal." },
+  { question: "How much more home can I get if I don’t have a $400 car payment?", answer: "If your car payment is $400 a month, that equates to roughly $90,000 that could go into buying a new home." },
+  { question: "How much more home can I get if I don’t have a $600 car payment?", answer: "If your car payment is $600 a month, that equates to roughly $140,000 that could go into buying a new home." },
+  { question: "How much more home can I get if I don’t have a $1000 car payment?", answer: "If your car payment is $1000 a month, that equates to roughly $235,000 that could go into buying a new home." },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({
@@ -277,6 +278,17 @@ export default function CarLoanPaymentAffectMortgagePage() {
                     . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work
                     with you and help you through the whole process.
                   </p>
+                </section>
+
+                
+                <section id="frequently-asked-questions">
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={articleFaqs.map((faq) => ({
+                      q: faq.question,
+                      a: faq.answer,
+                    }))}
+                  />
                 </section>
 
                 <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">

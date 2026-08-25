@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
+import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -75,9 +76,9 @@ const loanSolutions = [
 ];
 
 const articleFaqs = [
-  { question: "How High Is Your Insurance Deductible Allowed to be?", answer: "For single-family residential homes valued between $200,000 and $400,000, homeowners insurance premiums usually range from $600 to $1,200 annually, which breaks down to about $50 to $100 per month." },
+  { question: "How much does homeowners insurance typically cost for a single-family home?", answer: "For single-family residential homes valued between $200,000 and $400,000, homeowners insurance premiums usually range from $600 to $1,200 annually, which breaks down to about $50 to $100 per month." },
   { question: "How can I lower my homeowners insurance premium?", answer: "One of the most effective ways to lower your homeowners insurance premium is by choosing a higher deductible. For example, raising the deductible from $1,000 to $5,000 can significantly reduce annual premiums, in some cases from around $800 down to $350." },
-  { question: "Is choosing a higher deductible a good idea for everyone?", answer: "A higher deductible can be a smart strategy for homeowners who rarely file insurance claims. Since frequent claims can raise premiums, those who don't make many claims may benefit from lower monthly costs by selecting a higher deductible, using insurance mainly for major or catastrophic events." },
+  { question: "Is choosing a higher deductible a good idea for everyone?", answer: "A higher deductible can be a smart strategy for homeowners who rarely file insurance claims. Since frequent claims can raise premiums, those who don’t make many claims may benefit from lower monthly costs by selecting a higher deductible, using insurance mainly for major or catastrophic events." },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({
@@ -197,6 +198,17 @@ export default function HowHighWillALenderAllowYourDeductibleToBePage() {
                   . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
                   you and help you through the whole process.
                 </p>
+
+                
+                <section id="frequently-asked-questions">
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={articleFaqs.map((faq) => ({
+                      q: faq.question,
+                      a: faq.answer,
+                    }))}
+                  />
+                </section>
 
                 <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
                   <p className="text-[15px] text-[#052316] leading-relaxed">

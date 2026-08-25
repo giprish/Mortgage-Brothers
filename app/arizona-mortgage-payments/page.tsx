@@ -77,9 +77,13 @@ const loanSolutions = [
 
 const articleFaqs = [
   { question: "What is an Impounded or Escrow Account?", answer: "Loans are made up of Principal, Interest, Taxes and Insurance (PITI). The escrow account covers the T and the I and is included in the monthly payment." },
-  { question: "Are Impound Accounts required?", answer: "In some cases yes, as with Government Loans, FHA and VA loan programs. In other cases, if the Loan to Value is low enough an escrow waiver is allowed but there's typically a higher mortgage rate due to the lender taking on more risk." },
+  { question: "Are Impound Accounts required?", answer: "In some cases yes, as with Government Loans, FHA and VA loan programs. In other cases, if the Loan to Value is low enough an escrow waiver is allowed but there’s typically a higher mortgage rate due to the lender taking on more risk." },
   { question: "If I refinance my existing Arizona mortgage loan, what happens to my impound/escrow account?", answer: "If there is a balance after the refinance, the excess is generally refunded back to the homeowner." },
-  { question: "Can I set up an escrow account later?", answer: "Yes, you can request an escrow account at anytime. Keep in mind that you'll have to deposit at least 12 months of hazard insurance as well as around 6 months of tax payments in the account in order to get it established. ← Previous PostNext Post → [](tel:+16025352171) Categories Arizona Mortgage Insights FHA Loans Homeownership Tips Mortgage Basics Mortgage Payments & Strategies Mortgage Process Guidance Mortgage Qualifications Real Estate & Mortgages Specialty Loans Spouse & Estate Considerations" },
+  { question: "Can I set up an escrow account later?", answer: "Yes, you can request an escrow account at anytime. Keep in mind that you’ll have to deposit at least 12 months of hazard insurance as well as around 6 months of tax payments in the account in order to get it established." },
+  { question: "What temporary documents can I use if my official mortgage bill doesn't arrive before the first payment is due?", answer: "If your official mortgage statement or payment booklet does not arrive in time, you can use the temporary payment coupons provided within your closing documentation package to submit your initial monthly payment." },
+  { question: "What are the core components that make up a standard monthly mortgage payment?", answer: "A standard monthly mortgage payment, often referred to as PITI, is composed of principal reduction, interest charges, real estate property taxes, hazard homeowners insurance, and any applicable mortgage insurance premiums (PMI/MIP)." },
+  { question: "What is an escrow or impound account and how does it affect my monthly payment?", answer: "An escrow or impound account is a specialized financial account managed by your loan servicer. It collects a portion of your monthly payment specifically designated for real estate property taxes and hazard insurance, ensuring those annual bills are paid automatically on your behalf." },
+  { question: "Are homeowners required to maintain an escrow account for their mortgage?", answer: "Escrow accounts are mandatory for government-backed financing programs like FHA and VA loans. For conventional loans, buyers can request an escrow waiver if their loan-to-value (LTV) ratio is low enough, though lenders may charge a slightly higher interest rate due to the increased risk." },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({
@@ -218,18 +222,10 @@ export default function ArizonaMortgagePaymentsPage() {
                 <section id="frequently-asked-questions">
                   <FaqAccordion
                     title="Frequently Asked Questions"
-                    items={[
-                    { q: "What is an Impounded or Escrow Account?", a: <>Loans are made up of Principal, Interest, Taxes and Insurance (PITI). The escrow account
-                        covers the T and the I and is included in the monthly payment.</> },
-                    { q: "Are Impound Accounts required?", a: <>In some cases yes, as with Government Loans, FHA and VA loan programs. In other cases, if
-                        the Loan to Value is low enough an escrow waiver is allowed but there&apos;s typically a
-                        higher mortgage rate due to the lender taking on more risk.</> },
-                    { q: "If I refinance my existing Arizona mortgage loan, what happens to my impound/escrow\n                        account?", a: <>If there is a balance after the refinance, the excess is generally refunded back to the
-                        homeowner.</> },
-                    { q: "Can I set up an escrow account later?", a: <>Yes, you can request an escrow account at anytime. Keep in mind that you&apos;ll have to
-                        deposit at least 12 months of hazard insurance as well as around 6 months of tax payments
-                        in the account in order to get it established.</> }
-                    ]}
+                    items={articleFaqs.map((faq) => ({
+                      q: faq.question,
+                      a: faq.answer,
+                    }))}
                   />
                 </section>
 

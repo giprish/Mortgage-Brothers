@@ -139,7 +139,7 @@ export default function AboutPage() {
 
             {/* Subtitle */}
             <p className="text-brand-text-light text-[16px] lg:text-[18px] leading-[1.7] max-w-2xl mx-auto">
-              {"We've helped 5,000+ families secure $650M in loans with 98% satisfaction."}
+              {"We've helped 5,000+ families secure $650M in loans with 99% satisfaction."}
             </p>
 
             {/* Hero Badges */}

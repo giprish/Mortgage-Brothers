@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
+import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -75,9 +76,9 @@ const loanSolutions = [
 ];
 
 const articleFaqs = [
-  { question: "Who CAN and CANNOT Be On Title When You Get A Mortgage?", answer: "Of course you can. If you're getting a mortgage, you can absolutely add your spouse to the title." },
-  { question: "Can your spouse be on the title even if they're not on the mortgage?", answer: "You can have your spouse on the title even if they're not on the mortgage. However, if they're on the mortgage, if they're on the loan, they have to be on the title because you have to have rights to the home in order to encumber the home by getting a loan on it. This is true for any co-borrower, even if it's not your spouse." },
-  { question: "Are you in a community property state?", answer: "This is another thing that's good to be aware of. If you're in a community property state this means that if your spouse dies and you're not on the title then the house would go to you. Arizona, for example, is a community state property." },
+  { question: "Can you add your spouse to the title?", answer: "Of course you can. If you’re getting a mortgage, you can absolutely add your spouse to the title." },
+  { question: "Can your spouse be on the title even if they’re not on the mortgage?", answer: "You can have your spouse on the title even if they’re not on the mortgage. However, if they’re on the mortgage, if they’re on the loan, they have to be on the title because you have to have rights to the home in order to encumber the home by getting a loan on it. This is true for any co-borrower, even if it’s not your spouse." },
+  { question: "Are you in a community property state?", answer: "This is another thing that’s good to be aware of. If you’re in a community property state this means that if your spouse dies and you’re not on the title then the house would go to you. Arizona, for example, is a community state property." },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({
@@ -258,6 +259,17 @@ export default function WhoCanAndCannotBeOnTitlePage() {
                     </a>
                     .
                   </p>
+                </section>
+
+                
+                <section id="frequently-asked-questions">
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={articleFaqs.map((faq) => ({
+                      q: faq.question,
+                      a: faq.answer,
+                    }))}
+                  />
                 </section>
 
                 <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">

@@ -35,12 +35,12 @@ export const LOAN_PROGRAM_VIDEOS: Record<string, Record<string, unknown>> = {
 
 export const HOMEPAGE_VIDEO: Record<string, unknown> = {
   "@type": "VideoObject",
-  name: "Arizona Mortgage Brothers | Phoenix Home Loan Broker",
+  name: "The Mortgage Brothers in Phoenix Arizona",
   description:
-    "Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.",
+    "From the valley of Phoenix, to the mountains of Pinetop and Payson, and to the beautiful city of Tucson. The Mortgage Brothers are here to simplify your experience.",
   uploadDate: "2024-12-19T17:59:28+00:00",
-  thumbnailUrl:
-    "https://azmortgagebrothers.com/wp-content/uploads/2025/01/your-trusted-mortgage-experts.jpg",
+  thumbnailUrl: "https://i.ytimg.com/vi/YqOa8IipIPU/hqdefault.jpg",
+  contentUrl: "https://youtu.be/YqOa8IipIPU",
   embedUrl: "https://www.youtube.com/embed/YqOa8IipIPU",
   isFamilyFriendly: "True",
   inLanguage: "en-US",

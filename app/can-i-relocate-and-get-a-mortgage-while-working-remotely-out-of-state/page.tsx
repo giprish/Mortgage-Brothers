@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
+import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -75,9 +76,9 @@ const loanSolutions = [
 ];
 
 const articleFaqs = [
-  { question: "Do a lot of our borrowers work remotely?", answer: "Remote work is becoming more common, especially since COVID. Around 5% of our borrowers currently work remotely. It's possible to get a mortgage while working from home as long as you meet underwriting requirements." },
-  { question: "Do I need to talk to my employer?", answer: "Yes, it's very important to talk to your employer. You'll need documentation, such as a signed letter from your employer confirming your remote work arrangement, job details, and salary information. Many underwriters require this before approving a mortgage." },
-  { question: "How do I talk to my employer about moving?", answer: "Have a clear conversation with your boss or HR department about your remote work or relocation. To satisfy underwriting, you'll need a signed and dated letter from your employer stating approval to work remotely, your job position, start date, and salary details. The agreement must be permanent and without conditions." },
+  { question: "Do a lot of our borrowers work remotely?", answer: "Remote work is becoming more common, especially since COVID. Around 5% of our borrowers currently work remotely. It’s possible to get a mortgage while working from home as long as you meet underwriting requirements." },
+  { question: "Do I need to talk to my employer?", answer: "Yes, it’s very important to talk to your employer. You’ll need documentation, such as a signed letter from your employer confirming your remote work arrangement, job details, and salary information. Many underwriters require this before approving a mortgage." },
+  { question: "How do I talk to my employer about moving?", answer: "Have a clear conversation with your boss or HR department about your remote work or relocation. To satisfy underwriting, you’ll need a signed and dated letter from your employer stating approval to work remotely, your job position, start date, and salary details. The agreement must be permanent and without conditions." },
   { question: "Does remote working impact investment properties?", answer: "Remote work considerations mainly apply to primary homes, not investment properties. If you have questions regarding investment properties and remote work, you can contact us directly for guidance." },
 ] as const;
 
@@ -297,6 +298,17 @@ export default function RelocateRemoteMortgagePage() {
                     . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work
                     with you and help you through the whole process.
                   </p>
+                </section>
+
+                
+                <section id="frequently-asked-questions">
+                  <FaqAccordion
+                    title="Frequently Asked Questions"
+                    items={articleFaqs.map((faq) => ({
+                      q: faq.question,
+                      a: faq.answer,
+                    }))}
+                  />
                 </section>
 
                 <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
