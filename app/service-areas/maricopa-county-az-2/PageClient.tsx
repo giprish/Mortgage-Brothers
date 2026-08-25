@@ -5,7 +5,7 @@ import Link from "next/link";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 
-// Complete dataset of 108 cities across 15 counties
+// Complete dataset of 109 cities across 15 counties
 const citiesData = [
   // Maricopa (28)
   { name: "Phoenix", county: "Maricopa County", desc: "Home loans, refinancing, and pre-approvals for Phoenix buyers.", badge: "TOP METRO" },
@@ -119,11 +119,12 @@ const citiesData = [
   { name: "Duncan", county: "Greenlee County", desc: "Local mortgage guidance for homeowners across Duncan." },
   { name: "Morenci", county: "Greenlee County", desc: "Purchase and refinance financing in Morenci and nearby." },
 
-  // Santa Cruz (4)
+  // Santa Cruz (5)
   { name: "Nogales", county: "Santa Cruz County", desc: "Home loans, refinancing, and pre-approvals for Nogales buyers.", badge: "COUNTY SEAT" },
   { name: "Rio Rico", county: "Santa Cruz County", desc: "Local mortgage guidance for homeowners across Rio Rico." },
   { name: "Tubac", county: "Santa Cruz County", desc: "Purchase and refinance financing in Tubac and nearby." },
   { name: "Patagonia", county: "Santa Cruz County", desc: "Home loans, refinancing, and pre-approvals for Patagonia buyers." },
+  { name: "Santa Cruz", county: "Santa Cruz County", desc: "Santa Cruz offers a blend of historic charm and growing residential communities along the Arizona-Mexico border." },
 
   // Mohave (6)
   { name: "Lake Havasu City", county: "Mohave County", desc: "Local mortgage guidance for homeowners across Lake Havasu City." },
@@ -148,7 +149,7 @@ const citiesData = [
 
 // Sidebar Counties filter configuration with their counts
 const sidebarCounties = [
-  { name: "All", count: 108 },
+  { name: "All", count: 109 },
   { name: "Maricopa", count: 28 },
   { name: "Pima", count: 8 },
   { name: "Pinal", count: 10 },
@@ -160,7 +161,7 @@ const sidebarCounties = [
   { name: "Cochise", count: 7 },
   { name: "Graham", count: 3 },
   { name: "Greenlee", count: 3 },
-  { name: "Santa Cruz", count: 4 },
+  { name: "Santa Cruz", count: 5 },
   { name: "Mohave", count: 6 },
   { name: "La Paz", count: 4 },
   { name: "Yuma", count: 4 }
@@ -207,7 +208,7 @@ export default function MaricopaCounty2() {
 
             {/* Subtitle */}
             <p className="text-brand-text-muted text-[15px] lg:text-[16px] leading-[1.7] max-w-2xl mx-auto">
-              We&apos;re licensed in all 15 Arizona counties — 108 cities and towns and growing. Filter by county or search to find yours.
+              We&apos;re licensed in all 15 Arizona counties — 109 cities and towns and growing. Filter by county or search to find yours.
             </p>
           </div>
         </section>

@@ -117,9 +117,9 @@ const countiesData = [
     name: "Santa Cruz County",
     region: "SOUTHERN ARIZONA",
     seat: "Nogales",
-    cityCount: 4,
+    cityCount: 5,
     route: "/service-areas/santa-cruz-county-az/",
-    cities: ["Nogales", "Rio Rico", "Tubac", "Patagonia"]
+    cities: ["Nogales", "Rio Rico", "Tubac", "Patagonia", "Santa Cruz"]
   },
   {
     id: "mohave",

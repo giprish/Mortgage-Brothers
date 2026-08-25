@@ -21,6 +21,8 @@ const OUT_PATH = join(ROOT, "lib", "seo-metadata.json");
 const SHEET_CSV =
   "https://docs.google.com/spreadsheets/d/1AV11mP_IJzh5BLSQtIJvmYnLTn6b76Lx/export?format=csv&gid=1530173043";
 const FIRECRAWL_API = "https://api.firecrawl.dev/v1";
+/** Live WP origin — sheet Done URLs may point at vercel staging. */
+const LIVE_ORIGIN = "https://azmortgagebrothers.com";
 const FULL_REFRESH = process.argv.includes("--full");
 
 function getApiKey() {
@@ -109,7 +111,10 @@ function getDoneUrls(rows) {
     if (!url.startsWith("http")) continue;
     const pathname = pathnameFromUrl(url);
     if (!pathname) continue;
-    urls.push({ section, url, pathname });
+    // Always scrape live WP, even if the sheet lists vercel.app URLs.
+    const liveUrl =
+      pathname === "/" ? `${LIVE_ORIGIN}/` : `${LIVE_ORIGIN}${pathname}/`;
+    urls.push({ section, url: liveUrl, pathname });
   }
   return urls;
 }

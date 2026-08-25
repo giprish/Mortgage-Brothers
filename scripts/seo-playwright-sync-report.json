@@ -1,0 +1,72 @@
+{
+  "scrapedAt": "2026-08-25T07:21:58.647Z",
+  "method": "playwright",
+  "total": 260,
+  "updated": 3,
+  "unchanged": 251,
+  "notFound": 6,
+  "failed": 0,
+  "changes": [
+    {
+      "pathname": "/arizona-real-estate-trends-in-2026-predicting-mortgage-rates-for-the-coming-year",
+      "oldTitle": "Arizona Real Estate Trends in 2026: Predicting Mortgage Rates",
+      "newTitle": "Arizona Real Estate Trends in 2026: Predicting Mortgage Rates",
+      "oldDesc": "As of August 2026, Arizona 30-year rates are around 6.6%–6.75%. Inventory is healthier; th",
+      "newDesc": "Arizona real estate trends in 2026 suggest a healthier market - not a bubble, but a steady"
+    },
+    {
+      "pathname": "/author/eddie-knoell",
+      "oldTitle": "Eddie Knoell: Local Phoenix Mortgage Broker",
+      "newTitle": "Eddie Knoell: Local Phoenix Mortgage Broker",
+      "oldDesc": "Meet Eddie Knoell, Senior Loan Officer/Owner of Arizona Mortgage Brothers in Phoenix, with",
+      "newDesc": "Meet Eddie Knoell, Senior Loan Officer/Owner of Mortgage Brothers LLC in Phoenix, with 23+"
+    },
+    {
+      "pathname": "/thank-you",
+      "oldTitle": "Thank You | Arizona Mortgage Brothers",
+      "newTitle": "Thank You for Contacting AZ Mortgage Brothers",
+      "oldDesc": "Thank you for contacting Arizona Mortgage Brothers. We will be in touch shortly.",
+      "newDesc": "Thank you for reaching out to AZ Mortgage Brothers. We’ve received your information and ou"
+    }
+  ],
+  "failures": [
+    {
+      "pathname": "/team",
+      "error": "404",
+      "title": "Page Not Found - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/conventional-vs-fha-calculator",
+      "error": "404",
+      "title": "Page Not Found - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/faq",
+      "error": "404",
+      "title": "Page Not Found - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/arizona-directory",
+      "error": "404",
+      "title": "Page Not Found - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/arizona-directory-2",
+      "error": "404",
+      "title": "Page Not Found - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/maricopa-county-az-2",
+      "error": "404",
+      "title": "Page Not Found - Arizona Home Loans | The Mortgage Brothers"
+    }
+  ],
+  "homepage": {
+    "title": "Arizona Mortgage Brothers | Phoenix Home Loan Broker",
+    "description": "We live here, we work here, and we know this market better than anyone. Mortgage broker serving all of Arziona — Conventional, FHA, VA, Jumbo & Reverse Mortgage"
+  },
+  "about": {
+    "title": "About Us: Arizona Mortgage Brothers Story",
+    "description": "Discover the story behind Arizona Mortgage Brothers. Learn about our team, values, and commitment to your mortgage success."
+  }
+}

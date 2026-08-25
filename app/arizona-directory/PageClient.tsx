@@ -106,8 +106,8 @@ const countiesList = [
     name: "Santa Cruz County",
     region: "Southern Arizona",
     seat: "Nogales",
-    cityCount: 4,
-    cities: ["Nogales", "Rio Rico", "Tubac", "Patagonia"]
+    cityCount: 5,
+    cities: ["Nogales", "Rio Rico", "Tubac", "Patagonia", "Santa Cruz"]
   },
   {
     id: "mohave",

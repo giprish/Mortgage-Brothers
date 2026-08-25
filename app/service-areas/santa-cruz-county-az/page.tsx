@@ -15,7 +15,12 @@ const cities = [
   { name: "Nogales", description: "As Santa Cruz County's seat on the international border, Nogales offers commerce, historic homes, and home loans." },
   { name: "Rio Rico", description: "Master-planned community with rolling hills, golf courses, and accessible home financing." },
   { name: "Tubac", description: "Historic arts colony and luxury golf resort community featuring custom jumbo home loan solutions." },
-  { name: "Patagonia", description: "Scenic mountain valley town known for birdwatching, nature preserves, and quiet rural homes." }
+  { name: "Patagonia", description: "Scenic mountain valley town known for birdwatching, nature preserves, and quiet rural homes." },
+  {
+    name: "Santa Cruz",
+    description:
+      "Santa Cruz offers a blend of historic charm and growing residential communities along the Arizona-Mexico border. Our mortgage experts help buyers secure flexible home loan options for primary residences, refinancing, and long-term investments.",
+  },
 ];
 
 export default function SantaCruzCountyPage() {
@@ -33,7 +38,7 @@ export default function SantaCruzCountyPage() {
             </div>
             <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-4">SOUTHERN ARIZONA - SANTA CRUZ</p>
             <h1 className="text-white text-hero-title font-playfair font-normal leading-[1.1] mb-6 max-w-3xl">Your trusted Santa Cruz County mortgage broker.</h1>
-            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">From Nogales to Tubac — 4 communities, one team that knows every one of them.</p>
+            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">From Nogales to Tubac — 5 communities, one team that knows every one of them.</p>
             <HeroCtaButtons className="mb-4" />
           </div>
         </section>

@@ -8,7 +8,7 @@ import HeroCtaButtons from "../../component/HeroCtaButtons";
 import type { CountyCityDetail } from "../../../lib/cityData";
 
 const sidebarCounties = [
-  { name: "All", count: 108, href: "/service-areas/" },
+  { name: "All", count: 109, href: "/service-areas/" },
   { name: "Maricopa", count: 28, href: "/service-areas/maricopa-county-az/" },
   { name: "Pima", count: 8, href: "/service-areas/pima-county-az/" },
   { name: "Pinal", count: 10, href: "/service-areas/pinal-county-az/" },
@@ -20,7 +20,7 @@ const sidebarCounties = [
   { name: "Cochise", count: 7, href: "/service-areas/cochise-county-az/" },
   { name: "Graham", count: 3, href: "/service-areas/graham-county-az/" },
   { name: "Greenlee", count: 3, href: "/service-areas/greenlee-county-az/" },
-  { name: "Santa Cruz", count: 4, href: "/service-areas/santa-cruz-county-az/" },
+  { name: "Santa Cruz", count: 5, href: "/service-areas/santa-cruz-county-az/" },
   { name: "Mohave", count: 6, href: "/service-areas/mohave-county-az/" },
   { name: "La Paz", count: 4, href: "/service-areas/la-paz-county-az/" },
   { name: "Yuma", count: 4, href: "/service-areas/yuma-county-az/" }
