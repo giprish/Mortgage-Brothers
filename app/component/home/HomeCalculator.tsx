@@ -31,6 +31,13 @@ const fmtCurrency = (val: number) =>
     maximumFractionDigits: 0,
   }).format(Number.isFinite(val) ? val : 0);
 
+/** Parse input as a non-negative number; empty/invalid → 0. */
+const toNonNegative = (raw: string) => {
+  const n = Number(raw);
+  if (!Number.isFinite(n) || n < 0) return 0;
+  return n;
+};
+
 const HomeCalculator = () => {
   const [homePrice, setHomePrice] = useState(425000);
   const [downPaymentPct, setDownPaymentPct] = useState(10);
@@ -51,6 +58,10 @@ const HomeCalculator = () => {
     if (homePrice > 0) {
       setDownPaymentPct(Math.min(100, Math.max(0, (val / homePrice) * 100)));
     }
+  };
+
+  const handleDownPaymentPercent = (val: number) => {
+    setDownPaymentPct(Math.min(100, Math.max(0, val)));
   };
 
   const results = useMemo(() => {
@@ -132,9 +143,10 @@ const HomeCalculator = () => {
                   <input
                     id="home-price"
                     type="number"
+                    min={0}
                     inputMode="decimal"
                     value={homePrice}
-                    onChange={(e) => setHomePrice(Number(e.target.value) || 0)}
+                    onChange={(e) => setHomePrice(toNonNegative(e.target.value))}
                     className="w-full h-[44px] px-3.5 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                   />
                 </div>
@@ -149,9 +161,10 @@ const HomeCalculator = () => {
                       <input
                         id="down-payment-amount"
                         type="number"
+                        min={0}
                         inputMode="decimal"
                         value={downPaymentAmount}
-                        onChange={(e) => handleDownPaymentDollar(Number(e.target.value) || 0)}
+                        onChange={(e) => handleDownPaymentDollar(toNonNegative(e.target.value))}
                         className="w-full h-[44px] pl-6 pr-2 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                       />
                     </div>
@@ -160,9 +173,11 @@ const HomeCalculator = () => {
                         id="down-payment-percent"
                         aria-label="Down payment percent"
                         type="number"
+                        min={0}
+                        max={100}
                         inputMode="decimal"
                         value={Math.round(downPaymentPct * 10) / 10}
-                        onChange={(e) => setDownPaymentPct(Number(e.target.value) || 0)}
+                        onChange={(e) => handleDownPaymentPercent(toNonNegative(e.target.value))}
                         className="w-full h-[44px] pl-2.5 pr-6 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                       />
                       <span className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[#5f6f54] text-[13px]">%</span>
@@ -213,9 +228,10 @@ const HomeCalculator = () => {
                   <input
                     id="interest-rate"
                     type="number"
+                    min={0}
                     step="0.01"
                     value={interestRate}
-                    onChange={(e) => setInterestRate(Number(e.target.value) || 0)}
+                    onChange={(e) => setInterestRate(toNonNegative(e.target.value))}
                     className="w-full h-[44px] px-3.5 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                   />
                 </div>
@@ -249,8 +265,9 @@ const HomeCalculator = () => {
                   <input
                     id="annual-property-taxes"
                     type="number"
+                    min={0}
                     value={annualTaxes}
-                    onChange={(e) => setAnnualTaxes(Number(e.target.value) || 0)}
+                    onChange={(e) => setAnnualTaxes(toNonNegative(e.target.value))}
                     className="w-full h-[44px] px-3.5 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                   />
                 </div>
@@ -262,8 +279,9 @@ const HomeCalculator = () => {
                   <input
                     id="annual-home-insurance"
                     type="number"
+                    min={0}
                     value={annualInsurance}
-                    onChange={(e) => setAnnualInsurance(Number(e.target.value) || 0)}
+                    onChange={(e) => setAnnualInsurance(toNonNegative(e.target.value))}
                     className="w-full h-[44px] px-3.5 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                   />
                 </div>
@@ -275,8 +293,9 @@ const HomeCalculator = () => {
                   <input
                     id="monthly-hoa-fees"
                     type="number"
+                    min={0}
                     value={hoa}
-                    onChange={(e) => setHoa(Number(e.target.value) || 0)}
+                    onChange={(e) => setHoa(toNonNegative(e.target.value))}
                     className="w-full h-[44px] px-3.5 rounded-lg border border-[#e0d8c8] text-[16px] sm:text-[14.5px] font-medium text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                   />
                 </div>

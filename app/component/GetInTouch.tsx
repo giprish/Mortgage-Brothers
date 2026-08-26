@@ -215,6 +215,7 @@ export default function GetInTouch({
           ) : null}
         </div>
 
+        {/* Canonical order: Phone → Address → Contact (never reorder for live parity) */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 lg:gap-6 w-full md:items-start">
           <ContactItem
             href={COMPANY.phoneHref}

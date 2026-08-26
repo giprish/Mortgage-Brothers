@@ -49,12 +49,28 @@ const Hero = () => {
         </p>
 
         {/* CTAs — shared canonical buttons */}
-        <HeroCtaButtons className="mb-3" />
+        <HeroCtaButtons className="mb-6 sm:mb-7" />
 
-        {/* Micro text */}
-        <p className="text-[#b8d4b8] text-xs sm:text-sm font-medium">
-          3 min · no credit impact
-        </p>
+        {/* Trust micro-stats — stacked on small screens, spaced row from sm up */}
+        <ul className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-0 text-[#b8d4b8] text-xs sm:text-sm font-medium max-w-3xl mx-auto">
+          <li className="sm:px-4 lg:px-6 text-center leading-snug">
+            3 min · no credit impact
+          </li>
+          <li
+            className="hidden sm:block w-px h-3.5 bg-[#b8d4b8]/35 shrink-0"
+            aria-hidden
+          />
+          <li className="sm:px-4 lg:px-6 text-center leading-snug">
+            5000+ Families Helped Across Arizona
+          </li>
+          <li
+            className="hidden sm:block w-px h-3.5 bg-[#b8d4b8]/35 shrink-0"
+            aria-hidden
+          />
+          <li className="sm:px-4 lg:px-6 text-center leading-snug">
+            Average Closing Time: 25 Days
+          </li>
+        </ul>
       </div>
     </section>
   );

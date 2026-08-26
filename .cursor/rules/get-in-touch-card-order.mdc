@@ -1,0 +1,28 @@
+---
+description: Canonical Get in Touch contact card order (Phone → Address → Contact)
+alwaysApply: true
+---
+
+# Get in Touch contact card order
+
+Whenever a page shows the three contact cards (Phone / Address / Contact), the order is always:
+
+1. **Phone**
+2. **Address** (middle)
+3. **Contact**
+
+## Non-negotiable
+
+- Do **not** change this order when mapping content from live → stage.
+- Live may show a different order; stage still uses **Phone → Address → Contact**.
+- Apply sitewide: homepage `HomeContact`, shared `GetInTouch`, and any new contact card rows.
+- Copy, headings, and surrounding text may follow live; **card arrangement does not**.
+
+```tsx
+// ✅ REQUIRED
+Phone | Address | Contact
+
+// ❌ NEVER
+Phone | Contact | Address
+Contact | Address | Phone
+```

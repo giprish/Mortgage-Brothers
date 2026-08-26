@@ -27,15 +27,15 @@ export default function Home() {
       <main className="flex-1 flex flex-col">
         <Hero />
         <HomeStatsBar />
-        <DeferredReviews />
         <DeferredBrokersAdvocate />
         <DeferredBrothers />
         <DeferredRecognition />
+        <DeferredHomeCalculator />
         <DeferredHomeownershipSteps />
         <DeferredLoanPrograms />
-        <DeferredHomeCalculator />
         <DeferredCreditQuizCta />
         <DeferredPreApprovedForm />
+        <DeferredReviews />
         <DeferredHomeFaq />
         <DeferredHomeBlog />
         <DeferredDreamHomeCta />

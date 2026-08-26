@@ -1,107 +1,45 @@
-import React from "react";
-import Link from "next/link";
+import CountyTestimonials, {
+  type CountyTestimonial,
+} from "./CountyTestimonials";
 
-const reviewsData = [
+const homeTestimonials: CountyTestimonial[] = [
   {
+    name: "Chris and Vicky Smith",
     quote:
-      "Eddie and Thomas made our first purchase painless. They shopped our loan and got us a rate our bank couldn't touch. Closed in under three weeks.",
-    initials: "JR",
-    name: "Jordan R.",
-    subtitle: "Phoenix · First-time buyer",
+      "I was referred to Eddie through my sister-n-law. I had tried a previous company but wasn't satisfied. I have been extremely happy with Eddie's mortgage team. Everything was done online through emails. This was very helpful as both my husband and I work full time during the day and really have no time to do this. Emails were responded to on a daily basis and in a very quick manner. Every step of the process was done very professionally and friendly. I always hesitated to do a refinance because of the large amount of paperwork and meetings. But this didn't happen that way. I highly recommend Eddie's mortgage team for your refinancing needs.",
+    attribution: "Chris and Vicky Smith, Avondale, Arizona",
   },
   {
+    name: "Elizabeth Todd",
     quote:
-      "I was quoted one rate elsewhere and the Mortgage Brothers beat it without the runaround. Straight answers every single step.",
-    initials: "MP",
-    name: "Maria P.",
-    subtitle: "Gilbert · Refinance",
+      "Eddie and his team are fantastic to work with! They are efficient, friendly and very professional. They communicate to all parties in the transaction; making it a very smooth transaction every time. As a real estate agent, this makes my job that much easier when I have a lender who always performs and most of the time is even ahead of schedule. I can't say enough good things about Eddie as a mortgage lender!",
+    attribution: "Elizabeth Todd – H2 Realty, Phoenix, Arizona",
   },
   {
+    name: "Marleen Kapanicas",
     quote:
-      "As a realtor I send every buyer here. On-time closings, real communication, and my clients always feel taken care of.",
-    initials: "DK",
-    name: "David K.",
-    subtitle: "Scottsdale · Agent partner",
+      "My husband and I would like to thank you for an outstanding job you did with our refinance. You are so knowledgeable and kept us updated on each step of the way. Your professionalism was impeccable and your timing was perfect. As you know, I am a Realtor and have dealt with many mortgage people along my career. You are heads and shoulders beyond most I have worked with. Your communication skills are unique in this business. You were reassuring throughout this entire procedure. I just want you to know I will be proud to refer you to my family, friends and Clients.",
+    attribution: "Marleen Kapanicas – Homesmart, Scottsdale, Arizona",
+  },
+  {
+    name: "Thomas and Carol Milberry",
+    quote:
+      "Our mortgage service through Eddie Knoell was seamless throughout. It was like having someone watch over the process without us having any concern in the process. All questions were answered promptly and completely with the correct issues addressed without extra fanfare, like dealing with a trusted family member. Thanks again Eddie!!!",
+    attribution: "Thomas and Carol Milberry, Queen Creek, Arizona 85242",
+  },
+  {
+    name: "Nancy Perry",
+    quote:
+      "I met Eddie Knoell in 2012 through a client. He communicates very well, through every step of the process. Before I can even start to wonder what is going on, he's picked up the phone and called to let me know where we are in the process. He closes every deal and communicates through it well. He's patient with the questions and great with every client I have sent his way.",
+    attribution: "Nancy Perry – Solutions Real Estate, Avondale, Arizona",
   },
 ];
 
-const Reviews = () => {
+export default function Reviews() {
   return (
-    <section className="no-content-visibility w-full bg-[#faf9f6] pt-6 pb-16 sm:pt-10 sm:pb-20 border-t border-b border-slate-200/50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
-          {reviewsData.map((rev) => (
-            <div
-              key={rev.name}
-              className="bg-white rounded-2xl p-7 lg:p-8 shadow-sm border border-slate-100/80 flex flex-col justify-between hover:shadow-md transition-all duration-200"
-            >
-              <div>
-                {/* 5 Yellow Stars */}
-                <div className="flex gap-1 text-[#f5a623] mb-5" role="img" aria-label="5 stars">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <svg key={i} className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                    </svg>
-                  ))}
-                </div>
-
-                {/* Quote Text */}
-                <p className="text-slate-700 text-sm sm:text-[15px] leading-relaxed mb-6 font-normal">
-                  &ldquo;{rev.quote}&rdquo;
-                </p>
-              </div>
-
-              <div>
-                {/* Divider Line */}
-                <div className="border-t border-slate-100 mb-5" />
-
-                {/* Author Details Row */}
-                <div className="flex items-center gap-3.5">
-                  {/* Dark green circle avatar with white initials */}
-                  <div className="w-11 h-11 rounded-full bg-[#052316] text-white font-bold text-sm flex items-center justify-center shrink-0 shadow-inner tracking-wider">
-                    {rev.initials}
-                  </div>
-
-                  {/* Name and location/buyer type */}
-                  <div className="flex flex-col min-w-0 flex-1">
-                    <span className="font-bold text-slate-900 text-sm sm:text-[15px] leading-snug">
-                      {rev.name}
-                    </span>
-                    <span className="text-xs text-slate-500 font-medium truncate mt-0.5">
-                      {rev.subtitle}
-                    </span>
-                  </div>
-
-                  {/* Verified badge (Green circle with white checkmark) */}
-                  <div className="w-5 h-5 rounded-full bg-[#3fb364] flex items-center justify-center text-white shrink-0 ml-auto" title="Verified Customer">
-                    <svg className="w-3 h-3 stroke-current stroke-[3] fill-none" viewBox="0 0 24 24">
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* View All Client Reviews Link */}
-        <div className="text-center mt-12">
-          <Link
-            href="/client-mortgage-reviews/"
-            className="inline-flex items-center gap-2 text-[#052316] hover:text-[#3fb364] font-semibold text-sm transition-colors duration-200"
-          >
-            <span>Read More Verified Arizona Client Reviews</span>
-            <svg className="w-4 h-4 stroke-current fill-none stroke-2" viewBox="0 0 24 24">
-              <polyline points="9 18 15 12 9 6" />
-            </svg>
-          </Link>
-        </div>
-
-      </div>
-    </section>
+    <CountyTestimonials
+      title="What Our Clients Are Saying"
+      testimonials={homeTestimonials}
+    />
   );
-};
-
-export default Reviews;
+}

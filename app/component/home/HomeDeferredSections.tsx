@@ -18,7 +18,7 @@ const loadHomeContact = () => import("./HomeContact");
 const loadFooter = () => import("../Footer");
 
 export function DeferredReviews() {
-  return <LazyWhenVisible minHeight={320} load={loadReviews} />;
+  return <LazyWhenVisible minHeight={480} load={loadReviews} />;
 }
 
 export function DeferredHomeCalculator() {
