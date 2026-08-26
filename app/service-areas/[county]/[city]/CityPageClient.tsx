@@ -115,15 +115,6 @@ const loanPrograms = [
   }
 ];
 
-/* ─── Why Choose Checklist ─── */
-const whyChooseItems = [
-  "Access to multiple mortgage lenders in",
-  "Competitive mortgage rates in",
-  "Personalized loan strategies for buyers and homeowners",
-  "Clear communication from consultation through closing",
-  "Local experience in the",
-];
-
 export default function GenericCityDetailPage({ cityData }: { cityData: CityData }) {
   const countySlug = cityData.countySlug;
   const countyName = cityData.countyName;
@@ -275,7 +266,7 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
         </section>
 
         {/* ════════════════════════════════════════════════════════════
-            SECTION 4 — WHY CHOOSE AZ MORTGAGE BROTHERS
+            SECTION 4 — WHY CHOOSE (live-synced checklist + reviews card)
         ════════════════════════════════════════════════════════════ */}
         <section className="w-full py-16 lg:py-20 px-6 lg:px-10 bg-[#fcf9f3]">
           <div className="max-w-5xl mx-auto">
@@ -283,54 +274,93 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
               {/* Left — Checklist */}
               <div>
                 <h2 className="text-[#052316] text-[26px] lg:text-[34px] font-playfair font-normal leading-tight mb-8">
-                  Why Choose Mortgage Brothers LLC
+                  {cityData.whyChooseTitle}
                 </h2>
-                <div className="flex flex-col gap-4">
-                  {[
-                    `Access to multiple mortgage lenders in ${city} AZ`,
-                    `Competitive mortgage rates in ${city}`,
-                    "Personalized loan strategies for buyers and homeowners",
-                    "Clear communication from consultation through closing",
-                    `Local experience in the ${city}, AZ real estate market`,
-                  ].map((item, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#3fb364]/10 flex items-center justify-center flex-shrink-0">
+                <div className="flex flex-col gap-5">
+                  {cityData.whyChooseItems.map((item, i) => (
+                    <div key={i} className="flex items-start gap-3">
+                      <div className="w-5 h-5 rounded-full bg-[#3fb364]/10 flex items-center justify-center flex-shrink-0 mt-0.5">
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#3fb364" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
                           <polyline points="20 6 9 17 4 12" />
                         </svg>
                       </div>
-                      <span className="text-[#1a3a1a] text-[14px] font-medium leading-snug">{item}</span>
+                      <div>
+                        <span className={`text-[#1a3a1a] text-[14px] leading-snug ${item.description ? "font-bold block mb-0.5" : "font-medium"}`}>
+                          {item.title}
+                        </span>
+                        {item.description ? (
+                          <p className="text-[#4e5b4e] text-[13.5px] leading-[1.55]">{item.description}</p>
+                        ) : null}
+                      </div>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Right — Rating card */}
-              <div className="bg-[#052316] rounded-3xl p-8 lg:p-10 relative overflow-hidden shadow-xl border border-white/5">
-                <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "repeating-linear-gradient(45deg, #fff 0px, #fff 1px, transparent 1px, transparent 10px)" }} />
-                <div className="relative z-10">
-                  <span className="text-[#7a6638] text-[10px] font-bold tracking-[0.2em] uppercase block mb-3">OUTSTANDING</span>
-                  <div className="flex items-baseline gap-2 mb-4">
-                    <span className="text-white text-[52px] font-bold leading-none">5</span>
-                    <span className="text-[#b8d4b8] text-[14px] font-medium">/5 Rating</span>
+              {/* Right — Reviews summary (matches live ProvenExpert-style content) */}
+              <div className="bg-[#2d8545] rounded-3xl p-6 lg:p-8 relative overflow-hidden shadow-xl">
+                <div className="relative z-10 bg-white rounded-2xl p-5 lg:p-6 shadow-sm">
+                  <div className="flex flex-wrap items-center justify-between gap-3 mb-4 pb-4 border-b border-[#e8e0d0]/80">
+                    <div>
+                      <p className="text-[#052316] text-[13px] font-semibold leading-tight">
+                        Rated <span className="text-[#2d8545]">OUTSTANDING</span>
+                      </p>
+                      <div className="flex items-center gap-2 mt-1">
+                        <span className="text-[#052316] text-[28px] font-bold leading-none">5</span>
+                        <div className="flex gap-0.5">
+                          {[...Array(5)].map((_, i) => (
+                            <svg key={i} xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#f5b942" stroke="none">
+                              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-[#4e5b4e] text-[12px] font-medium">Based on <span className="font-bold text-[#052316]">450</span> reviews</p>
                   </div>
-                  <div className="flex gap-1 mb-6">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="#3fb364" stroke="none">
-                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                      </svg>
+
+                  <div className="grid grid-cols-3 gap-2 mb-5">
+                    {[
+                      { label: "Google", score: "5" },
+                      { label: "Facebook", score: "5" },
+                      { label: "other", score: "5" },
+                    ].map((src) => (
+                      <div key={src.label} className="text-center bg-[#fcf9f3] rounded-lg py-2 px-1">
+                        <p className="text-[#052316] text-[11px] font-semibold capitalize mb-0.5">{src.label}</p>
+                        <div className="flex justify-center gap-0.5 mb-0.5">
+                          {[...Array(5)].map((_, i) => (
+                            <svg key={i} xmlns="http://www.w3.org/2000/svg" width="9" height="9" viewBox="0 0 24 24" fill="#f5b942" stroke="none">
+                              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                          ))}
+                        </div>
+                        <p className="text-[#4e5b4e] text-[10px]">{src.score} / 5</p>
+                      </div>
                     ))}
                   </div>
 
-                  <div className="space-y-4 border-t border-white/10 pt-5">
-                    <div className="bg-white/[0.06] rounded-xl px-4 py-3">
-                      <p className="text-[#c8c8b8] text-[12.5px] leading-[1.6] italic">&ldquo;Professional, responsive, and extremely knowledgeable about {city} market conditions. Highly recommend!&rdquo;</p>
-                      <p className="text-[#b8d4b8] text-[11px] mt-2 font-semibold">— Recent {city} Homebuyer</p>
-                    </div>
-                    <div className="bg-white/[0.06] rounded-xl px-4 py-3">
-                      <p className="text-[#c8c8b8] text-[12.5px] leading-[1.6] italic">&ldquo;We have financed hundreds of homes in {city} and love this community. We know the local appraisers, brokers, and can tailor your experience.&rdquo;</p>
-                      <p className="text-[#b8d4b8] text-[11px] mt-2 font-semibold">— Mortgage Brothers LLC Team</p>
-                    </div>
+                  <div className="space-y-3">
+                    {[
+                      { initials: "T", quote: "Mortgage Brothers were great through the whole process." },
+                      { initials: "EH", quote: "Mortgage Brothers are a really great company, they help you with everything and make it easy." },
+                      { initials: "J", quote: "Eddie and the team have helped me with several mortgages over the years." },
+                    ].map((review) => (
+                      <div key={review.initials} className="flex gap-3 items-start">
+                        <div className="w-8 h-8 rounded-full bg-[#2d8545] text-white text-[11px] font-bold flex items-center justify-center flex-shrink-0">
+                          {review.initials}
+                        </div>
+                        <div className="min-w-0">
+                          <div className="flex gap-0.5 mb-1">
+                            {[...Array(5)].map((_, i) => (
+                              <svg key={i} xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="#f5b942" stroke="none">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                              </svg>
+                            ))}
+                          </div>
+                          <p className="text-[#4e5b4e] text-[12px] leading-[1.45]">&ldquo;{review.quote}&rdquo;</p>
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -404,8 +434,11 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
             SECTION 6 — CTA BANNER
         ════════════════════════════════════════════════════════════ */}
         <CTA
-          title={`Ready to Start Your ${city} Home Loan Journey?`}
-          description={`Our ${city} mortgage specialists are here to help you move forward with confidence. We compare lenders, review your financial profile, and recommend the best loan programs for your goals.`}
+          eyebrow=""
+          title={cityData.ctaTitle}
+          description={cityData.ctaDescription}
+          primaryLabel="Get Expert Mortgage Advice"
+          secondaryLabel="Call Us Now"
         />
 
         {/* ════════════════════════════════════════════════════════════
@@ -417,27 +450,27 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
               {/* Left — Text */}
               <div className="flex flex-col justify-center">
                 <h2 className="text-[#052316] text-[26px] lg:text-[34px] font-playfair font-normal leading-tight mb-6">
-                  Trusted Mortgage Guidance in {city}
+                  {cityData.guidanceTitle}
                 </h2>
-                <p className="text-[#4e5b4e] text-[14px] lg:text-[15px] leading-[1.8] mb-4">
-                  When you work with Mortgage Brothers LLC, you receive trusted advice and dependable support throughout your mortgage journey.
-                </p>
-                <p className="text-[#4e5b4e] text-[14px] lg:text-[15px] leading-[1.8]">
-                  Whether you&apos;re looking to buy your first home, refinancing, or exploring a reverse mortgage in {city}, our team guides you through the process with local advice and expert guidance.
-                </p>
+                {cityData.guidanceParagraphs.map((paragraph, i) => (
+                  <p
+                    key={i}
+                    className={`text-[#4e5b4e] text-[14px] lg:text-[15px] leading-[1.8] ${
+                      i < cityData.guidanceParagraphs.length - 1 ? "mb-4" : ""
+                    }`}
+                  >
+                    {paragraph}
+                  </p>
+                ))}
               </div>
 
-              {/* Right — What You Can Expect card */}
+              {/* Right — Expect card */}
               <div className="bg-[#2d8545] rounded-3xl p-8 lg:p-10 text-white shadow-lg relative overflow-hidden">
                 <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "repeating-linear-gradient(45deg, #fff 0px, #fff 1px, transparent 1px, transparent 10px)" }} />
                 <div className="relative z-10">
-                  <h3 className="text-white text-[20px] font-bold mb-6">What You Can Expect</h3>
+                  <h3 className="text-white text-[20px] font-bold mb-6">{cityData.expectTitle}</h3>
                   <div className="flex flex-col gap-4">
-                    {[
-                      "Lower loan comparisons across lenders",
-                      "Honest discussions of rates and loan terms",
-                      "Support from initial consultation through funding",
-                    ].map((item, i) => (
+                    {cityData.expectItems.map((item, i) => (
                       <div key={i} className="flex items-center gap-3">
                         <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center flex-shrink-0">
                           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">

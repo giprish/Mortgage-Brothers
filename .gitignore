@@ -53,3 +53,6 @@ next-env.d.ts
 /QA_Blog_Content_Audit_Report.xlsx
 /tsc.log
 /dev-check-out.txt
+
+# Local scrape / Playwright / agent temp files (never commit)
+/tmp/

@@ -15,6 +15,18 @@ export interface CityData {
   communities: { title: string; description: string }[];
   /** Optional live-synced intro under Popular Communities; falls back to template copy. */
   communitiesIntro?: string;
+  /** Live “Why Choose…” heading. */
+  whyChooseTitle: string;
+  /** Live why-choose checklist (title-only or title + description). */
+  whyChooseItems: { title: string; description?: string }[];
+  /** Mid-page CTA banner. */
+  ctaTitle: string;
+  ctaDescription: string;
+  /** Trusted guidance section. */
+  guidanceTitle: string;
+  guidanceParagraphs: string[];
+  expectTitle: string;
+  expectItems: string[];
   faqs: { question: string; answer: string }[];
   /** “Our {City} Mortgage Services” GetInTouch block (live copy when available). */
   getInTouchTitle: string;
@@ -229,6 +241,27 @@ function buildCityData(params: {
     `Whether you're purchasing a primary residence, an investment property, or refinancing an existing loan, we help you secure dependable mortgage loans in ${cityName} Arizona with competitive rates and transparent guidance.`,
   ];
   const defaultCommunitiesIntro = `${cityName} is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:`;
+  const defaultWhyChooseTitle = `Why Choose Us as Your ${cityName} Local Mortgage Team`;
+  const defaultWhyChooseItems = [
+    { title: `Access to multiple mortgage lenders in ${cityName} AZ` },
+    { title: `Competitive mortgage rates in ${cityName}` },
+    { title: "Personalized loan strategies for buyers and homeowners" },
+    { title: "Clear communication from consultation through closing" },
+    { title: `Local expertise in the ${cityName} AZ real estate market` },
+  ];
+  const defaultCtaTitle = `Ready to Start Your ${cityName} Home Loan Journey?`;
+  const defaultCtaDescription = `Our ${cityName} mortgage specialists are here to help you move forward with confidence. We compare lenders, review your financial profile, and recommend the best mortgage programs for your goals.`;
+  const defaultGuidanceTitle = `Trusted Mortgage Guidance in ${cityName}`;
+  const defaultGuidanceParagraphs = [
+    `When you work with Mortgage Brothers LLC, you receive structured advice and dependable support throughout your mortgage process.`,
+    `Whether you're purchasing your first home, refinancing, or exploring a reverse mortgage in ${cityName} AZ, our team guides you through the process with clear advice and dependable support.`,
+  ];
+  const defaultExpectTitle = "What You Can Expect";
+  const defaultExpectItems = [
+    "Clear loan comparisons across lenders",
+    "Honest discussion of rates and loan terms",
+    "Support from initial consultation through funding",
+  ];
   const defaultGetInTouchParagraphs = [
     `Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable mortgages in ${cityName} supported by experienced advisors and access to trusted lenders.`,
     `Whether you're purchasing a home, refinancing your existing mortgage, or exploring reverse mortgage opportunities, our team guides you through every step of the mortgage process with clear communication and personalized support.`,
@@ -245,6 +278,14 @@ function buildCityData(params: {
     daysOnMarket,
     communities,
     communitiesIntro: livePage?.intro ?? defaultCommunitiesIntro,
+    whyChooseTitle: livePage?.whyChooseTitle ?? defaultWhyChooseTitle,
+    whyChooseItems: livePage?.whyChooseItems ?? defaultWhyChooseItems,
+    ctaTitle: livePage?.ctaTitle ?? defaultCtaTitle,
+    ctaDescription: livePage?.ctaDescription ?? defaultCtaDescription,
+    guidanceTitle: livePage?.guidanceTitle ?? defaultGuidanceTitle,
+    guidanceParagraphs: livePage?.guidanceParagraphs ?? defaultGuidanceParagraphs,
+    expectTitle: livePage?.expectTitle ?? defaultExpectTitle,
+    expectItems: livePage?.expectItems ?? defaultExpectItems,
     faqs,
     getInTouchTitle: livePage?.getInTouchTitle ?? `Our ${cityName} Mortgage Services`,
     getInTouchParagraphs:

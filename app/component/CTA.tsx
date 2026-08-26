@@ -8,6 +8,8 @@ export type CTAProps = {
   title?: string;
   /** Supporting copy under the heading. Pass `""` to hide. */
   description?: string;
+  primaryLabel?: string | null;
+  secondaryLabel?: string | null;
 };
 
 const DEFAULT_EYEBROW = "READY WHEN YOU ARE";
@@ -20,6 +22,8 @@ export default function CTA({
   eyebrow = DEFAULT_EYEBROW,
   title = DEFAULT_TITLE,
   description = DEFAULT_DESCRIPTION,
+  primaryLabel,
+  secondaryLabel,
 }: CTAProps) {
   return (
     <section className="w-full bg-[#052316] text-white py-14 sm:py-16 lg:py-20 text-center relative overflow-hidden border-t border-white/5">
@@ -45,7 +49,10 @@ export default function CTA({
           </p>
         ) : null}
 
-        <HeroCtaButtons />
+        <HeroCtaButtons
+          {...(primaryLabel !== undefined ? { primaryLabel } : {})}
+          {...(secondaryLabel !== undefined ? { secondaryLabel } : {})}
+        />
       </div>
     </section>
   );
