@@ -66,6 +66,36 @@ const liveCityPageContent: Record<
       "Whether you're purchasing a home near the Colorado River, refinancing your existing mortgage, or exploring reverse mortgage opportunities, our team guides you through every step of the mortgage process with clear communication and personalized support.",
     ],
   },
+  "pima-county-az/oro-valley": {
+    longDescriptions: [
+      "As experienced mortgage lenders serving Oro Valley AZ, our team helps borrowers navigate the home loan process with confidence. From first-time homebuyers to homeowners exploring refinancing opportunities, we provide mortgage solutions tailored to the Oro Valley AZ real estate market.",
+      "Whether you're purchasing a primary residence, a luxury home, or refinancing your existing loan, we help you secure dependable mortgage loans in Oro Valley Arizona with competitive rates and transparent guidance.",
+    ],
+    intro:
+      "Oro Valley is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
+    items: [
+      {
+        title: "Rancho Vistoso",
+        description:
+          "Rancho Vistoso is one of the most popular communities in Oro Valley, offering scenic views and well-planned neighborhoods. Our mortgage brokers help buyers secure financing options suited for homes in this desirable area.",
+      },
+      {
+        title: "Canada Hills",
+        description:
+          "Canada Hills offers scenic desert landscapes and golf course homes. Our mortgage specialists help buyers explore loan options for homes in this prestigious neighborhood.",
+      },
+      {
+        title: "Sun City Oro Valley",
+        description:
+          "Sun City is a well-known active adult community with beautiful homes and amenities. We assist buyers with mortgage solutions tailored to retirement living and age-qualified communities.",
+      },
+      {
+        title: "Oro Valley Country Club Area",
+        description:
+          "Homes near Oro Valley Country Club feature luxury living and stunning mountain views. We help buyers secure financing for high-value properties and custom homes.",
+      },
+    ],
+  },
 };
 
 export const countyMap: Record<string, string> = {
