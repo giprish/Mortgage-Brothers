@@ -3,7 +3,7 @@ import { COMPANY } from "@/lib/company";
 
 /**
  * Homepage Get in Touch — copy and contact rows matched to live homepage.
- * Contact opens the sitewide JotForm modal via data-contact.
+ * Contact opens the sitewide JotForm modal via #contact-us-form / data-contact.
  */
 const HomeContact = () => {
   return (
@@ -106,8 +106,8 @@ const HomeContact = () => {
             </div>
           </a>
 
-          <button
-            type="button"
+          <a
+            href="#contact-us-form"
             data-contact="true"
             aria-label="Open contact form"
             className="flex items-start gap-3 min-w-0 w-full text-left bg-[#fcf9f3] border border-[#e8e0d0]/70 rounded-xl px-5 py-4 shadow-sm hover:border-[#3fb364]/40 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3fb364] focus-visible:ring-offset-2 min-h-11 cursor-pointer"
@@ -137,7 +137,7 @@ const HomeContact = () => {
                 Contact Us
               </p>
             </div>
-          </button>
+          </a>
         </div>
       </div>
     </section>

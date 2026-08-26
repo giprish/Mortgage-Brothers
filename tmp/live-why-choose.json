@@ -1,0 +1,372 @@
+{
+  "results": [
+    {
+      "key": "coconino-county-az/timberline",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "coconino-county-az/flagstaff",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "coconino-county-az/sedona",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "coconino-county-az/williams",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "coconino-county-az/page",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "coconino-county-az/bellemont",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "coconino-county-az/doney-park",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "coconino-county-az/happy-jack",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "coconino-county-az/kachina-village",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "coconino-county-az/mormon-lake",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "coconino-county-az/mountainaire",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "coconino-county-az/munds-park",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "coconino-county-az/parks",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "maricopa-county-az/phoenix",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "maricopa-county-az/scottsdale",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "maricopa-county-az/mesa",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "maricopa-county-az/chandler",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "maricopa-county-az/gilbert",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "maricopa-county-az/glendale",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "maricopa-county-az/tempe",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "maricopa-county-az/peoria",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "maricopa-county-az/surprise",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "maricopa-county-az/goodyear",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "maricopa-county-az/avondale",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "maricopa-county-az/buckeye",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "maricopa-county-az/queen-creek",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "maricopa-county-az/fountain-hills",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "maricopa-county-az/paradise-valley",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "maricopa-county-az/cave-creek",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "maricopa-county-az/carefree",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "maricopa-county-az/anthem",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "maricopa-county-az/sun-city",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "maricopa-county-az/sun-city-west",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "maricopa-county-az/litchfield-park",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "maricopa-county-az/wickenburg",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "maricopa-county-az/apache-junction",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "maricopa-county-az/guadalupe",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "pima-county-az/oro-valley",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "pima-county-az/tucson",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "greenlee-county-az/duncan",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "mohave-county-az/bullhead-city",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "mohave-county-az/lake-havasu-city",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "yavapai-county-az/prescott",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "pinal-county-az/casa-grande",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "gila-county-az/payson",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "navajo-county-az/show-low",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "pinal-county-az/san-tan-valley",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "pinal-county-az/florence",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "pinal-county-az/coolidge",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "pinal-county-az/apache-junction",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "graham-county-az/safford",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "graham-county-az/thatcher",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "graham-county-az/pima",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "greenlee-county-az/clifton",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "greenlee-county-az/morenci",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "cochise-county-az/sierra-vista",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "cochise-county-az/douglas",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "cochise-county-az/bisbee",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "cochise-county-az/tombstone",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "mohave-county-az/kingman",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "mohave-county-az/fort-mohave",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "mohave-county-az/colorado-city",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "mohave-county-az/chloride",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "yuma-county-az/yuma",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "yuma-county-az/san-luis",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "la-paz-county-az/parker",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "la-paz-county-az/quartzsite",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "santa-cruz-county-az/santa-cruz",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "yavapai-county-az/prescott-valley",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "yavapai-county-az/cottonwood",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "yavapai-county-az/chino-valley",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "yavapai-county-az/clarkdale",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "yavapai-county-az/jerome",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "yavapai-county-az/cornville",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "yavapai-county-az/yavapai-hills",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "apache-county-az/eagar",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "apache-county-az/springerville",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "navajo-county-az/holbrook",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "navajo-county-az/taylor",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "navajo-county-az/winslow",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "gila-county-az/globe",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "gila-county-az/miami",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "gila-county-az/star-valley",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "gila-county-az/christopher-creek",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "gila-county-az/forest-lakes",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "gila-county-az/kohls-ranch",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "gila-county-az/pine",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "gila-county-az/strawberry",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "gila-county-az/washington-park",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "gila-county-az/whispering-pines",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "pima-county-az/sahuarita",
+      "error": "why_choose_not_found"
+    },
+    {
+      "key": "pima-county-az/vail",
+      "error": "why_choose_not_found"
+    }
+  ]
+}

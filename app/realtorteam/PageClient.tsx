@@ -311,13 +311,13 @@ export default function RealtorTeamPage() {
             <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75] mb-8">
               Ready to explore how a partnership with Mortgage Brothers LLC can benefit your business? Reach out below, and one of our partnership specialists will get back to you within one business day.
             </p>
-            <button
-              type="button"
+            <a
+              href="#contact-us-form"
               data-contact="true"
               className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md cursor-pointer"
             >
               Contact Us →
-            </button>
+            </a>
           </div>
         </section>
       </main>

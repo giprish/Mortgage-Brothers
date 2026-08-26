@@ -316,13 +316,13 @@ export default function UltimateGuideFirstMortgagePage() {
                     Take our quick quiz to assess your credit profile and receive personalized insights to guide
                     your mortgage journey.
                   </p>
-                  <button
-                    type="button"
+                  <a
+                    href="#credit-score-quiz"
                     data-quiz="true"
                     className="btn-primary"
                   >
                     Take the Quiz
-                  </button>
+                  </a>
                 </div>
 
                 <section id="finding-a-lender">

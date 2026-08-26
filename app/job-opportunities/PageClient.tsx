@@ -356,13 +356,13 @@ export default function JobOpportunitiesPage() {
             </div>
 
             <div className="text-center">
-              <button
-                type="button"
+              <a
+                href="#contact-us-form"
                 data-contact="true"
                 className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all cursor-pointer"
               >
                 Contact our HR team
-              </button>
+              </a>
             </div>
           </div>
         </section>
@@ -387,13 +387,13 @@ export default function JobOpportunitiesPage() {
               for Eddie Knoell.
             </p>
 
-            <button
-              type="button"
+            <a
+              href="#contact-us-form"
               data-contact="true"
               className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md cursor-pointer"
             >
               Contact Us →
-            </button>
+            </a>
           </div>
         </section>
       </main>

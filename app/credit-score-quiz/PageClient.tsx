@@ -119,8 +119,8 @@ export default function CreditScoreQuizPage() {
               Ready when you are. Start the free credit quiz in a secure form — no credit pull,
               no obligation.
             </p>
-            <button
-              type="button"
+            <a
+              href="#credit-score-quiz"
               data-quiz="true"
               className="inline-flex items-center gap-2 bg-[#2d8545] hover:bg-[#246d39] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-[#2d8545]/20 cursor-pointer"
             >
@@ -129,7 +129,7 @@ export default function CreditScoreQuizPage() {
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12 5 19 12 12 19" />
               </svg>
-            </button>
+            </a>
           </div>
         </section>
 
@@ -168,13 +168,13 @@ export default function CreditScoreQuizPage() {
             </p>
 
             <div className="text-center">
-              <button
-                type="button"
+              <a
+                href="#credit-score-quiz"
                 data-quiz="true"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all cursor-pointer"
               >
                 Take the Credit Quiz
-              </button>
+              </a>
             </div>
           </div>
         </section>

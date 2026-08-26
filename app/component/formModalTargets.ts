@@ -119,6 +119,9 @@ function isQuizTarget(clickable: HTMLElement): boolean {
 
   const href = (clickable.getAttribute("href") || "").toLowerCase().trim();
   return (
+    href === "#credit-score-quiz" ||
+    href === "#quiz" ||
+    href.includes("#credit-score-quiz") ||
     href.includes("250305896122151") ||
     href.includes("form.jotform.com/250305896122151") ||
     href.includes("jsform/250305896122151")
@@ -130,6 +133,10 @@ function isContactTarget(clickable: HTMLElement): boolean {
 
   const href = (clickable.getAttribute("href") || "").toLowerCase().trim();
   return (
+    href === "#contact-us-form" ||
+    href === "#contact-form" ||
+    href.includes("#contact-us-form") ||
+    href.includes("#contact-form") ||
     href.includes("form.jotform.com/250026749097159") ||
     href.includes("jsform/250026749097159")
   );

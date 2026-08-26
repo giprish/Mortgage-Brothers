@@ -149,13 +149,13 @@ function MidCtaBanner() {
 function ConsultationCta() {
   return (
     <section className="w-full py-6 flex justify-center">
-      <button
-        type="button"
+      <a
+        href="#get-pre-approved"
         data-preapproval="true"
         className="inline-flex items-center justify-center bg-[#2d8545] hover:bg-[#246d39] text-white text-[16px] font-bold px-10 py-4 rounded-full transition-all shadow-lg shadow-[#2d8545]/25 cursor-pointer"
       >
         Get Pre-Approved →
-      </button>
+      </a>
     </section>
   );
 }
@@ -374,8 +374,8 @@ export default function VideosPage() {
               pre-approval — about 3 minutes, no credit impact, no obligation.
             </p>
 
-            <button
-              type="button"
+            <a
+              href="#get-pre-approved"
               data-preapproval="true"
               className="inline-flex items-center justify-center gap-2 bg-[#2d8545] hover:bg-[#246d39] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-[#2d8545]/20 cursor-pointer"
             >
@@ -395,7 +395,7 @@ export default function VideosPage() {
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12 5 19 12 12 19" />
               </svg>
-            </button>
+            </a>
 
             <ul className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-8 text-[13.5px] text-[#c8c8b8]">
               <li className="flex items-center gap-2">

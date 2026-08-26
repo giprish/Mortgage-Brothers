@@ -96,8 +96,8 @@ export default function ContactPage() {
             <p className="text-brand-text-light text-[15px] lg:text-[16px] leading-[1.7] max-w-2xl mx-auto mb-8">
               We&apos;re here to help and we&apos;ll get in touch with you shortly
             </p>
-            <button
-              type="button"
+            <a
+              href="#contact-us-form"
               data-contact="true"
               className="w-full sm:w-auto btn-primary hover:shadow-brand-green-accent/20 group text-[15px] font-bold px-7 py-3.5 cursor-pointer"
             >
@@ -118,7 +118,7 @@ export default function ContactPage() {
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12 5 19 12 12 19" />
               </svg>
-            </button>
+            </a>
           </div>
         </section>
 
@@ -149,13 +149,13 @@ export default function ContactPage() {
                 <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.15em] uppercase mb-2">
                   Contact
                 </p>
-                <button
-                  type="button"
+                <a
+                  href="#contact-us-form"
                   data-contact="true"
                   className="text-[#08271B] text-[15px] font-semibold hover:text-[#3fb364] transition-colors cursor-pointer"
                 >
                   Contact Us
-                </button>
+                </a>
               </div>
 
               <div className="bg-[#fcf9f3] rounded-2xl border border-[#e8e0d0]/60 p-5">
@@ -206,13 +206,13 @@ export default function ContactPage() {
             </div>
 
             <div className="text-center">
-              <button
-                type="button"
+              <a
+                href="#contact-us-form"
                 data-contact="true"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md cursor-pointer"
               >
                 Contact Us →
-              </button>
+              </a>
             </div>
           </div>
         </section>

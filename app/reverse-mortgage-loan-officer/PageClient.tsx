@@ -273,13 +273,13 @@ export default function ReverseMortgageLoanOfficerPage() {
                 <span className="text-center">Address {COMPANY.addressFull}</span>
               </div>
 
-              <button
-                type="button"
+              <a
+                href="#contact-us-form"
                 data-contact="true"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md cursor-pointer"
               >
                 Contact Us →
-              </button>
+              </a>
             </div>
           </div>
         </section>

@@ -4,7 +4,7 @@ import React from "react";
 
 /**
  * Homepage pre-approval section. Does NOT load JotForm on page load.
- * Uses data-preapproval so DeferredPreApproval's click interceptor opens the modal.
+ * Uses #get-pre-approved + data-preapproval so DeferredPreApproval's click interceptor opens the modal.
  */
 const PreApprovedForm = () => {
   return (
@@ -24,8 +24,8 @@ const PreApprovedForm = () => {
           credit impact and no obligation.
         </p>
 
-        <button
-          type="button"
+        <a
+          href="#get-pre-approved"
           data-preapproval="true"
           className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#2d8545] hover:bg-[#246d39] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200 shadow-lg shadow-[#2d8545]/20 cursor-pointer"
         >
@@ -45,7 +45,7 @@ const PreApprovedForm = () => {
             <line x1="5" y1="12" x2="19" y2="12" />
             <polyline points="12 5 19 12 12 19" />
           </svg>
-        </button>
+        </a>
 
         <ul className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-8 text-[13.5px] text-[#4e5b4e]">
           <li className="flex items-center gap-2">
