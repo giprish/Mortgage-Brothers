@@ -1,13 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import { COMPANY } from "@/lib/company";
-
-const MAP_EMBED_SRC =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1662.6593094747534!2d-112.04951486150385!3d33.545097128830214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b72a8a56e5b8f%3A0x32ff520eb58d08d6!2sMortgage%20Brothers!5e0!3m2!1sen!2sin!4v1757943685115!5m2!1sen!2sin";
 
 const loanSolutions = [
   { label: "Conventional Home Loans", href: "/conventional-home-loans-arizona/" },
@@ -67,39 +64,16 @@ const CheckIcon = () => (
   </svg>
 );
 
-/** Click-to-load map — avoids Google Maps JS until user intent. */
 function OfficeMapEmbed() {
-  const [active, setActive] = useState(false);
-
-  if (active) {
-    return (
-      <iframe
-        src={MAP_EMBED_SRC}
-        className="w-full h-full border-0"
-        loading="lazy"
-        allowFullScreen
-        referrerPolicy="no-referrer-when-downgrade"
-        title="Mortgage Brothers Office Location"
-      />
-    );
-  }
-
   return (
-    <button
-      type="button"
-      onClick={() => setActive(true)}
-      className="w-full h-full flex flex-col items-center justify-center gap-3 bg-[#e8efe9] hover:bg-[#dfe8e0] transition-colors cursor-pointer text-[#08271B] px-6"
-      aria-label="Load interactive map of Mortgage Brothers office"
-    >
-      <span className="w-12 h-12 rounded-full bg-[#2d8545] text-white flex items-center justify-center shadow-md" aria-hidden>
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-          <circle cx="12" cy="10" r="3" />
-        </svg>
-      </span>
-      <span className="text-[15px] font-semibold">View office map</span>
-      <span className="text-[13px] text-[#4e5b4e]">1599 E Orangewood Ave, Phoenix, AZ</span>
-    </button>
+    <iframe
+      src={COMPANY.addressMapsEmbedUrl}
+      className="w-full h-full border-0"
+      loading="lazy"
+      allowFullScreen
+      referrerPolicy="no-referrer-when-downgrade"
+      title="Mortgage Brothers Office Location"
+    />
   );
 }
 
@@ -267,7 +241,7 @@ export default function ContactPage() {
         </section>
       </main>
 
-      <Footer />
+      <Footer showOfficeMap={false} />
     </div>
   );
 }

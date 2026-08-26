@@ -17,6 +17,9 @@ export const COMPANY = {
   addressLine2: "Phoenix, AZ 85020",
   addressFull: "1599 East Orangewood Ave, Suite 200, Phoenix, AZ 85020",
   addressMapsUrl: "https://www.google.com/maps?cid=3674746044086552790",
+  /** Google Maps iframe embed (office pin) */
+  addressMapsEmbedUrl:
+    "https://www.google.com/maps?cid=3674746044086552790&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en&gl=IN&output=embed",
   /** Google Business Profile / reviews listing */
   googleReviewsUrl: "https://www.google.com/maps?cid=3674746044086552790",
   /** Social profiles (footer + schema sameAs — keep identical everywhere) */

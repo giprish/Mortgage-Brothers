@@ -48,13 +48,35 @@ const FooterLink = ({ href, children }: { href: string; children: React.ReactNod
   </a>
 );
 
-const Footer = () => {
+const Footer = ({ showOfficeMap = true }: { showOfficeMap?: boolean }) => {
   return (
-    <footer
-      aria-label="Site Footer"
-      data-no-form-modal="true"
-      className="w-full bg-[#32353C] text-[#c8cdc8] overflow-x-hidden"
-    >
+    <>
+      {showOfficeMap ? (
+        <section
+          aria-label="Office location map"
+          data-no-form-modal="true"
+          className="w-full bg-white border-t border-[#e8e0d0]/60"
+        >
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-8 sm:py-10">
+            <div className="w-full rounded-2xl overflow-hidden border border-[#e8e0d0]/60 shadow-sm h-[260px] sm:h-[320px] lg:h-[380px]">
+              <iframe
+                src={COMPANY.addressMapsEmbedUrl}
+                className="w-full h-full border-0"
+                loading="lazy"
+                allowFullScreen
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Mortgage Brothers Office Location"
+              />
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      <footer
+        aria-label="Site Footer"
+        data-no-form-modal="true"
+        className="w-full bg-[#32353C] text-[#c8cdc8] overflow-x-hidden"
+      >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 pt-12 sm:pt-14 lg:pt-16 pb-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-14 mb-12">
           <div>
@@ -356,6 +378,7 @@ const Footer = () => {
 
       </div>
     </footer>
+    </>
   );
 };
 
