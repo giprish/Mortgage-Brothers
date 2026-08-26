@@ -22,7 +22,7 @@ export const faqs = [
   },
   {
     q: "How can I get started with Mortgage Brothers LLC?",
-    a: "It's easy! You can call us directly at (602) 535-2171 or fill out our quick online form for a free consultation. We'll then match you with an expert loan officer to discuss your needs and options.",
+    a: "It's easy! You can call us directly at +1 (602) 535-2171 or fill out our quick online form for a free consultation. We'll then match you with an expert loan officer to discuss your needs and options.",
   },
 ] as const;
 

@@ -9,7 +9,7 @@ export const COMPANY = {
   nmlsDisplay: "NMLS #1007154",
   azLicense: "MB0922514",
   azLicenseDisplay: "AZ License #MB0922514",
-  phoneDisplay: "(602) 535-2171",
+  phoneDisplay: "+1 (602) 535-2171",
   phoneTel: "+16025352171",
   phoneHref: "tel:+16025352171",
   email: "team@azmortgagebrothers.com",

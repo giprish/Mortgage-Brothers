@@ -219,7 +219,7 @@ export default function PrepaymentPenaltiesArizonaMortgagePage() {
                   <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-2">
                     Contact Us Today at{" "}
                     <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                      602-535-2171
+                      +1 602-535-2171
                     </a>
                   </p>
                   <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-1">
@@ -248,7 +248,7 @@ export default function PrepaymentPenaltiesArizonaMortgagePage() {
                   </Link>{" "}
                   or give us a call at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    (602) 535-2171
+                    +1 (602) 535-2171
                   </a>
                   . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
                   you and help you through the whole process.

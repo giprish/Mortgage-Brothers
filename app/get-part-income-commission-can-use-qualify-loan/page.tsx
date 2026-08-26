@@ -311,7 +311,7 @@ export default function CommissionQualifyLoanPage() {
                   <p className="mb-3">
                     Contact Us Today at{" "}
                     <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                      602-535-2171
+                      +1 602-535-2171
                     </a>
                   </p>
                   <p className="mb-3">

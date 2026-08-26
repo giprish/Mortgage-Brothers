@@ -2,9 +2,9 @@ import React from "react";
 import Link from "next/link";
 import Navbar from "../../../component/Navbar";
 import Footer from "../../../component/Footer";
-import HeroCtaButtons from "../../../component/HeroCtaButtons";
 import FaqAccordion from "../../../component/FaqAccordion";
 import CTA from "../../../component/CTA";
+import GetInTouch from "../../../component/GetInTouch";
 import type { CityData } from "../../../../lib/cityData";
 
 /* ─── Loan Programs Data ─── */
@@ -160,7 +160,7 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
                   <span className="text-[#3fb364]">{city}</span>
                 </div>
                 <p className="text-[#c8c8b8] text-[15px] lg:text-[16px] leading-[1.75] mb-8 max-w-lg">
-                  Mortgage Brothers LLC provides trusted {city} mortgage solutions for homebuyers and homeowners throughout the area. Our experienced mortgage brokers in {city} AZ work with multiple lenders.
+                  Mortgage Brothers LLC provides trusted mortgage solutions for homebuyers and homeowners throughout {city}, Arizona. Our experienced mortgage brokers in {city} AZ work with multiple lenders.
                 </p>
 
                 {/* CTA */}
@@ -216,9 +216,16 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
             <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-semibold leading-tight mb-6">
               {city}, AZ Mortgage Brokers – Local Home Loan Experts
             </h2>
-            <p className="text-[#4e5b4e] text-[15px] lg:text-[16px] leading-[1.8] max-w-3xl mx-auto">
-              {cityData.longDescription}
-            </p>
+            <div className="max-w-3xl mx-auto space-y-4">
+              {cityData.longDescriptions.map((paragraph, i) => (
+                <p
+                  key={i}
+                  className="text-[#4e5b4e] text-[15px] lg:text-[16px] leading-[1.8]"
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
           </div>
         </section>
 
@@ -235,7 +242,8 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
                 Popular Communities We Serve in {city}, AZ
               </h2>
               <p className="text-[#4e5b4e] text-[14px] lg:text-[15px] leading-[1.7] max-w-2xl mx-auto">
-                {city} is home to diverse master-planned communities — each with a unique pricing, amenities, and lending needs. Our inside knowledge gives you the edge.
+                {cityData.communitiesIntro ??
+                  `${city} is home to diverse master-planned communities — each with a unique pricing, amenities, and lending needs. Our inside knowledge gives you the edge.`}
               </p>
             </div>
 
@@ -467,20 +475,14 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
         </section>
 
         {/* ════════════════════════════════════════════════════════════
-            SECTION 9 — BOTTOM CTA
+            SECTION 9 — GET IN TOUCH (matches live “Our {City} Mortgage Services”)
         ════════════════════════════════════════════════════════════ */}
-        <section className="w-full bg-[#2d8545] py-12 lg:py-14 text-center relative overflow-hidden">
-          <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: "repeating-linear-gradient(-45deg, #fff 0px, #fff 1px, transparent 1px, transparent 8px)" }} />
-          <div className="relative z-10 max-w-3xl mx-auto px-6">
-            <h2 className="text-white text-[22px] lg:text-[28px] font-playfair font-normal mb-3">
-              Talk to a {city} Loan Expert
-            </h2>
-            <p className="text-white/80 text-[14px] mb-6">
-              Start your pre-approval in about three minutes — no cost, no obligation.
-            </p>
-            <HeroCtaButtons variant="onGreen" />
-          </div>
-        </section>
+        <GetInTouch
+          theme="light"
+          title={cityData.getInTouchTitle}
+          showDivider
+          paragraphs={cityData.getInTouchParagraphs}
+        />
 
       </main>
       <Footer />

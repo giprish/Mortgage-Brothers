@@ -333,7 +333,7 @@ export default function DscrLoanHardMoneyPage() {
                   <p>
                     You can give us a call at{" "}
                     <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                      602-535-2171
+                      +1 602-535-2171
                     </a>{" "}
                     or shoot us an email at{" "}
                     <a

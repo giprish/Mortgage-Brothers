@@ -769,7 +769,7 @@ export default function VaLoansArizonaPage() {
                 href="tel:+16025352171"
                 className="border border-white/30 hover:border-white text-white font-semibold text-[15px] px-7 py-4 rounded-full transition-all hover:bg-white/10"
               >
-                Call (602) 535-2171
+                Call +1 (602) 535-2171
               </a>
             </div>
             <p className="text-[#b8d4b8] text-[12px] leading-relaxed pt-6 max-w-3xl mx-auto">

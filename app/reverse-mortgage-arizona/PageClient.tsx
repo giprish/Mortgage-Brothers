@@ -382,7 +382,7 @@ export default function ReverseMortgageArizonaPage() {
             <div className="space-y-3 rounded-3xl bg-[#052316] p-8 text-center text-white">
               <p className="text-[18px] font-semibold">Have More Questions? Contact Our Reverse Mortgage Experts</p>
               <a href="tel:+16025352171" className="block text-[28px] font-bold text-[#3fb364] hover:underline">
-                (602) 535-2171
+                +1 (602) 535-2171
               </a>
             </div>
           </div>
@@ -447,7 +447,7 @@ export default function ReverseMortgageArizonaPage() {
                 href="tel:+16025352171"
                 className="rounded-full border border-white/30 px-7 py-4 text-[15px] font-semibold text-white transition-all hover:border-white hover:bg-white/10"
               >
-                Call (602) 535-2171
+                Call +1 (602) 535-2171
               </a>
             </div>
             <p className="mx-auto max-w-3xl pt-6 text-[12px] leading-relaxed text-[#b8d4b8]">

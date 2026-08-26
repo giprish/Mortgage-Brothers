@@ -635,7 +635,7 @@ export default function RefinancingArizonaPage() {
                   Ready to discuss your refinancing options? Our expert team is just a call away to provide you with personalized assistance and answer any questions you may have.
                 </p>
                 <a href="tel:+16025352171" className="text-white text-[28px] lg:text-[32px] font-bold block mb-6 hover:opacity-90 transition-opacity">
-                  (602) 535-2171
+                  +1 (602) 535-2171
                 </a>
                 <a
                   href="tel:+16025352171"

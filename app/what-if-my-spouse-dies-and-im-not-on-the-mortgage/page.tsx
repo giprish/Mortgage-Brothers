@@ -294,7 +294,7 @@ export default function SpouseDiesNotOnMortgagePage() {
                     If you have any questions about this or anything else mortgage related don&apos;t hesitate to
                     give us a call at{" "}
                     <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                      (602) 535-2171
+                      +1 (602) 535-2171
                     </a>
                     .
                   </p>
@@ -441,7 +441,7 @@ export default function SpouseDiesNotOnMortgagePage() {
                       <p className="mb-2">
                         Phone:{" "}
                         <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                          (602) 535-2171
+                          +1 (602) 535-2171
                         </a>
                       </p>
                       <p className="mb-2">NMLS: 1007154</p>

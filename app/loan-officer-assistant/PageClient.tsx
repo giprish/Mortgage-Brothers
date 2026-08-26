@@ -320,7 +320,7 @@ export default function LoanOfficerAssistantPage() {
               </p>
 
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-                Interested? If you are interested in any job opportunity please call 602-535-2171 and
+                Interested? If you are interested in any job opportunity please call +1 602-535-2171 and
                 ask for Eddie Knoell.
               </p>
 

@@ -564,7 +564,7 @@ export default function JumboLoansPage() {
                   Experience the Mortgage Brothers LLC difference in your home buying journey. Let our expertise guide you to the perfect loan and your dream home in Arizona.
                 </p>
                 <a href="tel:+16025352171" className="text-white text-[28px] lg:text-[32px] font-bold block mb-6 hover:opacity-90 transition-opacity">
-                  (602) 535-2171
+                  +1 (602) 535-2171
                 </a>
                 <Link
                   href="/#get-pre-approved"

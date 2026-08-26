@@ -252,7 +252,7 @@ export default function MortgageCoupleVsSingleApplicantPage() {
                   <p className="text-[15px] text-[#052316] leading-relaxed">
                     We&rsquo;re Here With Answers From Experience! Contact Us Today at{" "}
                     <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                      602-535-2171
+                      +1 602-535-2171
                     </a>
                     <br />
                     Or reach us using our contact form.

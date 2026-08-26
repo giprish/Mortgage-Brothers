@@ -7,12 +7,66 @@ export interface CityData {
   countyName: string;
   countySlug: string;
   description: string;
-  longDescription: string;
+  /** Body paragraphs under the local experts heading (live copy when available). */
+  longDescriptions: string[];
   medianPrice: string;
   daysOnMarket: string;
   communities: { title: string; description: string }[];
+  /** Optional live-synced intro under Popular Communities; falls back to template copy. */
+  communitiesIntro?: string;
   faqs: { question: string; answer: string }[];
+  /** “Our {City} Mortgage Services” GetInTouch block (live copy when available). */
+  getInTouchTitle: string;
+  getInTouchParagraphs: string[];
 }
+
+/** Per-city body + communities copy from LIVE (azmortgagebrothers.com). Key: countySlug/citySlug */
+const liveCityPageContent: Record<
+  string,
+  {
+    longDescriptions?: string[];
+    intro?: string;
+    items: { title: string; description: string }[];
+    getInTouchTitle?: string;
+    getInTouchParagraphs?: string[];
+  }
+> = {
+  "mohave-county-az/bullhead-city": {
+    longDescriptions: [
+      "As experienced mortgage lenders serving Bullhead City AZ, our team helps borrowers navigate the home financing process with confidence. From first-time homebuyers to homeowners exploring refinancing opportunities, we provide mortgage solutions tailored to the Bullhead City AZ real estate market.",
+      "Whether you're purchasing a primary residence, vacation property, or refinancing an existing loan, we help you secure dependable mortgage loans in Bullhead City Arizona with competitive rates and transparent guidance.",
+    ],
+    intro:
+      "Bullhead City is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
+    items: [
+      {
+        title: "Riverfront Communities",
+        description:
+          "Homes along the Colorado River provide beautiful views and waterfront living opportunities. Our mortgage brokers help buyers secure financing for riverfront properties and vacation homes.",
+      },
+      {
+        title: "Fort Mohave Surrounding Area",
+        description:
+          "Nearby Fort Mohave offers growing residential developments and golf course communities. We help buyers secure mortgage solutions for homes in this expanding area.",
+      },
+      {
+        title: "Holiday Shores Area",
+        description:
+          "Holiday Shores features quiet neighborhoods close to the river and recreational amenities. Our mortgage specialists help buyers explore loan options for homes in this community.",
+      },
+      {
+        title: "Sunridge Estates",
+        description:
+          "Sunridge Estates offers scenic desert views and established residential neighborhoods. We assist buyers with mortgage solutions suited for homes in this desirable area.",
+      },
+    ],
+    getInTouchTitle: "Our Bullhead City Mortgage Services",
+    getInTouchParagraphs: [
+      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable mortgages in Bullhead City supported by experienced advisors and access to trusted lenders.",
+      "Whether you're purchasing a home near the Colorado River, refinancing your existing mortgage, or exploring reverse mortgage opportunities, our team guides you through every step of the mortgage process with clear communication and personalized support.",
+    ],
+  },
+};
 
 export const countyMap: Record<string, string> = {
   "maricopa-county-az": "Maricopa County",
@@ -180,7 +234,8 @@ function buildCityData(params: {
   const medianPrice = getMedianPrice(cityName);
   const daysOnMarket = getDaysOnMarket();
 
-  const communities = [
+  const livePage = liveCityPageContent[`${countySlug}/${citySlug}`];
+  const communities = livePage?.items ?? [
     {
       title: `${cityName} Historic District`,
       description: `The historic areas of ${cityName} feature charming architecture and established neighborhoods. We assist buyers with customized mortgage programs suited for traditional homes.`,
@@ -216,6 +271,13 @@ function buildCityData(params: {
   ];
 
   const defaultDescription = `Home loans, refinancing, and pre-approvals for ${cityName} buyers.`;
+  const defaultLongDescriptions = [
+    `${cityName} is a vibrant and growing community located in ${countyName}, offering a diverse real estate market with various neighborhood choices. Mortgage Brothers LLC provides local expertise to help residents and newcomers navigate home financing with confidence, offering tailored mortgage solutions for every buyer.`,
+  ];
+  const defaultGetInTouchParagraphs = [
+    `Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable mortgages in ${cityName} supported by experienced advisors and access to trusted lenders.`,
+    `Whether you're purchasing a home, refinancing your existing mortgage, or exploring reverse mortgage opportunities, our team guides you through every step of the mortgage process with clear communication and personalized support.`,
+  ];
 
   return {
     name: cityName,
@@ -223,11 +285,15 @@ function buildCityData(params: {
     countyName,
     countySlug,
     description: seoDescription || cityCustomDescriptions[cityName] || defaultDescription,
-    longDescription: `${cityName} is a vibrant and growing community located in ${countyName}, offering a diverse real estate market with various neighborhood choices. Mortgage Brothers LLC provides local expertise to help residents and newcomers navigate home financing with confidence, offering tailored mortgage solutions for every buyer.`,
+    longDescriptions: livePage?.longDescriptions ?? defaultLongDescriptions,
     medianPrice,
     daysOnMarket,
     communities,
+    communitiesIntro: livePage?.intro,
     faqs,
+    getInTouchTitle: livePage?.getInTouchTitle ?? `Our ${cityName} Mortgage Services`,
+    getInTouchParagraphs:
+      livePage?.getInTouchParagraphs ?? defaultGetInTouchParagraphs,
   };
 }
 

@@ -441,7 +441,7 @@ export default function FhaHomeLoansArizonaPage() {
                 href="tel:+16025352171"
                 className="inline-block text-[28px] lg:text-[32px] font-bold text-[#3fb364] hover:text-[#359854] transition-colors"
               >
-                (602) 535-2171
+                +1 (602) 535-2171
               </a>
               <div>
                 <a

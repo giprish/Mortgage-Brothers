@@ -192,7 +192,7 @@ export default function RelocateRemoteMortgagePage() {
                     keep rising. If you&apos;re thinking about getting a home here in Arizona and work from
                     home, you can save yourself some reading time and give us a call at{" "}
                     <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                      (602) 535-2171
+                      +1 (602) 535-2171
                     </a>{" "}
                     and we&apos;ll start getting you squared away today. That being said, it&apos;s totally
                     possible to get a mortgage while working remotely or from home. You just need to meet some
@@ -271,7 +271,7 @@ export default function RelocateRemoteMortgagePage() {
                     requirements it&apos;s easy. If you&apos;re self-employed and looking for a mortgage give
                     us a call at{" "}
                     <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                      (602) 535-2171
+                      +1 (602) 535-2171
                     </a>{" "}
                     and we can get right to helping you.
                   </p>
@@ -293,7 +293,7 @@ export default function RelocateRemoteMortgagePage() {
                     </Link>{" "}
                     or give us a call at{" "}
                     <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                      (602) 535-2171
+                      +1 (602) 535-2171
                     </a>
                     . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work
                     with you and help you through the whole process.

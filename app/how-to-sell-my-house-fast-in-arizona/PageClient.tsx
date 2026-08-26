@@ -741,7 +741,7 @@ export default function HowToSellMyHouseFastInArizonaPage() {
               <li><strong>The broker advantage.</strong> As independent brokers, we compare across many lenders rather than pushing one bank&apos;s products — and we compare <em>selling</em> options the same independent way. We don&apos;t buy houses, so our only goal is your clarity.</li>
             </ul>
             <p className="text-[14px] leading-[1.8] text-[#3a4a3a] italic mb-6">
-              Credentials: Mortgage Brothers LLC · NMLS #1007154 · AZ License #MB0922514 · Eddie Knoell, NMLS #210917 (AZ LO-0911422) · Thomas Knoell, NMLS #1618695 (AZ LO-0942229) · 1599 East Orangewood Ave, Suite 200, Phoenix, AZ 85020 · 602-535-2171.
+              Credentials: Mortgage Brothers LLC · NMLS #1007154 · AZ License #MB0922514 · Eddie Knoell, NMLS #210917 (AZ LO-0911422) · Thomas Knoell, NMLS #1618695 (AZ LO-0942229) · 1599 East Orangewood Ave, Suite 200, Phoenix, AZ 85020 · +1 602-535-2171.
             </p>
           </section>
 

@@ -246,7 +246,7 @@ export default function MortgageLateApprovalPage() {
                     loan. This is something that holds true for all these types of financing. If you have any
                     questions about this, be sure to reach out at{" "}
                     <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                      (602) 535-2171
+                      +1 (602) 535-2171
                     </a>
                     . We&apos;d love to answer any questions you might have.
                   </p>
@@ -275,7 +275,7 @@ export default function MortgageLateApprovalPage() {
                   </Link>{" "}
                   or give us a call at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    (602) 535-2171
+                    +1 (602) 535-2171
                   </a>
                   . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you
                   and help you through the whole process.

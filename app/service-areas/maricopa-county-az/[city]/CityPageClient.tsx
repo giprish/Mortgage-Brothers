@@ -467,7 +467,7 @@ export default function CityDetailPage({ citySlug }: { citySlug: string }) {
                   <span className="text-[#3fb364]">{city}</span>
                 </div>
                 <p className="text-[#c8c8b8] text-[15px] lg:text-[16px] leading-[1.75] mb-8 max-w-lg">
-                  Mortgage Brothers LLC provides trusted {city} mortgage solutions for homebuyers and homeowners throughout the area. Our experienced mortgage brokers in {city} AZ work with multiple lenders.
+                  Mortgage Brothers LLC provides trusted mortgage solutions for homebuyers and homeowners throughout {city}, Arizona. Our experienced mortgage brokers in {city} AZ work with multiple lenders.
                 </p>
 
                 {/* CTA */}

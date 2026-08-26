@@ -199,7 +199,7 @@ export default function FhaFlipRuleWaiverExpiredPage() {
                 <p>
                   If you have any questions about the FHA flip rule, call us at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    (602) 535-2171
+                    +1 (602) 535-2171
                   </a>{" "}
                   or reach us using our{" "}
                   <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
