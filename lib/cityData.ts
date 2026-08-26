@@ -311,6 +311,30 @@ export function getAllCountyCityParams(): { county: string; city: string }[] {
   );
 }
 
+/** Directory row used by /service-areas/ filter UI. */
+export type ServiceAreaDirectoryCity = {
+  name: string;
+  slug: string;
+  county: string;
+  countySlug: string;
+  desc: string;
+  badge?: string;
+};
+
+/** All city pages for the service-areas directory (keeps UI in sync with routes). */
+export function getServiceAreasDirectory(): ServiceAreaDirectoryCity[] {
+  return Object.entries(countyMap).flatMap(([countySlug, countyName]) =>
+    getCountyCitiesDetails(countySlug).map((city) => ({
+      name: city.name,
+      slug: city.slug,
+      county: countyName,
+      countySlug,
+      desc: city.desc,
+      badge: city.badge,
+    })),
+  );
+}
+
 // Generate realistic pricing based on name (so premium cities get higher valuations)
 function getMedianPrice(cityName: string): string {
   const premiumCities = ["Sedona", "Catalina Foothills", "Flagstaff", "Oro Valley", "Tubac", "Pinetop-Lakeside", "Patagonia"];
