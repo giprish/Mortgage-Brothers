@@ -13,6 +13,7 @@ import CountyCityCards from "../../component/CountyCityCards";
 import CountyMortgagePrograms from "../../component/CountyMortgagePrograms";
 import CountyTestimonials from "../../component/CountyTestimonials";
 import GetInTouch from "../../component/GetInTouch";
+import CTA from "../../component/CTA";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/yuma-county-az/");
 
@@ -164,21 +165,10 @@ export default function YumaCountyPage() {
           ]}
         />
 
-        {/* Bottom CTA section */}
-        <section className="w-full bg-[#052316] text-white py-16 lg:py-24 text-center relative overflow-hidden border-t border-white/5">
-          <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">
-            <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.15em] uppercase mb-4">
-              READY WHEN YOU ARE
-            </p>
-            <h2 className="text-white text-[32px] lg:text-[44px] font-playfair font-normal leading-tight mb-4">
-              Ready to start your Yuma County home journey?
-            </h2>
-            <p className="text-[#c8c8b8] text-[15px] lg:text-[16px] leading-[1.7] max-w-xl mx-auto mb-8">
-              Let&apos;s find the perfect mortgage solution for your Yuma County home.
-            </p>
-            <HeroCtaButtons />
-          </div>
-        </section>
+        <CTA
+          title="Ready to start your Yuma County home journey?"
+          description="Let's find the perfect mortgage solution for your Yuma County home."
+        />
       </main>
       <Footer />
     </div>

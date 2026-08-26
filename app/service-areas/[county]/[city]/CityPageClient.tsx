@@ -1,10 +1,10 @@
 import React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../../../component/Navbar";
 import Footer from "../../../component/Footer";
 import HeroCtaButtons from "../../../component/HeroCtaButtons";
 import FaqAccordion from "../../../component/FaqAccordion";
+import CTA from "../../../component/CTA";
 import type { CityData } from "../../../../lib/cityData";
 
 /* ─── Loan Programs Data ─── */
@@ -395,57 +395,10 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
         {/* ════════════════════════════════════════════════════════════
             SECTION 6 — CTA BANNER
         ════════════════════════════════════════════════════════════ */}
-        <section className="w-full bg-[#344454] relative overflow-hidden">
-          {/* Decorative circles */}
-          <div className="absolute -top-20 -right-20 w-[300px] h-[300px] rounded-full border border-white/[0.04]" />
-          <div className="absolute -bottom-16 -left-16 w-[200px] h-[200px] rounded-full border border-white/[0.04]" />
-
-          <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-10 py-16 lg:py-20">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
-              {/* Left — Broker Image Card */}
-              <div className="md:col-span-5">
-                <div className="relative w-full h-[260px] md:h-[300px] rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-[#2b3531]">
-                  <Image
-                    src="/home/thomas-knoell.jpg"
-                    alt="Thomas Knoell, Mortgage Brothers LLC loan officer"
-                    fill
-                    loading="lazy"
-                    className="object-cover object-top"
-                    sizes="(max-width: 768px) 100vw, 420px"
-                  />
-                </div>
-              </div>
-
-              {/* Right — Text + CTAs */}
-              <div className="md:col-span-7">
-                <h2 className="text-white text-[26px] lg:text-[34px] font-playfair font-normal leading-tight mb-4">
-                  Ready to Start Your {city} Home Loan Journey?
-                </h2>
-                <p className="text-[#c8c8b8] text-[14px] lg:text-[15px] leading-[1.7] mb-8">
-                  Our {city} mortgage specialists are here to help you move forward with confidence. We compare lenders, review your financial profile, and recommend the best loan programs for your goals.
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <Link prefetch={false}
-                    href="/#get-pre-approved"
-                    data-preapproval="true"
-                    className="bg-[#2d8545] hover:bg-[#246d39] text-white text-[14.5px] font-bold px-6 py-3.5 rounded-lg transition-all duration-300 shadow-md"
-                  >
-                    Get Expert Mortgage Advice
-                  </Link>
-                  <a
-                    href="tel:+16025352171"
-                    className="border border-white text-white font-bold text-[14.5px] px-6 py-3.5 rounded-lg hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
-                  >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4">
-                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                    </svg>
-                    Call Us Now
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <CTA
+          title={`Ready to Start Your ${city} Home Loan Journey?`}
+          description={`Our ${city} mortgage specialists are here to help you move forward with confidence. We compare lenders, review your financial profile, and recommend the best loan programs for your goals.`}
+        />
 
         {/* ════════════════════════════════════════════════════════════
             SECTION 7 — TRUSTED GUIDANCE

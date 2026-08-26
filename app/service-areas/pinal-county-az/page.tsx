@@ -13,6 +13,7 @@ import CountyCityCards from "../../component/CountyCityCards";
 import CountyMortgagePrograms from "../../component/CountyMortgagePrograms";
 import CountyTestimonials from "../../component/CountyTestimonials";
 import GetInTouch from "../../component/GetInTouch";
+import CTA from "../../component/CTA";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/pinal-county-az/");
 
@@ -238,49 +239,10 @@ export default function PinalCountyPage() {
           ]}
         />
 
-        {/* Bottom CTA section */}
-        <section className="w-full bg-[#052316] text-white py-16 lg:py-24 text-center relative overflow-hidden border-t border-white/5">
-          <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">
-            <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.15em] uppercase mb-4">
-              READY WHEN YOU ARE
-            </p>
-            <h2 className="text-white text-[32px] lg:text-[44px] font-playfair font-normal leading-tight mb-4">
-              Ready to start your Pinal County home journey?
-            </h2>
-            <p className="text-[#c8c8b8] text-[15px] lg:text-[16px] leading-[1.7] max-w-xl mx-auto mb-8">
-              Let&apos;s find the perfect mortgage solution for your Pinal County home.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
-              <Link
-                href="/#get-pre-approved"
-                className="w-full sm:w-auto btn-primary hover:shadow-brand-green-accent/20 group"
-              >
-                Get Pre-Approved
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="group-hover:translate-x-0.5 transition-transform duration-200"
-                >
-                  <line x1="5" y1="12" x2="19" y2="12" />
-                  <polyline points="12 5 19 12 12 19" />
-                </svg>
-              </Link>
-              <a
-                href="tel:6025352171"
-                className="w-full sm:w-auto inline-flex items-center justify-center bg-transparent border border-white/30 hover:border-white/60 text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200 gap-2"
-              >
-                (602) 535-2171
-              </a>
-            </div>
-          </div>
-        </section>
+        <CTA
+          title="Ready to start your Pinal County home journey?"
+          description="Let's find the perfect mortgage solution for your Pinal County home."
+        />
       </main>
 
       <Footer />
