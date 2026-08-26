@@ -209,7 +209,7 @@ export default function FhaHomeLoansArizonaPage() {
                 <span className="mt-md block"></span>At Mortgage Brothers, we specialize in guiding Arizona residents through the <strong>FHA loan process</strong>. Our expertise ensures you get the best terms tailored to your unique financial situation. Let&apos;s explore the key advantages that make FHA loans an attractive option for many homebuyers:<span className="mt-md block"></span>
               </p>
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
               >
                 GET PRE-APPROVED →
@@ -298,7 +298,7 @@ export default function FhaHomeLoansArizonaPage() {
 
             <div className="loan-btn-wrap">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-md inline-block"
               >
                 GET PRE-APPROVED →

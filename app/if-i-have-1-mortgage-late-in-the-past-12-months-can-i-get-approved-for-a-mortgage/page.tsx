@@ -158,7 +158,7 @@ export default function MortgageLateApprovalPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="/#get-pre-approved"
+                    href="#get-pre-approved"
                     className="btn-primary"
                   >
                     Find Out Your Options
@@ -406,7 +406,7 @@ export default function MortgageLateApprovalPage() {
                       <p className="mb-3">
                         <strong>Tom</strong>: Being eligible doesn&apos;t mean you&apos;ll be approved. Your loan
                         officer should provide clear answers during the{" "}
-                        <Link href="/#get-pre-approved" className="text-[#3fb364] font-semibold hover:underline">
+                        <Link href="#get-pre-approved" className="text-[#3fb364] font-semibold hover:underline">
                           pre-approval process
                         </Link>
                         , typically within a day or two.
@@ -581,7 +581,7 @@ export default function MortgageLateApprovalPage() {
               situation.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="btn-primary"
             >
               Get Your Rate Now

@@ -244,7 +244,7 @@ export default function BlogPage() {
                 Transform your mortgage knowledge into action – speak with our specialists today!
               </p>
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="inline-block bg-[#388e3c] hover:bg-[#2e7d32] text-white font-medium text-[16px] sm:text-[17px] px-8 py-3.5 rounded-lg shadow-sm transition-colors"
               >
                 Get Expert Mortgage Advice Now

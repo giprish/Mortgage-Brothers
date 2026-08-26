@@ -107,7 +107,7 @@ export default function RealtorTeamPage() {
           title="We Want to be Your Mortgage Team"
           subtitle="Our #1 Priority is giving Realtors® and their buyer clients exceptional service on “Purchase” transactions."
           ctaLabel="Start My Pre-Approval"
-          ctaHref="/#get-pre-approved"
+          ctaHref="#get-pre-approved"
           secondaryCtaLabel="Talk to a Broker"
           secondaryCtaHref="tel:+16025352171"
           note=""
@@ -138,7 +138,7 @@ export default function RealtorTeamPage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 data-preapproval="true"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
               >

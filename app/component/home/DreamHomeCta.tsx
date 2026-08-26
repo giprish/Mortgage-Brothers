@@ -66,7 +66,7 @@ const DreamHomeCta = () => {
         </div>
 
         <Link
-          href="/#get-pre-approved"
+          href="#get-pre-approved"
           className="btn-primary duration-200 shadow-lg shadow-[#3fb364]/20 w-fit"
         >
           Start My Pre-Approval

@@ -313,7 +313,7 @@ export default function JumboLoansPage() {
         <section className="loan-cta-band bg-[#fcf9f3] !pb-0">
           <div className="mx-auto max-w-6xl text-center loan-block-gap">
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
             >
               Get Your Jumbo Loan Quote Now
@@ -349,7 +349,7 @@ export default function JumboLoansPage() {
             </div>
             <div className="loan-btn-wrap">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Get Your Free Home Buying Consultation
@@ -388,7 +388,7 @@ export default function JumboLoansPage() {
             </p>
             <div className="loan-btn-wrap">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Get Expert Jumbo Loan Guidance
@@ -424,7 +424,7 @@ export default function JumboLoansPage() {
             </div>
             <div className="loan-btn-wrap">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Get Your Free Jumbo Loan Consultation
@@ -485,7 +485,7 @@ export default function JumboLoansPage() {
                   By following these steps and staying organized throughout the process, you can navigate the complexities of applying for a Jumbo Loan with confidence. Our team is here to assist you every step of the way!
                 </p>
                 <Link
-                  href="/#get-pre-approved"
+                  href="#get-pre-approved"
                   className="inline-flex items-center gap-2 bg-white hover:bg-[#f5f0e8] text-[#08271B] text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
                 >
                   Schedule Your Free Jumbo Loan Consultation
@@ -519,7 +519,7 @@ export default function JumboLoansPage() {
             </div>
             <div className="loan-btn-wrap">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Discover Your Jumbo Loan Options Today
@@ -567,7 +567,7 @@ export default function JumboLoansPage() {
                   +1 (602) 535-2171
                 </a>
                 <Link
-                  href="/#get-pre-approved"
+                  href="#get-pre-approved"
                   className="inline-flex items-center gap-2 bg-white hover:bg-[#f5f0e8] text-[#08271B] text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
                 >
                   Get Your Free Mortgage Consultation
@@ -621,7 +621,7 @@ export default function JumboLoansPage() {
             </p>
             <div className="loan-btn-wrap">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Get Your Jumbo Loan Quote Now
@@ -643,7 +643,7 @@ export default function JumboLoansPage() {
               Ready to take the next step in securing your dream home with a Jumbo Loan? Our team of experienced mortgage professionals at Mortgage Brothers LLC is here to guide you through every aspect of the Jumbo Loan process. Whether you have questions about eligibility, documentation requirements, or current market conditions, we&apos;re committed to providing you with personalized assistance and expert advice. Don&apos;t navigate the complexities of Jumbo Loans alone. Reach out to us today for a free consultation and let us help you turn your high-value property dreams into reality.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"
             >
               Start my preapproval

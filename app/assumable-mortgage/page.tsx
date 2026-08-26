@@ -156,7 +156,7 @@ export default function AssumableMortgagePage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="/#get-pre-approved"
+                    href="#get-pre-approved"
                     className="btn-primary"
                   >
                     Find Out If You Qualify
@@ -396,7 +396,7 @@ export default function AssumableMortgagePage() {
               situation.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="btn-primary"
             >
               Get Your Rate Now

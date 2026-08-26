@@ -163,7 +163,7 @@ export default function CommissionQualifyLoanPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="/#get-pre-approved"
+                    href="#get-pre-approved"
                     className="btn-primary"
                   >
                     Get a Free Mortgage Consultation
@@ -325,7 +325,7 @@ export default function CommissionQualifyLoanPage() {
                   </p>
                   <p>
                     Or Complete our{" "}
-                    <Link href="/#get-pre-approved" className="text-[#3fb364] font-semibold hover:underline">
+                    <Link href="#get-pre-approved" className="text-[#3fb364] font-semibold hover:underline">
                       Inquiry Form
                     </Link>
                   </p>
@@ -663,7 +663,7 @@ export default function CommissionQualifyLoanPage() {
               financial situation.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="btn-primary"
             >
               Get Your Rate Now

@@ -165,7 +165,7 @@ export default function HowFastIsTooFastToClosePage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="/#get-pre-approved"
+                    href="#get-pre-approved"
                     className="btn-primary"
                   >
                     Get a Free Mortgage Consultation
@@ -693,7 +693,7 @@ export default function HowFastIsTooFastToClosePage() {
               financial situation.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="btn-primary"
             >
               Get Your Rate Now

@@ -161,7 +161,7 @@ export default function ConventionalHomeLoanGuidePage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="/#get-pre-approved"
+                    href="#get-pre-approved"
                     className="btn-primary"
                   >
                     Start My Pre-Approval
@@ -620,7 +620,7 @@ export default function ConventionalHomeLoanGuidePage() {
               situation.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="btn-primary"
             >
               Get Your Rate Now

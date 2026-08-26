@@ -160,7 +160,7 @@ export default function DelayedFinancingPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="/#get-pre-approved"
+                    href="#get-pre-approved"
                     className="btn-primary"
                   >
                     Get a Free Cash-Out Consultation
@@ -721,7 +721,7 @@ export default function DelayedFinancingPage() {
               financial situation.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="btn-primary"
             >
               Get Your Rate Now

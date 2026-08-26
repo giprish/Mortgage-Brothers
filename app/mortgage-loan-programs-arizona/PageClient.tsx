@@ -625,7 +625,7 @@ export default function MortgageLoanProgramsArizonaPage() {
         <section className="w-full py-10 sm:py-12 lg:py-14 px-5 sm:px-6 bg-white border-b border-[#e8e0d0]/40">
           <div className="max-w-3xl mx-auto text-center">
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="inline-flex w-full sm:w-auto min-h-11 items-center justify-center bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] sm:text-[15px] font-semibold px-6 sm:px-8 py-3.5 rounded-full transition-all duration-200 shadow-sm hover:shadow-md"
             >
               Find Your Ideal Loan Program
@@ -683,7 +683,7 @@ export default function MortgageLoanProgramsArizonaPage() {
 
               {/* Desktop CTA — sits with left column */}
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="hidden lg:inline-flex self-start mt-8 min-h-11 bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-semibold px-6 py-3.5 rounded-md transition-colors duration-200"
               >
                 Get Your Custom Quote
@@ -712,7 +712,7 @@ export default function MortgageLoanProgramsArizonaPage() {
             {/* Mobile CTA — after value props */}
             <div className="lg:hidden min-w-0">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="inline-flex w-full sm:w-auto min-h-11 items-center justify-center bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-semibold px-6 py-3.5 rounded-md transition-colors duration-200"
               >
                 Get Your Custom Quote

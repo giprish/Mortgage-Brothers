@@ -157,7 +157,7 @@ export default function UltimateGuideFirstMortgagePage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="/#get-pre-approved"
+                    href="#get-pre-approved"
                     data-preapproval="true"
                     className="btn-primary"
                   >
@@ -797,7 +797,7 @@ export default function UltimateGuideFirstMortgagePage() {
               situation.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="btn-primary"
             >
               Get Your Rate Now

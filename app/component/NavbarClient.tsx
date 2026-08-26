@@ -627,7 +627,7 @@ const Navbar = () => {
           </a>
           <Link
             prefetch={false}
-            href="/#get-pre-approved"
+            href="#get-pre-approved"
             data-preapproval="true"
             className={PREAPPROVE_BTN_CLASS}
           >

@@ -135,7 +135,7 @@ function MidCtaBanner() {
           your business.
         </p>
         <Link
-          href="/#get-pre-approved"
+          href="#get-pre-approved"
           data-preapproval="true"
           className="inline-flex items-center justify-center bg-white hover:bg-[#f5f5f5] text-[#1a251c] text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
         >
@@ -214,7 +214,7 @@ export default function VideosPage() {
             </p>
 
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               data-preapproval="true"
               className="mt-8 inline-flex items-center gap-2 bg-[#2d8545] hover:bg-[#246d39] text-white text-[15px] font-bold px-7 py-3.5 rounded-xl transition-all shadow-lg shadow-[#2d8545]/25"
             >

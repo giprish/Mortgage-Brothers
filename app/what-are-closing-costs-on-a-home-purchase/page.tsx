@@ -127,7 +127,7 @@ export default function ClosingCostsPage() {
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
                   Don&apos;t let hidden fees surprise you. We&apos;ll break down your estimate line by line so you know exactly what is loan cost versus cash-to-close prepaids.
                 </p>
-                <Link href="/#get-pre-approved" className="btn-primary">
+                <Link href="#get-pre-approved" className="btn-primary">
                   Get a Free Closing Cost Estimate
                 </Link>
               </div>
@@ -542,7 +542,7 @@ export default function ClosingCostsPage() {
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
               Ready to take the next step towards your dream home? One of our experienced mortgage professionals will get back to you promptly with personalized solutions tailored to your unique financial situation.
             </p>
-            <Link href="/#get-pre-approved" className="btn-primary">
+            <Link href="#get-pre-approved" className="btn-primary">
               Get Your Rate Now
             </Link>
           </div>

@@ -212,7 +212,7 @@ export default function SellMyHouseFastArizonaPage() {
 
             <div className="mt-7 sm:mt-8 flex flex-col items-stretch sm:items-center gap-3 w-full max-w-md mx-auto">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 data-preapproval="true"
                 className="btn-primary w-full sm:w-auto px-7 py-3.5 text-[15px] sm:text-[16px]"
               >
@@ -698,7 +698,7 @@ export default function SellMyHouseFastArizonaPage() {
 
             <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 w-full max-w-md sm:max-w-none mx-auto">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 data-preapproval="true"
                 className="btn-primary w-full sm:w-auto px-8 py-4 text-[15px] sm:text-[16px]"
               >

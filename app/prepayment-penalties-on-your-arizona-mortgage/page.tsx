@@ -441,7 +441,7 @@ export default function PrepaymentPenaltiesArizonaMortgagePage() {
               financial situation.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="btn-primary"
             >
               Get Your Rate Now

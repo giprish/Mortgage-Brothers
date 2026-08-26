@@ -155,7 +155,7 @@ export default function SolarPanelsMortgagePage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="/#get-pre-approved"
+                    href="#get-pre-approved"
                     className="btn-primary"
                   >
                     Get a Free Mortgage Consultation
@@ -508,7 +508,7 @@ export default function SolarPanelsMortgagePage() {
                       </p>
                       <p>
                         Need a mortgage? Ask us for a{" "}
-                        <Link href="/#get-pre-approved" className="text-[#3fb364] font-semibold hover:underline">
+                        <Link href="#get-pre-approved" className="text-[#3fb364] font-semibold hover:underline">
                           free quote
                         </Link>
                         —we&apos;ll guide you through every step!
@@ -642,7 +642,7 @@ export default function SolarPanelsMortgagePage() {
               financial situation.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="btn-primary"
             >
               Get Your Rate Now

@@ -153,7 +153,7 @@ export default function UnderstandingAmortizationChartPage() {
                   guidance on managing your mortgage effectively.
                 </p>
                 <Link
-                  href="/#get-pre-approved"
+                  href="#get-pre-approved"
                   className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
                 >
                   Get a Free Mortgage Consultation
@@ -394,7 +394,7 @@ export default function UnderstandingAmortizationChartPage() {
               unique financial situation.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"
             >
               Get Your Rate Now

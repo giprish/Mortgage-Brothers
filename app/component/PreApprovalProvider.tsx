@@ -9,7 +9,7 @@ import React, {
   useState,
 } from "react";
 import { useRouter } from "next/navigation";
-import { resolveFormKind, type FormKind } from "./formModalTargets";
+import { formKindFromHash, resolveFormKind, type FormKind } from "./formModalTargets";
 
 /**
  * Spinner that auto-hides after 2.5s using a DOM timer — immune to React
@@ -144,7 +144,23 @@ export default function PreApprovalProvider({
   const close = useCallback(() => {
     setKind(null);
     document.body.style.overflow = "";
+    // Clear form deep-link hash so Back / refresh doesn't reopen the modal.
+    if (typeof window !== "undefined" && formKindFromHash(window.location.hash)) {
+      const { pathname, search } = window.location;
+      window.history.replaceState(null, "", `${pathname}${search}`);
+    }
   }, []);
+
+  // Open modal when landing with #get-pre-approved (open-in-new-tab / shared links).
+  useEffect(() => {
+    const syncFromHash = () => {
+      const next = formKindFromHash(window.location.hash);
+      if (next) open(next);
+    };
+    syncFromHash();
+    window.addEventListener("hashchange", syncFromHash);
+    return () => window.removeEventListener("hashchange", syncFromHash);
+  }, [open]);
 
   useEffect(() => {
     const onClick = (event: MouseEvent) => {

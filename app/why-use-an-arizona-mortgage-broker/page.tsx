@@ -150,7 +150,7 @@ export default function WhyUseAnArizonaMortgageBrokerPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="/#get-pre-approved"
+                    href="#get-pre-approved"
                     className="btn-primary"
                   >
                     Get Personalized Help Now
@@ -162,7 +162,7 @@ export default function WhyUseAnArizonaMortgageBrokerPage() {
                 <p>
                   Your Arizona mortgage broker will{" "}
                   <Link
-                    href="/#get-pre-approved"
+                    href="#get-pre-approved"
                     className="text-[#3fb364] font-semibold hover:underline"
                   >
                     pre-qualify you for a mortgage
@@ -413,7 +413,7 @@ export default function WhyUseAnArizonaMortgageBrokerPage() {
               situation.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="btn-primary"
             >
               Get Your Rate Now

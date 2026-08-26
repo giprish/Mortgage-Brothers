@@ -144,7 +144,7 @@ export default function ConnectingGuestHouseAddValuePage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="/#get-pre-approved"
+                    href="#get-pre-approved"
                     className="btn-primary"
                   >
                     Get a Free Home Value Assessment
@@ -455,7 +455,7 @@ export default function ConnectingGuestHouseAddValuePage() {
               situation.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="btn-primary"
             >
               Get Your Rate Now

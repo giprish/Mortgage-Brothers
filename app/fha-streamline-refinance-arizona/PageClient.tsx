@@ -205,7 +205,7 @@ export default function FhaStreamlineRefinanceArizonaPage() {
                 Whether you&apos;re looking to lower your monthly payments, take advantage of better interest rates, or simply streamline your mortgage, the FHA Streamline Refinance could be the solution you&apos;ve been searching for.
               </p>
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
               >
                 GET PRE-APPROVED →
@@ -326,7 +326,7 @@ export default function FhaStreamlineRefinanceArizonaPage() {
 
             <div className="loan-btn-wrap">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-md inline-block"
               >
                 GET PRE-APPROVED →

@@ -477,7 +477,7 @@ export default function PutBowFhaLoanGiftGuidePage() {
               financial situation.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="btn-primary"
             >
               Get Your Rate Now

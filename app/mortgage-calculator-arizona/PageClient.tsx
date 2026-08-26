@@ -160,7 +160,7 @@ export default function CalculatorsPage() {
                 <p className="text-[#c8c8b8] text-[15px] lg:text-[16px] leading-[1.7] max-w-lg mx-auto mb-8">
                   A pre-approval gives you a verified figure, not just an estimate.
                 </p>
-                <Link href="/#get-pre-approved" className="btn-primary hover:shadow-brand-green-accent/20 group">
+                <Link href="#get-pre-approved" className="btn-primary hover:shadow-brand-green-accent/20 group">
                   Get Pre-Approved
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 transition-transform duration-200">
                     <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />

@@ -168,7 +168,7 @@ export default function ArizonaRealEstateTrends2026Page() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="/#get-pre-approved"
+                    href="#get-pre-approved"
                     className="btn-primary"
                   >
                     Speak with an Expert
@@ -319,7 +319,7 @@ export default function ArizonaRealEstateTrends2026Page() {
                   </p>
                   <div className="loan-btn-wrap">
                     <Link
-                      href="/#get-pre-approved"
+                      href="#get-pre-approved"
                       className="btn-primary"
                     >
                       Speak with an Expert
@@ -603,7 +603,7 @@ export default function ArizonaRealEstateTrends2026Page() {
               situation.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="btn-primary"
             >
               Get Your Rate Now

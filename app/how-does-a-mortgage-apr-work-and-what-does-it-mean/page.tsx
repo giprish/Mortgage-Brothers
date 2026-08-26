@@ -138,7 +138,7 @@ export default function MortgageAprPage() {
                   best loan terms and avoid hidden costs.
                 </p>
                 <Link
-                  href="/#get-pre-approved"
+                  href="#get-pre-approved"
                   className="btn-primary"
                 >
                   Get a Free APR Consultation
@@ -615,7 +615,7 @@ export default function MortgageAprPage() {
               unique financial situation.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="btn-primary"
             >
               Get Your Rate Now

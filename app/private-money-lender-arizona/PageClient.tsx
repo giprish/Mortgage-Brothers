@@ -286,7 +286,7 @@ export default function PrivateMoneyLenderPage() {
         <section className="loan-cta-band bg-[#fcf9f3] !pb-0">
           <div className="mx-auto max-w-6xl text-center loan-block-gap">
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
             >
               Get Your Fast Financing Today
@@ -329,7 +329,7 @@ export default function PrivateMoneyLenderPage() {
 
             <div className="loan-btn-wrap">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="inline-flex items-center justify-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3.5 leading-none rounded-full transition-all"
               >
                 Get Your Private Money Loan Quote
@@ -375,7 +375,7 @@ export default function PrivateMoneyLenderPage() {
 
             <div className="loan-btn-wrap">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Explore Your Portfolio Loan Options
@@ -419,7 +419,7 @@ export default function PrivateMoneyLenderPage() {
 
             <div className="loan-btn-wrap">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Check Your Eligibility Now
@@ -546,7 +546,7 @@ export default function PrivateMoneyLenderPage() {
                   +1 (602) 535-2171
                 </a>
                 <Link
-                  href="/#get-pre-approved"
+                  href="#get-pre-approved"
                   className="inline-flex items-center gap-2 bg-white hover:bg-[#f5f0e8] text-[#08271B] text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
                 >
                   Get Your Free Mortgage Consultation

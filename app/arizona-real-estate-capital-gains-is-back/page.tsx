@@ -163,7 +163,7 @@ export default function ArizonaRealEstateCapitalGainsPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="/#get-pre-approved"
+                    href="#get-pre-approved"
                     className="btn-primary"
                   >
                     Get a Free Capital Gains Tax Consultation
@@ -449,7 +449,7 @@ export default function ArizonaRealEstateCapitalGainsPage() {
               financial situation.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="btn-primary"
             >
               Get Your Rate Now

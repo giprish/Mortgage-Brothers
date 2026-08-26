@@ -1,5 +1,20 @@
 export type FormKind = "preapproval" | "quiz" | "contact";
 
+/** Hash fragments that should open a form modal (e.g. open-in-new-tab deep links). */
+export function formKindFromHash(hash: string): FormKind | null {
+  const h = (hash || "").toLowerCase().replace(/^#/, "").trim();
+  if (h === "get-pre-approved" || h === "preapproval" || h === "pre-approval") {
+    return "preapproval";
+  }
+  if (h === "credit-score-quiz" || h === "quiz") {
+    return "quiz";
+  }
+  if (h === "contact-us-form" || h === "contact-form") {
+    return "contact";
+  }
+  return null;
+}
+
 function asElement(target: EventTarget | Element | null): Element | null {
   if (!target) return null;
   if (target instanceof Element) return target;

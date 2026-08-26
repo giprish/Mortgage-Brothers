@@ -20,7 +20,7 @@ export default function LoanProgramHero({
   title,
   subtitle,
   ctaLabel = "Start my preapproval",
-  ctaHref = "/#get-pre-approved",
+  ctaHref = "#get-pre-approved",
   secondaryCtaLabel = "Talk to a broker",
   secondaryCtaHref = "tel:+16025352171",
   note = "3 min - no credit impact",

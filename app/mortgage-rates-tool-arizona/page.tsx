@@ -142,7 +142,7 @@ export default function MortgageRatesToolArizonaPage() {
                   for personalized mortgage solutions.
                 </p>
                 <Link
-                  href="/#get-pre-approved"
+                  href="#get-pre-approved"
                   className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
                 >
                   Get Your Rate Now
@@ -264,7 +264,7 @@ export default function MortgageRatesToolArizonaPage() {
             </p>
 
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"
             >
               Get Your Rate Now

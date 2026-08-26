@@ -132,7 +132,7 @@ export default function MortgagePayoffPage() {
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
                   Get expert help understanding your payoff statement, daily interest accrual, and how closing dates impact the final number.
                 </p>
-                <Link href="/#get-pre-approved" className="btn-primary">
+                <Link href="#get-pre-approved" className="btn-primary">
                   Request a Free Mortgage Payoff Review
                 </Link>
               </div>
@@ -354,7 +354,7 @@ export default function MortgagePayoffPage() {
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
               Ready to take the next step towards your dream home? One of our experienced mortgage professionals will get back to you promptly with personalized solutions tailored to your unique financial situation.
             </p>
-            <Link href="/#get-pre-approved" className="btn-primary">
+            <Link href="#get-pre-approved" className="btn-primary">
               Get Your Rate Now
             </Link>
           </div>

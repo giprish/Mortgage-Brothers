@@ -200,7 +200,7 @@ export default function MortgageForGoodCreditPage() {
               Unlock Competitive Mortgage Rates with Good Credit
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="inline-flex items-center gap-2.5 bg-[#3fb364] hover:bg-[#349b55] text-white text-[16px] font-semibold px-8 py-3.5 rounded-full transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5"
             >
               Start my preapproval
@@ -251,7 +251,7 @@ export default function MortgageForGoodCreditPage() {
 
             <div className="loan-btn-wrap">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Discover Your Options
@@ -328,7 +328,7 @@ export default function MortgageForGoodCreditPage() {
         <section className="loan-cta-band bg-[#fcf9f3] !pb-0">
           <div className="mx-auto max-w-6xl text-center loan-block-gap">
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
             >
               Get Your Personalized Mortgage Offer
@@ -373,7 +373,7 @@ export default function MortgageForGoodCreditPage() {
 
             <div className="loan-btn-wrap">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Get Your Personalized Mortgage Offer
@@ -545,7 +545,7 @@ export default function MortgageForGoodCreditPage() {
             </p>
 
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"
             >
               Start my preapproval

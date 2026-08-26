@@ -418,7 +418,7 @@ export default function ClientMortgageReviewsPage() {
 
             <div className="text-center mt-10">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Get Pre-Approved Now
@@ -460,7 +460,7 @@ export default function ClientMortgageReviewsPage() {
 
             <div className="text-center">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Get Started Now
@@ -583,7 +583,7 @@ export default function ClientMortgageReviewsPage() {
             </p>
 
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"
             >
               Start my preapproval

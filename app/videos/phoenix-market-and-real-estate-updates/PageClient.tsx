@@ -94,7 +94,7 @@ export default function PhoenixMarketVideosPage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 data-preapproval="true"
                 className="inline-flex items-center justify-center bg-[#2d8545] hover:bg-[#246d39] text-white text-[15px] font-bold px-7 py-3.5 rounded-full transition-all shadow-md"
               >

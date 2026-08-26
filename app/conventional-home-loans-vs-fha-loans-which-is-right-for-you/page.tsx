@@ -163,7 +163,7 @@ export default function ConventionalVsFhaLoansPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="/#get-pre-approved"
+                    href="#get-pre-approved"
                     className="btn-primary"
                   >
                     Get Your Free Loan Comparison
@@ -295,7 +295,7 @@ export default function ConventionalVsFhaLoansPage() {
 
                   <div className="text-center">
                     <Link
-                      href="/#get-pre-approved"
+                      href="#get-pre-approved"
                       className="btn-primary"
                     >
                       Get in Touch
@@ -600,7 +600,7 @@ export default function ConventionalVsFhaLoansPage() {
                   </p>
                   <div className="text-center">
                     <Link
-                      href="/#get-pre-approved"
+                      href="#get-pre-approved"
                       className="btn-primary"
                     >
                       Get Your Free Consultation
@@ -754,7 +754,7 @@ export default function ConventionalVsFhaLoansPage() {
               situation.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="btn-primary"
             >
               Get Your Rate Now

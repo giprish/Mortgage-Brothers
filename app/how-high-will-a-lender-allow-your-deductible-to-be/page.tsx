@@ -158,7 +158,7 @@ export default function HowHighWillALenderAllowYourDeductibleToBePage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="/#get-pre-approved"
+                    href="#get-pre-approved"
                     className="btn-primary"
                   >
                     Get Expert Mortgage Advice
@@ -516,7 +516,7 @@ export default function HowHighWillALenderAllowYourDeductibleToBePage() {
               financial situation.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="btn-primary"
             >
               Get Your Rate Now

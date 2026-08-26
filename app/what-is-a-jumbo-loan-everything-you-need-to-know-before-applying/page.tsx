@@ -165,7 +165,7 @@ export default function WhatIsAJumboLoanPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="/#get-pre-approved"
+                    href="#get-pre-approved"
                     className="btn-primary"
                   >
                     Get Your Jumbo Loan Quote Now
@@ -317,7 +317,7 @@ export default function WhatIsAJumboLoanPage() {
 
                   <div className="text-center my-8">
                     <Link
-                      href="/#get-pre-approved"
+                      href="#get-pre-approved"
                       className="btn-primary"
                     >
                       Get Your Jumbo Loan Quote Now
@@ -631,7 +631,7 @@ export default function WhatIsAJumboLoanPage() {
               situation.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="btn-primary"
             >
               Get Your Rate Now

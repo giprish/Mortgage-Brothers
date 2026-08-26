@@ -214,7 +214,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
                 At Mortgage Brothers LLC, we guide you through every step — from assessing your financial readiness to selecting the right loan program and closing on your dream home.
               </p>
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
               >
                 GET PRE-APPROVED →

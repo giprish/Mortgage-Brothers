@@ -15,7 +15,7 @@ export type GetInTouchProps = {
   showDivider?: boolean;
   /** Show the green Get Pre-Approved button (image-2 pattern). */
   showPreApproveCta?: boolean;
-  /** Pre-approve link target. Defaults to `/#get-pre-approved`. */
+  /** Pre-approve link target. Defaults to `#get-pre-approved`. */
   ctaHref?: string;
   /** Pre-approve button label. */
   ctaLabel?: string;
@@ -164,7 +164,7 @@ export default function GetInTouch({
   paragraphs,
   showDivider = false,
   showPreApproveCta = false,
-  ctaHref = "/#get-pre-approved",
+  ctaHref = "#get-pre-approved",
   ctaLabel = "GET PRE-APPROVED →",
 }: GetInTouchProps) {
   const isLight = theme === "light";

@@ -189,7 +189,7 @@ export default function ConventionalHomeLoansPage() {
                 One of the most compelling aspects of conventional home loans is that they represent <strong className="text-[#052316] font-semibold">some of the cheapest money you can borrow</strong>. Thanks to the backing of Fannie Mae and Freddie Mac, these loans offer interest rates that often outcompete other financing options.
               </p>
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
               >
                 Discover Your Options →
@@ -253,7 +253,7 @@ export default function ConventionalHomeLoansPage() {
 
             <div className="loan-btn-wrap">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-md inline-block"
               >
                 Get Your Free Counsultation →

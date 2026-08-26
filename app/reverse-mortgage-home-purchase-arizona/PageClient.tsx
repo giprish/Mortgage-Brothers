@@ -245,7 +245,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
         <section className="loan-cta-band bg-[#fcf9f3] !pb-0">
           <div className="mx-auto max-w-6xl text-center loan-block-gap">
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-md inline-block"
             >
               Get Personalized Advice →
@@ -333,7 +333,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
 
             <div className="loan-btn-wrap">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-md inline-block"
               >
                 Contact Our Reverse Mortgage Specialists →
@@ -389,7 +389,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
 
             <div className="loan-btn-wrap">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-md inline-block"
               >
                 Schedule Your No-Obligation Consultation →
@@ -607,7 +607,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
             </p>
             <div className="pt-4 flex flex-wrap justify-center gap-4">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-lg"
               >
                 GET PRE-APPROVED NOW →

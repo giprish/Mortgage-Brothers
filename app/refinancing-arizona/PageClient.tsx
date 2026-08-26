@@ -306,7 +306,7 @@ export default function RefinancingArizonaPage() {
             </div>
             <div className="loan-btn-wrap">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Explore Your Refinancing Options
@@ -591,7 +591,7 @@ export default function RefinancingArizonaPage() {
               Ready to start your refinancing journey? Our expert team is here to guide you through every step of the process, ensuring a smooth and beneficial transition to your new mortgage terms.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="inline-flex items-center gap-2 bg-white hover:bg-[#f5f0e8] text-[#08271B] text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
             >
               Start Your Refinance Application
@@ -670,7 +670,7 @@ export default function RefinancingArizonaPage() {
             </p>
             <div className="loan-btn-wrap">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Get Your Refinancing Questions Answered

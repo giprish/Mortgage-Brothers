@@ -64,7 +64,7 @@ const HomeownershipSteps = () => {
 
         <div className="text-center">
           <Link
-            href="/#get-pre-approved"
+            href="#get-pre-approved"
             className="inline-flex items-center gap-2 bg-[#2d8545] hover:bg-[#246d39] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full shadow-md hover:shadow-xl transition-all duration-200 min-h-[44px]"
           >
             Start Your Journey Today

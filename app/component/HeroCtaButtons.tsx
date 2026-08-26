@@ -18,7 +18,7 @@ type HeroCtaButtonsProps = {
 export default function HeroCtaButtons({
   className = "",
   primaryLabel = "Start my preapproval",
-  primaryHref = "/#get-pre-approved",
+  primaryHref = "#get-pre-approved",
   secondaryLabel = "Talk to a broker",
   secondaryHref = "tel:+16025352171",
   variant = "default",

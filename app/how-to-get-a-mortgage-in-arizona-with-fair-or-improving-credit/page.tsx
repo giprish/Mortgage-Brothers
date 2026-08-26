@@ -165,7 +165,7 @@ export default function FairOrImprovingCreditPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="/#get-pre-approved"
+                    href="#get-pre-approved"
                     className="btn-primary"
                   >
                     Get Your Mortgage Consultation
@@ -251,7 +251,7 @@ export default function FairOrImprovingCreditPage() {
                   </blockquote>
                   <div className="text-center my-6">
                     <Link
-                      href="/#get-pre-approved"
+                      href="#get-pre-approved"
                       className="btn-primary"
                     >
                       Get Your Mortgage Consultation
@@ -402,7 +402,7 @@ export default function FairOrImprovingCreditPage() {
                   </p>
                   <div className="text-center my-6">
                     <Link
-                      href="/#get-pre-approved"
+                      href="#get-pre-approved"
                       className="btn-primary"
                     >
                       Talk to a Local Mortgage Expert Today
@@ -425,7 +425,7 @@ export default function FairOrImprovingCreditPage() {
                   </p>
                   <div className="text-center my-6">
                     <Link
-                      href="/#get-pre-approved"
+                      href="#get-pre-approved"
                       className="btn-primary"
                     >
                       Talk to a Local Mortgage Expert Today
@@ -634,7 +634,7 @@ export default function FairOrImprovingCreditPage() {
               situation.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="btn-primary"
             >
               Get Your Rate Now

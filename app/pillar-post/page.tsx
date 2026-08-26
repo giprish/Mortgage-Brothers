@@ -90,7 +90,7 @@ export default function PillarPostPage() {
               Our team of Arizona mortgage specialists is here to answer your questions and guide you through every step.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="inline-block bg-[#3fb364] hover:bg-[#349b55] text-white font-bold px-8 py-3.5 rounded-full transition-colors text-[15px]"
             >
               Get Pre-Approved Today

@@ -149,7 +149,7 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
               {/* Left — Text (h1 first in DOM for faster mobile LCP) */}
               <div>
                 <h1 className="text-white text-[32px] lg:text-[46px] font-semibold leading-[1.12] mb-4 lg:mb-5">
-                  <span className="text-[#63cd85]">{city}</span> Mortgage Experts&nbsp;– Your Local Home Loan Partners
+                  <span className="text-[#63cd85]">{city}</span> Mortgages&nbsp;– Your Local Mortgage Experts
                 </h1>
                 {/* Breadcrumbs */}
                 <div className="flex items-center gap-2 text-[12px] font-semibold mb-6 lg:mb-8">
@@ -160,12 +160,12 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
                   <span className="text-[#3fb364]">{city}</span>
                 </div>
                 <p className="text-[#c8c8b8] text-[15px] lg:text-[16px] leading-[1.75] mb-8 max-w-lg">
-                  Mortgage Brothers LLC provides trusted mortgage solutions for homebuyers and homeowners throughout {city}, Arizona. Our experienced mortgage brokers in {city} AZ work with multiple lenders.
+                  Expert {city} mortgages, competitive mortgage rates, and personalized home loan solutions for buyers and homeowners in {city}, Arizona.
                 </p>
 
                 {/* CTA */}
                 <Link prefetch={false}
-                  href="/#get-pre-approved"
+                  href="#get-pre-approved"
                   data-preapproval="true"
                   className="inline-flex items-center gap-2.5 bg-[#2d8545] hover:bg-[#246d39] text-white text-[15px] font-semibold px-7 py-3.5 rounded-full shadow-lg shadow-[#2d8545]/20 hover:shadow-xl hover:shadow-[#2d8545]/30 transition-all duration-300 group"
                 >
@@ -174,7 +174,7 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
                     <polyline points="9 18 15 12 9 6" />
                   </svg>
                 </Link>
-                <p className="text-[#c8d4c8] text-[11px] mt-3 font-medium">✓ 3 min, no credit impact</p>
+                <p className="text-[#c8d4c8] text-[11px] mt-3 font-medium">3 min / no credit impact</p>
               </div>
 
               {/* Right — Image placeholder card (desktop only — keeps mobile LCP on h1) */}

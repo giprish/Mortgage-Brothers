@@ -275,7 +275,7 @@ export default function ServiceAreasDirectory({ cities }: Props) {
             </p>
 
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="btn-primary duration-200 hover:shadow-lg hover:shadow-[#3fb364]/20 group"
             >
               Get Pre-Approved

@@ -143,7 +143,7 @@ export default function MortgageTriggerLeadsPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="/#get-pre-approved"
+                    href="#get-pre-approved"
                     className="btn-primary"
                   >
                     Get Expert Help Now
@@ -641,7 +641,7 @@ export default function MortgageTriggerLeadsPage() {
               unique financial situation.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="btn-primary"
             >
               Get Your Rate Now

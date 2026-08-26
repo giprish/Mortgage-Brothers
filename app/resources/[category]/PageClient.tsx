@@ -369,7 +369,7 @@ export default function ResourceCategoryPage() {
                   Skip the reading — get answers specific to your numbers.
                 </p>
                 <Link
-                  href="/#get-pre-approved"
+                  href="#get-pre-approved"
                   className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[13px] font-bold py-2.5 px-4 rounded-lg text-center flex items-center justify-center gap-1.5 transition-all duration-200"
                 >
                   Get Pre-Approved

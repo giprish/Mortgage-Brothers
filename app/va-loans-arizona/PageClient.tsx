@@ -320,7 +320,7 @@ export default function VaLoansArizonaPage() {
                 From reduced closing costs to no private mortgage insurance, the benefits of VA loans can translate into thousands of dollars saved over the life of your mortgage. Let&apos;s explore the key features that make VA loans an unparalleled opportunity:
               </p>
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
               >
                 Get Your Free VA Loan Consultation →
@@ -467,7 +467,7 @@ export default function VaLoansArizonaPage() {
             </p>
             <div className="loan-btn-wrap">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-md inline-block"
               >
                 Schedule Your Free VA Loan Consultation! →
@@ -523,7 +523,7 @@ export default function VaLoansArizonaPage() {
 
             <div className="loan-btn-wrap">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-md inline-block"
               >
                 Explore Your VA Loan Options Now! →
@@ -657,7 +657,7 @@ export default function VaLoansArizonaPage() {
                 Discover how easy it is to start your VA loan application process with expert guidance from our team. We&apos;ll help you navigate each step, from obtaining your Certificate of Eligibility to closing on your dream home.
               </p>
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="inline-block bg-[#3fb364] hover:bg-[#359854] text-white font-bold px-8 py-4 rounded-full transition-all"
               >
                 Start Your VA Loan Journey Today! →
@@ -760,7 +760,7 @@ export default function VaLoansArizonaPage() {
             </p>
             <div className="pt-4 flex flex-wrap justify-center gap-4">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-lg"
               >
                 GET PRE-APPROVED NOW →

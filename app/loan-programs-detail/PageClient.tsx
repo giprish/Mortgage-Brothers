@@ -348,7 +348,7 @@ export default function LoanProgramsDetailPage() {
               </p>
             </div>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="bg-[#052316] hover:bg-[#103020] text-white text-[13px] font-bold px-5 py-3 rounded-xl transition-all shadow-sm cursor-pointer whitespace-nowrap"
             >
               Take The Quiz &rarr;
@@ -371,7 +371,7 @@ export default function LoanProgramsDetailPage() {
 
             <div className="flex flex-wrap justify-center gap-4">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[14px] font-semibold px-6 py-3.5 rounded-full transition-all duration-200"
               >
                 Get Pre-Approved &rarr;

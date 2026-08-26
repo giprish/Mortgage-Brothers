@@ -153,7 +153,7 @@ export default function ArizonaMortgageClosingCostsPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="/#get-pre-approved"
+                    href="#get-pre-approved"
                     className="btn-primary"
                   >
                     Get in Touch
@@ -426,7 +426,7 @@ export default function ArizonaMortgageClosingCostsPage() {
               situation.
             </p>
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               className="btn-primary"
             >
               Get Your Rate Now

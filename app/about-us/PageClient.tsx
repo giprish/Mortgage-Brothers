@@ -100,7 +100,7 @@ export default function AboutPage() {
             {/* Hero CTA */}
             <div className="flex flex-col items-center mt-6">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 data-preapproval="true"
                 className="w-full sm:w-auto btn-primary hover:shadow-brand-green-accent/20 group text-[15px] font-bold px-7 py-3.5"
               >

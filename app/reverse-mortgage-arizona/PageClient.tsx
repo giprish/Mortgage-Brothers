@@ -190,7 +190,7 @@ export default function ReverseMortgageArizonaPage() {
                 </p>
                 <div className="pt-1">
                   <Link
-                    href="/#get-pre-approved"
+                    href="#get-pre-approved"
                     data-preapproval="true"
                     className="inline-flex items-center justify-center bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 leading-none rounded-full transition-all shadow"
                   >
@@ -229,7 +229,7 @@ export default function ReverseMortgageArizonaPage() {
         <section className="loan-cta-band no-content-visibility bg-[#fcf9f3] !pb-0">
           <div className="mx-auto max-w-6xl text-center loan-block-gap">
             <Link
-              href="/#get-pre-approved"
+              href="#get-pre-approved"
               data-preapproval="true"
               className="inline-flex items-center justify-center rounded-full bg-[#3fb364] px-8 py-3.5 text-[16px] font-bold leading-none text-white shadow-md transition-all hover:bg-[#359854]"
             >
@@ -271,7 +271,7 @@ export default function ReverseMortgageArizonaPage() {
 
             <div className="loan-btn-wrap">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 data-preapproval="true"
                 className="inline-block rounded-full bg-[#3fb364] px-8 py-4 text-[16px] font-bold text-white shadow-md transition-all hover:bg-[#359854]"
               >
@@ -328,7 +328,7 @@ export default function ReverseMortgageArizonaPage() {
 
             <div className="loan-btn-wrap">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 data-preapproval="true"
                 className="inline-block rounded-full bg-[#3fb364] px-8 py-4 text-[16px] font-bold text-white shadow-md transition-all hover:bg-[#359854]"
               >
@@ -437,7 +437,7 @@ export default function ReverseMortgageArizonaPage() {
             </p>
             <div className="flex flex-wrap justify-center gap-4 pt-4">
               <Link
-                href="/#get-pre-approved"
+                href="#get-pre-approved"
                 data-preapproval="true"
                 className="rounded-full bg-[#3fb364] px-8 py-4 text-[16px] font-bold text-white shadow-lg transition-all hover:bg-[#359854]"
               >
