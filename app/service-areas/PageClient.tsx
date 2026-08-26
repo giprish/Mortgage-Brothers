@@ -4,6 +4,7 @@ import React, { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
 import Navbar from "../../app/component/Navbar";
 import Footer from "../../app/component/Footer";
+import GetInTouch from "../component/GetInTouch";
 
 // Complete dataset of 109 cities across 15 counties
 const citiesData = [
@@ -412,6 +413,17 @@ export default function MaricopaCounty2() {
             </Link>
           </div>
         </section>
+
+        <GetInTouch
+          theme="light"
+          title="Get Started with Your Arizona Home Loan Today"
+          showDivider
+          paragraphs={[
+            "Take the first step towards your dream home with AZ Mortgage Brothers. Our team of experienced mortgage professionals is ready to guide you through the conventional loan process, answer your questions, and help you secure the best possible terms for your unique situation.",
+            "Whether you prefer to chat over the phone, send us an email, or meet in person, we're here to assist you. Fill out the form below, and one of our mortgage experts will get back to you promptly. Alternatively, feel free to reach out to us directly using the contact information provided.",
+            "Don't let this opportunity for homeownership pass you by. Contact us today and let's make your Arizona home dreams a reality with a conventional loan tailored to your needs.",
+          ]}
+        />
       </main>
 
       {/* Commented Out PreApprovedForm as requested */}

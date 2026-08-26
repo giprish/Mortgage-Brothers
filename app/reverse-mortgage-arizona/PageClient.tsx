@@ -9,6 +9,7 @@ import Footer from "../component/Footer";
 import StatsBanner from "../component/StatsBanner";
 import LoanProgramHero from "../component/LoanProgramHero";
 import HeroFeatureStrip from "../component/HeroFeatureStrip";
+import GetInTouch from "../component/GetInTouch";
 
 import CountyTestimonials, { type CountyTestimonial } from "../component/CountyTestimonials";
 
@@ -115,7 +116,11 @@ const whyUs = [
   },
   {
     title: "Trusted Reputation",
-    desc: "With hundreds of satisfied clients and a 5.0/5 rating on Google Reviews, our reputation speaks for itself.",
+    desc: (
+      <>
+        With <strong>hundreds of satisfied clients</strong> and a <strong>5.0/5 rating on Google Reviews</strong>, our reputation speaks for itself.
+      </>
+    ),
   },
 ] as const;
 
@@ -133,10 +138,10 @@ const relatedLoans = [
 ] as const;
 
 const STATS = [
-  { value: "62+", label: "Minimum Age Requirement" },
-  { value: "$0", label: "Monthly Payments Required" },
-  { value: "30%-60%", label: "Home Equity Accessible" },
-  { value: "100%", label: "Retain Full Ownership" },
+  { value: "Yes", label: "Do you Love Your Home?" },
+  { value: "Yes", label: "Do you Love your Location?" },
+  { value: "Yes", label: "Is Your Home Low Maintenance?" },
+  { value: "Yes", label: "Is Your Income Limited?" },
 ] as const;
 
 const featureStrip = [
@@ -178,10 +183,10 @@ export default function ReverseMortgageArizonaPage() {
                   A reverse mortgage is a powerful financial tool for Arizona homeowners 62 and older who want to access the equity they&apos;ve built in their home — without selling it or making monthly mortgage payments. The most common type is the HECM (Home Equity Conversion Mortgage), which is federally insured by the FHA and designed to give seniors greater financial flexibility in retirement.
                 </p>
                 <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                  Whether you want to eliminate your existing mortgage payment, supplement your monthly income, cover healthcare costs, or simply have a financial cushion for life&apos;s unexpected expenses, a reverse mortgage lets you unlock your home&apos;s value on your terms. You remain the owner of your home, and the loan doesn&apos;t come due until you sell, move out, or pass away.
+                  Whether you want to eliminate your existing mortgage payment, supplement your monthly income, cover healthcare costs, or simply have a financial cushion for life&apos;s unexpected expenses, a reverse mortgage lets you <strong>unlock your home&apos;s value on your terms.</strong> You remain the owner of your home, and the loan doesn&apos;t come due until you sell, move out, or pass away.
                 </p>
                 <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                  For Arizona seniors — whether you&apos;re in Phoenix, Scottsdale, Tucson, or anywhere across the state — a reverse mortgage can be a smart way to enjoy your retirement years with less financial stress. Our team specializes in HECM reverse mortgages and will walk you through every step so you fully understand how it works before making any decisions.
+                  For Arizona seniors — whether you&apos;re in Phoenix, Scottsdale, Tucson, or anywhere across the state — a reverse mortgage can be a smart way to <strong>enjoy your retirement years with less financial stress.</strong> Our team specializes in HECM reverse mortgages and will walk you through every step so you fully understand how it works before making any decisions.
                 </p>
                 <div className="pt-1">
                   <Link
@@ -245,7 +250,7 @@ export default function ReverseMortgageArizonaPage() {
                 Are You Eligible for a Reverse Mortgage?
               </h2>
               <p className="mx-auto mt-4 max-w-3xl text-[15.5px] leading-relaxed text-[#4e5b4e]">
-                Reverse mortgages offer unique benefits for Arizona homeowners 62 and older. Check if you meet the basic requirements:
+                Reverse mortgages offer unique benefits for Arizona homeowners <strong>62 and older</strong>. Check if you meet the basic requirements:
               </p>
             </div>
 
@@ -400,10 +405,10 @@ export default function ReverseMortgageArizonaPage() {
                 Why Choose The Mortgage Brothers for Your Reverse Mortgage
               </h2>
               <p className="text-[15.5px] leading-relaxed text-[#4e5b4e]">
-                With over 25 years of experience in the Arizona real estate market, The Mortgage Brothers bring unparalleled expertise to your reverse mortgage journey. Our deep roots in Phoenix, Scottsdale, and beyond give us unique insights into the local housing market. We understand the specific needs of Arizona homeowners and are committed to providing personalized solutions that enhance your financial freedom during retirement.
+                With over <strong>25 years of experience</strong> in the Arizona real estate market, The Mortgage Brothers bring unparalleled expertise to your reverse mortgage journey. Our <strong>deep roots in Phoenix, Scottsdale, and beyond</strong> give us unique insights into the local housing market. We understand the specific needs of Arizona homeowners and are committed to providing <strong>personalized solutions</strong> that enhance your <strong>financial freedom during retirement.</strong>
               </p>
               <p className="text-[15.5px] leading-relaxed text-[#4e5b4e]">
-                As a family-owned business, we prioritize building lasting relationships with our clients. Our team of experts is dedicated to simplifying the complex reverse mortgage process, ensuring you have a clear understanding of your options and the confidence to make informed decisions. Whether you&apos;re looking to supplement your retirement income, cover healthcare costs, or simply enjoy your golden years without financial stress, we&apos;re here to guide you every step of the way.
+                As a <strong>family-owned business</strong>, we prioritize building lasting relationships with our clients. Our team of experts is dedicated to <strong>simplifying the complex reverse mortgage process</strong>, ensuring you have a clear understanding of your options and the confidence to make informed decisions. Whether you&apos;re looking to <strong>supplement your retirement income</strong>, cover healthcare costs, or simply enjoy your golden years without financial stress, we&apos;re here to guide you every step of the way.
               </p>
             </div>
 
@@ -450,6 +455,13 @@ export default function ReverseMortgageArizonaPage() {
             </p>
           </div>
         </section>
+
+        <GetInTouch
+          theme="light"
+          title="Reach Out to Our Reverse Mortgage Experts"
+          description="Our team of Arizona reverse mortgage experts is here to provide personalized guidance tailored to your unique situation. Whether you're considering a reverse mortgage in Phoenix, Scottsdale, or anywhere else in Arizona, we're ready to answer your questions and help you make an informed decision."
+          showDivider
+        />
 
         {/* RELATED LOANS */}
         <section className="loan-section bg-[#fcf9f3]">
