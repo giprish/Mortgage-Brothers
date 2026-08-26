@@ -236,14 +236,14 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-4">
-                LOCAL KNOWLEDGE
+                LOCAL EXPERTISE
               </span>
               <h2 className="text-[#052316] text-[28px] lg:text-[36px] font-semibold leading-tight mb-4">
                 Popular Communities We Serve in {city}, AZ
               </h2>
               <p className="text-[#4e5b4e] text-[14px] lg:text-[15px] leading-[1.7] max-w-2xl mx-auto">
                 {cityData.communitiesIntro ??
-                  `${city} is home to diverse master-planned communities — each with a unique pricing, amenities, and lending needs. Our inside knowledge gives you the edge.`}
+                  `${city} is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:`}
               </p>
             </div>
 

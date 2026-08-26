@@ -1,5 +1,6 @@
 import { getSeoEntry, seoMetadata, type SeoEntry } from "./seo";
 import { getLiveCityFaqs } from "./liveCityFaqs";
+import { liveCityPageContent } from "./liveCityPageContent";
 
 export interface CityData {
   name: string;
@@ -19,84 +20,6 @@ export interface CityData {
   getInTouchTitle: string;
   getInTouchParagraphs: string[];
 }
-
-/** Per-city body + communities copy from LIVE (azmortgagebrothers.com). Key: countySlug/citySlug */
-const liveCityPageContent: Record<
-  string,
-  {
-    longDescriptions?: string[];
-    intro?: string;
-    items: { title: string; description: string }[];
-    getInTouchTitle?: string;
-    getInTouchParagraphs?: string[];
-  }
-> = {
-  "mohave-county-az/bullhead-city": {
-    longDescriptions: [
-      "As experienced mortgage lenders serving Bullhead City AZ, our team helps borrowers navigate the home financing process with confidence. From first-time homebuyers to homeowners exploring refinancing opportunities, we provide mortgage solutions tailored to the Bullhead City AZ real estate market.",
-      "Whether you're purchasing a primary residence, vacation property, or refinancing an existing loan, we help you secure dependable mortgage loans in Bullhead City Arizona with competitive rates and transparent guidance.",
-    ],
-    intro:
-      "Bullhead City is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
-    items: [
-      {
-        title: "Riverfront Communities",
-        description:
-          "Homes along the Colorado River provide beautiful views and waterfront living opportunities. Our mortgage brokers help buyers secure financing for riverfront properties and vacation homes.",
-      },
-      {
-        title: "Fort Mohave Surrounding Area",
-        description:
-          "Nearby Fort Mohave offers growing residential developments and golf course communities. We help buyers secure mortgage solutions for homes in this expanding area.",
-      },
-      {
-        title: "Holiday Shores Area",
-        description:
-          "Holiday Shores features quiet neighborhoods close to the river and recreational amenities. Our mortgage specialists help buyers explore loan options for homes in this community.",
-      },
-      {
-        title: "Sunridge Estates",
-        description:
-          "Sunridge Estates offers scenic desert views and established residential neighborhoods. We assist buyers with mortgage solutions suited for homes in this desirable area.",
-      },
-    ],
-    getInTouchTitle: "Our Bullhead City Mortgage Services",
-    getInTouchParagraphs: [
-      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable mortgages in Bullhead City supported by experienced advisors and access to trusted lenders.",
-      "Whether you're purchasing a home near the Colorado River, refinancing your existing mortgage, or exploring reverse mortgage opportunities, our team guides you through every step of the mortgage process with clear communication and personalized support.",
-    ],
-  },
-  "pima-county-az/oro-valley": {
-    longDescriptions: [
-      "As experienced mortgage lenders serving Oro Valley AZ, our team helps borrowers navigate the home loan process with confidence. From first-time homebuyers to homeowners exploring refinancing opportunities, we provide mortgage solutions tailored to the Oro Valley AZ real estate market.",
-      "Whether you're purchasing a primary residence, a luxury home, or refinancing your existing loan, we help you secure dependable mortgage loans in Oro Valley Arizona with competitive rates and transparent guidance.",
-    ],
-    intro:
-      "Oro Valley is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
-    items: [
-      {
-        title: "Rancho Vistoso",
-        description:
-          "Rancho Vistoso is one of the most popular communities in Oro Valley, offering scenic views and well-planned neighborhoods. Our mortgage brokers help buyers secure financing options suited for homes in this desirable area.",
-      },
-      {
-        title: "Canada Hills",
-        description:
-          "Canada Hills offers scenic desert landscapes and golf course homes. Our mortgage specialists help buyers explore loan options for homes in this prestigious neighborhood.",
-      },
-      {
-        title: "Sun City Oro Valley",
-        description:
-          "Sun City is a well-known active adult community with beautiful homes and amenities. We assist buyers with mortgage solutions tailored to retirement living and age-qualified communities.",
-      },
-      {
-        title: "Oro Valley Country Club Area",
-        description:
-          "Homes near Oro Valley Country Club feature luxury living and stunning mountain views. We help buyers secure financing for high-value properties and custom homes.",
-      },
-    ],
-  },
-};
 
 export const countyMap: Record<string, string> = {
   "maricopa-county-az": "Maricopa County",
@@ -302,8 +225,10 @@ function buildCityData(params: {
 
   const defaultDescription = `Home loans, refinancing, and pre-approvals for ${cityName} buyers.`;
   const defaultLongDescriptions = [
-    `${cityName} is a vibrant and growing community located in ${countyName}, offering a diverse real estate market with various neighborhood choices. Mortgage Brothers LLC provides local expertise to help residents and newcomers navigate home financing with confidence, offering tailored mortgage solutions for every buyer.`,
+    `As experienced mortgage lenders serving ${cityName} AZ, our team helps borrowers navigate the home financing process with confidence. From first-time homebuyers to homeowners exploring refinancing opportunities, we provide mortgage solutions tailored to the ${cityName} AZ real estate market.`,
+    `Whether you're purchasing a primary residence, an investment property, or refinancing an existing loan, we help you secure dependable mortgage loans in ${cityName} Arizona with competitive rates and transparent guidance.`,
   ];
+  const defaultCommunitiesIntro = `${cityName} is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:`;
   const defaultGetInTouchParagraphs = [
     `Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable mortgages in ${cityName} supported by experienced advisors and access to trusted lenders.`,
     `Whether you're purchasing a home, refinancing your existing mortgage, or exploring reverse mortgage opportunities, our team guides you through every step of the mortgage process with clear communication and personalized support.`,
@@ -319,7 +244,7 @@ function buildCityData(params: {
     medianPrice,
     daysOnMarket,
     communities,
-    communitiesIntro: livePage?.intro,
+    communitiesIntro: livePage?.intro ?? defaultCommunitiesIntro,
     faqs,
     getInTouchTitle: livePage?.getInTouchTitle ?? `Our ${cityName} Mortgage Services`,
     getInTouchParagraphs:

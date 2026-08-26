@@ -7,7 +7,7 @@ import {
   buildBreadcrumbListSchema,
   buildFaqPageSchema,
 } from "@/lib/seo/structured-data";
-import CityPageClient from "./CityPageClient";
+import CityPageClient from "../../[county]/[city]/CityPageClient";
 
 type Props = {
   params: Promise<{ city: string }>;
@@ -45,7 +45,7 @@ export default async function Page({ params }: Props) {
   return (
     <>
       {schemas.length > 0 ? <JsonLd data={schemas} /> : null}
-      <CityPageClient citySlug={city} />
+      <CityPageClient cityData={cityData} />
     </>
   );
 }
