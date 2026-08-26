@@ -10,6 +10,8 @@ import StatsBanner from "../component/StatsBanner";
 import LoanProgramHero from "../component/LoanProgramHero";
 import HeroFeatureStrip from "../component/HeroFeatureStrip";
 
+import CountyTestimonials, { type CountyTestimonial } from "../component/CountyTestimonials";
+
 const featureStrip = [
   "VA Loans Offer Zero Down Payment for Arizona Veterans",
   "Lower Rates, No PMI, Flexible Requirements",
@@ -221,32 +223,33 @@ export default function VaLoansArizonaPage() {
     }
   ];
 
-  const testimonials = [
-    {
-      quote:
-        "Eddie and his team are fantastic to work with! They are efficient, friendly and very professional. They communicate to all parties in the transaction, making it a very smooth transaction every time.",
-      name: "Elizabeth Todd, H2 Realty, Phoenix, Arizona"
-    },
-    {
-      quote:
-        "Eddie Knoell was a pleasure to work with. He got me a great rate with a quick approval and funding. Eddie was responsive to both phone calls and emails. I highly recommend him without reservation.",
-      name: "John Fynmore, Phoenix, Arizona"
-    },
-    {
-      quote:
-        "I met Eddie Knoell in 2012 through a client. He communicates very well through every step of the process. He closes every deal and is patient with questions and great with every client.",
-      name: "Nancy Perry, Solutions Real Estate, Avondale, Arizona"
-    },
-    {
-      quote:
-        "Working with Eddie was an absolute pleasure. He has a very high level of integrity and the knowledge to back it up. Without Eddie working diligently to overcome the challenges, I could not have closed this deal.",
-      name: "Michele Bonner, Tempe, Arizona"
-    },
-    {
-      quote: "Eddie is an efficient lender and has total follow up. He does a great job and has smooth closings.",
-      name: "Bob Daughtery, Mesa, Arizona"
-    }
-  ];
+  const testimonials: CountyTestimonial[] = [
+  {
+    name: "Elizabeth Todd",
+    quote: "Eddie and his team are fantastic to work with! They are efficient, friendly and very professional. They communicate to all parties in the transaction, making it a very smooth transaction every time.",
+    attribution: "Elizabeth Todd, H2 Realty, Phoenix, Arizona",
+  },
+  {
+    name: "John Fynmore",
+    quote: "Eddie Knoell was a pleasure to work with. He got me a great rate with a quick approval and funding. Eddie was responsive to both phone calls and emails. I highly recommend him without reservation.",
+    attribution: "John Fynmore, Phoenix, Arizona",
+  },
+  {
+    name: "Nancy Perry",
+    quote: "I met Eddie Knoell in 2012 through a client. He communicates very well through every step of the process. He closes every deal and is patient with questions and great with every client.",
+    attribution: "Nancy Perry, Solutions Real Estate, Avondale, Arizona",
+  },
+  {
+    name: "Michele Bonner",
+    quote: "Working with Eddie was an absolute pleasure. He has a very high level of integrity and the knowledge to back it up. Without Eddie working diligently to overcome the challenges, I could not have closed this deal.",
+    attribution: "Michele Bonner, Tempe, Arizona",
+  },
+  {
+    name: "Bob Daughtery",
+    quote: "Eddie is an efficient lender and has total follow up. He does a great job and has smooth closings.",
+    attribution: "Bob Daughtery, Mesa, Arizona",
+  },
+];
 
   const whyUs = [
     {
@@ -664,40 +667,10 @@ export default function VaLoansArizonaPage() {
         </section>
 
         {/* TESTIMONIALS */}
-        <section className="loan-section bg-white">
-          <div className="max-w-5xl mx-auto space-y-10">
-            <div className="text-center">
-              <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
-                CLIENT STORIES
-              </span>
-              <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair">
-                What Our Veterans Say About VA Loans
-              </h2>
-              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed max-w-3xl mx-auto mt-4">
-                Hear from fellow veterans who have successfully achieved their homeownership dreams through VA loans with the Mortgage Brothers team. Our commitment to serving those who served means providing expert guidance, competitive rates, and a smooth loan process tailored to your unique needs.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
-              {testimonials.map((t) => (
-                <div key={t.name} className="bg-[#fcf9f3] border border-[#e0e0e0] rounded-2xl p-6 shadow-sm space-y-4">
-                  <p className="text-[#3fb364] text-[14px]">★★★★★</p>
-                  <p className="text-[#4e5b4e] text-[14px] leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
-                  <p className="text-[#052316] text-[13px] font-bold">{t.name}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="loan-btn-wrap">
-              <Link
-                href="/client-mortgage-reviews/"
-                className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all"
-              >
-                Explore All Client Testimonials
-              </Link>
-            </div>
-          </div>
-        </section>
+        <CountyTestimonials
+          title="What Our Veterans Say About VA Loans"
+          testimonials={testimonials}
+        />
 
         {/* WHY US */}
         <section className="loan-section bg-[#fcf9f3]">

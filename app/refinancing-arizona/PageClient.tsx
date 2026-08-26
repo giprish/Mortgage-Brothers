@@ -10,6 +10,8 @@ import StatsBanner from "../component/StatsBanner";
 import LoanProgramHero from "../component/LoanProgramHero";
 import HeroFeatureStrip from "../component/HeroFeatureStrip";
 import FaqAccordion from "../component/FaqAccordion";
+import GetInTouch from "../component/GetInTouch";
+import CountyTestimonials, { type CountyTestimonial } from "../component/CountyTestimonials";
 
 const featureStrip = [
   "Unlock Home Equity with Arizona Refinancing Options",
@@ -98,26 +100,31 @@ const processSteps = [
   },
 ];
 
-const reviews = [
+const testimonials: CountyTestimonial[] = [
   {
-    text: "Thank you for outstanding service in the refinance of our home! Not only were you professional and courteous, you were realistic and honest. Our transaction was easier than we could have imagined.",
-    author: "Kristy Bartusek, Tempe, Arizona",
+    name: "Kristy Bartusek",
+    quote: "Thank you for outstanding service in the refinance of our home! Not only were you professional and courteous, you were realistic and honest. Our transaction was easier than we could have imagined.",
+    attribution: "Kristy Bartusek, Tempe, Arizona",
   },
   {
-    text: "Eddie refinanced our home with professionalism, timeliness, and accuracy. He was courteous, kept us informed, and got us a good rate.",
-    author: "Gregory LeBeau, Scottsdale, Arizona",
+    name: "Gregory LeBeau",
+    quote: "Eddie refinanced our home with professionalism, timeliness, and accuracy. He was courteous, kept us informed, and got us a good rate.",
+    attribution: "Gregory LeBeau, Scottsdale, Arizona",
   },
   {
-    text: "I appreciated your good communication and frequent updates. Anytime I called I never got a recording -- always able to talk to someone in person. You closed early. Thanks!",
-    author: "Mike Cameli, DPR Realty, Tempe, Arizona",
+    name: "Mike Cameli",
+    quote: "I appreciated your good communication and frequent updates. Anytime I called I never got a recording -- always able to talk to someone in person. You closed early. Thanks!",
+    attribution: "Mike Cameli, DPR Realty, Tempe, Arizona",
   },
   {
-    text: "Eddie saved us over $500 a month! He explained in great detail the program options, locked us into a great rate, and made it happen for us. We are so grateful.",
-    author: "Michael and Donna Hawkins, Glendale, Arizona",
+    name: "Michael and Donna Hawkins",
+    quote: "Eddie saved us over $500 a month! He explained in great detail the program options, locked us into a great rate, and made it happen for us. We are so grateful.",
+    attribution: "Michael and Donna Hawkins, Glendale, Arizona",
   },
   {
-    text: "Eddie works fast and is thorough. He gave us a great deal. We were financed in no time, and it was a lot faster and easier than any other loan process we have ever gone through.",
-    author: "Arlyn and Jennifer Stotts, Phoenix, Arizona",
+    name: "Arlyn and Jennifer Stotts",
+    quote: "Eddie works fast and is thorough. He gave us a great deal. We were financed in no time, and it was a lot faster and easier than any other loan process we have ever gone through.",
+    attribution: "Arlyn and Jennifer Stotts, Phoenix, Arizona",
   },
 ];
 
@@ -187,8 +194,16 @@ export default function RefinancingArizonaPage() {
   const [calcTerm, setCalcTerm] = useState("30");
   const [calcResult, setCalcResult] = useState<string | null>(null);
 
+  function sanitizeNonNegative(value: string, integersOnly = false) {
+    const digits = value.replace(/[^0-9.]/g, "");
+    if (integersOnly) return digits.replace(/\./g, "");
+    const firstDot = digits.indexOf(".");
+    if (firstDot === -1) return digits;
+    return digits.slice(0, firstDot + 1) + digits.slice(firstDot + 1).replace(/\./g, "");
+  }
+
   function parseAmount(value: string) {
-    return parseFloat(value.replace(/,/g, "").replace(/[^0-9.]/g, ""));
+    return parseFloat(sanitizeNonNegative(value));
   }
 
   function monthlyPayment(principal: number, annualRate: number, years: number) {
@@ -248,8 +263,10 @@ export default function RefinancingArizonaPage() {
 
       <main className="flex-grow">
         <LoanProgramHero
-          title="Refinancing in Arizona"
-          subtitle="Need money back or need to lower your payment? Let us help you with your mortgage refinancing in Arizona. We can help you decide if refinancing a home is the right step for you at this time. If yes, we can then offer you a variety of options to meet your specific needs and circumstances."
+          title="Mortgage Refinancing in Arizona"
+          subtitle="Lower your monthly payments, access cash, or shorten your loan term with our tailored refinancing options."
+          secondaryCtaLabel=""
+          note="3 min / no credit impact"
         />
 
         <HeroFeatureStrip items={featureStrip} />
@@ -498,8 +515,9 @@ export default function RefinancingArizonaPage() {
                       inputMode="decimal"
                       autoComplete="off"
                       placeholder="350000"
+                      min={0}
                       value={calcBalance}
-                      onChange={(e) => setCalcBalance(e.target.value)}
+                      onChange={(e) => setCalcBalance(sanitizeNonNegative(e.target.value))}
                       className="w-full border border-[#e0e0e0] rounded-xl px-4 py-3 text-[15px] text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                     />
                   </div>
@@ -513,8 +531,9 @@ export default function RefinancingArizonaPage() {
                       inputMode="decimal"
                       autoComplete="off"
                       placeholder="6.75"
+                      min={0}
                       value={calcCurrentRate}
-                      onChange={(e) => setCalcCurrentRate(e.target.value)}
+                      onChange={(e) => setCalcCurrentRate(sanitizeNonNegative(e.target.value))}
                       className="w-full border border-[#e0e0e0] rounded-xl px-4 py-3 text-[15px] text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                     />
                   </div>
@@ -528,8 +547,9 @@ export default function RefinancingArizonaPage() {
                       inputMode="decimal"
                       autoComplete="off"
                       placeholder="5.99"
+                      min={0}
                       value={calcNewRate}
-                      onChange={(e) => setCalcNewRate(e.target.value)}
+                      onChange={(e) => setCalcNewRate(sanitizeNonNegative(e.target.value))}
                       className="w-full border border-[#e0e0e0] rounded-xl px-4 py-3 text-[15px] text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                     />
                   </div>
@@ -543,8 +563,9 @@ export default function RefinancingArizonaPage() {
                       inputMode="numeric"
                       autoComplete="off"
                       placeholder="30"
+                      min={0}
                       value={calcTerm}
-                      onChange={(e) => setCalcTerm(e.target.value)}
+                      onChange={(e) => setCalcTerm(sanitizeNonNegative(e.target.value, true))}
                       className="w-full border border-[#e0e0e0] rounded-xl px-4 py-3 text-[15px] text-[#08271B] focus:outline-none focus:border-[#3fb364]"
                     />
                   </div>
@@ -578,53 +599,10 @@ export default function RefinancingArizonaPage() {
           </div>
         </section>
 
-        {/* Reviews */}
-        <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">
-          <div className="max-w-6xl mx-auto">
-            <div className="max-w-3xl mx-auto text-center mb-8">
-              <h2
-                className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-5"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                What Our Clients Say
-              </h2>
-              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                Don&apos;t just take our word for it—hear from our satisfied clients who have successfully navigated the refinancing process with us. Their experiences highlight the benefits of refinancing and the exceptional service provided by our team. Discover how we&apos;ve helped homeowners like you achieve their financial goals and transform their mortgage experience.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {reviews.map((rev) => (
-                <div
-                  key={rev.author}
-                  className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm flex flex-col"
-                >
-                  <div className="flex gap-0.5 mb-3" aria-label="5 star rating">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="#f5c518" aria-hidden>
-                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                      </svg>
-                    ))}
-                  </div>
-                  <p className="text-[#3a443a] text-[14px] leading-relaxed flex-1 mb-4">
-                    &ldquo;{rev.text}&rdquo;
-                  </p>
-                  <p className="text-[#08271B] text-[13.5px] font-bold">{rev.author}</p>
-                </div>
-              ))}
-            </div>
-            <div className="loan-btn-wrap">
-              <Link
-                href="/client-mortgage-reviews/"
-                className="inline-flex items-center gap-2 text-[#08271B] hover:text-[#3fb364] font-semibold text-[15px] transition-colors"
-              >
-                Explore All Client Testimonials
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <path d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </section>
+        <CountyTestimonials
+          title="What Our Clients Say"
+          testimonials={testimonials}
+        />
 
         {/* Why choose us */}
         <section className="w-full loan-section">
@@ -701,26 +679,13 @@ export default function RefinancingArizonaPage() {
           </div>
         </section>
 
-        {/* Contact */}
-        <section className="w-full loan-section">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2
-              className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-5"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
-              Contact Us for Expert Refinancing Advice in Arizona
-            </h2>
-            <Link
-              href="/#get-pre-approved"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"
-            >
-              Start my preapproval
-            </Link>
-            <p className="text-[#8a958a] text-[12px] leading-relaxed mt-8 max-w-2xl mx-auto">
-              Mortgage Brothers NMLS 1007154, NMLS #210917 and #1618695. Equal housing lender.
-            </p>
-          </div>
-        </section>
+        <GetInTouch
+          theme="dark"
+          title="Contact Us for Expert Refinancing Advice in Arizona"
+          description=""
+          showPreApproveCta
+          ctaLabel="Start my preapproval"
+        />
 
         {/* Explore solutions */}
         <section className="w-full bg-[#f5f0e8] loan-section border-t border-[#e8e0d0]/50">

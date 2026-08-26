@@ -10,6 +10,8 @@ import StatsBanner from "../component/StatsBanner";
 import LoanProgramHero from "../component/LoanProgramHero";
 import HeroFeatureStrip from "../component/HeroFeatureStrip";
 
+import CountyTestimonials, { type CountyTestimonial } from "../component/CountyTestimonials";
+
 const featureStrip = [
   "High-Value Financing Solutions",
   "Beyond Standard Loan Limits",
@@ -171,26 +173,31 @@ const marketInsights = [
   },
 ];
 
-const reviews = [
+const testimonials: CountyTestimonial[] = [
   {
-    text: "I recently had the pleasure and privilege of having Eddie Knoell as my loan officer for my new mortgage. It was a truly pleasant experience. Entering the office was a very warm and welcoming occurrence in itself. Eddie is the consummate professional and extremely knowledgeable in the lending arena. He is very organized, efficient, competent, and was an excellent communicator. He always made himself available to answer any and every question I had. Eddie's confidence and knowledge made the entire process extremely easy and enjoyable for me. I would highly recommend Eddie without reservation to anyone looking to finance their new home. I know from my experience he will do a top notch job.",
-    author: "K. Zanzucchi, Phoenix, Arizona",
+    name: "K. Zanzucchi",
+    quote: "I recently had the pleasure and privilege of having Eddie Knoell as my loan officer for my new mortgage. It was a truly pleasant experience. Entering the office was a very warm and welcoming occurrence in itself. Eddie is the consummate professional and extremely knowledgeable in the lending arena. He is very organized, efficient, competent, and was an excellent communicator. He always made himself available to answer any and every question I had. Eddie's confidence and knowledge made the entire process extremely easy and enjoyable for me. I would highly recommend Eddie without reservation to anyone looking to finance their new home. I know from my experience he will do a top notch job.",
+    attribution: "K. Zanzucchi, Phoenix, Arizona",
   },
   {
-    text: "Eddie Knoell is the best Loan Officer we've ever dealt with, and we've worked with a few in our day. Both Ched and I feel like he was always there for us even on the weekend!! Eddie's best quality, is his ability to get the job done efficiently, really fast, and had our financial situation as his top priority! In an area where we didn't feel very knowledgeable, we both felt comfortable knowing we were in good hands with Eddie's ability to get us the best mortgage possible. Eddie, we also enjoyed the cookies and the newsletters! We think its awesome customer service. God bless you and your family.",
-    author: "Ched and Nanette Salasek, Phoenix, Arizona",
+    name: "Ched and Nanette Salasek",
+    quote: "Eddie Knoell is the best Loan Officer we've ever dealt with, and we've worked with a few in our day. Both Ched and I feel like he was always there for us even on the weekend!! Eddie's best quality, is his ability to get the job done efficiently, really fast, and had our financial situation as his top priority! In an area where we didn't feel very knowledgeable, we both felt comfortable knowing we were in good hands with Eddie's ability to get us the best mortgage possible. Eddie, we also enjoyed the cookies and the newsletters! We think its awesome customer service. God bless you and your family.",
+    attribution: "Ched and Nanette Salasek, Phoenix, Arizona",
   },
   {
-    text: "Honest, effective and straight forward. P.S. the brownies were very good.",
-    author: "Paul Giles, Scottsdale, Arizona",
+    name: "Paul Giles",
+    quote: "Honest, effective and straight forward. P.S. the brownies were very good.",
+    attribution: "Paul Giles, Scottsdale, Arizona",
   },
   {
-    text: "Eddie Knoell is the best lender I've ever worked with. He was prompt, courteous and did what he promised, on or before the promised date. Eddie offered an L.S.R. without being asked. Eddie was in contact with me often throughout the entire transaction. As a real estate agent the entire process was a breeze. No calls had to be placed to Eddie to find out what was going on. I'd highly recommend using Eddie Knoell for all your clients lending needs. He makes an agents life stress free.",
-    author: "Judy Gibson, Mesa, Arizona",
+    name: "Judy Gibson",
+    quote: "Eddie Knoell is the best lender I've ever worked with. He was prompt, courteous and did what he promised, on or before the promised date. Eddie offered an L.S.R. without being asked. Eddie was in contact with me often throughout the entire transaction. As a real estate agent the entire process was a breeze. No calls had to be placed to Eddie to find out what was going on. I'd highly recommend using Eddie Knoell for all your clients lending needs. He makes an agents life stress free.",
+    attribution: "Judy Gibson, Mesa, Arizona",
   },
   {
-    text: "We have bought & sold a total of 5 homes and we have refinanced at least 3 times and Eddie Knoell is our mortgage guy for life. Eddie is honest, timely, and available and come highly recommended! Eddie makes a process that is often stressful and laborious, positive and a learning experience. He has expressed support when we needed reassurance, giving us peace of mind when it was greatly needed!!! His people skills are phenomenal, his insightfulness is excellent! You get the whole package with Eddie Knoell; Intellectual, Psychological and Emotional Intelligence!!! I would and have recommended him to my family, that's how much we trust Eddie!",
-    author: "Liza Garcia, Scottsdale, Arizona",
+    name: "Liza Garcia",
+    quote: "We have bought & sold a total of 5 homes and we have refinanced at least 3 times and Eddie Knoell is our mortgage guy for life. Eddie is honest, timely, and available and come highly recommended! Eddie makes a process that is often stressful and laborious, positive and a learning experience. He has expressed support when we needed reassurance, giving us peace of mind when it was greatly needed!!! His people skills are phenomenal, his insightfulness is excellent! You get the whole package with Eddie Knoell; Intellectual, Psychological and Emotional Intelligence!!! I would and have recommended him to my family, that's how much we trust Eddie!",
+    attribution: "Liza Garcia, Scottsdale, Arizona",
   },
 ];
 
@@ -521,53 +528,10 @@ export default function JumboLoansPage() {
           </div>
         </section>
 
-        {/* Reviews */}
-        <section className="w-full loan-section">
-          <div className="max-w-6xl mx-auto">
-            <div className="max-w-3xl mx-auto text-center mb-8">
-              <h2
-                className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-5"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                What Our Clients Say About Jumbo Loans
-              </h2>
-              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                At Mortgage Brothers LLC, we take pride in helping our clients achieve their dreams of owning high-value properties through Jumbo Loans. But don&apos;t just take our word for it - hear from some of the satisfied homeowners we&apos;ve had the pleasure of assisting. These testimonials reflect our commitment to providing expert guidance, personalized service, and successful outcomes in the complex world of Jumbo Loans.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {reviews.map((rev) => (
-                <div
-                  key={rev.author}
-                  className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm flex flex-col"
-                >
-                  <div className="flex gap-0.5 mb-3" aria-label="5 star rating">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="#f5c518" aria-hidden>
-                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                      </svg>
-                    ))}
-                  </div>
-                  <p className="text-[#3a443a] text-[14px] leading-relaxed flex-1 mb-4">
-                    &ldquo;{rev.text}&rdquo;
-                  </p>
-                  <p className="text-[#08271B] text-[13.5px] font-bold">{rev.author}</p>
-                </div>
-              ))}
-            </div>
-            <div className="loan-btn-wrap">
-              <Link
-                href="/client-mortgage-reviews/"
-                className="inline-flex items-center gap-2 text-[#08271B] hover:text-[#3fb364] font-semibold text-[15px] transition-colors"
-              >
-                Explore All Client Testimonials
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <path d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </section>
+        <CountyTestimonials
+          title="What Our Clients Say About Jumbo Loans"
+          testimonials={testimonials}
+        />
 
         {/* Why MB */}
         <section className="w-full bg-[#f5f0e8] loan-section border-y border-[#e8e0d0]/50">

@@ -10,6 +10,8 @@ import StatsBanner from "../component/StatsBanner";
 import LoanProgramHero from "../component/LoanProgramHero";
 import HeroFeatureStrip from "../component/HeroFeatureStrip";
 
+import CountyTestimonials, { type CountyTestimonial } from "../component/CountyTestimonials";
+
 const featureStrip = [
   "Fast Funding for Unique Arizona Real Estate Deals",
   "Flexible Financing Beyond Traditional Mortgage Limits",
@@ -150,26 +152,31 @@ const processSteps = [
   },
 ];
 
-const reviews = [
+const testimonials: CountyTestimonial[] = [
   {
-    text: "Thank you for your service & advice on the purchase of our 2ND home with your company. We would have been lost without your help & guidance. Thank you also for keeping in touch with us when we moved across this country of ours to Tennessee & Colorado over the last 2 years. Always available for our questions got to love that for customer service. No, matter how busy you were in your day you were always so attentive & kind with your assistance in the mortgage arena. We are grateful & thankful to know you are always available to answer any questions we may have concerning mortgages. We have & will continue to recommend you to family & friends as the very best Phoenix has to offer in mortgage financing. Thank you Eddie wish we had more people like you in the business world.",
-    author: "Michael and Vory Flis, Phoenix, Arizona",
+    name: "Michael and Vory Flis",
+    quote: "Thank you for your service & advice on the purchase of our 2ND home with your company. We would have been lost without your help & guidance. Thank you also for keeping in touch with us when we moved across this country of ours to Tennessee & Colorado over the last 2 years. Always available for our questions got to love that for customer service. No, matter how busy you were in your day you were always so attentive & kind with your assistance in the mortgage arena. We are grateful & thankful to know you are always available to answer any questions we may have concerning mortgages. We have & will continue to recommend you to family & friends as the very best Phoenix has to offer in mortgage financing. Thank you Eddie wish we had more people like you in the business world.",
+    attribution: "Michael and Vory Flis, Phoenix, Arizona",
   },
   {
-    text: "Eddie and his entire staff were wonderful. They helped us through the very intense process of purchasing a second home, while trying to sell the first home. Eddie was always EXTREMELY helpful, and very prompt to respond to any requests from either me, or the real estate agents to help make sure our mortgage went smoothly, and helped us to find and buy a new home in under three months!!! We couldn’t have completed this daunting task with the help given to us by Eddie. Also our mortgage was such a good rate, and closing fees were so fair that the closing agent actually commented on how wonderful our mortgage broker must be! I considered that a sign we had made a great decision to go with this company for our mortgage needs.",
-    author: "Michelle Blank, Glendale, Arizona",
+    name: "Michelle Blank",
+    quote: "Eddie and his entire staff were wonderful. They helped us through the very intense process of purchasing a second home, while trying to sell the first home. Eddie was always EXTREMELY helpful, and very prompt to respond to any requests from either me, or the real estate agents to help make sure our mortgage went smoothly, and helped us to find and buy a new home in under three months!!! We couldn’t have completed this daunting task with the help given to us by Eddie. Also our mortgage was such a good rate, and closing fees were so fair that the closing agent actually commented on how wonderful our mortgage broker must be! I considered that a sign we had made a great decision to go with this company for our mortgage needs.",
+    attribution: "Michelle Blank, Glendale, Arizona",
   },
   {
-    text: "We can’t thank you enough for the hard work you did to get us approved and helping us close our vacation home. This is something we have been talking about for at least 5 years and became a reality after you were highly recommended to us by Carolin and Bob Benjamin. From the start, I felt well informed during the pre-approval phase and during the loan process. From the start of this process in April, everything has fallen into place like it was meant to be. Again, thanks for everything and I tell everybody that wants to buy a home in the Phoenix area to contact you for help.",
-    author: "Bryan and Heather Collins, San Tan Valley, Arizona",
+    name: "Bryan and Heather Collins",
+    quote: "We can’t thank you enough for the hard work you did to get us approved and helping us close our vacation home. This is something we have been talking about for at least 5 years and became a reality after you were highly recommended to us by Carolin and Bob Benjamin. From the start, I felt well informed during the pre-approval phase and during the loan process. From the start of this process in April, everything has fallen into place like it was meant to be. Again, thanks for everything and I tell everybody that wants to buy a home in the Phoenix area to contact you for help.",
+    attribution: "Bryan and Heather Collins, San Tan Valley, Arizona",
   },
   {
-    text: "Very knowledgeable about foreclosures, short-sales, and new financing options. Upfront Eddie told me any concerns or hurdles we may face. It was a great experience.",
-    author: "Lynn Babinski, Mesa, Arizona",
+    name: "Lynn Babinski",
+    quote: "Very knowledgeable about foreclosures, short-sales, and new financing options. Upfront Eddie told me any concerns or hurdles we may face. It was a great experience.",
+    attribution: "Lynn Babinski, Mesa, Arizona",
   },
   {
-    text: "Thanks for your prompt, professional guidance and service through multiple loans this year.",
-    author: "Matthew Anderson, Goodyear, Arizona",
+    name: "Matthew Anderson",
+    quote: "Thanks for your prompt, professional guidance and service through multiple loans this year.",
+    attribution: "Matthew Anderson, Goodyear, Arizona",
   },
 ];
 
@@ -483,56 +490,10 @@ export default function PrivateMoneyLenderPage() {
           </div>
         </section>
 
-        {/* Reviews */}
-        <section className="loan-section w-full bg-[#f5f0e8] border-y border-[#e8e0d0]/50">
-          <div className="max-w-6xl mx-auto">
-            <div className="max-w-3xl mx-auto loan-section-heading">
-              <h2
-                className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-5"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                What Our Clients Say About Private Money and Portfolio Loans
-          </h2>
-          <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                Don’t just take our word for it. Hear from real Arizona borrowers who have successfully
-                leveraged our private money and portfolio loan options.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {reviews.map((rev) => (
-                <div
-                  key={rev.author}
-                  className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm flex flex-col"
-                >
-                  <div className="flex gap-0.5 mb-3" aria-label="5 star rating">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="#f5c518" aria-hidden>
-                        <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                      </svg>
-                    ))}
-                  </div>
-                  <p className="text-[#3a443a] text-[14px] leading-relaxed flex-1 mb-4">
-                    &ldquo;{rev.text}&rdquo;
-                  </p>
-                  <p className="text-[#08271B] text-[13.5px] font-bold">{rev.author}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="loan-btn-wrap">
-              <Link
-                href="/client-mortgage-reviews/"
-                className="inline-flex items-center gap-2 text-[#08271B] hover:text-[#3fb364] font-semibold text-[15px] transition-colors"
-              >
-                Explore All Client Testimonials
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                  <path d="M9 5l7 7-7 7" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </section>
+        <CountyTestimonials
+          title="What Our Clients Say About Private Money and Portfolio Loans"
+          testimonials={testimonials}
+        />
 
         {/* Why choose */}
         <section className="loan-section w-full">

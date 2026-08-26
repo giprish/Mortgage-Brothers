@@ -12,6 +12,8 @@ import HeroFeatureStrip from "../component/HeroFeatureStrip";
 import GetInTouch from "../component/GetInTouch";
 import { LOAN_PROGRAM_LINKS } from "@/lib/company";
 
+import CountyTestimonials, { type CountyTestimonial } from "../component/CountyTestimonials";
+
 export default function FhaHomeLoansArizonaPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -145,28 +147,28 @@ export default function FhaHomeLoansArizonaPage() {
     },
   ];
 
-  const testimonials = [
-    {
-      text: "We had a tight short-sale deadline and Mortgage Brothers closed a day early. Their team worked tirelessly to make sure we didn't lose the home we wanted.",
-      author: "Heather Rich Chapman",
-      location: "Chandler, Arizona",
-    },
-    {
-      text: "My application was complicated, but they navigated every detail with patience and professionalism. They secured an exceptional rate on our FHA loan.",
-      author: "Matthew MaClean",
-      location: "Phoenix, Arizona",
-    },
-    {
-      text: "Efficient, honest, and transparent throughout the entire process. I always knew where we stood and what to expect next.",
-      author: "Kevin Hinton",
-      location: "Peoria, Arizona",
-    },
-    {
-      text: "This was the easiest mortgage I've ever done. They were always available when I had questions and made the FHA process simple.",
-      author: "Carlos Baldenegro",
-      location: "Chandler, Arizona",
-    },
-  ];
+  const testimonials: CountyTestimonial[] = [
+  {
+    name: "Heather Rich Chapman",
+    quote: "We had a tight short-sale deadline and Mortgage Brothers closed a day early. Their team worked tirelessly to make sure we didn't lose the home we wanted.",
+    attribution: "Heather Rich Chapman, Chandler, Arizona",
+  },
+  {
+    name: "Matthew MaClean",
+    quote: "My application was complicated, but they navigated every detail with patience and professionalism. They secured an exceptional rate on our FHA loan.",
+    attribution: "Matthew MaClean, Phoenix, Arizona",
+  },
+  {
+    name: "Kevin Hinton",
+    quote: "Efficient, honest, and transparent throughout the entire process. I always knew where we stood and what to expect next.",
+    attribution: "Kevin Hinton, Peoria, Arizona",
+  },
+  {
+    name: "Carlos Baldenegro",
+    quote: "This was the easiest mortgage I've ever done. They were always available when I had questions and made the FHA process simple.",
+    attribution: "Carlos Baldenegro, Chandler, Arizona",
+  },
+];
 
   const faqs = pageFaqs;
 
@@ -454,44 +456,10 @@ export default function FhaHomeLoansArizonaPage() {
         </section>
 
         {/* TESTIMONIALS */}
-        <section className="loan-section bg-[#fcf9f3]">
-          <div className="max-w-5xl mx-auto space-y-10">
-            <div className="text-center space-y-4">
-              <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block">
-                CLIENT REVIEWS
-              </span>
-              <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair">
-                What Our Clients Say About Us
-              </h2>
-              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed max-w-3xl mx-auto">
-                Arizona homebuyers trust Mortgage Brothers for FHA loans and expert guidance. Here&apos;s what some of our satisfied clients have to say.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-              {testimonials.map((t, idx) => (
-                <div
-                  key={idx}
-                  className="bg-white border border-[#e0e0e0] rounded-2xl p-6 shadow-sm"
-                >
-                  <div className="text-[#3fb364] text-[14px] mb-3 tracking-wider">★★★★★</div>
-                  <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed mb-4 italic">&ldquo;{t.text}&rdquo;</p>
-                  <p className="text-[#052316] text-[14px] font-bold">{t.author}</p>
-                  <p className="text-[#b8d4b8] text-[13px]">{t.location}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="loan-btn-wrap">
-              <Link
-                href="/client-mortgage-reviews/"
-                className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
-              >
-                Explore All Client Testimonials →
-              </Link>
-            </div>
-          </div>
-        </section>
+        <CountyTestimonials
+          title="What Our Clients Say About Us"
+          testimonials={testimonials}
+        />
 
         {/* FAQ */}
         <section className="loan-section bg-white">

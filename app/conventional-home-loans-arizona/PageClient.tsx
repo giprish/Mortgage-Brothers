@@ -12,6 +12,8 @@ import HeroFeatureStrip from "../component/HeroFeatureStrip";
 import GetInTouch from "../component/GetInTouch";
 import { LOAN_PROGRAM_LINKS } from "@/lib/company";
 
+import CountyTestimonials, { type CountyTestimonial } from "../component/CountyTestimonials";
+
 export default function ConventionalHomeLoansPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -125,28 +127,28 @@ export default function ConventionalHomeLoansPage() {
     },
   ];
 
-  const testimonials = [
-    {
-      text: "You closed our house loan in 17 days!!! When we asked Chase how long escrow would take, we were told one to two months. We will never go to a large bank for a home loan again — you are our loan guy, period!",
-      author: "James Robbins",
-      location: "Phoenix, Arizona",
-    },
-    {
-      text: "Eddie did an incredible job getting our new home loan processed quickly and efficiently at an even lower interest rate than we had discussed. His professionalism, diligence, and kindness made him a pleasure to work with.",
-      author: "Marina McLennan",
-      location: "Chandler, Arizona",
-    },
-    {
-      text: "Eddie was referred to us by my sister and brother-in-law. Eddie was very helpful and knowledgeable through the entire process. He was very responsive.",
-      author: "Jason and Holly Raines",
-      location: "Scottsdale, Arizona",
-    },
-    {
-      text: "Eddie Knoell was the utmost professional. He is detail oriented, on top of the loan and process. He was able to adjust and accommodate any glitch that came our way. We would highly recommend Eddie.",
-      author: "Jeanne Morain",
-      location: "Gilbert, Arizona",
-    },
-  ];
+  const testimonials: CountyTestimonial[] = [
+  {
+    name: "James Robbins",
+    quote: "You closed our house loan in 17 days!!! When we asked Chase how long escrow would take, we were told one to two months. We will never go to a large bank for a home loan again — you are our loan guy, period!",
+    attribution: "James Robbins, Phoenix, Arizona",
+  },
+  {
+    name: "Marina McLennan",
+    quote: "Eddie did an incredible job getting our new home loan processed quickly and efficiently at an even lower interest rate than we had discussed. His professionalism, diligence, and kindness made him a pleasure to work with.",
+    attribution: "Marina McLennan, Chandler, Arizona",
+  },
+  {
+    name: "Jason and Holly Raines",
+    quote: "Eddie was referred to us by my sister and brother-in-law. Eddie was very helpful and knowledgeable through the entire process. He was very responsive.",
+    attribution: "Jason and Holly Raines, Scottsdale, Arizona",
+  },
+  {
+    name: "Jeanne Morain",
+    quote: "Eddie Knoell was the utmost professional. He is detail oriented, on top of the loan and process. He was able to adjust and accommodate any glitch that came our way. We would highly recommend Eddie.",
+    attribution: "Jeanne Morain, Gilbert, Arizona",
+  },
+];
 
   const faqs = pageFaqs;
 
@@ -342,44 +344,10 @@ export default function ConventionalHomeLoansPage() {
         </section>
 
         {/* TESTIMONIALS */}
-        <section className="loan-section bg-white">
-          <div className="max-w-5xl mx-auto space-y-10">
-            <div className="text-center space-y-4">
-              <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block">
-                CLIENT REVIEWS
-              </span>
-              <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair">
-                What Our Clients Say About Us
-              </h2>
-              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed max-w-3xl mx-auto">
-                At Mortgage Brothers LLC, we take pride in helping Arizona residents achieve their homeownership dreams through conventional loans. Hear from some of our satisfied clients who have experienced our commitment to excellence firsthand.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-              {testimonials.map((t, idx) => (
-                <div
-                  key={idx}
-                  className="bg-[#fcf9f3] border border-[#e0e0e0] rounded-2xl p-6 shadow-sm"
-                >
-                  <div className="text-[#3fb364] text-[14px] mb-3 tracking-wider">★★★★★</div>
-                  <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed mb-4 italic">&ldquo;{t.text}&rdquo;</p>
-                  <p className="text-[#052316] text-[14px] font-bold">{t.author}</p>
-                  <p className="text-[#b8d4b8] text-[13px]">{t.location}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="loan-btn-wrap">
-              <Link
-                href="/client-mortgage-reviews/"
-                className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
-              >
-                Explore All Client Testimonials →
-              </Link>
-            </div>
-          </div>
-        </section>
+        <CountyTestimonials
+          title="What Our Clients Say About Us"
+          testimonials={testimonials}
+        />
 
         {/* FAQ */}
         <section className="loan-section bg-[#fcf9f3]">

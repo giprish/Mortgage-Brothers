@@ -10,6 +10,8 @@ import StatsBanner from "../component/StatsBanner";
 import LoanProgramHero from "../component/LoanProgramHero";
 import HeroFeatureStrip from "../component/HeroFeatureStrip";
 
+import CountyTestimonials, { type CountyTestimonial } from "../component/CountyTestimonials";
+
 const faqs = pageFaqs;
 
 const benefits = [
@@ -61,38 +63,38 @@ const processSteps = [
   },
 ] as const;
 
-const testimonials = [
+const testimonials: CountyTestimonial[] = [
   {
-    quote:
-      "This is my 8th home purchase and mortgage. Working with Eddie has been by far, the most simple, straight forward experience I have ever had obtaining a mortgage.",
-    name: "Denise Roeder, Chandler, Arizona",
+    name: "Denise Roeder",
+    quote: "This is my 8th home purchase and mortgage. Working with Eddie has been by far, the most simple, straight forward experience I have ever had obtaining a mortgage.",
+    attribution: "Denise Roeder, Chandler, Arizona",
   },
   {
-    quote:
-      "Our mortgage service through Eddie Knoell was seamless throughout. It was like having someone watch over the process without us having any concern. All questions were answered promptly and completely, like dealing with a trusted family member.",
-    name: "Thomas and Carol Milberry, Queen Creek, Arizona",
+    name: "Thomas and Carol Milberry",
+    quote: "Our mortgage service through Eddie Knoell was seamless throughout. It was like having someone watch over the process without us having any concern. All questions were answered promptly and completely, like dealing with a trusted family member.",
+    attribution: "Thomas and Carol Milberry, Queen Creek, Arizona",
   },
   {
-    quote:
-      "Eddie has been a great help to me. He has refinanced many properties for me and is always very professional. I have recommended him to many people.",
-    name: "Eric and Joy Stevens, Phoenix, Arizona",
+    name: "Eric and Joy Stevens",
+    quote: "Eddie has been a great help to me. He has refinanced many properties for me and is always very professional. I have recommended him to many people.",
+    attribution: "Eric and Joy Stevens, Phoenix, Arizona",
   },
   {
-    quote:
-      "Eddie saved us over $500 a month! He explained in great detail the program options, locked us into a great rate, and made it happen for us. We will definitely be referring our family and friends.",
-    name: "Michael and Donna Hawkins, Glendale, Arizona",
+    name: "Michael and Donna Hawkins",
+    quote: "Eddie saved us over $500 a month! He explained in great detail the program options, locked us into a great rate, and made it happen for us. We will definitely be referring our family and friends.",
+    attribution: "Michael and Donna Hawkins, Glendale, Arizona",
   },
   {
-    quote:
-      "Eddie went above the call of duty on 3 separate transactions for us. Each time we challenged him to work under different circumstances and each time he came through and exceeded our expectations!",
-    name: "Anita Sanda, Surprise, Arizona",
+    name: "Anita Sanda",
+    quote: "Eddie went above the call of duty on 3 separate transactions for us. Each time we challenged him to work under different circumstances and each time he came through and exceeded our expectations!",
+    attribution: "Anita Sanda, Surprise, Arizona",
   },
   {
-    quote:
-      "Thank you for outstanding service in the refinance of our home! Not only were you professional and courteous, you were realistic and honest. Our transaction was easier than we could have imagined and we will definitely call on you for our future needs!",
-    name: "Kristy Bartusek, Tempe, Arizona",
+    name: "Kristy Bartusek",
+    quote: "Thank you for outstanding service in the refinance of our home! Not only were you professional and courteous, you were realistic and honest. Our transaction was easier than we could have imagined and we will definitely call on you for our future needs!",
+    attribution: "Kristy Bartusek, Tempe, Arizona",
   },
-] as const;
+];
 
 const whyUs = [
   {
@@ -382,42 +384,10 @@ export default function ReverseMortgageArizonaPage() {
         </section>
 
         {/* TESTIMONIALS */}
-        <section className="loan-section bg-[#fcf9f3]">
-          <div className="mx-auto max-w-5xl space-y-10">
-            <div className="text-center">
-              <span className="mb-3 block text-[11px] font-bold uppercase tracking-[0.2em] text-[#3fb364]">
-                CLIENT STORIES
-              </span>
-              <h2 className="font-playfair text-[28px] font-bold text-[#052316] lg:text-[38px]">
-                What Our Clients Say About Reverse Mortgages
-              </h2>
-              <p className="mx-auto mt-4 max-w-3xl text-[15.5px] leading-relaxed text-[#4e5b4e]">
-                Hear from Arizona homeowners who have benefited from our reverse mortgage solutions. Their stories showcase how a reverse mortgage can provide financial freedom and peace of mind.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 gap-6 text-left md:grid-cols-2 lg:grid-cols-3">
-              {testimonials.map((t) => (
-                <div key={t.name} className="space-y-4 rounded-2xl border border-[#e0e0e0] bg-white p-6 shadow-sm">
-                  <p className="text-[14px] text-[#3fb364]" aria-label="5 star rating">
-                    ★★★★★
-                  </p>
-                  <p className="text-[14px] leading-relaxed text-[#4e5b4e]">&ldquo;{t.quote}&rdquo;</p>
-                  <p className="text-[13px] font-bold text-[#052316]">{t.name}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="loan-btn-wrap">
-              <Link
-                href="/client-mortgage-reviews/"
-                className="inline-block rounded-full bg-[#052316] px-7 py-3.5 font-bold text-white transition-all hover:bg-[#0a3a24]"
-              >
-                Explore All Client Testimonials
-              </Link>
-            </div>
-          </div>
-        </section>
+        <CountyTestimonials
+          title="What Our Clients Say About Reverse Mortgages"
+          testimonials={testimonials}
+        />
 
         {/* WHY MORTGAGE BROTHERS */}
         <section className="loan-section bg-white">

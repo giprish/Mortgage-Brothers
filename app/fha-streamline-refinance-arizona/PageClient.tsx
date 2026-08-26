@@ -12,6 +12,8 @@ import HeroFeatureStrip from "../component/HeroFeatureStrip";
 import GetInTouch from "../component/GetInTouch";
 import { LOAN_PROGRAM_LINKS } from "@/lib/company";
 
+import CountyTestimonials, { type CountyTestimonial } from "../component/CountyTestimonials";
+
 export default function FhaStreamlineRefinanceArizonaPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -144,28 +146,28 @@ export default function FhaStreamlineRefinanceArizonaPage() {
     },
   ];
 
-  const testimonials = [
-    {
-      text: "Eddie helped us refinance our home. He was a very good communicator and honest. Got the job done even when His hands were tied due to regulations. Thank you Eddie!",
-      author: "Matthew and Christine Mostrom",
-      location: "Chandler, Arizona",
-    },
-    {
-      text: "I appreciated that you worked with us to get us a great rate and to make refinancing affordable. Thank you for doing it in a timely fashion. It was a pleasure working with you!",
-      author: "Joelle Engel",
-      location: "Phoenix, Arizona",
-    },
-    {
-      text: "Thank you Eddie for the fast closing of our loan. Our loan closed in 30 days thanks to you and your staff&apos;s diligence. We appreciate the fact that you gave us several financing options. We felt that we had a choice and chose the best option for our needs.",
-      author: "Diane Stackwick",
-      location: "Phoenix, Arizona",
-    },
-    {
-      text: "Shopping for a new loan can be very intimidating. I found that different lenders often make promises they just can&apos;t keep. Eddie delivers every time with accurate and timely loans. NO surprises at the closing table!",
-      author: "Rich Eneim",
-      location: "Phoenix, Arizona",
-    },
-  ];
+  const testimonials: CountyTestimonial[] = [
+  {
+    name: "Matthew and Christine Mostrom",
+    quote: "Eddie helped us refinance our home. He was a very good communicator and honest. Got the job done even when His hands were tied due to regulations. Thank you Eddie!",
+    attribution: "Matthew and Christine Mostrom, Chandler, Arizona",
+  },
+  {
+    name: "Joelle Engel",
+    quote: "I appreciated that you worked with us to get us a great rate and to make refinancing affordable. Thank you for doing it in a timely fashion. It was a pleasure working with you!",
+    attribution: "Joelle Engel, Phoenix, Arizona",
+  },
+  {
+    name: "Diane Stackwick",
+    quote: "Thank you Eddie for the fast closing of our loan. Our loan closed in 30 days thanks to you and your staff&apos;s diligence. We appreciate the fact that you gave us several financing options. We felt that we had a choice and chose the best option for our needs.",
+    attribution: "Diane Stackwick, Phoenix, Arizona",
+  },
+  {
+    name: "Rich Eneim",
+    quote: "Shopping for a new loan can be very intimidating. I found that different lenders often make promises they just can&apos;t keep. Eddie delivers every time with accurate and timely loans. NO surprises at the closing table!",
+    attribution: "Rich Eneim, Phoenix, Arizona",
+  },
+];
 
   const faqs = pageFaqs;
 
@@ -450,44 +452,10 @@ export default function FhaStreamlineRefinanceArizonaPage() {
         </section>
 
         {/* TESTIMONIALS */}
-        <section className="loan-section bg-[#fcf9f3]">
-          <div className="max-w-5xl mx-auto space-y-10">
-            <div className="text-center space-y-4">
-              <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block">
-                CLIENT REVIEWS
-              </span>
-              <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair">
-                Real Stories, Real Success
-              </h2>
-              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed max-w-3xl mx-auto">
-                At Mortgage Brothers LLC, we take pride in helping Arizona homeowners achieve their financial goals through FHA Streamline Refinance. Here are a few examples of how our clients have benefited.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-              {testimonials.map((t, idx) => (
-                <div
-                  key={idx}
-                  className="bg-white border border-[#e0e0e0] rounded-2xl p-6 shadow-sm"
-                >
-                  <div className="text-[#3fb364] text-[14px] mb-3 tracking-wider">★★★★★</div>
-                  <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed mb-4 italic">&ldquo;{t.text}&rdquo;</p>
-                  <p className="text-[#052316] text-[14px] font-bold">{t.author}</p>
-                  <p className="text-[#b8d4b8] text-[13px]">{t.location}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="loan-btn-wrap">
-              <Link
-                href="/client-mortgage-reviews/"
-                className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
-              >
-                Explore All Client Testimonials →
-              </Link>
-            </div>
-          </div>
-        </section>
+        <CountyTestimonials
+          title="Real Stories, Real Success"
+          testimonials={testimonials}
+        />
 
         {/* WHY AZ MORTGAGE BROTHERS */}
         <section className="loan-section bg-white">

@@ -10,6 +10,8 @@ import StatsBanner from "../component/StatsBanner";
 import LoanProgramHero from "../component/LoanProgramHero";
 import HeroFeatureStrip from "../component/HeroFeatureStrip";
 
+import CountyTestimonials, { type CountyTestimonial } from "../component/CountyTestimonials";
+
 const featureStrip = [
   "Buy Your Dream Home with No Monthly Payments",
   "Keep More Cash While Buying Your New Home",
@@ -122,33 +124,33 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
     "May affect inheritance plans"
   ];
 
-  const testimonials = [
-    {
-      quote:
-        "I was referred to Eddie through my sister-n-law. I had tried a previous company but wasn't satisfied. I have been extremely happy with Eddie's mortgage team. Everything was done online through emails. This was very helpful as both my husband and I work full time during the day and really have no time to do this. Emails were responded to on a daily basis and in a very quick manner. Every step of the process was done very professionally and friendly. I highly recommend Eddie's mortgage team for your refinancing needs.",
-      name: "Chris and Vicky Smith, Avondale, Arizona"
-    },
-    {
-      quote:
-        "Eddie and his team are fantastic to work with! They are efficient, friendly and very professional. They communicate to all parties in the transaction; making it a very smooth transaction every time. As a real estate agent, this makes my job that much easier when I have a lender who always performs and most of the time is even ahead of schedule.",
-      name: "Elizabeth Todd - H2 Realty, Phoenix, Arizona"
-    },
-    {
-      quote:
-        "My husband and I would like to thank you for an outstanding job you did with our refinance. You are so knowledgeable and kept us updated on each step of the way. Your professionalism was impeccable and your timing was perfect. You are heads and shoulders beyond most I have worked with.",
-      name: "Marleen Kapanicas - Homesmart, Scottsdale, Arizona"
-    },
-    {
-      quote:
-        "Our mortgage service through Eddie Knoell was seamless throughout. It was like having someone watch over the process without us having any concern in the process. All questions were answered promptly and completely with the correct issues addressed without extra fanfare, like dealing with a trusted family member.",
-      name: "Thomas and Carol Milberry, Queen Creek, Arizona 85242"
-    },
-    {
-      quote:
-        "I met Eddie Knoell in 2012 through a client. He communicates very well, through every step of the process. Before I can even start to wonder what is going on, he's picked up the phone and called to let me know where we are in the process. He closes every deal and communicates through it well.",
-      name: "Nancy Perry - Solutions Real Estate, Avondale, Arizona"
-    }
-  ];
+  const testimonials: CountyTestimonial[] = [
+  {
+    name: "Chris and Vicky Smith",
+    quote: "I was referred to Eddie through my sister-n-law. I had tried a previous company but wasn't satisfied. I have been extremely happy with Eddie's mortgage team. Everything was done online through emails. This was very helpful as both my husband and I work full time during the day and really have no time to do this. Emails were responded to on a daily basis and in a very quick manner. Every step of the process was done very professionally and friendly. I highly recommend Eddie's mortgage team for your refinancing needs.",
+    attribution: "Chris and Vicky Smith, Avondale, Arizona",
+  },
+  {
+    name: "Elizabeth Todd - H2 Realty",
+    quote: "Eddie and his team are fantastic to work with! They are efficient, friendly and very professional. They communicate to all parties in the transaction; making it a very smooth transaction every time. As a real estate agent, this makes my job that much easier when I have a lender who always performs and most of the time is even ahead of schedule.",
+    attribution: "Elizabeth Todd - H2 Realty, Phoenix, Arizona",
+  },
+  {
+    name: "Marleen Kapanicas - Homesmart",
+    quote: "My husband and I would like to thank you for an outstanding job you did with our refinance. You are so knowledgeable and kept us updated on each step of the way. Your professionalism was impeccable and your timing was perfect. You are heads and shoulders beyond most I have worked with.",
+    attribution: "Marleen Kapanicas - Homesmart, Scottsdale, Arizona",
+  },
+  {
+    name: "Thomas and Carol Milberry",
+    quote: "Our mortgage service through Eddie Knoell was seamless throughout. It was like having someone watch over the process without us having any concern in the process. All questions were answered promptly and completely with the correct issues addressed without extra fanfare, like dealing with a trusted family member.",
+    attribution: "Thomas and Carol Milberry, Queen Creek, Arizona 85242",
+  },
+  {
+    name: "Nancy Perry - Solutions Real Estate",
+    quote: "I met Eddie Knoell in 2012 through a client. He communicates very well, through every step of the process. Before I can even start to wonder what is going on, he's picked up the phone and called to let me know where we are in the process. He closes every deal and communicates through it well.",
+    attribution: "Nancy Perry - Solutions Real Estate, Avondale, Arizona",
+  },
+];
 
   const whyUs = [
     {
@@ -397,40 +399,10 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
         </section>
 
         {/* TESTIMONIALS */}
-        <section className="loan-section bg-white">
-          <div className="max-w-5xl mx-auto space-y-10">
-            <div className="text-center">
-              <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
-                CLIENT STORIES
-              </span>
-              <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair">
-                What Our Clients Say About Reverse Mortgages
-              </h2>
-              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed max-w-3xl mx-auto mt-4">
-                Hear from Arizona homeowners who have benefited from our reverse mortgage solutions. Their stories showcase how a reverse mortgage can provide financial freedom and peace of mind.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-              {testimonials.map((t) => (
-                <div key={t.name} className="bg-[#fcf9f3] border border-[#e0e0e0] rounded-2xl p-6 shadow-sm space-y-4">
-                  <p className="text-[#3fb364] text-[14px]">★★★★★</p>
-                  <p className="text-[#4e5b4e] text-[14px] leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
-                  <p className="text-[#052316] text-[13px] font-bold">{t.name}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="loan-btn-wrap">
-              <Link
-                href="/client-mortgage-reviews/"
-                className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all"
-              >
-                Explore All Client Testimonials
-              </Link>
-            </div>
-          </div>
-        </section>
+        <CountyTestimonials
+          title="What Our Clients Say About Reverse Mortgages"
+          testimonials={testimonials}
+        />
 
         {/* PROS & CONS */}
         <section className="loan-section bg-[#fcf9f3]">

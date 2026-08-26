@@ -1,12 +1,13 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import FaqAccordion from "../component/FaqAccordion";
 import CreditQuizCta from "../component/home/CreditQuizCta";
 import GetInTouch from "../component/GetInTouch";
+import LoanProgramHero from "../component/LoanProgramHero";
 import { faqs as pageFaqs } from "./faqs";
 
 const checkIcon = (
@@ -71,7 +72,7 @@ const programsData = [
     tabTitle: "Jumbo",
     title: "Jumbo Loans",
     description:
-      "Designed for high-value properties exceeding conventional loan limits, Jumbo loans offer competitive rates for luxury homes.",
+      "Designed for high-value properties exceeding conventional loan limits, jumbo loans offer competitive rates for luxury homes.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -94,9 +95,9 @@ const programsData = [
       </svg>
     ),
     bullets: [
-      "Loan amounts up to $3 million",
-      "Flexible terms, including fixed and adjustable rates",
-      "Higher credit score and cash reserve requirements",
+      "Loan amounts up to $5 million.",
+      "Flexible terms, including fixed and adjustable rates.",
+      "Higher credit score and cash reserve requirements.",
     ],
     ctaText: "Explore Jumbo Loan Options",
     href: "/jumbo-loans-arizona/",
@@ -498,68 +499,12 @@ const valueProps = [
 ];
 
 export default function MortgageLoanProgramsArizonaPage() {
-  const [activeTab, setActiveTab] = useState("conventional");
-  const [clickedTab, setClickedTab] = useState<string | null>(null);
-  const [isProgrammatic, setIsProgrammatic] = useState(false);
-
-  const scrollToSection = (id: string) => {
-    setActiveTab(id);
-    setClickedTab(id);
-    setIsProgrammatic(true);
-    const element = document.getElementById(id);
-    if (element) {
-      const offset = 80;
-      const bodyRect = document.body.getBoundingClientRect().top;
-      const elementRect = element.getBoundingClientRect().top;
-      const elementPosition = elementRect - bodyRect;
-      const offsetPosition = elementPosition - offset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth",
-      });
-
-      setTimeout(() => {
-        setIsProgrammatic(false);
-      }, 1000);
-    }
-  };
-
-  useEffect(() => {
-    const handleScrollSpy = () => {
-      if (isProgrammatic) return;
-
-      const scrollPosition = window.scrollY + 200;
-
-      if (window.scrollY < 150) {
-        setActiveTab(clickedTab || "conventional");
-        return;
-      }
-
-      for (let i = 0; i < programsData.length; i++) {
-        const prog = programsData[i];
-        const el = document.getElementById(prog.id);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveTab(prog.id);
-            break;
-          }
-        }
-      }
-    };
-    window.addEventListener("scroll", handleScrollSpy);
-    return () => window.removeEventListener("scroll", handleScrollSpy);
-  }, [clickedTab, isProgrammatic]);
-
   useEffect(() => {
     if (typeof window !== "undefined" && window.location.hash) {
       const targetId = window.location.hash.substring(1);
       setTimeout(() => {
         const element = document.getElementById(targetId);
         if (element) {
-          setIsProgrammatic(true);
           const offset = 80;
           const bodyRect = document.body.getBoundingClientRect().top;
           const elementRect = element.getBoundingClientRect().top;
@@ -570,12 +515,6 @@ export default function MortgageLoanProgramsArizonaPage() {
             top: offsetPosition,
             behavior: "smooth",
           });
-          setActiveTab(targetId);
-          setClickedTab(targetId);
-
-          setTimeout(() => {
-            setIsProgrammatic(false);
-          }, 1000);
         }
       }, 300);
     }
@@ -585,55 +524,12 @@ export default function MortgageLoanProgramsArizonaPage() {
     <div className="flex flex-col min-h-screen bg-brand-cream-light overflow-x-hidden">
       <Navbar />
       <main className="flex-grow min-w-0">
-        {/* Reserves space for fixed navbar */}
-        <div className="h-[64px] sm:h-[72px] bg-[#08271B]" aria-hidden />
-
-        <section className="w-full bg-brand-green-deep text-white loan-section text-center relative overflow-hidden">
-          <div
-            className="absolute inset-0 overflow-hidden pointer-events-none"
-            aria-hidden
-          >
-            <div className="absolute -top-36 -right-36 w-[400px] h-[400px] rounded-full border border-white/5 opacity-40 pointer-events-none"></div>
-            <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5 opacity-40 pointer-events-none"></div>
-          </div>
-
-          <div className="max-w-4xl mx-auto relative z-10 min-w-0">
-            <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-3 sm:mb-4">
-              LOAN PROGRAMS
-            </p>
-            <h1 className="text-white text-[28px] sm:text-hero-title font-playfair font-normal leading-[1.15] mb-4 sm:mb-6 px-1">
-              Find the loan that fits your life.
-            </h1>
-            <p className="text-brand-text-light text-[14px] sm:text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-7 sm:mb-10">
-              Ten programs, one broker shopping all of them for you. Jump to any
-              program below for the details.
-            </p>
-            {/* Equal-width 2-col grid on narrow screens — avoids uneven flex-wrap rows */}
-            <div
-              className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-2.5 max-w-4xl mx-auto"
-              role="navigation"
-              aria-label="Jump to loan program"
-            >
-              {programsData.map((prog) => {
-                const isActive = prog.id === activeTab;
-                return (
-                  <button
-                    key={prog.id}
-                    type="button"
-                    onClick={() => scrollToSection(prog.id)}
-                    className={`min-h-11 w-full text-[11px] sm:text-[12px] md:text-[13px] font-medium px-2 sm:px-3 py-2.5 rounded-full border transition-all duration-200 cursor-pointer leading-tight text-center ${
-                      isActive
-                        ? "bg-white border-white text-brand-green-deep font-semibold shadow-md"
-                        : "bg-transparent border-white/20 text-white/80 hover:border-white/60 hover:text-white"
-                    }`}
-                  >
-                    {prog.tabTitle}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-        </section>
+        <LoanProgramHero
+          title="Mortgage Loan Programs in Arizona"
+          subtitle="Find the perfect financing solution for your unique needs"
+          secondaryCtaLabel=""
+          note="3 min / no credit impact"
+        />
 
         <div>
           {programsData.map((prog) => (
@@ -825,7 +721,10 @@ export default function MortgageLoanProgramsArizonaPage() {
           </div>
         </section>
 
-        <CreditQuizCta />
+        <CreditQuizCta
+          title="Is Your Credit Score Good Enough to Buy a Home?"
+          description="Be armed with the right knowledge when starting your home search. Find out how important your credit score is to your next home loan."
+        />
 
         <section className="w-full py-12 sm:py-16 lg:py-20 bg-[#fcf9f3] border-t border-[#e8e0d0]/40">
           <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-10 min-w-0">

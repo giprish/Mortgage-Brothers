@@ -15,7 +15,7 @@ type FaqAccordionProps = {
  */
 export default function FaqAccordion({ items, title }: FaqAccordionProps) {
   return (
-    <div>
+    <div className="mb-8">
       {title && (
         <h2 className="font-playfair text-[#052316] text-[24px] lg:text-[32px] font-bold mb-6">
           {title}

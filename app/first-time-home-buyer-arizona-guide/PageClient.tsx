@@ -13,6 +13,8 @@ import FaqAccordion from "../component/FaqAccordion";
 import GetInTouch from "../component/GetInTouch";
 import { LOAN_PROGRAM_LINKS } from "@/lib/company";
 
+import CountyTestimonials, { type CountyTestimonial } from "../component/CountyTestimonials";
+
 export default function FirstTimeHomeBuyerGuidePage() {
 
   const highlights = [
@@ -150,28 +152,28 @@ export default function FirstTimeHomeBuyerGuidePage() {
     },
   ];
 
-  const testimonials = [
-    {
-      text: "This was our first house and Mortgage Brothers LLC made the entire process easy and stress-free. They explained everything clearly and were always available when we had questions.",
-      author: "Sean Cassidy",
-      location: "Phoenix, Arizona",
-    },
-    {
-      text: "Constant communication throughout the entire process. We always knew where we stood and what the next step was. Couldn't have asked for a better experience buying our first home.",
-      author: "Jaclyn Lindsey",
-      location: "Tempe, Arizona",
-    },
-    {
-      text: "As first-time buyers, we had no idea what we were doing. They guided us through every step and made us feel confident in our decisions from start to finish.",
-      author: "Mona Collins",
-      location: "Phoenix, Arizona",
-    },
-    {
-      text: "Always a phone call away whenever we needed help. Their responsiveness and expertise made buying our first home in Arizona a smooth and enjoyable experience.",
-      author: "Christian Holt",
-      location: "Phoenix, Arizona",
-    },
-  ];
+  const testimonials: CountyTestimonial[] = [
+  {
+    name: "Sean Cassidy",
+    quote: "This was our first house and Mortgage Brothers LLC made the entire process easy and stress-free. They explained everything clearly and were always available when we had questions.",
+    attribution: "Sean Cassidy, Phoenix, Arizona",
+  },
+  {
+    name: "Jaclyn Lindsey",
+    quote: "Constant communication throughout the entire process. We always knew where we stood and what the next step was. Couldn't have asked for a better experience buying our first home.",
+    attribution: "Jaclyn Lindsey, Tempe, Arizona",
+  },
+  {
+    name: "Mona Collins",
+    quote: "As first-time buyers, we had no idea what we were doing. They guided us through every step and made us feel confident in our decisions from start to finish.",
+    attribution: "Mona Collins, Phoenix, Arizona",
+  },
+  {
+    name: "Christian Holt",
+    quote: "Always a phone call away whenever we needed help. Their responsiveness and expertise made buying our first home in Arizona a smooth and enjoyable experience.",
+    attribution: "Christian Holt, Phoenix, Arizona",
+  },
+];
 
   const faqs = pageFaqs;
 
@@ -532,44 +534,10 @@ export default function FirstTimeHomeBuyerGuidePage() {
         </section>
 
         {/* TESTIMONIALS */}
-        <section className="loan-section bg-[#fcf9f3]">
-          <div className="max-w-5xl mx-auto space-y-10">
-            <div className="text-center space-y-4">
-              <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block">
-                CLIENT REVIEWS
-              </span>
-              <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair">
-                What Our First-Time Buyers Say
-              </h2>
-              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed max-w-3xl mx-auto">
-                Hear from Arizona first-time homebuyers who trusted Mortgage Brothers LLC to guide them through the process.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-              {testimonials.map((t, idx) => (
-                <div
-                  key={idx}
-                  className="bg-white border border-[#e0e0e0] rounded-2xl p-6 shadow-sm"
-                >
-                  <div className="text-[#3fb364] text-[14px] mb-3 tracking-wider">★★★★★</div>
-                  <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed mb-4 italic">&ldquo;{t.text}&rdquo;</p>
-                  <p className="text-[#052316] text-[14px] font-bold">{t.author}</p>
-                  <p className="text-[#b8d4b8] text-[13px]">{t.location}</p>
-                </div>
-              ))}
-            </div>
-
-            <div className="loan-btn-wrap">
-              <Link
-                href="/client-mortgage-reviews/"
-                className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
-              >
-                Explore All Client Testimonials →
-              </Link>
-            </div>
-          </div>
-        </section>
+        <CountyTestimonials
+          title="What Our First-Time Buyers Say"
+          testimonials={testimonials}
+        />
 
         {/* WHY AZ MORTGAGE BROTHERS */}
         <section className="loan-section bg-white">
