@@ -111,7 +111,7 @@ const pathSteps = [
 ];
 
 const CheckIcon = () => (
-  <svg className="w-5 h-5 text-[#3fb364] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+  <svg className="w-5 h-5 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
   </svg>
 );
@@ -147,7 +147,7 @@ export default function MortgageBrokerLoanOfficerPage() {
         <section className="w-full bg-[#eeeff4] border-b border-[#e0e2e8] py-10 lg:py-12">
           <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-3 gap-8">
             {featureStrip.map((title) => (
-              <div key={title} className="flex items-start gap-3">
+              <div key={title} className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm">
                   <CheckIcon />
                 </div>
@@ -191,7 +191,7 @@ export default function MortgageBrokerLoanOfficerPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 mb-10">
               <div className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 lg:p-7 shadow-sm">
-                <h3 className="text-[#08271B] text-[18px] font-bold mb-4 flex items-start gap-2">
+                <h3 className="text-[#08271B] text-[18px] font-bold mb-4 flex items-center gap-2">
                   <CheckIcon />
                   <span>Responsibilities</span>
                 </h3>
@@ -206,7 +206,7 @@ export default function MortgageBrokerLoanOfficerPage() {
               </div>
 
               <div className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 lg:p-7 shadow-sm">
-                <h3 className="text-[#08271B] text-[18px] font-bold mb-4 flex items-start gap-2">
+                <h3 className="text-[#08271B] text-[18px] font-bold mb-4 flex items-center gap-2">
                   <CheckIcon />
                   <span>Our Commitment to You</span>
                 </h3>
@@ -221,7 +221,7 @@ export default function MortgageBrokerLoanOfficerPage() {
               </div>
 
               <div className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 lg:p-7 shadow-sm">
-                <h3 className="text-[#08271B] text-[18px] font-bold mb-4 flex items-start gap-2">
+                <h3 className="text-[#08271B] text-[18px] font-bold mb-4 flex items-center gap-2">
                   <CheckIcon />
                   <span>Qualifications</span>
                 </h3>
@@ -276,7 +276,7 @@ export default function MortgageBrokerLoanOfficerPage() {
                   key={card.title}
                   className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 lg:p-7 shadow-sm"
                 >
-                  <h3 className="text-[#08271B] text-[18px] font-bold mb-3 flex items-start gap-2">
+                  <h3 className="text-[#08271B] text-[18px] font-bold mb-3 flex items-center gap-2">
                     <CheckIcon />
                     <span>{card.title}</span>
                   </h3>

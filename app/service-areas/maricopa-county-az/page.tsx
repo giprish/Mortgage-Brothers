@@ -11,8 +11,9 @@ import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
 import CountyCityCards from "../../component/CountyCityCards";
-import MortgageSolutionsGrid from "../../component/MortgageSolutionsGrid";
 import CountyTestimonials from "../../component/CountyTestimonials";
+import GetInTouch from "../../component/GetInTouch";
+import CTA from "../../component/CTA";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/maricopa-county-az/");
 
@@ -262,6 +263,22 @@ export default function MaricopaCounty() {
           </div>
         </section>
 
+
+        <section className="w-full py-14 sm:py-16 lg:py-20 bg-white border-t border-[#e8e0d0]/40">
+          <div className="max-w-4xl mx-auto px-6">
+            <h2 className="text-brand-green-deep text-[28px] lg:text-[32px] font-playfair mb-6">Home Loans in Maricopa County, Arizona</h2>
+            <div className="text-brand-text-muted text-[15px] space-y-4">
+              <p>We are here to make the home loan process a whole lot easier, with tools and expertise that will help guide you.</p>
+              <p>Maricopa County is home to over 4.3 million residents and continues to attract families, retirees, and professionals from across the country. With a diverse mix of urban neighborhoods, master-planned communities, and desert retreats, the county offers something for every type of buyer. The <Link href="/" className="text-[#3fb364] font-medium hover:underline">Mortgage Brothers</Link> have served Maricopa County homeowners for over 25 years — helping clients navigate everything from first-time purchases in Mesa to luxury buys in Paradise Valley.</p>
+              <ul className="list-disc pl-6 space-y-2 mt-4">
+                <li><strong>4.3 Million Residents:</strong> Maricopa County is Arizona&apos;s most populous county and one of the fastest-growing in the nation.</li>
+                <li><strong>27 Cities and Towns:</strong> From Phoenix to Queen Creek, Maricopa County offers a diverse range of communities for every lifestyle and budget.</li>
+                <li><strong>$832,750 Loan Limit:</strong> The 2026 conforming loan limit gives Maricopa County buyers significant purchasing power for conventional financing.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
         {/* Cities Grid Section */}
         <section className="w-full py-14 sm:py-16 lg:py-20 bg-white">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
@@ -280,22 +297,11 @@ export default function MaricopaCounty() {
           </div>
         </section>
 
-        <section className="w-full py-14 sm:py-16 lg:py-20 bg-white border-t border-[#e8e0d0]/40">
-          <div className="max-w-4xl mx-auto px-6">
-            <h2 className="text-brand-green-deep text-[28px] lg:text-[32px] font-playfair mb-6">Home Loans in Maricopa County, Arizona</h2>
-            <div className="text-brand-text-muted text-[15px] space-y-4">
-              <p>We are here to make the home loan process a whole lot easier, with tools and expertise that will help guide you.</p>
-              <p>Maricopa County is home to nearly 4.79 million residents and continues to attract families, retirees, and professionals from across the country. With a diverse mix of urban neighborhoods, master-planned communities, and desert retreats, the county offers something for every type of buyer. The Mortgage Brothers have served Maricopa County homeowners for over 25 years — helping clients navigate everything from first-time purchases in Mesa to luxury buys in Paradise Valley.</p>
-              <ul className="list-disc pl-6 space-y-2 mt-4">
-                <li><strong>~4.79 Million Residents:</strong> Maricopa County is Arizona&apos;s most populous county and one of the fastest-growing in the nation.</li>
-                <li><strong>26 Cities and Towns:</strong> From Phoenix to Queen Creek, Maricopa County offers a diverse range of communities for every lifestyle and budget.</li>
-                <li><strong>$832,750 Loan Limit:</strong> The 2026 conforming loan limit gives Maricopa County buyers significant purchasing power for conventional financing.</li>
-              </ul>
-            </div>
-          </div>
-        </section>
 
-        <MortgageSolutionsGrid placeName="Maricopa County" />
+        <CTA
+          title="Ready to start your Maricopa County home journey?"
+          description="Let's find the perfect mortgage solution for your Maricopa County home."
+        />
 
         <CountyTestimonials
           title="What Maricopa County Clients Say About Us"
@@ -311,26 +317,16 @@ export default function MaricopaCounty() {
           </div>
         </section>
 
-        {/* Bottom CTA section */}
-        <section className="w-full bg-[#052316] text-white py-14 sm:py-16 lg:py-20 text-center relative overflow-hidden border-t border-white/5">
-          {/* Decorative shapes */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5 pointer-events-none opacity-40"></div>
-          </div>
-
-          <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">
-            <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.15em] uppercase mb-4">
-              READY WHEN YOU ARE
-            </p>
-            <h2 className="text-white text-[32px] lg:text-[44px] font-playfair font-normal leading-tight mb-4">
-              Ready to start your Maricopa County home journey?
-            </h2>
-            <p className="text-[#c8c8b8] text-[15px] lg:text-[16px] leading-[1.7] max-w-xl mx-auto mb-8">
-              Let&apos;s find the perfect mortgage solution for your Maricopa County home.
-            </p>
-            <HeroCtaButtons />
-          </div>
-        </section>
+        <GetInTouch
+          theme="light"
+          title="Get Started with Your Arizona Home Loan Today"
+          showDivider
+          paragraphs={[
+            "Take the first step towards your dream home with AZ Mortgage Brothers. Our team of experienced mortgage professionals is ready to guide you through the home loan process, answer your questions, and help you secure the best possible terms for your unique situation.",
+            "Whether you prefer to chat over the phone, send us an email, or meet in person, we're here to assist you. Fill out the form below, and one of our mortgage experts will get back to you promptly. Alternatively, feel free to reach out to us directly using the contact information provided.",
+            "Don't let this opportunity for homeownership pass you by. Contact us today and let's make your Arizona home dreams a reality with a mortgage tailored to your needs.",
+          ]}
+        />
       </main>
 
       {/* <PreApprovedForm /> */}

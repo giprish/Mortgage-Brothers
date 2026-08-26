@@ -7,7 +7,14 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import StatsBanner from "../component/StatsBanner";
+import HeroFeatureStrip from "../component/HeroFeatureStrip";
 import { COMPANY, LOAN_OFFICERS } from "@/lib/company";
+
+const featureStrip = [
+  "We Are Not Cash Buyers",
+  "Compare Every Selling Option",
+  "Free, Unbiased Review",
+];
 
 const comparisonRows = [
   {
@@ -171,26 +178,26 @@ export default function SellMyHouseFastArizonaPage() {
       <Navbar />
 
       <main className="flex-grow">
-        {/* Hero — centered, matches the Areas We Serve page */}
-        <section className="w-full bg-brand-green-deep pt-[110px] lg:pt-[130px] pb-12 sm:pb-14 lg:pb-16 text-center relative overflow-hidden">
-          <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">
-            <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
+        {/* Hero — centered, mobile-first */}
+        <section className="w-full bg-brand-green-deep pt-[100px] sm:pt-[110px] lg:pt-[130px] pb-10 sm:pb-14 lg:pb-16 text-center relative overflow-hidden">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 flex flex-col items-center">
+            <p className="text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase mb-3 sm:mb-4">
               HOME SELLING OPTIONS REVIEW
             </p>
 
-            <h1 className="text-white text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.1] mb-6">
+            <h1 className="text-white text-[28px] sm:text-[32px] lg:text-[48px] font-playfair font-normal leading-[1.15] mb-4 sm:mb-6">
               Sell Your Home for Cash in Arizona
             </h1>
 
-            <p className="text-[#63cd85] text-[17px] lg:text-[20px] font-medium leading-snug mb-5 max-w-2xl mx-auto">
+            <p className="text-[#63cd85] text-[16px] sm:text-[17px] lg:text-[20px] font-medium leading-snug mb-4 sm:mb-5 max-w-2xl mx-auto">
               Before you accept a cash offer, compare it to every other way you could sell — with local experts who don&apos;t buy houses.
             </p>
 
-            <p className="text-[#c8c8b8] text-[15px] lg:text-[16px] leading-[1.7] max-w-2xl mx-auto">
+            <p className="text-[#c8c8b8] text-[14.5px] sm:text-[15px] lg:text-[16px] leading-[1.7] max-w-2xl mx-auto">
               See how a cash sale really stacks up against listing traditionally, selling as-is, repairing first, or keeping your home — in plain numbers, with no pressure and no obligation.
             </p>
 
-            <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2.5 text-[15px] font-semibold text-white text-left">
+            <ul className="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2.5 text-[14.5px] sm:text-[15px] font-semibold text-white text-left w-full max-w-md sm:max-w-lg">
               {["100% Free", "No Obligation", "We Don't Buy Houses", "Local Arizona Experts"].map((item) => (
                 <li key={item} className="flex items-center gap-2.5">
                   <span className="w-6 h-6 rounded-full bg-[#3fb364] flex items-center justify-center shrink-0">
@@ -203,21 +210,37 @@ export default function SellMyHouseFastArizonaPage() {
               ))}
             </ul>
 
-            <div className="mt-8 flex flex-col items-center gap-3">
+            <div className="mt-7 sm:mt-8 flex flex-col items-stretch sm:items-center gap-3 w-full max-w-md mx-auto">
               <Link
                 href="/#get-pre-approved"
                 data-preapproval="true"
-                className="btn-primary px-7 py-3.5 text-[16px]"
+                className="btn-primary w-full sm:w-auto px-7 py-3.5 text-[15px] sm:text-[16px]"
               >
                 Get My Free Home Selling Options Review
               </Link>
-              <p className="text-[#63cd85] text-[15px] font-medium">
-                or call{" "}
-                <a href={COMPANY.phoneHref} className="underline underline-offset-2 hover:text-white">
-                  602-535-2171
-                </a>
-              </p>
-              <p className="text-[#b8d4b8] text-[12px] leading-relaxed">
+              <p className="text-[#63cd85] text-[13px] font-medium tracking-wide">or</p>
+              <a
+                href={COMPANY.phoneHref}
+                className="btn-outline-accent w-full sm:w-auto"
+                aria-label={`Call Mortgage Brothers at ${COMPANY.phoneDisplay}`}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden
+                >
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                Call {COMPANY.phoneDisplay}
+              </a>
+              <p className="text-[#b8d4b8] text-[12px] leading-relaxed mt-1 px-1">
                 Safe. Secure. No pressure.
                 <br />
                 Reviewed by {LOAN_OFFICERS.eddie.name}, Licensed Mortgage Broker ({LOAN_OFFICERS.eddie.nmlsDisplay})
@@ -226,23 +249,7 @@ export default function SellMyHouseFastArizonaPage() {
           </div>
         </section>
 
-        {/* Intro strip */}
-        <div className="loan-strip w-full bg-[#03170e] text-[#c8c8b8] border-y border-white/10">
-          <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-around gap-6 text-[14px] font-medium">
-            <div className="flex items-center gap-2">
-              <span className="text-[#3fb364]">✓</span>
-              <span>We Are Not Cash Buyers</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-[#3fb364]">✓</span>
-              <span>Compare Every Selling Option</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-[#3fb364]">✓</span>
-              <span>Free, Unbiased Review</span>
-            </div>
-          </div>
-        </div>
+        <HeroFeatureStrip items={featureStrip} />
 
         {/* We Are Not Cash Buyers */}
         <section className="loan-section bg-white">
@@ -384,13 +391,20 @@ export default function SellMyHouseFastArizonaPage() {
               </table>
             </div>
 
-            <div className="loan-btn-wrap">
+            <div className="loan-btn-wrap flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
               <Link
                 href="/contact-us/"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[15px] px-8 py-3.5 rounded-full transition-all shadow-md"
+                className="btn-primary w-full sm:w-auto"
               >
                 Get My Free Comparison Review
               </Link>
+              <a
+                href={COMPANY.phoneHref}
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-11 px-7 py-3.5 rounded-full border-[1.5px] border-[#3fb364]/55 text-[#246d39] font-semibold text-[15px] hover:bg-[#3fb364]/10 hover:border-[#3fb364] transition-all"
+                aria-label={`Call Mortgage Brothers at ${COMPANY.phoneDisplay}`}
+              >
+                Call {COMPANY.phoneDisplay}
+              </a>
             </div>
           </div>
         </section>
@@ -446,7 +460,7 @@ export default function SellMyHouseFastArizonaPage() {
             <ul className="space-y-4">
               {cashOfferQuestions.map((q) => (
                 <li key={q} className="flex items-start gap-3 text-[#c8c8b8] text-[14.5px] leading-relaxed">
-                  <span className="text-[#3fb364] font-bold text-[16px] shrink-0">✓</span>
+                  <span className="text-[#3fb364] font-bold text-[16px] shrink-0 mt-0.5">✓</span>
                   {q}
                 </li>
               ))}
@@ -580,17 +594,17 @@ export default function SellMyHouseFastArizonaPage() {
                   <button
                     type="button"
                     onClick={() => setOpenQuickAnswer(openQuickAnswer === idx ? null : idx)}
-                    className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none cursor-pointer"
+                    className="w-full px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3fb364] focus-visible:ring-inset cursor-pointer"
                     aria-expanded={openQuickAnswer === idx}
                   >
-                    <h3 className="font-bold text-[#052316] text-[16.5px] pr-4 font-playfair">{item.q}</h3>
+                    <h3 className="font-bold text-[#052316] text-[15px] sm:text-[16.5px] pr-4 font-playfair">{item.q}</h3>
                     <span className="text-[#3fb364] text-[20px] ml-4 font-bold shrink-0">
                       {openQuickAnswer === idx ? "−" : "+"}
                     </span>
                   </button>
 
                   {openQuickAnswer === idx && (
-                    <div className="px-6 pb-6 text-[#4e5b4e] text-[14.5px] leading-relaxed border-t border-[#f0f0f0] pt-4">
+                    <div className="px-4 sm:px-6 pb-5 sm:pb-6 text-[#4e5b4e] text-[14.5px] leading-relaxed border-t border-[#f0f0f0] pt-4">
                       {item.a}
                     </div>
                   )}
@@ -621,17 +635,17 @@ export default function SellMyHouseFastArizonaPage() {
                   <button
                     type="button"
                     onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                    className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none cursor-pointer"
+                    className="w-full px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3fb364] focus-visible:ring-inset cursor-pointer"
                     aria-expanded={openFaq === idx}
                   >
-                    <h3 className="font-semibold text-[#052316] text-[16px] pr-4">{faq.q}</h3>
+                    <h3 className="font-semibold text-[#052316] text-[15px] sm:text-[16px] pr-4">{faq.q}</h3>
                     <span className="text-[#3fb364] text-[20px] ml-4 font-bold shrink-0">
                       {openFaq === idx ? "−" : "+"}
                     </span>
                   </button>
 
                   {openFaq === idx && (
-                    <div className="px-6 pb-6 text-[#4e5b4e] text-[14.5px] leading-relaxed border-t border-[#f0f0f0] pt-4">
+                    <div className="px-4 sm:px-6 pb-5 sm:pb-6 text-[#4e5b4e] text-[14.5px] leading-relaxed border-t border-[#f0f0f0] pt-4">
                       {faq.a}
                     </div>
                   )}
@@ -639,13 +653,20 @@ export default function SellMyHouseFastArizonaPage() {
               ))}
             </div>
 
-            <div className="loan-btn-wrap">
+            <div className="loan-btn-wrap flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
               <Link
                 href="/contact-us/"
-                className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3a24] text-white font-semibold text-[15px] px-7 py-3 rounded-full transition-all"
+                className="inline-flex items-center justify-center w-full sm:w-auto min-h-11 bg-[#052316] hover:bg-[#0a3a24] text-white font-semibold text-[15px] px-7 py-3 rounded-full transition-all"
               >
                 Get Expert Answers Now
               </Link>
+              <a
+                href={COMPANY.phoneHref}
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto min-h-11 px-7 py-3 rounded-full border-[1.5px] border-[#052316]/40 text-[#052316] font-semibold text-[15px] hover:bg-[#052316]/5 hover:border-[#052316] transition-all"
+                aria-label={`Call Mortgage Brothers at ${COMPANY.phoneDisplay}`}
+              >
+                Call {COMPANY.phoneDisplay}
+              </a>
             </div>
           </div>
         </section>
@@ -662,30 +683,31 @@ export default function SellMyHouseFastArizonaPage() {
 
             <ul className="text-left max-w-xl mx-auto space-y-3 text-[#c8c8b8] text-[14.5px]">
               <li className="flex items-start gap-3">
-                <span className="text-[#3fb364] font-bold">✓</span>
+                <span className="text-[#3fb364] font-bold mt-0.5 shrink-0">✓</span>
                 Compare every option side by side — cash sale, as-is listing, repair-then-sell, traditional sale, or keeping and refinancing.
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#3fb364] font-bold">✓</span>
+                <span className="text-[#3fb364] font-bold mt-0.5 shrink-0">✓</span>
                 See your realistic net proceeds for each path, not just a headline offer.
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-[#3fb364] font-bold">✓</span>
+                <span className="text-[#3fb364] font-bold mt-0.5 shrink-0">✓</span>
                 Get a straight, honest recommendation from someone who doesn&apos;t buy houses and has nothing to sell you on this page.
               </li>
             </ul>
 
-            <div className="pt-4 flex flex-wrap justify-center gap-4">
+            <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 w-full max-w-md sm:max-w-none mx-auto">
               <Link
                 href="/#get-pre-approved"
                 data-preapproval="true"
-                className="btn-primary px-8 py-4 text-[16px]"
+                className="btn-primary w-full sm:w-auto px-8 py-4 text-[15px] sm:text-[16px]"
               >
                 Get My Free Home Selling Options Review
               </Link>
               <a
                 href={COMPANY.phoneHref}
-                className="border border-white/30 hover:border-white text-white font-semibold text-[15px] px-7 py-4 rounded-full transition-all hover:bg-white/10"
+                className="btn-outline w-full sm:w-auto"
+                aria-label={`Call Mortgage Brothers at ${COMPANY.phoneDisplay}`}
               >
                 Call {COMPANY.phoneDisplay}
               </a>

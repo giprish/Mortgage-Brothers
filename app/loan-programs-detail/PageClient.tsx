@@ -317,7 +317,7 @@ export default function LoanProgramsDetailPage() {
 
                   <ul className="flex flex-col gap-3 mb-8 text-[13px] text-[#4e5b4e]">
                     {p.bullets.map((bullet, idx) => (
-                      <li key={idx} className="flex items-start gap-2.5">
+                      <li key={idx} className="flex items-center gap-2.5">
                         <span className="text-[#3fb364] font-bold mt-0.5">✓</span>
                         <span>{bullet}</span>
                       </li>

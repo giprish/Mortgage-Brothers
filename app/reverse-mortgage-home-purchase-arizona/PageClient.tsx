@@ -8,6 +8,13 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import StatsBanner from "../component/StatsBanner";
 import LoanProgramHero from "../component/LoanProgramHero";
+import HeroFeatureStrip from "../component/HeroFeatureStrip";
+
+const featureStrip = [
+  "Buy Your Dream Home with No Monthly Payments",
+  "Keep More Cash While Buying Your New Home",
+  "Flexible Homeownership for Retirement Living",
+];
 
 export default function ReverseMortgageHomePurchaseArizonaPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -185,23 +192,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
           subtitle="No Monthly Payments for 62+ Homebuyers"
         />
 
-        {/* TRUST BAR */}
-        <div className="loan-strip w-full bg-[#03170e] text-[#c8c8b8] border-y border-white/10">
-          <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-around gap-6 text-[14px] font-medium">
-            <div className="flex items-center gap-2">
-              <span className="text-[#3fb364]">✓</span>
-              <span>Buy Your Dream Home with No Monthly Payments</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-[#3fb364]">✓</span>
-              <span>Keep More Cash While Buying Your New Home</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-[#3fb364]">✓</span>
-              <span>Flexible Homeownership for Retirement Living</span>
-            </div>
-          </div>
-        </div>
+        <HeroFeatureStrip items={featureStrip} />
 
         {/* BENEFITS OVERVIEW */}
         <section className="loan-section bg-white">
@@ -305,7 +296,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
                   <ul className="space-y-2 text-[14px] text-[#4e5b4e]">
                     {["Property taxes", "Homeowners insurance", "HOA fees (if applicable)", "Home maintenance"].map(
                       (li) => (
-                        <li key={li} className="flex items-start gap-2">
+                        <li key={li} className="flex items-center gap-2">
                           <span className="text-[#3fb364] font-bold">✓</span>
                           <span>{li}</span>
                         </li>
@@ -328,7 +319,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
                       "HUD-approved condos",
                       "Manufactured homes (built after 1976 and HUD compliant)"
                     ].map((li) => (
-                      <li key={li} className="flex items-start gap-2">
+                      <li key={li} className="flex items-center gap-2">
                         <span className="text-[#3fb364] font-bold">✓</span>
                         <span>{li}</span>
                       </li>
@@ -461,7 +452,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
                 <h3 className="text-[20px] font-bold text-[#052316] mb-4 font-playfair">Pros</h3>
                 <ul className="space-y-3">
                   {pros.map((p) => (
-                    <li key={p} className="flex items-start gap-2.5 text-[14px] text-[#4e5b4e]">
+                    <li key={p} className="flex items-center gap-2.5 text-[14px] text-[#4e5b4e]">
                       <span className="text-[#3fb364] font-bold">✓</span>
                       <span>{p}</span>
                     </li>
@@ -528,15 +519,15 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
                 Key considerations include:
               </p>
               <ul className="space-y-2 text-[14.5px] text-[#4e5b4e]">
-                <li className="flex items-start gap-2">
+                <li className="flex items-center gap-2">
                   <span className="text-[#3fb364]">✓</span>
                   <span>Your long-term financial goals</span>
                 </li>
-                <li className="flex items-start gap-2">
+                <li className="flex items-center gap-2">
                   <span className="text-[#3fb364]">✓</span>
                   <span>Your health and potential future care needs</span>
                 </li>
-                <li className="flex items-start gap-2">
+                <li className="flex items-center gap-2">
                   <span className="text-[#3fb364]">✓</span>
                   <span>Your desire to leave an inheritance</span>
                 </li>

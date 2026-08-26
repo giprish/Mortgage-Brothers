@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import GetInTouch from "../component/GetInTouch";
 import { COMPANY, LOAN_PROGRAM_LINKS } from "@/lib/company";
 import { faqs as faqItems } from "./faqs";
 
@@ -584,29 +585,11 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Get in Touch Section */}
-        <section className="w-full about-section bg-brand-cream-light border-b border-[#e8e0d0]/40">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-brand-green-deep text-section-title font-playfair font-normal mb-6">
-              Get in Touch with Mortgage Brothers LLC
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left max-w-3xl mx-auto">
-              <div className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm">
-                <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.15em] uppercase mb-2">Address</p>
-                <p className="text-brand-text-muted text-[14px] leading-relaxed">
-                  {COMPANY.addressLine1}<br />
-                  {COMPANY.addressLine2}
-                </p>
-              </div>
-              <div className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm">
-                <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.15em] uppercase mb-2">Contact</p>
-                <Link href="/contact-us/" className="text-brand-green-deep text-[15px] font-semibold hover:text-brand-green-accent transition-colors">
-                  Send us a message
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
+        <GetInTouch
+          theme="light"
+          title="Get in Touch with Mortgage Brothers LLC"
+          description=""
+        />
 
         {/* Explore Mortgage Solutions */}
         <section className="w-full about-section bg-white border-b border-[#e8e0d0]/40">

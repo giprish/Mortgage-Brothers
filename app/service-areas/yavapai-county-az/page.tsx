@@ -10,8 +10,9 @@ import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
 import CountyCityCards from "../../component/CountyCityCards";
-import MortgageSolutionsGrid from "../../component/MortgageSolutionsGrid";
+import CountyMortgagePrograms from "../../component/CountyMortgagePrograms";
 import CountyTestimonials from "../../component/CountyTestimonials";
+import GetInTouch from "../../component/GetInTouch";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/yavapai-county-az/");
 
@@ -176,21 +177,6 @@ export default function YavapaiCountyPage() {
           </div>
         </section>
 
-        {/* Cities Grid Section */}
-        <section className="w-full py-16 lg:py-24 bg-white">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="text-center mb-16">
-              <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">
-                Yavapai County mortgage services
-              </h2>
-              <p className="text-brand-text-muted text-[15px] lg:text-[16px]">
-                Select your city below for local mortgage expertise.
-              </p>
-            </div>
-
-            <CountyCityCards countySlug="yavapai-county-az" cities={cities} />
-          </div>
-        </section>
 
         <section className="w-full py-16 bg-white">
           <div className="max-w-4xl mx-auto px-6">
@@ -209,7 +195,22 @@ export default function YavapaiCountyPage() {
           </div>
         </section>
 
-        <MortgageSolutionsGrid placeName="Yavapai County" />
+        {/* Cities Grid Section */}
+        <section className="w-full py-16 lg:py-24 bg-white">
+          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+            <div className="text-center mb-16">
+              <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">
+                Yavapai County mortgage services
+              </h2>
+              <p className="text-brand-text-muted text-[15px] lg:text-[16px]">
+                Select your city below for local mortgage expertise.
+              </p>
+            </div>
+
+            <CountyCityCards countySlug="yavapai-county-az" cities={cities} />
+          </div>
+        </section>
+        <CountyMortgagePrograms countyName="Yavapai County" fhaLimit="$541,287" />
 
         <CountyTestimonials testimonials={testimonials} />
 
@@ -221,6 +222,16 @@ export default function YavapaiCountyPage() {
             />
           </div>
         </section>
+
+        <GetInTouch
+          theme="light"
+          title="Get Started with Your Arizona Home Loan Today"
+          showDivider
+          paragraphs={[
+            "Choosing the right mortgage matters. Our team takes a personalized approach—reviewing your income, credit profile, and goals before recommending loan options.",
+            "Our AI-supported loan analysis helps compare lender terms efficiently, while our experienced advisors ensure decisions are made with clarity and confidence.",
+          ]}
+        />
 
         {/* Bottom CTA section */}
         <section className="w-full bg-[#052316] text-white py-16 lg:py-24 text-center relative overflow-hidden border-t border-white/5">

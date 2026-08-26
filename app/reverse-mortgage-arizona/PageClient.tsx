@@ -8,6 +8,7 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import StatsBanner from "../component/StatsBanner";
 import LoanProgramHero from "../component/LoanProgramHero";
+import HeroFeatureStrip from "../component/HeroFeatureStrip";
 
 const faqs = pageFaqs;
 
@@ -136,6 +137,12 @@ const STATS = [
   { value: "100%", label: "Retain Full Ownership" },
 ] as const;
 
+const featureStrip = [
+  "19.3% of Arizonans are 62+",
+  "No Monthly Payments Required",
+  "Use Funds Any Way You Choose",
+];
+
 export default function ReverseMortgageArizonaPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -149,29 +156,7 @@ export default function ReverseMortgageArizonaPage() {
           subtitle="Unlock Your Home's Value with a Reverse Mortgage"
         />
 
-        {/* TRUST BAR */}
-        <div className="loan-strip w-full bg-[#03170e] text-[#c8c8b8] border-y border-white/10">
-          <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-around gap-6 text-[14px] font-medium">
-            <div className="flex items-center gap-2">
-              <span className="text-[#3fb364]" aria-hidden>
-                ✓
-              </span>
-              <span>19.3% of Arizonans are 62+</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-[#3fb364]" aria-hidden>
-                ✓
-              </span>
-              <span>No Monthly Payments Required</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-[#3fb364]" aria-hidden>
-                ✓
-              </span>
-              <span>Use Funds Any Way You Choose</span>
-            </div>
-          </div>
-        </div>
+        <HeroFeatureStrip items={featureStrip} />
 
         {/* OVERVIEW — heading above; card aligns with body copy */}
         <section className="loan-section bg-white no-content-visibility">
@@ -214,7 +199,7 @@ export default function ReverseMortgageArizonaPage() {
                   </h3>
                   <ul className="m-0 list-none space-y-3.5 p-0 text-[14px] text-[#32353C]">
                     {benefits.map((b) => (
-                      <li key={b.title} className="flex items-start gap-3">
+                      <li key={b.title} className="flex items-center gap-3">
                         <span
                           className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#3fb364]/15 text-[12px] font-bold text-[#3fb364]"
                           aria-hidden
@@ -268,7 +253,7 @@ export default function ReverseMortgageArizonaPage() {
                   key={item.title}
                   className="group rounded-2xl border border-[#e0e0e0] bg-white p-6 shadow-sm transition-all hover:border-[#3fb364] hover:shadow-md"
                 >
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-[#3fb364]/10 text-[18px] font-bold text-[#3fb364] transition-colors group-hover:bg-[#3fb364] group-hover:text-white">
+                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-[#3fb364]/10 text-[18px] font-bold text-[#3fb364] transition-colors group-hover:bg-[#3fb364] group-hover:text-[#ffffff]">
                     {idx + 1}
                   </div>
                   <h3 className="mb-2 font-playfair text-[17px] font-bold text-[#052316]">{item.title}</h3>

@@ -191,7 +191,74 @@ a[href^="tel:"].btn-primary-sm::after,
   display: none !important;
 }
 
-/* "or call" phone link under primary CTAs on dark backgrounds */
+/* Outline / ghost button for dark backgrounds (secondary CTA, call) */
+@utility btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.25;
+  padding: 0.875rem 1.75rem;
+  border-radius: 9999px;
+  border: 1.5px solid rgb(255 255 255 / 0.35);
+  box-shadow: none;
+  transition-property: background-color, border-color, color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+  cursor: pointer;
+  text-decoration: none;
+  min-height: 2.75rem;
+
+  &:hover {
+    border-color: rgb(255 255 255 / 0.7);
+    background-color: rgb(255 255 255 / 0.1);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #63cd85;
+    outline-offset: 2px;
+  }
+}
+
+/* Soft outline on dark green — lime accent border for "or call" CTAs */
+@utility btn-outline-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: #63cd85;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.25;
+  padding: 0.875rem 1.75rem;
+  border-radius: 9999px;
+  border: 1.5px solid rgb(99 205 133 / 0.55);
+  box-shadow: none;
+  transition-property: background-color, border-color, color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+  cursor: pointer;
+  text-decoration: none;
+  min-height: 2.75rem;
+
+  &:hover {
+    border-color: #63cd85;
+    background-color: rgb(99 205 133 / 0.12);
+    color: #ffffff;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #63cd85;
+    outline-offset: 2px;
+  }
+}
+
+/* Legacy: plain "or call" text link (prefer btn-outline-accent) */
 @utility cta-phone-link {
   color: #63cd85;
   font-size: 15px;
@@ -608,7 +675,9 @@ textarea {
     grid-template-columns: 1fr !important;
   }
 
-  .btn-primary {
+  .btn-primary,
+  .btn-outline,
+  .btn-outline-accent {
     width: 100%;
     justify-content: center;
     padding-left: 1.25rem;

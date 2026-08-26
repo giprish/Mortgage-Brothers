@@ -8,7 +8,8 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import StatsBanner from "../component/StatsBanner";
 import LoanProgramHero from "../component/LoanProgramHero";
-import { COMPANY } from "@/lib/company";
+import HeroFeatureStrip from "../component/HeroFeatureStrip";
+import GetInTouch from "../component/GetInTouch";
 
 const featureStrip = [
   "Conventional and FHA loans serve different borrower needs",
@@ -162,7 +163,7 @@ const stats = [
 ];
 
 const CheckIcon = () => (
-  <svg className="w-5 h-5 text-[#3fb364] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+  <svg className="w-5 h-5 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
   </svg>
 );
@@ -226,19 +227,7 @@ export default function ConventionalVsFhaLoansPage() {
           subtitle="Understand the key differences and find the best loan option for your financial situation in Arizona"
         />
 
-        {/* Feature strip */}
-        <section className="loan-strip w-full bg-[#eeeff4] border-b border-[#e0e2e8]">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featureStrip.map((title) => (
-              <div key={title} className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm">
-                  <CheckIcon />
-                </div>
-                <h3 className="text-[#333333] text-[16px] font-semibold leading-snug">{title}</h3>
-              </div>
-            ))}
-          </div>
-        </section>
+        <HeroFeatureStrip items={featureStrip} />
 
         {/* Introduction */}
         <section className="loan-section w-full">
@@ -334,7 +323,7 @@ export default function ConventionalVsFhaLoansPage() {
                   key={card.title}
                   className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm"
                 >
-                  <h3 className="text-[#08271B] text-[17px] font-bold mb-3 flex items-start gap-2">
+                  <h3 className="text-[#08271B] text-[17px] font-bold mb-3 flex items-center gap-2">
                     <CheckIcon />
                     <span>{card.title}</span>
                   </h3>
@@ -733,39 +722,13 @@ export default function ConventionalVsFhaLoansPage() {
           </div>
         </section>
 
-        {/* Contact CTA */}
-        <section className="loan-section w-full bg-[#f5f0e8] border-y border-[#e8e0d0]/50">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2
-              className="text-[#08271B] text-[30px] lg:text-[38px] font-normal leading-tight mb-5"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
-              Ready to Take the Next Step? Let&apos;s Talk!
-            </h2>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-[14.5px] text-[#08271B]">
-              <a href="tel:+16025352171" className="font-semibold hover:text-[#3fb364] transition-colors">
-                +1 602-535-2171
-              </a>
-              <span className="hidden sm:inline text-[#c8c8b8]">|</span>
-              <a
-                href={COMPANY.addressMapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-[#3fb364] transition-colors text-center"
-              >
-                1599 East Orangewood Ave Suite 200, Phoenix, AZ 85020
-              </a>
-            </div>
-            <div className="loan-btn-wrap">
-              <Link
-                href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"
-              >
-                Start my preapproval
-              </Link>
-            </div>
-          </div>
-        </section>
+        <GetInTouch
+          theme="light"
+          title="Ready to Take the Next Step? Let's Talk!"
+          description=""
+          showPreApproveCta
+          ctaLabel="Start my preapproval"
+        />
 
         {/* Explore solutions */}
         <section className="loan-section w-full">

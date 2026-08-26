@@ -8,6 +8,7 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import StatsBanner from "../component/StatsBanner";
 import LoanProgramHero from "../component/LoanProgramHero";
+import HeroFeatureStrip from "../component/HeroFeatureStrip";
 
 const featureStrip = [
   "High-Value Financing Solutions",
@@ -235,7 +236,7 @@ const stats = [
 ];
 
 const CheckIcon = () => (
-  <svg className="w-5 h-5 text-[#3fb364] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+  <svg className="w-5 h-5 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
   </svg>
 );
@@ -253,19 +254,7 @@ export default function JumboLoansPage() {
           subtitle="Unlock Your Dream Home with Our Jumbo Loan Solutions"
         />
 
-        {/* Feature strip */}
-        <section className="w-full bg-[#eeeff4] border-b border-[#e0e2e8] loan-strip">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featureStrip.map((title) => (
-              <div key={title} className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm">
-                  <CheckIcon />
-                </div>
-                <h3 className="text-[#333333] text-[16px] font-semibold leading-snug">{title}</h3>
-              </div>
-            ))}
-          </div>
-        </section>
+        <HeroFeatureStrip items={featureStrip} />
 
         {/* Intro */}
         <section className="w-full loan-section">
@@ -291,7 +280,7 @@ export default function JumboLoansPage() {
                   <h3 className="text-[#08271B] text-[17px] font-bold mb-3">What Sets Jumbo Loans Apart?</h3>
                   <ul className="space-y-2.5">
                     {setsApart.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-[#4e5b4e] text-[14.5px] leading-relaxed">
+                      <li key={item} className="flex items-center gap-2.5 text-[#4e5b4e] text-[14.5px] leading-relaxed">
                         <CheckIcon />
                         <span>{item}</span>
                       </li>
@@ -302,7 +291,7 @@ export default function JumboLoansPage() {
                   <h3 className="text-[#08271B] text-[17px] font-bold mb-3">Why Consider a Jumbo Loan?</h3>
                   <ul className="space-y-2.5">
                     {whyConsider.map((item) => (
-                      <li key={item} className="flex items-start gap-2.5 text-[#4e5b4e] text-[14.5px] leading-relaxed">
+                      <li key={item} className="flex items-center gap-2.5 text-[#4e5b4e] text-[14.5px] leading-relaxed">
                         <CheckIcon />
                         <span>{item}</span>
                       </li>
@@ -343,7 +332,7 @@ export default function JumboLoansPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {whyChooseCards.map((card) => (
                 <div key={card.title} className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm">
-                  <h3 className="text-[#08271B] text-[16px] font-bold mb-3 flex items-start gap-2">
+                  <h3 className="text-[#08271B] text-[16px] font-bold mb-3 flex items-center gap-2">
                     <CheckIcon />
                     <span>{card.title}</span>
                   </h3>
@@ -379,7 +368,7 @@ export default function JumboLoansPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {understandingCards.map((card) => (
                 <div key={card.title} className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm">
-                  <h3 className="text-[#08271B] text-[16px] font-bold mb-3 flex items-start gap-2">
+                  <h3 className="text-[#08271B] text-[16px] font-bold mb-3 flex items-center gap-2">
                     <CheckIcon />
                     <span>{card.title}</span>
                   </h3>
@@ -387,7 +376,7 @@ export default function JumboLoansPage() {
                 </div>
               ))}
             </div>
-            <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center max-w-3xl mx-auto">
+            <p className="text-[#4e5b4e] lg:pt-10 text-[15px] leading-relaxed text-center max-w-3xl mx-auto">
               Remember, while Jumbo Loans come with additional complexities, they offer a pathway to financing your dream luxury home in Arizona. Our team is here to guide you through every step of the process.
             </p>
             <div className="loan-btn-wrap">
@@ -418,7 +407,7 @@ export default function JumboLoansPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {eligibilityCards.map((card) => (
                 <div key={card.title} className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm">
-                  <h3 className="text-[#08271B] text-[16px] font-bold mb-3 flex items-start gap-2">
+                  <h3 className="text-[#08271B] text-[16px] font-bold mb-3 flex items-center gap-2">
                     <CheckIcon />
                     <span>{card.title}</span>
                   </h3>
@@ -597,7 +586,7 @@ export default function JumboLoansPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {whyMb.map((card) => (
                 <div key={card.title} className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm">
-                  <h3 className="text-[#08271B] text-[16px] font-bold mb-3 flex items-start gap-2">
+                  <h3 className="text-[#08271B] text-[16px] font-bold mb-3 flex items-center gap-2">
                     <CheckIcon />
                     <span>{card.title}</span>
                   </h3>

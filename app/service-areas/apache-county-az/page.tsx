@@ -10,8 +10,9 @@ import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
 import CountyCityCards from "../../component/CountyCityCards";
-import MortgageSolutionsGrid from "../../component/MortgageSolutionsGrid";
+import CountyMortgagePrograms from "../../component/CountyMortgagePrograms";
 import CountyTestimonials from "../../component/CountyTestimonials";
+import GetInTouch from "../../component/GetInTouch";
 import { getCountyCitiesDetails } from "../../../lib/cityData";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/apache-county-az/");
@@ -110,16 +111,6 @@ export default function ApacheCountyPage() {
           </div>
         </section>
 
-        <section className="w-full py-16 lg:py-24 bg-white">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="text-center mb-16">
-              <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">Apache County mortgage services</h2>
-              <p className="text-brand-text-muted text-[15px] lg:text-[16px]">Select your city below for local mortgage expertise.</p>
-            </div>
-            <CountyCityCards countySlug="apache-county-az" cities={cities} />
-          </div>
-        </section>
-
         <section className="w-full py-16 bg-white">
           <div className="max-w-4xl mx-auto px-6">
             <h2 className="text-brand-green-deep text-[28px] lg:text-[32px] font-playfair mb-6">Home Loans in Apache County, Arizona</h2>
@@ -135,8 +126,18 @@ export default function ApacheCountyPage() {
             </div>
           </div>
         </section>
+        <section className="w-full py-16 lg:py-24 bg-white">
+          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+            <div className="text-center mb-16">
+              <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">Apache County mortgage services</h2>
+              <p className="text-brand-text-muted text-[15px] lg:text-[16px]">Select your city below for local mortgage expertise.</p>
+            </div>
+            <CountyCityCards countySlug="apache-county-az" cities={cities} />
+          </div>
+        </section>
 
-        <MortgageSolutionsGrid placeName="Apache County" />
+
+        <CountyMortgagePrograms countyName="Apache County" fhaLimit="$541,287" />
 
         <CountyTestimonials testimonials={testimonials} />
 
@@ -148,6 +149,16 @@ export default function ApacheCountyPage() {
             />
           </div>
         </section>
+
+        <GetInTouch
+          theme="light"
+          title="Get Started with Your Arizona Home Loan Today"
+          showDivider
+          paragraphs={[
+            "Choosing the right mortgage matters. Our team takes a personalized approach by reviewing your income, credit profile, and long-term financial goals before recommending loan options.",
+            "Our AI-supported loan comparison process helps identify competitive lenders efficiently, while our experienced advisors ensure you move forward with clarity and confidence.",
+          ]}
+        />
       </main>
       <Footer />
     </div>

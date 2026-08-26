@@ -1,58 +1,52 @@
 import React from "react";
-import Link from "next/link";
+import HeroCtaButtons from "./HeroCtaButtons";
 
-const CTA = () => {
+export type CTAProps = {
+  /** Small uppercase label above the heading. */
+  eyebrow?: string;
+  /** Main heading. */
+  title?: string;
+  /** Supporting copy under the heading. Pass `""` to hide. */
+  description?: string;
+};
+
+const DEFAULT_EYEBROW = "READY WHEN YOU ARE";
+const DEFAULT_TITLE = "Let's get you home.";
+const DEFAULT_DESCRIPTION =
+  "Start your pre-approval in about three minutes. No cost, no obligation, no impact to your credit.";
+
+/** Dark forest-green “Ready when you are” CTA with preapproval + broker buttons. */
+export default function CTA({
+  eyebrow = DEFAULT_EYEBROW,
+  title = DEFAULT_TITLE,
+  description = DEFAULT_DESCRIPTION,
+}: CTAProps) {
   return (
-    <section className="w-full bg-[#08271B] relative overflow-hidden py-20 lg:py-28">
-      {/* Decorative background circles */}
-      <div className="absolute -bottom-36 -left-36 w-[400px] h-[400px] rounded-full border border-white/10 pointer-events-none"></div>
-      <div className="absolute -top-36 -right-36 w-[450px] h-[450px] rounded-full border border-white/10 pointer-events-none"></div>
+    <section className="w-full bg-[#052316] text-white py-14 sm:py-16 lg:py-20 text-center relative overflow-hidden border-t border-white/5">
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -bottom-36 -left-36 w-[360px] h-[360px] rounded-full border border-white/5 pointer-events-none opacity-40" />
+        <div className="absolute -top-36 -right-36 w-[400px] h-[400px] rounded-full border border-white/5 pointer-events-none opacity-40" />
+      </div>
 
-      <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-        {/* Subtitle */}
-        <p className="text-[#7a6638] text-[11px] font-bold tracking-[0.18em] uppercase mb-4">
-          READY WHEN YOU ARE
-        </p>
+      <div className="max-w-4xl mx-auto px-6 relative z-10 flex flex-col items-center">
+        {eyebrow ? (
+          <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.15em] uppercase mb-4">
+            {eyebrow}
+          </p>
+        ) : null}
 
-        {/* Heading */}
-        <h2
-          className="text-white text-[clamp(28px,7vw,50px)] lg:text-[50px] font-normal leading-[1.15] mb-6"
-          
-        >
-          Let&apos;s get you home.
+        <h2 className="text-white text-[32px] lg:text-[44px] font-playfair font-normal leading-tight mb-4">
+          {title}
         </h2>
 
-        {/* Description */}
-        <p className="text-[#c8c8b8] text-[15px] lg:text-[16px] leading-[1.7] max-w-xl mx-auto mb-10">
-          Start your pre-approval in about three minutes. No cost, no obligation, no impact to your credit.
-        </p>
+        {description ? (
+          <p className="text-[#c8c8b8] text-[15px] lg:text-[16px] leading-[1.7] max-w-xl mx-auto mb-8">
+            {description}
+          </p>
+        ) : null}
 
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            href="/#get-pre-approved"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-250 shadow-lg shadow-[#3fb364]/20 hover:shadow-[#3fb364]/40"
-          >
-            Start My Pre-Approval
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
-          </Link>
-        </div>
+        <HeroCtaButtons />
       </div>
     </section>
   );
-};
-
-export default CTA;
+}

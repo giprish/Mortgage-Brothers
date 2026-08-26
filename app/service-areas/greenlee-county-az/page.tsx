@@ -10,8 +10,9 @@ import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
 import CountyCityCards from "../../component/CountyCityCards";
-import MortgageSolutionsGrid from "../../component/MortgageSolutionsGrid";
+import CountyMortgagePrograms from "../../component/CountyMortgagePrograms";
 import CountyTestimonials from "../../component/CountyTestimonials";
+import GetInTouch from "../../component/GetInTouch";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/greenlee-county-az/");
 
@@ -112,16 +113,6 @@ export default function GreenleeCountyPage() {
           </div>
         </section>
 
-        <section className="w-full py-14 sm:py-16 lg:py-20 bg-white">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="text-center mb-10">
-              <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">Greenlee County mortgage services</h2>
-              <p className="text-brand-text-muted text-[15px] lg:text-[16px]">Select your city below for local mortgage expertise.</p>
-            </div>
-            <CountyCityCards countySlug="greenlee-county-az" cities={cities} />
-          </div>
-        </section>
-
         <section className="w-full py-14 sm:py-16 lg:py-20 bg-white border-t border-[#e8e0d0]/40">
           <div className="max-w-4xl mx-auto px-6">
             <h2 className="text-brand-green-deep text-[28px] lg:text-[32px] font-playfair mb-6">Home Loans in Greenlee County, Arizona</h2>
@@ -137,8 +128,18 @@ export default function GreenleeCountyPage() {
             </div>
           </div>
         </section>
+        <section className="w-full py-14 sm:py-16 lg:py-20 bg-white">
+          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+            <div className="text-center mb-10">
+              <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">Greenlee County mortgage services</h2>
+              <p className="text-brand-text-muted text-[15px] lg:text-[16px]">Select your city below for local mortgage expertise.</p>
+            </div>
+            <CountyCityCards countySlug="greenlee-county-az" cities={cities} />
+          </div>
+        </section>
 
-        <MortgageSolutionsGrid placeName="Greenlee County" />
+
+        <CountyMortgagePrograms countyName="Greenlee County" fhaLimit="$541,287" />
 
         <CountyTestimonials testimonials={testimonials} />
 
@@ -150,6 +151,16 @@ export default function GreenleeCountyPage() {
             />
           </div>
         </section>
+
+        <GetInTouch
+          theme="light"
+          title="Get Started with Your Arizona Home Loan Today"
+          showDivider
+          paragraphs={[
+            "Choosing the right mortgage is an important financial decision. Our Greenlee County mortgage team takes a personalized approach by reviewing your financial profile, credit history, and long-term homeownership goals before recommending the best loan options.",
+            "With access to multiple lenders and advanced loan comparison tools, we help clients secure competitive mortgage solutions while keeping the process smooth and transparent.",
+          ]}
+        />
       </main>
       <Footer />
     </div>

@@ -135,7 +135,7 @@ const stats = [
 ];
 
 const CheckIcon = () => (
-  <svg className="w-5 h-5 text-[#3fb364] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+  <svg className="w-5 h-5 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
   </svg>
 );
@@ -164,7 +164,7 @@ export default function JobOpportunitiesPage() {
               "Join Arizona's Leading Team in Mortgage Lending Success",
               "Competitive Pay, Career Growth, and Impactful Work in Arizona",
             ].map((title) => (
-              <div key={title} className="flex items-start gap-3">
+              <div key={title} className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm">
                   <CheckIcon />
                 </div>
@@ -200,7 +200,7 @@ export default function JobOpportunitiesPage() {
                   key={card.title}
                   className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 lg:p-7 shadow-sm hover:shadow-md transition-shadow"
                 >
-                  <h3 className="text-[#08271B] text-[18px] font-bold mb-3 flex items-start gap-2">
+                  <h3 className="text-[#08271B] text-[18px] font-bold mb-3 flex items-center gap-2">
                     <CheckIcon />
                     <span>{card.title}</span>
                   </h3>

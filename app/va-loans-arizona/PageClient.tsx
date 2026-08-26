@@ -8,6 +8,13 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import StatsBanner from "../component/StatsBanner";
 import LoanProgramHero from "../component/LoanProgramHero";
+import HeroFeatureStrip from "../component/HeroFeatureStrip";
+
+const featureStrip = [
+  "VA Loans Offer Zero Down Payment for Arizona Veterans",
+  "Lower Rates, No PMI, Flexible Requirements",
+  "Up to $2 million VA Loan with 0% down",
+];
 
 export default function VaLoansArizonaPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -287,23 +294,8 @@ export default function VaLoansArizonaPage() {
           subtitle="Exclusive Benefits for Veterans and Active Duty Service Members"
         />
 
-        {/* TRUST BAR */}
-        <div className="w-full bg-[#03170e] text-[#c8c8b8] border-y border-white/10 py-4 px-6">
-          <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-around gap-6 text-[14px] font-medium">
-            <div className="flex items-center gap-2">
-              <span className="text-[#3fb364]">✓</span>
-              <span>VA Loans Offer Zero Down Payment for Arizona Veterans</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-[#3fb364]">✓</span>
-              <span>Lower Rates, No PMI, Flexible Requirements</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-[#3fb364]">✓</span>
-              <span>Up to $2 million VA Loan with 0% down</span>
-            </div>
-          </div>
-        </div>
+        <HeroFeatureStrip items={featureStrip} />
+
 
         {/* OVERVIEW */}
         <section className="loan-section bg-white">
@@ -438,7 +430,7 @@ export default function VaLoansArizonaPage() {
                     "Transfer to Standby/Ready Reserve after honorable service",
                     "Continued service in Selected Reserve"
                   ].map((li) => (
-                    <li key={li} className="flex items-start gap-2">
+                    <li key={li} className="flex items-center gap-2">
                       <span className="text-[#3fb364] font-bold">✓</span>
                       <span>{li}</span>
                     </li>
@@ -458,7 +450,7 @@ export default function VaLoansArizonaPage() {
                     "U.S. Public Health Service or Merchant Marines personnel",
                     "Active cadet/midshipman at U.S. military academy"
                   ].map((li) => (
-                    <li key={li} className="flex items-start gap-2">
+                    <li key={li} className="flex items-center gap-2">
                       <span className="text-[#3fb364] font-bold">✓</span>
                       <span>{li}</span>
                     </li>
@@ -573,7 +565,7 @@ export default function VaLoansArizonaPage() {
                   "No prepayment penalties if you pay off your loan early",
                   "No mortgage insurance premiums required"
                 ].map((li) => (
-                  <li key={li} className="flex items-start gap-2">
+                  <li key={li} className="flex items-center gap-2">
                     <span className="text-[#3fb364] font-bold">✓</span>
                     <span>{li}</span>
                   </li>

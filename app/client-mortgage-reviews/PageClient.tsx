@@ -308,7 +308,7 @@ const loanSolutions = [
 const INITIAL_VISIBLE = 12;
 
 const CheckIcon = () => (
-  <svg className="w-5 h-5 text-[#3fb364] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+  <svg className="w-5 h-5 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
   </svg>
 );
@@ -346,7 +346,7 @@ export default function ClientMortgageReviewsPage() {
               "Fast and hassle-free process",
               "Expert guidance every step of the way",
             ].map((title) => (
-              <div key={title} className="flex items-start gap-3">
+              <div key={title} className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm">
                   <CheckIcon />
                 </div>

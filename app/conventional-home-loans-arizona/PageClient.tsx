@@ -8,6 +8,8 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import StatsBanner from "../component/StatsBanner";
 import LoanProgramHero from "../component/LoanProgramHero";
+import HeroFeatureStrip from "../component/HeroFeatureStrip";
+import GetInTouch from "../component/GetInTouch";
 import { LOAN_PROGRAM_LINKS } from "@/lib/company";
 
 export default function ConventionalHomeLoansPage() {
@@ -162,17 +164,8 @@ export default function ConventionalHomeLoansPage() {
           subtitle="Flexible options, competitive rates, and expert guidance"
         />
 
-        {/* HIGHLIGHT BAR */}
-        <div className="w-full bg-[#03170e] text-[#c8c8b8] border-y border-white/10 py-4 px-6">
-          <div className="max-w-5xl mx-auto flex flex-wrap items-center justify-around gap-6 text-[14px] font-medium">
-            {highlights.map((item) => (
-              <div key={item} className="flex items-center gap-2">
-                <span className="text-[#3fb364]">✓</span>
-                <span>{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+        <HeroFeatureStrip items={highlights} />
+
 
         {/* WHY CHOOSE */}
         <section className="loan-section bg-white">
@@ -185,19 +178,19 @@ export default function ConventionalHomeLoansPage() {
                 Why Choose a Conventional Home Loan?
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                Discover the advantages that make conventional home loans an excellent choice for Arizona homebuyers. These loans offer a powerful combination of flexibility, competitive rates, and accessibility that can help you achieve your homeownership dreams.
+                Discover the advantages that make conventional home loans an excellent choice for Arizona homebuyers. These loans offer a powerful combination of <strong className="text-[#052316] font-semibold">flexibility, competitive rates, and accessibility</strong> that can help you achieve your homeownership dreams.
               </p>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                With features like low down payments, high loan limits, and favorable terms for various property types, conventional home loans stand out as a versatile financing solution. They&apos;re designed to serve primary residences, vacation homes, and investment properties — and offer unique benefits such as the ability to finance manufactured homes and condos with ease.
+                With features like <strong className="text-[#052316] font-semibold">low down payments, high loan limits, and favorable terms</strong> for various property types, conventional home loans stand out as a versatile financing solution. They&apos;re designed to serve <strong className="text-[#052316] font-semibold">primary residences, vacation homes, and investment properties</strong> — and offer unique benefits such as the ability to <strong className="text-[#052316] font-semibold">finance manufactured homes and condos</strong> with ease.
               </p>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                One of the most compelling aspects of conventional home loans is that they represent some of the cheapest money you can borrow. Thanks to the backing of Fannie Mae and Freddie Mac, these loans offer interest rates that often outcompete other financing options.
+                One of the most compelling aspects of conventional home loans is that they represent <strong className="text-[#052316] font-semibold">some of the cheapest money you can borrow</strong>. Thanks to the backing of Fannie Mae and Freddie Mac, these loans offer interest rates that often outcompete other financing options.
               </p>
               <Link
                 href="/#get-pre-approved"
                 className="inline-block bg-[#052316] hover:bg-[#0a3a24] text-white font-bold px-7 py-3.5 rounded-full transition-all shadow"
               >
-                GET PRE-APPROVED →
+                Discover Your Options →
               </Link>
             </div>
 
@@ -261,7 +254,7 @@ export default function ConventionalHomeLoansPage() {
                 href="/#get-pre-approved"
                 className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-md inline-block"
               >
-                GET PRE-APPROVED →
+                Get Your Free Counsultation →
               </Link>
             </div>
           </div>
@@ -288,7 +281,7 @@ export default function ConventionalHomeLoansPage() {
                   key={idx}
                   className="bg-[#fcf9f3] border border-[#e0e0e0] rounded-2xl p-6 hover:border-[#3fb364] transition-all group"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#3fb364]/10 text-[#3fb364] flex items-center justify-center font-bold text-[18px] mb-4 group-hover:bg-[#3fb364] group-hover:text-white transition-colors">
+                  <div className="w-10 h-10 rounded-xl bg-[#3fb364]/10 text-[#3fb364] flex items-center justify-center font-bold text-[18px] mb-4 group-hover:bg-[#3fb364] group-hover:text-[#ffffff] transition-colors">
                     {idx + 1}
                   </div>
                   <h3 className="text-[16px] font-bold text-[#052316] mb-2 font-playfair">{step.title}</h3>
@@ -430,39 +423,12 @@ export default function ConventionalHomeLoansPage() {
           </div>
         </section>
 
-        {/* FINAL CTA */}
-        <section className="loan-section bg-[#052316] text-white">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 className="text-[28px] lg:text-[40px] font-bold font-playfair">
-              Get Started with Your Conventional Home Loan Today
-            </h2>
-            <p className="text-[#c8c8b8] text-[16px] max-w-2xl mx-auto leading-relaxed">
-              Take the first step towards your dream home with Mortgage Brothers LLC. Our team of experienced mortgage professionals is ready to guide you through the conventional loan process and help you secure the best possible terms.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left max-w-xl mx-auto">
-              <div className="flex items-start gap-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3fb364" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 mt-1 flex-shrink-0" aria-hidden>
-                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                <div>
-                  <p className="text-[13px] text-[#b8d4b8] uppercase tracking-wider font-bold mb-1">Address</p>
-                  <p className="text-white text-[14px] leading-relaxed">
-                    1599 East Orangewood Ave Suite 200, Phoenix, AZ 85020
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <Link
-              href="/#get-pre-approved"
-              className="inline-block bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-lg"
-            >
-              GET PRE-APPROVED →
-            </Link>
-          </div>
-        </section>
+        <GetInTouch
+          theme="dark"
+          title="Get Started with Your Conventional Home Loan Today"
+          description="Take the first step towards your dream home with Mortgage Brothers LLC. Our team of experienced mortgage professionals is ready to guide you through the conventional loan process and help you secure the best possible terms."
+          showPreApproveCta
+        />
 
         {/* OTHER LOAN PROGRAMS */}
         <section className="loan-section bg-white">

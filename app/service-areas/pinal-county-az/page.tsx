@@ -10,8 +10,9 @@ import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
 import HeroCtaButtons from "../../component/HeroCtaButtons";
 import CountyCityCards from "../../component/CountyCityCards";
-import MortgageSolutionsGrid from "../../component/MortgageSolutionsGrid";
+import CountyMortgagePrograms from "../../component/CountyMortgagePrograms";
 import CountyTestimonials from "../../component/CountyTestimonials";
+import GetInTouch from "../../component/GetInTouch";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/pinal-county-az/");
 
@@ -177,21 +178,6 @@ export default function PinalCountyPage() {
           </div>
         </section>
 
-        {/* Cities Grid Section */}
-        <section className="w-full py-16 lg:py-24 bg-white">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="text-center mb-16">
-              <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">
-                Pinal County mortgage services
-              </h2>
-              <p className="text-brand-text-muted text-[15px] lg:text-[16px]">
-                Select your city below for local mortgage expertise.
-              </p>
-            </div>
-
-            <CountyCityCards countySlug="pinal-county-az" cities={cities} />
-          </div>
-        </section>
 
         <section className="w-full py-16 bg-white">
           <div className="max-w-4xl mx-auto px-6">
@@ -210,7 +196,26 @@ export default function PinalCountyPage() {
           </div>
         </section>
 
-        <MortgageSolutionsGrid placeName="Pinal County" />
+        {/* Cities Grid Section */}
+        <section className="w-full py-16 lg:py-24 bg-white">
+          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+            <div className="text-center mb-16">
+              <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">
+                Pinal County mortgage services
+              </h2>
+              <p className="text-brand-text-muted text-[15px] lg:text-[16px]">
+                Select your city below for local mortgage expertise.
+              </p>
+            </div>
+
+            <CountyCityCards countySlug="pinal-county-az" cities={cities} />
+          </div>
+        </section>
+        <CountyMortgagePrograms
+          countyName="Pinal County"
+          fhaLimit="$557,750"
+          intro="Whether you are buying your first home, upgrading to a larger space, or refinancing to a better rate, we offer a full range of home loan options for Pinal County residents."
+        />
 
         <CountyTestimonials testimonials={testimonials} />
 
@@ -222,6 +227,16 @@ export default function PinalCountyPage() {
             />
           </div>
         </section>
+
+        <GetInTouch
+          theme="light"
+          title="Get Started with Your Arizona Home Loan Today"
+          showDivider
+          paragraphs={[
+            "Take the first step toward homeownership with AZ Mortgage Brothers, your trusted local mortgage team. Our team provides expert guidance through the home loan process — answering questions, reviewing your options, and helping you secure the best terms for your situation. We'll help you secure the best possible terms for your unique situation across San Tan Valley, Queen Creek, Casa Grande, Coolidge, Florence, and Apache Junction.",
+            "Whether you prefer to chat over the phone, send us an email, or meet in person, we are here to help. Fill out the form below, and one of our Pinal County Arizona mortgage broker specialists will get back to you promptly.",
+          ]}
+        />
 
         {/* Bottom CTA section */}
         <section className="w-full bg-[#052316] text-white py-16 lg:py-24 text-center relative overflow-hidden border-t border-white/5">

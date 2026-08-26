@@ -322,7 +322,7 @@ export default function ResourceCategoryPage() {
                     </div>
 
                     {/* Right arrow icon */}
-                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#fcf9f3] flex items-center justify-center text-[#3fb364] group-hover:bg-[#3fb364] group-hover:text-white transition-colors duration-200">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#fcf9f3] flex items-center justify-center text-[#3fb364] group-hover:bg-[#3fb364] group-hover:text-[#ffffff] group-hover:[&_svg]:stroke-[#ffffff] transition-colors duration-200">
                       <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="transform group-hover:translate-x-0.5 transition-transform">
                         <line x1="5" y1="12" x2="19" y2="12" />
                         <polyline points="12 5 19 12 12 19" />

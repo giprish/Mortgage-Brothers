@@ -8,6 +8,7 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import StatsBanner from "../component/StatsBanner";
 import LoanProgramHero from "../component/LoanProgramHero";
+import HeroFeatureStrip from "../component/HeroFeatureStrip";
 
 const featureStrip = [
   "Fast Funding for Unique Arizona Real Estate Deals",
@@ -211,7 +212,7 @@ const loanSolutions = [
 ];
 
 const CheckIcon = () => (
-  <svg className="w-5 h-5 text-[#3fb364] shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
+  <svg className="w-5 h-5 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
   </svg>
 );
@@ -229,19 +230,7 @@ export default function PrivateMoneyLenderPage() {
           subtitle="Fast approvals, competitive rates, and personalized service for unique borrowing needs"
         />
 
-        {/* Feature strip */}
-        <section className="loan-strip w-full bg-[#eeeff4] border-b border-[#e0e2e8]">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            {featureStrip.map((title) => (
-              <div key={title} className="flex items-start gap-3">
-                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm">
-                  <CheckIcon />
-                </div>
-                <h3 className="text-[#333333] text-[16px] font-semibold leading-snug">{title}</h3>
-              </div>
-            ))}
-          </div>
-        </section>
+        <HeroFeatureStrip items={featureStrip} />
 
         {/* Flexible financing intro */}
         <section className="loan-section w-full">
@@ -271,7 +260,7 @@ export default function PrivateMoneyLenderPage() {
                   key={card.title}
                   className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 lg:p-7 shadow-sm"
                 >
-                  <h3 className="text-[#08271B] text-[17px] font-bold mb-3 flex items-start gap-2">
+                  <h3 className="text-[#08271B] text-[17px] font-bold mb-3 flex items-center gap-2">
                     <CheckIcon />
                     <span>{card.title}</span>
                   </h3>
@@ -362,7 +351,7 @@ export default function PrivateMoneyLenderPage() {
                   key={card.title}
                   className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm"
                 >
-                  <h3 className="text-[#08271B] text-[16px] font-bold mb-3 flex items-start gap-2">
+                  <h3 className="text-[#08271B] text-[16px] font-bold mb-3 flex items-center gap-2">
                     <CheckIcon />
                     <span>{card.title}</span>
                   </h3>
@@ -404,7 +393,7 @@ export default function PrivateMoneyLenderPage() {
                   key={card.title}
                   className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm"
                 >
-                  <h3 className="text-[#08271B] text-[16px] font-bold mb-3 flex items-start gap-2">
+                  <h3 className="text-[#08271B] text-[16px] font-bold mb-3 flex items-center gap-2">
                     <CheckIcon />
                     <span>{card.title}</span>
                   </h3>
