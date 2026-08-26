@@ -12,6 +12,8 @@ export type CountyTestimonial = {
 type CountyTestimonialsProps = {
   testimonials: CountyTestimonial[];
   title?: string;
+  /** Optional intro under the title (live page body copy). */
+  description?: string;
 };
 
 const AUTO_ADVANCE_MS = 6000;
@@ -19,6 +21,7 @@ const AUTO_ADVANCE_MS = 6000;
 export default function CountyTestimonials({
   testimonials,
   title = "What Our Arizona Clients Are Saying",
+  description,
 }: CountyTestimonialsProps) {
   const [index, setIndex] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -49,6 +52,11 @@ export default function CountyTestimonials({
           <h2 className="text-brand-green-deep text-section-title font-playfair font-normal">
             {title}
           </h2>
+          {description ? (
+            <p className="text-brand-text-muted text-[15px] sm:text-[15.5px] leading-[1.75] max-w-3xl mx-auto mt-4">
+              {description}
+            </p>
+          ) : null}
         </div>
 
         <div

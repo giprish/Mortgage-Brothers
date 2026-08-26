@@ -6,8 +6,16 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import GetInTouch from "../component/GetInTouch";
+import HeroFeatureStrip from "../component/HeroFeatureStrip";
+import Reviews from "../component/Reviews";
 import { COMPANY, LOAN_PROGRAM_LINKS } from "@/lib/company";
 import { faqs as faqItems } from "./faqs";
+
+const heroFeatures = [
+  "Third-Generation Arizonans",
+  "Comprehensive Loan Expertise",
+  "Local Family Business",
+];
 
 const whyChooseCards = [
   {
@@ -35,36 +43,8 @@ const whyChooseCards = [
 const teamStats = [
   { num: "25+", label: "Years of Experience" },
   { num: "5.0/5", label: "Client Rating" },
-  { num: "5,000+", label: "Loans Funded" },
+  { num: "650 $", label: "Loans Funded" },
   { num: "5,000+", label: "Families Helped" },
-];
-
-const testimonials = [
-  {
-    text: "I was referred to Eddie through my sister-n-law. I had tried a previous company but wasn't satisfied. I have been extremely happy with Eddie's mortgage team. Everything was done online through emails. This was very helpful as both my husband and I work full time during the day and really have no time to do this. Emails were responded to on a daily basis and in a very quick manner. Every step of the process was done very professionally and friendly. I always hesitated to do a refinance because of the large amount of paperwork and meetings. But this didn't happen that way. I highly recommend Eddie's mortgage team for your refinancing needs.",
-    author: "Chris and Vicky Smith",
-    loc: "Avondale, Arizona",
-  },
-  {
-    text: "Eddie and his team are fantastic to work with! They are efficient, friendly and very professional. They communicate to all parties in the transaction; making it a very smooth transaction every time. As a real estate agent, this makes my job that much easier when I have a lender who always performs and most of the time is even ahead of schedule. I can't say enough good things about Eddie as a mortgage lender!",
-    author: "Elizabeth Todd",
-    loc: "H2 Realty, Phoenix, Arizona",
-  },
-  {
-    text: "My wife and I recently decided it was the right time to refinance our home. I had been introduced to Eddie Knoell some years ago and had been periodically in touch with him to get more information on refinancing and interest rates so I would better understand the process as a whole. Eddie walked me through completing all the paperwork in advance so that when he called me and told me interest rates were favorable and we might want to consider locking in, all the paperwork was already completed and on file. Eddie has been an invaluable wealth of knowledge and has always been more than willing to take any time necessary to answer any questions I had. In an economic time where honesty and integrity are a hard to find commodity, especially in the housing industry, Eddie Knoell has proven to be a shining example of those qualities.",
-    author: "Kristine Wilson",
-    loc: "Surprise, Arizona",
-  },
-  {
-    text: "Our mortgage service through Eddie Knoell was seamless throughout. It was like having someone watch over the process without us having any concern in the process. All questions were answered promptly and completely with the correct issues addressed without extra fanfare, like dealing with a trusted family member. Thanks again Eddie!!!",
-    author: "Thomas and Carol Milberry",
-    loc: "Queen Creek, Arizona 85242",
-  },
-  {
-    text: "I met Eddie Knoell in 2012 through a client. He communicates very well, through every step of the process. Before I can even start to wonder what is going on, he's picked up the phone and called to let me know where we are in the process. He closes every deal and communicates through it well. He's patient with the questions and great with every client I have sent his way.",
-    author: "Nancy Perry",
-    loc: "Solutions Real Estate, Avondale, Arizona",
-  },
 ];
 
 const aboutLoanLinks = LOAN_PROGRAM_LINKS.filter((link) =>
@@ -117,15 +97,6 @@ export default function AboutPage() {
               {"We've helped 5,000+ families secure $650M in loans with 99% satisfaction."}
             </p>
 
-            {/* Hero Badges */}
-            <div className="flex flex-wrap items-center justify-center gap-3 mt-6">
-              {["Third-Generation Arizonans", "Comprehensive Loan Expertise", "Local Family Business"].map((badge) => (
-                <span key={badge} className="text-[11px] font-semibold tracking-wide text-white px-4 py-2 rounded-full bg-white/10 border border-white/15">
-                  {badge}
-                </span>
-              ))}
-            </div>
-
             {/* Hero CTA */}
             <div className="flex flex-col items-center mt-6">
               <Link
@@ -157,6 +128,8 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        <HeroFeatureStrip items={heroFeatures} />
 
         {/* Why Choose Section */}
         <section className="w-full about-section bg-white border-b border-[#e8e0d0]/40">
@@ -411,7 +384,31 @@ export default function AboutPage() {
               </p>
               <div className="bg-brand-cream-light rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm mt-2">
                 <p className="text-brand-text-muted text-[14px] leading-[1.7]">
-                  <span className="text-brand-green-deep font-semibold">Mortgage Brothers Team specialties:</span> Originating FHA, VA, Conventional, Jumbo loans, and Reverse Mortgages for Purchases &amp; Refinances. Up to 4 unit properties. Fixed Rates or ARMs. Cashout or Rate/Term. Primary residences, Second homes, and Investment properties.
+                  Mortgage Brothers Team specialties: Originating{" "}
+                  <Link href="/fha-home-loans-arizona/" className="text-[#3fb364] font-semibold no-underline hover:no-underline hover:text-[#349b55]">
+                    FHA
+                  </Link>
+                  ,{" "}
+                  <Link href="/va-loans-arizona/" className="text-[#3fb364] font-semibold no-underline hover:no-underline hover:text-[#349b55]">
+                    VA
+                  </Link>
+                  ,{" "}
+                  <Link href="/conventional-home-loans-arizona/" className="text-[#3fb364] font-semibold no-underline hover:no-underline hover:text-[#349b55]">
+                    Conventional
+                  </Link>
+                  ,{" "}
+                  <Link href="/jumbo-loans-arizona/" className="text-[#3fb364] font-semibold no-underline hover:no-underline hover:text-[#349b55]">
+                    Jumbo loans
+                  </Link>
+                  , and{" "}
+                  <Link href="/reverse-mortgage-home-purchase-arizona/" className="text-[#3fb364] font-semibold no-underline hover:no-underline hover:text-[#349b55]">
+                    Reverse Mortgages for Purchases
+                  </Link>{" "}
+                  &amp;{" "}
+                  <Link href="/refinancing-arizona/" className="text-[#3fb364] font-semibold no-underline hover:no-underline hover:text-[#349b55]">
+                    Refinances
+                  </Link>
+                  . Up to 4 unit properties. Fixed Rates or ARMs. Cashout or Rate/Term. Primary residences, Second homes, and Investment properties.
                 </p>
               </div>
             </div>
@@ -470,7 +467,16 @@ export default function AboutPage() {
             </p>
             <div className="text-center">
               <span className="text-brand-green-deep text-[15px] font-semibold">
-                Subscribe to @TheMortgageBrothersTeam on YouTube to stay up-to-date with the latest in mortgage news and expert advice, delivered in an easy-to-understand format.
+                Subscribe to{" "}
+                <a
+                  href="https://www.youtube.com/@TheMortgageBrothersTeam"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#3fb364] font-semibold no-underline hover:no-underline hover:text-[#349b55]"
+                >
+                  @TheMortgageBrothersTeam
+                </a>{" "}
+                on YouTube to stay up-to-date with the latest in mortgage news and expert advice, delivered in an easy-to-understand format.
               </span>
             </div>
           </div>
@@ -495,39 +501,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Testimonials Section */}
-        <section className="w-full about-section bg-brand-cream-light border-b border-[#e8e0d0]/40">
-          <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-8">
-              <span className="text-brand-green-accent text-[10px] font-bold tracking-[0.15em] uppercase block mb-3">
-                WHAT OUR CLIENTS SAY
-              </span>
-              <h2 className="text-brand-green-deep text-section-title font-playfair font-normal">
-                What Our Clients Say
-              </h2>
-              <p className="text-brand-text-muted text-[15px] lg:text-[16px] leading-[1.7] max-w-3xl mx-auto mt-4">
-                At Mortgage Brothers LLC, our clients&rsquo; success stories are the true measure of our commitment. We&rsquo;re proud to have helped thousands of Arizona families achieve their homeownership dreams. Here&rsquo;s what some of our satisfied clients have to say about their experience working with us:
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {testimonials.map((r) => (
-                <div key={r.author} className="bg-white rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm flex flex-col">
-                  <p className="text-brand-text-muted text-[14px] leading-[1.65] flex-1 mb-4">&ldquo;{r.text}&rdquo;</p>
-                  <div className="text-[#3fb364] text-[14px] mb-2 tracking-wider">★★★★★</div>
-                  <div>
-                    <p className="text-brand-green-deep text-[14px] font-bold">{r.author}</p>
-                    <p className="text-brand-text-muted text-[12px] mt-0.5">{r.loc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="text-center mt-6">
-              <Link href="/client-mortgage-reviews/" className="btn-primary inline-flex items-center gap-2">
-                Explore All Client Testimonials
-              </Link>
-            </div>
-          </div>
-        </section>
+        <Reviews />
 
         {/* FAQ Section */}
         <section className="w-full about-section bg-white border-b border-[#e8e0d0]/40">

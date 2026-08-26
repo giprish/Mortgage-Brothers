@@ -11,6 +11,7 @@ import LoanProgramHero from "../component/LoanProgramHero";
 import HeroFeatureStrip from "../component/HeroFeatureStrip";
 
 import CountyTestimonials, { type CountyTestimonial } from "../component/CountyTestimonials";
+import GetInTouch from "../component/GetInTouch";
 
 const featureStrip = [
   "Fast Funding for Unique Arizona Real Estate Deals",
@@ -38,10 +39,10 @@ const flexibleCards = [
 ];
 
 const stats = [
-  { value: "1–3", label: "Average Point Cost" },
-  { value: "7–14", label: "Average Days to Close" },
-  { value: "$250k+", label: "Typical Private Loan Size" },
-  { value: "65–75%", label: "Average Loan to Value" },
+  { value: "1.5 points", label: "Average Point Cost" },
+  { value: "10", label: "Average Days to close" },
+  { value: "$1,020,000", label: "Typical Private Loan Size" },
+  { value: "68%", label: "Average Loan to Value" },
 ];
 
 const privateMoneyCards = [
@@ -165,7 +166,8 @@ const testimonials: CountyTestimonial[] = [
   },
   {
     name: "Bryan and Heather Collins",
-    quote: "We can’t thank you enough for the hard work you did to get us approved and helping us close our vacation home. This is something we have been talking about for at least 5 years and became a reality after you were highly recommended to us by Carolin and Bob Benjamin. From the start, I felt well informed during the pre-approval phase and during the loan process. From the start of this process in April, everything has fallen into place like it was meant to be. Again, thanks for everything and I tell everybody that wants to buy a home in the Phoenix area to contact you for help.",
+    quote:
+      "We can’t thank you enough for the hard work you did to get us approved and helping us close our vacation home. This is something we have been talking about for at least 5 years and became a reality after you were highly recommended to us by Carolin and Bob Benjamin. From the start, I felt well informed during the pre-approval phase and during the loan process. I have to admit, I was frustrated at times on how much information was needed to keep the loan in motion but was assured by you and Carolin that this is the way loans are handled these days. We have bought property and homes in the past and the loan process was different due to different economic time. Completely understandable. From the start of this process in April, everything has fallen into place like it was meant to be. I surely take that as a sign. Again, thanks for everything and I tell everybody that wants to buy a home in the Phoenix area to contact you for help. Take care and talk to you soon.",
     attribution: "Bryan and Heather Collins, San Tan Valley, Arizona",
   },
   {
@@ -235,6 +237,8 @@ export default function PrivateMoneyLenderPage() {
         <LoanProgramHero
           title="Private Money and Portfolio Loans in Arizona"
           subtitle="Fast approvals, competitive rates, and personalized service for unique borrowing needs"
+          secondaryCtaLabel=""
+          note="3 min / no credit impact"
         />
 
         <HeroFeatureStrip items={featureStrip} />
@@ -348,7 +352,9 @@ export default function PrivateMoneyLenderPage() {
                 Portfolio Loans offer a unique approach to mortgage lending, providing long-term
                 financing options for borrowers who may not fit traditional lending criteria. These
                 loans are held by the lender rather than sold on the secondary market, allowing for more
-                flexibility in underwriting and loan terms.
+                flexibility in underwriting and loan terms. Whether you’re self-employed, have a complex
+                financial situation, or are investing in a unique property, portfolio loans can provide
+                the customized solution you need.
               </p>
             </div>
 
@@ -390,7 +396,9 @@ export default function PrivateMoneyLenderPage() {
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
                 While private money and portfolio loans offer more flexibility than traditional mortgages,
-                lenders still have certain criteria they consider when evaluating loan applications.
+                lenders still have certain criteria they consider when evaluating loan applications. These
+                requirements can vary between lenders, but understanding the general expectations can help
+                you prepare a stronger application.
               </p>
             </div>
 
@@ -492,6 +500,7 @@ export default function PrivateMoneyLenderPage() {
 
         <CountyTestimonials
           title="What Our Clients Say About Private Money and Portfolio Loans"
+          description="Don’t just take our word for it. Hear from real Arizona borrowers who have successfully leveraged our private money and portfolio loan options to achieve their real estate goals. These testimonials showcase the diverse range of projects we’ve helped finance and the personalized service we provide to each client."
           testimonials={testimonials}
         />
 
@@ -525,12 +534,24 @@ export default function PrivateMoneyLenderPage() {
             </div>
 
             <div className="loan-btn-wrap">
-              <Link
-                href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
-              >
-                Get Your Free Mortgage Consultation
-              </Link>
+              <div className="bg-[#3fb364] rounded-2xl p-8 lg:p-10 text-center max-w-3xl mx-auto">
+                <p className="text-white text-[15.5px] leading-relaxed mb-4">
+                  Experience the Mortgage Brothers LLC difference in your home buying journey. Let our
+                  expertise guide you to the perfect loan and your dream home in Arizona.
+                </p>
+                <a
+                  href="tel:+16025352171"
+                  className="text-white text-[28px] lg:text-[32px] font-bold block mb-6 hover:opacity-90 transition-opacity"
+                >
+                  (602) 535-2171
+                </a>
+                <Link
+                  href="/#get-pre-approved"
+                  className="inline-flex items-center gap-2 bg-white hover:bg-[#f5f0e8] text-[#08271B] text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                >
+                  Get Your Free Mortgage Consultation
+                </Link>
+              </div>
             </div>
           </div>
         </section>
@@ -586,6 +607,11 @@ export default function PrivateMoneyLenderPage() {
               })}
             </div>
 
+            <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center max-w-3xl mx-auto mt-10">
+              Still have questions? Our loan experts are here to provide personalized answers and guide
+              you through your financing options.
+            </p>
+
             <div className="loan-btn-wrap">
               <Link
                 href="/contact-us/"
@@ -597,28 +623,13 @@ export default function PrivateMoneyLenderPage() {
           </div>
         </section>
 
-        {/* Contact */}
-        <section className="loan-section w-full">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2
-              className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-5"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
-              Contact Mortgage Brothers LLC for Your Loan Needs
-            </h2>
-            <div className="loan-btn-wrap">
-              <Link
-                href="/#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"
-              >
-                Start my preapproval
-              </Link>
-            </div>
-            <p className="text-[#8a958a] text-[12px] leading-relaxed mt-8 max-w-2xl mx-auto">
-              Mortgage Brothers NMLS 1007154, NMLS #210917 and #1618695. Equal housing lender.
-            </p>
-          </div>
-        </section>
+        <GetInTouch
+          theme="dark"
+          title="Contact Mortgage Brothers LLC for Your Loan Needs"
+          description=""
+          showPreApproveCta
+          ctaLabel="Start my preapproval"
+        />
 
         {/* Explore solutions */}
         <section className="loan-section w-full bg-[#f5f0e8] border-t border-[#e8e0d0]/50">

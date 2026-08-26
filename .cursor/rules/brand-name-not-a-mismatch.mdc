@@ -1,0 +1,33 @@
+---
+description: Brand name variants are intentional — never flag as live vs stage content mismatches
+alwaysApply: true
+---
+
+# Brand name is not a content mismatch
+
+When comparing live (`azmortgagebrothers.com`) vs stage (`azmortgage.vercel.app`) textual content, **do not** treat company/brand name differences as mismatches.
+
+## Allowed equivalents (not mismatches)
+
+These refer to the same brand. Stage may use any of them; live may use another. **Never** list them in mismatch reports or “fix to match live” copy tasks:
+
+- Mortgage Brothers LLC
+- Mortgage Brothers
+- AZ Mortgage Brothers
+- AZ Mortgage Brothers LLC
+
+## Non-negotiable
+
+- Live → stage content migration: match body copy, headings, FAQs, stats, CTAs, and structure from live.
+- **Except** brand/company naming — stage branding stays as implemented; do not rewrite live’s “AZ Mortgage Brothers” onto stage or flag stage’s “Mortgage Brothers LLC” as wrong.
+- Surrounding sentence text still must match live; only the brand token itself is exempt.
+
+```text
+// ✅ IGNORE (not a mismatch)
+Live:  Discover how AZ Mortgage Brothers can help…
+Stage: Discover how Mortgage Brothers LLC can help…
+
+// ❌ STILL A MISMATCH (non-brand wording differs)
+Live:  …ensuring you get the private money or portfolio loan that best fits your needs.
+Stage: …guide you through every step of the process.   (missing clause)
+```
