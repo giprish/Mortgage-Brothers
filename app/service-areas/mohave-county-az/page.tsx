@@ -13,6 +13,7 @@ import CountyCityCards from "../../component/CountyCityCards";
 import CountyMortgagePrograms from "../../component/CountyMortgagePrograms";
 import CountyTestimonials from "../../component/CountyTestimonials";
 import GetInTouch from "../../component/GetInTouch";
+import CTA from "../../component/CTA";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/mohave-county-az/");
 
@@ -133,7 +134,7 @@ export default function MohaveCountyPage() {
             </div>
           </div>
         </section>
-        <section className="w-full py-10 lg:py-14 bg-white">
+        <section id="areas" className="w-full py-10 lg:py-14 bg-white scroll-mt-[72px]">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 lg:mb-10">
               <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-3">Mohave County mortgage services</h2>
@@ -143,6 +144,14 @@ export default function MohaveCountyPage() {
           </div>
         </section>
 
+        <CTA
+          eyebrow=""
+          title="Ready to Start Your Home Mortgage Journey in Mohave County?"
+          description="Our Mohave County mortgage experts are here to guide you through every step of the home loan process. From Lake Havasu City to Kingman and surrounding communities, we help buyers and homeowners secure the right mortgage solutions with confidence. Our experienced mortgage brokers help clients secure competitive mortgage rates and flexible home loan options across the region."
+          primaryLabel="View All Mohave County Areas"
+          primaryHref="#areas"
+          secondaryLabel="Call Us Now"
+        />
 
         <CountyMortgagePrograms countyName="Mohave County" fhaLimit="$541,287" />
 

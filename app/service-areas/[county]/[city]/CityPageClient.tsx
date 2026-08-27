@@ -9,6 +9,7 @@ import type { CityData } from "../../../../lib/cityData";
 import {
   renderCityIntroText,
   renderGetInTouchText,
+  renderHeroDescription,
   renderInlineLinks,
 } from "../../../../lib/renderInlineLinks";
 
@@ -168,7 +169,7 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
                   <span className="text-[#3fb364]">{city}</span>
                 </div>
                 <p className="text-[#c8c8b8] text-[15px] lg:text-[16px] leading-[1.75] mb-8 max-w-lg">
-                  {cityData.heroDescription}
+                  {renderHeroDescription(cityData.heroDescription)}
                 </p>
 
                 {/* CTA */}
@@ -222,7 +223,7 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
               LOCAL MORTGAGE EXPERTS
             </span>
             <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-semibold leading-tight mb-6">
-              {city}, AZ Mortgage Brokers – Local Home Loan Experts
+              {cityData.introTitle ?? `${city}, AZ Mortgage Brokers – Local Home Loan Experts`}
             </h2>
             <div className="max-w-3xl mx-auto space-y-4">
               {cityData.longDescriptions.map((paragraph, i) => (
@@ -247,7 +248,7 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
                 LOCAL EXPERTISE
               </span>
               <h2 className="text-[#052316] text-[28px] lg:text-[36px] font-semibold leading-tight mb-4">
-                Popular Communities We Serve in {city}, AZ
+                {cityData.communitiesTitle ?? `Popular Communities We Serve in ${city}, AZ`}
               </h2>
               <p className="text-[#4e5b4e] text-[14px] lg:text-[15px] leading-[1.7] max-w-2xl mx-auto">
                 {cityData.communitiesIntro ??
@@ -514,7 +515,7 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
                 QUICK ANSWERS
               </span>
               <h2 className="text-[#052316] text-[28px] lg:text-[36px] font-playfair font-normal leading-tight">
-                Frequently Asked Questions About {city} Home Loans
+                {cityData.faqTitle ?? `Frequently Asked Questions About ${city} Home Loans`}
               </h2>
             </div>
 

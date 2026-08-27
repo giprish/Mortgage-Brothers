@@ -11,10 +11,19 @@ const CITY_PAGE_INLINE_LINKS: { phrase: string; href: string }[] = [
   { phrase: "purchasing your first home", href: "/first-time-home-buyer-arizona-guide/" },
   { phrase: "first-time home buyers", href: "/first-time-home-buyer-arizona-guide/" },
   { phrase: "first-time homebuyers", href: "/first-time-home-buyer-arizona-guide/" },
+  { phrase: "Mortgage loans program", href: "/mortgage-loan-programs-arizona/" },
+  { phrase: "mortgage loans program", href: "/mortgage-loan-programs-arizona/" },
   { phrase: "mortgage loans", href: "/mortgage-loan-programs-arizona/" },
   { phrase: "loan programs", href: "/mortgage-loan-programs-arizona/" },
   { phrase: "Mortgage Brothers LLC", href: "/" },
+  { phrase: "Mortgage refinance options", href: "/refinancing-arizona/" },
+  { phrase: "mortgage refinance options", href: "/refinancing-arizona/" },
   { phrase: "Mortgage refinance", href: "/refinancing-arizona/" },
+  { phrase: "refinancing", href: "/refinancing-arizona/" },
+  { phrase: "Reverse mortgages", href: "/reverse-mortgage-arizona/" },
+  { phrase: "reverse mortgages", href: "/reverse-mortgage-arizona/" },
+  { phrase: "Reverse mortgage", href: "/reverse-mortgage-arizona/" },
+  { phrase: "reverse mortgage", href: "/reverse-mortgage-arizona/" },
   { phrase: "Conventional loans", href: "/conventional-home-loans-arizona/" },
   { phrase: "conventional loans", href: "/conventional-home-loans-arizona/" },
   { phrase: "FHA loans", href: "/fha-home-loans-arizona/" },
@@ -32,38 +41,6 @@ type InlineMatch = {
   href?: string;
 };
 
-/**
- * Live city intro paragraphs bold location/SEO phrases (e.g. "mortgage brokers in Kohls Ranch, AZ"),
- * not generic terms like "first-time homebuyers".
- */
-const CITY_INTRO_BOLD_REGEXES: { re: RegExp; group?: number }[] = [
-  { re: /^As experienced (.+?), we/i, group: 1 },
-  { re: /^As trusted (.+?), we/i, group: 1 },
-  { re: /^Looking for experienced (.+?)\?/i, group: 1 },
-  { re: /^Looking for (?:a trusted|an experienced|reliable) (.+?)\?/i, group: 1 },
-  { re: /^Looking for (.+? mortgage broker in .+?)\?/i, group: 1 },
-  { re: /^Searching for (.+?)\?/i, group: 1 },
-  {
-    re: /(?:help you )?secure (?:dependable |reliable |flexible )?(mortgages in [A-Za-z0-9' -]+?)(?=\s+with|\s+and|,|\.|$)/i,
-    group: 1,
-  },
-  {
-    re: /(?:help you )?secure (?:dependable |reliable |flexible )?(mortgage loans in [A-Za-z0-9' -]+?(?: Arizona)?)(?=\s+with|\s+and|,|\.|$)/i,
-    group: 1,
-  },
-  { re: /^(Buying or refinancing a home in [^,.]+(?:, Arizona)?)/i, group: 1 },
-  { re: /^(Buying a home in [^ ]+ or refinancing your current mortgage\?)/i, group: 1 },
-  { re: /^(Buying a home in [^ ]+ or planning a refinance\?)/i, group: 1 },
-  { re: /^(Buying a home in [^ ]+ or exploring refinance options\?)/i, group: 1 },
-  { re: /^(Finding the right mortgage in [^ ]+ requires)/i, group: 1 },
-  { re: /trusted ([A-Z][A-Za-z ]+ mortgage lender)/i, group: 1 },
-  { re: /trusted ([A-Z][A-Za-z ]+ mortgage provider)/i, group: 1 },
-  { re: /(home loans in [^,.]+, AZ)/i, group: 1 },
-  { re: /^As a ([^,]+ local mortgage team)/i, group: 1 },
-  { re: /^As a (local [^,]+ mortgage team)/i, group: 1 },
-  { re: /^As trusted (.+?) in /i, group: 1 },
-];
-
 function escapeRegExp(value: string): string {
   return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
@@ -74,13 +51,16 @@ function wrapUnmarkedPhrase(text: string, phrasePattern: string): string {
 }
 
 /**
- * Wraps live-synced location mortgage phrases in ** so GetInTouch / services copy
- * bolds "{City} mortgage" (or "mortgages in {City}") sitewide while leaving brand names unchanged.
+ * Wraps live-synced location mortgage phrases in ** for city intro copy.
+ * Not applied to Get In Touch (live getInTouch is typically plain unless explicit markdown links).
+ *
+ * Skip "{City} mortgage" when followed by " loans program" so contiguous
+ * phrases like "mortgage loans program" stay intact in source content.
  */
 export function boldLocationMortgagePhrases(text: string, cityName: string): string {
   const city = escapeRegExp(cityName);
   let result = wrapUnmarkedPhrase(text, `mortgages in ${city}`);
-  result = wrapUnmarkedPhrase(result, `${city} mortgage`);
+  result = wrapUnmarkedPhrase(result, `${city} mortgage(?!\\s+loans\\s+program)`);
   return result;
 }
 
@@ -98,6 +78,19 @@ function findExplicitBold(text: string): InlineMatch | null {
   };
 }
 
+/** Explicit `[label](href)` markdown — used by Get In Touch and city intro opt-in links. */
+function findMarkdownLink(text: string): InlineMatch | null {
+  const match = /\[([^\]]+)\]\(([^)]+)\)/.exec(text);
+  if (!match) return null;
+
+  return {
+    index: match.index,
+    length: match[0].length,
+    phrase: match[1],
+    href: match[2],
+  };
+}
+
 function findInlineLink(text: string): InlineMatch | null {
   let earliest: (InlineMatch & { href: string }) | null = null;
 
@@ -110,29 +103,6 @@ function findInlineLink(text: string): InlineMatch | null {
       (index === earliest.index && link.phrase.length > earliest.phrase.length)
     ) {
       earliest = { index, length: link.phrase.length, phrase: link.phrase, href: link.href };
-    }
-  }
-
-  return earliest;
-}
-
-function findCityIntroBold(text: string): InlineMatch | null {
-  let earliest: InlineMatch | null = null;
-
-  for (const { re, group = 0 } of CITY_INTRO_BOLD_REGEXES) {
-    const match = re.exec(text);
-    if (!match) continue;
-
-    const phrase = match[group];
-    const index = match.index + match[0].indexOf(phrase);
-    const candidate = { index, length: phrase.length, phrase };
-
-    if (
-      !earliest ||
-      index < earliest.index ||
-      (index === earliest.index && phrase.length > earliest.phrase.length)
-    ) {
-      earliest = candidate;
     }
   }
 
@@ -170,12 +140,49 @@ function renderLinkSpan(match: InlineMatch) {
   );
 }
 
-function findDefaultMatch(text: string): InlineMatch | null {
-  return findExplicitBold(text) ?? findInlineLink(text);
+function earliestMatch(...candidates: (InlineMatch | null)[]): InlineMatch | null {
+  let best: InlineMatch | null = null;
+
+  for (const candidate of candidates) {
+    if (!candidate) continue;
+    if (
+      !best ||
+      candidate.index < best.index ||
+      (candidate.index === best.index && candidate.length > best.length)
+    ) {
+      best = candidate;
+    }
+  }
+
+  return best;
 }
 
+function findDefaultMatch(text: string): InlineMatch | null {
+  return earliestMatch(findExplicitBold(text), findInlineLink(text));
+}
+
+/** City intro: only explicit `**bold**` and `[label](href)` — no heuristic bold/auto brand. */
 function findCityIntroMatch(text: string): InlineMatch | null {
-  return findExplicitBold(text) ?? findCityIntroBold(text);
+  return earliestMatch(findExplicitBold(text), findMarkdownLink(text));
+}
+
+function renderCityIntroBrandLink(match: InlineMatch) {
+  return (
+    <>
+      {match.index > 0 ? <br /> : null}
+      <Link
+        href={match.href!}
+        prefetch={false}
+        className="font-bold text-[#3fb364] no-underline hover:text-[#2d8545] hover:no-underline"
+      >
+        {match.phrase}
+      </Link>
+    </>
+  );
+}
+
+function isIntroBrandHomeLink(match: InlineMatch): boolean {
+  return match.href === "/" && match.phrase === "Mortgage Brothers LLC";
 }
 
 /** Bold/link helper for FAQs and guidance copy. */
@@ -187,18 +194,44 @@ export function renderInlineLinks(text: string): React.ReactNode {
 
 /**
  * GetInTouch / "Our {City} Mortgage Services" paragraphs.
- * Paragraphs are pre-marked with ** via boldLocationMortgagePhrases in cityData; this renders bold + brand links.
+ * Plain text by default (live Cochise-style pages have no bold/auto-links).
+ * Only explicit `[label](href)` renders as green bold links — no CITY_PAGE_INLINE_LINKS,
+ * and `**…**` markers are stripped (not bolded).
  */
 export function renderGetInTouchText(text: string): React.ReactNode {
-  return renderInlineLinks(text);
+  const withoutBoldMarkup = text.replace(/\*\*/g, "");
+  return renderFormattedText(withoutBoldMarkup, findMarkdownLink, renderLinkSpan);
 }
 
 /**
  * City page intro paragraphs under "LOCAL MORTGAGE EXPERTS".
- * Matches live bold placement for location phrases instead of generic link terms.
+ * Bold only via explicit `**…**`; green brand (and other) links only via `[label](href)`.
+ * Brand home links start on a new line when not at the start of the paragraph.
  */
 export function renderCityIntroText(text: string): React.ReactNode {
   return renderFormattedText(text, findCityIntroMatch, (match) =>
-    renderBoldSpan(match.phrase),
+    match.href
+      ? isIntroBrandHomeLink(match)
+        ? renderCityIntroBrandLink(match)
+        : renderLinkSpan(match)
+      : renderBoldSpan(match.phrase),
+  );
+}
+
+/**
+ * Hero description under the H1.
+ * Only explicit `**bold**` and optional `[label](href)` — no CITY_PAGE_INLINE_LINKS auto-linking.
+ * Uses white bold (not INLINE_BOLD_CLASS) so emphasis stays readable on the dark hero.
+ */
+export function renderHeroDescription(text: string): React.ReactNode {
+  return renderFormattedText(
+    text,
+    (value) => earliestMatch(findExplicitBold(value), findMarkdownLink(value)),
+    (match) =>
+      match.href ? (
+        renderLinkSpan(match)
+      ) : (
+        <strong className="font-bold text-white">{match.phrase}</strong>
+      ),
   );
 }

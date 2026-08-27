@@ -438,6 +438,16 @@ export const liveCityFaqs: Record<string, LiveCityFaqSet> = {
       { question: 'What documents do I need to apply for a mortgage?', answer: 'You\'ll typically need W-2s, pay stubs, bank statements, tax returns (if applicable), and identification. We\'ll give you a clear checklist to streamline the process.' },
     ],
   },
+  'maricopa-county-az/fountain-hills': {
+    title: 'Frequently Asked Questions About Fountain Hills Mortgages',
+    items: [
+      { question: 'How long does mortgage pre-approval take in Fountain Hills, AZ?', answer: 'Most Fountain Hills mortgage pre-approvals are completed within 24 to 48 hours once required documents are received.' },
+      { question: 'Do you work with retirees and second-home buyers in Fountain Hills?', answer: 'Yes. We frequently assist retirees and second-home buyers with tailored Fountain Hills home mortgage solutions.' },
+      { question: 'Can I refinance my home in Fountain Hills, Arizona?', answer: 'Yes. Mortgage refinance in Fountain Hills may help lower your interest rate, adjust loan terms, or access home equity.' },
+      { question: 'Do you offer reverse mortgages in Fountain Hills, AZ?', answer: 'Yes. We provide FHA-insured reverse mortgage guidance in Fountain Hills with a focus on education and transparency.' },
+      { question: 'What documents are needed to get pre-approved?', answer: 'Typically income documentation, employment details, credit history, estimated down payment, and purchase goals.' },
+    ],
+  },
   'maricopa-county-az/gilbert': {
     title: 'Frequently Asked Questions About Gilbert Mortgages',
     items: [

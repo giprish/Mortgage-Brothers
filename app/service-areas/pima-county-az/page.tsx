@@ -3,6 +3,7 @@ import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildFaqPageSchema, buildReviewsSchema, normalizeFaqs } from "@/lib/seo/structured-data";
 import FaqAccordion from "../../component/FaqAccordion";
+import { renderGetInTouchText } from "@/lib/renderInlineLinks";
 
 import React from "react";
 import Link from "next/link";
@@ -14,6 +15,11 @@ import CountyMortgagePrograms from "../../component/CountyMortgagePrograms";
 import CountyTestimonials from "../../component/CountyTestimonials";
 import GetInTouch from "../../component/GetInTouch";
 import CTA from "../../component/CTA";
+
+/** Strip `[label](href)` for FAQ JSON-LD plain text. */
+function stripMarkdownLinks(text: string): string {
+  return text.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+}
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/pima-county-az/");
 
@@ -55,28 +61,28 @@ const cities = [
 const countyFaqs = [
   {
     q: "What home loan programs are available to Pima County homebuyers?",
-    a: "Pima County buyers have access to the full range of mortgage programs including Conventional, FHA, VA (for eligible veterans), Jumbo, FHA Streamline Refinance, First-Time Homebuyer programs, Reverse Mortgage (for homeowners 62+), and Refinancing. Our team can walk you through all your options at no cost."
+    a: "Pima County buyers have access to the full range of mortgage programs including Conventional, FHA, VA (for eligible veterans), Jumbo, [FHA Streamline Refinance](/fha-streamline-refinance-arizona/), First-Time Homebuyer programs, Reverse Mortgage (for homeowners 62+), and Refinancing. Our team can walk you through all your options at no cost.",
   },
   {
     q: "What is the conforming loan limit in Pima County for 2026?",
-    a: "The 2026 conforming loan limit for Pima County is $832,750 – the same baseline limit that applies across all Arizona counties. If your loan exceeds this amount, you will need a jumbo loan."
+    a: "The 2026 conforming loan limit for Pima County is $832,750 – the same baseline limit that applies across all Arizona counties. If your loan exceeds this amount, you will need a jumbo loan.",
   },
   {
     q: "What is the FHA loan limit in Pima County for 2026?",
-    a: "The 2026 FHA loan limit for Pima County is $541,287. This means you can finance a home up to that purchase price using an FHA loan with as little as 3.5% down (with a 580+ credit score)."
+    a: "The 2026 FHA loan limit for Pima County is $541,287. This means you can finance a home up to that purchase price using an [FHA loan](/fha-home-loans-arizona/) with as little as 3.5% down (with a 580+ credit score).",
   },
   {
     q: "Why are people buying homes in Pima County?",
-    a: "Pima County offers more affordable home prices than the Phoenix metro, a vibrant arts and food scene in Tucson, and a strong job market anchored by the University of Arizona and Davis-Monthan AFB. Suburban communities like Oro Valley, Sahuarita, and Vail attract families looking for newer homes and highly rated schools."
+    a: "Pima County offers more affordable home prices than the Phoenix metro, a vibrant arts and food scene in Tucson, and a strong job market anchored by the University of Arizona and Davis-Monthan AFB. Suburban communities like Oro Valley, Sahuarita, and Vail attract families looking for newer homes and highly rated schools.",
   },
   {
     q: "How much do I need for a down payment on a Pima County home?",
-    a: "FHA loans require as little as 3.5% down. Conventional loans can go as low as 3%-5% for qualified buyers. VA loans require zero down payment for eligible veterans. We also work with down payment assistance programs. Contact us to find out which programs you qualify for."
+    a: "FHA loans require as little as 3.5% down. [Conventional loans](/conventional-home-loans-arizona/) can go as low as 3%-5% for qualified buyers. VA loans require zero down payment for eligible veterans. We also work with down payment assistance programs. Contact us to find out which programs you qualify for.",
   },
   {
     q: "How long does it take to close on a home in Pima County?",
-    a: "Most purchase transactions close in 21 to 30 days when all documentation is submitted promptly. Our team is known for fast, smooth closings with no surprises at the closing table."
-  }
+    a: "Most purchase transactions close in 21 to 30 days when all documentation is submitted promptly. Our team is known for fast, smooth closings with no surprises at the closing table.",
+  },
 ];
 
 const testimonials = [
@@ -112,7 +118,11 @@ const testimonials = [
   },
 ];
 
-const faqJsonLd = buildFaqPageSchema(normalizeFaqs(countyFaqs));
+const faqJsonLd = buildFaqPageSchema(
+  normalizeFaqs(
+    countyFaqs.map((faq) => ({ q: faq.q, a: stripMarkdownLinks(faq.a) })),
+  ),
+);
 const reviewsJsonLd = buildReviewsSchema(
   testimonials.map((t) => ({ author: t.name, reviewBody: t.quote })),
 );
@@ -185,7 +195,7 @@ export default function PimaCountyPage() {
         </section>
 
         {/* Cities Grid Section */}
-        <section className="w-full py-16 lg:py-24 bg-white">
+        <section id="areas" className="w-full py-16 lg:py-24 bg-white scroll-mt-[72px]">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-16">
               <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">
@@ -199,6 +209,16 @@ export default function PimaCountyPage() {
             <CountyCityCards countySlug="pima-county-az" cities={cities} />
           </div>
         </section>
+
+        <CTA
+          eyebrow=""
+          title="Ready to Start Your Home Mortgage Journey in Pima County?"
+          description="Our Pima County mortgage experts are here to guide you through every step of the home loan process. From Tucson to Oro Valley and surrounding communities, we help buyers and homeowners secure the right mortgage solutions with confidence."
+          primaryLabel="View All Pima County Areas"
+          primaryHref="#areas"
+          secondaryLabel="Call Us Now"
+        />
+
         <CountyMortgagePrograms countyName="Pima County" fhaLimit="$541,287" />
 
         <CountyTestimonials testimonials={testimonials} />
@@ -207,7 +227,10 @@ export default function PimaCountyPage() {
           <div className="max-w-4xl mx-auto px-6">
             <FaqAccordion
               title="Frequently Asked Questions"
-              items={countyFaqs}
+              items={countyFaqs.map((faq) => ({
+                q: faq.q,
+                a: renderGetInTouchText(faq.a),
+              }))}
             />
           </div>
         </section>

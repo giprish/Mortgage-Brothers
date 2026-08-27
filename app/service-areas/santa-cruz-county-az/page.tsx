@@ -136,7 +136,7 @@ export default function SantaCruzCountyPage() {
             </div>
           </div>
         </section>
-        <section className="w-full py-16 lg:py-24 bg-white">
+        <section id="areas" className="w-full py-16 lg:py-24 bg-white scroll-mt-[72px]">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-16">
               <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">Santa Cruz County mortgage services</h2>
@@ -146,6 +146,14 @@ export default function SantaCruzCountyPage() {
           </div>
         </section>
 
+        <CTA
+          eyebrow=""
+          title="Ready to Start Your Home Mortgage Journey in Santa Cruz County?"
+          description="Our Santa Cruz County mortgage experts are here to guide you through every step of the home loan process. From Nogales to Rio Rico and surrounding communities, we help buyers and homeowners secure the right mortgage solutions with confidence. Our experienced mortgage brokers help clients secure competitive mortgage rates and flexible home loan options across the region."
+          primaryLabel="View All Santa Cruz County Areas"
+          primaryHref="#areas"
+          secondaryLabel="Call Us Now"
+        />
 
         <CountyMortgagePrograms countyName="Santa Cruz County" fhaLimit="$541,287" />
 

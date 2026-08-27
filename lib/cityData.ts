@@ -1,7 +1,6 @@
 import { getSeoEntry, seoMetadata, type SeoEntry } from "./seo";
 import { getLiveCityFaqs } from "./liveCityFaqs";
 import { liveCityPageContent } from "./liveCityPageContent";
-import { boldLocationMortgagePhrases } from "./renderInlineLinks";
 
 export interface CityData {
   name: string;
@@ -13,10 +12,14 @@ export interface CityData {
   heroTitle: string;
   /** Hero subheading synced from live. */
   heroDescription: string;
+  /** Optional live-synced intro section heading. */
+  introTitle?: string;
   /** Body paragraphs under the local experts heading (live copy when available). */
   longDescriptions: string[];
   medianPrice: string;
   daysOnMarket: string;
+  /** Optional live-synced communities section heading. */
+  communitiesTitle?: string;
   communities: { title: string; description: string }[];
   /** Optional live-synced intro under Popular Communities; falls back to template copy. */
   communitiesIntro?: string;
@@ -32,6 +35,8 @@ export interface CityData {
   guidanceParagraphs: string[];
   expectTitle: string;
   expectItems: string[];
+  /** Optional live-synced FAQ section heading. */
+  faqTitle?: string;
   faqs: { question: string; answer: string }[];
   /** “Our {City} Mortgage Services” GetInTouch block (live copy when available). */
   getInTouchTitle: string;
@@ -282,9 +287,11 @@ function buildCityData(params: {
     description: seoDescription || cityCustomDescriptions[cityName] || defaultDescription,
     heroTitle: livePage?.heroTitle ?? defaultHeroTitle,
     heroDescription: livePage?.heroDescription ?? defaultHeroDescription,
+    introTitle: livePage?.introTitle,
     longDescriptions: livePage?.longDescriptions ?? defaultLongDescriptions,
     medianPrice,
     daysOnMarket,
+    communitiesTitle: livePage?.communitiesTitle,
     communities,
     communitiesIntro: livePage?.intro ?? defaultCommunitiesIntro,
     whyChooseTitle: livePage?.whyChooseTitle ?? defaultWhyChooseTitle,
@@ -295,11 +302,11 @@ function buildCityData(params: {
     guidanceParagraphs: livePage?.guidanceParagraphs ?? defaultGuidanceParagraphs,
     expectTitle: livePage?.expectTitle ?? defaultExpectTitle,
     expectItems: livePage?.expectItems ?? defaultExpectItems,
+    faqTitle: liveFaqs?.title,
     faqs,
     getInTouchTitle: livePage?.getInTouchTitle ?? `Our ${cityName} Mortgage Services`,
-    getInTouchParagraphs: (
-      livePage?.getInTouchParagraphs ?? defaultGetInTouchParagraphs
-    ).map((paragraph) => boldLocationMortgagePhrases(paragraph, cityName)),
+    getInTouchParagraphs:
+      livePage?.getInTouchParagraphs ?? defaultGetInTouchParagraphs,
   };
 }
 

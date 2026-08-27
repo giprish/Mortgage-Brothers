@@ -9,7 +9,9 @@ export type CTAProps = {
   /** Supporting copy under the heading. Pass `""` to hide. */
   description?: string;
   primaryLabel?: string | null;
+  primaryHref?: string;
   secondaryLabel?: string | null;
+  secondaryHref?: string;
 };
 
 const DEFAULT_EYEBROW = "READY WHEN YOU ARE";
@@ -23,7 +25,9 @@ export default function CTA({
   title = DEFAULT_TITLE,
   description = DEFAULT_DESCRIPTION,
   primaryLabel,
+  primaryHref,
   secondaryLabel,
+  secondaryHref,
 }: CTAProps) {
   return (
     <section className="w-full bg-[#052316] text-white py-14 sm:py-16 lg:py-20 text-center relative overflow-hidden border-t border-white/5">
@@ -51,7 +55,9 @@ export default function CTA({
 
         <HeroCtaButtons
           {...(primaryLabel !== undefined ? { primaryLabel } : {})}
+          {...(primaryHref !== undefined ? { primaryHref } : {})}
           {...(secondaryLabel !== undefined ? { secondaryLabel } : {})}
+          {...(secondaryHref !== undefined ? { secondaryHref } : {})}
         />
       </div>
     </section>
