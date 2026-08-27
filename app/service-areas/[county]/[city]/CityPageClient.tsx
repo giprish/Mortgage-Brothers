@@ -6,6 +6,7 @@ import FaqAccordion from "../../../component/FaqAccordion";
 import CTA from "../../../component/CTA";
 import GetInTouch from "../../../component/GetInTouch";
 import type { CityData } from "../../../../lib/cityData";
+import { renderInlineLinks } from "../../../../lib/renderInlineLinks";
 
 /* ─── Loan Programs Data ─── */
 const loanPrograms = [
@@ -459,7 +460,7 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
                       i < cityData.guidanceParagraphs.length - 1 ? "mb-4" : ""
                     }`}
                   >
-                    {paragraph}
+                    {renderInlineLinks(paragraph)}
                   </p>
                 ))}
               </div>
@@ -502,7 +503,10 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
             </div>
 
             <FaqAccordion
-              items={cityData.faqs.map((faq) => ({ q: faq.question, a: faq.answer }))}
+              items={cityData.faqs.map((faq) => ({
+                q: faq.question,
+                a: renderInlineLinks(faq.answer),
+              }))}
             />
           </div>
         </section>

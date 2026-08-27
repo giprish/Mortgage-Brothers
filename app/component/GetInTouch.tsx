@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { COMPANY } from "@/lib/company";
+import { renderInlineLinks } from "@/lib/renderInlineLinks";
 
 export type GetInTouchProps = {
   /** Visual theme. Dark is the default (loan-program final CTAs). */
@@ -208,7 +209,7 @@ export default function GetInTouch({
             <div className="space-y-4 max-w-4xl mx-auto">
               {bodyParagraphs.map((paragraph, index) => (
                 <p key={index} className={bodyClass}>
-                  {paragraph}
+                  {renderInlineLinks(paragraph)}
                 </p>
               ))}
             </div>
