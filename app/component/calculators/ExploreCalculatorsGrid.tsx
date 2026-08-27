@@ -3,6 +3,7 @@ import {
   SHARED_EXPLORE_CALCULATORS,
   type ExploreCalculatorItem,
 } from "@/lib/calculatorPageContent";
+import { renderInlineLinks } from "@/lib/renderInlineLinks";
 
 export type ExploreCalculatorsGridProps = {
   title: string;
@@ -45,7 +46,7 @@ export default function ExploreCalculatorsGrid({
           </h2>
           <div className="h-1 w-12 rounded-full bg-[#3fb364] mx-auto mb-5" aria-hidden />
           <p className="text-[#4e5b4e] text-[14px] sm:text-[15px] leading-[1.75] max-w-3xl mx-auto">
-            {intro}
+            {renderInlineLinks(intro)}
           </p>
         </div>
 

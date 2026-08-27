@@ -318,7 +318,7 @@ function InsightsPanel({ groups, nextSteps }: {
   nextSteps: string[];
 }) {
   return (
-    <div style={{ background: "#f7f8f5", border: `1px solid ${C.line}`, borderRadius: 10, padding: "20px 22px 22px", marginBottom: 18 }}>
+    <div style={{ background: "#f7f8f5", border: `1px solid ${C.line}`, borderRadius: 10, padding: "20px 22px 22px", marginTop: 24, marginBottom: 18 }}>
       <h3 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 600, margin: "0 0 12px", color: C.ink }}>Recommendations & Key Insights</h3>
       <div style={{ borderBottom: `1px solid ${C.line}`, marginBottom: 16 }} />
       <div className="insights-grid" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.3fr) minmax(0, 1fr)", gap: 20, alignItems: "start" }}>
@@ -554,7 +554,7 @@ function DownPaymentCalculator() {
   }, [loanType, downPct, homePrice, interestRate, loanTerm, creditScore, taxAnnual, insAnnual, hoaFees]);
 
   return (
-    <div style={{ background: C.paper, color: C.ink, fontFamily: SANS, fontSize: 15, lineHeight: 1.5, padding: "20px 12px 64px", overflowX: "hidden" }}>
+    <div style={{ background: C.paper, color: C.ink, fontFamily: SANS, fontSize: 15, lineHeight: 1.5, padding: "20px 12px 64px", overflowX: "hidden", marginTop: 24 }}>
       <div style={{ maxWidth: 1180, margin: "0 auto", width: "100%" }}>
 
         {/* Down Payment Milestones — bold, high-visibility centerpiece, full width at the very top */}
@@ -815,7 +815,13 @@ function DownPaymentCalculator() {
               </div>
             </div>
 
-            {/* Insights — last section, below all charts/tables */}
+            <p style={{ fontSize: 11.5, color: C.inkSoft, marginTop: 18, lineHeight: 1.5 }}>
+              This calculator is provided for informational purposes only and should not be considered financial advice. The calculations are estimates based on the information you provide and may not reflect your actual down payment requirements. Results are intended as a guide to help with your home buying planning.
+            </p>
+          </div>
+        </div>
+
+            {/* Insights — full width below the two-column layout */}
             <InsightsPanel
               groups={[
                 { title: "Financial Analysis", color: C.greenDeep, bullets: insights.financial },
@@ -824,11 +830,6 @@ function DownPaymentCalculator() {
               nextSteps={insights.nextSteps}
             />
 
-            <p style={{ fontSize: 11.5, color: C.inkSoft, marginTop: 18, lineHeight: 1.5 }}>
-              This calculator is provided for informational purposes only and should not be considered financial advice. The calculations are estimates based on the information you provide and may not reflect your actual down payment requirements. Results are intended as a guide to help with your home buying planning.
-            </p>
-          </div>
-        </div>
       </div>
       <style>{`
           /* Mobile calculator optimization */

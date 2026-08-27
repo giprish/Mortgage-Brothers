@@ -406,7 +406,7 @@ function TermSelector({ value, onChange }: { value: number; onChange: (v: number
 
 function InsightsPanel({ groups, nextSteps }: { groups: InsightGroup[]; nextSteps: string[] }) {
   return (
-    <div style={{ background: "#f7f8f5", border: `1px solid ${C.line}`, borderRadius: 10, padding: "20px 22px 22px", marginBottom: 18 }}>
+    <div style={{ background: "#f7f8f5", border: `1px solid ${C.line}`, borderRadius: 10, padding: "20px 22px 22px", marginTop: 24, marginBottom: 18 }}>
       <h2 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 600, margin: "0 0 12px", color: C.ink }}>Recommendations &amp; Key Insights</h2>
       <div style={{ borderBottom: `1px solid ${C.line}`, marginBottom: 16 }} />
       <div className="cvf-insights-grid" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.3fr) minmax(0, 1fr)", gap: 20, alignItems: "start" }}>
@@ -1046,6 +1046,13 @@ export default function ConventionalVsFhaCalculator() {
                 </div>
               </Panel>
 
+              <p style={{ fontSize: 11.5, color: C.inkSoft, marginTop: 18, lineHeight: 1.5 }}>
+                This comparison is for illustrative purposes only. Actual rates, mortgage insurance premiums, and loan limits vary by lender and are subject to change. Conventional PMI is modeled with automatic cancellation at 78% loan-to-value per the Homeowners Protection Act; actual cancellation timing may vary based on payment history and lender policy. Consult a Mortgage Brothers loan officer for a personalized comparison.
+              </p>
+            </div>
+          </div>
+
+              {/* Insights — full width below the two-column layout */}
               <InsightsPanel
                 groups={[
                   { title: "Program Comparison", color: C.greenDeep, bullets: insights.compare },
@@ -1054,11 +1061,6 @@ export default function ConventionalVsFhaCalculator() {
                 nextSteps={insights.nextSteps}
               />
 
-              <p style={{ fontSize: 11.5, color: C.inkSoft, marginTop: 18, lineHeight: 1.5 }}>
-                This comparison is for illustrative purposes only. Actual rates, mortgage insurance premiums, and loan limits vary by lender and are subject to change. Conventional PMI is modeled with automatic cancellation at 78% loan-to-value per the Homeowners Protection Act; actual cancellation timing may vary based on payment history and lender policy. Consult a Mortgage Brothers loan officer for a personalized comparison.
-              </p>
-            </div>
-          </div>
         </div>
         <style>{`
           @media (max-width: 1023px) {

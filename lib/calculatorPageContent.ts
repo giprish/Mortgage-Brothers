@@ -31,8 +31,18 @@ export type ExploreCalculatorItem = {
   bullets: [string, string];
 };
 
+export type CalculatorMidCtaContent = {
+  title: string;
+  description: string;
+  ctaLabel: string;
+  /** Defaults to `#get-pre-approved` when omitted. */
+  ctaHref?: string;
+};
+
 export type CalculatorPageContent = {
   explainer: CalculatorExplainerContent;
+  /** Green mid-page CTA band (above explore grid on live). */
+  midCta: CalculatorMidCtaContent;
   explore: {
     title: string;
     intro: string;
@@ -168,6 +178,12 @@ const CALCULATOR_PAGE_CONTENT: Record<string, CalculatorPageContent> = {
         },
       ],
     },
+    midCta: {
+      title: "Take the Next Step in Your Home Purchase",
+      description:
+        "Now that you've estimated your mortgage payments, let's discuss how to make your dream home a reality. Our team is here to guide you through the process, providing personalized advice and support every step of the way.",
+      ctaLabel: "Get Personalized Mortgage Guidance",
+    },
     explore: {
       title: "Explore More Mortgage Tools",
       intro:
@@ -219,6 +235,12 @@ const CALCULATOR_PAGE_CONTENT: Record<string, CalculatorPageContent> = {
             "By knowing your starting point financially, you can meet with lenders sooner and streamline your home search process.",
         },
       ],
+    },
+    midCta: {
+      title: "Ready to Find Your Perfect Arizona Home?",
+      description:
+        "Get a personalized affordability assessment from our expert mortgage advisors. We'll help you understand your buying power and find the right financing options for your dream home in Arizona.",
+      ctaLabel: "Get Pre-Approved Today",
     },
     explore: {
       title: "Explore Our Suite of Mortgage Calculators",
@@ -272,6 +294,12 @@ const CALCULATOR_PAGE_CONTENT: Record<string, CalculatorPageContent> = {
         },
       ],
     },
+    midCta: {
+      title: "Ready to Lower Your Mortgage Payments?",
+      description:
+        "Find out if refinancing makes financial sense for your situation. Our mortgage experts can help you navigate the refinance process and secure the best rates available in Arizona today.",
+      ctaLabel: "Get Your Free Refinance Consultation",
+    },
     explore: {
       title: "Explore Our Other Mortgage Calculators",
       intro:
@@ -324,6 +352,12 @@ const CALCULATOR_PAGE_CONTENT: Record<string, CalculatorPageContent> = {
         },
       ],
     },
+    midCta: {
+      title: "Ready to Make Your Housing Decision?",
+      description:
+        "Get personalized insights on whether renting or buying makes more financial sense for your situation. Our mortgage experts can help you interpret the results and explore your options.",
+      ctaLabel: "Get Expert Advice",
+    },
     explore: {
       title: "Mortgage Tools to Support Your Decision",
       intro:
@@ -369,6 +403,12 @@ const CALCULATOR_PAGE_CONTENT: Record<string, CalculatorPageContent> = {
             "Paying off your mortgage faster means achieving debt freedom sooner, giving you more financial flexibility for other goals like retirement or education funding.",
         },
       ],
+    },
+    midCta: {
+      title: "Ready to Save on Your Mortgage?",
+      description:
+        "See how much you could save with extra payments on your Arizona mortgage. Our mortgage experts can help you create a personalized payment plan that fits your budget and financial goals.",
+      ctaLabel: "Get a Personalized Payment Plan",
     },
     explore: {
       title: "Mortgage Calculator Suite",
@@ -422,6 +462,12 @@ const CALCULATOR_PAGE_CONTENT: Record<string, CalculatorPageContent> = {
         },
       ],
     },
+    midCta: {
+      title: "Get Expert Help with Your FHA Loan Application",
+      description:
+        "Not sure if an FHA loan is right for you? Our mortgage professionals can help you navigate FHA loan requirements, explain MIP costs, and find the best rates for your Arizona home purchase. We specialize in helping first-time homebuyers qualify with just 3.5% down payment.",
+      ctaLabel: "Contact Our FHA Loan Specialists Today",
+    },
     explore: {
       title: "Essential Mortgage Tools for Arizona Homebuyers",
       intro:
@@ -473,6 +519,12 @@ const CALCULATOR_PAGE_CONTENT: Record<string, CalculatorPageContent> = {
             "VA loans typically offer lower interest rates than conventional loans, saving you money over the life of your mortgage",
         },
       ],
+    },
+    midCta: {
+      title: "Ready to Secure Your VA Home Loan?",
+      description:
+        "Get personalized assistance with your VA loan application and discover how much you can afford with your military benefits. Our mortgage experts specialize in helping veterans and active-duty service members navigate the VA loan process.",
+      ctaLabel: "Get Your Free VA Loan Quote Today",
     },
     explore: {
       title: "Additional Mortgage Calculation Tools",
@@ -526,6 +578,12 @@ const CALCULATOR_PAGE_CONTENT: Record<string, CalculatorPageContent> = {
         },
       ],
     },
+    midCta: {
+      title: "Calculate Your Perfect Down Payment Today",
+      description:
+        "Unsure about how much to put down on your Arizona home? Our down payment calculator helps you find the optimal balance between upfront costs and monthly payments. Get personalized recommendations based on your financial situation.",
+      ctaLabel: "Get Your Free Down Payment Estimate",
+    },
     explore: {
       title: "Essential Mortgage Tools for Arizona Homebuyers",
       intro:
@@ -572,6 +630,12 @@ const CALCULATOR_PAGE_CONTENT: Record<string, CalculatorPageContent> = {
         },
       ],
     },
+    midCta: {
+      title: "Ready to Improve Your Mortgage Chances?",
+      description:
+        "Find out if your DTI ratio meets lender requirements for your Arizona home loan. Our mortgage experts can help you understand your options and improve your financial profile.",
+      ctaLabel: "Get Your Free DTI Analysis",
+    },
     explore: {
       title: "Mortgage Tools to Support Your Home Buying Journey",
       intro:
@@ -617,6 +681,12 @@ const CALCULATOR_PAGE_CONTENT: Record<string, CalculatorPageContent> = {
             "Consider future homeownership costs like property taxes, homeowners insurance, and potential HOA fees.",
         },
       ],
+    },
+    midCta: {
+      title: "Get Your Personalized Closing Cost Estimate Today",
+      description:
+        "Don't let hidden costs surprise you. Our experts will break down your specific closing expenses and help you plan your Arizona home purchase with confidence.",
+      ctaLabel: "Calculate My Closing Costs",
     },
     explore: {
       title: "Unlock More with Our Suite of Mortgage Calculators",
@@ -669,6 +739,12 @@ const CALCULATOR_PAGE_CONTENT: Record<string, CalculatorPageContent> = {
             "Use clear estimates to discuss options with a loan officer and choose the program that best aligns with your budget and homeownership goals.",
         },
       ],
+    },
+    midCta: {
+      title: "Ready to Choose Between Conventional and FHA?",
+      description:
+        "Get personalized guidance on which loan program fits your credit, down payment, and long-term plans. Our mortgage experts can walk you through your comparison results and help you apply with confidence.",
+      ctaLabel: "Talk to a Loan Specialist",
     },
     explore: {
       title: "Explore Our Other Mortgage Calculators",

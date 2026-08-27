@@ -313,7 +313,7 @@ function TermSelector({ value, onChange }: { value: number; onChange: (v: number
 
 function InsightsPanel({ groups, nextSteps }: { groups: InsightGroup[]; nextSteps: string[] }) {
   return (
-    <div style={{ background: "#f7f8f5", border: `1px solid ${C.line}`, borderRadius: 10, padding: "20px 22px 22px", marginBottom: 18 }}>
+    <div style={{ background: "#f7f8f5", border: `1px solid ${C.line}`, borderRadius: 10, padding: "20px 22px 22px", marginTop: 24, marginBottom: 18 }}>
       <h2 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 600, margin: "0 0 12px", color: C.ink }}>Recommendations &amp; Key Insights</h2>
       <div style={{ borderBottom: `1px solid ${C.line}`, marginBottom: 16 }} />
       <div className="fha-insights-grid" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.3fr) minmax(0, 1fr)", gap: 20, alignItems: "start" }}>
@@ -767,7 +767,13 @@ export default function FhaLoanCalculator() {
                 </div>
               </Panel>
 
-              {/* Insights — last section, below all charts/tables */}
+              <p style={{ fontSize: 11.5, color: C.inkSoft, marginTop: 18, lineHeight: 1.5 }}>
+                This FHA loan calculator provides estimates only. Property taxes and homeowners insurance are auto-estimated based on typical rates for your home price and can be overridden; actual amounts vary by location and provider. HOA fees and closing costs are not included. Results may vary based on your specific financial situation and current FHA guidelines. For a complete assessment of your mortgage costs and eligibility, please consult with one of our mortgage professionals. Rates and terms are subject to change without notice.
+              </p>
+            </div>
+          </div>
+
+              {/* Insights — full width below the two-column layout */}
               <InsightsPanel
                 groups={[
                   { title: "FHA Cost Analysis", color: C.greenDeep, bullets: insights.cost },
@@ -776,11 +782,7 @@ export default function FhaLoanCalculator() {
                 nextSteps={insights.nextSteps}
               />
 
-              <p style={{ fontSize: 11.5, color: C.inkSoft, marginTop: 18, lineHeight: 1.5 }}>
-                This FHA loan calculator provides estimates only. Property taxes and homeowners insurance are auto-estimated based on typical rates for your home price and can be overridden; actual amounts vary by location and provider. HOA fees and closing costs are not included. Results may vary based on your specific financial situation and current FHA guidelines. For a complete assessment of your mortgage costs and eligibility, please consult with one of our mortgage professionals. Rates and terms are subject to change without notice.
-              </p>
-            </div>
-          </div>
+
         </div>
         <style>{`
           @media (max-width: 1023px) {

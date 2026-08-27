@@ -312,7 +312,7 @@ function TermSelector({ value, onChange }: { value: number; onChange: (v: number
 
 function InsightsPanel({ groups, nextSteps }: { groups: InsightGroup[]; nextSteps: string[] }) {
   return (
-    <div style={{ background: "#f7f8f5", border: `1px solid ${C.line}`, borderRadius: 10, padding: "20px 22px 22px", marginBottom: 18 }}>
+    <div style={{ background: "#f7f8f5", border: `1px solid ${C.line}`, borderRadius: 10, padding: "20px 22px 22px", marginTop: 24, marginBottom: 18 }}>
       <h2 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 600, margin: "0 0 12px", color: C.ink }}>Recommendations &amp; Key Insights</h2>
       <div style={{ borderBottom: `1px solid ${C.line}`, marginBottom: 16 }} />
       <div className="va-insights-grid" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.3fr) minmax(0, 1fr)", gap: 20, alignItems: "start" }}>
@@ -779,7 +779,13 @@ export default function VaLoanCalculator() {
                 </div>
               </Panel>
 
-              {/* Insights — last section, below all charts/tables */}
+              <p style={{ fontSize: 11.5, color: C.inkSoft, marginTop: 18, lineHeight: 1.5 }}>
+                The information provided by this VA Loan Calculator is for illustrative purposes only and should not be considered financial advice. Results are based on user-input data and standard calculations. Actual loan terms, interest rates, funding fees, and other financial parameters may vary. All loans subject to underwriter approval.
+              </p>
+            </div>
+          </div>
+
+              {/* Insights — full width below the two-column layout */}
               <InsightsPanel
                 groups={[
                   { title: "VA Loan Analysis", color: C.greenDeep, bullets: insights.loan },
@@ -788,11 +794,7 @@ export default function VaLoanCalculator() {
                 nextSteps={insights.nextSteps}
               />
 
-              <p style={{ fontSize: 11.5, color: C.inkSoft, marginTop: 18, lineHeight: 1.5 }}>
-                The information provided by this VA Loan Calculator is for illustrative purposes only and should not be considered financial advice. Results are based on user-input data and standard calculations. Actual loan terms, interest rates, funding fees, and other financial parameters may vary. All loans subject to underwriter approval.
-              </p>
-            </div>
-          </div>
+
         </div>
         <style>{`
           @media (max-width: 1023px) {

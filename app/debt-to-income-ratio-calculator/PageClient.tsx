@@ -461,7 +461,7 @@ function ResultLine({
 
 function InsightsPanel({ groups, nextSteps }: { groups: InsightGroup[]; nextSteps: string[] }) {
   return (
-    <div style={{ background: "#f7f8f5", border: `1px solid ${C.line}`, borderRadius: 10, padding: "20px 22px 22px", marginBottom: 18 }}>
+    <div style={{ background: "#f7f8f5", border: `1px solid ${C.line}`, borderRadius: 10, padding: "20px 22px 22px", marginTop: 24, marginBottom: 18 }}>
       <h2 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 600, margin: "0 0 12px", color: C.ink }}>Recommendations &amp; Key Insights</h2>
       <div style={{ borderBottom: `1px solid ${C.line}`, marginBottom: 16 }} />
       <div className="insights-grid" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.3fr) minmax(0, 1fr)", gap: 20, alignItems: "start" }}>
@@ -859,7 +859,13 @@ export default function DtiCalculator() {
                 </div>
               </div>
 
-              {/* Insights — last section, below all charts/tables */}
+              <p style={{ fontSize: 11.5, color: C.inkSoft, marginTop: 18, lineHeight: 1.5 }}>
+                The Debt-to-Income Ratio Calculator is provided for informational and educational purposes only. Results are estimates based on the information you provide and may not reflect your actual financial situation. This calculator does not guarantee loan approval or specific interest rates. The calculations are hypothetical examples only and should not be relied upon as the sole basis for financial decisions.
+              </p>
+            </div>
+          </div>
+
+              {/* Insights — full width below the two-column layout */}
               <InsightsPanel
                 groups={[
                   { title: "DTI Analysis", color: C.greenDeep, bullets: insights.dti },
@@ -868,11 +874,6 @@ export default function DtiCalculator() {
                 nextSteps={insights.nextSteps}
               />
 
-              <p style={{ fontSize: 11.5, color: C.inkSoft, marginTop: 18, lineHeight: 1.5 }}>
-                The Debt-to-Income Ratio Calculator is provided for informational and educational purposes only. Results are estimates based on the information you provide and may not reflect your actual financial situation. This calculator does not guarantee loan approval or specific interest rates. The calculations are hypothetical examples only and should not be relied upon as the sole basis for financial decisions.
-              </p>
-            </div>
-          </div>
         </div>
         <style>{`
           @media (max-width: 1023px) {

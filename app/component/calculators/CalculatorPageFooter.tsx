@@ -1,3 +1,5 @@
+import CalculatorMidCta from "./CalculatorMidCta";
+import ClosingCostChallengeGame from "./ClosingCostChallengeGame";
 import ExploreCalculatorsGrid from "./ExploreCalculatorsGrid";
 import GetInTouch from "../GetInTouch";
 import { getCalculatorPageContentOrThrow } from "@/lib/calculatorPageContent";
@@ -8,9 +10,18 @@ type Props = {
 };
 
 export default function CalculatorPageFooter({ path }: Props) {
-  const { explore, contact } = getCalculatorPageContentOrThrow(path);
+  const { midCta, explore, contact } = getCalculatorPageContentOrThrow(path);
+  const showClosingCostGame = path === "/home-purchase-closing-cost-calculator/";
+
   return (
     <>
+      <CalculatorMidCta
+        title={midCta.title}
+        description={midCta.description}
+        ctaLabel={midCta.ctaLabel}
+        ctaHref={midCta.ctaHref}
+      />
+      {showClosingCostGame ? <ClosingCostChallengeGame /> : null}
       <ExploreCalculatorsGrid title={explore.title} intro={explore.intro} />
       <GetInTouch
         theme="light"

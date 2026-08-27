@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 
 export const INLINE_LINK_CLASS =
-  "text-[#3fb364] no-underline hover:underline";
+  "font-bold text-[#3fb364] no-underline hover:text-[#2d8545] hover:no-underline";
 
 export const INLINE_BOLD_CLASS = "font-bold text-[#052316]";
 
@@ -20,6 +20,9 @@ const CITY_PAGE_INLINE_LINKS: { phrase: string; href: string }[] = [
   { phrase: "FHA loans", href: "/fha-home-loans-arizona/" },
   { phrase: "Jumbo loans", href: "/jumbo-loans-arizona/" },
   { phrase: "jumbo loans", href: "/jumbo-loans-arizona/" },
+  { phrase: "VA loans", href: "/va-loans-arizona/" },
+  { phrase: "VA Loan", href: "/va-loans-arizona/" },
+  { phrase: "VA loan", href: "/va-loans-arizona/" },
 ].sort((a, b) => b.phrase.length - a.phrase.length);
 
 type InlineMatch = {

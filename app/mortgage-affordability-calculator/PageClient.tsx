@@ -369,7 +369,7 @@ function DtiMilestoneBar({ scenarios }: { scenarios: Scenario[] }) {
 }
 function InsightsPanel({ groups, nextSteps }: { groups: { title: string; color: string; bullets: string[] }[]; nextSteps: string[] }) {
   return (
-    <div style={{ background: "#f7f8f5", border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(28,42,23,0.06), 0 6px 20px rgba(28,42,23,0.05)", padding: 22, marginBottom: 20 }}>
+    <div style={{ background: "#f7f8f5", border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(28,42,23,0.06), 0 6px 20px rgba(28,42,23,0.05)", padding: 22, marginTop: 24, marginBottom: 20 }}>
       <h2 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 600, margin: "0 0 12px", color: C.ink }}>Recommendations & Key Insights</h2>
       <div style={{ borderBottom: `1px solid ${C.line}`, marginBottom: 16 }} />
       <div className="insights-grid" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.3fr) minmax(0, 1fr)", gap: 20, alignItems: "start" }}>
@@ -720,7 +720,13 @@ export default function MortgageAffordabilityCalculator() {
                 />
               </div>
 
-              {/* Insights — last section, below all charts/tables */}
+              <p style={{ fontSize: 11.5, color: C.inkSoft, marginTop: 8, lineHeight: 1.5 }}>
+                Prepared by Mortgage Brothers LLC · NMLS #1007154 · AZ MB #MB0922514 · Licensed in Arizona only · Educational estimate, not a commitment to lend.
+              </p>
+            </div>
+          </div>
+
+              {/* Insights — full width below the two-column layout */}
               <InsightsPanel
                 groups={[
                   { title: "Financial Analysis", color: C.greenDeep, bullets: insights.financial },
@@ -729,11 +735,7 @@ export default function MortgageAffordabilityCalculator() {
                 nextSteps={insights.nextSteps}
               />
 
-              <p style={{ fontSize: 11.5, color: C.inkSoft, marginTop: 8, lineHeight: 1.5 }}>
-                Prepared by Mortgage Brothers LLC · NMLS #1007154 · AZ MB #MB0922514 · Licensed in Arizona only · Educational estimate, not a commitment to lend.
-              </p>
-            </div>
-          </div>
+
         </div>
         <style>{`
           .mac-layout > * {

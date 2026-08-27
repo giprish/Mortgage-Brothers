@@ -311,7 +311,7 @@ function PayoffMilestoneBar({ n, payoffMonth }: { n: number; payoffMonth: number
 
 function InsightsPanel({ groups, nextSteps }: { groups: InsightGroup[]; nextSteps: string[] }) {
   return (
-    <div style={{ background: "#f7f8f5", border: `1px solid ${C.line}`, borderRadius: 10, padding: "20px 22px 22px", marginBottom: 18 }}>
+    <div style={{ background: "#f7f8f5", border: `1px solid ${C.line}`, borderRadius: 10, padding: "20px 22px 22px", marginTop: 24, marginBottom: 18 }}>
       <h2 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 600, margin: "0 0 12px", color: C.ink }}>Recommendations &amp; Key Insights</h2>
       <div style={{ borderBottom: `1px solid ${C.line}`, marginBottom: 16 }} />
       <div className="epc-insights-grid" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.3fr) minmax(0, 1fr)", gap: 20, alignItems: "start" }}>
@@ -710,7 +710,13 @@ export default function ExtraPaymentCalculator() {
                 </div>
               </Panel>
 
-              {/* Insights — last section, below all charts/tables */}
+              <p style={{ fontSize: 11.5, color: C.inkSoft, marginTop: 18, lineHeight: 1.5 }}>
+                This Extra Payment Calculator is for illustrative purposes only and not a guarantee of actual savings or loan terms. Results are estimates based on the information provided and may not reflect your actual situation.
+              </p>
+            </div>
+          </div>
+
+              {/* Insights — full width below the two-column layout */}
               <InsightsPanel
                 groups={[
                   { title: "Interest Savings", color: C.greenDeep, bullets: insights.interest },
@@ -719,11 +725,7 @@ export default function ExtraPaymentCalculator() {
                 nextSteps={insights.nextSteps}
               />
 
-              <p style={{ fontSize: 11.5, color: C.inkSoft, marginTop: 18, lineHeight: 1.5 }}>
-                This Extra Payment Calculator is for illustrative purposes only and not a guarantee of actual savings or loan terms. Results are estimates based on the information provided and may not reflect your actual situation.
-              </p>
-            </div>
-          </div>
+
         </div>
         <style>{`
           @media (max-width: 1023px) {
