@@ -5,6 +5,8 @@ import Navbar from "../component/Navbar";
 import LoanProgramHero from "../component/LoanProgramHero";
 import CalcSelect from "../component/CalcSelect";
 import Footer from "../component/Footer";
+import CalculatorExplainerSection from "../component/calculators/CalculatorExplainerSection";
+import CalculatorPageFooter from "../component/calculators/CalculatorPageFooter";
 
 type LoanType = "conventional" | "fha" | "va" | "usda";
 type RatioStatus = "pass" | "warn" | "fail";
@@ -1011,7 +1013,9 @@ export default function DownPaymentCalculatorPage() {
           ctaLabel=""
           note=""
         />
+        <CalculatorExplainerSection path="/down-payment-calculator/" />
         <DownPaymentCalculator />
+        <CalculatorPageFooter path="/down-payment-calculator/" />
       </main>
       <Footer />
     </div>

@@ -5,6 +5,8 @@ import Navbar from "../component/Navbar";
 import LoanProgramHero from "../component/LoanProgramHero";
 import CalcSelect from "../component/CalcSelect";
 import Footer from "../component/Footer";
+import CalculatorExplainerSection from "../component/calculators/CalculatorExplainerSection";
+import CalculatorPageFooter from "../component/calculators/CalculatorPageFooter";
 import { InteractiveLineChart } from "../component/charts/lazy";
 
 /* ============================================================
@@ -770,6 +772,8 @@ export default function RentVsBuyCalculator() {
           note=""
         />
 
+        <CalculatorExplainerSection path="/rent-vs-buy-calculator/" />
+
         <div style={{ maxWidth: 1220, margin: "0 auto", padding: "32px 20px 64px" }}>
           {/* Break-Even Milestone — bold, high-visibility centerpiece, full width at the very top */}
           <div style={{
@@ -1151,6 +1155,7 @@ export default function RentVsBuyCalculator() {
           .dpc-input:hover { border-color: #a9b59c; }
           .dpc-input:focus { background: #ffffff; border-color: ${C.green}; box-shadow: 0 0 0 3px ${C.greenPale}; }
         `}</style>
+        <CalculatorPageFooter path="/rent-vs-buy-calculator/" />
       </main>
       <Footer />
     </div>

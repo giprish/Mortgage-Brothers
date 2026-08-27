@@ -20,6 +20,8 @@ export type GetInTouchProps = {
   ctaHref?: string;
   /** Pre-approve button label. */
   ctaLabel?: string;
+  /** Optional paragraph renderer (city pages pass renderGetInTouchText). */
+  renderParagraph?: (text: string) => React.ReactNode;
 };
 
 const DEFAULT_TITLE = "Get in Touch with Arizona's Mortgage Experts";
@@ -167,6 +169,7 @@ export default function GetInTouch({
   showPreApproveCta = false,
   ctaHref = "#get-pre-approved",
   ctaLabel = "GET PRE-APPROVED →",
+  renderParagraph = renderInlineLinks,
 }: GetInTouchProps) {
   const isLight = theme === "light";
   const bodyParagraphs =
@@ -209,7 +212,7 @@ export default function GetInTouch({
             <div className="space-y-4 max-w-4xl mx-auto">
               {bodyParagraphs.map((paragraph, index) => (
                 <p key={index} className={bodyClass}>
-                  {renderInlineLinks(paragraph)}
+                  {renderParagraph(paragraph)}
                 </p>
               ))}
             </div>

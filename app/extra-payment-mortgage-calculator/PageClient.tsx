@@ -4,6 +4,8 @@ import { useMemo, useState, type CSSProperties, type ReactNode } from "react";
 import Navbar from "../component/Navbar";
 import LoanProgramHero from "../component/LoanProgramHero";
 import Footer from "../component/Footer";
+import CalculatorExplainerSection from "../component/calculators/CalculatorExplainerSection";
+import CalculatorPageFooter from "../component/calculators/CalculatorPageFooter";
 import { InteractivePieChart } from "../component/charts/lazy";
 
 /* ============================================================
@@ -475,6 +477,8 @@ export default function ExtraPaymentCalculator() {
           note=""
         />
 
+        <CalculatorExplainerSection path="/extra-payment-mortgage-calculator/" />
+
         <div style={{ maxWidth: 1180, margin: "0 auto", padding: "20px 12px 48px" }}>
           {/* Payoff Milestone — bold, high-visibility centerpiece, full width at the very top */}
           <div style={{
@@ -729,6 +733,7 @@ export default function ExtraPaymentCalculator() {
           .epc-input:hover { border-color: #a9b59c; }
           .epc-input:focus { background: #ffffff; border-color: ${C.greenBright}; box-shadow: 0 0 0 3px ${C.greenWash}; }
         `}</style>
+        <CalculatorPageFooter path="/extra-payment-mortgage-calculator/" />
       </main>
       <Footer />
     </div>

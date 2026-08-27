@@ -6,7 +6,11 @@ import FaqAccordion from "../../../component/FaqAccordion";
 import CTA from "../../../component/CTA";
 import GetInTouch from "../../../component/GetInTouch";
 import type { CityData } from "../../../../lib/cityData";
-import { renderInlineLinks } from "../../../../lib/renderInlineLinks";
+import {
+  renderCityIntroText,
+  renderGetInTouchText,
+  renderInlineLinks,
+} from "../../../../lib/renderInlineLinks";
 
 /* ─── Loan Programs Data ─── */
 const loanPrograms = [
@@ -116,6 +120,18 @@ const loanPrograms = [
   }
 ];
 
+function renderHeroTitle(title: string, city: string) {
+  if (title.startsWith(city)) {
+    return (
+      <>
+        <span className="text-[#63cd85]">{city}</span>
+        {title.slice(city.length)}
+      </>
+    );
+  }
+  return title;
+}
+
 export default function GenericCityDetailPage({ cityData }: { cityData: CityData }) {
   const countySlug = cityData.countySlug;
   const countyName = cityData.countyName;
@@ -141,7 +157,7 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
               {/* Left — Text (h1 first in DOM for faster mobile LCP) */}
               <div>
                 <h1 className="text-white text-[32px] lg:text-[46px] font-semibold leading-[1.12] mb-4 lg:mb-5">
-                  <span className="text-[#63cd85]">{city}</span> Mortgages&nbsp;– Your Local Mortgage Experts
+                  {renderHeroTitle(cityData.heroTitle, city)}
                 </h1>
                 {/* Breadcrumbs */}
                 <div className="flex items-center gap-2 text-[12px] font-semibold mb-6 lg:mb-8">
@@ -152,7 +168,7 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
                   <span className="text-[#3fb364]">{city}</span>
                 </div>
                 <p className="text-[#c8c8b8] text-[15px] lg:text-[16px] leading-[1.75] mb-8 max-w-lg">
-                  Expert {city} mortgages, competitive mortgage rates, and personalized home loan solutions for buyers and homeowners in {city}, Arizona.
+                  {cityData.heroDescription}
                 </p>
 
                 {/* CTA */}
@@ -214,7 +230,7 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
                   key={i}
                   className="text-[#4e5b4e] text-[15px] lg:text-[16px] leading-[1.8]"
                 >
-                  {paragraph}
+                  {renderCityIntroText(paragraph)}
                 </p>
               ))}
             </div>
@@ -519,6 +535,7 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
           title={cityData.getInTouchTitle}
           showDivider
           paragraphs={cityData.getInTouchParagraphs}
+          renderParagraph={renderGetInTouchText}
         />
 
       </main>

@@ -5,6 +5,8 @@ import Navbar from "../component/Navbar";
 import LoanProgramHero from "../component/LoanProgramHero";
 import Footer from "../component/Footer";
 import FaqAccordion from "../component/FaqAccordion";
+import CalculatorExplainerSection from "../component/calculators/CalculatorExplainerSection";
+import CalculatorPageFooter from "../component/calculators/CalculatorPageFooter";
 import { InteractivePieChart } from "../component/charts/lazy";
 import { faqs as pageFaqs } from "./faqs";
 
@@ -377,6 +379,8 @@ export default function ClosingCostCalculator() {
           note=""
         />
 
+        <CalculatorExplainerSection path="/home-purchase-closing-cost-calculator/" />
+
         <div style={{ maxWidth: 1180, margin: "0 auto", padding: "28px 20px 64px", boxSizing: "border-box" }}>
           <div className="ccc-layout" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: 24, alignItems: "start" }}>
             {/* ============ INPUT COLUMN ============ */}
@@ -505,6 +509,7 @@ export default function ClosingCostCalculator() {
           .ccc-input:hover { border-color: #a9b59c; }
           .ccc-input:focus { background: #ffffff; border-color: ${C.greenBright}; box-shadow: 0 0 0 3px ${C.greenWash}; }
         `}</style>
+        <CalculatorPageFooter path="/home-purchase-closing-cost-calculator/" />
       </main>
       <section className="w-full py-14 sm:py-16 lg:py-20 bg-[#fcf9f3] border-t border-[#e8e0d0]/40">
         <div className="max-w-4xl mx-auto px-6 lg:px-10">

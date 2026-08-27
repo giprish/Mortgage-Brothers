@@ -4,6 +4,8 @@ import { useMemo, useState, useId, cloneElement, isValidElement, type ReactNode 
 import Navbar from "../component/Navbar";
 import LoanProgramHero from "../component/LoanProgramHero";
 import Footer from "../component/Footer";
+import CalculatorExplainerSection from "../component/calculators/CalculatorExplainerSection";
+import CalculatorPageFooter from "../component/calculators/CalculatorPageFooter";
 import { InteractivePieChart, BasicPaymentOverTimeChart } from "../component/charts/lazy";
 
 /* ============================================================
@@ -557,6 +559,8 @@ export default function BasicMortgageCalculator() {
           note=""
         />
 
+        <CalculatorExplainerSection path="/basic-mortgage-payment-calculator/" />
+
         <div style={{ maxWidth: 1180, margin: "0 auto", padding: "20px 12px 48px" }}>
         <div className="bmc-layout" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: 24, alignItems: "start" }}>
           {/* ============ INPUTS ============ */}
@@ -834,7 +838,8 @@ export default function BasicMortgageCalculator() {
         .dpc-input { transition: border-color .15s, box-shadow .15s, background .15s; }
         .dpc-input:hover { border-color: #a9b59c; }
         .dpc-input:focus { background: #ffffff; border-color: ${C.green}; box-shadow: 0 0 0 3px ${C.greenPale}; }
-      `}</style>
+        `}</style>
+        <CalculatorPageFooter path="/basic-mortgage-payment-calculator/" />
       </main>
       <Footer />
     </div>

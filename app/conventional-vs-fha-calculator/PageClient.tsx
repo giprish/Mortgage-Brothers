@@ -5,6 +5,8 @@ import Navbar from "../component/Navbar";
 import LoanProgramHero from "../component/LoanProgramHero";
 import CalcSelect from "../component/CalcSelect";
 import Footer from "../component/Footer";
+import CalculatorExplainerSection from "../component/calculators/CalculatorExplainerSection";
+import CalculatorPageFooter from "../component/calculators/CalculatorPageFooter";
 import {
   ResponsiveContainer,
   BarChart,
@@ -681,6 +683,8 @@ export default function ConventionalVsFhaCalculator() {
           note=""
         />
 
+        <CalculatorExplainerSection path="/conventional-vs-fha-calculator/" />
+
         <div style={{ maxWidth: 1180, margin: "0 auto", padding: "28px 20px 64px", boxSizing: "border-box" }}>
           <div
             style={{
@@ -1071,6 +1075,7 @@ export default function ConventionalVsFhaCalculator() {
           .cvf-input:hover { border-color: #a9b59c; }
           .cvf-input:focus { background: #ffffff; border-color: ${C.greenBright}; box-shadow: 0 0 0 3px ${C.greenWash}; }
         `}</style>
+        <CalculatorPageFooter path="/conventional-vs-fha-calculator/" />
       </main>
       <Footer />
     </div>

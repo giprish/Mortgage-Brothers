@@ -1,6 +1,7 @@
 import { getSeoEntry, seoMetadata, type SeoEntry } from "./seo";
 import { getLiveCityFaqs } from "./liveCityFaqs";
 import { liveCityPageContent } from "./liveCityPageContent";
+import { boldLocationMortgagePhrases } from "./renderInlineLinks";
 
 export interface CityData {
   name: string;
@@ -8,6 +9,10 @@ export interface CityData {
   countyName: string;
   countySlug: string;
   description: string;
+  /** Hero H1 synced from live. */
+  heroTitle: string;
+  /** Hero subheading synced from live. */
+  heroDescription: string;
   /** Body paragraphs under the local experts heading (live copy when available). */
   longDescriptions: string[];
   medianPrice: string;
@@ -236,9 +241,11 @@ function buildCityData(params: {
   ];
 
   const defaultDescription = `Home loans, refinancing, and pre-approvals for ${cityName} buyers.`;
+  const defaultHeroTitle = `${cityName} Mortgage Experts - Your Local Home Loan Partners`;
+  const defaultHeroDescription = `Mortgage Brothers LLC provides trusted ${cityName} mortgage solutions for homebuyers and homeowners throughout the area. Our experienced mortgage brokers in ${cityName} AZ work with multiple lenders.`;
   const defaultLongDescriptions = [
-    `As experienced mortgage lenders serving ${cityName} AZ, our team helps borrowers navigate the home financing process with confidence. From first-time homebuyers to homeowners exploring refinancing opportunities, we provide mortgage solutions tailored to the ${cityName} AZ real estate market.`,
-    `Whether you're purchasing a primary residence, an investment property, or refinancing an existing loan, we help you secure dependable mortgage loans in ${cityName} Arizona with competitive rates and transparent guidance.`,
+    `As experienced **mortgage lenders serving ${cityName} AZ**, our team helps borrowers navigate the home financing process with confidence. From first-time homebuyers to homeowners exploring refinancing opportunities, we provide mortgage solutions tailored to the ${cityName} AZ real estate market.`,
+    `Whether you're purchasing a primary residence, an investment property, or refinancing an existing loan, we help you secure dependable **mortgage loans in ${cityName} Arizona** with competitive rates and transparent guidance.`,
   ];
   const defaultCommunitiesIntro = `${cityName} is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:`;
   const defaultWhyChooseTitle = `Why Choose Us as Your ${cityName} Local Mortgage Team`;
@@ -273,6 +280,8 @@ function buildCityData(params: {
     countyName,
     countySlug,
     description: seoDescription || cityCustomDescriptions[cityName] || defaultDescription,
+    heroTitle: livePage?.heroTitle ?? defaultHeroTitle,
+    heroDescription: livePage?.heroDescription ?? defaultHeroDescription,
     longDescriptions: livePage?.longDescriptions ?? defaultLongDescriptions,
     medianPrice,
     daysOnMarket,
@@ -288,8 +297,9 @@ function buildCityData(params: {
     expectItems: livePage?.expectItems ?? defaultExpectItems,
     faqs,
     getInTouchTitle: livePage?.getInTouchTitle ?? `Our ${cityName} Mortgage Services`,
-    getInTouchParagraphs:
-      livePage?.getInTouchParagraphs ?? defaultGetInTouchParagraphs,
+    getInTouchParagraphs: (
+      livePage?.getInTouchParagraphs ?? defaultGetInTouchParagraphs
+    ).map((paragraph) => boldLocationMortgagePhrases(paragraph, cityName)),
   };
 }
 

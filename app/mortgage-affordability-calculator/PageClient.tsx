@@ -4,6 +4,8 @@ import { useMemo, useState, type ReactNode } from "react";
 import Navbar from "../component/Navbar";
 import LoanProgramHero from "../component/LoanProgramHero";
 import Footer from "../component/Footer";
+import CalculatorExplainerSection from "../component/calculators/CalculatorExplainerSection";
+import CalculatorPageFooter from "../component/calculators/CalculatorPageFooter";
 import { ScenarioBarChart } from "../component/charts/lazy";
 
 /* ============================================================
@@ -512,6 +514,8 @@ export default function MortgageAffordabilityCalculator() {
           note=""
         />
 
+        <CalculatorExplainerSection path="/mortgage-affordability-calculator/" />
+
         <div style={{ maxWidth: 1180, margin: "0 auto", padding: "16px 12px 48px", width: "100%", boxSizing: "border-box" }}>
           {/* DTI Milestones — bold, high-visibility centerpiece, full width at the very top */}
           <div style={{
@@ -764,6 +768,7 @@ export default function MortgageAffordabilityCalculator() {
             .mac-input { font-size: 14px !important; }
           }
         `}</style>
+        <CalculatorPageFooter path="/mortgage-affordability-calculator/" />
       </main>
       <Footer />
     </div>

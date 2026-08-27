@@ -4,6 +4,8 @@ import { useMemo, useState, type ReactNode } from "react";
 import Navbar from "../component/Navbar";
 import LoanProgramHero from "../component/LoanProgramHero";
 import Footer from "../component/Footer";
+import CalculatorExplainerSection from "../component/calculators/CalculatorExplainerSection";
+import CalculatorPageFooter from "../component/calculators/CalculatorPageFooter";
 
 /* ============================================================
    DESIGN TOKENS (matches the suite's shared palette/typography)
@@ -332,7 +334,7 @@ function CompareRow({ name, value, pct, color, marginBottom = 16 }: { name: stri
 }
 function InsightsPanel({ groups, nextSteps }: { groups: { title: string; color: string; bullets: string[] }[]; nextSteps: string[] }) {
   return (
-    <div style={{ background: "#f7f7f2", border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(24,42,28,0.04), 0 8px 24px -12px rgba(24,42,28,0.18)", padding: 22, marginBottom: 20 }}>
+    <div style={{ background: "#f7f7f2", border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(24,42,28,0.04), 0 8px 24px -12px rgba(24,42,28,0.18)", padding: 22, marginTop: 20, marginBottom: 20 }}>
       <h2 style={{ fontFamily: SERIF, fontSize: 18, fontWeight: 600, margin: "0 0 12px", color: C.ink }}>Recommendations & Key Insights</h2>
       <div style={{ borderBottom: `1px solid ${C.line}`, marginBottom: 16 }} />
       <div className="insights-grid" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1.3fr) minmax(0, 1fr)", gap: 20, alignItems: "start" }}>
@@ -478,6 +480,8 @@ export default function RefinanceCalculator() {
           ctaLabel=""
           note=""
         />
+
+        <CalculatorExplainerSection path="/refinance-calculator/" />
 
         <div style={{ maxWidth: 1180, margin: "0 auto", padding: "20px 12px 48px" }}>
           {/* Break-Even Milestone — bold, high-visibility centerpiece, full width at the very top */}
@@ -718,77 +722,83 @@ export default function RefinanceCalculator() {
                     <h3 style={{ fontFamily: SERIF, fontSize: 15.5, fontWeight: 600, margin: "0 0 16px" }}>Total Interest Remaining</h3>
                     <CompareRow name="Current loan" value={fmtWhole(r.currentTotalInterest)} pct={(r.currentTotalInterest / Math.max(r.currentTotalInterest, r.newTotalInterest, 1)) * 100} color="#b7bdb1" />
                     <CompareRow name="Proposed refinance" value={fmtWhole(r.newTotalInterest)} pct={(r.newTotalInterest / Math.max(r.currentTotalInterest, r.newTotalInterest, 1)) * 100} color={r.interestStatus === "increase" ? C.amber : C.green} marginBottom={0} />
-              </div>
-
-                  <div style={{ background: C.card, border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(24,42,28,0.04), 0 8px 24px -12px rgba(24,42,28,0.18)", padding: "4px 0" }}>
-                    <button onClick={() => setShowDetails((v) => !v)}
-                      style={{ width: "100%", background: "none", border: "none", padding: "16px 22px", display: "flex", justifyContent: "space-between", alignItems: "center", cursor: "pointer", fontFamily: SERIF, fontSize: 15.5, fontWeight: 600, color: C.ink }}>
-                      All calculation details
-                      <span style={{ fontFamily: MONO, color: C.inkSoft, fontSize: 13, transform: showDetails ? "rotate(180deg)" : "none", transition: "transform .2s ease" }}>▾</span>
-                    </button>
-                    {showDetails && (
-                      <div style={{ padding: "0 22px 20px" }} className="calc-table-scroll">
-                        <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12.5 }}>
-                          <tbody>
-                            {([
-                              ["Current loan balance", fmtWhole(r.currentBalance)],
-                              ["Proposed new loan amount", fmtWhole(r.newLoanAmount)],
-                              ["Closing costs financed", r.financed ? "Yes" : "No"],
-                              ["Current annual rate", r.currentRatePct.toFixed(3) + "%"],
-                              ["Current monthly rate", (r.currentMonthlyRate * 100).toFixed(6) + "%"],
-                              ["New annual rate", r.newRatePct.toFixed(3) + "%"],
-                              ["New monthly rate", (r.newMonthlyRate * 100).toFixed(6) + "%"],
-                              ["Current term", r.currentTermYears + " yrs (" + r.currentN + " payments)"],
-                              ["New term", r.newTermYears + " yrs (" + r.newN + " payments)"],
-                              ["Current monthly payment", "$" + r.currentPayment.toFixed(2)],
-                              ["New monthly payment", "$" + r.newPayment.toFixed(2)],
-                              ["New payment excl. financed costs", "$" + r.newPaymentExcludingFinanced.toFixed(2)],
-                              ["Payment attributable to financed costs", "$" + r.paymentAttributableToFinancedCosts.toFixed(2)],
-                              ["Cash-out amount", fmtWhole(r.cashOut)],
-                              ["Payment attributable to cash-out", "$" + r.paymentAttributableToCashOut.toFixed(2)],
-                              ["Net cash at closing", fmtWhole(r.netCashAtClosing)],
-                              ["Monthly savings (unrounded)", "$" + r.monthlySavings.toFixed(2)],
-                              ["Current total scheduled payments", "$" + r.currentTotalScheduledPayments.toFixed(2)],
-                              ["New total scheduled payments", "$" + r.newTotalScheduledPayments.toFixed(2)],
-                              ["Current total interest", "$" + r.currentTotalInterest.toFixed(2)],
-                              ["New total interest", "$" + r.newTotalInterest.toFixed(2)],
-                              ["Total interest savings (unrounded)", "$" + r.totalInterestSavings.toFixed(2)],
-                              ["Closing costs entered", fmtWhole(r.closingCosts)],
-                              ["Break-even numerator", r.breakEvenNumerator === null ? "—" : "$" + r.breakEvenNumerator.toFixed(2)],
-                              ["Unrounded break-even months", r.unroundedBreakEvenMonths === null ? "—" : r.unroundedBreakEvenMonths.toFixed(3)],
-                              ["Displayed break-even months", r.displayedBreakEvenMonths === null ? "—" : String(r.displayedBreakEvenMonths)],
-                              ["Break-even status", r.breakEvenStatus],
-                              ["Payment-change status", r.paymentStatus],
-                              ["Interest-change status", r.interestStatus],
-                            ] as [string, string][]).map((row, i) => (
-                              <tr key={i}>
-                                <td style={{ padding: "7px 4px", borderBottom: `1px solid ${C.line}`, color: C.inkSoft }}>{row[0]}</td>
-                                <td style={{ padding: "7px 4px", borderBottom: `1px solid ${C.line}`, textAlign: "right", fontFamily: MONO, fontWeight: 600 }}>{row[1]}</td>
-                    </tr>
-                            ))}
-                  </tbody>
-                </table>
-              </div>
-                    )}
-            </div>
-
-                  {/* Insights — last section, below all charts/tables */}
-                  <InsightsPanel
-                    groups={[
-                      { title: "Refinance Savings", color: C.greenDeep, bullets: insights.savings },
-                      { title: "Break-Even Analysis", color: C.amber, bullets: insights.breakeven },
-                    ]}
-                    nextSteps={insights.nextSteps}
-                  />
+                  </div>
                 </>
               )}
-              </div>
             </div>
+          </div>
+
+          {valid && (
+            <>
+              <div style={{ background: C.card, border: `1px solid ${C.line}`, borderRadius: 10, boxShadow: "0 1px 2px rgba(24,42,28,0.04), 0 8px 24px -12px rgba(24,42,28,0.18)", padding: "4px 0", marginTop: 24 }}>
+                <button onClick={() => setShowDetails((v) => !v)}
+                  style={{ width: "100%", background: "none", border: "none", padding: "16px 22px", display: "flex", justifyContent: "space-between", alignItems: "center", cursor: "pointer", fontFamily: SERIF, fontSize: 15.5, fontWeight: 600, color: C.ink }}>
+                  All calculation details
+                  <span style={{ fontFamily: MONO, color: C.inkSoft, fontSize: 13, transform: showDetails ? "rotate(180deg)" : "none", transition: "transform .2s ease" }}>▾</span>
+                </button>
+                {showDetails && (
+                  <div style={{ padding: "0 22px 20px" }} className="calc-table-scroll">
+                    <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12.5 }}>
+                      <tbody>
+                        {([
+                          ["Current loan balance", fmtWhole(r.currentBalance)],
+                          ["Proposed new loan amount", fmtWhole(r.newLoanAmount)],
+                          ["Closing costs financed", r.financed ? "Yes" : "No"],
+                          ["Current annual rate", r.currentRatePct.toFixed(3) + "%"],
+                          ["Current monthly rate", (r.currentMonthlyRate * 100).toFixed(6) + "%"],
+                          ["New annual rate", r.newRatePct.toFixed(3) + "%"],
+                          ["New monthly rate", (r.newMonthlyRate * 100).toFixed(6) + "%"],
+                          ["Current term", r.currentTermYears + " yrs (" + r.currentN + " payments)"],
+                          ["New term", r.newTermYears + " yrs (" + r.newN + " payments)"],
+                          ["Current monthly payment", "$" + r.currentPayment.toFixed(2)],
+                          ["New monthly payment", "$" + r.newPayment.toFixed(2)],
+                          ["New payment excl. financed costs", "$" + r.newPaymentExcludingFinanced.toFixed(2)],
+                          ["Payment attributable to financed costs", "$" + r.paymentAttributableToFinancedCosts.toFixed(2)],
+                          ["Cash-out amount", fmtWhole(r.cashOut)],
+                          ["Payment attributable to cash-out", "$" + r.paymentAttributableToCashOut.toFixed(2)],
+                          ["Net cash at closing", fmtWhole(r.netCashAtClosing)],
+                          ["Monthly savings (unrounded)", "$" + r.monthlySavings.toFixed(2)],
+                          ["Current total scheduled payments", "$" + r.currentTotalScheduledPayments.toFixed(2)],
+                          ["New total scheduled payments", "$" + r.newTotalScheduledPayments.toFixed(2)],
+                          ["Current total interest", "$" + r.currentTotalInterest.toFixed(2)],
+                          ["New total interest", "$" + r.newTotalInterest.toFixed(2)],
+                          ["Total interest savings (unrounded)", "$" + r.totalInterestSavings.toFixed(2)],
+                          ["Closing costs entered", fmtWhole(r.closingCosts)],
+                          ["Break-even numerator", r.breakEvenNumerator === null ? "—" : "$" + r.breakEvenNumerator.toFixed(2)],
+                          ["Unrounded break-even months", r.unroundedBreakEvenMonths === null ? "—" : r.unroundedBreakEvenMonths.toFixed(3)],
+                          ["Displayed break-even months", r.displayedBreakEvenMonths === null ? "—" : String(r.displayedBreakEvenMonths)],
+                          ["Break-even status", r.breakEvenStatus],
+                          ["Payment-change status", r.paymentStatus],
+                          ["Interest-change status", r.interestStatus],
+                        ] as [string, string][]).map((row, i) => (
+                          <tr key={i}>
+                            <td style={{ padding: "7px 4px", borderBottom: `1px solid ${C.line}`, color: C.inkSoft }}>{row[0]}</td>
+                            <td style={{ padding: "7px 4px", borderBottom: `1px solid ${C.line}`, textAlign: "right", fontFamily: MONO, fontWeight: 600 }}>{row[1]}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+              </div>
+
+              <InsightsPanel
+                groups={[
+                  { title: "Refinance Savings", color: C.greenDeep, bullets: insights.savings },
+                  { title: "Break-Even Analysis", color: C.amber, bullets: insights.breakeven },
+                ]}
+                nextSteps={insights.nextSteps}
+              />
+            </>
+          )}
 
           <div style={{ marginTop: 36, paddingTop: 18, borderTop: `1px solid ${C.line}`, fontSize: 11.5, color: C.inkSoft, lineHeight: 1.6 }}>
             This calculator compares principal-and-interest payments only. It does not include property taxes, homeowners insurance, mortgage insurance, HOA dues, or other escrow items, and it does not determine loan eligibility, underwriting approval, or qualification for any specific rate. Mortgage Brothers LLC · NMLS #1007154 · AZ MB #MB0922514.
           </div>
         </div>
+
+        <CalculatorPageFooter path="/refinance-calculator/" />
+
         <style>{`
           @media (max-width: 1023px) {
             .refi-layout { grid-template-columns: minmax(0, 1fr) !important; }

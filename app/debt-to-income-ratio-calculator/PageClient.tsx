@@ -4,6 +4,8 @@ import { useMemo, useState, type CSSProperties, type ReactNode } from "react";
 import Navbar from "../component/Navbar";
 import LoanProgramHero from "../component/LoanProgramHero";
 import Footer from "../component/Footer";
+import CalculatorExplainerSection from "../component/calculators/CalculatorExplainerSection";
+import CalculatorPageFooter from "../component/calculators/CalculatorPageFooter";
 
 /* ============================================================
    DESIGN TOKENS (matches the original file's own palette, which
@@ -643,6 +645,8 @@ export default function DtiCalculator() {
           note=""
         />
 
+        <CalculatorExplainerSection path="/debt-to-income-ratio-calculator/" />
+
         <div style={{ maxWidth: 1180, margin: "0 auto", padding: "20px 12px 48px" }}>
           {/* DTI Milestones — bold, high-visibility centerpiece, full width at the very top */}
           <div style={{
@@ -878,6 +882,7 @@ export default function DtiCalculator() {
           .dpc-input:hover { border-color: #a9b59c; }
           .dpc-input:focus { background: #ffffff; border-color: ${C.greenBright}; box-shadow: 0 0 0 3px ${C.greenWash}; }
         `}</style>
+        <CalculatorPageFooter path="/debt-to-income-ratio-calculator/" />
       </main>
       <Footer />
     </div>

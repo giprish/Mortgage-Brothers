@@ -5,6 +5,8 @@ import Navbar from "../component/Navbar";
 import LoanProgramHero from "../component/LoanProgramHero";
 import CalcSelect from "../component/CalcSelect";
 import Footer from "../component/Footer";
+import CalculatorExplainerSection from "../component/calculators/CalculatorExplainerSection";
+import CalculatorPageFooter from "../component/calculators/CalculatorPageFooter";
 import { InteractivePieChart, BasicPaymentOverTimeChart } from "../component/charts/lazy";
 
 /* ============================================================
@@ -527,6 +529,8 @@ export default function VaLoanCalculator() {
           note=""
         />
 
+        <CalculatorExplainerSection path="/va-loan-calculator/" />
+
         <div style={{ maxWidth: 1180, margin: "0 auto", padding: "28px 20px 64px", boxSizing: "border-box" }}>
           <div className="va-layout" style={{ display: "grid", gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)", gap: 24, alignItems: "start" }}>
             {/* ============ INPUT COLUMN ============ */}
@@ -798,6 +802,7 @@ export default function VaLoanCalculator() {
           .va-input:hover { border-color: #a9b59c; }
           .va-input:focus { background: #ffffff; border-color: ${C.greenBright}; box-shadow: 0 0 0 3px ${C.greenWash}; }
         `}</style>
+        <CalculatorPageFooter path="/va-loan-calculator/" />
       </main>
       <Footer />
     </div>

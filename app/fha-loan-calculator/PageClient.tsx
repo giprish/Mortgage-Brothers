@@ -5,6 +5,8 @@ import Navbar from "../component/Navbar";
 import LoanProgramHero from "../component/LoanProgramHero";
 import CalcSelect from "../component/CalcSelect";
 import Footer from "../component/Footer";
+import CalculatorExplainerSection from "../component/calculators/CalculatorExplainerSection";
+import CalculatorPageFooter from "../component/calculators/CalculatorPageFooter";
 import {
   InteractivePieChart,
   BasicPaymentOverTimeChart,
@@ -538,6 +540,8 @@ export default function FhaLoanCalculator() {
           note=""
         />
 
+        <CalculatorExplainerSection path="/fha-loan-calculator/" />
+
         <div style={{ maxWidth: 1180, margin: "0 auto", padding: "28px 20px 64px", boxSizing: "border-box" }}>
           {/* Amortization Over Time — bold, high-visibility centerpiece, full width at the very top */}
           <div style={{
@@ -786,6 +790,7 @@ export default function FhaLoanCalculator() {
           .fha-input:hover { border-color: #a9b59c; }
           .fha-input:focus { background: #ffffff; border-color: ${C.greenBright}; box-shadow: 0 0 0 3px ${C.greenWash}; }
         `}</style>
+        <CalculatorPageFooter path="/fha-loan-calculator/" />
       </main>
       <Footer />
     </div>
