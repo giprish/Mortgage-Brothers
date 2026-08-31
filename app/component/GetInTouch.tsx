@@ -300,7 +300,11 @@ export default function GetInTouch({
               <a
                 href={ctaHref}
                 className={ctaClass}
-                {...(ctaHref.includes("contact") ? { "data-contact": "true" } : {})}
+                {...(ctaHref.includes("contact")
+                  ? { "data-contact": "true" }
+                  : ctaHref.includes("career-application")
+                    ? { "data-career": "true" }
+                    : {})}
               >
                 {ctaLabel}
               </a>

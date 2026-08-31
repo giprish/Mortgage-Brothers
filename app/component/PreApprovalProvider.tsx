@@ -83,6 +83,14 @@ const FORMS: Record<
     iframeTitle: "Get Your Free Home Selling Options Review",
     loadingLabel: "Loading home selling options review...",
   },
+  career: {
+    id: "250414406228146",
+    src: "https://form.jotform.com/250414406228146",
+    eyebrow: "Career application",
+    title: "Start Your Mortgage Career Application",
+    iframeTitle: "Career Application Form",
+    loadingLabel: "Loading career application form...",
+  },
 };
 
 type FormModalContextValue = {

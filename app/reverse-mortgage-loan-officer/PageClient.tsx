@@ -4,6 +4,9 @@ import React from "react";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import GetInTouch from "../component/GetInTouch";
+import CareerApplicationPath from "../component/CareerApplicationPath";
+import { CAREER_CONTACT_PARAGRAPHS, CAREER_FORM_CTA } from "@/lib/careerContactCopy";
+import { renderGetInTouchText } from "@/lib/renderInlineLinks";
 
 const featureStrip = [
   "Build a Rewarding Mortgage Career with Growth Opportunities",
@@ -46,57 +49,6 @@ const whyCards = [
   {
     title: "Work-Life Balance",
     text: "Achieve harmony between your professional and personal life with our flexible scheduling options. We understand the importance of family and personal time, offering remote work possibilities and paid time off to help you recharge and stay productive.",
-  },
-];
-
-const pathSteps = [
-  {
-    title: "Submit Your Application",
-    items: [
-      "Complete our online application form",
-      "Upload your resume and cover letter",
-      "Provide any additional requested documents",
-    ],
-  },
-  {
-    title: "Initial Screening",
-    items: [
-      "HR team reviews your application",
-      "Selected candidates receive a phone interview invitation",
-      "Brief discussion about your background and career goals",
-    ],
-  },
-  {
-    title: "In-Person or Video Interview",
-    items: [
-      "Meet with the hiring manager and team members",
-      "Discuss your experience and skills in detail",
-      "Learn more about the role and our company culture",
-    ],
-  },
-  {
-    title: "Skills Assessment",
-    items: [
-      "Complete a job-specific task or test",
-      "Showcase your abilities relevant to the position",
-      "Demonstrate your problem-solving skills",
-    ],
-  },
-  {
-    title: "Final Interview",
-    items: [
-      "Meet with senior leadership team",
-      "Discuss your long-term career aspirations",
-      "Address any remaining questions or concerns",
-    ],
-  },
-  {
-    title: "Offer and Onboarding",
-    items: [
-      "Receive and review your offer letter",
-      "Complete background check and necessary paperwork",
-      "Begin your comprehensive onboarding process",
-    ],
   },
 ];
 
@@ -176,7 +128,8 @@ export default function ReverseMortgageLoanOfficerPage() {
 
             <div className="text-center">
               <a
-                href="#contact"
+                href="#career-application-form"
+                data-career="true"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Start Your Application
@@ -215,52 +168,19 @@ export default function ReverseMortgageLoanOfficerPage() {
           </div>
         </section>
 
-        <section className="w-full py-16 lg:py-24">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <h2
-              className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight text-center mb-12"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
-              Your Path to Joining Our Team
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-              {pathSteps.map((step, i) => (
-                <div key={step.title} className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm">
-                  <div className="w-10 h-10 rounded-full bg-[#e8f5e9] text-[#3fb364] font-bold text-[16px] flex items-center justify-center mb-4">
-                    {i + 1}
-                  </div>
-                  <h3 className="text-[#08271B] text-[17px] font-bold mb-3">{step.title}</h3>
-                  <ul className="space-y-2">
-                    {step.items.map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-[#4e5b4e] text-[14px] leading-relaxed">
-                        <span className="text-[#3fb364] mt-1 shrink-0">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-            <div className="text-center">
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
-              >
-                Start Your Application
-              </a>
-            </div>
-          </div>
-        </section>
+        <CareerApplicationPath />
 
         <GetInTouch
           id="contact"
           className="scroll-mt-[90px]"
           theme="light"
           title="Contact Us: Let's Start Your Mortgage Career Journey"
-          description="We're excited about the possibility of you joining The Mortgage Brothers Team. Reach out today and take the first step towards a rewarding career in mortgage lending."
+          paragraphs={[...CAREER_CONTACT_PARAGRAPHS]}
+          renderParagraph={renderGetInTouchText}
+          showDivider
           showPreApproveCta
-          ctaHref="#contact-us-form"
-          ctaLabel="Contact Us →"
+          ctaHref={CAREER_FORM_CTA.href}
+          ctaLabel={CAREER_FORM_CTA.label}
         />
       </main>
       <Footer />

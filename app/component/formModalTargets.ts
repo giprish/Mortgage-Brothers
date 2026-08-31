@@ -1,4 +1,4 @@
-export type FormKind = "preapproval" | "quiz" | "contact" | "homeSellingReview";
+export type FormKind = "preapproval" | "quiz" | "contact" | "homeSellingReview" | "career";
 
 /** Hash fragments that should open a form modal (e.g. open-in-new-tab deep links). */
 export function formKindFromHash(hash: string): FormKind | null {
@@ -18,6 +18,9 @@ export function formKindFromHash(hash: string): FormKind | null {
     h === "selling-options-review"
   ) {
     return "homeSellingReview";
+  }
+  if (h === "career-application-form" || h === "career-form" || h === "career-application") {
+    return "career";
   }
   return null;
 }
@@ -158,6 +161,33 @@ function isPreapprovalJotformHref(clickable: HTMLElement): boolean {
   );
 }
 
+function isCareerTarget(clickable: HTMLElement): boolean {
+  if (clickable.hasAttribute("data-career") || clickable.hasAttribute("data-open-career")) {
+    return true;
+  }
+
+  const href = (clickable.getAttribute("href") || "").toLowerCase().trim();
+  if (
+    href === "#career-application-form" ||
+    href === "#career-form" ||
+    href === "#career-application" ||
+    href.includes("#career-application-form") ||
+    href.includes("#career-form") ||
+    href.includes("250414406228146") ||
+    href.includes("form.jotform.com/250414406228146") ||
+    href.includes("jsform/250414406228146")
+  ) {
+    return true;
+  }
+
+  const id = (clickable.id || "").toLowerCase().trim();
+  if (id === "career-application-form" || id === "career-form") {
+    return true;
+  }
+
+  return false;
+}
+
 function isHomeSellingReviewTarget(clickable: HTMLElement): boolean {
   if (
     clickable.hasAttribute("data-home-selling-review") ||
@@ -227,8 +257,12 @@ export function resolveFormKind(target: EventTarget | Element | null): FormKind 
   ) {
     return "homeSellingReview";
   }
+  if (clickable.hasAttribute("data-career") || clickable.hasAttribute("data-open-career")) {
+    return "career";
+  }
 
   if (isHomeSellingReviewTarget(clickable)) return "homeSellingReview";
+  if (isCareerTarget(clickable)) return "career";
   if (isPreApprovalTarget(clickable)) return "preapproval";
   if (isPreapprovalJotformHref(clickable)) return "preapproval";
   if (isQuizTarget(clickable)) return "quiz";
