@@ -484,7 +484,7 @@ const CALCULATOR_PAGE_CONTENT: Record<string, CalculatorPageContent> = {
     explainer: {
       title: "What is a VA Loan Calculator?",
       paragraphs: [
-        "A VA Loan Calculator is a specialized tool designed to help veterans, active-duty service members, and eligible military spouses estimate their monthly mortgage payments when using a VA loan. Unlike standard mortgage calculators, this tool accounts for the unique aspects of VA loans, including the VA funding fee, potential disability exemptions, and the $0 down payment option that makes these loans so valuable to military families.",
+        "A [VA Loan](/va-loans-arizona/) Calculator is a specialized tool designed to help veterans, active-duty service members, and eligible military spouses estimate their monthly mortgage payments when using a [VA loan](/va-loans-arizona/). Unlike standard mortgage calculators, this tool accounts for the unique aspects of [VA loans](/va-loans-arizona/), including the VA funding fee, potential disability exemptions, and the $0 down payment option that makes these loans so valuable to military families.",
         "The calculator provides a comprehensive breakdown of your potential monthly payments, including principal, interest, property taxes, and homeowners insurance. By inputting basic information about your military status, loan amount, and property details, you can quickly determine what you can afford and make informed decisions about your home purchase.",
       ],
       features: [
@@ -492,13 +492,13 @@ const CALCULATOR_PAGE_CONTENT: Record<string, CalculatorPageContent> = {
           icon: "downpayment",
           title: "No Down Payment Required",
           description:
-            "VA loans allow eligible borrowers to become homeowners without contributing money upfront, a significant advantage compared to conventional mortgages that typically require at least 20% down",
+            "[VA loans](/va-loans-arizona/) allow eligible borrowers to become homeowners without contributing money upfront, a significant advantage compared to [conventional mortgages](/conventional-home-loans-arizona/) that typically require at least 20% down",
         },
         {
           icon: "mip",
           title: "No Mortgage Insurance",
           description:
-            "Unlike FHA loans or conventional loans with less than 20% down, VA loans don't require any mortgage insurance, saving you considerable money each month",
+            "Unlike [FHA loans](/fha-home-loans-arizona/) or [conventional loans](/conventional-home-loans-arizona/) with less than 20% down, [VA loans](/va-loans-arizona/) don't require any mortgage insurance, saving you considerable money each month",
         },
         {
           icon: "payment",
@@ -516,7 +516,7 @@ const CALCULATOR_PAGE_CONTENT: Record<string, CalculatorPageContent> = {
           icon: "savings",
           title: "Lower Interest Rates",
           description:
-            "VA loans typically offer lower interest rates than conventional loans, saving you money over the life of your mortgage",
+            "[VA loans](/va-loans-arizona/) typically offer lower interest rates than [conventional loans](/conventional-home-loans-arizona/), saving you money over the life of your mortgage",
         },
       ],
     },
@@ -534,7 +534,7 @@ const CALCULATOR_PAGE_CONTENT: Record<string, CalculatorPageContent> = {
     contact: {
       title: "Get Expert VA Loan Assistance",
       description:
-        "Ready to take the next step with your VA loan? Our team of mortgage specialists is here to help you navigate the VA loan process and secure the best possible terms for your military service benefits. Fill out the form below, and one of our VA loan experts will contact you promptly to discuss your specific situation and answer any questions you may have about using your VA benefits to purchase a home in Arizona.",
+        "Ready to take the next step with your [VA loan](/va-loans-arizona/)? Our team of mortgage specialists is here to help you navigate the [VA loan](/va-loans-arizona/) process and secure the best possible terms for your military service benefits. Fill out the form below, and one of our [VA loan](/va-loans-arizona/) experts will contact you promptly to discuss your specific situation and answer any questions you may have about using your VA benefits to purchase a home in Arizona.",
     },
   },
 

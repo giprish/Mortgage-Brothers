@@ -133,10 +133,25 @@ function renderHeroTitle(title: string, city: string) {
   return title;
 }
 
+const DEFAULT_HERO_STATS = [
+  { value: "5.0/5", label: "Client Rating" },
+  { value: "Thousands", label: "Homes Financed" },
+  { value: "4-8 hrs", label: "Pre-Approval Time" },
+  { value: "Competitive", label: "Local Rates" },
+] as const;
+
 export default function GenericCityDetailPage({ cityData }: { cityData: CityData }) {
   const countySlug = cityData.countySlug;
   const countyName = cityData.countyName;
   const city = cityData.name;
+  const heroStats = cityData.heroClientRating
+    ? DEFAULT_HERO_STATS.map((stat, i) =>
+        i === 0 ? { ...stat, value: cityData.heroClientRating! } : stat,
+      )
+    : DEFAULT_HERO_STATS;
+  const visibleLoanPrograms = cityData.loanProgramsExclude?.length
+    ? loanPrograms.filter((program) => !cityData.loanProgramsExclude!.includes(program.title))
+    : loanPrograms;
 
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
@@ -199,12 +214,7 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
 
             {/* Stats row — below fold on mobile */}
             <div className="hidden md:grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-              {[
-                { value: "5.0/5", label: "Client Rating" },
-                { value: "Thousands", label: "Homes Financed" },
-                { value: "4-8 hrs", label: "Pre-Approval Time" },
-                { value: "Competitive", label: "Local Rates" },
-              ].map((stat, i) => (
+              {heroStats.map((stat, i) => (
                 <div key={i} className="bg-white/[0.06] border border-white/[0.08] rounded-2xl px-5 py-4 text-center">
                   <span className="text-white text-[18px] lg:text-[20px] font-bold block">{stat.value}</span>
                   <span className="text-[#b8d4b8] text-[11px] uppercase tracking-wider font-medium">{stat.label}</span>
@@ -280,6 +290,35 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
                 </div>
               ))}
             </div>
+
+            {cityData.communitiesCtaLabel ? (
+              <div className="text-center mt-10">
+                <Link
+                  prefetch={false}
+                  href="#get-pre-approved"
+                  data-preapproval="true"
+                  className="inline-flex items-center gap-2 text-[#2d8545] hover:text-[#246d39] text-[15px] font-semibold transition-colors group"
+                >
+                  {cityData.communitiesCtaLabel}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="group-hover:translate-x-0.5 transition-transform"
+                    aria-hidden
+                  >
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                  </svg>
+                </Link>
+              </div>
+            ) : null}
           </div>
         </section>
 
@@ -396,15 +435,16 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
                 OUR SERVICES
               </span>
               <h2 className="text-[#052316] text-[28px] lg:text-[36px] font-playfair font-normal leading-tight mb-4">
-                Explore Our {city} Mortgage Solutions
+                {cityData.mortgageSolutionsTitle ?? `Explore Our ${city} Mortgage Solutions`}
               </h2>
               <p className="text-[#4e5b4e] text-[14px] lg:text-[15px] leading-[1.7] max-w-2xl mx-auto">
-                Comprehensive mortgage programs designed specifically for {city}&apos;s unique real estate market and homeowners.
+                {cityData.mortgageSolutionsIntro ??
+                  `Comprehensive mortgage programs designed specifically for ${city}'s unique real estate market and homeowners.`}
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {loanPrograms.map((program, i) => (
+              {visibleLoanPrograms.map((program, i) => (
                 <Link
                   key={i}
                   href={program.href}
@@ -455,7 +495,7 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
           eyebrow=""
           title={cityData.ctaTitle}
           description={cityData.ctaDescription}
-          primaryLabel="Get Expert Mortgage Advice"
+          primaryLabel={cityData.ctaPrimaryLabel ?? "Get Expert Mortgage Advice"}
           secondaryLabel="Call Us Now"
         />
 
@@ -512,7 +552,7 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-4">
-                QUICK ANSWERS
+                {cityData.faqEyebrow ?? "QUICK ANSWERS"}
               </span>
               <h2 className="text-[#052316] text-[28px] lg:text-[36px] font-playfair font-normal leading-tight">
                 {cityData.faqTitle ?? `Frequently Asked Questions About ${city} Home Loans`}

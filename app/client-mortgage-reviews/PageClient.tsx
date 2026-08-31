@@ -1,254 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import LoanProgramHero from "../component/LoanProgramHero";
+import HeroFeatureStrip from "../component/HeroFeatureStrip";
+import FaqAccordion from "../component/FaqAccordion";
+import GetInTouch from "../component/GetInTouch";
 import { faqs } from "./faqs";
-
-const reviews = [
-  {
-    text: "I was referred to Eddie through my sister-n-law. I had tried a previous company but wasn't satisfied. I have been extremely happy with Eddie's mortgage team. Everything was done online through emails. This was very helpful as both my husband and I work full time during the day and really have no time to do this. Emails were responded to on a daily basis and in a very quick manner. Every step of the process was done very professionally and friendly. I enjoyed meeting Kristi and Bambi. I don't have a face to put with their name, but they were also very nice, professional and helpful. I always hesitated to do a refinance because of the large amount of paperwork and meetings. But this didn't happen that way. I highly recommend Eddie's mortgage team for your refinancing needs.",
-    author: "Chris and Vicky Smith",
-    location: "Avondale, Arizona",
-  },
-  {
-    text: "Eddie and his team are fantastic to work with! They are efficient, friendly and very professional. They communicate to all parties in the transaction; making it a very smooth transaction every time. As a real estate agent, this makes my job that much easier when I have a lender who always performs and most of the time is even ahead of schedule. I can't say enough good things about Eddie as a mortgage lender!",
-    author: "Elizabeth Todd",
-    location: "H2 Realty, Phoenix, Arizona",
-  },
-  {
-    text: "Our mortgage service through Eddie Knoell was seamless throughout. It was like having someone watch over the process without us having any concern in the process. All questions were answered promptly and completely with the correct issues addressed without extra fanfare, like dealing with a trusted family member. Thanks again Eddie!!!",
-    author: "Thomas and Carol Milberry",
-    location: "Queen Creek, Arizona",
-  },
-  {
-    text: "I met Eddie Knoell in 2012 through a client. He communicates very well, through every step of the process. Before I can even start to wonder what is going on, he's picked up the phone and called to let me know where we are in the process. He closes every deal and communicates through it well. He's patient with the questions and great with every client I have sent his way.",
-    author: "Nancy Perry",
-    location: "Solutions Real Estate, Avondale, Arizona",
-  },
-  {
-    text: "My fiancé and I were very nervous about buying our first house. The service Eddie provided made the whole process very easy. Eddie answered all the questions we had. He provided us with prompt and accurate service. We really appreciate all the help Eddie gave us.- home loan for first time home buyer.",
-    author: "Sean Cassidy",
-    location: "Phoenix, Arizona",
-  },
-  {
-    text: "I continue to refer my clients to you because I know I can count on you to provide a fast response and a courteous and professional service. You are the only mortgage contact I have used that provides daily updates on interest rates, costs, etc. I appreciate your personal attention and when you return phone calls as we work through a transaction. And, your dedication to faith & family give me insight into you as a person and not just a mortgage professional. I anticipate doing much more business together! Kind Regards.",
-    author: "Linda Martin",
-    location: "Coldwell Banker Residential Brokerage, Phoenix, Arizona",
-  },
-  {
-    text: "This is my 8th home purchase and mortgage. Working with Eddie has been by far, the most simple, straight forward experience I've ever had obtaining a mortgage.",
-    author: "Denise Roeder",
-    location: "Chandler, Arizona",
-  },
-  {
-    text: "Working with Eddie has been the smoothest portion of my relocation. As with anyone, moving is a stressful time, and to have a lender working with you to make the best of a challenging time is a true pleasure. Eddie was always on focus. He answered my questions by cell phone after hours when most lenders are turning it off for the day. My voice mails were returned promptly and he designated someone to follow through for him in his absence. My particular move had is own challenges/delays/holiday schedules but that didn't stop Eddie from being thorough and professional. Eddie put me at the front of the line and found the best rate and lock for me. It has been a truly wonderful experience working through the mortgage side of the move with Eddie. I would and will recommend Eddie Knoell to anyone I know who is looking for a top notch loan officer.",
-    author: "Teresa Beckman",
-    location: "Chandler, Arizona",
-  },
-  {
-    text: "Thank you so much for all you have done in helping me complete my loan and getting me house. I am loving it and all is well.",
-    author: "Donald and Connie Geahlen",
-    location: "Mesa Realty, Mesa, Arizona",
-  },
-  {
-    text: "Eddie has been a great help to me. He has refinanced many properties for me and are in the process of refinancing several more now. He has always been very professional and I have recommended them to many people.",
-    author: "Eric and Joy Stevens",
-    location: "Phoenix, Arizona",
-  },
-  {
-    text: "Eddie helped us refinance our home. He was a very good communicator and honest. Got the job done even when His hands were tied due to regulations. Thank you Eddie!",
-    author: "Matthew and Christine Mostrom",
-    location: "Chandler, Arizona",
-  },
-  {
-    text: "Eddie offered us professional service. Most importantly he is honest! I felt 100% confidant that he was doing everything possible to get the best loan for us closed in a timely manner. I will definitely refer him to friends and family. A good loan officer is hard to come by, and Eddie it just that!",
-    author: "John and Theresa Gorraiz",
-    location: "Gilbert, Arizona",
-  },
-  {
-    text: "Very Satisfied! Eddie's prompt returned calls, professionalism and clarification in matters that I did not understand was exceptional.",
-    author: "Hope Rosky",
-    location: "Phoenix, Arizona",
-  },
-  {
-    text: "Shopping for a new loan can be very intimidating. I found that different lenders often make promises they just can't keep. Eddie delivers every time with accurate and timely loans. NO surprises at the closing table!",
-    author: "Rich Eneim",
-    location: "Phoenix, Arizona",
-  },
-  {
-    text: "You closed our house loan in 17 days!!! We can't thank you enough for all you did to help us close this house in the three week deadline we were given. Early on in this short sale, we contacted our bank (Chase in Sedona) thinking it would be easier setting up the loan on the short sale. When we asked the loan officer how long the escrow would take we were told one to two months!! Even after telling them the other lender wouldn't wait that long, they said that was the best they could do. You had already pre-qualified us so we're very glad we went with you. We will never go to a large bank for a home loan again, you are our loan guy period! Thanks again Eddie, you're one in a million.",
-    author: "James Robbins",
-    location: "Phoenix, Arizona",
-  },
-  {
-    text: "The experience working with Eddie was good. Have not done a mortgage in a long time and had no idea really what I was doing. Eddie provided me with everything I needed to sign or initial, explained what all the charges were. Much of the work was able to be done through fax or e-mail so many trips were not necessary. Any questions I asked regarding what needed to be done were answered quickly.",
-    author: "Patricia Barrier",
-    location: "Surprise, Arizona",
-  },
-  {
-    text: "Eddie went above the call of duty on 3 separate transactions for us. Each time we challenged him to work under different circumstances & each time he came through and exceeded our expectations! Eddie is extremely efficient & knowledgeable. We really think the world of him and appreciate all that he has done for us!",
-    author: "Anita Sanda",
-    location: "HomeSmart, Surprise, Arizona",
-  },
-  {
-    text: "Eddie Knoell was the utmost professional. He is detailed oriented, on top of the loan and process. He was able to adjust and accommodate any glitch that can our way and insure we knew what was needed to make the process smooth and painless. We would highly recommend, Eddie.",
-    author: "Jeanne Morain",
-    location: "Gilbert, Arizona",
-  },
-  {
-    text: "Thank you Eddie for the fast closing of our loan. Our loan closed in 30 days thanks to you and your staff's diligence. We appreciate the fact that you gave us several financing options. We felt that we had a choice and chose the best option for our needs.",
-    author: "Diane Stackwick",
-    location: "Phoenix, Arizona",
-  },
-  {
-    text: "I appreciated your good communication and frequent updates. I also appreciate every time I call you I never got a recording always able to talk to someone in person. You also kept on top of things and were able to close early. Thanks",
-    author: "Mike Cameli",
-    location: "DPR Realty, Tempe, Arizona",
-  },
-  {
-    text: "Thank you so much for the professional way in which you dealt with my buyers. They remarked that they felt you gave them the time and attention they wanted and that you responded to their questions in a timely manner. Whenever I refer a client and it turns out that all parties are satisfied with the customer service—then I do not hesitate to send more referrals.",
-    author: "James Smith",
-    location: "Queen Creek, Arizona",
-  },
-  {
-    text: "Thank you for outstanding service in the refinance of our home! Not only were you professional and courteous, you were realistic and honest. Our transaction was easier than we could have imagined and we will definitely call on you for our future needs! Again, thank you for everything!",
-    author: "Kristy Bartusek",
-    location: "Tempe, Arizona",
-  },
-  {
-    text: "Eddie works fast and is thorough. He gave us a great deal. We were financed in no time, and it was a lot faster and easier than any other loan process we've ever gone through.",
-    author: "Arlyn and Jennifer Stotts",
-    location: "Phoenix, Arizona",
-  },
-  {
-    text: "I am a Realtor who uses Eddie as my personal broker. Eddie is the first lender that I recommend to my clients. Eddie is dependable, hardworking, and knowledgeable. The house will close on time and my clients will be extremely happy.",
-    author: "Teresa Eneim",
-    location: "Scottsdale, Arizona",
-  },
-  {
-    text: "Thank you for your service & advice on the purchase of our 2ND home. We would have been lost without your help & guidance. We have & will continue to recommend you to family & friends as the very best Phoenix has to offer in mortgage financing.",
-    author: "Michael and Vory Flis",
-    location: "Phoenix, Arizona",
-  },
-  {
-    text: "Eddie refinanced our home with professionalism, timeliness, and accuracy. He was courteous, kept us informed, and got us a good rate.",
-    author: "Gregory LeBeau",
-    location: "Scottsdale, Arizona",
-  },
-  {
-    text: "You made it happen so fast! Thanks for all your help! Your communication skills were excellent and your proficiency was unbelievable. Thanks again for treating us like we were your only client.",
-    author: "Matt Gonshorowski",
-    location: "Phoenix, Arizona",
-  },
-  {
-    text: "Purchasing a home is always confusing and overwhelming. Eddie helped and guided me throughout the entire process and without his assistance I don't think everything would have went through as smoothly as it did.",
-    author: "Mona Collins",
-    location: "Phoenix, Arizona",
-  },
-  {
-    text: "I want to say what a pleasant experience I had when dealing with Eddie Knoell. He went out of his way to keep in touch with me every step of the way. Whenever someone I know needs a mortgage agent, I will certainly recommend Eddie.",
-    author: "Suzanne Cormier",
-    location: "Sun City, Arizona",
-  },
-  {
-    text: "The service I received from Eddie at Mortgage Brothers was nothing short of exceptional. Mine was a complicated application and they worked tirelessly to secure me a great mortgage at an exceptional rate.",
-    author: "Matthew MaClean",
-    location: "Phoenix, Arizona",
-  },
-  {
-    text: "We have bought & sold a total of 5 homes and we have refinanced at least 3 times and Eddie Knoell is our mortgage guy for life. Eddie is honest, timely, and available and come highly recommended!",
-    author: "Liza Garcia",
-    location: "Scottsdale, Arizona",
-  },
-  {
-    text: "Eddie Knoell was a pleasure to work with. He got me a great rate with a quick approval and funding. I highly recommend him without reservation.",
-    author: "John Fynmore",
-    location: "Phoenix, Arizona",
-  },
-  {
-    text: "I trust Eddie with my lending needs and have referred him to my own family members. All of the loans I have done with Eddie were handled in a professional and prompt manner and even closed ahead of schedule!",
-    author: "Marie Haynes",
-    location: "Glendale, Arizona",
-  },
-  {
-    text: "Eddie Knoell is the best Loan Officer we've ever dealt with. Both Ched and I feel like he was always there for us even on the weekend!! Eddie's best quality is his ability to get the job done efficiently and really fast.",
-    author: "Ched and Nanette Salasek",
-    location: "Phoenix, Arizona",
-  },
-  {
-    text: "Eddie Knoell is the best lender I've ever worked with. He was prompt, courteous and did what he promised, on or before the promised date. As a real estate agent the entire process was a breeze.",
-    author: "Judy Gibson",
-    location: "Mesa, Arizona",
-  },
-  {
-    text: "We couldn't be more pleased with our choice in lending broker. Your demeanor, timeliness, sincerity and skill with finding the right loan vehicle for us was instrumental to our happiness. You have us as a lifelong customer.",
-    author: "T. and E. Cakmak",
-    location: "Chandler, Arizona",
-  },
-  {
-    text: "As a first time home buyer, your constant and open communication was helpful and comforting. Thank you for your patience and always thoroughly explaining all the steps along the way.",
-    author: "Jaclyn Lindsey",
-    location: "Tempe, Arizona",
-  },
-  {
-    text: "Working with Eddie was an absolute pleasure. He has a very high level of integrity and the knowledge to back it up. Without Eddie by my side, I could not have closed this deal.",
-    author: "Michele Bonner",
-    location: "Tempe, Arizona",
-  },
-  {
-    text: "Eddie saved us over $500 a month! He explained in great detail and was very knowledgeable about the HARP2 program. We will definitely be referring our family and friends to him.",
-    author: "Michael and Donna Hawkins",
-    location: "Glendale, Arizona",
-  },
-  {
-    text: "Eddie is a true professional. My case had a special set of circumstances, but he continued to work tirelessly on my behalf until we were finally able to close. I am very pleased with the service that I received.",
-    author: "Matt Fahrendorf",
-    location: "Phoenix, Arizona",
-  },
-  {
-    text: "I have been using Eddie Knoell from Mortgage Brothers for 10 years. He is a very honest, reliable and hard working man. He always gave me the best rates and a very reasonable closing cost.",
-    author: "Billy Ha",
-    location: "Mesa, Arizona",
-  },
-  {
-    text: "Eddie and his entire staff were wonderful. They helped us through the very intense process of purchasing a second home. Also our mortgage was such a good rate that the closing agent actually commented on how wonderful our mortgage broker must be!",
-    author: "Michelle Blank",
-    location: "Glendale, Arizona",
-  },
-  {
-    text: "My husband and I would like to thank you for an outstanding job you did with our refinance. You are so knowledgeable and kept us updated on each step of the way. Your professionalism was impeccable and your timing was perfect. As you know, I am a Realtor and have dealt with many mortgage people along my career. You are heads and shoulders beyond most I have worked with. Your communication skills are unique in this business. You were reassuring throughout this entire procedure. I just want you to know I will be proud to refer you to my family, friends and Clients.",
-    author: "Marleen Kapanicas",
-    location: "HomeSmart, Scottsdale, Arizona",
-  },
-  {
-    text: "With Eddie it was the easiest mortgage we've ever applied for. By phone we applied and were approved right then and there. We are very committed to using Eddie's vast knowledge and services if we ever buy another home.",
-    author: "Carlos Baldenegro",
-    location: "Chandler, Arizona",
-  },
-  {
-    text: "Eddie did an incredible job getting our new home loan processed quickly and efficiently at an even lower interest rate than we had discussed. Eddie helped us to realize our dreams of living in our new home!",
-    author: "Marina McLennan",
-    location: "Chandler, Arizona",
-  },
-  {
-    text: "Eddie was a blessing. I am a single female buying my first home. He came up with a mortgage plan that was best for me and made the whole process go very smoothly and essentially worry free.",
-    author: "Jennifer Speer",
-    location: "Sun City, Arizona",
-  },
-  {
-    text: "Eddie's attention to detail, prompt responses and knowledge of the market far surpasses his competition. If it is my call on who to use for a loan officer, I call Eddie.",
-    author: "Joey Slade",
-    location: "JB Carlson & Associates, Gilbert, Arizona",
-  },
-  {
-    text: "You made my first time home buying experience smooth and educational. You were ALWAYS a phone call away to answer any of my questions. Thanks!",
-    author: "Christian Holt",
-    location: "Phoenix, Arizona",
-  },
-];
+import { reviews, midPageCtas } from "./reviews-data";
 
 const steps = [
   {
@@ -305,16 +66,8 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const INITIAL_VISIBLE = 12;
-
-const CheckIcon = () => (
-  <svg className="w-5 h-5 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-  </svg>
-);
-
 const Stars = () => (
-  <div className="flex gap-0.5 text-[#7a6638] mb-4">
+  <div className="flex gap-0.5 text-[#7a6638] mb-4" aria-hidden>
     {Array.from({ length: 5 }).map((_, i) => (
       <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
@@ -323,60 +76,57 @@ const Stars = () => (
   </div>
 );
 
-export default function ClientMortgageReviewsPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [showAll, setShowAll] = useState(false);
-  const visibleReviews = showAll ? reviews : reviews.slice(0, INITIAL_VISIBLE);
+function MidPageCta({ text, button, href }: { text: string; button: string; href: string }) {
+  return (
+    <div className="col-span-full bg-white border border-[#e8e0d0]/70 rounded-2xl p-8 lg:p-10 text-center shadow-sm my-2">
+      <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed max-w-2xl mx-auto mb-6">{text}</p>
+      <Link
+        href={href}
+        className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+      >
+        {button}
+      </Link>
+    </div>
+  );
+}
 
+export default function ClientMortgageReviewsPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
 
       <main className="flex-grow">
         <LoanProgramHero
-          title="Client Mortgage Reviews"
-          subtitle="Aggregate Review of All 345 Reviews: 5.0 out of 5"
+          title="Real Stories, Real Results"
+          subtitle="See How We've Helped Clients Achieve Their Homeownership Dreams"
         />
 
-        {/* Feature strip */}
-        <section className="w-full bg-[#eeeff4] border-b border-[#e0e2e8] py-10 lg:py-12">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              "Personalized mortgage solutions",
-              "Fast and hassle-free process",
-              "Expert guidance every step of the way",
-            ].map((title) => (
-              <div key={title} className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm">
-                  <CheckIcon />
-                </div>
-                <h3 className="text-[#333333] text-[16px] font-semibold leading-snug">{title}</h3>
-              </div>
-            ))}
-          </div>
-        </section>
+        <HeroFeatureStrip
+          items={[
+            "Personalized mortgage solutions",
+            "Fast and hassle-free process",
+            "Expert guidance every step of the way",
+          ]}
+        />
 
         {/* Intro */}
-        <section className="w-full py-16 lg:py-20">
-          <div className="max-w-3xl mx-auto px-6 lg:px-10 text-center">
-            <h2
-              className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
+        <section className="loan-section bg-white">
+          <div className="max-w-3xl mx-auto text-center space-y-4">
+            <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair leading-tight">
               Trusted by Hundreds of Homeowners Across Arizona
             </h2>
-            <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75] mb-4">
-              At The Mortgage Brothers Team, we pride ourselves on delivering exceptional service and
-              results for our clients.
+            <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
+              At Mortgage Brothers LLC, we pride ourselves on delivering exceptional service and results for our clients.
             </p>
-            <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75] mb-8">
-              From first-time buyers to seasoned homeowners, we&apos;ve helped hundreds of families
-              achieve their dreams of homeownership with personalized mortgage solutions and expert
-              guidance. But don&apos;t just take our word for it—see what our happy clients have to say!
+            <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
+              From first-time buyers to seasoned homeowners, we&apos;ve helped hundreds of families achieve their dreams of homeownership with personalized mortgage solutions and expert guidance.
+            </p>
+            <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
+              But don&apos;t just take our word for it—see what our happy clients have to say about their experience working with us!
             </p>
             <Link
               href="/contact-us/"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all mt-2"
             >
               Schedule Your Free Consultation
             </Link>
@@ -384,79 +134,61 @@ export default function ClientMortgageReviewsPage() {
         </section>
 
         {/* Reviews grid */}
-        <section className="w-full bg-[#f5f0e8] py-16 lg:py-20 border-y border-[#e8e0d0]/50">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
+        <section className="loan-section bg-[#f5f0e8] border-y border-[#e8e0d0]/50">
+          <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {visibleReviews.map((rev) => (
-                <div
-                  key={rev.author + rev.location}
-                  className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm flex flex-col hover:shadow-md transition-shadow"
-                >
-                  <Stars />
-                  <p className="text-[#3a443a] text-[14px] leading-relaxed flex-1 mb-5">
-                    &ldquo;{rev.text}&rdquo;
-                  </p>
-                  <div>
-                    <p className="text-[#08271B] text-[14px] font-bold">{rev.author}</p>
-                    <p className="text-[#5a6b52] text-[12px] mt-0.5">{rev.location}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {!showAll && reviews.length > INITIAL_VISIBLE && (
-              <div className="text-center mt-10">
-                <button
-                  type="button"
-                  onClick={() => setShowAll(true)}
-                  className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all cursor-pointer"
-                >
-                  Show More Reviews
-                </button>
-              </div>
-            )}
-
-            <div className="text-center mt-10">
-              <Link
-                href="#get-pre-approved"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
-              >
-                Get Pre-Approved Now
-              </Link>
+              {reviews.map((rev, index) => {
+                const cta = midPageCtas.find((c) => c.afterIndex === index);
+                return (
+                  <React.Fragment key={`${rev.author}-${index}`}>
+                    <div className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm flex flex-col hover:shadow-md transition-shadow">
+                      <Stars />
+                      <p className="text-[#3a443a] text-[14px] leading-relaxed flex-1 mb-5">
+                        &ldquo;{rev.text}&rdquo;
+                      </p>
+                      <div>
+                        <p className="text-[#052316] text-[14px] font-bold">{rev.author}</p>
+                        <p className="text-[#5a6b52] text-[12px] mt-0.5">{rev.location}</p>
+                      </div>
+                    </div>
+                    {cta ? <MidPageCta text={cta.text} button={cta.button} href={cta.href} /> : null}
+                  </React.Fragment>
+                );
+              })}
             </div>
           </div>
         </section>
 
         {/* Path to homeownership */}
-        <section className="w-full py-16 lg:py-24">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
-              <h2
-                className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
+        <section className="loan-section bg-white">
+          <div className="max-w-5xl mx-auto space-y-10">
+            <div className="max-w-3xl mx-auto text-center space-y-4">
+              <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair leading-tight">
                 Your Path to Homeownership Made Simple
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                We&apos;ve streamlined the mortgage process to make it easy, fast, and stress-free for
-                you.
+                We&apos;ve streamlined the mortgage process to make it easy, fast, and stress-free for you.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 mb-10">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {steps.map((step, i) => (
                 <div
                   key={step.title}
-                  className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 shadow-sm text-center"
+                  className="bg-[#fcf9f3] border border-[#e8e0d0]/70 rounded-2xl p-7 text-center shadow-sm"
                 >
                   <div className="w-12 h-12 rounded-full bg-[#e8f5e9] text-[#3fb364] font-bold text-[18px] flex items-center justify-center mx-auto mb-4">
                     {i + 1}
                   </div>
-                  <h3 className="text-[#08271B] text-[18px] font-bold mb-3">{step.title}</h3>
+                  <h3 className="text-[#052316] text-[18px] font-bold mb-3 font-playfair">{step.title}</h3>
                   <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed">{step.text}</p>
                 </div>
               ))}
             </div>
+
+            <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed text-center">
+              Ready to take the first step? Schedule your free consultation today!
+            </p>
 
             <div className="text-center">
               <Link
@@ -470,22 +202,24 @@ export default function ClientMortgageReviewsPage() {
         </section>
 
         {/* Why trust us */}
-        <section className="w-full bg-[#08271B] py-16 lg:py-24 text-white">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <div className="max-w-3xl mx-auto text-center mb-12">
-              <h2
-                className="text-white text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                Top Mortgage Experts in Arizona
+        <section className="loan-section bg-[#052316] text-white">
+          <div className="max-w-6xl mx-auto space-y-10">
+            <div className="max-w-3xl mx-auto text-center space-y-4">
+              <h2 className="text-white text-[28px] lg:text-[38px] font-bold font-playfair leading-tight">
+                Top Mortgage Experts in Arizona for High Credit Borrowers
               </h2>
               <p className="text-[#c8c8b8] text-[15.5px] leading-relaxed">
-                At The Mortgage Brothers Team, we believe that every client deserves more than just a
-                loan—they deserve a trusted partner who truly understands their needs.
+                Choosing the right mortgage partner is one of the most important steps in your homeownership journey.
+              </p>
+              <p className="text-[#c8c8b8] text-[15.5px] leading-relaxed">
+                At Mortgage Brothers LLC, we believe that every client deserves more than just a loan—they deserve a trusted partner who truly understands their needs.
+              </p>
+              <p className="text-[#c8c8b8] text-[15.5px] leading-relaxed">
+                From personalized guidance to a streamlined process, we&apos;re here to make your experience smooth, stress-free, and tailored to your goals. Here&apos;s what makes us the team homeowners across Arizona trust.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {expertCards.map((card) => (
                 <div key={card.title} className="bg-white/5 border border-white/10 rounded-2xl p-6">
                   <h3 className="text-[#3fb364] text-[17px] font-bold mb-2">{card.title}</h3>
@@ -494,67 +228,29 @@ export default function ClientMortgageReviewsPage() {
               ))}
             </div>
 
-            <div className="text-center">
-              <a
-                href="tel:+16025352171"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
-              >
-                Call Us Now
-              </a>
-            </div>
+            <p className="text-[#c8c8b8] text-[15.5px] leading-relaxed text-center max-w-2xl mx-auto">
+              Experience the difference with Mortgage Brothers LLC. Let us help you achieve your homeownership dreams!
+            </p>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="w-full py-16 lg:py-24">
-          <div className="max-w-3xl mx-auto px-6 lg:px-10">
-            <div className="text-center mb-10">
-              <h2
-                className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-4"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
+        <section className="loan-section bg-[#fcf9f3]">
+          <div className="max-w-3xl mx-auto space-y-8">
+            <div className="text-center space-y-4">
+              <h2 className="text-[#052316] text-[28px] lg:text-[36px] font-bold font-playfair leading-tight">
                 Everything You Need to Know About the Mortgage Process
               </h2>
               <p className="text-[#4e5b4e] text-[15px] leading-relaxed">
-                We understand that getting a mortgage can feel overwhelming. That&apos;s why we&apos;ve
-                answered some of the most common questions.
+                We understand that getting a mortgage can feel overwhelming. That&apos;s why we&apos;ve answered some of the most common questions to help you feel confident every step of the way.
               </p>
             </div>
 
-            <div className="flex flex-col gap-3 mb-10">
-              {faqs.map((faq, index) => {
-                const open = openFaq === index;
-                return (
-                  <div
-                    key={faq.q}
-                    className="bg-white border border-[#e8e0d0]/70 rounded-xl overflow-hidden"
-                  >
-                    <button
-                      type="button"
-                      onClick={() => setOpenFaq(open ? null : index)}
-                      className="w-full flex items-center justify-between gap-4 text-left px-5 py-4 cursor-pointer"
-                      aria-expanded={open}
-                    >
-                      <span className="text-[#08271B] text-[15px] font-semibold leading-snug">
-                        {faq.q}
-                      </span>
-                      <span
-                        className={`text-[#3fb364] text-[22px] font-light shrink-0 transition-transform ${
-                          open ? "rotate-45" : ""
-                        }`}
-                      >
-                        +
-                      </span>
-                    </button>
-                    {open && (
-                      <div className="px-5 pb-5 text-[#4e5b4e] text-[14.5px] leading-relaxed border-t border-[#e8e0d0]/50 pt-4">
-                        {faq.a}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
+            <FaqAccordion items={[...faqs]} />
+
+            <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center">
+              Still have questions? Our loan experts are here to provide personalized answers and guide you through your financing options.
+            </p>
 
             <div className="text-center">
               <Link
@@ -567,47 +263,29 @@ export default function ClientMortgageReviewsPage() {
           </div>
         </section>
 
-        {/* Contact CTA */}
-        <section className="w-full bg-[#f5f0e8] py-16 lg:py-20 border-y border-[#e8e0d0]/50">
-          <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center">
-            <h2
-              className="text-[#08271B] text-[30px] lg:text-[38px] font-normal leading-tight mb-5"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
-              Let&apos;s Make Your Mortgage Process Simple &amp; Stress-Free
-            </h2>
-            <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              At Mortgage Brothers LLC, we&apos;re here to help you secure the best mortgage for your
-              financial goals. Whether you&apos;re buying a new home, refinancing, or just exploring your
-              options, our experienced team is ready to guide you.
-            </p>
-
-            <Link
-              href="#get-pre-approved"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"
-            >
-              Start my preapproval
-            </Link>
-          </div>
-        </section>
+        <GetInTouch
+          theme="dark"
+          title="Let's Make Your Mortgage Process Simple & Stress-Free"
+          paragraphs={[
+            "At Mortgage Brothers LLC, we're here to help you secure the best mortgage for your financial goals. Whether you're buying a new home, refinancing, or just exploring your options, our experienced team is ready to guide you every step of the way.",
+            "Have questions? Need a personalized mortgage consultation? Get in touch with us today!",
+          ]}
+        />
 
         {/* Explore solutions */}
-        <section className="w-full py-16 lg:py-20">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <h2
-              className="text-[#08271B] text-[28px] lg:text-[34px] font-normal text-center mb-10"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
+        <section className="loan-section bg-white">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-[#052316] text-[28px] lg:text-[34px] font-bold font-playfair text-center mb-10">
               Explore Our Mortgage Solutions
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {loanSolutions.map((item) => (
                 <Link
-                  key={item.href + item.label}
+                  key={item.href}
                   href={item.href}
-                  className="flex items-center gap-3 bg-white border border-[#e8e0d0]/70 rounded-xl px-5 py-4 text-[#08271B] font-semibold text-[14.5px] hover:border-[#3fb364]/50 hover:text-[#3fb364] transition-all"
+                  className="group flex items-center gap-3 bg-[#fcf9f3] border border-[#e8e0d0]/70 rounded-xl px-5 py-4 text-[#052316] font-semibold text-[14.5px] hover:border-[#3fb364] transition-all"
                 >
-                  <CheckIcon />
+                  <span className="text-[#3fb364] font-bold group-hover:translate-x-0.5 transition-transform">→</span>
                   {item.label}
                 </Link>
               ))}

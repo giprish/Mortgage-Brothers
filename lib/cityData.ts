@@ -41,6 +41,13 @@ export interface CityData {
   /** “Our {City} Mortgage Services” GetInTouch block (live copy when available). */
   getInTouchTitle: string;
   getInTouchParagraphs: string[];
+  mortgageSolutionsTitle?: string;
+  mortgageSolutionsIntro?: string;
+  heroClientRating?: string;
+  ctaPrimaryLabel?: string;
+  faqEyebrow?: string;
+  communitiesCtaLabel?: string;
+  loanProgramsExclude?: string[];
 }
 
 export const countyMap: Record<string, string> = {
@@ -307,6 +314,13 @@ function buildCityData(params: {
     getInTouchTitle: livePage?.getInTouchTitle ?? `Our ${cityName} Mortgage Services`,
     getInTouchParagraphs:
       livePage?.getInTouchParagraphs ?? defaultGetInTouchParagraphs,
+    mortgageSolutionsTitle: livePage?.mortgageSolutionsTitle,
+    mortgageSolutionsIntro: livePage?.mortgageSolutionsIntro,
+    heroClientRating: livePage?.heroClientRating,
+    ctaPrimaryLabel: livePage?.ctaPrimaryLabel,
+    faqEyebrow: livePage?.faqEyebrow,
+    communitiesCtaLabel: livePage?.communitiesCtaLabel,
+    loanProgramsExclude: livePage?.loanProgramsExclude,
   };
 }
 

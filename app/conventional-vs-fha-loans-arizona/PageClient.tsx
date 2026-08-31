@@ -2,14 +2,16 @@
 
 import { faqs as pageFaqs } from "./faqs";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import StatsBanner from "../component/StatsBanner";
 import LoanProgramHero from "../component/LoanProgramHero";
 import HeroFeatureStrip from "../component/HeroFeatureStrip";
+import FaqAccordion from "../component/FaqAccordion";
 import GetInTouch from "../component/GetInTouch";
+import IconBadge from "../component/IconBadge";
 
 import CountyTestimonials, { type CountyTestimonial } from "../component/CountyTestimonials";
 
@@ -57,27 +59,27 @@ const comparisonRows = [
 const scenarioExcellent = [
   { feature: "Sales Price", conventional: "$300,000", fha: "$300,000" },
   { feature: "Down Payment", conventional: "5%", fha: "5%" },
-  { feature: "Interest Rate", conventional: "6.70%", fha: "6.65%" },
+  { feature: "Interest Rate", conventional: "3.875%", fha: "3.250%" },
   { feature: "Financed Upfront MI", conventional: "$0.00", fha: "$4,987" },
   { feature: "Loan Amount", conventional: "$285,000", fha: "$289,987" },
-  { feature: "Principal & Interest Payment", conventional: "$1,839", fha: "$1,862" },
+  { feature: "Principal & Interest Payment", conventional: "$1,340", fha: "$1,262" },
   { feature: "Taxes", conventional: "$150", fha: "$150" },
   { feature: "Homeowners Insurance", conventional: "$60", fha: "$60" },
   { feature: "Mortgage Insurance", conventional: "$85", fha: "$201" },
-  { feature: "Total Monthly Payment", conventional: "$2,134", fha: "$2,273" },
+  { feature: "Total Monthly Payment", conventional: "$1,635", fha: "$1,637" },
   { feature: "Estimated Cash to Close", conventional: "$19,100", fha: "$19,100" },
 ];
 
 const scenarioBelowAvg = [
   { feature: "Sales Price", conventional: "$300,000", fha: "$300,000" },
   { feature: "Down Payment", conventional: "5%", fha: "5%" },
-  { feature: "Interest Rate", conventional: "7.80% (+1.10%)", fha: "6.65%", highlight: "conventional" },
+  { feature: "Interest Rate", conventional: "4.990% (+1.115%)", fha: "3.250%", highlight: "conventional" },
   { feature: "Financed Upfront MI", conventional: "$0.00", fha: "$4,987" },
   { feature: "Loan Amount", conventional: "$285,000", fha: "$289,987" },
   {
     feature: "Principal & Interest Payment",
-    conventional: "$2,052 (+$190)",
-    fha: "$1,862",
+    conventional: "$1,528 (+$188)",
+    fha: "$1,262",
     highlight: "conventional",
   },
   { feature: "Taxes", conventional: "$150", fha: "$150" },
@@ -90,8 +92,8 @@ const scenarioBelowAvg = [
   },
   {
     feature: "Total Monthly Payment",
-    conventional: "$2,570 (+$297)",
-    fha: "$2,273",
+    conventional: "$2,046 (+$411)",
+    fha: "$1,637",
     highlight: "conventional",
   },
   { feature: "Estimated Cash to Close", conventional: "$19,100", fha: "$19,100" },
@@ -100,26 +102,57 @@ const scenarioBelowAvg = [
 const expertCards = [
   {
     title: "Expert Guidance",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+      </svg>
+    ),
     text: "Our team has in-depth knowledge of both Conventional and FHA loans, allowing us to provide accurate, up-to-date advice on which option is best for you in the Arizona housing market.",
   },
   {
     title: "Arizona Market Specialists",
-    text: "With over 25 years of experience in the Arizona mortgage industry, we understand the unique challenges and opportunities of the local real estate landscape. Our expertise covers diverse markets from Phoenix to Tucson and beyond.",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+      </svg>
+    ),
+    text: "With over 22 years of experience in the Arizona mortgage industry, we understand the unique challenges and opportunities of the local real estate landscape. Our expertise covers diverse markets from Phoenix to Tucson and beyond.",
   },
   {
     title: "Personalized Service",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+      </svg>
+    ),
     text: "We take the time to understand your financial situation, credit history, and long-term goals to recommend the most suitable loan program for Arizona homebuyers.",
   },
   {
     title: "Transparent Communication",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+      </svg>
+    ),
     text: "We explain complex loan terms and conditions in simple language, ensuring you fully understand the pros and cons of each option before making a decision in the competitive Arizona market.",
   },
   {
     title: "Competitive Rates",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+      </svg>
+    ),
     text: "Our strong relationships with lenders allow us to offer competitive interest rates on both Conventional and FHA loans, potentially saving you thousands over the life of your loan in Arizona's dynamic housing market.",
   },
   {
     title: "Local Market Insights",
+    icon: (
+      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+      </svg>
+    ),
     text: "We stay up-to-date with Arizona's housing trends, regulations, and economic factors that affect mortgage rates and availability, providing you with valuable insights for your home buying decision.",
   },
 ];
@@ -129,18 +162,33 @@ const faqs = pageFaqs;
 const testimonials: CountyTestimonial[] = [
   {
     name: "Chris and Vicky Smith",
-    quote: "I was referred to Eddie through my sister-n-law. I had tried a previous company but wasn't satisfied. I have been extremely happy with Eddie's mortgage team. Everything was done online through emails. This was very helpful as both my husband and I work full time during the day and really have no time to do this. Emails were responded to on a daily basis and in a very quick manner. Every step of the process was done very professionally and friendly. I highly recommend Eddie's mortgage team for your refinancing needs.",
+    quote:
+      "I was referred to Eddie through my sister-n-law. I had tried a previous company but wasn't satisfied. I have been extremely happy with Eddie's mortgage team. Everything was done online through emails. This was very helpful as both my husband and I work full time during the day and really have no time to do this. Emails were responded to on a daily basis and in a very quick manner. Every step of the process was done very professionally and friendly. I enjoyed meeting Kristi and Bambi. I don't have a face to put with their name, but they were also very nice, professional and helpful. I always hesitated to do a refinance because of the large amount of paperwork and meetings. But this didn't happen that way. I highly recommend Eddie's mortgage team for your refinancing needs.",
     attribution: "Chris and Vicky Smith, Avondale, Arizona",
   },
   {
     name: "Elizabeth Todd",
-    quote: "Eddie and his team are fantastic to work with! They are efficient, friendly and very professional. They communicate to all parties in the transaction; making it a very smooth transaction every time. As a real estate agent, this makes my job that much easier when I have a lender who always performs and most of the time is even ahead of schedule.",
-    attribution: "Elizabeth Todd, H2 Realty, Phoenix, Arizona",
+    quote:
+      "Eddie and his team are fantastic to work with! They are efficient, friendly and very professional. They communicate to all parties in the transaction; making it a very smooth transaction every time. As a real estate agent, this makes my job that much easier when I have a lender who always performs and most of the time is even ahead of schedule. I can't say enough good things about Eddie as a mortgage lender!",
+    attribution: "Elizabeth Todd – H2 Realty, Phoenix, Arizona",
   },
   {
     name: "Marleen Kapanicas",
-    quote: "My husband and I would like to thank you for an outstanding job you did with our refinance. You are so knowledgeable and kept us updated on each step of the way. Your professionalism was impeccable and your timing was perfect. As you know, I am a Realtor and have dealt with many mortgage people along my career. You are heads and shoulders beyond most I have worked with.",
-    attribution: "Marleen Kapanicas, Homesmart, Scottsdale, Arizona",
+    quote:
+      "My husband and I would like to thank you for an outstanding job you did with our refinance. You are so knowledgeable and kept us updated on each step of the way. Your professionalism was impeccable and your timing was perfect. As you know, I am a Realtor and have dealt with many mortgage people along my career. You are heads and shoulders beyond most I have worked with. Your communication skills are unique in this business. You were reassuring throughout this entire procedure. I just want you to know I will be proud to refer you to my family, friends and Clients.",
+    attribution: "Marleen Kapanicas – Homesmart, Scottsdale, Arizona",
+  },
+  {
+    name: "Thomas and Carol Milberry",
+    quote:
+      "Our mortgage service through Eddie Knoell was seamless throughout. It was like having someone watch over the process without us having any concern in the process. All questions were answered promptly and completely with the correct issues addressed without extra fanfare, like dealing with a trusted family member. Thanks again Eddie!!!",
+    attribution: "Thomas and Carol Milberry, Queen Creek, Arizona 85242",
+  },
+  {
+    name: "Nancy Perry",
+    quote:
+      "I met Eddie Knoell in 2012 through a client. He communicates very well, through every step of the process. Before I can even start to wonder what is going on, he's picked up the phone and called to let me know where we are in the process. He closes every deal and communicates through it well. He's patient with the questions and great with every client I have sent his way.",
+    attribution: "Nancy Perry – Solutions Real Estate, Avondale, Arizona",
   },
 ];
 
@@ -164,11 +212,8 @@ const stats = [
   { value: "580", label: "Minimum FHA Credit Score" },
 ];
 
-const CheckIcon = () => (
-  <svg className="w-5 h-5 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-  </svg>
-);
+const CARD_HOVER =
+  "group bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm transition-all duration-200 hover:border-[#3fb364] hover:shadow-md hover:bg-[#f8fdf9]";
 
 function ComparisonTable({
   rows,
@@ -217,8 +262,6 @@ function ComparisonTable({
 }
 
 export default function ConventionalVsFhaLoansPage() {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
-
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
@@ -235,16 +278,13 @@ export default function ConventionalVsFhaLoansPage() {
         <section className="loan-section w-full">
           <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mx-auto loan-section-heading">
-              <h2
-                className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
+              <h2 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5 font-playfair">
                 Introduction to Loan Types
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
                 Understanding the differences between Conventional and FHA loans is crucial for
                 homebuyers in Arizona. Each loan type has unique features that cater to different
-                financial situations and borrower profiles.
+                financial situations and borrower profiles. Below are key descriptions of both loan types:
               </p>
             </div>
 
@@ -266,7 +306,9 @@ export default function ConventionalVsFhaLoansPage() {
                   One of the main advantages of Conventional loans is the potential for lower monthly
                   payments compared to FHA loans, especially for borrowers with excellent credit.
                   Additionally, mortgage insurance on Conventional loans can be canceled once the
-                  borrower reaches 20% equity in their home, leading to long-term savings.
+                  borrower reaches 20% equity in their home, leading to long-term savings. This
+                  flexibility makes Conventional loans appealing for buyers who can afford a larger down
+                  payment.
                 </p>
               </div>
 
@@ -277,14 +319,16 @@ export default function ConventionalVsFhaLoansPage() {
                   borrowers with lower credit scores or limited savings. With a minimum down payment of
                   just 3.5%, they provide an accessible pathway to homeownership for first-time buyers
                   or those recovering from past financial difficulties. FHA loans also allow for gift
-                  funds to cover down payments and closing costs.
+                  funds to cover down payments and closing costs, making them an attractive option for
+                  individuals who may struggle to save.
                 </p>
                 <h4 className="text-[#3fb364] text-[16px] font-bold mb-2">Key Benefits of FHA Loans</h4>
                 <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed">
                   FHA loans offer significant advantages for those with lower credit scores or minimal
-                  down payment funds. They feature lower upfront costs and more lenient qualification
-                  criteria, making them an ideal choice for individuals seeking to enter the housing
-                  market without extensive financial resources.
+                  down payment funds. They are particularly beneficial for first-time homebuyers who may
+                  not have a substantial financial history. FHA loans feature lower upfront costs and
+                  more lenient qualification criteria, making them an ideal choice for individuals
+                  seeking to enter the housing market without extensive financial resources.
                 </p>
               </div>
             </div>
@@ -307,15 +351,13 @@ export default function ConventionalVsFhaLoansPage() {
         <section className="loan-section w-full !pt-8 sm:!pt-10 lg:!pt-12">
           <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mx-auto loan-section-heading">
-              <h2
-                className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
+              <h2 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5 font-playfair">
                 Key Differences Between FHA and Conventional Loans in Arizona
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
                 Understanding the main distinctions between Conventional and FHA loans can help you
-                make an informed decision about which loan type best suits your needs.
+                make an informed decision about which loan type best suits your needs. Here&apos;s a quick
+                comparison of the key features:
               </p>
             </div>
 
@@ -323,20 +365,19 @@ export default function ConventionalVsFhaLoansPage() {
               {keyDifferences.map((card) => (
                 <div
                   key={card.title}
-                  className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm"
+                  className={`${CARD_HOVER} group`}
                 >
-                  <h3 className="text-[#08271B] text-[17px] font-bold mb-3 flex items-center gap-2">
-                    <CheckIcon />
-                    <span>{card.title}</span>
-                  </h3>
-                  <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed pl-7">{card.text}</p>
+                  <h3 className="text-[#08271B] text-[17px] font-bold mb-3">{card.title}</h3>
+                  <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed">{card.text}</p>
                 </div>
               ))}
             </div>
 
             <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center max-w-3xl mx-auto mb-8">
               To help you easily compare Conventional and FHA loans, here&apos;s a quick side-by-side
-              breakdown of their most important features.
+              breakdown of their most important features. This table highlights the critical factors
+              that can influence your decision, such as down payment, credit score requirements, and
+              long-term costs.
             </p>
 
             <ComparisonTable
@@ -360,15 +401,13 @@ export default function ConventionalVsFhaLoansPage() {
         <section className="loan-section w-full bg-[#f5f0e8] border-y border-[#e8e0d0]/50">
           <div className="max-w-6xl mx-auto">
             <div className="max-w-3xl mx-auto loan-section-heading">
-              <h2
-                className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
+              <h2 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5 font-playfair">
                 Who Benefits from Each Loan Type?
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
                 Understanding which loan type suits your financial situation is crucial when making a
-                home-buying decision.
+                home-buying decision. Let&apos;s explore the ideal candidates for both Conventional and FHA
+                loans:
               </p>
             </div>
 
@@ -391,7 +430,7 @@ export default function ConventionalVsFhaLoansPage() {
                   Borrowers choosing conventional loans often enjoy lower monthly payments, especially
                   with excellent credit. These loans offer higher borrowing limits, making them suitable
                   for purchasing more expensive homes. Additionally, the option to cancel mortgage
-                  insurance provides long-term savings potential.
+                  insurance provides long-term savings potential for homeowners.
                 </p>
               </div>
 
@@ -409,7 +448,8 @@ export default function ConventionalVsFhaLoansPage() {
                   FHA loans shine in their accessibility. They offer competitive interest rates for
                   borrowers with lower credit scores, potentially resulting in significant monthly
                   savings. The lower down payment requirement and more lenient qualification criteria make
-                  FHA loans an excellent choice for first-time homebuyers.
+                  FHA loans an excellent choice for first-time homebuyers or those with limited financial
+                  resources.
                 </p>
               </div>
             </div>
@@ -429,15 +469,13 @@ export default function ConventionalVsFhaLoansPage() {
         <section className="loan-section w-full">
           <div className="max-w-5xl mx-auto">
             <div className="max-w-3xl mx-auto loan-section-heading">
-              <h2
-                className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
+              <h2 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5 font-playfair">
                 Detailed Cost Comparisons
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
                 To provide a clear picture of how Conventional and FHA loans compare, let&apos;s examine
-                two scenarios based on different credit scores.
+                two scenarios based on different credit scores. These comparisons will help illustrate
+                the financial implications of each loan type for potential borrowers.
               </p>
             </div>
 
@@ -449,7 +487,8 @@ export default function ConventionalVsFhaLoansPage() {
               conventionalHeader="Conventional 30 Year Fixed"
               fhaHeader="Fixed 30 Year FHA"
             />
-            <ul className="mt-5 mb-8 space-y-2 text-[#4e5b4e] text-[14.5px] leading-relaxed list-disc pl-5">
+            <p className="text-[#08271B] text-[15px] font-bold mt-5 mb-2">Key Takeaways:</p>
+            <ul className="mb-8 space-y-2 text-[#4e5b4e] text-[14.5px] leading-relaxed list-disc pl-5">
               <li>
                 The Conventional loan is the clear winner with a total monthly payment that is $38 less
                 than the FHA loan.
@@ -471,7 +510,8 @@ export default function ConventionalVsFhaLoansPage() {
               conventionalHeader="Conventional 30 Year Fixed"
               fhaHeader="Fixed 30 Year FHA"
             />
-            <ul className="mt-5 mb-8 space-y-2 text-[#4e5b4e] text-[14.5px] leading-relaxed list-disc pl-5">
+            <p className="text-[#08271B] text-[15px] font-bold mt-5 mb-2">Key Takeaways:</p>
+            <ul className="mb-8 space-y-2 text-[#4e5b4e] text-[14.5px] leading-relaxed list-disc pl-5">
               <li>
                 The FHA loan is significantly more advantageous, with a total monthly payment that is $409
                 less than the Conventional loan.
@@ -486,63 +526,71 @@ export default function ConventionalVsFhaLoansPage() {
               </li>
             </ul>
 
-            <div className="flex flex-col gap-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-[#f5f0e8] rounded-2xl p-6 md:p-7 border border-[#e8e0d0]/60 h-full">
-                  <h4 className="text-[#08271B] text-[17px] font-bold mb-2">Conventional Loan</h4>
-                  <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed">
-                    Mortgage insurance can be removed once you reach 20% equity in your home, potentially
-                    leading to lower monthly payments over time.
-                  </p>
-                </div>
-                <div className="bg-[#f5f0e8] rounded-2xl p-6 md:p-7 border border-[#e8e0d0]/60 h-full">
-                  <h4 className="text-[#08271B] text-[17px] font-bold mb-2">FHA Loan</h4>
-                  <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed">
-                    For loans with less than 10% down payment, mortgage insurance is required for the life
-                    of the loan. If you put down 10% or more, you can remove mortgage insurance after 11
-                    years.
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 md:p-8 text-center">
-                <h4 className="text-[#08271B] text-[17px] font-bold mb-4">Interest Rate Comparison</h4>
-                <p className="text-[#4e5b4e] text-[15px]">
-                  Average 30-year Conventional rate:{" "}
-                  <span className="font-bold text-[#08271B]">6.70%</span>
-                </p>
-                <p className="text-[#4e5b4e] text-[15px] mt-2">
-                  Average 30-year FHA rate: <span className="font-bold text-[#08271B]">6.65%</span>
+            <h3 className="text-[#08271B] text-[20px] font-bold mb-5">Long-Term Considerations</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div className="bg-[#f5f0e8] rounded-2xl p-6 md:p-7 border border-[#e8e0d0]/60 h-full">
+                <h4 className="text-[#08271B] text-[17px] font-bold mb-2">Conventional Loan</h4>
+                <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed">
+                  Mortgage insurance can be removed once you reach 20% equity in your home, potentially
+                  leading to lower monthly payments over time.
                 </p>
               </div>
+              <div className="bg-[#f5f0e8] rounded-2xl p-6 md:p-7 border border-[#e8e0d0]/60 h-full">
+                <h4 className="text-[#08271B] text-[17px] font-bold mb-2">FHA Loan</h4>
+                <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed">
+                  For loans with less than 10% down payment, mortgage insurance is required for the life
+                  of the loan. If you put down 10% or more, you can remove mortgage insurance after 11
+                  years.
+                </p>
+              </div>
+            </div>
 
-              <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center max-w-3xl mx-auto">
-                For borrowers with excellent credit (760+), Conventional loans offer slight advantages.
-                For those with lower credit scores (660), FHA loans can provide substantial monthly savings
-                and easier qualification criteria.
+            <div className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 md:p-8 text-center mb-8">
+              <h4 className="text-[#08271B] text-[17px] font-bold mb-4">Interest Rate Comparison</h4>
+              <p className="text-[#4e5b4e] text-[15px]">
+                Average 30-year Conventional rate:{" "}
+                <span className="font-bold text-[#08271B]">7.01%</span>
               </p>
+              <p className="text-[#4e5b4e] text-[15px] mt-2">
+                Average 30-year FHA rate: <span className="font-bold text-[#08271B]">6.94%</span>
+              </p>
+            </div>
 
-              <div className="flex justify-center">
-                <Link
-                  href="/conventional-vs-fha-calculator/"
-                  className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
-                >
-                  Compare Your Loan Options Now!
-                </Link>
-              </div>
+            <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center max-w-3xl mx-auto mb-4">
+              These detailed comparisons demonstrate how credit scores significantly impact loan terms
+              and costs. For borrowers with excellent credit (760+), Conventional loans offer slight
+              advantages in terms of lower monthly payments and potential removal of mortgage insurance.
+              However, for those with lower credit scores (660), FHA loans can provide substantial monthly
+              savings and easier qualification criteria.
+            </p>
+            <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center max-w-3xl mx-auto mb-8">
+              The long-term considerations and current market interest rates highlight the importance of
+              considering your credit profile, down payment ability, and long-term homeownership plans when
+              choosing between Conventional and FHA loans. While FHA loans may offer slightly lower
+              interest rates, the long-term cost of mortgage insurance could offset this advantage for some
+              borrowers.
+            </p>
+
+            <div className="flex justify-center mb-10">
+              <Link
+                href="/conventional-vs-fha-calculator/"
+                className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+              >
+                Compare Your Loan Options Now!
+              </Link>
             </div>
           </div>
         </section>
 
         {/* Mid CTA */}
         <section className="loan-section w-full bg-[#08271B] text-white text-center">
-          <div className="max-w-3xl mx-auto">
-            <p className="text-[#c8c8b8] text-[15.5px] leading-relaxed mb-6">
+          <div className="max-w-3xl mx-auto space-y-6">
+            <p className="text-[#c8c8b8] text-[15.5px] leading-relaxed">
               Still weighing the pros and cons of Conventional vs. FHA loans? Let&apos;s simplify the
-              process and find the best option for you.
+              process and find the best option for you. Get expert guidance tailored to your needs today!
             </p>
             <Link
-              href="/contact-us/"
+              href="#get-pre-approved"
               className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
             >
               Get Your Free Consultation
@@ -552,121 +600,84 @@ export default function ConventionalVsFhaLoansPage() {
 
         <CountyTestimonials
           title="Hear from Homebuyers Like You"
+          description="Finding the right mortgage can be a game-changer. See how our clients navigated the choice between Conventional and FHA loans—and how we helped them secure the best financing for their dream homes!"
           testimonials={testimonials}
         />
 
-        {/* Quiz CTA */}
+        {/* Credit score CTA */}
         <section className="loan-section w-full bg-[#f5f0e8] border-y border-[#e8e0d0]/50">
           <div className="max-w-3xl mx-auto text-center">
-            <h2
-              className="text-[#08271B] text-[26px] lg:text-[32px] font-normal leading-tight mb-4"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
+            <h2 className="text-[#08271B] text-[26px] lg:text-[32px] font-normal leading-tight mb-4 font-playfair">
               Is Your Credit Score Better Suited for Conventional or FHA?
             </h2>
-            <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6">
+            <p className="text-[#4e5b4e] text-[15px] leading-relaxed">
               Your credit score can determine which loan type offers you better terms. Find out whether
               a Conventional or FHA loan might be right for your situation.
             </p>
-            <Link
-              href="/conventional-vs-fha-calculator/"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
-            >
-              Take The Quiz
-            </Link>
           </div>
         </section>
 
         {/* Expert guidance */}
-        <section className="loan-section w-full bg-[#08271B] text-white">
-          <div className="max-w-6xl mx-auto">
-            <div className="max-w-3xl mx-auto loan-section-heading">
-              <h2
-                className="text-white text-[30px] lg:text-[40px] font-normal leading-tight mb-5"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
+        <section className="loan-section w-full bg-white">
+          <div className="max-w-6xl mx-auto space-y-10">
+            <div className="max-w-3xl mx-auto loan-section-heading text-center">
+              <h2 className="text-[#08271B] text-[30px] lg:text-[40px] font-normal leading-tight mb-5 font-playfair">
                 Expert Guidance on Conventional vs FHA Loans in Arizona
               </h2>
-              <p className="text-[#c8c8b8] text-[15.5px] leading-relaxed">
+              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
                 At Mortgage Brothers LLC, we&apos;re committed to helping you find the best loan solution
-                for your unique situation.
+                for your unique situation. Our expertise in both Conventional and FHA loans, combined with
+                our deep understanding of the Arizona market, ensures you&apos;ll get personalized advice
+                tailored to your needs.
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {expertCards.map((card) => (
-                <div key={card.title} className="bg-white/5 border border-white/10 rounded-2xl p-6">
-                  <h3 className="text-[#3fb364] text-[17px] font-bold mb-2">{card.title}</h3>
-                  <p className="text-[#c8c8b8] text-[14px] leading-relaxed">{card.text}</p>
+                <div key={card.title} className={CARD_HOVER}>
+                  <div className="flex items-start gap-4 mb-3">
+                    <IconBadge>{card.icon}</IconBadge>
+                    <h3 className="text-[#08271B] text-[17px] font-bold pt-2">{card.title}</h3>
+                  </div>
+                  <p className="text-[#4e5b4e] text-[14px] leading-relaxed">{card.text}</p>
                 </div>
               ))}
             </div>
 
-            <div className="loan-btn-wrap">
-              <a
-                href="tel:+16025352171"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
-              >
-                Call Us Now
-              </a>
-            </div>
+            <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed text-center max-w-2xl mx-auto">
+              Have questions about Conventional or FHA loans? A quick call can give you the answers you
+              need to move forward with confidence.
+            </p>
           </div>
         </section>
 
         {/* FAQ */}
-        <section className="loan-section w-full">
-          <div className="max-w-3xl mx-auto">
-            <div className="loan-section-heading">
-              <h2
-                className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-4"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
+        <section className="loan-section w-full bg-[#fcf9f3]">
+          <div className="max-w-3xl mx-auto space-y-8">
+            <div className="loan-section-heading text-center">
+              <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
+                FREQUENTLY ASKED QUESTIONS
+              </span>
+              <h2 className="text-[#08271B] text-[28px] lg:text-[36px] font-normal leading-tight mb-4 font-playfair">
                 Common Questions About FHA and Conventional Loans
               </h2>
               <p className="text-[#4e5b4e] text-[15px] leading-relaxed">
                 When considering Conventional and FHA loans, many borrowers have questions about key
-                differences and potential drawbacks.
+                differences and potential drawbacks. Here are some of the most common concerns addressed:
               </p>
             </div>
 
-            <div className="flex flex-col gap-3">
-              {faqs.map((faq, index) => {
-                const open = openFaq === index;
-                return (
-                  <div
-                    key={faq.q}
-                    className="bg-white border border-[#e8e0d0]/70 rounded-xl overflow-hidden"
-                  >
-                    <button
-                      type="button"
-                      onClick={() => setOpenFaq(open ? null : index)}
-                      className="w-full flex items-center justify-between gap-4 text-left px-5 py-4 cursor-pointer"
-                      aria-expanded={open}
-                    >
-                      <span className="text-[#08271B] text-[15px] font-semibold leading-snug">
-                        {faq.q}
-                      </span>
-                      <span
-                        className={`text-[#3fb364] text-[22px] font-light shrink-0 transition-transform ${
-                          open ? "rotate-45" : ""
-                        }`}
-                      >
-                        +
-                      </span>
-                    </button>
-                    {open && (
-                      <div className="px-5 pb-5 text-[#4e5b4e] text-[14.5px] leading-relaxed border-t border-[#e8e0d0]/50 pt-4">
-                        {faq.a}
-                      </div>
-                    )}
-                  </div>
-                );
-              })}
-            </div>
+            <FaqAccordion items={faqs} />
+
+            <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center">
+              Still unsure which loan is the right fit for you? Choosing between a Conventional and FHA
+              loan depends on your financial situation, long-term goals, and eligibility. Our experts are
+              here to guide you through the process and help you secure the best mortgage for your needs.
+            </p>
 
             <div className="loan-btn-wrap">
               <Link
-                href="/contact-us/"
+                href="#get-pre-approved"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Get Personalized Advice Today!
@@ -676,7 +687,7 @@ export default function ConventionalVsFhaLoansPage() {
         </section>
 
         <GetInTouch
-          theme="light"
+          theme="dark"
           title="Ready to Take the Next Step? Let's Talk!"
           description=""
           showPreApproveCta
@@ -684,22 +695,24 @@ export default function ConventionalVsFhaLoansPage() {
         />
 
         {/* Explore solutions */}
-        <section className="loan-section w-full">
+        <section className="loan-section w-full bg-white">
           <div className="max-w-6xl mx-auto">
-            <h2
-              className="text-[#08271B] text-[28px] lg:text-[34px] font-normal loan-section-heading"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
-              Explore Our Mortgage Solutions
-            </h2>
+            <div className="text-center loan-section-heading">
+              <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
+                MORE OPTIONS
+              </span>
+              <h2 className="text-[#08271B] text-[28px] lg:text-[34px] font-normal font-playfair">
+                Explore Our Mortgage Solutions
+              </h2>
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {loanSolutions.map((item) => (
                 <Link
                   key={item.href + item.label}
                   href={item.href}
-                  className="flex items-center gap-3 bg-white border border-[#e8e0d0]/70 rounded-xl px-5 py-4 text-[#08271B] font-semibold text-[14.5px] hover:border-[#3fb364]/50 hover:text-[#3fb364] transition-all"
+                  className="group flex items-center gap-3 bg-[#fcf9f3] border border-[#e8e0d0]/70 rounded-xl px-5 py-4 text-[#08271B] font-semibold text-[14.5px] hover:border-[#3fb364] transition-all"
                 >
-                  <CheckIcon />
+                  <span className="text-[#3fb364] font-bold group-hover:translate-x-0.5 transition-transform">→</span>
                   {item.label}
                 </Link>
               ))}

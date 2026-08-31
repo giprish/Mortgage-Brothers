@@ -10,6 +10,7 @@ import StatsBanner from "../component/StatsBanner";
 import HeroFeatureStrip from "../component/HeroFeatureStrip";
 
 import CountyTestimonials, { type CountyTestimonial } from "../component/CountyTestimonials";
+import { renderDarkInlineLinks, renderInlineLinks } from "@/lib/renderInlineLinks";
 
 const featureStrip = [
   "Home Loans Are Still Possible with Poor Credit",
@@ -28,23 +29,23 @@ const creditTable = [
 const meaningCards = [
   {
     title: "Higher Interest Rates",
-    text: "Lenders typically charge higher interest rates to borrowers with low credit scores to offset the perceived risk.",
+    text: "Lenders typically charge **higher interest rates** to borrowers with low credit scores to offset the perceived risk.",
   },
   {
     title: "Limited Loan Program Availability",
-    text: "Conventional loans may be harder to qualify for, but government-backed loans like FHA, VA, and USDA mortgages offer more flexibility for low-credit borrowers.",
+    text: "Conventional loans may be harder to qualify for, but **government-backed loans like FHA, VA, and USDA mortgages** offer more flexibility for low-credit borrowers.",
   },
   {
     title: "Larger Down Payment Requirements",
-    text: "Some lenders may require a higher down payment (10–20%) to compensate for the lower credit score.",
+    text: "Some lenders may require a **higher down payment** (10–20%) to compensate for the lower credit score.",
   },
   {
     title: "Stricter Debt-to-Income (DTI) Ratios",
-    text: "Lenders may require a lower DTI ratio, meaning you'll need stable income and manageable existing debts to qualify.",
+    text: "Lenders may require a **lower DTI ratio**, meaning you'll need stable income and manageable existing debts to qualify.",
   },
   {
     title: "Credit Score Minimums Vary by Loan Type",
-    text: "While conventional loans usually require a minimum credit score of 620, FHA loans accept scores as low as 580 with alternative credit using a manual underwrite to approve the loan.",
+    text: "While conventional loans usually require a **minimum credit score of 620**, **FHA loans accept scores as low as 580** with alternative credit using a manual underwrite to approve the loan.",
   },
   {
     title: "Improving Your Credit Can Expand Your Options",
@@ -55,59 +56,59 @@ const meaningCards = [
 const benefitCards = [
   {
     title: "Access to Government-Backed Loans",
-    text: "Programs like FHA, VA, and USDA loans are designed to help borrowers with lower credit scores get approved with lower down payments and more flexible requirements.",
+    text: "Programs like **FHA, VA, and USDA loans** are designed to help borrowers with lower credit scores get approved with **lower down payments and more flexible requirements**.",
   },
   {
     title: "Opportunity to Rebuild Your Credit",
-    text: "Making consistent, on-time mortgage payments helps improve your credit score over time, opening doors to better financial opportunities.",
+    text: "Making **consistent, on-time mortgage payments** helps improve your credit score over time, opening doors to better financial opportunities.",
   },
   {
     title: "Equity Growth & Financial Stability",
-    text: "Instead of paying rent, homeownership allows you to build equity in your property, which can serve as a valuable financial asset in the future.",
+    text: "Instead of paying rent, homeownership allows you to build **equity in your property**, which can serve as a valuable financial asset in the future.",
   },
   {
     title: "Refinancing Options After Credit Improvement",
-    text: "Once your credit score improves, you can refinance your mortgage to secure a lower interest rate and better loan terms.",
+    text: "Once your credit score improves, you can **refinance your mortgage** to secure a lower interest rate and better loan terms.",
   },
   {
     title: "Down Payment Assistance Programs Available",
-    text: "Some state and federal programs offer down payment assistance for eligible borrowers, making it easier to afford homeownership even with poor credit.",
+    text: "Some state and federal programs offer **down payment assistance** for eligible borrowers, making it easier to afford homeownership even with poor credit.",
   },
   {
     title: "Alternative Loan Options Exist",
-    text: "In addition to traditional lenders, credit unions, private lenders, and rent-to-own programs may provide more flexible mortgage solutions for borrowers with low credit scores.",
+    text: "In addition to traditional lenders, **credit unions, private lenders, and rent-to-own programs** may provide more flexible mortgage solutions for borrowers with low credit scores.",
   },
 ];
 
 const programs = [
   {
     title: "FHA Loans – Low Credit, Low Down Payment",
-    text: "Backed by the Federal Housing Administration, FHA loans allow credit scores as low as 580 with only 3.5% down.",
+    text: "Backed by the Federal Housing Administration, **FHA loans allow credit scores as low as 580** with only **3.5% down**.",
     href: "/fha-home-loans-arizona/",
   },
   {
     title: "VA Loans – No Down Payment for Eligible Veterans",
-    text: "For eligible military service members and veterans, VA loans offer no down payment, no PMI, and competitive interest rates, even with a lower credit score.",
+    text: "For **eligible military service members and veterans**, VA loans offer **no down payment, no PMI, and competitive interest rates**, even with a lower credit score.",
     href: "/va-loans-arizona/",
   },
   {
     title: "USDA Loans – Affordable Homeownership in Rural Areas",
-    text: "Designed for low-to-moderate-income buyers in rural areas, USDA loans require no down payment and most lenders look for a credit score of at least 640 for automated approval, though scores as low as 620 may still qualify with manual underwriting and strong compensating factors.",
+    text: "Designed for **low-to-moderate-income buyers** in rural areas, **USDA loans require no down payment** and accept **credit scores as low as 580**.",
     href: "/fha-home-loans-arizona/",
   },
   {
     title: "Subprime & Alternative Loans",
-    text: "Some lenders offer non-traditional mortgage programs with flexible approval criteria, allowing borrowers with credit scores below 580 to qualify under different income and asset verification methods.",
+    text: "Some lenders offer **non-traditional mortgage programs** with flexible approval criteria, allowing borrowers with **credit scores below 580** to qualify under different income and asset verification methods.",
     href: "/private-money-lender-arizona/",
   },
   {
     title: "Rent-to-Own Programs",
-    text: "For those struggling to qualify for a mortgage today, rent-to-own programs provide an option to rent a home with a portion of payments going toward future ownership.",
+    text: "For those struggling to qualify for a mortgage today, rent-to-own programs provide an option to **rent a home with a portion of payments going toward future ownership**.",
     href: "/first-time-home-buyer-arizona-guide/",
   },
   {
     title: "Co-Signer Mortgages – A Boost for Your Application",
-    text: "Adding a creditworthy co-signer to your mortgage application can increase approval chances and help secure better loan terms.",
+    text: "Adding a **creditworthy co-signer** to your mortgage application can increase approval chances and help secure better loan terms.",
     href: "#get-pre-approved",
   },
 ];
@@ -115,27 +116,27 @@ const programs = [
 const expertCards = [
   {
     title: "Experts in Low Credit Mortgage Solutions",
-    text: "We have extensive experience helping borrowers with low credit scores find FHA, VA, USDA, and alternative loan programs that fit their needs.",
+    text: "We have extensive experience helping borrowers with **low credit scores** find **FHA, VA, USDA, and alternative loan programs** that fit their needs.",
   },
   {
     title: "Flexible Loan Options for Every Situation",
-    text: "From government-backed loans to rent-to-own programs, we provide customized mortgage solutions based on your financial profile.",
+    text: "From **government-backed loans to rent-to-own programs**, we provide **customized mortgage solutions** based on your financial profile.",
   },
   {
     title: "Higher Approval Odds",
-    text: "We work with lenders who specialize in low-credit mortgages, increasing your chances of approval even if you've been turned down elsewhere.",
+    text: "We work with **lenders who specialize in low-credit mortgages**, increasing your chances of approval even if you've been turned down elsewhere.",
   },
   {
     title: "Guidance on Improving Your Credit",
-    text: "Our team helps you understand how to improve your credit score so you can qualify for better rates and loan terms in the future.",
+    text: "Our team helps you understand **how to improve your credit score** so you can qualify for better rates and loan terms in the future.",
   },
   {
     title: "Fast & Transparent Process",
-    text: "We streamline the mortgage application, ensuring clear communication, no hidden fees, and fast processing so you can focus on finding your home.",
+    text: "We streamline the mortgage application, ensuring **clear communication, no hidden fees, and fast processing** so you can focus on finding your home.",
   },
   {
     title: "Trusted by Arizona Homebuyers",
-    text: "We've helped hundreds of borrowers in Phoenix, Scottsdale, Mesa, and beyond get approved for a mortgage, no matter their credit situation.",
+    text: "We've helped **hundreds of borrowers in Phoenix, Scottsdale, Mesa, and beyond** get approved for a mortgage, no matter their credit situation.",
   },
 ];
 
@@ -229,11 +230,13 @@ export default function MortgageForPoorCreditPage() {
                 What Does Poor Credit Mean for Your Mortgage?
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
-                Having poor credit doesn&apos;t mean homeownership is out of reach, but it does impact
-                your mortgage options. Lenders consider borrowers with lower credit scores as
-                higher-risk applicants, which can result in higher interest rates, stricter loan
-                requirements, and larger down payment demands. However, there are still mortgage
-                programs designed to help borrowers with poor credit secure home financing.
+                {renderInlineLinks(
+                  "Having **poor credit** doesn't mean homeownership is out of reach, but it does impact your mortgage options. Lenders consider borrowers with lower credit scores as higher-risk applicants, which can result in **higher interest rates, stricter loan requirements, and larger down payment demands**. However, there are still mortgage programs designed to help borrowers with poor credit secure home financing."
+                )}
+              </p>
+              <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75] mt-4">
+                Understanding how your credit score affects your mortgage can help you make informed
+                decisions and improve your chances of approval. Here&apos;s what you need to know:
               </p>
             </div>
 
@@ -247,7 +250,9 @@ export default function MortgageForPoorCreditPage() {
                     <CheckIcon />
                     <h3 className="text-[#08271B] text-[17px] font-bold">{card.title}</h3>
                   </div>
-                  <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed pl-8">{card.text}</p>
+                  <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed pl-8">
+                    {renderInlineLinks(card.text)}
+                  </p>
                 </div>
               ))}
             </div>
@@ -274,8 +279,9 @@ export default function MortgageForPoorCreditPage() {
                 How Your Credit Score Impacts Your Mortgage Rate
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                Lenders use your credit score to determine your interest rate. Here&apos;s how it can
-                affect a 30-year fixed mortgage rate:
+                {renderInlineLinks(
+                  "Lenders use your credit score to determine your interest rate. Here's how it can affect a **30-year fixed mortgage rate:**"
+                )}
               </p>
             </div>
 
@@ -303,11 +309,7 @@ export default function MortgageForPoorCreditPage() {
                           i === 3 ? "bg-[#e8f5e9]/60" : i % 2 === 0 ? "bg-[#fcf9f3]" : "bg-white"
                         }`}
                       >
-                        <td
-                          className={`px-5 py-3.5 text-[14.5px] ${
-                            i === 3 ? "font-bold text-[#2c5e1a]" : "text-[#08271B] font-medium"
-                          }`}
-                        >
+                        <td className="px-5 py-3.5 text-[14.5px] text-[#08271B]">
                           {row.range}
                         </td>
                         <td className="px-5 py-3.5 text-[14.5px] text-[#4e5b4e]">{row.rate}</td>
@@ -319,10 +321,15 @@ export default function MortgageForPoorCreditPage() {
               </div>
             </div>
 
+            <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center max-w-3xl mx-auto mb-5">
+              {renderInlineLinks(
+                "With a **poor credit score**, getting a mortgage may come with challenges, but it's still possible. Some lenders offer loan programs specifically designed for borrowers with lower credit scores, including **government-backed loans and alternative financing options**. While interest rates and down payment requirements may be higher, there are still ways to secure a home loan."
+              )}
+            </p>
             <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center max-w-3xl mx-auto">
-              With a poor credit score, getting a mortgage may come with challenges, but it&apos;s still
-              possible. Some lenders offer loan programs specifically designed for borrowers with lower
-              credit scores, including government-backed loans and alternative financing options.
+              If you&apos;re planning to buy a home, understanding your mortgage options is the first
+              step. Our tools and experts can help you explore programs that work for your situation
+              and guide you toward improving your approval chances.
             </p>
 
           </div>
@@ -367,7 +374,9 @@ export default function MortgageForPoorCreditPage() {
                     <CheckIcon />
                     <span>{card.title}</span>
                   </h3>
-                  <p className="text-[#4e5b4e] text-[14px] leading-relaxed pl-7">{card.text}</p>
+                  <p className="text-[#4e5b4e] text-[14px] leading-relaxed pl-7">
+                    {renderInlineLinks(card.text)}
+                  </p>
                 </div>
               ))}
             </div>
@@ -394,8 +403,9 @@ export default function MortgageForPoorCreditPage() {
                 Mortgage Programs Designed for Borrowers with Poor Credit
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                Having poor credit doesn&apos;t mean you can&apos;t qualify for a home loan. Below are
-                some of the best mortgage options available for borrowers with poor credit:
+                {renderInlineLinks(
+                  "Having **poor credit** doesn't mean you can't qualify for a home loan. While conventional loans may have stricter requirements, there are several mortgage programs designed specifically for borrowers with lower credit scores. These programs provide **flexible terms, lower down payment options, and alternative approval criteria**, helping you move toward homeownership."
+                )}
               </p>
             </div>
 
@@ -409,7 +419,9 @@ export default function MortgageForPoorCreditPage() {
                   <h3 className="text-[#3fb364] group-hover:text-[#2d8545] text-[19px] font-bold mb-2 transition-colors">
                     {p.title}
                   </h3>
-                  <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed">{p.text}</p>
+                  <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed">
+                    {renderInlineLinks(p.text)}
+                  </p>
                 </Link>
               ))}
             </div>
@@ -427,6 +439,9 @@ export default function MortgageForPoorCreditPage() {
 
         <CountyTestimonials
           title="Real Clients. Real Success. Homeownership Is Possible."
+          description={renderInlineLinks(
+            "At [AZ Mortgage Brothers](/), we understand that buying a home with poor credit can feel overwhelming—but we've helped many borrowers just like you secure the right mortgage. Through **flexible loan programs, expert guidance, and personalized solutions**, our clients have turned their homeownership dreams into reality."
+          )}
           testimonials={testimonials}
         />
 
@@ -441,9 +456,9 @@ export default function MortgageForPoorCreditPage() {
                 Helping Borrowers with Poor Credit Secure the Right Mortgage
               </h2>
               <p className="text-[#c8c8b8] text-[15.5px] leading-relaxed">
-                Getting a mortgage with poor credit can feel like a challenge, but at AZ Mortgage
-                Brothers, we specialize in helping borrowers with less-than-perfect credit find real
-                mortgage solutions.
+                {renderDarkInlineLinks(
+                  "Getting a mortgage with poor credit can feel like a challenge, but at **AZ Mortgage Brothers**, we specialize in helping borrowers with **less-than-perfect credit** find **real mortgage solutions**. Our team understands the unique obstacles you may face, and we work with **trusted lenders and specialized loan programs** to give you the best chance of homeownership."
+                )}
               </p>
             </div>
 
@@ -451,7 +466,9 @@ export default function MortgageForPoorCreditPage() {
               {expertCards.map((card) => (
                 <div key={card.title} className="bg-white/5 border border-white/10 rounded-2xl p-6">
                   <h3 className="text-[#3fb364] text-[17px] font-bold mb-2">{card.title}</h3>
-                  <p className="text-[#c8c8b8] text-[14px] leading-relaxed">{card.text}</p>
+                  <p className="text-[#c8c8b8] text-[14px] leading-relaxed">
+                    {renderDarkInlineLinks(card.text)}
+                  </p>
                 </div>
               ))}
             </div>
@@ -478,8 +495,9 @@ export default function MortgageForPoorCreditPage() {
                 Frequently Asked Questions About Getting a Mortgage with Poor Credit
               </h2>
               <p className="text-[#4e5b4e] text-[15px] leading-relaxed">
-                We understand that applying for a mortgage with poor credit can raise a lot of
-                questions. Below, we&apos;ve answered some of the most common ones.
+                {renderInlineLinks(
+                  "We understand that applying for a mortgage with **poor credit** can raise a lot of questions. While low credit scores can limit your options, there are still **loan programs designed to help you secure financing**. Below, we've answered some of the most common questions from borrowers with poor credit."
+                )}
               </p>
             </div>
 
@@ -510,7 +528,7 @@ export default function MortgageForPoorCreditPage() {
                     </button>
                     {open && (
                       <div className="px-5 pb-5 text-[#4e5b4e] text-[14.5px] leading-relaxed border-t border-[#e8e0d0]/50 pt-4">
-                        {faq.a}
+                        {renderInlineLinks(faq.a)}
                       </div>
                     )}
                   </div>
@@ -539,9 +557,9 @@ export default function MortgageForPoorCreditPage() {
               Let&apos;s Find the Right Mortgage Solution for You
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              Buying a home with poor credit may seem challenging, but you don&apos;t have to navigate
-              it alone. Whether you need guidance on FHA, VA, USDA loans, or alternative financing
-              solutions, our team is here to help.
+              {renderInlineLinks(
+                "Buying a home with **poor credit** may seem challenging, but you don't have to navigate it alone. At **AZ Mortgage Brothers**, we specialize in helping borrowers with low credit scores find **real mortgage options** that fit their financial situation. Whether you need guidance on **FHA, VA, USDA loans, or alternative financing solutions**, our team is here to help."
+              )}
             </p>
 
             <Link

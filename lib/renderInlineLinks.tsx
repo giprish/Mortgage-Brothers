@@ -4,7 +4,7 @@ import React from "react";
 export const INLINE_LINK_CLASS =
   "font-bold text-[#3fb364] no-underline hover:text-[#2d8545] hover:no-underline";
 
-export const INLINE_BOLD_CLASS = "font-bold text-[#052316]";
+export const INLINE_BOLD_CLASS = "font-bold text-inherit";
 
 /** Longest phrases first so overlapping matches resolve correctly. */
 const CITY_PAGE_INLINE_LINKS: { phrase: string; href: string }[] = [
@@ -24,6 +24,7 @@ const CITY_PAGE_INLINE_LINKS: { phrase: string; href: string }[] = [
   { phrase: "reverse mortgages", href: "/reverse-mortgage-arizona/" },
   { phrase: "Reverse mortgage", href: "/reverse-mortgage-arizona/" },
   { phrase: "reverse mortgage", href: "/reverse-mortgage-arizona/" },
+  { phrase: "conventional mortgages", href: "/conventional-home-loans-arizona/" },
   { phrase: "Conventional loans", href: "/conventional-home-loans-arizona/" },
   { phrase: "conventional loans", href: "/conventional-home-loans-arizona/" },
   { phrase: "FHA loans", href: "/fha-home-loans-arizona/" },
@@ -158,7 +159,7 @@ function earliestMatch(...candidates: (InlineMatch | null)[]): InlineMatch | nul
 }
 
 function findDefaultMatch(text: string): InlineMatch | null {
-  return earliestMatch(findExplicitBold(text), findInlineLink(text));
+  return earliestMatch(findExplicitBold(text), findMarkdownLink(text), findInlineLink(text));
 }
 
 /** City intro: only explicit `**bold**` and `[label](href)` — no heuristic bold/auto brand. */
@@ -224,6 +225,20 @@ export function renderCityIntroText(text: string): React.ReactNode {
  * Uses white bold (not INLINE_BOLD_CLASS) so emphasis stays readable on the dark hero.
  */
 export function renderHeroDescription(text: string): React.ReactNode {
+  return renderFormattedText(
+    text,
+    (value) => earliestMatch(findExplicitBold(value), findMarkdownLink(value)),
+    (match) =>
+      match.href ? (
+        renderLinkSpan(match)
+      ) : (
+        <strong className="font-bold text-white">{match.phrase}</strong>
+      ),
+  );
+}
+
+/** Dark band sections (e.g. expert cards on `#08271B` backgrounds). */
+export function renderDarkInlineLinks(text: string): React.ReactNode {
   return renderFormattedText(
     text,
     (value) => earliestMatch(findExplicitBold(value), findMarkdownLink(value)),

@@ -524,7 +524,7 @@ export default function VaLoanCalculator() {
       <main className="flex-grow overflow-x-hidden" style={{ color: C.ink, fontFamily: SANS, fontSize: 15, lineHeight: 1.5, overflowX: "hidden" }}>
         <LoanProgramHero
           title="VA Loan Calculator"
-          subtitle="Estimate VA payments, funding fees, and eligibility — results update as you adjust the inputs."
+          subtitle="Calculate Your Military Benefits & Estimate Monthly Payments for VA Home Loans"
           ctaLabel=""
           note=""
         />

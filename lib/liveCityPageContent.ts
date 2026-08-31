@@ -19,6 +19,20 @@ export type LiveCityPageContent = {
   expectItems?: string[];
   getInTouchTitle?: string;
   getInTouchParagraphs?: string[];
+  /** Optional override for “Explore Our … Mortgage Solutions” heading. */
+  mortgageSolutionsTitle?: string;
+  /** Optional override for intro under the mortgage solutions grid. */
+  mortgageSolutionsIntro?: string;
+  /** Optional hero stat override (e.g. "4.9/5"). */
+  heroClientRating?: string;
+  /** Optional mid-page CTA primary button label. */
+  ctaPrimaryLabel?: string;
+  /** Optional FAQ section eyebrow (defaults to "QUICK ANSWERS"). */
+  faqEyebrow?: string;
+  /** Optional link below the communities grid. */
+  communitiesCtaLabel?: string;
+  /** Loan program titles to omit from the mortgage solutions grid. */
+  loanProgramsExclude?: string[];
 };
 
 export const liveCityPageContent: Record<string, LiveCityPageContent> = {
@@ -935,10 +949,15 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
   },
   "coconino-county-az/sedona": {
+    heroTitle: "Sedona Mortgages – Your Local Mortgage Experts",
+    heroDescription:
+      "Expert Sedona mortgages, competitive mortgage rates, and personalized home loan solutions for buyers and homeowners in Sedona, Arizona.",
+    introTitle: "Mortgage Brokers Sedona AZ – Local Mortgage You Can Trust",
     longDescriptions: [
-      "Looking for experienced **mortgage brokers in Sedona AZ**? [Mortgage Brothers LLC](/) provides expert guidance on Sedona home mortgage solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
-      "As a **Sedona local mortgage team**, we understand resort-area properties, short-term rental considerations, luxury home appraisals, and lender requirements unique to the Sedona real estate market.",
+      "Looking for experienced mortgage brokers in Sedona AZ? [Mortgage Brothers LLC](/) provides expert guidance on Sedona home mortgage solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
+      "As a Sedona local mortgage team, we understand resort-area properties, short-term rental considerations, luxury home appraisals, and lender requirements unique to the Sedona real estate market.",
     ],
+    communitiesTitle: "Popular Sedona Communities We Serve",
     intro: "Sedona is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
     items: [
       {
@@ -967,9 +986,12 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
       { title: "Sedona Market Expertise", description: "We understand Sedona mortgage rates, luxury pricing trends, and appraisal factors." },
       { title: "Customized Home Mortgage Solutions", description: "Every homeowners mortgage Sedona AZ plan is tailored to your financial goals." },
       { title: "Clear & Responsive Communication", description: "Transparent guidance from application to closing." },
-      { title: "Fast Mortgage Pre-Approvals", description: "Most clients receive approval within 4-8 hours." },
+      { title: "Fast Mortgage Pre-Approvals", description: "Most clients receive approval within 4–8 hours." },
       { title: "Multiple Mortgage Lenders", description: "Access to a wide network of trusted lending partners." },
     ],
+    mortgageSolutionsTitle: "Explore Our Sedona Mortgage Loan Options",
+    mortgageSolutionsIntro:
+      "Comprehensive mortgage programs designed specifically for Sedona homebuyers and homeowners.",
     ctaTitle: "Ready to Secure Your Sedona Home Mortgage?",
     ctaDescription: "Work with experienced mortgage brokers Sedona AZ residents trust for purchases, refinancing, and competitive rates.",
     guidanceTitle: "Trusted Sedona Local Mortgage Guidance",
@@ -986,9 +1008,12 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Our Sedona Mortgage Services",
     getInTouchParagraphs: [
-      "Our **Sedona mortgage** services support buyers and homeowners at every stage of the lending journey. From first-time purchases to refinancing and reverse mortgage solutions, we provide flexible loan options designed for long-term success.",
+      "Our Sedona mortgage services support buyers and homeowners at every stage of the lending journey. From first-time purchases to refinancing and reverse mortgage solutions, we provide flexible loan options designed for long-term success.",
       "By working with multiple lenders, we help clients secure competitive rates and smooth closings with personalized service.",
     ],
+    heroClientRating: "4.9/5",
+    faqEyebrow: "OUR FAQ'S",
+    communitiesCtaLabel: "Talk to a Sedona Loan Expert",
   },
   "coconino-county-az/timberline": {
     longDescriptions: [
@@ -2994,6 +3019,9 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
   },
   "maricopa-county-az/phoenix": {
+    heroTitle: "Phoenix Mortgage Experts – Your Local Home Loan Partners",
+    heroDescription:
+      "Personalized mortgage solutions, competitive rates, and expert guidance for every Phoenix neighborhood",
     longDescriptions: [
       "Unlock your homeownership goals in Phoenix with a trusted local mortgage team. At Mortgage Brothers, we provide personalized mortgage guidance, competitive loan options, and a streamlined mortgage process built for today's Arizona housing market. Whether you're purchasing or refinancing, our experienced mortgage brokers help you make confident financing decisions.",
     ],
@@ -4451,6 +4479,97 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
       "By working with a strong network of trusted lenders, we help Florence clients secure competitive rates and efficient closings. Our focus is on clarity, speed, and personalized service.",
     ],
   },
+  "pinal-county-az/queen-creek": {
+    heroTitle: "Queen Creek Mortgage Experts – Your Local Home Loan Partners",
+    heroDescription:
+      "Personalized mortgage solutions, competitive rates, and expert guidance for homebuyers and homeowners in Queen Creek, AZ and surrounding areas.",
+    longDescriptions: [
+      "Looking for a trusted mortgage broker in Queen Creek, Arizona? [Mortgage Brothers LLC](/) provides tailored home loan solutions for first-time buyers, move-up buyers, investors, and homeowners looking to refinance in Queen Creek and nearby communities.",
+      "With deep knowledge of the local market, school districts, and lender requirements, our team helps you secure the right mortgage with confidence and clarity.",
+    ],
+    communitiesTitle: "Popular Queen Creek Communities We Serve",
+    intro: "Queen Creek is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
+    items: [
+      {
+        title: "Encanterra",
+        description:
+          "A premier master-planned community offering luxury homes, golf course living, and resort-style amenities, making it a top choice for buyers seeking an upscale lifestyle.",
+      },
+      {
+        title: "Meridian",
+        description:
+          "Meridian is a fast-growing community known for newer construction, family-friendly amenities, and convenient access to shopping, schools, and major roadways.",
+      },
+      {
+        title: "Ironwood Crossing",
+        description:
+          "A highly desirable neighborhood featuring parks, walking trails, and modern homes, ideal for family-friendly and long-term homeowners.",
+      },
+      {
+        title: "Queenland Manor",
+        description:
+          "An established Queen Creek community offering larger lots and a quieter residential feel, popular with buyers seeking space and privacy.",
+      },
+      {
+        title: "Sossaman Estates",
+        description:
+          "A well-located neighborhood close to major roads and daily conveniences, offering a mix of affordability and comfortable suburban living.",
+      },
+    ],
+    whyChooseTitle: "Why Queen Creek Residents Choose Mortgage Brothers LLC",
+    whyChooseItems: [
+      {
+        title: "Local Market Expertise",
+        description:
+          "We understand Queen Creek pricing trends, new-build financing, and lender guidelines.",
+      },
+      {
+        title: "Customized Loan Strategies",
+        description:
+          "Every borrower receives a mortgage solution designed around their financial goals.",
+      },
+      {
+        title: "Fast, Clear Communication",
+        description: "Timely updates, honest answers, and full transparency.",
+      },
+      {
+        title: "Quick Pre-Approvals",
+        description: "Most clients receive pre-approval within 4–8 hours.",
+      },
+      {
+        title: "Competitive Rates & Options",
+        description: "Access to multiple lenders to secure the best possible terms.",
+      },
+    ],
+    mortgageSolutionsTitle: "Explore Our Mortgage Solutions",
+    mortgageSolutionsIntro:
+      "Comprehensive mortgage programs designed specifically for Queen Creek homebuyers and homeowners.",
+    ctaTitle: "Ready to Start Your Queen Creek Home Journey?",
+    ctaDescription:
+      "Work with a local mortgage expert who understands Queen Creek real estate, new construction financing, and refinancing strategies.",
+    guidanceTitle: "Trusted Mortgage Guidance in Queen Creek",
+    guidanceParagraphs: [
+      "At Mortgage Brothers LLC, we guide Queen Creek buyers through every step of the mortgage process — from pre-approval to closing day.",
+      "Whether you're purchasing a new-build home, relocating, upgrading, or refinancing, our mission is to make your mortgage experience simple, transparent, and stress-free.",
+    ],
+    expectTitle: "With Us, You Can Expect",
+    expectItems: [
+      "Clear communication from start to finish",
+      "Honest advice with no hidden fees",
+      "Multiple lender options under one roof",
+      "Local expertise backed by strong lending partners",
+    ],
+    getInTouchTitle: "Our Queen Creek Mortgage Services",
+    getInTouchParagraphs: [
+      "Our Queen Creek mortgage services are designed to support buyers and homeowners at every stage of the lending process. From first-time home purchases to refinancing and investment properties, we provide expert guidance and flexible loan options tailored to your needs.",
+      "By working with a wide network of trusted lenders, we help Queen Creek clients secure competitive rates and smooth closings. Our local mortgage experts focus on clarity, speed, and personalized service to help you move forward with confidence.",
+    ],
+    heroClientRating: "4.9/5",
+    ctaPrimaryLabel: "Get Expert Consultation",
+    faqEyebrow: "OUR FAQ'S",
+    communitiesCtaLabel: "Talk to a Queen Creek Loan Expert",
+    loanProgramsExclude: ["Private Money Lender"],
+  },
   "pinal-county-az/san-tan-valley": {
     longDescriptions: [
       "Looking for a trusted mortgage broker in San Tan Valley, Arizona? Mortgage Brothers provides personalized home loan solutions tailored to the needs of local buyers, first-time homeowners, investors, and refinancers across Pinal County.",
@@ -4785,6 +4904,94 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
       "Our **Cottonwood mortgage** services support buyers and homeowners at every stage of the lending journey. From first-time purchases to refinancing and reverse mortgage solutions, we provide flexible loan options designed for long-term success.",
       "By working with multiple mortgage lenders in Cottonwood AZ, we help clients secure competitive rates and smooth closings with personalized service.",
     ],
+  },
+  "yavapai-county-az/dewey": {
+    heroTitle: "Dewey Mortgages – Your Trusted Mortgage Broker in Dewey, Arizona",
+    heroDescription:
+      "Expert Dewey mortgages, competitive mortgage rates, and personalized home loan solutions for buyers and homeowners in Dewey, AZ and surrounding Yavapai County areas.",
+    introTitle: "Mortgage Brokers Dewey AZ – Local Mortgage Lenders You Can Trust",
+    longDescriptions: [
+      "Looking for reliable mortgage brokers in Dewey AZ? [Mortgage Brothers LLC](/) helps buyers and homeowners secure the right mortgage loans in Dewey AZ, whether you're purchasing a home, refinancing, or planning long-term homeownership.",
+      "As experienced mortgage lenders in Dewey Arizona, we understand rural property guidelines, appraisal considerations, and lender requirements unique to the Dewey housing market.",
+    ],
+    communitiesTitle: "Popular Dewey Communities We Serve",
+    intro: "Dewey is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
+    items: [
+      {
+        title: "Central Dewey",
+        description:
+          "Central Dewey offers affordability, accessibility, and a strong sense of community close to local services.",
+      },
+      {
+        title: "Dewey–Humboldt",
+        description:
+          "Dewey–Humboldt offers a small-town atmosphere with affordable homes, open land, and easy access to Prescott Valley.",
+      },
+      {
+        title: "Humboldt Area",
+        description:
+          "This area provides convenient access to Highway 69 while maintaining a quiet residential feel.",
+      },
+      {
+        title: "Cherry Creek Estates",
+        description:
+          "Cherry Creek Estates features larger lots and a semi-rural lifestyle, popular with buyers seeking space and privacy.",
+      },
+      {
+        title: "Blue Hills Area",
+        description:
+          "The Blue Hills area offers scenic views, peaceful surroundings, and growing appeal among long-term homeowners.",
+      },
+    ],
+    whyChooseTitle: "Why Choose Us as Your Mortgage Broker in Dewey Arizona",
+    whyChooseItems: [
+      {
+        title: "Dewey Mortgage Market Expertise",
+        description: "We understand Dewey mortgage rates, property values, and lender guidelines.",
+      },
+      {
+        title: "Customized Home Mortgage Solutions",
+        description: "Every home mortgage in Dewey AZ is structured around your financial goals.",
+      },
+      {
+        title: "Clear & Responsive Communication",
+        description: "Transparent guidance from application to closing.",
+      },
+      {
+        title: "Fast Mortgage Pre-Approvals",
+        description: "Most clients receive approval within 4–8 hours.",
+      },
+      {
+        title: "Multiple Mortgage Lenders",
+        description: "Access to a wide network of trusted mortgage lenders in Dewey AZ.",
+      },
+    ],
+    mortgageSolutionsTitle: "Explore Our Dewey Mortgage Loan Options",
+    mortgageSolutionsIntro:
+      "Comprehensive mortgage programs designed specifically for Dewey homebuyers and homeowners.",
+    ctaTitle: "Ready to Secure Your Dewey Home Mortgage?",
+    ctaDescription:
+      "Work with an experienced mortgage broker Dewey AZ homeowners trust for purchases, refinancing, and competitive mortgage rates.",
+    guidanceTitle: "Trusted Mortgage Lenders Dewey AZ Homeowners",
+    guidanceParagraphs: [
+      "At Mortgage Brothers LLC, we help buyers and homeowners navigate Dewey mortgages with confidence. From new purchases to mortgage refinance in Dewey, we focus on clarity, speed, and long-term value.",
+      "Whether you're relocating, upgrading, or considering a reverse mortgage in Dewey Arizona, our team is here to guide you at every step.",
+    ],
+    expectTitle: "What Sets Our Dewey Mortgage Services Apart",
+    expectItems: [
+      "Honest mortgage advice with no hidden fees",
+      "Access to competitive Dewey mortgage rates",
+      "Multiple loan programs under one roof",
+      "Local expertise backed by statewide lending power",
+    ],
+    getInTouchTitle: "Our Dewey Mortgage Services",
+    getInTouchParagraphs: [
+      "Our Dewey mortgage services support buyers and homeowners at every stage of the lending journey. From first-time purchases to refinancing and reverse mortgage solutions, we provide flexible loan options designed for long-term success.",
+      "By working with multiple mortgage lenders in Dewey AZ, we help clients secure competitive rates and smooth closings with personalized service.",
+    ],
+    heroClientRating: "4.9/5",
+    faqEyebrow: "OUR FAQ'S",
+    communitiesCtaLabel: "Talk to a Dewey Loan Expert",
   },
   "yavapai-county-az/jerome": {
     longDescriptions: [

@@ -5,6 +5,7 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleCard from "../component/ArticleCard";
+import GetInTouch from "../component/GetInTouch";
 
 export const metadata: Metadata = getSeoMetadata("/spouse-estate-considerations/");
 
@@ -33,6 +34,19 @@ const articles = [
     readTime: "",
     category: "Spouse & Estate Considerations, Homeownership Tips"
   }
+];
+
+const loanSolutions = [
+  { label: "Conventional Home Loans", href: "/conventional-home-loans-arizona/" },
+  { label: "Private Money Lender", href: "/private-money-lender-arizona/" },
+  { label: "FHA Home Loans", href: "/fha-home-loans-arizona/" },
+  { label: "FHA Streamline Refinance", href: "/fha-streamline-refinance-arizona/" },
+  { label: "First Time Home Buyer", href: "/first-time-home-buyer-arizona-guide/" },
+  { label: "Reverse Mortgage", href: "/reverse-mortgage-arizona/" },
+  { label: "Reverse Mortgage for a Home Purchase", href: "/reverse-mortgage-home-purchase-arizona/" },
+  { label: "Refinancing", href: "/refinancing-arizona/" },
+  { label: "Jumbo Loans", href: "/jumbo-loans-arizona/" },
+  { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
 export default function SpouseEstateConsiderationsPage() {
@@ -88,26 +102,44 @@ export default function SpouseEstateConsiderationsPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-12 px-6 lg:px-10 max-w-5xl mx-auto mb-16">
-          <div className="bg-[#052316] text-white rounded-3xl p-10 lg:p-14 text-center relative overflow-hidden shadow-xl">
-            <div className="max-w-2xl mx-auto relative z-10">
-              <span className="text-[#7a6638] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
-                TAKE THE NEXT STEP
-              </span>
-              <h2 className="text-white text-[28px] lg:text-[38px] font-playfair font-normal mb-4">
-                Protect Your Assets &amp; Home Equity
-              </h2>
-              <p className="text-[#c8c8b8] text-[15px] leading-relaxed mb-8">
-                Get confidential, expert advice on home loan restructuring, buyout refinances, or reverse mortgage options.
-              </p>
-              <Link
-                href="#get-pre-approved"
-                className="bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all duration-200 inline-block shadow-lg hover:shadow-xl"
+        <GetInTouch
+          theme="light"
+          showDivider
+          title="Get in Touch with Mortgage Brothers LLC"
+          description="If you need immediate help, you can call us at 602-535-1288, use our contact form to request a callback."
+          renderParagraph={() => (
+            <>
+              If you need immediate help, you can call us at{" "}
+              <a
+                href="tel:+16025351288"
+                className="font-bold text-[#3fb364] no-underline hover:text-[#2d8545]"
               >
-                Get Pre-Approved &rarr;
+                602-535-1288
+              </a>
+              , use our{" "}
+              <Link href="/contact-us/" className="font-bold text-[#3fb364] no-underline hover:text-[#2d8545]">
+                contact form
+              </Link>{" "}
+              to request a callback.
+            </>
+          )}
+        />
+
+        <section className="py-16 px-6 lg:px-10 max-w-6xl mx-auto bg-white">
+          <h2 className="text-[#052316] text-[28px] lg:text-[34px] font-playfair font-normal text-center mb-10">
+            Explore Our Mortgage Solutions
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {loanSolutions.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="group flex items-center gap-3 bg-[#fcf9f3] border border-[#e8e0d0]/70 rounded-xl px-5 py-4 text-[#052316] font-semibold text-[14.5px] hover:border-[#3fb364] transition-all"
+              >
+                <span className="text-[#3fb364] font-bold group-hover:translate-x-0.5 transition-transform">→</span>
+                {item.label}
               </Link>
-            </div>
+            ))}
           </div>
         </section>
       </main>

@@ -22,6 +22,10 @@ export type GetInTouchProps = {
   ctaLabel?: string;
   /** Optional paragraph renderer (city pages pass renderGetInTouchText). */
   renderParagraph?: (text: string) => React.ReactNode;
+  /** When true, contact cards render before body copy (blog category pages). */
+  contactBeforeBody?: boolean;
+  /** Optional content after contact cards (e.g. licensing). */
+  afterContact?: React.ReactNode;
 };
 
 const DEFAULT_TITLE = "Get in Touch with Arizona's Mortgage Experts";
@@ -170,6 +174,8 @@ export default function GetInTouch({
   ctaHref = "#get-pre-approved",
   ctaLabel = "GET PRE-APPROVED →",
   renderParagraph = renderInlineLinks,
+  contactBeforeBody = false,
+  afterContact,
 }: GetInTouchProps) {
   const isLight = theme === "light";
   const bodyParagraphs =
@@ -197,64 +203,87 @@ export default function GetInTouch({
     ? "inline-flex items-center justify-center min-h-11 bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[15px] sm:text-[16px] px-7 sm:px-8 py-3.5 sm:py-4 rounded-full transition-all shadow-sm"
     : "inline-flex items-center justify-center min-h-11 bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[15px] sm:text-[16px] px-7 sm:px-8 py-3.5 sm:py-4 rounded-full transition-all shadow-lg";
 
+  const headingBlock = (
+    <div className="space-y-4 sm:space-y-5">
+      <h2 className={headingClass}>{title}</h2>
+      {showDivider ? (
+        <div
+          className="mx-auto h-0.5 w-12 rounded-full bg-[#3fb364]"
+          aria-hidden
+        />
+      ) : null}
+      {!contactBeforeBody && bodyParagraphs.length > 0 ? (
+        <div className="space-y-4 max-w-4xl mx-auto">
+          {bodyParagraphs.map((paragraph, index) => (
+            <p key={index} className={bodyClass}>
+              {renderParagraph(paragraph)}
+            </p>
+          ))}
+        </div>
+      ) : null}
+    </div>
+  );
+
+  const bodyBlock =
+    contactBeforeBody && bodyParagraphs.length > 0 ? (
+      <div className="space-y-4 max-w-4xl mx-auto">
+        {bodyParagraphs.map((paragraph, index) => (
+          <p key={index} className={bodyClass}>
+            {renderParagraph(paragraph)}
+          </p>
+        ))}
+      </div>
+    ) : null;
+
+  const contactCards = (
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 lg:gap-6 w-full md:items-start">
+      <ContactItem
+        href={COMPANY.phoneHref}
+        ariaLabel={`Call ${COMPANY.phoneDisplay}`}
+        label="Phone"
+        icon={<PhoneIcon />}
+        value={COMPANY.phoneDisplay}
+        isLight={isLight}
+      />
+
+      <ContactItem
+        href={COMPANY.addressMapsUrl}
+        ariaLabel={`Open map for ${COMPANY.addressFull}`}
+        label="Address"
+        icon={<PinIcon />}
+        value={
+          <>
+            {COMPANY.addressLine1}
+            <br />
+            {COMPANY.addressLine2}
+          </>
+        }
+        external
+        isLight={isLight}
+      />
+
+      <ContactItem
+        href="/contact-us/"
+        ariaLabel="Go to Contact Us page"
+        label="Contact"
+        icon={<ChatIcon />}
+        value="Contact Us"
+        isLight={isLight}
+      />
+    </div>
+  );
+
   return (
     <section className={sectionClass}>
       <div className="max-w-5xl mx-auto px-5 sm:px-6 lg:px-10 text-center space-y-8">
-        <div className="space-y-4 sm:space-y-5">
-          <h2 className={headingClass}>{title}</h2>
-          {showDivider ? (
-            <div
-              className="mx-auto h-0.5 w-12 rounded-full bg-[#3fb364]"
-              aria-hidden
-            />
-          ) : null}
-          {bodyParagraphs.length > 0 ? (
-            <div className="space-y-4 max-w-4xl mx-auto">
-              {bodyParagraphs.map((paragraph, index) => (
-                <p key={index} className={bodyClass}>
-                  {renderParagraph(paragraph)}
-                </p>
-              ))}
-            </div>
-          ) : null}
-        </div>
+        {headingBlock}
 
         {/* Canonical order: Phone → Address → Contact (never reorder for live parity) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5 lg:gap-6 w-full md:items-start">
-          <ContactItem
-            href={COMPANY.phoneHref}
-            ariaLabel={`Call ${COMPANY.phoneDisplay}`}
-            label="Phone"
-            icon={<PhoneIcon />}
-            value={COMPANY.phoneDisplay}
-            isLight={isLight}
-          />
+        {contactCards}
 
-          <ContactItem
-            href={COMPANY.addressMapsUrl}
-            ariaLabel={`Open map for ${COMPANY.addressFull}`}
-            label="Address"
-            icon={<PinIcon />}
-            value={
-              <>
-                {COMPANY.addressLine1}
-                <br />
-                {COMPANY.addressLine2}
-              </>
-            }
-            external
-            isLight={isLight}
-          />
+        {bodyBlock}
 
-          <ContactItem
-            href="/contact-us/"
-            ariaLabel="Go to Contact Us page"
-            label="Contact"
-            icon={<ChatIcon />}
-            value="Contact Us"
-            isLight={isLight}
-          />
-        </div>
+        {afterContact}
 
         {showPreApproveCta && (
           <div>

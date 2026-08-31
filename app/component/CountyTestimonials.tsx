@@ -13,7 +13,7 @@ type CountyTestimonialsProps = {
   testimonials: CountyTestimonial[];
   title?: string;
   /** Optional intro under the title (live page body copy). */
-  description?: string;
+  description?: React.ReactNode;
 };
 
 const AUTO_ADVANCE_MS = 6000;
