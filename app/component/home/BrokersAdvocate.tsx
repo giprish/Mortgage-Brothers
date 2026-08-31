@@ -1,4 +1,5 @@
 import React from "react";
+import IconBadge from "../IconBadge";
 
 const features = [
   {
@@ -6,7 +7,7 @@ const features = [
     description:
       "Our Arizona roots ensure tailored strategies for every region, whether you're buying in Scottsdale or refinancing in Tucson, or looking to get out of the heat and buy a second home in Flagstaff.",
     icon: (
-      <svg className="w-6 h-6 text-[#3fb364]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
         <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
         <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
@@ -17,7 +18,7 @@ const features = [
     description:
       "We connect you with multiple lenders to find the best rates and terms available in Arizona.",
     icon: (
-      <svg className="w-6 h-6 text-[#3fb364]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
         <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
       </svg>
     ),
@@ -27,7 +28,7 @@ const features = [
     description:
       "Our streamlined process ensures you can make competitive offers in the fast-moving Arizona market.",
     icon: (
-      <svg className="w-6 h-6 text-[#3fb364]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
         <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
       </svg>
     ),
@@ -70,11 +71,11 @@ const BrokersAdvocate = () => {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="bg-white border border-[#e8e0d0]/60 rounded-2xl p-7 lg:p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="group bg-white border border-[#e8e0d0]/60 rounded-2xl p-7 lg:p-8 shadow-sm hover:shadow-xl hover:border-[#3fb364]/40 transition-all duration-300 hover:-translate-y-1"
             >
-              <div className="w-12 h-12 rounded-xl bg-[#3fb364]/10 flex items-center justify-center mb-5">
+              <IconBadge size="lg" className="mb-5">
                 {feature.icon}
-              </div>
+              </IconBadge>
               <h3
                 className="text-[#08271B] text-[19px] font-semibold mb-3"
                 

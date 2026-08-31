@@ -5,7 +5,7 @@ export const faqs = [
   { q: "How long does the home buying process take?", a: "The timeline can vary, but typically expect 30-45 days from offer acceptance to closing. However, the entire process, including home searching, can take several months." },
   { q: "Can I use gift money for my down payment?", a: "Yes, many loan programs allow you to use gifted funds for your down payment. The gift must be properly documented, and some programs may require a portion of the down payment to come from your own funds." },
   { q: "What additional costs should I budget for beyond the down payment?", a: "Be prepared for closing costs (1-8% of the home's price), property taxes, homeowners insurance, and potential HOA fees. It's also wise to budget for maintenance and repairs." },
-  { q: "How do I choose the right neighborhood?", a: "Consider factors like proximity to work, school quality, local amenities, and future development plans. Research crime rates and visit the area at different times of day to get a feel for the community. Remember, every homebuying journey is unique. Don't hesitate to reach out to our team for personalized answers to your specific questions. Ask Our Experts" },
+  { q: "How do I choose the right neighborhood?", a: "Consider factors like proximity to work, school quality, local amenities, and future development plans. Research crime rates and visit the area at different times of day to get a feel for the community." },
 ];
 
 export const faqSchemaItems = faqs.map((item) => ({

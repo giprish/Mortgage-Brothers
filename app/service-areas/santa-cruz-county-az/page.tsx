@@ -182,10 +182,6 @@ export default function SantaCruzCountyPage() {
           ]}
         />
 
-        <CTA
-          title="Ready to start your Santa Cruz County home journey?"
-          description="Let's find the perfect mortgage solution for your Santa Cruz County home."
-        />
       </main>
       <Footer />
     </div>

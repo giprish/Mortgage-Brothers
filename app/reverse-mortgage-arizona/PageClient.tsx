@@ -12,6 +12,7 @@ import HeroFeatureStrip from "../component/HeroFeatureStrip";
 import GetInTouch from "../component/GetInTouch";
 
 import CountyTestimonials, { type CountyTestimonial } from "../component/CountyTestimonials";
+import { cardIconBadgeClassName } from "../component/IconBadge";
 
 const faqs = pageFaqs;
 
@@ -260,7 +261,7 @@ export default function ReverseMortgageArizonaPage() {
                   key={item.title}
                   className="group rounded-2xl border border-[#e0e0e0] bg-white p-6 shadow-sm transition-all hover:border-[#3fb364] hover:shadow-md"
                 >
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-[#3fb364]/10 text-[18px] font-bold text-[#3fb364] transition-colors group-hover:bg-[#3fb364] group-hover:text-[#ffffff]">
+                  <div className={cardIconBadgeClassName("sm", "font-bold mb-4")}>
                     {idx + 1}
                   </div>
                   <h3 className="mb-2 font-playfair text-[17px] font-bold text-[#052316]">{item.title}</h3>
@@ -316,8 +317,8 @@ export default function ReverseMortgageArizonaPage() {
 
             <div className="grid grid-cols-1 gap-6 text-left md:grid-cols-2">
               {processSteps.map((step, idx) => (
-                <div key={step.title} className="rounded-2xl border border-[#e0e0e0] bg-white p-6 shadow-sm">
-                  <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-[#3fb364]/10 text-[18px] font-bold text-[#3fb364]">
+                <div key={step.title} className="group rounded-2xl border border-[#e0e0e0] bg-white p-6 shadow-sm transition-all hover:border-[#3fb364] hover:shadow-md">
+                  <div className={cardIconBadgeClassName("sm", "font-bold mb-4")}>
                     {idx + 1}
                   </div>
                   <h3 className="mb-2 font-playfair text-[17px] font-bold text-[#052316]">{step.title}</h3>

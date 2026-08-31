@@ -13,6 +13,7 @@ import GetInTouch from "../component/GetInTouch";
 import { LOAN_PROGRAM_LINKS } from "@/lib/company";
 
 import CountyTestimonials, { type CountyTestimonial } from "../component/CountyTestimonials";
+import { cardIconBadgeClassName } from "../component/IconBadge";
 
 export default function ConventionalHomeLoansPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -283,7 +284,7 @@ export default function ConventionalHomeLoansPage() {
                   key={idx}
                   className="bg-[#fcf9f3] border border-[#e0e0e0] rounded-2xl p-6 hover:border-[#3fb364] transition-all group"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#3fb364]/10 text-[#3fb364] flex items-center justify-center font-bold text-[18px] mb-4 group-hover:bg-[#3fb364] group-hover:text-[#ffffff] transition-colors">
+                  <div className={cardIconBadgeClassName("sm", "font-bold mb-4")}>
                     {idx + 1}
                   </div>
                   <h3 className="text-[16px] font-bold text-[#052316] mb-2 font-playfair">{step.title}</h3>

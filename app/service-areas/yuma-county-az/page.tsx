@@ -111,7 +111,7 @@ export default function YumaCountyPage() {
             </div>
             <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-4">WESTERN ARIZONA - YUMA</p>
             <h1 className="text-white text-hero-title font-playfair font-normal leading-[1.1] mb-6 max-w-3xl">Your trusted Yuma County mortgage broker.</h1>
-            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">Mortgage Brothers provides reliable mortgage solutions for homebuyers and homeowners throughout Yuma County, Arizona.</p>
+            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">Mortgage Brothers provides reliable mortgage solutions for homebuyers and homeowners throughout Yuma County, Arizona. Our experienced mortgage brokers help clients .</p>
             <HeroCtaButtons className="mb-4" />
           </div>
         </section>
@@ -131,7 +131,7 @@ export default function YumaCountyPage() {
             </div>
           </div>
         </section>
-        <section className="w-full py-16 lg:py-24 bg-white">
+        <section id="areas" className="w-full py-16 lg:py-24 bg-white scroll-mt-[72px]">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-16">
               <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">Yuma County Arizona Mortgage Broker Serving Local Communities</h2>
@@ -143,6 +143,15 @@ export default function YumaCountyPage() {
             <CountyCityCards countySlug="yuma-county-az" cities={cities} />
           </div>
         </section>
+
+        <CTA
+          eyebrow=""
+          title="Ready to Start Your Home Mortgage Journey in Yuma County?"
+          description="Our Yuma County mortgage experts are here to guide you through every step of the home loan process. From Yuma to San Luis and surrounding communities, we help buyers and homeowners secure the right mortgage solutions with confidence."
+          primaryLabel="View All Yuma County Areas"
+          primaryHref="#areas"
+          secondaryLabel="Call Us Now"
+        />
 
 
         <CountyMortgagePrograms countyName="Yuma County" fhaLimit="$541,287" />
@@ -166,11 +175,6 @@ export default function YumaCountyPage() {
             "Choosing the right mortgage is an important financial decision. Our Yuma County mortgage team takes a personalized approach by reviewing your financial profile, credit history, and long-term homeownership goals before recommending the best loan options.",
             "With access to multiple lenders and advanced loan comparison tools, we help clients secure competitive mortgage solutions while keeping the process smooth and transparent.",
           ]}
-        />
-
-        <CTA
-          title="Ready to start your Yuma County home journey?"
-          description="Let's find the perfect mortgage solution for your Yuma County home."
         />
       </main>
       <Footer />

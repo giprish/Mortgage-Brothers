@@ -13,6 +13,7 @@ import CountyCityCards from "../../component/CountyCityCards";
 import CountyMortgagePrograms from "../../component/CountyMortgagePrograms";
 import CountyTestimonials from "../../component/CountyTestimonials";
 import GetInTouch from "../../component/GetInTouch";
+import CTA from "../../component/CTA";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/la-paz-county-az/");
 
@@ -129,7 +130,7 @@ export default function LaPazCountyPage() {
             </div>
           </div>
         </section>
-        <section className="w-full py-14 sm:py-16 lg:py-20 bg-white">
+        <section id="areas" className="w-full py-14 sm:py-16 lg:py-20 bg-white scroll-mt-[72px]">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-10">
               <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">La Paz County Arizona Mortgage Broker Serving Local Communities</h2>
@@ -141,6 +142,15 @@ export default function LaPazCountyPage() {
             <CountyCityCards countySlug="la-paz-county-az" cities={cities} />
           </div>
         </section>
+
+        <CTA
+          eyebrow=""
+          title="Ready to Start Your Home Mortgage Journey in La Paz County?"
+          description="Our La Paz County mortgage experts are here to guide you through every step of the home loan process. From Parker to Quartzsite and surrounding communities, we help buyers and homeowners secure the right mortgage solutions with confidence."
+          primaryLabel="View All La Paz County Areas"
+          primaryHref="#areas"
+          secondaryLabel="Call Us Now"
+        />
 
 
         <CountyMortgagePrograms countyName="La Paz County" fhaLimit="$541,287" />

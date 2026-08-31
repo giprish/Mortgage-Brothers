@@ -11,6 +11,7 @@ import LoanProgramHero from "../component/LoanProgramHero";
 import HeroFeatureStrip from "../component/HeroFeatureStrip";
 
 import CountyTestimonials, { type CountyTestimonial } from "../component/CountyTestimonials";
+import { cardIconBadgeClassName } from "../component/IconBadge";
 
 const featureStrip = [
   "Buy Your Dream Home with No Monthly Payments",
@@ -228,9 +229,9 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
                 {benefits.map((b, idx) => (
                   <div
                     key={b.title}
-                    className="bg-[#fcf9f3] border border-[#e0e0e0] hover:border-[#3fb364] rounded-2xl p-5 shadow-sm transition-all"
+                    className="group bg-[#fcf9f3] border border-[#e0e0e0] hover:border-[#3fb364] rounded-2xl p-5 shadow-sm transition-all"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#3fb364]/10 text-[#3fb364] flex items-center justify-center font-bold text-[14px] mb-3">
+                    <div className={cardIconBadgeClassName("xs", "font-bold mb-3")}>
                       {idx + 1}
                     </div>
                     <h3 className="text-[15px] font-bold text-[#052316] mb-2 font-playfair">{b.title}</h3>
@@ -377,8 +378,8 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
               {processSteps.map((step, idx) => (
-                <div key={step.title} className="bg-white border border-[#e0e0e0] rounded-2xl p-6 shadow-sm">
-                  <div className="w-10 h-10 rounded-xl bg-[#3fb364]/10 text-[#3fb364] flex items-center justify-center font-bold text-[18px] mb-4">
+                <div key={step.title} className="group bg-white border border-[#e0e0e0] hover:border-[#3fb364] rounded-2xl p-6 shadow-sm transition-all">
+                  <div className={cardIconBadgeClassName("sm", "font-bold mb-4")}>
                     {idx + 1}
                   </div>
                   <h3 className="text-[17px] font-bold text-[#052316] mb-2 font-playfair">{step.title}</h3>

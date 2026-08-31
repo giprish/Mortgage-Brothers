@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import IconBadge from "../component/IconBadge";
 
 const programs = [
   {
@@ -229,12 +230,12 @@ export default function LoanProgramsDetailPage() {
         <section className="loan-section px-6 lg:px-10 bg-white border-b border-[#e8e0d0]/40">
           <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {/* Card 1 */}
-            <div className="bg-[#fcf9f3] rounded-2xl p-6 border border-[#e8e0d0]/40 flex flex-col items-start gap-4">
-              <div className="w-9 h-9 rounded-lg bg-[#3fb364]/10 text-[#3fb364] flex items-center justify-center">
+            <div className="group bg-[#fcf9f3] rounded-2xl p-6 border border-[#e8e0d0]/40 hover:border-[#3fb364]/40 flex flex-col items-start gap-4 transition-all duration-200">
+              <IconBadge size="sm" className="w-9 h-9 rounded-lg">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                 </svg>
-              </div>
+              </IconBadge>
               <h3 className="text-[#052316] text-[15px] font-bold">Expertise You Can Trust</h3>
               <p className="text-[#4e5b4e] text-[12.5px] leading-relaxed">
                 With over 20 years in the Arizona mortgage market, our certified loan officers bring unparalleled knowledge to every client interaction.
@@ -242,12 +243,12 @@ export default function LoanProgramsDetailPage() {
             </div>
 
             {/* Card 2 */}
-            <div className="bg-[#fcf9f3] rounded-2xl p-6 border border-[#e8e0d0]/40 flex flex-col items-start gap-4">
-              <div className="w-9 h-9 rounded-lg bg-[#3fb364]/10 text-[#3fb364] flex items-center justify-center">
+            <div className="group bg-[#fcf9f3] rounded-2xl p-6 border border-[#e8e0d0]/40 hover:border-[#3fb364]/40 flex flex-col items-start gap-4 transition-all duration-200">
+              <IconBadge size="sm" className="w-9 h-9 rounded-lg">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                 </svg>
-              </div>
+              </IconBadge>
               <h3 className="text-[#052316] text-[15px] font-bold">A Program for Every Need</h3>
               <p className="text-[#4e5b4e] text-[12.5px] leading-relaxed">
                 From conventional home loans to specialized reverse mortgages, we offer a diverse range of programs to suit every situation.
@@ -255,12 +256,12 @@ export default function LoanProgramsDetailPage() {
             </div>
 
             {/* Card 3 */}
-            <div className="bg-[#fcf9f3] rounded-2xl p-6 border border-[#e8e0d0]/40 flex flex-col items-start gap-4">
-              <div className="w-9 h-9 rounded-lg bg-[#3fb364]/10 text-[#3fb364] flex items-center justify-center">
+            <div className="group bg-[#fcf9f3] rounded-2xl p-6 border border-[#e8e0d0]/40 hover:border-[#3fb364]/40 flex flex-col items-start gap-4 transition-all duration-200">
+              <IconBadge size="sm" className="w-9 h-9 rounded-lg">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                 </svg>
-              </div>
+              </IconBadge>
               <h3 className="text-[#052316] text-[15px] font-bold">Customer-Centric Approach</h3>
               <p className="text-[#4e5b4e] text-[12.5px] leading-relaxed">
                 Our loan officers take time to understand your situation, explain your options, and guide you through the process with transparency.
@@ -268,13 +269,13 @@ export default function LoanProgramsDetailPage() {
             </div>
 
             {/* Card 4 */}
-            <div className="bg-[#fcf9f3] rounded-2xl p-6 border border-[#e8e0d0]/40 flex flex-col items-start gap-4">
-              <div className="w-9 h-9 rounded-lg bg-[#3fb364]/10 text-[#3fb364] flex items-center justify-center">
+            <div className="group bg-[#fcf9f3] rounded-2xl p-6 border border-[#e8e0d0]/40 hover:border-[#3fb364]/40 flex flex-col items-start gap-4 transition-all duration-200">
+              <IconBadge size="sm" className="w-9 h-9 rounded-lg">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-              </div>
+              </IconBadge>
               <h3 className="text-[#052316] text-[15px] font-bold">Arizona Market Specialists</h3>
               <p className="text-[#4e5b4e] text-[12.5px] leading-relaxed">
                 As local experts, we have in-depth knowledge of Arizona&apos;s real estate market to find the loan program that fits our state&apos;s housing market.

@@ -246,10 +246,6 @@ export default function PimaCountyPage() {
           ]}
         />
 
-        <CTA
-          title="Ready to start your Pima County home journey?"
-          description="Let's find the perfect mortgage solution for your Pima County home."
-        />
       </main>
 
       <Footer />

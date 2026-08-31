@@ -2,7 +2,7 @@
 
 import { faqs as pageFaqs } from "./faqs";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
@@ -12,8 +12,229 @@ import HeroFeatureStrip from "../component/HeroFeatureStrip";
 import FaqAccordion from "../component/FaqAccordion";
 import GetInTouch from "../component/GetInTouch";
 import { LOAN_PROGRAM_LINKS } from "@/lib/company";
+import { renderInlineLinks } from "@/lib/renderInlineLinks";
 
 import CountyTestimonials, { type CountyTestimonial } from "../component/CountyTestimonials";
+import IconBadge from "../component/IconBadge";
+
+type IconProps = { className?: string };
+
+const iconClass = "w-5 h-5";
+
+const CardIcons = {
+  credit: ({ className = iconClass }: IconProps) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+    </svg>
+  ),
+  debt: ({ className = iconClass }: IconProps) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
+    </svg>
+  ),
+  savings: ({ className = iconClass }: IconProps) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  ),
+  costs: ({ className = iconClass }: IconProps) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+    </svg>
+  ),
+  preapprove: ({ className = iconClass }: IconProps) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  ),
+  standards: ({ className = iconClass }: IconProps) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+    </svg>
+  ),
+  agent: ({ className = iconClass }: IconProps) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+    </svg>
+  ),
+  inspection: ({ className = iconClass }: IconProps) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+    </svg>
+  ),
+  va: ({ className = iconClass }: IconProps) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+    </svg>
+  ),
+  fha: ({ className = iconClass }: IconProps) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+    </svg>
+  ),
+  conventional: ({ className = iconClass }: IconProps) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+    </svg>
+  ),
+  expertise: ({ className = iconClass }: IconProps) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+    </svg>
+  ),
+  guidance: ({ className = iconClass }: IconProps) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
+    </svg>
+  ),
+  competitive: ({ className = iconClass }: IconProps) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+    </svg>
+  ),
+  local: ({ className = iconClass }: IconProps) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+    </svg>
+  ),
+  commitment: ({ className = iconClass }: IconProps) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+    </svg>
+  ),
+  career: ({ className = iconClass }: IconProps) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+    </svg>
+  ),
+  relationship: ({ className = iconClass }: IconProps) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+    </svg>
+  ),
+  neighborhood: ({ className = iconClass }: IconProps) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+    </svg>
+  ),
+  commute: ({ className = iconClass }: IconProps) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+    </svg>
+  ),
+  housing: ({ className = iconClass }: IconProps) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+    </svg>
+  ),
+  wallet: ({ className = iconClass }: IconProps) => (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+    </svg>
+  ),
+} as const;
+
+type CardIconKey = keyof typeof CardIcons;
+
+function renderCardIcon(key: CardIconKey) {
+  const Icon = CardIcons[key];
+  return <Icon />;
+}
+
+const CARD_HOVER =
+  "group bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm transition-all duration-200 hover:border-[#3fb364] hover:shadow-md hover:bg-[#f8fdf9]";
+
+function DotBulletList({ items }: { items: string[] }) {
+  return (
+    <ul className="space-y-2">
+      {items.map((item) => (
+        <li key={item} className="flex items-start gap-2.5 text-[#4e5b4e] text-[14px] leading-relaxed">
+          <span className="text-[#3fb364] mt-[7px] shrink-0 text-[6px] leading-none">●</span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function NumberedFeatureCard({
+  icon,
+  title,
+  intro,
+  bullets,
+  className = CARD_HOVER,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  intro?: string;
+  bullets: string[];
+  className?: string;
+}) {
+  return (
+    <div className={className}>
+      <div className="flex items-start gap-4 mb-4">
+        <IconBadge>{icon}</IconBadge>
+        <div className="min-w-0">
+          <h3 className="text-[16px] font-bold text-[#052316] font-playfair leading-snug">{title}</h3>
+          {intro ? (
+            <p className="text-[#4e5b4e] text-[14px] leading-relaxed mt-2">{intro}</p>
+          ) : null}
+        </div>
+      </div>
+      <DotBulletList items={bullets} />
+    </div>
+  );
+}
+
+function IconSummaryCard({
+  icon,
+  title,
+  description,
+  className = CARD_HOVER,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+  className?: string;
+}) {
+  return (
+    <div className={className}>
+      <div className="flex items-start gap-4">
+        <IconBadge>{icon}</IconBadge>
+        <div className="min-w-0">
+          <h3 className="text-[17px] font-bold text-[#052316] mb-2 font-playfair leading-snug">{title}</h3>
+          <p className="text-[#4e5b4e] text-[14px] leading-relaxed">{description}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SectionCta({
+  label,
+  href = "#get-pre-approved",
+  dark = false,
+}: {
+  label: string;
+  href?: string;
+  dark?: boolean;
+}) {
+  return (
+    <div className="loan-btn-wrap">
+      <Link
+        href={href}
+        className={
+          dark
+            ? "inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+            : "inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+        }
+      >
+        {label}
+      </Link>
+    </div>
+  );
+}
 
 export default function FirstTimeHomeBuyerGuidePage() {
 
@@ -26,152 +247,271 @@ export default function FirstTimeHomeBuyerGuidePage() {
   const benefits = [
     {
       title: "Navigate with Confidence",
-      desc: "Our team walks you through every step of the homebuying process, from pre-approval to closing, so you always know what to expect.",
+      desc: "Buying a home involves numerous decisions and potential pitfalls. Our comprehensive guide equips you with the insights to make informed choices at every step.",
     },
     {
       title: "Tailored Arizona Expertise",
-      desc: "We understand the unique Arizona real estate market and can help you find the right neighborhood and loan program for your goals.",
+      desc: "The Arizona real estate market has its unique characteristics. We provide local knowledge that ensures you're prepared for the specific challenges and opportunities in the Grand Canyon State.",
     },
     {
       title: "Financial Clarity",
-      desc: "We break down your costs, monthly payments, and loan options in plain language so you can make informed decisions with confidence.",
+      desc: "Understanding the financial aspects of home buying is critical. We break down complex concepts into digestible information, helping you grasp everything from credit scores to down payments.",
     },
     {
       title: "Access to Specialized Programs",
-      desc: "Explore first-time buyer programs with as little as 1% down payment, plus down payment assistance options to help you get into a home sooner.",
+      desc: "As a first-time buyer, you may be eligible for special loan programs and assistance with as little as 1% down payment. We'll introduce you to options that could make homeownership more accessible and affordable.",
     },
     {
       title: "Long-term Success",
-      desc: "We focus on setting you up for sustainable homeownership, not just closing a loan — your financial well-being is our priority.",
+      desc: "Our guide doesn't just focus on getting you into a home; it helps you make choices that will benefit you for years to come. We consider your future needs to ensure your first home is a smart, lasting investment.",
     },
   ];
 
-  const essentialQuestions = [
+  const essentialQuestions: { title: string; desc: string; icon: CardIconKey }[] = [
     {
       title: "Career Stability",
-      desc: "Are you in a stable job or career path? Lenders look for consistent employment history, typically two years in the same field, to assess your ability to make monthly mortgage payments.",
+      icon: "career",
+      desc: "Assess your current job security and potential career changes. A stable career path can make homeownership more attainable and sustainable.",
     },
     {
       title: "Relationship Status",
-      desc: "Are you buying alone or with a partner? Your co-borrower's income, credit, and debts will factor into your loan approval and the home you can afford.",
+      icon: "relationship",
+      desc: "Consider your current relationship status and future plans. Are you single, planning to get married, or thinking about starting a family? Your home should accommodate potential life changes.",
     },
     {
       title: "Ideal Neighborhood",
-      desc: "What kind of community do you want to live in? Consider lifestyle, amenities, schools, and future development when choosing where to buy your first home.",
+      icon: "neighborhood",
+      desc: "Determine which areas in Arizona align with your lifestyle and preferences. Research neighborhoods that offer the amenities and community feel you desire.",
     },
     {
       title: "Proximity to Work",
-      desc: "How far are you willing to commute? Factor in daily travel time, transportation costs, and work-from-home flexibility when selecting a location.",
+      icon: "commute",
+      desc: "Evaluate how close you want to live to your workplace. A shorter commute can significantly impact your quality of life and daily routine.",
     },
     {
       title: "Long-term Housing Needs",
-      desc: "How long do you plan to stay in this home? Your timeline affects whether buying makes sense now and what type of property best fits your future plans.",
+      icon: "housing",
+      desc: "Think about the features you'll need in a home over the next 5-10 years. Consider factors like the number of bedrooms, home office space, or a yard for future pets or children.",
     },
     {
       title: "Financial Readiness",
-      desc: "Do you have savings for a down payment and closing costs? Review your credit score, debt levels, and emergency fund before starting your home search.",
+      icon: "wallet",
+      desc: "Assess your current financial situation, including credit score, savings, and debt. Ensure you're prepared for the financial responsibilities of homeownership.",
     },
   ];
 
-  const financialPathItems = [
+  const financialPathItems: { title: string; intro: string; bullets: string[]; icon: CardIconKey }[] = [
     {
       title: "Improve Your Credit Score",
-      desc: "Aim for a credit score of 620 or higher for most loan programs. Review your credit report for errors, make all payments on time, reduce credit card balances, and avoid opening new credit accounts before applying for a mortgage.",
+      icon: "credit",
+      intro: "A good credit score is key to securing favorable mortgage terms. Aim for a score of at least 620, but remember that higher scores often lead to better rates.",
+      bullets: [
+        "Review your credit report for errors and dispute any inaccuracies",
+        "Make all payments on time",
+        "Reduce your credit card balances",
+        "Avoid opening new credit accounts before applying for a mortgage",
+      ],
     },
     {
       title: "Manage Your Debt",
-      desc: "Keep your total monthly housing costs below 45% of your gross income. Pay down existing debt, consider consolidating high-interest balances, and avoid taking on new debt during the homebuying process.",
+      icon: "debt",
+      intro: "Lenders look closely at your debt-to-income ratio when considering your mortgage application.",
+      bullets: [
+        "Aim to keep your total mortgage costs below 45% of your income",
+        "Pay down existing debts, especially high-interest credit cards",
+        "Consider consolidating debts to improve your financial profile",
+        "Avoid taking on new debt while preparing to buy a home",
+      ],
     },
     {
       title: "Save for a Down Payment",
-      desc: "FHA loans require as little as 3.5% down, while conventional loans can go as low as 3%. Explore down payment assistance programs available in Arizona to reduce the amount you need to save.",
+      icon: "savings",
+      intro: "While some loans offer low down payment options, having a larger down payment can provide more flexibility and potentially better terms.",
+      bullets: [
+        "Set a savings goal based on your target home price",
+        "Explore down payment assistance programs for first-time buyers",
+        "Consider setting up automatic transfers to a dedicated savings account",
+        "Look into FHA loans, which require as little as 3.5% down, or conventional loans with 3% down payment options",
+      ],
     },
     {
       title: "Understand Additional Costs",
-      desc: "Budget for closing costs (typically 1–8% of the purchase price), property taxes, homeowners insurance, ongoing maintenance, and potential HOA fees beyond your down payment.",
+      icon: "costs",
+      intro: "Homeownership involves more than just a mortgage payment. Be prepared for:",
+      bullets: [
+        "Closing costs, which can range from 1-8% of the home's price",
+        "Property taxes and homeowners insurance",
+        "Maintenance and repair expenses",
+        "Possible homeowners association (HOA) fees",
+      ],
     },
   ];
 
-  const loanPrograms = [
+  const loanPrograms: {
+    title: string;
+    href: string;
+    bullets: string[];
+    cta: string;
+    icon: CardIconKey;
+  }[] = [
     {
       title: "VA Loans",
+      icon: "va",
       href: "/va-loans-arizona/",
-      desc: "0% down payment, no PMI required. Available to eligible veterans, active-duty service members, and surviving spouses.",
+      bullets: [
+        "Exclusively for veterans and active-duty military personnel",
+        "No down payment required, offering 100% financing",
+        "Competitive interest rates, often lower than conventional loans",
+        "No private mortgage insurance (PMI) required",
+      ],
+      cta: "Explore VA Loan Options",
     },
     {
       title: "FHA Loans",
+      icon: "fha",
       href: "/fha-home-loans-arizona/",
-      desc: "3.5% down payment with credit scores below 700. A flexible option for first-time buyers with less-than-perfect credit.",
+      bullets: [
+        "Ideal for buyers with credit scores below 700",
+        "Low down payment requirement of just 3.5%",
+        "More lenient credit score requirements for qualification",
+        "Requires upfront and monthly mortgage insurance premiums",
+      ],
+      cta: "See If You Qualify for FHA",
     },
     {
       title: "Conventional Loans",
+      icon: "conventional",
       href: "/conventional-home-loans-arizona/",
-      desc: "Best for credit scores of 700+. As low as 3% down, and avoid PMI entirely with a 20% down payment.",
+      bullets: [
+        "Best suited for buyers with credit scores of 700 or above",
+        "Competitive interest rates and flexible terms",
+        "Down payment as low as 3% for qualified buyers",
+        "Option to avoid PMI with 20% down payment",
+      ],
+      cta: "Learn About Conventional Loans",
     },
   ];
 
-  const roadmapSteps = [
+  const roadmapSteps: { title: string; bullets: string[]; icon: CardIconKey }[] = [
     {
       title: "Get Pre-approved",
-      desc: "Start with a pre-approval letter to understand your budget and show sellers you're a serious, qualified buyer ready to make an offer.",
+      icon: "preapprove",
+      bullets: [
+        "Determine your exact home buying budget",
+        "Demonstrate financial credibility to sellers",
+        "Understand your precise borrowing capacity",
+        "Identify potential credit issues early",
+        "Streamline your home search process",
+      ],
     },
     {
       title: "Set Your Standards",
-      desc: "Define your must-haves and nice-to-haves for your first home — location, size, features, and price range — to focus your search efficiently.",
+      icon: "standards",
+      bullets: [
+        "Create a comprehensive home wishlist",
+        "Prioritize structural integrity over cosmetic features",
+        "Identify must-have vs. nice-to-have home characteristics",
+        "Consider long-term living requirements",
+        "Balance emotional desires with practical needs",
+      ],
     },
     {
       title: "Work with a Real Estate Agent",
-      desc: "Partner with an experienced Arizona agent who knows the local market and can guide you through showings, negotiations, and the offer process.",
+      icon: "agent",
+      bullets: [
+        "Access local market expertise",
+        "Leverage professional negotiation skills",
+        "Get unbiased property recommendations",
+        "Navigate complex paperwork and legal requirements",
+        "Save time and reduce stress during home search",
+      ],
     },
     {
       title: "Home Inspection and Closing",
-      desc: "Schedule a professional home inspection, finalize your loan, and complete the closing process to receive your keys and officially become a homeowner.",
+      icon: "inspection",
+      bullets: [
+        "Conduct thorough property evaluation",
+        "Identify potential repair or maintenance issues",
+        "Understand the true condition of your potential home",
+        "Review and negotiate inspection findings",
+        "Complete final walkthrough and closing process",
+      ],
     },
   ];
 
-  const whyUsItems = [
+  const whyUsItems: { title: string; bullets: string[]; icon: CardIconKey }[] = [
     {
-      title: "Expertise in First-Time Programs",
-      desc: "We specialize in first-time homebuyer loan programs and down payment assistance options available throughout Arizona.",
+      title: "Expertise in First-Time Homebuyer Programs",
+      icon: "expertise",
+      bullets: [
+        "In-depth knowledge of VA, FHA, and Conventional loan options",
+        "Access to specialized programs with down payments as low as 3%",
+        "Guidance on choosing the best loan program for your unique situation",
+      ],
     },
     {
-      title: "Personalized Guidance",
-      desc: "Every buyer's situation is different. We take the time to understand your goals and recommend the best path forward for you.",
+      title: "Personalized Guidance Throughout the Process",
+      icon: "guidance",
+      bullets: [
+        "Step-by-step support from pre-approval to closing",
+        "Clear explanations of complex mortgage terms and procedures",
+        "Assistance in improving your credit score and financial readiness",
+      ],
     },
     {
       title: "Competitive Loan Options",
-      desc: "We shop multiple lenders to find competitive terms across FHA, VA, and conventional programs tailored to your profile.",
+      icon: "competitive",
+      bullets: [
+        "Relationships with multiple lenders to secure the best rates",
+        "Expertise in negotiating favorable terms on your behalf",
+        "Transparent comparison of various loan programs and their costs",
+      ],
     },
     {
       title: "Strong Local Market Knowledge",
-      desc: "Our deep understanding of Arizona neighborhoods, pricing trends, and local regulations helps you buy with confidence.",
+      icon: "local",
+      bullets: [
+        "Deep understanding of Arizona's diverse neighborhoods and property types",
+        "Insights into local market trends and property values",
+        "Connections with trusted real estate professionals in the area",
+      ],
     },
     {
-      title: "Commitment to Long-Term Success",
-      desc: "We're invested in your homeownership journey beyond closing day, ensuring you choose a loan that works for years to come.",
+      title: "Commitment to Your Long-Term Success",
+      icon: "commitment",
+      bullets: [
+        "Focus on finding a home that meets your current and future needs",
+        "Education on sustainable homeownership practices",
+        "Ongoing support even after your loan closes",
+      ],
     },
   ];
 
   const testimonials: CountyTestimonial[] = [
   {
     name: "Sean Cassidy",
-    quote: "This was our first house and Mortgage Brothers LLC made the entire process easy and stress-free. They explained everything clearly and were always available when we had questions.",
+    quote: "My fiance and I were very nervous about buying our first house. The service Eddie provided made the whole process very easy. He answered all our questions and provided prompt and accurate service.",
     attribution: "Sean Cassidy, Phoenix, Arizona",
   },
   {
     name: "Jaclyn Lindsey",
-    quote: "Constant communication throughout the entire process. We always knew where we stood and what the next step was. Couldn't have asked for a better experience buying our first home.",
+    quote: "As a first time home buyer, your constant and open communication was helpful and comforting. Thank you for your patience and always thoroughly explaining all the steps along the way.",
     attribution: "Jaclyn Lindsey, Tempe, Arizona",
   },
   {
     name: "Mona Collins",
-    quote: "As first-time buyers, we had no idea what we were doing. They guided us through every step and made us feel confident in our decisions from start to finish.",
+    quote: "Purchasing a home is always confusing and overwhelming. Eddie helped and guided me throughout the entire process. I recommend Eddie anytime anyone is interested in purchasing a home.",
     attribution: "Mona Collins, Phoenix, Arizona",
   },
   {
     name: "Christian Holt",
-    quote: "Always a phone call away whenever we needed help. Their responsiveness and expertise made buying our first home in Arizona a smooth and enjoyable experience.",
+    quote: "You made my first time home buying experience smooth and educational. You were ALWAYS a phone call away to answer any of my questions or just to ease my concerns.",
     attribution: "Christian Holt, Phoenix, Arizona",
+  },
+  {
+    name: "Matthew and Carmen Hershberger",
+    quote: "What I like most about your service is that you were prompt in responding to any questions throughout the entire process. Overall the communication was great and we appreciate your patience.",
+    attribution: "Matthew and Carmen Hershberger, Phoenix, Arizona",
   },
 ];
 
@@ -205,13 +545,19 @@ export default function FirstTimeHomeBuyerGuidePage() {
                 Your Journey to Homeownership Starts Here
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                Buying your first home in Arizona is an exciting milestone, and the Arizona market offers unique opportunities for new buyers. From vibrant urban neighborhoods in Phoenix and Tempe to growing suburban communities, there&apos;s a place for every lifestyle and budget.
+                {renderInlineLinks(
+                  "Embarking on the path to buying your first home in Arizona is an exciting yet complex adventure. As you stand at the threshold of this life-changing decision, it's crucial to arm yourself with knowledge and expert guidance. At Mortgage Brothers LLC, we're here to transform your homeownership dreams into reality."
+                )}
               </p>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                Understanding your credit score, down payment options, and specialized loan programs is key to a successful purchase. Arizona first-time buyers can access programs with as little as 1% down, making homeownership more attainable than ever before.
+                {renderInlineLinks(
+                  "The journey to homeownership can seem **overwhelming at first**, but with the right information and support, you can navigate this process with confidence. Our comprehensive guide is designed to **demystify the home buying process** and provide you with the tools you need to make informed decisions every step of the way."
+                )}
               </p>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                At Mortgage Brothers LLC, we guide you through every step — from assessing your financial readiness to selecting the right loan program and closing on your dream home.
+                {renderInlineLinks(
+                  "Arizona's real estate market has its own unique characteristics, and as a first-time buyer, you'll benefit from **local expertise**. We'll help you understand the financial aspects, from credit scores to down payments, and potentially access **specialized programs** designed for first-time buyers. Our goal is to ensure your first home is not just a house, but a **smart, lasting investment** that aligns with your lifestyle and future goals."
+                )}
               </p>
               <Link
                 href="#get-pre-approved"
@@ -396,14 +742,25 @@ export default function FirstTimeHomeBuyerGuidePage() {
         </section>
 
         {/* STATS BANNER */}
-        <StatsBanner
-          stats={[
-            { value: "1%", label: "Minimum Down Payment" },
-            { value: "620", label: "Minimum Credit Score for Most Loans" },
-            { value: "$442,900", label: "Median Home Price in Arizona" },
-            { value: "$16,000", label: "Maximum Down Payment Assistance" },
-          ]}
-        />
+        <section className="loan-cta-band bg-[#fcf9f3] !pb-0">
+          <div className="mx-auto max-w-6xl text-center loan-block-gap">
+            <Link
+              href="#get-pre-approved"
+              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+            >
+              Lower Your Payments Now
+            </Link>
+          </div>
+          <StatsBanner
+            sectionClassName="py-0 bg-transparent"
+            stats={[
+              { value: "1%", label: "Minimum Down Payment" },
+              { value: "620", label: "Minimum Credit Score for Most Loans" },
+              { value: "$442,900", label: "Median Home Price in Arizona" },
+              { value: "$16,000", label: "Maximum Down Payment Assistance" },
+            ]}
+          />
+        </section>
 
         {/* ESSENTIAL QUESTIONS */}
         <section className="loan-section bg-[#fcf9f3] !pt-8 sm:!pt-10 lg:!pt-12">
@@ -413,24 +770,25 @@ export default function FirstTimeHomeBuyerGuidePage() {
                 BEFORE YOU BEGIN
               </span>
               <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair">
-                Essential Questions Every First-Time Buyer Should Ask
+                Essential Questions for Your Home Buying Journey
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed max-w-3xl mx-auto">
-                Before you start house hunting, take time to reflect on these key questions. Honest answers will help you set realistic goals and choose the right home and loan program.
+                Before diving into the exciting world of home ownership, it&apos;s crucial to reflect on your current situation and future plans. These key considerations will help you make informed decisions and find a home that truly fits your lifestyle.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-              {essentialQuestions.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="bg-white border border-[#e0e0e0] rounded-2xl p-6 shadow-sm hover:border-[#3fb364] transition-all"
-                >
-                  <h3 className="text-[17px] font-bold text-[#052316] mb-2 font-playfair">{item.title}</h3>
-                  <p className="text-[#4e5b4e] text-[14px] leading-relaxed">{item.desc}</p>
-                </div>
+              {essentialQuestions.map((item) => (
+                <IconSummaryCard
+                  key={item.title}
+                  icon={renderCardIcon(item.icon)}
+                  title={item.title}
+                  description={item.desc}
+                />
               ))}
             </div>
+
+            <SectionCta label="Get Your Free Home Buying Consultation" />
           </div>
         </section>
 
@@ -442,27 +800,48 @@ export default function FirstTimeHomeBuyerGuidePage() {
                 FINANCIAL PREPARATION
               </span>
               <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair">
-                Your Financial Path to Homeownership
+                Paving Your Financial Path to Homeownership
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed max-w-3xl mx-auto">
-                Preparing your finances before you buy is one of the most important steps you can take. Here&apos;s how to get ready for a successful home purchase in Arizona.
+                Before you start house hunting, it&apos;s crucial to get your finances in order. A solid financial foundation will not only increase your chances of mortgage approval but also ensure you&apos;re prepared for the long-term commitment of homeownership.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-              {financialPathItems.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="bg-[#fcf9f3] border border-[#e0e0e0] rounded-2xl p-6 hover:border-[#3fb364] transition-all"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-[#3fb364]/10 text-[#3fb364] flex items-center justify-center font-bold text-[18px] mb-4">
-                    {idx + 1}
-                  </div>
-                  <h3 className="text-[16px] font-bold text-[#052316] mb-2 font-playfair">{item.title}</h3>
-                  <p className="text-[#4e5b4e] text-[14px] leading-relaxed">{item.desc}</p>
-                </div>
+              {financialPathItems.map((item) => (
+                <NumberedFeatureCard
+                  key={item.title}
+                  icon={renderCardIcon(item.icon)}
+                  title={item.title}
+                  intro={item.intro}
+                  bullets={item.bullets}
+                />
               ))}
             </div>
+
+            <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed text-center max-w-3xl mx-auto">
+              By focusing on these key areas of financial preparation, you&apos;ll be better positioned to navigate the home buying process and enjoy the benefits of homeownership for years to come.
+            </p>
+
+            <SectionCta label="Get Your Free First-Time Buyer Mortgage Analysis" />
+          </div>
+        </section>
+
+        {/* CREDIT SCORE CTA */}
+        <section className="loan-section bg-[#f5f0e8] border-y border-[#e8e0d0]/50">
+          <div className="max-w-3xl mx-auto text-center space-y-4">
+            <h2 className="text-[#052316] text-[26px] lg:text-[32px] font-bold font-playfair">
+              First-Time Buyer? See If Your Credit Score Is Ready
+            </h2>
+            <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
+              As a first-time homebuyer, your credit score affects your loan options and down payment requirements. Discover if your credit is ready for homeownership.
+            </p>
+            <Link
+              href="/arizona-understanding-your-credit/"
+              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+            >
+              Check Your Credit Readiness
+            </Link>
           </div>
         </section>
 
@@ -474,30 +853,42 @@ export default function FirstTimeHomeBuyerGuidePage() {
                 LOAN OPTIONS
               </span>
               <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair">
-                Loan Programs for First-Time Arizona Buyers
+                Unlock Your Dream Home with These First-Time Buyer Loan Programs
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed max-w-3xl mx-auto">
-                Multiple loan programs are available to help first-time buyers get into a home. Compare your options and find the best fit for your financial situation.
+                As a first-time homebuyer in Arizona, you have access to several loan programs designed to make homeownership more accessible. Each program offers unique benefits tailored to different financial situations and needs. Let&apos;s explore your options:
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
               {loanPrograms.map((program) => (
-                <Link
+                <div
                   key={program.href}
-                  href={program.href}
-                  className="bg-white border border-[#e0e0e0] rounded-2xl p-6 shadow-sm hover:border-[#3fb364] hover:shadow-md transition-all group"
+                  className={`${CARD_HOVER} flex flex-col`}
                 >
-                  <h3 className="text-[17px] font-bold text-[#052316] mb-2 font-playfair group-hover:text-[#3fb364] transition-colors">
-                    {program.title}
-                  </h3>
-                  <p className="text-[#4e5b4e] text-[14px] leading-relaxed mb-4">{program.desc}</p>
-                  <span className="text-[#3fb364] font-bold text-[14px] group-hover:translate-x-0.5 inline-block transition-transform">
-                    Learn More →
-                  </span>
-                </Link>
+                  <div className="flex items-center gap-3 mb-4">
+                    <IconBadge>{renderCardIcon(program.icon)}</IconBadge>
+                    <h3 className="text-[17px] font-bold text-[#052316] font-playfair leading-snug">{program.title}</h3>
+                  </div>
+                  <div className="flex-grow mb-5">
+                    <DotBulletList items={program.bullets} />
+                  </div>
+                  <Link
+                    href={program.href}
+                    className="text-[#3fb364] font-bold text-[14px] hover:text-[#2d8545] inline-flex items-center gap-1 transition-colors group/link mt-auto"
+                  >
+                    {program.cta}
+                    <span className="group-hover/link:translate-x-0.5 transition-transform">→</span>
+                  </Link>
+                </div>
               ))}
             </div>
+
+            <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed text-center max-w-3xl mx-auto">
+              Each of these programs offers a pathway to homeownership, catering to different financial profiles and needs. By understanding these options, you can choose the loan program that best aligns with your situation, bringing you one step closer to owning your first home in Arizona.
+            </p>
+
+            <SectionCta label="Compare Your Loan Options Now" />
           </div>
         </section>
 
@@ -509,33 +900,37 @@ export default function FirstTimeHomeBuyerGuidePage() {
                 YOUR ROADMAP
               </span>
               <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair">
-                Your Roadmap to Buying Your First Home
+                Your Roadmap to Successful Homeownership
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed max-w-3xl mx-auto">
-                Follow these four key steps to go from dreaming about homeownership to holding the keys to your new Arizona home.
+                Navigating the home buying process can seem complex, but with the right guidance, you can transform this journey into an exciting and rewarding experience. Understanding each step will help you make informed decisions and avoid potential pitfalls along the way.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-              {roadmapSteps.map((step, idx) => (
-                <div
-                  key={idx}
-                  className="bg-[#fcf9f3] border border-[#e0e0e0] rounded-2xl p-6 hover:border-[#3fb364] transition-all group"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-[#3fb364]/10 text-[#3fb364] flex items-center justify-center font-bold text-[18px] mb-4 group-hover:bg-[#3fb364] group-hover:text-[#ffffff] transition-colors">
-                    {idx + 1}
-                  </div>
-                  <h3 className="text-[16px] font-bold text-[#052316] mb-2 font-playfair">{step.title}</h3>
-                  <p className="text-[#4e5b4e] text-[14px] leading-relaxed">{step.desc}</p>
-                </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 text-left">
+              {roadmapSteps.map((step) => (
+                <NumberedFeatureCard
+                  key={step.title}
+                  icon={renderCardIcon(step.icon)}
+                  title={step.title}
+                  bullets={step.bullets}
+                  className="group bg-[#fcf9f3] border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm transition-all duration-200 hover:border-[#3fb364] hover:shadow-md hover:bg-[#f8fdf9] h-full"
+                />
               ))}
             </div>
+
+            <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed text-center max-w-3xl mx-auto">
+              Ready to take the next step in your home buying journey? Our expert team is here to guide you through every stage of the process, from pre-approval to closing.
+            </p>
+
+            <SectionCta label="Get Your Personalized Home Buying Plan" />
           </div>
         </section>
 
         {/* TESTIMONIALS */}
         <CountyTestimonials
-          title="What Our First-Time Buyers Say"
+          title="Real Stories from Arizona's First-Time Homeowners"
+          description="At Mortgage Brothers LLC, we take pride in helping countless first-time buyers achieve their dream of homeownership. But don't just take our word for it — hear from those who've successfully navigated the journey with our guidance. These testimonials reflect the experiences of real Arizonans who trusted us to make their homeownership dreams a reality."
           testimonials={testimonials}
         />
 
@@ -547,24 +942,33 @@ export default function FirstTimeHomeBuyerGuidePage() {
                 LOCAL EXPERTISE
               </span>
               <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair">
-                Why Choose Mortgage Brothers LLC?
+                Your Trusted Partner in Arizona Home Buying
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed max-w-3xl mx-auto">
-                We&apos;re dedicated to helping Arizona first-time buyers navigate the path to homeownership with confidence, clarity, and competitive loan options.
+                At Mortgage Brothers LLC, we understand that buying your first home is a significant milestone. Our team of experienced professionals is dedicated to making your journey to homeownership smooth, transparent, and rewarding.
+              </p>
+              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed max-w-3xl mx-auto">
+                Here&apos;s why we&apos;re the ideal choice for first-time homebuyers in Arizona:
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
               {whyUsItems.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="bg-[#fcf9f3] border border-[#e0e0e0] rounded-2xl p-6 shadow-sm hover:border-[#3fb364] transition-all"
-                >
-                  <h3 className="text-[16px] font-bold text-[#052316] mb-2 font-playfair">{item.title}</h3>
-                  <p className="text-[#4e5b4e] text-[14px] leading-relaxed">{item.desc}</p>
-                </div>
+                <NumberedFeatureCard
+                  key={item.title}
+                  icon={renderCardIcon(item.icon)}
+                  title={item.title}
+                  bullets={item.bullets}
+                  className={`${CARD_HOVER}${
+                    idx === whyUsItems.length - 1 ? " md:col-span-2 md:max-w-xl md:mx-auto md:w-full" : ""
+                  }`}
+                />
               ))}
             </div>
+
+            <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed text-center max-w-3xl mx-auto">
+              Experience the Mortgage Brothers LLC difference in your home buying journey. Let our expertise guide you to the perfect loan and your dream home in Arizona.
+            </p>
 
             <div className="bg-[#052316] rounded-3xl p-8 lg:p-10 text-center text-white space-y-4">
               <p className="text-[16px] text-[#c8c8b8] max-w-2xl mx-auto leading-relaxed">
@@ -577,12 +981,12 @@ export default function FirstTimeHomeBuyerGuidePage() {
                 +1 (602) 535-2171
               </a>
               <div>
-                <a
-                  href="tel:+16025352171"
+                <Link
+                  href="#get-pre-approved"
                   className="inline-block border border-white/30 hover:border-white text-white font-semibold text-[15px] px-7 py-3.5 rounded-full transition-all hover:bg-white/10"
                 >
-                  Call Now for Expert Advice
-                </a>
+                  Get Your Free Mortgage Consultation
+                </Link>
               </div>
             </div>
           </div>
@@ -596,23 +1000,29 @@ export default function FirstTimeHomeBuyerGuidePage() {
                 FREQUENTLY ASKED QUESTIONS
               </span>
               <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair">
-                Frequently Asked Questions for First-Time Home Buyers
+                Frequently Asked Questions for First-Time Homebuyers
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed max-w-2xl mx-auto mt-4">
-                Have questions about buying your first home in Arizona? Here are answers to the most common questions we hear from first-time buyers.
+                Navigating the home buying process can bring up many questions, especially for first-time buyers. Here are answers to some of the most common inquiries we receive:
               </p>
             </div>
 
             <div className="text-left">
               <FaqAccordion items={faqs} />
             </div>
+
+            <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed text-center max-w-2xl mx-auto">
+              Remember, every homebuying journey is unique. Don&apos;t hesitate to reach out to our team for personalized answers to your specific questions.
+            </p>
+
+            <SectionCta label="Ask Our Experts" href="/contact-us/" />
           </div>
         </section>
 
         <GetInTouch
           theme="dark"
-          title="Start Your First-Time Homebuyer Journey Today"
-          description="Take the first step toward owning your first home in Arizona. Our experienced team at Mortgage Brothers LLC is ready to guide you through pre-approval, loan selection, and closing."
+          title="Get in Touch with Arizona's First-Time Home Buying Experts"
+          description="Ready to take the next step towards homeownership? Our team at Mortgage Brothers LLC is here to guide you through every aspect of your first home purchase. Whether you have questions about loan programs, need help improving your credit score, or want to start the pre-approval process, we're just a phone call or message away. Don't let the complexities of home buying overwhelm you. Reach out today, and let's work together to make your dream of owning a home in Arizona a reality."
           showPreApproveCta
         />
 
@@ -624,7 +1034,7 @@ export default function FirstTimeHomeBuyerGuidePage() {
                 MORE OPTIONS
               </span>
               <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair">
-                Explore Other Loan Programs
+                Explore Our Mortgage Solutions
               </h2>
             </div>
 

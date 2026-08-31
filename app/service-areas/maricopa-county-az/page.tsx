@@ -290,7 +290,7 @@ export default function MaricopaCounty() {
         </section>
 
         {/* Cities Grid Section */}
-        <section className="w-full py-14 sm:py-16 lg:py-20 bg-white">
+        <section id="areas" className="w-full py-14 sm:py-16 lg:py-20 bg-white scroll-mt-[72px]">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             {/* Section Header */}
             <div className="text-center mb-10">
@@ -309,8 +309,12 @@ export default function MaricopaCounty() {
 
 
         <CTA
-          title="Ready to start your Maricopa County home journey?"
+          eyebrow=""
+          title="Ready to Start Your Maricopa County Home Journey?"
           description="Let's find the perfect mortgage solution for your Maricopa County home."
+          primaryLabel="View All Maricopa County Areas"
+          primaryHref="#areas"
+          secondaryLabel="Call Us Now"
         />
 
         <CountyTestimonials

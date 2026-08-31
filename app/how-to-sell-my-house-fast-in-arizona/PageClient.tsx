@@ -838,7 +838,8 @@ export default function HowToSellMyHouseFastInArizonaPage() {
               Before accepting any cash offer, let our team run the real net numbers for cash sale vs. as-is listing vs. refinancing.
             </p>
             <Link
-              href="#get-pre-approved"
+              href="#home-selling-options-review"
+              data-home-selling-review="true"
               className="inline-block bg-[#3fb364] hover:bg-[#2d9e4f] text-white font-bold text-[15px] px-8 py-3.5 rounded-xl shadow-md transition-colors"
             >
               Request Free Options Review

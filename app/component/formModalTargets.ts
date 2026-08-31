@@ -1,4 +1,4 @@
-export type FormKind = "preapproval" | "quiz" | "contact";
+export type FormKind = "preapproval" | "quiz" | "contact" | "homeSellingReview";
 
 /** Hash fragments that should open a form modal (e.g. open-in-new-tab deep links). */
 export function formKindFromHash(hash: string): FormKind | null {
@@ -11,6 +11,13 @@ export function formKindFromHash(hash: string): FormKind | null {
   }
   if (h === "contact-us-form" || h === "contact-form") {
     return "contact";
+  }
+  if (
+    h === "home-selling-options-review" ||
+    h === "home-selling-review" ||
+    h === "selling-options-review"
+  ) {
+    return "homeSellingReview";
   }
   return null;
 }
@@ -151,6 +158,44 @@ function isPreapprovalJotformHref(clickable: HTMLElement): boolean {
   );
 }
 
+function isHomeSellingReviewTarget(clickable: HTMLElement): boolean {
+  if (
+    clickable.hasAttribute("data-home-selling-review") ||
+    clickable.hasAttribute("data-open-home-selling-review")
+  ) {
+    return true;
+  }
+
+  const href = (clickable.getAttribute("href") || "").toLowerCase().trim();
+  if (
+    href === "#home-selling-options-review" ||
+    href === "#home-selling-review" ||
+    href === "#selling-options-review" ||
+    href.includes("#home-selling-options-review") ||
+    href.includes("#home-selling-review") ||
+    href.includes("#selling-options-review") ||
+    href.includes("261665289742166") ||
+    href.includes("form.jotform.com/261665289742166") ||
+    href.includes("jsform/261665289742166")
+  ) {
+    return true;
+  }
+
+  const text = (clickable.textContent || "").toLowerCase().replace(/\s+/g, " ").trim();
+  if (text.length > 0 && text.length < 140) {
+    if (
+      text.includes("home selling options review") ||
+      text.includes("request free options review") ||
+      text.includes("free comparison review") ||
+      text.includes("get my free comparison review")
+    ) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
 export function resolveFormKind(target: EventTarget | Element | null): FormKind | null {
   const element = asElement(target);
   if (!element) return null;
@@ -176,7 +221,14 @@ export function resolveFormKind(target: EventTarget | Element | null): FormKind 
   if (clickable.hasAttribute("data-contact") || clickable.hasAttribute("data-open-contact")) {
     return "contact";
   }
+  if (
+    clickable.hasAttribute("data-home-selling-review") ||
+    clickable.hasAttribute("data-open-home-selling-review")
+  ) {
+    return "homeSellingReview";
+  }
 
+  if (isHomeSellingReviewTarget(clickable)) return "homeSellingReview";
   if (isPreApprovalTarget(clickable)) return "preapproval";
   if (isPreapprovalJotformHref(clickable)) return "preapproval";
   if (isQuizTarget(clickable)) return "quiz";

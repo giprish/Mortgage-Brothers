@@ -13,6 +13,7 @@ import CountyCityCards from "../../component/CountyCityCards";
 import CountyMortgagePrograms from "../../component/CountyMortgagePrograms";
 import CountyTestimonials from "../../component/CountyTestimonials";
 import GetInTouch from "../../component/GetInTouch";
+import CTA from "../../component/CTA";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/navajo-county-az/");
 
@@ -133,7 +134,7 @@ export default function NavajoCountyPage() {
             </div>
           </div>
         </section>
-        <section className="w-full py-16 lg:py-24 bg-white">
+        <section id="areas" className="w-full py-16 lg:py-24 bg-white scroll-mt-[72px]">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-16">
               <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">Navajo County Arizona Mortgage Broker Serving All Major Cities</h2>
@@ -145,6 +146,15 @@ export default function NavajoCountyPage() {
             <CountyCityCards countySlug="navajo-county-az" cities={cities} />
           </div>
         </section>
+
+        <CTA
+          eyebrow=""
+          title="Ready to Start Your Home Mortgage Journey in Navajo County?"
+          description="Our Navajo County mortgage specialists are here to help you move forward with confidence. From Show Low to Holbrook and surrounding communities, we guide buyers and homeowners through every step of the mortgage process."
+          primaryLabel="View All Navajo County Areas"
+          primaryHref="#areas"
+          secondaryLabel="Call Us Now"
+        />
 
 
         <CountyMortgagePrograms countyName="Navajo County" fhaLimit="$541,287" />

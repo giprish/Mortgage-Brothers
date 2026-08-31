@@ -168,7 +168,7 @@ export default function PinalCountyPage() {
             </h1>
 
             <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">
-              From San Tan Valley to Casa Grande — 11 communities, one team that knows every one of them.
+              We are here to make the home loan process a whole lot easier, with tools and expertise that will help guide you.
             </p>
 
             <HeroCtaButtons className="mb-4" />
@@ -198,7 +198,7 @@ export default function PinalCountyPage() {
         </section>
 
         {/* Cities Grid Section */}
-        <section className="w-full py-16 lg:py-24 bg-white">
+        <section id="areas" className="w-full py-16 lg:py-24 bg-white scroll-mt-[72px]">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-16">
               <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">
@@ -212,6 +212,16 @@ export default function PinalCountyPage() {
             <CountyCityCards countySlug="pinal-county-az" cities={cities} />
           </div>
         </section>
+
+        <CTA
+          eyebrow=""
+          title="Ready to Start Your Pinal County Home Journey?"
+          description="Let's find the perfect mortgage solution for your Pinal County home."
+          primaryLabel="View All Pinal County Areas"
+          primaryHref="#areas"
+          secondaryLabel="Call Us Now"
+        />
+
         <CountyMortgagePrograms
           countyName="Pinal County"
           fhaLimit="$557,750"
@@ -237,11 +247,6 @@ export default function PinalCountyPage() {
             "Take the first step toward homeownership with AZ Mortgage Brothers, your trusted local mortgage team. Our team provides expert guidance through the home loan process — answering questions, reviewing your options, and helping you secure the best terms for your situation. We'll help you secure the best possible terms for your unique situation across San Tan Valley, Queen Creek, Casa Grande, Coolidge, Florence, and Apache Junction.",
             "Whether you prefer to chat over the phone, send us an email, or meet in person, we are here to help. Fill out the form below, and one of our Pinal County Arizona mortgage broker specialists will get back to you promptly.",
           ]}
-        />
-
-        <CTA
-          title="Ready to start your Pinal County home journey?"
-          description="Let's find the perfect mortgage solution for your Pinal County home."
         />
       </main>
 

@@ -13,6 +13,7 @@ import CountyCityCards from "../../component/CountyCityCards";
 import CountyMortgagePrograms from "../../component/CountyMortgagePrograms";
 import CountyTestimonials from "../../component/CountyTestimonials";
 import GetInTouch from "../../component/GetInTouch";
+import CTA from "../../component/CTA";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/apache-county-az/");
 
@@ -134,7 +135,7 @@ export default function ApacheCountyPage() {
             </div>
           </div>
         </section>
-        <section className="w-full py-16 lg:py-24 bg-white">
+        <section id="areas" className="w-full py-16 lg:py-24 bg-white scroll-mt-[72px]">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-16">
               <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">Apache County Arizona Mortgage Broker Serving All Major Cities</h2>
@@ -143,6 +144,15 @@ export default function ApacheCountyPage() {
             <CountyCityCards countySlug="apache-county-az" cities={cities} />
           </div>
         </section>
+
+        <CTA
+          eyebrow=""
+          title="Ready to Start Your Home Mortgage Journey in Apache County?"
+          description="Our Apache County mortgage specialists are here to answer your questions, compare loan programs, and guide you through every step of the mortgage process. From Snowflake to Alpine and surrounding communities, we make home financing simple and stress-free."
+          primaryLabel="View All Apache County Areas"
+          primaryHref="#areas"
+          secondaryLabel="Call Us Now"
+        />
 
 
         <CountyMortgagePrograms countyName="Apache County" fhaLimit="$541,287" />

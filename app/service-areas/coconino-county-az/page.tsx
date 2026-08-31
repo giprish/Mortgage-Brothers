@@ -208,7 +208,7 @@ export default function CoconinoCountyPage() {
         </section>
 
         {/* Cities Grid Section */}
-        <section className="w-full py-16 lg:py-24 bg-white">
+        <section id="areas" className="w-full py-16 lg:py-24 bg-white scroll-mt-[72px]">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-16">
               <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">
@@ -222,6 +222,16 @@ export default function CoconinoCountyPage() {
             <CountyCityCards countySlug="coconino-county-az" cities={cities} />
           </div>
         </section>
+
+        <CTA
+          eyebrow=""
+          title="Ready to Start Your Home Mortgage Journey in Coconino County?"
+          description="Our Coconino County mortgage experts are here to answer your questions, compare loan options, and guide you through every step of the mortgage process. From Flagstaff to Sedona and surrounding communities, we make home financing simple and stress-free."
+          primaryLabel="View All Coconino County Areas"
+          primaryHref="#areas"
+          secondaryLabel="Call Us Now"
+        />
+
         <CountyMortgagePrograms countyName="Coconino County" fhaLimit="$609,500" />
 
         <CountyTestimonials testimonials={testimonials} />
@@ -243,10 +253,6 @@ export default function CoconinoCountyPage() {
             "Choosing the right mortgage matters. Our team takes a personalized approach by reviewing your income, credit profile, and long-term goals before recommending loan options.",
             "Our AI-supported loan analysis helps compare lender terms efficiently, while our experienced advisors ensure every decision is made with clarity and confidence — whether you're buying, refinancing, or planning ahead.",
           ]}
-        />
-        <CTA
-          title="Ready to start your Coconino County home journey?"
-          description="Let's find the perfect mortgage solution for your Coconino County home."
         />
       </main>
 

@@ -75,6 +75,14 @@ const FORMS: Record<
     iframeTitle: "New Contact Us Form",
     loadingLabel: "Loading contact form...",
   },
+  homeSellingReview: {
+    id: "261665289742166",
+    src: "https://form.jotform.com/261665289742166",
+    eyebrow: "Free home selling review",
+    title: "Get Your Free Home Selling Options Review",
+    iframeTitle: "Get Your Free Home Selling Options Review",
+    loadingLabel: "Loading home selling options review...",
+  },
 };
 
 type FormModalContextValue = {
