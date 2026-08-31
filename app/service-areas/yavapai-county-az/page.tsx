@@ -20,23 +20,43 @@ export const metadata: Metadata = getSeoMetadata("/service-areas/yavapai-county-
 const cities = [
   {
     name: "Prescott",
-    description: "As Yavapai County's seat, Prescott features historic courthouse square charm, pine forests, and mile-high mountain air."
+    description: "Prescott offers a strong housing market with diverse neighborhoods and long-term value. Prescott offers a strong housing market with diverse neighborhoods and long-term value — we help buyers secure competitive home loans with clear guidance and fast closings."
+  },
+  {
+    name: "Cottonwood",
+    description: "Cottonwood attracts both homeowners and investors with its steady growth and affordability. We provide mortgage solutions in Cottonwood designed for home purchases, refinancing, and long-term planning."
+  },
+  {
+    name: "Chino Valley",
+    description: "Chino Valley is known for larger lots and more affordable housing options. Our mortgage experts help Chino Valley buyers find loan programs that fit rural-friendly loan options and suburban property needs."
+  },
+  {
+    name: "Dewey",
+    description: "Dewey offers quieter living with access to nearby cities. We assist Dewey homebuyers with flexible mortgage options and personalized support throughout the loan process."
+  },
+  {
+    name: "Yavapai Hills",
+    description: "Yavapai Hills features established neighborhoods with strong home values. Our mortgage broker services help homeowners and buyers navigate financing with confidence and clarity."
   },
   {
     name: "Prescott Valley",
-    description: "Fast-growing community with family neighborhoods, shopping hubs, and affordable home loan programs."
+    description: "Prescott Valley continues to grow with new homes and family-friendly communities. We help buyers secure home loans that match market conditions and builder timelines."
+  },
+  {
+    name: "Clarkdale",
+    description: "Clarkdale provides a mix of historic charm and residential opportunity. We help Clarkdale buyers find tailored home loan solutions that fit their goals and timeline."
+  },
+  {
+    name: "Cornville",
+    description: "Cornville offers rural-style living with unique property types. We help Cornville buyers understand loan requirements and secure financing that fits non-traditional properties."
+  },
+  {
+    name: "Jerome",
+    description: "Jerome's distinctive housing market often requires careful mortgage planning. Our team helps buyers navigate financing options for unique homes and hillside properties."
   },
   {
     name: "Sedona",
     description: "World-famous red rock beauty offering luxury estates, second homes, and specialized jumbo loan options."
-  },
-  {
-    name: "Cottonwood",
-    description: "Heart of Verde Valley wine country with charming residential areas and competitive mortgage programs."
-  },
-  {
-    name: "Chino Valley",
-    description: "Spacious country living with acreage, agricultural properties, and USDA rural home loan options."
   },
   {
     name: "Camp Verde",
@@ -46,26 +66,6 @@ const cities = [
     name: "Dewey-Humboldt",
     description: "Peaceful rural atmosphere with spacious properties and custom home financing options."
   },
-  {
-    name: "Clarkdale",
-    description: "Historic company town with preserved architecture, artistic flair, and accessible home loan choices."
-  },
-  {
-    name: "Jerome",
-    description: "Historic hillside mining town with breathtaking Verde Valley views and unique property financing."
-  },
-  {
-    name: "Cornville",
-    description: "Verde Valley community with vineyards, acreage, and rural home financing near Cottonwood."
-  },
-  {
-    name: "Dewey",
-    description: "Highway 69 community with spacious lots, mountain views, and custom home mortgage options."
-  },
-  {
-    name: "Yavapai Hills",
-    description: "Prescott-area neighborhood with golf-community living and competitive home loan programs."
-  }
 ];
 
 const countyFaqs = [
@@ -167,7 +167,7 @@ export default function YavapaiCountyPage() {
             </h1>
 
             <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">
-              From Prescott to Sedona — 12 communities, one team that knows every one of them.
+              Mortgage Brothers is a trusted Arizona mortgage broker providing home loan solutions throughout Yavapai County, AZ. We help buyers and homeowners secure competitive mortgage options with clear guidance, and a smooth approval process.
             </p>
 
             <HeroCtaButtons className="mb-4" />
@@ -201,11 +201,12 @@ export default function YavapaiCountyPage() {
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-16">
               <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">
-                Yavapai County mortgage services
+                Serving All of Yavapai County
               </h2>
-              <p className="text-brand-text-muted text-[15px] lg:text-[16px]">
-                Select your city below for local mortgage expertise.
-              </p>
+              <div className="text-brand-text-muted text-[15px] lg:text-[16px] max-w-3xl mx-auto space-y-4">
+                <p>Our Yavapai County mortgage broker team provides home loans and mortgage services across the county&apos;s major cities and communities.</p>
+                <p>Whether you&apos;re buying your first home, upgrading, refinancing, or exploring loan options in Yavapai County, our team works with multiple lenders to help you find a mortgage that fits your financial goals.</p>
+              </div>
             </div>
 
             <CountyCityCards countySlug="yavapai-county-az" cities={cities} />

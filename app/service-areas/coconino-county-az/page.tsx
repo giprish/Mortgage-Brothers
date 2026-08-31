@@ -20,19 +20,55 @@ export const metadata: Metadata = getSeoMetadata("/service-areas/coconino-county
 const cities = [
   {
     name: "Flagstaff",
-    description: "As Coconino County's seat, Flagstaff offers pine forests, mountain vistas, university energy, and custom home financing."
-  },
-  {
-    name: "Sedona",
-    description: "Iconic red rock vistas with luxury real estate, vacation properties, and tailored jumbo mortgage options."
+    description: "Flagstaff offers a diverse housing market near Northern Arizona University and outdoor recreation. Our mortgage solutions help buyers navigate higher-elevation pricing with confidence and clarity."
   },
   {
     name: "Williams",
-    description: "Gateway to the Grand Canyon with mountain town heritage, pine forests, and competitive home loan rates."
+    description: "Williams combines small-town charm with tourism-driven opportunities. We help homeowners and buyers secure flexible mortgage options suited for primary homes or investment properties."
+  },
+  {
+    name: "Sedona",
+    description: "Sedona is known for luxury homes and scenic red-rock views. Our mortgage experts assist homeowners and buyers with customized loan solutions for high-value and second-home properties."
+  },
+  {
+    name: "Happy Jack",
+    description: "Happy Jack features cabin-style living and rural properties. We guide buyers through financing options that fit unique home types and land considerations."
+  },
+  {
+    name: "Munds Park",
+    description: "Munds Park is popular for vacation and seasonal home properties. Our team helps buyers secure financing that works for second homes and long-term investments."
   },
   {
     name: "Page",
-    description: "Located near Lake Powell and Horseshoe Bend, offering tourism-driven real estate and residential financing."
+    description: "Page attracts buyers seeking proximity to Lake Powell and tourism opportunities. We offer mortgage solutions tailored for residential and short-term rental properties."
+  },
+  {
+    name: "Doney Park",
+    description: "Doney Park provides spacious lots and quieter living near Flagstaff. We help buyers understand financing options for homes with larger parcels and rural zoning."
+  },
+  {
+    name: "Bellemont",
+    description: "Bellemont offers newer developments and family-friendly neighborhoods. Our mortgage services support first-time buyers and growing families with competitive loan options."
+  },
+  {
+    name: "Timberline",
+    description: "Timberline features mountain homes and scenic surroundings. We assist buyers with mortgage programs designed for higher-elevation and custom-built properties."
+  },
+  {
+    name: "Parks",
+    description: "Parks is ideal for buyers seeking privacy and acreage. Our team helps navigate financing for rural homes and affordable properties with unique land features."
+  },
+  {
+    name: "Mountainaire",
+    description: "Mountainaire offers forest-surrounded living with larger lots. We provide personalized mortgage guidance for buyers seeking peaceful, low-density communities."
+  },
+  {
+    name: "Kachina Village",
+    description: "Kachina Village is a popular Flagstaff-area community with affordable housing options. We help buyers secure practical mortgage solutions tailored to local market conditions."
+  },
+  {
+    name: "Mormon Lake",
+    description: "Mormon Lake delivers scenic, rural living and open land. Our mortgage experts assist with financing options suited for remote properties and long-term ownership goals."
   },
   {
     name: "Fredonia",
@@ -42,42 +78,6 @@ const cities = [
     name: "Tusayan",
     description: "Grand Canyon South Rim community providing housing solutions for local workforce and residents."
   },
-  {
-    name: "Bellemont",
-    description: "I-40 community west of Flagstaff with pine-forest homes and high-country mortgage options."
-  },
-  {
-    name: "Doney Park",
-    description: "East Flagstaff neighborhood with mountain views, acreage, and competitive home loan programs."
-  },
-  {
-    name: "Happy Jack",
-    description: "Mogollon Rim high-country community with cabins, second homes, and recreational property financing."
-  },
-  {
-    name: "Kachina Village",
-    description: "South Flagstaff pine-forest neighborhood with family homes and mountain-town mortgage options."
-  },
-  {
-    name: "Mormon Lake",
-    description: "Lakeside cabin community south of Flagstaff offering recreational and second-home financing."
-  },
-  {
-    name: "Mountainaire",
-    description: "Quiet forested community near Flagstaff with cabin-style homes and local mortgage programs."
-  },
-  {
-    name: "Munds Park",
-    description: "I-17 mountain community between Flagstaff and Sedona with cabins and vacation-home loans."
-  },
-  {
-    name: "Parks",
-    description: "Rural high-country community west of Flagstaff with acreage, cabins, and USDA-friendly financing."
-  },
-  {
-    name: "Timberline",
-    description: "Flagstaff-area pine neighborhood offering mountain homes and competitive mortgage rates."
-  }
 ];
 
 const countyFaqs = [
@@ -179,7 +179,7 @@ export default function CoconinoCountyPage() {
             </h1>
 
             <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">
-              From Flagstaff to Lake Powell — 15 communities, one team that knows every one of them.
+              Mortgage Brothers is a trusted Arizona mortgage broker providing personalized home loan solutions throughout Coconino County, AZ. We help homebuyers and homeowners secure competitive mortgage options with clear guidance and a smooth approval process.
             </p>
 
             <HeroCtaButtons className="mb-4" />
@@ -212,10 +212,10 @@ export default function CoconinoCountyPage() {
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-16">
               <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">
-                Coconino County mortgage services
+                Serving All of Coconino County
               </h2>
-              <p className="text-brand-text-muted text-[15px] lg:text-[16px]">
-                Select your city below for local mortgage expertise.
+              <p className="text-brand-text-muted text-[15px] lg:text-[16px] max-w-3xl mx-auto">
+                Our Coconino County mortgage team delivers reliable home loan and refinancing services across the region&apos;s cities, mountain towns, and rural communities. Whether you&apos;re buying your first home, upgrading, refinancing, or exploring loan options in Coconino County, our experienced brokers work with multiple lenders to help you find the best mortgage to fit your financial goals.
               </p>
             </div>
 

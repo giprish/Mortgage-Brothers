@@ -18,15 +18,15 @@ import CTA from "../../component/CTA";
 export const metadata: Metadata = getSeoMetadata("/service-areas/santa-cruz-county-az/");
 
 const cities = [
+  {
+    name: "Santa Cruz",
+    description:
+      "Santa Cruz offers a blend of historic charm and growing residential communities along the Arizona–Mexico border. Our mortgage experts help buyers secure flexible home loan options for primary residences, refinancing, and long-term investments.",
+  },
   { name: "Nogales", description: "As Santa Cruz County's seat on the international border, Nogales offers commerce, historic homes, and home loans." },
   { name: "Rio Rico", description: "Master-planned community with rolling hills, golf courses, and accessible home financing." },
   { name: "Tubac", description: "Historic arts colony and luxury golf resort community featuring custom jumbo home loan solutions." },
   { name: "Patagonia", description: "Scenic mountain valley town known for birdwatching, nature preserves, and quiet rural homes." },
-  {
-    name: "Santa Cruz",
-    description:
-      "Santa Cruz offers a blend of historic charm and growing residential communities along the Arizona-Mexico border. Our mortgage experts help buyers secure flexible home loan options for primary residences, refinancing, and long-term investments.",
-  },
 ];
 
 const countyFaqs = [
@@ -116,7 +116,7 @@ export default function SantaCruzCountyPage() {
             </div>
             <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-4">SOUTHERN ARIZONA - SANTA CRUZ</p>
             <h1 className="text-white text-hero-title font-playfair font-normal leading-[1.1] mb-6 max-w-3xl">Your trusted Santa Cruz County mortgage broker.</h1>
-            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">From Nogales to Tubac — 5 communities, one team that knows every one of them.</p>
+            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">Mortgage Brothers provides reliable mortgage solutions for homebuyers and homeowners throughout Santa Cruz County, AZ.</p>
             <HeroCtaButtons className="mb-4" />
           </div>
         </section>
@@ -139,8 +139,11 @@ export default function SantaCruzCountyPage() {
         <section id="areas" className="w-full py-16 lg:py-24 bg-white scroll-mt-[72px]">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-16">
-              <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">Santa Cruz County mortgage services</h2>
-              <p className="text-brand-text-muted text-[15px] lg:text-[16px]">Select your city below for local mortgage expertise.</p>
+              <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">Santa Cruz County Arizona Mortgage Broker Serving Local Communities</h2>
+              <div className="text-brand-text-muted text-[15px] lg:text-[16px] max-w-3xl mx-auto space-y-4">
+                <p>Our Santa Cruz County mortgage specialists assist homebuyers and homeowners throughout southern Arizona with dependable mortgage services. Whether you&apos;re purchasing a primary residence, investing in property, or refinancing your current mortgage, we help you compare lenders and choose the right loan program.</p>
+                <p>With access to a wide network of lending partners, our team helps clients secure competitive mortgage rates while simplifying the entire home financing process from application to closing.</p>
+              </div>
             </div>
             <CountyCityCards countySlug="santa-cruz-county-az" cities={cities} />
           </div>

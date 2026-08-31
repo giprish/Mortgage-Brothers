@@ -17,9 +17,9 @@ import GetInTouch from "../../component/GetInTouch";
 export const metadata: Metadata = getSeoMetadata("/service-areas/graham-county-az/");
 
 const cities = [
-  { name: "Safford", description: "As Graham County's seat in the Gila Valley, Safford offers vibrant agriculture, Mount Graham views, and home loans." },
-  { name: "Thatcher", description: "Home to Eastern Arizona College with family neighborhoods, top schools, and competitive loan rates." },
-  { name: "Pima", description: "Historic agricultural town in the Gila Valley offering spacious rural home options." }
+  { name: "Safford", description: "Safford serves as the county seat of Graham County and features a growing residential community surrounded by scenic desert. Our mortgage brokers help Safford homebuyers secure financing for primary homes." },
+  { name: "Thatcher", description: "Thatcher is home to Eastern Arizona College and offers family-friendly neighborhoods and expanding housing options. We help buyers explore mortgage solutions suited for homes in this vibrant community." },
+  { name: "Pima", description: "Pima provides small-town living with peaceful residential neighborhoods and nearby farmland. Our mortgage specialists help buyers compare loan programs suited for homes and rural properties in the area." },
 ];
 
 const countyFaqs = [
@@ -132,8 +132,11 @@ export default function GrahamCountyPage() {
         <section className="w-full py-16 lg:py-24 bg-white">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-16">
-              <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">Graham County mortgage services</h2>
-              <p className="text-brand-text-muted text-[15px] lg:text-[16px]">Select your city below for local mortgage expertise.</p>
+              <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">Graham County Arizona Mortgage Broker Serving Local Communities</h2>
+              <div className="text-brand-text-muted text-[15px] lg:text-[16px] max-w-3xl mx-auto space-y-4">
+                <p>Our Graham County mortgage specialists assist homebuyers and homeowners throughout southeastern Arizona with dependable mortgage services. Whether you&apos;re purchasing a primary residence, investing in property, or refinancing your current mortgage, we help you compare lenders and choose the right loan program.</p>
+                <p>With access to a wide network of lending partners, our team helps clients secure competitive mortgage rates while simplifying the entire home financing process from application to closing.</p>
+              </div>
             </div>
             <CountyCityCards countySlug="graham-county-az" cities={cities} />
           </div>

@@ -18,13 +18,13 @@ import CTA from "../../component/CTA";
 export const metadata: Metadata = getSeoMetadata("/service-areas/mohave-county-az/");
 
 const cities = [
-  { name: "Lake Havasu City", description: "Famous for the London Bridge, water sports, and vibrant desert waterfront home financing." },
-  { name: "Kingman", description: "As Mohave County's seat along Route 66, Kingman offers affordable home growth and mountain vistas." },
-  { name: "Bullhead City", description: "Located along the Colorado River opposite Laughlin, offering riverfront homes and competitive loan rates." },
-  { name: "Fort Mohave", description: "Growing residential community south of Bullhead City with new construction and golf properties." },
+  { name: "Kingman", description: "Kingman serves as the county seat of Mohave County and features a mix of historic homes and new residential developments. Our mortgage specialists help Kingman buyers secure financing tailored to their goals." },
+  { name: "Lake Havasu City", description: "Lake Havasu City is known for its waterfront properties, vacation homes, and vibrant desert lifestyle. Our mortgage brokers help buyers secure financing for primary homes, and refinancing opportunities." },
+  { name: "Bullhead City", description: "Located along the Colorado River, Bullhead City offers scenic living and growing residential neighborhoods. We help buyers explore mortgage solutions suited for homes in this riverside community." },
+  { name: "Chloride", description: "Chloride is a historic mining town known for its quiet desert setting and small-town charm. Our mortgage experts help buyers explore financing options for primary homes and unique rural properties." },
+  { name: "Fort Mohave", description: "Fort Mohave offers suburban communities and golf course neighborhoods with easy access to the Colorado River. Our mortgage team helps buyers compare loan programs suited for homes in this desirable area." },
+  { name: "Colorado City", description: "Colorado City offers peaceful desert living near the Arizona–Utah border. We help homebuyers secure flexible mortgage options for residential homes and growing local communities." },
   { name: "Golden Valley", description: "Spacious desert valley living between Kingman and Bullhead City with affordable acreage options." },
-  { name: "Colorado City", description: "Northern Mohave County community near the Utah border with mountain views and rural loans." },
-  { name: "Chloride", description: "Historic mining town near Kingman offering small-town character homes and rural financing." }
 ];
 
 const countyFaqs = [
@@ -114,7 +114,7 @@ export default function MohaveCountyPage() {
             </div>
             <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-3">WESTERN ARIZONA - MOHAVE</p>
             <h1 className="text-white text-hero-title font-playfair font-normal leading-[1.1] mb-4 max-w-3xl">Your trusted Mohave County mortgage broker.</h1>
-            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-6">From Lake Havasu to Kingman — 7 communities, one team that knows every one of them.</p>
+            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-6">Mortgage Brothers provides reliable mortgage solutions for homebuyers and homeowners throughout Mohave County, Arizona.</p>
             <HeroCtaButtons className="mb-2" />
           </div>
         </section>
@@ -137,8 +137,11 @@ export default function MohaveCountyPage() {
         <section id="areas" className="w-full py-10 lg:py-14 bg-white scroll-mt-[72px]">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 lg:mb-10">
-              <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-3">Mohave County mortgage services</h2>
-              <p className="text-brand-text-muted text-[15px] lg:text-[16px]">Select your city below for local mortgage expertise.</p>
+              <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-3">Mohave County Arizona Mortgage Broker Serving All Major Cities</h2>
+              <div className="text-brand-text-muted text-[15px] lg:text-[16px] max-w-3xl mx-auto space-y-4">
+                <p>Our Mohave County mortgage specialists assist homebuyers and homeowners throughout northwestern Arizona with dependable mortgage services. Whether you&apos;re purchasing a primary residence, buying a vacation property near the Colorado River, or refinancing your current mortgage, we help you compare lenders and choose the right loan program.</p>
+                <p>With access to a wide network of lending partners, our team helps clients secure competitive mortgage rates while simplifying the entire home financing process from application to closing.</p>
+              </div>
             </div>
             <CountyCityCards countySlug="mohave-county-az" cities={cities} />
           </div>

@@ -137,7 +137,10 @@ export default function NavajoCountyPage() {
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-16">
               <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">Navajo County Arizona Mortgage Broker Serving All Major Cities</h2>
-              <p className="text-brand-text-muted text-[15px] lg:text-[16px] max-w-3xl mx-auto">Our Navajo County mortgage specialists provide dependable home loan and refinancing services across the region. Whether you&apos;re buying your first home, upgrading to a larger property, refinancing an existing mortgage, or investing in a second home near Arizona&apos;s scenic White Mountains, we help match you with the right loan programs. With access to multiple lending partners, our team helps borrowers secure competitive mortgage rates in Navajo County while simplifying the financing process from application through closing.</p>
+              <div className="text-brand-text-muted text-[15px] lg:text-[16px] max-w-3xl mx-auto space-y-4">
+                <p>Our Navajo County mortgage specialists provide dependable home loan and refinancing services across the region. Whether you&apos;re buying your first home, upgrading to a larger property, refinancing an existing mortgage, or investing in a second home near Arizona&apos;s scenic White Mountains, we help match you with the right loan programs.</p>
+                <p>With access to multiple lending partners, our team helps borrowers secure competitive mortgage rates in Navajo County while simplifying the financing process from application through closing.</p>
+              </div>
             </div>
             <CountyCityCards countySlug="navajo-county-az" cities={cities} />
           </div>

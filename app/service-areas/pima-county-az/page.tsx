@@ -26,11 +26,11 @@ export const metadata: Metadata = getSeoMetadata("/service-areas/pima-county-az/
 const cities = [
   {
     name: "Tucson",
-    description: "As Pima County's seat and Southern Arizona's major hub, Tucson offers vibrant neighborhoods, mountain view estates, and historic charm."
+    description: "Tucson is the largest city in Pima County and one of Arizona's most vibrant real estate markets. Our mortgage brokers help Tucson buyers secure financing for primary homes, and investment properties."
   },
   {
     name: "Oro Valley",
-    description: "Known for upscale golf communities and Santa Catalina views, Oro Valley homebuyers benefit from competitive mortgage rates."
+    description: "Oro Valley offers beautiful desert landscapes, scenic mountain views, and family-friendly neighborhoods. We assist buyers with mortgage solutions tailored to homes in this growing community."
   },
   {
     name: "Marana",
@@ -38,11 +38,11 @@ const cities = [
   },
   {
     name: "Sahuarita",
-    description: "Located south of Tucson, Sahuarita features affordable single-family housing, scenic desert landscapes, and top parks."
+    description: "Sahuarita is a rapidly growing residential community with modern neighborhoods and master-planned developments. Our mortgage specialists help buyers explore financing options suited for new homes."
   },
   {
     name: "Vail",
-    description: "Known for top-ranked school districts and spacious desert properties southeast of Tucson, ideal for growing families."
+    description: "Vail provides peaceful suburban living with excellent schools and expanding residential areas. We help buyers secure mortgage loans designed for homes in this popular area."
   },
   {
     name: "Green Valley",
@@ -166,7 +166,7 @@ export default function PimaCountyPage() {
             </h1>
 
             <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">
-              From Tucson to Catalina Foothills — 8 communities, one team that knows every one of them.
+              Mortgage Brothers provides reliable mortgage solutions for homebuyers and homeowners throughout Pima County, Arizona. Our experienced mortgage brokers help clients secure competitive mortgage.
             </p>
 
             <HeroCtaButtons className="mb-4" />
@@ -199,11 +199,12 @@ export default function PimaCountyPage() {
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-16">
               <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">
-                Pima County mortgage services
+                Pima County Arizona Mortgage Broker Serving All Major Cities
               </h2>
-              <p className="text-brand-text-muted text-[15px] lg:text-[16px]">
-                Select your city below for local mortgage expertise.
-              </p>
+              <div className="text-brand-text-muted text-[15px] lg:text-[16px] max-w-3xl mx-auto space-y-4">
+                <p>Our Pima County mortgage specialists assist homebuyers and homeowners throughout Southern Arizona with dependable mortgage services. Whether you&apos;re purchasing a primary residence, investing in property, or refinancing your current mortgage, we help you compare lenders and choose the right loan program.</p>
+                <p>With access to a wide network of lending partners, our team helps clients secure competitive mortgage rates while simplifying the entire home financing process from application to closing.</p>
+              </div>
             </div>
 
             <CountyCityCards countySlug="pima-county-az" cities={cities} />

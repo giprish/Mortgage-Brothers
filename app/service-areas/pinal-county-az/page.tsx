@@ -19,32 +19,36 @@ export const metadata: Metadata = getSeoMetadata("/service-areas/pinal-county-az
 
 const cities = [
   {
+    name: "San Tan Valley",
+    description: "Pinal County's fastest-growing community featuring master-planned neighborhoods, family-friendly amenities, and affordable housing options."
+  },
+  {
+    name: "Queen Creek",
+    description: "Thriving Southeast Valley community with master-planned neighborhoods, top-rated schools, and strong community appeal for families and professionals."
+  },
+  {
     name: "Casa Grande",
-    description: "Positioned between Phoenix and Tucson, Casa Grande offers fast-growing residential developments and affordable home financing."
+    description: "Pinal County seat offering affordable housing, a historic downtown, and a strong community feel — a great choice for families and retirees alike."
+  },
+  {
+    name: "Coolidge",
+    description: "Historic community with affordable housing and small-town charm — a great fit for first-time buyers looking for competitive rates and room to grow."
+  },
+  {
+    name: "Florence",
+    description: "Historic town with preserved architecture, modern growth, and a welcoming community for families and retirees."
+  },
+  {
+    name: "Apache Junction",
+    description: "Gateway to the Superstition Mountains with active adult communities and stunning desert living — popular with retirees and outdoor enthusiasts."
   },
   {
     name: "Maricopa",
     description: "Popular commuter city with modern master-planned communities, great parks, and flexible first-time buyer loan programs."
   },
   {
-    name: "San Tan Valley",
-    description: "Rapidly expanding East Valley suburban area featuring new home construction and low down payment mortgage choices."
-  },
-  {
-    name: "Florence",
-    description: "As Pinal County's seat, Florence combines rich historic heritage with growing affordable residential choices."
-  },
-  {
-    name: "Coolidge",
-    description: "Agricultural and manufacturing hub offering accessible home loan options and USDA rural financing availability."
-  },
-  {
     name: "Eloy",
     description: "Conveniently located along I-10, Eloy provides affordable housing options for buyers and refinancers."
-  },
-  {
-    name: "Apache Junction",
-    description: "Nestled at the base of the Superstition Mountains with affordable home choices and equestrian properties."
   },
   {
     name: "Superior",
@@ -57,10 +61,6 @@ const cities = [
   {
     name: "Mammoth",
     description: "Quiet desert community in southern Pinal County offering affordable single-family home financing."
-  },
-  {
-    name: "Queen Creek",
-    description: "East Valley growth corridor spanning Pinal County with new construction and family-friendly mortgage options."
   }
 ];
 
@@ -202,10 +202,10 @@ export default function PinalCountyPage() {
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-16">
               <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">
-                Pinal County mortgage services
+                Pinal County Arizona Mortgage Broker Serving All Major Cities
               </h2>
               <p className="text-brand-text-muted text-[15px] lg:text-[16px]">
-                Select your city below for local mortgage expertise.
+                Select your city below for local mortgage expertise and rates.
               </p>
             </div>
 

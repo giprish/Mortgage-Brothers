@@ -84,15 +84,15 @@ const cities = [
   },
   {
     name: "Fountain Hills",
-    description: "With scenic desert views and its iconic fountain, Fountain Hills attracts buyers seeking peaceful living with upscale homes. We provide customized mortgage solutions."
+    description: "Our team provides customized mortgage solutions for its scenic desert views and iconic fountain, Fountain Hills attracts buyers seeking peaceful living with upscale homes."
   },
   {
     name: "Anthem",
-    description: "Anthem's master-planned neighborhoods make it a popular choice for growing families, with flexible loan options at every stage of homeownership."
+    description: "Anthem's master-planned neighborhoods and family-friendly make it a popular choice for growing families, and flexible loan options to at every stage of homeownership."
   },
   {
     name: "New River",
-    description: "New River is ideal for buyers looking for spacious properties and a more rural lifestyle. We assist homeowners with land and traditional mortgage financing options."
+    description: "New River is ideal for buyers looking for spacious properties and a more rural lifestyle. We assist homeowners with land, and traditional mortgage financing options."
   },
   {
     name: "Paradise Valley",
@@ -104,11 +104,11 @@ const cities = [
   },
   {
     name: "Litchfield Park",
-    description: "Litchfield Park offers established neighborhoods with convenient access to West Valley employment hubs. Our team supports buyers and refinancers with competitive rates."
+    description: "Litchfield Park offers established convenient access to West Valley employment hubs. Our team supports buyers and refinancers with competitive rates."
   },
   {
     name: "Cave Creek",
-    description: "Cave Creek is known for its desert landscapes and equestrian properties. We specialize in financing solutions for larger properties and higher-value homes in this area."
+    description: "Cave Creek is known for its desert landscapes, and equestrian properties. We specialize in financing solutions for properties and higher-value homes in this area."
   },
   {
     name: "Carefree",
@@ -116,7 +116,7 @@ const cities = [
   },
   {
     name: "Sun City",
-    description: "Sun City is a shadow-free active-adult community designed for retirement living. We offer mortgage and refinance options specifically suited for 55+ homeowners."
+    description: "Sun City is a nationally recognized active-adult community designed for retirement living. We offer mortgage and refinance options specifically suited for 55+ homeowners."
   },
   {
     name: "Sun City West",
@@ -260,7 +260,7 @@ export default function MaricopaCounty() {
 
             {/* Subtitle */}
             <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">
-              From downtown Phoenix to the far West Valley — 30 cities, one team that knows every one of them.
+              We are here to make the home loan process a whole lot easier, with tools and expertise that will help guide you.
             </p>
 
             {/* CTA Buttons */}
@@ -295,10 +295,10 @@ export default function MaricopaCounty() {
             {/* Section Header */}
             <div className="text-center mb-10">
               <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">
-                Maricopa County mortgage services
+                Maricopa County Mortgage Services
               </h2>
               <p className="text-brand-text-muted text-[15px] lg:text-[16px]">
-                Select your city below for local mortgage expertise.
+                Select your city below for local mortgage expertise and rates
               </p>
             </div>
 
