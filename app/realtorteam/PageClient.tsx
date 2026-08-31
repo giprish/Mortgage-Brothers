@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import LoanProgramHero from "../component/LoanProgramHero";
@@ -91,12 +90,6 @@ const STATS = [
   { value: "99%", label: "Communication Satisfaction" },
 ];
 
-const HIGHLIGHTS = [
-  "Grow Your Business with Premier Mortgage Partner",
-  "Strategic Partnerships for Real Estate Success",
-  "Trusted Mortgage Solutions for Industry Professionals",
-];
-
 export default function RealtorTeamPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
@@ -104,75 +97,14 @@ export default function RealtorTeamPage() {
 
       <main className="flex-grow">
         <LoanProgramHero
-          title="We Want to be Your Mortgage Team"
-          subtitle="Our #1 Priority is giving Realtors® and their buyer clients exceptional service on “Purchase” transactions."
-          ctaLabel="Start My Pre-Approval"
-          ctaHref="#get-pre-approved"
-          secondaryCtaLabel="Talk to a Broker"
-          secondaryCtaHref="tel:+16025352171"
+          title="A Mortgage Partner You Can Depend On"
+          subtitle="Partner with trusted mortgage experts to deliver exceptional service and grow your business together"
+          ctaLabel="Join Our Partner Network"
+          ctaHref="#contact"
+          secondaryCtaLabel="Contact Our Partnership Team"
+          secondaryCtaHref="#contact"
           note=""
         />
-
-        {/* Highlight strip */}
-        <section className="w-full bg-[#052316] loan-strip border-b border-white/5">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
-            {HIGHLIGHTS.map((item) => (
-              <div key={item} className="flex items-center justify-center md:justify-start gap-3">
-                <span className="w-2 h-2 rounded-full bg-[#3fb364] flex-shrink-0" />
-                <p className="text-white text-[14px] lg:text-[15px] font-medium leading-snug">{item}</p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* We Are Brokers Advocating For You */}
-        <section className="w-full loan-section bg-white border-b border-[#e8e0d0]/50">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-[#052316] text-[30px] sm:text-[36px] lg:text-[40px] font-playfair font-normal leading-tight mb-5">
-              We Are Brokers Advocating For You.
-            </h2>
-            <p className="text-[#4e5b4e] text-[15.5px] lg:text-[16.5px] leading-[1.75] mb-8 max-w-2xl mx-auto">
-              Because we are brokers we shop your scenario so banks compete for your business! We have
-              access to rates and loan programs other banks can&apos;t offer. We are fast and streamlined
-              so you can get on with your life.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link
-                href="#get-pre-approved"
-                data-preapproval="true"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
-              >
-                Start My Pre-Approval →
-              </Link>
-              <a
-                href="tel:+16025352171"
-                className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all"
-              >
-                Talk to a Broker →
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* We are Here to Simplify the Home Loan Process */}
-        <section className="w-full loan-section bg-[#fcf9f3] border-b border-[#e8e0d0]/50">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-[#052316] text-[30px] sm:text-[36px] lg:text-[40px] font-playfair font-normal leading-tight mb-5">
-              We are Here to Simplify the Home Loan Process.
-            </h2>
-            <p className="text-[#4e5b4e] text-[15.5px] lg:text-[16.5px] leading-[1.75] mb-8 max-w-2xl mx-auto">
-              Check out our extensive library of video and content aimed at arming you with the right
-              knowledge and the most up-to-date information so that you can start home shopping with
-              confidence.
-            </p>
-            <Link
-              href="/loan-programs/"
-              className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
-            >
-              VIEW LOAN PROGRAMS →
-            </Link>
-          </div>
-        </section>
 
         {/* Why Partner */}
         <section className="w-full loan-section bg-white border-b border-[#e8e0d0]/50">

@@ -3,7 +3,7 @@
 import React from "react";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
-import { COMPANY } from "@/lib/company";
+import GetInTouch from "../component/GetInTouch";
 
 const featureStrip = [
   "Build a Rewarding Mortgage Career with Growth Opportunities",
@@ -252,37 +252,16 @@ export default function ReverseMortgageLoanOfficerPage() {
           </div>
         </section>
 
-        <section id="contact" className="w-full bg-[#f5f0e8] py-16 lg:py-20 border-y border-[#e8e0d0]/50 scroll-mt-[90px]">
-          <div className="max-w-4xl mx-auto px-6 lg:px-10">
-            <div className="text-center mb-10">
-              <h2
-                className="text-[#08271B] text-[30px] lg:text-[38px] font-normal leading-tight mb-5"
-                style={{ fontFamily: "'Playfair Display', serif" }}
-              >
-                Contact Us: Let&apos;s Start Your Mortgage Career Journey
-              </h2>
-              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-                We&apos;re excited about the possibility of you joining The Mortgage Brothers Team. Reach
-                out today and take the first step towards a rewarding career in mortgage lending.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 text-[14.5px] text-[#08271B]">
-                <a href={COMPANY.phoneHref} className="font-semibold hover:text-[#3fb364] transition-colors">
-                  Phone {COMPANY.phoneDisplay}
-                </a>
-                <span className="hidden sm:inline text-[#c8c8b8]">|</span>
-                <span className="text-center">Address {COMPANY.addressFull}</span>
-              </div>
-
-              <a
-                href="#contact-us-form"
-                data-contact="true"
-                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md cursor-pointer"
-              >
-                Contact Us →
-              </a>
-            </div>
-          </div>
-        </section>
+        <GetInTouch
+          id="contact"
+          className="scroll-mt-[90px]"
+          theme="light"
+          title="Contact Us: Let's Start Your Mortgage Career Journey"
+          description="We're excited about the possibility of you joining The Mortgage Brothers Team. Reach out today and take the first step towards a rewarding career in mortgage lending."
+          showPreApproveCta
+          ctaHref="#contact-us-form"
+          ctaLabel="Contact Us →"
+        />
       </main>
       <Footer />
     </div>

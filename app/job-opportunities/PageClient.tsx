@@ -4,8 +4,10 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import GetInTouch from "../component/GetInTouch";
 import LoanProgramHero from "../component/LoanProgramHero";
 import StatsBanner from "../component/StatsBanner";
+import { COMPANY } from "@/lib/company";
 
 const whyCards = [
   {
@@ -149,7 +151,7 @@ export default function JobOpportunitiesPage() {
 
       <main className="flex-grow">
         <LoanProgramHero
-          title="Available Career Opportunities"
+          title="Mortgage Job Opportunities in Arizona"
           subtitle="Join Our Team and Build a Rewarding Career in Mortgage Lending"
           ctaLabel="View Open Positions"
           ctaHref="#open-positions"
@@ -367,35 +369,17 @@ export default function JobOpportunitiesPage() {
           </div>
         </section>
 
-        {/* Contact CTA */}
-        <section className="w-full bg-[#f5f0e8] py-16 lg:py-20 border-y border-[#e8e0d0]/50">
-          <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center">
-            <h2
-              className="text-[#08271B] text-[30px] lg:text-[38px] font-normal leading-tight mb-5"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
-              Contact Us: Let&apos;s Start Your Mortgage Career Journey
-            </h2>
-            <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              We&apos;re excited about the possibility of you joining The Mortgage Brothers Team. Whether
-              you&apos;re ready to apply, have questions about our open positions, or simply want to learn
-              more about building a career in the mortgage industry, we&apos;re here to help.
-            </p>
-
-            <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              Interested? If you are interested in any job opportunity please call +1 602-535-2171 and ask
-              for Eddie Knoell.
-            </p>
-
-            <a
-              href="#contact-us-form"
-              data-contact="true"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md cursor-pointer"
-            >
-              Contact Us →
-            </a>
-          </div>
-        </section>
+        <GetInTouch
+          theme="light"
+          title="Contact Us: Let's Start Your Mortgage Career Journey"
+          paragraphs={[
+            "We're excited about the possibility of you joining The Mortgage Brothers Team. Whether you're ready to apply, have questions about our open positions, or simply want to learn more about building a career in the mortgage industry, we're here to help.",
+            `Interested? If you are interested in any job opportunity please call ${COMPANY.phoneDisplay} and ask for Eddie Knoell.`,
+          ]}
+          showPreApproveCta
+          ctaHref="#contact-us-form"
+          ctaLabel="Contact Us →"
+        />
       </main>
 
       <Footer />

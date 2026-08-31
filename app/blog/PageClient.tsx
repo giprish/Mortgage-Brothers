@@ -31,42 +31,49 @@ const topicsData = [
   {
     title: "FHA Loans",
     description:
-      "Discover the benefits and requirements of Federal Housing Administration loans. Learn how these government-backed mortgages can make homeownership more accessible,",
-    linkText: "Explore FHA Loans",
+      "Discover the benefits and requirements of Federal Housing Administration loans. Learn how these government-backed mortgages can make homeownership more accessible, especially for first-time buyers.",
+    linkText: "Discover FHA Benefits",
     href: "/fha-loans/",
   },
   {
     title: "Mortgage Qualifications",
     description:
-      "Understand credit scores, income requirements, debt-to-income ratios, and other key factors that determine mortgage eligibility. Get tips to improve your chances of approval.",
-    linkText: "Check Your Qualification",
+      "Understand the factors that lenders consider when approving mortgages. Learn how to improve your chances of qualification by optimizing your credit score, debt-to-income ratio, and down payment.",
+    linkText: "Boost Your Eligibility",
     href: "/mortgage-qualifications/",
   },
   {
     title: "Homeownership Tips",
     description:
-      "Practical advice for current and aspiring homeowners. From maintenance tips to equity building strategies, learn how to make the most of your Arizona home investment.",
-    linkText: "Get Homeownership Tips",
+      "Find practical advice on maintaining, improving, and managing your home. From budget-friendly renovations to energy-saving strategies, empower yourself with knowledge to maximize your investment.",
+    linkText: "Get Home Smart",
     href: "/homeownership-tips/",
   },
   {
     title: "Real Estate & Mortgages",
     description:
-      "Insights at the intersection of real estate and mortgage lending. Stay informed about market conditions, property types, and financing strategies for Arizona buyers and sellers.",
-    linkText: "Explore Real Estate Insights",
+      "Explore the intersection of real estate trends and mortgage options. Get insights on how market conditions affect home prices, interest rates, and financing opportunities.",
+    linkText: "Sync Market & Mortgage",
     href: "/real-estate-mortgages/",
+  },
+  {
+    title: "Mortgage Basics",
+    description:
+      "Demystify the world of mortgages with our comprehensive guides. Understand key terms, loan types, and fundamental concepts to make informed decisions about your home financing.",
+    linkText: "Master Mortgage Fundamentals",
+    href: "/mortgage-basics/",
   },
   {
     title: "Specialty Loans",
     description:
-      "Explore specialized mortgage products including jumbo loans, DSCR loans, private money lending, and other unique financing options for Arizona real estate.",
-    linkText: "View Specialty Options",
+      "Discover unique mortgage products designed for specific needs. From VA loans for veterans to jumbo loans for high-value properties, learn about specialized financing options that might suit your situation.",
+    linkText: "Find Your Niche Loan",
     href: "/specialty-loans/",
   },
   {
     title: "Mortgage Payments & Strategies",
     description:
-      "Learn strategies to manage, reduce, or optimize your mortgage payments. From biweekly payments to refinancing, discover ways to save money over the life of your loan.",
+      "Optimize your mortgage with smart payment strategies. Learn about bi-weekly payments, extra principal payments, and refinancing options to potentially save thousands over the life of your loan.",
     linkText: "Optimize Your Payments",
     href: "/mortgage-payments-strategies/",
   },
@@ -74,7 +81,7 @@ const topicsData = [
     title: "Spouse & Estate Considerations",
     description:
       "Understand the implications of mortgages on marriage, divorce, and estate planning. Get expert advice on protecting your assets and ensuring smooth transitions in various life scenarios.",
-    linkText: "Protect Your Assets",
+    linkText: "Plan Your Future",
     href: "/spouse-estate-considerations/",
   },
 ];
@@ -135,13 +142,16 @@ export default function BlogPage() {
         <section className="w-full pt-[110px] lg:pt-[130px] pb-12 px-6 text-center">
           <div className="max-w-4xl mx-auto">
             <span className="text-[#7a6a3d] text-[11px] font-bold tracking-[0.2em] uppercase mb-4 block">
-              THE RESOURCE LIBRARY
+              YOUR GUIDE TO SMART HOME FINANCING
             </span>
             <h1 className="text-[#052316] text-[36px] lg:text-[50px] font-playfair font-normal leading-tight mb-5">
-              Straight answers about Arizona mortgages.
+              Mortgage Insights
             </h1>
-            <p className="text-[#4e5b4e] text-[15px] lg:text-[16px] leading-[1.7] max-w-2xl mx-auto">
-              Guides, explainers, and market reads from two brothers who&apos;ve spent decades in Phoenix real estate.
+            <p className="text-[#4e5b4e] text-[15px] lg:text-[16px] leading-[1.7] max-w-2xl mx-auto mb-6">
+              Expert Tips, Trends, and Strategies for Homebuyers and Homeowners
+            </p>
+            <p className="text-[#4e5b4e] text-[14.5px] leading-[1.7] max-w-2xl mx-auto">
+              Transform your mortgage knowledge into action – speak with our specialists today!
             </p>
           </div>
         </section>

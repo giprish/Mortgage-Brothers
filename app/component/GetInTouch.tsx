@@ -26,6 +26,10 @@ export type GetInTouchProps = {
   contactBeforeBody?: boolean;
   /** Optional content after contact cards (e.g. licensing). */
   afterContact?: React.ReactNode;
+  /** Optional section id for in-page anchors (e.g. `#contact`). */
+  id?: string;
+  /** Extra classes on the outer `<section>` (e.g. scroll margin for fixed nav). */
+  className?: string;
 };
 
 const DEFAULT_TITLE = "Get in Touch with Arizona's Mortgage Experts";
@@ -176,6 +180,8 @@ export default function GetInTouch({
   renderParagraph = renderInlineLinks,
   contactBeforeBody = false,
   afterContact,
+  id,
+  className,
 }: GetInTouchProps) {
   const isLight = theme === "light";
   const bodyParagraphs =
@@ -274,7 +280,10 @@ export default function GetInTouch({
   );
 
   return (
-    <section className={sectionClass}>
+    <section
+      id={id}
+      className={[sectionClass, className].filter(Boolean).join(" ")}
+    >
       <div className="max-w-5xl mx-auto px-5 sm:px-6 lg:px-10 text-center space-y-8">
         {headingBlock}
 
@@ -287,9 +296,19 @@ export default function GetInTouch({
 
         {showPreApproveCta && (
           <div>
-            <Link href={ctaHref} className={ctaClass}>
-              {ctaLabel}
-            </Link>
+            {ctaHref.startsWith("#") ? (
+              <a
+                href={ctaHref}
+                className={ctaClass}
+                {...(ctaHref.includes("contact") ? { "data-contact": "true" } : {})}
+              >
+                {ctaLabel}
+              </a>
+            ) : (
+              <Link href={ctaHref} className={ctaClass}>
+                {ctaLabel}
+              </Link>
+            )}
           </div>
         )}
       </div>
