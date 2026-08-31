@@ -185,7 +185,7 @@ export default function YavapaiCountyPage() {
             <div className="text-brand-text-muted text-[15px] space-y-4">
               <p>Mortgage Brothers is the Prescott mortgage broker locals trust - serving Prescott, Prescott Valley, Sedona, and communities across all of Yavapai County for over 25 years.</p>
               <p>Yavapai County is one of Arizona&apos;s most scenic and diverse counties, stretching from the high desert of Prescott and Prescott Valley to the Verde Valley communities of Cottonwood, Clarkdale, and Jerome. With a mix of retirees, families, and first-time buyers drawn by the cooler climate and more affordable prices than metro Phoenix, Yavapai County has one of the most active real estate markets in the state.</p>
-              <p>At Mortgage Brothers, we have been helping Arizona homebuyers navigate the mortgage process for 25+ years. Whether you are buying in Prescott, Cottonwood, Chino Valley, or anywhere in between, we know the market and can help you find the right loan.</p>
+              <p>At <Link href="/" className="text-[#3fb364] font-bold hover:underline">Mortgage Brothers</Link>, we have been helping Arizona homebuyers navigate the mortgage process for 25+ years. Whether you are buying in Prescott, Cottonwood, Chino Valley, or anywhere in between, we know the market and can help you find the right loan.</p>
               <ul className="list-disc pl-6 space-y-2 mt-4">
                 <li><strong>Major Cities:</strong> Prescott, Prescott Valley, Cottonwood, Chino Valley, Sedona (shared with Coconino), Clarkdale, Jerome, Cornville</li>
                 <li><strong>2026 Conforming Loan Limit:</strong> $832,750</li>

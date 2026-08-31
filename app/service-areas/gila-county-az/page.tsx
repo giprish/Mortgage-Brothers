@@ -17,18 +17,17 @@ import GetInTouch from "../../component/GetInTouch";
 export const metadata: Metadata = getSeoMetadata("/service-areas/gila-county-az/");
 
 const cities = [
-  { name: "Payson", description: "Popular Rim Country retreat nestled in the Mogollon Rim pine forests with mountain home financing options." },
-  { name: "Globe", description: "As Gila County's seat, Globe features historic copper mining heritage, hillside homes, and home loans." },
-  { name: "Miami", description: "Historic mining town neighboring Globe with affordable character housing and competitive rates." },
-  { name: "Star Valley", description: "Rim Country community bordering Payson with mountain views and spacious property financing." },
-  { name: "Hayden", description: "Small Gila River valley town offering quiet rural residential home financing." },
-  { name: "Pine", description: "Mogollon Rim mountain town with cabins, second homes, and pine-forest property financing." },
-  { name: "Strawberry", description: "Neighboring Pine along the Rim with cabin retreats and mountain home loan options." },
-  { name: "Christopher Creek", description: "Rim Country community east of Payson with creek-side cabins and recreational home financing." },
-  { name: "Forest Lakes", description: "High-country pine community with cabin and vacation-home mortgage options near the Mogollon Rim." },
-  { name: "Kohls Ranch", description: "Payson-area Rim Country neighborhood with mountain cabins and recreational property loans." },
-  { name: "Washington Park", description: "Quiet Rim Country community with forested lots and mountain home financing." },
-  { name: "Whispering Pines", description: "Pine-forest neighborhood near Payson offering cabin and primary-home mortgage options." }
+  { name: "Payson", description: "Payson offers scenic mountain living and growing residential neighborhoods. We help buyers secure competitive mortgage options for primary homes, and vacation properties." },
+  { name: "Miami", description: "Miami features historic charm and affordable housing opportunities. Our mortgage experts guide buyers through loan options that fit both first-time and move-up home purchases." },
+  { name: "Star Valley", description: "Star Valley provides peaceful residential living near Payson. We assist buyers with personalized mortgage solutions tailored to family homes and long-term investments." },
+  { name: "Globe", description: "Globe offers a mix of historic homes and new developments. Our team helps buyers navigate financing options with clear guidance, refinancing needs, and competitive rates." },
+  { name: "Strawberry", description: "Strawberry is known for cabin-style homes and forest surroundings. We provide mortgage programs designed for unique mountain properties and seasonal residences." },
+  { name: "Pine", description: "Pine attracts buyers seeking quiet, nature-focused living. Our mortgage services help secure financing for primary homes, vacation retreats, and refinancing needs." },
+  { name: "Kohls Ranch", description: "Kohls Ranch features scenic properties near the Rim Country area. We help buyers explore loan solutions that fit rural, primary homes, and recreational properties." },
+  { name: "Christopher Creek", description: "Christopher Creek is ideal for cabin living and weekend homes. Our mortgage experts guide clients through financing options for second homes and investment properties." },
+  { name: "Forest Lakes", description: "Forest Lakes offers larger lots and custom-built homes. We assist buyers with financing programs suited for acreage and higher-elevation properties." },
+  { name: "Whispering Pines", description: "Whispering Pines delivers peaceful residential living in a wooded setting. We help homeowners refinance or purchase with loan options tailored to local market conditions." },
+  { name: "Washington Park", description: "Washington Park provides rural charm and spacious properties. Our mortgage team supports buyers with flexible financing options for unique home types." },
 ];
 
 const countyFaqs = [
@@ -118,7 +117,7 @@ export default function GilaCountyPage() {
             </div>
             <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-4">NORTHERN ARIZONA - GILA</p>
             <h1 className="text-white text-hero-title font-playfair font-normal leading-[1.1] mb-6 max-w-3xl">Your trusted Gila County mortgage broker.</h1>
-            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">From Payson to Globe — 12 communities, one team that knows every one of them.</p>
+            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">Mortgage Brothers is a trusted Arizona mortgage broker providing personalized home loan solutions throughout Gila County, AZ. We help homebuyers and homeowners secure competitive mortgage options with clear guidance and a smooth approval process.</p>
             <HeroCtaButtons className="mb-4" />
           </div>
         </section>
@@ -129,7 +128,7 @@ export default function GilaCountyPage() {
             <div className="text-brand-text-muted text-[15px] space-y-4">
               <p>Buying a home in Payson or the Rim Country? As your local Payson mortgage broker, Mortgage Brothers knows Gila County real estate inside and out.</p>
               <p>Gila County is Arizona&apos;s Rim Country — a stunning stretch of pine forests, mountain towns, and scenic rivers that draws buyers looking for a quieter pace of life without sacrificing community. From the mountain hub of Payson to the historic mining towns of Globe and Miami, Gila County offers some of the most affordable and picturesque real estate in the state.</p>
-              <p>At Mortgage Brothers, we have been helping Arizona homebuyers navigate the mortgage process for 25+ years. Whether you are buying a primary home in Payson, a cabin near Strawberry or Pine, or refinancing in Globe, we know Gila County and can find the right loan for you.</p>
+              <p>At <Link href="/" className="text-[#3fb364] font-bold hover:underline">Mortgage Brothers</Link>, we have been helping Arizona homebuyers navigate the mortgage process for 25+ years. Whether you are buying a primary home in Payson, a cabin near Strawberry or Pine, or refinancing in Globe, we know Gila County and can find the right loan for you.</p>
               <ul className="list-disc pl-6 space-y-2 mt-4">
                 <li><strong>Major Cities:</strong> Payson, Globe, Miami, Star Valley, Strawberry, Pine, Christopher Creek, Kohls Ranch</li>
                 <li><strong>2026 Conforming Loan Limit:</strong> $832,750</li>
@@ -142,8 +141,8 @@ export default function GilaCountyPage() {
         <section className="w-full py-16 lg:py-24 bg-white">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-16">
-              <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">Gila County mortgage services</h2>
-              <p className="text-brand-text-muted text-[15px] lg:text-[16px]">Select your city below for local mortgage expertise.</p>
+              <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">Gila County Arizona Mortgage Broker Serving All Major Cities</h2>
+              <p className="text-brand-text-muted text-[15px] lg:text-[16px] max-w-3xl mx-auto">Our Gila County mortgage team provides reliable home loan and refinancing services across the county&apos;s mountain towns, lakeside communities, and growing neighborhoods. Whether you&apos;re buying your first home, upgrading, refinancing, or exploring cash-out options in Gila County, we work with multiple lenders to match you with the right mortgage for your financial goals.</p>
             </div>
             <CountyCityCards countySlug="gila-county-az" cities={cities} />
           </div>

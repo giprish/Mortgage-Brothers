@@ -3,6 +3,7 @@ import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildFaqPageSchema, buildReviewsSchema, normalizeFaqs } from "@/lib/seo/structured-data";
 import FaqAccordion from "../../component/FaqAccordion";
+import { renderGetInTouchText } from "@/lib/renderInlineLinks";
 
 import React from "react";
 
@@ -14,6 +15,11 @@ import CountyCityCards from "../../component/CountyCityCards";
 import CountyTestimonials from "../../component/CountyTestimonials";
 import GetInTouch from "../../component/GetInTouch";
 import CTA from "../../component/CTA";
+
+/** Strip `[label](href)` for FAQ JSON-LD plain text. */
+function stripMarkdownLinks(text: string): string {
+  return text.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+}
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/maricopa-county-az/");
 
@@ -145,7 +151,7 @@ const cities = [
 const countyFaqs = [
   {
     q: "What loan programs are available to Maricopa County homebuyers?",
-    a: "Maricopa County homebuyers have access to a full range of loan programs including Conventional, FHA, VA, Jumbo, and Reverse Mortgage loans. First-time buyers may also qualify for down payment assistance programs. We help you compare options and match you with the program that best fits your situation."
+    a: "Maricopa County homebuyers have access to a full range of [loan programs](/mortgage-loan-programs-arizona/) including Conventional, FHA, VA, Jumbo, and [Reverse Mortgage loans](/reverse-mortgage-arizona/). First-time buyers may also qualify for down payment assistance programs. We help you compare options and match you with the program that best fits your situation."
   },
   {
     q: "What is the conforming loan limit in Maricopa County?",
@@ -202,7 +208,11 @@ const testimonials = [
   },
 ];
 
-const faqJsonLd = buildFaqPageSchema(normalizeFaqs(countyFaqs));
+const faqJsonLd = buildFaqPageSchema(
+  normalizeFaqs(
+    countyFaqs.map((faq) => ({ q: faq.q, a: stripMarkdownLinks(faq.a) })),
+  ),
+);
 const reviewsJsonLd = buildReviewsSchema(
   testimonials.map((t) => ({ author: t.name, reviewBody: t.quote })),
 );
@@ -312,7 +322,10 @@ export default function MaricopaCounty() {
           <div className="max-w-4xl mx-auto px-6">
             <FaqAccordion
               title="Frequently Asked Questions"
-              items={countyFaqs}
+              items={countyFaqs.map((faq) => ({
+                q: faq.q,
+                a: renderGetInTouchText(faq.a),
+              }))}
             />
           </div>
         </section>

@@ -9,6 +9,7 @@ import Footer from "../component/Footer";
 import StatsBanner from "../component/StatsBanner";
 import HeroFeatureStrip from "../component/HeroFeatureStrip";
 import { COMPANY, LOAN_OFFICERS } from "@/lib/company";
+import { renderInlineLinks } from "@/lib/renderInlineLinks";
 
 const featureStrip = [
   "We Are Not Cash Buyers",
@@ -443,7 +444,9 @@ export default function SellMyHouseFastArizonaPage() {
               Who Should Sell a House for Cash?
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-              A cash sale tends to make the most sense when speed and certainty matter more than squeezing out the last dollar — for example, when you&apos;re facing a tight deadline, the home needs major work, or the property is vacant and costing you money each month. If, on the other hand, your home is in decent shape and you have a little time, listing it (even as-is with an agent) often nets meaningfully more. For some owners — especially those 62 and older — a reverse mortgage may let you access cash without selling at all. The only way to know which is true for you is to put the numbers side by side. That&apos;s the free review we offer — no pressure, no obligation, and no one trying to buy your house at the end of it.
+              {renderInlineLinks(
+                "A cash sale tends to make the most sense when speed and certainty matter more than squeezing out the last dollar — for example, when you're facing a tight deadline, the home needs major work, or the property is vacant and costing you money each month. If, on the other hand, your home is in decent shape and you have a little time, listing it (even as-is with an agent) often nets meaningfully more. For some owners — especially those 62 and older — a reverse mortgage may let you access cash without selling at all. The only way to know which is true for you is to put the numbers side by side. That's the free review we offer — no pressure, no obligation, and no one trying to buy your house at the end of it.",
+              )}
             </p>
           </div>
         </section>

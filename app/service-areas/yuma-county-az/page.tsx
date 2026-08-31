@@ -18,10 +18,10 @@ import CTA from "../../component/CTA";
 export const metadata: Metadata = getSeoMetadata("/service-areas/yuma-county-az/");
 
 const cities = [
-  { name: "Yuma", description: "As Yuma County's seat and Sunniest City in the World, Yuma offers thriving agriculture, military bases, and home loans." },
-  { name: "San Luis", description: "Fast-growing border city with expanding residential developments and low down payment home loans." },
+  { name: "Yuma", description: "Safford serves as the county seat of Graham County and features a growing residential community surrounded by scenic desert. Our mortgage brokers help Safford homebuyers secure financing for primary homes." },
+  { name: "San Luis", description: "Thatcher is home to Eastern Arizona College and offers family-friendly neighborhoods and expanding housing options. We help buyers explore mortgage solutions suited for homes in this vibrant community." },
   { name: "Somerton", description: "Culturally rich community in the fertile Yuma Valley with family housing choices." },
-  { name: "Wellton", description: "Agricultural community along I-8 with quiet small-town charm and affordable home loans." }
+  { name: "Wellton", description: "Agricultural community along I-8 with quiet small-town charm and affordable home loans." },
 ];
 
 const countyFaqs = [
@@ -111,7 +111,7 @@ export default function YumaCountyPage() {
             </div>
             <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-4">WESTERN ARIZONA - YUMA</p>
             <h1 className="text-white text-hero-title font-playfair font-normal leading-[1.1] mb-6 max-w-3xl">Your trusted Yuma County mortgage broker.</h1>
-            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">From Yuma to San Luis — 4 communities, one team that knows every one of them.</p>
+            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">Mortgage Brothers provides reliable mortgage solutions for homebuyers and homeowners throughout Yuma County, Arizona.</p>
             <HeroCtaButtons className="mb-4" />
           </div>
         </section>
@@ -134,8 +134,11 @@ export default function YumaCountyPage() {
         <section className="w-full py-16 lg:py-24 bg-white">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-16">
-              <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">Yuma County mortgage services</h2>
-              <p className="text-brand-text-muted text-[15px] lg:text-[16px]">Select your city below for local mortgage expertise.</p>
+              <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">Yuma County Arizona Mortgage Broker Serving Local Communities</h2>
+              <div className="text-brand-text-muted text-[15px] lg:text-[16px] max-w-3xl mx-auto space-y-4">
+                <p>Our Yuma County mortgage specialists assist homebuyers and homeowners throughout southwestern Arizona with dependable mortgage services. Whether you&apos;re purchasing a primary residence, investing in property, or refinancing your current mortgage, we help you compare lenders and choose the right loan program.</p>
+                <p>With access to a wide network of lending partners, our team helps clients secure competitive mortgage rates while simplifying the entire home financing process from application to closing.</p>
+              </div>
             </div>
             <CountyCityCards countySlug="yuma-county-az" cities={cities} />
           </div>

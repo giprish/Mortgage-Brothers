@@ -540,6 +540,9 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
   },
   "coconino-county-az/happy-jack": {
+    heroTitle: "Happy Jack Mortgages – Your Local Mortgage Experts",
+    heroDescription:
+      "Expert Happy Jack mortgages, competitive mortgage rates, and personalized home loan solutions for buyers and homeowners in Happy Jack, Arizona.",
     longDescriptions: [
       "Looking for experienced **mortgage brokers in Happy Jack AZ**? [Mortgage Brothers LLC](/) provides expert guidance on Happy Jack home mortgage solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
       "As a **Happy Jack local mortgage team**, we understand cabin properties, forest-service land considerations, seasonal access issues, and lender requirements unique to the Happy Jack real estate market.",
@@ -2520,7 +2523,7 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Gilbert Mortgage Programs & Loan Options",
     getInTouchParagraphs: [
-      "We offer a wide range of programs designed to support different financial situations, from first-time home buyers to experienced homeowners and investors. Our role is to help you choose the right loan - not just the easiest one.",
+      "We offer a wide range of programs designed to support different financial situations, from [first-time home buyers](/first-time-home-buyer-arizona-guide/) to experienced homeowners and investors. Our role is to help you choose the right loan - not just the easiest one.",
     ],
   },
   "maricopa-county-az/glendale": {

@@ -13,11 +13,19 @@ import CountyCityCards from "../../component/CountyCityCards";
 import CountyMortgagePrograms from "../../component/CountyMortgagePrograms";
 import CountyTestimonials from "../../component/CountyTestimonials";
 import GetInTouch from "../../component/GetInTouch";
-import { getCountyCitiesDetails } from "../../../lib/cityData";
 
 export const metadata: Metadata = getSeoMetadata("/service-areas/apache-county-az/");
 
-const cities = getCountyCitiesDetails("apache-county-az");
+const cities = [
+  { name: "Snowflake", description: "Snowflake offers a quiet small-town lifestyle with growing residential neighborhoods and new home developments. Our mortgage brokers help Snowflake homebuyers." },
+  { name: "Springerville", description: "Springerville combines historic charm with beautiful mountain surroundings in eastern Arizona. Our mortgage specialists help buyers explore loan programs that fit first-time purchases." },
+  { name: "Eagar", description: "Eagar is known as community and family-friendly neighborhoods near the White Mountains. We help Eagar buyers compare mortgage options and find financing solutions." },
+  { name: "Greer", description: "Greer is a popular destination for cabin homes, vacation properties, and scenic mountain living. Our mortgage experts help buyers secure financing options designed for seasonal homes." },
+  { name: "Alpine", description: "Alpine offers peaceful living surrounded by forests and outdoor recreation areas. Our mortgage team works with buyers interested in rural properties, second homes, and custom homes." },
+  { name: "St. Johns", description: "Home loans, refinancing, and pre-approvals for St. Johns buyers." },
+  { name: "Chinle", description: "Home loans, refinancing, and pre-approvals for Chinle buyers." },
+  { name: "Window Rock", description: "Home loans, refinancing, and pre-approvals for Window Rock buyers." },
+];
 
 const countyFaqs = [
   {
@@ -106,7 +114,7 @@ export default function ApacheCountyPage() {
             </div>
             <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-4">NORTHERN ARIZONA - APACHE</p>
             <h1 className="text-white text-hero-title font-playfair font-normal leading-[1.1] mb-6 max-w-3xl">Your trusted Apache County mortgage broker.</h1>
-            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">From St. Johns to Alpine — {cities.length} communities, one team that knows every one of them.</p>
+            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">Mortgage Brothers is a trusted Arizona mortgage broker providing personalized home loan solutions throughout Apache County, AZ.</p>
             <HeroCtaButtons className="mb-4" />
           </div>
         </section>
@@ -129,8 +137,8 @@ export default function ApacheCountyPage() {
         <section className="w-full py-16 lg:py-24 bg-white">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-16">
-              <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">Apache County mortgage services</h2>
-              <p className="text-brand-text-muted text-[15px] lg:text-[16px]">Select your city below for local mortgage expertise.</p>
+              <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">Apache County Arizona Mortgage Broker Serving All Major Cities</h2>
+              <p className="text-brand-text-muted text-[15px] lg:text-[16px] max-w-3xl mx-auto">Our Apache County mortgage specialists provide reliable home loan and refinancing services across the region&apos;s rural communities, mountain towns, and growing residential areas. Whether you&apos;re buying your first home, upgrading, refinancing, or investing in vacation property, we help match you with the right loan options and competitive mortgage rates for your financial goals.</p>
             </div>
             <CountyCityCards countySlug="apache-county-az" cities={cities} />
           </div>

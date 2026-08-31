@@ -17,13 +17,13 @@ import GetInTouch from "../../component/GetInTouch";
 export const metadata: Metadata = getSeoMetadata("/service-areas/navajo-county-az/");
 
 const cities = [
-  { name: "Show Low", description: "Commercial hub of the White Mountains offering cool pine forest living, cabin retreats, and home loans." },
+  { name: "Show Low", description: "Show Low is one of the fastest-growing communities in Navajo County and a popular destination for both primary homes, vacation properties and a smooth approval process." },
+  { name: "Pinetop", description: "Pinetop offers beautiful mountain living and is popular for vacation homes and seasonal properties. Our mortgage specialists help buyers secure flexible loan options for primary residences." },
+  { name: "Holbrook", description: "Holbrook is known for its historic charm and convenient location along Interstate 40. Our mortgage team helps buyers in Holbrook secure home loans for primary residences." },
+  { name: "Winslow", description: "Winslow is known for its historic Route 66 charm and growing residential areas. Our mortgage experts assist buyers in securing reliable home loan options for both new purchases and refinancing." },
+  { name: "Taylor", description: "Taylor provides quiet residential living with family-friendly neighborhoods and rural properties. We assist buyers with mortgage options designed for traditional homes." },
   { name: "Pinetop-Lakeside", description: "Resort town in the White Mountains featuring golf communities, mountain cabins, and second-home financing." },
-  { name: "Pinetop", description: "White Mountains community with pine-forest homes, cabins, and competitive mortgage rates." },
-  { name: "Holbrook", description: "As Navajo County's seat along historic Route 66, Holbrook offers affordable small-town home purchase options." },
-  { name: "Taylor", description: "Family-centered White Mountain area town with ranch properties and flexible home loan choices." },
   { name: "Snowflake", description: "Historic pioneer heritage town offering family neighborhoods, acreage, and competitive mortgage rates." },
-  { name: "Winslow", description: "Famous Route 66 community offering affordable housing options and first-time buyer financing." }
 ];
 
 const countyFaqs = [
@@ -113,7 +113,7 @@ export default function NavajoCountyPage() {
             </div>
             <p className="text-brand-green-accent text-[11px] font-bold tracking-[0.18em] uppercase mb-4">NORTHERN ARIZONA - NAVAJO</p>
             <h1 className="text-white text-hero-title font-playfair font-normal leading-[1.1] mb-6 max-w-3xl">Your trusted Navajo County mortgage broker.</h1>
-            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">From Show Low to Winslow — 7 communities, one team that knows every one of them.</p>
+            <p className="text-brand-text-light text-[15px] lg:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8">Mortgage Brothers provides reliable mortgage solutions for homebuyers and homeowners throughout Navajo County, AZ.</p>
             <HeroCtaButtons className="mb-4" />
           </div>
         </section>
@@ -136,8 +136,8 @@ export default function NavajoCountyPage() {
         <section className="w-full py-16 lg:py-24 bg-white">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <div className="text-center mb-16">
-              <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">Navajo County mortgage services</h2>
-              <p className="text-brand-text-muted text-[15px] lg:text-[16px]">Select your city below for local mortgage expertise.</p>
+              <h2 className="text-brand-green-deep text-[28px] lg:text-[36px] font-playfair font-normal mb-4">Navajo County Arizona Mortgage Broker Serving All Major Cities</h2>
+              <p className="text-brand-text-muted text-[15px] lg:text-[16px] max-w-3xl mx-auto">Our Navajo County mortgage specialists provide dependable home loan and refinancing services across the region. Whether you&apos;re buying your first home, upgrading to a larger property, refinancing an existing mortgage, or investing in a second home near Arizona&apos;s scenic White Mountains, we help match you with the right loan programs. With access to multiple lending partners, our team helps borrowers secure competitive mortgage rates in Navajo County while simplifying the financing process from application through closing.</p>
             </div>
             <CountyCityCards countySlug="navajo-county-az" cities={cities} />
           </div>
