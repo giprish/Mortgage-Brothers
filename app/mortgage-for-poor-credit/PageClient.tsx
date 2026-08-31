@@ -174,9 +174,9 @@ const loanSolutions = [
 ];
 
 const stats = [
-  { value: "$283,115", label: "Average Mortgage Balance in Arizona" },
+  { value: "261706 $", label: "Average Mortgage Balance in Arizona" },
   { value: "3%", label: "Minimum Down Payment for Conventional Loans" },
-  { value: "666", label: "Average Credit Score in Arizona" },
+  { value: "684", label: "Average Credit Score in Arizona" },
   { value: "80.6%", label: "Super-Prime Mortgage Borrowers" },
 ];
 

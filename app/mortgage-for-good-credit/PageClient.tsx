@@ -6,11 +6,11 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
-import FaqAccordion from "../component/FaqAccordion";
 import StatsBanner from "../component/StatsBanner";
 import HeroFeatureStrip from "../component/HeroFeatureStrip";
 
 import CountyTestimonials, { type CountyTestimonial } from "../component/CountyTestimonials";
+import { renderDarkInlineLinks, renderInlineLinks } from "@/lib/renderInlineLinks";
 
 const featureStrip = [
   "Good Credit Means Better Mortgage Rates",
@@ -29,50 +29,50 @@ const creditTable = [
 const meaningCards = [
   {
     title: "Competitive Interest Rates",
-    text: "A good credit score often qualifies you for better-than-average interest rates, which can save you thousands of dollars over the life of your loan.",
+    text: "A good credit score often qualifies you for **better-than-average interest rates**, which can save you thousands of dollars over the life of your loan.",
   },
   {
     title: "Higher Loan Approval Chances",
-    text: "Lenders view borrowers with good credit as reliable, increasing your chances of being approved for a mortgage without additional conditions.",
+    text: "Lenders view borrowers with good credit as **reliable**, increasing your chances of being approved for a mortgage without additional conditions.",
   },
   {
     title: "Lower Down Payment Requirements",
-    text: "With good credit, you may be eligible for loans that require a lower down payment, making homeownership more accessible.",
+    text: "With good credit, you may be eligible for loans that require a **lower down payment**, making homeownership more accessible.",
   },
   {
     title: "Access to Flexible Loan Programs",
-    text: "Borrowers with good credit can choose from a variety of loan options, including fixed-rate and adjustable-rate mortgages, to find the best fit for their financial goals.",
+    text: "Borrowers with good credit can choose from a variety of loan options, including **fixed-rate and adjustable-rate mortgages**, to find the best fit for their financial goals.",
   },
   {
     title: "Improved Negotiating Power",
-    text: "A solid credit score gives you leverage to negotiate better terms and fees with lenders, helping you get the most value out of your mortgage.",
+    text: "A solid credit score gives you leverage to **negotiate better terms and fees** with lenders, helping you get the most value out of your mortgage.",
   },
 ];
 
 const benefitCards = [
   {
     title: "Access to Competitive Interest Rates",
-    text: "A good credit score allows you to qualify for interest rates that are lower than average, reducing the total cost of your loan over time.",
+    text: "A good credit score allows you to qualify for interest rates that are **lower than average**, reducing the total cost of your loan over time.",
   },
   {
     title: "Lower Mortgage Insurance Costs",
-    text: "Certain loan programs may offer reduced private mortgage insurance (PMI) rates for borrowers with good credit, resulting in lower monthly expenses.",
+    text: "Certain loan programs may offer **reduced private mortgage insurance (PMI)** rates for borrowers with good credit, resulting in lower monthly expenses.",
   },
   {
     title: "Favorable Loan Terms",
-    text: "With good credit, you can secure mortgages with better repayment terms and lower upfront fees, making your loan more manageable.",
+    text: "With good credit, you can secure mortgages with **better repayment terms** and lower upfront fees, making your loan more manageable.",
   },
   {
     title: "Greater Flexibility in Loan Programs",
-    text: "A strong credit score gives you access to a variety of mortgage options, from fixed-rate loans to adjustable-rate mortgages (ARMs), allowing you to choose what fits your goals best.",
+    text: "A strong credit score gives you access to a variety of mortgage options, from **fixed-rate loans** to **adjustable-rate mortgages (ARMs)**, allowing you to choose what fits your goals best.",
   },
   {
     title: "Increased Loan Approval Chances",
-    text: "Lenders view borrowers with good credit as reliable candidates, increasing the likelihood of approval without additional requirements.",
+    text: "Lenders view borrowers with good credit as **reliable candidates**, increasing the likelihood of approval without additional requirements.",
   },
   {
     title: "Improved Negotiating Power",
-    text: "Good credit gives you leverage to negotiate better rates, fees, and other terms, ensuring that you get the best possible value from your mortgage.",
+    text: "Good credit gives you leverage to **negotiate better rates, fees, and other terms**, ensuring that you get the best possible value from your mortgage.",
   },
 ];
 
@@ -128,7 +128,7 @@ const expertCards = [
   },
   {
     title: "Trusted by Arizona Homebuyers",
-    text: "We have helped thousands of clients in Phoenix, Scottsdale, and beyond achieve their homeownership dreams with transparent, reliable service.",
+    text: "We have helped thousands of clients in **Phoenix, Scottsdale, and beyond** achieve their homeownership dreams with transparent, reliable service.",
   },
   {
     title: "Clear and Honest Communication",
@@ -170,9 +170,9 @@ const loanSolutions = [
 ];
 
 const stats = [
-  { value: "$283,115", label: "Average Mortgage Balance in Arizona" },
+  { value: "261706 $", label: "Average Mortgage Balance in Arizona" },
   { value: "3%", label: "Minimum Down Payment for Conventional Loans" },
-  { value: "666", label: "Average Credit Score in Arizona" },
+  { value: "684", label: "Average Credit Score in Arizona" },
   { value: "80.6%", label: "Super-Prime Mortgage Borrowers" },
 ];
 
@@ -226,11 +226,14 @@ export default function MortgageForGoodCreditPage() {
                 What Does Good Credit Mean for Your Mortgage?
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
-                Having a good credit score can significantly impact your ability to secure a favorable
-                mortgage. While it may not be as high as an &quot;excellent&quot; credit score, a strong score
-                still provides access to competitive interest rates, higher approval odds, and flexible
-                loan options. Lenders consider good credit a sign of financial responsibility, which
-                makes you a more attractive candidate for home loans.
+                {renderInlineLinks(
+                  "Having a **good credit score** can significantly impact your ability to secure a favorable mortgage. While it may not be as high as an \"excellent\" credit score, a strong score still provides access to **competitive interest rates, higher approval odds, and flexible loan options**. Lenders consider good credit a sign of financial responsibility, which makes you a more attractive candidate for home loans. This means you can enjoy benefits like more favorable terms, faster approvals, and a wider range of loan programs to fit your needs."
+                )}
+              </p>
+              <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75] mt-4">
+                In short, having good credit is a key advantage when purchasing a home, helping you turn
+                your homeownership goals into reality. Here&apos;s how having good credit can benefit you
+                as a homebuyer:
               </p>
             </div>
 
@@ -244,7 +247,9 @@ export default function MortgageForGoodCreditPage() {
                     <CheckIcon />
                     <h3 className="text-[#08271B] text-[17px] font-bold">{card.title}</h3>
                   </div>
-                  <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed pl-8">{card.text}</p>
+                  <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed pl-8">
+                    {renderInlineLinks(card.text)}
+                  </p>
                 </div>
               ))}
             </div>
@@ -271,8 +276,9 @@ export default function MortgageForGoodCreditPage() {
                 How Your Credit Score Impacts Your Mortgage Rate
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                Lenders use your credit score to determine your interest rate. Here&apos;s how it can
-                affect a 30-year fixed mortgage rate:
+                {renderInlineLinks(
+                  "Lenders use your credit score to determine your interest rate. Here's how it can affect a **30-year fixed mortgage rate:**"
+                )}
               </p>
             </div>
 
@@ -316,10 +322,15 @@ export default function MortgageForGoodCreditPage() {
               </div>
             </div>
 
+            <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center max-w-3xl mx-auto mb-4">
+              {renderInlineLinks(
+                "With a **good credit score**, you still have access to competitive mortgage rates and a variety of **loan options**. Lenders see you as a reliable borrower, which means you can qualify for favorable terms, reasonable interest rates, and flexible loan programs."
+              )}
+            </p>
             <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center max-w-3xl mx-auto">
-              With a good credit score, you still have access to competitive mortgage rates and a
-              variety of loan options. Lenders see you as a reliable borrower, which means you can
-              qualify for favorable terms, reasonable interest rates, and flexible loan programs.
+              If you&apos;re planning to buy a home, understanding your potential mortgage terms is the
+              next important step. Our tools and experts can help you explore your best options and
+              ensure you make the most out of your good credit score.
             </p>
 
           </div>
@@ -329,7 +340,7 @@ export default function MortgageForGoodCreditPage() {
           <div className="mx-auto max-w-6xl text-center loan-block-gap">
             <Link
               href="#get-pre-approved"
-              className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
             >
               Get Your Personalized Mortgage Offer
             </Link>
@@ -348,11 +359,13 @@ export default function MortgageForGoodCreditPage() {
                 Unlocking the Full Potential of Your Good Credit
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
-                Having a good credit score is a valuable asset when applying for a mortgage. While it
-                may not reach the &quot;excellent&quot; range, it still demonstrates financial responsibility
-                and reliability, making you an attractive candidate for lenders. With good credit, you
-                can access competitive interest rates, favorable loan terms, and flexible mortgage
-                programs designed to help you achieve your homeownership goals.
+                {renderInlineLinks(
+                  "Having a **good credit score** is a valuable asset when applying for a mortgage. While it may not reach the \"excellent\" range, it still demonstrates financial responsibility and reliability, making you an attractive candidate for lenders. With good credit, you can access **competitive interest rates, favorable loan terms, and flexible mortgage programs** designed to help you achieve your homeownership goals. This means that even if your credit isn't perfect, you can still benefit from solid loan offers and save money over the life of your mortgage."
+                )}
+              </p>
+              <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75] mt-4">
+                Below are some of the key advantages that come with having a good credit score when
+                applying for a home loan:
               </p>
             </div>
 
@@ -366,7 +379,9 @@ export default function MortgageForGoodCreditPage() {
                     <CheckIcon />
                     <span>{card.title}</span>
                   </h3>
-                  <p className="text-[#4e5b4e] text-[14px] leading-relaxed pl-7">{card.text}</p>
+                  <p className="text-[#4e5b4e] text-[14px] leading-relaxed pl-7">
+                    {renderInlineLinks(card.text)}
+                  </p>
                 </div>
               ))}
             </div>
@@ -393,31 +408,34 @@ export default function MortgageForGoodCreditPage() {
                 Best Mortgage Options for Borrowers with Good Credit
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                A good credit score opens the door to a variety of mortgage programs designed to offer
-                competitive rates, flexible terms, and accessible financing options. Below are some of
-                the best mortgage programs available for borrowers with good credit:
+                {renderInlineLinks(
+                  "A **good credit score** opens the door to a variety of mortgage programs designed to offer competitive rates, flexible terms, and accessible financing options. Whether you're looking to buy your first home, upgrade to a new property, or refinance your current mortgage, having good credit means you have a range of choices that can help you achieve your homeownership goals. Below are some of the best mortgage programs available for borrowers with good credit:"
+                )}
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
               {programs.map((p) => (
-                <Link
+                <div
                   key={p.title}
-                  href={p.href}
                   className="group bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 lg:p-7 hover:border-[#3fb364]/40 hover:shadow-lg transition-all"
                 >
-                  <h3 className="text-[#3fb364] group-hover:text-[#2d8545] text-[19px] font-bold mb-2 transition-colors">
-                    {p.title}
-                  </h3>
-                  <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed">{p.text}</p>
-                </Link>
+                  <Link href={p.href} className="block mb-2">
+                    <h3 className="text-[#3fb364] group-hover:text-[#2d8545] text-[19px] font-bold transition-colors">
+                      {p.title}
+                    </h3>
+                  </Link>
+                  <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed">
+                    {renderInlineLinks(p.text)}
+                  </p>
+                </div>
               ))}
             </div>
 
             <div className="loan-btn-wrap">
               <a
                 href="tel:+16025352171"
-                className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Call Us Now
               </a>
@@ -427,6 +445,9 @@ export default function MortgageForGoodCreditPage() {
 
         <CountyTestimonials
           title="Hear from Our Satisfied Clients"
+          description={renderInlineLinks(
+            "At [Mortgage Brothers LLC](/), we believe that every client deserves a seamless, stress-free mortgage experience. We take pride in helping borrowers with good credit secure the **best rates, flexible loan options, and personalized service** tailored to their unique needs. But don't just take our word for it — read what our clients have to say about working with us."
+          )}
           testimonials={testimonials}
         />
 
@@ -441,9 +462,9 @@ export default function MortgageForGoodCreditPage() {
                 Why Borrowers with Good Credit Trust Mortgage Brothers LLC
               </h2>
               <p className="text-[#c8c8b8] text-[15.5px] leading-relaxed">
-                At Mortgage Brothers LLC, we know that borrowers with good credit deserve a mortgage
-                experience that matches their financial responsibility. Here&apos;s why we&apos;re the top
-                choice for mortgage borrowers with good credit in Arizona:
+                {renderDarkInlineLinks(
+                  "At [Mortgage Brothers LLC](/), we know that borrowers with good credit deserve a mortgage experience that matches their financial responsibility. With a focus on providing **competitive rates, expert guidance, and personalized service**, we ensure that every client receives the best possible home financing solution. Here's why we're the top choice for mortgage borrowers with good credit in Arizona:"
+                )}
               </p>
             </div>
 
@@ -451,7 +472,9 @@ export default function MortgageForGoodCreditPage() {
               {expertCards.map((card) => (
                 <div key={card.title} className="bg-white/5 border border-white/10 rounded-2xl p-6">
                   <h3 className="text-[#3fb364] text-[17px] font-bold mb-2">{card.title}</h3>
-                  <p className="text-[#c8c8b8] text-[14px] leading-relaxed">{card.text}</p>
+                  <p className="text-[#c8c8b8] text-[14px] leading-relaxed">
+                    {renderDarkInlineLinks(card.text)}
+                  </p>
                 </div>
               ))}
             </div>
@@ -478,8 +501,9 @@ export default function MortgageForGoodCreditPage() {
                 Frequently Asked Questions About Mortgages for Good Credit Borrowers
               </h2>
               <p className="text-[#4e5b4e] text-[15px] leading-relaxed">
-                We understand that the mortgage process can be complex, even for borrowers with good
-                credit. Here are answers to the most common questions.
+                {renderInlineLinks(
+                  "We understand that the mortgage process can be complex, even for borrowers with good credit. To help you make informed decisions, we've compiled answers to some of the most frequently asked questions about [mortgage rates](/mortgage-rates-tool-arizona/), loan options, and the application process."
+                )}
               </p>
             </div>
 
@@ -510,7 +534,7 @@ export default function MortgageForGoodCreditPage() {
                     </button>
                     {open && (
                       <div className="px-5 pb-5 text-[#4e5b4e] text-[14.5px] leading-relaxed border-t border-[#e8e0d0]/50 pt-4">
-                        {faq.a}
+                        {renderInlineLinks(faq.a)}
                       </div>
                     )}
                   </div>
@@ -539,16 +563,16 @@ export default function MortgageForGoodCreditPage() {
               Connect with Mortgage Brothers LLC
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              Ready to take the next step in your homeownership journey? Whether you&apos;re exploring
-              mortgage options, looking to refinance, or have specific questions about the process, our
-              team of licensed mortgage professionals is here to help.
+              {renderInlineLinks(
+                "Ready to take the next step in your homeownership journey? Whether you're exploring mortgage options, looking to refinance, or have specific questions about the process, our team of **licensed mortgage professionals** is here to help. We offer personalized guidance and solutions tailored to your financial goals."
+              )}
             </p>
 
             <Link
-              href="#get-pre-approved"
+              href="/contact-us/"
               className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"
             >
-              Start my preapproval
+              Get in touch with us today!
             </Link>
           </div>
         </section>

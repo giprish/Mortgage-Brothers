@@ -82,10 +82,10 @@ const faqs = [
 ];
 
 const stats = [
-  { value: "$86k", label: "Avg. Broker Salary" },
+  { value: "86k $", label: "Avg. Broker Salary" },
   { value: "258", label: "Avg. Broker Openings" },
-  { value: "~0.6%", label: "AZ Job Growth" },
-  { value: "~4.9%", label: "AZ Unemployment" },
+  { value: "1.7%", label: "AZ Job Growth" },
+  { value: "3.8%", label: "AZ Unemployment" },
 ];
 
 const CheckIcon = () => (
@@ -265,7 +265,7 @@ export default function JobOpportunitiesPage() {
               <a
                 href="#contact-us-form"
                 data-contact="true"
-                className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all cursor-pointer"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all cursor-pointer"
               >
                 Contact our HR team
               </a>

@@ -2,13 +2,14 @@
 
 import { faqs as pageFaqs } from "./faqs";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import FaqAccordion from "../component/FaqAccordion";
 import StatsBanner from "../component/StatsBanner";
 import HeroFeatureStrip from "../component/HeroFeatureStrip";
+import { renderDarkInlineLinks, renderInlineLinks } from "@/lib/renderInlineLinks";
 
 import CountyTestimonials, { type CountyTestimonial } from "../component/CountyTestimonials";
 
@@ -48,27 +49,27 @@ const meaningCards = [
 const benefitCards = [
   {
     title: "Access to Exclusive Loan Programs",
-    text: "High credit scores unlock special mortgage programs with lower fees, flexible repayment terms, and better borrowing limits, giving you more financial options.",
+    text: "High credit scores unlock special mortgage programs with **lower fees, flexible repayment terms, and better borrowing limits**, giving you more financial options.",
   },
   {
     title: "Lower Mortgage Insurance Costs",
-    text: "Borrowers with strong credit often pay less for private mortgage insurance (PMI) or may even qualify to eliminate it, reducing monthly expenses.",
+    text: "Borrowers with strong credit often **pay less for private mortgage insurance (PMI)** or may even qualify to eliminate it, reducing monthly expenses.",
   },
   {
     title: "More Favorable Refinancing Opportunities",
-    text: "A higher credit score makes it easier to refinance at better rates, helping you lower your monthly payments and overall loan costs when needed.",
+    text: "A higher credit score makes it easier to **refinance at better rates**, helping you lower your monthly payments and overall loan costs when needed.",
   },
   {
     title: "Faster Loan Approval Process",
-    text: "Lenders prioritize applicants with excellent credit, leading to a quicker, smoother mortgage approval with fewer delays and less paperwork.",
+    text: "Lenders prioritize applicants with excellent credit, leading to **a quicker, smoother mortgage approval** with fewer delays and less paperwork.",
   },
   {
     title: "Higher Loan Limits with Better Terms",
-    text: "With excellent credit, you may qualify for larger loan amounts with better interest rates, allowing you to buy a more valuable home while keeping payments manageable.",
+    text: "With excellent credit, you may qualify for **larger loan amounts** with better interest rates, allowing you to buy a more valuable home while keeping payments manageable.",
   },
   {
     title: "More Competitive Offers from Lenders",
-    text: "Lenders compete for borrowers with strong credit, giving you the ability to negotiate better terms, lower fees, and special incentives on your mortgage.",
+    text: "Lenders compete for borrowers with strong credit, giving you the ability to **negotiate better terms, lower fees, and special incentives** on your mortgage.",
   },
 ];
 
@@ -80,12 +81,12 @@ const programs = [
   },
   {
     title: "Jumbo Loans",
-    text: "For those looking to finance high-value properties that exceed conforming loan limits, our jumbo loans provide flexible terms and competitive rates. These loans are tailored for borrowers with excellent credit seeking to purchase luxury homes.",
+    text: "For those looking to finance high-value properties that exceed conforming loan limits, our [jumbo loans](/jumbo-loans-arizona/) provide flexible terms and competitive rates. These loans are tailored for borrowers with excellent credit seeking to purchase luxury homes.",
     href: "/jumbo-loans-arizona/",
   },
   {
     title: "FHA Home Loans",
-    text: "Backed by the Federal Housing Administration, FHA loans are designed to help first-time homebuyers and those with lower down payments. Recent updates have reduced mortgage insurance premiums, making these loans more affordable.",
+    text: "Backed by the Federal Housing Administration, FHA loans are designed to help first-time homebuyers and those with lower down payments. Recent updates have reduced mortgage insurance premiums by about 35%, making these loans more affordable.",
     href: "/fha-home-loans-arizona/",
   },
   {
@@ -108,27 +109,27 @@ const programs = [
 const expertCards = [
   {
     title: "Local Market Expertise",
-    text: "With deep knowledge of the Arizona housing market, we help high-credit borrowers find the best mortgage solutions for their needs.",
+    text: "With deep knowledge of the **Arizona housing market**, we help high-credit borrowers find the best mortgage solutions for their needs.",
   },
   {
     title: "Exclusive Low-Rate Mortgage Programs",
-    text: "We offer access to some of the most competitive interest rates in Arizona, ensuring you save more over the life of your loan.",
+    text: "We offer access to **some of the most competitive interest rates in Arizona**, ensuring you save more over the life of your loan.",
   },
   {
     title: "Faster Mortgage Approval",
-    text: "Our streamlined application process allows for quick approvals, so you can secure your home financing without delays.",
+    text: "Our streamlined application process allows for **quick approvals**, so you can secure your home financing without delays.",
   },
   {
     title: "Personalized Loan Options",
-    text: "Every borrower is unique — our licensed mortgage brokers provide custom financing strategies that align with your goals.",
+    text: "Every borrower is unique — our **licensed mortgage brokers** provide custom financing strategies that align with your goals.",
   },
   {
     title: "Trusted by Arizona Homebuyers",
-    text: "We've helped thousands of clients in Phoenix, Scottsdale, and beyond secure their dream homes with the best mortgage terms.",
+    text: "We've helped thousands of clients in **Phoenix, Scottsdale, and beyond** secure their dream homes with the best mortgage terms.",
   },
   {
     title: "Transparent & Reliable Service",
-    text: "No hidden fees, no surprises — just expert guidance and clear communication from start to finish.",
+    text: "No hidden fees, no surprises — just **expert guidance and clear communication** from start to finish.",
   },
 ];
 
@@ -150,7 +151,10 @@ const testimonials: CountyTestimonial[] = [
   },
 ];
 
-const faqs = pageFaqs;
+const faqs = pageFaqs.map((item) => ({
+  q: item.q,
+  a: renderInlineLinks(item.a),
+}));
 
 const loanSolutions = [
   { label: "Conventional Home Loans", href: "/conventional-home-loans-arizona/" },
@@ -169,7 +173,7 @@ const stats = [
   { value: "80.6%", label: "Mortgages for Top Credit Scores" },
   { value: "758", label: "Avg. Credit Score for Mortgages" },
   { value: "6.72%", label: "Current 30-Year Mortgage Rate" },
-  { value: "$426,947", label: "Average Home Value in Arizona" },
+  { value: "426.947 $", label: "Average Home Value in Arizona" },
 ];
 
 const CheckIcon = () => (
@@ -220,12 +224,14 @@ export default function MortgageForExcellentCreditPage() {
                 What Does Excellent Credit Mean for Your Mortgage?
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
-                Your credit score is one of the most important factors lenders consider when determining
-                your mortgage eligibility and the interest rates you qualify for. Having an excellent
-                credit score (typically 760 and above) means you are viewed as a low-risk borrower,
-                making you eligible for the best mortgage rates, higher loan amounts, and more flexible
-                repayment terms. This can lead to significant savings over the life of your mortgage
-                and give you a strong negotiating position when securing financing for your home.
+                {renderInlineLinks(
+                  "Your credit score is one of the most important factors lenders consider when determining your mortgage eligibility and the interest rates you qualify for. Having an **excellent credit score (typically 720 and above)** means you are viewed as a low-risk borrower, making you eligible for the **best mortgage rates, higher loan amounts, and more flexible repayment terms**. This can lead to significant savings over the life of your mortgage and give you a strong negotiating position when securing financing for your home."
+                )}
+              </p>
+              <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75] mt-4">
+                Understanding how your credit score impacts your mortgage options will help you make
+                informed decisions and maximize your financial benefits. Below, we break down the key
+                advantages of having excellent credit when applying for a home loan.
               </p>
             </div>
 
@@ -239,7 +245,9 @@ export default function MortgageForExcellentCreditPage() {
                     <CheckIcon />
                     <h3 className="text-[#08271B] text-[18px] font-bold">{card.title}</h3>
                   </div>
-                  <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed pl-8">{card.text}</p>
+                  <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed pl-8">
+                    {renderInlineLinks(card.text)}
+                  </p>
                 </div>
               ))}
             </div>
@@ -266,8 +274,9 @@ export default function MortgageForExcellentCreditPage() {
                 How Your Credit Score Impacts Your Mortgage Rate
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                Lenders use your credit score to determine your interest rate. Here&apos;s how it can
-                affect a 30-year fixed mortgage rate:
+                {renderInlineLinks(
+                  "Lenders use your credit score to determine your interest rate. Here's how it can affect a **30-year fixed mortgage rate:**"
+                )}
               </p>
             </div>
 
@@ -307,10 +316,15 @@ export default function MortgageForExcellentCreditPage() {
               </div>
             </div>
 
-            <p className="text-[#4e5b4e] text-[15px] leading-relaxed text-center max-w-3xl mx-auto">
+            <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed text-center max-w-3xl mx-auto mb-4">
               With an excellent credit score, you have access to the most competitive mortgage rates
               and flexible loan options. Lenders see you as a low-risk borrower, which means you can
               qualify for higher loan amounts, lower interest rates, and reduced costs.
+            </p>
+            <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed text-center max-w-3xl mx-auto">
+              If you&apos;re planning to buy a home, understanding your potential mortgage terms is the
+              next logical step. Our tools and experts can help you explore your best options and
+              ensure you get the most out of your excellent credit score.
             </p>
 
           </div>
@@ -320,7 +334,7 @@ export default function MortgageForExcellentCreditPage() {
           <div className="mx-auto max-w-6xl text-center loan-block-gap">
             <Link
               href="#get-pre-approved"
-              className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
             >
               Get Your Personalized Mortgage Offer
             </Link>
@@ -339,10 +353,13 @@ export default function MortgageForExcellentCreditPage() {
                 How Excellent Credit Maximizes Your Home Loan Benefits
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75]">
-                Your excellent credit score does more than just help you qualify for a mortgage — it
-                opens doors to exclusive advantages that can significantly impact your financial
-                future. Lenders offer better rates, more flexible terms, and faster approvals to
-                borrowers with high credit scores.
+                {renderInlineLinks(
+                  "Your excellent credit score does more than just help you qualify for a mortgage — it opens doors to exclusive advantages that can significantly impact your financial future. Lenders offer **better rates, more flexible terms, and faster approvals** to borrowers with high credit scores."
+                )}
+              </p>
+              <p className="text-[#4e5b4e] text-[15.5px] leading-[1.75] mt-4">
+                This means you can secure the best possible home financing and save money over time.
+                Here&apos;s what makes excellent credit a game-changer when buying a home:
               </p>
             </div>
 
@@ -356,7 +373,9 @@ export default function MortgageForExcellentCreditPage() {
                     <CheckIcon />
                     <span>{card.title}</span>
                   </h3>
-                  <p className="text-[#4e5b4e] text-[14px] leading-relaxed pl-7">{card.text}</p>
+                  <p className="text-[#4e5b4e] text-[14px] leading-relaxed pl-7">
+                    {renderInlineLinks(card.text)}
+                  </p>
                 </div>
               ))}
             </div>
@@ -383,31 +402,39 @@ export default function MortgageForExcellentCreditPage() {
                 Exclusive Mortgage Programs for Borrowers with Excellent Credit
               </h2>
               <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                With an excellent credit score, you gain access to mortgage programs with the lowest
-                interest rates, flexible repayment options, and higher loan limits. Below are some of
-                the best mortgage options available to borrowers with excellent credit.
+                {renderInlineLinks(
+                  "With an excellent credit score, you gain access to mortgage programs with the **lowest interest rates, flexible repayment options, and higher loan limits**."
+                )}
+              </p>
+              <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mt-4">
+                Lenders offer these exclusive programs to reward responsible borrowers, helping you
+                secure financing that fits your homeownership goals. Below are some of the best
+                mortgage options available to borrowers with excellent credit.
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
               {programs.map((p) => (
-                <Link
+                <div
                   key={p.title}
-                  href={p.href}
                   className="group bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 lg:p-7 hover:border-[#3fb364]/40 hover:shadow-lg transition-all"
                 >
-                  <h3 className="text-[#3fb364] group-hover:text-[#2d8545] text-[19px] font-bold mb-2 transition-colors">
-                    {p.title}
-                  </h3>
-                  <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed">{p.text}</p>
-                </Link>
+                  <Link href={p.href} className="block mb-2">
+                    <h3 className="text-[#3fb364] group-hover:text-[#2d8545] text-[19px] font-bold transition-colors">
+                      {p.title}
+                    </h3>
+                  </Link>
+                  <p className="text-[#4e5b4e] text-[14.5px] leading-relaxed">
+                    {renderInlineLinks(p.text)}
+                  </p>
+                </div>
               ))}
             </div>
 
             <div className="loan-btn-wrap">
               <a
                 href="tel:+16025352171"
-                className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
+                className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
               >
                 Call Us Now
               </a>
@@ -417,6 +444,9 @@ export default function MortgageForExcellentCreditPage() {
 
         <CountyTestimonials
           title="Real Clients. Real Success. Your Homeownership Journey Starts Here."
+          description={renderInlineLinks(
+            "At [Mortgage Brothers LLC](/), we take pride in helping high-credit borrowers secure the **best mortgage rates and smoothest loan experiences**. But don't just take our word for it — hear from real homebuyers who turned their dreams into reality with our expert guidance. From first-time buyers to seasoned homeowners refinancing for better terms, our clients trust us to deliver **personalized mortgage solutions and stress-free closings**. Here's what they have to say."
+          )}
           testimonials={testimonials}
         />
 
@@ -431,9 +461,9 @@ export default function MortgageForExcellentCreditPage() {
                 Top Mortgage Experts in Arizona for High Credit Borrowers
               </h2>
               <p className="text-[#c8c8b8] text-[15.5px] leading-relaxed">
-                Finding the right mortgage lender is key to securing the best loan terms. At AZ
-                Mortgage Brothers, we specialize in helping borrowers with excellent credit access the
-                lowest rates and most competitive loan programs.
+                {renderDarkInlineLinks(
+                  "Finding the right mortgage lender is key to securing the best loan terms. At [Mortgage Brothers LLC](/), we specialize in helping borrowers with excellent credit access the **lowest rates and most competitive loan programs**. With years of experience in the **Arizona real estate market**, we provide tailored financing solutions to make your homebuying journey seamless and stress-free. Whether you're purchasing a home in **Phoenix, Scottsdale, Mesa, or anywhere in Arizona**, our expert mortgage team is here to guide you every step of the way."
+                )}
               </p>
             </div>
 
@@ -441,7 +471,9 @@ export default function MortgageForExcellentCreditPage() {
               {expertCards.map((card) => (
                 <div key={card.title} className="bg-white/5 border border-white/10 rounded-2xl p-6">
                   <h3 className="text-[#3fb364] text-[17px] font-bold mb-2">{card.title}</h3>
-                  <p className="text-[#c8c8b8] text-[14px] leading-relaxed">{card.text}</p>
+                  <p className="text-[#c8c8b8] text-[14px] leading-relaxed">
+                    {renderDarkInlineLinks(card.text)}
+                  </p>
                 </div>
               ))}
             </div>
@@ -469,7 +501,8 @@ export default function MortgageForExcellentCreditPage() {
               </h2>
               <p className="text-[#4e5b4e] text-[15px] leading-relaxed">
                 Navigating the mortgage process can bring up a lot of questions, even for borrowers
-                with excellent credit. Here are answers to the most common ones.
+                with excellent credit. To help you make informed decisions, we&apos;ve answered some of
+                the most common questions about mortgage rates, loan approvals, and refinancing.
               </p>
             </div>
 
@@ -498,16 +531,16 @@ export default function MortgageForExcellentCreditPage() {
               Let&apos;s Make Your Mortgage Process Simple &amp; Stress-Free
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              At Mortgage Brothers LLC, we&apos;re here to help you secure the best mortgage for your
-              financial goals. Whether you&apos;re buying a new home, refinancing, or just exploring
-              your options, our experienced team is ready to guide you every step of the way.
+              {renderInlineLinks(
+                "At **Mortgage Brothers LLC**, we're here to help you secure the best mortgage for your financial goals. Whether you're buying a new home, refinancing, or just exploring your options, our experienced team is ready to guide you every step of the way. Have questions? Need a personalized mortgage consultation? **Get in touch with us today!**"
+              )}
             </p>
 
             <Link
-              href="#get-pre-approved"
+              href="/contact-us/"
               className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"
             >
-              Start my preapproval
+              Get in touch with us today!
             </Link>
           </div>
         </section>
