@@ -132,6 +132,68 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
       },
     ],
   },
+  "apache-county-az/alpine": {
+    heroTitle: "Alpine Mortgage Experts – Your Local Home Loan Partners",
+    heroDescription:
+      "Mortgage Brothers LLC provides trusted Alpine mortgage solutions for homebuyers and homeowners in Arizona's scenic White Mountains. Our experienced mortgage brokers in Alpine AZ work with multiple lenders.",
+    introTitle: "Alpine, AZ Mortgage Brokers – Local Home Loan Experts",
+    longDescriptions: [
+      "As experienced mortgage lenders in Alpine AZ, we help borrowers navigate every stage of the loan process. Whether you're buying a full-time residence, a vacation cabin, or refinancing your existing home, our team provides mortgage strategies aligned with the Alpine AZ real estate market.",
+      "From rural homes to mountain cabins, we help buyers secure reliable mortgage loans in Alpine Arizona with competitive terms and clear guidance throughout the mortgage process.",
+    ],
+    intro: "Alpine is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
+    items: [
+      {
+        title: "Downtown Alpine",
+        description: "Downtown Alpine offers established neighborhoods close to schools, parks, and community services. We assist buyers with mortgage programs suited for traditional homes and long-term residences.",
+      },
+      {
+        title: "White Mountains Region",
+        description: "The White Mountains region attracts buyers seeking mountain living, outdoor recreation, and vacation properties. We help buyers explore mortgage options suited for homes in this scenic area.",
+      },
+      {
+        title: "Rural Properties & Acreage Homes",
+        description: "Many properties in Alpine include larger lots and rural homesites. Our mortgage experts help buyers explore financing options for acreage homes and custom builds.",
+      },
+      {
+        title: "Alpine-Springerville Area",
+        description: "Alpine and nearby communities form a connected mountain market. Our mortgage brokers help buyers across the greater Alpine region secure flexible financing solutions.",
+      },
+    ],
+    whyChooseTitle: "Why Choose Us as Your Alpine Local Mortgage Team",
+    whyChooseItems: [
+      { title: "Access to multiple mortgage lenders in Alpine AZ" },
+      { title: "Competitive mortgage rates in Alpine" },
+      { title: "Personalized loan strategies for buyers and homeowners" },
+      { title: "Clear communication from consultation through closing" },
+      { title: "Local knowledge of the Alpine AZ real estate market" },
+    ],
+    mortgageSolutionsTitle: "Explore Our Alpine Mortgage Solutions",
+    mortgageSolutionsIntro:
+      "Comprehensive mortgage programs designed specifically for Alpine homebuyers and homeowners.",
+    ctaTitle: "Ready to Start Your Alpine Home Loan Journey?",
+    ctaDescription:
+      "Our Alpine mortgage specialists are here to help you move forward with confidence. We compare lenders, review your financial profile, and recommend the best loan programs for your goals.",
+    guidanceTitle: "Trusted Mortgage Guidance in Alpine",
+    guidanceParagraphs: [
+      "When you work with Mortgage Brothers LLC, you receive structured advice and dependable support throughout your mortgage process.",
+      "Whether you're purchasing your first home, refinancing, or exploring a reverse mortgage in Alpine AZ, our team guides you through every step with clear communication and personalized support.",
+    ],
+    expectTitle: "What You Can Expect",
+    expectItems: [
+      "Clear loan comparisons across lenders",
+      "Honest discussion of rates and loan terms",
+      "Support from initial consultation through funding",
+    ],
+    getInTouchTitle: "Our Alpine Mortgage Services",
+    getInTouchParagraphs: [
+      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable mortgages in Alpine supported by experienced advisors and access to trusted lenders.",
+      "Our experienced mortgage brokers in Alpine AZ work with multiple lenders to help you secure competitive mortgage rates and flexible home loan options.",
+    ],
+    heroClientRating: "4.9/5",
+    faqEyebrow: "OUR FAQ'S",
+    communitiesCtaLabel: "Talk to an Alpine Loan Expert",
+  },
   "apache-county-az/springerville": {
     longDescriptions: [
       "As experienced **mortgage lenders in Springerville AZ**, we help borrowers navigate every stage of the loan process. From first-time homebuyers to long-time homeowners looking to refinance, our team provides personalized mortgage solutions tailored to the Springerville AZ real estate market.",
@@ -442,9 +504,18 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
   },
   "coconino-county-az/doney-park": {
+    communitiesCtaLabel: "Talk to a Doney Park Loan Expert",
+    faqEyebrow: "OUR FAQ'S",
+    heroClientRating: "4.9/5",
+    mortgageSolutionsIntro: "Comprehensive mortgage programs designed specifically for Doney Park homebuyers and homeowners.",
+    mortgageSolutionsTitle: "Explore Our Doney Park Mortgage Loan Options",
+    communitiesTitle: "Popular Doney Park Areas We Serve",
+    introTitle: "Mortgage Brokers Doney Park AZ – Local Mortgage You Can Trust",
+    heroDescription: "Expert Doney Park mortgages, competitive mortgage rates, and personalized home loan solutions for buyers and homeowners in Doney Park, Arizona.",
+    heroTitle: "Doney Park Mortgages – Your Local Mortgage Experts",
     longDescriptions: [
-      "Looking for experienced **mortgage brokers in Doney Park AZ**? [Mortgage Brothers LLC](/) provides expert guidance on home mortgage Doney Park AZ solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
-      "As a **Doney Park local mortgage team**, we understand larger lots, rural zoning, manufactured-home considerations, and lender requirements unique to the Doney Park real estate market.",
+      "Looking for experienced mortgage brokers in Doney Park AZ? [Mortgage Brothers LLC](/) provides expert guidance on home mortgage Doney Park AZ solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
+      "As a Doney Park local mortgage team, we understand rural property guidelines, forested parcels, seasonal occupancy considerations, and lender requirements unique to the Doney Park real estate market.",
     ],
     intro: "Doney Park is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
     items: [
@@ -474,7 +545,7 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
       { title: "Doney Park Market Expertise", description: "We understand Doney Park mortgage rates, rural appraisals, and lender guidelines." },
       { title: "Customized Home Mortgage Solutions", description: "Every homeowners mortgage Doney Park AZ plan is tailored to your financial goals." },
       { title: "Clear & Responsive Communication", description: "Transparent guidance from application to closing." },
-      { title: "Fast Mortgage Pre-Approvals", description: "Most clients receive approval within 4-8 hours." },
+      { title: "Fast Mortgage Pre-Approvals", description: "Most clients receive approval within 4–8 hours." },
       { title: "Multiple Mortgage Lenders", description: "Access to a wide network of trusted lending partners." },
     ],
     ctaTitle: "Ready to Secure Your Doney Park Home Mortgage?",
@@ -493,7 +564,7 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Our Doney Park Mortgage Services",
     getInTouchParagraphs: [
-      "Our **Doney Park mortgage** services support buyers and homeowners at every stage of the lending journey. From first-time purchases to refinancing and reverse mortgage solutions, we provide flexible loan options designed for long-term success.",
+      "Our Doney Park mortgage services support buyers and homeowners at every stage of the lending journey. From first-time purchases to refinancing and reverse mortgage solutions, we provide flexible loan options designed for long-term success.",
       "By working with multiple lenders, we help clients secure competitive rates and smooth closings with personalized service.",
     ],
   },
@@ -725,9 +796,17 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
   },
   "coconino-county-az/mountainaire": {
+    communitiesCtaLabel: "Talk to a Mountainaire Loan Expert",
+    faqEyebrow: "OUR FAQ'S",
+    heroClientRating: "4.9/5",
+    mortgageSolutionsIntro: "Comprehensive mortgage programs designed specifically for Mountainaire homebuyers and homeowners.",
+    mortgageSolutionsTitle: "Explore Our Mountainaire Mortgage Loan Options",
+    communitiesTitle: "Popular Mountainaire Areas We Serve",
+    introTitle: "Mortgage Brokers Mountainaire AZ – Local Mortgage You Can Trust",
+    heroDescription: "Expert Mountainaire mortgages, competitive mortgage rates, and personalized home loan solutions for buyers and homeowners in Mountainaire, Arizona.",
+    heroTitle: "Mountainaire Mortgages – Your Local Mortgage Experts",
     longDescriptions: [
-      "Looking for experienced **mortgage brokers in Mountainaire AZ**? [Mortgage Brothers LLC](/) provides expert guidance on home mortgage Mountainaire AZ solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
-      "As a **Mountainaire local mortgage team**, we understand forested lots, cabin-style homes, elevation-related appraisals, and lender requirements unique to the Mountainaire real estate market.",
+      "Looking for experienced mortgage brokers in Mountainaire AZ? [Mortgage Brothers LLC](/) provides expert guidance on home mortgage Mountainaire AZ solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
     ],
     intro: "Mountainaire is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
     items: [
@@ -757,7 +836,7 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
       { title: "Mountainaire Market Expertise", description: "We understand Mountainaire mortgage rates, forest-property appraisals, and lender guidelines." },
       { title: "Customized Home Mortgage Solutions", description: "Every homeowners mortgage Mountainaire AZ plan is tailored to your financial goals." },
       { title: "Clear & Responsive Communication", description: "Transparent guidance from application to closing." },
-      { title: "Fast Mortgage Pre-Approvals", description: "Most clients receive approval within 4-8 hours." },
+      { title: "Fast Mortgage Pre-Approvals", description: "Most clients receive approval within 4–8 hours." },
       { title: "Multiple Mortgage Lenders", description: "Access to a wide network of trusted lending partners." },
     ],
     ctaTitle: "Ready to Secure Your Mountainaire Home Mortgage?",
@@ -776,15 +855,20 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Our Mountainaire Mortgage Services",
     getInTouchParagraphs: [
-      "Our **Mountainaire mortgage** services support buyers and homeowners at every stage of the lending journey. From first-time purchases to refinancing and reverse mortgage solutions, we provide flexible loan options designed for long-term success.",
+      "Our Mountainaire mortgage services support buyers and homeowners at every stage of the lending journey. From first-time purchases to refinancing and reverse mortgage solutions, we provide flexible loan options designed for long-term success.",
       "By working with multiple lenders, we help clients secure competitive rates and smooth closings with personalized service.",
     ],
   },
   "coconino-county-az/munds-park": {
+    heroTitle: "Munds Park Mortgages – Your Local Mortgage Experts",
+    heroDescription:
+      "Expert Munds Park mortgages, competitive mortgage rates, and personalized home loan solutions for buyers and homeowners in Munds Park, Arizona.",
+    introTitle: "Mortgage Brokers Munds Park AZ – Local Mortgage You Can Trust",
     longDescriptions: [
-      "Looking for experienced **mortgage brokers in Munds Park AZ**? [Mortgage Brothers LLC](/) provides expert guidance on home mortgage Munds Park AZ solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
-      "As a **Munds Park local mortgage team**, we understand cabin properties, HOA guidelines, seasonal occupancy considerations, and lender requirements unique to the Munds Park real estate market.",
+      "Looking for experienced mortgage brokers in Munds Park AZ? [Mortgage Brothers LLC](/) provides expert guidance on home mortgage Munds Park AZ solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
+      "As a Munds Park local mortgage team, we understand cabin properties, HOA guidelines, seasonal occupancy considerations, and lender requirements unique to the Munds Park real estate market.",
     ],
+    communitiesTitle: "Popular Munds Park Areas We Serve",
     intro: "Munds Park is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
     items: [
       {
@@ -813,9 +897,12 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
       { title: "Munds Park Market Expertise", description: "We understand Munds Park mortgage rates, cabin appraisals, and lender guidelines." },
       { title: "Customized Home Mortgage Solutions", description: "Every homeowners mortgage Munds Park AZ plan is tailored to your financial goals." },
       { title: "Clear & Responsive Communication", description: "Transparent guidance from application to closing." },
-      { title: "Fast Mortgage Pre-Approvals", description: "Most clients receive approval within 4-8 hours." },
+      { title: "Fast Mortgage Pre-Approvals", description: "Most clients receive approval within 4–8 hours." },
       { title: "Multiple Mortgage Lenders", description: "Access to a wide network of trusted lending partners." },
     ],
+    mortgageSolutionsTitle: "Explore Our Munds Park Mortgage Loan Options",
+    mortgageSolutionsIntro:
+      "Comprehensive mortgage programs designed specifically for Munds Park homebuyers and homeowners.",
     ctaTitle: "Ready to Secure Your Munds Park Home Mortgage?",
     ctaDescription: "Work with experienced mortgage brokers Munds Park AZ residents trust for purchases, refinancing, and competitive rates.",
     guidanceTitle: "Trusted Munds Park Local Mortgage Guidance",
@@ -832,14 +919,26 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Our Munds Park Mortgage Services",
     getInTouchParagraphs: [
-      "Our **Munds Park mortgage** services support buyers and homeowners at every stage of the lending journey. From first-time purchases to refinancing and reverse mortgage solutions, we provide flexible loan options designed for long-term success.",
+      "Our Munds Park mortgage services support buyers and homeowners at every stage of the lending journey. From first-time purchases to refinancing and reverse mortgage solutions, we provide flexible loan options designed for long-term success.",
       "By working with multiple lenders, we help clients secure competitive rates and smooth closings with personalized service.",
     ],
+    heroClientRating: "4.9/5",
+    faqEyebrow: "OUR FAQ'S",
+    communitiesCtaLabel: "Talk to a Munds Park Loan Expert",
   },
   "coconino-county-az/page": {
+    communitiesCtaLabel: "Talk to a Page Loan Expert",
+    faqEyebrow: "OUR FAQ'S",
+    heroClientRating: "4.9/5",
+    mortgageSolutionsIntro: "Comprehensive mortgage programs designed specifically for Page homebuyers and homeowners.",
+    mortgageSolutionsTitle: "Explore Our Page Mortgage Loan Options",
+    communitiesTitle: "Popular Page Communities We Serve",
+    introTitle: "Mortgage Brokers Page AZ – Local Mortgage You Can Trust",
+    heroDescription: "Expert Page mortgages, competitive mortgage rates, and personalized home loan solutions for buyers and homeowners in Page, Arizona.",
+    heroTitle: "Page Mortgages – Your Local Mortgage Experts",
     longDescriptions: [
-      "Looking for experienced **mortgage brokers in Page AZ**? [Mortgage Brothers LLC](/) provides expert guidance on home mortgage Page AZ solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
-      "As a **Page local mortgage team**, we understand lake-area properties, seasonal demand, second-home considerations, and lender requirements unique to the Page real estate market.",
+      "Looking for experienced mortgage brokers in Page AZ? [Mortgage Brothers LLC](/) provides expert guidance on home mortgage Page AZ solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
+      "As a Page local mortgage team, we understand vacation-home lending, rural property guidelines, and lender requirements unique to the Page real estate market.",
     ],
     intro: "Page is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
     items: [
@@ -869,7 +968,7 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
       { title: "Page Market Expertise", description: "We understand Page mortgage rates, appraisal considerations, and lender guidelines." },
       { title: "Customized Home Mortgage Solutions", description: "Every homeowners mortgage Page AZ plan is tailored to your financial goals." },
       { title: "Clear & Responsive Communication", description: "Transparent guidance from application to closing." },
-      { title: "Fast Mortgage Pre-Approvals", description: "Most clients receive approval within 4-8 hours." },
+      { title: "Fast Mortgage Pre-Approvals", description: "Most clients receive approval within 4–8 hours." },
       { title: "Multiple Mortgage Lenders", description: "Access to a wide network of trusted lending partners." },
     ],
     ctaTitle: "Ready to Secure Your Page Home Mortgage?",
@@ -888,7 +987,7 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Our Page Mortgage Services",
     getInTouchParagraphs: [
-      "Our **Page mortgage** services support buyers and homeowners at every stage of the lending journey. From first-time purchases to refinancing and reverse mortgage solutions, we provide flexible loan options designed for long-term success.",
+      "Our Page mortgage services support buyers and homeowners at every stage of the lending journey. From first-time purchases to refinancing and reverse mortgage solutions, we provide flexible loan options designed for long-term success.",
       "By working with multiple lenders, we help clients secure competitive rates and smooth closings with personalized service.",
     ],
   },
@@ -1128,10 +1227,16 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
   },
   "gila-county-az/christopher-creek": {
+    communitiesCtaLabel: "Talk to a Christopher Creek Loan Expert",
+    faqEyebrow: "OUR FAQ'S",
+    heroClientRating: "4.9/5",
+    mortgageSolutionsTitle: "Explore Our Christopher Creek Mortgage Solutions",
+    introTitle: "Christopher Creek, AZ Mortgage Brokers – Local Home Loan Experts",
+    heroDescription: "AZ Mortgage Brothers provides trusted Christopher Creek mortgage solutions for buyers and homeowners in this scenic Rim Country community.",
+    heroTitle: "Christopher Creek Experts – Your Local Mortgage Experts",
     longDescriptions: [
-      "As experienced **mortgage brokers in Christopher Creek, AZ**, we guide borrowers through every stage of the mortgage process. From first-time homebuyers to long-term property owners, we structure financing solutions aligned with your financial goals and the realities of mountain-area properties.",
-      "Whether you are purchasing or refinancing, we help you secure dependable **mortgages in Christopher Creek** with transparent communication and competitive terms.",
-      "With experience navigating Christopher Creek AZ real estate, we help borrowers secure the right Christopher Creek home mortgage with clarity, local insight, and access to multiple lenders.",
+      "As experienced mortgage brokers in Christopher Creek, AZ, we guide borrowers through every stage of the mortgage process. From first-time homebuyers to long-term property owners, we structure financing solutions aligned with your financial goals and the realities of mountain-area properties.",
+      "Whether you are purchasing or refinancing, we help you secure dependable mortgages in Christopher Creek with transparent communication and competitive terms. With experience navigating Christopher Creek AZ real estate, we help borrowers secure the right Christopher Creek home mortgage with clarity, local insight, and access to multiple lenders.",
     ],
     intro: "Christopher Creek is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
     items: [
@@ -1170,8 +1275,8 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Our Christopher Creek Mortgage Services",
     getInTouchParagraphs: [
-      "Whether you are buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable **Christopher Creek mortgage** solutions backed by experience and local expertise.",
-      "Whether you are purchasing a cabin, primary residence, vacation property, or refinancing an existing loan, our team works with multiple **Christopher Creek mortgage** lenders to deliver competitive and structured financing options.",
+      "Whether you are buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable Christopher Creek mortgage solutions backed by experience and local expertise.",
+      "Whether you are purchasing a cabin, primary residence, vacation property, or refinancing an existing loan, our team works with multiple Christopher Creek mortgage lenders to deliver competitive and structured financing options.",
     ],
   },
   "gila-county-az/forest-lakes": {
@@ -1312,9 +1417,17 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
   },
   "gila-county-az/miami": {
+    communitiesCtaLabel: "Talk to a Miami Loan Expert",
+    faqEyebrow: "OUR FAQ'S",
+    heroClientRating: "4.9/5",
+    mortgageSolutionsIntro: "Comprehensive mortgage programs designed specifically for Miami homebuyers and homeowners.",
+    mortgageSolutionsTitle: "Explore Our Miami Mortgage Solutions",
+    introTitle: "Miami, AZ Mortgage Brokers – Local Home Loan Experts",
+    heroDescription: "AZ Mortgage Brothers provides trusted Miami mortgage solutions for buyers and homeowners throughout the area. Our team works with multiple Miami mortgage lenders to deliver competitive and flexible financing solutions.",
+    heroTitle: "Miami Mortgage Experts – Your Local Home Loan Partners",
     longDescriptions: [
-      "As experienced **mortgage brokers in Miami, AZ**, we guide borrowers through each stage of the loan process. From first-time buyers to long-term homeowners, we structure financing solutions aligned with your goals and the realities of Miami AZ real estate.",
-      "Whether you are purchasing a primary residence or refinancing, we help you secure dependable **mortgages in Miami** with competitive terms and transparent guidance.",
+      "As experienced mortgage brokers in Miami, AZ, we guide borrowers through each stage of the loan process. From first-time buyers to long-term homeowners, we structure financing solutions aligned with your goals and the realities of Miami AZ real estate.",
+      "Whether you are purchasing a primary residence or refinancing, we help you secure dependable mortgages in Miami with competitive terms and transparent guidance.",
     ],
     intro: "Miami is home to diverse communities — each with unique pricing, amenities,and lending considerations. We assist homebuyers throughout:",
     items: [
@@ -1357,7 +1470,7 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Our Miami Mortgage Services",
     getInTouchParagraphs: [
-      "Whether you are buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable **Miami mortgage** solutions backed by experience and local insight.",
+      "Whether you are buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable Miami mortgage solutions backed by experience and local insight.",
     ],
   },
   "gila-county-az/payson": {
@@ -1455,9 +1568,17 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
   },
   "gila-county-az/star-valley": {
+    communitiesCtaLabel: "Talk to a Star Valley Loan Expert",
+    faqEyebrow: "OUR FAQ'S",
+    heroClientRating: "4.9/5",
+    mortgageSolutionsIntro: "Comprehensive mortgage programs designed specifically for Star Valley homebuyers and homeowners.",
+    mortgageSolutionsTitle: "Explore Our Star Valley Mortgage Solutions",
+    introTitle: "Star Valley, AZ Mortgage Brokers – Local Home Loan Experts",
+    heroDescription: "AZ Mortgage Brothers provides trusted Star Valley mortgage solutions for buyers and homeowners seeking clarity, Competitive options, and local expertise.",
+    heroTitle: "Star Valley Mortgage Experts – Your Local Home Loan Partners",
     longDescriptions: [
-      "As experienced **mortgage brokers in Star Valley, AZ**, we guide borrowers through every stage of the mortgage process. From first-time buyers to long-term homeowners, we structure financing solutions aligned with your financial goals and local market conditions.",
-      "Whether you are purchasing, refinancing, or reviewing options, we help you secure dependable **mortgages in Star Valley** with transparent guidance and competitive terms.",
+      "As experienced mortgage brokers in Star Valley, AZ, we guide borrowers through every stage of the mortgage process. From first-time buyers to long-term homeowners, we structure financing solutions aligned with your financial goals and local market conditions.",
+      "Whether you are purchasing, refinancing, or reviewing options, we help you secure dependable mortgages in Star Valley with transparent guidance and competitive terms.",
     ],
     intro: "Star Valley is home to diverse communities — each with unique pricing, amenities,and lending considerations. We assist homebuyers throughout:",
     items: [
@@ -1496,7 +1617,7 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Our Star Valley Mortgage Services",
     getInTouchParagraphs: [
-      "Whether you are buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable **Star Valley mortgage** solutions backed by experience and local expertise.",
+      "Whether you are buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable Star Valley mortgage solutions backed by experience and local expertise.",
     ],
   },
   "gila-county-az/strawberry": {
@@ -1545,9 +1666,16 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
   },
   "gila-county-az/washington-park": {
+    communitiesCtaLabel: "Talk to a Washington Park Loan Expert",
+    faqEyebrow: "OUR FAQ'S",
+    heroClientRating: "4.9/5",
+    mortgageSolutionsTitle: "Explore Our Washington Park Mortgage Solutions",
+    introTitle: "Washington Park, AZ Mortgage Brokers – Local Home Loan Experts",
+    heroDescription: "AZ Mortgage Brothers provides dependable Washington Park mortgage solutions tailored for buyers and homeowners in this Rim Country community.",
+    heroTitle: "Washington Park Mortgage – Your Local Mortgage Experts",
     longDescriptions: [
-      "As experienced **mortgage brokers in Washington Park, AZ**, we guide borrowers through every stage of the mortgage process. From first-time buyers to long-term homeowners, we structure financing solutions aligned with your financial profile and property goals.",
-      "Whether you are purchasing or refinancing, we help you secure dependable **mortgages in Washington Park** with transparent communication and competitive terms.",
+      "As experienced mortgage brokers in Washington Park, AZ, we guide borrowers through every stage of the mortgage process. From first-time buyers to long-term homeowners, we structure financing solutions aligned with your financial profile and property goals.",
+      "Whether you are purchasing or refinancing, we help you secure dependable mortgages in Washington Park with transparent communication and competitive terms.",
     ],
     intro: "Washington Park is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
     items: [
@@ -1587,8 +1715,8 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Our Washington Park Mortgage Services",
     getInTouchParagraphs: [
-      "Whether you are buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable **Washington Park mortgage** solutions backed by experience and local expertise.",
-      "Whether you are purchasing a primary residence, cabin, or refinancing an existing loan, our team works with multiple **Washington Park mortgage** lenders to deliver competitive and structured financing options.",
+      "Whether you are buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable Washington Park mortgage solutions backed by experience and local expertise.",
+      "Whether you are purchasing a primary residence, cabin, or refinancing an existing loan, our team works with multiple Washington Park mortgage lenders to deliver competitive and structured financing options.",
     ],
   },
   "gila-county-az/whispering-pines": {
@@ -1741,9 +1869,17 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
   },
   "graham-county-az/thatcher": {
+    communitiesCtaLabel: "Talk to a Thatcher Loan Expert",
+    faqEyebrow: "OUR FAQ'S",
+    heroClientRating: "4.9/5",
+    mortgageSolutionsIntro: "Comprehensive mortgage programs designed specifically for Thatcher homebuyers and homeowners.",
+    mortgageSolutionsTitle: "Explore Our Thatcher Mortgage Solutions",
+    introTitle: "Thatcher, AZ Mortgage Brokers – Local Home Loan Experts",
+    heroDescription: "AZ Mortgage Brothers provides trusted mortgage solutions for homebuyers and homeowners throughout Thatcher, Arizona. Our experienced mortgage brokers in Thatcher AZ work.",
+    heroTitle: "Thatcher Mortgage Experts – Your Local Home Loan Partners",
     longDescriptions: [
-      "As experienced **mortgage lenders serving Thatcher AZ**, our team helps borrowers navigate the home financing process with confidence. From first-time homebuyers to families relocating for work or school, we provide mortgage solutions tailored to the Thatcher AZ real estate market.",
-      "Whether you're purchasing a primary residence, an investment property, or refinancing an existing loan, we help you secure dependable **mortgage loans in Thatcher Arizona** with competitive rates and transparent guidance.",
+      "As experienced mortgage lenders serving Thatcher AZ, our team helps borrowers navigate the home financing process with confidence. From first-time homebuyers to families relocating for work or school, we provide mortgage solutions tailored to the Thatcher AZ real estate market.",
+      "Whether you’re purchasing a primary residence, an investment property, or refinancing an existing loan, we help you secure dependable mortgage loans in Thatcher Arizona with competitive rates and transparent guidance.",
     ],
     intro: "Thatcher is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
     items: [
@@ -1787,14 +1923,22 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Our Thatcher Mortgage Services",
     getInTouchParagraphs: [
-      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable **mortgages in Thatcher** supported by experienced advisors and access to trusted lenders.",
+      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable mortgages in Thatcher supported by experienced advisors and access to trusted lenders.",
       "Whether you're purchasing your first home, refinancing your current mortgage, or exploring reverse mortgage opportunities, our team guides you through every step of the mortgage process with clear communication and personalized support.",
     ],
   },
   "greenlee-county-az/clifton": {
+    communitiesCtaLabel: "Talk to a Clifton Loan Expert",
+    faqEyebrow: "OUR FAQ'S",
+    heroClientRating: "4.9/5",
+    mortgageSolutionsIntro: "Comprehensive mortgage programs designed specifically for Clifton homebuyers and homeowners.",
+    mortgageSolutionsTitle: "Explore Our Clifton Mortgage Solutions",
+    introTitle: "Clifton, AZ Mortgage Brokers – Local Home Loan Experts",
+    heroDescription: "AZ Mortgage Brothers provides trusted mortgage solutions for homebuyers and homeowners throughout Clifton, Arizona. Our experienced mortgage brokers in Clifton AZ work.",
+    heroTitle: "Clifton Mortgage Experts – Your Local Home Loan Partners",
     longDescriptions: [
-      "As experienced **mortgage lenders serving Clifton AZ**, our team helps borrowers navigate the home financing process with confidence. From first-time homebuyers to homeowners exploring refinancing opportunities, we provide mortgage solutions tailored to the Clifton AZ real estate market.",
-      "Whether you're purchasing a primary residence, an investment property, or refinancing an existing loan, we help you secure dependable **mortgage loans in Clifton Arizona** with competitive rates and transparent guidance.",
+      "As experienced mortgage lenders serving Clifton AZ, our team helps borrowers navigate the home financing process with confidence. From first-time homebuyers to homeowners exploring refinancing opportunities, we provide mortgage solutions tailored to the Clifton AZ real estate market.",
+      "Whether you’re purchasing a primary residence, an investment property, or refinancing an existing loan, we help you secure dependable mortgage loans in Clifton Arizona with competitive rates and transparent guidance.",
     ],
     intro: "Clifton is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
     items: [
@@ -1838,7 +1982,7 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Our Clifton Mortgage Services",
     getInTouchParagraphs: [
-      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable **mortgages in Clifton** supported by experienced advisors and access to trusted lenders. Whether you're purchasing your first home, refinancing your existing mortgage, or exploring reverse mortgage opportunities, our team guides you through every step of the mortgage process with clear communication and personalized support.",
+      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable mortgages in Clifton supported by experienced advisors and access to trusted lenders. Whether you're purchasing your first home, refinancing your existing mortgage, or exploring reverse mortgage opportunities, our team guides you through every step of the mortgage process with clear communication and personalized support.",
     ],
   },
   "greenlee-county-az/duncan": {
@@ -1944,9 +2088,17 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
   },
   "la-paz-county-az/parker": {
+    communitiesCtaLabel: "Talk to a Parker Loan Expert",
+    faqEyebrow: "OUR FAQ'S",
+    heroClientRating: "4.9/5",
+    mortgageSolutionsIntro: "Comprehensive mortgage programs designed specifically for Parker homebuyers and homeowners.",
+    mortgageSolutionsTitle: "Explore Our Parker Mortgage Solutions",
+    introTitle: "Parker, AZ Mortgage Brokers – Local Home Loan Experts",
+    heroDescription: "AZ Mortgage Brothers provides trusted mortgage solutions for homebuyers and homeowners throughout Parker, Arizona. Our experienced mortgage brokers in Parker AZ work.",
+    heroTitle: "Parker Mortgage Experts – Your Local Home Loan Partners",
     longDescriptions: [
-      "As experienced **mortgage lenders serving Parker AZ**, our team helps borrowers navigate the home financing process with confidence. From first-time homebuyers to homeowners seeking refinancing opportunities, we provide mortgage solutions tailored to the Parker AZ real estate market.",
-      "Whether you're purchasing a primary residence, an investment property, or refinancing an existing loan, our team helps you secure dependable **mortgage loans in Parker Arizona** with competitive rates and transparent guidance.",
+      "As experienced mortgage lenders in Tucson AZ, we help borrowers navigate the home financing process with confidence. From first-time homebuyers to homeowners seeking refinancing opportunities, we provide mortgage solutions tailored to the Tucson AZ real estate market.",
+      "Whether you’re purchasing a primary residence, an investment property, or refinancing an existing loan, our team helps you secure dependable mortgage loans in Tucson Arizona with competitive rates and transparent guidance.",
     ],
     intro: "Parker is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
     items: [
@@ -1990,13 +2142,21 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Our Parker Mortgage Services",
     getInTouchParagraphs: [
-      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable **mortgages in Tucson** supported by experienced advisors and access to trusted lenders. Whether you're purchasing a home near the Colorado River, refinancing an existing mortgage, or exploring reverse mortgage opportunities, our team guides you through every step of the mortgage process with clear communication and personalized support.",
+      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable mortgages in Tucson supported by experienced advisors and access to trusted lenders. Whether you're purchasing a home near the Colorado River, refinancing an existing mortgage, or exploring reverse mortgage opportunities, our team guides you through every step of the mortgage process with clear communication and personalized support.",
     ],
   },
   "la-paz-county-az/quartzsite": {
+    communitiesCtaLabel: "Talk to a Quartzsite Loan Expert",
+    faqEyebrow: "OUR FAQ'S",
+    heroClientRating: "4.9/5",
+    mortgageSolutionsIntro: "Comprehensive mortgage programs designed specifically for Quartzsite homebuyers and homeowners.",
+    mortgageSolutionsTitle: "Explore Our Quartzsite Mortgage Solutions",
+    introTitle: "Quartzsite, AZ Mortgage Brokers – Local Home Loan Experts",
+    heroDescription: "AZ Mortgage Brothers provides trusted mortgage solutions for homebuyers and homeowners throughout Quartzsite, Arizona. Our experienced mortgage brokers in Quartzsite AZ work.",
+    heroTitle: "Quartzsite Mortgage Experts – Your Local Home Loan Partners",
     longDescriptions: [
-      "As experienced **mortgage lenders serving Quartzsite AZ**, our team helps borrowers navigate the home financing process with confidence. From first-time homebuyers to homeowners exploring refinancing opportunities, we provide mortgage solutions tailored to the Quartzsite AZ real estate market.",
-      "Whether you're purchasing a residential home, seasonal property, or refinancing an existing loan, we help you secure dependable **mortgage loans in Quartzsite Arizona** with competitive rates and transparent guidance.",
+      "As experienced mortgage lenders serving Quartzsite AZ, our team helps borrowers navigate the home financing process with confidence. From first-time homebuyers to homeowners exploring refinancing opportunities, we provide mortgage solutions tailored to the Quartzsite AZ real estate market.",
+      "Whether you’re purchasing a residential home, seasonal property, or refinancing an existing loan, we help you secure dependable mortgage loans in Quartzsite Arizona with competitive rates and transparent guidance.",
     ],
     intro: "Quartzsite is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
     items: [
@@ -2040,7 +2200,7 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Our Quartzsite Mortgage Services",
     getInTouchParagraphs: [
-      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable **mortgages in Quartzsite** supported by experienced advisors and access to trusted lenders.",
+      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable mortgages in Quartzsite supported by experienced advisors and access to trusted lenders.",
       "Whether you're purchasing your first home, refinancing an existing mortgage, or exploring reverse mortgage opportunities, our team guides you through every step of the mortgage process with clear communication and personalized support.",
     ],
   },
@@ -2768,8 +2928,17 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
   },
   "maricopa-county-az/mesa": {
+    communitiesCtaLabel: "Talk to a Mesa Loan Expert",
+    faqEyebrow: "OUR FAQ'S",
+    heroClientRating: "4.9/5",
+    mortgageSolutionsTitle: "Explore Our Mesa Mortgage Solutions",
+    mortgageSolutionsIntro:
+      "Comprehensive mortgage programs designed specifically for Mesa homebuyers and homeowners.",
+    introTitle: "Mesa, AZ Mortgage Brokers — Local Home Loan Experts",
+    heroDescription: "Personalized mortgage solutions, competitive rates, and expert guidance for every Mesa neighborhood",
+    heroTitle: "Mesa Mortgage Experts – Your Local Home Loan Partners",
     longDescriptions: [
-      "Buying a home in Mesa or planning a refinance? Our team provides Mesa-focused mortgage expertise, competitive rate options, and a smooth approval process tailored to the city's growing real estate market. Whether you're financing your first home, upgrading, or restructuring your current loan, we help you make confident and informed mortgage decisions.",
+      "Buying a home in Mesa or planning a refinance? Our team provides Mesa-focused mortgage expertise, competitive rate options, and a smooth approval process tailored to the city’s growing real estate market. Whether you’re financing your first home, upgrading, or restructuring your current loan, we help you make confident and informed mortgage decisions.",
     ],
     intro: "Mesa offers a range of communities with diverse price points, school districts, and home styles. We guide buyers and homeowners throughout:",
     items: [
@@ -3218,8 +3387,17 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
   },
   "maricopa-county-az/scottsdale": {
+    communitiesCtaLabel: "Talk to a Scottsdale Loan Expert",
+    faqEyebrow: "OUR FAQ'S",
+    heroClientRating: "4.9/5",
+    mortgageSolutionsTitle: "Explore Our Scottsdale Mortgage Solutions",
+    mortgageSolutionsIntro:
+      "Comprehensive mortgage programs designed specifically for Scottsdale homebuyers and homeowners.",
+    introTitle: "Scottsdale, AZ Mortgage Brokers — Local Home Loan Experts",
+    heroDescription: "Personalized mortgage solutions, competitive rates, and expert guidance for every Scottsdale neighborhood",
+    heroTitle: "Scottsdale Mortgage Experts – Your Local Home Loan Partners",
     longDescriptions: [
-      "Buying a home in Scottsdale or exploring a refinance? The Mortgage Brothers LLC Team provides local mortgage expertise, competitive lending options, and a smooth, transparent process tailored to Scottsdale's dynamic real estate market. Whether you're securing a new loan or restructuring your current one, we help you make confident, well-informed decisions.",
+      "Buying a home in Scottsdale or exploring a refinance? Mortgage Brothers LLC provides local mortgage expertise, competitive lending options, and a smooth, transparent process tailored to Scottsdale’s dynamic real estate market. Whether you’re securing a new loan or restructuring your current one, we help you make confident, well-informed decisions.",
     ],
     intro: "Scottsdale offers a wide range of communities — each with unique pricing, inventory, and lending considerations. We work with homebuyers throughout:",
     items: [
@@ -3656,9 +3834,17 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
   },
   "mohave-county-az/colorado-city": {
+    communitiesCtaLabel: "Talk to a Colorado City Loan Expert",
+    faqEyebrow: "OUR FAQ'S",
+    heroClientRating: "4.9/5",
+    mortgageSolutionsIntro: "Comprehensive mortgage programs designed specifically for Colorado City homebuyers and homeowners.",
+    mortgageSolutionsTitle: "Explore Our Colorado City Mortgage Solutions",
+    introTitle: "Colorado City, AZ Mortgage Brokers – Local Home Loan Experts",
+    heroDescription: "AZ Mortgage Brothers provides trusted mortgage solutions for homebuyers and homeowners throughout Colorado City, Arizona. Our experienced mortgage brokers in Colorado City AZ work with multiple lenders.",
+    heroTitle: "Colorado City Mortgage Experts – Your Local Home Loan Partners",
     longDescriptions: [
-      "As experienced **mortgage lenders serving Colorado City AZ**, our team helps borrowers navigate the home financing process with confidence. From first-time homebuyers to homeowners exploring refinancing opportunities, we provide mortgage solutions tailored to the Colorado City AZ real estate market.",
-      "Whether you're purchasing a primary residence, a rural property, or refinancing an existing loan, we help you secure dependable **mortgage loans in Colorado City Arizona** with competitive rates and transparent guidance.",
+      "As experienced mortgage lenders serving Colorado City AZ, our team helps borrowers navigate the home financing process with confidence. From first-time homebuyers to homeowners exploring refinancing opportunities, we provide mortgage solutions tailored to the Colorado City AZ real estate market.",
+      "Whether you’re purchasing a primary residence, a rural property, or refinancing an existing loan, we help you secure dependable mortgage loans in Colorado City Arizona with competitive rates and transparent guidance.",
     ],
     intro: "Colorado City is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
     items: [
@@ -3702,7 +3888,7 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Our Colorado City Mortgage Services",
     getInTouchParagraphs: [
-      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable **mortgages in Colorado City** supported by experienced advisors and access to trusted lenders. Whether you're purchasing your first home, refinancing an existing mortgage, or exploring reverse mortgage opportunities, our team guides you through every step of the mortgage process with clear communication and personalized support.",
+      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable mortgages in Colorado City supported by experienced advisors and access to trusted lenders. Whether you're purchasing your first home, refinancing an existing mortgage, or exploring reverse mortgage opportunities, our team guides you through every step of the mortgage process with clear communication and personalized support.",
     ],
   },
   "mohave-county-az/fort-mohave": {
@@ -3756,9 +3942,17 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
   },
   "mohave-county-az/kingman": {
+    communitiesCtaLabel: "Talk to a Kingman Loan Expert",
+    faqEyebrow: "OUR FAQ'S",
+    heroClientRating: "4.9/5",
+    mortgageSolutionsIntro: "Comprehensive mortgage programs designed specifically for Kingman homebuyers and homeowners.",
+    mortgageSolutionsTitle: "Explore Our Kingman Mortgage Solutions",
+    introTitle: "Kingman, AZ Mortgage Brokers – Local Home Loan Experts",
+    heroDescription: "AZ Mortgage Brothers provides reliable mortgage solutions for homebuyers and homeowners throughout Kingman, Arizona. Our experienced mortgage brokers in Kingman AZ work with multiple lenders.",
+    heroTitle: "Kingman Mortgage Experts – Your Local Home Loan Partners",
     longDescriptions: [
-      "As experienced **mortgage lenders serving Kingman AZ**, our team helps borrowers navigate the home loan process with confidence. From first-time homebuyers to homeowners exploring refinancing opportunities, we provide mortgage solutions tailored to the Kingman AZ real estate market.",
-      "Whether you're purchasing a primary residence, an investment property, or refinancing your existing loan, we help you secure dependable **mortgage loans in Kingman Arizona** with competitive rates and transparent guidance.",
+      "As experienced mortgage lenders serving Kingman AZ, our team helps borrowers navigate the home loan process with confidence. From first-time homebuyers to homeowners exploring refinancing opportunities, we provide mortgage solutions tailored to the Kingman AZ real estate market.",
+      "Whether you’re purchasing a primary residence, an investment property, or refinancing your existing loan, we help you secure dependable mortgage loans in Kingman Arizona with competitive rates and transparent guidance.",
     ],
     intro: "Kingman is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
     items: [
@@ -3802,7 +3996,7 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Our Kingman Mortgage Services",
     getInTouchParagraphs: [
-      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable **mortgages in Kingman** supported by experienced advisors and access to trusted lenders. Whether you're purchasing your first home, refinancing an existing mortgage, or exploring reverse mortgage opportunities, our team guides you through every step of the mortgage process with clear communication and personalized support.",
+      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable mortgages in Kingman supported by experienced advisors and access to trusted lenders. Whether you're purchasing your first home, refinancing an existing mortgage, or exploring reverse mortgage opportunities, our team guides you through every step of the mortgage process with clear communication and personalized support.",
     ],
   },
   "mohave-county-az/lake-havasu-city": {
@@ -3856,9 +4050,17 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
   },
   "navajo-county-az/holbrook": {
+    communitiesCtaLabel: "Talk to a Holbrook Loan Expert",
+    faqEyebrow: "OUR FAQ'S",
+    heroClientRating: "4.9/5",
+    mortgageSolutionsIntro: "Comprehensive mortgage programs designed specifically for Holbrook homebuyers and homeowners.",
+    mortgageSolutionsTitle: "Explore Our Holbrook Mortgage Solutions",
+    introTitle: "Holbrook, AZ Mortgage Brokers – Local Home Loan Experts",
+    heroDescription: "AZ Mortgage Brothers provides reliable mortgage solutions for homebuyers and homeowners throughout Holbrook, Arizona. Our experienced mortgage brokers in Holbrook AZ work with multiple lenders.",
+    heroTitle: "Holbrook Mortgage Experts – Your Local Home Loan Partners",
     longDescriptions: [
       "As trusted mortgage lenders serving Holbrook, AZ, our team helps borrowers navigate the home loan process with confidence. From first-time homebuyers to homeowners exploring refinancing options, we provide mortgage solutions tailored to the Holbrook AZ real estate market.",
-      "Whether you're purchasing a primary residence, an investment property, or refinancing your existing loan, we help you secure dependable **mortgage loans in Holbrook Arizona** with competitive rates and transparent guidance.",
+      "Whether you’re purchasing a primary residence, an investment property, or refinancing your existing loan, we help you secure dependable mortgage loans in Holbrook Arizona with competitive rates and transparent guidance.",
     ],
     intro: "Holbrook is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
     items: [
@@ -3902,13 +4104,21 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Our Holbrook Mortgage Services",
     getInTouchParagraphs: [
-      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable **mortgages in Holbrook** supported by experienced advisors and access to trusted lenders. Our experienced mortgage brokers in Holbrook AZ work with multiple lenders to help you secure competitive mortgage rates and flexible home loan options.",
+      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable mortgages in Holbrook supported by experienced advisors and access to trusted lenders. Our experienced mortgage brokers in Holbrook AZ work with multiple lenders to help you secure competitive mortgage rates and flexible home loan options.",
     ],
   },
   "navajo-county-az/show-low": {
+    communitiesCtaLabel: "Talk to a Show Low Loan Expert",
+    faqEyebrow: "OUR FAQ'S",
+    heroClientRating: "4.9/5",
+    mortgageSolutionsIntro: "Comprehensive mortgage programs designed specifically for Show Low homebuyers and homeowners.",
+    mortgageSolutionsTitle: "Explore Our Show Low Mortgage Solutions",
+    introTitle: "Show Low, AZ Mortgage Brokers – Local Home Loan Experts",
+    heroDescription: "AZ Mortgage Brothers provides reliable mortgage solutions for homebuyers and homeowners throughout Show Low, Arizona. Our experienced mortgage brokers in Show Low AZ work with multiple lenders.",
+    heroTitle: "Show Low Mortgage Experts – Your Local Home Loan Partners",
     longDescriptions: [
-      "As trusted mortgage lenders serving Show Low, AZ, our team helps borrowers navigate the home loan process with confidence. From first-time homebuyers to homeowners looking for refinancing options, we provide mortgage solutions tailored to the local Show Low AZ real estate market.",
-      "Whether you're purchasing a primary residence, a vacation home in the White Mountains, or refinancing an existing loan, we help you secure reliable **mortgage loans in Show Low Arizona** with competitive rates and clear guidance.",
+      "As trusted mortgage lenders serving Show Low, AZ, our team helps borrowers navigate the home loan process with confidence. From first‑time homebuyers to homeowners looking for refinancing options, we provide mortgage solutions tailored to the local Show Low AZ real estate market.",
+      "Whether you’re purchasing a primary residence, a vacation home in the White Mountains, or refinancing an existing loan, we help you secure reliable mortgage loans in Show Low Arizona with competitive rates and clear guidance.",
     ],
     intro: "Show Low is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
     items: [
@@ -3952,13 +4162,83 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Our Show Low Mortgage Services",
     getInTouchParagraphs: [
-      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable **mortgages in Show Low** supported by experienced advisors and access to trusted lenders. Our experienced mortgage brokers in Show Low AZ work with multiple lenders to help you secure competitive mortgage rates and flexible home loan options.",
+      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable mortgages in Show Low supported by experienced advisors and access to trusted lenders. Our experienced mortgage brokers in Show Low AZ work with multiple lenders to help you secure competitive mortgage rates and flexible home loan options.",
     ],
   },
+  "navajo-county-az/pinetop": {
+    heroTitle: "Pinetop Mortgage Experts – Your Local Home Loan Partners",
+    heroDescription:
+      "Mortgage Brothers LLC provides reliable mortgage solutions for homebuyers and homeowners throughout Pinetop, Arizona. Our experienced mortgage brokers in Pinetop AZ work with multiple lenders.",
+    introTitle: "Pinetop, AZ Mortgage Brokers – Local Home Loan Experts",
+    longDescriptions: [
+      "As trusted mortgage lenders serving Pinetop, AZ, our team helps borrowers navigate the home loan process with confidence. From first-time homebuyers to homeowners exploring refinancing options, we provide mortgage solutions tailored to the local Pinetop AZ real estate market.",
+      "Whether you're purchasing a primary residence, a vacation cabin in the White Mountains, or refinancing an existing loan, we help you secure dependable mortgage loans in Pinetop Arizona with competitive rates and clear guidance.",
+    ],
+    intro: "Pinetop is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
+    items: [
+      {
+        title: "Pinetop Lakeside Area",
+        description: "The Pinetop-Lakeside area offers mountain living, lake recreation, and strong appeal for vacation and primary homes. We assist buyers with mortgage programs suited for this popular White Mountains community.",
+      },
+      {
+        title: "White Mountain Lakes",
+        description: "White Mountain Lakes is a popular area for homebuyers seeking peaceful surroundings and outdoor recreation. We assist buyers with mortgage programs designed for both primary homes and vacation properties.",
+      },
+      {
+        title: "Pinetop Country Club Vicinity",
+        description: "Homes near Pinetop Country Club offer golf-course living and scenic mountain views. Our mortgage specialists help buyers explore loan options in this desirable area.",
+      },
+      {
+        title: "Rural Pinetop Properties",
+        description: "Many homes around Pinetop include larger land parcels and forested settings. Our mortgage experts assist buyers with loan solutions suited for acreage homes and rural properties.",
+      },
+    ],
+    whyChooseTitle: "Why Choose Us as Your Pinetop Local Mortgage Team",
+    whyChooseItems: [
+      { title: "Access to multiple mortgage lenders in Pinetop AZ" },
+      { title: "Competitive mortgage rates in Pinetop" },
+      { title: "Personalized loan strategies for buyers and homeowners" },
+      { title: "Clear communication from consultation through closing" },
+      { title: "Local knowledge of the Pinetop AZ real estate market" },
+    ],
+    mortgageSolutionsTitle: "Explore Our Pinetop Mortgage Solutions",
+    mortgageSolutionsIntro:
+      "Comprehensive mortgage programs designed specifically for Pinetop homebuyers and homeowners.",
+    ctaTitle: "Ready to Start Your Pinetop Home Loan Journey?",
+    ctaDescription:
+      "Our Pinetop mortgage specialists are here to help you move forward with confidence. We compare lenders, review your financial profile, and recommend the best loan programs for your goals.",
+    guidanceTitle: "Trusted Mortgage Guidance in Pinetop",
+    guidanceParagraphs: [
+      "When you work with Mortgage Brothers LLC, you receive structured advice and dependable support throughout your mortgage process.",
+      "Whether you're buying your first home, refinancing an existing mortgage, or exploring reverse mortgage opportunities, our team guides you through every step of the mortgage process with clarity and personalized support.",
+    ],
+    expectTitle: "What You Can Expect",
+    expectItems: [
+      "Clear loan comparisons across lenders",
+      "Honest discussion of rates and loan terms",
+      "Support from initial consultation through funding",
+    ],
+    getInTouchTitle: "Our Pinetop Mortgage Services",
+    getInTouchParagraphs: [
+      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable mortgages in Pinetop supported by experienced advisors and access to trusted lenders.",
+      "Our experienced mortgage brokers in Pinetop AZ work with multiple lenders to help you secure competitive mortgage rates and flexible home loan options.",
+    ],
+    heroClientRating: "4.9/5",
+    faqEyebrow: "OUR FAQ'S",
+    communitiesCtaLabel: "Talk to a Pinetop Loan Expert",
+  },
   "navajo-county-az/taylor": {
+    communitiesCtaLabel: "Talk to a Taylor Loan Expert",
+    faqEyebrow: "OUR FAQ'S",
+    heroClientRating: "4.9/5",
+    mortgageSolutionsIntro: "Comprehensive mortgage programs designed specifically for Taylor homebuyers and homeowners.",
+    mortgageSolutionsTitle: "Explore Our Taylor Mortgage Solutions",
+    introTitle: "Taylor, AZ Mortgage Brokers – Local Home Loan Experts",
+    heroDescription: "AZ Mortgage Brothers provides reliable mortgage solutions for homebuyers and homeowners throughout Taylor, AZ. Our experienced mortgage brokers in Taylor AZ work with multiple lenders.",
+    heroTitle: "Taylor Mortgage Experts – Your Local Home Loan Partners",
     longDescriptions: [
       "As trusted mortgage lenders serving Taylor, AZ, our team helps borrowers navigate the home loan process with confidence. From first-time homebuyers to homeowners exploring refinancing options, we provide mortgage solutions tailored to the local Taylor AZ real estate market.",
-      "Whether you're purchasing a primary residence, a rural property, or refinancing an existing loan, we help you secure dependable **mortgage loans in Taylor Arizona** with competitive rates and transparent guidance.",
+      "Whether you’re purchasing a primary residence, a rural property, or refinancing an existing loan, we help you secure dependable mortgage loans in Taylor Arizona with competitive rates and transparent guidance.",
     ],
     intro: "Taylor is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
     items: [
@@ -4002,7 +4282,7 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Our Taylor Mortgage Services",
     getInTouchParagraphs: [
-      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable **mortgages in Taylor** supported by experienced advisors and access to trusted lenders. Our experienced mortgage brokers in Taylor AZ work with multiple lenders to help you secure competitive mortgage rates and flexible home loan options.",
+      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable mortgages in Taylor supported by experienced advisors and access to trusted lenders. Our experienced mortgage brokers in Taylor AZ work with multiple lenders to help you secure competitive mortgage rates and flexible home loan options.",
     ],
   },
   "navajo-county-az/winslow": {
@@ -4106,9 +4386,17 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
   },
   "pima-county-az/sahuarita": {
+    communitiesCtaLabel: "Talk to a Sahuarita Loan Expert",
+    faqEyebrow: "OUR FAQ'S",
+    heroClientRating: "4.9/5",
+    mortgageSolutionsIntro: "Comprehensive mortgage programs designed specifically for Sahuarita homebuyers and homeowners.",
+    mortgageSolutionsTitle: "Explore Our Sahuarita Mortgage Solutions",
+    introTitle: "Sahuarita, AZ Mortgage Brokers – Local Home Loan Experts",
+    heroDescription: "AZ Mortgage Brothers provides trusted mortgage solutions for homebuyers and homeowners throughout Sahuarita, Arizona.",
+    heroTitle: "Sahuarita Mortgage Experts – Your Local Home Loan Partners",
     longDescriptions: [
-      "As experienced **mortgage lenders serving Sahuarita AZ**, our team helps borrowers navigate the home loan process with confidence. From first-time homebuyers to homeowners exploring refinancing opportunities, we provide mortgage solutions tailored to the Sahuarita AZ real estate market.",
-      "Whether you're purchasing a primary residence, a new construction home, or refinancing an existing loan, we help you secure dependable **mortgage loans in Sahuarita Arizona** with competitive rates and transparent guidance.",
+      "As experienced mortgage lenders serving Sahuarita AZ, our team helps borrowers navigate the home loan process with confidence. From first-time homebuyers to homeowners exploring refinancing opportunities, we provide mortgage solutions tailored to the Sahuarita AZ real estate market.",
+      "Whether you’re purchasing a primary residence, a new construction home, or refinancing an existing loan, we help you secure dependable mortgage loans in Sahuarita Arizona with competitive rates and transparent guidance.",
     ],
     intro: "Sahuarita is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
     items: [
@@ -4152,13 +4440,21 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Our Sahuarita Mortgage Services",
     getInTouchParagraphs: [
-      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable **mortgages in Sahuarita** supported by experienced advisors and access to trusted lenders. Our experienced mortgage brokers in Sahuarita AZ work with multiple lenders to help you secure competitive mortgage rates in Sahuarita and flexible home loan options.",
+      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable mortgages in Sahuarita supported by experienced advisors and access to trusted lenders. Our experienced mortgage brokers in Sahuarita AZ work with multiple lenders to help you secure competitive mortgage rates in Sahuarita and flexible home loan options.",
     ],
   },
   "pima-county-az/tucson": {
+    communitiesCtaLabel: "Talk to a Tucson Loan Expert",
+    faqEyebrow: "OUR FAQ'S",
+    heroClientRating: "4.9/5",
+    mortgageSolutionsIntro: "Comprehensive mortgage programs designed specifically for Tucson homebuyers and homeowners.",
+    mortgageSolutionsTitle: "Explore Our Tucson Mortgage Solutions",
+    introTitle: "Tucson, AZ Mortgage Brokers – Local Home Loan Experts",
+    heroDescription: "AZ Mortgage Brothers provides trusted mortgage solutions for homebuyers and homeowners throughout Tucson, Arizona. Our experienced mortgage brokers in Tucson AZ work with multiple lenders",
+    heroTitle: "Tucson Mortgage Experts – Your Local Home Loan Partners",
     longDescriptions: [
-      "As experienced **mortgage lenders in Tucson AZ**, we help borrowers navigate the home financing process with confidence. From first-time homebuyers to homeowners seeking refinancing opportunities, we provide mortgage solutions tailored to the Tucson AZ real estate market.",
-      "Whether you're purchasing a primary residence, an investment property, or refinancing an existing loan, our team helps you secure dependable **mortgage loans in Tucson Arizona** with competitive rates and transparent guidance.",
+      "As experienced mortgage lenders in Tucson AZ, we help borrowers navigate the home financing process with confidence. From first-time homebuyers to homeowners seeking refinancing opportunities, we provide mortgage solutions tailored to the Tucson AZ real estate market.",
+      "Whether you’re purchasing a primary residence, an investment property, or refinancing an existing loan, our team helps you secure dependable mortgage loans in Tucson Arizona with competitive rates and transparent guidance.",
     ],
     intro: "Tucson is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
     items: [
@@ -4202,13 +4498,21 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Our Tucson Mortgage Services",
     getInTouchParagraphs: [
-      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable **mortgages in Tucson** supported by experienced advisors and access to trusted lenders. . Our experienced mortgage brokers in Tucson AZ work with multiple lenders to help you secure competitive mortgage rates in Tucson and flexible financing options.",
+      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable mortgages in Tucson supported by experienced advisors and access to trusted lenders. . Our experienced mortgage brokers in Tucson AZ work with multiple lenders to help you secure competitive mortgage rates in Tucson and flexible financing options.",
     ],
   },
   "pima-county-az/vail": {
+    communitiesCtaLabel: "Talk to a Vail Loan Expert",
+    faqEyebrow: "OUR FAQ'S",
+    heroClientRating: "4.9/5",
+    mortgageSolutionsIntro: "Comprehensive mortgage programs designed specifically for Vail homebuyers and homeowners.",
+    mortgageSolutionsTitle: "Explore Our Vail Mortgage Solutions",
+    introTitle: "Vail, AZ Mortgage Brokers – Local Home Loan Experts",
+    heroDescription: "AZ Mortgage Brothers provides trusted mortgage solutions for homebuyers and homeowners throughout Vail, Arizona. Our experienced mortgage brokers in Vail AZ work with multiple lenders.",
+    heroTitle: "Vail Mortgage Experts – Your Local Home Loan Partners",
     longDescriptions: [
-      "As experienced **mortgage lenders serving Vail AZ**, our team helps borrowers navigate the home loan process with confidence. From first-time homebuyers to homeowners exploring refinancing opportunities, we provide mortgage solutions tailored to the Vail AZ real estate market.",
-      "Whether you're purchasing a primary residence, a new construction home, or refinancing an existing loan, we help you secure dependable **mortgage loans in Vail Arizona** with competitive rates and transparent guidance.",
+      "As experienced mortgage lenders serving Vail AZ, our team helps borrowers navigate the home loan process with confidence. From first-time homebuyers to homeowners exploring refinancing opportunities, we provide mortgage solutions tailored to the Vail AZ real estate market.",
+      "Whether you’re purchasing a primary residence, a new construction home, or refinancing an existing loan, we help you secure dependable mortgage loans in Vail Arizona with competitive rates and transparent guidance.",
     ],
     intro: "Vail is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
     items: [
@@ -4252,7 +4556,7 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Our Vail Mortgage Services",
     getInTouchParagraphs: [
-      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable **mortgages in Vail** supported by experienced advisors and access to trusted lenders. Our experienced mortgage brokers in Vail AZ work with multiple lenders to help you secure competitive mortgage rates in Vail and flexible home loan options.",
+      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable mortgages in Vail supported by experienced advisors and access to trusted lenders. Our experienced mortgage brokers in Vail AZ work with multiple lenders to help you secure competitive mortgage rates in Vail and flexible home loan options.",
     ],
   },
   "pinal-county-az/apache-junction": {
@@ -4627,9 +4931,17 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
   },
   "santa-cruz-county-az/santa-cruz": {
+    communitiesCtaLabel: "Talk to a Santa Cruz Loan Expert",
+    faqEyebrow: "OUR FAQ'S",
+    heroClientRating: "4.9/5",
+    mortgageSolutionsIntro: "Comprehensive mortgage programs designed specifically for Santa Cruz homebuyers and homeowners.",
+    mortgageSolutionsTitle: "Explore Our Santa Cruz Mortgage Solutions",
+    introTitle: "Santa Cruz County Mortgage Brokers – Local Home Loan Experts",
+    heroDescription: "AZ Mortgage Brothers provides trusted mortgage solutions for homebuyers and homeowners across Santa Cruz County, Arizona. Our experienced mortgage brokers work.",
+    heroTitle: "Santa Cruz AZ Mortgage Experts – Your Local Home Loan Partners",
     longDescriptions: [
-      "As experienced **mortgage lenders serving Santa Cruz County AZ**, our team helps borrowers navigate the home financing process with confidence. From first-time homebuyers to homeowners refinancing existing loans, we provide mortgage solutions tailored to the Santa Cruz County real estate market.",
-      "Whether you're purchasing a primary residence, an investment property, or refinancing an existing loan, we help you secure dependable **mortgage loans in Santa Cruz County Arizona** with competitive rates and transparent guidance.",
+      "As experienced mortgage lenders serving Santa Cruz County AZ, our team helps borrowers navigate the home financing process with confidence. From first-time homebuyers to homeowners refinancing existing loans, we provide mortgage solutions tailored to the Santa Cruz County real estate market.",
+      "Whether you’re purchasing a primary residence, an investment property, or refinancing an existing loan, we help you secure dependable mortgage loans in Santa Cruz County Arizona with competitive rates and transparent guidance.",
     ],
     intro: "Santa Cruz is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
     items: [
@@ -4994,10 +5306,15 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     communitiesCtaLabel: "Talk to a Dewey Loan Expert",
   },
   "yavapai-county-az/jerome": {
+    heroTitle: "Jerome Mortgages – Your Local Mortgage Experts",
+    heroDescription:
+      "Expert Jerome mortgages, competitive mortgage rates, and personalized home loan solutions for buyers and homeowners in Jerome, Arizona.",
+    introTitle: "Mortgage Brokers Jerome AZ – Local Mortgage You Can Trust",
     longDescriptions: [
-      "Looking for experienced **mortgage brokers in Jerome AZ**? [Mortgage Brothers LLC](/) provides expert guidance on Jerome home mortgage solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
-      "As a **Jerome local mortgage team**, we understand hillside properties, historic home considerations, appraisal challenges, and lender requirements unique to Jerome's real estate market.",
+      "Looking for experienced mortgage brokers in Jerome AZ? [Mortgage Brothers LLC](/) provides expert guidance on Jerome home mortgage solutions, helping buyers and homeowners secure the right loan with clarity and confidence.",
+      "As a Jerome local mortgage team, we understand hillside properties, historic home considerations, appraisal challenges, and lender requirements unique to Jerome's real estate market.",
     ],
+    communitiesTitle: "Popular Jerome Areas We Serve",
     intro: "Jerome is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
     items: [
       {
@@ -5026,9 +5343,11 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
       { title: "Jerome Market Expertise", description: "We understand Jerome mortgage rates, historic-property lending, and appraisal standards." },
       { title: "Customized Home Mortgage Solutions", description: "Every homeowners mortgage Jerome AZ plan is tailored to your financial goals." },
       { title: "Clear & Responsive Communication", description: "Transparent guidance from application to closing." },
-      { title: "Fast Mortgage Pre-Approvals", description: "Most clients receive approval within 4-8 hours." },
+      { title: "Fast Mortgage Pre-Approvals", description: "Most clients receive approval within 4–8 hours." },
       { title: "Multiple Mortgage Lenders", description: "Access to a wide network of trusted lending partners." },
     ],
+    mortgageSolutionsTitle: "Explore Our Jerome Mortgage Loan Options",
+    mortgageSolutionsIntro: "Comprehensive mortgage programs designed specifically for Jerome homebuyers and homeowners.",
     ctaTitle: "Ready to Secure Your Jerome Home Mortgage?",
     ctaDescription: "Work with experienced mortgage brokers Jerome AZ residents trust for purchases, refinancing, and competitive rates.",
     guidanceTitle: "Trusted Jerome Local Mortgage Guidance",
@@ -5045,9 +5364,12 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Our Jerome Mortgage Services",
     getInTouchParagraphs: [
-      "Our **Jerome mortgage** services support buyers and homeowners at every stage of the lending journey. From first-time purchases to refinancing and reverse mortgage solutions, we provide flexible loan options designed for long-term success.",
+      "Our Jerome mortgage services support buyers and homeowners at every stage of the lending journey. From first-time purchases to refinancing and reverse mortgage solutions, we provide flexible loan options designed for long-term success.",
       "By working with multiple lenders, we help clients secure competitive rates and smooth closings with personalized service.",
     ],
+    heroClientRating: "4.9/5",
+    faqEyebrow: "OUR FAQ'S",
+    communitiesCtaLabel: "Talk to a Jerome Loan Expert",
   },
   "yavapai-county-az/prescott": {
     longDescriptions: [
@@ -5106,10 +5428,15 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
   },
   "yavapai-county-az/prescott-valley": {
+    heroTitle: "Prescott Valley Mortgages – Your Local Mortgage Experts",
+    heroDescription:
+      "Expert Prescott Valley mortgages, competitive mortgage rates, and personalized home loan solutions for buyers and homeowners in Prescott Valley, Arizona.",
+    introTitle: "Mortgage Brokers Prescott Valley AZ – Local Mortgage You Can Trust",
     longDescriptions: [
-      "Looking for reliable mortgage brokers in Prescott Valley AZ? Mortgage Brothers LLC provides expert guidance on home mortgage Prescott Valley AZ solutions, helping buyers and homeowners choose the right loan with clarity and confidence.",
-      "As a Prescott Valley local mortgage team, we understand neighborhood pricing, appraisal standards, and lender guidelines-making the mortgage process smooth whether you're buying, refinancing, or planning long-term homeownership.",
+      "Looking for reliable mortgage brokers in Prescott Valley AZ? [Mortgage Brothers LLC](/) provides expert guidance on home mortgage Prescott Valley AZ solutions, helping buyers and homeowners choose the right loan with clarity and confidence.",
+      "As a Prescott Valley local mortgage team, we understand neighborhood pricing, appraisal standards, and lender guidelines—making the mortgage process smooth whether you're buying, refinancing, or planning long-term homeownership.",
     ],
+    communitiesTitle: "Popular Prescott Valley Communities We Serve",
     intro: "Prescott Valley is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
     items: [
       {
@@ -5138,9 +5465,12 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
       { title: "Prescott Valley Market Expertise", description: "We understand Prescott Valley mortgage rates, home values, and lender requirements." },
       { title: "Customized Home Mortgage Solutions", description: "Every homeowners mortgage Prescott Valley AZ plan is tailored to your financial goals." },
       { title: "Clear & Responsive Communication", description: "Transparent guidance from application to closing." },
-      { title: "Fast Mortgage Pre-Approvals", description: "Most clients receive approval within 4-8 hours." },
+      { title: "Fast Mortgage Pre-Approvals", description: "Most clients receive approval within 4–8 hours." },
       { title: "Multiple Mortgage Lenders", description: "Access to a wide network of trusted lending partners." },
     ],
+    mortgageSolutionsTitle: "Explore Our Prescott Valley Mortgage Loan Options",
+    mortgageSolutionsIntro:
+      "Comprehensive mortgage programs designed specifically for Prescott Valley homebuyers and homeowners.",
     ctaTitle: "Ready to Secure Your Prescott Valley Home Mortgage?",
     ctaDescription: "Work with experienced mortgage brokers Prescott Valley AZ residents trust for purchases, refinancing, and competitive rates.",
     guidanceTitle: "Trusted Prescott Valley Local Mortgage Guidance",
@@ -5157,9 +5487,12 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Our Prescott Valley Mortgage Services",
     getInTouchParagraphs: [
-      "Our **Prescott Valley mortgage** services support buyers and homeowners at every stage of the lending journey. From first-time purchases to refinancing and reverse mortgage solutions, we provide flexible loan options designed for long-term success.",
+      "Our Prescott Valley mortgage services support buyers and homeowners at every stage of the lending journey. From first-time purchases to refinancing and reverse mortgage solutions, we provide flexible loan options designed for long-term success.",
       "By working with multiple lenders, we help clients secure competitive rates and smooth closings with personalized service.",
     ],
+    heroClientRating: "4.9/5",
+    faqEyebrow: "OUR FAQ'S",
+    communitiesCtaLabel: "Talk to a Prescott Valley Loan Expert",
   },
   "yavapai-county-az/yavapai-hills": {
     longDescriptions: [
@@ -5218,9 +5551,17 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
   },
   "yuma-county-az/san-luis": {
+    communitiesCtaLabel: "Talk to a Safford Loan Expert",
+    faqEyebrow: "OUR FAQ'S",
+    heroClientRating: "4.9/5",
+    mortgageSolutionsIntro: "Comprehensive mortgage programs designed specifically for San Luis homebuyers and homeowners.",
+    mortgageSolutionsTitle: "Explore Our San Luis Mortgage Solutions",
+    introTitle: "San Luis, AZ Mortgage Brokers – Local Home Loan Experts",
+    heroDescription: "AZ Mortgage Brothers provides trusted mortgage solutions for homebuyers and homeowners throughout San Luis, Arizona. Our experienced mortgage brokers in San Luis AZ work.",
+    heroTitle: "San Luis Mortgage Experts – Your Local Home Loan Partners",
     longDescriptions: [
-      "As experienced **mortgage lenders serving San Luis AZ**, our team helps borrowers navigate the home financing process with confidence. From first-time homebuyers to families upgrading their homes, we provide mortgage solutions tailored to the San Luis AZ real estate market.",
-      "Whether you're purchasing a primary residence, investment property, or refinancing an existing loan, we help you secure dependable **mortgage loans in San Luis Arizona** with competitive rates and transparent guidance.",
+      "As experienced mortgage lenders serving San Luis AZ, our team helps borrowers navigate the home financing process with confidence. From first-time homebuyers to families upgrading their homes, we provide mortgage solutions tailored to the San Luis AZ real estate market.",
+      "Whether you’re purchasing a primary residence, investment property, or refinancing an existing loan, we help you secure dependable mortgage loans in San Luis Arizona with competitive rates and transparent guidance.",
     ],
     intro: "San Luis is home to diverse communities — each with unique pricing, amenities, and lending considerations. We assist homebuyers throughout:",
     items: [
@@ -5264,7 +5605,7 @@ export const liveCityPageContent: Record<string, LiveCityPageContent> = {
     ],
     getInTouchTitle: "Our San Luis Mortgage Services",
     getInTouchParagraphs: [
-      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable **mortgages in San Luis** supported by experienced advisors and access to trusted lenders.",
+      "Whether you're buying, refinancing, or reviewing loan options, Mortgage Brothers LLC provides dependable mortgages in San Luis supported by experienced advisors and access to trusted lenders.",
       "Whether you're purchasing your first home, relocating to San Luis, refinancing your current mortgage, or exploring reverse mortgage opportunities, our team guides you through every step of the mortgage process with clear communication and personalized support.",
     ],
   },
