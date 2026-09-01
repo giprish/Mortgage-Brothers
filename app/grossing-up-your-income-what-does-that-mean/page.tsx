@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -75,12 +74,6 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "What’s an example of grossing up?", answer: "For example, if you make $1000 a month from foster care income, since it is non-taxable, it can usually be grossed up. For a conventional loan, the gross-up is 25% ($1250) and for an FHA loan, it’s 15% ($1150)." },
-  { question: "What other incomes are typically allowed to be grossed up?", answer: "Other non-taxable incomes that can usually be grossed up include child support payments, VA benefits, workers’ compensation, supplemental social security, adoption income, and foster care income. Documentation is required to show continuation for at least three years." },
-  { question: "What income may be partially grossed up?", answer: "Incomes that may be partially grossed up include social security income, retirement income, pension income, annuity income, IRA distributions, housing allowance, and long-term disability income. The non-taxable portion can be grossed up by 25% for conventional loans and 15% for FHA loans." },
-] as const;
-
 const articleJsonLd = buildArticleSchemas({
   blog: {
     pathname: "/grossing-up-your-income-what-does-that-mean/",
@@ -89,7 +82,6 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-04",
     articleSection: "Specialty Loans",
   },
-  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Specialty Loans", path: "/specialty-loans/" },
@@ -130,19 +122,11 @@ export default function GrossingUpIncomePage() {
           <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
             <article className="min-w-0">
 
-              <section id="what-is-grossing-up">
-                <h2
-                  className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-                >
-                  What is grossing up?
-                </h2>
-                <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-8">
-                  You can think of grossing up as extra credit. Now, this isn&apos;t extra money. It doesn&apos;t
-                  go into your bank account, but it is an additional amount we can put on paper when it comes to
-                  applying for a loan.
-                </p>
-              </section>
+              <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-8">
+                You can think of grossing up as extra credit. Now, this isn&apos;t extra money. It doesn&apos;t
+                go into your bank account, but it is an additional amount we can put on paper when it comes to
+                applying for a loan.
+              </p>
 
               <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#08271B] mb-10 shadow-sm">
                 <YoutubeLiteEmbed
@@ -247,44 +231,31 @@ export default function GrossingUpIncomePage() {
                   </p>
                   <p>
                     If you have any questions about this or if you have any questions you&apos;d like us to
-                    answer on our podcast, you can email your questions to{" "}
-                    <a
-                      href="mailto:team@azmortgagebrothers.com"
-                      className="text-[#3fb364] font-semibold hover:underline"
-                    >
-                      team@azmortgagebrothers.com
-                    </a>{" "}
+                    answer on our podcast, you can submit your questions using our{" "}
+                    <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
+                      contact form
+                    </Link>{" "}
                     or give us a call at{" "}
                     <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                      +1 (602) 535-2171
+                      (602) 535-2171
                     </a>
                     . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work
                     with you and help you through the whole process.
                   </p>
                 </section>
 
-                
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={articleFaqs.map((faq) => ({
-                      q: faq.question,
-                      a: faq.answer,
-                    }))}
-                  />
-                </section>
+                <p className="text-center text-[#5a6b52] tracking-widest">•••</p>
 
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
-                    you and help you through the whole process.
-                  </p>
-                </div>
+                <p>
+                  Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
+                  you and help you through the whole process.
+                </p>
 
-                <p className="text-[15px]">
-                  Thanks for listening and reading the Mortgage Brothers Show. Let us know if you have any
-                  questions you&apos;d like us to answer on this podcast. You can email your questions to
-                  Tom@AZMortgageBrothers.com or Eddie@AZMortgageBrothers.com.
+                <p className="text-[#5a6b52] text-[13px] leading-relaxed">
+                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
+                  been prepared for informational purposes only. You should consult your own tax, legal, and
+                  accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
+                  #210917 and 1618695. Equal Housing Opportunity.
                 </p>
 
                 <p className="text-[15px]">
@@ -318,13 +289,6 @@ export default function GrossingUpIncomePage() {
                     closing pace requirements
                   </Link>
                   .
-                </p>
-
-                <p className="text-[#5a6b52] text-[13px] leading-relaxed">
-                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
-                  been prepared for informational purposes only. You should consult your own tax, legal, and
-                  accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
-                  #210917 and 1618695. Equal Housing Opportunity.
                 </p>
 
                 <section id="podcast-transcript">
@@ -383,7 +347,7 @@ export default function GrossingUpIncomePage() {
                       <ul className="list-disc pl-6 space-y-2 mb-3">
                         <li>Conventional Loan → Gross up by 25% → Adjusted income: $1,250</li>
                         <li>FHA Loan → Gross up by 15% → Adjusted income: $1,150</li>
-                        <li>VA Loans → Grossing up allowed (typically 25%)</li>
+                        <li>VA Loans → No grossing up allowed</li>
                       </ul>
                       <p>
                         <strong>Bottom line:</strong> The lender considers your non-taxable income as being
@@ -474,7 +438,7 @@ export default function GrossingUpIncomePage() {
                       <ul className="list-disc pl-6 space-y-2 mb-3">
                         <li>Conventional Loans: 25% gross up</li>
                         <li>FHA Loans: 15% gross up</li>
-                        <li>VA Loans: Grossing up allowed (typically 25%)</li>
+                        <li>VA Loans: No grossing up allowed</li>
                       </ul>
                       <p className="mb-2 font-semibold text-[#052316]">Example Calculation</p>
                       <p className="mb-3">
@@ -505,9 +469,9 @@ export default function GrossingUpIncomePage() {
                       </ul>
                       <p className="mb-2 font-semibold text-[#052316]">Example:</p>
                       <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>💰 Borrower A: Earns $3,000/month (fully taxable)</li>
+                        <li>Borrower A: Earns $3,000/month (fully taxable)</li>
                         <li>
-                          💰 Borrower B: Earns $3,000/month (but $1,000 is non-taxable Social Security)
+                          Borrower B: Earns $3,000/month (but $1,000 is non-taxable Social Security)
                         </li>
                       </ul>
                       <p>
@@ -565,8 +529,14 @@ export default function GrossingUpIncomePage() {
                       </h3>
                       <p className="mb-3">
                         If you&apos;re applying for a mortgage and want to know how grossing up your income
-                        could help, we&apos;re here to assist! Contact us through our contact form or call us
-                        for a personalized mortgage review.
+                        could help, we&apos;re here to assist!
+                      </p>
+                      <p className="mb-3">
+                        Contact us through our{" "}
+                        <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
+                          contact form
+                        </Link>{" "}
+                        or call us for a personalized mortgage review.
                       </p>
                       <p>
                         <strong>Final Thought:</strong> Grossing up income is a simple but powerful tool that
@@ -697,9 +667,10 @@ export default function GrossingUpIncomePage() {
               Get in Touch with The Mortgage Brothers
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              Ready to take the next step towards your dream home? One of our experienced mortgage
-              professionals will get back to you promptly with personalized solutions tailored to your unique
-              financial situation.
+              Ready to take the next step towards your dream home? Fill out the form below, and one of our
+              experienced mortgage professionals will get back to you promptly. We&apos;re here to provide
+              personalized solutions tailored to your unique financial situation and homeownership goals in
+              Arizona.
             </p>
             <Link
               href="#get-pre-approved"

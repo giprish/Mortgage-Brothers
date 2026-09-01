@@ -375,7 +375,18 @@ export default function MortgageRecastExamplePage() {
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
                         When Does a Mortgage Recast Make Sense? [02:25]
                       </h3>
-                      <p className="mb-3">A mortgage recast is best suited for homeowners who:</p>
+                      <p className="mb-3">
+                        A{" "}
+                        <a
+                          href="https://www.investopedia.com/terms/m/mortgagerecast.asp"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[#3fb364] font-semibold hover:underline"
+                        >
+                          mortgage recast
+                        </a>{" "}
+                        is best suited for homeowners who:
+                      </p>
                       <ul className="list-disc pl-6 space-y-2 mb-3">
                         <li>
                           Have a large sum of money coming in (e.g., inheritance, work bonus, home sale
