@@ -131,7 +131,16 @@ export default function HowHighWillALenderAllowYourDeductibleToBePage() {
             <article className="min-w-0">
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-8">
-                In this episode, we went over homeowners insurance deductibles and a quick tip on how to get
+                In this episode, we went over{" "}
+                <a
+                  href="https://www.investopedia.com/terms/h/homeowners-insurance.asp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#3fb364] font-semibold hover:underline"
+                >
+                  homeowners insurance deductibles
+                </a>{" "}
+                and a quick tip on how to get
                 lower premiums. For single-family residential homes in the range from $200,000 to $400,000 or so,
                 premiums are going to range from about $600 to maybe $1,200 annually. So, about $50-$100 a month.
                 We&apos;ve had some people asking how they can get the lowest premium possible. For many people,
@@ -226,7 +235,21 @@ export default function HowHighWillALenderAllowYourDeductibleToBePage() {
                   >
                     mortgage interest tax deduction is really a big deal
                   </Link>
-                  , review closing costs on a home purchase, and learn about mortgage payoff discrepancies.
+                  , review{" "}
+                  <Link
+                    href="/what-are-closing-costs-on-a-home-purchase/"
+                    className="text-[#3fb364] font-semibold hover:underline"
+                  >
+                    closing costs on a home purchase
+                  </Link>
+                  , and learn about{" "}
+                  <Link
+                    href="/mortgage-payoff-higher-than-mortgage-balance/"
+                    className="text-[#3fb364] font-semibold hover:underline"
+                  >
+                    mortgage payoff discrepancies
+                  </Link>
+                  .
                 </p>
 
                 <p className="text-[#5a6b52] text-[13px] leading-relaxed">

@@ -167,7 +167,7 @@ export default function IsHomeownershipHereditaryPage() {
                   <p className="mb-5">
                     Recently, the Urban Institute conducted{" "}
                     <a
-                      href="https://www.urban.org/"
+                      href="https://www.urban.org/research/publication/millennial-homeownership"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[#3fb364] font-semibold hover:underline"
@@ -219,7 +219,7 @@ export default function IsHomeownershipHereditaryPage() {
                     Houses play a significant, wealth-building role in the lives of millions of people in the
                     United States. The most recent{" "}
                     <a
-                      href="https://www.federalreserve.gov/econres/scfindex.htm"
+                      href="https://www.federalreserve.gov/publications/files/scf17.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[#3fb364] font-semibold hover:underline"

@@ -367,7 +367,16 @@ export default function VaLoansFirstTimeHomebuyersPage() {
                     Understanding the VA Funding Fee
                   </h2>
                   <p className="mb-5">
-                    The VA Funding Fee supports the loan program so future veterans can benefit, too.
+                    The{" "}
+                    <a
+                      href="https://www.benefits.va.gov/homeloans/purchaseco_loan_fee.asp"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      VA Funding Fee
+                    </a>{" "}
+                    supports the loan program so future veterans can benefit, too.
                     Here&apos;s how it works:
                   </p>
                   <h3 className="text-[#052316] text-[18px] font-bold mb-3">

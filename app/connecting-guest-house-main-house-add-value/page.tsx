@@ -209,7 +209,15 @@ export default function ConnectingGuestHouseAddValuePage() {
                     </li>
                     <li>
                       The structure that connects the guest house and main house has to be{" "}
-                      <strong>livable space</strong>, closed in, etc. It cannot be just a structure connecting the
+                      <a
+                        href="https://www.lawinsider.com/dictionary/living-space"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#3fb364] font-semibold hover:underline"
+                      >
+                        livable space
+                      </a>
+                      , closed in, etc. It cannot be just a structure connecting the
                       house and casita.
                     </li>
                     <li>

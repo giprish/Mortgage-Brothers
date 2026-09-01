@@ -202,7 +202,16 @@ export default function RapidRescoreMortgagePage() {
                     mortgage broker and one shall not reach credit repair companies for the same.
                   </p>
                   <p className="mb-5">
-                    As per the norms of the Fair Credit Reporting Act (FCRA), the borrowers are not supposed to pay
+                    As per the norms of the{" "}
+                    <a
+                      href="https://www.ftc.gov/legal-library/browse/statutes/fair-credit-reporting-act"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      Fair Credit Reporting Act
+                    </a>{" "}
+                    (FCRA), the borrowers are not supposed to pay
                     for brining inaccurate information on their credit profile to credit bureaus notice or filing a
                     dispute on the same. Apart rescoring is not deemed as disputing the negative information by any
                     means.
@@ -309,7 +318,16 @@ export default function RapidRescoreMortgagePage() {
                     mortgage broker and one shall not reach credit repair companies for the same.
                   </p>
                   <p className="mb-5">
-                    As per the norms of the Fair Credit Reporting Act (FCRA), the borrowers are not supposed to pay
+                    As per the norms of the{" "}
+                    <a
+                      href="https://www.ftc.gov/legal-library/browse/statutes/fair-credit-reporting-act"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      Fair Credit Reporting Act
+                    </a>{" "}
+                    (FCRA), the borrowers are not supposed to pay
                     for brining inaccurate information on their credit profile to credit bureaus notice or filing a
                     dispute on the same. Apart rescoring is not deemed as disputing the negative information by any
                     means.
@@ -435,7 +453,16 @@ export default function RapidRescoreMortgagePage() {
                     mortgage broker and one shall not reach credit repair companies for the same.
                   </p>
                   <p className="mb-5">
-                    As per the norms of the Fair Credit Reporting Act (FCRA), the borrowers are not supposed to pay
+                    As per the norms of the{" "}
+                    <a
+                      href="https://www.ftc.gov/legal-library/browse/statutes/fair-credit-reporting-act"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      Fair Credit Reporting Act
+                    </a>{" "}
+                    (FCRA), the borrowers are not supposed to pay
                     for brining inaccurate information on their credit profile to credit bureaus notice or filing a
                     dispute on the same. Apart rescoring is not deemed as disputing the negative information by any
                     means.

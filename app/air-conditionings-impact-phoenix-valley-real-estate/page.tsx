@@ -176,7 +176,16 @@ export default function AirConditioningPhoenixRealEstatePage() {
                       the 1930s.
                     </li>
                     <li>
-                      The modern, central air system was invented in 1902 by Willis Carrier, but these systems
+                      The modern, central air system was invented in 1902 by{" "}
+                      <a
+                        href="https://en.wikipedia.org/wiki/Willis_Carrier"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#3fb364] font-semibold hover:underline"
+                      >
+                        Willis Carrier
+                      </a>
+                      , but these systems
                       didn&apos;t become available for residential use until 1951.
                     </li>
                     <li>

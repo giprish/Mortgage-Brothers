@@ -870,7 +870,11 @@ export default function HowToSellMyHouseFastInArizonaPage() {
               It&apos;s 100% free, there&apos;s zero obligation, and no one will ever make an offer on your home.
             </p>
             <p className="text-[#c8c8b8] text-[15px] max-w-xl mx-auto mb-2 leading-relaxed">
-              📞 602-535-2171 — or request your free review below. Want reassurance first? Read what Arizona homeowners say about working with us.
+              📞 602-535-2171 — or request your free review below. Want reassurance first? Read{" "}
+              <Link href="/client-mortgage-reviews/" className="text-[#3fb364] font-semibold hover:underline">
+                what Arizona homeowners say about working with us
+              </Link>
+              .
             </p>
             <p className="text-[#c8c8b8] text-[13px] max-w-xl mx-auto mb-6 leading-relaxed">
               100% Free • No Obligation • We Don&apos;t Buy Houses • Local Arizona Experts

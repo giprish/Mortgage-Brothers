@@ -422,7 +422,16 @@ export default function UltimateGuideFirstMortgagePage() {
                     than not, loans are made and then resold on the conventional loan market.
                   </p>
                   <p className="mb-5">
-                    This market is overseen by an organization called Fannie Mae (stands for FNMA, or Federal
+                    This market is overseen by an organization called{" "}
+                    <a
+                      href="https://www.fanniemae.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      Fannie Mae
+                    </a>{" "}
+                    (stands for FNMA, or Federal
                     National Mortgage Association), which sets underwriting standards that conventional loans have
                     to adhere to. They&apos;re the ones who determine the down payment amount that must be provided
                     (usually 20%), the documentation that must be provided, etc., for each individual loan.

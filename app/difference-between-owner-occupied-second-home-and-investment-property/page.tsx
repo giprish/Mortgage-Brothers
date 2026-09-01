@@ -171,7 +171,16 @@ export default function OwnerOccupiedSecondHomeInvestmentPage() {
                     Owner Occupied / Primary Residence
                   </h3>
                   <p className="mb-6">
-                    According to HUD, a principal residence is a property that will be occupied by the borrower
+                    According to{" "}
+                    <a
+                      href="https://www.hud.gov/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      HUD
+                    </a>
+                    , a principal residence is a property that will be occupied by the borrower
                     for the majority of the calendar year. At least one borrower must occupy the property and sign
                     the security instrument and the mortgage note for the property to be considered
                     owner-occupied.
@@ -261,6 +270,13 @@ export default function OwnerOccupiedSecondHomeInvestmentPage() {
                     className="text-[#3fb364] font-semibold hover:underline"
                   >
                     detached guest home appraisal issues
+                  </Link>
+                  , learn how{" "}
+                  <Link
+                    href="/connecting-guest-house-main-house-add-value/"
+                    className="text-[#3fb364] font-semibold hover:underline"
+                  >
+                    connecting a guest house to your main home adds value
                   </Link>
                   , and discover the distinctions between{" "}
                   <Link

@@ -124,19 +124,23 @@ export default function CancelingFhaMipPage() {
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
                 If you are still paying Mortgage Insurance Premiums (
-                <Link
-                  href="/how-to-calculate-how-much-pmi-mortgage-insurance-will-be/"
+                <a
+                  href="https://www.investopedia.com/mortgage/insurance/qualified-insurance-premium/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-[#3fb364] font-semibold hover:underline"
                 >
                   MIP
-                </Link>
+                </a>
                 ) on a Federal Housing Administration (
-                <Link
-                  href="/fha-home-loans-arizona/"
+                <a
+                  href="https://www.hud.gov/federal_housing_administration"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-[#3fb364] font-semibold hover:underline"
                 >
                   FHA
-                </Link>
+                </a>
                 ) backed loan you may be paying more than you need to. Canceling this type of mortgage insurance
                 can also be easier than many homeowners believe. Many homeowners were forced into a FHA backed
                 mortgage and its resulting MIP when the housing market dipped. Yet now with house values on the
@@ -305,7 +309,7 @@ export default function CancelingFhaMipPage() {
                   Learn why canceling your FHA MIP might be simpler than you expect, and discover the steps to save
                   on your mortgage. For a broader perspective, check out when a{" "}
                   <Link
-                    href="/arizona-mortgage-payments/"
+                    href="/when-is-a-mortgage-payment-actually-considered-late/"
                     className="text-[#3fb364] font-semibold hover:underline"
                   >
                     mortgage payment is considered late

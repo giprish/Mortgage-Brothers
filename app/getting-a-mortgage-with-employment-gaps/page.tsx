@@ -192,8 +192,14 @@ export default function GettingMortgageWithEmploymentGapsPage() {
                   </h2>
                   <p>
                     If someone has had a gap in employment for a long time, say 10 years, and they just got back into
-                    the workforce a month ago we would put them into a conventional loan. Neither the FHA nor the VA
-                    would allow for this situation. Conventional is going to be flexible because they&rsquo;re going to be able
+                    the workforce a month ago we would put them into a{" "}
+                    <Link
+                      href="/conventional-home-loans-arizona/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      conventional loan
+                    </Link>
+                    . Neither the FHA nor the VA would allow for this situation. Conventional is going to be flexible because they&rsquo;re going to be able
                     to look at someone&rsquo;s situation case by case. The only reason you wouldn&rsquo;t like conventional is if
                     your credit score isn&rsquo;t very good. So as long as you have decent credit, conventional is the way to go.
                   </p>
@@ -207,8 +213,11 @@ export default function GettingMortgageWithEmploymentGapsPage() {
                     FHA Loans
                   </h2>
                   <p>
-                    So, the biggest difference between FHA and conventional is that in the case of FHA if there&rsquo;s a job gap
-                    over six months a two-year work history will be needed. Now it doesn&rsquo;t matter when that two-year work
+                    So, the biggest difference between FHA and conventional is that in the case of{" "}
+                    <Link href="/fha-home-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
+                      FHA
+                    </Link>{" "}
+                    if there&rsquo;s a job gap over six months a two-year work history will be needed. Now it doesn&rsquo;t matter when that two-year work
                     history was. It can go back 10 years, but it needs to be two years of consecutive work. FHA is where a
                     lot of our first-time homebuyers or lower credit score borrowers will fall. To qualify for the loan you
                     will have to have been with your current employer for six months and the borrower would need to have two
@@ -224,7 +233,11 @@ export default function GettingMortgageWithEmploymentGapsPage() {
                     VA Loans
                   </h2>
                   <p>
-                    The VA is the strictest of all three. It requires borrowers to have at least a 12-month history on the
+                    The{" "}
+                    <Link href="/va-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
+                      VA
+                    </Link>{" "}
+                    is the strictest of all three. It requires borrowers to have at least a 12-month history on the
                     current job if there are any job gaps over 60 days within the last two years.
                   </p>
                 </section>

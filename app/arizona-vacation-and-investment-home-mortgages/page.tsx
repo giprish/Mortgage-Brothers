@@ -151,7 +151,16 @@ export default function ArizonaVacationAndInvestmentHomeMortgagesPage() {
                 Many properties in the Arizona area are bank owned properties and short sales. For instance, if
                 you are looking for foreclosure deals, according to RealtyTrac&apos;s data, there are still
                 thousands of foreclosure sale auction properties available to purchase, as well as government
-                owned foreclosure properties and thousands of bank owned REO&apos;s. Investors and first time
+                owned foreclosure properties and thousands of{" "}
+                <a
+                  href="https://www.investopedia.com/terms/r/realestateowned.asp"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#3fb364] font-semibold hover:underline"
+                >
+                  bank owned REO&apos;s
+                </a>
+                . Investors and first time
                 buyers have been finding great bargains in all neighborhoods and price ranges.
               </p>
 

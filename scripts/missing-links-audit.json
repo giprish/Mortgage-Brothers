@@ -1,0 +1,452 @@
+[
+  {
+    "route": "/how-to-sell-my-house-fast-in-arizona/",
+    "stagingFile": "app/how-to-sell-my-house-fast-in-arizona/PageClient.tsx",
+    "missing": [],
+    "error": "page.evaluate: Execution context was destroyed, most likely because of a navigation"
+  },
+  {
+    "route": "/conventional-home-loans-vs-fha-loans-which-is-right-for-you/",
+    "stagingFile": "app/conventional-home-loans-vs-fha-loans-which-is-right-for-you/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/conventional-home-loans-vs-fha-loans-which-is-right-for-you/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/.well-known/sgcaptcha/?r=%2Fhow-to-sell-my-house-fast-in-arizona%2F&sol=MjE6MTc4ODI1ODA3Mjo3NDMwOGU4Nzo2Nzk2ZTM5NTBlZWQ0MjNjZTljMmViMGIxMTkwMTA3ZmZlZWU1OTM4MmZkMjZkOTI0MzJhMTEzYWJjNDFkZDMyOlZemw%3D%3D&s=1569:1306293\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/conventional-home-loans-vs-fha-loans-which-is-right-for-you/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/when-is-a-mortgage-payment-actually-considered-late/",
+    "stagingFile": "app/when-is-a-mortgage-payment-actually-considered-late/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/when-is-a-mortgage-payment-actually-considered-late/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/conventional-home-loans-vs-fha-loans-which-is-right-for-you/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/when-is-a-mortgage-payment-actually-considered-late/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/how-to-calculate-how-much-pmi-mortgage-insurance-will-be/",
+    "stagingFile": "app/how-to-calculate-how-much-pmi-mortgage-insurance-will-be/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/how-to-calculate-how-much-pmi-mortgage-insurance-will-be/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/when-is-a-mortgage-payment-actually-considered-late/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/how-to-calculate-how-much-pmi-mortgage-insurance-will-be/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/understanding-amortization-chart/",
+    "stagingFile": "app/understanding-amortization-chart/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/understanding-amortization-chart/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/how-to-calculate-how-much-pmi-mortgage-insurance-will-be/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/understanding-amortization-chart/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/what-if-my-spouse-dies-and-im-not-on-the-mortgage/",
+    "stagingFile": "app/what-if-my-spouse-dies-and-im-not-on-the-mortgage/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/what-if-my-spouse-dies-and-im-not-on-the-mortgage/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/understanding-amortization-chart/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/what-if-my-spouse-dies-and-im-not-on-the-mortgage/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/what-are-mortgage-trigger-leads/",
+    "stagingFile": "app/what-are-mortgage-trigger-leads/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/what-are-mortgage-trigger-leads/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/what-if-my-spouse-dies-and-im-not-on-the-mortgage/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/what-are-mortgage-trigger-leads/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/how-does-a-mortgage-apr-work-and-what-does-it-mean/",
+    "stagingFile": "app/how-does-a-mortgage-apr-work-and-what-does-it-mean/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/how-does-a-mortgage-apr-work-and-what-does-it-mean/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/what-are-mortgage-trigger-leads/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/how-does-a-mortgage-apr-work-and-what-does-it-mean/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/what-are-closing-costs-on-a-home-purchase/",
+    "stagingFile": "app/what-are-closing-costs-on-a-home-purchase/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/what-are-closing-costs-on-a-home-purchase/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/how-does-a-mortgage-apr-work-and-what-does-it-mean/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/what-are-closing-costs-on-a-home-purchase/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/mortgage-payoff-higher-than-mortgage-balance/",
+    "stagingFile": "app/mortgage-payoff-higher-than-mortgage-balance/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/mortgage-payoff-higher-than-mortgage-balance/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/what-are-closing-costs-on-a-home-purchase/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/mortgage-payoff-higher-than-mortgage-balance/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/getting-a-mortgage-with-employment-gaps/",
+    "stagingFile": "app/getting-a-mortgage-with-employment-gaps/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/getting-a-mortgage-with-employment-gaps/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/mortgage-payoff-higher-than-mortgage-balance/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/getting-a-mortgage-with-employment-gaps/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/better-getting-mortgage-couple-vs-single-applicant/",
+    "stagingFile": "app/better-getting-mortgage-couple-vs-single-applicant/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/better-getting-mortgage-couple-vs-single-applicant/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/getting-a-mortgage-with-employment-gaps/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/better-getting-mortgage-couple-vs-single-applicant/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/can-i-relocate-and-get-a-mortgage-while-working-remotely-out-of-state/",
+    "stagingFile": "app/can-i-relocate-and-get-a-mortgage-while-working-remotely-out-of-state/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/can-i-relocate-and-get-a-mortgage-while-working-remotely-out-of-state/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/better-getting-mortgage-couple-vs-single-applicant/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/can-i-relocate-and-get-a-mortgage-while-working-remotely-out-of-state/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/dscr-loan-the-best-alternative-to-hard-money/",
+    "stagingFile": "app/dscr-loan-the-best-alternative-to-hard-money/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/dscr-loan-the-best-alternative-to-hard-money/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/can-i-relocate-and-get-a-mortgage-while-working-remotely-out-of-state/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/dscr-loan-the-best-alternative-to-hard-money/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/arizona-binsr-buyer-inspection-notice-and-seller-response/",
+    "stagingFile": "app/arizona-binsr-buyer-inspection-notice-and-seller-response/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/arizona-binsr-buyer-inspection-notice-and-seller-response/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/dscr-loan-the-best-alternative-to-hard-money/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/arizona-binsr-buyer-inspection-notice-and-seller-response/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/what-you-need-to-know-about-the-arizona-prequalification-form/",
+    "stagingFile": "app/what-you-need-to-know-about-the-arizona-prequalification-form/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/what-you-need-to-know-about-the-arizona-prequalification-form/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/arizona-binsr-buyer-inspection-notice-and-seller-response/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/what-you-need-to-know-about-the-arizona-prequalification-form/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/arizona-mortgage-rates-and-the-interest-deduction/",
+    "stagingFile": "app/arizona-mortgage-rates-and-the-interest-deduction/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/arizona-mortgage-rates-and-the-interest-deduction/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/what-you-need-to-know-about-the-arizona-prequalification-form/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/arizona-mortgage-rates-and-the-interest-deduction/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/prepayment-penalties-on-your-arizona-mortgage/",
+    "stagingFile": "app/prepayment-penalties-on-your-arizona-mortgage/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/prepayment-penalties-on-your-arizona-mortgage/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/arizona-mortgage-rates-and-the-interest-deduction/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/prepayment-penalties-on-your-arizona-mortgage/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/buying-down-your-arizona-interest-rate/",
+    "stagingFile": "app/buying-down-your-arizona-interest-rate/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/buying-down-your-arizona-interest-rate/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/prepayment-penalties-on-your-arizona-mortgage/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/buying-down-your-arizona-interest-rate/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/arizona-second-mortgages/",
+    "stagingFile": "app/arizona-second-mortgages/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/arizona-second-mortgages/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/buying-down-your-arizona-interest-rate/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/arizona-second-mortgages/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/arizona-real-estate-capital-gains-is-back/",
+    "stagingFile": "app/arizona-real-estate-capital-gains-is-back/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/arizona-real-estate-capital-gains-is-back/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/arizona-second-mortgages/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/arizona-real-estate-capital-gains-is-back/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/delayed-financing-how-to-get-cashout-without-waiting-6-months-seasoning/",
+    "stagingFile": "app/delayed-financing-how-to-get-cashout-without-waiting-6-months-seasoning/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/delayed-financing-how-to-get-cashout-without-waiting-6-months-seasoning/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/arizona-real-estate-capital-gains-is-back/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/delayed-financing-how-to-get-cashout-without-waiting-6-months-seasoning/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/what-is-an-example-of-a-mortgage-recast/",
+    "stagingFile": "app/what-is-an-example-of-a-mortgage-recast/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/what-is-an-example-of-a-mortgage-recast/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/delayed-financing-how-to-get-cashout-without-waiting-6-months-seasoning/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/what-is-an-example-of-a-mortgage-recast/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/buying-a-house-with-a-cash-offer-and-simultaneously-getting-mortgage-financing/",
+    "stagingFile": "app/buying-a-house-with-a-cash-offer-and-simultaneously-getting-mortgage-financing/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/buying-a-house-with-a-cash-offer-and-simultaneously-getting-mortgage-financing/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/what-is-an-example-of-a-mortgage-recast/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/buying-a-house-with-a-cash-offer-and-simultaneously-getting-mortgage-financing/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/how-does-my-car-loan-payment-affect-my-mortgage/",
+    "stagingFile": "app/how-does-my-car-loan-payment-affect-my-mortgage/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/how-does-my-car-loan-payment-affect-my-mortgage/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/buying-a-house-with-a-cash-offer-and-simultaneously-getting-mortgage-financing/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/how-does-my-car-loan-payment-affect-my-mortgage/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/grossing-up-your-income-what-does-that-mean/",
+    "stagingFile": "app/grossing-up-your-income-what-does-that-mean/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/grossing-up-your-income-what-does-that-mean/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/how-does-my-car-loan-payment-affect-my-mortgage/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/grossing-up-your-income-what-does-that-mean/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/can-i-get-a-3rd-mortgage/",
+    "stagingFile": "app/can-i-get-a-3rd-mortgage/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/can-i-get-a-3rd-mortgage/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/grossing-up-your-income-what-does-that-mean/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/can-i-get-a-3rd-mortgage/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house/",
+    "stagingFile": "app/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/can-i-get-a-3rd-mortgage/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/what-is-the-difference-between-aan-arizona-condo-and-arizona-townhome/",
+    "stagingFile": "app/what-is-the-difference-between-aan-arizona-condo-and-arizona-townhome/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/what-is-the-difference-between-aan-arizona-condo-and-arizona-townhome/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/what-is-the-difference-between-aan-arizona-condo-and-arizona-townhome/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/detached-guest-home-casita-appraisal-issues/",
+    "stagingFile": "app/detached-guest-home-casita-appraisal-issues/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/detached-guest-home-casita-appraisal-issues/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/what-is-the-difference-between-aan-arizona-condo-and-arizona-townhome/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/detached-guest-home-casita-appraisal-issues/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/difference-between-owner-occupied-second-home-and-investment-property/",
+    "stagingFile": "app/difference-between-owner-occupied-second-home-and-investment-property/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/difference-between-owner-occupied-second-home-and-investment-property/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/detached-guest-home-casita-appraisal-issues/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/difference-between-owner-occupied-second-home-and-investment-property/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/buying-or-selling-personal-property-with-your-home-sale-must-watch-this-first/",
+    "stagingFile": "app/buying-or-selling-personal-property-with-your-home-sale-must-watch-this-first/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/buying-or-selling-personal-property-with-your-home-sale-must-watch-this-first/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/difference-between-owner-occupied-second-home-and-investment-property/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/buying-or-selling-personal-property-with-your-home-sale-must-watch-this-first/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/how-to-skip-2-payments-on-your-mortgage/",
+    "stagingFile": "app/how-to-skip-2-payments-on-your-mortgage/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/how-to-skip-2-payments-on-your-mortgage/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/buying-or-selling-personal-property-with-your-home-sale-must-watch-this-first/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/how-to-skip-2-payments-on-your-mortgage/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/put-bow-fha-loan-gift-guide/",
+    "stagingFile": "app/put-bow-fha-loan-gift-guide/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/put-bow-fha-loan-gift-guide/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/how-to-skip-2-payments-on-your-mortgage/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/put-bow-fha-loan-gift-guide/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/lsu-forms-loan-status-updates-and-what-you-need-to-know/",
+    "stagingFile": "app/lsu-forms-loan-status-updates-and-what-you-need-to-know/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/lsu-forms-loan-status-updates-and-what-you-need-to-know/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/put-bow-fha-loan-gift-guide/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/lsu-forms-loan-status-updates-and-what-you-need-to-know/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/how-do-solar-panels-affect-the-mortgage-and-closing-process/",
+    "stagingFile": "app/how-do-solar-panels-affect-the-mortgage-and-closing-process/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/how-do-solar-panels-affect-the-mortgage-and-closing-process/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/lsu-forms-loan-status-updates-and-what-you-need-to-know/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/how-do-solar-panels-affect-the-mortgage-and-closing-process/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/get-part-income-commission-can-use-qualify-loan/",
+    "stagingFile": "app/get-part-income-commission-can-use-qualify-loan/page.tsx",
+    "missing": [],
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/get-part-income-commission-can-use-qualify-loan/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/how-do-solar-panels-affect-the-mortgage-and-closing-process/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/get-part-income-commission-can-use-qualify-loan/\", waiting until \"domcontentloaded\"\n"
+  },
+  {
+    "route": "/how-to-count-commissions-and-bonuses-and-tips/",
+    "stagingFile": "app/how-to-count-commissions-and-bonuses-and-tips/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/who-can-and-cannot-be-on-title-when-you-get-a-mortgage/",
+    "stagingFile": "app/who-can-and-cannot-be-on-title-when-you-get-a-mortgage/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/is-the-mortgage-interest-tax-deduction-really-a-big-deal/",
+    "stagingFile": "app/is-the-mortgage-interest-tax-deduction-really-a-big-deal/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/how-high-will-a-lender-allow-your-deductible-to-be/",
+    "stagingFile": "app/how-high-will-a-lender-allow-your-deductible-to-be/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/arizona-vacation-and-investment-home-mortgages/",
+    "stagingFile": "app/arizona-vacation-and-investment-home-mortgages/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/if-i-have-1-mortgage-late-in-the-past-12-months-can-i-get-approved-for-a-mortgage/",
+    "stagingFile": "app/if-i-have-1-mortgage-late-in-the-past-12-months-can-i-get-approved-for-a-mortgage/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/what-is-a-conventional-home-loan-the-complete-first-time-buyer-mortgage-guide/",
+    "stagingFile": "app/what-is-a-conventional-home-loan-the-complete-first-time-buyer-mortgage-guide/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/arizona-real-estate-trends-in-2026-predicting-mortgage-rates-for-the-coming-year/",
+    "stagingFile": "app/arizona-real-estate-trends-in-2026-predicting-mortgage-rates-for-the-coming-year/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/what-is-a-jumbo-loan-everything-you-need-to-know-before-applying/",
+    "stagingFile": "app/what-is-a-jumbo-loan-everything-you-need-to-know-before-applying/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/va-loans-for-first-time-homebuyers-in-arizona-your-path-to-affordable-homeownership/",
+    "stagingFile": "app/va-loans-for-first-time-homebuyers-in-arizona-your-path-to-affordable-homeownership/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/how-to-get-a-mortgage-in-arizona-with-fair-or-improving-credit/",
+    "stagingFile": "app/how-to-get-a-mortgage-in-arizona-with-fair-or-improving-credit/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/glossary/",
+    "stagingFile": "app/glossary/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/the-broker-advantage/",
+    "stagingFile": "app/the-broker-advantage/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/arizona-refinance-process/",
+    "stagingFile": "app/arizona-refinance-process/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/arizona-home-buying-process/",
+    "stagingFile": "app/arizona-home-buying-process/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/arizona-mortgage-approval-process/",
+    "stagingFile": "app/arizona-mortgage-approval-process/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/arizona-mortgage-closing-process/",
+    "stagingFile": "app/arizona-mortgage-closing-process/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/arizona-mortgage-payments/",
+    "stagingFile": "app/arizona-mortgage-payments/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/can-i-simply-payoff-credit-cards-to-qualify-for-a-mortgage/",
+    "stagingFile": "app/can-i-simply-payoff-credit-cards-to-qualify-for-a-mortgage/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/air-conditionings-impact-phoenix-valley-real-estate/",
+    "stagingFile": "app/air-conditionings-impact-phoenix-valley-real-estate/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/canceling-your-fha-mip-is-easier-than-you-think/",
+    "stagingFile": "app/canceling-your-fha-mip-is-easier-than-you-think/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/arizona-mortgage-basics/",
+    "stagingFile": "app/arizona-mortgage-basics/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/arizona-mortgage-closing-costs/",
+    "stagingFile": "app/arizona-mortgage-closing-costs/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/navigating-mortgage-options-during-divorce-a-complete-guide/",
+    "stagingFile": "app/navigating-mortgage-options-during-divorce-a-complete-guide/PageClient.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/top-7-reasons-arizona-investment-home-buyers-choose-private-money-lenders/",
+    "stagingFile": "app/top-7-reasons-arizona-investment-home-buyers-choose-private-money-lenders/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/who-qualifies-for-a-reverse-mortgage-understanding-eligibility-requirements/",
+    "stagingFile": "app/who-qualifies-for-a-reverse-mortgage-understanding-eligibility-requirements/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/connecting-guest-house-main-house-add-value/",
+    "stagingFile": "app/connecting-guest-house-main-house-add-value/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/how-a-rapid-rescore-can-help-to-get-qualified-for-a-mortgage/",
+    "stagingFile": "app/how-a-rapid-rescore-can-help-to-get-qualified-for-a-mortgage/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/why-use-an-arizona-mortgage-broker/",
+    "stagingFile": "app/why-use-an-arizona-mortgage-broker/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/arizona-understanding-your-credit/",
+    "stagingFile": "app/arizona-understanding-your-credit/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/seller-concessions-to-buyers-how-much/",
+    "stagingFile": "app/seller-concessions-to-buyers-how-much/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/ultimate-guide-first-mortgage/",
+    "stagingFile": "app/ultimate-guide-first-mortgage/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/expect-youre-not-first-time-mortgage-shopper/",
+    "stagingFile": "app/expect-youre-not-first-time-mortgage-shopper/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/fha-flip-rule-waiver-expired-you-need-wait-90-days-to-write-a-contract/",
+    "stagingFile": "app/fha-flip-rule-waiver-expired-you-need-wait-90-days-to-write-a-contract/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/is-homeownership-hereditary/",
+    "stagingFile": "app/is-homeownership-hereditary/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/mortgage-101/",
+    "stagingFile": "app/mortgage-101/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/mortgage-rates-tool-arizona/",
+    "stagingFile": "app/mortgage-rates-tool-arizona/page.tsx",
+    "missing": [],
+    "error": null
+  },
+  {
+    "route": "/assumable-mortgage/",
+    "stagingFile": "app/assumable-mortgage/page.tsx",
+    "missing": [],
+    "error": null
+  }
+]

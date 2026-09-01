@@ -165,7 +165,16 @@ export default function MortgageAprPage() {
                     APR
                   </h2>
                   <p>
-                    An APR is a home loan&apos;s Annual Percentage Rate. Much like the interest rate, APR is
+                    An APR is a home loan&apos;s{" "}
+                    <a
+                      href="https://www.investopedia.com/terms/a/apr.asp"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      Annual Percentage Rate
+                    </a>
+                    . Much like the interest rate, APR is
                     also displayed as a percentage, but it is typically higher than the accompanying
                     interest rate. This is because an APR not only takes your interest rate into account,
                     but also factors in other costs, such as most closing costs and lender fees. The APR

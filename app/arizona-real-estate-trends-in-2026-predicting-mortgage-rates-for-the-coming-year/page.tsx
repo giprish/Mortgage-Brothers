@@ -134,20 +134,19 @@ export default function ArizonaRealEstateTrends2026Page() {
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-5">
                 If you&apos;ve been watching Arizona&apos;s housing market over the past few years, you know
-                it&apos;s been a wild ride. From ultra-low{" "}
+                it&apos;s been a wild ride. From ultra-low mortgage rates during the pandemic to bidding wars in
+                Phoenix and Tucson, things have finally started to cool down. Now, in 2026, we&apos;re entering a
+                different kind of market — one that feels a bit more balanced.
+              </p>
+              <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-5">
+                But balanced doesn&apos;t always mean easy. Affordability is still tight,{" "}
                 <Link
-                  href="/arizona-mortgage-rates-and-the-interest-deduction/"
+                  href="/mortgage-rates-tool-arizona/"
                   className="text-[#3fb364] font-semibold hover:underline"
                 >
                   mortgage rates
                 </Link>{" "}
-                during the pandemic to bidding wars in Phoenix and Tucson, things have finally started to cool
-                down. Now, in 2026, we&apos;re entering a different kind of market — one that feels a bit more
-                balanced.
-              </p>
-              <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-5">
-                But balanced doesn&apos;t always mean easy. Affordability is still tight, mortgage rates are
-                higher than what we got used to in 2020-2021, and buyers are asking one big question: What
+                are higher than what we got used to in 2020-2021, and buyers are asking one big question: What
                 happens next?
               </p>
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">

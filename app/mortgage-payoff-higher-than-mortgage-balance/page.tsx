@@ -139,8 +139,16 @@ export default function MortgagePayoffPage() {
                     If you&apos;re refinancing, you can&apos;t just get a loan for the exact amount of your
                     mortgage statement balance. You have to account for interest. We&apos;ve had people call us
                     looking to refinance who will tell us what they owe, but we always advise them right away to
-                    make sure that they&apos;re looking at their mortgage payoff, not their mortgage statement
-                    balance. It&apos;s a common confusion that happens to a lot of people, which is why we&apos;re
+                    make sure that they&apos;re looking at their{" "}
+                    <a
+                      href="https://www.lawinsider.com/dictionary/mortgage-payoff"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      mortgage payoff
+                    </a>
+                    , not their mortgage statement balance. It&apos;s a common confusion that happens to a lot of people, which is why we&apos;re
                     here to clear it up.
                   </p>
                   <p>
@@ -235,9 +243,13 @@ export default function MortgagePayoffPage() {
                   <Link href="/what-are-mortgage-trigger-leads/" className="text-[#3fb364] font-semibold hover:underline">
                     mortgage trigger leads
                   </Link>
-                  ,{" "}
+                  . Also, familiarize yourself with{" "}
+                  <Link href="/how-does-a-mortgage-apr-work-and-what-does-it-mean/" className="text-[#3fb364] font-semibold hover:underline">
+                    APR basics
+                  </Link>{" "}
+                  and understand{" "}
                   <Link href="/what-are-closing-costs-on-a-home-purchase/" className="text-[#3fb364] font-semibold hover:underline">
-                    closing costs on home purchases
+                    closing costs
                   </Link>
                   , and{" "}
                   <Link href="/mortgage-payoff-higher-than-mortgage-balance/" className="text-[#3fb364] font-semibold hover:underline">

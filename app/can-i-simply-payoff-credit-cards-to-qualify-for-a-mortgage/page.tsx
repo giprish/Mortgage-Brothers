@@ -136,12 +136,14 @@ export default function PayoffCreditCardsQualifyPage() {
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
                 Since June 30, 2015,{" "}
-                <Link
-                  href="/mortgage-qualifications/"
+                <a
+                  href="https://www.lawinsider.com/dictionary/mortgage-guidelines"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-[#3fb364] font-semibold hover:underline"
                 >
                   loan guidelines
-                </Link>{" "}
+                </a>{" "}
                 have allowed borrowers to pay off credit card and other revolving balances to qualify for a mortgage — a rule that remains in place today.
               </p>
 

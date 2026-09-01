@@ -209,7 +209,25 @@ export default function CondoVsTownhomePage() {
                     approval before they will insure any loan on a condo.
                   </p>
                   <p>
-                    Additionally, conventional (Fannie Mae and Freddie Mac) financing requires all condos to be
+                    Additionally, conventional (
+                    <a
+                      href="https://www.fanniemae.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      Fannie Mae
+                    </a>{" "}
+                    and{" "}
+                    <a
+                      href="https://www.freddiemac.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      Freddie Mac
+                    </a>
+                    ) financing requires all condos to be
                     warrantable, i.e. each condo development has to meet certain requirements similar to FHA.
                     Townhouses on the other hand are treated just like single family residences for the most
                     part when it comes to lending. Arizona mortgage guidelines favor townhouses over condos.
