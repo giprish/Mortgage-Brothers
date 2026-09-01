@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { COMPANY } from "@/lib/company";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
@@ -539,7 +540,15 @@ export default function VaLoansFirstTimeHomebuyersPage() {
                     Phoenix—Mortgage Brothers LLC will guide you every step of the way.
                   </p>
                   <p className="mb-2">
-                    📍 Visit us: 1599 E Orangewood Ave Suite 200, Phoenix, AZ 85020
+                    📍 Visit us:{" "}
+                    <a
+                      href={COMPANY.addressMapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      1599 E Orangewood Ave Suite 200, Phoenix, AZ 85020
+                    </a>
                   </p>
                   <p className="mb-5">
                     📞 Call us:{" "}

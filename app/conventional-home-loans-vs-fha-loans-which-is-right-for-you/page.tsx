@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { COMPANY } from "@/lib/company";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
@@ -477,7 +478,15 @@ export default function ConventionalVsFhaLoansPage() {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
-                      <strong>Visit Us:</strong> 1599 East Orangewood Ave Suite 200, Phoenix, AZ 85020
+                      <strong>Visit Us:</strong>{" "}
+                      <a
+                        href={COMPANY.addressMapsUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#3fb364] font-semibold hover:underline"
+                      >
+                        1599 East Orangewood Ave Suite 200, Phoenix, AZ 85020
+                      </a>
                     </span>
                     <span className="inline-flex items-center gap-1.5">
                       <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
