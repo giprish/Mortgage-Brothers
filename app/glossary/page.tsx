@@ -295,12 +295,12 @@ export default function GlossaryPage() {
                   Leverage your new knowledge from our Mortgage Glossary and contact Arizona Mortgage
                   Brothers for personalized mortgage guidance.
                 </p>
-                <a
-                  href="#contact"
+                <Link
+                  href="/contact-us/"
                   className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
                 >
                   Get Expert Help
-                </a>
+                </Link>
               </div>
 
               <div className="space-y-5">

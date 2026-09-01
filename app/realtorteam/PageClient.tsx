@@ -100,9 +100,9 @@ export default function RealtorTeamPage() {
           title="A Mortgage Partner You Can Depend On"
           subtitle="Partner with trusted mortgage experts to deliver exceptional service and grow your business together"
           ctaLabel="Join Our Partner Network"
-          ctaHref="#contact"
+          ctaHref="/contact-us/"
           secondaryCtaLabel="Contact Our Partnership Team"
-          secondaryCtaHref="#contact"
+          secondaryCtaHref="/contact-us/"
           note=""
         />
 
@@ -141,7 +141,7 @@ export default function RealtorTeamPage() {
 
             <div className="loan-btn-wrap">
               <a
-                href="#contact"
+                href="/contact-us/"
                 className="inline-flex items-center gap-2 bg-[#052316] hover:bg-[#0a3d26] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
               >
                 Join Our Partner Network →
@@ -177,7 +177,7 @@ export default function RealtorTeamPage() {
 
             <div className="loan-btn-wrap">
               <a
-                href="#contact"
+                href="/contact-us/"
                 className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
               >
                 Contact Our Partnership Team →
@@ -216,7 +216,7 @@ export default function RealtorTeamPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <a
-                    href="#contact"
+                    href="/contact-us/"
                     className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
                   >
                     Schedule Your Partnership Consultation →
@@ -244,9 +244,8 @@ export default function RealtorTeamPage() {
               Ready to explore how a partnership with Mortgage Brothers LLC can benefit your business? Reach out below, and one of our partnership specialists will get back to you within one business day.
             </p>
             <a
-              href="#contact-us-form"
-              data-contact="true"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md cursor-pointer"
+              href="/contact-us/"
+              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-bold px-8 py-3.5 rounded-full transition-all shadow-md"
             >
               Contact Us →
             </a>
