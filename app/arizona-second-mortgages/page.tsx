@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -78,12 +77,6 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "What is a second mortgage in Arizona?", answer: "A second Arizona mortgage is secured by the same property as a first lien mortgage. The first lien has priority and gets paid first if you default. The second lien only gets paid if funds remain after the first lien is satisfied. These loans are usually based on the equity in your home." },
-  { question: "What are the common uses of a second mortgage?", answer: "Homeowners often use second mortgages for home repairs, debt consolidation, paying college expenses, retirement, vacations, medical bills, or other family expenses." },
-  { question: "What types of second mortgages are available in Arizona?", answer: "Types of second mortgages include home equity loans (lump sum loan at a fixed rate), home equity lines of credit (HELOCs) with variable interest rates, and traditional second mortgages." },
-  { question: "What are the requirements for qualifying for a second mortgage?", answer: "To qualify, you need good credit, equity in your Arizona home, and must pay closing costs. The lender will order an appraisal, review your credit, and provide an estimate of the costs at application. Working with a mortgage broker can also help you find the right loan product and interest rate." },
-] as const;
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
@@ -93,7 +86,6 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-04",
     articleSection: "Real Estate & Mortgages",
   },
-  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Real Estate & Mortgages", path: "/real-estate-mortgages/" },
@@ -244,29 +236,17 @@ export default function ArizonaSecondMortgagesPage() {
                   </Link>{" "}
                   or give us a call at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
+                    (602) 535-2171
                   </a>
                   . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
                   you and help you through the whole process.
                 </p>
+                <p className="text-center text-[#5a6b52] tracking-widest">•••</p>
 
-                
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={articleFaqs.map((faq) => ({
-                      q: faq.question,
-                      a: faq.answer,
-                    }))}
-                  />
-                </section>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
-                    you and help you through the whole process.
-                  </p>
-                </div>
+                <p>
+                  Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
+                  you and help you through the whole process.
+                </p>
 
                 <p className="text-[15px]">
                   Explore the benefits and considerations of second mortgages in Arizona. You might also find
@@ -319,7 +299,7 @@ export default function ArizonaSecondMortgagesPage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
                   been prepared for informational purposes only. You should consult your own tax, legal, and
                   accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
-                  #210917 and 1618695. Equal housing lender.
+                  #210917 and 1618695. Equal Housing Opportunity.
                 </p>
               </div>
 
@@ -442,9 +422,10 @@ export default function ArizonaSecondMortgagesPage() {
               Get in Touch with The Mortgage Brothers
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              Ready to take the next step towards your dream home? One of our experienced mortgage
-              professionals will get back to you promptly with personalized solutions tailored to your unique
-              financial situation.
+              Ready to take the next step towards your dream home? Fill out the form below, and one of our
+              experienced mortgage professionals will get back to you promptly. We&apos;re here to provide
+              personalized solutions tailored to your unique financial situation and homeownership goals in
+              Arizona.
             </p>
             <Link
               href="#get-pre-approved"

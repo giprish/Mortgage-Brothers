@@ -76,7 +76,7 @@ const loanSolutions = [
 ];
 
 const articleFaqs = [
-  { question: "Delayed Financing - how to get cashout without waiting 6 months seasoning", answer: "Delayed Financing is a mortgage strategy that allows a buyer to purchase a property with cash (or a HELOC/secured loan) and then refinance shortly after closing, without waiting the standard 6-month seasoning requirement for a cash-out refinance." },
+  { question: "Delayed Financing - how to get cashout without waiting 6 months seasoning", answer: "Delayed Financing is a mortgage strategy that allows a buyer to purchase a property with cash (or a HELOC/secure loan) and then refinance shortly after closing, without waiting the standard 6-month seasoning requirement for a cash-out refinance." },
   { question: "Why would someone use Delayed Financing?", answer: "The main benefits of Delayed Financing include avoiding the 6-month seasoning requirement for cash-out refinancing, saving time by closing quickly with cash, and having a stronger negotiating position by offering a cash purchase." },
   { question: "What are the requirements for Delayed Financing?", answer: "Requirements include following standard cash-out LTV and interest rate guidelines, obtaining a new appraisal, and ensuring that the funds are replenished to the original source of payment." },
   { question: "Can Delayed Financing be used when parents buy a home for their child?", answer: "Yes, an alternate use of Delayed Financing is when parents purchase a home with cash for their child, and then the child refinances to pay the parents back. This requires a standard loan agreement, a new appraisal, and the refinance would follow typical rate and LTV rules." },
@@ -134,8 +134,8 @@ export default function DelayedFinancingPage() {
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-8">
                 Delayed Financing (Defined Term) has more to do with avoiding normal Seasoning Requirements
                 (6 months) when doing a Cash-Out Refi than really anything else. It could be called
-                &ldquo;No Seasoning Cash-Out Refinancing.&rdquo; Basically someone delays getting financing
-                by first paying cash (or can be from a HELOC, or secured loan) and THEN decides to put
+                &ldquo;No Seasoning Cash-Out Refinancing.&rdquo; Basically Someone delays getting financing
+                by first paying cash (or can be from a HELOC, or secure loan) and THEN decides to put
                 financing on the property after COE but doesn&apos;t want to wait the standard 6 months
                 seasoning!
               </p>
@@ -328,7 +328,7 @@ export default function DelayedFinancingPage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
                   been prepared for informational purposes only. You should consult your own tax, legal, and
                   accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
-                  #210917 and 1618695. Equal housing lender.
+                  #210917 and 1618695. Equal Housing Opportunity.
                 </p>
 
                 <section id="podcast-transcript">
@@ -578,7 +578,7 @@ export default function DelayedFinancingPage() {
                     items={[
                       {
                         q: "Delayed Financing - how to get cashout without waiting 6 months seasoning",
-                        a: <>Delayed Financing is a mortgage strategy that allows a buyer to purchase a property with cash (or a HELOC/secured loan) and then refinance shortly after closing, without waiting the standard 6-month seasoning requirement for a cash-out refinance.</>
+                        a: <>Delayed Financing is a mortgage strategy that allows a buyer to purchase a property with cash (or a HELOC/secure loan) and then refinance shortly after closing, without waiting the standard 6-month seasoning requirement for a cash-out refinance.</>
                       },
                       {
                         q: "Why would someone use Delayed Financing?",

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
 import Link from "next/link";
@@ -75,12 +74,6 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "What are lender fees in Arizona mortgage closing costs?", answer: "Lender fees are the costs charged by your mortgage lender for creating and funding your loan. These fees vary by lender and typically include administrative and underwriting costs. You can compare lenders to find lower fees, but your decision shouldn't be based solely on the fee amount." },
-  { question: "Why are title company fees required during mortgage closing?", answer: "Title company fees cover services like verifying a clear property title, preparing the deed transfer, and recording the mortgage with the county. The title company ensures the legal transfer of ownership and that there are no existing claims or issues with the property title." },
-  { question: "What is an appraisal fee in mortgage closing costs?", answer: "An appraisal fee is charged for evaluating the property's market value. Lenders require an appraisal to ensure the home is worth the amount you're borrowing. This cost appears on your closing statement and is typically paid at closing." },
-  { question: "Are there additional inspection fees involved in closing a mortgage in Arizona?", answer: "Yes, additional inspection fees may include pest inspections for termites or wood-destroying organisms, as well as septic and well certifications if the property relies on those systems. Condo buyers might also face questionnaire fees required by the condominium association." },
-] as const;
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
@@ -90,7 +83,6 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-10",
     articleSection: "Mortgage Basics",
   },
-  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Basics", path: "/mortgage-basics/" },
@@ -254,29 +246,6 @@ export default function ArizonaMortgageClosingCostsPage() {
                   </p>
                 </section>
 
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={[
-                    { q: "What are lender fees in Arizona mortgage closing costs?", a: <>Lender fees are the costs charged by your mortgage lender for creating and funding your
-                        loan. These fees vary by lender and typically include administrative and underwriting
-                        costs. You can compare lenders to find lower fees, but your decision shouldn&apos;t be
-                        based solely on the fee amount.</> },
-                    { q: "Why are title company fees required during mortgage closing?", a: <>Title company fees cover services like verifying a clear property title, preparing the deed
-                        transfer, and recording the mortgage with the county. The title company ensures the legal
-                        transfer of ownership and that there are no existing claims or issues with the property
-                        title.</> },
-                    { q: "What is an appraisal fee in mortgage closing costs?", a: <>An appraisal fee is charged for evaluating the property&apos;s market value. Lenders require
-                        an appraisal to ensure the home is worth the amount you&apos;re borrowing. This cost
-                        appears on your closing statement and is typically paid at closing.</> },
-                    { q: "Are there additional inspection fees involved in closing a mortgage in Arizona?", a: <>Yes, additional inspection fees may include pest inspections for termites or wood-destroying
-                        organisms, as well as septic and well certifications if the property relies on those
-                        systems. Condo buyers might also face questionnaire fees required by the condominium
-                        association.</> }
-                    ]}
-                  />
-                </section>
-
                 <p>
                   If you have any questions about Arizona mortgage closing costs, call us at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
@@ -300,7 +269,7 @@ export default function ArizonaMortgageClosingCostsPage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
                   prepared for informational purposes only. You should consult your own tax, legal, and accounting
                   advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
-                  1618695. Equal housing lender.
+                  1618695. Equal Housing Opportunity.
                 </p>
               </div>
 

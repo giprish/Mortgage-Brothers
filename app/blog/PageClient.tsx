@@ -4,6 +4,7 @@ import React, { useState, useMemo, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import GetInTouch from "../component/GetInTouch";
 import ArticleCard from "../component/ArticleCard";
 import {
   blogArticles,
@@ -308,6 +309,13 @@ export default function BlogPage() {
             </div>
           </div>
         </section>
+
+        <GetInTouch
+          theme="light"
+          showDivider
+          title="Got Questions? Let's Connect"
+          description="Dive deeper into your mortgage journey with personalized expert advice. Whether you've found inspiration in our articles or need clarification on a specific topic, our team is here to help. Share your questions or concerns, and we'll provide tailored insights to guide your next steps in the world of mortgages and homeownership. Fill out the form below, and one of our mortgage specialists will reach out to you soon. Let's turn your mortgage knowledge into action!"
+        />
       </main>
 
       <Footer />

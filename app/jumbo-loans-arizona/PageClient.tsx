@@ -649,7 +649,7 @@ export default function JumboLoansPage() {
               Start my preapproval
             </Link>
             <p className="text-[#8a958a] text-[12px] leading-relaxed mt-8 max-w-2xl mx-auto">
-              Mortgage Brothers NMLS 1007154, NMLS #210917 and #1618695. Equal housing lender.
+              Mortgage Brothers NMLS 1007154, NMLS #210917 and #1618695. Equal Housing Opportunity.
             </p>
           </div>
         </section>

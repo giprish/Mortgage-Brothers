@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
 import Link from "next/link";
@@ -76,12 +75,6 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "When is a mortgage payment considered late by the bank?", answer: "Lenders typically consider your mortgage payment late if it's received after the 15th of the month. Payments made within the first 15 days are not penalized, but if your payment is made on the 16th or later, you may incur a 5% late fee. This does not affect your credit score." },
-  { question: "When does a late mortgage payment impact your credit score?", answer: "A late mortgage payment impacts your credit score if it is 30 or more days past due. At that point, the credit bureau will mark your report with a '30-day late,' which can make it harder to get approved for future loans. A 90-day late could trigger foreclosure proceedings, depending on state laws." },
-  { question: "Can I still get a mortgage with a 30-day late payment on your credit report?", answer: "Yes, it's still possible to get approved for a mortgage even with a 30-day late payment on your credit report. However, it may make the approval process more difficult and could affect your interest rate or loan terms." },
-] as const;
-
 const articleJsonLd = buildArticleSchemas({
   blog: {
     pathname: "/when-is-a-mortgage-payment-actually-considered-late/",
@@ -90,7 +83,6 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2024-12-29",
     articleSection: "Mortgage Basics",
   },
-  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Basics", path: "/mortgage-basics/" },
@@ -219,24 +211,24 @@ export default function WhenIsAMortgagePaymentActuallyConsideredLatePage() {
                   </Link>{" "}
                   or give us a call at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
+                    (602) 535-2171
                   </a>
                   . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
                   you and help you through the whole process.
                 </p>
 
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
-                    you and help you through the whole process.
-                  </p>
-                </div>
+                <p className="text-center text-[#5a6b52] tracking-widest">•••</p>
+
+                <p>
+                  Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
+                  you and help you through the whole process.
+                </p>
 
                 <p className="text-[#5a6b52] text-[13px] leading-relaxed">
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
                   been prepared for informational purposes only. You should consult your own tax, legal, and
                   accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
-                  #210917 and 1618695. Equal housing lender.
+                  #210917 and 1618695. Equal Housing Opportunity.
                 </p>
 
                 <p className="text-[15px]">
@@ -284,25 +276,6 @@ export default function WhenIsAMortgagePaymentActuallyConsideredLatePage() {
                   </Link>
                   .
                 </p>
-
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={[
-                    { q: "When is a mortgage payment considered late by the bank?", a: <>Lenders typically consider your mortgage payment late if it&apos;s received after the
-                        15th of the month. Payments made within the first 15 days are not penalized, but if your
-                        payment is made on the 16th or later, you may incur a 5% late fee. This does not affect
-                        your credit score.</> },
-                    { q: "When does a late mortgage payment impact your credit score?", a: <>A late mortgage payment impacts your credit score if it is 30 or more days past due. At
-                        that point, the credit bureau will mark your report with a &apos;30-day late,&apos;
-                        which can make it harder to get approved for future loans. A 90-day late could trigger
-                        foreclosure proceedings, depending on state laws.</> },
-                    { q: "Can I still get a mortgage with a 30-day late payment on your credit report?", a: <>Yes, it&apos;s still possible to get approved for a mortgage even with a 30-day late
-                        payment on your credit report. However, it may make the approval process more difficult
-                        and could affect your interest rate or loan terms.</> }
-                    ]}
-                  />
-                </section>
 
                 <section id="podcast-transcript">
                   <h2

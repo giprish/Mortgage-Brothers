@@ -159,7 +159,7 @@ export default function PmiMortgageInsurancePage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    When is PMI (Mortgage Insurance) required?
+                    When is PMI (Mortgage Insurance required?
                   </h2>
                   <p>PMI is required for loans with less than a 20% down payment.</p>
                 </section>
@@ -279,20 +279,209 @@ export default function PmiMortgageInsurancePage() {
                     </li>
                   </ol>
                 </section>
+                <p className="text-center text-[#5a6b52] tracking-widest">•••</p>
 
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work
-                    with you and help you through the whole process.
-                  </p>
-                </div>
+                <p>
+                  Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
+                  you and help you through the whole process.
+                </p>
 
                 <p className="text-[#5a6b52] text-[13px] leading-relaxed">
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material
                   has been prepared for informational purposes only. You should consult your own tax,
                   legal, and accounting advisors before engaging in any transaction. Mortgage Brothers
-                  NMLS 1007154, NMLS #210917 and 1618695. Equal housing lender.
+                  NMLS 1007154, NMLS #210917 and 1618695. Equal Housing Opportunity.
                 </p>
+
+                <section id="podcast-transcript">
+                  <h2
+                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    Transcript of the Mortgage Brothers Podcast
+                  </h2>
+
+                  <div className="space-y-8 text-[15.5px]">
+                    <div>
+                      <p className="mb-3">
+                        <strong>Eddie Knoell</strong>: I&apos;m Eddie Knoell.
+                      </p>
+                      <p>
+                        <strong>Tom Knoell</strong>: And I&apos;m Tom Knoell. Welcome, everyone! This is the
+                        Mortgage Brothers Podcast Show. Today, we&apos;re talking about PMI: Private Mortgage
+                        Insurance.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">What Is PMI? [00:02]</h3>
+                      <p className="mb-3">
+                        <strong>Eddie</strong>: What is this mortgage insurance, and how do we{" "}
+                        <Link href="/mortgage-calculator-arizona/" className="text-[#3fb364] font-semibold hover:underline">
+                          calculate
+                        </Link>{" "}
+                        it?
+                      </p>
+                      <p className="mb-3">
+                        <strong>Tom</strong>: PMI stands for Private Mortgage Insurance. You&apos;ll hear it
+                        often if you&apos;re dealing with conventional loans, specifically Fannie Mae and
+                        Freddie Mac loans.
+                      </p>
+                      <p className="mb-3">
+                        <strong>Eddie</strong>: PMI applies to loans with less than a 20% down payment. If you
+                        have more than 20% down, you don&apos;t need PMI.
+                      </p>
+                      <p>
+                        <strong>Tom</strong>: A quick note: PMI is not government insurance. It&apos;s used for
+                        conventional loans. For FHA loans, the insurance is government-backed.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        Factors That Determine PMI [01:40]
+                      </h3>
+                      <p className="mb-3">
+                        <strong>Eddie</strong>: So, how is PMI calculated? Six main factors determine the cost
+                        of PMI:
+                      </p>
+                      <ul className="list-disc pl-6 space-y-2 mb-3">
+                        <li>
+                          <strong>Down Payment Percentage</strong>: Calculated in 5% increments (e.g., 5%,
+                          10%, 15%).
+                        </li>
+                        <li>
+                          <strong>Loan Amount</strong>: Larger loan amounts typically mean higher PMI.
+                        </li>
+                        <li>
+                          <strong>Number of Borrowers</strong>: Two borrowers reduce risk slightly, leading to
+                          a lower PMI rate.
+                        </li>
+                        <li>
+                          <strong>Credit Score</strong>: A higher score (760+) secures the best rates, while
+                          scores below 760 are graded in 20-point increments.
+                        </li>
+                        <li>
+                          <strong>Property Type</strong>: Single-family homes typically have lower PMI rates
+                          than condos or townhomes.
+                        </li>
+                        <li>
+                          <strong>Occupancy Type</strong>: PMI is lower for primary residences compared to
+                          second homes or investment properties.
+                        </li>
+                      </ul>
+                      <p>
+                        <strong>Tom</strong>: Oh, and don&apos;t forget the Debt-to-Income (DTI) Ratio. A DTI
+                        over 45% may result in additional fees.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        Example Calculation of PMI [03:19]
+                      </h3>
+                      <p className="mb-3">
+                        <strong>Eddie</strong>: Let&apos;s break down an example:
+                      </p>
+                      <ul className="list-disc pl-6 space-y-2 mb-3">
+                        <li>
+                          <strong>Loan Amount</strong>: $200,000
+                        </li>
+                        <li>
+                          <strong>Down Payment</strong>: 5%
+                        </li>
+                        <li>
+                          <strong>Credit Score</strong>: 760+
+                        </li>
+                        <li>
+                          <strong>Borrowers</strong>: One
+                        </li>
+                        <li>
+                          <strong>Property Type</strong>: Single-family residence
+                        </li>
+                        <li>
+                          <strong>Occupancy</strong>: Primary residence
+                        </li>
+                      </ul>
+                      <p className="mb-3">
+                        The PMI rate is 0.36% annually. To calculate the monthly PMI:
+                        <br />
+                        PMI = Loan Amount × PMI Rate ÷ 12
+                      </p>
+                      <p>
+                        For example, for a $200,000 loan:
+                        <br />
+                        PMI = 200,000 × 0.0036 ÷ 12 = $60/month
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        Does PMI Change Over Time? [05:13]
+                      </h3>
+                      <p className="mb-3">
+                        <strong>Tom</strong>: PMI is static for the first 10 years. After year 10, it adjusts
+                        downward. For example, a PMI rate of 0.36% might drop to 0.20% in year 11.
+                      </p>
+                      <p>
+                        <strong>Eddie</strong>: However, most people refinance or sell their homes before they
+                        reach year 10. So, this reduction often doesn&apos;t come into play.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">When Is PMI Removed? [06:09]</h3>
+                      <p>
+                        <strong>Tom</strong>: PMI is legally required to be removed when the loan balance
+                        reaches 78% of the original value. This typically happens around year 12.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">High DTI Ratios [07:19]</h3>
+                      <p className="mb-3">
+                        <strong>Eddie</strong>: Be cautious with high debt-to-income ratios. A DTI over 45%
+                        might increase PMI costs because lenders see it as higher risk.
+                      </p>
+                      <p>
+                        <strong>Tom</strong>: Lower DTI ratios can help keep PMI rates down, so managing debt
+                        is key.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">Final Thoughts [07:52]</h3>
+                      <p className="mb-3">
+                        <strong>Eddie</strong>: That&apos;s the nuts and bolts of PMI!
+                      </p>
+                      <p className="mb-3">
+                        <strong>Tom</strong>: There&apos;s a lot more to cover, but this gives you a solid
+                        foundation.
+                      </p>
+                      <p>
+                        <strong>Eddie</strong>: Thanks for listening, and let us know if you have any questions.
+                        Feel free to reach out for a personalized quote on your next mortgage.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">Contact Information</h3>
+                      <p className="mb-2">
+                        <strong>Contact</strong>:{" "}
+                        <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
+                          Contact Form
+                        </Link>
+                      </p>
+                      <p className="mb-2">
+                        <strong>NMLS</strong>: 1007154
+                      </p>
+                      <p>
+                        <strong>Disclaimer</strong>: This material is for informational purposes only. Consult
+                        your tax, legal, and accounting advisors before any transaction.
+                      </p>
+                    </div>
+                  </div>
+                </section>
               </div>
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">
@@ -417,9 +606,10 @@ export default function PmiMortgageInsurancePage() {
               Get in Touch with The Mortgage Brothers
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              Ready to take the next step towards your dream home? One of our experienced mortgage
-              professionals will get back to you promptly with personalized solutions tailored to your
-              unique financial situation.
+              Ready to take the next step towards your dream home? Fill out the form below, and one of our
+              experienced mortgage professionals will get back to you promptly. We&apos;re here to provide
+              personalized solutions tailored to your unique financial situation and homeownership goals in
+              Arizona.
             </p>
             <Link
               href="#get-pre-approved"

@@ -288,7 +288,7 @@ export default function ArizonaVacationAndInvestmentHomeMortgagesPage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
                   been prepared for informational purposes only. You should consult your own tax, legal, and
                   accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
-                  #210917 and 1618695. Equal housing lender.
+                  #210917 and 1618695. Equal Housing Opportunity.
                 </p>
               </div>
 

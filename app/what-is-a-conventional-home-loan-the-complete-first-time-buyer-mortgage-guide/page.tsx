@@ -78,7 +78,7 @@ const loanSolutions = [
 const articleFaqs = [
   { question: "1: What exactly is a conventional home loan?", answer: "A conventional home loan is a mortgage not insured by the federal government, offered by private lenders like banks or credit unions." },
   { question: "2: What is the 2026 conforming loan limit in Arizona?", answer: "For 2026, the conforming loan limit for a single-family home in Arizona is $806,500." },
-  { question: "3: What credit score is needed for a conventional loan?", answer: "A minimum credit score of 620 is usually required to qualify for a conventional loan. ← Previous PostNext Post → Start Your Home Loan Journey You can always press Enter⏎ to continue" },
+  { question: "3: What credit score is needed for a conventional loan?", answer: "A minimum credit score of 620 is usually required to qualify for a conventional loan." },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({
@@ -202,18 +202,18 @@ export default function ConventionalHomeLoanGuidePage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    2026 Arizona Loan Limits
+                    2025 Arizona Loan Limits
                   </h2>
                   <p className="mb-5">
                     Loan limits determine how large a loan can be while still being considered
-                    &ldquo;conforming.&rdquo; For 2026, the conforming loan limit for a single-family home in
-                    Arizona is <strong>$832,750</strong> (<a href="https://www.fhfa.gov/data/dashboard/conforming-loan-limit-values" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">FHFA conforming loan limits</a>).
+                    &ldquo;conforming.&rdquo; For 2025, the conforming loan limit for a single-family home in
+                    Arizona is <strong>$806,500</strong> (<a href="https://www.fhfa.gov/data/dashboard/conforming-loan-limit-values" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">FHFA 2025 Loan Limits PDF</a>).
                   </p>
                   <ul className="list-disc pl-6 space-y-2 mb-5">
                     <li>
-                      <strong>Conventional (Conforming) Loan</strong> → Up to <strong>$832,750</strong>
+                      <strong>Conventional (Conforming) Loan</strong> → Up to <strong>$806,500</strong>
                     </li>
-                    <li><strong>Jumbo Loan → $832,751 and above</strong></li>
+                    <li><strong>Jumbo Loan → $806,501 and above</strong></li>
                   </ul>
                   <p>
                     These limits apply to most Arizona counties, including Maricopa, Pima, Pinal, and Mohave.
@@ -337,10 +337,10 @@ export default function ConventionalHomeLoanGuidePage() {
                         </tr>
                         <tr>
                           <td className="py-3 pr-3 font-semibold">Loan Limit</td>
-                          <td className="py-3 pr-3">$832,750</td>
-                          <td className="py-3 pr-3">~$557,750 (Maricopa/Pinal County, 2026; varies by county)</td>
+                          <td className="py-3 pr-3">$806,500</td>
+                          <td className="py-3 pr-3">~$557,750 (Maricopa/Pinal County, 2025; varies by county)</td>
                           <td className="py-3 pr-3">No cap with entitlement</td>
-                          <td className="py-3">$832,751+</td>
+                          <td className="py-3">$806,501+</td>
                         </tr>
                       </tbody>
                     </table>
@@ -461,7 +461,7 @@ export default function ConventionalHomeLoanGuidePage() {
                     items={[
                     { q: "What exactly is a conventional home loan?", a: <>A conventional home loan is a mortgage not insured by the federal government, offered by
                         private lenders like banks or credit unions.</> },
-                    { q: "What is the 2026 conforming loan limit in Arizona?", a: <>For 2026, the conforming loan limit for a single-family home in Arizona is $832,750.</> },
+                    { q: "What is the 2026 conforming loan limit in Arizona?", a: <>For 2026, the conforming loan limit for a single-family home in Arizona is $806,500.</> },
                     { q: "What credit score is needed for a conventional loan?", a: <>A minimum credit score of 620 is usually required to qualify for a conventional loan.</> }
                     ]}
                   />
@@ -492,7 +492,7 @@ export default function ConventionalHomeLoanGuidePage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
                   prepared for informational purposes only. You should consult your own tax, legal, and accounting
                   advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
-                  1618695. Equal housing lender.
+                  1618695. Equal Housing Opportunity.
                 </p>
               </div>
 

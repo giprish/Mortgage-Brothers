@@ -79,7 +79,7 @@ const articleFaqs = [
   { question: "What credit score do I need for a jumbo loan in Arizona?", answer: "Most lenders require at least a **700–720 credit score**, but higher scores can unlock better rates and more flexible terms." },
   { question: "Can I use a jumbo loan for a vacation home or investment property?", answer: "Yes. Many Arizona lenders offer jumbo financing for **second homes and investment properties**, though down payment and reserve requirements are typically higher." },
   { question: "Are jumbo loan rates higher than conventional mortgage rates?", answer: "They used to be, but not always today. In competitive markets, jumbo rates can be **similar or even slightly lower** than conforming rates depending on your profile." },
-  { question: "How can I increase my chances of jumbo loan approval?", answer: "Focus on strengthening your credit, maintaining low debt levels, and building substantial liquid reserves before applying. ← Previous PostNext Post → Start Your Home Loan Journey You can always press Enter⏎ to continue" },
+  { question: "How can I increase my chances of jumbo loan approval?", answer: "Focus on strengthening your credit, maintaining low debt levels, and building substantial liquid reserves before applying." },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({
@@ -213,12 +213,11 @@ export default function WhatIsAJumboLoanPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Arizona&apos;s 2026 Jumbo Loan Limit
+                    Arizona&apos;s 2025 Jumbo Loan Limit
                   </h2>
                   <p className="mb-5">
-                    For 2025, the <strong>conforming loan limit in most Arizona counties was $806,500</strong> for
-                    single-family homes. <strong>For 2026</strong>, the FHFA set the conforming loan limit at
-                    $832,750.
+                    For 2025, the <strong>conforming loan limit in most Arizona counties is $806,500</strong> for
+                    single-family homes. In 2026, the conforming loan limit is estimated to be over $825,000.
                   </p>
                   <p className="mb-5">
                     That includes Maricopa County (Phoenix, Scottsdale, Mesa), Pinal County, and Coconino County.
@@ -503,7 +502,7 @@ export default function WhatIsAJumboLoanPage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
                   prepared for informational purposes only. You should consult your own tax, legal, and accounting
                   advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
-                  1618695. Equal housing lender.
+                  1618695. Equal Housing Opportunity.
                 </p>
               </div>
 

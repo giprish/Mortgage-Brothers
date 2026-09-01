@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -61,11 +60,6 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "How does a mortgage APR work and what does it mean?", answer: "An APR, or Annual Percentage Rate, represents the total yearly cost of a mortgage, including the interest rate, lender fees, and most closing costs. Unlike the interest rate, which only reflects the cost of borrowing the loan amount, APR provides a more comprehensive view of your total mortgage cost." },
-  { question: "What is the difference between interest rate and APR?", answer: "The interest rate is the percentage charged by the lender on the principal loan amount, excluding fees and closing costs. APR, on the other hand, includes the interest rate plus additional costs like lender fees and closing costs, making it slightly higher and a better indicator of the true cost of the loan." },
-  { question: "How do closing costs and interest rates affect APR?", answer: "Closing costs and interest rates have an inverse relationship when it comes to APR. A no-closing-cost loan usually comes with a higher interest rate, leading to a lower APR. Conversely, paying more upfront in closing costs or discount points to reduce the interest rate typically increases the APR." },
-] as const;
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
@@ -75,7 +69,6 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-03",
     articleSection: "Mortgage Basics",
   },
-  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Basics", path: "/mortgage-basics/" },
@@ -225,24 +218,12 @@ export default function MortgageAprPage() {
                     related, don&apos;t hesitate to reach out.
                   </p>
                 </section>
+                <p className="text-center text-[#5a6b52] tracking-widest">•••</p>
 
-                
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={articleFaqs.map((faq) => ({
-                      q: faq.question,
-                      a: faq.answer,
-                    }))}
-                  />
-                </section>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work
-                    with you and help you through the whole process.
-                  </p>
-                </div>
+                <p>
+                  Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
+                  you and help you through the whole process.
+                </p>
 
                 <p className="text-[15px]">
                   Broaden your mortgage expertise by reading about{" "}
@@ -276,7 +257,7 @@ export default function MortgageAprPage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material
                   has been prepared for informational purposes only. You should consult your own tax,
                   legal, and accounting advisors before engaging in any transaction. Mortgage Brothers
-                  NMLS 1007154, NMLS #210917 and 1618695. Equal housing lender.
+                  NMLS 1007154, NMLS #210917 and 1618695. Equal Housing Opportunity.
                 </p>
 
                 {/* Podcast transcript */}
@@ -610,9 +591,10 @@ export default function MortgageAprPage() {
               Get in Touch with The Mortgage Brothers
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              Ready to take the next step towards your dream home? One of our experienced mortgage
-              professionals will get back to you promptly with personalized solutions tailored to your
-              unique financial situation.
+              Ready to take the next step towards your dream home? Fill out the form below, and one of our
+              experienced mortgage professionals will get back to you promptly. We&apos;re here to provide
+              personalized solutions tailored to your unique financial situation and homeownership goals in
+              Arizona.
             </p>
             <Link
               href="#get-pre-approved"

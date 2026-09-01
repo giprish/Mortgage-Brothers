@@ -283,7 +283,7 @@ const Footer = ({ showOfficeMap = true }: { showOfficeMap?: boolean }) => {
               </p>
               <p>
                 {COMPANY.legalName} is an{" "}
-                <strong className="text-white font-semibold">Equal Opportunity Employer</strong>.
+                <strong className="text-white font-semibold">{COMPANY.equalHousingLabel}</strong>.
               </p>
             </div>
           </div>

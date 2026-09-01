@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -74,12 +73,6 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "How does FHA Mortgage Insurance Premium (MIP) usually appear on a mortgage statement?", answer: "FHA mortgage insurance premiums are broken down into 12 monthly installments. On your monthly mortgage statement, this expense rarely uses the acronym 'MIP'—instead, it standardly appears under labels such as Monthly Mortgage Insurance, Risk-based HUD, or HUD Escrow." },
-  { question: "Under what specific loan-to-value (LTV) rules will an FHA MIP automatically cancel?", answer: "For older FHA loans that qualify for automatic cancellation based on loan-to-value milestones, MIP payments cease once the principal balance hits 78% LTV. For a 30-year mortgage, you must also have paid on the loan for at least 60 months, a benchmark typically reached within 11 years, whereas a 15-year mortgage can hit this point in about 2 years." },
-  { question: "How can grandfathered FHA borrowers utilize an FHA Streamline Refinance to lower insurance costs?", answer: "Borrowers who have maintained their FHA home loan since before 2009 are grandfathered into unique rate exemptions. By executing an FHA Streamline Refinance, they can dramatically lower their upfront mortgage premium down to 0.01% and reduce their annual MIP rate to a flat 0.55%, regardless of their current loan-to-value calculation." },
-  { question: "How can homeowners with newer FHA loans eliminate their monthly mortgage insurance completely?", answer: "If your FHA loan originated after 2013, the monthly mortgage insurance is typically structured to remain for the entire life of the loan. The most effective strategy to get rid of it is to leverage your rising home equity and refinance out of the FHA program into a conventional home loan backed by Fannie Mae or Freddie Mac. Once you transition to a conventional loan and achieve 20% equity, mortgage insurance is eliminated entirely." },
-] as const;
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
@@ -89,7 +82,6 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-06",
     articleSection: "Homeownership Tips",
   },
-  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Homeownership Tips", path: "/homeownership-tips/" },
@@ -213,9 +205,8 @@ export default function CancelingFhaMipPage() {
                     market uncertainty between 2008 and 2013, they changed 8 times.
                   </p>
                   <p>
-                    The last market change was in March 2023, when HUD reduced the annual MIP from 0.85% to 0.55%
-                    for most new FHA loans (following an earlier 2015 reduction from 1.35% to 0.85%). The premium
-                    has ranged from 0.55% to 1.35% historically. Depending on when
+                    The last market change was in 2015 when the annual MIP dropped from the previous 1.35% to
+                    0.85% annual premium. The premium has ranged from 0.5% to 1.35% during this period. Depending on when
                     you took out your mortgage you may be paying a higher premium on your mortgage and now is a
                     good time to get out of it.
                   </p>
@@ -310,36 +301,6 @@ export default function CancelingFhaMipPage() {
                   </p>
                 </section>
 
-                <p>
-                  If you have any questions, call us at{" "}
-                  <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
-                  </a>{" "}
-                  or reach us using our{" "}
-                  <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                    contact form
-                  </Link>
-                  .
-                </p>
-
-                
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={articleFaqs.map((faq) => ({
-                      q: faq.question,
-                      a: faq.answer,
-                    }))}
-                  />
-                </section>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you
-                    and help you through the whole process.
-                  </p>
-                </div>
-
                 <p className="text-[15px]">
                   Learn why canceling your FHA MIP might be simpler than you expect, and discover the steps to save
                   on your mortgage. For a broader perspective, check out when a{" "}
@@ -405,7 +366,7 @@ export default function CancelingFhaMipPage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
                   prepared for informational purposes only. You should consult your own tax, legal, and accounting
                   advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
-                  1618695. Equal housing lender.
+                  1618695. Equal Housing Opportunity.
                 </p>
               </div>
 

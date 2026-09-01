@@ -78,7 +78,7 @@ const loanSolutions = [
 const articleFaqs = [
   { question: "What's the minimum credit score to buy a home in Arizona?", answer: "Most loan programs require **620 or higher**. This threshold opens the door to FHA, VA, and conventional loan options." },
   { question: "Can I qualify if my credit is below 620?", answer: "Not at this time. We recommend improving your score first — our team can review your credit and create a quick action plan to reach 620+." },
-  { question: "How long does credit improvement take?", answer: "**Depending on your situation, meaningful progress can occur in 30–90 days by paying down debt, correcting errors, and managing utilization.** ← Previous PostNext Post → Start Your Home Loan Journey You can always press Enter⏎ to continue" },
+  { question: "How long does credit improvement take?", answer: "Depending on your situation, meaningful progress can occur in 30–90 days by paying down debt, correcting errors, and managing utilization." },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({
@@ -506,7 +506,7 @@ export default function FairOrImprovingCreditPage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
                   prepared for informational purposes only. You should consult your own tax, legal, and accounting
                   advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
-                  1618695. Equal housing lender.
+                  1618695. Equal Housing Opportunity.
                 </p>
               </div>
 

@@ -80,7 +80,7 @@ const articleFaqs = [
   { question: "Do FHA loans always cost more long-term?", answer: "Usually. FHA's lifetime MIP adds up, unless you refinance." },
   { question: "Which loan is better for investors?", answer: "Conventional—FHA is only for primary residences." },
   { question: "Which loan closes faster?", answer: "Conventional, since FHA requires stricter inspections." },
-  { question: "Can I use Conventional with less than 20% down?", answer: "Yes. You'll pay PMI, but it's temporary—unlike FHA's MIP. ← Previous PostNext Post → Start Your Home Loan Journey You can always press Enter⏎ to continue" },
+  { question: "Can I use Conventional with less than 20% down?", answer: "Yes. You'll pay PMI, but it's temporary—unlike FHA's MIP." },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({
@@ -132,51 +132,6 @@ export default function ConventionalVsFhaLoansPage() {
           <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
             <article className="min-w-0">
 
-              <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-5">
-                Buying a home in Arizona is exciting—but it can also feel overwhelming when it comes to choosing
-                the right mortgage.
-              </p>
-
-              <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
-                Take Emma, a first-time buyer in Phoenix. She&apos;s saved some money but isn&apos;t sure if a{" "}
-                <Link href="/conventional-home-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
-                  Conventional home loan
-                </Link>{" "}
-                or an{" "}
-                <Link href="/fha-home-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
-                  FHA loan
-                </Link>{" "}
-                makes more sense. Her friend Carlos, upgrading to a bigger home in Gilbert with excellent credit,
-                is leaning Conventional.
-              </p>
-
-              <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
-                <h2
-                  className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-                >
-                  Ready to Compare Conventional and FHA Loans?
-                </h2>
-                <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
-                  Connect with Mortgage Brothers LLC for a personalized side-by-side comparison and a free
-                  quote tailored to your home purchase.
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <Link
-                    href="#get-pre-approved"
-                    className="btn-primary"
-                  >
-                    Get Your Free Loan Comparison
-                  </Link>
-                  <Link
-                    href="/fha-home-loans-arizona/"
-                    className="inline-flex items-center gap-2 text-[#3fb364] hover:underline text-[15px] font-semibold px-4 py-3 transition-all"
-                  >
-                    Learn About FHA Loans
-                  </Link>
-                </div>
-              </div>
-
               <div className="space-y-10 text-[#3a4a3a] text-[16px] leading-[1.8]">
                 <section id="the-arizona-home-loan-dilemma">
                   <h2
@@ -186,11 +141,24 @@ export default function ConventionalVsFhaLoansPage() {
                     The Arizona Home Loan Dilemma
                   </h2>
                   <p className="mb-5">
-                    Their situations highlight the same question thousands of Arizona buyers ask every year:
+                    Buying a home in Arizona is exciting—but it can also feel overwhelming when it comes to choosing
+                    the right mortgage.
+                  </p>
+                  <p className="mb-5">
+                    Take Emma, a first-time buyer in Phoenix. She&apos;s saved some money but isn&apos;t sure if a{" "}
+                    <Link href="/conventional-home-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
+                      Conventional home loan
+                    </Link>{" "}
+                    or an{" "}
+                    <Link href="/fha-home-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
+                      FHA loan
+                    </Link>{" "}
+                    makes more sense. Her friend Carlos, upgrading to a bigger home in Gilbert with excellent credit,
+                    is leaning Conventional.
                   </p>
                   <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
                     <p className="text-[16px] font-bold text-[#052316] mb-1">
-                      ðŸ‘‰ &quot;Should I go with a Conventional Loan or an FHA Loan?&quot;
+                      👉 &quot;Should I go with a Conventional Loan or an FHA Loan?&quot;
                     </p>
                     <p className="text-[14.5px] text-[#3a4a3a]">
                       This guide breaks it down clearly—so you&apos;ll know which option fits your situation best.
@@ -224,8 +192,7 @@ export default function ConventionalVsFhaLoansPage() {
                       removable once you hit 20% equity.
                     </li>
                     <li>
-                      <strong>Loan limits:</strong> higher than FHA in most Arizona counties — up to $832,750
-                      for a single-family home in 2026 (
+                      <strong>Loan limits:</strong> higher than FHA in most Arizona counties—up to $1,041,125 in 2026 (
                       <a
                         href="https://www.fhfa.gov/data/dashboard/conforming-loan-limit-values"
                         target="_blank"
@@ -242,7 +209,7 @@ export default function ConventionalVsFhaLoansPage() {
                     </li>
                   </ul>
                   <p className="font-semibold text-[#052316]">
-                    ðŸ‘‰ <strong>Best for:</strong> Buyers with strong credit and stable income who want flexibility
+                    👉 <strong>Best for:</strong> Buyers with strong credit and stable income who want flexibility
                     and lower long-term costs.
                   </p>
                 </section>
@@ -289,7 +256,7 @@ export default function ConventionalVsFhaLoansPage() {
                     </li>
                   </ul>
                   <p className="font-semibold text-[#052316] mb-6">
-                    ðŸ‘‰ <strong>Best for:</strong> First-time buyers or those with lower credit scores and smaller
+                    👉 <strong>Best for:</strong> First-time buyers or those with lower credit scores and smaller
                     down payments.
                   </p>
 
@@ -336,8 +303,8 @@ export default function ConventionalVsFhaLoansPage() {
                           <td className="p-4">MIP (usually for life of loan)</td>
                         </tr>
                         <tr className="hover:bg-[#f9f7f2]">
-                          <td className="p-4 font-bold text-[#052316]">Loan Limits (Maricopa 1-unit, 2026)</td>
-                          <td className="p-4">$832,750</td>
+                          <td className="p-4 font-bold text-[#052316]">Loan Limits (Maricopa, 2026)</td>
+                          <td className="p-4">$1,072,600</td>
                           <td className="p-4">$557,750</td>
                         </tr>
                         <tr className="hover:bg-[#f9f7f2]">
@@ -427,7 +394,7 @@ export default function ConventionalVsFhaLoansPage() {
 
                   <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl mb-6">
                     <p className="text-[15px] text-[#052316]">
-                      ðŸ‘‰ <strong>Key Takeaway:</strong> FHA is easier to qualify for upfront, but Conventional
+                      👉 <strong>Key Takeaway:</strong> FHA is easier to qualify for upfront, but Conventional
                       often saves money long-term because PMI eventually goes away.
                     </p>
                   </div>
@@ -518,8 +485,9 @@ export default function ConventionalVsFhaLoansPage() {
                       </svg>
                       <strong>Call Today:</strong> Contact our Arizona mortgage experts at{" "}
                       <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline ml-1">
-                        +1 602-535-2171
-                      </a>.
+                        +1 602 535 2171
+                      </a>{" "}
+                      (+16025352171).
                     </span>
                   </div>
                 </section>
@@ -533,8 +501,8 @@ export default function ConventionalVsFhaLoansPage() {
                   </h2>
                   <ul className="list-disc pl-6 space-y-2">
                     <li>
-                      <strong>Loan Limits:</strong> FHA capped at $557,750 in Maricopa County and $609,500 in
-                      Coconino County, while Conventional allows up to $832,750.
+                      <strong>Loan Limits:</strong> FHA capped at $557,750 in Maricopa County &amp; and $609,500 in
+                      Coconino County, while Conventional allows up to $806,500.
                     </li>
                     <li>
                       <strong>Seller Preference:</strong> In hot Arizona markets, sellers often prefer
@@ -565,7 +533,7 @@ export default function ConventionalVsFhaLoansPage() {
                       actually relevant to your local area.
                     </li>
                     <li>
-                      <strong>Conventional and FHA Experts:</strong> Whether you&apos;re choosing a Conventional
+                      <strong>Conventional and FHA experts:</strong> Whether you&apos;re choosing a Conventional
                       or FHA loan, we guide you to the program that best fits your goals, budget, and long-term
                       plans.
                     </li>
@@ -596,7 +564,7 @@ export default function ConventionalVsFhaLoansPage() {
                     home with confidence.
                   </p>
                   <p className="font-semibold text-[#052316] mb-6">
-                    ðŸ‘‰ Ready to find out which loan is right for you? Contact us today for a free consultation.
+                    👉 Ready to find out which loan is right for you? Contact us today for a free consultation.
                   </p>
                   <div className="text-center">
                     <Link
@@ -626,7 +594,7 @@ export default function ConventionalVsFhaLoansPage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
                   prepared for informational purposes only. You should consult your own tax, legal, and accounting
                   advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
-                  1618695. Equal housing lender.
+                  1618695. Equal Housing Opportunity.
                 </p>
               </div>
 

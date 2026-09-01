@@ -292,7 +292,7 @@ export default function SolarPanelsMortgagePage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
                   been prepared for informational purposes only. You should consult your own tax, legal, and
                   accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
-                  #210917 and 1618695. Equal housing lender.
+                  #210917 and 1618695. Equal Housing Opportunity.
                 </p>
 
                 <p>
@@ -402,7 +402,7 @@ export default function SolarPanelsMortgagePage() {
                           before closing.
                         </li>
                       </ul>
-                      <p className="mb-3"><strong>Will the seller pay off the loan?</strong></p>
+                      <p className="mb-3">💰 <strong>Will the seller pay off the loan?</strong></p>
                       <ul className="list-disc pl-6 space-y-2 mb-3">
                         <li>
                           Sometimes, sellers offer to pay off the remaining balance to make the home more

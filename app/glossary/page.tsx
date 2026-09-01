@@ -264,7 +264,7 @@ export default function GlossaryPage() {
       <main className="flex-grow relative z-0">
         {/* Featured hero image */}
         <ArticleHero
-          title={<>Glossary of Terms</>}
+          title={<>Glossary Terms</>}
           excerpt="Key mortgage terms explained in plain language, from amortization and escrow to LTV, points, and PMI."
           category="Mortgage Basics"
           categoryHref="/mortgage-basics/"

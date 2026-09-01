@@ -1,0 +1,61 @@
+---
+description: Intentional stage copy (25+ years, nearly a century) and Equal Housing Opportunity designation — do not revert during live sync
+alwaysApply: true
+---
+
+# Staging content exceptions and compliance labels
+
+When comparing live (`azmortgagebrothers.com`) vs stage (`azmortgage.vercel.app`) or migrating live → stage, **do not** overwrite these intentional stage values to match live.
+
+## Experience and family history (intentional stage copy)
+
+These are **correct on stage**. Never “fix” them to match live wording:
+
+| Stage (keep) | Live (ignore) | Scope |
+|--------------|---------------|--------|
+| **25+ years** (mortgage experience) | 20+ years | Sitewide — articles, about, service areas, author bios, credentials |
+| **nearly a century** (Knoell family / Valley real estate roots) | over 70 years | Same |
+
+```text
+// ✅ KEEP on stage (not a mismatch)
+Stage: 25+ years of mortgage experience
+Live:  20+ years of mortgage experience
+
+Stage: …part of Valley real estate for nearly a century.
+Live:  …part of Valley real estate for over 70 years.
+
+// ❌ NEVER do this during live → stage sync
+Change "25+ years" → "20+ years" to match live
+Change "nearly a century" → "over 70 years" to match live
+```
+
+If live sync finds these differences, **skip them** in mismatch reports and leave stage copy unchanged.
+
+## Equal Housing Opportunity (required designation)
+
+The **only** correct compliance label is:
+
+**Equal Housing Opportunity**
+
+Replace anywhere it appears incorrectly:
+
+- ❌ Equal housing lender
+- ❌ Equal Housing Lender
+- ❌ Equal Opportunity Employer
+
+```text
+// ✅ REQUIRED
+…NMLS #210917 and 1618695. Equal Housing Opportunity.
+
+// ❌ WRONG — fix to Equal Housing Opportunity
+…Equal housing lender.
+…Equal Housing Lender.
+…Equal Opportunity Employer.
+```
+
+Use exact casing **Equal Housing Opportunity** in disclaimers, footers, about, FAQ, and JSON-LD where a housing compliance label is shown. `lib/company.ts` (`equalHousingLabel`) is the source of truth.
+
+## Non-negotiable
+
+- Live → stage body copy still must match live for everything **except** the exceptions above (and brand naming per `brand-name-not-a-mismatch.mdc`).
+- When auditing or fixing content, grep for `20+ years`, `over 70 years`, `Equal housing lender`, and `Equal Opportunity Employer` and correct **away from** those strings, not toward them.

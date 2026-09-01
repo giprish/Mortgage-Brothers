@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -79,11 +78,6 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "Will the bank let us make payments on the mortgage if a spouse dies?", answer: "Yes, in many cases the bank will allow you to continue making payments on the mortgage. However, whether you are on the title or not matters, and it’s important to confirm your legal rights with your attorney." },
-  { question: "Do we have to refinance the mortgage after a spouse dies?", answer: "Refinancing is not always required. If you are on the title, you can usually continue with the current loan or choose to refinance into your name. It’s recommended to speak with an attorney and notify the bank of the spouse’s passing." },
-  { question: "What happens if I live in a community property state and my spouse dies?", answer: "In community property states such as California, Texas, and Arizona, property is treated differently when a spouse passes away. The classification as community or separate property will impact inheritance and mortgage rights. It’s essential to consult with an attorney to understand your obligations." },
-] as const;
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
@@ -93,7 +87,6 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2024-12-30",
     articleSection: "Spouse & Estate Considerations",
   },
-  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Spouse & Estate Considerations", path: "/spouse-estate-considerations/" },
@@ -294,35 +287,23 @@ export default function SpouseDiesNotOnMortgagePage() {
                     If you have any questions about this or anything else mortgage related don&apos;t hesitate to
                     give us a call at{" "}
                     <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                      +1 (602) 535-2171
+                      (602) 535-2171
                     </a>
                     .
                   </p>
                 </section>
+                <p className="text-center text-[#5a6b52] tracking-widest">•••</p>
 
-                
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={articleFaqs.map((faq) => ({
-                      q: faq.question,
-                      a: faq.answer,
-                    }))}
-                  />
-                </section>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
-                    you and help you through the whole process.
-                  </p>
-                </div>
+                <p>
+                  Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
+                  you and help you through the whole process.
+                </p>
 
                 <p className="text-[#5a6b52] text-[13px] leading-relaxed">
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
                   been prepared for informational purposes only. You should consult your own tax, legal, and
                   accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154,
-                  NMLS #210917 and 1618695. Equal housing lender.
+                  NMLS #210917 and 1618695. Equal Housing Opportunity.
                 </p>
 
                 {/* Transcript */}
@@ -441,7 +422,7 @@ export default function SpouseDiesNotOnMortgagePage() {
                       <p className="mb-2">
                         Phone:{" "}
                         <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                          +1 (602) 535-2171
+                          (602) 535-2171
                         </a>
                       </p>
                       <p className="mb-2">NMLS: 1007154</p>
@@ -576,9 +557,10 @@ export default function SpouseDiesNotOnMortgagePage() {
               Get in Touch with The Mortgage Brothers
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              Ready to take the next step towards your dream home? One of our experienced mortgage
-              professionals will get back to you promptly with personalized solutions tailored to your unique
-              financial situation.
+              Ready to take the next step towards your dream home? Fill out the form below, and one of our
+              experienced mortgage professionals will get back to you promptly. We&apos;re here to provide
+              personalized solutions tailored to your unique financial situation and homeownership goals in
+              Arizona.
             </p>
             <Link
               href="#get-pre-approved"

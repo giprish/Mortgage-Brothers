@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -78,12 +77,6 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "What does it mean to buy down a mortgage interest rate?", answer: "Buying down your interest rate means paying a one-time fee upfront at the time you take out your loan to secure a lower mortgage rate. The lender or broker charges a fee known as a discount point to apply this rate reduction." },
-  { question: "How much does a mortgage discount point cost and how much does it lower the rate?", answer: "One discount point is equal to 1% of your total loan amount. For example, on a $200,000 mortgage, one point costs $2,000. Paying one full discount point typically lowers your ongoing interest rate by approximately a quarter of a percent (0.25%)." },
-  { question: "What is the difference between a simple buydown and a temporary structured buydown?", answer: "A simple mortgage buydown lowers your interest rate for the entire life of the loan and is available for Conventional, FHA, VA, and USDA options. In contrast, structured temporary options like a 2-1 or 3-2-1 buydown offer a significantly lower rate initially, which then increases by 1% each year for the first two or three years before locking into a fixed rate for the remaining term." },
-  { question: "Can you get a seller to pay for your interest rate buydown points?", answer: "Yes, you can negotiate in your purchase contract to have the seller pay for your buydown points, subject to lender approval guidelines. Notably, these buydown points remain tax-deductible for the homebuyer in the year the loan closes, even if the seller pays for them on your behalf." },
-] as const;
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
@@ -93,7 +86,6 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-04",
     articleSection: "Real Estate & Mortgages",
   },
-  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Real Estate & Mortgages", path: "/real-estate-mortgages/" },
@@ -224,16 +216,6 @@ export default function BuyingDownArizonaInterestRatePage() {
                   </p>
                 </section>
 
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={articleFaqs.map((faq) => ({
-                      q: faq.question,
-                      a: faq.answer,
-                    }))}
-                  />
-                </section>
-
 
 
                 <p>
@@ -244,7 +226,7 @@ export default function BuyingDownArizonaInterestRatePage() {
                   </Link>{" "}
                   or give us a call at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
+                    (602) 535-2171
                   </a>
                   . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
                   you and help you through the whole process.
@@ -261,7 +243,7 @@ export default function BuyingDownArizonaInterestRatePage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
                   been prepared for informational purposes only. You should consult your own tax, legal, and
                   accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
-                  #210917 and 1618695. Equal housing lender.
+                  #210917 and 1618695. Equal Housing Opportunity.
                 </p>
 
                 <p className="text-[15px]">
@@ -315,7 +297,7 @@ export default function BuyingDownArizonaInterestRatePage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
                   been prepared for informational purposes only. You should consult your own tax, legal, and
                   accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
-                  #210917 and 1618695. Equal housing lender.
+                  #210917 and 1618695. Equal Housing Opportunity.
                 </p>
               </div>
 
@@ -438,9 +420,10 @@ export default function BuyingDownArizonaInterestRatePage() {
               Get in Touch with The Mortgage Brothers
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              Ready to take the next step towards your dream home? One of our experienced mortgage
-              professionals will get back to you promptly with personalized solutions tailored to your unique
-              financial situation.
+              Ready to take the next step towards your dream home? Fill out the form below, and one of our
+              experienced mortgage professionals will get back to you promptly. We&apos;re here to provide
+              personalized solutions tailored to your unique financial situation and homeownership goals in
+              Arizona.
             </p>
             <Link
               href="#get-pre-approved"

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
 import Link from "next/link";
@@ -75,13 +74,6 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "Should I use an online mortgage lender when buying a home in Phoenix?", answer: "Online lenders may advertise very low teaser rates, but these usually apply only to buyers with perfect credit, no debt, and large cash reserves. Many real estate agents advise against using online lenders because they often lack personal service, can cause delays, and may put you at a disadvantage in multiple-offer situations." },
-  { question: "What is the difference between a mortgage broker and a mortgage banker?", answer: "A mortgage broker works independently and can offer loan options from multiple lenders, often helping you secure the best rates. A mortgage banker works for a specific bank or lender and can only offer the loans that their company originates. Some lenders may also provide portfolio lending, where they originate and service the loan themselves." },
-  { question: "Why is it important to get pre-approved instead of just prequalified?", answer: "A prequalification is based on verbal information and doesn't include a credit check or income verification, so it carries little weight with sellers. A pre-approval, however, verifies your financial information and signals to sellers that you are ready and able to buy. In competitive markets, a pre-approval can make the difference between having your offer accepted or rejected." },
-  { question: "What documents are needed for mortgage pre-approval?", answer: "To get pre-approved, you typically need to provide your Social Security number, proof of employment, recent pay stubs, tax returns from the last two years, and bank account information. These documents help lenders verify your income, employment stability, and available assets." },
-  { question: "What should I avoid doing during the mortgage approval process?", answer: "To avoid delays or loan denial, do not make large purchases on credit such as cars, boats, or vacations. Always provide requested documentation promptly, follow the timelines in your purchase agreement, and stay in close contact with your lender and agent throughout the process." },
-] as const;
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
@@ -91,7 +83,6 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-11",
     articleSection: "Mortgage Basics",
   },
-  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Basics", path: "/mortgage-basics/" },
@@ -494,35 +485,6 @@ export default function ExpectYoureNotFirstTimeMortgageShopperPage() {
                   </p>
                 </section>
 
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={[
-                    { q: "Should I use an online mortgage lender when buying a home in Phoenix?", a: <>Online lenders may advertise very low teaser rates, but these usually apply only to
-                        buyers with perfect credit, no debt, and large cash reserves. Many real estate agents
-                        advise against using online lenders because they often lack personal service, can cause
-                        delays, and may put you at a disadvantage in multiple-offer situations.</> },
-                    { q: "What is the difference between a mortgage broker and a mortgage banker?", a: <>A mortgage broker works independently and can offer loan options from multiple lenders,
-                        often helping you secure the best rates. A mortgage banker works for a specific bank or
-                        lender and can only offer the loans that their company originates. Some lenders may also
-                        provide portfolio lending, where they originate and service the loan themselves.</> },
-                    { q: "Why is it important to get pre-approved instead of just prequalified?", a: <>A prequalification is based on verbal information and doesn&apos;t include a credit
-                        check or income verification, so it carries little weight with sellers. A pre-approval,
-                        however, verifies your financial information and signals to sellers that you are ready
-                        and able to buy. In competitive markets, a pre-approval can make the difference between
-                        having your offer accepted or rejected.</> },
-                    { q: "What documents are needed for mortgage pre-approval?", a: <>To get pre-approved, you typically need to provide your Social Security number, proof of
-                        employment, recent pay stubs, tax returns from the last two years, and bank account
-                        information. These documents help lenders verify your income, employment stability, and
-                        available assets.</> },
-                    { q: "What should I avoid doing during the mortgage approval process?", a: <>To avoid delays or loan denial, do not make large purchases on credit such as cars,
-                        boats, or vacations. Always provide requested documentation promptly, follow the
-                        timelines in your purchase agreement, and stay in close contact with your lender and
-                        agent throughout the process.</> }
-                    ]}
-                  />
-                </section>
-
                 <p>
                   If you have any questions about the mortgage process, call us at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
@@ -546,7 +508,7 @@ export default function ExpectYoureNotFirstTimeMortgageShopperPage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
                   been prepared for informational purposes only. You should consult your own tax, legal, and
                   accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
-                  #210917 and 1618695. Equal housing lender.
+                  #210917 and 1618695. Equal Housing Opportunity.
                 </p>
               </div>
 

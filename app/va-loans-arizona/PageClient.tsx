@@ -774,7 +774,7 @@ export default function VaLoansArizonaPage() {
               </a>
             </div>
             <p className="text-[#b8d4b8] text-[12px] leading-relaxed pt-6 max-w-3xl mx-auto">
-              Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been prepared for informational purposes only. You should consult your own tax, legal, and accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and #1618695. Equal housing lender.
+              Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been prepared for informational purposes only. You should consult your own tax, legal, and accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and #1618695. Equal Housing Opportunity.
             </p>
           </div>
         </section>

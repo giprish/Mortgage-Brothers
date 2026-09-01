@@ -4,6 +4,7 @@ import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
@@ -171,6 +172,15 @@ export default function UnderstandingAmortizationChartPage() {
                   <p className="mb-5">
                     The details will include the interest and principal component of each periodic payment.
                   </p>
+                  <Image
+                    src="/home/amortization-chart.jpg"
+                    alt="Detailed loan amortization chart showcasing monthly mortgage payments, including principal, interest, and remaining balance over time."
+                    width={600}
+                    height={515}
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 600px"
+                    className="w-full h-auto rounded-xl border border-[#e8e0d0]/70 mb-5 shadow-sm"
+                  />
                   <p className="mb-5">
                     For example, let&apos;s look at a scenario where you borrowed a $100,000 loan at 7.5%
                     interest rate, fixed for 30 year term. To ensure full repayment of principal by the end of
@@ -218,18 +228,17 @@ export default function UnderstandingAmortizationChartPage() {
                   </Link>{" "}
                   or give us a call at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
+                    (602) 535-2171
                   </a>
                   . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
                   you and help you through the whole process.
                 </p>
+                <p className="text-center text-[#5a6b52] tracking-widest">•••</p>
 
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work
-                    with you and help you through the whole process.
-                  </p>
-                </div>
+                <p>
+                  Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
+                  you and help you through the whole process.
+                </p>
 
                 <p className="text-[15px]">
                   Enhance your understanding by reading about{" "}
@@ -263,7 +272,7 @@ export default function UnderstandingAmortizationChartPage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material
                   has been prepared for informational purposes only. You should consult your own tax,
                   legal, and accounting advisors before engaging in any transaction. Mortgage Brothers
-                  NMLS 1007154, NMLS #210917 and 1618695. Equal housing lender.
+                  NMLS 1007154, NMLS #210917 and 1618695. Equal Housing Opportunity.
                 </p>
               </div>
 
@@ -389,9 +398,10 @@ export default function UnderstandingAmortizationChartPage() {
               Get in Touch with The Mortgage Brothers
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              Ready to take the next step towards your dream home? One of our experienced mortgage
-              professionals will get back to you promptly with personalized solutions tailored to your
-              unique financial situation.
+              Ready to take the next step towards your dream home? Fill out the form below, and one of our
+              experienced mortgage professionals will get back to you promptly. We&apos;re here to provide
+              personalized solutions tailored to your unique financial situation and homeownership goals in
+              Arizona.
             </p>
             <Link
               href="#get-pre-approved"

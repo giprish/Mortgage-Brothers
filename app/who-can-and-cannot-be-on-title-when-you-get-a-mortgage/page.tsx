@@ -309,7 +309,7 @@ export default function WhoCanAndCannotBeOnTitlePage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
                   been prepared for informational purposes only. You should consult your own tax, legal, and
                   accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
-                  #210917 and 1618695. Equal housing lender.
+                  #210917 and 1618695. Equal Housing Opportunity.
                 </p>
 
                 <section id="podcast-transcript">
@@ -458,8 +458,8 @@ export default function WhoCanAndCannotBeOnTitlePage() {
                         Remember, being on the title is NOT the same as being on the mortgage.
                       </p>
                       <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>The title = ownership rights.</li>
-                        <li>The mortgage = loan responsibility.</li>
+                        <li>📌 The title = ownership rights.</li>
+                        <li>📌 The mortgage = loan responsibility.</li>
                       </ul>
                       <p className="mb-3">
                         The title is like the deed to a car—it proves who owns the home. If you&apos;re not on
@@ -467,14 +467,28 @@ export default function WhoCanAndCannotBeOnTitlePage() {
                         on it.
                       </p>
                       <p className="mb-3">
-                        Have questions about your mortgage or title options? Reach out to us—we&apos;re happy to
+                        🏡 Have questions about your mortgage or title options? 📩 Reach out to us—we&apos;re happy to
                         help! Contact us through our{" "}
                         <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
                           contact form
                         </Link>
                         .
                       </p>
-                      <p>Thanks for tuning in—see you in the next episode!</p>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        Subscribe &amp; Stay Updated! [09:20]
+                      </h3>
+                      <p className="mb-3">
+                        🔔 Like this episode? Subscribe for more mortgage insights!
+                      </p>
+                      <p className="mb-3">📩 Email us: ✅ Contact Form</p>
+                      <p className="mb-3">
+                        💰 Need a mortgage? Get a{" "}
+                        <Link href="#get-pre-approved" className="text-[#3fb364] font-semibold hover:underline">
+                          free quote
+                        </Link>{" "}
+                        —we&apos;ll guide you every step of the way.
+                      </p>
+                      <p>🎯 Thanks for tuning in—see you in the next episode!</p>
                     </div>
                   </div>
                 </section>

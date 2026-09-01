@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
 import Link from "next/link";
@@ -75,11 +74,6 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "What is an assumable mortgage?", answer: "An assumable mortgage is one where the lender includes a clause allowing a third party, typically the homebuyer, to take over the existing mortgage. If the mortgage is not assumable, the clause will clearly state so." },
-  { question: "What does an assumable clause look like?", answer: "A typical assumable clause may read: 'If all or any part of the property is sold or transferred without the lender’s prior consent, the lender may require immediate payment in full of the loan.' This means the mortgage may be assumed if the lender is notified and consents to the transfer." },
-  { question: "Are FHA mortgages assumable?", answer: "Yes, one of the advantages of FHA mortgages is that they are assumable. This can be a strong selling point if you decide to sell your home in the future." },
-] as const;
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
@@ -89,7 +83,6 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-04",
     articleSection: "Mortgage Payments & Strategies",
   },
-  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Payments & Strategies", path: "/mortgage-payments-strategies/" },
@@ -202,42 +195,6 @@ export default function AssumableMortgagePage() {
                   </p>
                 </section>
 
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={[
-                    { q: "What is an assumable mortgage?", a: <>An assumable mortgage is one where the lender includes a clause allowing a third party,
-                        typically the homebuyer, to take over the existing mortgage. If the mortgage is not
-                        assumable, the clause will clearly state so.</> },
-                    { q: "What does an assumable clause look like?", a: <>A typical assumable clause may read: &apos;If all or any part of the property is sold or
-                        transferred without the lender&apos;s prior consent, the lender may require immediate
-                        payment in full of the loan.&apos; This means the mortgage may be assumed if the lender
-                        is notified and consents to the transfer.</> },
-                    { q: "Are FHA mortgages assumable?", a: <>Yes, one of the advantages of FHA mortgages is that they are assumable. This can be a
-                        strong selling point if you decide to sell your home in the future.</> }
-                    ]}
-                  />
-                </section>
-
-                <p>
-                  If you have any questions about assumable mortgages, call us at{" "}
-                  <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
-                  </a>{" "}
-                  or reach us using our{" "}
-                  <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                    contact form
-                  </Link>
-                  .
-                </p>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
-                    you and help you through the whole process.
-                  </p>
-                </div>
-
                 <p className="text-[15px]">
                   Understand how an assumable mortgage can simplify your home financing process. For further
                   reading, see our guide on{" "}
@@ -275,7 +232,7 @@ export default function AssumableMortgagePage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
                   been prepared for informational purposes only. You should consult your own tax, legal, and
                   accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
-                  #210917 and 1618695. Equal housing lender.
+                  #210917 and 1618695. Equal Housing Opportunity.
                 </p>
               </div>
 

@@ -11,13 +11,33 @@ import LoanProgramHero from "../component/LoanProgramHero";
 import HeroFeatureStrip from "../component/HeroFeatureStrip";
 
 import CountyTestimonials, { type CountyTestimonial } from "../component/CountyTestimonials";
-import { cardIconBadgeClassName } from "../component/IconBadge";
+import IconBadge, { cardIconBadgeClassName } from "../component/IconBadge";
 
 const featureStrip = [
   "Buy Your Dream Home with No Monthly Payments",
   "Keep More Cash While Buying Your New Home",
   "Flexible Homeownership for Retirement Living",
 ];
+
+function IconBenefitRow({
+  icon,
+  title,
+  description,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="group flex items-start gap-4 text-left">
+      <IconBadge>{icon}</IconBadge>
+      <div className="min-w-0">
+        <h3 className="text-[17px] font-bold text-[#052316] mb-2 font-playfair leading-snug">{title}</h3>
+        <p className="text-[#4e5b4e] text-[14px] leading-relaxed">{description}</p>
+      </div>
+    </div>
+  );
+}
 
 export default function ReverseMortgageHomePurchaseArizonaPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -27,28 +47,58 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
   const benefits = [
     {
       title: "No Monthly Mortgage Payments",
-      desc: "You can buy your dream home without the burden of regular mortgage payments, freeing up cash flow for other expenses"
+      desc: "You can buy your dream home without the burden of regular mortgage payments, freeing up cash flow for other expenses",
+      icon: (
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+        </svg>
+      ),
     },
     {
       title: "Maintain Home Ownership",
-      desc: "You retain full ownership of your new property while living there, allowing you to age in place comfortably"
+      desc: "You retain full ownership of your new property while living there, allowing you to age in place comfortably",
+      icon: (
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+      ),
     },
     {
       title: "Flexibility in Home Choice",
-      desc: "This program allows you to purchase a home that better suits your current needs, whether downsizing in Phoenix or moving closer to family in Tucson"
+      desc: "This program allows you to purchase a home that better suits your current needs, whether downsizing in Phoenix or moving closer to family in Tucson",
+      icon: (
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+        </svg>
+      ),
     },
     {
       title: "Protection Against Market Declines",
-      desc: "As a non-recourse loan, you or your heirs won't owe more than the home's value when the loan becomes due"
+      desc: "As a non-recourse loan, you or your heirs won't owe more than the home's value when the loan becomes due",
+      icon: (
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      ),
     },
     {
       title: "Tax-Free Funds",
-      desc: "The money received from a reverse mortgage is generally not considered taxable income, providing potential tax advantages"
+      desc: "The money received from a reverse mortgage is generally not considered taxable income, providing potential tax advantages",
+      icon: (
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        </svg>
+      ),
     },
     {
       title: "FHA Insurance",
-      desc: "Most reverse mortgages are insured by the Federal Housing Administration (FHA), offering an additional layer of security"
-    }
+      desc: "Most reverse mortgages are insured by the Federal Housing Administration (FHA), offering an additional layer of security",
+      icon: (
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" aria-hidden>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      ),
+    },
   ];
 
   const eligibilityLeft = [
@@ -199,44 +249,52 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
 
         {/* BENEFITS OVERVIEW */}
         <section className="loan-section bg-white">
-          <div className="max-w-5xl mx-auto space-y-10">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-              <div className="lg:col-span-6 space-y-6 text-left">
-                <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase">
-                  TOP BENEFITS
-                </span>
-                <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair leading-tight">
-                  Top Benefits of Reverse Mortgage for Home Purchase in Arizona
-                </h2>
+          <div className="max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+              <div className="space-y-6 text-left">
+                <div className="space-y-4">
+                  <h2 className="text-[#052316] text-[28px] lg:text-[38px] font-bold font-playfair leading-tight">
+                    Top Benefits of Reverse Mortgage for Home Purchase in Arizona
+                  </h2>
+                  <div
+                    className="h-0.5 w-12 rounded-full bg-[#3fb364]"
+                    aria-hidden
+                  />
+                </div>
                 <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                  A Reverse Mortgage for Home Purchase is a unique financial tool that empowers seniors 62 and older to buy their dream home without the burden of monthly mortgage payments. This innovative program combines a one-time investment of your own funds with the proceeds from a reverse mortgage to purchase a new primary residence.
+                  A Reverse Mortgage for Home Purchase is a unique financial tool that empowers seniors 62 and older to buy their dream home{" "}
+                  <strong className="font-semibold text-[#052316]">without the burden of monthly mortgage payments</strong>.
+                  This innovative program combines a one-time investment of your own funds with the proceeds from a reverse mortgage to purchase a new primary residence.
                 </p>
                 <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                  By leveraging your home equity, you can potentially secure a more comfortable living situation, move closer to family, or find a home that better suits your needs in retirement. This approach allows you to maintain ownership of your new property while preserving your cash flow for other important expenses.
+                  By leveraging your home equity, you can potentially secure a{" "}
+                  <strong className="font-semibold text-[#052316]">more comfortable living situation</strong>, move closer to family, or find a home that better suits your needs in retirement.
+                  This approach allows you to{" "}
+                  <strong className="font-semibold text-[#052316]">maintain ownership of your new property</strong> while preserving your cash flow for other important expenses.
                 </p>
                 <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                  Whether you&apos;re looking to downsize, upgrade, or relocate, a Reverse Mortgage for Home Purchase offers the flexibility to make these changes without straining your retirement savings. It opens up possibilities for higher-value homes or more desirable locations that might be out of reach with traditional financing.
+                  Whether you&apos;re looking to downsize, upgrade, or relocate, a Reverse Mortgage for Home Purchase offers the flexibility to make these changes without straining your retirement savings.
+                  It opens up possibilities for{" "}
+                  <strong className="font-semibold text-[#052316]">higher-value homes or more desirable locations</strong> that might be out of reach with traditional financing.
                 </p>
                 <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
-                  This program not only helps you secure a new home but also provides financial freedom in retirement. You can allocate funds towards healthcare, travel, or simply enjoying your golden years to the fullest, all while living in a home that meets your current needs and preferences.
+                  This program not only helps you secure a new home but also provides{" "}
+                  <strong className="font-semibold text-[#052316]">financial freedom in retirement</strong>.
+                  You can allocate funds towards healthcare, travel, or simply enjoying your golden years to the fullest, all while living in a home that meets your current needs and preferences.
                 </p>
                 <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed">
                   With a Reverse Mortgage for Home Purchase, you&apos;re not just buying a house – you&apos;re investing in your quality of life and securing a comfortable future in a home that truly feels like yours.
                 </p>
               </div>
 
-              <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
-                {benefits.map((b, idx) => (
-                  <div
-                    key={b.title}
-                    className="group bg-[#fcf9f3] border border-[#e0e0e0] hover:border-[#3fb364] rounded-2xl p-5 shadow-sm transition-all"
-                  >
-                    <div className={cardIconBadgeClassName("xs", "font-bold mb-3")}>
-                      {idx + 1}
-                    </div>
-                    <h3 className="text-[15px] font-bold text-[#052316] mb-2 font-playfair">{b.title}</h3>
-                    <p className="text-[#4e5b4e] text-[13.5px] leading-relaxed">{b.desc}</p>
-                  </div>
+              <div className="space-y-8 text-left">
+                {benefits.map((benefit) => (
+                  <IconBenefitRow
+                    key={benefit.title}
+                    icon={benefit.icon}
+                    title={benefit.title}
+                    description={benefit.desc}
+                  />
                 ))}
               </div>
             </div>
@@ -244,7 +302,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
         </section>
 
         <section className="loan-cta-band bg-[#fcf9f3] !pb-0">
-          <div className="mx-auto max-w-6xl text-center loan-block-gap">
+          <div className="mx-auto max-w-7xl text-center loan-block-gap">
             <Link
               href="#get-pre-approved"
               className="bg-[#3fb364] hover:bg-[#359854] text-white font-bold text-[16px] px-8 py-4 rounded-full transition-all shadow-md inline-block"
@@ -265,7 +323,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
 
         {/* ELIGIBILITY */}
         <section className="loan-section bg-[#fcf9f3] !pt-8 sm:!pt-10 lg:!pt-12">
-          <div className="max-w-5xl mx-auto space-y-10">
+          <div className="max-w-7xl mx-auto space-y-10">
             <div className="text-center">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
                 ELIGIBILITY
@@ -363,7 +421,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
 
         {/* PROCESS */}
         <section className="loan-section bg-[#fcf9f3]">
-          <div className="max-w-5xl mx-auto space-y-10">
+          <div className="max-w-7xl mx-auto space-y-10">
             <div className="text-center">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
                 HOW IT WORKS
@@ -407,7 +465,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
 
         {/* PROS & CONS */}
         <section className="loan-section bg-[#fcf9f3]">
-          <div className="max-w-5xl mx-auto space-y-10">
+          <div className="max-w-7xl mx-auto space-y-10">
             <div className="text-center">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase block mb-3">
                 WEIGH YOUR OPTIONS
@@ -567,7 +625,7 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
 
         {/* WHY US */}
         <section className="loan-section bg-white">
-          <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             <div className="lg:col-span-5 space-y-5 text-left">
               <span className="text-[#3fb364] text-[11px] font-bold tracking-[0.2em] uppercase">
                 WHY MORTGAGE BROTHERS
@@ -621,14 +679,14 @@ export default function ReverseMortgageHomePurchaseArizonaPage() {
               </a>
             </div>
             <p className="text-[#b8d4b8] text-[12px] leading-relaxed pt-6 max-w-3xl mx-auto">
-              Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been prepared for informational purposes only. You should consult your own tax, legal, and accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and #1618695. Equal housing lender.
+              Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been prepared for informational purposes only. You should consult your own tax, legal, and accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and #1618695. Equal Housing Opportunity.
             </p>
           </div>
         </section>
 
         {/* RELATED LOANS */}
         <section className="loan-section bg-[#fcf9f3]">
-          <div className="max-w-5xl mx-auto space-y-8">
+          <div className="max-w-7xl mx-auto space-y-8">
             <div className="text-center">
               <h2 className="text-[#052316] text-[28px] lg:text-[34px] font-bold font-playfair">
                 Explore Our Mortgage Solutions

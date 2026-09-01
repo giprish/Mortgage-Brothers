@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
 import Link from "next/link";
@@ -75,12 +74,6 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "How does connecting a detached casita to the main house affect home valuation?", answer: "When you officially connect a detached guest house to the main dwelling, its square footage is absorbed directly into the total primary living area of the home. Instead of receiving a lower, separate line-item adjustment for a detached casita, the entire space is appraised as a single, larger home structure based on comparable market sales for that higher total square footage." },
-  { question: "What structural requirements must be met for a guest house connection to add value?", answer: "The connecting structure cannot just be a covered breezeway or an open patio. To be recognized by city building codes and mortgage appraisers, it must be fully enclosed, permitted, and constructed as a completely finished, heated, and cooled livable space that seamlessly connects the main house and the casita." },
-  { question: "Why do detached guest houses typically receive lower appraisal values?", answer: "Appraisers do not calculate a detached casita's value using its actual cost of construction. Instead, they apply a standard, flat line-item adjustment on the appraisal report—often ranging from $15,000 to $30,000—regardless of whether the structure cost significantly more to build, because finding exact detached comparable sales in the immediate area is highly difficult." },
-  { question: "Does adding more square footage to a home always yield a straight-line increase in value?", answer: "No, real estate valuation does not follow a perfectly straight line due to the law of diminishing returns. In many neighborhoods, larger homes command a slightly lower price per square foot than smaller properties, so it is critical to evaluate recent local comparable sales for larger homes to ensure the expansion makes financial sense." },
-] as const;
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
@@ -90,7 +83,6 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-05",
     articleSection: "Real Estate & Mortgages",
   },
-  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Real Estate & Mortgages", path: "/real-estate-mortgages/" },
@@ -254,51 +246,6 @@ export default function ConnectingGuestHouseAddValuePage() {
                   </ul>
                 </section>
 
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={[
-                    { q: "How does connecting a detached casita to the main house affect home valuation?", a: <>When you officially connect a detached guest house to the main dwelling, its square footage
-                        is absorbed directly into the total primary living area of the home. Instead of receiving a
-                        lower, separate line-item adjustment for a detached casita, the entire space is appraised as
-                        a single, larger home structure based on comparable market sales for that higher total
-                        square footage.</> },
-                    { q: "What structural requirements must be met for a guest house connection to add value?", a: <>The connecting structure cannot just be a covered breezeway or an open patio. To be
-                        recognized by city building codes and mortgage appraisers, it must be fully enclosed,
-                        permitted, and constructed as a completely finished, heated, and cooled livable space that
-                        seamlessly connects the main house and the casita.</> },
-                    { q: "Why do detached guest houses typically receive lower appraisal values?", a: <>Appraisers do not calculate a detached casita&apos;s value using its actual cost of
-                        construction. Instead, they apply a standard, flat line-item adjustment on the appraisal
-                        report—often ranging from $15,000 to $30,000—regardless of whether the structure cost
-                        significantly more to build, because finding exact detached comparable sales in the
-                        immediate area is highly difficult.</> },
-                    { q: "Does adding more square footage to a home always yield a straight-line increase in value?", a: <>No, real estate valuation does not follow a perfectly straight line due to the law of
-                        diminishing returns. In many neighborhoods, larger homes command a slightly lower price per
-                        square foot than smaller properties, so it is critical to evaluate recent local comparable
-                        sales for larger homes to ensure the expansion makes financial sense.</> }
-                    ]}
-                  />
-                </section>
-
-                <p>
-                  If you have any questions, call us at{" "}
-                  <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
-                  </a>{" "}
-                  or reach us using our{" "}
-                  <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                    contact form
-                  </Link>
-                  .
-                </p>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you
-                    and help you through the whole process.
-                  </p>
-                </div>
-
                 <p className="text-[15px]">
                   Learn how linking a guest house to your main residence can add significant value to your
                   property. You might also explore our analysis on the{" "}
@@ -329,7 +276,7 @@ export default function ConnectingGuestHouseAddValuePage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
                   prepared for informational purposes only. You should consult your own tax, legal, and accounting
                   advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
-                  1618695. Equal housing lender.
+                  1618695. Equal Housing Opportunity.
                 </p>
               </div>
 

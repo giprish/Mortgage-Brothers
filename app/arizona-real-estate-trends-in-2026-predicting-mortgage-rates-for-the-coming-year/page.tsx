@@ -78,7 +78,7 @@ const loanSolutions = [
 const articleFaqs = [
   { question: "Are Arizona home prices dropping in 2026?", answer: "Not significantly. Prices are stabilizing, with some growth in suburbs like Buckeye, Marana, and Casa Grande." },
   { question: "What are mortgage rates in Arizona right now?", answer: "Most buyers are seeing rates between 6.0%–6.375%, depending on credit and loan type." },
-  { question: "Is 2026 a good time to buy in Arizona?", answer: "Yes, especially with more inventory and fewer bidding wars. Down payment assistance can also help first-time buyers. ← Previous PostNext Post → Start Your Home Loan Journey You can always press Enter⏎ to continue" },
+  { question: "Is 2026 a good time to buy in Arizona?", answer: "Yes, especially with more inventory and fewer bidding wars. Down payment assistance can also help first-time buyers." },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({
@@ -477,7 +477,7 @@ export default function ArizonaRealEstateTrends2026Page() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
                   prepared for informational purposes only. You should consult your own tax, legal, and accounting
                   advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
-                  1618695. Equal housing lender.
+                  1618695. Equal Housing Opportunity.
                 </p>
               </div>
 

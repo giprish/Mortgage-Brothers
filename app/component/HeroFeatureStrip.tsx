@@ -45,7 +45,7 @@ export default function HeroFeatureStrip({
         className ? ` ${className}` : ""
       }`}
     >
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
         {normalized.map((item) => (
           <div key={item.text} className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm">

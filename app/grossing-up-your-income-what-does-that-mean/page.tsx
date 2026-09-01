@@ -324,7 +324,7 @@ export default function GrossingUpIncomePage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
                   been prepared for informational purposes only. You should consult your own tax, legal, and
                   accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
-                  #210917 and 1618695. Equal housing lender.
+                  #210917 and 1618695. Equal Housing Opportunity.
                 </p>
 
                 <section id="podcast-transcript">
@@ -505,9 +505,9 @@ export default function GrossingUpIncomePage() {
                       </ul>
                       <p className="mb-2 font-semibold text-[#052316]">Example:</p>
                       <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Borrower A: Earns $3,000/month (fully taxable)</li>
+                        <li>💰 Borrower A: Earns $3,000/month (fully taxable)</li>
                         <li>
-                          Borrower B: Earns $3,000/month (but $1,000 is non-taxable Social Security)
+                          💰 Borrower B: Earns $3,000/month (but $1,000 is non-taxable Social Security)
                         </li>
                       </ul>
                       <p>

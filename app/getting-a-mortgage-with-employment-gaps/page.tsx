@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -75,11 +74,6 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "What are some typical employment gap scenarios?", answer: "Employment gaps typically occur when someone loses a job and is searching for a new one. For executives, it may take up to a year to find the right fit, while entry-level workers may take only a few months. Other common scenarios include parents returning to the workforce after staying home to care for children." },
-  { question: "How do conventional, FHA, and VA loans treat job gaps?", answer: "Conventional loans are the most flexible and can work with borrowers who recently rejoined the workforce, even after long gaps, as long as credit is decent. FHA loans require a two-year consecutive work history if the job gap exceeds six months and at least six months with the current employer. VA loans are stricter, requiring at least a 12-month history on the current job if there are job gaps of more than 60 days in the last two years." },
-  { question: "Do all loan programs accept short job gaps?", answer: "Yes, all programs generally accept employment gaps of less than 30 days without issue. However, longer gaps have different requirements depending on whether you are applying for a Conventional, FHA, or VA loan." },
-] as const;
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
@@ -89,7 +83,6 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-03",
     articleSection: "Mortgage Qualifications",
   },
-  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Qualifications", path: "/mortgage-qualifications/" },
@@ -272,29 +265,18 @@ export default function GettingMortgageWithEmploymentGapsPage() {
                   </Link>{" "}
                   or give us a call at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
+                    (602) 535-2171
                   </a>
                   . Be sure to ask us for a free quote on your next mortgage. We&rsquo;ll personally work with you and help you through
                   the whole process.
                 </p>
 
-                
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={articleFaqs.map((faq) => ({
-                      q: faq.question,
-                      a: faq.answer,
-                    }))}
-                  />
-                </section>
+                <p className="text-center text-[#5a6b52] tracking-widest">•••</p>
 
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&rsquo;ll personally work with you and help you
-                    through the whole process.
-                  </p>
-                </div>
+                <p>
+                  Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
+                  you and help you through the whole process.
+                </p>
 
                 <p className="text-[15px]">
                   Thanks for listening and reading the Mortgage Brothers Show. Let us know if you have any questions
@@ -329,7 +311,7 @@ export default function GettingMortgageWithEmploymentGapsPage() {
                 <p className="text-[#5a6b52] text-[13px] leading-relaxed">
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been prepared for informational purposes only.
                   You should consult your own tax, legal, and accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154,
-                  NMLS #210917 and 1618695. Equal housing lender.
+                  NMLS #210917 and 1618695. Equal Housing Opportunity.
                 </p>
 
                 {/* Transcript */}
@@ -640,7 +622,7 @@ export default function GettingMortgageWithEmploymentGapsPage() {
               Get in Touch with The Mortgage Brothers
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              Ready to take the next step towards your dream home? One of our experienced mortgage professionals will get back to you promptly with personalized solutions tailored to your unique financial situation.
+              Ready to take the next step towards your dream home? Fill out the form below, and one of our experienced mortgage professionals will get back to you promptly. We&apos;re here to provide personalized solutions tailored to your unique financial situation and homeownership goals in Arizona.
             </p>
             <Link
               href="#get-pre-approved"

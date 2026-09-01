@@ -1,123 +1,294 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
+import FaqAccordion from "../component/FaqAccordion";
+
+const articleFaqs = [
+  {
+    q: "Can I remove my ex-spouse's name from the mortgage without refinancing?",
+    a: "Usually, no. Lenders require refinancing to release one party from liability. In rare cases, an assumption may be allowed, but most lenders prefer a full refinance.",
+  },
+  {
+    q: "How long after divorce can I refinance my mortgage?",
+    a: "You can refinance as soon as your divorce is finalized and you meet lender requirements for credit, income, and documentation. Many people refinance immediately after receiving their divorce decree.",
+  },
+  {
+    q: "What documents are required for an equity buyout refinance?",
+    a: "You'll typically need your divorce decree, property settlement agreement, recent pay stubs, tax returns, and proof of the equity amount owed to your former spouse.",
+  },
+  {
+    q: "Can I buy a new home before my divorce is final?",
+    a: "Yes, but it's more complex. You'll need a signed separation agreement and proof of separate finances. Some lenders prefer to wait until finalization, but others specialize in pre-divorce lending.",
+  },
+  {
+    q: "Will alimony or child support help or hurt my mortgage approval?",
+    a: "It depends. If you receive alimony or support, it can count as income (with documentation). If you pay it, it's counted as a debt, which may affect your debt-to-income ratio.",
+  },
+  {
+    q: "Is an equity buyout refinance the same as a cash-out refinance?",
+    a: "No — and that's a key advantage. Court-ordered equity buyouts through conventional loans are treated as rate-and-term refinances, which means lower interest rates and better terms.",
+  },
+];
 
 export default function DivorceMortgageArticlePage() {
-  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
-
-  const toggleFaq = (index: number) => {
-    setOpenFaqIndex(openFaqIndex === index ? null : index);
-  };
-
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
 
-      <main className="flex-grow pt-[64px] sm:pt-[72px]">
-        {/* Hero */}
+      <main id="main-content" className="flex-grow pt-[64px] sm:pt-[72px]">
         <section className="bg-[#052316] text-white py-16 px-6 lg:px-10 text-center relative overflow-hidden">
           <div className="max-w-4xl mx-auto relative z-10">
             <div className="flex items-center justify-center gap-2 text-[#b8d4b8] text-[13px] font-semibold mb-6">
-              <Link href="/blog/" className="hover:text-white transition-colors">Blog</Link>
-              <span>&gt;</span>
-              <span className="text-[#3fb364]">Arizona Mortgage Insights</span>
+              <Link href="/arizona-mortgage-insights/" className="hover:text-white transition-colors">
+                Arizona Mortgage Insights
+              </Link>
             </div>
-
-            <span className="bg-[#103020] border border-[#205030] text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase px-3.5 py-1.5 rounded-full inline-block mb-4">
-              COMMUNITY PROPERTY GUIDE
-            </span>
 
             <h1
               className="text-[32px] sm:text-[42px] lg:text-[50px] font-bold leading-tight mb-6 text-white"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              Navigating Mortgage Options During Divorce: A Complete Guide for Arizona Homeowners
+              Navigating Mortgage Options During Divorce: A Complete Guide
             </h1>
-
-            <div className="flex items-center justify-center gap-4 text-[14px] text-[#c8c8b8]">
-              <span>By <strong className="text-white">Eddie Knoell</strong></span>
-              <span>•</span>
-              <span>May 20, 2026</span>
-              <span>•</span>
-              <span>13 min read</span>
-            </div>
           </div>
         </section>
 
-        {/* Content Body */}
         <article className="max-w-4xl mx-auto px-6 py-12 lg:py-16 text-[#1a3a1a]">
-          
-          {/* Summary */}
           <section className="mb-12">
-            <h2 className="text-[#052316] text-[26px] sm:text-[32px] font-bold mb-4 font-playfair border-b border-[#e8e0d0] pb-3">
-              1. Understanding Arizona Community Property Laws
+            <h2
+              className="text-[#052316] text-[26px] sm:text-[32px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              Understanding Mortgage Options During Divorce
             </h2>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
-              Arizona is a <strong>community property state</strong>. Real estate acquired during marriage is generally owned equally (50/50) by both spouses, regardless of whose income was used to pay the mortgage or whose name appears on the deed.
+              Divorce is one of life&apos;s most difficult transitions, and when real estate is involved, the
+              financial complexity increases dramatically. For many couples, their home represents their largest
+              shared asset, making mortgage decisions a critical part of achieving independence.
             </p>
-            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
-              During a dissolution of marriage, deciding what to do with the marital home requires evaluating mortgage liabilities, equity division, and long-term affordability.
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a]">
+              Knowing how to handle your mortgage during or after a divorce — whether you sell, refinance, or buy
+              a new home — can help you make informed decisions and protect your financial stability.
             </p>
           </section>
 
-          {/* Primary Paths */}
           <section className="mb-12 border-t border-[#e8e0d0] pt-8">
-            <h2 className="text-[#052316] text-[26px] font-bold mb-6 font-playfair">
-              2. The 3 Primary Paths for the Marital Home
+            <h2
+              className="text-[#052316] text-[26px] font-bold mb-4"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              1. Understanding Your Current Mortgage Situation
             </h2>
-
-            <div className="space-y-6">
-              <div className="bg-white border border-[#e8e0d0] p-6 rounded-2xl shadow-sm">
-                <h3 className="text-[#052316] text-[20px] font-bold mb-2">Path 1: Refinance Equity Buyout</h3>
-                <p className="text-[#3a4a3a] text-[15px] leading-relaxed mb-3">One spouse keeps the house, refinances the existing mortgage into their sole name, and cashes out equity to pay the departing spouse their 50% share.</p>
-                <span className="text-[13px] font-bold text-[#3fb364]">Requires: Single-income qualification &amp; sufficient equity</span>
-              </div>
-
-              <div className="bg-white border border-[#e8e0d0] p-6 rounded-2xl shadow-sm">
-                <h3 className="text-[#052316] text-[20px] font-bold mb-2">Path 2: Sell the Property &amp; Divide Net Cash</h3>
-                <p className="text-[#3a4a3a] text-[15px] leading-relaxed mb-3">List the home on the MLS or sell to a cash buyer. Escrow pays off the existing mortgage and disburses net proceeds according to the divorce settlement decree.</p>
-                <span className="text-[13px] font-bold text-[#3fb364]">Requires: Agreement from both spouses to sell</span>
-              </div>
-
-              <div className="bg-white border border-[#e8e0d0] p-6 rounded-2xl shadow-sm">
-                <h3 className="text-[#052316] text-[20px] font-bold mb-2">Path 3: Co-Ownership (Temporary Deferred Sale)</h3>
-                <p className="text-[#3a4a3a] text-[15px] leading-relaxed">Both spouses maintain joint ownership for a set timeframe (e.g. until minor children graduate high school), then execute a sale or buyout.</p>
-              </div>
-            </div>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
+              When a couple divorces, their shared mortgage doesn&apos;t automatically change. Both spouses remain
+              legally responsible for the debt until steps are taken to modify or remove one person&apos;s name.
+            </p>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
+              Even if the divorce decree awards the home to one spouse,{" "}
+              <strong>the mortgage lender isn&apos;t bound by that order</strong>. If the person keeping the home
+              stops paying, the other spouse&apos;s credit can still be damaged.
+            </p>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
+              To prevent this, it&apos;s vital to resolve the mortgage situation as part of the divorce
+              settlement. Couples usually have three main options:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-[16px] leading-[1.8] text-[#3a4a3a]">
+              <li>Sell the home and divide the proceeds equally or as determined by the court.</li>
+              <li>Refinance the mortgage so one spouse keeps the home and removes the other from the loan.</li>
+              <li>Maintain joint ownership temporarily, allowing more time to plan financially before separating the asset.</li>
+            </ul>
           </section>
 
-          {/* FAQs */}
+          <section className="mb-12 border-t border-[#e8e0d0] pt-8">
+            <h2
+              className="text-[#052316] text-[26px] font-bold mb-4"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              2. Removing a Spouse from the Mortgage Through Refinancing
+            </h2>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
+              One of the most common goals during divorce is to remove one spouse from the mortgage. This helps
+              both parties achieve financial independence and protects the departing spouse from future
+              liability.
+            </p>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
+              The primary way to accomplish this is through refinancing the loan in the name of the spouse who
+              will keep the home.
+            </p>
+            <h4 className="text-[#052316] text-[18px] font-bold mb-3">How Refinancing Works After Divorce</h4>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-3">The spouse keeping the home must:</p>
+            <ul className="list-disc pl-6 space-y-2 text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
+              <li>Qualify for the mortgage independently (income, credit, and debt-to-income ratio).</li>
+              <li>Show consistent income sufficient to cover the monthly payment.</li>
+              <li>Remove the other spouse&apos;s name from both the mortgage and property title.</li>
+            </ul>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a]">
+              In many cases, refinancing also provides an opportunity to pay the departing spouse their share of
+              home equity — a process known as an equity buyout.
+            </p>
+          </section>
+
+          <section className="mb-12 border-t border-[#e8e0d0] pt-8">
+            <h2
+              className="text-[#052316] text-[26px] font-bold mb-4"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              3. The Equity Buyout Advantage with Conventional Loans
+            </h2>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
+              Divorcing homeowners can benefit greatly from conventional loan guidelines when refinancing for an
+              equity buyout.
+            </p>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
+              Typically, when you take money out of your home&apos;s equity, the lender classifies it as a
+              cash-out refinance, which comes with higher rates and stricter qualification rules. However, in
+              divorce cases, conventional loan programs often treat a court-ordered equity payout as a
+              rate-and-term refinance, not a cash-out.
+            </p>
+            <h4 className="text-[#052316] text-[18px] font-bold mb-3">Why This Matters</h4>
+            <ul className="list-disc pl-6 space-y-2 text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
+              <li>Lower interest rates: Rate-and-term refinances generally qualify for better rates.</li>
+              <li>Easier approval: Fewer restrictions and more favorable terms.</li>
+              <li>Financial savings: Reduces long-term borrowing costs for the spouse keeping the home.</li>
+            </ul>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-3">To access this benefit:</p>
+            <ul className="list-disc pl-6 space-y-2 text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
+              <li>Your divorce decree or separation agreement must clearly document the equity amount owed to your ex-spouse.</li>
+              <li>The lender must see that the funds are part of the legal settlement, not a discretionary cash withdrawal.</li>
+            </ul>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a]">
+              👉 Tip: Work with a mortgage professional experienced in divorce refinances. They&apos;ll help ensure
+              your paperwork aligns with lender requirements and that your refinance qualifies for the best
+              possible terms.
+            </p>
+          </section>
+
+          <section className="mb-12 border-t border-[#e8e0d0] pt-8">
+            <h2
+              className="text-[#052316] text-[26px] font-bold mb-4"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              4. Buying a New Home After Divorce
+            </h2>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
+              For many individuals, divorce marks a fresh start — including a new home. Whether you&apos;re ready
+              to buy immediately or after your divorce is finalized, understanding how lenders view your financial
+              situation is crucial.
+            </p>
+            <h4 className="text-[#052316] text-[18px] font-bold mb-3">If Your Divorce Is Finalized</h4>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-3">
+              The process is more straightforward once your divorce is legally complete. You&apos;ll apply for a
+              mortgage as an individual, based on:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
+              <li>Your income and employment stability.</li>
+              <li>Your assets and credit score.</li>
+              <li>Your ongoing obligations (alimony, child support, etc.).</li>
+            </ul>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-6">
+              If you receive alimony or child support, lenders may count it as income — provided it will continue
+              for at least three years and you can document consistent payments.
+            </p>
+            <h4 className="text-[#052316] text-[18px] font-bold mb-3">If Your Divorce Is Still in Progress</h4>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-3">
+              If your divorce isn&apos;t finalized, lenders may require:
+            </p>
+            <ul className="list-disc pl-6 space-y-2 text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
+              <li>A separation agreement detailing division of assets and debts.</li>
+              <li>Evidence of separate finances and living arrangements.</li>
+            </ul>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-6">
+              Some lenders prefer to wait until the divorce is final, but those with experience in divorce lending
+              can often navigate these situations before finalization.
+            </p>
+            <h4 className="text-[#052316] text-[18px] font-bold mb-3">Existing Mortgage Considerations</h4>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-3">
+              If your name is still on the marital home&apos;s mortgage, that payment will count toward your
+              debt-to-income ratio, even if your ex-spouse is making the payments.
+            </p>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-3">You can sometimes exclude this debt if:</p>
+            <ul className="list-disc pl-6 space-y-2 text-[16px] leading-[1.8] text-[#3a4a3a]">
+              <li>The divorce decree assigns the mortgage responsibility to your ex-spouse.</li>
+              <li>You can provide documentation showing consistent payments made by them for at least 6–12 months.</li>
+            </ul>
+          </section>
+
+          <section className="mb-12 border-t border-[#e8e0d0] pt-8">
+            <h2
+              className="text-[#052316] text-[26px] font-bold mb-4"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              5. Timing Your Move Strategically
+            </h2>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
+              Timing plays a major role in optimizing both your refinance and new home purchase.
+            </p>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
+              If you plan to keep the marital home, consider refinancing soon after the divorce is finalized. This
+              solidifies your financial independence and prevents shared liability. However, ensure you have
+              stable income and a strong credit profile first.
+            </p>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a]">
+              If you&apos;re buying a new home, waiting until your divorce is legally complete provides the
+              clearest and smoothest process. Still, if you need to move sooner, lenders with divorce experience
+              can often structure your loan even before finalization.
+            </p>
+          </section>
+
+          <section className="mb-12 border-t border-[#e8e0d0] pt-8">
+            <h2
+              className="text-[#052316] text-[26px] font-bold mb-4"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              Moving Forward with Confidence
+            </h2>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
+              Divorce forces you to separate emotional and financial ties, and your mortgage is often the largest
+              shared financial commitment. Whether you&apos;re refinancing to remove your ex-spouse, buying out
+              their equity, or starting over with a new home, understanding your mortgage options helps you make
+              informed, confident decisions.
+            </p>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-6">
+              Remember that conventional loans offer unique benefits for divorce-related refinances — treating
+              court-ordered equity payouts as rate-and-term rather than cash-out transactions. This difference can
+              save you money and help you achieve independence faster.
+            </p>
+            <h3
+              className="text-[#052316] text-[22px] font-bold mb-3"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              Ready to explore your options?
+            </h3>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a]">
+              Our team specializes in divorce-related mortgage solutions, including refinancing, equity buyouts,
+              and new home financing. Contact us today for a personalized consultation and take the next step
+              toward your new beginning.
+            </p>
+          </section>
+
           <section className="mb-12">
-            <h2 className="text-[#052316] text-[26px] font-bold mb-6 font-playfair border-b border-[#e8e0d0] pb-3">Frequently Asked Questions</h2>
-            <div className="space-y-4">
-              {[
-                { q: "Can I remove my ex-spouse's name from the mortgage without refinancing?", a: "Usually, no. Lenders require refinancing to release one party from liability. In rare cases, an assumption may be allowed, but most lenders prefer a full refinance." },
-                { q: "How long after divorce can I refinance my mortgage?", a: "You can refinance as soon as your divorce is finalized and you meet lender requirements for credit, income, and documentation. Many people refinance immediately after receiving their divorce decree." },
-                { q: "What documents are required for an equity buyout refinance?", a: "You'll typically need your **divorce decree**, **property settlement agreement**, recent **pay stubs**, **tax returns**, and proof of the equity amount owed to your former spouse." },
-                { q: "Can I buy a new home before my divorce is final?", a: "Yes, but it's more complex. You'll need a signed separation agreement and proof of separate finances. Some lenders prefer to wait until finalization, but others specialize in pre-divorce lending." },
-                { q: "Will alimony or child support help or hurt my mortgage approval?", a: "It depends. If you **receive** alimony or support, it can count as income (with documentation). If you **pay** it, it's counted as a debt, which may affect your debt-to-income ratio." },
-                { q: "Is an equity buyout refinance the same as a cash-out refinance?", a: "No — and that's a key advantage. Court-ordered equity buyouts through conventional loans are treated as **rate-and-term refinances**, which means **lower interest rates and better terms**. ← Previous PostNext Post → Start Your Home Loan Journey You can always press Enter⏎ to continue" }
-              ].map((faq, idx) => (
-                <div key={idx} className="bg-white border border-[#e8e0d0] rounded-xl overflow-hidden shadow-sm">
-                  <button onClick={() => toggleFaq(idx)} className="w-full text-left p-5 font-bold text-[#052316] text-[16px] flex justify-between hover:bg-[#f9f7f2]">
-                    <span>{faq.q}</span>
-                    <span className="text-[#3fb364] font-bold">{openFaqIndex === idx ? "−" : "+"}</span>
-                  </button>
-                  {openFaqIndex === idx && <div className="p-5 pt-0 text-[14.5px] text-[#4a5568] border-t border-[#f0e8db] bg-[#faf8f4]">{faq.a}</div>}
-                </div>
-              ))}
-            </div>
+            <FaqAccordion
+              title="Frequently Asked Questions (FAQ)"
+              items={articleFaqs.map((faq) => ({ q: faq.q, a: faq.a }))}
+            />
           </section>
 
-          {/* CTA */}
-          <div className="bg-[#052316] text-white rounded-2xl p-8 text-center mt-12 shadow-xl">
-            <h3 className="text-[24px] font-bold mb-3 font-playfair">Confidential Mortgage Guidance During Divorce</h3>
-            <p className="text-[#c8c8b8] text-[15px] max-w-xl mx-auto mb-6">Contact our Arizona mortgage team to evaluate buyout refinances and equity splits.</p>
-            <Link href="/refinancing-arizona/" className="btn-primary">
-              Explore Refinance Buyouts
+          <div className="bg-[#052316] text-white rounded-2xl p-8 text-center shadow-xl">
+            <h3
+              className="text-[24px] font-bold mb-3"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              Get Expert Guidance Now
+            </h3>
+            <p className="text-[#c8c8b8] text-[15px] max-w-xl mx-auto mb-6">
+              Contact our Arizona mortgage team to evaluate buyout refinances, equity splits, and new home
+              financing during divorce.
+            </p>
+            <Link href="/#Get-in-Touch" className="btn-primary">
+              Contact Us
             </Link>
           </div>
         </article>

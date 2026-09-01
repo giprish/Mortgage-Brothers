@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
 import Link from "next/link";
@@ -75,11 +74,6 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "Is homeownership hereditary?", answer: "Yes, research suggests that homeownership can be hereditary. A study by the Urban Institute found that young adults whose parents own homes are significantly more likely to become homeowners themselves compared to those whose parents rent." },
-  { question: "What factors influence millennial homeownership rates?", answer: "According to the Urban Institute, millennial homeownership rates are affected by factors such as higher education debt, delayed marriage and childbearing, rising rent costs, and increased racial diversity among millennials." },
-  { question: "How does parental wealth impact homeownership among millennials?", answer: "The study found a strong correlation between parents’ net worth and their children's likelihood of owning a home. As a parent's wealth increases, the chances of their child becoming a homeowner also rise." },
-] as const;
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
@@ -89,7 +83,6 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-12",
     articleSection: "Spouse & Estate Considerations",
   },
-  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Spouse & Estate Considerations", path: "/spouse-estate-considerations/" },
@@ -248,23 +241,6 @@ export default function IsHomeownershipHereditaryPage() {
                   </p>
                 </section>
 
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={[
-                    { q: "Is homeownership hereditary?", a: <>Yes, research suggests that homeownership can be hereditary. A study by the Urban
-                        Institute found that young adults whose parents own homes are significantly more likely
-                        to become homeowners themselves compared to those whose parents rent.</> },
-                    { q: "What factors influence millennial homeownership rates?", a: <>According to the Urban Institute, millennial homeownership rates are affected by factors
-                        such as higher education debt, delayed marriage and childbearing, rising rent costs, and
-                        increased racial diversity among millennials.</> },
-                    { q: "How does parental wealth impact homeownership among millennials?", a: <>The study found a strong correlation between parents&apos; net worth and their
-                        children&apos;s likelihood of owning a home. As a parent&apos;s wealth increases, the
-                        chances of their child becoming a homeowner also rise.</> }
-                    ]}
-                  />
-                </section>
-
                 <p>
                   If you have any questions about building a homeownership legacy, call us at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
@@ -314,7 +290,7 @@ export default function IsHomeownershipHereditaryPage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
                   been prepared for informational purposes only. You should consult your own tax, legal, and
                   accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
-                  #210917 and 1618695. Equal housing lender.
+                  #210917 and 1618695. Equal Housing Opportunity.
                 </p>
               </div>
 

@@ -124,7 +124,7 @@ export default function HowToSellMyHouseFastInArizonaPage() {
               4. What Does &quot;Selling a Home for Cash&quot; Actually Mean?
             </h2>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-6">
-              &quot;Cash buyer&quot; is an umbrella term that hides important differences. Here is who&apos;s really behind a cash offer in Arizona:
+              &quot;Cash buyer&quot; is an umbrella term that hides important differences. Here&apos;s who&apos;s really behind a cash offer in Arizona:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-[15px] leading-[1.7] text-[#3a4a3a] mb-6">
               <li><strong>Individual cash buyer</strong> — a regular buyer (retiree, downsizer, relocating professional) who pays without financing. Usually pays closest to market value; comes through a normal listing.</li>
@@ -288,7 +288,7 @@ export default function HowToSellMyHouseFastInArizonaPage() {
               <table className="w-full text-left text-[14px]">
                 <thead className="bg-[#052316] text-white">
                   <tr>
-                    <th className="p-4 font-semibold text-red-300">Red Flag ðŸš©</th>
+                    <th className="p-4 font-semibold text-red-300">Red Flag 🚩</th>
                     <th className="p-4 font-semibold text-emerald-300">Green Flag ✅</th>
                   </tr>
                 </thead>
@@ -741,7 +741,7 @@ export default function HowToSellMyHouseFastInArizonaPage() {
               <li><strong>The broker advantage.</strong> As independent brokers, we compare across many lenders rather than pushing one bank&apos;s products — and we compare <em>selling</em> options the same independent way. We don&apos;t buy houses, so our only goal is your clarity.</li>
             </ul>
             <p className="text-[14px] leading-[1.8] text-[#3a4a3a] italic mb-6">
-              Credentials: Mortgage Brothers LLC · NMLS #1007154 · AZ License #MB0922514 · Eddie Knoell, NMLS #210917 (AZ LO-0911422) · Thomas Knoell, NMLS #1618695 (AZ LO-0942229) · 1599 East Orangewood Ave, Suite 200, Phoenix, AZ 85020 · +1 602-535-2171.
+              Credentials: Mortgage Brothers LLC · NMLS #1007154 · AZ License #MB0922514 · Eddie Knoell, NMLS #210917 (AZ LO-0911422) · Thomas Knoell, NMLS #1618695 (AZ LO-0942229) · 1599 East Orangewood Ave, Suite 200, Phoenix, AZ 85020 · 602-535-2171.
             </p>
           </section>
 
@@ -823,6 +823,30 @@ export default function HowToSellMyHouseFastInArizonaPage() {
                 {
                   q: "Will a cash buyer purchase a home that needs major repairs?",
                   a: "Yes — that's their specialty — but expect a lower offer that prices in the work.",
+                },
+                {
+                  q: "What is the best way to sell a house for cash?",
+                  a: "Get offers from reputable Arizona cash buyers, verify proof of funds, and compare each offer to your home's open-market value before accepting.",
+                },
+                {
+                  q: "How much do cash buyers pay?",
+                  a: "Below full market value in most cases — investors price in repairs and profit; iBuyers pay closer to market but charge a fee. Always compare to market value.",
+                },
+                {
+                  q: "Are cash buyers legitimate?",
+                  a: "Many are, but vet every buyer: proof of funds, reviews, a real track record, and closing through a licensed Arizona title company.",
+                },
+                {
+                  q: "Should I accept a cash offer?",
+                  a: "Only after comparing it to a traditional sale, an as-is listing, and keep-the-home options like refinancing or a reverse mortgage.",
+                },
+                {
+                  q: "Can I sell my house as-is?",
+                  a: "Yes — to a cash buyer or through an agent. You skip repairs, but the price may be lower.",
+                },
+                {
+                  q: "What is the biggest mistake homeowners make?",
+                  a: "Accepting the first cash offer without comparing alternatives or calculating their true net proceeds.",
                 }
               ]
             }
@@ -832,10 +856,24 @@ export default function HowToSellMyHouseFastInArizonaPage() {
           {/* CTA Review Banner */}
           <div className="bg-[#052316] text-white rounded-2xl p-8 text-center mt-12 shadow-xl">
             <h3 className="text-[24px] font-bold mb-3 font-playfair">
-              Get Your Free Home Selling Options Review
+              Get a Free Home Selling Options Review
             </h3>
-            <p className="text-[#c8c8b8] text-[15px] max-w-xl mx-auto mb-6 leading-relaxed">
-              Before accepting any cash offer, let our team run the real net numbers for cash sale vs. as-is listing vs. refinancing.
+            <p className="text-[#c8c8b8] text-[15px] max-w-xl mx-auto mb-4 leading-relaxed">
+              You don&apos;t have to navigate this alone — or take a cash buyer&apos;s word for what your home is worth. In a free, no-obligation Home Selling Options Review, a licensed Arizona mortgage expert will help you:
+            </p>
+            <ul className="text-[#c8c8b8] text-[15px] max-w-xl mx-auto mb-4 leading-relaxed text-left list-disc pl-6 space-y-2">
+              <li>Compare every option side by side — cash sale, as-is listing, traditional sale, or keeping and refinancing.</li>
+              <li>See your realistic net proceeds for each path, not just a headline offer.</li>
+              <li>Get independent, Arizona-specific advice from people who don&apos;t buy houses and have nothing to sell you here.</li>
+            </ul>
+            <p className="text-[#c8c8b8] text-[15px] max-w-xl mx-auto mb-4 leading-relaxed">
+              It&apos;s 100% free, there&apos;s zero obligation, and no one will ever make an offer on your home.
+            </p>
+            <p className="text-[#c8c8b8] text-[15px] max-w-xl mx-auto mb-2 leading-relaxed">
+              📞 602-535-2171 — or request your free review below. Want reassurance first? Read what Arizona homeowners say about working with us.
+            </p>
+            <p className="text-[#c8c8b8] text-[13px] max-w-xl mx-auto mb-6 leading-relaxed">
+              100% Free • No Obligation • We Don&apos;t Buy Houses • Local Arizona Experts
             </p>
             <Link
               href="#home-selling-options-review"

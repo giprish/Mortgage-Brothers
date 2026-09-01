@@ -7,7 +7,6 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
-import FaqAccordion from "../component/FaqAccordion";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
 
 export const metadata: Metadata = getSeoMetadata("/what-are-mortgage-trigger-leads/");
@@ -61,23 +60,15 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "What is a mortgage trigger lead?", answer: "A trigger lead is generated when your credit is pulled for a mortgage application. Credit bureaus historically sold your contact information to lenders and marketing companies, who then called you trying to win your business—even though you never contacted them directly." },
-  { question: "Why am I getting calls from strangers after applying for a mortgage?", answer: "That used to happen within a day or two of a credit pull: bureaus sold trigger leads and competing lenders called. As of March 4, 2026, the Homebuyers Privacy Protection Act restricts those sales except in narrow cases, such as a pre-existing relationship or documented consumer consent." },
-  { question: "How do I stop unwanted mortgage trigger lead calls?", answer: "The main protection is now federal: the Homebuyers Privacy Protection Act (signed September 5, 2025, effective March 4, 2026) limits credit bureaus from selling mortgage trigger leads except in narrow circumstances. As a supplement, register at www.donotcall.gov; it takes about 30 days to take effect." },
-  { question: "How do I stop unwanted mortgage mail solicitations?", answer: "Federal trigger-lead limits do not replace mail opt-outs. Visit www.dmachoice.org to reduce promotional mail. DMA Choice is a supplement to the Homebuyers Privacy Protection Act, not the primary protection." },
-] as const;
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
     pathname: "/what-are-mortgage-trigger-leads/",
     headline: "What Are Mortgage Trigger Leads? Why Are Strangers Calling Your phone?",
-    description: "Trigger leads are the calls that used to follow a mortgage credit pull. Federal law now restricts the practice; Do Not Call and DMA Choice are still useful extras.",
+    description: "Learn what mortgage trigger leads are, why strangers call after you apply, and how to stop unwanted calls and mail with Do Not Call and DMA Choice.",
     datePublished: "2025-02-03",
-    dateModified: "2026-03-04",
     articleSection: "Mortgage Basics",
   },
-  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Basics", path: "/mortgage-basics/" },
@@ -102,11 +93,10 @@ export default function MortgageTriggerLeadsPage() {
         {/* Featured hero image */}
         <ArticleHero
           title={<>What Are Mortgage Trigger Leads? Why Are Strangers Calling Your phone?</>}
-          excerpt="Trigger leads are the calls that used to follow a mortgage credit pull. Federal law now restricts the practice; Do Not Call and DMA Choice are still useful extras."
+          excerpt="Learn what mortgage trigger leads are, why strangers call after you apply, and how to stop unwanted calls and mail with Do Not Call and DMA Choice."
           category="Mortgage Basics"
           categoryHref="/mortgage-basics/"
           dateLabel="Feb 3, 2025"
-          updatedLabel="Mar 4, 2026"
           readTime="6 min read"
         />
 
@@ -116,9 +106,8 @@ export default function MortgageTriggerLeadsPage() {
             <article className="min-w-0">
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-8">
-                Today we&apos;re talking about trigger leads: what they are, why strangers used to call after
-                you applied, and how federal law now restricts the practice. Do Not Call and DMA Choice remain
-                useful supplements.
+                Today we&apos;re talking about trigger leads. We&apos;re going to cover what they are and how
+                to avoid getting annoying phone calls after applying for a mortgage.
               </p>
 
               {/* Video */}
@@ -138,8 +127,8 @@ export default function MortgageTriggerLeadsPage() {
                   Tired of Unwanted Mortgage Calls?
                 </h2>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
-                  Federal law now limits trigger-lead sales. Work with a lender who does not buy them, and
-                  we will guide you through a straightforward home loan process.
+                  Find out how to stop mortgage trigger leads from flooding your phone with sales calls. Our
+                  experts can help protect your privacy and guide you through a stress-free home loan process.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
@@ -162,17 +151,18 @@ export default function MortgageTriggerLeadsPage() {
                   <p className="mb-5">
                     If you&apos;ve ever applied for a mortgage you&apos;ve likely received some of these
                     calls. A few days after your credit is pulled you start getting phone calls from people
-                    you haven&apos;t previously been talking with. That pattern is a trigger lead.
+                    you haven&apos;t previously been talking with. This is because of a trigger lead.
                   </p>
                   <p className="mb-5">
-                    A trigger lead is a marketing product built off your credit pull. Companies that wanted
-                    to know when you&apos;d applied for a mortgage could buy your contact info from the credit
-                    bureaus, then call and try to swoop in and close a deal. That sale of applicant data is
-                    what used to flood phones within a day or two of an application.
+                    A trigger lead is a good, old-fashioned marketing trick. What happens is companies who are
+                    interested in knowing when you&apos;ve applied for a mortgage can buy your contact info.
+                    And once they have your info, they&apos;ll give you a call and try to swoop in and close a
+                    deal. These leads are sold by the credit bureaus to companies that are interested in
+                    knowing when you&apos;ve applied for a mortgage.
                   </p>
                   <p>
                     The unfortunate thing about these, besides being annoying, is that they can also be
-                    scummy, especially when those calling give the impression that they&apos;re associated
+                    scummy, especially when those calling give the impression that they&apos;re associate
                     with a company you&apos;re already working with (such as the Mortgage Brothers!).
                   </p>
                 </section>
@@ -186,27 +176,7 @@ export default function MortgageTriggerLeadsPage() {
                   </h2>
                   <p className="mb-5">How do we get these calls to stop?</p>
                   <p className="mb-5">
-                    Federal law now directly restricts the practice. The{" "}
-                    <a
-                      href="https://www.congress.gov/bill/119th-congress/house-bill/2808"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[#3fb364] font-semibold hover:underline"
-                    >
-                      Homebuyers Privacy Protection Act
-                    </a>{" "}
-                    was signed September 5, 2025 and took effect March 4, 2026. It amends the Fair Credit
-                    Reporting Act so credit bureaus generally cannot sell mortgage trigger leads except in
-                    narrow circumstances—for example, when the recipient already has a qualifying relationship
-                    with you (such as originating or servicing your mortgage, or another specified banking
-                    relationship) or you have given documented consent.
-                  </p>
-                  <p className="mb-5">
-                    That law is the main change for borrowers today. Self-help opt-outs are still useful as a
-                    supplement, not the whole story.
-                  </p>
-                  <p className="mb-5">
-                    You can still sign up with the Do Not Call registry at{" "}
+                    The trick is to sign up with the Do Not Call registry. You can do that at{" "}
                     <a
                       href="https://www.donotcall.gov"
                       target="_blank"
@@ -215,11 +185,12 @@ export default function MortgageTriggerLeadsPage() {
                     >
                       www.donotcall.gov
                     </a>
-                    . While it takes about 30 days or so to go into effect, once it does, you&apos;ll get
-                    fewer leftover telemarketing calls that are not covered by the trigger-lead restriction.
+                    . While it takes about 30 days or so to go into effect, once it does, you&apos;ll get less
+                    and less of these unwanted calls.
                   </p>
                   <p className="mb-5">
-                    Stopping calls does not automatically stop mailers. You can go to{" "}
+                    Now, unfortunately, when you put a stop on calls you can still get mailers. But,
+                    thankfully there&apos;s a solution for those too. You can go to{" "}
                     <a
                       href="https://www.dmachoice.org"
                       target="_blank"
@@ -237,73 +208,6 @@ export default function MortgageTriggerLeadsPage() {
                   </p>
                 </section>
 
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={[
-                      {
-                        q: "What is a mortgage trigger lead?",
-                        a: (
-                          <>
-                            A trigger lead is generated when your credit is pulled for a mortgage application.
-                            Credit bureaus historically sold your contact information to lenders and marketing
-                            companies, who then called you trying to win your business—even though you never
-                            contacted them directly.
-                          </>
-                        ),
-                      },
-                      {
-                        q: "Why am I getting calls from strangers after applying for a mortgage?",
-                        a: (
-                          <>
-                            That used to happen within a day or two of a credit pull: bureaus sold trigger leads
-                            and competing lenders called. As of March 4, 2026, the Homebuyers Privacy Protection
-                            Act restricts those sales except in narrow cases, such as a pre-existing relationship
-                            or documented consumer consent.
-                          </>
-                        ),
-                      },
-                      {
-                        q: "How do I stop unwanted mortgage trigger lead calls?",
-                        a: (
-                          <>
-                            The main protection is now federal: the Homebuyers Privacy Protection Act (signed
-                            September 5, 2025, effective March 4, 2026) limits credit bureaus from selling
-                            mortgage trigger leads except in narrow circumstances. As a supplement, register at{" "}
-                            <a
-                              href="https://www.donotcall.gov"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-[#3fb364] font-semibold hover:underline"
-                            >
-                              www.donotcall.gov
-                            </a>
-                            ; it takes about 30 days to take effect.
-                          </>
-                        ),
-                      },
-                      {
-                        q: "How do I stop unwanted mortgage mail solicitations?",
-                        a: (
-                          <>
-                            Federal trigger-lead limits do not replace mail opt-outs. Visit{" "}
-                            <a
-                              href="https://www.dmachoice.org"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-[#3fb364] font-semibold hover:underline"
-                            >
-                              www.dmachoice.org
-                            </a>{" "}
-                            to reduce promotional mail. DMA Choice is a supplement to the Homebuyers Privacy
-                            Protection Act, not the primary protection.
-                          </>
-                        ),
-                      },
-                    ]}
-                  />
-                </section>
-
                 <p>
                   If you have any questions about this or if you have any questions you&apos;d like us to
                   answer on our podcast, you can submit your questions using our{" "}
@@ -312,18 +216,24 @@ export default function MortgageTriggerLeadsPage() {
                   </Link>{" "}
                   or give us a call at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
+                    (602) 535-2171
                   </a>
                   . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
                   you and help you through the whole process.
                 </p>
+                <p className="text-center text-[#5a6b52] tracking-widest">•••</p>
 
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work
-                    with you and help you through the whole process.
-                  </p>
-                </div>
+                <p>
+                  Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
+                  you and help you through the whole process.
+                </p>
+
+                <p className="text-[#5a6b52] text-[13px] leading-relaxed">
+                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material
+                  has been prepared for informational purposes only. You should consult your own tax,
+                  legal, and accounting advisors before engaging in any transaction. Mortgage Brothers
+                  NMLS 1007154, NMLS #210917 and 1618695. Equal Housing Opportunity.
+                </p>
 
                 <p className="text-[15px]">
                   If you&apos;re interested in further mortgage topics, explore our article on{" "}
@@ -353,13 +263,6 @@ export default function MortgageTriggerLeadsPage() {
                   .
                 </p>
 
-                <p className="text-[#5a6b52] text-[13px] leading-relaxed">
-                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material
-                  has been prepared for informational purposes only. You should consult your own tax,
-                  legal, and accounting advisors before engaging in any transaction. Mortgage Brothers
-                  NMLS 1007154, NMLS #210917 and 1618695. Equal housing lender.
-                </p>
-
                 <section id="podcast-transcript">
                   <h2
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
@@ -367,12 +270,6 @@ export default function MortgageTriggerLeadsPage() {
                   >
                     Transcript of the Mortgage Brothers Podcast
                   </h2>
-                  <p className="text-[14.5px] text-[#5a6b52] leading-relaxed mb-6">
-                    This episode was recorded before the Homebuyers Privacy Protection Act took effect on
-                    March 4, 2026. The article above reflects current federal law. The transcript below is
-                    the original conversation; treat Do Not Call and DMA Choice as supplements, not the whole
-                    story.
-                  </p>
 
                   <div className="space-y-8 text-[15.5px]">
                     <div>
@@ -636,9 +533,10 @@ export default function MortgageTriggerLeadsPage() {
               Get in Touch with The Mortgage Brothers
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              Ready to take the next step towards your dream home? One of our experienced mortgage
-              professionals will get back to you promptly with personalized solutions tailored to your
-              unique financial situation.
+              Ready to take the next step towards your dream home? Fill out the form below, and one of our
+              experienced mortgage professionals will get back to you promptly. We&apos;re here to provide
+              personalized solutions tailored to your unique financial situation and homeownership goals in
+              Arizona.
             </p>
             <Link
               href="#get-pre-approved"

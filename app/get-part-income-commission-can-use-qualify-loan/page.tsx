@@ -331,13 +331,6 @@ export default function CommissionQualifyLoanPage() {
                   </p>
                 </section>
 
-                <p className="text-[#5a6b52] text-[13px] leading-relaxed">
-                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
-                  been prepared for informational purposes only. You should consult your own tax, legal, and
-                  accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
-                  #210917 and 1618695. Equal housing lender.
-                </p>
-
                 <p>
                   Learn how you can use part of your commission income to qualify for a mortgage and expand
                   your financing options. Enhance your financial strategy by exploring how to{" "}
@@ -402,7 +395,7 @@ export default function CommissionQualifyLoanPage() {
                         Knoell.
                       </p>
                       <p className="mb-3">
-                        Today, we&apos;re covering a big topic for many borrowers: How do lenders count
+                        Today, we&apos;re covering a big topic for many borrowers: 💰 How do lenders count
                         commissions, bonuses, and tips as income?
                       </p>
                       <p className="mb-3">

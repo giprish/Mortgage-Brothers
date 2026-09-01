@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
 import Link from "next/link";
@@ -75,12 +74,6 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "Why is understanding credit important for getting a mortgage loan in Arizona?", answer: "Understanding credit is crucial because lenders evaluate your credit history, open accounts, payment behavior, and types of credit to determine your risk level. Even small changes in your credit score can influence your down payment, loan programs, and interest rates." },
-  { question: "What factors make up a credit score?", answer: "Credit scores are calculated based on several components: 35% payment history, 30% amount owed compared to available credit, 15% length of credit history, 10% mix of credit, and 10% new credit applications." },
-  { question: "Where can I get a free copy of my credit report?", answer: "Consumers are entitled by law to one free credit report annually from each of the three major credit bureaus—Equifax, Experian, and TransUnion. You can access your free credit report at www.AnnualCreditReport.com." },
-  { question: "What factors do not affect my credit score?", answer: "Factors such as your age, race, sex, employment history, income, marital status, length of employment, and occupancy status do not impact your credit score." },
-] as const;
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
@@ -90,7 +83,6 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-10",
     articleSection: "Mortgage Basics",
   },
-  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Basics", path: "/mortgage-basics/" },
@@ -258,26 +250,6 @@ export default function ArizonaUnderstandingYourCreditPage() {
                   </p>
                 </section>
 
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={[
-                    { q: "Why is understanding credit important for getting a mortgage loan in Arizona?", a: <>Understanding credit is crucial because lenders evaluate your credit history, open
-                        accounts, payment behavior, and types of credit to determine your risk level. Even small
-                        changes in your credit score can influence your down payment, loan programs, and interest
-                        rates.</> },
-                    { q: "What factors make up a credit score?", a: <>Credit scores are calculated based on several components: 35% payment history, 30% amount
-                        owed compared to available credit, 15% length of credit history, 10% mix of credit, and 10%
-                        new credit applications.</> },
-                    { q: "Where can I get a free copy of my credit report?", a: <>Consumers are entitled by law to one free credit report annually from each of the three
-                        major credit bureaus—Equifax, Experian, and TransUnion. You can access your free credit
-                        report at www.AnnualCreditReport.com.</> },
-                    { q: "What factors do not affect my credit score?", a: <>Factors such as your age, race, sex, employment history, income, marital status, length of
-                        employment, and occupancy status do not impact your credit score.</> }
-                    ]}
-                  />
-                </section>
-
                 <p>
                   If you have any questions about understanding your credit, call us at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
@@ -301,7 +273,7 @@ export default function ArizonaUnderstandingYourCreditPage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
                   prepared for informational purposes only. You should consult your own tax, legal, and accounting
                   advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
-                  1618695. Equal housing lender.
+                  1618695. Equal Housing Opportunity.
                 </p>
               </div>
 

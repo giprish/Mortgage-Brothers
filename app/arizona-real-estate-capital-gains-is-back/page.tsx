@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -78,12 +77,6 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "What is real estate capital gains tax?", answer: "Capital gains tax is a tax levied on the profit realized from the sale of a non-inventory asset, such as real estate. It is calculated by taking the difference between the final selling price and the original purchase price (along with adjusted cost basis improvements)." },
-  { question: "How does the IRS Section 121 exclusion protect Arizona primary residences from capital gains?", answer: "Under IRS Section 121, if the property was your primary residence, you can exclude up to $250,000 of capital gains profit if you are a single filer, and up to $500,000 if you are married filing jointly. To qualify, you must meet the ownership and use tests, meaning you owned and lived in the home for at least two out of the five years prior to the sale date." },
-  { question: "Are investment properties and vacation homes exempt from Arizona capital gains tax?", answer: "No. Investment properties and secondary vacation homes do not qualify for the standard primary residence Section 121 tax exclusion. When you sell an investment property or second home, the entire realized profit is subject to applicable state and federal capital gains taxes." },
-  { question: "How can real estate investors defer capital gains tax on Arizona properties?", answer: "Real estate investors can legally defer paying capital gains taxes by utilizing a Section 1031 exchange. This strategy allows an investor to defer the tax liabilities by reinvesting the net cash proceeds from the sale of their current investment property into a new, 'like-kind' replacement property within strict IRS timeline guidelines." },
-] as const;
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
@@ -93,7 +86,6 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-04",
     articleSection: "Real Estate & Mortgages",
   },
-  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Real Estate & Mortgages", path: "/real-estate-mortgages/" },
@@ -246,29 +238,17 @@ export default function ArizonaRealEstateCapitalGainsPage() {
                   </a>{" "}
                   or give us a call at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
+                    (602) 535-2171
                   </a>
                   . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
                   you and help you through the whole process.
                 </p>
+                <p className="text-center text-[#5a6b52] tracking-widest">•••</p>
 
-                
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={articleFaqs.map((faq) => ({
-                      q: faq.question,
-                      a: faq.answer,
-                    }))}
-                  />
-                </section>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
-                    you and help you through the whole process.
-                  </p>
-                </div>
+                <p>
+                  Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
+                  you and help you through the whole process.
+                </p>
 
                 <p className="text-[15px]">
                   Stay informed with the latest on Arizona real estate capital gains. For additional insights,
@@ -321,7 +301,7 @@ export default function ArizonaRealEstateCapitalGainsPage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
                   been prepared for informational purposes only. You should consult your own tax, legal, and
                   accounting advisors before engaging in any transaction. Mortgage Brothers LLC NMLS 1007154,
-                  NMLS #210917 and 1618695. Equal housing lender.
+                  NMLS #210917 and 1618695. Equal Housing Opportunity.
                 </p>
               </div>
 
@@ -444,9 +424,10 @@ export default function ArizonaRealEstateCapitalGainsPage() {
               Get in Touch with The Mortgage Brothers
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              Ready to take the next step towards your dream home? One of our experienced mortgage
-              professionals will get back to you promptly with personalized solutions tailored to your unique
-              financial situation.
+              Ready to take the next step towards your dream home? Fill out the form below, and one of our
+              experienced mortgage professionals will get back to you promptly. We&apos;re here to provide
+              personalized solutions tailored to your unique financial situation and homeownership goals in
+              Arizona.
             </p>
             <Link
               href="#get-pre-approved"

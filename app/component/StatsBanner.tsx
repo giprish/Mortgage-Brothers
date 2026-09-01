@@ -22,7 +22,7 @@ export default function StatsBanner({ stats, sectionClassName }: StatsBannerProp
 
   return (
     <section className={`w-full bg-[#fcf9f3] no-content-visibility ${sectionClassName ?? "py-4 lg:py-5"}`}>
-      <div className="max-w-6xl mx-auto px-6 lg:px-10">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div
           className={`bg-[#08271B] border border-[#143d2b] rounded-2xl px-4 sm:px-8 py-6 lg:py-8 grid ${gridCols} gap-6 sm:gap-5 lg:gap-6 items-center justify-items-center text-center shadow-xl`}
         >

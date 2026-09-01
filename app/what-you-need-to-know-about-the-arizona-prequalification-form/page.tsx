@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -79,11 +78,6 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "What is the Arizona Prequalification Form?", answer: "The Arizona Prequalification Form is a document required in real estate transactions in Arizona. It is issued by lenders and shows that a buyer has been reviewed and is financially capable of purchasing a home." },
-  { question: "Why does the Arizona Prequalification Form matter to buyers?", answer: "For buyers, the Arizona Prequalification Form acts like a resume. It shows sellers that they are serious and financially qualified, which can strengthen their chances of getting their offer accepted in a competitive market." },
-  { question: "Why is the Arizona Prequalification Form important for sellers?", answer: "For sellers, reviewing a buyer’s prequalification form helps assess risk before accepting an offer. A strong form gives sellers confidence in the buyer’s ability to qualify and can make the buyer’s offer more attractive." },
-] as const;
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
@@ -93,7 +87,6 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-04",
     articleSection: "Real Estate & Mortgages",
   },
-  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Real Estate & Mortgages", path: "/real-estate-mortgages/" },
@@ -312,13 +305,15 @@ export default function ArizonaPrequalificationFormPage() {
                       </h3>
                       <p className="mb-3">
                         Lines 25-28 indicate whether the borrower has provided:
+                        <br />
+                        ✅ Pay stubs
+                        <br />
+                        ✅ Tax returns
+                        <br />
+                        ✅ W-2s
+                        <br />
+                        ✅ Down payment proof
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Pay stubs</li>
-                        <li>Tax returns</li>
-                        <li>W-2s</li>
-                        <li>Down payment proof</li>
-                      </ul>
                       <p className="mb-6">
                         This is crucial because sellers prefer buyers who have fully documented their
                         financials.
@@ -366,51 +361,24 @@ export default function ArizonaPrequalificationFormPage() {
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
                         Need Help? Contact Us! [21:08]
                       </h3>
-                      <p>
+                      <p className="mb-3">
                         If you have any questions about prequalification or the home-buying process, reach
-                        out to the Mortgage Brothers Team. Email us using our{" "}
+                        out to the Mortgage Brothers Team.
+                      </p>
+                      <p className="mb-3">
+                        📩 Email us at:{" "}
                         <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                          contact form
-                        </Link>{" "}
-                        or call us for a free mortgage quote. If you found this video helpful, like,
-                        subscribe, and hit the notification button for more mortgage tips! Thanks for tuning
-                        in.
+                          Contact Form
+                        </Link>
+                      </p>
+                      <p className="mb-3">📞 Call us for a free mortgage quote</p>
+                      <p>
+                        If you found this video helpful, like, subscribe, and hit the notification button
+                        for more mortgage tips! Thanks for tuning in.
                       </p>
                     </div>
                   </div>
                 </section>
-
-                <p>
-                  If you have any questions about this or if you have any questions you&apos;d like us to
-                  answer on our podcast, you can submit your questions using our{" "}
-                  <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                    contact form
-                  </Link>{" "}
-                  or give us a call at{" "}
-                  <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
-                  </a>
-                  . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
-                  you and help you through the whole process.
-                </p>
-
-                
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={articleFaqs.map((faq) => ({
-                      q: faq.question,
-                      a: faq.answer,
-                    }))}
-                  />
-                </section>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
-                    you and help you through the whole process.
-                  </p>
-                </div>
 
                 <p className="text-[15px]">
                   Get the essentials on Arizona&apos;s prequalification form. You might also explore our tips
@@ -457,13 +425,6 @@ export default function ArizonaPrequalificationFormPage() {
                     capital gains
                   </Link>
                   .
-                </p>
-
-                <p className="text-[#5a6b52] text-[13px] leading-relaxed">
-                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
-                  been prepared for informational purposes only. You should consult your own tax, legal, and
-                  accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
-                  #210917 and 1618695. Equal housing lender.
                 </p>
               </div>
 
@@ -586,9 +547,10 @@ export default function ArizonaPrequalificationFormPage() {
               Get in Touch with The Mortgage Brothers
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              Ready to take the next step towards your dream home? One of our experienced mortgage
-              professionals will get back to you promptly with personalized solutions tailored to your unique
-              financial situation.
+              Ready to take the next step towards your dream home? Fill out the form below, and one of our
+              experienced mortgage professionals will get back to you promptly. We&apos;re here to provide
+              personalized solutions tailored to your unique financial situation and homeownership goals in
+              Arizona.
             </p>
             <Link
               href="#get-pre-approved"

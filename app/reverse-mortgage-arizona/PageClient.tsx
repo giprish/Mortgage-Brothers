@@ -452,7 +452,7 @@ export default function ReverseMortgageArizonaPage() {
               </a>
             </div>
             <p className="mx-auto max-w-3xl pt-6 text-[12px] leading-relaxed text-[#b8d4b8]">
-              Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been prepared for informational purposes only. You should consult your own tax, legal, and accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and #1618695. Equal housing lender.
+              Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been prepared for informational purposes only. You should consult your own tax, legal, and accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and #1618695. Equal Housing Opportunity.
             </p>
           </div>
         </section>

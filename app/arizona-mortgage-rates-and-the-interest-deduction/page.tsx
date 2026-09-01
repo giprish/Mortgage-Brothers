@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -78,12 +77,6 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "What is the mortgage interest tax deduction and how does it work?", answer: "The mortgage interest deduction is a federal tax incentive designed to reduce the cost of homeownership. If you itemize your deductions, it allows you to subtract the total amount of interest paid on your home loan from your gross income, actively lowering your overall taxable income balance for the year." },
-  { question: "How do I know exactly how much mortgage interest I paid over the tax year?", answer: "Every January, your mortgage servicer is legally required to send you an IRS Form 1098. This official document states the precise dollar amount of mortgage interest and any deductible loan points you paid during the prior calendar year, which your tax professional will use to calculate your write-off." },
-  { question: "Does a higher annual income increase the value of the mortgage interest deduction?", answer: "Yes, because tax savings scale directly with your federal income tax bracket. For example, a homeowner in a 12% marginal tax bracket who pays $12,000 in annual mortgage interest will save roughly $1,400 on their tax bill, whereas a higher-earning homeowner paying the same interest in a 22% tax bracket will save closer to $3,500." },
-  { question: "What are the limitations on writing off home loan interest under current tax laws?", answer: "To claim the mortgage interest write-off, your total itemized deductions must exceed the standard deduction set by the IRS. Additionally, federal tax guidelines limit the deduction to the interest paid on the first $750,000 of indebtedness for properties purchased after December 15, 2017." },
-] as const;
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
@@ -93,7 +86,6 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-04",
     articleSection: "Real Estate & Mortgages",
   },
-  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Real Estate & Mortgages", path: "/real-estate-mortgages/" },
@@ -241,7 +233,7 @@ export default function ArizonaMortgageRatesInterestDeductionPage() {
                   </a>{" "}
                   or give us a call at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
+                    (602) 535-2171
                   </a>
                   . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
                   you and help you through the whole process.
@@ -269,24 +261,12 @@ export default function ArizonaMortgageRatesInterestDeductionPage() {
                   </a>
                   .
                 </p>
+                <p className="text-center text-[#5a6b52] tracking-widest">•••</p>
 
-                
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={articleFaqs.map((faq) => ({
-                      q: faq.question,
-                      a: faq.answer,
-                    }))}
-                  />
-                </section>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
-                    you and help you through the whole process.
-                  </p>
-                </div>
+                <p>
+                  Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
+                  you and help you through the whole process.
+                </p>
 
                 <p className="text-[15px]">
                   Stay updated on Arizona mortgage rates and interest deductions. Additionally, learn about{" "}
@@ -338,7 +318,7 @@ export default function ArizonaMortgageRatesInterestDeductionPage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
                   been prepared for informational purposes only. You should consult your own tax, legal, and
                   accounting advisors before engaging in any transaction. Mortgage Brothers LLC NMLS 1007154,
-                  NMLS #210917 and 1618695. Equal housing lender.
+                  NMLS #210917 and 1618695. Equal Housing Opportunity.
                 </p>
               </div>
 
@@ -461,9 +441,10 @@ export default function ArizonaMortgageRatesInterestDeductionPage() {
               Get in Touch with The Mortgage Brothers
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              Ready to take the next step towards your dream home? One of our experienced mortgage
-              professionals will get back to you promptly with personalized solutions tailored to your unique
-              financial situation.
+              Ready to take the next step towards your dream home? Fill out the form below, and one of our
+              experienced mortgage professionals will get back to you promptly. We&apos;re here to provide
+              personalized solutions tailored to your unique financial situation and homeownership goals in
+              Arizona.
             </p>
             <Link
               href="#get-pre-approved"

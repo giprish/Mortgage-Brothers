@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -75,12 +74,6 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "Do a lot of our borrowers work remotely?", answer: "Remote work is becoming more common, especially since COVID. Around 5% of our borrowers currently work remotely. It’s possible to get a mortgage while working from home as long as you meet underwriting requirements." },
-  { question: "Do I need to talk to my employer?", answer: "Yes, it’s very important to talk to your employer. You’ll need documentation, such as a signed letter from your employer confirming your remote work arrangement, job details, and salary information. Many underwriters require this before approving a mortgage." },
-  { question: "How do I talk to my employer about moving?", answer: "Have a clear conversation with your boss or HR department about your remote work or relocation. To satisfy underwriting, you’ll need a signed and dated letter from your employer stating approval to work remotely, your job position, start date, and salary details. The agreement must be permanent and without conditions." },
-  { question: "Does remote working impact investment properties?", answer: "Remote work considerations mainly apply to primary homes, not investment properties. If you have questions regarding investment properties and remote work, you can contact us directly for guidance." },
-] as const;
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
@@ -90,7 +83,6 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-03",
     articleSection: "Mortgage Qualifications",
   },
-  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Qualifications", path: "/mortgage-qualifications/" },
@@ -192,7 +184,7 @@ export default function RelocateRemoteMortgagePage() {
                     keep rising. If you&apos;re thinking about getting a home here in Arizona and work from
                     home, you can save yourself some reading time and give us a call at{" "}
                     <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                      +1 (602) 535-2171
+                      (602) 535-2171
                     </a>{" "}
                     and we&apos;ll start getting you squared away today. That being said, it&apos;s totally
                     possible to get a mortgage while working remotely or from home. You just need to meet some
@@ -271,7 +263,7 @@ export default function RelocateRemoteMortgagePage() {
                     requirements it&apos;s easy. If you&apos;re self-employed and looking for a mortgage give
                     us a call at{" "}
                     <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                      +1 (602) 535-2171
+                      (602) 535-2171
                     </a>{" "}
                     and we can get right to helping you.
                   </p>
@@ -293,30 +285,18 @@ export default function RelocateRemoteMortgagePage() {
                     </Link>{" "}
                     or give us a call at{" "}
                     <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                      +1 (602) 535-2171
+                      (602) 535-2171
                     </a>
                     . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work
                     with you and help you through the whole process.
                   </p>
                 </section>
+                <p className="text-center text-[#5a6b52] tracking-widest">•••</p>
 
-                
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={articleFaqs.map((faq) => ({
-                      q: faq.question,
-                      a: faq.answer,
-                    }))}
-                  />
-                </section>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
-                    you and help you through the whole process.
-                  </p>
-                </div>
+                <p>
+                  Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
+                  you and help you through the whole process.
+                </p>
 
                 <p className="text-[15px]">
                   Wondering if relocating while working remotely affects your mortgage? Learn more by reading
@@ -362,7 +342,7 @@ export default function RelocateRemoteMortgagePage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
                   been prepared for informational purposes only. You should consult your own tax, legal, and
                   accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
-                  #210917 and 1618695. Equal housing lender.
+                  #210917 and 1618695. Equal Housing Opportunity.
                 </p>
 
                 <section id="podcast-transcript">
@@ -630,9 +610,10 @@ export default function RelocateRemoteMortgagePage() {
               Get in Touch with The Mortgage Brothers
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              Ready to take the next step towards your dream home? One of our experienced mortgage
-              professionals will get back to you promptly with personalized solutions tailored to your unique
-              financial situation.
+              Ready to take the next step towards your dream home? Fill out the form below, and one of our
+              experienced mortgage professionals will get back to you promptly. We&apos;re here to provide
+              personalized solutions tailored to your unique financial situation and homeownership goals in
+              Arizona.
             </p>
             <Link
               href="#get-pre-approved"

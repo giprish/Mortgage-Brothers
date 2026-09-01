@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -61,11 +60,6 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "How do mortgage payoffs work?", answer: "When refinancing, you can’t just use the balance shown on your mortgage statement. You must account for interest. Many borrowers confuse the mortgage payoff with the statement balance, but they are different. Your monthly payments are based on your loan amount, interest, and the timing of your payoff." },
-  { question: "I made my payment on time, why is it still going up?", answer: "Mortgage payments are paid in arrears, meaning the payment you make at the start of the month covers the previous month. Interest accrues daily, so your balance increases until your payment is applied. If charted, it looks like a stair-step pattern rather than a straight downward line." },
-  { question: "How does your closing date impact your mortgage payoff?", answer: "Your closing date determines how much daily interest you must cover. If you close mid-month, you’re responsible for the accrued interest for the remaining days. If closing at the start of the month, title companies may add a few extra days of interest to avoid shortages. Closing at the end of the month may delay your first payment, but you’ll still owe daily interest." },
-] as const;
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
@@ -75,7 +69,6 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-03",
     articleSection: "Mortgage Basics",
   },
-  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Basics", path: "/mortgage-basics/" },
@@ -218,23 +211,12 @@ export default function MortgagePayoffPage() {
                   on your next mortgage. We&apos;ll personally work with you and help you through the whole
                   process.
                 </p>
+                <p className="text-center text-[#5a6b52] tracking-widest">•••</p>
 
-                
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={articleFaqs.map((faq) => ({
-                      q: faq.question,
-                      a: faq.answer,
-                    }))}
-                  />
-                </section>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you and help you through the whole process.
-                  </p>
-                </div>
+                <p>
+                  Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
+                  you and help you through the whole process.
+                </p>
 
                 <p className="text-[15px]">
                   Expand your mortgage knowledge with{" "}
@@ -265,7 +247,7 @@ export default function MortgagePayoffPage() {
                 </p>
 
                 <p className="text-[#5a6b52] text-[13px] leading-relaxed">
-                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been prepared for informational purposes only. You should consult your own tax, legal, and accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and 1618695. Equal housing lender.
+                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been prepared for informational purposes only. You should consult your own tax, legal, and accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and 1618695. Equal Housing Opportunity.
                 </p>
               </div>
 
@@ -352,7 +334,7 @@ export default function MortgagePayoffPage() {
               Get in Touch with The Mortgage Brothers
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              Ready to take the next step towards your dream home? One of our experienced mortgage professionals will get back to you promptly with personalized solutions tailored to your unique financial situation.
+              Ready to take the next step towards your dream home? Fill out the form below, and one of our experienced mortgage professionals will get back to you promptly. We&apos;re here to provide personalized solutions tailored to your unique financial situation and homeownership goals in Arizona.
             </p>
             <Link href="#get-pre-approved" className="btn-primary">
               Get Your Rate Now

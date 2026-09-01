@@ -126,7 +126,7 @@ function CategorySection({
 function MidCtaBanner() {
   return (
     <section className="w-full py-4">
-      <div className="bg-[#3fb364] rounded-3xl px-8 py-12 lg:py-14 text-center shadow-lg shadow-[#3fb364]/20">
+      <div className="bg-[#08271B] rounded-3xl px-8 py-12 lg:py-14 text-center shadow-lg shadow-[#08271B]/25">
         <h2 className="text-white text-[28px] lg:text-[36px] font-bold leading-tight mb-4 max-w-3xl mx-auto">
           Watching is a great start. Ready for real numbers?
         </h2>

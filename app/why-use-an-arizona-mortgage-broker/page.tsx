@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
 import Link from "next/link";
@@ -75,12 +74,6 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "Why should I use an Arizona mortgage broker?", answer: "An Arizona mortgage broker can help you find the best mortgage rates by working with multiple lenders, unlike banks that offer only their own loan products. They assist with pre-qualification, completing your mortgage application, locking your loan rate, and guiding you through the entire loan process." },
-  { question: "What are the benefits of working with an Arizona mortgage broker instead of a bank loan officer?", answer: "Mortgage brokers offer flexible hours, often working evenings and weekends, while bank loan officers typically work 9 a.m. to 5 p.m. Brokers can compare rates across lenders to save you time and money and find solutions for unique financial situations. Bank loan officers can only offer products from their own institution." },
-  { question: "Can a Realtor help me find a reliable Arizona mortgage broker?", answer: "Yes, Realtors often have established relationships with trusted Arizona mortgage brokers. They can refer you to brokers who have a proven track record of helping clients close their deals smoothly and on time." },
-  { question: "What is the difference between pre-qualification and pre-approval for a mortgage?", answer: "Pre-qualification provides an estimate of how much you can borrow based on your financial information, while pre-approval means your income, assets, credit, and loan application have been reviewed and approved by a lender. A pre-approval letter carries more weight with sellers and helps you close faster when you find a home." },
-] as const;
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
@@ -90,7 +83,6 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-10",
     articleSection: "Mortgage Basics",
   },
-  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Basics", path: "/mortgage-basics/" },
@@ -241,29 +233,6 @@ export default function WhyUseAnArizonaMortgageBrokerPage() {
                   </p>
                 </section>
 
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={[
-                    { q: "Why should I use an Arizona mortgage broker?", a: <>An Arizona mortgage broker can help you find the best mortgage rates by working with
-                        multiple lenders, unlike banks that offer only their own loan products. They assist with
-                        pre-qualification, completing your mortgage application, locking your loan rate, and
-                        guiding you through the entire loan process.</> },
-                    { q: "What are the benefits of working with an Arizona mortgage broker instead of a bank loan\r\n                        officer?", a: <>Mortgage brokers offer flexible hours, often working evenings and weekends, while bank loan
-                        officers typically work 9 a.m. to 5 p.m. Brokers can compare rates across lenders to save
-                        you time and money and find solutions for unique financial situations. Bank loan officers
-                        can only offer products from their own institution.</> },
-                    { q: "Can a Realtor help me find a reliable Arizona mortgage broker?", a: <>Yes, Realtors often have established relationships with trusted Arizona mortgage brokers.
-                        They can refer you to brokers who have a proven track record of helping clients close their
-                        deals smoothly and on time.</> },
-                    { q: "What is the difference between pre-qualification and pre-approval for a mortgage?", a: <>Pre-qualification provides an estimate of how much you can borrow based on your financial
-                        information, while pre-approval means your income, assets, credit, and loan application
-                        have been reviewed and approved by a lender. A pre-approval letter carries more weight with
-                        sellers and helps you close faster when you find a home.</> }
-                    ]}
-                  />
-                </section>
-
                 <p>
                   If you have any questions about working with an Arizona mortgage broker, call us at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
@@ -287,7 +256,7 @@ export default function WhyUseAnArizonaMortgageBrokerPage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
                   prepared for informational purposes only. You should consult your own tax, legal, and accounting
                   advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
-                  1618695. Equal housing lender.
+                  1618695. Equal Housing Opportunity.
                 </p>
               </div>
 

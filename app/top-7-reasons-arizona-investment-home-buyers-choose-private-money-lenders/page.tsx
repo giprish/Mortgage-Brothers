@@ -180,7 +180,7 @@ export default function PrivateMoneyLendersArticlePage() {
             </ul>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-8">
               <strong>Example:</strong><br />
-              An investor in Maryvale purchased three homes, renovated them, and sold for a $155,000 profit — all using private money.
+              Maryvale purchased three homes, renovated them, and sold for a $155,000 profit — all using private money.
             </p>
 
             <h3 className="text-[#052316] text-[24px] font-bold mb-3 font-playfair">5. Creative Financing Solutions for Investment Scenarios</h3>
@@ -272,36 +272,11 @@ export default function PrivateMoneyLendersArticlePage() {
               <strong>Contact Mortgage Brothers today for:</strong>
             </p>
             <ul className="space-y-2.5 mb-5 text-[#3a4a3a] text-[16px]">
-              <li className="flex items-center gap-2">
-                <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-                <span>Free private money consultation</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-                <span>Fast pre-qualification (within 24 hours)</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-                <span>Access to Arizona&apos;s top private lenders</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-                <span>Transparent cost analysis and loan structuring</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                </svg>
-                <span>Expert guidance through every step</span>
-              </li>
+              <li>✅ Free private money consultation</li>
+              <li>✅ Fast pre-qualification (within 24 hours)</li>
+              <li>✅ Access to Arizona&apos;s top private lenders</li>
+              <li>✅ Transparent cost analysis and loan structuring</li>
+              <li>✅ Expert guidance through every step</li>
             </ul>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-2 flex items-center gap-1.5">
               <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">

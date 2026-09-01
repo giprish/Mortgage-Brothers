@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -79,12 +78,6 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "What is the Arizona BINSR in a real estate transaction?", answer: "The BINSR, which stands for Buyer Inspection Notice and Seller Response, is a standard legal document used in Arizona real estate transactions. It serves as the official platform for the buyer to notify the seller of any physical items or property conditions they disapprove of following their home inspection period." },
-  { question: "How long does a buyer have to submit the BINSR in Arizona?", answer: "Under the standard Arizona Real Estate Purchase Contract, a buyer has a default inspection period of 10 days from contract acceptance to complete all physical inspections, review reports, and formally deliver the completed BINSR document to the seller." },
-  { question: "What options does a buyer have when completing their portion of the BINSR?", answer: "When submitting the BINSR, the buyer must choose one of three primary options: accept the premises in its current condition with no repairs, reject the premises entirely and cancel the contract (reclaiming their earnest money), or provide a specific list of disapproved items and give the seller an opportunity to correct them." },
-  { question: "How long does a seller have to respond to a buyer's BINSR repair requests?", answer: "Once the seller receives the BINSR containing repair requests, they have a strict timeline of 5 days to respond. The seller can agree to correct all disapproved items, refuse to make any repairs, or offer a compromise by agreeing to fix only specific items listed by the buyer." },
-] as const;
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
@@ -94,7 +87,6 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-04",
     articleSection: "Real Estate & Mortgages",
   },
-  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Real Estate & Mortgages", path: "/real-estate-mortgages/" },
@@ -213,7 +205,7 @@ export default function ArizonaBinsrPage() {
                   </a>{" "}
                   or give us a call at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
+                    (602) 535-2171
                   </a>
                   . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
                   you and help you through the whole process.
@@ -241,30 +233,18 @@ export default function ArizonaBinsrPage() {
                   </a>
                   .
                 </p>
+                <p className="text-center text-[#5a6b52] tracking-widest">•••</p>
 
-                
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={articleFaqs.map((faq) => ({
-                      q: faq.question,
-                      a: faq.answer,
-                    }))}
-                  />
-                </section>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
-                    you and help you through the whole process.
-                  </p>
-                </div>
+                <p>
+                  Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
+                  you and help you through the whole process.
+                </p>
                 
                 <p className="text-[#5a6b52] text-[13px] leading-relaxed">
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material
                   has been prepared for informational purposes only. You should consult your own tax, legal,
                   and accounting advisors before engaging in any transaction. Mortgage Brothers LLC NMLS
-                  1007154, NMLS #210917 and 1618695. Equal housing lender.
+                  1007154, NMLS #210917 and 1618695. Equal Housing Opportunity.
                 </p>
 
                 <blockquote className="border-l-4 border-[#3fb364] pl-5 my-8 italic">
@@ -624,9 +604,10 @@ export default function ArizonaBinsrPage() {
               Get in Touch with The Mortgage Brothers
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              Ready to take the next step towards your dream home? One of our experienced mortgage
-              professionals will get back to you promptly with personalized solutions tailored to your unique
-              financial situation.
+              Ready to take the next step towards your dream home? Fill out the form below, and one of our
+              experienced mortgage professionals will get back to you promptly. We&apos;re here to provide
+              personalized solutions tailored to your unique financial situation and homeownership goals in
+              Arizona.
             </p>
             <Link
               href="#get-pre-approved"

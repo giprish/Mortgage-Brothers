@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -74,12 +73,6 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "What are the primary financial benefits of applying for a mortgage as a couple?", answer: "Applying for a mortgage as a couple allows lenders to combine both applicants' incomes and assets. This joint financial profile typically lowers the overall debt-to-income (DTI) ratio, helping the couple qualify for a larger loan amount or secure better mortgage terms than they might individually." },
-  { question: "How do mortgage lenders evaluate credit scores when a couple applies together?", answer: "When a couple applies jointly, both credit histories carry equal weight. Lenders do not average the scores together; instead, underwriting guidelines dictate that they typically use the lower middle credit score of the two applicants to determine eligibility and pricing." },
-  { question: "What are the advantages of applying for a home loan as a single applicant?", answer: "As a single applicant, your qualification rests entirely on your own financial profile. This eliminates any negative surprises or impact from a partner's poor credit history, high individual debt loads, or erratic employment records, allowing you to maintain control over the application process." },
-  { question: "Should a couple apply solo if one partner has a poor credit history?", answer: "If one partner has a low credit score or significant debt, it may be beneficial to apply as a single applicant using only the spouse with strong financial credentials. However, doing so means the lender will exclude the non-applying partner's income, which could reduce the maximum home purchase budget." },
-] as const;
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
@@ -89,7 +82,6 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-03",
     articleSection: "Mortgage Qualifications",
   },
-  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Qualifications", path: "/mortgage-qualifications/" },
@@ -169,7 +161,7 @@ export default function MortgageCoupleVsSingleApplicantPage() {
                     href="#get-pre-approved"
                     className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
                   >
-                    Get Personalized Mortgage Advice &rarr;
+                    Get Personalized Mortgage Advice
                   </Link>
                 </div>
               </div>
@@ -237,27 +229,19 @@ export default function MortgageCoupleVsSingleApplicantPage() {
                   </p>
                 </section>
 
-                
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={articleFaqs.map((faq) => ({
-                      q: faq.question,
-                      a: faq.answer,
-                    }))}
-                  />
-                </section>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    We&rsquo;re Here With Answers From Experience! Contact Us Today at{" "}
-                    <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                      +1 602-535-2171
-                    </a>
-                    <br />
-                    Or reach us using our contact form.
-                  </p>
-                </div>
+                <p className="mb-3">We&apos;re Here With Answers From Experience!</p>
+                <p className="mb-3">
+                  Contact Us Today at{" "}
+                  <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
+                    602-535-2171
+                  </a>
+                </p>
+                <p className="mb-8">
+                  Or reach us using our{" "}
+                  <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
+                    contact form
+                  </Link>
+                </p>
 
                 <p className="text-[15px]">
                   Deciding whether to apply as a couple or solo? Deepen your understanding by reading about{" "}
@@ -296,12 +280,6 @@ export default function MortgageCoupleVsSingleApplicantPage() {
                     DSCR loan might be your best bet
                   </Link>
                   .
-                </p>
-
-                <p className="text-[#5a6b52] text-[13px] leading-relaxed">
-                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been prepared for informational purposes only.
-                  You should consult your own tax, legal, and accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154,
-                  NMLS #210917 and 1618695. Equal housing lender.
                 </p>
               </div>
 
@@ -427,7 +405,7 @@ export default function MortgageCoupleVsSingleApplicantPage() {
               Get in Touch with The Mortgage Brothers
             </h2>
             <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              Ready to take the next step towards your dream home? One of our experienced mortgage professionals will get back to you promptly with personalized solutions tailored to your unique financial situation.
+              Ready to take the next step towards your dream home? Fill out the form below, and one of our experienced mortgage professionals will get back to you promptly. We&apos;re here to provide personalized solutions tailored to your unique financial situation and homeownership goals in Arizona.
             </p>
             <Link
               href="#get-pre-approved"

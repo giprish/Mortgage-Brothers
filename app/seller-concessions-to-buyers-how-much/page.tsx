@@ -7,7 +7,6 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
-import FaqAccordion from "../component/FaqAccordion";
 
 export const metadata: Metadata = getSeoMetadata("/seller-concessions-to-buyers-how-much/");
 
@@ -76,17 +75,16 @@ const loanSolutions = [
 
 const articleFaqs = [
   { question: "What are seller concessions in real estate?", answer: "Seller concessions are closing cost contributions from the seller to help buyers complete the purchase." },
-  { question: "How common are seller concessions in Phoenix in 2026?", answer: "Redfin reported seller concessions in 65.6% of Phoenix-area home sales in the three months ending May 31, 2026, up from 50.7% a year earlier. That measures how often a concession appeared, not the dollar amount." },
-  { question: "How much were seller concessions in Phoenix Metro?", answer: "In a February 9, 2019 ARMLS snapshot—not current market guidance—concessions ranged from 0.9% to 2.6% of sale prices across 2,112 Greater Phoenix closings in the prior 30 days." },
-  { question: "Which city had the highest seller concessions?", answer: "In that same February 2019 ARMLS snapshot, Glendale recorded the highest average seller concessions at about 2.3%. City rankings change with inventory and rates." },
-  { question: "Which price range had the most closings?", answer: "In the February 2019 ARMLS period, homes priced between $200,000 and $300,000 had the most closings, with average concessions of 1.9%. Those price bands and averages are historical." },
+  { question: "How much were seller concessions in Phoenix Metro?", answer: "Concessions ranged from 0.9% to 2.6% of sale prices across 2,112 closings in the prior 30 days as of February 9, 2019." },
+  { question: "Which city had the highest seller concessions?", answer: "Glendale recorded the highest average seller concessions at about 2.3%." },
+  { question: "Which price range had the most closings?", answer: "Homes priced between $200,000 and $300,000 had the most closings, with average concessions of 1.9%." },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
     pathname: "/seller-concessions-to-buyers-how-much/",
     headline: "Seller Concessions To Buyers - How Much?",
-    description: "Seller concessions in Phoenix move with rates and inventory. Here is 2026 frequency data, plus a clearly dated February 2019 ARMLS snapshot of concession size—not a current target.",
+    description: "Seller concessions to buyers in the Greater Phoenix Metro Area: ARMLS data from February 2019 on average concession amounts by city and price range.",
     datePublished: "2025-02-05",
     articleSection: "Mortgage Payments & Strategies",
   },
@@ -120,7 +118,7 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
       <main id="main-content" className="flex-grow relative z-0">
         <ArticleHero
           title={<>Seller Concessions To Buyers - How Much?</>}
-          excerpt="Seller concessions in Phoenix move with rates and inventory. Here is 2026 frequency data, plus a clearly dated February 2019 ARMLS snapshot of concession size—not a current target."
+          excerpt="ARMLS data from February 2019 on average seller concession amounts across the Greater Phoenix Metro Area."
           category="Mortgage Payments & Strategies"
           categoryHref="/mortgage-payments-strategies/"
           dateLabel="Feb 5, 2025"
@@ -131,25 +129,13 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
           <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
             <article className="min-w-0">
 
-              <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-5">
-                Seller concessions—credits toward closing costs, rate buydowns, or repairs—are fully negotiable.
-                How often they show up, and how large they are, tracks the housing cycle. A 2019 Phoenix average
-                is not a 2026 playbook.
+              <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-5 font-semibold">
+                Attached and Detached Resales in the Greater Phoenix Metro Area for prior 30 day period as of 2/9/19
               </p>
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
-                <a
-                  href="https://www.redfin.com/news/home-seller-concessions-record-high-rate/"
-                  target="_blank"
-                  rel="noopener"
-                  className="text-[#2d8545] font-semibold hover:underline"
-                >
-                  Redfin
-                </a>{" "}
-                reported seller concessions in 65.6% of Phoenix-area home sales in the three months ending May 31,
-                2026, up from 50.7% a year earlier. Nationally, about 46% of sales included a concession in that
-                same window. That figure is frequency (did a concession appear?), not the typical percent of the
-                sale price.
+                The above graph represents the average seller concession to buyers within the prior 30 day period
+                as of 2/9/2019 for closings in the Greater Phoenix Metro Market area.
               </p>
 
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
@@ -175,28 +161,12 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
 
               <div className="space-y-10 text-[#3a4a3a] text-[16px] leading-[1.8]">
                 <p>
-                  Loan programs also cap how much a seller can contribute. Typical owner-occupied limits are about
-                  3%–9% of the sale price on conventional loans (tied to down payment), 6% on FHA, and 4% on VA
-                  for certain seller-paid items. Those are maximums the loan allows—not what a seller should offer.
-                  Confirm current caps with your loan officer before you write the contract.
+                  The graph above shows the number of closings by amount of concession to the buyers in the
+                  Greater Phoenix Metro Market area. The total number of closings for the period was 2,112. Data
+                  gathered from ARMLS closings for prior 30 days as of 2/9/19.
                 </p>
 
                 <section>
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Historical snapshot: data as of February 2019
-                  </h2>
-                  <p className="mb-5">
-                    The figures below are from ARMLS attached and detached resales in the Greater Phoenix Metro
-                    Area for the prior 30-day period as of February 9, 2019—a pre-pandemic snapshot, not current
-                    market conditions. Concession size moves with rates and inventory, so treat these city and
-                    price-band averages as history, not a target for today&apos;s offer.
-                  </p>
-                  <p className="mb-5">
-                    That 30-day window included 2,112 closings.
-                  </p>
                   <ul className="list-disc pl-6 space-y-3">
                     <li>
                       <a
@@ -207,24 +177,23 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
                       >
                         Seller concessions to buyers
                       </a>{" "}
-                      of single-family attached and detached homes ranged from a low of 0.9% to a high of 2.6% of
-                      sale price across those 2,112 closings (data as of February 9, 2019).
+                      of single family attached and detached products ranged from a low of .9% to a high of 2.6%
+                      for 2,112 closings in the previous 30 days as of 2/9/2019 in the Greater Phoenix Metro Area.
                     </li>
                     <li>
-                      In that 2019 sample, Gilbert had the lowest average concession at 1.3% and Glendale the
-                      highest at 2.3%.
+                      Key cities – Gilbert had the lowest concession at 1.3% and Glendale had the highest at 2.3%
                     </li>
                     <li>
-                      Most closings in that 30-day period were in the $200,000 to $300,000 price range (1,076
-                      closings) with an average seller concession of 1.9%.
+                      Most closings in the 30 day period – $200,000 to $300,000 price range accounted for 1,076
+                      closings and an average seller concession to buyers of 1.9%
                     </li>
-                    <li>Anthem, Gilbert, Cave Creek, and Paradise Valley averaged 1.3% (February 2019).</li>
-                    <li>Chandler, Litchfield Park, and Tempe averaged 1.5% (February 2019).</li>
-                    <li>Peoria, Mesa, and Sun City averaged 1.8% (February 2019).</li>
+                    <li>Anthem, Gilbert, Cave Creek, Paradise Valley averaged 1.3%</li>
+                    <li>Chandler, Litchfield Park, Tempe averaged 1.5% seller concessions.</li>
+                    <li>Peoria, Mesa, Sun City, averaged 1.8%.</li>
                   </ul>
                 </section>
 
-                <p>Try us on your next loan. Our clients appreciate our pricing, timing, and customer service.</p>
+                <p>Try us on your next loan……our clients appreciate our pricing, timing and customer service</p>
 
                 <blockquote className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
                   <p className="text-[15px] text-[#052316] leading-relaxed">
@@ -253,19 +222,6 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
                     .
                   </p>
                 </blockquote>
-
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={[
-                    { q: "What are seller concessions in real estate?", a: <>Seller concessions are closing cost contributions from the seller to help buyers complete the purchase.</> },
-                    { q: "How common are seller concessions in Phoenix in 2026?", a: <>Redfin reported seller concessions in 65.6% of Phoenix-area home sales in the three months ending May 31, 2026, up from 50.7% a year earlier. That measures how often a concession appeared, not the dollar amount.</> },
-                    { q: "How much were seller concessions in Phoenix Metro?", a: <>In a February 9, 2019 ARMLS snapshot—not current market guidance—concessions ranged from 0.9% to 2.6% of sale prices across 2,112 Greater Phoenix closings in the prior 30 days.</> },
-                    { q: "Which city had the highest seller concessions?", a: <>In that same February 2019 ARMLS snapshot, Glendale recorded the highest average seller concessions at about 2.3%. City rankings change with inventory and rates.</> },
-                    { q: "Which price range had the most closings?", a: <>In the February 2019 ARMLS period, homes priced between $200,000 and $300,000 had the most closings, with average concessions of 1.9%. Those price bands and averages are historical.</> }
-                    ]}
-                  />
-                </section>
               </div>
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">

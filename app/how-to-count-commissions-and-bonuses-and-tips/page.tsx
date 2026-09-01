@@ -305,7 +305,7 @@ export default function CountCommissionsBonusesTipsPage() {
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
                   been prepared for informational purposes only. You should consult your own tax, legal, and
                   accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
-                  #210917 and 1618695. Equal housing lender.
+                  #210917 and 1618695. Equal Housing Opportunity.
                 </p>
 
                 <p>
@@ -360,7 +360,7 @@ export default function CountCommissionsBonusesTipsPage() {
                         Knoell.
                       </p>
                       <p className="mb-3">
-                        Today, we&apos;re covering a key topic that affects a lot of borrowers: How do
+                        Today, we&apos;re covering a key topic that affects a lot of borrowers: 💰 How do
                         commissions, bonuses, and tip income count when applying for a mortgage?
                       </p>
                       <ul className="list-disc pl-6 space-y-2 mb-3">

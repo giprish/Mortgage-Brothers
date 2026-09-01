@@ -29,7 +29,7 @@ const articleJsonLd = buildArticleSchemas({
 const topics = [
   {
     title: "Arizona Mortgage Basics",
-    text: "What is a mortgage, and who owns my home if I have secured financing to purchase it? Whether you're new to the home buying process, or a seasoned investor, there are at least 20 top mortgage related terms that you may want to understand prior to speaking with a real estate agent or loan officer. This section highlights some of the basic math and topics of interest that will help you get started on your home buying and financing journey.",
+    text: "What is a mortgage, and who owns my home if I have secured financing to purchase it? Whether you're new to the home buying process, or a seasoned investor, I bet you didn't realize that there are at least 20 top mortgage related terms that you may want to understand prior to speaking with a real estate agent or loan officer. This section highlights some of the basic math and topics of interest that will help you get started on your home buying and financing journey.",
     href: "/arizona-mortgage-basics/",
   },
   {

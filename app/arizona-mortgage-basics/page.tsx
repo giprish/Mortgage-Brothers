@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 
 import React from "react";
 import Link from "next/link";
@@ -75,12 +74,6 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "What is a mortgage and how does it work?", answer: "A mortgage is a loan secured by real property, which means the lender is protected by the property itself. The borrower repays the loan over a set period of time. If the borrower fails to make payments, the lender can take ownership of the property to recover losses." },
-  { question: "What factors do Arizona mortgage lenders consider for loan approval?", answer: "Arizona mortgage lenders typically evaluate a borrower's credit history, employment history, income, assets, and debts. Additionally, the property must meet certain standards set by the lender before approval of the mortgage loan." },
-  { question: "How are mortgage payments structured?", answer: "Most home loans are set for 15 or 30 years and include both principal and interest portions. Over time, the amount applied toward interest decreases while the portion applied to the principal increases—a process known as amortization. Lenders may also offer alternative plans such as interest-only payments or introductory teaser rates." },
-  { question: "What costs and fees are associated with getting a mortgage in Arizona?", answer: "Mortgage costs may include points to secure lower rates, processing or underwriting fees, and other out-of-pocket expenses such as appraisal fees, property taxes, insurance, and inspections. Government consumer protection policies help ensure buyers understand these costs during the mortgage process." },
-] as const;
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
@@ -90,7 +83,6 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-10",
     articleSection: "Mortgage Basics",
   },
-  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Basics", path: "/mortgage-basics/" },
@@ -283,28 +275,6 @@ export default function ArizonaMortgageBasicsPage() {
                     with any and all questions you may have regarding your home purchase and lending process. We
                     are here to help make it easy and effortless for you to purchase your home.
                   </p>
-                </section>
-
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={[
-                    { q: "What is a mortgage and how does it work?", a: <>A mortgage is a loan secured by real property, which means the lender is protected by the
-                        property itself. The borrower repays the loan over a set period of time. If the borrower
-                        fails to make payments, the lender can take ownership of the property to recover losses.</> },
-                    { q: "What factors do Arizona mortgage lenders consider for loan approval?", a: <>Arizona mortgage lenders typically evaluate a borrower&apos;s credit history, employment
-                        history, income, assets, and debts. Additionally, the property must meet certain standards
-                        set by the lender before approval of the mortgage loan.</> },
-                    { q: "How are mortgage payments structured?", a: <>Most home loans are set for 15 or 30 years and include both principal and interest portions.
-                        Over time, the amount applied toward interest decreases while the portion applied to the
-                        principal increases—a process known as amortization. Lenders may also offer alternative
-                        plans such as interest-only payments or introductory teaser rates.</> },
-                    { q: "What costs and fees are associated with getting a mortgage in Arizona?", a: <>Mortgage costs may include points to secure lower rates, processing or underwriting fees,
-                        and other out-of-pocket expenses such as appraisal fees, property taxes, insurance, and
-                        inspections. Government consumer protection policies help ensure buyers understand these
-                        costs during the mortgage process.</> }
-                    ]}
-                  />
                 </section>
 
 
