@@ -229,9 +229,18 @@ export default function ArizonaPrequalificationFormPage() {
                         </li>
                       </ul>
                       <p>
-                        In most cases, a prequalification form serves as a preapproval since lenders review
-                        financial documents before issuing it. However, final underwriting approval happens
-                        after a contract is signed and the loan process begins.
+                        In most cases, a{" "}
+                        <a
+                          href="https://www.investopedia.com/terms/p/prequalification.asp"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[#3fb364] font-semibold hover:underline"
+                        >
+                          prequalification form
+                        </a>{" "}
+                        serves as a preapproval since lenders review financial documents before issuing it.
+                        However, final underwriting approval happens after a contract is signed and the loan
+                        process begins.
                       </p>
                     </div>
 
@@ -371,7 +380,16 @@ export default function ArizonaPrequalificationFormPage() {
                           Contact Form
                         </Link>
                       </p>
-                      <p className="mb-3">📞 Call us for a free mortgage quote</p>
+                      <p className="mb-3">
+                        📞{" "}
+                        <a
+                          href="tel:+16025352171"
+                          className="text-[#3fb364] font-semibold hover:underline"
+                        >
+                          Call us
+                        </a>{" "}
+                        for a free mortgage quote
+                      </p>
                       <p>
                         If you found this video helpful, like, subscribe, and hit the notification button
                         for more mortgage tips! Thanks for tuning in.

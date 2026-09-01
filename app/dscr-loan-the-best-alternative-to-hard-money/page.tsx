@@ -165,7 +165,16 @@ export default function DscrLoanHardMoneyPage() {
                     What&apos;s a hard money loan?
                   </h2>
                   <p className="mb-5">
-                    A hard money loan is a loan secured by a property. There are plenty of good things about
+                    A{" "}
+                    <a
+                      href="https://www.investopedia.com/terms/h/hard_money_loan.asp"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      hard money loan
+                    </a>{" "}
+                    is a loan secured by a property. There are plenty of good things about
                     them. They close quickly &mdash; we&apos;re talking five to seven days, maybe even three
                     in some scenarios. Very little underwriting is needed. The downsides are that they have
                     high interest rates, typically 12% or more and they require a lot of equity in the home.
@@ -199,9 +208,17 @@ export default function DscrLoanHardMoneyPage() {
                     The DSCR loan as an alternative to hard money
                   </h2>
                   <p className="mb-5">
-                    DSCR stands for Debt Service Coverage Ratio. A DSCR loan allows you to take a loan out on
-                    an investment property based on the appraised cash flow that it might generate, as opposed
-                    to your income.
+                    DSCR stands for{" "}
+                    <a
+                      href="https://www.investopedia.com/terms/d/dscr.asp"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      Debt Service Coverage Ratio
+                    </a>
+                    . A DSCR loan allows you to take a loan out on an investment property based on the
+                    appraised cash flow that it might generate, as opposed to your income.
                   </p>
                   <p className="mb-5">
                     Your debt service coverage ratio is calculated by taking your gross rent income and

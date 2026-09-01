@@ -127,8 +127,17 @@ export default function ArizonaMortgageRatesInterestDeductionPage() {
             <article className="min-w-0">
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-6">
-                During recent weeks, the mortgage interest tax deduction that has been discussed in Washington
-                with regard to saving money, closing loopholes, and avoiding the &lsquo;fiscal cliff&rsquo; has
+                During recent weeks, the{" "}
+                <a
+                  href="https://www.irs.gov/publications/p936"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#3fb364] font-semibold hover:underline"
+                >
+                  mortgage interest tax deduction
+                </a>{" "}
+                that has been discussed in Washington with regard to saving money, closing loopholes, and
+                avoiding the &lsquo;fiscal cliff&rsquo; has
                 created a bit of controversy. While the interest deduction has no bearing on Arizona mortgage
                 rates, it&apos;s a good idea to become familiar with it: what it&apos;s about, how it could
                 save you money, and why losing it can cost you money over time.
