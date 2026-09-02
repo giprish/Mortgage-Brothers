@@ -10,6 +10,7 @@ import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
 import {
+  TranscriptBanItem,
   TranscriptCheckItem,
   TranscriptCrossItem,
   TranscriptEmojiItem,
@@ -20,17 +21,8 @@ import {
   TranscriptPointItem,
   TranscriptTvLine,
 } from "@/app/component/TranscriptIcons";
-import {
-  TranscriptCheckItem,
-  TranscriptCrossItem,
-  TranscriptEmojiItem,
-  TranscriptLightbulbLine,
-  TranscriptList,
-  TranscriptPhoneLine,
-  TranscriptPinLine,
-  TranscriptPointItem,
-  TranscriptTvLine,
-} from "@/app/component/TranscriptIcons";
+
+const HELOC_INVESTOPEDIA_URL = "https://www.investopedia.com/mortgage/heloc/";
 
 export const metadata: Metadata = getSeoMetadata("/can-i-get-a-3rd-mortgage/");
 
@@ -168,7 +160,7 @@ export default function CanIGetA3rdMortgagePage() {
 
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
                 <h2
-                  className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
+                  className="text-[#08271B] text-[24px] lg:text-[28px] font-bold mb-3"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   Need a Third Mortgage? Here&apos;s What to Know
@@ -370,16 +362,27 @@ export default function CanIGetA3rdMortgagePage() {
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
                         Can You Get a Third Mortgage? What You Need to Know
                       </h3>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">Introduction [00:02]</h3>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        <strong>Introduction</strong>
+                      </h3>
                       <p className="mb-3">
-                        Welcome to the Mortgage Brothers Podcast! I&apos;m Eddie Knoell, and I&apos;m Tom
-                        Knoell. Today, we&apos;re answering a question that many homeowners ask:
+                        [00:02]
+                        <br />
+                        Welcome to the <strong>Mortgage Brothers Podcast</strong>! I&apos;m{" "}
+                        <strong>Eddie Knoell</strong>, and I&apos;m <strong>Tom Knoell</strong>. Today, we&apos;re
+                        answering a question that many homeowners ask:
                       </p>
                       <TranscriptList>
-                        <TranscriptPointItem>Can I get a third mortgage?</TranscriptPointItem>
-                        <TranscriptPointItem>How many mortgages can I stack on my home?</TranscriptPointItem>
                         <TranscriptPointItem>
-                          What happens if I need more equity after getting a second mortgage?
+                          <strong>Can I get a third mortgage?</strong>
+                        </TranscriptPointItem>
+                        <TranscriptPointItem>
+                          <strong>How many mortgages can I stack on my home?</strong>
+                        </TranscriptPointItem>
+                        <TranscriptPointItem>
+                          <strong>
+                            What happens if I need more equity after getting a second mortgage?
+                          </strong>
                         </TranscriptPointItem>
                       </TranscriptList>
                       <p>Let&apos;s break it all down.</p>
@@ -390,8 +393,10 @@ export default function CanIGetA3rdMortgagePage() {
                         How Many Mortgages Can You Have? [00:46]
                       </h3>
                       <p className="mb-3">
-                        Most borrowers don&apos;t realize that each mortgage is assigned a position on the
-                        property.
+                        [00:46]
+                        <br />
+                        Most borrowers <strong>don&apos;t realize</strong> that each mortgage is assigned a{" "}
+                        <strong>position</strong> on the property.
                       </p>
                       <TranscriptList>
                         <TranscriptCheckItem>
@@ -399,18 +404,20 @@ export default function CanIGetA3rdMortgagePage() {
                           etc.).
                         </TranscriptCheckItem>
                         <TranscriptCheckItem>
-                          <strong>Second Mortgage:</strong> A home equity line of credit (HELOC) or fixed-rate
-                          second mortgage.
+                          <strong>Second Mortgage:</strong> A{" "}
+                          <strong>home equity line of credit (HELOC)</strong> or{" "}
+                          <strong>fixed-rate second mortgage</strong>.
                         </TranscriptCheckItem>
                         <TranscriptCrossItem>
-                          <strong>Third Mortgage?</strong> Nope! Lenders don&apos;t typically offer
-                          third-position residential mortgages.
+                          <strong>Third Mortgage?</strong> Nope! Lenders don&apos;t typically offer{" "}
+                          <strong>third-position residential mortgages</strong>.
                         </TranscriptCrossItem>
                       </TranscriptList>
                       <TranscriptLightbulbLine>
-                        <strong>Important:</strong> You can have multiple mortgages, but they must be in
-                        different lien positions (1st, 2nd, etc.). However, banks won&apos;t go into third
-                        position for residential mortgages.
+                        <strong>Important:</strong> You can have multiple mortgages, but they must be in{" "}
+                        <strong>different lien positions</strong> (1st, 2nd, etc.). However, banks{" "}
+                        <strong>won&apos;t</strong> go into <strong>third position</strong> for residential
+                        mortgages.
                       </TranscriptLightbulbLine>
                     </div>
 
@@ -419,27 +426,40 @@ export default function CanIGetA3rdMortgagePage() {
                         Understanding Mortgage Lien Positions [01:19]
                       </h3>
                       <p className="mb-3">
-                        Every mortgage loan has a lien position on the property. This determines who gets paid
-                        first in case of foreclosure.
+                        [01:19]
+                        <br />
+                        Every mortgage loan has a <strong>lien position</strong> on the property. This determines{" "}
+                        <strong>who gets paid first</strong> in case of foreclosure.
                       </p>
                       <TranscriptLightbulbLine className="mb-2 font-semibold text-[#052316]">
-                        Example:
+                        <strong>Example:</strong>
                       </TranscriptLightbulbLine>
                       <TranscriptList>
                         <TranscriptEmojiItem emoji="🏡">
-                          1st Mortgage: $250,000 (conventional loan)
+                          <strong>1st Mortgage:</strong> $250,000 (conventional loan)
                         </TranscriptEmojiItem>
                         <TranscriptEmojiItem emoji="🏡">
-                          2nd Mortgage: $50,000 (HELOC)
+                          <strong>2nd Mortgage:</strong> $50,000 (
+                          <a
+                            href={HELOC_INVESTOPEDIA_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#3fb364] font-semibold hover:underline"
+                          >
+                            HELOC
+                          </a>
+                          )
                         </TranscriptEmojiItem>
                         <TranscriptEmojiItem emoji="🏡">
-                          3rd Mortgage? Not possible (no lender offers third-position residential loans).
+                          <strong>3rd Mortgage?</strong> ❌ <strong>Not possible</strong> (no lender offers
+                          third-position residential loans).
                         </TranscriptEmojiItem>
                       </TranscriptList>
                       <TranscriptPinLine>
-                        <strong>Why does lien position matter?</strong> If you default and the home is sold,
-                        the first mortgage lender gets paid first, then the second lender, and if anything is
-                        left, it would go to the third lender (which rarely happens).
+                        <strong>Why does lien position matter?</strong> If you <strong>default</strong> and the
+                        home is sold, the <strong>first mortgage lender gets paid first</strong>, then the{" "}
+                        <strong>second lender</strong>, and if anything is left, it would go to the{" "}
+                        <strong>third lender</strong> (which rarely happens).
                       </TranscriptPinLine>
                     </div>
 
@@ -447,22 +467,28 @@ export default function CanIGetA3rdMortgagePage() {
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
                         Why Aren&apos;t Third Mortgages Available? [03:41]
                       </h3>
-                      <p className="mb-3">Banks don&apos;t offer third-position mortgages because:</p>
+                      <p className="mb-3">
+                        [03:41]
+                        <br />
+                        Banks don&apos;t offer <strong>third-position mortgages</strong> because:
+                      </p>
                       <TranscriptList>
                         <TranscriptCrossItem>
-                          <strong>High risk</strong> – Third lenders are the last to get paid in foreclosure.
+                          <strong>High risk</strong> – Third lenders are the <strong>last to get paid</strong>{" "}
+                          in foreclosure.
                         </TranscriptCrossItem>
                         <TranscriptCrossItem>
-                          <strong>No demand</strong> – Most borrowers refinance instead of getting a third
-                          loan.
+                          <strong>No demand</strong> – Most borrowers <strong>refinance</strong> instead of
+                          getting a third loan.
                         </TranscriptCrossItem>
                         <TranscriptCrossItem>
-                          <strong>Complicated lien structure</strong> – Having three mortgages makes property
-                          sales, refinancing, and foreclosure messy.
+                          <strong>Complicated lien structure</strong> – Having <strong>three</strong> mortgages
+                          makes property sales, refinancing, and foreclosure <strong>messy</strong>.
                         </TranscriptCrossItem>
                       </TranscriptList>
                       <TranscriptLightbulbLine>
-                        <strong>The Simple Rule:</strong> Lenders offer first and second mortgages only.
+                        <strong>The Simple Rule:</strong>{" "}
+                        <strong>Lenders offer first and second mortgages only</strong>.
                       </TranscriptLightbulbLine>
                     </div>
 
@@ -471,8 +497,8 @@ export default function CanIGetA3rdMortgagePage() {
                         Alternatives If You Need More Equity [05:31]
                       </h3>
                       <p className="mb-3">
-                        If you already have a first and second mortgage but need more funds, here&apos;s what
-                        you can do:
+                        If you <strong>already</strong> have a first and second mortgage but need more funds,
+                        here&apos;s what you can do:
                       </p>
                       <TranscriptList>
                         <TranscriptCheckItem>
@@ -488,13 +514,13 @@ export default function CanIGetA3rdMortgagePage() {
                           your home equity line of credit (if you have enough equity).
                         </TranscriptCheckItem>
                         <TranscriptCheckItem>
-                          <strong>Take a Personal Loan</strong> – While not secured by your home, this can
-                          provide additional funds (though at higher interest rates).
+                          <strong>Take a Personal Loan</strong> – While <strong>not secured by your home</strong>
+                          , this can provide additional funds (though at higher interest rates).
                         </TranscriptCheckItem>
                       </TranscriptList>
                       <TranscriptPinLine>
-                        <strong>Remember:</strong> You can always combine loans, but you can&apos;t add a third
-                        mortgage.
+                        <strong>Remember:</strong> You can always <strong>combine</strong> loans, but you{" "}
+                        <strong>can&apos;t</strong> add a third mortgage.
                       </TranscriptPinLine>
                     </div>
 
@@ -503,32 +529,38 @@ export default function CanIGetA3rdMortgagePage() {
                         Why Mortgage Position Matters [06:04]
                       </h3>
                       <p className="mb-3">
-                        Your lien position determines who gets paid first in foreclosure:
+                        [06:04]
+                        <br />
+                        Your <strong>lien position</strong> determines <strong>who gets paid first</strong> in
+                        foreclosure:
                       </p>
                       <TranscriptList>
                         <TranscriptEmojiItem emoji="1️⃣">
-                          First Mortgage → Always gets paid first.
+                          <strong>First Mortgage</strong> → Always gets paid first.
                         </TranscriptEmojiItem>
                         <TranscriptEmojiItem emoji="2️⃣">
-                          Second Mortgage (HELOC or fixed-rate second loan) → Gets paid after the first
-                          mortgage.
+                          <strong>Second Mortgage (HELOC or fixed-rate second loan)</strong> → Gets paid{" "}
+                          <strong>after</strong> the first mortgage.
                         </TranscriptEmojiItem>
                         <TranscriptEmojiItem emoji="3️⃣">
-                          Third Mortgage? ❌ Not an option for residential loans.
+                          <strong>Third Mortgage?</strong> ❌ <strong>Not an option for residential loans</strong>
+                          .
                         </TranscriptEmojiItem>
                       </TranscriptList>
                       <TranscriptPinLine className="mb-2 font-semibold text-[#052316]">
-                        What Happens in Foreclosure?
+                        <strong>What Happens in Foreclosure?</strong>
                       </TranscriptPinLine>
                       <p className="mb-3">If a home is sold due to foreclosure:</p>
                       <TranscriptList>
-                        <TranscriptCheckItem>The first mortgage gets paid.</TranscriptCheckItem>
                         <TranscriptCheckItem>
-                          The second mortgage gets paid if there&apos;s enough equity.
+                          The <strong>first mortgage gets paid</strong>.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          The <strong>second mortgage gets paid if there&apos;s enough equity</strong>.
                         </TranscriptCheckItem>
                         <TranscriptCrossItem>
-                          A third mortgage (if it existed) would likely get nothing—which is why lenders
-                          don&apos;t offer them.
+                          A <strong>third mortgage (if it existed) would likely get nothing</strong>—which is
+                          why lenders don&apos;t offer them.
                         </TranscriptCrossItem>
                       </TranscriptList>
                     </div>
@@ -538,22 +570,24 @@ export default function CanIGetA3rdMortgagePage() {
                         What About SBA Loans or Contractor Liens? [04:18]
                       </h3>
                       <p className="mb-3">
-                        While third-position residential mortgages aren&apos;t available, you can have other
-                        types of liens on your home:
+                        [04:18]
+                        <br />
+                        While <strong>third-position residential mortgages aren&apos;t available</strong>, you{" "}
+                        <strong>can</strong> have other <strong>types of liens</strong> on your home:
                       </p>
                       <TranscriptList>
                         <TranscriptEmojiItem emoji="🏦">
-                          <strong>SBA Loans</strong> – If you take out a business loan, the lender may place a
-                          lien on your home.
+                          <strong>SBA Loans</strong> – If you take out a <strong>business loan</strong>, the
+                          lender may place a lien on your home.
                         </TranscriptEmojiItem>
                         <TranscriptEmojiItem emoji="🔨">
-                          <strong>Contractor Liens</strong> – If you don&apos;t pay for renovations, a
-                          contractor can file a mechanic&apos;s lien against your property.
+                          <strong>Contractor Liens</strong> – If you <strong>don&apos;t pay for renovations</strong>
+                          , a contractor can file a <strong>mechanic&apos;s lien</strong> against your property.
                         </TranscriptEmojiItem>
                       </TranscriptList>
                       <TranscriptPinLine>
-                        <strong>Key Difference:</strong> These liens aren&apos;t residential mortgages—they are
-                        simply claims against your property for unpaid debts.
+                        <strong>Key Difference:</strong> These liens <strong>aren&apos;t residential mortgages</strong>
+                        —they are simply <strong>claims against your property</strong> for unpaid debts.
                       </TranscriptPinLine>
                     </div>
 
@@ -562,35 +596,43 @@ export default function CanIGetA3rdMortgagePage() {
                         How Much Can You Borrow Against Your Home? [08:23]
                       </h3>
                       <p className="mb-3">
-                        Lenders limit how much you can borrow based on your home&apos;s value:
+                        [08:23]
+                        <br />
+                        Lenders <strong>limit</strong> how much you can borrow based on your home&apos;s value:
                       </p>
                       <TranscriptList>
                         <TranscriptCheckItem>
-                          <strong>80% Loan-to-Value (LTV)</strong> – Most banks require you to keep at least
-                          20% equity in your home.
+                          <strong>80% Loan-to-Value (LTV)</strong> – Most banks require you to keep{" "}
+                          <strong>at least 20% equity</strong> in your home.
                         </TranscriptCheckItem>
                         <TranscriptCheckItem>
-                          <strong>90% LTV (Rare)</strong> – Some second mortgages allow up to 90% LTV, but with
-                          higher interest rates.
+                          <strong>90% LTV (Rare)</strong> – Some second mortgages{" "}
+                          <strong>allow up to 90% LTV</strong>, but with higher interest rates.
                         </TranscriptCheckItem>
                         <TranscriptCrossItem>
-                          <strong>100% LTV (Not possible)</strong> – Banks won&apos;t let you borrow the entire
-                          value of your home.
+                          <strong>100% LTV (Not possible)</strong> – Banks won&apos;t let you borrow the{" "}
+                          <strong>entire</strong> value of your home.
                         </TranscriptCrossItem>
                       </TranscriptList>
                       <TranscriptPinLine className="mb-2 font-semibold text-[#052316]">
-                        Example:
+                        <strong>Example:</strong>
                       </TranscriptPinLine>
                       <TranscriptList>
-                        <TranscriptEmojiItem emoji="🏡">Home Value: $500,000</TranscriptEmojiItem>
+                        <TranscriptEmojiItem emoji="🏡">
+                          Home Value: <strong>$500,000</strong>
+                        </TranscriptEmojiItem>
                         <TranscriptCheckItem>
-                          80% LTV Limit: $400,000 (max total mortgage amount)
+                          <strong>80% LTV Limit:</strong> $400,000 (max total mortgage amount)
                         </TranscriptCheckItem>
-                        <TranscriptCheckItem>First Mortgage: $300,000</TranscriptCheckItem>
-                        <TranscriptCheckItem>Second Mortgage: $50,000</TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>First Mortgage:</strong> $300,000
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>Second Mortgage:</strong> $50,000
+                        </TranscriptCheckItem>
                         <TranscriptCrossItem>
-                          Third Mortgage? Not possible—your total loans can&apos;t exceed the lender&apos;s LTV
-                          limit.
+                          <strong>Third Mortgage?</strong> Not possible—your total loans can&apos;t exceed the{" "}
+                          <strong>lender&apos;s LTV limit</strong>.
                         </TranscriptCrossItem>
                       </TranscriptList>
                     </div>
@@ -600,16 +642,19 @@ export default function CanIGetA3rdMortgagePage() {
                         Final Answer: Can You Get a Third Mortgage? [07:49]
                       </h3>
                       <TranscriptList>
-                        <TranscriptCrossItem>
-                          No. There are no third-position residential mortgages.
-                        </TranscriptCrossItem>
+                        <TranscriptBanItem>
+                          <strong>No. There are no third-position residential mortgages.</strong>
+                        </TranscriptBanItem>
                         <TranscriptCheckItem>
-                          Your options: Refinance your first or second mortgage, or take a personal loan.
+                          <strong>Your options:</strong> Refinance your first or second mortgage, or take a
+                          personal loan.
                         </TranscriptCheckItem>
                       </TranscriptList>
                       <TranscriptPinLine>
-                        If you need more equity, talk to your lender about refinancing or increasing your
-                        HELOC.
+                        <strong>
+                          If you need more equity, talk to your lender about refinancing or increasing your
+                          HELOC.
+                        </strong>
                       </TranscriptPinLine>
                     </div>
 
@@ -618,25 +663,32 @@ export default function CanIGetA3rdMortgagePage() {
                         Need Help? Contact Us Today! [10:28]
                       </h3>
                       <p className="mb-3">
-                        If you&apos;re wondering how to access more home equity, we&apos;re here to help!
+                        [10:28]
+                        <br />
+                        If you&apos;re wondering <strong>how to access more home equity</strong>, we&apos;re here
+                        to help!
                       </p>
                       <TranscriptPhoneLine className="mb-3">
-                        Contact us:{" "}
+                        <strong>Contact us:</strong>{" "}
                         <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
                           Contact Form
                         </Link>
                       </TranscriptPhoneLine>
                       <TranscriptPhoneLine className="mb-3">
-                        Call us for a personalized mortgage review
+                        <strong>Call us for a personalized mortgage review</strong>
                       </TranscriptPhoneLine>
                       <TranscriptTvLine className="mb-3">
                         <strong>Like &amp; Subscribe for More Mortgage Tips!</strong> If you found this
-                        information helpful, subscribe to our channel and hit the notification bell for expert
-                        insights.
+                        information helpful, <strong>subscribe to our channel</strong> and hit the{" "}
+                        <strong>notification bell</strong> for expert insights.
                       </TranscriptTvLine>
                       <TranscriptLightbulbLine>
-                        <strong>Final Thought:</strong> If you need more equity, explore refinancing
-                        options—but don&apos;t expect to find a third mortgage!
+                        <strong>Final Thought:</strong>{" "}
+                        <strong>
+                          If you need more equity, explore refinancing options—but don&apos;t expect to find a
+                          third mortgage!
+                        </strong>{" "}
+                        🚀
                       </TranscriptLightbulbLine>
                     </div>
                   </div>

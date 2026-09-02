@@ -139,7 +139,7 @@ export default function OwnerOccupiedSecondHomeInvestmentPage() {
 
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
                 <h2
-                  className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
+                  className="text-[#08271B] text-[24px] lg:text-[28px] font-bold mb-3"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   Not Sure How Your Property Is Classified?
@@ -229,7 +229,7 @@ export default function OwnerOccupiedSecondHomeInvestmentPage() {
                     need to be 70% or lower to qualify.
                   </p>
 
-                  <p className="text-[15px] italic">
+                  <p>
                     *It should be noted that on any high balance loan amount the above mentioned Loan-to-Value
                     (LTV) requirements will change. Credit score requirements also apply.
                   </p>
@@ -243,49 +243,17 @@ export default function OwnerOccupiedSecondHomeInvestmentPage() {
                   </Link>{" "}
                   or give us a call at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
+                    (602) 535-2171
                   </a>
                   . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you
                   and help you through the whole process.
                 </p>
 
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you
-                    and help you through the whole process.
-                  </p>
-                </div>
+                <p>•••</p>
 
-                <p className="text-[15px]">
-                  Thanks for listening and reading the Mortgage Brothers Show. Let us know if you have any
-                  questions you&apos;d like us to answer on this podcast. You can email your questions to
-                  Tom@AZMortgageBrothers.com or Eddie@AZMortgageBrothers.com.
-                </p>
-
-                <p className="text-[15px]">
-                  Explore the key differences between an owner-occupied second home and an investment property.
-                  For further insights, check out our discussion on{" "}
-                  <Link
-                    href="/detached-guest-home-casita-appraisal-issues/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    detached guest home appraisal issues
-                  </Link>
-                  , learn how{" "}
-                  <Link
-                    href="/connecting-guest-house-main-house-add-value/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    connecting a guest house to your main home adds value
-                  </Link>
-                  , and discover the distinctions between{" "}
-                  <Link
-                    href="/what-is-the-difference-between-aan-arizona-condo-and-arizona-townhome/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    Arizona condos and townhomes
-                  </Link>
-                  .
+                <p>
+                  Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you
+                  and help you through the whole process.
                 </p>
 
                 <p className="text-[#5a6b52] text-[13px] leading-relaxed">
@@ -294,8 +262,36 @@ export default function OwnerOccupiedSecondHomeInvestmentPage() {
                   advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
                   1618695. Equal Housing Opportunity.
                 </p>
+
+                <blockquote className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
+                  <p className="text-[15px] text-[#052316] leading-relaxed">
+                    Explore the key differences between an owner-occupied second home and an investment property.
+                    For further insights, check out our discussion on{" "}
+                    <Link
+                      href="/detached-guest-home-casita-appraisal-issues/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      detached guest home appraisal issues
+                    </Link>
+                    , learn how{" "}
+                    <Link
+                      href="/connecting-guest-house-main-house-add-value/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      connecting a guest house to your main home adds value
+                    </Link>
+                    , and discover the distinctions between{" "}
+                    <Link
+                      href="/what-is-the-difference-between-aan-arizona-condo-and-arizona-townhome/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      Arizona condos and townhomes
+                    </Link>
+                    .
+                  </p>
+                </blockquote>
               </div>
-              
+
               <section id="faqs">
                 <FaqAccordion
                   title="Frequently Asked Questions"
@@ -328,7 +324,7 @@ export default function OwnerOccupiedSecondHomeInvestmentPage() {
                   ← Previous Post
                 </Link>
                 <Link
-                  href="/lsu-forms-loan-status-updates-and-what-you-need-to-know/"
+                  href="/seller-concessions-to-buyers-how-much/"
                   className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
                 >
                   Next Post →

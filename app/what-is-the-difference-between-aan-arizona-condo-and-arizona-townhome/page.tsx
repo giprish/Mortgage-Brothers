@@ -168,8 +168,8 @@ export default function CondoVsTownhomePage() {
                     Condo owners
                   </h2>
                   <p>
-                    Condo owners have &lsquo;horizontal ownership&rsquo;, i.e., they own the floor to the
-                    ceiling and essentially wall to wall. Condo owners own a pro-rated share of the land they
+                    <strong>Condo owners have &lsquo;horizontal ownership</strong>&rsquo;, i.e., they own the
+                    floor to the ceiling and essentially wall to wall. Condo owners own a pro-rated share of the land they
                     are sitting on. If there are 100 units in a development, each unit owner owns a 1/100 share
                     of the entire plot of land for the development, including all the common areas. Condo
                     developments can be 1 story buildings to any number of stories. In Arizona, it is rare to
@@ -186,8 +186,8 @@ export default function CondoVsTownhomePage() {
                     Townhouse owners
                   </h2>
                   <p>
-                    Townhouse owners have &lsquo;vertical ownership&rsquo;, i.e., they own the earth below the
-                    structure and the air above the roof. Townhouse legal descriptions in Arizona will often
+                    <strong>Townhouse owners have &lsquo;vertical ownership&rsquo;</strong>, i.e., they own the
+                    earth below the structure and the air above the roof. Townhouse legal descriptions in Arizona will often
                     have a &lsquo;lot number&rsquo;. A townhouse owner will never have an owner above or below
                     them. Townhouse owners will often times have a neighbor that shares a common wall.
                     Townhouses in Arizona are often referred to as &lsquo;Patio Homes&rsquo;.
@@ -243,54 +243,17 @@ export default function CondoVsTownhomePage() {
                   </Link>{" "}
                   or give us a call at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
+                    (602) 535-2171
                   </a>
                   . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
                   you and help you through the whole process.
                 </p>
 
-                
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={articleFaqs.map((faq) => ({
-                      q: faq.question,
-                      a: faq.answer,
-                    }))}
-                  />
-                </section>
+                <p className="text-center text-[#5a6b52] tracking-widest">•••</p>
 
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
-                    you and help you through the whole process.
-                  </p>
-                </div>
-
-                <p className="text-[15px]">
-                  Get clarity on the differences between Arizona condos and townhomes. For additional context,
-                  review our guide on{" "}
-                  <Link
-                    href="/difference-between-owner-occupied-second-home-and-investment-property/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    owner-occupied second homes versus investment properties
-                  </Link>
-                  , explore{" "}
-                  <Link
-                    href="/detached-guest-home-casita-appraisal-issues/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    detached guest home appraisal issues
-                  </Link>
-                  , and discover how{" "}
-                  <Link
-                    href="/connecting-guest-house-main-house-add-value/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    connecting a guest house to your main home can enhance value
-                  </Link>
-                  .
+                <p>
+                  Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
+                  you and help you through the whole process.
                 </p>
 
                 <p className="text-[#5a6b52] text-[13px] leading-relaxed">
@@ -299,11 +262,49 @@ export default function CondoVsTownhomePage() {
                   accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
                   #210917 and 1618695. Equal Housing Opportunity.
                 </p>
+
+                <blockquote className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
+                  <p className="text-[15px] text-[#052316] leading-relaxed">
+                    Get clarity on the differences between Arizona condos and townhomes. For additional context,
+                    review our guide on{" "}
+                    <Link
+                      href="/difference-between-owner-occupied-second-home-and-investment-property/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      owner-occupied second homes versus investment properties
+                    </Link>
+                    , explore{" "}
+                    <Link
+                      href="/detached-guest-home-casita-appraisal-issues/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      detached guest home appraisal issues
+                    </Link>
+                    , and discover how{" "}
+                    <Link
+                      href="/connecting-guest-house-main-house-add-value/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      connecting a guest house to your main home can enhance value
+                    </Link>
+                    .
+                  </p>
+                </blockquote>
               </div>
+
+              <section id="frequently-asked-questions">
+                <FaqAccordion
+                  title="Frequently Asked Questions"
+                  items={articleFaqs.map((faq) => ({
+                    q: faq.question,
+                    a: faq.answer,
+                  }))}
+                />
+              </section>
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">
                 <Link
-                  href="/arizona-real-estate-capital-gains-is-back/"
+                  href="/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house/"
                   className="text-[#3fb364] font-semibold hover:underline"
                 >
                   ← Previous Post
