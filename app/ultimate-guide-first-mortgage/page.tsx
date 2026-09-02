@@ -74,6 +74,56 @@ const loanSolutions = [
 ];
 
 
+const tocLinks = [
+  { label: "The Basics: What Do Lenders Look For?", href: "#the-basics-what-do-lenders-look-for" },
+  { label: "How Do Lenders Look at Credit?", href: "#how-do-lenders-look-at-credit" },
+  { label: "Down Payments: How Much Do I Need to Save?", href: "#down-payments-how-much-do-i-need-to-save" },
+  { label: "How do Lenders Look at Income?", href: "#how-do-lenders-look-at-income" },
+  { label: "Finding a Lender", href: "#finding-a-lender" },
+  { label: "What Types of Loans Are There?", href: "#what-types-of-loans-are-there" },
+  { label: "Conventional Loans and The Mortgage Market", href: "#conventional-loans-and-the-mortgage-market" },
+  { label: "Getting Pre-Approved", href: "#getting-pre-approved" },
+  { label: "Next Step: Finding a Home", href: "#next-step-finding-a-home" },
+  { label: "Making the Offer and Making a Loan Application", href: "#making-the-offer-and-making-a-loan-application" },
+  { label: "What does it mean to lock my rate?", href: "#what-does-it-mean-to-lock-my-rate" },
+  { label: "The Lending Process", href: "#the-lending-process" },
+  { label: "Final Approval and the Closing Table", href: "#final-approval-and-the-closing-table" },
+  { label: "Celebrate – You're a Homeowner!", href: "#celebrate-youre-a-homeowner" },
+] as const;
+
+const articleFaqs = [
+  {
+    question: "What do lenders look for when approving a mortgage?",
+    answer:
+      "Lenders typically assess several key factors when approving a mortgage, including your credit score and payment history, reliable income, debt-to-income ratio, and available assets. They want to ensure you have a strong record of repaying debts, a stable income source, manageable debt levels, and financial reserves to cover unforeseen circumstances.",
+  },
+  {
+    question: "How does my credit score affect my mortgage approval?",
+    answer:
+      "Your credit score plays a major role in determining the interest rate and loan options available to you. A score around 700 or higher is considered good and often qualifies for the best rates. Scores as low as 620 may still be accepted, but they typically result in higher rates. Lenders also consider your credit utilization and full credit history, not just the score.",
+  },
+  {
+    question: "How much down payment do I need for my first home?",
+    answer:
+      "The required down payment depends on the type of loan and home price. Conventional loans generally need 20% down, though some allow as little as 5%. FHA loans require a minimum of 3.5% down, and VA loans for veterans can go as low as 0%. A larger down payment helps reduce your monthly payments and total loan cost.",
+  },
+  {
+    question: "What types of home loans are available for first-time buyers?",
+    answer:
+      "Common loan types include conventional loans, FHA loans, and VA loans. Conventional loans are widely available and often sold on the secondary market. FHA loans are backed by the Federal Housing Administration and offer lower down payments, while VA loans are guaranteed by the Department of Veterans Affairs and provide benefits like no down payment for eligible veterans.",
+  },
+  {
+    question: "What is the difference between pre-approval and pre-qualification?",
+    answer:
+      "A pre-qualification is an initial estimate of how much you may be able to borrow based on basic information you provide. A pre-approval is a more detailed process that requires financial verification, such as proof of income, tax returns, and bank statements. Pre-approval carries more weight when making an offer on a home.",
+  },
+  {
+    question: "What happens after my mortgage is approved?",
+    answer:
+      "Once your mortgage is approved, the lender will finalize the loan documents and schedule your closing. You'll complete a final home inspection, sign paperwork with your closing agent or attorney, and arrange for the key transfer. Staying in close contact with your lender and real estate agent ensures a smooth closing process.",
+  },
+] as const;
+
 const articleJsonLd = buildArticleSchemas({
   blog: {
     pathname: "/ultimate-guide-first-mortgage/",
@@ -82,6 +132,7 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-11",
     articleSection: "Mortgage Basics",
   },
+  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Basics", path: "/mortgage-basics/" },
@@ -135,26 +186,34 @@ export default function UltimateGuideFirstMortgagePage() {
               </p>
 
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
-                <h2
+                <p
                   className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  Start Your Journey to Secure Your First Mortgage Now!
-                </h2>
+                  <strong>Start Your Journey to Secure Your First Mortgage Now!</strong>
+                </p>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
                   Begin your path with expert guidance. Connect with our professionals for personalized advice on
                   securing your first mortgage.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <Link
-                    href="#get-pre-approved"
-                    data-preapproval="true"
-                    className="btn-primary"
-                  >
+                  <Link href="#Get-in-Touch" className="btn-primary">
                     Get Started Today
                   </Link>
                 </div>
               </div>
+
+              <nav aria-label="Table of contents" className="mb-10">
+                <ul className="list-disc pl-6 space-y-2 text-[#3a4a3a] text-[16px]">
+                  {tocLinks.map((item) => (
+                    <li key={item.href}>
+                      <a href={item.href} className="text-[#3fb364] hover:underline">
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
 
               <div className="space-y-10 text-[#3a4a3a] text-[16px] leading-[1.8]">
                 <section id="the-basics-what-do-lenders-look-for">
@@ -162,7 +221,7 @@ export default function UltimateGuideFirstMortgagePage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    The Basics: What Do Lenders Look For?
+                    <strong>The Basics: What Do Lenders Look For?</strong>
                   </h2>
                   <p className="mb-5">
                     So, what do you need to do to prepare to buy your first home? What do lenders want to see
@@ -210,7 +269,7 @@ export default function UltimateGuideFirstMortgagePage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    How Do Lenders Look at Credit?
+                    <strong>How Do Lenders Look at Credit?</strong>
                   </h2>
                   <p className="mb-5">
                     Many people have the idea that lenders just look at a credit score to determine if a buyer has
@@ -250,7 +309,7 @@ export default function UltimateGuideFirstMortgagePage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Down Payments: How Much Do I Need to Save?
+                    <strong>Down Payments: How Much Do I Need to Save?</strong>
                   </h2>
                   <p className="mb-5">
                     When prices are rising quickly, first time buyers often become concerned that they will be
@@ -276,7 +335,7 @@ export default function UltimateGuideFirstMortgagePage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    How do Lenders Look at Income?
+                    <strong>How do Lenders Look at Income?</strong>
                   </h2>
                   <p className="mb-5">
                     Some people think you need to have a lot of money to get a mortgage, but this isn&apos;t the
@@ -296,19 +355,20 @@ export default function UltimateGuideFirstMortgagePage() {
                 </section>
 
                 <div className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
-                  <h2
+                  <p
                     className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Discover Your Borrower Rating Today!
-                  </h2>
+                    <strong>Discover Your Borrower Rating Today!</strong>
+                  </p>
                   <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
                     Take our quick quiz to assess your credit profile and receive personalized insights to guide
                     your mortgage journey.
                   </p>
                   <a
-                    href="#credit-score-quiz"
-                    data-quiz="true"
+                    href="https://form.jotform.com/250305896122151"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="btn-primary"
                   >
                     Take the Quiz
@@ -320,7 +380,7 @@ export default function UltimateGuideFirstMortgagePage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Finding a Lender
+                    <strong>Finding a Lender</strong>
                   </h2>
                   <p className="mb-5">
                     Now that you know some of the basics around getting a loan, let&apos;s look at the process. One
@@ -378,7 +438,7 @@ export default function UltimateGuideFirstMortgagePage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    What Types of Loans Are There?
+                    <strong>What Types of Loans Are There?</strong>
                   </h2>
                   <p className="mb-5">
                     The most common loan types are conventional loans, VA and FHA loans. Here is a little more
@@ -386,7 +446,11 @@ export default function UltimateGuideFirstMortgagePage() {
                   </p>
                   <ul className="list-disc pl-6 space-y-3">
                     <li>
-                      <strong><Link href="/va-loans-arizona/" className="hover:underline">VA loans</Link></strong><br />
+                      <strong>
+                        <Link href="/va-loans-arizona/" className="text-[#3fb364] hover:underline">
+                          VA loans
+                        </Link>
+                      </strong><br />
                       are for veterans of the armed forces. VA loans are loans that are guaranteed by the
                       Veterans Administration, which protects the lenders providing these loans against default.
                       Because they&apos;re federally guaranteed, these loans offer very low rates, and also can
@@ -394,13 +458,21 @@ export default function UltimateGuideFirstMortgagePage() {
                       veteran, ask if you qualify for a VA loan.
                     </li>
                     <li>
-                      <strong><Link href="/fha-home-loans-arizona/" className="hover:underline">FHA loans</Link></strong><br />
+                      <strong>
+                        <Link href="/fha-home-loans-arizona/" className="text-[#3fb364] hover:underline">
+                          FHA loans
+                        </Link>
+                      </strong><br />
                       are another loan program which is commonly used by first time buyers. FHA loans are
                       federally guaranteed loans that are often used by first-time buyers. They offer low rates
                       and a down payment of just 3.5%,
                     </li>
                     <li>
-                      <strong><Link href="/conventional-home-loans-arizona/" className="hover:underline">Conventional loans</Link></strong><br />
+                      <strong>
+                        <Link href="/conventional-home-loans-arizona/" className="text-[#3fb364] hover:underline">
+                          Conventional loans
+                        </Link>
+                      </strong><br />
                       are loans with are bought and sold on the open mortgage market (more about that in a
                       moment). These loans are offered by all types of lenders according to criteria that makes
                       them easy to underwrite.
@@ -413,7 +485,7 @@ export default function UltimateGuideFirstMortgagePage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Conventional Loans and The Mortgage Market
+                    <strong>Conventional Loans and The Mortgage Market</strong>
                   </h2>
                   <p className="mb-5">
                     The mortgage world is pretty complex with a lot of players. Many buyers think that the loan
@@ -427,7 +499,7 @@ export default function UltimateGuideFirstMortgagePage() {
                       href="https://www.fanniemae.com/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#3fb364] font-semibold hover:underline"
+                      className="text-[#3fb364] hover:underline"
                     >
                       Fannie Mae
                     </a>{" "}
@@ -449,7 +521,7 @@ export default function UltimateGuideFirstMortgagePage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Getting Pre-Approved
+                    <strong>Getting Pre-Approved</strong>
                   </h2>
                   <p className="mb-5">
                     After selecting a lender, your next step is to get pre-approved. A pre-approval is when the
@@ -491,7 +563,7 @@ export default function UltimateGuideFirstMortgagePage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Next Step: Finding a Home
+                    <strong>Next Step: Finding a Home</strong>
                   </h2>
                   <p className="mb-5">
                     You should provide your pre-approval information to your real estate agent as soon as you are
@@ -516,7 +588,7 @@ export default function UltimateGuideFirstMortgagePage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Making the Offer and Making a Loan Application
+                    <strong>Making the Offer and Making a Loan Application</strong>
                   </h2>
                   <p className="mb-5">
                     Making an offer to buy your first home is exciting. Many buyers also find it very
@@ -548,7 +620,7 @@ export default function UltimateGuideFirstMortgagePage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    What does it mean to lock my rate?
+                    <strong>What does it mean to lock my rate?</strong>
                   </h2>
                   <p className="mb-5">
                     When you were first getting pre-approved for your loan, your lender may have quoted you a rate
@@ -577,14 +649,14 @@ export default function UltimateGuideFirstMortgagePage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    The Lending Process
+                    <strong>The Lending Process</strong>
                   </h2>
                   <p className="mb-5">
                     Once you&apos;ve made formal application and locked a rate, the lender will process the loan.
                     To avoid delays or even the possibility that your loan application will be denied, make sure
                     to:
                   </p>
-                  <ul className="list-disc pl-6 space-y-3">
+                  <ol className="list-decimal pl-6 space-y-3">
                     <li>
                       <strong>Follow all the terms of your purchase and sale contract.</strong><br />
                       Make sure you fully understand what actions you&apos;re required to take by what dates in
@@ -603,7 +675,7 @@ export default function UltimateGuideFirstMortgagePage() {
                       of credit. This will show up on your credit report and can slow or stop your approval. It
                       can wait.
                     </li>
-                  </ul>
+                  </ol>
                 </section>
 
                 <section id="final-approval-and-the-closing-table">
@@ -611,7 +683,7 @@ export default function UltimateGuideFirstMortgagePage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Final Approval and the Closing Table
+                    <strong>Final Approval and the Closing Table</strong>
                   </h2>
                   <p className="mb-5">
                     Final Approval for your loan usually comes in about a week before closing but there can often
@@ -648,7 +720,7 @@ export default function UltimateGuideFirstMortgagePage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Celebrate – You&apos;re a Homeowner!
+                    <strong>Celebrate – You&apos;re a Homeowner!</strong>
                   </h2>
                   <p>
                     After several months of looking for a home and a flurry of activity to close on your home, the
@@ -660,16 +732,32 @@ export default function UltimateGuideFirstMortgagePage() {
                 </section>
               </div>
 
+              <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
+                <p
+                  className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                  <strong>Step Into Homeownership in Arizona Today!</strong>
+                </p>
+                <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
+                  Unlock expert tips and essential insights that empower you as a first-time homebuyer. Let our
+                  specialists help you make the leap with confidence.
+                </p>
+                <Link href="/first-time-home-buyer-arizona-guide/" className="btn-primary">
+                  Start Your Journey
+                </Link>
+              </div>
+
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">
                 <Link
-                  href="/what-is-a-conventional-home-loan-the-complete-first-time-buyer-mortgage-guide/"
+                  href="/arizona-refinance-process/"
                   className="text-[#3fb364] font-semibold hover:underline"
                 >
                   ← Previous Post
                 </Link>
                 <Link
-                  href="/first-time-home-buyer-arizona-guide/"
-                  className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
+                  href="/expect-youre-not-first-time-mortgage-shopper/"
+                  className="text-[#3fb364] font-semibold hover:underline"
                 >
                   Next Post →
                 </Link>

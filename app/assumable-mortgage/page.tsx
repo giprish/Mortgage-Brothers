@@ -8,6 +8,7 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
+import GetInTouch from "../component/GetInTouch";
 
 export const metadata: Metadata = getSeoMetadata("/assumable-mortgage/");
 
@@ -75,6 +76,24 @@ const loanSolutions = [
 ];
 
 
+const articleFaqs = [
+  {
+    question: "What is an assumable mortgage?",
+    answer:
+      "An assumable mortgage is one where the lender includes a clause allowing a third party, typically the homebuyer, to take over the existing mortgage. If the mortgage is not assumable, the clause will clearly state so.",
+  },
+  {
+    question: "What does an assumable clause look like?",
+    answer:
+      "A typical assumable clause may read: 'If all or any part of the property is sold or transferred without the lender's prior consent, the lender may require immediate payment in full of the loan.' This means the mortgage may be assumed if the lender is notified and consents to the transfer.",
+  },
+  {
+    question: "Are FHA mortgages assumable?",
+    answer:
+      "Yes, one of the advantages of FHA mortgages is that they are assumable. This can be a strong selling point if you decide to sell your home in the future.",
+  },
+] as const;
+
 const articleJsonLd = buildArticleSchemas({
   blog: {
     pathname: "/assumable-mortgage/",
@@ -83,6 +102,7 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-04",
     articleSection: "Mortgage Payments & Strategies",
   },
+  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Payments & Strategies", path: "/mortgage-payments-strategies/" },
@@ -137,21 +157,18 @@ export default function AssumableMortgagePage() {
               </p>
 
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
-                <h2
+                <p
                   className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  Interested in an Assumable Mortgage?
-                </h2>
+                  <strong>Interested in an Assumable Mortgage?</strong>
+                </p>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
                   Taking over a seller&apos;s mortgage can mean lower rates and better terms. Let our experts
                   guide you through the process.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <Link
-                    href="#get-pre-approved"
-                    className="btn-primary"
-                  >
+                  <Link href="#Get-in-Touch" className="btn-primary">
                     Find Out If You Qualify
                   </Link>
                 </div>
@@ -166,11 +183,11 @@ export default function AssumableMortgagePage() {
                     What Does The Assumable Clause Look Like?
                   </h2>
                   <p className="mb-5">The typical assumable clause will read like this:</p>
-                  <blockquote className="border-l-4 border-[#3fb364] bg-white/70 px-5 py-4 mb-5 rounded-r-xl italic text-[#052316]">
+                  <p className="mb-5">
                     Transfer of Property. If all or any part of the Property or any interest in it is sold or
                     transferred without the Lender&apos;s prior consent, the Lender may require immediate
                     payment in full of the home loan.
-                  </blockquote>
+                  </p>
                   <p className="mb-5">
                     What this provision is saying is that the mortgage is assumable if the Lender is notified
                     in advance of the transfer of interest in the property and has consented to the transfer.
@@ -185,62 +202,64 @@ export default function AssumableMortgagePage() {
                   </p>
                   <p>
                     One of the big advantages of an FHA mortgage is that FHA mortgages are assumable. And an{" "}
-                    <Link
-                      href="/assumable-mortgage/"
-                      className="text-[#3fb364] font-semibold hover:underline"
+                    <a
+                      href="https://www.investopedia.com/terms/a/assumablemortgage.asp"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#3fb364] hover:underline"
                     >
                       assumable mortgage
-                    </Link>{" "}
+                    </a>{" "}
                     might be a selling point if you at some point decide to sell your home.
                   </p>
                 </section>
 
-                <p className="text-[15px]">
-                  Understand how an assumable mortgage can simplify your home financing process. For further
-                  reading, see our guide on{" "}
-                  <Link
-                    href="/delayed-financing-how-to-get-cashout-without-waiting-6-months-seasoning/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    delayed financing
-                  </Link>
-                  , get an example of a{" "}
-                  <Link
-                    href="/what-is-an-example-of-a-mortgage-recast/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    mortgage recast
-                  </Link>
-                  , learn about{" "}
-                  <Link
-                    href="/buying-a-house-with-a-cash-offer-and-simultaneously-getting-mortgage-financing/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    cash offer financing
-                  </Link>
-                  , and review the details of the{" "}
-                  <Link
-                    href="/fha-flip-rule-waiver-expired-you-need-wait-90-days-to-write-a-contract/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    FHA flip rule waiver
-                  </Link>
-                  .
-                </p>
-
-                <p className="text-[#5a6b52] text-[13px] leading-relaxed">
-                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
-                  been prepared for informational purposes only. You should consult your own tax, legal, and
-                  accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
-                  #210917 and 1618695. Equal Housing Opportunity.
-                </p>
+                <blockquote className="border-l-4 border-[#3fb364] bg-white/70 px-5 py-4 rounded-r-xl text-[#3a4a3a] text-[15px] leading-relaxed">
+                  <p>
+                    Understand how an assumable mortgage can simplify your home financing process. For further
+                    reading, see our guide on{" "}
+                    <Link
+                      href="/delayed-financing-how-to-get-cashout-without-waiting-6-months-seasoning/"
+                      className="text-[#3fb364] hover:underline"
+                    >
+                      delayed financing
+                    </Link>
+                    , get an example of a{" "}
+                    <Link
+                      href="/what-is-an-example-of-a-mortgage-recast/"
+                      className="text-[#3fb364] hover:underline"
+                    >
+                      mortgage recast
+                    </Link>
+                    , learn about{" "}
+                    <Link
+                      href="/buying-a-house-with-a-cash-offer-and-simultaneously-getting-mortgage-financing/"
+                      className="text-[#3fb364] hover:underline"
+                    >
+                      cash offer financing
+                    </Link>
+                    , and review the details of the{" "}
+                    <Link
+                      href="/fha-flip-rule-waiver-expired-you-need-wait-90-days-to-write-a-contract/"
+                      className="text-[#3fb364] hover:underline"
+                    >
+                      FHA flip rule waiver
+                    </Link>
+                    .
+                  </p>
+                </blockquote>
               </div>
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">
-                <span />
+                <Link
+                  href="/arizona-real-estate-capital-gains-is-back/"
+                  className="text-[#3fb364] font-semibold hover:underline"
+                >
+                  ← Previous Post
+                </Link>
                 <Link
                   href="/fha-flip-rule-waiver-expired-you-need-wait-90-days-to-write-a-contract/"
-                  className="text-[#5a6b52] hover:text-[#3fb364] transition-colors ml-auto"
+                  className="text-[#3fb364] font-semibold hover:underline"
                 >
                   Next Post →
                 </Link>
@@ -339,28 +358,14 @@ export default function AssumableMortgagePage() {
           </div>
         </section>
 
-        <section className="w-full bg-[#f5f0e8] py-16 lg:py-20 border-y border-[#e8e0d0]/50">
-          <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center">
-            <h2
-              className="text-[#08271B] text-[30px] lg:text-[38px] font-normal leading-tight mb-5"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
-              Get in Touch with The Mortgage Brothers
-            </h2>
-            <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              Ready to take the next step towards your dream home? One of our experienced mortgage professionals
-              will get back to you promptly with personalized solutions tailored to your unique financial
-              situation.
-            </p>
-            <Link
-              href="#get-pre-approved"
-              className="btn-primary"
-            >
-              Get Your Rate Now
-            </Link>
-          </div>
-        </section>
-R
+        <GetInTouch
+          id="Get-in-Touch"
+          theme="light"
+          title="Get in Touch with The Mortgage Brothers"
+          description="Ready to take the next step towards your dream home? Fill out the form below, and one of our experienced mortgage professionals will get back to you promptly. We're here to provide personalized solutions tailored to your unique financial situation and homeownership goals in Arizona."
+          className="bg-[#f5f0e8] border-y border-[#e8e0d0]/50"
+        />
+
         <section className="w-full py-16 lg:py-20">
           <div className="max-w-6xl mx-auto px-6 lg:px-10">
             <h2

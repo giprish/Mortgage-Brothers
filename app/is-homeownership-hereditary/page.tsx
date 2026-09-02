@@ -75,6 +75,24 @@ const loanSolutions = [
 ];
 
 
+const articleFaqs = [
+  {
+    question: "Is homeownership hereditary?",
+    answer:
+      "Yes, research suggests that homeownership can be hereditary. A study by the Urban Institute found that young adults whose parents own homes are significantly more likely to become homeowners themselves compared to those whose parents rent.",
+  },
+  {
+    question: "What factors influence millennial homeownership rates?",
+    answer:
+      "According to the Urban Institute, millennial homeownership rates are affected by factors such as higher education debt, delayed marriage and childbearing, rising rent costs, and increased racial diversity among millennials.",
+  },
+  {
+    question: "How does parental wealth impact homeownership among millennials?",
+    answer:
+      "The study found a strong correlation between parents' net worth and their children's likelihood of owning a home. As a parent's wealth increases, the chances of their child becoming a homeowner also rise.",
+  },
+] as const;
+
 const articleJsonLd = buildArticleSchemas({
   blog: {
     pathname: "/is-homeownership-hereditary/",
@@ -83,6 +101,7 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-12",
     articleSection: "Spouse & Estate Considerations",
   },
+  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Spouse & Estate Considerations", path: "/spouse-estate-considerations/" },
@@ -124,33 +143,23 @@ export default function IsHomeownershipHereditaryPage() {
             <article className="min-w-0">
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
-                Everyone knows that{" "}
-                <Link
-                  href="/first-time-home-buyer-arizona-guide/"
-                  className="text-[#3fb364] font-semibold hover:underline"
-                >
-                  houses
-                </Link>{" "}
-                can be inherited, but can homeownership? It would seem that the answer to that question is
-                &ldquo;yes.&rdquo;
+                Everyone knows that <em>houses</em> can be inherited, but can homeownership? It would seem that
+                the answer to that question is &ldquo;yes.&rdquo;
               </p>
 
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
-                <h2
+                <p
                   className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  Ready to Build Your Legacy?
-                </h2>
+                  <strong>Ready to Build Your Legacy?</strong>
+                </p>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
                   Connect with Mortgage Brothers LLC today to start your journey toward lasting
                   homeownership and secure mortgage solutions.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <Link
-                    href="#get-pre-approved"
-                    className="btn-primary"
-                  >
+                  <Link href="#Get-in-Touch" className="btn-primary">
                     Get Started
                   </Link>
                 </div>
@@ -162,7 +171,7 @@ export default function IsHomeownershipHereditaryPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Homeownership is a Family Trait
+                    <strong>Homeownership is a Family Trait</strong>
                   </h2>
                   <p className="mb-5">
                     Recently, the Urban Institute conducted{" "}
@@ -170,7 +179,7 @@ export default function IsHomeownershipHereditaryPage() {
                       href="https://www.urban.org/research/publication/millennial-homeownership"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#3fb364] font-semibold hover:underline"
+                      className="text-[#3fb364] hover:underline"
                     >
                       research
                     </a>{" "}
@@ -195,7 +204,7 @@ export default function IsHomeownershipHereditaryPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Another Familial Factor
+                    <strong>Another Familial Factor</strong>
                   </h2>
                   <p className="mb-5">
                     Interestingly, the study discovered another factor that affected millennial homeownership
@@ -213,7 +222,7 @@ export default function IsHomeownershipHereditaryPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Build Wealth for Yourself and Future Generations
+                    <strong>Build Wealth for Yourself and Future Generations</strong>
                   </h2>
                   <p className="mb-5">
                     Houses play a significant, wealth-building role in the lives of millions of people in the
@@ -222,7 +231,7 @@ export default function IsHomeownershipHereditaryPage() {
                       href="https://www.federalreserve.gov/publications/files/scf17.pdf"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#3fb364] font-semibold hover:underline"
+                      className="text-[#3fb364] hover:underline"
                     >
                       Survey of Consumer Finances
                     </a>{" "}
@@ -241,69 +250,42 @@ export default function IsHomeownershipHereditaryPage() {
                   </p>
                 </section>
 
-                <p>
-                  If you have any questions about building a homeownership legacy, call us at{" "}
-                  <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
-                  </a>{" "}
-                  or reach us using our{" "}
-                  <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                    contact form
-                  </Link>
-                  .
-                </p>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
+                <blockquote className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
                   <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
-                    you and help you through the whole process.
+                    Delve into the concept of whether homeownership can be passed down through generations and
+                    what that means for your financial future. Enhance your understanding by reading about{" "}
+                    <Link href="/can-i-get-a-3rd-mortgage/" className="text-[#3fb364] hover:underline">
+                      securing a third mortgage
+                    </Link>
+                    , learning about{" "}
+                    <Link
+                      href="/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house/"
+                      className="text-[#3fb364] hover:underline"
+                    >
+                      optimal closing speeds
+                    </Link>
+                    , and discovering{" "}
+                    <Link
+                      href="/who-can-and-cannot-be-on-title-when-you-get-a-mortgage/"
+                      className="text-[#3fb364] hover:underline"
+                    >
+                      who can be on title
+                    </Link>
+                    .
                   </p>
-                </div>
-
-                <p className="text-[15px]">
-                  Delve into the concept of whether homeownership can be passed down through generations and
-                  what that means for your financial future. Enhance your understanding by reading about{" "}
-                  <Link
-                    href="/can-i-get-a-3rd-mortgage/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    securing a third mortgage
-                  </Link>
-                  , learning about{" "}
-                  <Link
-                    href="/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    optimal closing speeds
-                  </Link>
-                  , and discovering{" "}
-                  <Link
-                    href="/who-can-and-cannot-be-on-title-when-you-get-a-mortgage/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    who can be on title
-                  </Link>
-                  .
-                </p>
-
-                <p className="text-[#5a6b52] text-[13px] leading-relaxed">
-                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
-                  been prepared for informational purposes only. You should consult your own tax, legal, and
-                  accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
-                  #210917 and 1618695. Equal Housing Opportunity.
-                </p>
+                </blockquote>
               </div>
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">
                 <Link
-                  href="/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house/"
+                  href="/expect-youre-not-first-time-mortgage-shopper/"
                   className="text-[#3fb364] font-semibold hover:underline"
                 >
                   ← Previous Post
                 </Link>
                 <Link
                   href="/who-can-and-cannot-be-on-title-when-you-get-a-mortgage/"
-                  className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
+                  className="text-[#3fb364] font-semibold hover:underline"
                 >
                   Next Post →
                 </Link>

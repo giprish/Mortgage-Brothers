@@ -75,6 +75,19 @@ const loanSolutions = [
 ];
 
 
+const articleFaqs = [
+  {
+    question: "Are homes owned by the seller for less than 90 days eligible for FHA financing?",
+    answer:
+      "No, homes that have been owned by the seller for less than 90 days are not eligible for FHA financing as of January 1, 2015.",
+  },
+  {
+    question: "When can FHA buyers write a contract on a home owned by the seller?",
+    answer:
+      "FHA buyers can write a contract only after the seller has owned the home for at least 90 days. The 90-day waiting period applies to writing the contract, not to closing the loan.",
+  },
+] as const;
+
 const articleJsonLd = buildArticleSchemas({
   blog: {
     pathname: "/fha-flip-rule-waiver-expired-you-need-wait-90-days-to-write-a-contract/",
@@ -83,6 +96,7 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-04",
     articleSection: "Mortgage Payments & Strategies",
   },
+  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Payments & Strategies", path: "/mortgage-payments-strategies/" },
@@ -130,21 +144,18 @@ export default function FhaFlipRuleWaiverExpiredPage() {
               </p>
 
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
-                <h2
+                <p
                   className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  Buying a Flipped Home? Know the FHA 90-Day Rule
-                </h2>
+                  <strong>Buying a Flipped Home? Know the FHA 90-Day Rule</strong>
+                </p>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
                   The FHA flip rule waiver is gone, and waiting periods are back. Get expert guidance on
                   navigating the new rules.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <Link
-                    href="#get-pre-approved"
-                    className="btn-primary"
-                  >
+                  <Link href="#Get-in-Touch" className="btn-primary">
                     Get Expert FHA Loan Advice
                   </Link>
                 </div>
@@ -158,7 +169,7 @@ export default function FhaFlipRuleWaiverExpiredPage() {
                       href="https://www.federalregister.gov/documents/2011/12/28/2011-33411/federal-housing-administration-fha-temporary-exemption-from-compliance-with-fhas-regulation-on"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#3fb364] font-semibold hover:underline"
+                      className="text-[#3fb364] hover:underline"
                     >
                       FHA announced
                     </a>{" "}
@@ -177,45 +188,40 @@ export default function FhaFlipRuleWaiverExpiredPage() {
                   </p>
                 </section>
 
-                <p>
-                  Stay updated on the FHA flip rule waiver and why a 90-day wait is required before writing a
-                  contract. For additional context, read about{" "}
-                  <Link
-                    href="/delayed-financing-how-to-get-cashout-without-waiting-6-months-seasoning/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    delayed financing
-                  </Link>
-                  , explore an example of a{" "}
-                  <Link
-                    href="/what-is-an-example-of-a-mortgage-recast/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    mortgage recast
-                  </Link>
-                  , discover the benefits of an{" "}
-                  <Link
-                    href="/assumable-mortgage/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    assumable mortgage
-                  </Link>
-                  , and learn how{" "}
-                  <Link
-                    href="/buying-a-house-with-a-cash-offer-and-simultaneously-getting-mortgage-financing/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    cash offer financing
-                  </Link>{" "}
-                  can work for you.
-                </p>
-
-                <p className="text-[#5a6b52] text-[13px] leading-relaxed">
-                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
-                  been prepared for informational purposes only. You should consult your own tax, legal, and
-                  accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
-                  #210917 and 1618695. Equal Housing Opportunity.
-                </p>
+                <blockquote className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
+                  <p className="text-[15px] text-[#052316] leading-relaxed">
+                    Stay updated on the FHA flip rule waiver and why a 90-day wait is required before writing a
+                    contract. For additional context, read about{" "}
+                    <Link
+                      href="/delayed-financing-how-to-get-cashout-without-waiting-6-months-seasoning/"
+                      className="text-[#3fb364] hover:underline"
+                    >
+                      delayed financing
+                    </Link>
+                    , explore an example of a{" "}
+                    <Link
+                      href="/what-is-an-example-of-a-mortgage-recast/"
+                      className="text-[#3fb364] hover:underline"
+                    >
+                      mortgage recast
+                    </Link>
+                    , discover the benefits of an{" "}
+                    <Link
+                      href="/assumable-mortgage/"
+                      className="text-[#3fb364] hover:underline"
+                    >
+                      assumable mortgage
+                    </Link>
+                    , and learn how{" "}
+                    <Link
+                      href="/buying-a-house-with-a-cash-offer-and-simultaneously-getting-mortgage-financing/"
+                      className="text-[#3fb364] hover:underline"
+                    >
+                      cash offer financing
+                    </Link>{" "}
+                    can work for you.
+                  </p>
+                </blockquote>
               </div>
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">
@@ -224,7 +230,7 @@ export default function FhaFlipRuleWaiverExpiredPage() {
                 </Link>
                 <Link
                   href="/delayed-financing-how-to-get-cashout-without-waiting-6-months-seasoning/"
-                  className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
+                  className="text-[#3fb364] font-semibold hover:underline"
                 >
                   Next Post →
                 </Link>
