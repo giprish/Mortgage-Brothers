@@ -247,6 +247,8 @@ export default function PinalCountyPage() {
             "Take the first step toward homeownership with AZ Mortgage Brothers, your trusted local mortgage team. Our team provides expert guidance through the home loan process — answering questions, reviewing your options, and helping you secure the best terms for your situation. We'll help you secure the best possible terms for your unique situation across San Tan Valley, Queen Creek, Casa Grande, Coolidge, Florence, and Apache Junction.",
             "Whether you prefer to chat over the phone, send us an email, or meet in person, we are here to help. Fill out the form below, and one of our Pinal County Arizona mortgage broker specialists will get back to you promptly.",
           ]}
+          showPreApproveCta
+          ctaLabel="Start my preapproval"
         />
       </main>
 

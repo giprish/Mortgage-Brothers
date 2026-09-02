@@ -577,6 +577,8 @@ export default function GenericCityDetailPage({ cityData }: { cityData: CityData
           showDivider
           paragraphs={cityData.getInTouchParagraphs}
           renderParagraph={renderGetInTouchText}
+          showPreApproveCta
+          ctaLabel="Start my preapproval"
         />
 
       </main>

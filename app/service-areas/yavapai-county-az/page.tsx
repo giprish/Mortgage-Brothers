@@ -243,6 +243,8 @@ export default function YavapaiCountyPage() {
             "Choosing the right mortgage matters. Our team takes a personalized approach—reviewing your income, credit profile, and goals before recommending loan options.",
             "Our AI-supported loan analysis helps compare lender terms efficiently, while our experienced advisors ensure decisions are made with clarity and confidence.",
           ]}
+          showPreApproveCta
+          ctaLabel="Start my preapproval"
         />
       </main>
 

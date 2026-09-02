@@ -175,6 +175,8 @@ export default function YumaCountyPage() {
             "Choosing the right mortgage is an important financial decision. Our Yuma County mortgage team takes a personalized approach by reviewing your financial profile, credit history, and long-term homeownership goals before recommending the best loan options.",
             "With access to multiple lenders and advanced loan comparison tools, we help clients secure competitive mortgage solutions while keeping the process smooth and transparent.",
           ]}
+          showPreApproveCta
+          ctaLabel="Start my preapproval"
         />
       </main>
       <Footer />

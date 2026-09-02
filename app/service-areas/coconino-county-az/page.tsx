@@ -253,6 +253,8 @@ export default function CoconinoCountyPage() {
             "Choosing the right mortgage matters. Our team takes a personalized approach by reviewing your income, credit profile, and long-term goals before recommending loan options.",
             "Our AI-supported loan analysis helps compare lender terms efficiently, while our experienced advisors ensure every decision is made with clarity and confidence — whether you're buying, refinancing, or planning ahead.",
           ]}
+          showPreApproveCta
+          ctaLabel="Start my preapproval"
         />
       </main>
 
