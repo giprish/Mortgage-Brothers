@@ -10,6 +10,34 @@ import ArticleHero from "../component/ArticleHero";
 
 export const metadata: Metadata = getSeoMetadata("/mortgage-101/");
 
+const articleFaqs = [
+  {
+    question: "What is a mortgage, and who owns my home if I have secured financing to purchase it?",
+    answer:
+      "A mortgage is a loan used to purchase a home, with the property itself serving as collateral. Although you hold the title to the home, the lender retains a lien on the property until the mortgage is fully repaid. Understanding key mortgage terms and how financing works can help you make informed decisions before working with a real estate agent or loan officer.",
+  },
+  {
+    question: "Why should I use an Arizona mortgage broker?",
+    answer:
+      "Working with an Arizona mortgage broker gives you access to multiple lenders and banks, increasing your chances of approval and securing the best loan terms. Brokers often work flexible hours, including evenings and weekends, to guide clients through every step of the mortgage process and ensure a smooth home buying experience.",
+  },
+  {
+    question: "What factors affect mortgage loan approval?",
+    answer:
+      "Lenders evaluate several factors when approving a mortgage, including your down payment amount, employment and income history, and credit standing. Being prepared with the right documentation helps streamline the pre-approval process and allows you to discuss the best loan programs with your lender.",
+  },
+  {
+    question: "How does my credit score impact my mortgage approval?",
+    answer:
+      "Your credit score plays a critical role in determining your eligibility and interest rate for a mortgage. Understanding how credit scores are calculated and managing your accounts responsibly—such as keeping older credit lines open and paying bills on time—can help improve your chances of securing favorable mortgage terms.",
+  },
+  {
+    question: "What costs are included in a typical mortgage payment?",
+    answer:
+      "In addition to the loan principal and interest, mortgage payments often include property taxes, homeowner's insurance, HOA dues, and sometimes home warranty fees. Understanding all the associated costs helps you create a realistic monthly budget and maintain financial stability throughout homeownership.",
+  },
+] as const;
+
 const articleJsonLd = buildArticleSchemas({
   blog: {
     pathname: "/mortgage-101/",
@@ -19,6 +47,7 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-10",
     articleSection: "Mortgage Basics",
   },
+  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Basics", path: "/mortgage-basics/" },
@@ -148,7 +177,7 @@ export default function Mortgage101Page() {
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
                 Since there are so many components to the AZ mortgage process, we have taken special
                 care to organize the most important qualifying steps, lending frequently asked
-                questions, home buying and mortgage processes below. We realize that the information
+                questions, home buying and mortgage processes below. We realize that that the information
                 contained in this site could literally take you weeks to research and digest, so please
                 feel free to call us at any time for a personal consultation where we can address your
                 specific needs and questions.
@@ -156,20 +185,17 @@ export default function Mortgage101Page() {
 
               {/* Mid CTA */}
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
-                <h2
+                <p
                   className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  You&apos;ve Mastered the Basics—Now Connect with the Experts
-                </h2>
+                  <strong>You&apos;ve Mastered the Basics—Now Connect with the Experts</strong>
+                </p>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
                   Now that you&apos;ve learned the fundamentals, reach out to us. We&apos;re professional
                   mortgage experts ready to guide you to the next step.
                 </p>
-                <Link
-                  href="/contact-us/"
-                  className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
-                >
+                <Link href="#Get-in-Touch" className="btn-primary">
                   Contact Us Today
                 </Link>
               </div>
@@ -181,32 +207,26 @@ export default function Mortgage101Page() {
                     key={topic.title}
                     className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 lg:p-7 shadow-sm hover:shadow-md hover:border-[#3fb364]/30 transition-all"
                   >
-                    <h2 className="text-[#08271B] text-[20px] lg:text-[22px] font-bold mb-3">
+                    <h4 className="text-[#08271B] text-[20px] lg:text-[22px] font-bold mb-3">
                       {topic.title}
-                    </h2>
+                    </h4>
                     <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-5">{topic.text}</p>
-                    <Link
-                      href={topic.href}
-                      className="inline-flex items-center gap-1.5 text-[#3fb364] hover:text-[#2d8545] font-semibold text-[14.5px] transition-colors"
-                    >
+                    <Link href={topic.href} className="btn-primary">
                       Learn more
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M9 5l7 7-7 7" />
-                      </svg>
                     </Link>
                   </div>
                 ))}
               </div>
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">
-                <Link href="/blog/" className="text-[#3fb364] font-semibold hover:underline">
-                  ← Back to Blog
+                <Link href="/the-broker-advantage/" className="text-[#3fb364] font-semibold hover:underline">
+                  ← Previous Post
                 </Link>
                 <Link
-                  href="/mortgage-basics/"
-                  className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
+                  href="/arizona-mortgage-basics/"
+                  className="text-[#3fb364] font-semibold hover:underline"
                 >
-                  Mortgage Basics →
+                  Next Post →
                 </Link>
               </div>
             </article>

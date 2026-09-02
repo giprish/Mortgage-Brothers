@@ -24,10 +24,14 @@ export type GetInTouchProps = {
   renderParagraph?: (text: string) => React.ReactNode;
   /** When true, contact cards render before body copy (blog category pages). */
   contactBeforeBody?: boolean;
+  /** Optional content between body copy and contact cards (e.g. inline Jotform on blog posts). */
+  beforeContact?: React.ReactNode;
   /** Optional content after contact cards (e.g. licensing). */
   afterContact?: React.ReactNode;
   /** Optional section id for in-page anchors (e.g. `#contact`). */
   id?: string;
+  /** When false, hides Phone / Address / Contact cards (e.g. blog pages with inline form only). */
+  showContactCards?: boolean;
   /** Extra classes on the outer `<section>` (e.g. scroll margin for fixed nav). */
   className?: string;
 };
@@ -179,8 +183,10 @@ export default function GetInTouch({
   ctaLabel = "GET PRE-APPROVED →",
   renderParagraph = renderInlineLinks,
   contactBeforeBody = false,
+  beforeContact,
   afterContact,
   id,
+  showContactCards = true,
   className,
 }: GetInTouchProps) {
   const isLight = theme === "light";
@@ -287,8 +293,10 @@ export default function GetInTouch({
       <div className="max-w-5xl mx-auto px-5 sm:px-6 lg:px-10 text-center space-y-8">
         {headingBlock}
 
+        {beforeContact}
+
         {/* Canonical order: Phone → Address → Contact (never reorder for live parity) */}
-        {contactCards}
+        {showContactCards ? contactCards : null}
 
         {bodyBlock}
 
@@ -304,7 +312,7 @@ export default function GetInTouch({
                   ? { "data-contact": "true" }
                   : ctaHref.includes("career-application")
                     ? { "data-career": "true" }
-                    : {})}
+                    : { "data-preapproval": "true" })}
               >
                 {ctaLabel}
               </a>

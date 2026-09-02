@@ -180,6 +180,8 @@ export default function SantaCruzCountyPage() {
             "With access to multiple lenders and advanced loan comparison tools, we help clients secure competitive mortgage solutions while keeping the process smooth and transparent.",
             "Whether you're purchasing your first home, refinancing your existing mortgage, or exploring new financing opportunities, our team provides clear guidance and personalized mortgage strategies tailored to your financial goals.",
           ]}
+          showPreApproveCta
+          ctaLabel="Start my preapproval"
         />
 
       </main>

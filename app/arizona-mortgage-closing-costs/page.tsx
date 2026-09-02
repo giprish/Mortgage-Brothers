@@ -74,6 +74,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
+const faqs = [
+  {
+    question: "What are lender fees in Arizona mortgage closing costs?",
+    answer:
+      "Lender fees are the costs charged by your mortgage lender for creating and funding your loan. These fees vary by lender and typically include administrative and underwriting costs. You can compare lenders to find lower fees, but your decision shouldn't be based solely on the fee amount.",
+  },
+  {
+    question: "Why are title company fees required during mortgage closing?",
+    answer:
+      "Title company fees cover services like verifying a clear property title, preparing the deed transfer, and recording the mortgage with the county. The title company ensures the legal transfer of ownership and that there are no existing claims or issues with the property title.",
+  },
+  {
+    question: "What is an appraisal fee in mortgage closing costs?",
+    answer:
+      "An appraisal fee is charged for evaluating the property's market value. Lenders require an appraisal to ensure the home is worth the amount you're borrowing. This cost appears on your closing statement and is typically paid at closing.",
+  },
+  {
+    question: "Are there additional inspection fees involved in closing a mortgage in Arizona?",
+    answer:
+      "Yes, additional inspection fees may include pest inspections for termites or wood-destroying organisms, as well as septic and well certifications if the property relies on those systems. Condo buyers might also face questionnaire fees required by the condominium association.",
+  },
+];
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
@@ -83,6 +105,7 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-10",
     articleSection: "Mortgage Basics",
   },
+  faqs,
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Basics", path: "/mortgage-basics/" },
@@ -123,36 +146,6 @@ export default function ArizonaMortgageClosingCostsPage() {
           <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
             <article className="min-w-0">
 
-              <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
-                If you&apos;re getting a mortgage, you&apos;re probably hearing talk of closing costs. But what
-                makes these up, and why do you have to pay them? Closing costs are commonly lender fees,
-                appraisal fees, title company fees, and more. Learning what fees you&apos;ll be expected to pay
-                and why can help make the process of getting a mortgage and buying a home less stressful and
-                confusing. Here are some of the commonly seen closing costs you might have as a part of your
-                mortgage and real estate transaction.
-              </p>
-
-              <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
-                <h2
-                  className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-                >
-                  Demystify Your Closing Costs—Contact Our Experts!
-                </h2>
-                <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
-                  Ready to understand every detail of your closing costs? Connect with Mortgage Brothers LLC
-                  for personalized advice and a stress-free closing experience.
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <Link
-                    href="#get-pre-approved"
-                    className="btn-primary"
-                  >
-                    Get in Touch
-                  </Link>
-                </div>
-              </div>
-
               <div className="space-y-10 text-[#3a4a3a] text-[16px] leading-[1.8]">
                 <section id="lender-fees">
                   <h2
@@ -169,6 +162,27 @@ export default function ArizonaMortgageClosingCostsPage() {
                     fees.
                   </p>
                 </section>
+
+                <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
+                  <h2
+                    className="text-[#08271B] text-[24px] lg:text-[28px] font-bold mb-3"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    <strong>Demystify Your Closing Costs—Contact Our Experts!</strong>
+                  </h2>
+                  <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
+                    Ready to understand every detail of your closing costs? Connect with Mortgage Brothers LLC
+                    for personalized advice and a stress-free closing experience.
+                  </p>
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <Link
+                      href="#Get-in-Touch"
+                      className="btn-primary"
+                    >
+                      Get in Touch
+                    </Link>
+                  </div>
+                </div>
 
                 <section id="title-company-fees">
                   <h2
@@ -245,32 +259,6 @@ export default function ArizonaMortgageClosingCostsPage() {
                     unpleasant surprises at closing.
                   </p>
                 </section>
-
-                <p>
-                  If you have any questions about Arizona mortgage closing costs, call us at{" "}
-                  <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
-                  </a>{" "}
-                  or reach us using our{" "}
-                  <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                    contact form
-                  </Link>
-                  .
-                </p>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you
-                    and help you through the whole process.
-                  </p>
-                </div>
-
-                <p className="text-[#5a6b52] text-[13px] leading-relaxed">
-                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
-                  prepared for informational purposes only. You should consult your own tax, legal, and accounting
-                  advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
-                  1618695. Equal Housing Opportunity.
-                </p>
               </div>
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">

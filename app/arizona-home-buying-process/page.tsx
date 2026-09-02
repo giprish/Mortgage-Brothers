@@ -75,15 +75,51 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "I’ve heard the term “Buyer’s Market” and “Seller’s Market”. What does that mean?", answer: "Simply, it’s about economics. When there are more buyers than sellers, it becomes a Seller’s Market…meaning the seller has the control. If they don’t like your bid, there’s probably someone else out there ready to buy. On the flip side, if there are more sellers than buyers, it becomes a Buyer’s Market because there probably isn’t someone else waiting to place a bid." },
-  { question: "Where does my “earnest” money go?", answer: "Earnest money, or a small down payment to “hold” the purchase, is credited back toward the buyer’s closing costs or down payment." },
-  { question: "Do I need a Home Inspection?", answer: "Some mortgage loan programs require a borrower to get an inspection. However, even if it’s not required it is still important to complete to be sure the house is sound and there are no problems waiting in the wings." },
-  { question: "Does it matter if I buy a home that’s part of a Home Owner’s Association?", answer: "Yes, it does. An HOA may have the power to determine the color of your home, the number of pets you have and even the type of grass and flowers you plant? They may also have the power to assess penalties to you if the problems aren’t fixed. It’s very important to understand the scope of any HOA and what the costs/premiums might be." },
-  { question: "What are the primary operational steps in the Arizona home buying process?", answer: "The entire home buying process can be broken down into five major sequential phases. It begins with filling out a mortgage application for pre-approval, followed by assembling your real estate team, submitting a formal purchase offer, clearing underwriting conditions and paperwork, and finally attending the closing appointment." },
-  { question: "Why is a personalized strategy session required before shopping for an Arizona home?", answer: "A personalized strategy session with a trusted mortgage lender ensures you clearly understand how much home you can afford, establishes your exact down payment budget, and identifies the best mortgage program for your needs. It also allows the lender to uncover and resolve any potential loan approval issues early in the process." },
-  { question: "What happens during the due diligence period after a purchase offer is accepted?", answer: "Once the seller accepts your offer, the official due diligence period begins. This phase triggers a series of time-sensitive real estate events, including completing property home inspections to ensure the structure is sound, ordering the bank appraisal, and processing final mortgage approvals before signing closing documents." },
-  { question: "How do Homeowners Associations (HOAs) impact buyers in Arizona?", answer: "HOAs hold significant regulatory power over a property and can dictate specific rules regarding home paint colors, pet limits, landscaping choices, and architectural changes. Because they can assess financial penalties for non-compliance, buyers must thoroughly review the scope, guidelines, and monthly premiums of the HOA during escrow." },
+const visibleFaqs = [
+  {
+    question: "I’ve heard the term “Buyer’s Market” and “Seller’s Market”. What does that mean?",
+    answer:
+      "Simply, it’s about economics. When there are more buyers than sellers, it becomes a Seller’s Market…meaning the seller has the control. If they don’t like your bid, there’s probably someone else out there ready to buy. On the flip side, if there are more sellers than buyers, it becomes a Buyer’s Market because there probably isn’t someone else waiting to place a bid.",
+  },
+  {
+    question: "Where does my “earnest” money go?",
+    answer:
+      "Earnest money, or a small down payment to “hold” the purchase, is credited back toward the buyer’s closing costs or down payment.",
+  },
+  {
+    question: "Do I need a Home Inspection?",
+    answer:
+      "Some mortgage loan programs require a borrower to get an inspection. However, even if it’s not required it is still important to complete to be sure the house is sound and there are no problems waiting in the wings.",
+  },
+  {
+    question: "Does it matter if I buy a home that’s part of a Home Owner’s Association?",
+    answer:
+      "Yes, it does. An HOA may have the power to determine the color of your home, the number of pets you have and even the type of grass and flowers you plant? They may also have the power to assess penalties to you if the problems aren’t fixed. It’s very important to understand the scope of any HOA and what the costs/premiums might be.",
+  },
+] as const;
+
+const schemaFaqs = [
+  ...visibleFaqs,
+  {
+    question: "What are the primary operational steps in the Arizona home buying process?",
+    answer:
+      "The entire home buying process can be broken down into five major sequential phases. It begins with filling out a mortgage application for pre-approval, followed by assembling your real estate team, submitting a formal purchase offer, clearing underwriting conditions and paperwork, and finally attending the closing appointment.",
+  },
+  {
+    question: "Why is a personalized strategy session required before shopping for an Arizona home?",
+    answer:
+      "A personalized strategy session with a trusted mortgage lender ensures you clearly understand how much home you can afford, establishes your exact down payment budget, and identifies the best mortgage program for your needs. It also allows the lender to uncover and resolve any potential loan approval issues early in the process.",
+  },
+  {
+    question: "What happens during the due diligence period after a purchase offer is accepted?",
+    answer:
+      "Once the seller accepts your offer, the official due diligence period begins. This phase triggers a series of time-sensitive real estate events, including completing property home inspections to ensure the structure is sound, ordering the bank appraisal, and processing final mortgage approvals before signing closing documents.",
+  },
+  {
+    question: "How do Homeowners Associations (HOAs) impact buyers in Arizona?",
+    answer:
+      "HOAs hold significant regulatory power over a property and can dictate specific rules regarding home paint colors, pet limits, landscaping choices, and architectural changes. Because they can assess financial penalties for non-compliance, buyers must thoroughly review the scope, guidelines, and monthly premiums of the HOA during escrow.",
+  },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({
@@ -94,7 +130,7 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-10",
     articleSection: "Mortgage Basics",
   },
-  faqs: [...articleFaqs],
+  faqs: [...schemaFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Basics", path: "/mortgage-basics/" },
@@ -143,21 +179,28 @@ export default function ArizonaHomeBuyingProcessPage() {
 
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
                 <h2
-                  className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
+                  className="text-[#08271B] text-[24px] lg:text-[28px] font-bold mb-3"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  Streamline Your Mortgage Journey Today!
+                  <strong>Streamline Your Mortgage Journey Today!</strong>
                 </h2>
-                <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
-                  Now that you understand how to optimize your payments, reach out to our experts for
-                  personalized mortgage advice.
+                <p className="text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
+                  <Link
+                    href="#get-pre-approved"
+                    className="text-[#3fb364] font-semibold hover:underline"
+                  >
+                    <strong>
+                      Now that you understand how to optimize your payments, reach out to our experts for
+                      personalized mortgage advice.
+                    </strong>
+                  </Link>
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
                     href="#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get Pre-Approved
+                    Contact Us Now
                   </Link>
                 </div>
               </div>
@@ -183,7 +226,7 @@ export default function ArizonaHomeBuyingProcessPage() {
                       rel="noopener noreferrer"
                       className="text-[#3fb364] font-semibold hover:underline"
                     >
-                      clicking here to take a loan application
+                      <strong>clicking here to take a loan application</strong>
                     </a>
                     .
                   </p>
@@ -253,7 +296,7 @@ export default function ArizonaHomeBuyingProcessPage() {
                 <section id="home-buying-faqs">
                   <FaqAccordion
                     title="Home Buying FAQ's"
-                    items={articleFaqs.map((faq) => ({
+                    items={visibleFaqs.map((faq) => ({
                       q: faq.question,
                       a: faq.answer,
                     }))}

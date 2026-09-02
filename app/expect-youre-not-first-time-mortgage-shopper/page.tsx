@@ -75,6 +75,45 @@ const loanSolutions = [
 ];
 
 
+const tocLinks = [
+  { label: "What About Online Lenders?", href: "#what-about-online-lenders" },
+  { label: "Choosing a Lender", href: "#choosing-a-lender" },
+  { label: "Finding a Home", href: "#finding-a-home" },
+  { label: "Applying for the Loan", href: "#applying-for-the-loan" },
+  { label: "Locking Rates", href: "#locking-rates" },
+  { label: "The Lending Process", href: "#the-lending-process" },
+  { label: "Final Approval and the Closing Table", href: "#final-approval-and-the-closing-table" },
+  { label: "Kick Back and Relax – You're Home!", href: "#kick-back-and-relax-youre-home" },
+] as const;
+
+const articleFaqs = [
+  {
+    question: "Should I use an online mortgage lender when buying a home in Phoenix?",
+    answer:
+      "Online lenders may advertise very low teaser rates, but these usually apply only to buyers with perfect credit, no debt, and large cash reserves. Many real estate agents advise against using online lenders because they often lack personal service, can cause delays, and may put you at a disadvantage in multiple-offer situations.",
+  },
+  {
+    question: "What is the difference between a mortgage broker and a mortgage banker?",
+    answer:
+      "A mortgage broker works independently and can offer loan options from multiple lenders, often helping you secure the best rates. A mortgage banker works for a specific bank or lender and can only offer the loans that their company originates. Some lenders may also provide portfolio lending, where they originate and service the loan themselves.",
+  },
+  {
+    question: "Why is it important to get pre-approved instead of just prequalified?",
+    answer:
+      "A prequalification is based on verbal information and doesn't include a credit check or income verification, so it carries little weight with sellers. A pre-approval, however, verifies your financial information and signals to sellers that you are ready and able to buy. In competitive markets, a pre-approval can make the difference between having your offer accepted or rejected.",
+  },
+  {
+    question: "What documents are needed for mortgage pre-approval?",
+    answer:
+      "To get pre-approved, you typically need to provide your Social Security number, proof of employment, recent pay stubs, tax returns from the last two years, and bank account information. These documents help lenders verify your income, employment stability, and available assets.",
+  },
+  {
+    question: "What should I avoid doing during the mortgage approval process?",
+    answer:
+      "To avoid delays or loan denial, do not make large purchases on credit such as cars, boats, or vacations. Always provide requested documentation promptly, follow the timelines in your purchase agreement, and stay in close contact with your lender and agent throughout the process.",
+  },
+] as const;
+
 const articleJsonLd = buildArticleSchemas({
   blog: {
     pathname: "/expect-youre-not-first-time-mortgage-shopper/",
@@ -83,6 +122,7 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-11",
     articleSection: "Mortgage Basics",
   },
+  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Basics", path: "/mortgage-basics/" },
@@ -142,25 +182,34 @@ export default function ExpectYoureNotFirstTimeMortgageShopperPage() {
               </p>
 
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
-                <h2
+                <p
                   className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  Already Experienced? Elevate Your Mortgage Strategy!
-                </h2>
+                  <strong>Already Experienced? Elevate Your Mortgage Strategy!</strong>
+                </p>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
                   If you&apos;re not a first-time mortgage shopper, connect with our experts for advanced tips
                   and personalized solutions to optimize your mortgage journey.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <Link
-                    href="#get-pre-approved"
-                    className="btn-primary"
-                  >
+                  <Link href="#Get-in-Touch" className="btn-primary">
                     Enhance Your Strategy
                   </Link>
                 </div>
               </div>
+
+              <nav aria-label="Table of contents" className="mb-10">
+                <ul className="list-disc pl-6 space-y-2 text-[#3a4a3a] text-[16px]">
+                  {tocLinks.map((item) => (
+                    <li key={item.href}>
+                      <a href={item.href} className="text-[#3fb364] hover:underline">
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
 
               <div className="space-y-10 text-[#3a4a3a] text-[16px] leading-[1.8]">
                 <section id="what-about-online-lenders">
@@ -168,7 +217,7 @@ export default function ExpectYoureNotFirstTimeMortgageShopperPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    What About Online Lenders?
+                    <strong>What About Online Lenders?</strong>
                   </h2>
                   <p className="mb-5">
                     Depending on when you last applied for a mortgage, the market might have changed a lot, or
@@ -211,14 +260,16 @@ export default function ExpectYoureNotFirstTimeMortgageShopperPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Choosing a Lender
+                    <strong>Choosing a Lender</strong>
                   </h2>
                   <p className="mb-5">
                     If you&apos;ve decided against going online for a loan, you&apos;ll need to find a lender
                     you can trust here in the Phoenix Valley. You&apos;ll have plenty of choices, but here are
                     some criteria you should consider:
                   </p>
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-3">Broker or Banker?</h3>
+                  <h3 id="broker-or-banker" className="text-[#052316] text-[18px] font-bold mb-3">
+                    <strong>Broker or Banker?</strong>
+                  </h3>
                   <p className="mb-5">
                     A mortgage broker is a person that sells loans that are offered or originated by other
                     lenders. That means they don&apos;t work for any specific lender. Instead, they work for
@@ -236,22 +287,21 @@ export default function ExpectYoureNotFirstTimeMortgageShopperPage() {
                     lender originates the loan, and services it after closing. These kinds of loans tend to be
                     ARMs or loans that would be difficult to sell on the open market.
                   </p>
-                  <p className="mb-2 font-semibold text-[#052316]">Questions to ask:</p>
+                  <p className="mb-2">Questions to ask:</p>
                   <ul className="list-disc pl-6 space-y-2 mb-5">
                     <li>Are you a broker or a bank?</li>
                     <li>Do you originate loans?</li>
                     <li>Do you offer portfolio lending?</li>
                   </ul>
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-3">VA or FHA Approved?</h3>
+                  <h3 id="va-or-fha-approved" className="text-[#052316] text-[18px] font-bold mb-3">
+                    <strong>VA or FHA Approved?</strong>
+                  </h3>
                   <p className="mb-5">
-                    <Link href="/va-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
+                    <Link href="/va-loans-arizona/" className="text-[#3fb364] hover:underline">
                       VA
                     </Link>{" "}
                     and{" "}
-                    <Link
-                      href="/fha-home-loans-arizona/"
-                      className="text-[#3fb364] font-semibold hover:underline"
-                    >
+                    <Link href="/fha-home-loans-arizona/" className="text-[#3fb364] hover:underline">
                       FHA loans
                     </Link>{" "}
                     offer some of the best rates in the mortgage industry, but because they are government
@@ -265,8 +315,8 @@ export default function ExpectYoureNotFirstTimeMortgageShopperPage() {
                     disadvantage since they are less able to resolve issues in a timely way. This can impact
                     your ability to close on time in some cases.
                   </p>
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                    PreQualified or PreApproved?
+                  <h3 id="pre-qualified-or-pre-approved" className="text-[#052316] text-[18px] font-bold mb-3">
+                    <strong>PreQualified or PreApproved?</strong>
                   </h3>
                   <p className="mb-5">
                     The next step before choosing a loan is to find out how much money and what loan programs
@@ -289,7 +339,7 @@ export default function ExpectYoureNotFirstTimeMortgageShopperPage() {
                     having a solid pre-approval from a lender with a good reputation can make the difference
                     between being accepted, or not.
                   </p>
-                  <p className="mb-2 font-semibold text-[#052316]">To get pre-approved, you will need to provide:</p>
+                  <p className="mb-2">To get pre-approved, you will need to provide:</p>
                   <ul className="list-disc pl-6 space-y-2">
                     <li>
                       Social security number – you provide this and your current residence on an application.
@@ -312,7 +362,7 @@ export default function ExpectYoureNotFirstTimeMortgageShopperPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Finding a Home
+                    <strong>Finding a Home</strong>
                   </h2>
                   <p className="mb-5">
                     Now you&apos;re ready to actually go through the process of finding a home. The first step
@@ -349,7 +399,7 @@ export default function ExpectYoureNotFirstTimeMortgageShopperPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Applying for the Loan
+                    <strong>Applying for the Loan</strong>
                   </h2>
                   <p className="mb-5">
                     Once you&apos;ve found the house of your dreams, you need to make formal application for
@@ -373,7 +423,7 @@ export default function ExpectYoureNotFirstTimeMortgageShopperPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Locking Rates
+                    <strong>Locking Rates</strong>
                   </h2>
                   <p className="mb-5">
                     Once your home is found, the offer is made and your loan application is made, you&apos;ll
@@ -401,14 +451,14 @@ export default function ExpectYoureNotFirstTimeMortgageShopperPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    The Lending Process
+                    <strong>The Lending Process</strong>
                   </h2>
                   <p className="mb-5">
                     Once you&apos;ve made formal application and locked a rate, the lender will process the
                     loan. To avoid delays or even the possibility that your loan application will be denied,
                     make sure to:
                   </p>
-                  <ul className="list-disc pl-6 space-y-3">
+                  <ol className="list-decimal pl-6 space-y-3">
                     <li>
                       <strong>Follow all the terms of your purchase and sale contract.</strong> Make sure you
                       fully understand what actions you&apos;re required to take by what dates in order to meet
@@ -426,7 +476,7 @@ export default function ExpectYoureNotFirstTimeMortgageShopperPage() {
                       plan to sell using a home equity line, credit card or any other form of credit. This will
                       show up on your credit report and can slow or stop your approval. It can wait.
                     </li>
-                  </ul>
+                  </ol>
                 </section>
 
                 <section id="final-approval-and-the-closing-table">
@@ -434,7 +484,7 @@ export default function ExpectYoureNotFirstTimeMortgageShopperPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Final Approval and the Closing Table
+                    <strong>Final Approval and the Closing Table</strong>
                   </h2>
                   <p className="mb-5">
                     Final Approval for a loan will ideally come in at least a week in advance of your closing,
@@ -447,9 +497,7 @@ export default function ExpectYoureNotFirstTimeMortgageShopperPage() {
                     During this time, you&apos;ll want to stay in close contact with your lender, your agent and
                     possibly your therapist to ensure that things continue to go smoothly.
                   </p>
-                  <p className="mb-2 font-semibold text-[#052316]">
-                    A few to-dos for you around closing time include:
-                  </p>
+                  <p className="mb-2">A few to-dos for you around closing time include:</p>
                   <ul className="list-disc pl-6 space-y-2">
                     <li>
                       Final inspection of the home 3 – 5 days in advance of closing. The seller&apos;s stuff
@@ -474,7 +522,7 @@ export default function ExpectYoureNotFirstTimeMortgageShopperPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Kick Back and Relax – You&apos;re Home!
+                    <strong>Kick Back and Relax – You&apos;re Home!</strong>
                   </h2>
                   <p>
                     Once you&apos;ve made it this far, you&apos;ll be able to relax. The house is closed,
@@ -484,32 +532,6 @@ export default function ExpectYoureNotFirstTimeMortgageShopperPage() {
                     step in your life.
                   </p>
                 </section>
-
-                <p>
-                  If you have any questions about the mortgage process, call us at{" "}
-                  <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
-                  </a>{" "}
-                  or reach us using our{" "}
-                  <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                    contact form
-                  </Link>
-                  .
-                </p>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
-                    you and help you through the whole process.
-                  </p>
-                </div>
-
-                <p className="text-[#5a6b52] text-[13px] leading-relaxed">
-                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
-                  been prepared for informational purposes only. You should consult your own tax, legal, and
-                  accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
-                  #210917 and 1618695. Equal Housing Opportunity.
-                </p>
               </div>
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">
@@ -519,7 +541,12 @@ export default function ExpectYoureNotFirstTimeMortgageShopperPage() {
                 >
                   ← Previous Post
                 </Link>
-                <span />
+                <Link
+                  href="/is-homeownership-hereditary/"
+                  className="text-[#3fb364] font-semibold hover:underline"
+                >
+                  Next Post →
+                </Link>
               </div>
             </article>
 

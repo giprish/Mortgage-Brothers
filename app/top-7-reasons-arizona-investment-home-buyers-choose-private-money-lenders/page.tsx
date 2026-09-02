@@ -14,9 +14,9 @@ const articleFaqs = [
   { question: "What is a private money lender?", answer: "An individual or private company that lends its own funds, offering faster closings (7–14 days), flexible underwriting, and property-based approvals — perfect for investors who need speed and flexibility." },
   { question: "How much does private money cost?", answer: "Typically 8–15% interest with 2–5% points. While higher than bank rates, the speed and access to capital often outweigh the cost for investment opportunities." },
   { question: "What credit score is needed?", answer: "Private lenders prioritize property value, down payment (20–30%), and investor experience — often approving loans with credit scores as low as 500–550." },
-  { question: "Can I use private money for my primary residence or second home?", answer: "No Private money loans are available **only for investment properties**. They are designed for flips, rentals, and short-term investment purposes." },
-  { question: "How fast can I close?", answer: "Simple deals close within **7–10 days**, complex or large loans may take 10–14 days, and auction purchases can fund in as little as 3–5 days" },
-  { question: "Are private money loans regulated differently than banks?", answer: "Yes. Private lenders follow Arizona lending laws but operate with greater flexibility. Mortgage Brothers ensures all loans remain compliant while maintaining speed and transparency. ← Previous PostNext Post → Start Your Home Loan Journey You can always press Enter⏎ to continue" },
+  { question: "Can I use private money for my primary residence or second home?", answer: "No. Private money loans are available only for investment properties. They are designed for flips, rentals, and short-term investment purposes." },
+  { question: "How fast can I close?", answer: "Simple deals close within 7–10 days, complex or large loans may take 10–14 days, and auction purchases can fund in as little as 3–5 days." },
+  { question: "Are private money loans regulated differently than banks?", answer: "Yes. Private lenders follow Arizona lending laws but operate with greater flexibility. Mortgage Brothers ensures all loans remain compliant while maintaining speed and transparency." },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({
@@ -49,13 +49,9 @@ export default function PrivateMoneyLendersArticlePage() {
               <Link href="/blog/" className="hover:text-white transition-colors">Blog</Link>
               <span>&gt;</span>
               <Link href="/arizona-mortgage-insights/" className="hover:text-white transition-colors">Arizona Mortgage Insights</Link>
-              <span></span>
-            
+              <span>,</span>
+              <Link href="/real-estate-mortgages/" className="hover:text-white transition-colors">Real Estate &amp; Mortgages</Link>
             </div>
-
-            <span className="bg-[#103020] border border-[#205030] text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase px-3.5 py-1.5 rounded-full inline-block mb-4">
-              INVESTOR GUIDE · 2026
-            </span>
 
             <h1
               className="text-[32px] sm:text-[42px] lg:text-[50px] font-bold leading-tight mb-6 text-white"
@@ -97,10 +93,16 @@ export default function PrivateMoneyLendersArticlePage() {
               Enter the private money lender Arizona investors rely on. Private money lenders prioritize <strong>speed, flexibility, and asset-based decisions</strong>, evaluating the property and your investment plan rather than focusing solely on credit scores or W-2 income.
             </p>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-6">
-              At <Link href="/" className="text-[#3fb364] font-semibold hover:underline"><strong>Mortgage Brothers</strong></Link>, we help investors close deals that traditional financing would never allow — from fix-and-flip projects to portfolio expansion and bridge loans for time-sensitive acquisitions.
+              At{" "}
+              <strong>
+                <Link href="https://azmortgagebrothers.com" className="text-[#3fb364] font-semibold hover:underline">
+                  Mortgage Brothers
+                </Link>
+              </strong>
+              , we help investors close deals that traditional financing would never allow — from fix-and-flip projects to portfolio expansion and bridge loans for time-sensitive acquisitions.
             </p>
             <div className="text-center my-6">
-              <Link href="/contact-us/" className="btn-primary">
+              <Link href="#getin_touch" className="btn-primary">
                 Talk to an Arizona Private Lending Expert
               </Link>
             </div>
@@ -110,8 +112,8 @@ export default function PrivateMoneyLendersArticlePage() {
             <h2 className="text-[#052316] text-[26px] sm:text-[32px] font-bold mb-4 font-playfair border-b border-[#e8e0d0] pb-3">
               Top 7 Reasons Arizona Investment Buyers Choose Private Money Lenders
             </h2>
-            
-            <h3 className="text-[#052316] text-[24px] font-bold mb-3 font-playfair">1. Lightning-Fast Closings (7-14 Days vs. 30-45 Days)</h3>
+
+            <h3 className="text-[#052316] text-[24px] font-bold mb-3 font-playfair"><strong>1. Lightning-Fast Closings (7-14 Days vs. 30-45 Days)</strong></h3>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
               <strong>Speed is the #1 advantage.</strong>
             </p>
@@ -132,7 +134,7 @@ export default function PrivateMoneyLendersArticlePage() {
               <li>Acting on short-term investment opportunities</li>
             </ul>
 
-            <h3 className="text-[#052316] text-[24px] font-bold mb-3 font-playfair">2. Flexible Qualification Standards for Arizona Investors</h3>
+            <h3 className="text-[#052316] text-[24px] font-bold mb-3 font-playfair"><strong>2. Flexible Qualification Standards for Arizona Investors</strong></h3>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
               Private lenders look at the <strong>property</strong>, not just your credit.
             </p>
@@ -150,7 +152,7 @@ export default function PrivateMoneyLendersArticlePage() {
               Self-employed investors, those with multiple properties, or buyers with past credit issues often get rejected by banks. Private lenders recognize strong collateral and real-world experience.
             </p>
 
-            <h3 className="text-[#052316] text-[24px] font-bold mb-3 font-playfair">3. Financing for Properties Traditional Lenders Avoid</h3>
+            <h3 className="text-[#052316] text-[24px] font-bold mb-3 font-playfair"><strong>3. Financing for Properties Traditional Lenders Avoid</strong></h3>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
               Private money lenders fund properties that banks simply won&apos;t touch, such as:
             </p>
@@ -167,7 +169,7 @@ export default function PrivateMoneyLendersArticlePage() {
               A Tucson investor purchased a 1950s home needing $40,000 in repairs. Traditional financing was impossible. After renovations, the property appraised at $265,000 and was refinanced through a <Link href="/conventional-home-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline"><strong>conventional loan</strong></Link>.
             </p>
 
-            <h3 className="text-[#052316] text-[24px] font-bold mb-3 font-playfair">4. Perfect for Arizona Real Estate Investors &amp; Fix-and-Flip Projects</h3>
+            <h3 className="text-[#052316] text-[24px] font-bold mb-3 font-playfair"><strong>4. Perfect for Arizona Real Estate Investors &amp; Fix-and-Flip Projects</strong></h3>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
               Private money is ideal for <strong>short-term investors</strong>, offering:
             </p>
@@ -180,10 +182,10 @@ export default function PrivateMoneyLendersArticlePage() {
             </ul>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-8">
               <strong>Example:</strong><br />
-              Maryvale purchased three homes, renovated them, and sold for a $155,000 profit — all using private money.
+              An investor in Maryvale purchased three homes, renovated them, and sold for a $155,000 profit — all using private money.
             </p>
 
-            <h3 className="text-[#052316] text-[24px] font-bold mb-3 font-playfair">5. Creative Financing Solutions for Investment Scenarios</h3>
+            <h3 className="text-[#052316] text-[24px] font-bold mb-3 font-playfair"><strong>5. Creative Financing Solutions for Investment Scenarios</strong></h3>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
               Private lenders structure deals that banks can&apos;t, including:
             </p>
@@ -199,10 +201,10 @@ export default function PrivateMoneyLendersArticlePage() {
               An investor used a short-term bridge loan to purchase a duplex in Tempe, closed in 9 days, and refinanced after stabilizing the rental income.
             </p>
 
-            <h3 className="text-[#052316] text-[24px] font-bold mb-3 font-playfair">6. Less Documentation &amp; Simple Applications</h3>
+            <h3 className="text-[#052316] text-[24px] font-bold mb-3 font-playfair"><strong>6. Less Documentation &amp; Simple Applications</strong></h3>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
               Traditional loans require tax returns, W-2s, and detailed income verification.<br />
-              Private money lenders simplify this:
+              Private money lending simplifies this process with:
             </p>
             <ul className="list-disc pl-6 space-y-2 mb-4 text-[#3a4a3a] text-[16px]">
               <li>Property details and purchase agreement</li>
@@ -214,7 +216,7 @@ export default function PrivateMoneyLendersArticlePage() {
               Approvals can occur within <strong>24–72 hours</strong>, allowing investors to act on time-sensitive deals.
             </p>
 
-            <h3 className="text-[#052316] text-[24px] font-bold mb-3 font-playfair">7. Ideal for Time-Sensitive Investment Opportunities</h3>
+            <h3 className="text-[#052316] text-[24px] font-bold mb-3 font-playfair"><strong>7. Ideal for Time-Sensitive Investment Opportunities</strong></h3>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
               Some deals won&apos;t wait:
             </p>
@@ -234,7 +236,7 @@ export default function PrivateMoneyLendersArticlePage() {
             <h2 className="text-[#052316] text-[26px] sm:text-[32px] font-bold mb-4 font-playfair border-b border-[#e8e0d0] pb-3">
               Smart Tips for Working With Private Money Lenders in Arizona
             </h2>
-            <ol className="list-decimal pl-6 space-y-2 mb-4 text-[#3a4a3a] text-[16px]">
+            <ol className="list-decimal pl-6 space-y-2 mb-8 text-[#3a4a3a] text-[16px]">
               <li><strong>Understand costs:</strong> Interest typically 8–15%, points 2–5%</li>
               <li><strong>Have a clear exit strategy</strong> (sale, refinance, or funding source)</li>
               <li><strong>Work with experienced, transparent lenders</strong></li>
@@ -247,8 +249,8 @@ export default function PrivateMoneyLendersArticlePage() {
             <h2 className="text-[#052316] text-[26px] sm:text-[32px] font-bold mb-4 font-playfair border-b border-[#e8e0d0] pb-3">
               Why Mortgage Brothers Is Arizona&apos;s Trusted Private Money Partner
             </h2>
-            <h3 className="text-[#052316] text-[20px] font-bold mb-2">Our advantages include:</h3>
-            <ul className="list-disc pl-6 space-y-2 mb-4 text-[#3a4a3a] text-[16px]">
+            <h4 className="text-[#052316] text-[18px] font-bold mb-3"><strong>Our advantages include:</strong></h4>
+            <ul className="list-disc pl-6 space-y-2 mb-6 text-[#3a4a3a] text-[16px]">
               <li>Statewide lender network for competitive terms</li>
               <li>Fast pre-qualification — often within 24 hours</li>
               <li><strong>Experience with all property types and investment structures</strong></li>
@@ -257,14 +259,14 @@ export default function PrivateMoneyLendersArticlePage() {
               <li>Post-closing support to help plan refinances or sales</li>
             </ul>
             <div className="text-center my-6">
-              <Link href="/contact-us/" className="btn-primary">
+              <Link href="#getin_touch" className="btn-primary">
                 Start Your Private Loan Application Now
               </Link>
             </div>
           </section>
 
           <section className="mb-12">
-            <h3 className="text-[#052316] text-[24px] font-bold mb-3 font-playfair">Ready to Close Your Arizona Investment Deal Quickly?</h3>
+            <h3 className="text-[#052316] text-[24px] font-bold mb-3 font-playfair"><strong>Ready to Close Your Arizona Investment Deal Quickly?</strong></h3>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
               Whether you&apos;re flipping a property, expanding your rental portfolio, or seeking bridge financing, private money lending can help you move fast and stay competitive.
             </p>
@@ -278,24 +280,20 @@ export default function PrivateMoneyLendersArticlePage() {
               <li>✅ Transparent cost analysis and loan structuring</li>
               <li>✅ Expert guidance through every step</li>
             </ul>
-            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-2 flex items-center gap-1.5">
-              <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              <strong>Call:</strong>{" "}
-              <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
+              📞 <strong>Call:</strong>{" "}
+              <a href="tel:+16025352171" className="text-[#3fb364] hover:underline">
                 +1 602 535 2171
               </a>
             </p>
-            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4 flex items-center gap-1.5">
-              <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.6 9h16.8M3.6 15h16.8" />
-              </svg>
-              <strong>Visit:</strong>{" "}
-              <Link href="/" className="text-[#3fb364] font-semibold hover:underline">
-                Mortgage Brothers
-              </Link>
+            <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
+              🌐 <strong>Visit:</strong>{" "}
+              <a
+                href="https://azmortgagebrothers.com"
+                className="text-[#3fb364] hover:underline"
+              >
+                https://azmortgagebrothers.com
+              </a>
             </p>
           </section>
 
@@ -308,7 +306,7 @@ export default function PrivateMoneyLendersArticlePage() {
                 { q: "How much does private money cost?", a: "Typically 8–15% interest with 2–5% points. While higher than bank rates, the speed and access to capital often outweigh the cost for investment opportunities." },
                 { q: "What credit score is needed?", a: "Private lenders prioritize property value, down payment (20–30%), and investor experience — often approving loans with credit scores as low as 500–550." },
                 { q: "Can I use private money for my primary residence or second home?", a: <>No. Private money loans are available <strong>only for investment properties</strong>. They are designed for flips, rentals, and short-term investment purposes.</> },
-                { q: "How fast can I close?", a: "Simple deals close within 7–10 days, complex or large loans may take 10–14 days, and auction purchases can fund in as little as 3–5 days." },
+                { q: "How fast can I close?", a: <>Simple deals close within <strong>7–10 days</strong>, complex or large loans may take 10–14 days, and auction purchases can fund in as little as 3–5 days.</> },
                 { q: "Are private money loans regulated differently than banks?", a: "Yes. Private lenders follow Arizona lending laws but operate with greater flexibility. Mortgage Brothers ensures all loans remain compliant while maintaining speed and transparency." }
               ]}
             />

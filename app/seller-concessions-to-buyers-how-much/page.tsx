@@ -160,21 +160,18 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
               </p>
 
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
-                <h2
+                <p
                   className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  Wondering How Much to Offer in Concessions?
-                </h2>
+                  <strong>Wondering How Much to Offer in Concessions?</strong>
+                </p>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
                   Seller concessions can make or break a sale. Get expert advice on offering the right amount to
                   attract buyers and close the deal.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <Link
-                    href="/#Get-in-Touch"
-                    className="btn-primary"
-                  >
+                  <Link href="#Get-in-Touch" className="btn-primary">
                     Get a Free Seller Consultation
                   </Link>
                 </div>
@@ -213,8 +210,8 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
                       <a
                         href="https://finance.yahoo.com/personal-finance/mortgages/article/seller-concessions-165151738.html"
                         target="_blank"
-                        rel="noopener"
-                        className="text-[#2d8545] font-semibold hover:underline"
+                        rel="noopener noreferrer"
+                        className="text-[#3fb364] hover:underline"
                       >
                         Seller concessions to buyers
                       </a>{" "}
@@ -242,21 +239,21 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
                     negotiations. For more insights, check out our{" "}
                     <Link
                       href="/buying-or-selling-personal-property-with-your-home-sale-must-watch-this-first/"
-                      className="text-[#2d8545] font-semibold hover:underline"
+                      className="text-[#3fb364] hover:underline"
                     >
                       personal property guide
                     </Link>
                     , find out{" "}
                     <Link
                       href="/how-to-skip-2-payments-on-your-mortgage/"
-                      className="text-[#2d8545] font-semibold hover:underline"
+                      className="text-[#3fb364] hover:underline"
                     >
                       how to skip two mortgage payments
                     </Link>
                     , and review our{" "}
                     <Link
                       href="/put-bow-fha-loan-gift-guide/"
-                      className="text-[#2d8545] font-semibold hover:underline"
+                      className="text-[#3fb364] hover:underline"
                     >
                       FHA loan gift guide
                     </Link>
@@ -268,13 +265,13 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">
                 <Link
                   href="/difference-between-owner-occupied-second-home-and-investment-property/"
-                  className="text-[#2d8545] font-semibold hover:underline"
+                  className="text-[#3fb364] font-semibold hover:underline"
                 >
                   ← Previous Post
                 </Link>
                 <Link
                   href="/buying-or-selling-personal-property-with-your-home-sale-must-watch-this-first/"
-                  className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
+                  className="text-[#3fb364] font-semibold hover:underline"
                 >
                   Next Post →
                 </Link>
@@ -292,7 +289,7 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
                 <p className="text-[#4e5b4e] text-[11px] font-semibold uppercase tracking-wide mb-4">
                   Expert mortgage solutions tailored to your needs
                 </p>
-                <p className="text-[#2d8545] text-[14px] font-bold uppercase mb-5">Talk to a Broker Today!</p>
+                <p className="text-[#3fb364] text-[14px] font-bold uppercase mb-5">Talk to a Broker Today!</p>
                 <a
                   href="tel:+16025352171"
                   className="btn-primary w-full"

@@ -176,6 +176,8 @@ export default function ApacheCountyPage() {
             "Choosing the right mortgage matters. Our team takes a personalized approach by reviewing your income, credit profile, and long-term financial goals before recommending loan options.",
             "Our AI-supported loan comparison process helps identify competitive lenders efficiently, while our experienced advisors ensure you move forward with clarity and confidence.",
           ]}
+          showPreApproveCta
+          ctaLabel="Start my preapproval"
         />
       </main>
       <Footer />

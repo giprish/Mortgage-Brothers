@@ -75,14 +75,47 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "Does it matter what day of the month I close on?", answer: "If you’re more concerned about successfully closing with the least amount of stress, then early to mid month is usually the best time to close. It really comes down to the timing of the money and how it will be applied to the mortgage loan. Regardless, pay now or pay later but it all evens out at the end of the process." },
-  { question: "I am refinancing an FHA loan. Will it benefit me to close in the beginning of the month?", answer: "No. In fact, FHA refinances should always close at the END of the month because you are responsible for the entire month’s interest." },
-  { question: "Should I be concerned about the closing date on a conventional Arizona mortgage loan refinance?", answer: "Not really. You can save a few dollars by closing early in the month but it won’t amount to much. You WILL want to avoid closing on a Friday since you could be responsible for the interest due on both loans over the weekend." },
-  { question: "What are the common prior-to-closing conditions that can cause mortgage delays?", answer: "Even after initial loan approval, several factors can delay closing. These include lenders requesting updated income or asset documentation, new credit inquiries or opened accounts, employment verification issues, delays in liquidating funds for closing, newly uncovered liens during title and judgment searches, and difficulties securing adequate homeowners or flood insurance coverage." },
-  { question: "What essential items must a homebuyer bring to their closing appointment?", answer: "The two most critical items to bring to your mortgage closing are proper funds to close and proof of identification. Required funds must be in the form of a certified bank check or wire transfer instructions, as personal checks or cash are not accepted. For identification, an unexpired, valid state driver's license, state ID card, or passport is required." },
-  { question: "How does the timing of a mortgage closing date affect the transaction?", answer: "Closing early to mid-month is generally recommended to minimize transaction stress and streamline funding. However, for an FHA loan refinance, it is highly advantageous to close at the very end of the month, because FHA guidelines require the borrower to pay the entire month's interest regardless of the specific day they close. Additionally, borrowers should avoid closing on a Friday, as delays could make them responsible for paying interest on both the old and new loans over the weekend." },
-  { question: "What are the final legal steps required to officially close on an Arizona property?", answer: "After the buyer and seller sign all legal closing documents—including the final loan application, Closing Disclosure, Promissory Note, and the Deed of Trust—the title company returns the package to the lender for final review. Once approved, the lender releases the funds to the title company, and the escrow agent submits the deed to the county recorder's office. Ownership officially transfers to the buyer only after the deed is recorded." },
+const visibleFaqs = [
+  {
+    question: "Does it matter what day of the month I close on?",
+    answer:
+      "If you’re more concerned about successfully closing with the least amount of stress, then early to mid month is usually the best time to close. It really comes down to the timing of the money and how it will be applied to the mortgage loan. Regardless, pay now or pay later but it all evens out at the end of the process.",
+  },
+  {
+    question: "I am refinancing an FHA loan. Will it benefit me to close in the beginning of the month?",
+    answer:
+      "No. In fact, FHA refinances should always close at the END of the month because you are responsible for the entire month’s interest.",
+  },
+  {
+    question:
+      "Should I be concerned about the closing date on a conventional Arizona mortgage loan refinance?",
+    answer:
+      "Not really. You can save a few dollars by closing early in the month but it won’t amount to much. You WILL want to avoid closing on a Friday since you could be responsible for the interest due on both loans over the weekend.",
+  },
+] as const;
+
+const schemaFaqs = [
+  ...visibleFaqs,
+  {
+    question: "What are the common prior-to-closing conditions that can cause mortgage delays?",
+    answer:
+      "Even after initial loan approval, several factors can delay closing. These include lenders requesting updated income or asset documentation, new credit inquiries or opened accounts, employment verification issues, delays in liquidating funds for closing, newly uncovered liens during title and judgment searches, and difficulties securing adequate homeowners or flood insurance coverage.",
+  },
+  {
+    question: "What essential items must a homebuyer bring to their closing appointment?",
+    answer:
+      "The two most critical items to bring to your mortgage closing are proper funds to close and proof of identification. Required funds must be in the form of a certified bank check or wire transfer instructions, as personal checks or cash are not accepted. For identification, an unexpired, valid state driver's license, state ID card, or passport is required.",
+  },
+  {
+    question: "How does the timing of a mortgage closing date affect the transaction?",
+    answer:
+      "Closing early to mid-month is generally recommended to minimize transaction stress and streamline funding. However, for an FHA loan refinance, it is highly advantageous to close at the very end of the month, because FHA guidelines require the borrower to pay the entire month's interest regardless of the specific day they close. Additionally, borrowers should avoid closing on a Friday, as delays could make them responsible for paying interest on both the old and new loans over the weekend.",
+  },
+  {
+    question: "What are the final legal steps required to officially close on an Arizona property?",
+    answer:
+      "After the buyer and seller sign all legal closing documents—including the final loan application, Closing Disclosure, Promissory Note, and the Deed of Trust—the title company returns the package to the lender for final review. Once approved, the lender releases the funds to the title company, and the escrow agent submits the deed to the county recorder's office. Ownership officially transfers to the buyer only after the deed is recorded.",
+  },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({
@@ -93,7 +126,7 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-10",
     articleSection: "Mortgage Basics",
   },
-  faqs: [...articleFaqs],
+  faqs: [...schemaFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Basics", path: "/mortgage-basics/" },
@@ -175,26 +208,6 @@ export default function ArizonaMortgageClosingProcessPage() {
                 grinding halt.
               </p>
 
-              <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
-                <h2
-                  className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-                >
-                  Ready for a Smooth Closing?
-                </h2>
-                <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
-                  Our team helps Arizona buyers clear prior-to-closing conditions and prepare for signing day.
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <Link
-                    href="#get-pre-approved"
-                    className="btn-primary"
-                  >
-                    Get Pre-Approved
-                  </Link>
-                </div>
-              </div>
-
               <div className="space-y-10 text-[#3a4a3a] text-[16px] leading-[1.8]">
                 <section id="prior-to-closing-conditions">
                   <h2
@@ -204,54 +217,45 @@ export default function ArizonaMortgageClosingProcessPage() {
                     Prior-To-Closing conditions
                   </h2>
                   <p className="mb-5">Here are Six Prior-To-Closing conditions that could cause delays:</p>
-
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                    Updated Income/Asset Documentation
-                  </h3>
-                  <p className="mb-5">
-                    Although you&apos;ve supplied your Arizona mortgage loan lender with piles of paperwork, be
-                    sure to save all of your new paystubs and financial statements throughout the process. The
-                    odds are good that your lender might ask for the most current documents so be prepared.
-                  </p>
-
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-2">Credit Inquiries</h3>
-                  <p className="mb-5">
-                    Be aware that your lender might request a new credit report just before your closing to see if
-                    there are any changes. If the underwriter begins uncovering surprises, they might hold up the
-                    process to get to the bottom of things. Be sure you bring to the attention of your team
-                    anything that might be unusual which might cause a delay.
-                  </p>
-
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-2">Employment Verification</h3>
-                  <p className="mb-5">
-                    On more than one occasion during the process, your AZ mortgage loan lender will confirm that
-                    you&apos;re actively employed. Again, anything unusual here might cause a delay so be sure to
-                    inform your team of any odd events that might be forthcoming.
-                  </p>
-
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-2">Funds for Closing</h3>
-                  <p className="mb-5">
-                    Mortgage lenders will want to source where every dollar for the upcoming transaction is coming
-                    from and will want to verify the deposits to your bank account. If you&apos;re liquidating
-                    investments or drawing from a retirement account you&apos;ll want to do this sooner rather
-                    than later!
-                  </p>
-
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-2">Title and Judgment Searches</h3>
-                  <p className="mb-5">
-                    Title and judgment searches are typically performed later in the process. These searches could
-                    reveal judgments against your name or the sellers along with liens against the property. All
-                    of these issues must be cleared up prior to closing.
-                  </p>
-
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-2">
-                    Homeowners and Flood Insurance Coverage
-                  </h3>
-                  <p>
-                    Mortgage lenders will be sure to review your policies a few days before closing to make sure
-                    you have enough coverage and that&apos;s being accounted for in your monthly payment. This
-                    coverage can sometimes be difficult to obtain so make sure you&apos;re working on this early.
-                  </p>
+                  <ol className="list-decimal pl-6 space-y-3 mb-5">
+                    <li>
+                      <strong>Updated Income/Asset Documentation</strong> Although you&apos;ve supplied your
+                      Arizona mortgage loan lender with piles of paperwork, be sure to save all of your new
+                      paystubs and financial statements throughout the process. The odds are good that your
+                      lender might ask for the most current documents so be prepared.
+                    </li>
+                    <li>
+                      <strong>Credit Inquiries</strong> Be aware that your lender might request a new credit
+                      report just before your closing to see if there are any changes. If the underwriter begins
+                      uncovering surprises, they might hold up the process to get to the bottom of things. Be
+                      sure you bring to the attention of your team anything that might be unusual which might
+                      cause a delay.
+                    </li>
+                    <li>
+                      <strong>Employment Verification</strong> On more than one occasion during the process, your
+                      AZ mortgage loan lender will confirm that you&apos;re actively employed. Again, anything
+                      unusual here might cause a delay so be sure to inform your team of any odd events that
+                      might be forthcoming.
+                    </li>
+                    <li>
+                      <strong>Funds for Closing</strong> Mortgage lenders will want to source where every dollar
+                      for the upcoming transaction is coming from and will want to verify the deposits to your
+                      bank account. If you&apos;re liquidating investments or drawing from a retirement account
+                      you&apos;ll want to do this sooner rather than later!
+                    </li>
+                    <li>
+                      <strong>Title and Judgment Searches</strong> Title and judgment searches are typically
+                      performed later in the process. These searches could reveal judgments against your name or
+                      the sellers along with liens against the property. All of these issues must be cleared up
+                      prior to closing.
+                    </li>
+                    <li>
+                      <strong>Homeowners and Flood Insurance Coverage</strong> Mortgage lenders will be sure to
+                      review your policies a few days before closing to make sure you have enough coverage and
+                      that&apos;s being accounted for in your monthly payment. This coverage can sometimes be
+                      difficult to obtain so make sure you&apos;re working on this early.
+                    </li>
+                  </ol>
                 </section>
 
                 <section id="items-to-bring-to-closing">
@@ -265,26 +269,25 @@ export default function ArizonaMortgageClosingProcessPage() {
                     Your real estate agent will likely supply you with a checklist of documents and items to bring
                     to your closing. This can be a fairly detailed list, but the two most important items are:
                   </p>
-
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-2">Funds To Close</h3>
-                  <p className="mb-5">
-                    If you are required to bring in your down payment or other funds for closing, you will need a
-                    certified check from your bank. A personal check or a bag full of cash just won&apos;t do!
-                    Make sure you know well in advance what the total amount will be so you can head to the bank
-                    and get that certified check.
-                  </p>
-
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-2">Proof of Identification</h3>
-                  <p>
-                    Your official drivers license or state ID card will be fine. You could also bring a passport
-                    as well…as long as you can prove that you are really you!
-                  </p>
+                  <ul className="list-disc pl-6 space-y-3">
+                    <li>
+                      <strong>Funds To Close</strong> If you are required to bring in your down payment or other
+                      funds for closing, you will need a certified check from your bank. A personal check or a
+                      bag full of cash just won&apos;t do! Make sure you know well in advance what the total
+                      amount will be so you can head to the bank and get that certified check.
+                    </li>
+                    <li>
+                      <strong>Proof of Identification</strong> Your official drivers license or state ID card
+                      will be fine. You could also bring a passport as well…as long as you can prove that you are
+                      really you!
+                    </li>
+                  </ul>
                 </section>
 
                 <section id="frequently-asked-questions">
                   <FaqAccordion
                     title="Frequently Asked Questions"
-                    items={articleFaqs.map((faq) => ({
+                    items={visibleFaqs.map((faq) => ({
                       q: faq.question,
                       a: faq.answer,
                     }))}

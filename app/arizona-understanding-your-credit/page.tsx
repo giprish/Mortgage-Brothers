@@ -75,6 +75,29 @@ const loanSolutions = [
 ];
 
 
+const articleFaqs = [
+  {
+    question: "Why is understanding credit important for getting a mortgage loan in Arizona?",
+    answer:
+      "Understanding credit is crucial because lenders evaluate your credit history, open accounts, payment behavior, and types of credit to determine your risk level. Even small changes in your credit score can influence your down payment, loan programs, and interest rates.",
+  },
+  {
+    question: "What factors make up a credit score?",
+    answer:
+      "Credit scores are calculated based on several components: 35% payment history, 30% amount owed compared to available credit, 15% length of credit history, 10% mix of credit, and 10% new credit applications.",
+  },
+  {
+    question: "Where can I get a free copy of my credit report?",
+    answer:
+      "Consumers are entitled by law to one free credit report annually from each of the three major credit bureaus—Equifax, Experian, and TransUnion. You can access your free credit report at www.AnnualCreditReport.com.",
+  },
+  {
+    question: "What factors do not affect my credit score?",
+    answer:
+      "Factors such as your age, race, sex, employment history, income, marital status, length of employment, and occupancy status do not impact your credit score.",
+  },
+] as const;
+
 const articleJsonLd = buildArticleSchemas({
   blog: {
     pathname: "/arizona-understanding-your-credit/",
@@ -83,6 +106,7 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-10",
     articleSection: "Mortgage Basics",
   },
+  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Basics", path: "/mortgage-basics/" },
@@ -124,10 +148,10 @@ export default function ArizonaUnderstandingYourCreditPage() {
             <article className="min-w-0">
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-5">
-                As you know, one&apos;s credit scores and history play a huge role in the Arizona{" "}
+                As you know, one&apos;s <strong>credit scores and history</strong> play a huge role in the Arizona{" "}
                 <Link
                   href="/arizona-mortgage-approval-process/"
-                  className="text-[#3fb364] font-semibold hover:underline"
+                  className="text-[#3fb364] hover:underline"
                 >
                   mortgage loan approval process
                 </Link>{" "}
@@ -143,27 +167,24 @@ export default function ArizonaUnderstandingYourCreditPage() {
               </p>
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
-                A person&apos;s <strong>credit score</strong>, or &quot;<a href="http://en.wikipedia.org/wiki/Fair_Isaac" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">FICO</a>&quot; score (which stand for the Fair Isaac
-                Corporation) has been the standard score that the three main credit reporting agencies (<a href="http://en.wikipedia.org/wiki/Equifax" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">Equifax</a>,
-                <a href="http://en.wikipedia.org/wiki/Experian" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">Experian</a> and <a href="http://en.wikipedia.org/wiki/TransUnion" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">TransUnion</a>) use to sell to lenders.
+                A person&apos;s <strong>credit score</strong>, or &quot;<a href="http://en.wikipedia.org/wiki/Fair_Isaac" target="_blank" rel="noopener" className="text-[#3fb364] hover:underline">FICO</a>&quot; score (which stand for the Fair Isaac
+                Corporation) has been the standard score that the three main credit reporting agencies (<a href="http://en.wikipedia.org/wiki/Equifax" target="_blank" rel="noopener" className="text-[#3fb364] hover:underline">Equifax</a>,
+                <a href="http://en.wikipedia.org/wiki/Experian" target="_blank" rel="noopener" className="text-[#3fb364] hover:underline">Experian</a> and <a href="http://en.wikipedia.org/wiki/TransUnion" target="_blank" rel="noopener" className="text-[#3fb364] hover:underline">TransUnion</a>) use to sell to lenders.
               </p>
 
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
-                <h2
+                <p
                   className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  Boost Your Credit Confidence Today!
-                </h2>
+                  <strong>Boost Your Credit Confidence Today!</strong>
+                </p>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
                   Now that you understand the essentials of Arizona Understanding Your Credit, connect with our
                   experts for personalized advice to elevate your financial future.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <Link
-                    href="#get-pre-approved"
-                    className="btn-primary"
-                  >
+                  <Link href="#Get-in-Touch" className="btn-primary">
                     Contact Us Now
                   </Link>
                 </div>
@@ -184,7 +205,7 @@ export default function ArizonaUnderstandingYourCreditPage() {
                       href="https://www.annualcreditreport.com/index.action"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#3fb364] font-semibold hover:underline"
+                      className="text-[#3fb364] hover:underline"
                     >
                       www.AnnualCreditReport.com
                     </a>
@@ -249,32 +270,6 @@ export default function ArizonaUnderstandingYourCreditPage() {
                     these factors in their decision making process.
                   </p>
                 </section>
-
-                <p>
-                  If you have any questions about understanding your credit, call us at{" "}
-                  <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
-                  </a>{" "}
-                  or reach us using our{" "}
-                  <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                    contact form
-                  </Link>
-                  .
-                </p>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you
-                    and help you through the whole process.
-                  </p>
-                </div>
-
-                <p className="text-[#5a6b52] text-[13px] leading-relaxed">
-                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
-                  prepared for informational purposes only. You should consult your own tax, legal, and accounting
-                  advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
-                  1618695. Equal Housing Opportunity.
-                </p>
               </div>
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">
@@ -283,7 +278,7 @@ export default function ArizonaUnderstandingYourCreditPage() {
                 </Link>
                 <Link
                   href="/arizona-mortgage-payments/"
-                  className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
+                  className="text-[#3fb364] font-semibold hover:underline"
                 >
                   Next Post →
                 </Link>

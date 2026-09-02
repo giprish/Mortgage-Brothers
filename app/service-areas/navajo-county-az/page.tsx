@@ -178,6 +178,8 @@ export default function NavajoCountyPage() {
             "Choosing the right mortgage is an important financial decision. Our Navajo County mortgage broker team takes a personalized approach by reviewing your financial profile, credit history, and homeownership goals before recommending the best loan options.",
             "With access to a wide network of lenders and advanced loan comparison tools, we help clients secure competitive mortgage solutions while keeping the process clear and stress-free.",
           ]}
+          showPreApproveCta
+          ctaLabel="Start my preapproval"
         />
       </main>
       <Footer />
