@@ -21,7 +21,7 @@ import {
   TranscriptPinLine,
   TranscriptPointItem,
   TranscriptTvLine,
-} from "@/app/component/TranscriptIcons";
+} from "@/lib/utils/transcript-icons";
 
 export const metadata: Metadata = getSeoMetadata("/grossing-up-your-income-what-does-that-mean/");
 
@@ -74,6 +74,9 @@ const loanPrograms = [
   { label: "Jumbo Loans", href: "/jumbo-loans-arizona/" },
   { label: "First-time Home Buyer Guide", href: "/first-time-home-buyer-arizona-guide/" },
 ];
+
+const IRS_NON_TAXABLE_INCOME_URL =
+  "https://www.irs.gov/businesses/small-businesses-self-employed/what-is-taxable-and-nontaxable-income";
 
 const loanSolutions = [
   { label: "Conventional Home Loans", href: "/conventional-home-loans-arizona/" },
@@ -320,14 +323,20 @@ export default function GrossingUpIncomePage() {
                       </h3>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">Introduction [00:02]</h3>
                       <p className="mb-3">
-                        Welcome to the Mortgage Brothers Podcast! I&apos;m Eddie Knoell, and I&apos;m Tom
-                        Knoell. In this episode, we&apos;re answering a question many borrowers don&apos;t know
-                        they should ask:
+                        Welcome to the <strong>Mortgage Brothers Podcast</strong>! I&apos;m{" "}
+                        <strong>Eddie Knoell</strong>, and I&apos;m <strong>Tom Knoell</strong>. In this episode,
+                        we&apos;re answering a question many borrowers don&apos;t know they should ask:
                       </p>
                       <TranscriptList>
-                        <TranscriptPointItem>What is grossing up income?</TranscriptPointItem>
-                        <TranscriptPointItem>How can it help with your mortgage approval?</TranscriptPointItem>
-                        <TranscriptPointItem>Which types of income qualify for grossing up?</TranscriptPointItem>
+                        <TranscriptPointItem>
+                          <strong>What is grossing up income?</strong>
+                        </TranscriptPointItem>
+                        <TranscriptPointItem>
+                          <strong>How can it help with your mortgage approval?</strong>
+                        </TranscriptPointItem>
+                        <TranscriptPointItem>
+                          <strong>Which types of income qualify for grossing up?</strong>
+                        </TranscriptPointItem>
                       </TranscriptList>
                       <p>
                         If you&apos;ve heard the term &ldquo;grossing up&rdquo; while applying for a mortgage,
@@ -340,16 +349,28 @@ export default function GrossingUpIncomePage() {
                         What Does &ldquo;Grossing Up&rdquo; Mean? [00:39]
                       </h3>
                       <p className="mb-3">
-                        If you receive certain types of non-taxable income, lenders may allow you to increase
-                        that income on paper to improve your loan eligibility.
+                        If you receive{" "}
+                        <strong>
+                          certain types of{" "}
+                          <a
+                            href={IRS_NON_TAXABLE_INCOME_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#3fb364] font-semibold hover:underline"
+                          >
+                            non-taxable income
+                          </a>
+                        </strong>
+                        , lenders may allow you to <strong>increase that income on paper</strong> to improve
+                        your loan eligibility.
                       </p>
                       <TranscriptLightbulbLine className="mb-3">
-                        Think of it as getting extra credit for your income.
+                        <strong>Think of it as getting extra credit for your income.</strong>
                       </TranscriptLightbulbLine>
                       <p>
-                        When we gross up your income, we adjust your earnings to reflect what they would be if
-                        they were taxed&mdash;since non-taxable income allows you to keep more money in your
-                        pocket.
+                        When we gross up your income, we <strong>adjust</strong> your earnings to reflect what
+                        they would be <strong>if they were taxed</strong>&mdash;since non-taxable income allows
+                        you to keep more money in your pocket.
                       </p>
                     </div>
 
@@ -358,21 +379,26 @@ export default function GrossingUpIncomePage() {
                         Example of Grossing Up Income [01:43]
                       </h3>
                       <p className="mb-3">
-                        Let&apos;s say you receive $1,000 per month from foster care income:
+                        Let&apos;s say you receive <strong>$1,000 per month</strong> from{" "}
+                        <strong>foster care income</strong>:
                       </p>
                       <TranscriptList>
                         <TranscriptCheckItem>
-                          Conventional Loan → Gross up by 25% → Adjusted income: $1,250
+                          <strong>Conventional Loan</strong> → Gross up by <strong>25%</strong> → Adjusted
+                          income: <strong>$1,250</strong>
                         </TranscriptCheckItem>
                         <TranscriptCheckItem>
-                          FHA Loan → Gross up by 15% → Adjusted income: $1,150
+                          <strong>FHA Loan</strong> → Gross up by <strong>15%</strong> → Adjusted income:{" "}
+                          <strong>$1,150</strong>
                         </TranscriptCheckItem>
-                        <TranscriptCrossItem>VA Loans → No grossing up allowed</TranscriptCrossItem>
+                        <TranscriptCrossItem>
+                          <strong>VA Loans</strong> → No grossing up allowed
+                        </TranscriptCrossItem>
                       </TranscriptList>
                       <TranscriptPinLine>
-                        <strong>Bottom line:</strong> The lender considers your non-taxable income as being
-                        higher than what you actually receive, giving you a better debt-to-income (DTI) ratio
-                        and potentially increasing your borrowing power.
+                        <strong>Bottom line:</strong> The lender considers your non-taxable income as being{" "}
+                        <strong>higher</strong> than what you actually receive, giving you a better
+                        debt-to-income (DTI) ratio and potentially increasing your borrowing power.
                       </TranscriptPinLine>
                     </div>
 
@@ -381,29 +407,30 @@ export default function GrossingUpIncomePage() {
                         Why Are Some Incomes Eligible for Grossing Up? [03:34]
                       </h3>
                       <p className="mb-3">
-                        Lenders allow non-taxable income to be grossed up because you don&apos;t pay taxes on
-                        it&mdash;meaning you effectively have more disposable income than someone earning a
-                        taxable equivalent.
+                        Lenders allow <strong>non-taxable income</strong> to be grossed up because you
+                        don&apos;t pay taxes on it&mdash;meaning you effectively have{" "}
+                        <strong>more disposable income</strong> than someone earning a taxable equivalent.
                       </p>
                       <p className="mb-2 font-semibold text-[#052316]">
-                        Think of your income as ice cream flavors:
+                        <strong>Think of your income as ice cream flavors:</strong>
                       </p>
                       <TranscriptList>
                         <TranscriptEmojiItem emoji="🍦">
-                          <strong>Net Income (Vanilla):</strong> The amount deposited in your bank account
-                          after taxes.
+                          <strong>Net Income (Vanilla):</strong> The amount deposited in your bank account after
+                          taxes.
                         </TranscriptEmojiItem>
                         <TranscriptEmojiItem emoji="🍫">
-                          <strong>Gross Income (Chocolate):</strong> Your salary before taxes.
+                          <strong>Gross Income (Chocolate):</strong> Your salary <strong>before</strong> taxes.
                         </TranscriptEmojiItem>
                         <TranscriptEmojiItem emoji="🍓">
-                          <strong>Grossed-Up Income (Strawberry):</strong> The bonus credit given for
-                          non-taxable income.
+                          <strong>Grossed-Up Income (Strawberry):</strong> The bonus credit given for non-taxable
+                          income.
                         </TranscriptEmojiItem>
                       </TranscriptList>
                       <p>
-                        When applying for a mortgage, lenders usually use your gross income (before taxes).
-                        However, for non-taxable income, they gross it up to compensate for the lack of taxes.
+                        When applying for a mortgage, lenders usually use your <strong>gross income</strong>{" "}
+                        (before taxes). However, for non-taxable income, they <strong>gross it up</strong> to
+                        compensate for the lack of taxes.
                       </p>
                     </div>
 
@@ -413,37 +440,65 @@ export default function GrossingUpIncomePage() {
                       </h3>
                       <TranscriptCheckHeading>Always Eligible for Grossing Up:</TranscriptCheckHeading>
                       <p className="mb-2">
-                        These types of income are never taxed, so they can always be grossed up:
+                        These types of income are <strong>never taxed</strong>, so they can{" "}
+                        <strong>always</strong> be grossed up:
                       </p>
                       <TranscriptList>
-                        <TranscriptCheckItem>Child Support Payments</TranscriptCheckItem>
-                        <TranscriptCheckItem>VA Disability Benefits</TranscriptCheckItem>
-                        <TranscriptCheckItem>Workers&apos; Compensation</TranscriptCheckItem>
-                        <TranscriptCheckItem>Supplemental Social Security (SSI)</TranscriptCheckItem>
-                        <TranscriptCheckItem>Adoption Income</TranscriptCheckItem>
-                        <TranscriptCheckItem>Foster Care Income</TranscriptCheckItem>
-                        <TranscriptCheckItem>Military Housing Allowance</TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>Child Support Payments</strong>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>VA Disability Benefits</strong>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>Workers&apos; Compensation</strong>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>Supplemental Social Security (SSI)</strong>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>Adoption Income</strong>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>Foster Care Income</strong>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>Military Housing Allowance</strong>
+                        </TranscriptCheckItem>
                       </TranscriptList>
                       <TranscriptPinLine className="mb-4">
-                        <strong>Note:</strong> These incomes do not appear on tax returns, so borrowers must
-                        provide separate documentation proving they receive them.
+                        <strong>Note:</strong> These incomes <strong>do not</strong> appear on tax returns, so
+                        borrowers must provide separate documentation proving they receive them.
                       </TranscriptPinLine>
                       <TranscriptCheckHeading>Sometimes Eligible for Grossing Up:</TranscriptCheckHeading>
                       <p className="mb-2">
-                        These income sources may be taxed partially or fully. Lenders will check how much of it
-                        is non-taxable and apply the gross-up only to that portion:
+                        These income sources <strong>may</strong> be taxed partially or fully. Lenders will check{" "}
+                        <strong>how much of it is non-taxable</strong> and apply the gross-up only to that
+                        portion:
                       </p>
                       <TranscriptList>
-                        <TranscriptCheckItem>Social Security Income</TranscriptCheckItem>
-                        <TranscriptCheckItem>Retirement Income</TranscriptCheckItem>
-                        <TranscriptCheckItem>Pension Income</TranscriptCheckItem>
-                        <TranscriptCheckItem>Annuities</TranscriptCheckItem>
-                        <TranscriptCheckItem>IRA Distributions</TranscriptCheckItem>
-                        <TranscriptCheckItem>Long-Term Disability Income</TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>Social Security Income</strong>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>Retirement Income</strong>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>Pension Income</strong>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>Annuities</strong>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>IRA Distributions</strong>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>Long-Term Disability Income</strong>
+                        </TranscriptCheckItem>
                       </TranscriptList>
                       <TranscriptPinLine>
-                        <strong>Example:</strong> If one-third of your Social Security income is non-taxable,
-                        only that portion is eligible for grossing up.
+                        <strong>Example:</strong> If <strong>one-third</strong> of your Social Security income is
+                        non-taxable, <strong>only that portion</strong> is eligible for grossing up.
                       </TranscriptPinLine>
                     </div>
 
@@ -452,28 +507,37 @@ export default function GrossingUpIncomePage() {
                         How Much Can Your Income Be Grossed Up? [02:53]
                       </h3>
                       <TranscriptList>
-                        <TranscriptCheckItem>Conventional Loans: 25% gross up</TranscriptCheckItem>
-                        <TranscriptCheckItem>FHA Loans: 15% gross up</TranscriptCheckItem>
-                        <TranscriptCrossItem>VA Loans: No grossing up allowed</TranscriptCrossItem>
-                      </TranscriptList>
-                      <TranscriptPinLine className="mb-2 font-semibold text-[#052316]">
-                        Example Calculation
-                      </TranscriptPinLine>
-                      <p className="mb-3">
-                        If your pension income is $2,000 per month and half of it is non-taxable, then:
-                      </p>
-                      <TranscriptList>
-                        <TranscriptCheckItem>Non-Taxable Portion: $1,000</TranscriptCheckItem>
                         <TranscriptCheckItem>
-                          Grossed-Up Amount (Conventional Loan, 25%): $1,250
+                          <strong>Conventional Loans:</strong> <strong>25%</strong> gross up
                         </TranscriptCheckItem>
                         <TranscriptCheckItem>
-                          New Total Income Used for Mortgage Approval: $2,250
+                          <strong>FHA Loans:</strong> <strong>15%</strong> gross up
+                        </TranscriptCheckItem>
+                        <TranscriptCrossItem>
+                          <strong>VA Loans:</strong> No grossing up allowed
+                        </TranscriptCrossItem>
+                      </TranscriptList>
+                      <TranscriptPinLine className="mb-2 font-semibold text-[#052316]">
+                        <strong>Example Calculation</strong>
+                      </TranscriptPinLine>
+                      <p className="mb-3">
+                        If your <strong>pension income</strong> is <strong>$2,000 per month</strong> and{" "}
+                        <strong>half of it is non-taxable</strong>, then:
+                      </p>
+                      <TranscriptList>
+                        <TranscriptCheckItem>
+                          <strong>Non-Taxable Portion:</strong> $1,000
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>Grossed-Up Amount (Conventional Loan, 25%):</strong> $1,250
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>New Total Income Used for Mortgage Approval:</strong> <strong>$2,250</strong>
                         </TranscriptCheckItem>
                       </TranscriptList>
                       <TranscriptLightbulbLine>
-                        <strong>Result:</strong> This extra $250 can improve your debt-to-income ratio and help
-                        you qualify for a better loan.
+                        <strong>Result:</strong> This <strong>extra $250</strong> can improve your debt-to-income
+                        ratio and help you qualify for a better loan.
                       </TranscriptLightbulbLine>
                     </div>
 
@@ -484,27 +548,34 @@ export default function GrossingUpIncomePage() {
                       <p className="mb-3">Many borrowers don&apos;t realize:</p>
                       <TranscriptList>
                         <TranscriptDiamondItem>
-                          A higher income means qualifying for a bigger home loan.
+                          <strong>A higher income means qualifying for a bigger home loan.</strong>
                         </TranscriptDiamondItem>
                         <TranscriptDiamondItem>
-                          Lower debt-to-income ratio (DTI) improves mortgage approval chances.
+                          <strong>Lower debt-to-income ratio (DTI) improves mortgage approval chances.</strong>
                         </TranscriptDiamondItem>
                         <TranscriptDiamondItem>
-                          It can help meet lender income requirements without needing a co-signer.
+                          <strong>
+                            It can help meet lender income requirements without needing a co-signer.
+                          </strong>
                         </TranscriptDiamondItem>
                       </TranscriptList>
-                      <p className="mb-2 font-semibold text-[#052316]">Example:</p>
+                      <p className="mb-2 font-semibold text-[#052316]">
+                        <strong>Example:</strong>
+                      </p>
                       <TranscriptList>
                         <TranscriptMoneyItem>
-                          Borrower A: Earns $3,000/month (fully taxable)
+                          <strong>Borrower A:</strong> Earns $3,000/month (fully taxable)
                         </TranscriptMoneyItem>
                         <TranscriptMoneyItem>
-                          Borrower B: Earns $3,000/month (but $1,000 is non-taxable Social Security)
+                          <strong>Borrower B:</strong> Earns $3,000/month (but $1,000 is non-taxable Social
+                          Security)
                         </TranscriptMoneyItem>
                       </TranscriptList>
                       <TranscriptPinLine>
-                        With grossing up, Borrower B&apos;s income is adjusted to $3,250 (or more), making them
-                        eligible for a higher mortgage amount!
+                        <strong>
+                          With grossing up, Borrower B&apos;s income is adjusted to $3,250 (or more), making them
+                          eligible for a higher mortgage amount!
+                        </strong>
                       </TranscriptPinLine>
                     </div>
 
@@ -513,26 +584,31 @@ export default function GrossingUpIncomePage() {
                         How to Use Grossing Up to Your Advantage [08:02]
                       </h3>
                       <p className="mb-3">
-                        If you receive Social Security, child support, VA benefits, or other non-taxable
-                        income, here&apos;s what to do:
+                        If you receive{" "}
+                        <strong>
+                          Social Security, child support, VA benefits, or other non-taxable income
+                        </strong>
+                        , here&apos;s what to do:
                       </p>
                       <TranscriptList>
                         <TranscriptCheckItem>
-                          Tell your lender upfront if any of your income is non-taxable.
+                          <strong>Tell your lender upfront</strong> if any of your income is non-taxable.
                         </TranscriptCheckItem>
                         <TranscriptCheckItem>
-                          Provide documentation (award letters, benefit statements, court orders).
+                          <strong>Provide documentation</strong> (award letters, benefit statements, court
+                          orders).
                         </TranscriptCheckItem>
                         <TranscriptCheckItem>
-                          Check your tax returns to see which portions of income are taxed vs. non-taxed.
+                          <strong>Check your tax returns</strong> to see which portions of income are taxed vs.
+                          non-taxed.
                         </TranscriptCheckItem>
                         <TranscriptCheckItem>
-                          Ask your lender how grossing up can improve your mortgage approval.
+                          <strong>Ask your lender</strong> how grossing up can improve your mortgage approval.
                         </TranscriptCheckItem>
                       </TranscriptList>
                       <TranscriptPinLine>
-                        <strong>Remember:</strong> The lender only applies grossing up to the non-taxable
-                        portion, so understanding how much of your income qualifies is key.
+                        <strong>Remember:</strong> The lender only applies grossing up to the non-taxable portion,
+                        so understanding <strong>how much of your income qualifies</strong> is key.
                       </TranscriptPinLine>
                     </div>
 
@@ -542,18 +618,24 @@ export default function GrossingUpIncomePage() {
                       </h3>
                       <TranscriptList>
                         <TranscriptCheckItem>
-                          If you have non-taxable income, grossing up can help you qualify for a bigger loan!
+                          <strong>
+                            If you have non-taxable income, grossing up can help you qualify for a bigger loan!
+                          </strong>
                         </TranscriptCheckItem>
                         <TranscriptCheckItem>
-                          It reduces your debt-to-income ratio, making mortgage approval easier.
+                          <strong>
+                            It reduces your debt-to-income ratio, making mortgage approval easier.
+                          </strong>
                         </TranscriptCheckItem>
                         <TranscriptCheckItem>
-                          It&apos;s a strategy many borrowers miss, but it can significantly impact loan
-                          eligibility.
+                          <strong>
+                            It&apos;s a strategy many borrowers miss, but it can significantly impact loan
+                            eligibility.
+                          </strong>
                         </TranscriptCheckItem>
                       </TranscriptList>
                       <TranscriptLightbulbLine>
-                        Even if you&apos;re not sure whether your income qualifies, ask your lender!
+                        <strong>Even if you&apos;re not sure whether your income qualifies, ask your lender!</strong>
                       </TranscriptLightbulbLine>
                     </div>
 
@@ -562,27 +644,26 @@ export default function GrossingUpIncomePage() {
                         Need Help? Contact Us Today! [09:02]
                       </h3>
                       <p className="mb-3">
-                        If you&apos;re applying for a mortgage and want to know how grossing up your income
-                        could help, we&apos;re here to assist!
+                        If you&apos;re applying for a mortgage and want to know{" "}
+                        <strong>how grossing up your income could help</strong>, we&apos;re here to assist!
                       </p>
                       <TranscriptPhoneLine className="mb-3">
-                        Contact us:{" "}
+                        <strong>Contact us:</strong>{" "}
                         <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
                           Contact Form
                         </Link>
                       </TranscriptPhoneLine>
                       <TranscriptPhoneLine className="mb-3">
-                        Call us for a personalized mortgage review
+                        <strong>Call us for a personalized mortgage review</strong>
                       </TranscriptPhoneLine>
                       <TranscriptTvLine className="mb-3">
-                        <strong>Like &amp; Subscribe for More Mortgage Tips!</strong> If you found this
-                        information helpful, subscribe to our channel and hit the notification bell for expert
-                        insights.
+                        <strong>Like &amp; Subscribe for More Mortgage Tips!</strong> If you found this information
+                        helpful, <strong>subscribe to our channel</strong> and hit the{" "}
+                        <strong>notification bell</strong> for expert insights.
                       </TranscriptTvLine>
                       <TranscriptLightbulbLine>
-                        <strong>Final Thought:</strong> Grossing up income is a simple but powerful tool that
-                        can help you secure the home loan you need. Make sure you&apos;re using it to your
-                        advantage!
+                        <strong>Final Thought:</strong> Grossing up income is a simple but powerful tool that can
+                        help you secure the home loan you need. Make sure you&apos;re using it to your advantage!
                       </TranscriptLightbulbLine>
                     </div>
                   </div>
