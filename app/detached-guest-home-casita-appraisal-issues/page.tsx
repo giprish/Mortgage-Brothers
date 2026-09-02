@@ -9,6 +9,10 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
+import {
+  TranscriptCheckItem,
+  TranscriptList,
+} from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/detached-guest-home-casita-appraisal-issues/");
 
@@ -368,17 +372,19 @@ export default function DetachedGuestHomeCasitaAppraisalPage() {
                         If you purchased a home that already had a casita, here&apos;s what happens when you
                         refinance:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Your casita will NOT be included in your home&apos;s total square footage.</li>
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          Your casita will NOT be included in your home&apos;s total square footage.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           If you have a 3,000 sq. ft. home and a 1,000 sq. ft. casita, the appraiser will not
                           count it as 4,000 sq. ft.&mdash;only the main house is included.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           Instead, appraisers make a line-item adjustment for the casita, typically between
                           $15,000 &ndash; $30,000, regardless of the actual construction cost.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         [03:12] Many homeowners expect their casita to add significant value, but when they see
                         that low line-item adjustment, they&apos;re shocked. We get calls like: &ldquo;The
@@ -418,17 +424,19 @@ export default function DetachedGuestHomeCasitaAppraisalPage() {
                         the main home&apos;s appraisal price&mdash;what we call &ldquo;stolen value.&rdquo;
                       </p>
                       <p className="mb-2 font-semibold text-[#052316]">Example [06:33]:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>You buy a 3,000 sq. ft. home with a 1,000 sq. ft. casita for $600K.</li>
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          You buy a 3,000 sq. ft. home with a 1,000 sq. ft. casita for $600K.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           The appraiser finds comps but still values the casita separately at $20K&ndash;$30K
                           rather than adding its full worth to the property.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           The final appraised value may reflect the casita&apos;s presence, but it won&apos;t be
                           itemized at its true construction cost.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         [07:11] Appraisers stick to comps. They don&apos;t value casitas based on construction
                         cost but rather on comparable sales of similar homes with guest houses.
@@ -442,17 +450,19 @@ export default function DetachedGuestHomeCasitaAppraisalPage() {
                       <p className="mb-3">
                         Appraisers look at comparable sales of homes with casitas. The problem?
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Casitas are rare, so it&apos;s difficult to find matching sales.</li>
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          Casitas are rare, so it&apos;s difficult to find matching sales.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           Many casitas vary in size, quality, and function (some are luxury guest homes, others
                           are converted garages).
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           A casita built for Airbnb rental or family use might hold high personal value, but
                           that doesn&apos;t mean it translates to higher appraisal value.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         [08:21] It&apos;s like dating&mdash;you&apos;re looking for someone your age, with
                         shared interests, and similar values. Finding a perfect match isn&apos;t always easy,
@@ -472,15 +482,15 @@ export default function DetachedGuestHomeCasitaAppraisalPage() {
                       <p className="mb-3">
                         If you&apos;re buying a home with a casita, here&apos;s the good news:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           The appraised value may come in lower than the purchase price&mdash;meaning you could
                           get a deal!
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           Appraisers often undervalue casitas compared to what buyers are willing to pay.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         [09:59] However, if the seller overprices the home, the appraisal might come in low,
                         requiring either price negotiations between buyer &amp; seller, or more cash from the
@@ -527,11 +537,17 @@ export default function DetachedGuestHomeCasitaAppraisalPage() {
                         Some homeowners believe in a conspiracy&mdash;that appraisers intentionally undervalue
                         homes. The truth?
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Appraisers follow strict guidelines&mdash;they aren&apos;t just making up numbers.</li>
-                        <li>If they inflated values, banks wouldn&apos;t accept the loans.</li>
-                        <li>They&apos;re using market comps, not personal opinions.</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          Appraisers follow strict guidelines&mdash;they aren&apos;t just making up numbers.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          If they inflated values, banks wouldn&apos;t accept the loans.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          They&apos;re using market comps, not personal opinions.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         [14:00] Yes, appraisals can feel unfair, but once you understand how appraisers
                         calculate values, it all makes sense.
@@ -543,16 +559,20 @@ export default function DetachedGuestHomeCasitaAppraisalPage() {
                         Final Thoughts on Casitas and Appraisals [14:33]
                       </h3>
                       <p className="mb-2 font-semibold text-[#052316]">Key Takeaways:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Casitas are always appraised separately from the main house.</li>
-                        <li>Expect a low line-item adjustment (often just $20K&ndash;$30K).</li>
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          Casitas are always appraised separately from the main house.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Expect a low line-item adjustment (often just $20K&ndash;$30K).
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           If you build a casita, don&apos;t expect a dollar-for-dollar increase in home value.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           If you&apos;re buying a home with a casita, you might get a better deal than expected.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         [15:02] Got questions? Reach out through our contact form. Need a mortgage? Let&apos;s
                         chat!

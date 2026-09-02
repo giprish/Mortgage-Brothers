@@ -9,6 +9,12 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
+import {
+  TranscriptCheckItem,
+  TranscriptDiamondItem,
+  TranscriptList,
+  TranscriptMoneyItem,
+} from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/how-to-calculate-how-much-pmi-mortgage-insurance-will-be/");
 
@@ -345,31 +351,31 @@ export default function PmiMortgageInsurancePage() {
                         <strong>Eddie</strong>: So, how is PMI calculated? Six main factors determine the cost
                         of PMI:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           <strong>Down Payment Percentage</strong>: Calculated in 5% increments (e.g., 5%,
                           10%, 15%).
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>Loan Amount</strong>: Larger loan amounts typically mean higher PMI.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>Number of Borrowers</strong>: Two borrowers reduce risk slightly, leading to
                           a lower PMI rate.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>Credit Score</strong>: A higher score (760+) secures the best rates, while
                           scores below 760 are graded in 20-point increments.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>Property Type</strong>: Single-family homes typically have lower PMI rates
                           than condos or townhomes.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>Occupancy Type</strong>: PMI is lower for primary residences compared to
                           second homes or investment properties.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         <strong>Tom</strong>: Oh, and don&apos;t forget the Debt-to-Income (DTI) Ratio. A DTI
                         over 45% may result in additional fees.
@@ -383,26 +389,26 @@ export default function PmiMortgageInsurancePage() {
                       <p className="mb-3">
                         <strong>Eddie</strong>: Let&apos;s break down an example:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptMoneyItem>
                           <strong>Loan Amount</strong>: $200,000
-                        </li>
-                        <li>
+                        </TranscriptMoneyItem>
+                        <TranscriptDiamondItem>
                           <strong>Down Payment</strong>: 5%
-                        </li>
-                        <li>
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
                           <strong>Credit Score</strong>: 760+
-                        </li>
-                        <li>
+                        </TranscriptDiamondItem>
+                        <TranscriptCheckItem>
                           <strong>Borrowers</strong>: One
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>Property Type</strong>: Single-family residence
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>Occupancy</strong>: Primary residence
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         The PMI rate is 0.36% annually. To calculate the monthly PMI:
                         <br />

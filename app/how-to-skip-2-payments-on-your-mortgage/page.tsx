@@ -9,6 +9,10 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
+import {
+  TranscriptCheckItem,
+  TranscriptList,
+} from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/how-to-skip-2-payments-on-your-mortgage/");
 
@@ -322,19 +326,19 @@ export default function HowToSkip2PaymentsPage() {
                         Mortgage Payments: How Do They Work? [00:36]
                       </h3>
                       <p className="mb-3">First, let&apos;s clarify how mortgage payments work.</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           Mortgage payments are always due on the first of the month—every lender follows this
                           rule.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           You pay for the previous month&apos;s interest—unlike rent, which is paid in advance.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           Skipping payments doesn&apos;t mean free money—it&apos;s all about how interest is
                           calculated and rolled into your new loan.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         You can&apos;t just move your payment to another day—the first of the month is standard
                         across all lenders.
@@ -350,12 +354,20 @@ export default function HowToSkip2PaymentsPage() {
                         closing.
                       </p>
                       <p className="mb-2 font-semibold text-[#052316]">Example:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>You close on November 10th</li>
-                        <li>No mortgage payment in November</li>
-                        <li>No mortgage payment in December</li>
-                        <li>Your first payment is due January 1st</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          You close on November 10th
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          No mortgage payment in November
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          No mortgage payment in December
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Your first payment is due January 1st
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         The skipped payment happens because interest is prepaid at closing—not because
                         you&apos;re getting free months.
@@ -369,23 +381,31 @@ export default function HowToSkip2PaymentsPage() {
                       <p className="mb-3">
                         Refinancing is where skipping two payments becomes possible. Here&apos;s how:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Skip one payment from your current lender</li>
-                        <li>Skip one payment from your new mortgage</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          Skip one payment from your current lender
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Skip one payment from your new mortgage
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">Example:</p>
-                      <ul className="list-disc pl-6 space-y-2">
-                        <li>You close your refinance on November 5th</li>
-                        <li>
+                      <TranscriptList>
+                        <TranscriptCheckItem>
+                          You close your refinance on November 5th
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           You don&apos;t pay your November mortgage payment (because the loan is being paid
                           off)
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           You don&apos;t pay a December mortgage payment (because your new loan covers prepaid
                           interest)
-                        </li>
-                        <li>Your first payment on the new loan starts January 1st</li>
-                      </ul>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Your first payment on the new loan starts January 1st
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
@@ -396,19 +416,19 @@ export default function HowToSkip2PaymentsPage() {
                         No! Some borrowers think skipping payments is a way to cheat the system—but
                         that&apos;s not true.
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           You&apos;re not getting free months—you&apos;re just rolling interest into the
                           payoff.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           The bank always gets paid—whether it&apos;s from your pocket or included in the
                           refinance.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           It&apos;s like squeezing a balloon—the amount stays the same, it just shifts.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         [05:03] Some people hear advice like: &ldquo;Always close at the end of the month to
                         save money.&rdquo; Or: &ldquo;Closing early in the month means you pay more.&rdquo;
@@ -426,11 +446,17 @@ export default function HowToSkip2PaymentsPage() {
                       <p className="mb-3">
                         Skipping two mortgage payments when refinancing is real, but:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>It&apos;s not free—interest is still owed.</li>
-                        <li>Your lender structures the loan to roll interest into the payoff.</li>
-                        <li>It only works if you refinance early in the month.</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          It&apos;s not free—interest is still owed.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Your lender structures the loan to roll interest into the payoff.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          It only works if you refinance early in the month.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         [07:14] Have questions? Reach out to us through our{" "}
                         <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">

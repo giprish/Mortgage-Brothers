@@ -9,6 +9,14 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
+import {
+  TranscriptCheckItem,
+  TranscriptDiamondItem,
+  TranscriptLightbulbLine,
+  TranscriptList,
+  TranscriptPinLine,
+  TranscriptPointItem,
+} from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/what-is-an-example-of-a-mortgage-recast/");
 
@@ -352,23 +360,22 @@ export default function MortgageRecastExamplePage() {
                         Homeowners looking to adjust their mortgage payments typically consider two main
                         options:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptPointItem>
                           <strong>Refinance</strong> – Completely replaces your current loan with a new one,
                           which may involve a different interest rate, new loan terms (e.g., switching from a
                           30-year to a 15-year loan), or a brand-new loan amount.
-                        </li>
-                        <li>
+                        </TranscriptPointItem>
+                        <TranscriptPointItem>
                           <strong>Recast</strong> – Instead of replacing your loan, you apply a lump sum
                           payment toward your principal, and your lender recalculates your monthly payments
                           based on the new, lower balance. No new loan terms, no change in interest rate&mdash;
                           simply lowers your monthly payment.
-                        </li>
-                      </ul>
-                      <p>
-                        <strong>Key Takeaway:</strong> A recast keeps your existing loan but reduces your
+                        </TranscriptPointItem>
+                      </TranscriptList>
+                      <TranscriptLightbulbLine><strong>Key Takeaway:</strong> A recast keeps your existing loan but reduces your
                         monthly mortgage payment after you apply a lump sum toward the principal.
-                      </p>
+                      </TranscriptLightbulbLine>
                     </div>
 
                     <div>
@@ -387,18 +394,22 @@ export default function MortgageRecastExamplePage() {
                         </a>{" "}
                         is best suited for homeowners who:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           Have a large sum of money coming in (e.g., inheritance, work bonus, home sale
                           proceeds).
-                        </li>
-                        <li>Want to reduce monthly payments without refinancing.</li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Want to reduce monthly payments without refinancing.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           Have a low interest rate on their current mortgage and don&apos;t want to lose it by
                           refinancing.
-                        </li>
-                        <li>Prefer to avoid the costs and paperwork of refinancing.</li>
-                      </ul>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Prefer to avoid the costs and paperwork of refinancing.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         Example: A borrower receives a $100,000 inheritance and wants to lower their mortgage
                         payments. Now, let&apos;s compare two scenarios&mdash;one with a recast and one
@@ -411,28 +422,46 @@ export default function MortgageRecastExamplePage() {
                         Scenario 1: Recasting the Mortgage [04:12]
                       </h3>
                       <p className="mb-2 font-semibold text-[#052316]">Loan Details (Before Recast):</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Original Loan: $300,000</li>
-                        <li>Monthly Payment: $1,264</li>
-                        <li>Remaining Term: 29 years</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptDiamondItem>
+                          Original Loan: $300,000
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          Monthly Payment: $1,264
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          Remaining Term: 29 years
+                        </TranscriptDiamondItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">
                         After Recasting (Applying $100,000 to Principal):
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>New Loan Balance: $200,000</li>
-                        <li>New Monthly Payment: $861</li>
-                        <li>Term remains the same (29 years)</li>
-                        <li>Total Interest Saved: $55,000</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptDiamondItem>
+                          New Loan Balance: $200,000
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          New Monthly Payment: $861
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          Term remains the same (29 years)
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          Total Interest Saved: $55,000
+                        </TranscriptDiamondItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">Benefits of a Recast:</p>
-                      <ul className="list-disc pl-6 space-y-2">
-                        <li>Lower monthly payment while keeping the same loan term.</li>
-                        <li>
+                      <TranscriptList>
+                        <TranscriptCheckItem>
+                          Lower monthly payment while keeping the same loan term.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           No change in interest rate&mdash;ideal if you already have a low rate.
-                        </li>
-                        <li>Minimal fees ($200–$300 vs. thousands in refinance costs).</li>
-                      </ul>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Minimal fees ($200–$300 vs. thousands in refinance costs).
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
@@ -442,21 +471,37 @@ export default function MortgageRecastExamplePage() {
                       <p className="mb-3">
                         What if the borrower just makes a lump sum payment but doesn&apos;t request a recast?
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Original Loan: $300,000</li>
-                        <li>Lump Sum Payment: $100,000</li>
-                        <li>New Loan Balance: $200,000</li>
-                        <li>Monthly Payment: Remains at $1,264</li>
-                        <li>Mortgage is paid off in 17 years (instead of 29 years).</li>
-                        <li>Total Interest Saved: $95,000</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptDiamondItem>
+                          Original Loan: $300,000
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          Lump Sum Payment: $100,000
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          New Loan Balance: $200,000
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          Monthly Payment: Remains at $1,264
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          Mortgage is paid off in 17 years (instead of 29 years).
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          Total Interest Saved: $95,000
+                        </TranscriptDiamondItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">
                         Benefits of Paying Down Principal Without a Recast:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Pays off the mortgage years earlier.</li>
-                        <li>Saves more in interest over the life of the loan.</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          Pays off the mortgage years earlier.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Saves more in interest over the life of the loan.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         <strong>Biggest Difference:</strong> A recast lowers your monthly payment but keeps
                         your term the same. Paying extra without a recast keeps your payments the same but
@@ -469,32 +514,34 @@ export default function MortgageRecastExamplePage() {
                         Who Should Choose a Mortgage Recast? [08:37]
                       </h3>
                       <p className="mb-3">A mortgage recast is best for homeowners who:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           Need lower monthly payments due to a fixed income or budget constraints.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           Are selling a home and buying another one&mdash;wanting to apply the proceeds toward
                           their new mortgage.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           Have a large sum of money but don&apos;t necessarily want to pay off their mortgage
                           early.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">
                         Recast Example: Home Sale Proceeds
                       </p>
-                      <ul className="list-disc pl-6 space-y-2">
-                        <li>Homeowner buys a new home before selling their old one.</li>
-                        <li>
+                      <TranscriptList>
+                        <TranscriptCheckItem>
+                          Homeowner buys a new home before selling their old one.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           They take out a mortgage with a higher payment than they&apos;d like.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           After selling the old home, they apply those proceeds toward the new mortgage and
                           recast to lower the payment.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
@@ -502,18 +549,23 @@ export default function MortgageRecastExamplePage() {
                         How to Request a Mortgage Recast [09:43]
                       </h3>
                       <p className="mb-3">To qualify for a mortgage recast, you&apos;ll need to:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Make at least two payments on your mortgage before applying.</li>
-                        <li>Have a lump sum (usually at least $10,000) to put toward principal.</li>
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          Make at least two payments on your mortgage before applying.
+                        </TranscriptCheckItem>
+                        <TranscriptDiamondItem>
+                          Have a lump sum (usually at least $10,000) to put toward principal.
+                        </TranscriptDiamondItem>
+                        <TranscriptCheckItem>
                           Check with your lender&mdash;some only allow a limited number of recasts.
-                        </li>
-                        <li>Pay a small administrative fee (typically $200–$300).</li>
-                      </ul>
-                      <p className="mb-3">
-                        <strong>Important:</strong> Not all lenders allow recasts. If this is part of your
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Pay a small administrative fee (typically $200–$300).
+                        </TranscriptCheckItem>
+                      </TranscriptList>
+                      <TranscriptPinLine><strong>Important:</strong> Not all lenders allow recasts. If this is part of your
                         plan, ask your lender before closing on your mortgage.
-                      </p>
+                      </TranscriptPinLine>
                       <p>
                         Government-backed loans (FHA, VA, USDA) do NOT allow recasts&mdash;only conventional
                         loans typically qualify.
@@ -525,21 +577,31 @@ export default function MortgageRecastExamplePage() {
                         Final Thoughts: Should You Recast or Just Pay Down Principal? [12:09]
                       </h3>
                       <p className="mb-2 font-semibold text-[#052316]">Choose a Mortgage Recast if:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>You need lower monthly payments.</li>
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          You need lower monthly payments.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           You don&apos;t want to refinance and lose your current interest rate.
-                        </li>
-                        <li>You plan to stay in your home long-term.</li>
-                      </ul>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          You plan to stay in your home long-term.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">
                         Choose to Pay Down Principal Without a Recast if:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>You want to pay off your mortgage faster.</li>
-                        <li>You can afford the current monthly payments.</li>
-                        <li>You want to maximize interest savings over time.</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          You want to pay off your mortgage faster.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          You can afford the current monthly payments.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          You want to maximize interest savings over time.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         Both options have their advantages&mdash;it all depends on your financial goals.
                       </p>

@@ -9,6 +9,11 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
+import {
+  TranscriptCheckItem,
+  TranscriptList,
+  TranscriptPointItem,
+} from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/when-is-a-mortgage-payment-actually-considered-late/");
 
@@ -334,10 +339,14 @@ export default function WhenIsAMortgagePaymentActuallyConsideredLatePage() {
                       <p className="mb-3">
                         <strong>Tom</strong>: There are two perspectives to consider:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>When the bank considers it late.</li>
-                        <li>When the credit bureau considers it late.</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptPointItem>
+                          When the bank considers it late.
+                        </TranscriptPointItem>
+                        <TranscriptPointItem>
+                          When the credit bureau considers it late.
+                        </TranscriptPointItem>
+                      </TranscriptList>
                       <p>
                         <strong>Eddie</strong>: Actually, let&apos;s add a third:{" "}
                         <strong>when people feel late.</strong> For some, if they haven&apos;t paid by the
@@ -353,13 +362,15 @@ export default function WhenIsAMortgagePaymentActuallyConsideredLatePage() {
                         <strong>Tom</strong>: According to the lender, payments aren&apos;t late until{" "}
                         <strong>after the 15th</strong>.
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>If your payment arrives on the 15th, there&apos;s no penalty.</li>
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          If your payment arrives on the 15th, there&apos;s no penalty.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           After the 15th, most banks will charge a late fee, typically{" "}
                           <strong>5% of your monthly payment</strong>.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         <strong>Eddie</strong>: For example, if your mortgage payment is $2,000, you&apos;d pay
                         a $100 late fee.
@@ -374,15 +385,15 @@ export default function WhenIsAMortgagePaymentActuallyConsideredLatePage() {
                         <strong>Tom</strong>: Credit bureaus don&apos;t report anything until the payment is{" "}
                         <strong>30 days overdue</strong>. For instance:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           If your October payment isn&apos;t made by October 31st, it&apos;s considered
                           &quot;30 days late.&quot;
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           At this point, it&apos;s reported to the bureaus, and your credit score takes a hit.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         <strong>Eddie</strong>: And trust me, folks, this is a <strong>big deal</strong>. A
                         30-day late payment impacts your credit significantly.
@@ -396,14 +407,14 @@ export default function WhenIsAMortgagePaymentActuallyConsideredLatePage() {
                       <p className="mb-3">
                         <strong>Tom</strong>: After 30 days, the consequences escalate:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           <strong>60 days late</strong>: A bigger hit to your credit.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>90 days late</strong>: Foreclosure proceedings may begin.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         <strong>Eddie</strong>: In Arizona, for example, after 90 days of non-payment, the
                         foreclosure process starts. Each state has its own laws, but the bottom line is: Avoid

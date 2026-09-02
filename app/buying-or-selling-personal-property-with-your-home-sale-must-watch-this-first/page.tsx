@@ -9,6 +9,15 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
+import {
+  TranscriptBanItem,
+  TranscriptCheckItem,
+  TranscriptDiamondItem,
+  TranscriptLightbulbLine,
+  TranscriptList,
+  TranscriptMicLine,
+  TranscriptPinLine,
+} from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/buying-or-selling-personal-property-with-your-home-sale-must-watch-this-first/");
 
@@ -317,12 +326,12 @@ export default function BuyingOrSellingPersonalPropertyPage() {
                         Buying or Selling Personal Property with Your Home? Here&apos;s What You Need to Know
                       </h3>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">Introduction [00:02]</h3>
-                      <p className="mb-3">
-                        (00:02) 🎙 Welcome to the Mortgage Brothers Podcast! I&apos;m Eddie Cannell, and I&apos;m Tom
+                      <TranscriptMicLine className="mb-3">
+                        (00:02) Welcome to the Mortgage Brothers Podcast! I&apos;m Eddie Cannell, and I&apos;m Tom
                         Cannell. This is Episode 18—holy cow, 18 episodes already! Today, we have a must-know
                         topic for both buyers and sellers: personal property and how it affects your home
                         purchase contract.
-                      </p>
+                      </TranscriptMicLine>
                       <p className="mb-3">
                         (00:42) When walking through a home, buyers often fall in love with certain personal
                         items—a pool table, beautiful furniture, or even an outdoor grill. The question is: Can
@@ -339,33 +348,37 @@ export default function BuyingOrSellingPersonalPropertyPage() {
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
                         Why Does Personal Property Matter in a Real Estate Contract? [01:14]
                       </h3>
-                      <p className="mb-3">
-                        Example: When I bought my house a few years ago, the seller had a pool table they
+                      <TranscriptLightbulbLine className="mb-3">
+                        <strong>Example:</strong> When I bought my house a few years ago, the seller had a pool table they
                         didn&apos;t want to move. Sound familiar? Many sellers prefer to sell large or heavy
                         items rather than deal with the logistics of moving them.
-                      </p>
+                      </TranscriptLightbulbLine>
                       <p className="mb-3">
                         [01:46] In many cases, sellers are willing to sell all kinds of personal property,
                         including:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Pool tables</li>
-                        <li>Couches, dressers, and beds</li>
-                        <li>Appliances beyond what&apos;s typically included</li>
-                        <li>Outdoor furniture, grills, or storage sheds</li>
-                      </ul>
+                      <TranscriptList>
+                        <TranscriptCheckItem>Pool tables</TranscriptCheckItem>
+                        <TranscriptCheckItem>Couches, dressers, and beds</TranscriptCheckItem>
+                        <TranscriptCheckItem>Appliances beyond what&apos;s typically included</TranscriptCheckItem>
+                        <TranscriptCheckItem>Outdoor furniture, grills, or storage sheds</TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-3">[02:19] So, what&apos;s the problem?</p>
                       <p className="mb-3">
                         From a lender&apos;s perspective, personal property should not be part of the real
                         estate transaction. Why?
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Lenders only finance real estate value—not furniture or extras.</li>
-                        <li>Including personal property artificially inflates the value of the home.</li>
-                        <li>
+                      <TranscriptList>
+                        <TranscriptDiamondItem>
+                          Lenders only finance real estate value—not furniture or extras.
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          Including personal property artificially inflates the value of the home.
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
                           The home itself is the collateral for the loan—not the pool table or couch!
-                        </li>
-                      </ul>
+                        </TranscriptDiamondItem>
+                      </TranscriptList>
                       <p>
                         [02:54] In short, what&apos;s easy for a seller (offloading extra items) is complicated
                         for a lender.
@@ -381,29 +394,41 @@ export default function BuyingOrSellingPersonalPropertyPage() {
                         addresses personal property. The only items that can be transferred through the
                         contract are:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Refrigerator</li>
-                        <li>Washer &amp; Dryer</li>
-                        <li>Above-ground spa</li>
-                      </ul>
-                      <p className="mb-3">Anything else should NOT be included in the contract.</p>
+                      <TranscriptList>
+                        <TranscriptCheckItem>
+                          <strong>Refrigerator</strong>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>Washer &amp; Dryer</strong>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>Above-ground spa</strong>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
+                      <TranscriptPinLine className="mb-3">
+                        <strong>Anything else should NOT be included in the contract.</strong>
+                      </TranscriptPinLine>
                       <p className="mb-3">[04:15] Items NOT allowed on the contract:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Pool tables</li>
-                        <li>Grills</li>
-                        <li>Gun safes</li>
-                        <li>Home furnishings</li>
-                        <li>Paintings or artwork</li>
-                      </ul>
+                      <TranscriptList>
+                        <TranscriptBanItem>Pool tables</TranscriptBanItem>
+                        <TranscriptBanItem>Grills</TranscriptBanItem>
+                        <TranscriptBanItem>Gun safes</TranscriptBanItem>
+                        <TranscriptBanItem>Home furnishings</TranscriptBanItem>
+                        <TranscriptBanItem>Paintings or artwork</TranscriptBanItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         [04:53] These personal property items should never be written into:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>The purchase contract</li>
-                        <li>The additional terms section (Page 7)</li>
-                        <li>An addendum</li>
-                        <li>A counteroffer</li>
-                      </ul>
+                      <TranscriptList>
+                        <TranscriptDiamondItem>
+                          The <strong>purchase contract</strong>
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          The <strong>additional terms</strong> section (Page 7)
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>An <strong>addendum</strong></TranscriptDiamondItem>
+                        <TranscriptDiamondItem>A <strong>counteroffer</strong></TranscriptDiamondItem>
+                      </TranscriptList>
                       <p>
                         Why? Lenders don&apos;t want non-real estate items affecting the home&apos;s appraisal
                         value.
@@ -418,15 +443,19 @@ export default function BuyingOrSellingPersonalPropertyPage() {
                         Some buyers and sellers try to get around this rule by writing: &ldquo;This personal
                         property has no value.&rdquo;
                       </p>
-                      <p className="mb-3">This used to work—but NOT anymore.</p>
+                      <TranscriptLightbulbLine className="mb-3">
+                        <strong>This used to work</strong>—but NOT anymore.
+                      </TranscriptLightbulbLine>
                       <p className="mb-3">
                         [06:03] Lenders caught on. If a buyer is including furniture or appliances in the
                         contract, it clearly has value—otherwise, they wouldn&apos;t be asking for it.
                       </p>
-                      <ul className="list-disc pl-6 space-y-2">
-                        <li>The true real estate value is all that matters.</li>
-                        <li>Lenders ignore personal property when determining home value.</li>
-                      </ul>
+                      <TranscriptList className="mb-0">
+                        <TranscriptCheckItem>The true real estate value is all that matters.</TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Lenders ignore personal property when determining home value.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
@@ -434,20 +463,20 @@ export default function BuyingOrSellingPersonalPropertyPage() {
                         What About Outdoor Sheds? [06:35]
                       </h3>
                       <p className="mb-3">What if a shed is included in the home sale?</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList>
+                        <TranscriptDiamondItem>
                           If it&apos;s a permanent structure (built into the ground with a foundation),
                           it&apos;s part of real estate.
-                        </li>
-                        <li>
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
                           If it&apos;s a portable Rubbermaid or Tuff Shed, it&apos;s personal property and
                           should be excluded from the contract.
-                        </li>
-                      </ul>
-                      <p>
-                        Rule of thumb: If the seller could move it to their next home, it shouldn&apos;t be
-                        included in the contract.
-                      </p>
+                        </TranscriptDiamondItem>
+                      </TranscriptList>
+                      <TranscriptLightbulbLine>
+                        <strong>Rule of Thumb:</strong> If the seller could move it to their next home, it
+                        shouldn&apos;t be included in the contract.
+                      </TranscriptLightbulbLine>
                     </div>
 
                     <div>
@@ -458,16 +487,24 @@ export default function BuyingOrSellingPersonalPropertyPage() {
                         So, what if you really want to buy that pool table or furniture? No problem! Just
                         follow these simple steps:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Handle the purchase separately—outside of the real estate transaction.</li>
-                        <li>Create a separate bill of sale between the buyer and seller.</li>
-                        <li>Keep it out of escrow—don&apos;t include it in closing documents.</li>
-                        <li>Don&apos;t involve the title company or lender—it&apos;s a private transaction.</li>
-                      </ul>
-                      <p>
-                        Bottom line: Personal property should be treated as a separate sale, just like buying
-                        used furniture from a private seller.
-                      </p>
+                      <TranscriptList>
+                        <TranscriptCheckItem>
+                          Handle the purchase separately—outside of the real estate transaction.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Create a separate bill of sale between the buyer and seller.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Keep it out of escrow—don&apos;t include it in closing documents.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Don&apos;t involve the title company or lender—it&apos;s a private transaction.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
+                      <TranscriptPinLine>
+                        <strong>Bottom line:</strong> Personal property should be treated as a separate sale,
+                        just like buying used furniture from a private seller.
+                      </TranscriptPinLine>
                     </div>
 
                     <div>
@@ -478,19 +515,21 @@ export default function BuyingOrSellingPersonalPropertyPage() {
                         Wildest example: A buyer once wanted to buy a home fully furnished—down to the
                         silverware, bedsheets, and wall décor.
                       </p>
-                      <p className="mb-3">
-                        Nice try, but no dice. The lender wouldn&apos;t allow it, and the buyer had to handle it
+                      <TranscriptLightbulbLine className="mb-3">
+                        <strong>Nice try, but no dice.</strong> The lender wouldn&apos;t allow it, and the buyer had to handle it
                         as a separate purchase outside the contract.
-                      </p>
+                      </TranscriptLightbulbLine>
                       <p className="mb-3">
                         [08:53] Can some lenders make exceptions? Maybe. Some real estate agents claim their
                         lender allows personal property to be included, but:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2">
-                        <li>These deals barely squeak by underwriting.</li>
-                        <li>It&apos;s risky—the deal could fall apart.</li>
-                        <li>It&apos;s easier and safer to handle personal property outside of escrow.</li>
-                      </ul>
+                      <TranscriptList className="mb-0">
+                        <TranscriptDiamondItem>These deals barely squeak by underwriting.</TranscriptDiamondItem>
+                        <TranscriptDiamondItem>It&apos;s risky—the deal could fall apart.</TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          It&apos;s easier and safer to handle personal property outside of escrow.
+                        </TranscriptDiamondItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
@@ -498,21 +537,23 @@ export default function BuyingOrSellingPersonalPropertyPage() {
                         Final Thoughts: Keep Real Estate Separate from Personal Property [09:25]
                       </h3>
                       <p className="mb-3">Key takeaways:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList>
+                        <TranscriptCheckItem>
                           Only refrigerators, washers, dryers, and above-ground spas can be included in a
                           contract.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           Everything else should be handled separately—not written into the real estate
                           contract.
-                        </li>
-                        <li>Avoid unnecessary risks—a separate bill of sale is the best approach.</li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Avoid unnecessary risks—a separate bill of sale is the best approach.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           Title companies and lenders don&apos;t need to see personal property
                           agreements—keep them separate.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         [09:57] Final advice: If you&apos;re buying or selling a home and have questions about
                         personal property, reach out to us!

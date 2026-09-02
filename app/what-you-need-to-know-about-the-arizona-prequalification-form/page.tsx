@@ -8,6 +8,10 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
+import {
+  TranscriptCheckItem,
+  TranscriptList,
+} from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/what-you-need-to-know-about-the-arizona-prequalification-form/");
 
@@ -199,16 +203,18 @@ export default function ArizonaPrequalificationFormPage() {
                         in Arizona. It&apos;s issued by lenders and shows that a buyer has been reviewed and
                         is financially capable of purchasing a home.
                       </p>
-                      <ul className="list-disc pl-6 space-y-2">
-                        <li>
+                      <TranscriptList>
+                        <TranscriptCheckItem>
                           It is not a lender-specific form&mdash;it&apos;s a universal document used by all
                           banks and lenders in Arizona.
-                        </li>
-                        <li>It is required by real estate agents to submit an offer.</li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          It is required by real estate agents to submit an offer.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           It provides sellers with proof that a buyer has been financially vetted.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
@@ -218,16 +224,16 @@ export default function ArizonaPrequalificationFormPage() {
                       <p className="mb-3">
                         There&apos;s often confusion between prequalification and preapproval:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           Prequalification means a lender has reviewed basic financial information but has
                           not verified all documents.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           Preapproval means the loan has been conditionally approved after an underwriter has
                           reviewed all required documentation.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         In most cases, a{" "}
                         <a
@@ -249,12 +255,20 @@ export default function ArizonaPrequalificationFormPage() {
                         How the Prequalification Form Works [04:37]
                       </h3>
                       <p className="mb-3">When a lender issues a prequalification form, it includes:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>The borrower&apos;s basic details (name, marital status, property type).</li>
-                        <li>Loan type (conventional, FHA, VA, etc.).</li>
-                        <li>Whether the borrower relies on selling another property to qualify.</li>
-                        <li>Whether the borrower needs seller concessions to cover closing costs.</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          The borrower&apos;s basic details (name, marital status, property type).
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Loan type (conventional, FHA, VA, etc.).
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Whether the borrower relies on selling another property to qualify.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Whether the borrower needs seller concessions to cover closing costs.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         A key part of this form is line 20, which states the maximum loan amount the borrower
                         qualifies for. There is no sales price listed&mdash;only the loan amount.
@@ -272,26 +286,28 @@ export default function ArizonaPrequalificationFormPage() {
                       <p className="mb-3">
                         Lines 3, 4, and 5 indicate whether the borrower has consulted with a lender.
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-6">
-                        <li>
+                      <TranscriptList className="mb-6">
+                        <TranscriptCheckItem>
                           If a borrower has not spoken with a lender, they sign lines 4 and 5.
-                        </li>
-                        <li>If they have consulted a lender, these lines are left blank.</li>
-                      </ul>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          If they have consulted a lender, these lines are left blank.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
 
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
                         2. Sale Contingencies &amp; Seller Concessions [06:51]
                       </h3>
-                      <ul className="list-disc pl-6 space-y-2 mb-6">
-                        <li>
+                      <TranscriptList className="mb-6">
+                        <TranscriptCheckItem>
                           Line 8 &ndash; Indicates if the buyer needs to sell or lease another property before
                           qualifying for this mortgage.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           Line 9 &ndash; Indicates whether the buyer needs seller concessions (closing cost
                           assistance from the seller).
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
 
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
                         3. Loan Amount vs. Sales Price [11:09]
@@ -314,15 +330,13 @@ export default function ArizonaPrequalificationFormPage() {
                       </h3>
                       <p className="mb-3">
                         Lines 25-28 indicate whether the borrower has provided:
-                        <br />
-                        ✅ Pay stubs
-                        <br />
-                        ✅ Tax returns
-                        <br />
-                        ✅ W-2s
-                        <br />
-                        ✅ Down payment proof
                       </p>
+                      <TranscriptList className="mb-6">
+                        <TranscriptCheckItem>Pay stubs</TranscriptCheckItem>
+                        <TranscriptCheckItem>Tax returns</TranscriptCheckItem>
+                        <TranscriptCheckItem>W-2s</TranscriptCheckItem>
+                        <TranscriptCheckItem>Down payment proof</TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-6">
                         This is crucial because sellers prefer buyers who have fully documented their
                         financials.
@@ -354,16 +368,18 @@ export default function ArizonaPrequalificationFormPage() {
 
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">Final Thoughts [20:37]</h3>
-                      <ul className="list-disc pl-6 space-y-2">
-                        <li>This form is required in Arizona real estate transactions.</li>
-                        <li>
+                      <TranscriptList>
+                        <TranscriptCheckItem>
+                          This form is required in Arizona real estate transactions.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           Lenders, buyers, and agents must ensure it&apos;s accurate before submitting offers.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           If you&apos;re buying a home, work with your lender to maximize your
                           prequalification strength.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                     </div>
 
                     <div>

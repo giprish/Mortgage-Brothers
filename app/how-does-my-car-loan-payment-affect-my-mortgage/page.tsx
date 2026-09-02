@@ -9,6 +9,18 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
+import {
+  TranscriptAlertLine,
+  TranscriptCarLine,
+  TranscriptCheckItem,
+  TranscriptCrossItem,
+  TranscriptFalseTrueLine,
+  TranscriptLightbulbLine,
+  TranscriptList,
+  TranscriptPhoneLine,
+  TranscriptPointItem,
+  TranscriptTvLine,
+} from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/how-does-my-car-loan-payment-affect-my-mortgage/");
 
@@ -357,11 +369,13 @@ export default function CarLoanPaymentAffectMortgagePage() {
                         Knoell. Today, we&apos;re diving into a topic that many homebuyers and homeowners
                         overlook:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>How do car payments affect your mortgage?</li>
-                        <li>Can they reduce your home-buying power?</li>
-                        <li>Should you buy a car before or after a home purchase?</li>
-                      </ul>
+                      <TranscriptList>
+                        <TranscriptPointItem>How do car payments affect your mortgage?</TranscriptPointItem>
+                        <TranscriptPointItem>Can they reduce your home-buying power?</TranscriptPointItem>
+                        <TranscriptPointItem>
+                          Should you buy a car before or after a home purchase?
+                        </TranscriptPointItem>
+                      </TranscriptList>
                       <p>Let&apos;s break it down!</p>
                     </div>
 
@@ -379,10 +393,10 @@ export default function CarLoanPaymentAffectMortgagePage() {
                         <strong>The short answer:</strong> A car payment reduces how much house you can
                         afford.
                       </p>
-                      <p>
+                      <TranscriptLightbulbLine>
                         For every car payment you have, your mortgage lender must account for it when
                         calculating your Debt-to-Income (DTI) ratio.
-                      </p>
+                      </TranscriptLightbulbLine>
                     </div>
 
                     <div>
@@ -392,18 +406,18 @@ export default function CarLoanPaymentAffectMortgagePage() {
                       <p className="mb-3">
                         Let&apos;s say you&apos;re Bob Borrower, and you call us with this situation:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>You have a $400 car payment.</li>
-                        <li>You have credit cards with balances.</li>
-                        <li>You earn a fixed monthly income.</li>
-                      </ul>
+                      <TranscriptList>
+                        <TranscriptCheckItem>You have a $400 car payment.</TranscriptCheckItem>
+                        <TranscriptCheckItem>You have credit cards with balances.</TranscriptCheckItem>
+                        <TranscriptCheckItem>You earn a fixed monthly income.</TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         As lenders, we assess your debt-to-income ratio (DTI) to determine how much house you
                         can afford.
                       </p>
-                      <p>
+                      <TranscriptCarLine>
                         Car payments are one of the biggest fixed expenses affecting your home-buying power!
-                      </p>
+                      </TranscriptCarLine>
                     </div>
 
                     <div>
@@ -428,9 +442,9 @@ export default function CarLoanPaymentAffectMortgagePage() {
                         <li>Want to refinance a low-interest mortgage (e.g., 3.5%).</li>
                         <li>High car payments limit refinance options due to debt ratio.</li>
                       </ul>
-                      <p>
+                      <TranscriptLightbulbLine>
                         Regardless of income level, car payments add up and affect mortgage eligibility.
-                      </p>
+                      </TranscriptLightbulbLine>
                     </div>
 
                     <div>
@@ -441,18 +455,16 @@ export default function CarLoanPaymentAffectMortgagePage() {
                         Many borrowers don&apos;t realize how much their car payment affects their mortgage
                         approval. Let&apos;s break it down:
                       </p>
-                      <p className="mb-2 font-semibold text-[#052316]">
-                        Car Payment Amount → Lost Home Buying Power
-                      </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>$250/mo → Lose $50,000 in home affordability</li>
-                        <li>$400/mo → Lose $80,000 in home affordability</li>
-                        <li>$600/mo → Lose $120,000 in home affordability</li>
-                        <li>$1,000/mo → Lose $200,000 in home affordability</li>
-                      </ul>
-                      <p>
+                      <TranscriptCarLine>Car Payment Amount → Lost Home Buying Power</TranscriptCarLine>
+                      <TranscriptList>
+                        <TranscriptCheckItem>$250/mo → Lose $50,000 in home affordability</TranscriptCheckItem>
+                        <TranscriptCheckItem>$400/mo → Lose $90,000 in home affordability</TranscriptCheckItem>
+                        <TranscriptCheckItem>$600/mo → Lose $140,000 in home affordability</TranscriptCheckItem>
+                        <TranscriptCheckItem>$1,000/mo → Lose $235,000 in home affordability</TranscriptCheckItem>
+                      </TranscriptList>
+                      <TranscriptLightbulbLine>
                         For every $100 in car payment, you lose about $20,000 in mortgage approval!
-                      </p>
+                      </TranscriptLightbulbLine>
                     </div>
 
                     <div>
@@ -463,11 +475,15 @@ export default function CarLoanPaymentAffectMortgagePage() {
                         A borrower applied for a mortgage six months ago. When they came back ready to buy,
                         they had:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Bought a new car with a $600 monthly payment.</li>
-                        <li>Lost $120,000 in home affordability.</li>
-                        <li>Could no longer qualify for the home they wanted.</li>
-                      </ul>
+                      <TranscriptList>
+                        <TranscriptCrossItem>
+                          Bought a new car with a $600 monthly payment.
+                        </TranscriptCrossItem>
+                        <TranscriptCrossItem>Lost $140,000 in home affordability.</TranscriptCrossItem>
+                        <TranscriptCrossItem>
+                          Could no longer qualify for the home they wanted.
+                        </TranscriptCrossItem>
+                      </TranscriptList>
                       <p>
                         <strong>Moral of the story:</strong> If you&apos;re planning to buy a house soon, avoid
                         buying a car first!
@@ -478,50 +494,78 @@ export default function CarLoanPaymentAffectMortgagePage() {
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
                         Common Misconceptions About Car Loans &amp; Mortgages [07:04]
                       </h3>
-                      <ul className="list-disc pl-6 space-y-3">
-                        <li>
-                          <strong>&ldquo;Lenders don&apos;t count car loans in mortgage approval.&rdquo;</strong>{" "}
-                          False. All monthly debts, including car loans, count toward your Debt-to-Income ratio
-                          (DTI).
-                        </li>
-                        <li>
-                          <strong>
-                            &ldquo;Everyone needs a car, so lenders won&apos;t penalize me for a car
-                            loan.&rdquo;
-                          </strong>{" "}
-                          False. Even though cars are essential, lenders still count the debt as part of your
-                          total obligations.
-                        </li>
-                        <li>
-                          <strong>&ldquo;I can afford my car and a house.&rdquo;</strong> Maybe, but your lender
-                          determines affordability based on income, debts, and loan guidelines.
-                        </li>
-                        <li>
-                          <strong>&ldquo;I can pay off my car loan later.&rdquo;</strong> Paying off a car loan
-                          before applying for a mortgage may improve your approval odds.
-                        </li>
-                      </ul>
+                      <TranscriptList className="space-y-3">
+                        <TranscriptFalseTrueLine
+                          falseText={
+                            <strong>
+                              &ldquo;Lenders don&apos;t count car loans in mortgage approval.&rdquo;
+                            </strong>
+                          }
+                          trueText={
+                            <>
+                              False. All monthly debts, including car loans, count toward your Debt-to-Income
+                              ratio (DTI).
+                            </>
+                          }
+                        />
+                        <TranscriptFalseTrueLine
+                          falseText={
+                            <strong>
+                              &ldquo;Everyone needs a car, so lenders won&apos;t penalize me for a car
+                              loan.&rdquo;
+                            </strong>
+                          }
+                          trueText={
+                            <>
+                              False. Even though cars are essential, lenders still count the debt as part of
+                              your total obligations.
+                            </>
+                          }
+                        />
+                        <TranscriptFalseTrueLine
+                          falseText={<strong>&ldquo;I can afford my car and a house.&rdquo;</strong>}
+                          trueText={
+                            <>
+                              Maybe, but your lender determines affordability based on income, debts, and loan
+                              guidelines.
+                            </>
+                          }
+                        />
+                        <TranscriptFalseTrueLine
+                          falseText={<strong>&ldquo;I can pay off my car loan later.&rdquo;</strong>}
+                          trueText={
+                            <>
+                              Paying off a car loan before applying for a mortgage may improve your approval
+                              odds.
+                            </>
+                          }
+                        />
+                      </TranscriptList>
                     </div>
 
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
                         Key Takeaways: Should You Buy a Car Before or After a House? [07:58]
                       </h3>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>If you&apos;re planning to buy a home soon, wait to buy a car!</li>
-                        <li>
+                      <TranscriptList>
+                        <TranscriptCheckItem>
+                          If you&apos;re planning to buy a home soon, wait to buy a car!
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           If you have a car loan, consider paying it off before applying for a mortgage.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           If you&apos;re refinancing, check how much your car loan affects your loan
                           eligibility.
-                        </li>
-                        <li>Always talk to a mortgage lender first before making big purchases!</li>
-                      </ul>
-                      <p>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Always talk to a mortgage lender first before making big purchases!
+                        </TranscriptCheckItem>
+                      </TranscriptList>
+                      <TranscriptAlertLine>
                         <strong>Remember:</strong> Every $100 in car payment reduces home affordability by
                         $20,000.
-                      </p>
+                      </TranscriptAlertLine>
                     </div>
 
                     <div>
@@ -530,13 +574,26 @@ export default function CarLoanPaymentAffectMortgagePage() {
                       </h3>
                       <p className="mb-3">
                         If you&apos;re unsure how your car payment affects your mortgage, we&apos;re here to
-                        help! Contact us through our contact form or call us for a personalized mortgage
-                        review.
+                        help!
                       </p>
-                      <p>
+                      <TranscriptPhoneLine className="mb-3">
+                        Contact us:{" "}
+                        <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
+                          Contact Form
+                        </Link>
+                      </TranscriptPhoneLine>
+                      <TranscriptPhoneLine className="mb-3">
+                        Call us for a personalized mortgage review
+                      </TranscriptPhoneLine>
+                      <TranscriptTvLine className="mb-3">
+                        <strong>Like &amp; Subscribe for More Mortgage Tips!</strong> If you found this
+                        information helpful, subscribe to our channel and hit the notification bell for more
+                        expert insights.
+                      </TranscriptTvLine>
+                      <TranscriptLightbulbLine>
                         <strong>Final Thought:</strong> A car loan might not seem like a big deal, but it could
                         be the difference between buying your dream home or settling for less. Plan wisely!
-                      </p>
+                      </TranscriptLightbulbLine>
                     </div>
                   </div>
                 </section>

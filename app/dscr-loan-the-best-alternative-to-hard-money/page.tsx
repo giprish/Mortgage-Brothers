@@ -8,6 +8,12 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
+import {
+  TranscriptCheckItem,
+  TranscriptDiamondItem,
+  TranscriptList,
+  TranscriptMoneyItem,
+} from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/dscr-loan-the-best-alternative-to-hard-money/");
 
@@ -445,11 +451,17 @@ export default function DscrLoanHardMoneyPage() {
                         They require minimal underwriting, making them a go-to option for fast transactions.
                       </p>
                       <p className="mb-3">But hard money loans have significant downsides:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>High interest rates (often 12% or more)</li>
-                        <li>High fees and points</li>
-                        <li>Strict equity requirements (some lenders require 40% to 50% down)</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          High interest rates (often 12% or more)
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          High fees and points
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Strict equity requirements (some lenders require 40% to 50% down)
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         These loans are not ideal for long-term investors. They work best for short-term
                         situations, like flipping a property quickly. Investors who need to move fast and
@@ -471,13 +483,17 @@ export default function DscrLoanHardMoneyPage() {
                         insurance (PITI).
                       </p>
                       <p className="mb-3">Example:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Monthly rent: $2,500</li>
-                        <li>PITI payment: $3,000</li>
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptMoneyItem>
+                          Monthly rent: $2,500
+                        </TranscriptMoneyItem>
+                        <TranscriptMoneyItem>
+                          PITI payment: $3,000
+                        </TranscriptMoneyItem>
+                        <TranscriptDiamondItem>
                           DSCR ratio: <strong>2,500 ÷ 3,000 = 0.83</strong>
-                        </li>
-                      </ul>
+                        </TranscriptDiamondItem>
+                      </TranscriptList>
                       <p>
                         Most DSCR loan programs require a ratio above 0.75, making them a flexible option for
                         investors.
@@ -492,19 +508,33 @@ export default function DscrLoanHardMoneyPage() {
                         Unlike hard money, DSCR loans have lower rates and lower fees. Here are the key
                         benefits:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Interest rates are much lower than hard money loans</li>
-                        <li>Lower fees and points</li>
-                        <li>Down payments as low as 20%</li>
-                        <li>No personal income verification required</li>
-                        <li>No tax returns, W-2s, or pay stubs needed</li>
-                        <li>No lease agreements required (appraisers use market rent analysis)</li>
-                        <li>Loan amounts up to $3.5 million</li>
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          Interest rates are much lower than hard money loans
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Lower fees and points
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Down payments as low as 20%
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          No personal income verification required
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          No tax returns, W-2s, or pay stubs needed
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          No lease agreements required (appraisers use market rent analysis)
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Loan amounts up to $3.5 million
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           Gift funds allowed for down payments&mdash;something conventional loans don&apos;t
                           allow for investment properties
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         If you already have a hard money loan, you can refinance into a DSCR loan to get out
                         of high interest rates. Many investors use hard money to buy a foreclosure and then
@@ -522,17 +552,29 @@ export default function DscrLoanHardMoneyPage() {
                         DSCR Loan Requirements [06:28]
                       </h3>
                       <p className="mb-3">To qualify, you must:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Have a DSCR ratio of at least 0.75</li>
-                        <li>Have a credit score of 620+ (higher scores get better rates)</li>
-                        <li>Be purchasing an investment property (not a primary or second home)</li>
-                        <li>Buy a property in livable condition (no major renovations needed)</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          Have a DSCR ratio of at least 0.75
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Have a credit score of 620+ (higher scores get better rates)
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Be purchasing an investment property (not a primary or second home)
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Buy a property in livable condition (no major renovations needed)
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-3">However, there are a few restrictions:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Prepayment penalties apply if you pay off the loan within 6 months</li>
-                        <li>Vacation homes are not eligible (only investment properties)</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          Prepayment penalties apply if you pay off the loan within 6 months
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Vacation homes are not eligible (only investment properties)
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         This means you can&apos;t use a DSCR loan for a cabin in Flagstaff or a vacation
                         rental in Sedona unless it&apos;s strictly an investment property.
@@ -544,12 +586,20 @@ export default function DscrLoanHardMoneyPage() {
                         Who Are DSCR Loans Best For? [08:25]
                       </h3>
                       <p className="mb-3">These loans are perfect for investors who:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Don&apos;t want to provide personal income documentation</li>
-                        <li>Are self-employed, 1099 workers, or have complex tax returns</li>
-                        <li>Need to refinance out of a hard money loan</li>
-                        <li>Want to buy and hold rental properties</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          Don&apos;t want to provide personal income documentation
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Are self-employed, 1099 workers, or have complex tax returns
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Need to refinance out of a hard money loan
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Want to buy and hold rental properties
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         DSCR loans are especially useful for high-net-worth individuals with unconventional
                         income streams, such as attorneys transitioning to partnership status or entrepreneurs

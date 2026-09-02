@@ -9,6 +9,11 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
+import {
+  TranscriptCheckItem,
+  TranscriptDiamondItem,
+  TranscriptList,
+} from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/is-the-mortgage-interest-tax-deduction-really-a-big-deal/");
 
@@ -369,60 +374,116 @@ export default function IsTheMortgageInterestTaxDeductionReallyABigDealPage() {
                         homeowners save each year and how that translates into daily savings.
                       </p>
                       <p className="mb-2 font-semibold text-[#052316]">Our Assumptions:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-4">
-                        <li>A 4% interest rate (a general estimate)</li>
-                        <li>A 5% down payment</li>
-                        <li>Housing costs make up 25-30% of the homeowner&apos;s income</li>
-                        <li>Tax rates are based on common brackets</li>
-                      </ul>
+                      <TranscriptList className="mb-4">
+                        <TranscriptCheckItem>
+                          A 4% interest rate (a general estimate)
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          A 5% down payment
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Housing costs make up 25-30% of the homeowner&apos;s income
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Tax rates are based on common brackets
+                        </TranscriptCheckItem>
+                      </TranscriptList>
 
                       <h3 className="text-[#052316] text-[17px] font-bold mb-2">
                         Example 1: Homeowner Making $50,000 per Year
                       </h3>
-                      <ul className="list-disc pl-6 space-y-2 mb-4">
-                        <li>Home Price: $208,000</li>
-                        <li>Mortgage Amount: $195,000</li>
-                        <li>Annual Interest Paid: ~$8,000</li>
-                        <li>Tax Bracket: 12%</li>
-                        <li>Annual Tax Savings: ~$950</li>
-                        <li>Daily Savings: $2.60 per day — a six-pack of name-brand soda every day</li>
-                      </ul>
+                      <TranscriptList className="mb-4">
+                        <TranscriptDiamondItem>
+                          Home Price: $208,000
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          Mortgage Amount: $195,000
+                        </TranscriptDiamondItem>
+                        <TranscriptCheckItem>
+                          Annual Interest Paid: ~$8,000
+                        </TranscriptCheckItem>
+                        <TranscriptDiamondItem>
+                          Tax Bracket: 12%
+                        </TranscriptDiamondItem>
+                        <TranscriptCheckItem>
+                          Annual Tax Savings: ~$950
+                        </TranscriptCheckItem>
+                        <TranscriptDiamondItem>
+                          Daily Savings: $2.60 per day — a six-pack of name-brand soda every day
+                        </TranscriptDiamondItem>
+                      </TranscriptList>
 
                       <h3 className="text-[#052316] text-[17px] font-bold mb-2">
                         Example 2: Homeowner Making $75,000 per Year
                       </h3>
-                      <ul className="list-disc pl-6 space-y-2 mb-4">
-                        <li>Home Price: $315,000</li>
-                        <li>Mortgage Amount: ~$300,000</li>
-                        <li>Annual Interest Paid: ~$12,000</li>
-                        <li>Tax Bracket: 12%</li>
-                        <li>Annual Tax Savings: ~$1,400</li>
-                        <li>Daily Savings: $3.90 per day — a Starbucks or Dutch Bros coffee every day</li>
-                      </ul>
+                      <TranscriptList className="mb-4">
+                        <TranscriptDiamondItem>
+                          Home Price: $315,000
+                        </TranscriptDiamondItem>
+                        <TranscriptCheckItem>
+                          Mortgage Amount: ~$300,000
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Annual Interest Paid: ~$12,000
+                        </TranscriptCheckItem>
+                        <TranscriptDiamondItem>
+                          Tax Bracket: 12%
+                        </TranscriptDiamondItem>
+                        <TranscriptCheckItem>
+                          Annual Tax Savings: ~$1,400
+                        </TranscriptCheckItem>
+                        <TranscriptDiamondItem>
+                          Daily Savings: $3.90 per day — a Starbucks or Dutch Bros coffee every day
+                        </TranscriptDiamondItem>
+                      </TranscriptList>
 
                       <h3 className="text-[#052316] text-[17px] font-bold mb-2">
                         Example 3: Homeowner Making $100,000 per Year
                       </h3>
-                      <ul className="list-disc pl-6 space-y-2 mb-4">
-                        <li>Home Price: $415,000</li>
-                        <li>Mortgage Amount: ~$385,000</li>
-                        <li>Annual Interest Paid: ~$15,800</li>
-                        <li>Tax Bracket: 22%</li>
-                        <li>Annual Tax Savings: ~$3,500</li>
-                        <li>Daily Savings: $9.50 per day — a decent bottle of wine each day</li>
-                      </ul>
+                      <TranscriptList className="mb-4">
+                        <TranscriptDiamondItem>
+                          Home Price: $415,000
+                        </TranscriptDiamondItem>
+                        <TranscriptCheckItem>
+                          Mortgage Amount: ~$385,000
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Annual Interest Paid: ~$15,800
+                        </TranscriptCheckItem>
+                        <TranscriptDiamondItem>
+                          Tax Bracket: 22%
+                        </TranscriptDiamondItem>
+                        <TranscriptCheckItem>
+                          Annual Tax Savings: ~$3,500
+                        </TranscriptCheckItem>
+                        <TranscriptDiamondItem>
+                          Daily Savings: $9.50 per day — a decent bottle of wine each day
+                        </TranscriptDiamondItem>
+                      </TranscriptList>
 
                       <h3 className="text-[#052316] text-[17px] font-bold mb-2">
                         Example 4: Homeowner Making $150,000 per Year
                       </h3>
-                      <ul className="list-disc pl-6 space-y-2">
-                        <li>Home Price: $625,000</li>
-                        <li>Mortgage Amount: ~$590,000</li>
-                        <li>Annual Interest Paid: ~$23,000</li>
-                        <li>Tax Bracket: 22%</li>
-                        <li>Annual Tax Savings: ~$5,200</li>
-                        <li>Daily Savings: $14.50 per day — two large pizzas every day</li>
-                      </ul>
+                      <TranscriptList>
+                        <TranscriptDiamondItem>
+                          Home Price: $625,000
+                        </TranscriptDiamondItem>
+                        <TranscriptCheckItem>
+                          Mortgage Amount: ~$590,000
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Annual Interest Paid: ~$23,000
+                        </TranscriptCheckItem>
+                        <TranscriptDiamondItem>
+                          Tax Bracket: 22%
+                        </TranscriptDiamondItem>
+                        <TranscriptCheckItem>
+                          Annual Tax Savings: ~$5,200
+                        </TranscriptCheckItem>
+                        <TranscriptDiamondItem>
+                          Daily Savings: $14.50 per day — two large pizzas every day
+                        </TranscriptDiamondItem>
+                      </TranscriptList>
                     </div>
 
                     <div>

@@ -9,6 +9,11 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
+import {
+  TranscriptCheckItem,
+  TranscriptCrossItem,
+  TranscriptList,
+} from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/if-i-have-1-mortgage-late-in-the-past-12-months-can-i-get-approved-for-a-mortgage/");
 
@@ -375,28 +380,30 @@ export default function MortgageLateApprovalPage() {
                       </h3>
                       <p className="mb-3">Here&apos;s how the major loan programs handle late payments:</p>
                       <p className="mb-2 font-semibold text-[#052316]">FHA Loans:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-4">
-                        <li>
+                      <TranscriptList className="mb-4">
+                        <TranscriptCheckItem>
                           Allows up to <strong>two 30-day late payments</strong> in the past 12 months.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCrossItem>
                           Does not permit any <strong>60-day late payments</strong> in the same period.
-                        </li>
-                      </ul>
+                        </TranscriptCrossItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">Conventional Loans:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-4">
-                        <li>
+                      <TranscriptList className="mb-4">
+                        <TranscriptCheckItem>
                           Allows only <strong>one 30-day late payment</strong> in the past 12 months.
-                        </li>
-                        <li>Stricter than FHA, but eligibility doesn&apos;t guarantee approval.</li>
-                      </ul>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Stricter than FHA, but eligibility doesn&apos;t guarantee approval.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">VA Loans:</p>
-                      <ul className="list-disc pl-6 space-y-2">
-                        <li>
+                      <TranscriptList>
+                        <TranscriptCheckItem>
                           Similar to conventional loans, allowing just{" "}
                           <strong>one 30-day late payment</strong> in the past 12 months.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
@@ -421,19 +428,19 @@ export default function MortgageLateApprovalPage() {
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">Tips for Borrowers [07:11]</h3>
                       <p className="mb-2 font-semibold text-[#052316]">Be Honest:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-4">
-                        <li>
+                      <TranscriptList className="mb-4">
+                        <TranscriptCheckItem>
                           Inform your lender upfront about any mortgage lates. Keep the explanation brief and to
                           the point.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">Understand the Difference:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-4">
-                        <li>
+                      <TranscriptList className="mb-4">
+                        <TranscriptCheckItem>
                           Late payments differ from deferments or forbearances. Contact your lender if you&apos;re
                           unsure about the specifics.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         <strong>Tom</strong>: Honesty allows the lender to assess your situation accurately and
                         determine if you&apos;re eligible for a new mortgage.

@@ -9,6 +9,7 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
+import { TranscriptList, TranscriptPinItem } from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/who-can-and-cannot-be-on-title-when-you-get-a-mortgage/");
 
@@ -457,10 +458,10 @@ export default function WhoCanAndCannotBeOnTitlePage() {
                       <p className="mb-3">
                         Remember, being on the title is NOT the same as being on the mortgage.
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>📌 The title = ownership rights.</li>
-                        <li>📌 The mortgage = loan responsibility.</li>
-                      </ul>
+                      <TranscriptList>
+                        <TranscriptPinItem>The title = ownership rights.</TranscriptPinItem>
+                        <TranscriptPinItem>The mortgage = loan responsibility.</TranscriptPinItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         The title is like the deed to a car—it proves who owns the home. If you&apos;re not on
                         the title, you don&apos;t legally own the property, even if you&apos;re making payments

@@ -9,6 +9,11 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
+import {
+  TranscriptCheckItem,
+  TranscriptDiamondItem,
+  TranscriptList,
+} from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/lsu-forms-loan-status-updates-and-what-you-need-to-know/");
 
@@ -265,28 +270,30 @@ export default function LsuFormsPage() {
                         the seller on how far along the buyer&apos;s loan process is.
                       </p>
                       <p className="mb-2 font-semibold text-[#052316]">Why sellers care:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           Sellers are waiting on the buyer&apos;s loan to be finalized before they can close.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           They already have a pre-qualification form, but the LSU gives real-time updates.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         The Arizona Association of Realtors (AAR) requires LSU forms, just like purchase
                         contracts and pre-qualification forms.
                       </p>
                       <p className="mb-2 font-semibold text-[#052316]">LSU Timeline:</p>
-                      <ul className="list-disc pl-6 space-y-2">
-                        <li>The contract requires buyers to send at least one LSU to the seller.</li>
-                        <li>
+                      <TranscriptList>
+                        <TranscriptCheckItem>
+                          The contract requires buyers to send at least one LSU to the seller.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           Due within 10 days of contract acceptance (but many lenders send them much earlier).
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           Our team sends LSU within 2–3 days to keep things moving smoothly.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
@@ -296,25 +303,25 @@ export default function LsuFormsPage() {
                       <p className="mb-3">
                         The LSU form is two pages long and contains two key sections:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptDiamondItem>
                           <strong>Page 1:</strong> Mostly repeats the information from the pre-qualification
                           form (loan type, amount, property address, buyer &amp; seller details).
-                        </li>
-                        <li>
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
                           <strong>Page 2:</strong> A detailed checklist of loan milestones, showing
                           what&apos;s been completed and what&apos;s still pending.
-                        </li>
-                      </ul>
+                        </TranscriptDiamondItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">How It Works:</p>
-                      <ul className="list-disc pl-6 space-y-2">
-                        <li>
+                      <TranscriptList>
+                        <TranscriptCheckItem>
                           Buyers receive the LSU via DocuSign and sign it to acknowledge the status update.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           The lender then forwards it to the seller&apos;s agent and the buyer&apos;s agent.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
@@ -329,13 +336,23 @@ export default function LsuFormsPage() {
                       <h3 className="text-[#052316] text-[17px] font-bold mb-2">
                         Step 1: Contract &amp; Loan Setup
                       </h3>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Line 41: Has the lender received the purchase contract &amp; addendums?</li>
-                        <li>Line 42: Has the lender sent out the Loan Estimate (LE)?</li>
-                        <li>Line 43: Has the borrower signed the Intent to Proceed?</li>
-                        <li>Line 48: Has the borrower paid for the appraisal?</li>
-                        <li>Line 49: Has the appraisal been ordered?</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptDiamondItem>
+                          Line 41: Has the lender received the purchase contract &amp; addendums?
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          Line 42: Has the lender sent out the Loan Estimate (LE)?
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          Line 43: Has the borrower signed the Intent to Proceed?
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          Line 48: Has the borrower paid for the appraisal?
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          Line 49: Has the appraisal been ordered?
+                        </TranscriptDiamondItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         The loan estimate must be sent within 3 days of the application. Borrowers must sign
                         the Intent to Proceed before appraisals can be ordered.
@@ -344,9 +361,11 @@ export default function LsuFormsPage() {
                       <h3 className="text-[#052316] text-[17px] font-bold mb-2">
                         Step 2: Interest Rate &amp; Loan Details
                       </h3>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Line 52: Has the buyer locked in their interest rate and loan program?</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptDiamondItem>
+                          Line 52: Has the buyer locked in their interest rate and loan program?
+                        </TranscriptDiamondItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         Red flag: If this box is marked NO, the buyer may not be fully committed to their
                         lender yet.
@@ -355,11 +374,17 @@ export default function LsuFormsPage() {
                       <h3 className="text-[#052316] text-[17px] font-bold mb-2">
                         Step 3: Appraisal &amp; Property Value
                       </h3>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Line 55: Has the appraisal been received?</li>
-                        <li>Line 56: Did the appraisal come in at or above purchase price?</li>
-                        <li>Line 61: Have all appraisal conditions been met?</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptDiamondItem>
+                          Line 55: Has the appraisal been received?
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          Line 56: Did the appraisal come in at or above purchase price?
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          Line 61: Have all appraisal conditions been met?
+                        </TranscriptDiamondItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         If the appraisal is below purchase price, the buyer and seller may need to
                         renegotiate. If the appraisal requires repairs, they must be completed before final
@@ -369,11 +394,17 @@ export default function LsuFormsPage() {
                       <h3 className="text-[#052316] text-[17px] font-bold mb-2">
                         Step 4: Loan Approval Process
                       </h3>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Line 59: Has the lender submitted the loan package to underwriting?</li>
-                        <li>Line 60: Has the loan received initial approval with conditions?</li>
-                        <li>Line 62: Has the loan received final approval (clear to close)?</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptDiamondItem>
+                          Line 59: Has the lender submitted the loan package to underwriting?
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          Line 60: Has the loan received initial approval with conditions?
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          Line 62: Has the loan received final approval (clear to close)?
+                        </TranscriptDiamondItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         Initial approval often comes with conditions—small missing documents or
                         clarifications. Final approval (clear to close) means the loan is ready for closing
@@ -383,14 +414,20 @@ export default function LsuFormsPage() {
                       <h3 className="text-[#052316] text-[17px] font-bold mb-2">
                         Step 5: Final Loan Documents &amp; Closing
                       </h3>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Line 57: Has the Closing Disclosure (CD) been sent to the buyer?</li>
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptDiamondItem>
+                          Line 57: Has the Closing Disclosure (CD) been sent to the buyer?
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
                           Line 58: Has the buyer acknowledged the CD (starts the 3-day waiting period)?
-                        </li>
-                        <li>Line 63: Have the loan documents been sent to title?</li>
-                        <li>Line 64: Have the buyers signed their final loan documents?</li>
-                      </ul>
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          Line 63: Have the loan documents been sent to title?
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          Line 64: Have the buyers signed their final loan documents?
+                        </TranscriptDiamondItem>
+                      </TranscriptList>
                       <p>
                         The Closing Disclosure must be signed at least 3 days before closing. Loan docs must
                         be signed before escrow can officially close.
@@ -405,11 +442,17 @@ export default function LsuFormsPage() {
                         Sellers rely on LSU updates to feel confident in the transaction.
                       </p>
                       <p className="mb-2 font-semibold text-[#052316]">Buyers &amp; agents should:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Send LSU updates quickly after contract acceptance.</li>
-                        <li>Make sure LSU forms accurately reflect loan progress.</li>
-                        <li>Understand that missing items may slow down closing.</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          Send LSU updates quickly after contract acceptance.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Make sure LSU forms accurately reflect loan progress.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Understand that missing items may slow down closing.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         Good news: If everything is checked off early, buyers may close ahead of schedule!
                       </p>

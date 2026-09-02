@@ -8,6 +8,11 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
+import {
+  TranscriptCheckItem,
+  TranscriptCrossItem,
+  TranscriptList,
+} from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/arizona-binsr-buyer-inspection-notice-and-seller-response/");
 
@@ -373,14 +378,18 @@ export default function ArizonaBinsrPage() {
                         Once the buyer submits the BINSR, the seller has <strong>5 days</strong> to respond. Here&apos;s what
                         can happen:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>The seller <strong>agrees</strong> to all the requested repairs.</li>
-                        <li>The seller <strong>agrees to some</strong> but not all requested repairs.</li>
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          The seller <strong>agrees</strong> to all the requested repairs.
+                        </TranscriptCheckItem>
+                        <TranscriptCrossItem>
+                          The seller <strong>agrees to some</strong> but not all requested repairs.
+                        </TranscriptCrossItem>
+                        <TranscriptCheckItem>
                           The seller <strong>declines all requests</strong>, leaving the buyer to decide whether to proceed or
                           cancel the contract.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         If the seller offers a partial repair list, the buyer has <strong>5 additional days</strong> to accept
                         or walk away.
@@ -396,21 +405,21 @@ export default function ArizonaBinsrPage() {
                         Buyers often misunderstand how the BINSR process works. Here are a few common
                         mistakes:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2">
-                        <li>
+                      <TranscriptList>
+                        <TranscriptCheckItem>
                           <strong>Requesting non-essential cosmetic repairs</strong> &ndash; Sellers are more likely to agree
                           to <strong>safety or structural concerns</strong> than minor cosmetic issues.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>Not understanding that sellers aren&apos;t obligated to fix anything</strong> &ndash; The
                           seller can reject all repair requests, and it&apos;s up to the buyer to decide what
                           to do next.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>Submitting unrealistic demands</strong> &ndash; This can lead to the seller rejecting the
                           entire request, potentially causing unnecessary conflicts.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
@@ -418,21 +427,21 @@ export default function ArizonaBinsrPage() {
                         <strong>Common Seller Mistakes</strong>
                       </h3>
                       <p className="mb-3">[06:38]<br />Sellers also make missteps when responding to the BINSR:</p>
-                      <ul className="list-disc pl-6 space-y-2">
-                        <li>
+                      <TranscriptList>
+                        <TranscriptCheckItem>
                           <strong>Automatically rejecting all requests</strong> &ndash; This can result in the buyer walking
                           away, causing delays in selling the home.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>Ignoring the importance of negotiations</strong> &ndash; Sellers should carefully consider
                           reasonable repair requests rather than dismissing them outright.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>Misunderstanding appraisal impacts</strong> &ndash; Some repairs may be required for
                           financing (FHA, VA loans), so rejecting them could cause financing issues for the
                           buyer.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                     </div>
 
                     <div>

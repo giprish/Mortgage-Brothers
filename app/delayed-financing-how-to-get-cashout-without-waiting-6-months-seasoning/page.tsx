@@ -9,6 +9,12 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
+import {
+  TranscriptCheckItem,
+  TranscriptCrossItem,
+  TranscriptList,
+  TranscriptPointItem,
+} from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/delayed-financing-how-to-get-cashout-without-waiting-6-months-seasoning/");
 
@@ -373,15 +379,15 @@ export default function DelayedFinancingPage() {
                         immediately take out a mortgage and pull equity from the home&mdash;without waiting
                         six months.
                       </p>
-                      <ul className="list-disc pl-6 space-y-2">
-                        <li>
+                      <TranscriptList>
+                        <TranscriptCheckItem>
                           Normally, if you buy a home in cash, lenders require a six-month seasoning period
                           before allowing a cash-out refinance.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           Delayed financing bypasses this requirement if you meet specific guidelines.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
@@ -392,20 +398,20 @@ export default function DelayedFinancingPage() {
                         There are several reasons why a buyer might purchase a home in cash and then apply for
                         delayed financing:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           <strong>Competitive Advantage</strong> – Sellers prefer cash buyers because they can
                           close faster, so buyers use cash to secure a better deal.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>Faster Closing</strong> – Cash purchases bypass traditional loan approvals,
                           allowing for quicker closings.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>Unlocking Equity</strong> – Buyers may want to free up their capital for
                           other investments after securing the property.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         For example, we recently worked with a borrower who bought a home with cash to get a
                         $10,000 discount from the seller. However, after purchasing the home, they wanted to
@@ -422,20 +428,38 @@ export default function DelayedFinancingPage() {
                         home was your own funds and properly sourced.
                       </p>
                       <p className="mb-2 font-semibold text-[#052316]">Accepted Sources:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Personal bank accounts</li>
-                        <li>Investment accounts</li>
-                        <li>Home equity lines of credit (HELOCs)</li>
-                        <li>Retirement accounts (401k loans, IRAs, etc.)</li>
-                        <li>Business accounts (if you&apos;re the majority owner)</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          Personal bank accounts
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Investment accounts
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Home equity lines of credit (HELOCs)
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Retirement accounts (401k loans, IRAs, etc.)
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Business accounts (if you&apos;re the majority owner)
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">NOT Accepted:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Gifts from family members</li>
-                        <li>Personal loans from individuals</li>
-                        <li>Inheritance funds that cannot be sourced</li>
-                        <li>Exchanging assets (e.g., selling a car to finance the purchase)</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          Gifts from family members
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Personal loans from individuals
+                        </TranscriptCheckItem>
+                        <TranscriptCrossItem>
+                          Inheritance funds that cannot be sourced
+                        </TranscriptCrossItem>
+                        <TranscriptCheckItem>
+                          Exchanging assets (e.g., selling a car to finance the purchase)
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         <strong>Key Rule:</strong> You can only refinance and withdraw the amount that was
                         originally your own money.
@@ -446,14 +470,18 @@ export default function DelayedFinancingPage() {
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
                         Loan Limits &amp; Terms [07:21]
                       </h3>
-                      <ul className="list-disc pl-6 space-y-2">
-                        <li>You can cash out up to 80% of the home&apos;s appraised value.</li>
-                        <li>
+                      <TranscriptList>
+                        <TranscriptCheckItem>
+                          You can cash out up to 80% of the home&apos;s appraised value.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           The loan is priced as a cash-out refinance, meaning the interest rates follow
                           standard cash-out pricing.
-                        </li>
-                        <li>If you want to withdraw more than 80%, you must wait 6 months.</li>
-                      </ul>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          If you want to withdraw more than 80%, you must wait 6 months.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
@@ -465,45 +493,45 @@ export default function DelayedFinancingPage() {
                         used when a family member buys the home in cash for you.
                       </p>
                       <p className="mb-2 font-semibold text-[#052316]">Example:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           A borrower was losing offers to cash buyers, so they asked their father to buy the
                           home for them in cash.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           After securing the property, they wanted to refinance their father out.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           Instead of a cash-out refinance, they used a rate-and-term refinance to pay back
                           their father&apos;s loan.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">How It Works:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           The person buying the home in cash (e.g., dad) must have a recorded lien (Deed of
                           Trust) on the property.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           The loan must be structured like a real loan (e.g., must include interest and
                           payments).
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           The borrower then refinances the &ldquo;loan&rdquo; into their name as a
                           rate-and-term refinance, which allows them to finance up to 95% of the home&apos;s
                           value.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">Why This Is Better?</p>
-                      <ul className="list-disc pl-6 space-y-2">
-                        <li>
+                      <TranscriptList>
+                        <TranscriptCheckItem>
                           Higher Loan-to-Value (LTV) – You can borrow up to 95% instead of just 80%.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           Better Interest Rates – Rate-and-term refinances typically have lower interest rates
                           than cash-out refinances.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
@@ -514,19 +542,19 @@ export default function DelayedFinancingPage() {
                         If you&apos;re using this alternative financing method, title companies play a key
                         role:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2">
-                        <li>
+                      <TranscriptList>
+                        <TranscriptCheckItem>
                           The title company records the lien (Deed of Trust) for the person funding the
                           purchase.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           There must be a loan agreement between the buyer and the lender (e.g., the father).
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptPointItem>
                           When refinancing, the loan is treated as a rate-and-term refinance, not a cash-out
                           refinance.
-                        </li>
-                      </ul>
+                        </TranscriptPointItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
@@ -536,24 +564,32 @@ export default function DelayedFinancingPage() {
                       <p className="mb-2 font-semibold text-[#052316]">
                         1. Traditional Delayed Financing (No-Seasoning Cash-Out Refinance)
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-4">
-                        <li>
+                      <TranscriptList className="mb-4">
+                        <TranscriptCheckItem>
                           Used when a buyer purchases a home with their own cash and wants to refinance
                           quickly.
-                        </li>
-                        <li>Allows up to 80% cash-out of the appraised value.</li>
-                        <li>Must prove the cash source.</li>
-                      </ul>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Allows up to 80% cash-out of the appraised value.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Must prove the cash source.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">
                         2. Alternative Delayed Financing (Rate-and-Term Refinance)
                       </p>
-                      <ul className="list-disc pl-6 space-y-2">
-                        <li>
+                      <TranscriptList>
+                        <TranscriptCheckItem>
                           Used when a family member or investor buys the home for you in cash.
-                        </li>
-                        <li>Requires a Deed of Trust to structure the loan.</li>
-                        <li>Allows refinancing up to 95% LTV with better interest rates.</li>
-                      </ul>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Requires a Deed of Trust to structure the loan.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Allows refinancing up to 95% LTV with better interest rates.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                     </div>
 
                     <div>

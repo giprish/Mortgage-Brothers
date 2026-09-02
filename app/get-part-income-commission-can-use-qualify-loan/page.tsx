@@ -9,6 +9,11 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
+import {
+  TranscriptCheckItem,
+  TranscriptList,
+  TranscriptPointItem,
+} from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/get-part-income-commission-can-use-qualify-loan/");
 
@@ -401,11 +406,17 @@ export default function CommissionQualifyLoanPage() {
                       <p className="mb-3">
                         If you earn commissions, bonuses, or tips, you might be wondering:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Can I use this income to qualify for a mortgage?</li>
-                        <li>How long do I need to show this income?</li>
-                        <li>What are the rules for different loan types?</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptPointItem>
+                          Can I use this income to qualify for a mortgage?
+                        </TranscriptPointItem>
+                        <TranscriptPointItem>
+                          How long do I need to show this income?
+                        </TranscriptPointItem>
+                        <TranscriptPointItem>
+                          What are the rules for different loan types?
+                        </TranscriptPointItem>
+                      </TranscriptList>
                       <p>Let&apos;s break it all down!</p>
                     </div>
 
@@ -417,19 +428,19 @@ export default function CommissionQualifyLoanPage() {
                         Lenders need to see a history of commissions &amp; bonuses before counting them as
                         income.
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           <strong>Conventional Loans (Fannie Mae/Freddie Mac)</strong> – 12 months of history
                           required.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>VA Loans</strong> – 24 months of history required (same employer, no gaps).
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>FHA Loans</strong> – 12 months of history required (must be from one
                           employer).
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         Conventional loans allow you to combine income from multiple employers (as long as
                         it&apos;s in the same field). VA &amp; FHA loans require the same employer for the
@@ -450,28 +461,28 @@ export default function CommissionQualifyLoanPage() {
                       <p className="mb-3">
                         Tip income works differently than commissions and bonuses.
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           <strong>Conventional &amp; VA Loans</strong> – 2 years of reported tip income
                           required.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>FHA Loans</strong> – Only 1 year of reported tip income required.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         Think of tip income like self-employment income. Lenders want consistent, documented
                         earnings over time.
                       </p>
                       <p className="mb-3">How are tips verified?</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           If tips are paid on a credit card, they are reported on your pay stubs and W-2s.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           If you receive cash tips, they only count if you report them on your tax returns.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         Pro Tip: If you earn tips, make sure they are reported on your pay stubs or tax
                         returns so they can count toward your mortgage qualification!
@@ -482,40 +493,40 @@ export default function CommissionQualifyLoanPage() {
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
                         Common Myths About Counting Income
                       </h3>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           &ldquo;I&apos;ve been getting tips/bonuses for 9 months—can I use that income?&rdquo;
                           No. You need at least 12 months for conventional/FHA loans and 24 months for VA
                           loans.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           &ldquo;I switched jobs recently—can I still count my commissions?&rdquo; Maybe. If
                           you&apos;re in the same industry and it&apos;s a conventional loan, you can combine
                           income from multiple employers. For VA &amp; FHA loans, you need to be with one
                           employer.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           &ldquo;I get cash tips but don&apos;t report them—will lenders still count
                           them?&rdquo; No. Only documented tip income counts.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">The Bottom Line</h3>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           Commissions &amp; bonuses require at least 12 months (conventional/FHA) or 24 months
                           (VA).
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           Tip income requires 2 years (Conventional &amp; VA) or 1 year (FHA).
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           Always report cash tips on your tax returns if you want them to count toward your
                           mortgage.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         Need help figuring out your income for a mortgage?{" "}
                         <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">

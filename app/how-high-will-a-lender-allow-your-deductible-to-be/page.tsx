@@ -9,6 +9,11 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
+import {
+  TranscriptCheckItem,
+  TranscriptDiamondItem,
+  TranscriptList,
+} from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/how-high-will-a-lender-allow-your-deductible-to-be/");
 
@@ -297,16 +302,16 @@ export default function HowHighWillALenderAllowYourDeductibleToBePage() {
                         A deductible is the amount you must pay out of pocket before your insurance kicks in to
                         cover a claim.
                       </p>
-                      <ul className="list-disc pl-6 space-y-2">
-                        <li>
+                      <TranscriptList>
+                        <TranscriptCheckItem>
                           If you have a $1,000 deductible and a storm damages your roof, you&apos;ll pay $1,000
                           before the insurance covers the rest.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           If you have a $5,000 deductible, you&apos;ll pay more upfront in the event of a claim,
                           but your monthly premium will be lower.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
@@ -314,11 +319,17 @@ export default function HowHighWillALenderAllowYourDeductibleToBePage() {
                         How Much Does Homeowners Insurance Cost? [01:01]
                       </h3>
                       <p className="mb-2 font-semibold text-[#052316]">Premiums vary depending on:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>The value of your home</li>
-                        <li>Your deductible amount</li>
-                        <li>The type of coverage you choose</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          The value of your home
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Your deductible amount
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          The type of coverage you choose
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         On average, homeowners insurance costs $600–$1,200 per year (or about $50–$100 per
                         month).
@@ -337,10 +348,14 @@ export default function HowHighWillALenderAllowYourDeductibleToBePage() {
                       <p className="mb-3">
                         If you&apos;re looking to reduce costs, the best way is to raise your deductible.
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Standard deductible: $500–$1,000</li>
-                        <li>Higher deductible: Up to $5,000</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptDiamondItem>
+                          Standard deductible: $500–$1,000
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          Higher deductible: Up to $5,000
+                        </TranscriptDiamondItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         If you increase your deductible from $1,000 to $5,000, you could cut your insurance
                         premium in half!
@@ -361,10 +376,14 @@ export default function HowHighWillALenderAllowYourDeductibleToBePage() {
                         afford to cover a claim.
                       </p>
                       <p className="mb-2 font-semibold text-[#052316]">Most lenders require:</p>
-                      <ul className="list-disc pl-6 space-y-2">
-                        <li>A deductible of $5,000 or less</li>
-                        <li>OR 5% of the home&apos;s value, whichever is lower</li>
-                      </ul>
+                      <TranscriptList>
+                        <TranscriptCheckItem>
+                          A deductible of $5,000 or less
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          OR 5% of the home&apos;s value, whichever is lower
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
@@ -374,18 +393,26 @@ export default function HowHighWillALenderAllowYourDeductibleToBePage() {
                       <p className="mb-2 font-semibold text-[#052316]">
                         Consider a higher deductible if:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>You have enough savings to cover a larger deductible in case of a claim</li>
-                        <li>You don&apos;t plan on filing frequent claims</li>
-                        <li>You want to save on your monthly mortgage costs</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          You have enough savings to cover a larger deductible in case of a claim
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          You don&apos;t plan on filing frequent claims
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          You want to save on your monthly mortgage costs
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">Stick with a lower deductible if:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           You prefer more coverage with less out-of-pocket expense in case of damage
-                        </li>
-                        <li>You anticipate needing to file a claim in the near future</li>
-                      </ul>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          You anticipate needing to file a claim in the near future
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         [08:55] Remember: Insurance companies track your claims history. Just like car
                         insurance, too many claims can increase your rates.

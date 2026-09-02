@@ -8,6 +8,10 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
+import {
+  TranscriptCheckItem,
+  TranscriptList,
+} from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/getting-a-mortgage-with-employment-gaps/");
 
@@ -370,14 +374,26 @@ export default function GettingMortgageWithEmploymentGapsPage() {
                       <p className="mb-3">
                         There are many valid reasons why someone might have an employment gap, including:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 text-[15.5px] mb-3">
-                        <li>Job loss (looking for the right fit)</li>
-                        <li>Maternity/paternity leave (stay-at-home parents returning to work)</li>
-                        <li>Caring for a family member (elderly parents, children, etc.)</li>
-                        <li>Medical leave (disability, recovery from an accident, etc.)</li>
-                        <li>Military deployment or overseas assignments</li>
-                        <li>Returning to work after retirement</li>
-                      </ul>
+                      <TranscriptList className="text-[15.5px] mb-3">
+                        <TranscriptCheckItem>
+                          Job loss (looking for the right fit)
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Maternity/paternity leave (stay-at-home parents returning to work)
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Caring for a family member (elderly parents, children, etc.)
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Medical leave (disability, recovery from an accident, etc.)
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Military deployment or overseas assignments
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Returning to work after retirement
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         If your employment gap was due to one of these reasons, you may still qualify for a mortgage&mdash;but the lender will need additional
                         documentation and explanations.
@@ -389,11 +405,17 @@ export default function GettingMortgageWithEmploymentGapsPage() {
                         Conventional Loans (Fannie Mae &amp; Freddie Mac) [04:37]
                       </h3>
                       <p className="mb-3">Best for borrowers with good credit and stable income.</p>
-                      <ul className="list-disc pl-6 space-y-2 text-[15.5px] mb-3">
-                        <li>You can qualify with an employment gap of ANY length</li>
-                        <li>You only need to be back at work for at least 1 month</li>
-                        <li>Requires a written explanation for why you were unemployed</li>
-                      </ul>
+                      <TranscriptList className="text-[15.5px] mb-3">
+                        <TranscriptCheckItem>
+                          You can qualify with an employment gap of ANY length
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          You only need to be back at work for at least 1 month
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Requires a written explanation for why you were unemployed
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         Example: If a stay-at-home parent has been out of work for 10 years but recently returned to a stable full-time job, they can still qualify&mdash;even after just 1 month of employment!
                       </p>
@@ -408,10 +430,14 @@ export default function GettingMortgageWithEmploymentGapsPage() {
                       <p className="mb-3">
                         FHA has stricter rules for employment gaps: if you&rsquo;ve been unemployed for more than 6 months, you must:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 text-[15.5px] mb-3">
-                        <li>Have at least 6 months of continuous employment before applying</li>
-                        <li>Show at least 2 years of prior work history (even if it was years ago)</li>
-                      </ul>
+                      <TranscriptList className="text-[15.5px] mb-3">
+                        <TranscriptCheckItem>
+                          Have at least 6 months of continuous employment before applying
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Show at least 2 years of prior work history (even if it was years ago)
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         If your job gap was less than 6 months, there are no restrictions&mdash;you can qualify as long as you&rsquo;re currently working.
                       </p>
@@ -429,10 +455,14 @@ export default function GettingMortgageWithEmploymentGapsPage() {
                       <p className="mb-3">
                         VA loans have the strictest rules for employment gaps: if you have a job gap longer than 60 days in the past 2 years, you must:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 text-[15.5px] mb-3">
-                        <li>Show at least 12 months of continuous employment at your current job</li>
-                        <li>Provide a written explanation for the gap</li>
-                      </ul>
+                      <TranscriptList className="text-[15.5px] mb-3">
+                        <TranscriptCheckItem>
+                          Show at least 12 months of continuous employment at your current job
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Provide a written explanation for the gap
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         Example: If a veteran was unemployed for 2.5 months, they must be at their new job for at least 12 months before qualifying for a VA loan.
                       </p>
@@ -480,13 +510,23 @@ export default function GettingMortgageWithEmploymentGapsPage() {
 
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">Final Tips for Getting Approved with Employment Gaps [11:22]</h3>
-                      <ul className="list-disc pl-6 space-y-2 text-[15.5px] mb-3">
-                        <li>Be upfront with your lender&mdash;don&rsquo;t try to hide employment gaps.</li>
-                        <li>Have documentation ready (old W-2s, pay stubs, letters from employers).</li>
-                        <li>Write a letter of explanation for why you had a job gap and why you&rsquo;re now stable.</li>
-                        <li>If your credit is strong, conventional loans may be the best option.</li>
-                        <li>If you need FHA or VA financing, make sure you meet the minimum job history requirements.</li>
-                      </ul>
+                      <TranscriptList className="text-[15.5px] mb-3">
+                        <TranscriptCheckItem>
+                          Be upfront with your lender&mdash;don&rsquo;t try to hide employment gaps.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Have documentation ready (old W-2s, pay stubs, letters from employers).
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Write a letter of explanation for why you had a job gap and why you&rsquo;re now stable.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          If your credit is strong, conventional loans may be the best option.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          If you need FHA or VA financing, make sure you meet the minimum job history requirements.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         Key takeaway: Employment gaps aren&rsquo;t deal-breakers, but they require extra documentation and stable recent employment.
                       </p>

@@ -8,6 +8,11 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
+import {
+  TranscriptCheckItem,
+  TranscriptList,
+  TranscriptPointItem,
+} from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/can-i-relocate-and-get-a-mortgage-while-working-remotely-out-of-state/");
 
@@ -393,11 +398,17 @@ export default function RelocateRemoteMortgagePage() {
                         to the office, which might affect your ability to repay the loan.
                       </p>
                       <p className="mb-3">Some key lender concerns:</p>
-                      <ul className="list-disc pl-6 space-y-2 text-[15.5px]">
-                        <li>Is your remote work arrangement permanent or temporary?</li>
-                        <li>Will your salary and job title remain unchanged?</li>
-                        <li>Can you provide written confirmation from your employer?</li>
-                      </ul>
+                      <TranscriptList className="text-[15.5px]">
+                        <TranscriptPointItem>
+                          Is your remote work arrangement permanent or temporary?
+                        </TranscriptPointItem>
+                        <TranscriptPointItem>
+                          Will your salary and job title remain unchanged?
+                        </TranscriptPointItem>
+                        <TranscriptPointItem>
+                          Can you provide written confirmation from your employer?
+                        </TranscriptPointItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
@@ -408,15 +419,21 @@ export default function RelocateRemoteMortgagePage() {
                         If you want to qualify for a mortgage while working remotely, your employer must
                         provide a letter on company letterhead that states:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 text-[15.5px] mb-3">
-                        <li>Your job title and salary</li>
-                        <li>Your start date and employment terms</li>
-                        <li>That you are allowed to work remotely indefinitely</li>
-                        <li>
+                      <TranscriptList className="text-[15.5px] mb-3">
+                        <TranscriptCheckItem>
+                          Your job title and salary
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Your start date and employment terms
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          That you are allowed to work remotely indefinitely
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           That there are no conditions attached to your remote work (e.g., sales quotas,
                           performance targets, or future reviews)
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         The letter must be signed by your employer and cannot be an informal email. Some
                         lenders may also conduct a verbal verification with your employer.
@@ -442,24 +459,24 @@ export default function RelocateRemoteMortgagePage() {
 
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">Key Takeaways [06:20]</h3>
-                      <ul className="list-disc pl-6 space-y-2 text-[15.5px]">
-                        <li>
+                      <TranscriptList className="text-[15.5px]">
+                        <TranscriptCheckItem>
                           Employer approval is crucial &ndash; You need written confirmation that your remote
                           work arrangement is permanent.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           The letter must be formal &ndash; A simple email won&apos;t work. It must be on
                           company letterhead and include specific employment details.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           No conditions or time limits &ndash; The arrangement cannot be temporary or
                           contingent on meeting certain job performance criteria.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           W-2 Employees Only &ndash; These rules apply to W-2 employees. If you are
                           self-employed, different rules apply.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                     </div>
 
                     <div>

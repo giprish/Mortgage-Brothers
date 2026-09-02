@@ -9,6 +9,13 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
+import {
+  TranscriptCheckItem,
+  TranscriptCrossItem,
+  TranscriptDiamondItem,
+  TranscriptList,
+  TranscriptPointItem,
+} from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/buying-a-house-with-a-cash-offer-and-simultaneously-getting-mortgage-financing/");
 
@@ -338,8 +345,8 @@ export default function CashOfferMortgageFinancingPage() {
                         Knoell. Today, we&apos;re answering a question that many homebuyers don&apos;t even
                         know how to ask:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptPointItem>
                           How can you buy a home with a{" "}
                           <a
                             href="https://en.wikipedia.org/wiki/Cash_offer"
@@ -350,9 +357,11 @@ export default function CashOfferMortgageFinancingPage() {
                             cash offer
                           </a>{" "}
                           if you don&apos;t have cash?
-                        </li>
-                        <li>Can you still get a mortgage after using cash to buy a home?</li>
-                      </ul>
+                        </TranscriptPointItem>
+                        <TranscriptPointItem>
+                          Can you still get a mortgage after using cash to buy a home?
+                        </TranscriptPointItem>
+                      </TranscriptList>
                       <p>
                         This happens more often than you think&mdash;especially in competitive real estate
                         markets where buyers struggle to win bids. Let&apos;s break it down!
@@ -364,25 +373,29 @@ export default function CashOfferMortgageFinancingPage() {
                         Why Do Buyers Use Cash Offers? [00:40]
                       </h3>
                       <p className="mb-3">Many buyers find themselves in this situation:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>They&apos;ve been outbid before and realize cash offers win.</li>
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          They&apos;ve been outbid before and realize cash offers win.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           They have a relative (e.g., parent) with cash who&apos;s willing to help.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           They need a loan, but using cash first helps secure the deal faster.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">Common Scenario:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           You find your dream home but realize sellers are only considering cash offers.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           A family member (e.g., parent) has cash and offers to help.
-                        </li>
-                        <li>But you still need a mortgage after purchasing the home.</li>
-                      </ul>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          But you still need a mortgage after purchasing the home.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         The solution? Buying with cash and then getting mortgage financing after closing!
                       </p>
@@ -397,14 +410,18 @@ export default function CashOfferMortgageFinancingPage() {
                         home from her mother after closing&mdash;resulting in two sets of closing costs.
                       </p>
                       <p className="mb-3">We told her that&apos;s not necessary. Instead, we showed her how to:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Use her mother&apos;s cash to buy the home as a cash buyer.</li>
-                        <li>Structure it as a private loan between her and her mother.</li>
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          Use her mother&apos;s cash to buy the home as a cash buyer.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Structure it as a private loan between her and her mother.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           Immediately refinance after closing to pay her mother back&mdash;without extra
                           purchase costs!
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         This is called rate and term refinancing&mdash;it lets you pay back your private
                         lender right after buying the home.
@@ -419,11 +436,17 @@ export default function CashOfferMortgageFinancingPage() {
                         Instead of buying the home from your relative, your relative becomes the lender. This
                         means:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>You use their cash to buy the home.</li>
-                        <li>They act as a private lender instead of a co-buyer.</li>
-                        <li>You refinance right after closing to repay them.</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          You use their cash to buy the home.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          They act as a private lender instead of a co-buyer.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          You refinance right after closing to repay them.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         <strong>Key Advantage:</strong> Since your relative isn&apos;t underwriting the loan
                         like a bank, the deal still counts as a cash offer, making it highly attractive to
@@ -438,53 +461,71 @@ export default function CashOfferMortgageFinancingPage() {
                       <p className="mb-2 font-semibold text-[#052316]">
                         1. Find a Lender Who Understands This Process
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Not all lenders will structure this correctly.</li>
-                        <li>Work with a mortgage team that has done this before.</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCrossItem>
+                          Not all lenders will structure this correctly.
+                        </TranscriptCrossItem>
+                        <TranscriptCheckItem>
+                          Work with a mortgage team that has done this before.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">
                         2. Set Up a Private Loan with a Deed of Trust
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Your family member (or private lender) provides cash.</li>
-                        <li>The title company creates a loan agreement (deed of trust).</li>
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          Your family member (or private lender) provides cash.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          The title company creates a loan agreement (deed of trust).
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           You sign a note stating you&apos;ll pay them back (just like a normal loan).
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">
                         3. Buy the Home with Cash &amp; Close the Deal
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>The seller sees a cash offer with no contingencies.</li>
-                        <li>You win the home without loan-related delays.</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          The seller sees a cash offer with no contingencies.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          You win the home without loan-related delays.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">
                         4. Apply for a Mortgage (Rate &amp; Term Refinance)
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           Once you own the home, you immediately refinance to pay off the private lender
                           (family member) and convert the private loan into a traditional mortgage.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">
                         5. Repay Your Private Lender with Mortgage Funds
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>The refinance loan pays back your family member.</li>
-                        <li>You now have a regular mortgage like any other homebuyer.</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          The refinance loan pays back your family member.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          You now have a regular mortgage like any other homebuyer.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">Important:</p>
-                      <ul className="list-disc pl-6 space-y-2">
-                        <li>
+                      <TranscriptList>
+                        <TranscriptCheckItem>
                           The private loan must have market terms (interest rate, repayment terms).
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCrossItem>
                           The lender must charge some interest&mdash;it cannot be a gift.
-                        </li>
-                        <li>You may need to make one monthly payment before refinancing.</li>
-                      </ul>
+                        </TranscriptCrossItem>
+                        <TranscriptCheckItem>
+                          You may need to make one monthly payment before refinancing.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
@@ -516,17 +557,17 @@ export default function CashOfferMortgageFinancingPage() {
                         Why This Works: Cash Strength + Mortgage Flexibility [08:11]
                       </h3>
                       <p className="mb-3">This strategy is a win-win because:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           Sellers prefer cash offers (higher chances of winning the deal).
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptDiamondItem>
                           You get a mortgage right after closing (instead of waiting months).
-                        </li>
-                        <li>
+                        </TranscriptDiamondItem>
+                        <TranscriptCheckItem>
                           You avoid extra purchase costs&mdash;you only pay for one transaction, not two.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         It&apos;s like &ldquo;having your cake and eating it too&rdquo;&mdash;you get the
                         benefits of a cash offer and the affordability of a mortgage!
@@ -538,15 +579,17 @@ export default function CashOfferMortgageFinancingPage() {
                         Final Thoughts: Should You Use This Strategy? [09:20]
                       </h3>
                       <p className="mb-3">This works best if:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>You&apos;re competing in a tough housing market.</li>
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          You&apos;re competing in a tough housing market.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           You have a family member or private lender willing to help.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           You need a mortgage but also want to win with a cash offer.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         Make sure you work with a lender who understands how to structure this properly!
                       </p>

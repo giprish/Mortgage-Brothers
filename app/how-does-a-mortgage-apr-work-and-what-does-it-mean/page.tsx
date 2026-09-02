@@ -8,6 +8,12 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
+import {
+  TranscriptCheckItem,
+  TranscriptDiamondItem,
+  TranscriptList,
+  TranscriptMoneyItem,
+} from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/how-does-a-mortgage-apr-work-and-what-does-it-mean/");
 
@@ -346,10 +352,14 @@ export default function MortgageAprPage() {
                       <p className="mb-3">
                         <strong>Eddie:</strong> Think of it this way:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 text-[15.5px]">
-                        <li>Interest Rate = Cost of borrowing the money</li>
-                        <li>APR = Interest rate + certain fees included in the loan</li>
-                      </ul>
+                      <TranscriptList className="text-[15.5px]">
+                        <TranscriptCheckItem>
+                          Interest Rate = Cost of borrowing the money
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          APR = Interest rate + certain fees included in the loan
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
@@ -378,10 +388,14 @@ export default function MortgageAprPage() {
                       <p className="mb-4">
                         <strong>Eddie:</strong> In general, APR increases when loan costs are higher.
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 text-[15.5px] mb-4">
-                        <li>If a loan has zero closing costs, the APR and interest rate should be the same.</li>
-                        <li>If a loan includes points or other fees, the APR will be higher than the interest rate.</li>
-                      </ul>
+                      <TranscriptList className="text-[15.5px] mb-4">
+                        <TranscriptCheckItem>
+                          If a loan has zero closing costs, the APR and interest rate should be the same.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          If a loan includes points or other fees, the APR will be higher than the interest rate.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         <strong>Tom:</strong> This is why two lenders offering the same interest rate might
                         show different APRs—one might be including more fees in the calculation.
@@ -413,17 +427,29 @@ export default function MortgageAprPage() {
                       </h3>
                       <p className="mb-4">Let&apos;s look at two example loans:</p>
                       <p className="mb-2 font-semibold text-[#052316]">Loan A:</p>
-                      <ul className="list-disc pl-6 space-y-2 text-[15.5px] mb-4">
-                        <li>Interest Rate: 3.25%</li>
-                        <li>Closing Costs: $0</li>
-                        <li>APR: 3.25% (since there are no fees)</li>
-                      </ul>
+                      <TranscriptList className="text-[15.5px] mb-4">
+                        <TranscriptDiamondItem>
+                          Interest Rate: 3.25%
+                        </TranscriptDiamondItem>
+                        <TranscriptMoneyItem>
+                          Closing Costs: $0
+                        </TranscriptMoneyItem>
+                        <TranscriptDiamondItem>
+                          APR: 3.25% (since there are no fees)
+                        </TranscriptDiamondItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">Loan B:</p>
-                      <ul className="list-disc pl-6 space-y-2 text-[15.5px] mb-4">
-                        <li>Interest Rate: 2.875%</li>
-                        <li>Closing Costs: $3,750</li>
-                        <li>APR: 2.973% (higher because it includes the loan costs)</li>
-                      </ul>
+                      <TranscriptList className="text-[15.5px] mb-4">
+                        <TranscriptDiamondItem>
+                          Interest Rate: 2.875%
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          Closing Costs: $3,750
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          APR: 2.973% (higher because it includes the loan costs)
+                        </TranscriptDiamondItem>
+                      </TranscriptList>
                       <p>
                         <strong>Eddie:</strong> Even though Loan B has a lower interest rate, the APR is
                         higher due to the added costs.

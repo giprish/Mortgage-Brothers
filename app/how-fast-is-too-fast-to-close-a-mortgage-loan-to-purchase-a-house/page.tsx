@@ -9,6 +9,13 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
+import {
+  TranscriptCheckItem,
+  TranscriptDiamondItem,
+  TranscriptLightbulbLine,
+  TranscriptList,
+  TranscriptPointItem,
+} from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house/");
 
@@ -352,11 +359,17 @@ export default function HowFastIsTooFastToClosePage() {
                         Welcome to the Mortgage Brothers Podcast! I&apos;m Eddie Knoell, and I&apos;m Tom
                         Knoell. Today, we&apos;re tackling one of the most common questions homebuyers ask:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>How fast can I close on my home purchase?</li>
-                        <li>Can you close in a week?</li>
-                        <li>What&apos;s the ideal closing timeline?</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptPointItem>
+                          How fast can I close on my home purchase?
+                        </TranscriptPointItem>
+                        <TranscriptPointItem>
+                          Can you close in a week?
+                        </TranscriptPointItem>
+                        <TranscriptPointItem>
+                          What&apos;s the ideal closing timeline?
+                        </TranscriptPointItem>
+                      </TranscriptList>
                       <p>
                         Let&apos;s set the record straight on what&apos;s possible, what&apos;s realistic, and
                         what&apos;s best for you.
@@ -371,20 +384,20 @@ export default function HowFastIsTooFastToClosePage() {
                         Homebuyers often hear lenders advertising super-fast closings&mdash;sometimes as
                         little as 7 to 10 days. But is that realistic?
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptDiamondItem>
                           <strong>Fastest Close We&apos;ve Ever Done:</strong> 12 days &ndash; but it was under
                           perfect conditions.
-                        </li>
-                        <li>
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
                           <strong>Typical Fast Close:</strong> 25 days or less &ndash; anything under 30 days
                           is considered quick.
-                        </li>
-                        <li>
+                        </TranscriptDiamondItem>
+                        <TranscriptCheckItem>
                           <strong>The Reality?</strong> If a lender is advertising 10-day closings, they likely
                           have higher fees, higher rates, or aren&apos;t that busy.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         <strong>Important:</strong> While we&apos;ve done super-fast closings, it&apos;s not
                         the best option for most buyers.
@@ -396,23 +409,29 @@ export default function HowFastIsTooFastToClosePage() {
                         What&apos;s the Ideal Closing Timeframe? [05:12]
                       </h3>
                       <p className="mb-3">The best closing timeline is:</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           <strong>30 Days</strong> &ndash; This is the industry standard.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>20-25 Days</strong> &ndash; This is considered fast but reasonable.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>15 Days or Less</strong> &ndash; Extremely rushed and high-stress.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">Why 30 Days?</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>Gives enough time for underwriting, appraisal, and title review.</li>
-                        <li>Reduces stress for buyers, sellers, and lenders.</li>
-                        <li>Minimizes errors that can delay closing.</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          Gives enough time for underwriting, appraisal, and title review.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Reduces stress for buyers, sellers, and lenders.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Minimizes errors that can delay closing.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         <strong>Fun Fact:</strong> A 30-day closing means we actually have only 20-21 business
                         days to get everything done!
@@ -424,27 +443,33 @@ export default function HowFastIsTooFastToClosePage() {
                         Why Closing Too Fast Can Be a Bad Idea [06:04]
                       </h3>
                       <p className="mb-2 font-semibold text-[#052316]">1. More Stress for the Buyer</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>You&apos;ll feel rushed &ndash; need to sign paperwork quickly.</li>
-                        <li>You&apos;ll have less time for inspections, rate locks, and negotiations.</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          You&apos;ll feel rushed &ndash; need to sign paperwork quickly.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          You&apos;ll have less time for inspections, rate locks, and negotiations.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">2. More Human Errors in Paperwork</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           Rushing increases the chance of typos, incorrect addresses, and missing documents.
-                        </li>
-                        <li>Lenders, title companies, and underwriters need time to get everything right.</li>
-                      </ul>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Lenders, title companies, and underwriters need time to get everything right.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-2 font-semibold text-[#052316]">3. You Might Skip Important Steps</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           <strong>Home Inspections</strong> &ndash; Rushing could mean skipping a detailed home
                           inspection.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>Appraisals</strong> &ndash; You might pay extra for a rushed appraisal.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         <strong>Takeaway:</strong> A 30-day closing lets you make smart decisions rather than
                         rushing into a major financial commitment.
@@ -456,19 +481,19 @@ export default function HowFastIsTooFastToClosePage() {
                         Where Does the Pressure to Close Fast Come From? [08:27]
                       </h3>
                       <p className="mb-3">Many buyers feel pressured to close quickly. But why?</p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           <strong>Self-Imposed Pressure</strong> &ndash; You want to move in ASAP.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>Real Estate Agents</strong> &ndash; Some agents push for quick closings to
                           &ldquo;secure the deal.&rdquo;
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>Sellers&apos; Expectations</strong> &ndash; Some sellers prefer quick
                           closings, but many don&apos;t require it.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         <strong>Seasoned Agents Know Better.</strong> Good agents understand that rushing
                         isn&apos;t always necessary. They factor in holiday schedules, loan processing time,
@@ -488,20 +513,20 @@ export default function HowFastIsTooFastToClosePage() {
                         Sometimes, a buyer must close quickly&mdash;maybe they&apos;re relocating, have a
                         family emergency, or need to align with another home sale.
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           <strong>Be Tech-Savvy</strong> &ndash; You&apos;ll need to quickly upload PDFs of
                           bank statements, pay stubs, and tax returns.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>Communicate Everything</strong> &ndash; If you own multiple properties, have
                           self-employment income, or complex assets, tell your lender ASAP.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>Have All Funds Ready</strong> &ndash; If you&apos;re moving money between
                           accounts, do it before applying for the loan.
-                        </li>
-                      </ul>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p>
                         <strong>Remember:</strong> Closing fast requires teamwork between you, your lender, and
                         your real estate agent.
@@ -512,37 +537,36 @@ export default function HowFastIsTooFastToClosePage() {
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
                         Special Cases: Jumbo Loans &amp; Simultaneous Closings [13:38]
                       </h3>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
                           <strong>Jumbo Loans</strong> &ndash; Typically require 45+ days to close due to extra
                           underwriting requirements.
-                        </li>
-                        <li>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
                           <strong>Simultaneous Closings</strong> &ndash; If selling one home and buying
                           another, using the same title company helps speed things up.
-                        </li>
-                      </ul>
-                      <p>
-                        <strong>Key Takeaway:</strong> If you&apos;re dealing with complex transactions, expect
+                        </TranscriptCheckItem>
+                      </TranscriptList>
+                      <TranscriptLightbulbLine><strong>Key Takeaway:</strong> If you&apos;re dealing with complex transactions, expect
                         extra time to close.
-                      </p>
+                      </TranscriptLightbulbLine>
                     </div>
 
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
                         Final Answer: How Fast Can You Close on a Home? [07:49]
                       </h3>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>
+                      <TranscriptList className="mb-3">
+                        <TranscriptDiamondItem>
                           <strong>Standard Close:</strong> 30 days (best for most buyers).
-                        </li>
-                        <li>
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
                           <strong>Fast Close:</strong> 20-25 days (if needed).
-                        </li>
-                        <li>
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
                           <strong>Super-Fast Close:</strong> 15 days or less (only in rare cases).
-                        </li>
-                      </ul>
+                        </TranscriptDiamondItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         <strong>Avoid Rushing!</strong> Closing too fast increases stress, errors, and costs.
                       </p>

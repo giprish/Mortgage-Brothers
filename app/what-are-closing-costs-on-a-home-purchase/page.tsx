@@ -8,6 +8,13 @@ import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
+import {
+  TranscriptCheckItem,
+  TranscriptDiamondItem,
+  TranscriptLightbulbLine,
+  TranscriptList,
+  TranscriptMoneyItem,
+} from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/what-are-closing-costs-on-a-home-purchase/");
 
@@ -227,10 +234,14 @@ export default function ClosingCostsPage() {
                         [01:44]<br />
                         Many people believe closing costs are a percentage of the home price, but that&apos;s not really accurate. Closing costs cover the <strong>work required to process the loan</strong>, and the cost doesn&apos;t scale exactly with the loan amount.
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li>For a <strong>$200,000 home</strong>, closing costs are often between <strong>$3,000 and $3,800</strong>.</li>
-                        <li>For a <strong>$500,000 home</strong>, they might not be much higher.</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptDiamondItem>
+                          For a <strong>$200,000 home</strong>, closing costs are often between <strong>$3,000 and $3,800</strong>.
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          For a <strong>$500,000 home</strong>, they might not be much higher.
+                        </TranscriptDiamondItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
@@ -252,14 +263,20 @@ export default function ClosingCostsPage() {
                         [03:46]<br />
                         To help explain closing costs, let&apos;s look at a real example:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li><strong>Home price</strong>: $370,000</li>
-                        <li><strong>Down payment</strong>: 20%–30%</li>
-                        <li><strong>Total closing costs</strong>: <strong>$3,563</strong> (excluding prepaids)</li>
-                      </ul>
-                      <p className="mb-3">
-                        💡 <strong>Important Note:</strong> Many Loan Estimates will show a higher <strong>Estimated Closing Costs</strong> amount because it includes <strong>prepaids</strong> (taxes, insurance, etc.). <strong>Actual loan fees are separate.</strong>
-                      </p>
+                      <TranscriptList className="mb-3">
+                        <TranscriptMoneyItem>
+                          <strong>Home price</strong>: $370,000
+                        </TranscriptMoneyItem>
+                        <TranscriptDiamondItem>
+                          <strong>Down payment</strong>: 20%–30%
+                        </TranscriptDiamondItem>
+                        <TranscriptMoneyItem>
+                          <strong>Total closing costs</strong>: <strong>$3,563</strong> (excluding prepaids)
+                        </TranscriptMoneyItem>
+                      </TranscriptList>
+                      <TranscriptLightbulbLine className="mb-3">
+                        <strong>Important Note:</strong> Many Loan Estimates will show a higher <strong>Estimated Closing Costs</strong> amount because it includes <strong>prepaids</strong> (taxes, insurance, etc.). <strong>Actual loan fees are separate.</strong>
+                      </TranscriptLightbulbLine>
                     </div>
 
                     <div>
@@ -270,13 +287,23 @@ export default function ClosingCostsPage() {
                         [05:35]<br />
                         On <strong>page 2</strong> of your Loan Estimate, the left side lists all <strong>closing costs</strong>. These include:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li><strong>Underwriting Fees</strong> (~$1,000)</li>
-                        <li><strong>Appraisal Fee</strong> ($500–$550)</li>
-                        <li><strong>Credit Report Fee</strong> ($40–$60)</li>
-                        <li><strong>Flood Certification &amp; Tax Service Fees</strong> ($15 for flood, ~$80 for tax verification)</li>
-                        <li><strong>Title Company Fees</strong> (~$1,800–$1,900)</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptDiamondItem>
+                          <strong>Underwriting Fees</strong> (~$1,000)
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          <strong>Appraisal Fee</strong> ($500–$550)
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          <strong>Credit Report Fee</strong> ($40–$60)
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          <strong>Flood Certification &amp; Tax Service Fees</strong> ($15 for flood, ~$80 for tax verification)
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          <strong>Title Company Fees</strong> (~$1,800–$1,900)
+                        </TranscriptDiamondItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
@@ -316,10 +343,14 @@ export default function ClosingCostsPage() {
                       <p className="mb-3">
                         [08:46]
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li><strong>Flood Certification Fee</strong> (~$15) ensures the property doesn&apos;t require flood insurance.</li>
-                        <li><strong>Tax Service Fee</strong> (~$80) verifies that property taxes are paid on time.</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          <strong>Flood Certification Fee</strong> (~$15) ensures the property doesn&apos;t require flood insurance.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>Tax Service Fee</strong> (~$80) verifies that property taxes are paid on time.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
@@ -330,19 +361,31 @@ export default function ClosingCostsPage() {
                         [09:46]<br />
                         Title fees are set by <strong>third-party title companies</strong> (not the lender). These include:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li><strong>Closing Protection Letter (CPL)</strong></li>
-                        <li><strong>Document Preparation Fees</strong></li>
-                        <li><strong>Lender&apos;s Title Policy</strong></li>
-                        <li><strong>Settlement/Escrow Fee</strong></li>
-                      </ul>
-                      <p className="mb-3">
-                        💡 <strong>Key Title Fees</strong>:
-                      </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li><strong>Settlement/Escrow Fee</strong> (~$500–$600) covers the labor costs for handling the transaction.</li>
-                        <li><strong>Lender&apos;s Title Policy</strong> ensures the property&apos;s ownership history is clear and prevents future claims against the property.</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          <strong>Closing Protection Letter (CPL)</strong>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>Document Preparation Fees</strong>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>Lender&apos;s Title Policy</strong>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>Settlement/Escrow Fee</strong>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
+                      <TranscriptLightbulbLine className="mb-3">
+                        <strong>Key Title Fees</strong>:
+                      </TranscriptLightbulbLine>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          <strong>Settlement/Escrow Fee</strong> (~$500–$600) covers the labor costs for handling the transaction.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>Lender&apos;s Title Policy</strong> ensures the property&apos;s ownership history is clear and prevents future claims against the property.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
@@ -353,10 +396,14 @@ export default function ClosingCostsPage() {
                         [14:09]<br />
                         Some costs listed on the Loan Estimate are <strong>not actually closing costs</strong>—these are <strong>prepaid expenses</strong> like:
                       </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li><strong>Homeowners insurance</strong> (typically one year upfront)</li>
-                        <li><strong>Property taxes</strong> (several months of escrow payments)</li>
-                      </ul>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          <strong>Homeowners insurance</strong> (typically one year upfront)
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>Property taxes</strong> (several months of escrow payments)
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-3">
                         These prepaids are <strong>not fees</strong> but <strong>funds set aside for future payments</strong>.
                       </p>
@@ -373,14 +420,20 @@ export default function ClosingCostsPage() {
                       <p className="mb-3">
                         If a lender tells you <strong>closing costs are only $1,000</strong>, they&apos;re likely only quoting <strong>their fee</strong>, not the total amount.
                       </p>
-                      <p className="mb-3">
-                        💡 <strong>Quick Summary</strong>:
-                      </p>
-                      <ul className="list-disc pl-6 space-y-2 mb-3">
-                        <li><strong>Purchase Closing Costs</strong>: ~$3,500</li>
-                        <li><strong>Refinance Closing Costs</strong>: ~$2,500</li>
-                        <li><strong>Prepaids &amp; Taxes</strong>: Additional, but not actual fees</li>
-                      </ul>
+                      <TranscriptLightbulbLine className="mb-3">
+                        <strong>Quick Summary</strong>:
+                      </TranscriptLightbulbLine>
+                      <TranscriptList className="mb-3">
+                        <TranscriptDiamondItem>
+                          <strong>Purchase Closing Costs</strong>: ~$3,500
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          <strong>Refinance Closing Costs</strong>: ~$2,500
+                        </TranscriptDiamondItem>
+                        <TranscriptDiamondItem>
+                          <strong>Prepaids &amp; Taxes</strong>: Additional, but not actual fees
+                        </TranscriptDiamondItem>
+                      </TranscriptList>
                     </div>
 
                     <div>
