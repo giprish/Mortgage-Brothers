@@ -4,6 +4,7 @@ import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
@@ -129,9 +130,29 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
           <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
             <article className="min-w-0">
 
+              <Image
+                src="/home/seller-concessions-to-buyers-how-much.jpg"
+                alt="How much seller concessions to buyers affect closing costs and home sales."
+                width={1920}
+                height={1080}
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 900px"
+                className="w-full h-auto rounded-xl border border-[#e8e0d0]/70 mb-8"
+              />
+
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-5 font-semibold">
                 Attached and Detached Resales in the Greater Phoenix Metro Area for prior 30 day period as of 2/9/19
               </p>
+
+              <Image
+                src="/home/sellerconcessions.png"
+                alt="Chart showing seller concessions as a percentage of sale price by property price range as of February 9, 2019."
+                width={1664}
+                height={1050}
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 900px"
+                className="w-full h-auto rounded-xl border border-[#e8e0d0]/70 mb-8"
+              />
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
                 The above graph represents the average seller concession to buyers within the prior 30 day period
@@ -160,11 +181,31 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
               </div>
 
               <div className="space-y-10 text-[#3a4a3a] text-[16px] leading-[1.8]">
+                <Image
+                  src="/home/closingsandconcessions.png"
+                  alt="Chart showing the number of closings by seller concession amount in the Greater Phoenix Metro Area as of February 9, 2019."
+                  width={1654}
+                  height={1076}
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 900px"
+                  className="w-full h-auto rounded-xl border border-[#e8e0d0]/70"
+                />
+
                 <p>
                   The graph above shows the number of closings by amount of concession to the buyers in the
                   Greater Phoenix Metro Market area. The total number of closings for the period was 2,112. Data
                   gathered from ARMLS closings for prior 30 days as of 2/9/19.
                 </p>
+
+                <Image
+                  src="/home/concessionsbycity.png"
+                  alt="Chart showing concessions as a percentage of sale price by city as of February 9, 2019."
+                  width={1658}
+                  height={1126}
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 900px"
+                  className="w-full h-auto rounded-xl border border-[#e8e0d0]/70"
+                />
 
                 <section>
                   <ul className="list-disc pl-6 space-y-3">

@@ -5,6 +5,7 @@ import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
@@ -136,6 +137,16 @@ export default function AirConditioningPhoenixRealEstatePage() {
                 wasn&apos;t until the 1950s that the city began growing in earnest. That is when air conditioning
                 became available for residential use.
               </p>
+
+              <Image
+                src="/home/az-energy-consumption.jpg"
+                alt="Energy consumption by end use in Arizona, compared to the U.S. average, focusing on air conditioning, space heating, and cooling equipment."
+                width={1200}
+                height={785}
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 900px"
+                className="w-full h-auto rounded-xl border border-[#e8e0d0]/70 mb-10"
+              />
 
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
                 <h2

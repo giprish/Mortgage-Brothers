@@ -5,6 +5,7 @@ import { buildArticleSchemas } from "@/lib/seo/structured-data";
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
@@ -201,11 +202,20 @@ export default function IsHomeownershipHereditaryPage() {
                     Interestingly, the study discovered another factor that affected millennial homeownership
                     rates. This one, too, has to do with the parents of millenials.
                   </p>
-                  <p>
+                  <p className="mb-5">
                     The study found that as parents&apos; net worth increased, so did the likelihood that their
                     children would own a home. The graph below shows the correlation between a parent&apos;s
                     wealth and a millennial&apos;s likelihood to own a home.
                   </p>
+                  <Image
+                    src="/home/millennial-homeownership-graph.jpeg"
+                    alt="Bar chart showing millennial homeownership rates by parental wealth, with higher wealth leading to higher ownership rates"
+                    width={1024}
+                    height={768}
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 900px"
+                    className="w-full h-auto rounded-xl border border-[#e8e0d0]/70"
+                  />
                 </section>
 
                 <section id="build-wealth-for-yourself-and-future-generations">

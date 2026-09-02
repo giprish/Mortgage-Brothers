@@ -386,7 +386,9 @@ export default function UltimateGuideFirstMortgagePage() {
                   </p>
                   <ul className="list-disc pl-6 space-y-3">
                     <li>
-                      <strong><Link href="/va-loans-arizona/" className="hover:underline">VA loans</Link></strong><br />
+                      <Link href="/va-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
+                        VA loans
+                      </Link>{" "}
                       are for veterans of the armed forces. VA loans are loans that are guaranteed by the
                       Veterans Administration, which protects the lenders providing these loans against default.
                       Because they&apos;re federally guaranteed, these loans offer very low rates, and also can
@@ -394,13 +396,17 @@ export default function UltimateGuideFirstMortgagePage() {
                       veteran, ask if you qualify for a VA loan.
                     </li>
                     <li>
-                      <strong><Link href="/fha-home-loans-arizona/" className="hover:underline">FHA loans</Link></strong><br />
+                      <Link href="/fha-home-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
+                        FHA loans
+                      </Link>{" "}
                       are another loan program which is commonly used by first time buyers. FHA loans are
                       federally guaranteed loans that are often used by first-time buyers. They offer low rates
                       and a down payment of just 3.5%,
                     </li>
                     <li>
-                      <strong><Link href="/conventional-home-loans-arizona/" className="hover:underline">Conventional loans</Link></strong><br />
+                      <Link href="/conventional-home-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
+                        Conventional loans
+                      </Link>{" "}
                       are loans with are bought and sold on the open mortgage market (more about that in a
                       moment). These loans are offered by all types of lenders according to criteria that makes
                       them easy to underwrite.
