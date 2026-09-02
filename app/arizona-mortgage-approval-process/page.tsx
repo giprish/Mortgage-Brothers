@@ -87,15 +87,53 @@ const tocLinks = [
   { label: "Arizona Mortgage Approval Process FAQ's", href: "#arizona-mortgage-approval-process-faqs" },
 ];
 
-const articleFaqs = [
-  { question: "I was told I needed a second pre-approval letter from a different lender when I wanted to make an offer on a certain home. Why?", answer: "Some large banks that are trying to sell a bank-owned or short sale property may require this and it’s called “Cross Qualification”. In effect, this may be required in order to make the seller, the agent, or the bank who owns the property more comfortable that if the primary lending option falls through that there is a backup plan in place." },
-  { question: "I was pre-approved for a loan, but after I found a home and signed the contract, my lender decided to deny my loan! Why did they do that?", answer: "Unfortunately since Arizona mortgage loans have many moving parts, sometimes even the smallest change in credit scores, income or employment can change the status of a loan causing the lender to deny it at the last minute. Other issues such as the appraised value, the inspection report, or even the seller turning uncooperative can cause issues along with changes in the interest rates offered by a lender. There are many reason to go from a pre-approval to a denial, so be sure to keep in constant contact with your mortgage lender to assure things flow smoothly." },
-  { question: "What happens if I don’t find a home before my pre-approval letter expires?", answer: "This all depends on the mortgage program you’re involved in, but in most cases it will require you to re-submit the most recent 30 days of income and asset documentation as well as having your credit report pulled. This is precisely why it’s important to understand the expiration dates of all documents to avoid having the entire process drag out for months." },
-  { question: "Do I have to sell my current home before I can qualify for a new mortgage loan?", answer: "The answer is…it depends. If you’re in a financial position where you could afford BOTH payments until your first home sells, then there should be no problem! This comes down to your Debt to Income ratio (mentioned earlier) but additional expenses such as maintenance of the first property, unexpected repairs and even property taxes will need to be taken into account." },
-  { question: "What basic background information is required during the initial mortgage application?", answer: "When a loan officer takes your initial application, you must provide your full legal name, a complete two-year residence and employment history, documentation of your assets and income, a list of any other properties you own, and disclosures regarding past credit events like collections, bankruptcies, or foreclosures." },
-  { question: "How do automated underwriting systems evaluate an Arizona mortgage file?", answer: "Once your credit profile and application are loaded, the file is typically submitted through online automated underwriting platforms like Desktop Underwriter (DU) or Loan Product Advisor (LPA). These systems generate automated 'findings' that determine initial approval status and list the explicit documentation requirements needed for the loan file." },
-  { question: "Should I expect the underwriter to request more documents after initial submission?", answer: "Yes. Nearly 99% of all mortgage files receive an initial approval that is conditional, meaning it contains conditional requirements. Homebuyers should fully anticipate that the underwriter will ask for additional supporting documents, asset verifications, or letters of explanation before issuing a final approval." },
-  { question: "What are the final operational steps required to fund an Arizona mortgage?", answer: "Once all conditional requirements are cleared, the lender issues a final approval and delivers the closing loan documents to the title company for your signing appointment. After signing, the package is reviewed by the lender's funder, who authorizes and sends the final wire transfer to the title company to fund the transaction." },
+const visibleFaqs = [
+  {
+    question:
+      "I was told I needed a second pre-approval letter from a different lender when I wanted to make an offer on a certain home. Why?",
+    answer:
+      "Some large banks that are trying to sell a bank-owned or short sale property may require this and it’s called “Cross Qualification”. In effect, this may be required in order to make the seller, the agent, or the bank who owns the property more comfortable that if the primary lending option falls through that there is a backup plan in place.",
+  },
+  {
+    question:
+      "I was pre-approved for a loan, but after I found a home and signed the contract, my lender decided to deny my loan! Why did they do that?",
+    answer:
+      "Unfortunately since Arizona mortgage loans have many moving parts, sometimes even the smallest change in credit scores, income or employment can change the status of a loan causing the lender to deny it at the last minute. Other issues such as the appraised value, the inspection report, or even the seller turning uncooperative can cause issues along with changes in the interest rates offered by a lender. There are many reason to go from a pre-approval to a denial, so be sure to keep in constant contact with your mortgage lender to assure things flow smoothly.",
+  },
+  {
+    question: "What happens if I don’t find a home before my pre-approval letter expires?",
+    answer:
+      "This all depends on the mortgage program you’re involved in, but in most cases it will require you to re-submit the most recent 30 days of income and asset documentation as well as having your credit report pulled. This is precisely why it’s important to understand the expiration dates of all documents to avoid having the entire process drag out for months.",
+  },
+  {
+    question: "Do I have to sell my current home before I can qualify for a new mortgage loan?",
+    answer:
+      "The answer is…it depends. If you’re in a financial position where you could afford BOTH payments until your first home sells, then there should be no problem! This comes down to your Debt to Income ratio (mentioned earlier) but additional expenses such as maintenance of the first property, unexpected repairs and even property taxes will need to be taken into account.",
+  },
+] as const;
+
+const schemaFaqs = [
+  ...visibleFaqs,
+  {
+    question: "What basic background information is required during the initial mortgage application?",
+    answer:
+      "When a loan officer takes your initial application, you must provide your full legal name, a complete two-year residence and employment history, documentation of your assets and income, a list of any other properties you own, and disclosures regarding past credit events like collections, bankruptcies, or foreclosures.",
+  },
+  {
+    question: "How do automated underwriting systems evaluate an Arizona mortgage file?",
+    answer:
+      "Once your credit profile and application are loaded, the file is typically submitted through online automated underwriting platforms like Desktop Underwriter (DU) or Loan Product Advisor (LPA). These systems generate automated 'findings' that determine initial approval status and list the explicit documentation requirements needed for the loan file.",
+  },
+  {
+    question: "Should I expect the underwriter to request more documents after initial submission?",
+    answer:
+      "Yes. Nearly 99% of all mortgage files receive an initial approval that is conditional, meaning it contains conditional requirements. Homebuyers should fully anticipate that the underwriter will ask for additional supporting documents, asset verifications, or letters of explanation before issuing a final approval.",
+  },
+  {
+    question: "What are the final operational steps required to fund an Arizona mortgage?",
+    answer:
+      "Once all conditional requirements are cleared, the lender issues a final approval and delivers the closing loan documents to the title company for your signing appointment. After signing, the package is reviewed by the lender's funder, who authorizes and sends the final wire transfer to the title company to fund the transaction.",
+  },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({
@@ -106,7 +144,7 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-10",
     articleSection: "Mortgage Basics",
   },
-  faqs: [...articleFaqs],
+  faqs: [...schemaFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Basics", path: "/mortgage-basics/" },
@@ -165,10 +203,10 @@ export default function ArizonaMortgageApprovalProcessPage() {
 
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
                 <h2
-                  className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
+                  className="text-[#08271B] text-[24px] lg:text-[28px] font-bold mb-3"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  Master the Process—Connect with Our Experts!
+                  <strong>Master the Process—Connect with Our Experts!</strong>
                 </h2>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
                   Now that you understand the Arizona Mortgage Approval Process, reach out to us. We&apos;re here
@@ -179,17 +217,22 @@ export default function ArizonaMortgageApprovalProcessPage() {
                     href="#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get Pre-Approved
+                    Contact Us Today
                   </Link>
                 </div>
               </div>
 
               <div className="space-y-10 text-[#3a4a3a] text-[16px] leading-[1.8]">
                 <nav
-                  aria-label="Table of contents"
+                  aria-label="Table of Contents"
                   className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm"
                 >
-                  <p className="text-[#052316] text-[16px] font-bold mb-3">On this page</p>
+                  <h2
+                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    Table of Contents
+                  </h2>
                   <ul className="space-y-2">
                     {tocLinks.map((item) => (
                       <li key={item.href}>
@@ -197,26 +240,7 @@ export default function ArizonaMortgageApprovalProcessPage() {
                           href={item.href}
                           className="text-[14px] text-[#3fb364] font-semibold hover:underline"
                         >
-                          {item.label}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </nav>
-
-                <nav
-                  aria-label="Table of contents"
-                  className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm"
-                >
-                  <p className="text-[#052316] text-[16px] font-bold mb-3">On this page</p>
-                  <ul className="space-y-2">
-                    {tocLinks.map((item) => (
-                      <li key={item.href}>
-                        <a
-                          href={item.href}
-                          className="text-[14px] text-[#3fb364] font-semibold hover:underline"
-                        >
-                          {item.label}
+                          <strong>{item.label}</strong>
                         </a>
                       </li>
                     ))}
@@ -248,11 +272,13 @@ export default function ArizonaMortgageApprovalProcessPage() {
 
                   <h3 className="text-[#052316] text-[18px] font-bold mb-3">Step 2</h3>
                   <p className="mb-3 font-semibold text-[#052316]">The loan officer will pull your credit:</p>
-                  <p className="mb-6">
-                    The loan officer will pull your credit to determine what liabilities you have on a monthly
-                    basis and what credit score you have. The content of your credit report as well as the credit
-                    score will impact and affect your approval.
-                  </p>
+                  <ul className="list-disc pl-6 space-y-2 mb-6">
+                    <li>
+                      The loan officer will pull your credit to determine what liabilities you have on a monthly
+                      basis and what credit score you have. The content of your credit report as well as the credit
+                      score will impact and affect your approval.
+                    </li>
+                  </ul>
 
                   <h3 className="text-[#052316] text-[18px] font-bold mb-3">Step 3</h3>
                   <p className="mb-3 font-semibold text-[#052316]">
@@ -471,25 +497,25 @@ export default function ArizonaMortgageApprovalProcessPage() {
                         href="/fha-home-loans-arizona/"
                         className="text-[#3fb364] font-semibold hover:underline"
                       >
-                        FHA
+                        <strong>FHA</strong>
                       </Link>
                       , USDA and{" "}
                       <Link href="/va-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
-                        VA home loans
+                        <strong>VA home loans</strong>
                       </Link>{" "}
                       as well as{" "}
                       <Link
                         href="/conventional-home-loans-arizona/"
                         className="text-[#3fb364] font-semibold hover:underline"
                       >
-                        conventional
+                        <strong>conventional</strong>
                       </Link>{" "}
                       and{" "}
                       <Link
                         href="/jumbo-loans-arizona/"
                         className="text-[#3fb364] font-semibold hover:underline"
                       >
-                        jumbo loan
+                        <strong>jumbo loan</strong>
                       </Link>{" "}
                       financing.
                     </li>
@@ -518,9 +544,10 @@ export default function ArizonaMortgageApprovalProcessPage() {
                     initial conditions are met such as income, assets and loan program conditions.
                   </p>
                   <p className="mb-5">
-                    The Mortgage Approval Conditions List is a more detailed document issued by the underwriter
-                    once an entire loan package is submitted after a review of other qualifying details such as
-                    inspection issues, purchase contract updates and appraisal values.
+                    The{" "}
+                    <strong>Mortgage Approval Conditions List</strong> is a more detailed document issued by the
+                    underwriter once an entire loan package is submitted after a review of other qualifying details
+                    such as inspection issues, purchase contract updates and appraisal values.
                   </p>
                   <p className="mb-4">
                     Pre-approval letters let the borrower know the exact terms of the loan amount, down payment
@@ -545,7 +572,7 @@ export default function ArizonaMortgageApprovalProcessPage() {
                 <section id="arizona-mortgage-approval-process-faqs">
                   <FaqAccordion
                     title="Arizona Mortgage Approval Process FAQ's"
-                    items={articleFaqs.map((faq) => ({
+                    items={visibleFaqs.map((faq) => ({
                       q: faq.question,
                       a: faq.answer,
                     }))}

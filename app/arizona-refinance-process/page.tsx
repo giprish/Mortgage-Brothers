@@ -9,6 +9,7 @@ import Link from "next/link";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
+import MortgageSolutionsGrid from "../component/MortgageSolutionsGrid";
 
 export const metadata: Metadata = getSeoMetadata("/arizona-refinance-process/");
 
@@ -62,19 +63,6 @@ const loanPrograms = [
   { label: "First-time Home Buyer Guide", href: "/first-time-home-buyer-arizona-guide/" },
 ];
 
-const loanSolutions = [
-  { label: "Conventional Home Loans", href: "/conventional-home-loans-arizona/" },
-  { label: "Private Money Lender", href: "/private-money-lender-arizona/" },
-  { label: "FHA Home Loans", href: "/fha-home-loans-arizona/" },
-  { label: "FHA Streamline Refinance", href: "/fha-streamline-refinance-arizona/" },
-  { label: "First Time Home Buyer", href: "/first-time-home-buyer-arizona-guide/" },
-  { label: "Reverse Mortgage", href: "/reverse-mortgage-arizona/" },
-  { label: "Reverse Mortgage for a Home Purchase", href: "/reverse-mortgage-home-purchase-arizona/" },
-  { label: "Refinancing", href: "/refinancing-arizona/" },
-  { label: "Jumbo Loans", href: "/jumbo-loans-arizona/" },
-  { label: "VA Loans", href: "/va-loans-arizona/" },
-];
-
 const articleFaqs = [
   { question: "Is there such a thing as a “No Cost” mortgage?", answer: "We get this question a lot. Technically speaking, there are always costs, it just depends on who is paying them. Either you (the borrower) will pay the closing costs OR the lender will pay them. Even though you may hear or read deceiving advertising that gives you the impression that you can get a loan with no closing costs, they are not being forthcoming. If you don’t want to pay any closing costs, the lender will structure (increase the interest rate) so that the lender will pay them." },
   { question: "How long do I have to wait to refinance after a purchase transaction?", answer: "A good rule of thumb is after your 6th scheduled payment, but there are exceptions. It is wise to discuss this with your lender at the time of your initial application to be sure there are no short-term penalties involved with a quick refinance. Another thing to consider is the cost of a refinance. If you watch the market closely and think that a quick refinance may be a possibility, it may be more beneficial to purchase points rather than having a refinance." },
@@ -104,18 +92,6 @@ const articleJsonLd = buildArticleSchemas({
     { name: "Arizona Refinance Process", path: "/arizona-refinance-process/" },
   ],
 });
-
-const CheckIcon = () => (
-  <svg
-    className="w-5 h-5 text-[#3fb364] shrink-0"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-    strokeWidth="2.5"
-  >
-    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-  </svg>
-);
 
 export default function ArizonaRefinanceProcessPage() {
   return (
@@ -428,28 +404,7 @@ export default function ArizonaRefinanceProcessPage() {
           </div>
         </section>
 
-        <section className="w-full py-16 lg:py-20">
-          <div className="max-w-6xl mx-auto px-6 lg:px-10">
-            <h2
-              className="text-[#08271B] text-[28px] lg:text-[34px] font-normal text-center mb-10"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
-              Explore Our Mortgage Solutions
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {loanSolutions.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="flex items-center gap-3 bg-white border border-[#e8e0d0]/70 rounded-xl px-5 py-4 text-[#08271B] font-semibold text-[14.5px] hover:border-[#3fb364]/50 hover:text-[#3fb364] transition-all"
-                >
-                  <CheckIcon />
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
+        <MortgageSolutionsGrid placeName="Arizona" />
       </main>
 
       <Footer />

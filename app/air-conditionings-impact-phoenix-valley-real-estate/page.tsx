@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -139,10 +138,10 @@ export default function AirConditioningPhoenixRealEstatePage() {
 
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
                 <h2
-                  className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
+                  className="text-[#08271B] text-[24px] lg:text-[28px] font-bold mb-3"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  Buying or Selling a Home in Phoenix? AC Matters!
+                  <strong>Buying or Selling a Home in Phoenix? AC Matters!</strong>
                 </h2>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
                   In Phoenix&apos;s hot climate, air conditioning can impact real estate value. Get expert advice
@@ -183,7 +182,7 @@ export default function AirConditioningPhoenixRealEstatePage() {
                         rel="noopener noreferrer"
                         className="text-[#3fb364] font-semibold hover:underline"
                       >
-                        Willis Carrier
+                        <strong>Willis Carrier</strong>
                       </a>
                       , but these systems
                       didn&apos;t become available for residential use until 1951.
@@ -238,55 +237,35 @@ export default function AirConditioningPhoenixRealEstatePage() {
                     In a city where summer days over 100 degrees are the norm, there&apos;s good reason to be
                     grateful for this modern invention that makes life comfortable for Phoenix residents.
                   </p>
+                </section>
 
-                  <p className="mt-6">
-                    Learn more:{" "}
+                <blockquote className="border-l-4 border-[#3fb364] pl-5 my-8 italic">
+                  <p className="text-[15px]">
+                    Discover how air conditioning influences real estate trends in the Phoenix Valley. Enhance your
+                    market insight by exploring our guide on{" "}
                     <Link
-                      href="https://youtu.be/1MiQCBIx1mM"
-                      target="_blank"
-                      rel="noopener"
-                      className="text-[#3fb364] font-semibold hover:underline"
+                      href="/arizona-real-estate-capital-gains-is-back/"
+                      className="text-[#3fb364] font-semibold hover:underline not-italic"
                     >
-                      How Air Conditioners Work
+                      <strong>real estate capital gains</strong>
+                    </Link>{" "}
+                    and learning about{" "}
+                    <Link
+                      href="/arizona-mortgage-rates-and-the-interest-deduction/"
+                      className="text-[#3fb364] font-semibold hover:underline not-italic"
+                    >
+                      <strong>mortgage rates and deductions</strong>
                     </Link>
+                    . For a complete perspective, review our piece on the{" "}
+                    <Link
+                      href="/what-you-need-to-know-about-the-arizona-prequalification-form/"
+                      className="text-[#3fb364] font-semibold hover:underline not-italic"
+                    >
+                      <strong>prequalification process</strong>
+                    </Link>
+                    .
                   </p>
-                </section>
-
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={articleFaqs.map((faq) => ({
-                      q: faq.question,
-                      a: faq.answer,
-                    }))}
-                  />
-                </section>
-
-                <p className="text-[15px]">
-                  Discover how air conditioning influences real estate trends in the Phoenix Valley. Enhance your
-                  market insight by exploring our guide on{" "}
-                  <Link
-                    href="/arizona-real-estate-capital-gains-is-back/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    real estate capital gains
-                  </Link>{" "}
-                  and learning about{" "}
-                  <Link
-                    href="/arizona-mortgage-rates-and-the-interest-deduction/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    mortgage rates and deductions
-                  </Link>
-                  . For a complete perspective, review our piece on the{" "}
-                  <Link
-                    href="/what-you-need-to-know-about-the-arizona-prequalification-form/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    prequalification process
-                  </Link>
-                  .
-                </p>
+                </blockquote>
 
 
               </div>

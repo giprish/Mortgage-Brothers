@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
-import FaqAccordion from "../component/FaqAccordion";
 import React from "react";
 import Link from "next/link";
 import Navbar from "../component/Navbar";
@@ -130,43 +129,24 @@ export default function PayoffCreditCardsQualifyPage() {
           <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
             <article className="min-w-0">
 
-              <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
-                It Depends on whether you trying to get a Conventional, FHA, or VA home loan
+              <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-5">
+                <strong>
+                  It Depends on whether you trying to get a Conventional, FHA, or VA home loan
+                </strong>
               </p>
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
-                Since June 30, 2015,{" "}
+                Finally some good news. As of June 30th 2015,{" "}
                 <a
                   href="https://www.lawinsider.com/dictionary/mortgage-guidelines"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-[#3fb364] font-semibold hover:underline"
                 >
-                  loan guidelines
+                  <strong>loan guidelines</strong>
                 </a>{" "}
-                have allowed borrowers to pay off credit card and other revolving balances to qualify for a mortgage — a rule that remains in place today.
+                are finally loosening on allowing borrower to payoff mortgage balances to qualify for a mortgage.
               </p>
-
-              <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
-                <h2
-                  className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-                >
-                  Ready to Improve Your Debt Ratio?
-                </h2>
-                <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
-                  Paying down credit cards can help you qualify. Connect with our team for personalized mortgage
-                  advice.
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <Link
-                    href="#get-pre-approved"
-                    className="btn-primary"
-                  >
-                    Get Pre-Approved
-                  </Link>
-                </div>
-              </div>
 
               <div className="space-y-10 text-[#3a4a3a] text-[16px] leading-[1.8]">
                 <section id="conventional-mortgage-past-rules">
@@ -206,7 +186,7 @@ export default function PayoffCreditCardsQualifyPage() {
                       href="/conventional-home-loans-arizona/"
                       className="text-[#3fb364] font-semibold hover:underline"
                     >
-                      conventional loans
+                      <strong>conventional loans</strong>
                     </Link>
                     . As long as we have proof that the credit card balance is $0, we don&apos;t have to count a
                     payment against a borrower. This is really going to help borrowers reduce their debt to income
@@ -222,12 +202,17 @@ export default function PayoffCreditCardsQualifyPage() {
                     FHA Loan and VA home loan rule past rules
                   </h2>
                   <p>
-                    FHA and{" "}
-                    <Link href="/va-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
-                      VA home loan
+                    <Link
+                      href="/fha-home-loans-arizona/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      <strong>FHA</strong>
                     </Link>{" "}
-                    rules have allowed borrowers to pay revolving balances down to qualify since June 30, 2015.
-                    Before that date, lenders required the credit
+                    and{" "}
+                    <Link href="/va-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
+                      <strong>VA home loan</strong>
+                    </Link>{" "}
+                    rules were identical to Conventional before June 30th 2015. Lender would require the credit
                     card balance to be paid down to $0 and the credit card would need to be closed in order for the
                     minimum payment to count against the borrower&apos;s debt to income ratio (DTI) on the mortgage
                     application.
@@ -246,7 +231,7 @@ export default function PayoffCreditCardsQualifyPage() {
                       href="/fha-home-loans-arizona/"
                       className="text-[#3fb364] font-semibold hover:underline"
                     >
-                      FHA
+                      <strong>FHA</strong>
                     </Link>{" "}
                     and VA mortgage guidelines will allow a borrower to pay down their credit card balances to $0
                     and the underwriter will only count a $10/month minimum payment towards the borrower&apos;s
@@ -255,77 +240,47 @@ export default function PayoffCreditCardsQualifyPage() {
                   </p>
                 </section>
 
-                <p>
-                  If you have any questions about this or if you have any questions you&apos;d like us to answer on
-                  our podcast, you can submit your questions using our{" "}
-                  <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                    contact form
-                  </Link>{" "}
-                  or give us a call at{" "}
-                  <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
-                  </a>
-                  . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you
-                  and help you through the whole process.
-                </p>
-
-                
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={articleFaqs.map((faq) => ({
-                      q: faq.question,
-                      a: faq.answer,
-                    }))}
-                  />
-                </section>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you
-                    and help you through the whole process.
+                <blockquote className="border-l-4 border-[#3fb364] pl-5 my-8 italic">
+                  <p className="text-[15px]">
+                    Considering paying off your credit cards to boost your mortgage chances? You might also benefit
+                    from our tips on handling{" "}
+                    <Link
+                      href="/getting-a-mortgage-with-employment-gaps/"
+                      className="text-[#3fb364] font-semibold hover:underline not-italic"
+                    >
+                      <strong>employment gaps</strong>
+                    </Link>
+                    , understanding the benefits of{" "}
+                    <Link
+                      href="/better-getting-mortgage-couple-vs-single-applicant/"
+                      className="text-[#3fb364] font-semibold hover:underline not-italic"
+                    >
+                      <strong>couple vs single applications</strong>
+                    </Link>
+                    , advice on{" "}
+                    <Link
+                      href="/can-i-relocate-and-get-a-mortgage-while-working-remotely-out-of-state/"
+                      className="text-[#3fb364] font-semibold hover:underline not-italic"
+                    >
+                      <strong>relocating while working remotely</strong>
+                    </Link>
+                    , insights into how a{" "}
+                    <Link
+                      href="/how-a-rapid-rescore-can-help-to-get-qualified-for-a-mortgage/"
+                      className="text-[#3fb364] font-semibold hover:underline not-italic"
+                    >
+                      <strong>rapid rescore can improve your profile</strong>
+                    </Link>
+                    , and why a{" "}
+                    <Link
+                      href="/dscr-loan-the-best-alternative-to-hard-money/"
+                      className="text-[#3fb364] font-semibold hover:underline not-italic"
+                    >
+                      <strong>DSCR loan can be a smart alternative</strong>
+                    </Link>
+                    .
                   </p>
-                </div>
-
-                <p className="text-[15px]">
-                  Considering paying off your credit cards to boost your mortgage chances? You might also benefit
-                  from our tips on handling{" "}
-                  <Link
-                    href="/getting-a-mortgage-with-employment-gaps/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    employment gaps
-                  </Link>
-                  , understanding the benefits of{" "}
-                  <Link
-                    href="/better-getting-mortgage-couple-vs-single-applicant/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    couple vs single applications
-                  </Link>
-                  , advice on{" "}
-                  <Link
-                    href="/can-i-relocate-and-get-a-mortgage-while-working-remotely-out-of-state/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    relocating while working remotely
-                  </Link>
-                  , insights into how a{" "}
-                  <Link
-                    href="/how-a-rapid-rescore-can-help-to-get-qualified-for-a-mortgage/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    rapid rescore can improve your profile
-                  </Link>
-                  , and why a{" "}
-                  <Link
-                    href="/dscr-loan-the-best-alternative-to-hard-money/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    DSCR loan can be a smart alternative
-                  </Link>
-                  .
-                </p>
+                </blockquote>
 
                 <p className="text-[#5a6b52] text-[13px] leading-relaxed">
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been

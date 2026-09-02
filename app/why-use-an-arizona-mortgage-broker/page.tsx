@@ -75,6 +75,29 @@ const loanSolutions = [
 ];
 
 
+const articleFaqs = [
+  {
+    question: "Why should I use an Arizona mortgage broker?",
+    answer:
+      "An Arizona mortgage broker can help you find the best mortgage rates by working with multiple lenders, unlike banks that offer only their own loan products. They assist with pre-qualification, completing your mortgage application, locking your loan rate, and guiding you through the entire loan process.",
+  },
+  {
+    question: "What are the benefits of working with an Arizona mortgage broker instead of a bank loan officer?",
+    answer:
+      "Mortgage brokers offer flexible hours, often working evenings and weekends, while bank loan officers typically work 9 a.m. to 5 p.m. Brokers can compare rates across lenders to save you time and money and find solutions for unique financial situations. Bank loan officers can only offer products from their own institution.",
+  },
+  {
+    question: "Can a Realtor help me find a reliable Arizona mortgage broker?",
+    answer:
+      "Yes, Realtors often have established relationships with trusted Arizona mortgage brokers. They can refer you to brokers who have a proven track record of helping clients close their deals smoothly and on time.",
+  },
+  {
+    question: "What is the difference between pre-qualification and pre-approval for a mortgage?",
+    answer:
+      "Pre-qualification provides an estimate of how much you can borrow based on your financial information, while pre-approval means your income, assets, credit, and loan application have been reviewed and approved by a lender. A pre-approval letter carries more weight with sellers and helps you close faster when you find a home.",
+  },
+] as const;
+
 const articleJsonLd = buildArticleSchemas({
   blog: {
     pathname: "/why-use-an-arizona-mortgage-broker/",
@@ -83,6 +106,7 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-10",
     articleSection: "Mortgage Basics",
   },
+  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Basics", path: "/mortgage-basics/" },
@@ -124,27 +148,24 @@ export default function WhyUseAnArizonaMortgageBrokerPage() {
             <article className="min-w-0">
 
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-5">
-                An Arizona Mortgage broker can assist you with finding the best Arizona mortgage rates because the
+                An <strong>Arizona Mortgage broker</strong> can assist you with finding the best Arizona mortgage rates because the
                 broker works with many lenders. If you just go down to your local bank branch, you are limited by
-                the Mortgage products for that particular bank.
+                the <strong>Mortgage products</strong> for that particular bank.
               </p>
 
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
-                <h2
+                <p
                   className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  Experience the Broker Advantage Now!
-                </h2>
+                  <strong>Experience the Broker Advantage Now!</strong>
+                </p>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
                   After exploring why using an Arizona Mortgage Broker benefits you, contact our experts for
                   personalized mortgage solutions.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <Link
-                    href="#get-pre-approved"
-                    className="btn-primary"
-                  >
+                  <Link href="#Get-in-Touch" className="btn-primary">
                     Get Personalized Help Now
                   </Link>
                 </div>
@@ -154,8 +175,8 @@ export default function WhyUseAnArizonaMortgageBrokerPage() {
                 <p>
                   Your Arizona mortgage broker will{" "}
                   <Link
-                    href="#get-pre-approved"
-                    className="text-[#3fb364] font-semibold hover:underline"
+                    href="/arizona-mortgage-approval-process/"
+                    className="text-[#3fb364] hover:underline"
                   >
                     pre-qualify you for a mortgage
                   </Link>
@@ -165,7 +186,7 @@ export default function WhyUseAnArizonaMortgageBrokerPage() {
                 </p>
 
                 <p>
-                  Arizona Bank loan officers are employees of banks, lending institutions or credit unions that
+                  <strong>Arizona Bank loan officers</strong> are employees of banks, lending institutions or credit unions that
                   sell their company&apos;s loan products. As a result they cannot offer you products outside the
                   bank. While they have a variety of loans available to their customers, they are all loan products
                   from their company. The loan officer also pre-qualifies you for a loan, helps you with the
@@ -178,9 +199,9 @@ export default function WhyUseAnArizonaMortgageBrokerPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Benefits of Working With a Arizona Mortgage Broker
+                    <strong>Benefits of Working With a Arizona Mortgage Broker</strong>
                   </h2>
-                  <ul className="list-disc pl-6 space-y-4 mb-5">
+                  <ol className="list-decimal pl-6 space-y-4 mb-5">
                     <li>
                       Mortgage brokers are available after business hours and on weekends if you need them. Bank
                       loan officers work Monday through Friday at a 9 a.m. to 5 p.m. job.
@@ -190,12 +211,12 @@ export default function WhyUseAnArizonaMortgageBrokerPage() {
                       are stuck with the rates they are given from the their bank.
                     </li>
                     <li>
-                      If your scenario is unique, the Bank may have extra overlays or rules that prohibit the you
+                      If your scenario is unique, <strong>the Bank may have extra overlays</strong> or rules that prohibit the you
                       from closing the loan. Bank loan officers will not have the ability to send your loan to a
                       different bank with different guidelines. Mortgage brokers can match you with a bank that
                       will fit your unique scenario.
                     </li>
-                  </ul>
+                  </ol>
                   <p className="mb-5">
                     Your Realtor can refer you to a reputable Arizona mortgage broker because Realtors have
                     established relationships with mortgage brokers they trust to help their clients close their
@@ -217,7 +238,7 @@ export default function WhyUseAnArizonaMortgageBrokerPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Pre-qualify vs. Pre-approved
+                    <strong>Pre-qualify vs. Pre-approved</strong>
                   </h2>
                   <p>
                     Having your Arizona mortgage broker or bank give you a pre-qualified letter makes your offer
@@ -232,32 +253,6 @@ export default function WhyUseAnArizonaMortgageBrokerPage() {
                     how long they expect it will take to close the loan.
                   </p>
                 </section>
-
-                <p>
-                  If you have any questions about working with an Arizona mortgage broker, call us at{" "}
-                  <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
-                  </a>{" "}
-                  or reach us using our{" "}
-                  <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                    contact form
-                  </Link>
-                  .
-                </p>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you
-                    and help you through the whole process.
-                  </p>
-                </div>
-
-                <p className="text-[#5a6b52] text-[13px] leading-relaxed">
-                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
-                  prepared for informational purposes only. You should consult your own tax, legal, and accounting
-                  advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
-                  1618695. Equal Housing Opportunity.
-                </p>
               </div>
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">
@@ -269,7 +264,7 @@ export default function WhyUseAnArizonaMortgageBrokerPage() {
                 </Link>
                 <Link
                   href="/arizona-mortgage-approval-process/"
-                  className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
+                  className="text-[#3fb364] font-semibold hover:underline"
                 >
                   Next Post →
                 </Link>

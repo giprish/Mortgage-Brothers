@@ -74,6 +74,28 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
+const faqs = [
+  {
+    question: "What is a mortgage and how does it work?",
+    answer:
+      "A mortgage is a loan secured by real property, which means the lender is protected by the property itself. The borrower repays the loan over a set period of time. If the borrower fails to make payments, the lender can take ownership of the property to recover losses.",
+  },
+  {
+    question: "What factors do Arizona mortgage lenders consider for loan approval?",
+    answer:
+      "Arizona mortgage lenders typically evaluate a borrower’s credit history, employment history, income, assets, and debts. Additionally, the property must meet certain standards set by the lender before approval of the mortgage loan.",
+  },
+  {
+    question: "How are mortgage payments structured?",
+    answer:
+      "Most home loans are set for 15 or 30 years and include both principal and interest portions. Over time, the amount applied toward interest decreases while the portion applied to the principal increases—a process known as amortization. Lenders may also offer alternative plans such as interest-only payments or introductory teaser rates.",
+  },
+  {
+    question: "What costs and fees are associated with getting a mortgage in Arizona?",
+    answer:
+      "Mortgage costs may include points to secure lower rates, processing or underwriting fees, and other out-of-pocket expenses such as appraisal fees, property taxes, insurance, and inspections. Government consumer protection policies help ensure buyers understand these costs during the mortgage process.",
+  },
+];
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
@@ -83,6 +105,7 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-10",
     articleSection: "Mortgage Basics",
   },
+  faqs,
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Basics", path: "/mortgage-basics/" },
@@ -123,7 +146,7 @@ export default function ArizonaMortgageBasicsPage() {
           <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
             <article className="min-w-0">
 
-              <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-5">
+              <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
                 What exactly is a mortgage anyway? In simple terms a mortgage is a loan that is secured or backed
                 by real property. It is then paid back over a set period of time. The term &quot;secured&quot;
                 means that the lender is protected by the piece of property that he can take ownership of in the
@@ -131,24 +154,12 @@ export default function ArizonaMortgageBasicsPage() {
                 a borrower does not pay, the lender takes the property back to offset their losses.
               </p>
 
-              <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
-                No matter where you live or who does your loan, there are a few standard components to any Mortgage
-                Loan that{" "}
-                <Link
-                  href="/why-use-an-arizona-mortgage-broker/"
-                  className="text-[#3fb364] font-semibold hover:underline"
-                >
-                  we will cover
-                </Link>{" "}
-                below:
-              </p>
-
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
                 <h2
-                  className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
+                  className="text-[#08271B] text-[24px] lg:text-[28px] font-bold mb-3"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  Start Your Mortgage Journey Today!
+                  <strong>Start Your Mortgage Journey Today!</strong>
                 </h2>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
                   Contact Mortgage Brothers LLC for personalized advice on Arizona Mortgage Basics and take
@@ -163,6 +174,18 @@ export default function ArizonaMortgageBasicsPage() {
                   </Link>
                 </div>
               </div>
+
+              <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
+                No matter where you live or who does your loan, there are a few standard components to any Mortgage
+                Loan that{" "}
+                <Link
+                  href="/why-use-an-arizona-mortgage-broker/"
+                  className="text-[#3fb364] font-semibold hover:underline"
+                >
+                  <strong>we will cover</strong>
+                </Link>{" "}
+                below:
+              </p>
 
               <div className="space-y-10 text-[#3a4a3a] text-[16px] leading-[1.8]">
                 <section id="mortgage-approval">
@@ -180,7 +203,7 @@ export default function ArizonaMortgageBasicsPage() {
                       href="/why-use-an-arizona-mortgage-broker/"
                       className="text-[#3fb364] font-semibold hover:underline"
                     >
-                      Arizona mortgage broker
+                      <strong>Arizona mortgage broker</strong>
                     </Link>{" "}
                     will look at your credit history, employment history, your income and any assets and debts you
                     may have. The property must also meet certain standards set by the mortgage lenders before a
@@ -222,18 +245,8 @@ export default function ArizonaMortgageBasicsPage() {
                   <p>
                     Your Arizona mortgage lender has many mortgage program options available and can explain them
                     in detail so that you can make an informed decision as to which plan is best for you. You may
-                    also be eligible for federally insured programs such as{" "}
-                    <Link
-                      href="/fha-home-loans-arizona/"
-                      className="text-[#3fb364] font-semibold hover:underline"
-                    >
-                      FHA
-                    </Link>{" "}
-                    or{" "}
-                    <Link href="/va-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
-                      VA loans
-                    </Link>
-                    , which have more flexible qualifying guidelines. Be sure to exhaust all options.
+                    also be eligible for federally insured programs such as FHA or VA loans, which have more
+                    flexible qualifying guidelines. Be sure to exhaust all options.
                   </p>
                 </section>
 
@@ -268,12 +281,9 @@ export default function ArizonaMortgageBasicsPage() {
                     that you can always pay attention to that may impact your monthly mortgage loan payment. Watch
                     and learn. Shop around for the best rates and learn the difference between the note rate and
                     the APR. Arm yourself with all the right information before you begin the process of purchasing
-                    your home. See{" "}
-                    <Link href="/about-us/" className="text-[#3fb364] font-semibold hover:underline">
-                      The Mortgage Brothers Team
-                    </Link>{" "}
-                    with any and all questions you may have regarding your home purchase and lending process. We
-                    are here to help make it easy and effortless for you to purchase your home.
+                    your home. See <strong>The Mortgage Brothers Team</strong> with any and all questions you may
+                    have regarding your home purchase and lending process. We are here to help make it easy and
+                    effortless for you to purchase your home.
                   </p>
                 </section>
 

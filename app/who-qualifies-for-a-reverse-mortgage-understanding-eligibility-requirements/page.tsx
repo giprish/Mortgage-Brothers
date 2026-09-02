@@ -47,12 +47,8 @@ export default function ReverseMortgageEligibilityArticlePage() {
             <div className="flex items-center justify-center gap-2 text-[#b8d4b8] text-[13px] font-semibold mb-6">
               <Link href="/blog/" className="hover:text-white transition-colors">Blog</Link>
               <span>&gt;</span>
-              <span className="text-[#3fb364]">Arizona Mortgage Insights</span>
+              <Link href="/arizona-mortgage-insights/" className="text-[#3fb364] hover:text-white transition-colors">Arizona Mortgage Insights</Link>
             </div>
-
-            <span className="bg-[#103020] border border-[#205030] text-[#3fb364] text-[11px] font-bold tracking-[0.18em] uppercase px-3.5 py-1.5 rounded-full inline-block mb-4">
-              RETIREMENT GUIDE · 2026
-            </span>
 
             <h1
               className="text-[32px] sm:text-[42px] lg:text-[50px] font-bold leading-tight mb-6 text-white"
@@ -79,10 +75,10 @@ export default function ReverseMortgageEligibilityArticlePage() {
               A reverse mortgage allows homeowners aged 62 and older to convert home equity into cash without selling their home. However, not everyone qualifies. Understanding the eligibility requirements is essential before considering this financial option.
             </p>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
-              This guide covers all major qualifications — from age and home equity to property standards and financial assessments — so you can determine if a <Link href="/reverse-mortgage-arizona/" className="text-[#3fb364] font-semibold hover:underline">reverse mortgage</Link> is the right solution for your retirement planning.
+              This guide covers all major qualifications — from age and home equity to property standards and financial assessments — so you can determine if a <Link href="/reverse-mortgage-arizona/" className="text-[#3fb364] hover:underline">reverse mortgage</Link> is the right solution for your retirement planning.
             </p>
             <p className="text-[14px] leading-[1.8] text-[#3a4a3a] mb-4 italic">
-              (Sources: HUD, Investopedia, <a href="https://files.consumerfinance.gov/f/documents/cfpb_reverse_mortgage_rights_responsibilities.pdf" target="_blank" rel="noopener noreferrer" className="text-[#3fb364] font-semibold hover:underline">Consumer Finance.gov</a>)
+              (Sources: HUD, Investopedia, <a href="https://files.consumerfinance.gov/f/documents/cfpb_reverse_mortgage_rights_responsibilities.pdf" target="_blank" rel="noopener noreferrer" className="text-[#3fb364] hover:underline">Consumer Finance.gov</a>)
             </p>
           </section>
 
@@ -91,8 +87,7 @@ export default function ReverseMortgageEligibilityArticlePage() {
               1. Age Requirement
             </h2>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
-              To qualify, <strong>at least one borrower must be 62 years or older</strong>.<br />
-              For married couples with a younger spouse, there are two options:
+              To qualify, <strong>at least one borrower must be 62 years or older</strong>. For married couples with a younger spouse, there are two options:
             </p>
             <ul className="list-disc pl-6 space-y-2 mb-4 text-[#3a4a3a] text-[16px]">
               <li><strong>Non-borrowing spouse:</strong> The younger spouse isn&apos;t listed as a borrower but is protected under HUD rules.</li>
@@ -131,25 +126,25 @@ export default function ReverseMortgageEligibilityArticlePage() {
             <h2 className="text-[#052316] text-[26px] sm:text-[32px] font-bold mb-4 font-playfair border-b border-[#e8e0d0] pb-3">
               3. Property Type &amp; Residency Requirements
             </h2>
-            <h3 className="text-[#052316] text-[20px] font-bold mb-2">Eligible Properties</h3>
+            <h4 className="text-[#052316] text-[18px] font-bold mb-2"><strong>Eligible Properties</strong></h4>
             <ul className="list-disc pl-6 space-y-2 mb-4 text-[#3a4a3a] text-[16px]">
               <li>Single-family homes</li>
               <li>1–4 unit residential properties (if you occupy one unit)</li>
               <li>FHA-approved condos or planned developments</li>
               <li>Manufactured homes meeting HUD standards</li>
             </ul>
-            <h3 className="text-[#052316] text-[20px] font-bold mb-2">Ineligible Properties</h3>
+            <h4 className="text-[#052316] text-[18px] font-bold mb-2"><strong>Ineligible Properties</strong></h4>
             <ul className="list-disc pl-6 space-y-2 mb-4 text-[#3a4a3a] text-[16px]">
               <li>Vacation or investment homes</li>
               <li>Co-ops</li>
               <li>Homes on leased land</li>
             </ul>
-            <h3 className="text-[#052316] text-[20px] font-bold mb-2">Primary Residence Rule</h3>
+            <h4 className="text-[#052316] text-[18px] font-bold mb-2"><strong>Primary Residence Rule</strong></h4>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
               Your home must be your primary residence, occupied most of the year (typically 6+ months). Temporary absences for vacations or medical care are generally allowed, but permanent relocation may trigger repayment.
             </p>
             <div className="text-center my-6">
-              <Link href="/contact-us/" className="btn-primary">
+              <Link href="#getin_touch" className="btn-primary">
                 Speak with a Reverse Mortgage Specialist
               </Link>
             </div>
@@ -208,7 +203,7 @@ export default function ReverseMortgageEligibilityArticlePage() {
               You receive a certificate valid for 180 days to proceed with your application.
             </p>
             <div className="text-center my-6">
-              <Link href="/contact-us/" className="btn-primary">
+              <Link href="#getin_touch" className="btn-primary">
                 Check Your Reverse Mortgage Eligibility
               </Link>
             </div>

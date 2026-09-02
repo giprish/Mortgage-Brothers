@@ -74,6 +74,29 @@ const loanSolutions = [
 ];
 
 
+const schemaFaqs = [
+  {
+    question: "How does FHA Mortgage Insurance Premium (MIP) usually appear on a mortgage statement?",
+    answer:
+      "FHA mortgage insurance premiums are broken down into 12 monthly installments. On your monthly mortgage statement, this expense rarely uses the acronym 'MIP'—instead, it standardly appears under labels such as Monthly Mortgage Insurance, Risk-based HUD, or HUD Escrow.",
+  },
+  {
+    question: "Under what specific loan-to-value (LTV) rules will an FHA MIP automatically cancel?",
+    answer:
+      "For older FHA loans that qualify for automatic cancellation based on loan-to-value milestones, MIP payments cease once the principal balance hits 78% LTV. For a 30-year mortgage, you must also have paid on the loan for at least 60 months, a benchmark typically reached within 11 years, whereas a 15-year mortgage can hit this point in about 2 years.",
+  },
+  {
+    question: "How can grandfathered FHA borrowers utilize an FHA Streamline Refinance to lower insurance costs?",
+    answer:
+      "Borrowers who have maintained their FHA home loan since before 2009 are grandfathered into unique rate exemptions. By executing an FHA Streamline Refinance, they can dramatically lower their upfront mortgage premium down to 0.01% and reduce their annual MIP rate to a flat 0.55%, regardless of their current loan-to-value calculation.",
+  },
+  {
+    question: "How can homeowners with newer FHA loans eliminate their monthly mortgage insurance completely?",
+    answer:
+      "If your FHA loan originated after 2013, the monthly mortgage insurance is typically structured to remain for the entire life of the loan. The most effective strategy to get rid of it is to leverage your rising home equity and refinance out of the FHA program into a conventional home loan backed by Fannie Mae or Freddie Mac. Once you transition to a conventional loan and achieve 20% equity, mortgage insurance is eliminated entirely.",
+  },
+] as const;
+
 const articleJsonLd = buildArticleSchemas({
   blog: {
     pathname: "/canceling-your-fha-mip-is-easier-than-you-think/",
@@ -82,6 +105,7 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-06",
     articleSection: "Homeownership Tips",
   },
+  faqs: [...schemaFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Homeownership Tips", path: "/homeownership-tips/" },
@@ -130,7 +154,7 @@ export default function CancelingFhaMipPage() {
                   rel="noopener noreferrer"
                   className="text-[#3fb364] font-semibold hover:underline"
                 >
-                  MIP
+                  <strong>MIP</strong>
                 </a>
                 ) on a Federal Housing Administration (
                 <a
@@ -139,7 +163,7 @@ export default function CancelingFhaMipPage() {
                   rel="noopener noreferrer"
                   className="text-[#3fb364] font-semibold hover:underline"
                 >
-                  FHA
+                  <strong>FHA</strong>
                 </a>
                 ) backed loan you may be paying more than you need to. Canceling this type of mortgage insurance
                 can also be easier than many homeowners believe. Many homeowners were forced into a FHA backed
@@ -150,14 +174,21 @@ export default function CancelingFhaMipPage() {
 
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
                 <h2
-                  className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
+                  className="text-[#08271B] text-[24px] lg:text-[28px] font-bold mb-3"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  Ready to Cancel Your FHA MIP?
+                  <strong>Ready to Cancel Your FHA MIP?</strong>
                 </h2>
-                <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
-                  Canceling FHA MIP can lower your monthly payments and save you money. Find out if you&apos;re
-                  eligible and how to get started today.
+                <p className="text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
+                  <Link
+                    href="#get-pre-approved"
+                    className="text-[#3fb364] font-semibold hover:underline"
+                  >
+                    <strong>
+                      Canceling FHA MIP can lower your monthly payments and save you money. Find out if you&apos;re
+                      eligible and how to get started today.
+                    </strong>
+                  </Link>
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
@@ -211,7 +242,7 @@ export default function CancelingFhaMipPage() {
                   <p>
                     The last market change was in 2015 when the annual MIP dropped from the previous 1.35% to
                     0.85% annual premium. The premium has ranged from 0.5% to 1.35% during this period. Depending on when
-                    you took out your mortgage you may be paying a higher premium on your mortgage and now is a
+                    you took out your mortgage you may be paying the maximum premium on your mortgage and now is a
                     good time to get out of it.
                   </p>
                 </section>
@@ -230,7 +261,7 @@ export default function CancelingFhaMipPage() {
                       href="/fha-streamline-refinance-arizona/"
                       className="text-[#3fb364] font-semibold hover:underline"
                     >
-                      Streamline FHA refinance
+                      <strong>Streamline FHA refinance</strong>
                     </Link>{" "}
                     and reduce your mortgage Insurance. This is because long time FHA customers were
                     &quot;grandfathered&quot; into certain rate exemptions a few years ago. Your rates are as
@@ -305,66 +336,68 @@ export default function CancelingFhaMipPage() {
                   </p>
                 </section>
 
-                <p className="text-[15px]">
-                  Learn why canceling your FHA MIP might be simpler than you expect, and discover the steps to save
-                  on your mortgage. For a broader perspective, check out when a{" "}
-                  <Link
-                    href="/when-is-a-mortgage-payment-actually-considered-late/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    mortgage payment is considered late
-                  </Link>
-                  , learn how to{" "}
-                  <Link
-                    href="/how-to-calculate-how-much-pmi-mortgage-insurance-will-be/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    calculate PMI
-                  </Link>
-                  , and study an{" "}
-                  <Link
-                    href="/understanding-amortization-chart/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    amortization chart
-                  </Link>
-                  . Also, explore{" "}
-                  <Link
-                    href="/what-are-mortgage-trigger-leads/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    mortgage trigger leads
-                  </Link>
-                  , see{" "}
-                  <Link
-                    href="/how-does-a-mortgage-apr-work-and-what-does-it-mean/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    how APR works
-                  </Link>
-                  , review{" "}
-                  <Link
-                    href="/what-are-closing-costs-on-a-home-purchase/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    closing costs
-                  </Link>
-                  , understand why{" "}
-                  <Link
-                    href="/mortgage-payoff-higher-than-mortgage-balance/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    mortgage payoff can exceed the balance
-                  </Link>
-                  , and learn if{" "}
-                  <Link
-                    href="/if-i-have-1-mortgage-late-in-the-past-12-months-can-i-get-approved-for-a-mortgage/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    a past late payment affects your approval
-                  </Link>
-                  .
-                </p>
+                <blockquote className="border-l-4 border-[#3fb364] pl-5 my-8 italic">
+                  <p className="text-[15px]">
+                    Learn why canceling your FHA MIP might be simpler than you expect, and discover the steps to
+                    save on your mortgage. For a broader perspective, check out when a{" "}
+                    <Link
+                      href="/when-is-a-mortgage-payment-actually-considered-late/"
+                      className="text-[#3fb364] font-semibold hover:underline not-italic"
+                    >
+                      <strong>mortgage payment is considered late</strong>
+                    </Link>
+                    , learn how to{" "}
+                    <Link
+                      href="/how-to-calculate-how-much-pmi-mortgage-insurance-will-be/"
+                      className="text-[#3fb364] font-semibold hover:underline not-italic"
+                    >
+                      <strong>calculate PMI</strong>
+                    </Link>
+                    , and study an{" "}
+                    <Link
+                      href="/understanding-amortization-chart/"
+                      className="text-[#3fb364] font-semibold hover:underline not-italic"
+                    >
+                      <strong>amortization chart</strong>
+                    </Link>
+                    . Also, explore{" "}
+                    <Link
+                      href="/what-are-mortgage-trigger-leads/"
+                      className="text-[#3fb364] font-semibold hover:underline not-italic"
+                    >
+                      <strong>mortgage trigger leads</strong>
+                    </Link>
+                    , see{" "}
+                    <Link
+                      href="/how-does-a-mortgage-apr-work-and-what-does-it-mean/"
+                      className="text-[#3fb364] font-semibold hover:underline not-italic"
+                    >
+                      <strong>how APR works</strong>
+                    </Link>
+                    , review{" "}
+                    <Link
+                      href="/what-are-closing-costs-on-a-home-purchase/"
+                      className="text-[#3fb364] font-semibold hover:underline not-italic"
+                    >
+                      <strong>closing costs</strong>
+                    </Link>
+                    , understand why{" "}
+                    <Link
+                      href="/mortgage-payoff-higher-than-mortgage-balance/"
+                      className="text-[#3fb364] font-semibold hover:underline not-italic"
+                    >
+                      <strong>mortgage payoff can exceed the balance</strong>
+                    </Link>
+                    , and learn if{" "}
+                    <Link
+                      href="/if-i-have-1-mortgage-late-in-the-past-12-months-can-i-get-approved-for-a-mortgage/"
+                      className="text-[#3fb364] font-semibold hover:underline not-italic"
+                    >
+                      <strong>a past late payment affects your approval</strong>
+                    </Link>
+                    .
+                  </p>
+                </blockquote>
 
                 <p className="text-[#5a6b52] text-[13px] leading-relaxed">
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been

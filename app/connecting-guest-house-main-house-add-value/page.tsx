@@ -75,6 +75,29 @@ const loanSolutions = [
 ];
 
 
+const articleFaqs = [
+  {
+    question: "How does connecting a detached casita to the main house affect home valuation?",
+    answer:
+      "When you officially connect a detached guest house to the main dwelling, its square footage is absorbed directly into the total primary living area of the home. Instead of receiving a lower, separate line-item adjustment for a detached casita, the entire space is appraised as a single, larger home structure based on comparable market sales for that higher total square footage.",
+  },
+  {
+    question: "What structural requirements must be met for a guest house connection to add value?",
+    answer:
+      "The connecting structure cannot just be a covered breezeway or an open patio. To be recognized by city building codes and mortgage appraisers, it must be fully enclosed, permitted, and constructed as a completely finished, heated, and cooled livable space that seamlessly connects the main house and the casita.",
+  },
+  {
+    question: "Why do detached guest houses typically receive lower appraisal values?",
+    answer:
+      "Appraisers do not calculate a detached casita's value using its actual cost of construction. Instead, they apply a standard, flat line-item adjustment on the appraisal report—often ranging from $15,000 to $30,000—regardless of whether the structure cost significantly more to build, because finding exact detached comparable sales in the immediate area is highly difficult.",
+  },
+  {
+    question: "Does adding more square footage to a home always yield a straight-line increase in value?",
+    answer:
+      "No, real estate valuation does not follow a perfectly straight line due to the law of diminishing returns. In many neighborhoods, larger homes command a slightly lower price per square foot than smaller properties, so it is critical to evaluate recent local comparable sales for larger homes to ensure the expansion makes financial sense.",
+  },
+] as const;
+
 const articleJsonLd = buildArticleSchemas({
   blog: {
     pathname: "/connecting-guest-house-main-house-add-value/",
@@ -83,6 +106,7 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-05",
     articleSection: "Real Estate & Mortgages",
   },
+  faqs: [...articleFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Real Estate & Mortgages", path: "/real-estate-mortgages/" },
@@ -123,27 +147,6 @@ export default function ConnectingGuestHouseAddValuePage() {
           <div className="max-w-6xl mx-auto px-6 lg:px-10 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_320px] gap-10 lg:gap-14">
             <article className="min-w-0">
 
-              <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
-                <h2
-                  className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-                >
-                  Thinking About Connecting a Guest House?
-                </h2>
-                <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
-                  Find out if connecting your guest house to the main home will increase value and appeal to
-                  buyers. Get expert insights today!
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <Link
-                    href="#get-pre-approved"
-                    className="btn-primary"
-                  >
-                    Get a Free Home Value Assessment
-                  </Link>
-                </div>
-              </div>
-
               <div className="space-y-10 text-[#3a4a3a] text-[16px] leading-[1.8]">
                 <section id="should-you-connect-a-guest-house-to-the-main-house">
                   <h2
@@ -155,21 +158,38 @@ export default function ConnectingGuestHouseAddValuePage() {
                   <p className="mb-5">
                     Here is Borrower&apos;s question about connecting a detached guest house to his main house:
                   </p>
-                  <blockquote className="border-l-4 border-[#3fb364] pl-5 italic text-[#4e5b4e] mb-6">
-                    <p className="mb-4">
-                      &ldquo;Looks like we will be staying here a bit longer and are thinking of doing some more
-                      things to make it nicer. We were thinking of adding a structure that connects the house to
-                      the outside casita. It will have a connecting door making it part of the square footage of
-                      the house contrary to before when it was not counted as such.
+                  <p className="mb-4">
+                    &ldquo;Looks like we will be staying here a bit longer and are thinking of doing some more
+                    things to make it nicer. We were thinking of adding a structure that connects the house to
+                    the outside casita. It will have a connecting door making it part of the square footage of
+                    the house contrary to before when it was not counted as such.
+                  </p>
+                  <p className="mb-6">
+                    5 months ago our house appraised at $440,000. The main house has 2,427 square feet. By
+                    connecting the detached guest house casita, the additional square footage will be 400 square
+                    feet and that would make the house about 2827 square feet. We are hoping that it increases
+                    the value by $30,000 or more.
+                  </p>
+
+                  <div className="my-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
+                    <p
+                      className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
+                      style={{ fontFamily: "'Playfair Display', serif" }}
+                    >
+                      <strong>Thinking About Connecting a Guest House?</strong>
                     </p>
-                    <p>
-                      5 months ago our house appraised at $440,000. The main house has 2,427 square feet. By
-                      connecting the detached guest house casita, the additional square footage will be 400 square
-                      feet and that would make the house about 2827 square feet. We are hoping that it increases
-                      the value by $30,000 or more.&rdquo;
+                    <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
+                      Find out if connecting your guest house to the main home will increase value and appeal to
+                      buyers. Get expert insights today!
                     </p>
-                  </blockquote>
-                  <p className="mb-4 font-semibold text-[#052316]">A few questions:</p>
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                      <Link href="#Get-in-Touch" className="btn-primary">
+                        Get a Free Home Value Assessment
+                      </Link>
+                    </div>
+                  </div>
+
+                  <p className="mb-4">A few questions:</p>
                   <ul className="list-disc pl-6 space-y-3 mb-5">
                     <li>
                       If I add in the square footage for the NEW area, do I totally eliminate the value of the
@@ -184,14 +204,14 @@ export default function ConnectingGuestHouseAddValuePage() {
                       feet X 181 = 440,000 then and now 2827 X 181 = 511,000?
                     </li>
                   </ul>
-                  <p>
+                  <p className="mb-4">
                     So, all this brings me to this. If we refinanced again after the connection of the detached
                     guest house casita is done, we would like to pull more money out (80% LTV) to cover the cost of
                     the construction and then for other improvements around the house. Based on hypothetical values
                     later and our credit scores being over 700, it would be something I would really like to do but
                     need clarification of the supposed increase in value.
                   </p>
-                  <p className="mt-5">Can you help answer these questions?</p>
+                  <p>Can you help answer these questions?&rdquo;</p>
                 </section>
 
                 <section id="my-answers-and-expert-insights-on-guest-house-connection">
@@ -202,90 +222,82 @@ export default function ConnectingGuestHouseAddValuePage() {
                     My Answers and Expert Insights on Guest House Connection
                   </h2>
                   <p className="mb-5">Here are my answers</p>
-                  <ul className="list-disc pl-6 space-y-4 mb-5">
-                    <li>
-                      Make sure all additions go through the proper channels at the city level and get all permits
-                      etc.
-                    </li>
-                    <li>
-                      The structure that connects the guest house and main house has to be{" "}
-                      <a
-                        href="https://www.lawinsider.com/dictionary/living-space"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#3fb364] font-semibold hover:underline"
-                      >
-                        livable space
-                      </a>
-                      , closed in, etc. It cannot be just a structure connecting the
-                      house and casita.
-                    </li>
-                    <li>
-                      If you are merely talking about a structure connecting the house and casita, your home would
-                      value would not change.
-                    </li>
-                    <li>
-                      In other words, the city has to recognize that you have a single 2,827 square foot building.
-                      There cannot be any &apos;grey area&apos; or possible misinterpretation by an appraiser who
-                      visits your property.
-                    </li>
-                    <li>
-                      The casita becomes apart of the home. One structure and one value for all of it.
-                    </li>
-                    <li>
-                      The future value of your home will depend on what comparable sales are with 2,800 square
-                      feet. If similar homes with 2,800 square feet livable space are selling for $180/square foot,
-                      yours should be worth that too.
-                    </li>
-                    <li>
-                      Since the detached casita was appraised 5 months ago with a $60 per square foot value, a new
-                      appraisal giving you a value of $180 per square foot will increase your value an estimated
-                      $48,000 (I took the square foot price difference, $120 and multiplied it by 400 square feet).
-                      The only caveat I can think of is this, be sure to check the comparable sales at the larger
-                      square footage. If you look at your immediate area, typically large homes will be worth less
-                      per square foot.
-                    </li>
-                    <li>
-                      It is common to see a 2,000 square foot home sell for $180 per square foot and a 3,000 square
-                      foot home in the same neighborhood sell for $170 per square foot. Value is not a straight
-                      line that is constant, there is a point where you will get diminished returns as you go larger
-                      in home size. Be sure to check and verify the recent sales within 6 months around your home.
-                    </li>
-                  </ul>
+                  <p className="mb-4">
+                    Make sure all additions go through the proper channels at the city level and get all permits
+                    etc.
+                  </p>
+                  <p className="mb-4">
+                    The structure that connects the guest house and main house has to be{" "}
+                    <a
+                      href="https://www.lawinsider.com/dictionary/living-space"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#3fb364] hover:underline"
+                    >
+                      livable space
+                    </a>
+                    , closed in, etc. It cannot be just a structure connecting the house and casita.
+                  </p>
+                  <p className="mb-4">
+                    If you are merely talking about a structure connecting the house and casita, your home would
+                    value would not change.
+                  </p>
+                  <p className="mb-4">
+                    In other words, the city has to recognize that you have a single 2,827 square foot building.
+                    There cannot be any &apos;grey area&apos; or possible misinterpretation by an appraiser who
+                    visits your property.
+                  </p>
+                  <p className="mb-4">
+                    The casita becomes apart of the home. One structure and one value for all of it.
+                  </p>
+                  <p className="mb-4">
+                    The future value of your home will depend on what comparable sales are with 2,800 square
+                    feet. If similar homes with 2,800 square feet livable space are selling for $180/square foot,
+                    yours should be worth that too.
+                  </p>
+                  <p className="mb-4">
+                    Since the detached casita was appraised 5 months ago with a $60 per square foot value, a new
+                    appraisal giving you a value of $180 per square foot will increase your value an estimated
+                    $48,000 (I took the square foot price difference, $120 and multiplied it by 400 square feet).
+                    The only caveat I can think of is this, be sure to check the comparable sales at the larger
+                    square footage. If you look at your immediate area, typically large homes will be worth less
+                    per square foot.
+                  </p>
+                  <p className="mb-5">
+                    It is common to see a 2,000 square foot home sell for $180 per square foot and a 3,000 square
+                    foot home in the same neighborhood sell for $170 per square foot. Value is not a straight
+                    line that is constant, there is a point where you will get diminished returns as you go larger
+                    in home size. Be sure to check and verify the recent sales within 6 months around your home.
+                  </p>
                 </section>
 
-                <p className="text-[15px]">
-                  Learn how linking a guest house to your main residence can add significant value to your
-                  property. You might also explore our analysis on the{" "}
-                  <Link
-                    href="/difference-between-owner-occupied-second-home-and-investment-property/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    differences between owner-occupied second homes and investment properties
-                  </Link>
-                  , examine{" "}
-                  <Link
-                    href="/detached-guest-home-casita-appraisal-issues/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    detached guest home appraisal issues
-                  </Link>
-                  , and understand the{" "}
-                  <Link
-                    href="/what-is-the-difference-between-aan-arizona-condo-and-arizona-townhome/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    distinctions between Arizona condos and townhomes
-                  </Link>
-                  .
-                </p>
-
-                <p className="text-[#5a6b52] text-[13px] leading-relaxed">
-                  Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
-                  prepared for informational purposes only. You should consult your own tax, legal, and accounting
-                  advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS #210917 and
-                  1618695. Equal Housing Opportunity.
-                </p>
+                <blockquote className="border-l-4 border-[#3fb364] pl-5 text-[#4e5b4e] mb-6">
+                  <p className="text-[15px] text-[#3a4a3a]">
+                    Learn how linking a guest house to your main residence can add significant value to your
+                    property. You might also explore our analysis on the{" "}
+                    <Link
+                      href="/difference-between-owner-occupied-second-home-and-investment-property/"
+                      className="text-[#3fb364] hover:underline"
+                    >
+                      differences between owner-occupied second homes and investment properties
+                    </Link>
+                    , examine{" "}
+                    <Link
+                      href="/detached-guest-home-casita-appraisal-issues/"
+                      className="text-[#3fb364] hover:underline"
+                    >
+                      detached guest home appraisal issues
+                    </Link>
+                    , and understand the{" "}
+                    <Link
+                      href="/what-is-the-difference-between-aan-arizona-condo-and-arizona-townhome/"
+                      className="text-[#3fb364] hover:underline"
+                    >
+                      distinctions between Arizona condos and townhomes
+                    </Link>
+                    .
+                  </p>
+                </blockquote>
               </div>
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">
@@ -297,7 +309,7 @@ export default function ConnectingGuestHouseAddValuePage() {
                 </Link>
                 <Link
                   href="/detached-guest-home-casita-appraisal-issues/"
-                  className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
+                  className="text-[#3fb364] font-semibold hover:underline"
                 >
                   Next Post →
                 </Link>

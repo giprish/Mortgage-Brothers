@@ -8,28 +8,43 @@ import FaqAccordion from "../component/FaqAccordion";
 
 const articleFaqs = [
   {
-    q: "Can I remove my ex-spouse's name from the mortgage without refinancing?",
+    q: "1. Can I remove my ex-spouse's name from the mortgage without refinancing?",
     a: "Usually, no. Lenders require refinancing to release one party from liability. In rare cases, an assumption may be allowed, but most lenders prefer a full refinance.",
   },
   {
-    q: "How long after divorce can I refinance my mortgage?",
+    q: "2. How long after divorce can I refinance my mortgage?",
     a: "You can refinance as soon as your divorce is finalized and you meet lender requirements for credit, income, and documentation. Many people refinance immediately after receiving their divorce decree.",
   },
   {
-    q: "What documents are required for an equity buyout refinance?",
-    a: "You'll typically need your divorce decree, property settlement agreement, recent pay stubs, tax returns, and proof of the equity amount owed to your former spouse.",
+    q: "3. What documents are required for an equity buyout refinance?",
+    a: (
+      <>
+        You&apos;ll typically need your <strong>divorce decree</strong>, <strong>property settlement agreement</strong>, recent{" "}
+        <strong>pay stubs</strong>, <strong>tax returns</strong>, and proof of the equity amount owed to your former spouse.
+      </>
+    ),
   },
   {
-    q: "Can I buy a new home before my divorce is final?",
+    q: "4. Can I buy a new home before my divorce is final?",
     a: "Yes, but it's more complex. You'll need a signed separation agreement and proof of separate finances. Some lenders prefer to wait until finalization, but others specialize in pre-divorce lending.",
   },
   {
-    q: "Will alimony or child support help or hurt my mortgage approval?",
-    a: "It depends. If you receive alimony or support, it can count as income (with documentation). If you pay it, it's counted as a debt, which may affect your debt-to-income ratio.",
+    q: "5. Will alimony or child support help or hurt my mortgage approval?",
+    a: (
+      <>
+        It depends. If you <strong>receive</strong> alimony or support, it can count as income (with documentation). If you{" "}
+        <strong>pay</strong> it, it&apos;s counted as a debt, which may affect your debt-to-income ratio.
+      </>
+    ),
   },
   {
-    q: "Is an equity buyout refinance the same as a cash-out refinance?",
-    a: "No — and that's a key advantage. Court-ordered equity buyouts through conventional loans are treated as rate-and-term refinances, which means lower interest rates and better terms.",
+    q: "6. Is an equity buyout refinance the same as a cash-out refinance?",
+    a: (
+      <>
+        No — and that&apos;s a key advantage. Court-ordered equity buyouts through conventional loans are treated as{" "}
+        <strong>rate-and-term refinances</strong>, which means <strong>lower interest rates and better terms</strong>.
+      </>
+    ),
   },
 ];
 
@@ -93,13 +108,18 @@ export default function DivorceMortgageArticlePage() {
             </p>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
               To prevent this, it&apos;s vital to resolve the mortgage situation as part of the divorce
-              settlement. Couples usually have three main options:
+              settlement. Couples usually have <strong>three main options</strong>:
             </p>
-            <ul className="list-disc pl-6 space-y-2 text-[16px] leading-[1.8] text-[#3a4a3a]">
-              <li>Sell the home and divide the proceeds equally or as determined by the court.</li>
-              <li>Refinance the mortgage so one spouse keeps the home and removes the other from the loan.</li>
-              <li>Maintain joint ownership temporarily, allowing more time to plan financially before separating the asset.</li>
+            <ul className="list-disc pl-6 space-y-2 text-[16px] leading-[1.8] text-[#3a4a3a] mb-6">
+              <li><strong>Sell the home</strong> and divide the proceeds equally or as determined by the court.</li>
+              <li><strong>Refinance the mortgage</strong> so one spouse keeps the home and removes the other from the loan.</li>
+              <li><strong>Maintain joint ownership temporarily</strong>, allowing more time to plan financially before separating the asset.</li>
             </ul>
+            <div className="text-center my-6">
+              <Link href="#getin_touch" className="btn-primary">
+                Get Expert Guidance Now
+              </Link>
+            </div>
           </section>
 
           <section className="mb-12 border-t border-[#e8e0d0] pt-8">
@@ -115,10 +135,13 @@ export default function DivorceMortgageArticlePage() {
               liability.
             </p>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
-              The primary way to accomplish this is through refinancing the loan in the name of the spouse who
-              will keep the home.
+              The primary way to accomplish this is through{" "}
+              <Link href="/refinancing-arizona/" className="text-[#3fb364] font-semibold hover:underline">
+                <strong>refinancing</strong>
+              </Link>{" "}
+              the loan in the name of the spouse who will keep the home.
             </p>
-            <h4 className="text-[#052316] text-[18px] font-bold mb-3">How Refinancing Works After Divorce</h4>
+            <h4 className="text-[#052316] text-[18px] font-bold mb-3"><strong>How Refinancing Works After Divorce</strong></h4>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-3">The spouse keeping the home must:</p>
             <ul className="list-disc pl-6 space-y-2 text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
               <li>Qualify for the mortgage independently (income, credit, and debt-to-income ratio).</li>
@@ -127,7 +150,7 @@ export default function DivorceMortgageArticlePage() {
             </ul>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a]">
               In many cases, refinancing also provides an opportunity to pay the departing spouse their share of
-              home equity — a process known as an equity buyout.
+              home equity — a process known as an <strong>equity buyout</strong>.
             </p>
           </section>
 
@@ -139,28 +162,29 @@ export default function DivorceMortgageArticlePage() {
               3. The Equity Buyout Advantage with Conventional Loans
             </h2>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
-              Divorcing homeowners can benefit greatly from conventional loan guidelines when refinancing for an
+              Divorcing homeowners can benefit greatly from <strong>conventional loan guidelines</strong> when refinancing for an
               equity buyout.
             </p>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
-              Typically, when you take money out of your home&apos;s equity, the lender classifies it as a
-              cash-out refinance, which comes with higher rates and stricter qualification rules. However, in
-              divorce cases, conventional loan programs often treat a court-ordered equity payout as a
-              rate-and-term refinance, not a cash-out.
+              Typically, when you take money out of your home&apos;s equity, the lender classifies it as a{" "}
+              <strong>cash-out refinance</strong>, which comes with higher rates and stricter qualification rules. However,{" "}
+              <strong>in divorce cases</strong>, conventional loan programs often treat a court-ordered equity payout as a{" "}
+              <strong>rate-and-term refinance</strong>, not a cash-out.
             </p>
-            <h4 className="text-[#052316] text-[18px] font-bold mb-3">Why This Matters</h4>
+            <h4 className="text-[#052316] text-[18px] font-bold mb-3"><strong>Why This Matters</strong></h4>
             <ul className="list-disc pl-6 space-y-2 text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
-              <li>Lower interest rates: Rate-and-term refinances generally qualify for better rates.</li>
-              <li>Easier approval: Fewer restrictions and more favorable terms.</li>
-              <li>Financial savings: Reduces long-term borrowing costs for the spouse keeping the home.</li>
+              <li><strong>Lower interest rates:</strong> Rate-and-term refinances generally qualify for better rates.</li>
+              <li><strong>Easier approval:</strong> Fewer restrictions and more favorable terms.</li>
+              <li><strong>Financial savings:</strong> Reduces long-term borrowing costs for the spouse keeping the home.</li>
             </ul>
+            <h4 className="text-[#052316] text-[18px] font-bold mb-3"><strong>How to Qualify</strong></h4>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-3">To access this benefit:</p>
             <ul className="list-disc pl-6 space-y-2 text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
-              <li>Your divorce decree or separation agreement must clearly document the equity amount owed to your ex-spouse.</li>
+              <li>Your <strong>divorce decree or separation agreement</strong> must clearly document the equity amount owed to your ex-spouse.</li>
               <li>The lender must see that the funds are part of the legal settlement, not a discretionary cash withdrawal.</li>
             </ul>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a]">
-              👉 Tip: Work with a mortgage professional experienced in divorce refinances. They&apos;ll help ensure
+              <strong>👉 Tip:</strong> Work with a mortgage professional experienced in divorce refinances. They&apos;ll help ensure
               your paperwork aligns with lender requirements and that your refinance qualifies for the best
               possible terms.
             </p>
@@ -178,7 +202,7 @@ export default function DivorceMortgageArticlePage() {
               to buy immediately or after your divorce is finalized, understanding how lenders view your financial
               situation is crucial.
             </p>
-            <h4 className="text-[#052316] text-[18px] font-bold mb-3">If Your Divorce Is Finalized</h4>
+            <h4 className="text-[#052316] text-[18px] font-bold mb-3"><strong>If Your Divorce Is Finalized</strong></h4>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-3">
               The process is more straightforward once your divorce is legally complete. You&apos;ll apply for a
               mortgage as an individual, based on:
@@ -189,31 +213,39 @@ export default function DivorceMortgageArticlePage() {
               <li>Your ongoing obligations (alimony, child support, etc.).</li>
             </ul>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-6">
-              If you receive alimony or child support, lenders may count it as income — provided it will continue
+              If you receive <strong>alimony or child support</strong>, lenders may count it as income — provided it will continue
               for at least three years and you can document consistent payments.
             </p>
-            <h4 className="text-[#052316] text-[18px] font-bold mb-3">If Your Divorce Is Still in Progress</h4>
+            <h4 className="text-[#052316] text-[18px] font-bold mb-3"><strong>If Your Divorce Is Still in Progress</strong></h4>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-3">
               If your divorce isn&apos;t finalized, lenders may require:
             </p>
             <ul className="list-disc pl-6 space-y-2 text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
-              <li>A separation agreement detailing division of assets and debts.</li>
-              <li>Evidence of separate finances and living arrangements.</li>
+              <li>A <strong>separation agreement</strong> detailing division of assets and debts.</li>
+              <li>Evidence of <strong>separate finances and living arrangements.</strong></li>
             </ul>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-6">
               Some lenders prefer to wait until the divorce is final, but those with experience in divorce lending
               can often navigate these situations before finalization.
             </p>
-            <h4 className="text-[#052316] text-[18px] font-bold mb-3">Existing Mortgage Considerations</h4>
+            <h4 className="text-[#052316] text-[18px] font-bold mb-3"><strong>Existing Mortgage Considerations</strong></h4>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-3">
-              If your name is still on the marital home&apos;s mortgage, that payment will count toward your
-              debt-to-income ratio, even if your ex-spouse is making the payments.
+              If your name is still on the marital home&apos;s mortgage, that payment will count toward your{" "}
+              <Link href="/debt-to-income-ratio-calculator/" className="text-[#3fb364] font-semibold hover:underline">
+                <strong>debt-to-income ratio</strong>
+              </Link>
+              , even if your ex-spouse is making the payments.
             </p>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-3">You can sometimes exclude this debt if:</p>
             <ul className="list-disc pl-6 space-y-2 text-[16px] leading-[1.8] text-[#3a4a3a]">
               <li>The divorce decree assigns the mortgage responsibility to your ex-spouse.</li>
               <li>You can provide documentation showing consistent payments made by them for at least 6–12 months.</li>
             </ul>
+            <div className="text-center my-6">
+              <Link href="#getin_touch" className="btn-primary">
+                Schedule a Divorce Mortgage Consultation
+              </Link>
+            </div>
           </section>
 
           <section className="mb-12 border-t border-[#e8e0d0] pt-8">
@@ -227,13 +259,13 @@ export default function DivorceMortgageArticlePage() {
               Timing plays a major role in optimizing both your refinance and new home purchase.
             </p>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-4">
-              If you plan to keep the marital home, consider refinancing soon after the divorce is finalized. This
+              If you plan to <strong>keep the marital home</strong>, consider refinancing soon after the divorce is finalized. This
               solidifies your financial independence and prevents shared liability. However, ensure you have
               stable income and a strong credit profile first.
             </p>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a]">
-              If you&apos;re buying a new home, waiting until your divorce is legally complete provides the
-              clearest and smoothest process. Still, if you need to move sooner, lenders with divorce experience
+              If you&apos;re buying a new home, waiting until your divorce is legally complete provides the{" "}
+              <strong>clearest and smoothest process</strong>. Still, if you need to move sooner, lenders with divorce experience
               can often structure your loan even before finalization.
             </p>
           </section>
@@ -252,8 +284,14 @@ export default function DivorceMortgageArticlePage() {
               informed, confident decisions.
             </p>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a] mb-6">
-              Remember that conventional loans offer unique benefits for divorce-related refinances — treating
-              court-ordered equity payouts as rate-and-term rather than cash-out transactions. This difference can
+              Remember that{" "}
+              <strong>
+                <Link href="/conventional-home-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
+                  conventional loans
+                </Link>{" "}
+                offer unique benefits
+              </strong>{" "}
+              for divorce-related refinances — treating court-ordered equity payouts as rate-and-term rather than cash-out transactions. This difference can
               save you money and help you achieve independence faster.
             </p>
             <h3
@@ -263,7 +301,7 @@ export default function DivorceMortgageArticlePage() {
               Ready to explore your options?
             </h3>
             <p className="text-[16px] leading-[1.8] text-[#3a4a3a]">
-              Our team specializes in divorce-related mortgage solutions, including refinancing, equity buyouts,
+              Our team specializes in <strong>divorce-related mortgage solutions</strong>, including refinancing, equity buyouts,
               and new home financing. Contact us today for a personalized consultation and take the next step
               toward your new beginning.
             </p>
@@ -275,22 +313,6 @@ export default function DivorceMortgageArticlePage() {
               items={articleFaqs.map((faq) => ({ q: faq.q, a: faq.a }))}
             />
           </section>
-
-          <div className="bg-[#052316] text-white rounded-2xl p-8 text-center shadow-xl">
-            <h3
-              className="text-[24px] font-bold mb-3"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
-              Get Expert Guidance Now
-            </h3>
-            <p className="text-[#c8c8b8] text-[15px] max-w-xl mx-auto mb-6">
-              Contact our Arizona mortgage team to evaluate buyout refinances, equity splits, and new home
-              financing during divorce.
-            </p>
-            <Link href="/#Get-in-Touch" className="btn-primary">
-              Contact Us
-            </Link>
-          </div>
         </article>
       </main>
 

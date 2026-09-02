@@ -75,15 +75,52 @@ const loanSolutions = [
   { label: "VA Loans", href: "/va-loans-arizona/" },
 ];
 
-const articleFaqs = [
-  { question: "What is an Impounded or Escrow Account?", answer: "Loans are made up of Principal, Interest, Taxes and Insurance (PITI). The escrow account covers the T and the I and is included in the monthly payment." },
-  { question: "Are Impound Accounts required?", answer: "In some cases yes, as with Government Loans, FHA and VA loan programs. In other cases, if the Loan to Value is low enough an escrow waiver is allowed but there’s typically a higher mortgage rate due to the lender taking on more risk." },
-  { question: "If I refinance my existing Arizona mortgage loan, what happens to my impound/escrow account?", answer: "If there is a balance after the refinance, the excess is generally refunded back to the homeowner." },
-  { question: "Can I set up an escrow account later?", answer: "Yes, you can request an escrow account at anytime. Keep in mind that you’ll have to deposit at least 12 months of hazard insurance as well as around 6 months of tax payments in the account in order to get it established." },
-  { question: "What temporary documents can I use if my official mortgage bill doesn't arrive before the first payment is due?", answer: "If your official mortgage statement or payment booklet does not arrive in time, you can use the temporary payment coupons provided within your closing documentation package to submit your initial monthly payment." },
-  { question: "What are the core components that make up a standard monthly mortgage payment?", answer: "A standard monthly mortgage payment, often referred to as PITI, is composed of principal reduction, interest charges, real estate property taxes, hazard homeowners insurance, and any applicable mortgage insurance premiums (PMI/MIP)." },
-  { question: "What is an escrow or impound account and how does it affect my monthly payment?", answer: "An escrow or impound account is a specialized financial account managed by your loan servicer. It collects a portion of your monthly payment specifically designated for real estate property taxes and hazard insurance, ensuring those annual bills are paid automatically on your behalf." },
-  { question: "Are homeowners required to maintain an escrow account for their mortgage?", answer: "Escrow accounts are mandatory for government-backed financing programs like FHA and VA loans. For conventional loans, buyers can request an escrow waiver if their loan-to-value (LTV) ratio is low enough, though lenders may charge a slightly higher interest rate due to the increased risk." },
+const visibleFaqs = [
+  {
+    question: "What is an Impounded or Escrow Account?",
+    answer:
+      "Loans are made up of Principal, Interest, Taxes and Insurance (PITI). The escrow account covers the T and the I and is included in the monthly payment.",
+  },
+  {
+    question: "Are Impound Accounts required?",
+    answer:
+      "In some cases yes, as with Government Loans, FHA and VA loan programs. In other cases, if the Loan to Value is low enough an escrow waiver is allowed but there’s typically a higher mortgage rate due to the lender taking on more risk.",
+  },
+  {
+    question: "If I refinance my existing Arizona mortgage loan, what happens to my impound/escrow account?",
+    answer:
+      "If there is a balance after the refinance, the excess is generally refunded back to the homeowner.",
+  },
+  {
+    question: "Can I set up an escrow account later?",
+    answer:
+      "Yes, you can request an escrow account at anytime. Keep in mind that you’ll have to deposit at least 12 months of hazard insurance as well as around 6 months of tax payments in the account in order to get it established.",
+  },
+] as const;
+
+const schemaFaqs = [
+  ...visibleFaqs,
+  {
+    question:
+      "What temporary documents can I use if my official mortgage bill doesn't arrive before the first payment is due?",
+    answer:
+      "If your official mortgage statement or payment booklet does not arrive in time, you can use the temporary payment coupons provided within your closing documentation package to submit your initial monthly payment.",
+  },
+  {
+    question: "What are the core components that make up a standard monthly mortgage payment?",
+    answer:
+      "A standard monthly mortgage payment, often referred to as PITI, is composed of principal reduction, interest charges, real estate property taxes, hazard homeowners insurance, and any applicable mortgage insurance premiums (PMI/MIP).",
+  },
+  {
+    question: "What is an escrow or impound account and how does it affect my monthly payment?",
+    answer:
+      "An escrow or impound account is a specialized financial account managed by your loan servicer. It collects a portion of your monthly payment specifically designated for real estate property taxes and hazard insurance, ensuring those annual bills are paid automatically on your behalf.",
+  },
+  {
+    question: "Are homeowners required to maintain an escrow account for their mortgage?",
+    answer:
+      "Escrow accounts are mandatory for government-backed financing programs like FHA and VA loans. For conventional loans, buyers can request an escrow waiver if their loan-to-value (LTV) ratio is low enough, though lenders may charge a slightly higher interest rate due to the increased risk.",
+  },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({
@@ -94,7 +131,7 @@ const articleJsonLd = buildArticleSchemas({
     datePublished: "2025-02-10",
     articleSection: "Mortgage Basics",
   },
-  faqs: [...articleFaqs],
+  faqs: [...schemaFaqs],
   breadcrumbs: [
     { name: "Home", path: "/" },
     { name: "Mortgage Basics", path: "/mortgage-basics/" },
@@ -143,17 +180,17 @@ export default function ArizonaMortgagePaymentsPage() {
                   href="/basic-mortgage-payment-calculator/"
                   className="text-[#3fb364] font-semibold hover:underline"
                 >
-                  my payment calculator
+                  <strong>my payment calculator</strong>
                 </Link>{" "}
                 to play around with scenarios.
               </p>
 
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
                 <h2
-                  className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
+                  className="text-[#08271B] text-[24px] lg:text-[28px] font-bold mb-3"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  Streamline Your Payments Today!
+                  <strong>Streamline Your Payments Today!</strong>
                 </h2>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
                   Now that you&apos;ve explored key strategies for Arizona Mortgage Payments, connect with our
@@ -164,7 +201,7 @@ export default function ArizonaMortgagePaymentsPage() {
                     href="#get-pre-approved"
                     className="btn-primary"
                   >
-                    Get Pre-Approved
+                    Contact Us Now
                   </Link>
                 </div>
               </div>
@@ -190,39 +227,37 @@ export default function ArizonaMortgagePaymentsPage() {
                     What&apos;s In Your Mortgage Payment
                   </h2>
                   <p className="mb-5">When you receive your first bill, here are a few things you will see:</p>
-
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-2">Principal Amount</h3>
-                  <p className="mb-5">This is the portion that goes toward paying down your balance.</p>
-
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-2">Interest</h3>
-                  <p className="mb-5">
-                    Essentially this is the amount you&apos;re paying to the bank to borrow the original balance.
-                  </p>
-
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-2">Taxes</h3>
-                  <p className="mb-5">
-                    Real Estate Taxes can either be included as part of your monthly payment or they can be paid
-                    separately throughout the year. Make sure you understand this requirement before closing!
-                  </p>
-
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-2">Insurance</h3>
-                  <p className="mb-5">
-                    This is your hazard insurance (fire) which protects your home and belongings.
-                  </p>
-
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-2">Mortgage Insurance</h3>
-                  <p>
-                    Depending on the type of Arizona mortgage loan you have, this will be an additional payment
-                    that&apos;s unrelated to your hazard insurance. Lenders often require this when the Loan to
-                    Value is greater than 80% and is meant to protect the lender if the borrower fails to pay back
-                    the loan.
-                  </p>
+                  <ul className="list-disc pl-6 space-y-3">
+                    <li>
+                      <strong>Principal Amount</strong>: This is the portion that goes toward paying down your
+                      balance.
+                    </li>
+                    <li>
+                      <strong>Interest</strong>: Essentially this is the amount you&apos;re paying to the bank to
+                      borrow the original balance.
+                    </li>
+                    <li>
+                      <strong>Taxes</strong>: Real Estate Taxes can either be included as part of your monthly
+                      payment or they can be paid separately throughout the year. Make sure you understand this
+                      requirement before closing!
+                    </li>
+                    <li>
+                      <strong>Insurance</strong>: This is your hazard insurance (fire) which protects your home and
+                      belongings.
+                    </li>
+                    <li>
+                      <strong>Mortgage Insurance</strong>: Depending on the type of Arizona mortgage loan you have,
+                      this will be an additional payment that&apos;s unrelated to your hazard insurance. Lenders
+                      often require this when the Loan to Value is greater than 80% and is meant to protect the
+                      lender if the borrower fails to pay back the loan.
+                    </li>
+                  </ul>
                 </section>
 
                 <section id="frequently-asked-questions">
                   <FaqAccordion
                     title="Frequently Asked Questions"
-                    items={articleFaqs.map((faq) => ({
+                    items={visibleFaqs.map((faq) => ({
                       q: faq.question,
                       a: faq.answer,
                     }))}
