@@ -149,26 +149,6 @@ export default function ConventionalHomeLoanGuidePage() {
                 and how it compares to other options like FHA and VA loans.
               </p>
 
-              <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
-                <h2
-                  className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-                >
-                  Ready to Explore Conventional Loan Options?
-                </h2>
-                <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
-                  Get pre-approved and see how a conventional home loan can work for your first Arizona purchase.
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <Link
-                    href="#get-pre-approved"
-                    className="btn-primary"
-                  >
-                    Start My Pre-Approval
-                  </Link>
-                </div>
-              </div>
-
               <div className="space-y-10 text-[#3a4a3a] text-[16px] leading-[1.8]">
                 <section id="what-exactly-is-a-conventional-home-loan">
                   <h2
@@ -238,8 +218,16 @@ export default function ConventionalHomeLoanGuidePage() {
                   </p>
                   <p className="mb-5"><strong>2. Flexible Credit Requirements</strong></p>
                   <p className="mb-5">
-                    A <strong>minimum credit score of 620</strong> is usually required (Fannie Mae Eligibility
-                    Matrix).
+                    A <strong>minimum credit score of 620</strong> is usually required (
+                    <a
+                      href="https://singlefamily.fanniemae.com/media/20786/display"
+                      target="_blank"
+                      rel="noopener"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      Fannie Mae Eligibility Matrix
+                    </a>
+                    ).
                   </p>
                   <p className="mb-5">
                     <strong>3. Cancelable Private Mortgage Insurance (PMI)</strong>
@@ -306,39 +294,52 @@ export default function ConventionalHomeLoanGuidePage() {
                     <table className="w-full min-w-[640px] text-left text-[14px] border-collapse">
                       <thead>
                         <tr className="border-b border-[#4b800a]/40">
-                          <th className="py-3 pr-3 font-bold text-[#052316]">Feature</th>
-                          <th className="py-3 pr-3 font-bold text-[#052316]">Conventional Loan</th>
-                          <th className="py-3 pr-3 font-bold text-[#052316]">FHA Loan</th>
-                          <th className="py-3 pr-3 font-bold text-[#052316]">VA Loan (<a href="https://www.va.gov/housing-assistance/home-loans/loan-types/" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">VA.gov</a>)</th>
-                          <th className="py-3 font-bold text-[#052316]">Jumbo Loan</th>
+                          <th className="py-3 pr-3 text-[#052316]"><strong>Feature</strong></th>
+                          <th className="py-3 pr-3 text-[#052316]"><strong>Conventional Loan</strong></th>
+                          <th className="py-3 pr-3 text-[#052316]"><strong>FHA Loan</strong></th>
+                          <th className="py-3 pr-3 text-[#052316]">
+                            <strong>
+                              VA Loan (
+                              <a
+                                href="https://www.va.gov/housing-assistance/home-loans/loan-types/"
+                                target="_blank"
+                                rel="noopener"
+                                className="text-[#3fb364] font-semibold hover:underline"
+                              >
+                                VA.gov
+                              </a>
+                              )
+                            </strong>
+                          </th>
+                          <th className="py-3 text-[#052316]"><strong>Jumbo Loan</strong></th>
                         </tr>
                       </thead>
                       <tbody className="text-[#3a4a3a]">
                         <tr className="border-b border-[#4b800a]/20">
-                          <td className="py-3 pr-3 font-semibold">Down Payment</td>
+                          <td className="py-3 pr-3"><strong>Down Payment</strong></td>
                           <td className="py-3 pr-3">As low as 3%</td>
                           <td className="py-3 pr-3">3.5% (580+ credit score)</td>
                           <td className="py-3 pr-3">0% (for eligible veterans)</td>
                           <td className="py-3">10–20% typical</td>
                         </tr>
                         <tr className="border-b border-[#4b800a]/20">
-                          <td className="py-3 pr-3 font-semibold">Credit Score</td>
+                          <td className="py-3 pr-3"><strong>Credit Score</strong></td>
                           <td className="py-3 pr-3">620+</td>
                           <td className="py-3 pr-3">580+</td>
                           <td className="py-3 pr-3">Flexible, no set minimum</td>
                           <td className="py-3">700+ preferred</td>
                         </tr>
                         <tr className="border-b border-[#4b800a]/20">
-                          <td className="py-3 pr-3 font-semibold">Mortgage Insurance</td>
+                          <td className="py-3 pr-3"><strong>Mortgage Insurance</strong></td>
                           <td className="py-3 pr-3">PMI (removable)</td>
                           <td className="py-3 pr-3">MIP (often permanent)</td>
                           <td className="py-3 pr-3">None for most borrowers</td>
                           <td className="py-3">None, but higher rates</td>
                         </tr>
                         <tr>
-                          <td className="py-3 pr-3 font-semibold">Loan Limit</td>
+                          <td className="py-3 pr-3"><strong>Loan Limit</strong></td>
                           <td className="py-3 pr-3">$806,500</td>
-                          <td className="py-3 pr-3">~$557,750 (Maricopa/Pinal County, 2025; varies by county)</td>
+                          <td className="py-3 pr-3">~$498,257 (varies)</td>
                           <td className="py-3 pr-3">No cap with entitlement</td>
                           <td className="py-3">$806,501+</td>
                         </tr>
@@ -359,18 +360,18 @@ export default function ConventionalHomeLoanGuidePage() {
                   </p>
                   <ul className="list-disc pl-6 space-y-3">
                     <li>
-                      <strong>Excellent Credit (760+)</strong> → Best rates, lowest PMI.
+                      <strong>Excellent Credit (740+)</strong> → Best rates, lowest PMI.
                     </li>
                     <li>
-                      <strong>Good Credit (720–759)</strong> → Competitive rates with manageable PMI.
+                      <strong>Good Credit (680–739)</strong> → Competitive rates with manageable PMI.
                     </li>
                     <li>
-                      <strong>Fair Credit (680–719)</strong> → Still eligible for conventional, though FHA may
+                      <strong>Fair Credit (620–679)</strong> → Still eligible for conventional, though FHA may
                       provide more leniency.
                     </li>
                     <li>
                       <strong>Below 620</strong> → May need to improve credit before qualifying, or consider FHA
-                      options starting at 580.
+                      options.
                     </li>
                   </ul>
                 </section>
@@ -382,9 +383,17 @@ export default function ConventionalHomeLoanGuidePage() {
                   >
                     First-Time Buyer Tips for Arizona
                   </h2>
-                  <ul className="list-disc pl-6 space-y-3">
+                  <ol className="list-decimal pl-6 space-y-3">
                     <li>
-                      <strong>Check Your Credit</strong> – Request a free report from <a href="https://www.annualcreditreport.com/" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">AnnualCreditReport.com</a>
+                      <strong>Check Your Credit</strong> – Request a free report from{" "}
+                      <a
+                        href="https://www.annualcreditreport.com/"
+                        target="_blank"
+                        rel="noopener"
+                        className="text-[#3fb364] font-semibold hover:underline"
+                      >
+                        AnnualCreditReport.com
+                      </a>
                     </li>
                     <li>
                       <strong>Save for a Down Payment</strong> – Even if you qualify for 3% down, a larger down
@@ -392,7 +401,16 @@ export default function ConventionalHomeLoanGuidePage() {
                     </li>
                     <li>
                       <strong>Calculate Affordability</strong> – Keep housing costs under 28% of your monthly
-                      income (<a href="https://www.consumerfinance.gov/owning-a-home/process/prepare/determine-your-budget/" target="_blank" rel="noopener" className="text-[#3fb364] font-semibold hover:underline">CFPB Mortgage Affordability</a>).
+                      income (
+                      <a
+                        href="https://www.consumerfinance.gov/owning-a-home/process/prepare/determine-your-budget/"
+                        target="_blank"
+                        rel="noopener"
+                        className="text-[#3fb364] font-semibold hover:underline"
+                      >
+                        CFPB Mortgage Affordability
+                      </a>
+                      ).
                     </li>
                     <li>
                       <strong>Get Pre-Approved</strong> – A pre-approval from Mortgage Brothers LLC helps you shop
@@ -402,7 +420,7 @@ export default function ConventionalHomeLoanGuidePage() {
                       <strong>Work With Local Experts</strong> – Arizona mortgage professionals can help you
                       navigate county-specific loan limits and eligibility rules.
                     </li>
-                  </ul>
+                  </ol>
                 </section>
 
                 <section id="why-choose-az-mortgage-brothers">
@@ -418,33 +436,33 @@ export default function ConventionalHomeLoanGuidePage() {
                       href="/fha-home-loans-arizona/"
                       className="text-[#3fb364] font-semibold hover:underline"
                     >
-                      FHA loans
+                      <strong>FHA loans</strong>
                     </Link>
                     ,{" "}
                     <Link href="/va-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
-                      VA loans
+                      <strong>VA loans</strong>
                     </Link>
                     ,{" "}
                     <Link href="/jumbo-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
-                      jumbo loans
+                      <strong>jumbo loans</strong>
                     </Link>
                     ,{" "}
                     <Link href="/refinancing-arizona/" className="text-[#3fb364] font-semibold hover:underline">
-                      refinancing
+                      <strong>refinancing</strong>
                     </Link>
                     ,{" "}
                     <Link
                       href="/reverse-mortgage-arizona/"
                       className="text-[#3fb364] font-semibold hover:underline"
                     >
-                      reverse mortgages
+                      <strong>reverse mortgages</strong>
                     </Link>
                     , and{" "}
                     <Link
                       href="/private-money-lender-arizona/"
                       className="text-[#3fb364] font-semibold hover:underline"
                     >
-                      private money lending
+                      <strong>private money lending</strong>
                     </Link>
                     . Their Arizona-based team helps first-time buyers secure fast pre-approvals and personalized
                     loan solutions.
@@ -459,10 +477,10 @@ export default function ConventionalHomeLoanGuidePage() {
                   <FaqAccordion
                     title="FAQs (Frequently Asked Questions)"
                     items={[
-                    { q: "What exactly is a conventional home loan?", a: <>A conventional home loan is a mortgage not insured by the federal government, offered by
+                    { q: "1: What exactly is a conventional home loan?", a: <>A conventional home loan is a mortgage not insured by the federal government, offered by
                         private lenders like banks or credit unions.</> },
-                    { q: "What is the 2026 conforming loan limit in Arizona?", a: <>For 2026, the conforming loan limit for a single-family home in Arizona is $806,500.</> },
-                    { q: "What credit score is needed for a conventional loan?", a: <>A minimum credit score of 620 is usually required to qualify for a conventional loan.</> }
+                    { q: "2: What is the 2026 conforming loan limit in Arizona?", a: <>For 2026, the conforming loan limit for a single-family home in Arizona is $806,500.</> },
+                    { q: "3: What credit score is needed for a conventional loan?", a: <>A minimum credit score of 620 is usually required to qualify for a conventional loan.</> }
                     ]}
                   />
                 </section>

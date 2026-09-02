@@ -10,9 +10,14 @@ import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
 import {
+  TranscriptAlertLine,
   TranscriptCheckItem,
   TranscriptCrossItem,
+  TranscriptEmojiItem,
+  TranscriptLightbulbLine,
   TranscriptList,
+  TranscriptMicLine,
+  TranscriptPinLine,
   TranscriptPointItem,
 } from "@/app/component/TranscriptIcons";
 
@@ -185,7 +190,7 @@ export default function SolarPanelsMortgagePage() {
                     leased or owned.
                   </p>
                   <p className="mb-5">
-                    If someone&apos;s solar panels are leased, they have to be transferred by the owner (a
+                    In someone&apos;s solar panels are leased, they have to be transferred by the owner (a
                     company such as Solar City) to the new buyer. But, if they are owned outright then
                     there&apos;s no loan and they are treated as a part of the real estate, a fixture of the
                     property. However, if there&apos;s a loan on there, that loan itself goes with the
@@ -264,7 +269,7 @@ export default function SolarPanelsMortgagePage() {
                   </Link>{" "}
                   or give us a call at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
+                    (602) 535-2171
                   </a>
                   . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
                   you and help you through the whole process.
@@ -287,12 +292,6 @@ export default function SolarPanelsMortgagePage() {
                     you and help you through the whole process.
                   </p>
                 </div>
-
-                <p className="text-[15px]">
-                  Thanks for listening and reading the Mortgage Brothers Show. Let us know if you have any
-                  questions you&apos;d like us to answer on this podcast. You can email your questions to
-                  Tom@AZMortgageBrothers.com or Eddie@AZMortgageBrothers.com.
-                </p>
 
                 <p className="text-[#5a6b52] text-[13px] leading-relaxed">
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
@@ -332,225 +331,340 @@ export default function SolarPanelsMortgagePage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Transcript of the Mortgage Brothers Podcast
+                    <strong>Transcript of the Mortgage Brothers Podcast</strong>
                   </h2>
 
                   <div className="space-y-8 text-[15.5px]">
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        How Do Solar Panels Affect the Mortgage &amp; Closing Process?
+                        <strong>How Do Solar Panels Affect the Mortgage &amp; Closing Process?</strong>
                       </h3>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">Introduction [00:02]</h3>
+                      <TranscriptMicLine className="mb-3">
+                        (00:02) Welcome to the <strong>Mortgage Brothers Podcast!</strong> I&apos;m{" "}
+                        <strong>Eddie Knoell</strong>, and I&apos;m <strong>Tom Knoell</strong>. Today,
+                        we&apos;re diving into a hot topic for homeowners and buyers:
+                      </TranscriptMicLine>
+                      <TranscriptList className="mb-3">
+                        <TranscriptEmojiItem emoji="☀️">
+                          <strong>Solar Panels: How Do They Impact Your Mortgage &amp; Closing?</strong>
+                        </TranscriptEmojiItem>
+                      </TranscriptList>
+                      <TranscriptLightbulbLine>
+                        Are solar panels always a bright idea, or do they come with{" "}
+                        <strong>storm clouds</strong> when it comes to financing? Let&apos;s break it down.
+                      </TranscriptLightbulbLine>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        <strong>Are Solar Panels Allowed in Mortgage Loans?</strong>
+                      </h3>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          (00:36) <strong>Yes, lenders allow solar panels!</strong>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
                       <p className="mb-3">
-                        Welcome to the Mortgage Brothers Podcast! I&apos;m Eddie Knoell, and I&apos;m Tom
-                        Knoell. Today, we&apos;re diving into a hot topic for homeowners and buyers: Solar
-                        Panels—How Do They Impact Your Mortgage &amp; Closing?
+                        However, they fall into <strong>two categories</strong>:
                       </p>
-                      <p>
-                        Are solar panels always a bright idea, or do they come with storm clouds when it comes
-                        to financing? Let&apos;s break it down.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        Are Solar Panels Allowed in Mortgage Loans? [00:36]
-                      </h3>
-                      <p className="mb-3">Yes, lenders allow solar panels! However, they fall into two categories:</p>
+                      <TranscriptList className="mb-3">
+                        <TranscriptEmojiItem emoji="1️⃣">
+                          <strong>Owned panels</strong> – The seller <strong>owns the panels outright</strong>.
+                        </TranscriptEmojiItem>
+                        <TranscriptEmojiItem emoji="2️⃣">
+                          <strong>Leased panels</strong> – The panels are owned by a{" "}
+                          <strong>solar company</strong>, and the homeowner is making{" "}
+                          <strong>lease payments</strong>.
+                        </TranscriptEmojiItem>
+                      </TranscriptList>
+                      <TranscriptList className="mb-3">
+                        <TranscriptEmojiItem emoji="🏡">
+                          <strong>Why does this matter?</strong>
+                        </TranscriptEmojiItem>
+                      </TranscriptList>
                       <TranscriptList className="mb-3">
                         <TranscriptCheckItem>
-                          <strong>Owned panels</strong> – The seller owns the panels outright.
+                          <strong>
+                            Lenders need to review the{" "}
+                            <Link
+                              href="https://www.epa.gov/green-power-markets/solar-power-purchase-agreements"
+                              className="text-[#3fb364] font-semibold hover:underline"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              solar agreement
+                            </Link>
+                          </strong>{" "}
+                          before approving a loan.
                         </TranscriptCheckItem>
                         <TranscriptCheckItem>
-                          <strong>Leased panels</strong> – The panels are owned by a solar company, and the
-                          homeowner is making lease payments.
-                        </TranscriptCheckItem>
-                      </TranscriptList>
-                      <TranscriptList>
-                        <TranscriptCheckItem>
-                          Lenders need to review the solar agreement before approving a loan.
+                          The <strong>buyer must get a copy</strong> of the agreement and provide it to the
+                          lender.
                         </TranscriptCheckItem>
                         <TranscriptCheckItem>
-                          The buyer must get a copy of the agreement and provide it to the lender.
-                        </TranscriptCheckItem>
-                        <TranscriptCheckItem>
-                          If the panels are leased, the lease must be transferable to the new buyer.
+                          If the <strong>panels are leased</strong>, the lease must be{" "}
+                          <strong>transferable</strong> to the new buyer.
                         </TranscriptCheckItem>
                       </TranscriptList>
                     </div>
 
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        Why Does Transferability Matter? [01:46]
+                        <strong>Why Does Transferability Matter?</strong>
                       </h3>
+                      <TranscriptList className="mb-3">
+                        <TranscriptEmojiItem emoji="🔄">
+                          (01:46) If the solar lease isn&apos;t transferable, the deal can fall apart.
+                        </TranscriptEmojiItem>
+                      </TranscriptList>
+                      <TranscriptList className="mb-3">
+                        <TranscriptPointItem>
+                          <strong>Buyers should check:</strong>
+                        </TranscriptPointItem>
+                        <TranscriptCheckItem>
+                          Does the solar lease <strong>include a warranty</strong> for malfunctions?
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Can the buyer <strong>take over the lease</strong> without restrictions?
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Does the solar company <strong>require a credit check</strong> for the new owner?
+                        </TranscriptCheckItem>
+                      </TranscriptList>
+                      <TranscriptPinLine>
+                        <strong>Key point:</strong> If the panels are owned outright, they{" "}
+                        <strong>transfer automatically</strong> with the home, just like any other fixture.
+                        But if there&apos;s a <strong>loan or lease attached</strong>, the seller may need to{" "}
+                        <strong>pay off the balance</strong> before selling.
+                      </TranscriptPinLine>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        <strong>How Do Solar Panel Leases Impact Buyers?</strong>
+                      </h3>
+                      <TranscriptList className="mb-3">
+                        <TranscriptPointItem>
+                          (03:59) <strong>What do buyers need to know?</strong>
+                        </TranscriptPointItem>
+                      </TranscriptList>
                       <p className="mb-3">
-                        If the solar lease isn&apos;t transferable, the deal can fall apart. Buyers should
-                        check:
+                        If the panels are leased, <strong>the buyer must qualify</strong> to take over the
+                        lease.
+                      </p>
+                      <p className="mb-3">
+                        Some solar companies will <strong>run a credit check</strong> on the buyer.
+                      </p>
+                      <p className="mb-3">
+                        If the lease isn&apos;t transferable, the seller{" "}
+                        <strong>may need to buy out the contract</strong> before closing.
                       </p>
                       <TranscriptList className="mb-3">
-                        <TranscriptPointItem>
-                          Does the solar lease include a warranty for malfunctions?
-                        </TranscriptPointItem>
-                        <TranscriptPointItem>
-                          Can the buyer take over the lease without restrictions?
-                        </TranscriptPointItem>
-                        <TranscriptPointItem>
-                          Does the solar company require a credit check for the new owner?
-                        </TranscriptPointItem>
+                        <TranscriptEmojiItem emoji="💰">
+                          <strong>Will the seller pay off the loan?</strong>
+                        </TranscriptEmojiItem>
                       </TranscriptList>
-                      <p>
-                        Key point: If the panels are owned outright, they transfer automatically with the
-                        home, just like any other fixture. But if there&apos;s a loan or lease attached, the
-                        seller may need to pay off the balance before selling.
+                      <p className="mb-3">
+                        Sometimes, sellers <strong>offer to pay off</strong> the remaining balance to make the
+                        home more attractive.
                       </p>
+                      <p className="mb-3">
+                        Buyers should <strong>ask about the payoff amount</strong> before making an offer.
+                      </p>
+                      <TranscriptAlertLine>
+                        <strong>Pro Tip:</strong> If a home has leased panels, check with the{" "}
+                        <strong>solar company</strong> early in the process to avoid last-minute surprises!
+                      </TranscriptAlertLine>
                     </div>
 
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        How Do Solar Panel Leases Impact Buyers? [03:59]
-                      </h3>
-                      <p className="mb-3"><strong>What do buyers need to know?</strong></p>
-                      <TranscriptList className="mb-3">
-                        <TranscriptCheckItem>
-                          If the panels are leased, the buyer must qualify to take over the lease.
-                        </TranscriptCheckItem>
-                        <TranscriptCheckItem>
-                          Some solar companies will run a credit check on the buyer.
-                        </TranscriptCheckItem>
-                        <TranscriptCheckItem>
-                          If the lease isn&apos;t transferable, the seller may need to buy out the contract
-                          before closing.
-                        </TranscriptCheckItem>
-                      </TranscriptList>
-                      <p className="mb-3">💰 <strong>Will the seller pay off the loan?</strong></p>
-                      <TranscriptList className="mb-3">
-                        <TranscriptCheckItem>
-                          Sometimes, sellers offer to pay off the remaining balance to make the home more
-                          attractive.
-                        </TranscriptCheckItem>
-                        <TranscriptCheckItem>
-                          Buyers should ask about the payoff amount before making an offer.
-                        </TranscriptCheckItem>
-                      </TranscriptList>
-                      <p>
-                        <strong>Pro Tip:</strong> If a home has leased panels, check with the solar company early in the
-                        process to avoid last-minute surprises!
-                      </p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        How Do Solar Panels Affect Home Value? [05:38]
+                        <strong>How Do Solar Panels Affect Home Value?</strong>
                       </h3>
                       <TranscriptList className="mb-3">
+                        <TranscriptEmojiItem emoji="💰">
+                          (05:38) <strong>Do solar panels increase home value?</strong>
+                        </TranscriptEmojiItem>
+                      </TranscriptList>
+                      <TranscriptList className="mb-3">
                         <TranscriptCheckItem>
-                          Owned solar panels can increase value, but not as much as most people think.
+                          <strong>Owned solar panels</strong> can increase value, but not as much as most
+                          people think.
                         </TranscriptCheckItem>
                         <TranscriptCrossItem>
-                          Leased panels do NOT increase the appraised value of the home.
+                          <strong>Leased panels</strong> do NOT increase the appraised value of the home.
                         </TranscriptCrossItem>
                       </TranscriptList>
+
                       <h3 className="text-[#052316] text-[17px] font-bold mb-2">
-                        How Do Appraisers Handle Solar Panels? [06:19]
+                        <strong>How Do Appraisers Handle Solar Panels?</strong>
                       </h3>
                       <TranscriptList className="mb-3">
-                        <TranscriptCheckItem>
-                          Leased panels = No value added
-                        </TranscriptCheckItem>
-                        <TranscriptCheckItem>
-                          Owned panels = Some value added (but not always a full return on investment)
-                        </TranscriptCheckItem>
+                        <TranscriptEmojiItem emoji="🏠">
+                          (06:19) <strong>Appraisers follow lender guidelines:</strong>
+                        </TranscriptEmojiItem>
                       </TranscriptList>
-                      <p className="mb-3">
-                        Even if the seller paid $20,000 for the system, appraisers may only add $5,000 in
-                        value. If there are no comparable homes with solar panels, the appraiser may not
-                        adjust the value at all.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        How Do Solar Panel Payments Affect Mortgage Qualification? [09:39]
-                      </h3>
-                      <p className="mb-3">
-                        If the buyer takes over a lease, will the payment count against their mortgage
-                        qualification? It depends. If the lease includes a <strong>production guarantee</strong>, lenders
-                        won&apos;t count it in debt-to-income (DTI) calculations.
-                      </p>
-                      <p className="mb-3">
-                        <strong>What&apos;s a production guarantee?</strong><br />
-                        A solar company promises that the panels will produce a
-                        set amount of electricity. If they don&apos;t, they refund the homeowner.
-                      </p>
-                      <p className="mb-3"><strong>Why does this matter?</strong></p>
                       <TranscriptList className="mb-3">
+                        <TranscriptCrossItem>
+                          <strong>Leased panels = No value added</strong>
+                        </TranscriptCrossItem>
                         <TranscriptCheckItem>
-                          Without a production guarantee, lenders may count the lease payment as debt,
-                          reducing the buyer&apos;s borrowing power.
-                        </TranscriptCheckItem>
-                        <TranscriptCheckItem>
-                          Buyers should check their loan pre-approval to see if the solar lease affects their
-                          DTI ratio.
+                          <strong>Owned panels = Some value added</strong> (but not always a full return on
+                          investment)
                         </TranscriptCheckItem>
                       </TranscriptList>
-                    </div>
-
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        How Do Solar Panels Affect the Closing Process? [11:18]
-                      </h3>
+                      <TranscriptPinLine className="mb-3">
+                        <strong>Why don&apos;t leased panels add value?</strong>
+                      </TranscriptPinLine>
                       <p className="mb-3">
-                        If the solar panels are financed, there is usually a lien on the property. Before
-                        closing, the title company must:
+                        The homeowner <strong>doesn&apos;t actually own them</strong>.
+                      </p>
+                      <p className="mb-3">
+                        Lenders see them like a <strong>car lease</strong>—you don&apos;t own the asset, so
+                        it&apos;s not counted.
                       </p>
                       <TranscriptList className="mb-3">
-                        <TranscriptCheckItem>
-                          Get the solar company to release the lien
-                        </TranscriptCheckItem>
-                        <TranscriptCheckItem>
-                          Add the new buyer&apos;s name to the lease (if applicable)
-                        </TranscriptCheckItem>
-                        <TranscriptCheckItem>
-                          Re-file the lien after closing (if the lease continues)
-                        </TranscriptCheckItem>
+                        <TranscriptEmojiItem emoji="📉">
+                          <strong>What if the panels are owned?</strong>
+                        </TranscriptEmojiItem>
                       </TranscriptList>
                       <p className="mb-3">
-                        Some solar companies charge $200–$500 to transfer the lien. Work with the title
-                        company early in the process to avoid delays.
-                      </p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        Final Thoughts [14:45]
-                      </h3>
-                      <p className="mb-3">Solar panels can be a great investment, but buyers should:</p>
-                      <TranscriptList className="mb-3">
-                        <TranscriptCheckItem>
-                          Ask for a copy of the lease or loan agreement early.
-                        </TranscriptCheckItem>
-                        <TranscriptCheckItem>
-                          Check if the lease is transferable.
-                        </TranscriptCheckItem>
-                        <TranscriptCheckItem>
-                          Verify whether the solar payment affects their mortgage qualification.
-                        </TranscriptCheckItem>
-                        <TranscriptCheckItem>
-                          Understand that appraisals may not fully reflect the system&apos;s cost.
-                        </TranscriptCheckItem>
-                      </TranscriptList>
-                      <p className="mb-3">
-                        Long-term outlook: Solar technology is improving, and costs are dropping. While solar
-                        panels may not add much value today, they can offset rising electricity costs in the
-                        future.
+                        Even if the seller paid <strong>$20,000</strong> for the system, appraisers may{" "}
+                        <strong>only add $5,000</strong> in value.
                       </p>
                       <p>
-                        Need a mortgage? Ask us for a{" "}
-                        <Link href="#get-pre-approved" className="text-[#3fb364] font-semibold hover:underline">
-                          free quote
-                        </Link>
-                        —we&apos;ll guide you through every step!
+                        If there are <strong>no comparable homes with solar panels</strong>, the appraiser{" "}
+                        <strong>may not adjust the value at all</strong>.
                       </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        <strong>How Do Solar Panel Payments Affect Mortgage Qualification?</strong>
+                      </h3>
+                      <TranscriptList className="mb-3">
+                        <TranscriptPointItem>
+                          (09:39) If the buyer <strong>takes over a lease</strong>, will the payment count
+                          against their mortgage qualification?
+                        </TranscriptPointItem>
+                      </TranscriptList>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          <strong>It depends.</strong> If the lease includes a{" "}
+                          <strong>production guarantee</strong>, lenders <strong>won&apos;t count it</strong> in
+                          debt-to-income (DTI) calculations.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
+                      <TranscriptAlertLine className="mb-3">
+                        <strong>What&apos;s a production guarantee?</strong>
+                        <br />
+                        A solar company promises that the panels will{" "}
+                        <strong>produce a set amount of electricity</strong>. If they don&apos;t, they refund
+                        the homeowner.
+                      </TranscriptAlertLine>
+                      <TranscriptPinLine className="mb-3">
+                        <strong>Why does this matter?</strong>
+                      </TranscriptPinLine>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          Without a <strong>production guarantee</strong>, lenders may{" "}
+                          <strong>count the lease payment</strong> as debt,{" "}
+                          <strong>reducing the buyer&apos;s borrowing power</strong>.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Buyers should check their <strong>loan pre-approval</strong> to see if the solar
+                          lease affects their <strong>DTI ratio</strong>.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        <strong>How Do Solar Panels Affect the Closing Process?</strong>
+                      </h3>
+                      <TranscriptList className="mb-3">
+                        <TranscriptEmojiItem emoji="🔄">
+                          (11:18) <strong>Title Companies Must Release Solar Liens</strong>
+                        </TranscriptEmojiItem>
+                      </TranscriptList>
+                      <p className="mb-3">
+                        If the solar panels are financed, <strong>there is usually a lien</strong> on the
+                        property.
+                      </p>
+                      <TranscriptList className="mb-3">
+                        <TranscriptEmojiItem emoji="🏡">
+                          <strong>Before closing, the title company must:</strong>
+                        </TranscriptEmojiItem>
+                      </TranscriptList>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          Get the <strong>solar company to release the lien</strong>.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Add the new buyer&apos;s name to the lease (if applicable).
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Re-file the lien <strong>after closing</strong> (if the lease continues).
+                        </TranscriptCheckItem>
+                      </TranscriptList>
+                      <TranscriptPinLine className="mb-3">
+                        <strong>Fees:</strong> Some solar companies charge <strong>$200–$500</strong> to
+                        transfer the lien.
+                      </TranscriptPinLine>
+                      <TranscriptAlertLine>
+                        <strong>Pro Tip:</strong> Work with the title company{" "}
+                        <strong>early in the process</strong> to avoid delays.
+                      </TranscriptAlertLine>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        <strong>Final Thoughts: Should Buyers Be Worried About Solar Panels?</strong>
+                      </h3>
+                      <TranscriptList className="mb-3">
+                        <TranscriptEmojiItem emoji="☀️">
+                          (14:45) <strong>Solar panels can be a great investment, but buyers should:</strong>
+                        </TranscriptEmojiItem>
+                      </TranscriptList>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          Ask for a <strong>copy of the lease or loan agreement</strong> early.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Check if the <strong>lease is transferable</strong>.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Verify whether the <strong>solar payment affects their mortgage qualification</strong>.
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Understand that <strong>appraisals may not fully reflect the system&apos;s cost</strong>.
+                        </TranscriptCheckItem>
+                      </TranscriptList>
+                      <TranscriptLightbulbLine>
+                        <strong>Long-term outlook:</strong> Solar technology is <strong>improving</strong>, and{" "}
+                        <strong>costs are dropping</strong>. While solar panels may not add much value today,
+                        they can <strong>offset rising electricity costs</strong> in the future.
+                      </TranscriptLightbulbLine>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        <strong>Got Questions? Contact Us!</strong>
+                      </h3>
+                      <TranscriptList className="mb-3">
+                        <TranscriptEmojiItem emoji="🎯">
+                          <strong>Need a mortgage?</strong> Ask us for a{" "}
+                          <Link href="#get-pre-approved" className="text-[#3fb364] font-semibold hover:underline">
+                            <strong>free quote</strong>
+                          </Link>
+                          —we&apos;ll guide you through every step!
+                        </TranscriptEmojiItem>
+                      </TranscriptList>
+                      <TranscriptList>
+                        <TranscriptEmojiItem emoji="🏡">
+                          <strong>Thanks for tuning in—see you in the next episode!</strong>
+                        </TranscriptEmojiItem>
+                      </TranscriptList>
                     </div>
                   </div>
                 </section>

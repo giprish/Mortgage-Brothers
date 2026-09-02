@@ -76,16 +76,29 @@ const loanSolutions = [
 ];
 
 const articleFaqs = [
-  { question: "What's the minimum credit score to buy a home in Arizona?", answer: "Most loan programs require **620 or higher**. This threshold opens the door to FHA, VA, and conventional loan options." },
-  { question: "Can I qualify if my credit is below 620?", answer: "Not at this time. We recommend improving your score first — our team can review your credit and create a quick action plan to reach 620+." },
-  { question: "How long does credit improvement take?", answer: "Depending on your situation, meaningful progress can occur in 30–90 days by paying down debt, correcting errors, and managing utilization." },
+  {
+    question: "What's the minimum credit score to buy a home in Arizona?",
+    answer:
+      "Most loan programs require 620 or higher. This threshold opens the door to FHA, VA, and conventional loan options.",
+  },
+  {
+    question: "Can I qualify if my credit is below 620?",
+    answer:
+      "Not at this time. We recommend improving your score first — our team can review your credit and create a quick action plan to reach 620+.",
+  },
+  {
+    question: "How long does credit improvement take?",
+    answer:
+      "Depending on your situation, meaningful progress can occur in 30–90 days by paying down debt, correcting errors, and managing utilization.",
+  },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({
   blog: {
     pathname: "/how-to-get-a-mortgage-in-arizona-with-fair-or-improving-credit/",
     headline: "How to Get a Mortgage in Arizona with Fair or Improving Credit",
-    description: "Learn how buyers with credit scores between 580 and 660 qualify for home loans in Arizona with FHA programs and rapid rescoring.",
+    description:
+      "Learn how Arizona homebuyers with fair or improving credit can qualify for FHA or conventional loans. Build your credit and buy with confidence.",
     datePublished: "2026-06-10",
     articleSection: "Arizona Mortgage Insights",
   },
@@ -119,7 +132,7 @@ export default function FairOrImprovingCreditPage() {
       <main className="flex-grow relative z-0">
         <ArticleHero
           title={<>How to Get a Mortgage in Arizona with Fair or Improving Credit</>}
-          excerpt="Learn how buyers with credit scores between 580 and 660 qualify for home loans in Arizona with FHA programs and rapid rescoring."
+          excerpt="Learn how Arizona homebuyers with fair or improving credit can qualify for FHA or conventional loans. Build your credit and buy with confidence."
           category="Arizona Mortgage Insights"
           categoryHref="/arizona-mortgage-insights/"
           dateLabel="Jun 10, 2026"
@@ -145,33 +158,12 @@ export default function FairOrImprovingCreditPage() {
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
                 At{" "}
                 <Link href="/" className="text-[#3fb364] font-semibold hover:underline">
-                  Mortgage Brothers
+                  <strong>Mortgage Brothers</strong>
                 </Link>
                 , we help Arizona homebuyers strengthen their credit and financial profile so they can qualify for
                 the <strong>best loan programs and lowest possible rates.</strong> This guide walks you through how
                 to prepare for a mortgage when your credit is fair or improving.
               </p>
-
-              <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
-                <h2
-                  className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-                >
-                  Get Your Mortgage Consultation
-                </h2>
-                <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
-                  Talk with Mortgage Brothers LLC about credit readiness, loan options, and the steps to
-                  pre-approval.
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <Link
-                    href="#get-pre-approved"
-                    className="btn-primary"
-                  >
-                    Get Your Mortgage Consultation
-                  </Link>
-                </div>
-              </div>
 
               <div className="space-y-10 text-[#3a4a3a] text-[16px] leading-[1.8]">
                 <section id="understanding-credit-and-mortgage-readiness">
@@ -179,7 +171,7 @@ export default function FairOrImprovingCreditPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Understanding Credit and Mortgage Readiness
+                    <strong>Understanding Credit and Mortgage Readiness</strong>
                   </h2>
 
                   <p className="mb-4">
@@ -199,11 +191,11 @@ export default function FairOrImprovingCreditPage() {
                       <strong>Fair:</strong> 620-679
                     </li>
                     <li>
-                      <strong>Below 620:</strong> Conventional programs typically start at 620, but FHA loans may qualify with scores as low as 580
+                      <strong>Below 620:</strong> Typically not eligible for most loan programs
                     </li>
                   </ul>
                   <p className="mb-5">
-                    If your score is <strong>620 or higher</strong>, you are in a strong position for conventional financing, and FHA options may be available down to 580 depending on your full profile and lender guidelines. You may qualify for
+                    If your score is <strong>620 or higher</strong>, you&apos;re in a good position to qualify for
                     an FHA or conventional mortgage — especially with strong income and a manageable
                     debt-to-income (DTI) ratio.
                   </p>
@@ -219,7 +211,7 @@ export default function FairOrImprovingCreditPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    What Lenders Actually Look at Beyond Your Credit Score
+                    <strong>What Lenders Actually Look at Beyond Your Credit Score</strong>
                   </h2>
                   <p className="mb-3">
                     <strong>While credit score matters, Arizona lenders also focus on:</strong>
@@ -245,10 +237,10 @@ export default function FairOrImprovingCreditPage() {
                       obligations.
                     </li>
                   </ul>
-                  <blockquote className="border-l-4 border-[#3fb364] bg-white/70 pl-5 pr-4 py-4 rounded-r-xl mb-6 italic text-[#052316]">
+                  <p className="text-center font-bold text-[#052316] mb-6">
                     &ldquo;Your credit score is one part of your financial story. We help you strengthen every part
                     that lenders evaluate — not just the number.&rdquo;
-                  </blockquote>
+                  </p>
                   <div className="text-center my-6">
                     <Link
                       href="#get-pre-approved"
@@ -264,11 +256,11 @@ export default function FairOrImprovingCreditPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Your 5-Step Plan to Qualify for a Mortgage with Fair or Improving Credit
+                    <strong>Your 5-Step Plan to Qualify for a Mortgage with Fair or Improving Credit</strong>
                   </h2>
 
                   <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                    Step 1: Review and Update Your Credit Report
+                    <strong>Step 1: Review and Update Your Credit Report</strong>
                   </h3>
                   <p className="mb-5">
                     Check your credit reports from all three bureaus via AnnualCreditReport.com. Dispute any
@@ -276,12 +268,12 @@ export default function FairOrImprovingCreditPage() {
                     keeping it below 30%.
                   </p>
                   <p className="mb-8">
-                    Even small improvements can raise your score by 20–40 points, helping you move into the 580+
-                    range needed for FHA or the 620+ range for most conventional loans.
+                    Even small improvements can raise your score by 20–40 points, helping you move into the 620+
+                    range needed for most loans.
                   </p>
 
                   <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                    Step 2: Strengthen Your Financial Profile
+                    <strong>Step 2: Strengthen Your Financial Profile</strong>
                   </h3>
                   <p className="mb-3">While improving your credit, also focus on:</p>
                   <ul className="list-disc pl-6 space-y-2 mb-8">
@@ -292,52 +284,60 @@ export default function FairOrImprovingCreditPage() {
                   </ul>
 
                   <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                    Step 3: Explore Loan Programs for Fair to Good Credit
+                    <strong>Step 3: Explore Loan Programs for Fair to Good Credit</strong>
                   </h3>
                   <p className="mb-5">
-                    Mortgage options for Arizona buyers include:
+                    Mortgage options for Arizona buyers with credit <strong>620+</strong> include:
                   </p>
 
-                  <h4 className="text-[#052316] text-[17px] font-bold mb-2">FHA Loans</h4>
+                  <h4 className="text-[#052316] text-[17px] font-bold mb-2">
+                    <strong>FHA Loans</strong>
+                  </h4>
                   <ul className="list-disc pl-6 space-y-2 mb-5">
-                    <li>Minimum score: 580+ with FHA backing (lender overlays may apply)</li>
+                    <li>Minimum score: 620+ recommended</li>
                     <li>Low down payments (3.5%)</li>
                     <li>Flexible debt ratios</li>
                     <li>Ideal for first-time buyers improving their credit</li>
                   </ul>
 
-                  <h4 className="text-[#052316] text-[17px] font-bold mb-2">Conventional Loans</h4>
+                  <h4 className="text-[#052316] text-[17px] font-bold mb-2">
+                    <strong>Conventional Loans</strong>
+                  </h4>
                   <ul className="list-disc pl-6 space-y-2 mb-5">
-                    <li>Minimum score: 620+ recommended</li>
+                    <li>Minimum score: 640–660+</li>
                     <li>Better rates with stronger credit</li>
                     <li>Suitable for buyers with steady income and savings</li>
                   </ul>
 
-                  <h4 className="text-[#052316] text-[17px] font-bold mb-2">VA Loans (for Veterans)</h4>
+                  <h4 className="text-[#052316] text-[17px] font-bold mb-2">
+                    <strong>VA Loans (for Veterans)</strong>
+                  </h4>
                   <ul className="list-disc pl-6 space-y-2 mb-5">
                     <li>Flexible requirements for eligible service members</li>
                     <li>$0 down and no PMI</li>
                   </ul>
 
-                  <h4 className="text-[#052316] text-[17px] font-bold mb-2">USDA Loans (Rural Areas)</h4>
+                  <h4 className="text-[#052316] text-[17px] font-bold mb-2">
+                    <strong>USDA Loans (Rural Areas)</strong>
+                  </h4>
                   <ul className="list-disc pl-6 space-y-2 mb-8">
                     <li>Typically 640+ credit required</li>
                     <li>$0 down for qualifying locations</li>
                   </ul>
 
                   <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                    Step 4: Work with Experienced Arizona Mortgage Advisors
+                    <strong>Step 4: Work with Experienced Arizona Mortgage Advisors</strong>
                   </h3>
                   <p className="mb-3">
                     At{" "}
                     <Link href="/" className="text-[#3fb364] font-semibold hover:underline">
-                      Mortgage Brothers
+                      <strong>Mortgage Brothers</strong>
                     </Link>
                     , we guide Arizona buyers through:
                   </p>
                   <ul className="list-disc pl-6 space-y-2 mb-5">
                     <li>
-                      <strong>Credit readiness planning</strong> – how to reach 580+ for FHA or 620+ for conventional loans quickly
+                      <strong>Credit readiness planning</strong> – how to reach 620+ quickly
                     </li>
                     <li>
                       <strong>Loan comparison</strong> – FHA vs. conventional options
@@ -353,7 +353,7 @@ export default function FairOrImprovingCreditPage() {
                   </p>
 
                   <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                    Step 5: Get Pre-Approved and Start Shopping
+                    <strong>Step 5: Get Pre-Approved and Start Shopping</strong>
                   </h3>
                   <p className="mb-5">
                     Once your credit and finances are in place, pre-approval shows sellers you&apos;re serious —
@@ -376,7 +376,7 @@ export default function FairOrImprovingCreditPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Smart Tips for Credit-Ready Buyers
+                    <strong>Smart Tips for Credit-Ready Buyers</strong>
                   </h2>
                   <ul className="list-disc pl-6 space-y-2 mb-5">
                     <li>Keep credit card balances below 30% utilization</li>
@@ -392,36 +392,13 @@ export default function FairOrImprovingCreditPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Your Arizona Homeownership Path Starts Here
+                    <strong>Your Arizona Homeownership Path Starts Here</strong>
                   </h2>
                   <p className="mb-6">
-                    If your credit is <strong>580 or above</strong>, you may already be on track to qualify for FHA,
-                    and 620+ is typically the conventional threshold. If it&apos;s close, our advisors can help you
-                    fine-tune your profile to get there faster — so you can buy with confidence and secure better
-                    loan terms.
-                  </p>
-                  <div className="text-center my-6">
-                    <Link
-                      href="#get-pre-approved"
-                      className="btn-primary"
-                    >
-                      Talk to a Local Mortgage Expert Today
-                    </Link>
-                  </div>
-                </section>
-
-                <section id="homeownership-path">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Your Arizona Homeownership Path Starts Here
-                  </h2>
-                  <p className="mb-6">
-                    If your credit is <strong>580 or above</strong>, you may already be on track to qualify for FHA,
-                    and 620+ is typically the conventional threshold. If it&apos;s close, our advisors can help you
-                    fine-tune your profile to get there faster — so you can buy with confidence and secure better
-                    loan terms.
+                    If your credit is <strong>620 or above</strong>, you&apos;re already on track to qualify.
+                    <br />
+                    If it&apos;s close, our advisors can help you fine-tune your profile to get there faster — so
+                    you can buy with confidence and secure better loan terms.
                   </p>
                   <div className="text-center my-6">
                     <Link
@@ -433,10 +410,14 @@ export default function FairOrImprovingCreditPage() {
                   </div>
 
                   <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                    Contact Mortgage Brothers today for:
+                    <strong>Contact Mortgage Brothers today for:</strong>
                   </h3>
                   <p className="mb-4">
-                    <strong>Ready to explore your options?</strong> <strong>Mortgage Brothers</strong> offers:
+                    <strong>Ready to explore your options?</strong>{" "}
+                    <Link href="/" className="text-[#3fb364] font-semibold hover:underline">
+                      <strong>Mortgage Brothers</strong>
+                    </Link>{" "}
+                    offers:
                   </p>
                   <ul className="space-y-2 mb-5">
                     <li className="flex items-center gap-2">
@@ -449,16 +430,25 @@ export default function FairOrImprovingCreditPage() {
                       <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
-                      <span>Credit readiness review (580+ FHA / 620+ conventional)</span>
+                      <span>Credit readiness review (620+)</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <svg className="w-4 h-4 text-[#3fb364] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
                       <span>
-                        <Link href="/fha-home-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">FHA</Link>,{" "}
-                        <Link href="/conventional-home-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">Conventional</Link> &amp;{" "}
-                        <Link href="/va-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">VA loan</Link> options
+                        <Link href="/fha-home-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
+                          <strong>FHA</strong>
+                        </Link>
+                        ,{" "}
+                        <Link href="/conventional-home-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
+                          <strong>Conventional</strong>
+                        </Link>{" "}
+                        &amp;{" "}
+                        <Link href="/va-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
+                          <strong>VA loan</strong>
+                        </Link>{" "}
+                        options
                       </span>
                     </li>
                     <li className="flex items-center gap-2">
@@ -493,11 +483,34 @@ export default function FairOrImprovingCreditPage() {
                   <FaqAccordion
                     title="Frequently Asked Questions"
                     items={[
-                    { q: "What's the minimum credit score to buy a home in Arizona?", a: <>Most conventional loan programs look for 620 or higher, but FHA loans may qualify with scores as low as 580.</> },
-                    { q: "Can I qualify if my credit is below 620 or even below 580?", a: <>Most conventional loan programs look for 620 or higher, but FHA loans may qualify with scores as low as 580. If your score is below 580, we recommend improving it first — our team can review your credit and create a quick action plan.</> },
-                    { q: "How long does credit improvement take?", a: <>Depending on your situation, meaningful progress can occur in{" "}
-                        <strong>30–90 days</strong> by paying down debt, correcting errors, and managing
-                        utilization.</> }
+                      {
+                        q: articleFaqs[0].question,
+                        a: (
+                          <>
+                            Most loan programs require <strong>620 or higher</strong>. This threshold opens the
+                            door to FHA, VA, and conventional loan options.
+                          </>
+                        ),
+                      },
+                      {
+                        q: articleFaqs[1].question,
+                        a: (
+                          <>
+                            Not at this time. We recommend improving your score first — our team can review your
+                            credit and create a quick action plan to reach 620+.
+                          </>
+                        ),
+                      },
+                      {
+                        q: articleFaqs[2].question,
+                        a: (
+                          <>
+                            Depending on your situation, meaningful progress can occur in{" "}
+                            <strong>30–90 days</strong> by paying down debt, correcting errors, and managing
+                            utilization.
+                          </>
+                        ),
+                      },
                     ]}
                   />
                 </section>

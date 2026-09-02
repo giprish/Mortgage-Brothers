@@ -249,48 +249,17 @@ export default function ArizonaVacationAndInvestmentHomeMortgagesPage() {
                   </Link>{" "}
                   or give us a call at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
+                    (602) 535-2171
                   </a>
                   . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
                   you and help you through the whole process.
                 </p>
 
-                
-                <section id="frequently-asked-questions">
-                  <FaqAccordion
-                    title="Frequently Asked Questions"
-                    items={articleFaqs.map((faq) => ({
-                      q: faq.question,
-                      a: faq.answer,
-                    }))}
-                  />
-                </section>
+                <p>•••</p>
 
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
-                    you and help you through the whole process.
-                  </p>
-                </div>
-
-                <p className="text-[15px]">
-                  Explore the ins and outs of vacation and investment home mortgages in Arizona. To get a full
-                  view of your financing options, learn about how high a lender will allow your deductible to be
-                  on our{" "}
-                  <Link
-                    href="/how-high-will-a-lender-allow-your-deductible-to-be/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    deductible limits guide
-                  </Link>{" "}
-                  and discover the impact of car loan payments on your mortgage in our article on{" "}
-                  <Link
-                    href="/how-does-my-car-loan-payment-affect-my-mortgage/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    car loan payment effects
-                  </Link>
-                  .
+                <p>
+                  Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
+                  you and help you through the whole process.
                 </p>
 
                 <p className="text-[#5a6b52] text-[13px] leading-relaxed">
@@ -299,7 +268,39 @@ export default function ArizonaVacationAndInvestmentHomeMortgagesPage() {
                   accounting advisors before engaging in any transaction. Mortgage Brothers NMLS 1007154, NMLS
                   #210917 and 1618695. Equal Housing Opportunity.
                 </p>
+
+                <blockquote className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
+                  <p className="text-[15px] text-[#052316] leading-relaxed">
+                    Explore the ins and outs of vacation and investment home mortgages in Arizona. To get a full
+                    view of your financing options, learn about how high a lender will allow your deductible to
+                    be on our{" "}
+                    <Link
+                      href="/how-high-will-a-lender-allow-your-deductible-to-be/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      deductible limits guide
+                    </Link>{" "}
+                    and discover the impact of car loan payments on your mortgage in our article on{" "}
+                    <Link
+                      href="/how-does-my-car-loan-payment-affect-my-mortgage/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      car loan payment effects
+                    </Link>
+                    .
+                  </p>
+                </blockquote>
               </div>
+
+              <section id="frequently-asked-questions">
+                <FaqAccordion
+                  title="Frequently Asked Questions"
+                  items={articleFaqs.map((faq) => ({
+                    q: faq.question,
+                    a: faq.answer,
+                  }))}
+                />
+              </section>
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">
                 <Link
@@ -309,7 +310,7 @@ export default function ArizonaVacationAndInvestmentHomeMortgagesPage() {
                   ← Previous Post
                 </Link>
                 <Link
-                  href="/conventional-home-loans-vs-fha-loans-which-is-right-for-you/"
+                  href="/what-is-a-conventional-home-loan-the-complete-first-time-buyer-mortgage-guide/"
                   className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
                 >
                   Next Post →

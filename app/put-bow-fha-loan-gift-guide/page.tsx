@@ -175,19 +175,19 @@ export default function PutBowFhaLoanGiftGuidePage() {
               </p>
 
               <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
-                <h2
-                  className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
+                <p
+                  className="text-[#08271B] text-[20px] lg:text-[24px] font-bold mb-3"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   Need Help with Your FHA Loan Down Payment?
-                </h2>
+                </p>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
                   Gift funds can make buying a home easier. Learn how to use them for your FHA loan and get
                   started today.
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="/fha-home-loans-arizona/"
+                    href="#Get-in-Touch"
                     className="btn-primary"
                   >
                     Get FHA Loan Guidance
@@ -197,7 +197,7 @@ export default function PutBowFhaLoanGiftGuidePage() {
 
               <div className="space-y-10 text-[#3a4a3a] text-[16px] leading-[1.8]">
                 <p>
-                  Here are some of the most common things to remember when considering a gift for your FHA
+                  Here are some of the most common things to remembering when considering a gift for your FHA
                   loan.
                 </p>
 
@@ -275,16 +275,11 @@ export default function PutBowFhaLoanGiftGuidePage() {
                 </section>
 
                 <section id="have-additional-questions">
-                  <h2
-                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
-                    style={{ fontFamily: "'Playfair Display', serif" }}
-                  >
-                    Have Additional Questions? Let Us Help With Answers!
-                  </h2>
+                  <p className="mb-3">Have Additional Questions? Let Us Help With Answers!</p>
                   <p className="mb-3">
                     Contact Us Today at{" "}
                     <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                      +1 602-535-2171
+                      602-535-2171
                     </a>
                   </p>
                   <p className="mb-3">
@@ -312,38 +307,33 @@ export default function PutBowFhaLoanGiftGuidePage() {
                   />
                 </section>
 
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
+                <blockquote className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
                   <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
-                    you and help you through the whole process.
+                    Get the details on FHA loan gift options with our comprehensive guide. For additional
+                    context, consider our discussion on{" "}
+                    <Link
+                      href="/seller-concessions-to-buyers-how-much/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      seller concessions
+                    </Link>
+                    , check out the{" "}
+                    <Link
+                      href="/buying-or-selling-personal-property-with-your-home-sale-must-watch-this-first/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      personal property guide
+                    </Link>
+                    , and discover tips on{" "}
+                    <Link
+                      href="/how-to-skip-2-payments-on-your-mortgage/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      skipping two mortgage payments
+                    </Link>
+                    .
                   </p>
-                </div>
-
-                <p className="text-[15px]">
-                  Get the details on FHA loan gift options with our comprehensive guide. For additional
-                  context, consider our discussion on{" "}
-                  <Link
-                    href="/seller-concessions-to-buyers-how-much/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    seller concessions
-                  </Link>
-                  , check out the{" "}
-                  <Link
-                    href="/buying-or-selling-personal-property-with-your-home-sale-must-watch-this-first/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    personal property guide
-                  </Link>
-                  , and discover tips on{" "}
-                  <Link
-                    href="/how-to-skip-2-payments-on-your-mortgage/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    skipping two mortgage payments
-                  </Link>
-                  .
-                </p>
+                </blockquote>
               </div>
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">
@@ -354,8 +344,8 @@ export default function PutBowFhaLoanGiftGuidePage() {
                   ← Previous Post
                 </Link>
                 <Link
-                  href="/is-the-mortgage-interest-tax-deduction-really-a-big-deal/"
-                  className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
+                  href="/lsu-forms-loan-status-updates-and-what-you-need-to-know/"
+                  className="text-[#3fb364] font-semibold hover:underline"
                 >
                   Next Post →
                 </Link>

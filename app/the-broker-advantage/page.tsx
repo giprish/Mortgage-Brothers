@@ -4,10 +4,10 @@ import JsonLd from "@/app/component/JsonLd";
 import { buildArticleSchemas } from "@/lib/seo/structured-data";
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
 import ArticleHero from "../component/ArticleHero";
+import GetInTouch from "../component/GetInTouch";
 
 export const metadata: Metadata = getSeoMetadata("/the-broker-advantage/");
 
@@ -26,6 +26,19 @@ const articleJsonLd = buildArticleSchemas({
     { name: "The Broker Advantage", path: "/the-broker-advantage/" },
   ],
 });
+
+const categories = [
+  { label: "Arizona Mortgage Insights", href: "/arizona-mortgage-insights/" },
+  { label: "FHA Loans", href: "/fha-loans/" },
+  { label: "Homeownership Tips", href: "/homeownership-tips/" },
+  { label: "Mortgage Basics", href: "/mortgage-basics/" },
+  { label: "Mortgage Payments & Strategies", href: "/mortgage-payments-strategies/" },
+  { label: "Mortgage Process Guidance", href: "/mortgage-process-guidance/" },
+  { label: "Mortgage Qualifications", href: "/mortgage-qualifications/" },
+  { label: "Real Estate & Mortgages", href: "/real-estate-mortgages/" },
+  { label: "Specialty Loans", href: "/specialty-loans/" },
+  { label: "Spouse & Estate Considerations", href: "/spouse-estate-considerations/" },
+];
 
 const loanSolutions = [
   { label: "Conventional Home Loans", href: "/conventional-home-loans-arizona/" },
@@ -102,16 +115,13 @@ export default function TheBrokerAdvantagePage() {
                   className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  Unlock Your Broker Advantage Today!
+                  <strong>Unlock Your Broker Advantage Today!</strong>
                 </h2>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
                   Contact Mortgage Brothers LLC to leverage The Broker Advantage for a competitive
                   edge in mortgage solutions.
                 </p>
-                <Link
-                  href="#get-pre-approved"
-                  className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
-                >
+                <Link href="#get-in-touch" className="btn-primary">
                   Get Started
                 </Link>
               </div>
@@ -122,7 +132,7 @@ export default function TheBrokerAdvantagePage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Answering the Right Questions
+                    <strong>Answering the Right Questions</strong>
                   </h2>
                   <p className="mb-4">
                     To understand the difference between brokers and bankers, borrowers need to know the
@@ -140,7 +150,7 @@ export default function TheBrokerAdvantagePage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Who&apos;s the Boss?
+                    <strong>Who&apos;s the Boss?</strong>
                   </h2>
                   <p className="mb-4">
                     Savvy brokers and bankers will probably both claim that they work for the client, and
@@ -163,7 +173,7 @@ export default function TheBrokerAdvantagePage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Who can offer the most options?
+                    <strong>Who can offer the most options?</strong>
                   </h2>
                   <p>
                     It follows from the answer above, that brokers can generally present more options to
@@ -180,7 +190,7 @@ export default function TheBrokerAdvantagePage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Is there a middleman?
+                    <strong>Is there a middleman?</strong>
                   </h2>
                   <p>
                     When you work with a banker, you are working directly with a particular bank. In
@@ -198,24 +208,20 @@ export default function TheBrokerAdvantagePage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Asking the Right Question
+                    <strong>Asking the Right Question</strong>
                   </h2>
                   <p className="mb-4">
                     Ultimately, best way to understand the advantage of using a broker over a banker is
                     not by comparing their answers to your questions; it&apos;s by comparing the questions
                     they ask themselves.
                   </p>
-                  <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl my-6 space-y-3">
-                    <p className="text-[15.5px] text-[#052316]">
-                      <strong>The banker asks:</strong> &quot;Can I get this loan approved?&quot; If
-                      their bank doesn&apos;t approve your application, there&apos;s nothing more they can
-                      do.
-                    </p>
-                    <p className="text-[15.5px] text-[#052316]">
-                      <strong>The mortgage broker asks:</strong> &quot;Where can I get this loan
-                      approved?&quot;
-                    </p>
-                  </div>
+                  <p className="mb-4">
+                    The banker asks, &quot;Can I get this loan approved?&quot; If their bank doesn&apos;t
+                    approve your application, there&apos;s nothing more they can do. They don&apos;t have
+                    the authority or the flexibility to find a creative solution to meet your needs. The
+                    mortgage broker, on the other hand, asks himself, &quot;Where can I get this loan
+                    approved?&quot;
+                  </p>
                   <p className="mb-4">
                     The difference between these two questions makes all the difference for the borrower.
                     Because brokers work in the buyer&apos;s interests and not the bank&apos;s, a broker
@@ -225,7 +231,7 @@ export default function TheBrokerAdvantagePage() {
                   <p>
                     Mortgage Brothers LLC are proud to be mortgage brokers and have been coming up with
                     innovative mortgage solutions for our clients for years.{" "}
-                    <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
+                    <Link href="#get-in-touch" className="text-[#3fb364] font-semibold hover:underline">
                       Contact us today
                     </Link>{" "}
                     if you want to experience the broker advantage (and the Mortgage Brothers LLC
@@ -235,14 +241,17 @@ export default function TheBrokerAdvantagePage() {
               </div>
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">
-                <Link href="/blog/" className="text-[#3fb364] font-semibold hover:underline">
-                  ← Back to Blog
+                <Link
+                  href="/how-to-count-commissions-and-bonuses-and-tips/"
+                  className="text-[#3fb364] font-semibold hover:underline"
+                >
+                  ← Previous Post
                 </Link>
                 <Link
-                  href="/arizona-mortgage-insights/"
+                  href="/mortgage-101/"
                   className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
                 >
-                  Arizona Mortgage Insights →
+                  Next Post →
                 </Link>
               </div>
             </article>
@@ -271,6 +280,22 @@ export default function TheBrokerAdvantagePage() {
                   </svg>
                   +1 602-535-2171
                 </a>
+              </div>
+
+              <div className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm">
+                <h3 className="text-[#08271B] text-[16px] font-bold mb-4">Categories</h3>
+                <ul className="space-y-2.5">
+                  {categories.map((item) => (
+                    <li key={item.href}>
+                      <Link
+                        href={item.href}
+                        className="text-[13.5px] text-[#4e5b4e] hover:text-[#3fb364] transition-colors leading-snug"
+                      >
+                        {item.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               <div className="bg-white border border-[#e8e0d0]/70 rounded-2xl p-6 shadow-sm">
@@ -303,40 +328,21 @@ export default function TheBrokerAdvantagePage() {
             </h2>
             <p className="text-[#c8c8b8] text-[15.5px] leading-relaxed mb-7">
               Have questions about financing options? Our experts are here to help with personalized
-              advice for any mortgage type.
+              advice for any mortgage type. Fill out our form to get started today!
             </p>
-            <Link
-              href="/contact-us/"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-7 py-3 rounded-full transition-all"
-            >
+            <Link href="/contact-us/" className="btn-primary">
               Contact Us
             </Link>
           </div>
         </section>
 
-        {/* Get in touch */}
-        <section className="w-full bg-[#f5f0e8] py-16 lg:py-20 border-y border-[#e8e0d0]/50">
-          <div className="max-w-4xl mx-auto px-6 lg:px-10 text-center">
-            <h2
-              className="text-[#08271B] text-[30px] lg:text-[38px] font-normal leading-tight mb-5"
-              style={{ fontFamily: "'Playfair Display', serif" }}
-            >
-              Get in Touch with The Mortgage Brothers
-            </h2>
-            <p className="text-[#4e5b4e] text-[15.5px] leading-relaxed mb-8 max-w-2xl mx-auto">
-              Ready to take the next step towards your dream home? One of our experienced mortgage
-              professionals will get back to you promptly with personalized solutions tailored to your
-              unique financial situation.
-            </p>
-
-            <Link
-              href="#get-pre-approved"
-              className="inline-flex items-center gap-2 bg-[#3fb364] hover:bg-[#349b55] text-white text-[15px] font-semibold px-8 py-3.5 rounded-full transition-all"
-            >
-              Start my preapproval
-            </Link>
-          </div>
-        </section>
+        <GetInTouch
+          id="get-in-touch"
+          theme="light"
+          title="Get in Touch with The Mortgage Brothers"
+          description="Ready to take the next step towards your dream home? Fill out the form below, and one of our experienced mortgage professionals will get back to you promptly. We're here to provide personalized solutions tailored to your unique financial situation and homeownership goals in Arizona."
+          className="bg-[#f5f0e8] border-y border-[#e8e0d0]/50"
+        />
 
         {/* Explore solutions */}
         <section className="w-full py-16 lg:py-20">

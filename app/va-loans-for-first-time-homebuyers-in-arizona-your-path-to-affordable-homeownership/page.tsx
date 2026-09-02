@@ -168,8 +168,11 @@ export default function VaLoansFirstTimeHomebuyersPage() {
                   </p>
                   <p>
                     At Mortgage Brothers LLC, we specialize in helping veterans and service members throughout
-                    the state unlock these powerful benefits. Here&apos;s how VA loans can make your first home
-                    purchase in Arizona simple, affordable, and fast.
+                    the state unlock these powerful benefits. Here&apos;s how{" "}
+                    <Link href="/va-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
+                      <strong>VA loans</strong>
+                    </Link>{" "}
+                    can make your first home purchase in Arizona simple, affordable, and fast.
                   </p>
                 </section>
 
@@ -224,10 +227,13 @@ export default function VaLoansFirstTimeHomebuyersPage() {
                       <h3 className="text-[#052316] text-[18px] font-bold mb-2">
                         2. No Private Mortgage Insurance (PMI)
                       </h3>
-                      <p>
+                      <p className="mb-3">
                         Conventional loans charge PMI if you put less than 20% down, and FHA loans include
-                        mandatory Mortgage Insurance Premiums (MIP). VA loans require no monthly mortgage
-                        insurance—ever. That alone can save you $200–$300 per month.
+                        mandatory Mortgage Insurance Premiums (MIP).
+                      </p>
+                      <p>
+                        VA loans require no monthly mortgage insurance—ever. That alone can save you $200–$300
+                        per month.
                       </p>
                     </div>
                     <div>
@@ -309,8 +315,8 @@ export default function VaLoansFirstTimeHomebuyersPage() {
                     </table>
                   </div>
                   <p className="mb-5">
-                    👉 That&apos;s a monthly savings of $185–$200 and $60,000–$90,000 over 30 years compared to
-                    other loans.
+                    👉 👉 That&apos;s a monthly savings of $185–$200 and $60,000–$90,000 over 30 years compared
+                    to other loans.
                   </p>
                   <p className="text-[14px] text-[#5a6b52] italic">
                     *Interest rate assumptions: Conventional 6.25%, FHA 6.00%, and VA 5.75% (as of October
@@ -339,9 +345,9 @@ export default function VaLoansFirstTimeHomebuyersPage() {
                         {[
                           ["Phoenix", "$445,000", "0.62%", "No limit for full entitlement"],
                           ["Mesa", "$425,000", "0.68%", "No limit"],
-                          ["Tucson", "$355,000", "0.85%", "No limit"],
-                          ["Prescott", "$585,000", "0.62%", "No limit"],
-                          ["Yuma", "$295,000", "0.68%", "No limit"],
+                          ["Tucson", "$355,000", "$0.85%", "No limit"],
+                          ["Prescott", "$585,000", "$0.62%", "No limit"],
+                          ["Yuma", "$295,000", "$0.68%", "No limit"],
                         ].map(([city, price, tax, limit]) => (
                           <tr key={city} className="border-b border-[#e8e0d0]/70">
                             <td className="py-3 pr-3">{city}</td>
@@ -354,8 +360,10 @@ export default function VaLoansFirstTimeHomebuyersPage() {
                     </table>
                   </div>
                   <p>
-                    Because veterans with full entitlement have no loan limit, you can buy in higher-priced
-                    markets like Scottsdale or Prescott with zero down.
+                    <strong>
+                      Because veterans with full entitlement have no loan limit, you can buy in higher-priced
+                      markets like Scottsdale or Prescott with zero down.
+                    </strong>
                   </p>
                 </section>
 
@@ -369,21 +377,24 @@ export default function VaLoansFirstTimeHomebuyersPage() {
                   <p className="mb-5">
                     The{" "}
                     <a
-                      href="https://www.benefits.va.gov/homeloans/purchaseco_loan_fee.asp"
+                      href="https://www.va.gov/housing-assistance/home-loans/funding-fee-and-closing-costs/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[#3fb364] font-semibold hover:underline"
                     >
-                      VA Funding Fee
+                      <strong>VA Funding Fee</strong>
                     </a>{" "}
                     supports the loan program so future veterans can benefit, too.
+                    <br />
                     Here&apos;s how it works:
                   </p>
                   <h3 className="text-[#052316] text-[18px] font-bold mb-3">
                     VA-backed purchase and construction loans
                   </h3>
                   <p className="mb-4">
-                    Rates for Veterans, active-duty service members, and National Guard and Reserve members
+                    <strong>
+                      Rates for Veterans, active-duty service members, and National Guard and Reserve members
+                    </strong>
                   </p>
                   <div className="overflow-x-auto mb-5">
                     <table className="w-full text-[14px] border-collapse">
@@ -404,7 +415,9 @@ export default function VaLoansFirstTimeHomebuyersPage() {
                           ["", "10% or more", "1.25%"],
                         ].map(([use, down, fee], i) => (
                           <tr key={i} className="border-b border-[#e8e0d0]/70">
-                            <td className="py-3 pr-3">{use}</td>
+                            <td className="py-3 pr-3">
+                              {use ? <strong>{use}</strong> : null}
+                            </td>
                             <td className="py-3 pr-3">{down}</td>
                             <td className="py-3">{fee}</td>
                           </tr>
@@ -413,8 +426,8 @@ export default function VaLoansFirstTimeHomebuyersPage() {
                     </table>
                   </div>
                   <p className="mb-5">
-                    💡 Tip: The fee can be financed into your mortgage, so you don&apos;t need to pay it
-                    out-of-pocket.
+                    💡 <strong>Tip:</strong> The fee can be financed into your mortgage, so you don&apos;t need to
+                    pay it out-of-pocket.
                   </p>
                   <p className="mb-5">
                     Source: U.S. Department of Veterans Affairs –{" "}
@@ -428,12 +441,14 @@ export default function VaLoansFirstTimeHomebuyersPage() {
                     </a>
                   </p>
                   <p className="mb-5">
-                    For veterans with any VA disability rating, the funding fee is waived entirely, increasing
-                    total savings even further.
+                    <strong>
+                      For veterans with any VA disability rating, the funding fee is waived entirely, increasing
+                      total savings even further.
+                    </strong>
                   </p>
                   <p className="text-[14px] text-[#5a6b52] italic">
-                    Disclaimer: Example figures are for illustration only and may vary based on credit score,
-                    lender, loan amount, and current market rates.
+                    <strong>Disclaimer</strong>: Example figures are for illustration only and may vary based on
+                    credit score, lender, loan amount, and current market rates.
                   </p>
                 </section>
 
@@ -476,7 +491,13 @@ export default function VaLoansFirstTimeHomebuyersPage() {
                     Marcus, a 32-year-old Army veteran, dreamed of buying a home for his family in Mesa. With a 640
                     credit score and 30% VA disability rating, he assumed he&apos;d need years to save up.
                   </p>
-                  <p className="mb-3">Here&apos;s how the VA loan changed everything:</p>
+                  <p className="mb-3">
+                    Here&apos;s how the{" "}
+                    <Link href="/va-loans-arizona/" className="text-[#3fb364] font-semibold hover:underline">
+                      <strong>VA loan</strong>
+                    </Link>{" "}
+                    changed everything:
+                  </p>
                   <ul className="list-disc pl-6 space-y-2 mb-5">
                     <li>$0 down payment</li>
                     <li>Funding fee waived (disability benefit)</li>
@@ -499,21 +520,28 @@ export default function VaLoansFirstTimeHomebuyersPage() {
                   </h2>
                   <div className="space-y-4">
                     <p>
-                      <strong>Myth 1: &ldquo;VA loans take too long to close.&rdquo;</strong> Fact: VA loans
-                      typically close in 30–45 days, the same as Conventional loans.
+                      <strong>Myth 1:</strong> &ldquo;VA loans take too long to close.&rdquo;
+                      <br />
+                      <strong>Fact:</strong> VA loans typically close in 30–45 days, the same as Conventional
+                      loans.
                     </p>
                     <p>
-                      <strong>Myth 2: &ldquo;Sellers don&apos;t accept VA offers.&rdquo;</strong> Fact: In
-                      Arizona, with 500,000+ veterans, VA offers are common and respected—especially with strong
-                      pre-approval.
+                      <strong>Myth 2:</strong> &ldquo;Sellers don&apos;t accept VA offers.&rdquo;
+                      <br />
+                      <strong>Fact:</strong> In Arizona, with 500,000+ veterans, VA offers are common and
+                      respected—especially with strong pre-approval.
                     </p>
                     <p>
-                      <strong>Myth 3: &ldquo;You can only use a VA loan once.&rdquo;</strong> Fact: Your benefit
-                      can be reused for life after selling or restoring entitlement.
+                      <strong>Myth 3:</strong> &ldquo;You can only use a VA loan once.&rdquo;
+                      <br />
+                      <strong>Fact:</strong> Your benefit can be reused for life after selling or restoring
+                      entitlement.
                     </p>
                     <p>
-                      <strong>Myth 4: &ldquo;The funding fee makes VA loans expensive.&rdquo;</strong> Fact: Even
-                      with the fee, VA loans save tens of thousands compared to PMI or MIP on other loan types.
+                      <strong>Myth 4:</strong> &ldquo;The funding fee makes VA loans expensive.&rdquo;
+                      <br />
+                      <strong>Fact:</strong> Even with the fee, VA loans save tens of thousands compared to PMI or
+                      MIP on other loan types.
                     </p>
                   </div>
                 </section>
@@ -529,7 +557,12 @@ export default function VaLoansFirstTimeHomebuyersPage() {
                     We&apos;ve helped hundreds of Arizona veterans become homeowners—and we know the local market
                     better than anyone.
                   </p>
-                  <h3 className="text-[#052316] text-[20px] font-bold mb-3">Here&apos;s what we do for you:</h3>
+                  <h2
+                    className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
+                    style={{ fontFamily: "'Playfair Display', serif" }}
+                  >
+                    Here&apos;s what we do for you:
+                  </h2>
                   <ul className="list-disc pl-6 space-y-2 mb-8">
                     <li>Help you secure your Certificate of Eligibility (COE)</li>
                     <li>Provide custom loan comparisons (VA vs. Conventional vs. FHA)</li>
@@ -549,7 +582,7 @@ export default function VaLoansFirstTimeHomebuyersPage() {
                     Phoenix—Mortgage Brothers LLC will guide you every step of the way.
                   </p>
                   <p className="mb-2">
-                    📍 Visit us:{" "}
+                    📍 <strong>Visit us:</strong>{" "}
                     <a
                       href={COMPANY.addressMapsUrl}
                       target="_blank"
@@ -560,9 +593,9 @@ export default function VaLoansFirstTimeHomebuyersPage() {
                     </a>
                   </p>
                   <p className="mb-5">
-                    📞 Call us:{" "}
+                    📞 <strong>Call us:</strong>{" "}
                     <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                      +1 (602) 535-2171
+                      +1 602 535 2171
                     </a>
                   </p>
                   <p>Let&apos;s turn your VA benefits into your new Arizona home.</p>

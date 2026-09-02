@@ -11,8 +11,12 @@ import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
 import {
   TranscriptCheckItem,
-  TranscriptDiamondItem,
+  TranscriptEmojiItem,
+  TranscriptLightbulbLine,
   TranscriptList,
+  TranscriptMicLine,
+  TranscriptPinLine,
+  TranscriptTvLine,
 } from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/is-the-mortgage-interest-tax-deduction-really-a-big-deal/");
@@ -153,7 +157,7 @@ export default function IsTheMortgageInterestTaxDeductionReallyABigDealPage() {
                   className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  Unlock Your Mortgage Savings!
+                  <strong>Unlock Your Mortgage Savings!</strong>
                 </h2>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
                   Speak with our experts about leveraging the mortgage interest deduction to boost your
@@ -161,10 +165,10 @@ export default function IsTheMortgageInterestTaxDeductionReallyABigDealPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="#get-pre-approved"
+                    href="/contact-us/"
                     className="btn-primary"
                   >
-                    Get Expert Mortgage Advice
+                    Contact Us Today
                   </Link>
                 </div>
               </div>
@@ -175,10 +179,19 @@ export default function IsTheMortgageInterestTaxDeductionReallyABigDealPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    What Are Mortgage Interest Write-Offs?
+                    <strong>What Are Mortgage Interest Write-Offs?</strong>
                   </h2>
                   <p className="mb-5">
-                    Each year, when you pay interest, or your mortgage payment, if you have 12 payments to your
+                    Each year, when you pay interest, or your{" "}
+                    <a
+                      href="https://www.investopedia.com/mortgage/mortgage-rates/payment-structure/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      mortgage payment
+                    </a>
+                    , if you have 12 payments to your
                     mortgage company, usually at the end of January, when you get your W-2 form from your income,
                     you&apos;re going to receive a 1098 for any mortgage interest that you paid to the bank. That
                     form will tell you how much interest you paid to them, and that&apos;s the amount that you
@@ -197,7 +210,7 @@ export default function IsTheMortgageInterestTaxDeductionReallyABigDealPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    A Home Mortgage is an Incentive to Save on Taxable Income
+                    <strong>A Home Mortgage is an Incentive to Save on Taxable Income</strong>
                   </h2>
                   <p className="mb-5">
                     Mortgages are an incentive to purchase a home. The government has used the home purchase as
@@ -268,7 +281,7 @@ export default function IsTheMortgageInterestTaxDeductionReallyABigDealPage() {
                   </Link>{" "}
                   or give us a call at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
+                    (602) 535-2171
                   </a>
                   . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
                   you and help you through the whole process.
@@ -292,19 +305,6 @@ export default function IsTheMortgageInterestTaxDeductionReallyABigDealPage() {
                   </p>
                 </div>
 
-                <p className="text-[15px]">
-                  Discover whether the mortgage interest tax deduction truly makes a difference for your
-                  finances. To get a complete picture, learn about{" "}
-                  <Link
-                    href="/how-high-will-a-lender-allow-your-deductible-to-be/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    lender deductible limits
-                  </Link>
-                  , explore the details of home closing costs, and understand why mortgage payoff can sometimes
-                  exceed the balance.
-                </p>
-
                 <p className="text-[#5a6b52] text-[13px] leading-relaxed">
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
                   been prepared for informational purposes only. You should consult your own tax, legal, and
@@ -312,53 +312,100 @@ export default function IsTheMortgageInterestTaxDeductionReallyABigDealPage() {
                   #210917 and 1618695. Equal Housing Opportunity.
                 </p>
 
+                <blockquote className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
+                  <p className="text-[15px] text-[#052316] leading-relaxed">
+                    Discover whether the mortgage interest tax deduction truly makes a difference for your
+                    finances. To get a complete picture, learn about{" "}
+                    <Link
+                      href="/how-high-will-a-lender-allow-your-deductible-to-be/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      lender deductible limits
+                    </Link>
+                    , explore the details of{" "}
+                    <Link
+                      href="/what-are-closing-costs-on-a-home-purchase/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      home closing costs
+                    </Link>
+                    , and understand why{" "}
+                    <Link
+                      href="/mortgage-payoff-higher-than-mortgage-balance/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      mortgage payoff can sometimes exceed the balance
+                    </Link>
+                    .
+                  </p>
+                </blockquote>
+
                 <section id="podcast-transcript">
                   <h2
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Transcript of the Mortgage Brothers Podcast
+                    <strong>Transcript of the Mortgage Brothers Podcast</strong>
                   </h2>
 
                   <div className="space-y-8 text-[15.5px]">
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        Is the Mortgage Interest Tax Deduction Really a Big Deal?
+                        <strong>Is the Mortgage Interest Tax Deduction Really a Big Deal?</strong>
                       </h3>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">Introduction [00:02]</h3>
+                      <TranscriptMicLine className="mb-3">
+                        (00:02) Welcome to the <strong>Mortgage Brothers Podcast!</strong> I&apos;m{" "}
+                        <strong>Eddie Knoell</strong>, and I&apos;m <strong>Tom Knoell</strong>.
+                      </TranscriptMicLine>
                       <p className="mb-3">
-                        Welcome to the Mortgage Brothers Podcast! I&apos;m Eddie Knoell, and I&apos;m Tom
-                        Knoell.
+                        Today, we&apos;re diving into one of the most common tax-related questions we get:
                       </p>
+                      <TranscriptList className="mb-3">
+                        <TranscriptEmojiItem emoji="💰">
+                          <strong>Is the mortgage interest tax deduction actually worth it?</strong>
+                        </TranscriptEmojiItem>
+                      </TranscriptList>
                       <p className="mb-3">
-                        Today, we&apos;re diving into one of the most common tax-related questions we get: Is the
-                        mortgage interest tax deduction actually worth it?
+                        You&apos;ve probably heard people talk about it at work, at family gatherings, or even at
+                        a wedding. Everyone seems to have an opinion—
+                      </p>
+                      <p className="mb-3 italic">
+                        &ldquo;Of course, I own a home! I get the mortgage interest deduction!&rdquo;
+                      </p>
+                      <p className="mb-3 italic">
+                        &ldquo;That&apos;s why you HAVE to buy a house—it&apos;s all about the tax
+                        benefits!&rdquo;
                       </p>
                       <p>
-                        You&apos;ve probably heard people talk about it at work, at family gatherings, or even at
-                        a wedding. Everyone seems to have an opinion. But how much are you really saving? Is it
-                        just a couple of pennies, or is it actually significant?
+                        But how much are you really saving? Is it just a couple of pennies, or is it actually
+                        significant?
                       </p>
                     </div>
 
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        What Is the Mortgage Interest Tax Deduction? [01:01]
+                        <strong>What Is the Mortgage Interest Tax Deduction?</strong>
                       </h3>
+                      <TranscriptPinLine className="mb-3">(01:01) Simply put:</TranscriptPinLine>
+                      <TranscriptPinLine className="mb-3">
+                        <strong>
+                          If you own a home and pay mortgage interest, you may be able to deduct that interest
+                          from your taxable income.
+                        </strong>
+                      </TranscriptPinLine>
                       <p className="mb-3">
-                        Simply put: If you own a home and pay mortgage interest, you may be able to deduct that
-                        interest from your taxable income.
+                        At the end of <strong>January</strong>, when you get your <strong>W-2 form</strong> for
+                        your income, you&apos;ll also receive a <strong>1098 form</strong> from your mortgage
+                        lender. This form will show how much interest you paid throughout the year.
                       </p>
                       <p className="mb-3">
-                        At the end of January, when you get your W-2 form for your income, you&apos;ll also
-                        receive a 1098 form from your mortgage lender. This form will show how much interest you
-                        paid throughout the year. That amount? That&apos;s what you get to tell the IRS NOT to
-                        tax you on.
+                        That amount? <strong>That&apos;s what you get to tell the IRS NOT to tax you on.</strong>
                       </p>
-                      <p className="mb-3">
-                        Example: Let&apos;s say you paid $8,000 in mortgage interest last year. That means you
-                        can deduct that $8,000 from your taxable income, lowering the amount of taxes you owe.
-                      </p>
+                      <TranscriptPinLine className="mb-3">
+                        <strong>Example:</strong> Let&apos;s say you paid <strong>$8,000</strong> in mortgage
+                        interest last year. That means you can deduct that $8,000 from your taxable income,
+                        lowering the amount of taxes you owe.
+                      </TranscriptPinLine>
                       <p>
                         The government allows this because they want to incentivize homeownership. But how much
                         do you actually save? Let&apos;s break it down.
@@ -367,146 +414,221 @@ export default function IsTheMortgageInterestTaxDeductionReallyABigDealPage() {
 
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        How Much Do You REALLY Save? Four Examples [03:06]
+                        <strong>How Much Do You REALLY Save? Four Examples</strong>
                       </h3>
                       <p className="mb-3">
-                        We&apos;re going to walk through four different examples to show exactly how much
-                        homeowners save each year and how that translates into daily savings.
+                        (03:06) We&apos;re going to walk through four different examples to show exactly how
+                        much homeowners save each year and how that translates into daily savings.
                       </p>
-                      <p className="mb-2 font-semibold text-[#052316]">Our Assumptions:</p>
-                      <TranscriptList className="mb-4">
-                        <TranscriptCheckItem>
-                          A 4% interest rate (a general estimate)
-                        </TranscriptCheckItem>
-                        <TranscriptCheckItem>
-                          A 5% down payment
-                        </TranscriptCheckItem>
-                        <TranscriptCheckItem>
-                          Housing costs make up 25-30% of the homeowner&apos;s income
-                        </TranscriptCheckItem>
-                        <TranscriptCheckItem>
-                          Tax rates are based on common brackets
-                        </TranscriptCheckItem>
-                      </TranscriptList>
+                      <TranscriptPinLine className="mb-3">
+                        <strong>Our Assumptions:</strong>
+                      </TranscriptPinLine>
+                      <ul className="list-disc pl-6 space-y-1 mb-4">
+                        <li>A <strong>4% interest rate</strong> (a general estimate)</li>
+                        <li>A <strong>5% down payment</strong></li>
+                        <li>Housing costs make up <strong>25-30% of the homeowner&apos;s income</strong></li>
+                        <li>Tax rates are based on common brackets</li>
+                      </ul>
+                      <p className="mb-4">
+                        Now, let&apos;s look at four different income levels and their mortgage interest
+                        savings.
+                      </p>
 
                       <h3 className="text-[#052316] text-[17px] font-bold mb-2">
-                        Example 1: Homeowner Making $50,000 per Year
+                        <strong>Example 1: Homeowner Making $50,000 per Year</strong>
                       </h3>
-                      <TranscriptList className="mb-4">
-                        <TranscriptDiamondItem>
-                          Home Price: $208,000
-                        </TranscriptDiamondItem>
-                        <TranscriptDiamondItem>
-                          Mortgage Amount: $195,000
-                        </TranscriptDiamondItem>
-                        <TranscriptCheckItem>
-                          Annual Interest Paid: ~$8,000
-                        </TranscriptCheckItem>
-                        <TranscriptDiamondItem>
-                          Tax Bracket: 12%
-                        </TranscriptDiamondItem>
-                        <TranscriptCheckItem>
-                          Annual Tax Savings: ~$950
-                        </TranscriptCheckItem>
-                        <TranscriptDiamondItem>
-                          Daily Savings: $2.60 per day — a six-pack of name-brand soda every day
-                        </TranscriptDiamondItem>
-                      </TranscriptList>
+                      <ul className="list-disc pl-6 space-y-1 mb-3">
+                        <li>
+                          <strong>Home Price:</strong> $208,000
+                        </li>
+                        <li>
+                          <strong>Mortgage Amount:</strong> $195,000
+                        </li>
+                        <li>
+                          <strong>Annual Interest Paid:</strong> ~$8,000
+                        </li>
+                        <li>
+                          <strong>Tax Bracket:</strong> 12%
+                        </li>
+                        <li>
+                          <strong>Annual Tax Savings:</strong> ~$950
+                        </li>
+                        <li>
+                          <strong>Daily Savings:</strong> <strong>$2.60 per day</strong>
+                        </li>
+                      </ul>
+                      <TranscriptLightbulbLine>
+                        <strong>What Can You Get for $2.60/Day?</strong> A{" "}
+                        <strong>six-pack of name-brand soda</strong> every single day.
+                      </TranscriptLightbulbLine>
+
+                      <h3 className="text-[#052316] text-[17px] font-bold mb-2 mt-6">
+                        <strong>Example 2: Homeowner Making $75,000 per Year</strong>
+                      </h3>
+                      <ul className="list-disc pl-6 space-y-1 mb-3">
+                        <li>
+                          <strong>Home Price:</strong> $315,000
+                        </li>
+                        <li>
+                          <strong>Mortgage Amount:</strong> ~$300,000
+                        </li>
+                        <li>
+                          <strong>Annual Interest Paid:</strong> ~$12,000
+                        </li>
+                        <li>
+                          <strong>Tax Bracket:</strong> 12%
+                        </li>
+                        <li>
+                          <strong>Annual Tax Savings:</strong> ~$1,400
+                        </li>
+                        <li>
+                          <strong>Daily Savings:</strong> <strong>$3.90 per day</strong>
+                        </li>
+                      </ul>
+                      <TranscriptLightbulbLine>
+                        <strong>What Can You Get for $3.90/Day?</strong> A{" "}
+                        <strong>Starbucks or Dutch Bros coffee</strong>—every single day.
+                      </TranscriptLightbulbLine>
+
+                      <h3 className="text-[#052316] text-[17px] font-bold mb-2 mt-6">
+                        <strong>Example 3: Homeowner Making $100,000 per Year</strong>
+                      </h3>
+                      <ul className="list-disc pl-6 space-y-1 mb-3">
+                        <li>
+                          <strong>Home Price:</strong> $415,000
+                        </li>
+                        <li>
+                          <strong>Mortgage Amount:</strong> ~$385,000
+                        </li>
+                        <li>
+                          <strong>Annual Interest Paid:</strong> ~$15,800
+                        </li>
+                        <li>
+                          <strong>Tax Bracket:</strong> 22%
+                        </li>
+                        <li>
+                          <strong>Annual Tax Savings:</strong> ~$3,500
+                        </li>
+                        <li>
+                          <strong>Daily Savings:</strong> <strong>$9.50 per day</strong>
+                        </li>
+                      </ul>
+                      <TranscriptLightbulbLine className="mb-2">
+                        <strong>What Can You Get for $9.50/Day?</strong>
+                      </TranscriptLightbulbLine>
+                      <ul className="list-disc pl-6 space-y-1 mb-4">
+                        <li>
+                          A <strong>12-pack of beer</strong> every day 🍻
+                        </li>
+                        <li>
+                          OR a <strong>decent bottle of wine</strong> 🍷
+                        </li>
+                      </ul>
 
                       <h3 className="text-[#052316] text-[17px] font-bold mb-2">
-                        Example 2: Homeowner Making $75,000 per Year
+                        <strong>Example 4: Homeowner Making $150,000 per Year</strong>
                       </h3>
-                      <TranscriptList className="mb-4">
-                        <TranscriptDiamondItem>
-                          Home Price: $315,000
-                        </TranscriptDiamondItem>
-                        <TranscriptCheckItem>
-                          Mortgage Amount: ~$300,000
-                        </TranscriptCheckItem>
-                        <TranscriptCheckItem>
-                          Annual Interest Paid: ~$12,000
-                        </TranscriptCheckItem>
-                        <TranscriptDiamondItem>
-                          Tax Bracket: 12%
-                        </TranscriptDiamondItem>
-                        <TranscriptCheckItem>
-                          Annual Tax Savings: ~$1,400
-                        </TranscriptCheckItem>
-                        <TranscriptDiamondItem>
-                          Daily Savings: $3.90 per day — a Starbucks or Dutch Bros coffee every day
-                        </TranscriptDiamondItem>
-                      </TranscriptList>
-
-                      <h3 className="text-[#052316] text-[17px] font-bold mb-2">
-                        Example 3: Homeowner Making $100,000 per Year
-                      </h3>
-                      <TranscriptList className="mb-4">
-                        <TranscriptDiamondItem>
-                          Home Price: $415,000
-                        </TranscriptDiamondItem>
-                        <TranscriptCheckItem>
-                          Mortgage Amount: ~$385,000
-                        </TranscriptCheckItem>
-                        <TranscriptCheckItem>
-                          Annual Interest Paid: ~$15,800
-                        </TranscriptCheckItem>
-                        <TranscriptDiamondItem>
-                          Tax Bracket: 22%
-                        </TranscriptDiamondItem>
-                        <TranscriptCheckItem>
-                          Annual Tax Savings: ~$3,500
-                        </TranscriptCheckItem>
-                        <TranscriptDiamondItem>
-                          Daily Savings: $9.50 per day — a decent bottle of wine each day
-                        </TranscriptDiamondItem>
-                      </TranscriptList>
-
-                      <h3 className="text-[#052316] text-[17px] font-bold mb-2">
-                        Example 4: Homeowner Making $150,000 per Year
-                      </h3>
-                      <TranscriptList>
-                        <TranscriptDiamondItem>
-                          Home Price: $625,000
-                        </TranscriptDiamondItem>
-                        <TranscriptCheckItem>
-                          Mortgage Amount: ~$590,000
-                        </TranscriptCheckItem>
-                        <TranscriptCheckItem>
-                          Annual Interest Paid: ~$23,000
-                        </TranscriptCheckItem>
-                        <TranscriptDiamondItem>
-                          Tax Bracket: 22%
-                        </TranscriptDiamondItem>
-                        <TranscriptCheckItem>
-                          Annual Tax Savings: ~$5,200
-                        </TranscriptCheckItem>
-                        <TranscriptDiamondItem>
-                          Daily Savings: $14.50 per day — two large pizzas every day
-                        </TranscriptDiamondItem>
-                      </TranscriptList>
+                      <ul className="list-disc pl-6 space-y-1 mb-3">
+                        <li>
+                          <strong>Home Price:</strong> $625,000
+                        </li>
+                        <li>
+                          <strong>Mortgage Amount:</strong> ~$590,000
+                        </li>
+                        <li>
+                          <strong>Annual Interest Paid:</strong> ~$23,000
+                        </li>
+                        <li>
+                          <strong>Tax Bracket:</strong> 22%
+                        </li>
+                        <li>
+                          <strong>Annual Tax Savings:</strong> ~$5,200
+                        </li>
+                        <li>
+                          <strong>Daily Savings:</strong> <strong>$14.50 per day</strong>
+                        </li>
+                      </ul>
+                      <TranscriptLightbulbLine className="mb-2">
+                        <strong>What Can You Get for $14.50/Day?</strong>
+                      </TranscriptLightbulbLine>
+                      <ul className="list-disc pl-6 space-y-1">
+                        <li>
+                          <strong>Two large pizzas</strong> 🍕🍕 every day
+                        </li>
+                        <li>
+                          OR <strong>two large pizzas + breadsticks</strong> from Little Caesars
+                        </li>
+                      </ul>
                     </div>
 
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        Final Takeaway: Is the Mortgage Interest Deduction Worth It? [10:18]
+                        <strong>Final Takeaway: Is the Mortgage Interest Deduction Worth It?</strong>
                       </h3>
                       <p className="mb-3">
-                        Yes, but… it&apos;s not a &ldquo;get rich&rdquo; hack. The mortgage interest deduction
-                        lowers your tax bill—but it&apos;s not free money. Your savings depend on your income,
-                        your loan amount, and your tax bracket.
+                        (10:18) <strong>Yes, but… it&apos;s not a &ldquo;get rich&rdquo; hack.</strong>
                       </p>
                       <p className="mb-3">
-                        The next time someone raves about the mortgage interest deduction, you&apos;ll actually
-                        know how much it&apos;s worth in real dollars.
+                        The mortgage interest deduction <strong>lowers your tax bill</strong>—but it&apos;s not{" "}
+                        <em>free money</em>. Your savings depend on:
                       </p>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          Your <strong>income</strong>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Your <strong>loan amount</strong>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          Your <strong>tax bracket</strong>
+                        </TranscriptCheckItem>
+                      </TranscriptList>
+                      <TranscriptLightbulbLine className="mb-3">
+                        <strong>Fun Way to Think About It:</strong>
+                      </TranscriptLightbulbLine>
+                      <ul className="list-disc pl-6 space-y-1 mb-4">
+                        <li>
+                          If you make <strong>$50K a year</strong>, your tax savings ={" "}
+                          <strong>free soda every day</strong>
+                        </li>
+                        <li>
+                          If you make <strong>$75K a year</strong>, your tax savings ={" "}
+                          <strong>free Starbucks every day</strong>
+                        </li>
+                        <li>
+                          If you make <strong>$100K a year</strong>, your tax savings ={" "}
+                          <strong>free beer or wine every day</strong>
+                        </li>
+                        <li>
+                          If you make <strong>$150K a year</strong>, your tax savings ={" "}
+                          <strong>free pizza every day</strong>
+                        </li>
+                      </ul>
+                      <p>
+                        The next time someone raves about the <strong>mortgage interest deduction</strong>,
+                        you&apos;ll actually know <strong>how much it&apos;s worth in real dollars</strong>.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        <strong>Got Questions? Let&apos;s Talk!</strong>
+                      </h3>
                       <p className="mb-3">
-                        [10:50] Have questions about your mortgage? Thinking about refinancing? Contact us
-                        through our{" "}
-                        <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                          contact form
-                        </Link>
-                        .
+                        (10:50) Have questions about your mortgage? Thinking about refinancing?
                       </p>
+                      <TranscriptList className="mb-3">
+                        <TranscriptEmojiItem emoji="📩">
+                          <strong>Email us:</strong>{" "}
+                          <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
+                            Contact Form
+                          </Link>
+                        </TranscriptEmojiItem>
+                      </TranscriptList>
+                      <TranscriptTvLine className="mb-3">
+                        <strong>Like this episode?</strong> Subscribe and hit the notification bell to stay
+                        updated!
+                      </TranscriptTvLine>
                       <p>Thanks for tuning in—see you next time!</p>
                     </div>
                   </div>

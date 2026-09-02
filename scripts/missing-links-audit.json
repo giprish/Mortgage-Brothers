@@ -9,7 +9,7 @@
     "route": "/conventional-home-loans-vs-fha-loans-which-is-right-for-you/",
     "stagingFile": "app/conventional-home-loans-vs-fha-loans-which-is-right-for-you/page.tsx",
     "missing": [],
-    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/conventional-home-loans-vs-fha-loans-which-is-right-for-you/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/.well-known/sgcaptcha/?r=%2Fhow-to-sell-my-house-fast-in-arizona%2F&sol=MjE6MTc4ODI1ODA3Mjo3NDMwOGU4Nzo2Nzk2ZTM5NTBlZWQ0MjNjZTljMmViMGIxMTkwMTA3ZmZlZWU1OTM4MmZkMjZkOTI0MzJhMTEzYWJjNDFkZDMyOlZemw%3D%3D&s=1569:1306293\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/conventional-home-loans-vs-fha-loans-which-is-right-for-you/\", waiting until \"domcontentloaded\"\n"
+    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/conventional-home-loans-vs-fha-loans-which-is-right-for-you/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/how-to-sell-my-house-fast-in-arizona/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/conventional-home-loans-vs-fha-loans-which-is-right-for-you/\", waiting until \"domcontentloaded\"\n"
   },
   {
     "route": "/when-is-a-mortgage-payment-actually-considered-late/",
@@ -159,67 +159,67 @@
     "route": "/can-i-get-a-3rd-mortgage/",
     "stagingFile": "app/can-i-get-a-3rd-mortgage/page.tsx",
     "missing": [],
-    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/can-i-get-a-3rd-mortgage/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/grossing-up-your-income-what-does-that-mean/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/can-i-get-a-3rd-mortgage/\", waiting until \"domcontentloaded\"\n"
+    "error": null
   },
   {
     "route": "/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house/",
     "stagingFile": "app/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house/page.tsx",
     "missing": [],
-    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/can-i-get-a-3rd-mortgage/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house/\", waiting until \"domcontentloaded\"\n"
+    "error": null
   },
   {
     "route": "/what-is-the-difference-between-aan-arizona-condo-and-arizona-townhome/",
     "stagingFile": "app/what-is-the-difference-between-aan-arizona-condo-and-arizona-townhome/page.tsx",
     "missing": [],
-    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/what-is-the-difference-between-aan-arizona-condo-and-arizona-townhome/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/how-fast-is-too-fast-to-close-a-mortgage-loan-to-purchase-a-house/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/what-is-the-difference-between-aan-arizona-condo-and-arizona-townhome/\", waiting until \"domcontentloaded\"\n"
+    "error": null
   },
   {
     "route": "/detached-guest-home-casita-appraisal-issues/",
     "stagingFile": "app/detached-guest-home-casita-appraisal-issues/page.tsx",
     "missing": [],
-    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/detached-guest-home-casita-appraisal-issues/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/what-is-the-difference-between-aan-arizona-condo-and-arizona-townhome/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/detached-guest-home-casita-appraisal-issues/\", waiting until \"domcontentloaded\"\n"
+    "error": null
   },
   {
     "route": "/difference-between-owner-occupied-second-home-and-investment-property/",
     "stagingFile": "app/difference-between-owner-occupied-second-home-and-investment-property/page.tsx",
     "missing": [],
-    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/difference-between-owner-occupied-second-home-and-investment-property/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/detached-guest-home-casita-appraisal-issues/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/difference-between-owner-occupied-second-home-and-investment-property/\", waiting until \"domcontentloaded\"\n"
+    "error": null
   },
   {
     "route": "/buying-or-selling-personal-property-with-your-home-sale-must-watch-this-first/",
     "stagingFile": "app/buying-or-selling-personal-property-with-your-home-sale-must-watch-this-first/page.tsx",
     "missing": [],
-    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/buying-or-selling-personal-property-with-your-home-sale-must-watch-this-first/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/difference-between-owner-occupied-second-home-and-investment-property/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/buying-or-selling-personal-property-with-your-home-sale-must-watch-this-first/\", waiting until \"domcontentloaded\"\n"
+    "error": null
   },
   {
     "route": "/how-to-skip-2-payments-on-your-mortgage/",
     "stagingFile": "app/how-to-skip-2-payments-on-your-mortgage/page.tsx",
     "missing": [],
-    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/how-to-skip-2-payments-on-your-mortgage/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/buying-or-selling-personal-property-with-your-home-sale-must-watch-this-first/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/how-to-skip-2-payments-on-your-mortgage/\", waiting until \"domcontentloaded\"\n"
+    "error": null
   },
   {
     "route": "/put-bow-fha-loan-gift-guide/",
     "stagingFile": "app/put-bow-fha-loan-gift-guide/page.tsx",
     "missing": [],
-    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/put-bow-fha-loan-gift-guide/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/how-to-skip-2-payments-on-your-mortgage/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/put-bow-fha-loan-gift-guide/\", waiting until \"domcontentloaded\"\n"
+    "error": null
   },
   {
     "route": "/lsu-forms-loan-status-updates-and-what-you-need-to-know/",
     "stagingFile": "app/lsu-forms-loan-status-updates-and-what-you-need-to-know/page.tsx",
     "missing": [],
-    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/lsu-forms-loan-status-updates-and-what-you-need-to-know/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/put-bow-fha-loan-gift-guide/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/lsu-forms-loan-status-updates-and-what-you-need-to-know/\", waiting until \"domcontentloaded\"\n"
+    "error": null
   },
   {
     "route": "/how-do-solar-panels-affect-the-mortgage-and-closing-process/",
     "stagingFile": "app/how-do-solar-panels-affect-the-mortgage-and-closing-process/page.tsx",
     "missing": [],
-    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/how-do-solar-panels-affect-the-mortgage-and-closing-process/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/lsu-forms-loan-status-updates-and-what-you-need-to-know/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/how-do-solar-panels-affect-the-mortgage-and-closing-process/\", waiting until \"domcontentloaded\"\n"
+    "error": null
   },
   {
     "route": "/get-part-income-commission-can-use-qualify-loan/",
     "stagingFile": "app/get-part-income-commission-can-use-qualify-loan/page.tsx",
     "missing": [],
-    "error": "page.goto: Navigation to \"https://azmortgagebrothers.com/get-part-income-commission-can-use-qualify-loan/\" is interrupted by another navigation to \"https://azmortgagebrothers.com/how-do-solar-panels-affect-the-mortgage-and-closing-process/\"\nCall log:\n  - navigating to \"https://azmortgagebrothers.com/get-part-income-commission-can-use-qualify-loan/\", waiting until \"domcontentloaded\"\n"
+    "error": null
   },
   {
     "route": "/how-to-count-commissions-and-bonuses-and-tips/",

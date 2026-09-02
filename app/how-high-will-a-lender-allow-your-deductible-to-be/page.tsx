@@ -11,8 +11,14 @@ import ArticleHero from "../component/ArticleHero";
 import YoutubeLiteEmbed from '@/app/component/YoutubeLiteEmbed';
 import {
   TranscriptCheckItem,
-  TranscriptDiamondItem,
+  TranscriptEmojiItem,
+  TranscriptLightbulbLine,
   TranscriptList,
+  TranscriptMicLine,
+  TranscriptMoneyItem,
+  TranscriptPinLine,
+  TranscriptPointItem,
+  TranscriptTvLine,
 } from "@/app/component/TranscriptIcons";
 
 export const metadata: Metadata = getSeoMetadata("/how-high-will-a-lender-allow-your-deductible-to-be/");
@@ -164,7 +170,7 @@ export default function HowHighWillALenderAllowYourDeductibleToBePage() {
                   className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  Optimize Your Lender Deductible!
+                  <strong>Optimize Your Lender Deductible!</strong>
                 </h2>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
                   Connect with our experts to learn how lender deductible limits can save you money on mortgage
@@ -172,10 +178,10 @@ export default function HowHighWillALenderAllowYourDeductibleToBePage() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
                   <Link
-                    href="#get-pre-approved"
+                    href="/contact-us/"
                     className="btn-primary"
                   >
-                    Get Expert Mortgage Advice
+                    Contact Us Today
                   </Link>
                 </div>
               </div>
@@ -207,7 +213,7 @@ export default function HowHighWillALenderAllowYourDeductibleToBePage() {
                   </Link>{" "}
                   or give us a call at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
+                    (602) 535-2171
                   </a>
                   . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with
                   you and help you through the whole process.
@@ -231,32 +237,6 @@ export default function HowHighWillALenderAllowYourDeductibleToBePage() {
                   </p>
                 </div>
 
-                <p className="text-[15px]">
-                  Find out how high a lender will allow your deductible to be and what that means for your
-                  mortgage. For more insights, see if the{" "}
-                  <Link
-                    href="/is-the-mortgage-interest-tax-deduction-really-a-big-deal/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    mortgage interest tax deduction is really a big deal
-                  </Link>
-                  , review{" "}
-                  <Link
-                    href="/what-are-closing-costs-on-a-home-purchase/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    closing costs on a home purchase
-                  </Link>
-                  , and learn about{" "}
-                  <Link
-                    href="/mortgage-payoff-higher-than-mortgage-balance/"
-                    className="text-[#3fb364] font-semibold hover:underline"
-                  >
-                    mortgage payoff discrepancies
-                  </Link>
-                  .
-                </p>
-
                 <p className="text-[#5a6b52] text-[13px] leading-relaxed">
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has
                   been prepared for informational purposes only. You should consult your own tax, legal, and
@@ -264,135 +244,184 @@ export default function HowHighWillALenderAllowYourDeductibleToBePage() {
                   #210917 and 1618695. Equal Housing Opportunity.
                 </p>
 
+                <blockquote className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
+                  <p className="text-[15px] text-[#052316] leading-relaxed">
+                    Find out how high a lender will allow your deductible to be and what that means for your
+                    mortgage. For more insights, see if the{" "}
+                    <Link
+                      href="/is-the-mortgage-interest-tax-deduction-really-a-big-deal/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      mortgage interest tax deduction is really a big deal
+                    </Link>
+                    , review{" "}
+                    <Link
+                      href="/what-are-closing-costs-on-a-home-purchase/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      closing costs on a home purchase
+                    </Link>
+                    , and learn about{" "}
+                    <Link
+                      href="/mortgage-payoff-higher-than-mortgage-balance/"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      mortgage payoff discrepancies
+                    </Link>
+                    .
+                  </p>
+                </blockquote>
+
                 <section id="podcast-transcript">
                   <h2
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Transcript of the Mortgage Brothers Podcast
+                    <strong>Transcript of the Mortgage Brothers Podcast</strong>
                   </h2>
 
                   <div className="space-y-8 text-[15.5px]">
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        Homeowners Insurance Deductibles: What You Need to Know
+                        <strong>Homeowners Insurance Deductibles: What You Need to Know 🏠💰</strong>
                       </h3>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">Introduction [00:05]</h3>
+                      <TranscriptMicLine className="mb-3">
+                        (00:05) Welcome to the <strong>Mortgage Brothers Podcast!</strong> I&apos;m{" "}
+                        <strong>Eddie Knoell</strong>, and I&apos;m <strong>Tom Knoell</strong>.
+                      </TranscriptMicLine>
                       <p className="mb-3">
-                        Welcome to the Mortgage Brothers Podcast! I&apos;m Eddie Knoell, and I&apos;m Tom
-                        Knoell.
-                      </p>
-                      <p>
-                        Today, we&apos;re tackling a topic that affects every homeowner: Homeowners insurance
-                        deductibles – how they impact your mortgage, monthly payments, and what you need to know
-                        to make the best financial decision. Let&apos;s dive in!
-                      </p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        What Is a Homeowners Insurance Deductible? [00:33]
-                      </h3>
-                      <p className="mb-3">
-                        Some people are very particular about their homeowners insurance, while others just go
-                        with whatever their agent suggests. But when you&apos;re budgeting for a mortgage,
-                        understanding your deductible is key.
-                      </p>
-                      <p className="mb-3">
-                        A deductible is the amount you must pay out of pocket before your insurance kicks in to
-                        cover a claim.
-                      </p>
-                      <TranscriptList>
-                        <TranscriptCheckItem>
-                          If you have a $1,000 deductible and a storm damages your roof, you&apos;ll pay $1,000
-                          before the insurance covers the rest.
-                        </TranscriptCheckItem>
-                        <TranscriptCheckItem>
-                          If you have a $5,000 deductible, you&apos;ll pay more upfront in the event of a claim,
-                          but your monthly premium will be lower.
-                        </TranscriptCheckItem>
-                      </TranscriptList>
-                    </div>
-
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        How Much Does Homeowners Insurance Cost? [01:01]
-                      </h3>
-                      <p className="mb-2 font-semibold text-[#052316]">Premiums vary depending on:</p>
-                      <TranscriptList className="mb-3">
-                        <TranscriptCheckItem>
-                          The value of your home
-                        </TranscriptCheckItem>
-                        <TranscriptCheckItem>
-                          Your deductible amount
-                        </TranscriptCheckItem>
-                        <TranscriptCheckItem>
-                          The type of coverage you choose
-                        </TranscriptCheckItem>
-                      </TranscriptList>
-                      <p className="mb-3">
-                        On average, homeowners insurance costs $600–$1,200 per year (or about $50–$100 per
-                        month).
-                      </p>
-                      <p>
-                        [02:04] But what if you need to lower your monthly expenses? We recently had a case where
-                        a borrower needed just $20 less per month to qualify for their loan. A simple way to do
-                        that? Increase the homeowners insurance deductible to lower the monthly payment!
-                      </p>
-                    </div>
-
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        How to Lower Your Homeowners Insurance Premium [03:12]
-                      </h3>
-                      <p className="mb-3">
-                        If you&apos;re looking to reduce costs, the best way is to raise your deductible.
+                        Today, we&apos;re tackling a topic that affects every homeowner:
                       </p>
                       <TranscriptList className="mb-3">
-                        <TranscriptDiamondItem>
-                          Standard deductible: $500–$1,000
-                        </TranscriptDiamondItem>
-                        <TranscriptDiamondItem>
-                          Higher deductible: Up to $5,000
-                        </TranscriptDiamondItem>
+                        <TranscriptPointItem>
+                          <strong>Homeowners insurance deductibles</strong> – how they impact your mortgage,
+                          monthly payments, and what you need to know to make the best financial decision.
+                        </TranscriptPointItem>
                       </TranscriptList>
-                      <p className="mb-3">
-                        If you increase your deductible from $1,000 to $5,000, you could cut your insurance
-                        premium in half!
-                      </p>
-                      <p className="mb-3">
-                        Example: A homeowner paying $800 per year could reduce it to $350–$400 per year with a
-                        higher deductible. That&apos;s $30–$40 saved per month—which could help you qualify for a
-                        mortgage with a lower debt-to-income ratio.
+                      <p>Let&apos;s dive in!</p>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        <strong>What Is a Homeowners Insurance Deductible?</strong>
+                      </h3>
+                      <TranscriptPinLine className="mb-3">
+                        (00:33) Some people are very particular about their homeowners insurance, while others
+                        just go with whatever their agent suggests. But when you&apos;re budgeting for a
+                        mortgage, <strong>understanding your deductible is key.</strong>
+                      </TranscriptPinLine>
+                      <TranscriptList className="mb-3">
+                        <TranscriptEmojiItem emoji="📝">
+                          <strong>A deductible</strong> is the amount you must pay out of pocket before your
+                          insurance kicks in to cover a claim.
+                        </TranscriptEmojiItem>
+                      </TranscriptList>
+                      <p className="mb-2 font-semibold text-[#052316]">For example:</p>
+                      <ul className="list-disc pl-6 space-y-1 mb-3">
+                        <li>
+                          If you have a <strong>$1,000 deductible</strong> and a storm damages your roof,
+                          you&apos;ll pay $1,000 before the insurance covers the rest.
+                        </li>
+                        <li>
+                          If you have a <strong>$5,000 deductible</strong>, you&apos;ll pay more upfront in the
+                          event of a claim, but your <strong>monthly premium will be lower.</strong>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        <strong>How Much Does Homeowners Insurance Cost?</strong>
+                      </h3>
+                      <TranscriptPinLine className="mb-3">
+                        (01:01) <strong>Premiums vary depending on:</strong>
+                      </TranscriptPinLine>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>The value of your home</TranscriptCheckItem>
+                        <TranscriptCheckItem>Your deductible amount</TranscriptCheckItem>
+                        <TranscriptCheckItem>The type of coverage you choose</TranscriptCheckItem>
+                      </TranscriptList>
+                      <TranscriptList className="mb-3">
+                        <TranscriptMoneyItem>
+                          On <strong>average</strong>, homeowners insurance costs:{" "}
+                          <strong>$600–$1,200 per year</strong> (or about <strong>$50–$100 per month</strong>).
+                        </TranscriptMoneyItem>
+                      </TranscriptList>
+                      <p className="mb-3">(02:04) But what if you need to lower your monthly expenses?</p>
+                      <p>
+                        <strong>
+                          We recently had a case where a borrower needed just $20 less per month to qualify for
+                          their loan.
+                        </strong>{" "}
+                        A simple way to do that?{" "}
+                        <strong>Increase the homeowners insurance deductible</strong> to lower the monthly
+                        payment!
                       </p>
                     </div>
 
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        What Do Lenders Require? [04:20]
+                        <strong>How to Lower Your Homeowners Insurance Premium</strong>
                       </h3>
-                      <p className="mb-3">
-                        Your mortgage lender will have minimum deductible requirements to ensure you can still
-                        afford to cover a claim.
-                      </p>
-                      <p className="mb-2 font-semibold text-[#052316]">Most lenders require:</p>
-                      <TranscriptList>
+                      <TranscriptPinLine className="mb-3">
+                        (03:12) If you&apos;re looking to reduce costs, the best way is to{" "}
+                        <strong>raise your deductible.</strong>
+                      </TranscriptPinLine>
+                      <TranscriptList className="mb-3">
                         <TranscriptCheckItem>
-                          A deductible of $5,000 or less
+                          <strong>Standard deductible</strong>: $500–$1,000
                         </TranscriptCheckItem>
                         <TranscriptCheckItem>
-                          OR 5% of the home&apos;s value, whichever is lower
+                          <strong>Higher deductible</strong>: Up to $5,000
                         </TranscriptCheckItem>
                       </TranscriptList>
-                    </div>
-
-                    <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        Should You Choose a High or Low Deductible? [07:05]
-                      </h3>
+                      <p className="mb-3">
+                        If you <strong>increase your deductible from $1,000 to $5,000</strong>, you could cut
+                        your insurance premium <strong>in half</strong>!
+                      </p>
                       <p className="mb-2 font-semibold text-[#052316]">
-                        Consider a higher deductible if:
+                        <strong>Example:</strong>
                       </p>
+                      <ul className="list-disc pl-6 space-y-1">
+                        <li>
+                          A homeowner paying <strong>$800 per year</strong> could reduce it to{" "}
+                          <strong>$350–$400 per year</strong> with a higher deductible.
+                        </li>
+                        <li>
+                          That&apos;s <strong>$30–$40 saved per month</strong>—which could{" "}
+                          <strong>help you qualify for a mortgage</strong> with a lower debt-to-income ratio.
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        <strong>What Do Lenders Require?</strong>
+                      </h3>
+                      <TranscriptPinLine className="mb-3">
+                        (04:20) Your mortgage lender will have <strong>minimum deductible requirements</strong>{" "}
+                        to ensure you can still afford to cover a claim.
+                      </TranscriptPinLine>
+                      <TranscriptList>
+                        <TranscriptEmojiItem emoji="🏦">
+                          <strong>Most lenders require:</strong>
+                        </TranscriptEmojiItem>
+                        <TranscriptCheckItem>
+                          A deductible of <strong>$5,000 or less</strong>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          OR <strong>5% of the home&apos;s value</strong>, whichever is lower
+                        </TranscriptCheckItem>
+                      </TranscriptList>
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        <strong>Should You Choose a High or Low Deductible?</strong>
+                      </h3>
+                      <TranscriptPinLine className="mb-3">
+                        (07:05) <strong>Consider a higher deductible if:</strong>
+                      </TranscriptPinLine>
                       <TranscriptList className="mb-3">
                         <TranscriptCheckItem>
                           You have enough savings to cover a larger deductible in case of a claim
@@ -404,7 +433,9 @@ export default function HowHighWillALenderAllowYourDeductibleToBePage() {
                           You want to save on your monthly mortgage costs
                         </TranscriptCheckItem>
                       </TranscriptList>
-                      <p className="mb-2 font-semibold text-[#052316]">Stick with a lower deductible if:</p>
+                      <TranscriptPinLine className="mb-3">
+                        <strong>Stick with a lower deductible if:</strong>
+                      </TranscriptPinLine>
                       <TranscriptList className="mb-3">
                         <TranscriptCheckItem>
                           You prefer more coverage with less out-of-pocket expense in case of damage
@@ -414,29 +445,33 @@ export default function HowHighWillALenderAllowYourDeductibleToBePage() {
                         </TranscriptCheckItem>
                       </TranscriptList>
                       <p>
-                        [08:55] Remember: Insurance companies track your claims history. Just like car
-                        insurance, too many claims can increase your rates.
+                        (08:55) <strong>Remember:</strong> Insurance companies{" "}
+                        <strong>track your claims history.</strong> Just like car insurance, too many claims can
+                        increase your rates.
                       </p>
                     </div>
 
                     <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">Final Thoughts [09:09]</h3>
-                      <p className="mb-3">
-                        Homeowners insurance is a key part of your mortgage payment. If you&apos;re looking to
-                        save money or improve your loan approval chances, adjusting your deductible could be an
-                        easy way to do it.
-                      </p>
-                      <p className="mb-3">
-                        Pro Tip: Talk to your insurance agent about different deductible options to find the best
-                        balance between savings and coverage.
-                      </p>
-                      <p>
-                        Have questions? Contact us through our{" "}
-                        <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                          contact form
-                        </Link>
-                        . Don&apos;t forget to subscribe for more mortgage tips!
-                      </p>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        <strong>Final Thoughts</strong>
+                      </h3>
+                      <TranscriptPinLine className="mb-3">
+                        (09:09) <strong>Homeowners insurance is a key part of your mortgage payment.</strong>{" "}
+                        If you&apos;re looking to save money or improve your loan approval chances, adjusting your
+                        deductible could be an easy way to do it.
+                      </TranscriptPinLine>
+                      <TranscriptLightbulbLine className="mb-3">
+                        <strong>Pro Tip:</strong> Talk to your insurance agent about different deductible options
+                        to find the best balance between savings and coverage.
+                      </TranscriptLightbulbLine>
+                      <TranscriptList className="mb-3">
+                        <TranscriptEmojiItem emoji="💬">
+                          <strong>Have questions?</strong> Drop them in the comments or email us!
+                        </TranscriptEmojiItem>
+                      </TranscriptList>
+                      <TranscriptTvLine>
+                        <strong>Don&apos;t forget to subscribe for more mortgage tips!</strong> 🎉
+                      </TranscriptTvLine>
                     </div>
                   </div>
                 </section>

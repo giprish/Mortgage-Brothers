@@ -77,7 +77,11 @@ const loanSolutions = [
 
 const articleFaqs = [
   { question: "Are Arizona home prices dropping in 2026?", answer: "Not significantly. Prices are stabilizing, with some growth in suburbs like Buckeye, Marana, and Casa Grande." },
-  { question: "What are mortgage rates in Arizona right now?", answer: "Most buyers are seeing rates between 6.0%–6.375%, depending on credit and loan type." },
+  {
+    question: "What are mortgage rates in Arizona right now?",
+    answer:
+      "As of August 2026, most Arizona buyers are seeing 30-year fixed rates around 6.6%–6.75%, depending on credit, loan type, and points. An earlier mid-2026 call of about 5.5% did not happen.",
+  },
   { question: "Is 2026 a good time to buy in Arizona?", answer: "Yes, especially with more inventory and fewer bidding wars. Down payment assistance can also help first-time buyers." },
 ] as const;
 
@@ -150,30 +154,9 @@ export default function ArizonaRealEstateTrends2026Page() {
                 happens next?
               </p>
               <p className="text-[#3a4a3a] text-[16px] leading-[1.8] mb-10">
-                Let&apos;s take a closer look at the latest Arizona real estate trends in 2026 and what they mean
-                for you.
+                Let&apos;s take a closer look at the latest{" "}
+                <strong>Arizona real estate trends in 2026</strong> and what they mean for you.
               </p>
-
-              <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
-                <h2
-                  className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-                >
-                  Looking for Expert Mortgage Guidance in 2026?
-                </h2>
-                <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
-                  Speak with an Arizona mortgage expert about rates, loan programs, and what today&apos;s market
-                  means for your next move.
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <Link
-                    href="#get-pre-approved"
-                    className="btn-primary"
-                  >
-                    Speak with an Expert
-                  </Link>
-                </div>
-              </div>
 
               <div className="space-y-10 text-[#3a4a3a] text-[16px] leading-[1.8]">
                 <section id="arizona-housing-market-overview-2026">
@@ -204,12 +187,12 @@ export default function ArizonaRealEstateTrends2026Page() {
                       Homes are staying on the market for about <strong>50–70 days</strong> before selling
                       (Arizona Realtors).
                     </li>
-                    <li>
-                      On top of that, Arizona keeps welcoming new residents — nearly{" "}
-                      <strong>85,000 people in 2023–24 alone</strong> (U.S. Census Bureau). That steady
-                      population growth is helping to keep housing demand strong.
-                    </li>
                   </ul>
+                  <p className="mb-5">
+                    On top of that, Arizona keeps welcoming new residents — nearly{" "}
+                    <strong>85,000 people in 2023–24 alone</strong> (U.S. Census Bureau). That steady population
+                    growth is helping to keep housing demand strong.
+                  </p>
                   <p>
                     👉 <strong>The big picture:</strong> Arizona&apos;s market is stabilizing. Prices aren&apos;t
                     crashing, but buyers aren&apos;t being forced into crazy bidding wars either.
@@ -303,8 +286,11 @@ export default function ArizonaRealEstateTrends2026Page() {
                       possible .25% cuts), which should keep rates from spiking again (Federal Reserve). Keep in
                       mind that current mortgage interest rates always take into account the speculation of where
                       the Fed rate will go. So, interest rates{" "}
-                      <strong>tend to move ahead of the Fed</strong> — meaning they often start improving months
-                      before the Fed actually cuts rates, as markets price in those expectations early.
+                      <strong>
+                        tend to move ahead of the Fed — meaning they often start improving months before the Fed
+                        actually cuts rates, as markets price in those expectations early
+                      </strong>
+                      .
                     </li>
                     <li>
                       We no longer project a mid-2026 drop to around 5.5%. That call missed; rates stayed in the
@@ -334,7 +320,9 @@ export default function ArizonaRealEstateTrends2026Page() {
                     Smart Moves in 2026 for Buyers, Owners &amp; Investors
                   </h2>
 
-                  <h3 className="text-[#052316] text-[20px] font-bold mb-3 mt-2">First-Time Buyers</h3>
+                  <p className="mb-2">
+                    <strong>First-Time Buyers</strong>
+                  </p>
                   <ul className="list-disc pl-6 space-y-3 mb-6">
                     <li>
                       Explore loan programs designed for first-time homebuyers, such as{" "}
@@ -359,17 +347,12 @@ export default function ArizonaRealEstateTrends2026Page() {
                     </li>
                   </ul>
 
-                  <h3 className="text-[#052316] text-[20px] font-bold mb-3">Current Homeowners</h3>
+                  <p className="mb-2">
+                    <strong>Current Homeowners</strong>
+                  </p>
                   <ul className="list-disc pl-6 space-y-3 mb-6">
                     <li>
-                      If you bought at 7%+ in 2023–24, watch for{" "}
-                      <Link
-                        href="/refinancing-arizona/"
-                        className="text-[#3fb364] font-semibold hover:underline"
-                      >
-                        refinance
-                      </Link>{" "}
-                      opportunities.
+                      If you bought at 7%+ in 2023–24, watch for refinance opportunities.
                     </li>
                     <li>
                       Think about tapping equity with a HELOC for improvements, especially energy upgrades that
@@ -377,7 +360,9 @@ export default function ArizonaRealEstateTrends2026Page() {
                     </li>
                   </ul>
 
-                  <h3 className="text-[#052316] text-[20px] font-bold mb-3">Investors</h3>
+                  <p className="mb-2">
+                    <strong>Investors</strong>
+                  </p>
                   <ul className="list-disc pl-6 space-y-3">
                     <li>
                       Single-family rentals are in demand near job hubs like Casa Grande and Buckeye (AZ
@@ -441,36 +426,12 @@ export default function ArizonaRealEstateTrends2026Page() {
                 <section id="faq">
                   <FaqAccordion
                     title="FAQ: Arizona Real Estate Trends in 2026"
-                    items={[
-                    { q: "Are Arizona home prices dropping in 2026?", a: <>Not significantly. Prices are stabilizing, with some growth in suburbs like Buckeye,
-                        Marana, and Casa Grande.</> },
-                    { q: "What are mortgage rates in Arizona right now?", a: <>As of August 2026, most Arizona buyers are seeing 30-year fixed rates around 6.6%–6.75%, depending on credit, loan type, and points. An earlier mid-2026 call of about 5.5% did not happen.</> },
-                    { q: "Is 2026 a good time to buy in Arizona?", a: <>Yes, especially with more inventory and fewer bidding wars. Down payment assistance can
-                        also help first-time buyers.</> }
-                    ]}
+                    items={articleFaqs.map((faq) => ({
+                      q: faq.question,
+                      a: faq.answer,
+                    }))}
                   />
                 </section>
-
-                <p>
-                  If you have any questions about this or if you have any questions you&apos;d like us to answer
-                  on our podcast, you can submit your questions using our{" "}
-                  <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
-                    contact form
-                  </Link>{" "}
-                  or give us a call at{" "}
-                  <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
-                  </a>
-                  . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you
-                  and help you through the whole process.
-                </p>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you
-                    and help you through the whole process.
-                  </p>
-                </div>
 
                 <p className="text-[#5a6b52] text-[13px] leading-relaxed">
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been

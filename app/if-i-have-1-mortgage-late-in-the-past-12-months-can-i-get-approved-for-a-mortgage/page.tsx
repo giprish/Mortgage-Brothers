@@ -155,7 +155,7 @@ export default function MortgageLateApprovalPage() {
                   className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  One Late Payment? You Still Have Options
+                  <strong>One Late Payment? You Still Have Options</strong>
                 </h2>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
                   Think a late mortgage payment will hold you back? Discover what lenders really look for and how
@@ -177,7 +177,7 @@ export default function MortgageLateApprovalPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    What does the underwriter look at when it comes to approving you?
+                    <strong>What does the underwriter look at when it comes to approving you?</strong>
                   </h2>
                   <p>
                     Well, the first thing they&apos;re going to be looking at is your full credit report.
@@ -195,7 +195,7 @@ export default function MortgageLateApprovalPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    How does the FHA handle late payments?
+                    <strong>How does the FHA handle late payments?</strong>
                   </h2>
                   <p>
                     FHA financing is pretty tolerant. With them, you can have no more than two 30-day mortgage
@@ -211,7 +211,7 @@ export default function MortgageLateApprovalPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    How does Conventional Financing handle late payments?
+                    <strong>How does Conventional Financing handle late payments?</strong>
                   </h2>
                   <p>
                     <Link
@@ -231,7 +231,7 @@ export default function MortgageLateApprovalPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    How are VA Loans impacted by late mortgage payments?
+                    <strong>How are VA Loans impacted by late mortgage payments?</strong>
                   </h2>
                   <p>
                     VA loans have the same policy as Conventional Financing when it comes to past late mortgage
@@ -244,14 +244,14 @@ export default function MortgageLateApprovalPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Eligibility vs. Approval
+                    <strong>Eligibility vs. Approval</strong>
                   </h2>
                   <p>
                     Just because you are eligible, does not mean you&apos;re guaranteed to get approved for the
                     loan. This is something that holds true for all these types of financing. If you have any
                     questions about this, be sure to reach out at{" "}
                     <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                      +1 (602) 535-2171
+                      (602) 535-2171
                     </a>
                     . We&apos;d love to answer any questions you might have.
                   </p>
@@ -262,7 +262,7 @@ export default function MortgageLateApprovalPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    In Summary
+                    <strong>In Summary</strong>
                   </h2>
                   <p>
                     With FHA allowing for two 30-day lates, versus the one for Conventional and VA, they&apos;re
@@ -280,13 +280,19 @@ export default function MortgageLateApprovalPage() {
                   </Link>{" "}
                   or give us a call at{" "}
                   <a href="tel:+16025352171" className="text-[#3fb364] font-semibold hover:underline">
-                    +1 (602) 535-2171
+                    (602) 535-2171
                   </a>
                   . Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you
                   and help you through the whole process.
                 </p>
 
-                
+                <p className="text-center text-[#5a6b52] tracking-widest">•••</p>
+
+                <p>
+                  Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you
+                  and help you through the whole process.
+                </p>
+
                 <section id="frequently-asked-questions">
                   <FaqAccordion
                     title="Frequently Asked Questions"
@@ -296,13 +302,6 @@ export default function MortgageLateApprovalPage() {
                     }))}
                   />
                 </section>
-
-                <div className="bg-[#eaf5ed] border-l-4 border-[#3fb364] p-5 rounded-r-xl">
-                  <p className="text-[15px] text-[#052316] leading-relaxed">
-                    Be sure to ask us for a free quote on your next mortgage. We&apos;ll personally work with you
-                    and help you through the whole process.
-                  </p>
-                </div>
 
                 <p className="text-[#5a6b52] text-[13px] leading-relaxed">
                   Mortgage Brothers LLC does not provide tax, legal, or accounting advice. This material has been
@@ -316,7 +315,7 @@ export default function MortgageLateApprovalPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-6 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Transcript of the Mortgage Brothers Podcast
+                    <strong>Transcript of the Mortgage Brothers Podcast</strong>
                   </h2>
 
                   <div className="space-y-8 text-[15.5px]">
@@ -329,7 +328,7 @@ export default function MortgageLateApprovalPage() {
 
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        Can You Qualify with a Late Payment? [00:05]
+                        <strong>Can You Qualify with a Late Payment? [00:05]</strong>
                       </h3>
                       <p className="mb-3">
                         <strong>Eddie</strong>: Today, we&apos;re discussing a common question: Can you qualify
@@ -344,7 +343,7 @@ export default function MortgageLateApprovalPage() {
 
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        Factors Impacting Mortgage Approval [01:10]
+                        <strong>Factors Impacting Mortgage Approval [01:10]</strong>
                       </h3>
                       <p className="mb-3">
                         <strong>Eddie</strong>: If you&apos;ve had multiple late payments, like missing car
@@ -352,7 +351,7 @@ export default function MortgageLateApprovalPage() {
                         challenging.
                       </p>
                       <p>
-                        <strong>Tom</strong>: However, if this is an <em>isolated event</em>, your chances are
+                        <strong>Tom</strong>: However, if this is an <strong>isolated event</strong>, your chances are
                         better. One or two late payments might not disqualify you entirely, depending on the loan
                         program.
                       </p>
@@ -360,7 +359,7 @@ export default function MortgageLateApprovalPage() {
 
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        Understanding the Underwriter&apos;s Perspective [01:47]
+                        <strong>Understanding the Underwriter&apos;s Perspective [01:47]</strong>
                       </h3>
                       <p className="mb-3">
                         <strong>Tom</strong>: Think of it like hiring a babysitter. If a babysitter admits to
@@ -376,10 +375,12 @@ export default function MortgageLateApprovalPage() {
 
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        Loan Program Guidelines [04:00]
+                        <strong>Loan Program Guidelines [04:00]</strong>
                       </h3>
                       <p className="mb-3">Here&apos;s how the major loan programs handle late payments:</p>
-                      <p className="mb-2 font-semibold text-[#052316]">FHA Loans:</p>
+                      <p className="mb-2 font-semibold text-[#052316]">
+                        <strong>1. FHA Loans:</strong>
+                      </p>
                       <TranscriptList className="mb-4">
                         <TranscriptCheckItem>
                           Allows up to <strong>two 30-day late payments</strong> in the past 12 months.
@@ -388,7 +389,9 @@ export default function MortgageLateApprovalPage() {
                           Does not permit any <strong>60-day late payments</strong> in the same period.
                         </TranscriptCrossItem>
                       </TranscriptList>
-                      <p className="mb-2 font-semibold text-[#052316]">Conventional Loans:</p>
+                      <p className="mb-2 font-semibold text-[#052316]">
+                        <strong>2. Conventional Loans:</strong>
+                      </p>
                       <TranscriptList className="mb-4">
                         <TranscriptCheckItem>
                           Allows only <strong>one 30-day late payment</strong> in the past 12 months.
@@ -397,7 +400,9 @@ export default function MortgageLateApprovalPage() {
                           Stricter than FHA, but eligibility doesn&apos;t guarantee approval.
                         </TranscriptCheckItem>
                       </TranscriptList>
-                      <p className="mb-2 font-semibold text-[#052316]">VA Loans:</p>
+                      <p className="mb-2 font-semibold text-[#052316]">
+                        <strong>3. VA Loans:</strong>
+                      </p>
                       <TranscriptList>
                         <TranscriptCheckItem>
                           Similar to conventional loans, allowing just{" "}
@@ -408,13 +413,13 @@ export default function MortgageLateApprovalPage() {
 
                     <div>
                       <h3 className="text-[#052316] text-[18px] font-bold mb-3">
-                        Eligibility and Approval Comparison [05:37]
+                        <strong>Eligibility and Approval Comparison [05:37]</strong>
                       </h3>
                       <p className="mb-3">
                         <strong>Tom</strong>: Being eligible doesn&apos;t mean you&apos;ll be approved. Your loan
                         officer should provide clear answers during the{" "}
                         <Link href="#get-pre-approved" className="text-[#3fb364] font-semibold hover:underline">
-                          pre-approval process
+                          <strong>pre-approval process</strong>
                         </Link>
                         , typically within a day or two.
                       </p>
@@ -426,15 +431,21 @@ export default function MortgageLateApprovalPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">Tips for Borrowers [07:11]</h3>
-                      <p className="mb-2 font-semibold text-[#052316]">Be Honest:</p>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        <strong>Tips for Borrowers [07:11]</strong>
+                      </h3>
+                      <p className="mb-2 font-semibold text-[#052316]">
+                        <strong>1. Be Honest:</strong>
+                      </p>
                       <TranscriptList className="mb-4">
                         <TranscriptCheckItem>
                           Inform your lender upfront about any mortgage lates. Keep the explanation brief and to
                           the point.
                         </TranscriptCheckItem>
                       </TranscriptList>
-                      <p className="mb-2 font-semibold text-[#052316]">Understand the Difference:</p>
+                      <p className="mb-2 font-semibold text-[#052316]">
+                        <strong>2. Understand the Difference:</strong>
+                      </p>
                       <TranscriptList className="mb-4">
                         <TranscriptCheckItem>
                           Late payments differ from deferments or forbearances. Contact your lender if you&apos;re
@@ -448,21 +459,40 @@ export default function MortgageLateApprovalPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">Final Thoughts [07:42]</h3>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        <strong>Final Thoughts [07:42]</strong>
+                      </h3>
                       <p className="mb-3">
                         <strong>Eddie</strong>: We hope this information has been helpful. If you like this
                         content, subscribe to our channel and click the notification button.
                       </p>
-                      <p className="mb-3">
+                      <p>
                         <strong>Tom</strong>: And if you have questions, reach us using our{" "}
                         <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
                           contact form
                         </Link>
                         .
                       </p>
-                      <p className="text-[#5a6b52] text-[13px]">
+                    </div>
+
+                    <div>
+                      <h3 className="text-[#052316] text-[18px] font-bold mb-3">
+                        <strong>Contact Information</strong>
+                      </h3>
+                      <TranscriptList className="mb-3">
+                        <TranscriptCheckItem>
+                          <strong>Contact</strong>:{" "}
+                          <Link href="/contact-us/" className="text-[#3fb364] font-semibold hover:underline">
+                            Contact Form
+                          </Link>
+                        </TranscriptCheckItem>
+                        <TranscriptCheckItem>
+                          <strong>NMLS</strong>: 1007154
+                        </TranscriptCheckItem>
+                      </TranscriptList>
+                      <p className="text-[#5a6b52] text-[13px] italic">
                         Disclaimer: This material is for informational purposes only. Consult your tax, legal, and
-                        accounting advisors before taking action. NMLS: 1007154
+                        accounting advisors before taking action.
                       </p>
                     </div>
                   </div>

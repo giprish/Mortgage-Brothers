@@ -76,10 +76,10 @@ const loanSolutions = [
 ];
 
 const articleFaqs = [
-  { question: "What credit score do I need for a jumbo loan in Arizona?", answer: "Most lenders require at least a **700–720 credit score**, but higher scores can unlock better rates and more flexible terms." },
-  { question: "Can I use a jumbo loan for a vacation home or investment property?", answer: "Yes. Many Arizona lenders offer jumbo financing for **second homes and investment properties**, though down payment and reserve requirements are typically higher." },
-  { question: "Are jumbo loan rates higher than conventional mortgage rates?", answer: "They used to be, but not always today. In competitive markets, jumbo rates can be **similar or even slightly lower** than conforming rates depending on your profile." },
-  { question: "How can I increase my chances of jumbo loan approval?", answer: "Focus on strengthening your credit, maintaining low debt levels, and building substantial liquid reserves before applying." },
+  { question: "1. What credit score do I need for a jumbo loan in Arizona?", answer: "Most lenders require at least a **700–720 credit score**, but higher scores can unlock better rates and more flexible terms." },
+  { question: "2. Can I use a jumbo loan for a vacation home or investment property?", answer: "Yes. Many Arizona lenders offer jumbo financing for **second homes and investment properties**, though down payment and reserve requirements are typically higher." },
+  { question: "3. Are jumbo loan rates higher than conventional mortgage rates?", answer: "They used to be, but not always today. In competitive markets, jumbo rates can be **similar or even slightly lower** than conforming rates depending on your profile." },
+  { question: "4. How can I increase my chances of jumbo loan approval?", answer: "Focus on strengthening your credit, maintaining low debt levels, and building substantial liquid reserves before applying." },
 ] as const;
 
 const articleJsonLd = buildArticleSchemas({
@@ -140,7 +140,7 @@ export default function WhatIsAJumboLoanPage() {
                   href="/jumbo-loans-arizona/"
                   className="text-[#3fb364] font-semibold hover:underline"
                 >
-                  jumbo loans
+                  <strong>jumbo loans</strong>
                 </Link>{" "}
                 come in — mortgage options designed specifically for high-value properties that exceed standard
                 lending limits.
@@ -152,40 +152,13 @@ export default function WhatIsAJumboLoanPage() {
                 Let&apos;s break down what these loans are, how they work, and what it takes to qualify.
               </p>
 
-              <div className="mb-12 bg-white border border-[#e8e0d0]/70 rounded-2xl p-7 lg:p-8 text-center shadow-sm">
-                <h2
-                  className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
-                  style={{ fontFamily: "'Playfair Display', serif" }}
-                >
-                  Ready to Explore Jumbo Financing?
-                </h2>
-                <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
-                  Connect with Mortgage Brothers LLC for personalized jumbo loan guidance and a free quote
-                  tailored to your luxury home purchase.
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <Link
-                    href="#get-pre-approved"
-                    className="btn-primary"
-                  >
-                    Get Your Jumbo Loan Quote Now
-                  </Link>
-                  <Link
-                    href="/jumbo-loans-arizona/"
-                    className="inline-flex items-center gap-2 text-[#3fb364] hover:underline text-[15px] font-semibold px-4 py-3 transition-all"
-                  >
-                    Learn About Jumbo Loans
-                  </Link>
-                </div>
-              </div>
-
               <div className="space-y-10 text-[#3a4a3a] text-[16px] leading-[1.8]">
                 <section id="what-is-a-jumbo-loan">
                   <h2
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    What Is a Jumbo Loan?
+                    <strong>What Is a Jumbo Loan?</strong>
                   </h2>
                   <p className="mb-5">
                     A <strong>jumbo loan</strong> is a mortgage that exceeds the{" "}
@@ -196,7 +169,7 @@ export default function WhatIsAJumboLoanPage() {
                       rel="noopener noreferrer"
                       className="text-[#3fb364] font-semibold hover:underline"
                     >
-                      Federal Housing Finance Agency (FHFA)
+                      <strong>Federal Housing Finance Agency (FHFA)</strong>
                     </a>
                     . These limits determine how much Fannie Mae and Freddie Mac can buy or guarantee from
                     lenders.
@@ -213,11 +186,12 @@ export default function WhatIsAJumboLoanPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Arizona&apos;s 2025 Jumbo Loan Limit
+                    <strong>Arizona&apos;s 2025 Jumbo Loan Limit</strong>
                   </h2>
                   <p className="mb-5">
                     For 2025, the <strong>conforming loan limit in most Arizona counties is $806,500</strong> for
-                    single-family homes. In 2026, the conforming loan limit is estimated to be over $825,000.
+                    single-family homes. <strong>In 2026</strong>, the conforming loan limit is estimated to be over
+                    $825,000.
                   </p>
                   <p className="mb-5">
                     That includes Maricopa County (Phoenix, Scottsdale, Mesa), Pinal County, and Coconino County.
@@ -236,7 +210,7 @@ export default function WhatIsAJumboLoanPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Why Jumbo Loans Have Stricter Requirements
+                    <strong>Why Jumbo Loans Have Stricter Requirements</strong>
                   </h2>
                   <p className="mb-5">
                     The main reason jumbo loans are harder to qualify for comes down to risk.
@@ -265,23 +239,29 @@ export default function WhatIsAJumboLoanPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Jumbo Loan Requirements in Arizona
+                    <strong>Jumbo Loan Requirements in Arizona</strong>
                   </h2>
 
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-3">1. Credit Score</h3>
+                  <p className="mb-3">
+                    <strong>1. Credit Score</strong>
+                  </p>
                   <p className="mb-5">
                     Most lenders require a <strong>minimum credit score of 700–720</strong>. Clean credit history
                     is essential — any recent delinquencies or major derogatory marks can result in higher rates
                     or denials.
                   </p>
 
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-3">2. Debt-to-Income Ratio (DTI)</h3>
+                  <p className="mb-3">
+                    <strong>2. Debt-to-Income Ratio (DTI)</strong>
+                  </p>
                   <p className="mb-5">
                     Jumbo lenders generally cap the DTI ratio at <strong>43–45%</strong>. This ensures you can
                     comfortably manage your mortgage payment alongside other debts.
                   </p>
 
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-3">3. Down Payment</h3>
+                  <p className="mb-3">
+                    <strong>3. Down Payment</strong>
+                  </p>
                   <p className="mb-5">
                     Plan for a <strong>10%–20% minimum down payment</strong>, though many lenders prefer 20% or
                     higher for stronger loan terms. Something to note: IF you put between 10%-20% down, you will
@@ -293,13 +273,17 @@ export default function WhatIsAJumboLoanPage() {
                     higher rates.
                   </p>
 
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-3">4. Cash Reserves</h3>
+                  <p className="mb-3">
+                    <strong>4. Cash Reserves</strong>
+                  </p>
                   <p className="mb-5">
                     Expect to show <strong>6–12 months of mortgage payments in liquid reserves</strong> after
                     closing. For a $1M loan, that could mean $60,000–$120,000 in accessible funds.
                   </p>
 
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-3">5. Documentation</h3>
+                  <p className="mb-3">
+                    <strong>5. Documentation</strong>
+                  </p>
                   <p className="mb-3">Jumbo loans require full documentation:</p>
                   <ul className="list-disc pl-6 space-y-2 mb-5">
                     <li>Two years of tax returns and W-2s</li>
@@ -308,7 +292,9 @@ export default function WhatIsAJumboLoanPage() {
                     <li>Business financials if self-employed</li>
                   </ul>
 
-                  <h3 className="text-[#052316] text-[18px] font-bold mb-3">6. Appraisal Requirements</h3>
+                  <p className="mb-3">
+                    <strong>6. Appraisal Requirements</strong>
+                  </p>
                   <p className="mb-6">
                     High-value properties often need <strong>two independent appraisals</strong> to verify value.
                     Lenders demand accurate market comparisons, especially in luxury neighborhoods.
@@ -329,14 +315,32 @@ export default function WhatIsAJumboLoanPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Rates and Costs: Are Jumbo Loans More Expensive?
+                    <strong>Rates and Costs: Are Jumbo Loans More Expensive?</strong>
                   </h2>
                   <p className="mb-5">
                     Traditionally, jumbo loans carried higher interest rates than conforming mortgages. Today,
                     that gap has narrowed.
                   </p>
                   <p className="mb-5">
-                    According to Investopedia and Bankrate, jumbo rates are often{" "}
+                    According to{" "}
+                    <a
+                      href="https://www.investopedia.com/terms/j/jumbomortgage.asp"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      Investopedia
+                    </a>{" "}
+                    and{" "}
+                    <a
+                      href="https://www.bankrate.com/mortgages/what-is-jumbo-loan/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#3fb364] font-semibold hover:underline"
+                    >
+                      Bankrate
+                    </a>
+                    , jumbo rates are often{" "}
                     <strong>within 0.25%–0.50%</strong> of conforming loans — and sometimes even lower.
                   </p>
                   <p className="mb-5">
@@ -358,7 +362,7 @@ export default function WhatIsAJumboLoanPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Jumbo Loan Application Process
+                    <strong>Jumbo Loan Application Process</strong>
                   </h2>
                   <p className="mb-5">
                     The steps are similar to a conventional mortgage but with deeper underwriting:
@@ -392,7 +396,7 @@ export default function WhatIsAJumboLoanPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Risks and Considerations
+                    <strong>Risks and Considerations</strong>
                   </h2>
                   <p className="mb-3">
                     Before applying, it&apos;s smart to understand the unique risks tied to jumbo loans:
@@ -421,7 +425,7 @@ export default function WhatIsAJumboLoanPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Tips to Improve Your Approval Odds
+                    <strong>Tips to Improve Your Approval Odds</strong>
                   </h2>
                   <ol className="list-decimal pl-6 space-y-3 mb-5">
                     <li>
@@ -453,11 +457,13 @@ export default function WhatIsAJumboLoanPage() {
                     className="text-[#052316] text-[24px] sm:text-[28px] font-bold mb-4 border-b border-[#e8e0d0] pb-3"
                     style={{ fontFamily: "'Playfair Display', serif" }}
                   >
-                    Example: Jumbo Loan in Scottsdale
+                    <strong>Example: Jumbo Loan in Scottsdale</strong>
                   </h2>
                   <p className="mb-5">
-                    Suppose you&apos;re purchasing a <strong>$1.2 million home in North Scottsdale</strong>. With
-                    a 20% down payment ($240,000), you&apos;d finance $960,000 — a jumbo loan.
+                    Suppose you&apos;re purchasing a <strong>$1.2 million home in North Scottsdale</strong>.
+                  </p>
+                  <p className="mb-5">
+                    With a 20% down payment ($240,000), you&apos;d finance $960,000 — a jumbo loan.
                   </p>
                   <p className="mb-5">
                     At a <strong>7.00% interest rate</strong>, your monthly principal and interest would be about{" "}
@@ -472,11 +478,14 @@ export default function WhatIsAJumboLoanPage() {
                 </section>
 
                 <section id="the-bottom-line">
-                  <h3 className="text-[#052316] text-[20px] font-bold mb-4">The Bottom Line</h3>
+                  <h3 className="text-[#052316] text-[20px] font-bold mb-4">
+                    <strong>The Bottom Line</strong>
+                  </h3>
                   <p className="mb-5">
-                    If you&apos;re ready to explore jumbo financing, start by connecting with a local Arizona
-                    mortgage professional who understands the nuances of luxury home lending. The right guidance
-                    can help you secure the best rate, simplify the process, and make your dream home a reality.
+                    If you&apos;re ready to explore jumbo financing, start by connecting with a{" "}
+                    <strong>local Arizona mortgage professional</strong> who understands the nuances of luxury
+                    home lending. The right guidance can help you secure the best rate, simplify the process, and
+                    make your dream home a reality.
                   </p>
                 </section>
 
@@ -484,15 +493,15 @@ export default function WhatIsAJumboLoanPage() {
                   <FaqAccordion
                     title="FAQs About Jumbo Loans in Arizona"
                     items={[
-                    { q: "What credit score do I need for a jumbo loan in Arizona?", a: <>Most lenders require at least a <strong>700–720 credit score</strong>, but higher scores
+                    { q: "1. What credit score do I need for a jumbo loan in Arizona?", a: <>Most lenders require at least a <strong>700–720 credit score</strong>, but higher scores
                         can unlock better rates and more flexible terms.</> },
-                    { q: "Can I use a jumbo loan for a vacation home or investment property?", a: <>Yes. Many Arizona lenders offer jumbo financing for{" "}
+                    { q: "2. Can I use a jumbo loan for a vacation home or investment property?", a: <>Yes. Many Arizona lenders offer jumbo financing for{" "}
                         <strong>second homes and investment properties</strong>, though down payment and reserve
                         requirements are typically higher.</> },
-                    { q: "Are jumbo loan rates higher than conventional mortgage rates?", a: <>They used to be, but not always today. In competitive markets, jumbo rates can be{" "}
+                    { q: "3. Are jumbo loan rates higher than conventional mortgage rates?", a: <>They used to be, but not always today. In competitive markets, jumbo rates can be{" "}
                         <strong>similar or even slightly lower</strong> than conforming rates depending on your
                         profile.</> },
-                    { q: "How can I increase my chances of jumbo loan approval?", a: <>Focus on strengthening your credit, maintaining low debt levels, and building substantial
+                    { q: "4. How can I increase my chances of jumbo loan approval?", a: <>Focus on strengthening your credit, maintaining low debt levels, and building substantial
                         liquid reserves before applying.</> }
                     ]}
                   />

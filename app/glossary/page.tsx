@@ -289,7 +289,7 @@ export default function GlossaryPage() {
                   className="text-[#08271B] text-[24px] lg:text-[28px] font-normal mb-3"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  You’ve Mastered the Mortgage Glossary—Now Connect with Experts!
+                  <strong>You’ve Mastered the Mortgage Glossary—Now Connect with Experts!</strong>
                 </h2>
                 <p className="text-[#4e5b4e] text-[15px] leading-relaxed mb-6 max-w-xl mx-auto">
                   Leverage your new knowledge from our Mortgage Glossary and contact Arizona Mortgage
@@ -310,15 +310,10 @@ export default function GlossaryPage() {
               </div>
 
               <div className="mt-12 pt-8 border-t border-[#e8e0d0]/70 flex flex-wrap items-center justify-between gap-4 text-[14px]">
-                <Link
-                  href="/mortgage-rates-tool-arizona/"
-                  className="text-[#3fb364] font-semibold hover:underline"
-                >
-                  ← Previous Post
-                </Link>
+                <span className="text-[#5a6b52]">← Previous Post</span>
                 <Link
                   href="/arizona-understanding-your-credit/"
-                  className="text-[#5a6b52] hover:text-[#3fb364] transition-colors"
+                  className="text-[#3fb364] font-semibold hover:underline"
                 >
                   Next Post →
                 </Link>
