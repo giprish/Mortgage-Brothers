@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import Navbar from "../../app/component/Navbar";
 import Footer from "../../app/component/Footer";
@@ -33,6 +33,15 @@ type Props = {
 export default function ServiceAreasDirectory({ cities }: Props) {
   const [selectedCounty, setSelectedCounty] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
+  const communitiesRef = useRef<HTMLDivElement>(null);
+
+  const selectCounty = useCallback((name: string) => {
+    setSelectedCounty(name);
+    // Scroll the community list into view (below sticky header) after filter updates.
+    requestAnimationFrame(() => {
+      communitiesRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }, []);
 
   const sidebarCounties = useMemo(() => {
     const counts = new Map<string, number>();
@@ -144,7 +153,7 @@ export default function ServiceAreasDirectory({ cities }: Props) {
                       <button
                         key={county.name}
                         type="button"
-                        onClick={() => setSelectedCounty(county.name)}
+                        onClick={() => selectCounty(county.name)}
                         className={`flex items-center justify-between text-[13.5px] font-semibold px-4 py-2.5 rounded-xl cursor-pointer transition-all duration-200 text-left w-full ${
                           isActive
                             ? "bg-[#052316] text-white shadow-md shadow-[#052316]/10"
@@ -165,7 +174,11 @@ export default function ServiceAreasDirectory({ cities }: Props) {
             </div>
 
             {/* Right Side City Grid Content */}
-            <div className="flex-1 w-full flex flex-col gap-6">
+            <div
+              ref={communitiesRef}
+              id="communities"
+              className="flex-1 w-full flex flex-col gap-6 scroll-mt-[110px] lg:scroll-mt-[130px]"
+            >
               {/* Search Bar Input */}
               <div className="relative w-full">
                 <input

@@ -93,6 +93,8 @@ export default function MobileNavDrawer({ onClose }: { onClose: () => void }) {
     { key: "RESOURCES", href: "/blog/", label: "RESOURCES" },
   ];
 
+  const activeSection = sections.find((s) => s.key === submenu);
+
   const submenuLinks =
     submenu === "LOAN PROGRAMS"
       ? LOAN_PROGRAM_MOBILE_LINKS
@@ -142,27 +144,21 @@ export default function MobileNavDrawer({ onClose }: { onClose: () => void }) {
           {!submenu ? (
             <div className="flex flex-col">
               {sections.map((s) => (
-                <div
+                <button
                   key={s.key}
-                  className="flex items-center justify-between border-b border-[#3b4148]"
+                  type="button"
+                  onClick={() => setSubmenu(s.key)}
+                  aria-haspopup="true"
+                  aria-expanded={false}
+                  className="flex w-full items-center justify-between border-b border-[#3b4148] text-left"
                 >
-                  <Link
-                    prefetch={false}
-                    href={s.href}
-                    onClick={close}
-                    className="flex-1 font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 text-white"
-                  >
+                  <span className="flex-1 font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 text-white">
                     {s.label}
-                  </Link>
-                  <button
-                    type="button"
-                    onClick={() => setSubmenu(s.key)}
-                    className="px-5 py-4 text-[#3fb364]"
-                    aria-label={`Open ${s.label} submenu`}
-                  >
+                  </span>
+                  <span className="px-5 py-4 text-[#3fb364]" aria-hidden>
                     <Chevron />
-                  </button>
-                </div>
+                  </span>
+                </button>
               ))}
               <Link
                 prefetch={false}
@@ -183,9 +179,16 @@ export default function MobileNavDrawer({ onClose }: { onClose: () => void }) {
             </div>
           ) : (
             <div className="flex flex-col">
-              <div className="text-white font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 border-b border-[#3b4148] bg-[#23272c]">
-                {submenu}
-              </div>
+              {activeSection ? (
+                <Link
+                  prefetch={false}
+                  href={activeSection.href}
+                  onClick={close}
+                  className="text-white font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 border-b border-[#3b4148] bg-[#23272c] hover:text-[#3fb364]"
+                >
+                  {activeSection.label}
+                </Link>
+              ) : null}
               {submenuLinks.map((item) => (
                 <Link
                   prefetch={false}

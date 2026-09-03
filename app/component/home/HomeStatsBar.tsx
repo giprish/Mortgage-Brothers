@@ -21,9 +21,13 @@ const HomeStatsBar = () => {
               <span className="text-[11px] lg:text-xs text-[#b8d4b8] leading-tight mt-0.5">
                 from 500+ verified Arizona homeowners
               </span>
-              <div className="flex text-[#f5c518] gap-0.5 mt-1" aria-label="5 out of 5 stars">
+              <div
+                className="flex text-[#f5c518] gap-0.5 mt-1"
+                role="img"
+                aria-label="5 out of 5 stars"
+              >
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <svg key={i} className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <svg key={i} className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden>
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                   </svg>
                 ))}
@@ -121,9 +125,13 @@ const HomeStatsBar = () => {
               <span className="text-xs text-[#b8d4b8] leading-tight mt-0.5">
                 from 500+ verified Arizona homeowners
               </span>
-              <div className="flex text-[#f5c518] gap-0.5 mt-1.5" aria-label="5 out of 5 stars">
+              <div
+                className="flex text-[#f5c518] gap-0.5 mt-1.5"
+                role="img"
+                aria-label="5 out of 5 stars"
+              >
                 {Array.from({ length: 5 }).map((_, i) => (
-                  <svg key={i} className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                  <svg key={i} className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden>
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                   </svg>
                 ))}

@@ -65,6 +65,14 @@ const RESOURCE_LINKS = [
   { href: "/faq/", label: "MORTGAGE FAQ" },
 ] as const;
 
+const MOBILE_SECTIONS = [
+  { key: "LOAN PROGRAMS", href: "/mortgage-loan-programs-arizona/", label: "LOAN PROGRAMS" },
+  { key: "CALCULATORS", href: "/mortgage-calculator-arizona/", label: "CALCULATORS" },
+  { key: "AREAS WE SERVE", href: "/service-areas/", label: "AREAS WE SERVE" },
+  { key: "ABOUT", href: "/about-us/", label: "ABOUT US" },
+  { key: "RESOURCES", href: "/blog/", label: "RESOURCES" },
+] as const;
+
 function normalizePath(path: string) {
   if (!path) return "/";
   return path.endsWith("/") ? path : `${path}/`;
@@ -157,6 +165,19 @@ const Navbar = () => {
       p.startsWith("/resources/")
     );
   }, [pathname, isExactPathActive]);
+
+  const isMobileSectionActive = useCallback(
+    (key: (typeof MOBILE_SECTIONS)[number]["key"]) => {
+      if (key === "LOAN PROGRAMS") return isLoanProgramsActive;
+      if (key === "CALCULATORS") return isCalculatorsActive;
+      if (key === "AREAS WE SERVE") return isAreasActive;
+      if (key === "ABOUT") return isAboutActive;
+      return isResourcesActive;
+    },
+    [isLoanProgramsActive, isCalculatorsActive, isAreasActive, isAboutActive, isResourcesActive],
+  );
+
+  const activeMobileSection = MOBILE_SECTIONS.find((s) => s.key === activeSubmenu);
 
   // When opening the drawer on a matching page, jump straight into that submenu.
   const resolveSubmenuForPath = useCallback(() => {
@@ -755,105 +776,27 @@ const Navbar = () => {
               {!activeSubmenu ? (
                 /* Main Menu Items */
                 <div className="flex flex-col">
-                  {/* Loan Programs */}
-                  <div className="flex items-center justify-between border-b border-[#3b4148] hover:bg-[#343a42]">
-                    <Link prefetch={false}
-                      href="/mortgage-loan-programs-arizona/"
-                      onClick={closeMobile}
-                      className={`flex-1 font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 ${
-                        isLoanProgramsActive ? "text-[#3fb364]" : "text-white"
-                      }`}
-                    >
-                      LOAN PROGRAMS
-                    </Link>
+                  {MOBILE_SECTIONS.map((s) => (
                     <button
-                      onClick={() => setActiveSubmenu("LOAN PROGRAMS")}
-                      className="px-5 py-4 text-[#3fb364] hover:text-white shrink-0 cursor-pointer"
-                      aria-label="Open Loan Programs submenu"
+                      key={s.key}
+                      type="button"
+                      onClick={() => setActiveSubmenu(s.key)}
+                      aria-haspopup="true"
+                      aria-expanded={false}
+                      className="flex w-full items-center justify-between border-b border-[#3b4148] hover:bg-[#343a42] text-left cursor-pointer"
                     >
-                      <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 256 512" aria-hidden="true"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103.5c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 33.5z"/></svg>
+                      <span
+                        className={`flex-1 font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 ${
+                          isMobileSectionActive(s.key) ? "text-[#3fb364]" : "text-white"
+                        }`}
+                      >
+                        {s.label}
+                      </span>
+                      <span className="px-5 py-4 text-[#3fb364] shrink-0" aria-hidden>
+                        <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 256 512"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103.5c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 33.5z"/></svg>
+                      </span>
                     </button>
-                  </div>
-
-                  {/* Calculators */}
-                  <div className="flex items-center justify-between border-b border-[#3b4148] hover:bg-[#343a42]">
-                    <Link prefetch={false}
-                      href="/mortgage-calculator-arizona/"
-                      onClick={closeMobile}
-                      className={`flex-1 font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 ${
-                        isCalculatorsActive ? "text-[#3fb364]" : "text-white"
-                      }`}
-                    >
-                      CALCULATORS
-                    </Link>
-                    <button
-                      onClick={() => setActiveSubmenu("CALCULATORS")}
-                      className="px-5 py-4 text-[#3fb364] hover:text-white shrink-0 cursor-pointer"
-                      aria-label="Open Calculators submenu"
-                    >
-                      <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 256 512" aria-hidden="true"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103.5c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 33.5z"/></svg>
-                    </button>
-                  </div>
-
-                  {/* Areas We Serve */}
-                  <div className="flex items-center justify-between border-b border-[#3b4148] hover:bg-[#343a42]">
-                    <Link prefetch={false}
-                      href="/service-areas/"
-                      onClick={closeMobile}
-                      className={`flex-1 font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 ${
-                        isAreasActive ? "text-[#3fb364]" : "text-white"
-                      }`}
-                    >
-                      AREAS WE SERVE
-                    </Link>
-                    <button
-                      onClick={() => setActiveSubmenu("AREAS WE SERVE")}
-                      className="px-5 py-4 text-[#3fb364] hover:text-white shrink-0 cursor-pointer"
-                      aria-label="Open Areas We Serve submenu"
-                    >
-                      <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 256 512" aria-hidden="true"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103.5c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 33.5z"/></svg>
-                    </button>
-                  </div>
-
-                  {/* About */}
-                  <div className="flex items-center justify-between border-b border-[#3b4148] hover:bg-[#343a42]">
-                    <Link prefetch={false}
-                      href="/about-us/"
-                      onClick={closeMobile}
-                      className={`flex-1 font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 ${
-                        isAboutActive ? "text-[#3fb364]" : "text-white"
-                      }`}
-                    >
-                      ABOUT US
-                    </Link>
-                    <button
-                      onClick={() => setActiveSubmenu("ABOUT")}
-                      className="px-5 py-4 text-[#3fb364] hover:text-white shrink-0 cursor-pointer"
-                      aria-label="Open About submenu"
-                    >
-                      <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 256 512" aria-hidden="true"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103.5c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 33.5z"/></svg>
-                    </button>
-                  </div>
-
-                  {/* Resources */}
-                  <div className="flex items-center justify-between border-b border-[#3b4148] hover:bg-[#343a42]">
-                    <Link prefetch={false}
-                      href="/blog/"
-                      onClick={closeMobile}
-                      className={`flex-1 font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 ${
-                        isResourcesActive ? "text-[#3fb364]" : "text-white"
-                      }`}
-                    >
-                      RESOURCES
-                    </Link>
-                    <button
-                      onClick={() => setActiveSubmenu("RESOURCES")}
-                      className="px-5 py-4 text-[#3fb364] hover:text-white shrink-0 cursor-pointer"
-                      aria-label="Open Resources submenu"
-                    >
-                      <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 256 512" aria-hidden="true"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103.5c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 33.5z"/></svg>
-                    </button>
-                  </div>
+                  ))}
 
                   {/* Contact Us */}
                   <Link prefetch={false}
@@ -876,10 +819,20 @@ const Navbar = () => {
               ) : (
                 /* Submenu Items */
                 <div className="flex flex-col">
-                  {/* Submenu Header Label */}
-                  <div className="text-white font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 border-b border-[#3b4148] bg-[#23272c]">
-                    {activeSubmenu}
-                  </div>
+                  {activeMobileSection ? (
+                    <Link
+                      prefetch={false}
+                      href={activeMobileSection.href}
+                      onClick={closeMobile}
+                      className={`font-bold text-[13.5px] uppercase tracking-wider px-5 py-4 border-b border-[#3b4148] bg-[#23272c] ${
+                        isExactPathActive(activeMobileSection.href)
+                          ? "text-[#3fb364]"
+                          : "text-white hover:text-[#3fb364]"
+                      }`}
+                    >
+                      {activeMobileSection.label}
+                    </Link>
+                  ) : null}
 
                   {activeSubmenu === "LOAN PROGRAMS" &&
                     LOAN_PROGRAM_MOBILE_LINKS.map((item) => (

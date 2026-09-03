@@ -6,6 +6,7 @@ import { getConfiguredSiteUrl } from "@/lib/site-url";
 import DeferredPreApproval from "./component/DeferredPreApproval";
 import GoogleTags from "./component/GoogleTags";
 import JsonLd from "./component/JsonLd";
+import ScrollToTop from "./component/ScrollToTop";
 import "./globals.css";
 
 const googleTagsEnabled = isGoogleTagsEnabled();
@@ -117,6 +118,7 @@ export default function RootLayout({
         >
           {children}
         </div>
+        <ScrollToTop />
         <DeferredPreApproval />
         {googleTagsEnabled ? <GoogleTags /> : null}
       </body>
