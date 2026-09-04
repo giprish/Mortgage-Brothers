@@ -11,6 +11,7 @@ import LoanProgramHero from "../component/LoanProgramHero";
 import HeroFeatureStrip from "../component/HeroFeatureStrip";
 import FaqAccordion from "../component/FaqAccordion";
 import GetInTouch from "../component/GetInTouch";
+import YoutubeLiteEmbed from "../component/YoutubeLiteEmbed";
 import { LOAN_PROGRAM_LINKS } from "@/lib/company";
 import { renderInlineLinks } from "@/lib/renderInlineLinks";
 
@@ -476,6 +477,18 @@ export default function FhaHomeLoansArizonaPage() {
                   <p className="text-[#4e5b4e] text-[14px] leading-relaxed">{b.desc}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Video — live embed */}
+        <section className="loan-section bg-[#fcf9f3] !py-10 sm:!py-12">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#08271B] shadow-sm">
+              <YoutubeLiteEmbed
+                videoId="6G3aczBQENM"
+                title="FHA loans and What You Need to Know"
+              />
             </div>
           </div>
         </section>

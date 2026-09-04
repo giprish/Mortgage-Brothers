@@ -9,6 +9,7 @@ import Footer from "../component/Footer";
 import StatsBanner from "../component/StatsBanner";
 import LoanProgramHero from "../component/LoanProgramHero";
 import HeroFeatureStrip from "../component/HeroFeatureStrip";
+import YoutubeLiteEmbed from "../component/YoutubeLiteEmbed";
 import FaqAccordion from "../component/FaqAccordion";
 import GetInTouch from "../component/GetInTouch";
 import CountyTestimonials, { type CountyTestimonial } from "../component/CountyTestimonials";
@@ -311,6 +312,18 @@ export default function RefinancingArizonaPage() {
               >
                 Explore Your Refinancing Options
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Video — live embed */}
+        <section className="loan-section bg-[#fcf9f3] !py-10 sm:!py-12">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#08271B] shadow-sm">
+              <YoutubeLiteEmbed
+                videoId="JMEydrfshTY"
+                title="Cashout Refinance Vs. HELOC"
+              />
             </div>
           </div>
         </section>

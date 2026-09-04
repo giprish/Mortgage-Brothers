@@ -9,6 +9,7 @@ import Footer from "../component/Footer";
 import StatsBanner from "../component/StatsBanner";
 import LoanProgramHero from "../component/LoanProgramHero";
 import HeroFeatureStrip from "../component/HeroFeatureStrip";
+import YoutubeLiteEmbed from "../component/YoutubeLiteEmbed";
 
 import CountyTestimonials, { type CountyTestimonial } from "../component/CountyTestimonials";
 import { cardIconBadgeClassName } from "../component/IconBadge";
@@ -341,6 +342,18 @@ export default function VaLoansArizonaPage() {
                   <p className="text-[#4e5b4e] text-[13.5px] leading-relaxed">{h.desc}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Video — live embed */}
+        <section className="loan-section bg-[#fcf9f3] !py-10 sm:!py-12">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <div className="relative w-full aspect-video rounded-xl overflow-hidden bg-[#08271B] shadow-sm">
+              <YoutubeLiteEmbed
+                videoId="JJOCFayy08k"
+                title="What you need to know about buying a home with a VA mortgage"
+              />
             </div>
           </div>
         </section>

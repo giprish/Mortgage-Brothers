@@ -1,9 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import Navbar from "../component/Navbar";
 import Footer from "../component/Footer";
-import LoanProgramHero from "../component/LoanProgramHero";
+import HeroCtaButtons from "../component/HeroCtaButtons";
 import StatsBanner from "../component/StatsBanner";
 
 const WHY_PARTNER = [
@@ -83,6 +84,25 @@ const STEPS = [
   },
 ];
 
+const GALLERY_IMAGES = [
+  {
+    src: "/realtorteam/arizona-mortgage-office-building.jpg",
+    alt: "Arizona Mortgage Brothers’ office building located in a prime area",
+  },
+  {
+    src: "/realtorteam/arizona-mortgage-brokers.jpg",
+    alt: "Experienced mortgage brokers in Arizona ready to assist homebuyers",
+  },
+  {
+    src: "/realtorteam/mortgage-brothers-office-design.jpg",
+    alt: "Modern office design of the Arizona Mortgage Brothers",
+  },
+  {
+    src: "/realtorteam/mortgage-office-team-arizona.jpg",
+    alt: "Professional mortgage team helping Arizona residents with home loans",
+  },
+];
+
 const STATS = [
   { value: "25 Days", label: "Average Closing Time" },
   { value: "25+ Yrs", label: "Industry Experience" },
@@ -90,21 +110,107 @@ const STATS = [
   { value: "99%", label: "Communication Satisfaction" },
 ];
 
+function OfficeGallery() {
+  const [index, setIndex] = useState(0);
+  const count = GALLERY_IMAGES.length;
+
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      setIndex((prev) => (prev + 1) % count);
+    }, 7000);
+    return () => window.clearInterval(id);
+  }, [count]);
+
+  const goPrev = () => setIndex((prev) => (prev - 1 + count) % count);
+  const goNext = () => setIndex((prev) => (prev + 1) % count);
+  const current = GALLERY_IMAGES[index];
+
+  return (
+    <section className="w-full">
+      <div className="relative w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 py-8 sm:py-10">
+        <div className="relative aspect-[2/1] sm:aspect-[21/9] w-full overflow-hidden rounded-xl">
+          <Image
+            key={current.src}
+            src={current.src}
+            alt={current.alt}
+            fill
+            sizes="(max-width: 1024px) 100vw, 1152px"
+            className="object-cover"
+            priority={index === 0}
+          />
+        </div>
+        <button
+          type="button"
+          onClick={goPrev}
+          aria-label="Previous"
+          className="absolute left-6 sm:left-10 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 text-white flex items-center justify-center transition-colors"
+        >
+          ‹
+        </button>
+        <button
+          type="button"
+          onClick={goNext}
+          aria-label="Next"
+          className="absolute right-6 sm:right-10 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-black/40 hover:bg-black/60 text-white flex items-center justify-center transition-colors"
+        >
+          ›
+        </button>
+        <div className="flex items-center justify-center gap-2 mt-4">
+          {GALLERY_IMAGES.map((img, i) => (
+            <button
+              key={img.src}
+              type="button"
+              aria-label={`Go to slide ${i + 1}`}
+              onClick={() => setIndex(i)}
+              className={`h-2.5 w-2.5 rounded-full transition-colors ${
+                i === index ? "bg-[#3fb364]" : "bg-[#052316]/25 hover:bg-[#052316]/50"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function RealtorTeamPage() {
   return (
     <div className="flex flex-col min-h-screen bg-[#fcf9f3]">
       <Navbar />
 
       <main className="flex-grow">
-        <LoanProgramHero
-          title="A Mortgage Partner You Can Depend On"
-          subtitle="Partner with trusted mortgage experts to deliver exceptional service and grow your business together"
-          ctaLabel="Join Our Partner Network"
-          ctaHref="/contact-us/"
-          secondaryCtaLabel="Contact Our Partnership Team"
-          secondaryCtaHref="/contact-us/"
-          note=""
-        />
+        {/* Hero — heights mirror the homepage hero (648 / 519 / 568px) */}
+        <section className="relative w-full min-h-[648px] sm:min-h-[519px] lg:min-h-[568px] pt-[65px] sm:pt-[73px] bg-[#052316] text-white text-center overflow-hidden flex items-center">
+          {/* Image starts below the fixed navbar so the team's heads keep full headroom.
+              Hidden below sm — the narrow crop leaves the team unreadable on phones. */}
+          <div className="hidden sm:block absolute inset-x-0 top-[65px] sm:top-[73px] bottom-0 overflow-hidden">
+            <Image
+              src="/realtorteam/arizona-mortgage-brothers-team.jpg"
+              alt="Mortgage Brothers team"
+              fill
+              quality={100}
+              sizes="100vw"
+              className="object-cover object-right-top"
+            />
+          </div>
+          <div className="hidden sm:block absolute inset-0 bg-black/40" aria-hidden />
+          <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-10 py-12 sm:py-14">
+            <h1 className="text-white text-[36px] sm:text-[48px] lg:text-[56px] font-semibold leading-[1.12] mb-4 tracking-tight drop-shadow-sm">
+              A Mortgage Partner You Can
+              <br />
+              Depend On
+            </h1>
+            <p className="text-white/95 text-[15px] sm:text-[17px] leading-[1.7] max-w-2xl mx-auto mb-8 drop-shadow-sm">
+              Partner with trusted mortgage experts to deliver exceptional service and grow your business together
+            </p>
+            <HeroCtaButtons
+              primaryLabel="Join Our Partner Network"
+              primaryHref="/contact-us/"
+              secondaryLabel="Contact Our Partnership Team"
+              secondaryHref="/contact-us/"
+            />
+          </div>
+        </section>
 
         {/* Why Partner */}
         <section className="w-full loan-section bg-white border-b border-[#e8e0d0]/50">
@@ -128,11 +234,6 @@ export default function RealtorTeamPage() {
                   key={item.title}
                   className="bg-[#faf7f0] border border-[#e8e0d0]/70 rounded-2xl p-6 lg:p-7 shadow-sm hover:border-[#3fb364]/40 hover:shadow-md transition-all flex flex-col items-start text-left"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-[#3fb364]/15 text-[#3fb364] flex items-center justify-center mb-4 shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                  </div>
                   <h3 className="text-[#052316] text-[18px] font-bold mb-2.5">{item.title}</h3>
                   <p className="text-[#4e5b4e] text-[14.5px] leading-[1.65]">{item.body}</p>
                 </div>
@@ -152,6 +253,22 @@ export default function RealtorTeamPage() {
 
         {/* Stats */}
         <StatsBanner stats={STATS} />
+
+        {/* Video — Commitment To Arizona Real Estate Agents */}
+        <section className="w-full loan-section bg-[#fcf9f3] border-b border-[#e8e0d0]/50 !pt-2 sm:!pt-4 lg:!pt-6">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10">
+            <div className="relative w-full aspect-video overflow-hidden rounded-2xl shadow-lg border border-[#e8e0d0]/60 bg-[#052316]">
+              <iframe
+                src="https://www.youtube.com/embed/d50xIN-Z-vw?rel=0"
+                title="Commitment To Arizona Real Estate Agents"
+                className="absolute inset-0 w-full h-full border-0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+          </div>
+        </section>
 
         {/* Specialized audiences */}
         <section className="w-full loan-section bg-[#fcf9f3] border-b border-[#e8e0d0]/50 !pt-8 sm:!pt-10 lg:!pt-12">
@@ -185,6 +302,9 @@ export default function RealtorTeamPage() {
             </div>
           </div>
         </section>
+
+        {/* Live 4-image office gallery — no colored background */}
+        <OfficeGallery />
 
         {/* Four steps */}
         <section className="w-full loan-section bg-white border-b border-[#e8e0d0]/50">
