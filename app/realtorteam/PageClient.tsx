@@ -256,8 +256,8 @@ export default function RealtorTeamPage() {
 
         {/* Video — Commitment To Arizona Real Estate Agents */}
         <section className="w-full loan-section bg-[#fcf9f3] border-b border-[#e8e0d0]/50 !pt-2 sm:!pt-4 lg:!pt-6">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-10">
-            <div className="relative w-full aspect-video overflow-hidden rounded-2xl shadow-lg border border-[#e8e0d0]/60 bg-[#052316]">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+            <div className="relative w-full aspect-video overflow-hidden rounded-xl bg-[#08271B] shadow-sm">
               <iframe
                 src="https://www.youtube.com/embed/d50xIN-Z-vw?rel=0"
                 title="Commitment To Arizona Real Estate Agents"
