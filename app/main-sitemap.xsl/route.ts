@@ -99,6 +99,14 @@ const MAIN_SITEMAP_XSL = `<?xml version="1.0" encoding="UTF-8"?>
 		.count strong {
 			color: #000;
 		}
+		.count a,
+		.expl a {
+			color: #4a76a8;
+		}
+		.expl {
+			padding: 0 20px;
+			margin: 0 0 10px;
+		}
 	</style>
 </head>
 <body>
@@ -147,6 +155,9 @@ const MAIN_SITEMAP_XSL = `<?xml version="1.0" encoding="UTF-8"?>
 				<div class="count">
 					<p>This XML Sitemap contains <strong><xsl:value-of select="count(sitemap:urlset/sitemap:url)"/></strong> URLs.</p>
 				</div>
+				<p class="expl">
+					<a href="/sitemap_index.xml">&#8592; Sitemap Index</a>
+				</p>
 				<table id="sitemap">
 					<thead>
 						<tr>

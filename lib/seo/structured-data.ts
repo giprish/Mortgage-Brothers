@@ -326,6 +326,27 @@ function buildHomepageVideo(siteUrl: string): JsonLdObject {
   };
 }
 
+function buildPageVideo(
+  pathname: string,
+  siteUrl: string,
+): JsonLdObject | null {
+  const path = toTrailingSlashPath(pathname);
+  const video = LOAN_PROGRAM_VIDEOS[path];
+  if (!video) return null;
+
+  const origin = siteUrl.replace(/\/+$/, "");
+  const url = pageUrl(path, origin);
+  const webpageId = `${url}#webpage`;
+
+  return {
+    ...video,
+    "@id": `${url}#schema-video`,
+    isPartOf: { "@id": webpageId },
+    publisher: { "@id": organizationId(origin) },
+    mainEntityOfPage: { "@id": webpageId },
+  };
+}
+
 export function buildVideoObjectSchema(
   pathname: string,
   siteUrl = getConfiguredSiteUrl(),
@@ -341,7 +362,8 @@ export function buildVideoObjectSchema(
 
 /**
  * Yoast/Rank-Math style @graph for every page.
- * Pathname drives WebPage vs AboutPage vs ContactPage and homepage VideoObject.
+ * Pathname drives WebPage vs AboutPage vs ContactPage and page VideoObject
+ * (homepage + loan/partner pages with embeds).
  */
 export function buildGlobalGraph(
   siteUrlOrOptions?: string | GlobalGraphOptions,
@@ -367,6 +389,9 @@ export function buildGlobalGraph(
 
   if (normalizePathname(pathname) === "/") {
     graph.push(buildHomepageVideo(siteUrl));
+  } else {
+    const pageVideo = buildPageVideo(pathname, siteUrl);
+    if (pageVideo) graph.push(pageVideo);
   }
 
   return {
