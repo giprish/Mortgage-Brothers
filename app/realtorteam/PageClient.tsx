@@ -204,10 +204,9 @@ export default function RealtorTeamPage() {
               Partner with trusted mortgage experts to deliver exceptional service and grow your business together
             </p>
             <HeroCtaButtons
-              primaryLabel="Join Our Partner Network"
-              primaryHref="/contact-us/"
-              secondaryLabel="Contact Our Partnership Team"
-              secondaryHref="/contact-us/"
+              primaryLabel="Start my preapproval"
+              primaryHref="#get-pre-approved"
+              secondaryLabel={null}
             />
           </div>
         </section>
