@@ -38,6 +38,21 @@ const EXCLUDED = new Set([
 const EXTRA_PAGE_PATHS = ["/privacy-policy", "/terms-of-use"];
 const FALLBACK_AUTHOR_PATHS = ["/author/eddie-knoell"];
 
+/** Must match live Rank Math category-sitemap.xml and lib/sitemap.ts LIVE_CATEGORY_ENTRIES. */
+const LIVE_CATEGORIES = [
+  "/mortgage-basics",
+  "/mortgage-qualifications",
+  "/arizona-mortgage-insights",
+  "/mortgage-payments-strategies",
+  "/fha-loans",
+  "/real-estate-mortgages",
+  "/specialty-loans",
+  "/homeownership-tips",
+  "/mortgage-process-guidance",
+  "/spouse-estate-considerations",
+  "/pillar-post",
+];
+
 const RAW_CITIES = {
   "maricopa-county-az": [
     "Phoenix", "Scottsdale", "Mesa", "Chandler", "Gilbert", "Glendale", "Tempe", "Peoria",
@@ -143,12 +158,12 @@ for (const [path, entry] of Object.entries(seoMetadata)) {
   if (entry.section === "posts") postPaths.add(normalizePathname(path));
 }
 
-const categoryPaths = new Set(
-  Object.entries(seoMetadata)
+const categoryPaths = new Set([
+  ...LIVE_CATEGORIES,
+  ...Object.entries(seoMetadata)
     .filter(([, e]) => e.section === "cats")
-    .map(([p]) => normalizePathname(p))
-    .filter((p) => !EXCLUDED.has(p)),
-);
+    .map(([p]) => normalizePathname(p)),
+].filter((p) => !EXCLUDED.has(p)));
 
 const authorDir = join(appDir, "author");
 const authorPaths = [
@@ -199,6 +214,11 @@ else ok(`posts: ${postPaths.size}`);
 
 if (categoryPaths.size < 10) fail(`expected ~10 categories, got ${categoryPaths.size}`);
 else ok(`categories: ${categoryPaths.size}`);
+
+for (const path of LIVE_CATEGORIES) {
+  if (!categoryPaths.has(path)) fail(`missing live category ${path}`);
+}
+ok(`all ${LIVE_CATEGORIES.length} live Rank Math categories present`);
 
 if (cityPaths.length < 108) fail(`expected 108+ cities, got ${cityPaths.length}`);
 else ok(`service-area cities: ${cityPaths.length}`);

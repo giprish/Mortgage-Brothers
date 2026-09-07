@@ -9,7 +9,7 @@ export function GET(request: Request) {
   const body = `User-agent: *
 Disallow:
 
-Sitemap: https://azmortgage.vercel.app/sitemap.xml
+Sitemap: ${siteUrl}/sitemap.xml
 `;
 
   return new Response(body, {

@@ -62,6 +62,24 @@ const EXTRA_PAGE_PATHS = ["/privacy-policy", "/terms-of-use"];
 
 const FALLBACK_AUTHOR_PATHS = ["/author/eddie-knoell", "/author/thomas-knoell"];
 
+/**
+ * Live Rank Math category-sitemap.xml (azmortgagebrothers.com) — keep in sync.
+ * Paths always appear in category-sitemap even if seo-metadata section drifts.
+ */
+const LIVE_CATEGORY_ENTRIES: ReadonlyArray<{ path: string; lastmod: string }> = [
+  { path: "/mortgage-basics", lastmod: "2026-06-25T17:44:47+00:00" },
+  { path: "/mortgage-qualifications", lastmod: "2026-06-25T17:44:37+00:00" },
+  { path: "/arizona-mortgage-insights", lastmod: "2026-06-25T19:55:24+00:00" },
+  { path: "/mortgage-payments-strategies", lastmod: "2026-06-25T17:44:27+00:00" },
+  { path: "/fha-loans", lastmod: "2026-06-25T19:55:24+00:00" },
+  { path: "/real-estate-mortgages", lastmod: "2026-06-25T17:44:33+00:00" },
+  { path: "/specialty-loans", lastmod: "2026-06-25T17:44:24+00:00" },
+  { path: "/homeownership-tips", lastmod: "2026-06-25T17:44:43+00:00" },
+  { path: "/mortgage-process-guidance", lastmod: "2026-06-25T17:44:40+00:00" },
+  { path: "/spouse-estate-considerations", lastmod: "2026-06-25T17:44:43+00:00" },
+  { path: "/pillar-post", lastmod: "2026-06-29T13:54:33+00:00" },
+];
+
 const CHILD_SITEMAPS = [
   "post-sitemap.xml",
   "page-sitemap.xml",
@@ -213,10 +231,21 @@ function getPostPathSet(): Map<string, string | undefined> {
 }
 
 function getCategoryPaths(): string[] {
-  return Object.entries(seoMetadata)
+  const fromSeo = Object.entries(seoMetadata)
     .filter(([, entry]) => entry.section === "cats")
-    .map(([path]) => normalizePathname(path))
-    .filter((path) => !isExcludedPath(path));
+    .map(([path]) => normalizePathname(path));
+
+  // Always include live Rank Math categories (source of truth for category-sitemap).
+  const fromLive = LIVE_CATEGORY_ENTRIES.map((entry) => entry.path);
+
+  return dedupePaths([...fromLive, ...fromSeo]).filter(
+    (path) => !isExcludedPath(path),
+  );
+}
+
+function getCategoryLastmod(pathname: string): string | undefined {
+  const path = normalizePathname(pathname);
+  return LIVE_CATEGORY_ENTRIES.find((entry) => entry.path === path)?.lastmod;
 }
 
 function getAuthorPaths(appDir: string): string[] {
@@ -282,9 +311,23 @@ export function collectSitemapEntries(
     }))
     .sort((a, b) => a.loc.localeCompare(b.loc));
 
-  const categories: SitemapUrlEntry[] = [...categorySet]
-    .map((path) => ({ loc: absoluteUrl(siteUrl, path) }))
-    .sort((a, b) => a.loc.localeCompare(b.loc));
+  // Preserve live Rank Math category order; append any extra seo "cats" after.
+  const liveCategoryOrder = LIVE_CATEGORY_ENTRIES.map((entry) => entry.path).filter(
+    (path) => categorySet.has(path),
+  );
+  const extraCategories = [...categorySet]
+    .filter((path) => !liveCategoryOrder.includes(path))
+    .sort((a, b) => a.localeCompare(b));
+
+  const categories: SitemapUrlEntry[] = [...liveCategoryOrder, ...extraCategories].map(
+    (path) => {
+      const lastmod = getCategoryLastmod(path);
+      return {
+        loc: absoluteUrl(siteUrl, path),
+        ...(lastmod ? { lastmod } : {}),
+      };
+    },
+  );
 
   const authors: SitemapUrlEntry[] = authorPaths
     .filter((path) => !isExcludedPath(path))

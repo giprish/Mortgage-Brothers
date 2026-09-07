@@ -76,7 +76,7 @@
     }
   },
   "/arizona-mortgage-insights": {
-    "section": "pages",
+    "section": "cats",
     "sourceUrl": "https://azmortgagebrothers.com/arizona-mortgage-insights/",
     "title": "Arizona Mortgage Insights and Market Tips",
     "description": "Discover Arizona mortgage insights, including trends and tax benefits, for smarter real estate decisions in Arizona.",
@@ -760,7 +760,7 @@
     }
   },
   "/homeownership-tips": {
-    "section": "pages",
+    "section": "cats",
     "sourceUrl": "https://azmortgagebrothers.com/homeownership-tips/",
     "title": "Get Expert Homeownership Tips and Advice",
     "description": "Discover homeownership tips on property types, tax deductions, and how features like guest houses affect your home's value.",
@@ -950,7 +950,7 @@
     }
   },
   "/mortgage-payments-strategies": {
-    "section": "pages",
+    "section": "cats",
     "sourceUrl": "https://azmortgagebrothers.com/mortgage-payments-strategies/",
     "title": "Optimize Your Mortgage Payments Strategies",
     "description": "Learn about mortgage payments strategies, including skipping payments, recasting, and payoff techniques, for better management.",
@@ -969,7 +969,7 @@
     }
   },
   "/mortgage-process-guidance": {
-    "section": "pages",
+    "section": "cats",
     "sourceUrl": "https://azmortgagebrothers.com/mortgage-process-guidance/",
     "title": "Simplify and Master the Mortgage Process Today",
     "description": "Follow our mortgage process guidance to streamline steps, documentation, and requirements for easier home financing.",
@@ -988,7 +988,7 @@
     }
   },
   "/mortgage-qualifications": {
-    "section": "pages",
+    "section": "cats",
     "sourceUrl": "https://azmortgagebrothers.com/mortgage-qualifications/",
     "title": "Understand Mortgage Qualifications Easily",
     "description": "Explore mortgage qualifications, including income, credit, and employment requirements, to improve your approval chances.",
@@ -1042,7 +1042,7 @@
     }
   },
   "/real-estate-mortgages": {
-    "section": "pages",
+    "section": "cats",
     "sourceUrl": "https://azmortgagebrothers.com/real-estate-mortgages/",
     "title": "Explore Real Estate Mortgages and Insights",
     "description": "Learn how real estate mortgages impact buying, selling, and investments, including options like cash offers and remote work.",
@@ -3379,7 +3379,7 @@
     }
   },
   "/specialty-loans": {
-    "section": "pages",
+    "section": "cats",
     "sourceUrl": "https://azmortgagebrothers.com/specialty-loans/",
     "title": "Specialty Loans for All Your Unique Needs",
     "description": "Explore specialty loans like DSCR loans, delayed financing, and assumable mortgages tailored for special financial needs.",

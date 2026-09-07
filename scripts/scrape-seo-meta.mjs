@@ -119,7 +119,25 @@ function getDoneUrls(rows) {
   return urls;
 }
 
+/** Live Rank Math category paths — keep section=cats across SEO scrapes. */
+const LIVE_CATEGORY_PATHS = new Set([
+  "/mortgage-basics",
+  "/mortgage-qualifications",
+  "/arizona-mortgage-insights",
+  "/mortgage-payments-strategies",
+  "/fha-loans",
+  "/real-estate-mortgages",
+  "/specialty-loans",
+  "/homeownership-tips",
+  "/mortgage-process-guidance",
+  "/spouse-estate-considerations",
+  "/pillar-post",
+]);
+
 function pickMeta(metadata = {}, sourceUrl, section) {
+  const pathname = pathnameFromUrl(sourceUrl);
+  const resolvedSection =
+    pathname && LIVE_CATEGORY_PATHS.has(pathname) ? "cats" : section;
   const title =
     metadata.title || metadata.ogTitle || metadata["og:title"] || undefined;
   const description =
@@ -159,7 +177,7 @@ function pickMeta(metadata = {}, sourceUrl, section) {
   };
 
   return {
-    section,
+    section: resolvedSection,
     sourceUrl,
     title,
     description,
