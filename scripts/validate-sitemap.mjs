@@ -288,10 +288,18 @@ const robotsRoute = readFileSync(join(root, "app/robots.txt/route.ts"), "utf8");
 if (!robotsRoute.includes("Sitemap: ${siteUrl}/sitemap.xml")) {
   fail("robots.txt route missing host-aware Sitemap directive");
 }
-if (/Disallow:\s*\/author/.test(robotsRoute)) {
-  fail("robots.txt still disallows /author");
+for (const rule of [
+  "Disallow: /wp-admin/",
+  "Allow: /wp-admin/admin-ajax.php",
+  "Disallow: /blog.php?*",
+  "Disallow: /author/*",
+  "Disallow: */feed/",
+]) {
+  if (!robotsRoute.includes(rule)) {
+    fail(`robots.txt missing live rule: ${rule}`);
+  }
 }
-ok("robots.txt route points at sitemap.xml and allows all");
+ok("robots.txt matches live rules with host-aware Sitemap");
 
 const llmsRoute = readFileSync(join(root, "app/llms.txt/route.ts"), "utf8");
 if (!llmsRoute.includes("buildLlmsTxt(siteUrl)")) {

@@ -1,13 +1,18 @@
 import { resolveSiteUrl } from "@/lib/sitemap";
 
 /**
- * Allow indexing of real content; block thin/duplicate alias routes
- * that are already excluded from the sitemap.
+ * Match live WordPress robots rules; Sitemap stays host-aware
+ * (stage vs production), same as sitemap.xml / llms.txt.
  */
 export function GET(request: Request) {
   const siteUrl = resolveSiteUrl(request);
   const body = `User-agent: *
-Disallow:
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+
+Disallow: /blog.php?*
+Disallow: /author/*
+Disallow: */feed/
 
 Sitemap: ${siteUrl}/sitemap.xml
 `;
