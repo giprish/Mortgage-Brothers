@@ -254,7 +254,7 @@ const Footer = ({ showOfficeMap = true }: { showOfficeMap?: boolean }) => {
                     </a>{" "}
                     and the Arizona Department of Financial Institutions{" "}
                     <a
-                      href="https://azdifi.portalus.thentiacloud.net/webs/portal/register/#/profile/LO-0911422/0/20/all/all/false/66185b7fa32d990aef41475d"
+                      href={COMPANY.azDifiLicenseUrl}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[#6bcf84] underline underline-offset-2 hover:text-[#6bcf84]"

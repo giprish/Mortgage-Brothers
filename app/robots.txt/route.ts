@@ -1,20 +1,15 @@
-import { resolveSiteUrl } from "@/lib/sitemap";
-
 /**
- * Match live WordPress robots rules; Sitemap stays host-aware
- * (stage vs production), same as sitemap.xml / llms.txt.
+ * Match live WordPress robots rules.
  */
-export function GET(request: Request) {
-  const siteUrl = resolveSiteUrl(request);
+export function GET() {
   const body = `User-agent: *
 Disallow: /wp-admin/
 Allow: /wp-admin/admin-ajax.php
 
 Disallow: /blog.php?*
-Disallow: /author/*
 Disallow: */feed/
 
-Sitemap: ${siteUrl}/sitemap.xml
+Sitemap: https://azmortgagebrothers.com/sitemap.xml
 `;
 
   return new Response(body, {

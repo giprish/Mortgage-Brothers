@@ -285,21 +285,20 @@ for (const file of requiredRoutes) {
 ok("all sitemap route files present");
 
 const robotsRoute = readFileSync(join(root, "app/robots.txt/route.ts"), "utf8");
-if (!robotsRoute.includes("Sitemap: ${siteUrl}/sitemap.xml")) {
-  fail("robots.txt route missing host-aware Sitemap directive");
+if (!robotsRoute.includes("Sitemap: https://azmortgagebrothers.com/sitemap.xml")) {
+  fail("robots.txt route missing live Sitemap directive");
 }
 for (const rule of [
   "Disallow: /wp-admin/",
   "Allow: /wp-admin/admin-ajax.php",
   "Disallow: /blog.php?*",
-  "Disallow: /author/*",
   "Disallow: */feed/",
 ]) {
   if (!robotsRoute.includes(rule)) {
     fail(`robots.txt missing live rule: ${rule}`);
   }
 }
-ok("robots.txt matches live rules with host-aware Sitemap");
+ok("robots.txt matches live rules");
 
 const llmsRoute = readFileSync(join(root, "app/llms.txt/route.ts"), "utf8");
 if (!llmsRoute.includes("buildLlmsTxt(siteUrl)")) {

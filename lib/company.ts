@@ -43,6 +43,9 @@ export const COMPANY = {
   imageSrc: "/home/eddie-knoell.jpg",
   nmlsConsumerAccessUrl:
     "https://www.nmlsconsumeraccess.org/Home.aspx/SubSearch?searchText=1007154",
+  /** Arizona DIFI business license lookup */
+  azDifiLicenseUrl:
+    "https://azdifi.portalus.thentiacloud.net/webs/portal/register/#/business/Mortgage%20brothers%20llc/0/20/all/all/false/66188166a32d990aef42805d",
   equalHousingLabel: "Equal Housing Opportunity",
   sameAs: [
     "https://www.facebook.com/azmortgagebrothers/",
