@@ -1,0 +1,36 @@
+---
+description: Stage meta title/description/OG/Twitter must match live ditto — including brand names
+alwaysApply: true
+---
+
+# Live SEO metadata must match ditto
+
+`<title>`, meta description, Open Graph (`og:title`, `og:description`, images), and Twitter card tags on stage **must match live** (`azmortgagebrothers.com`) character-for-character for the same route.
+
+## Source of truth
+
+- Registry: `lib/seo-metadata.json` (route pathname → live meta)
+- Helper: `lib/seo.ts` → `getSeoMetadata(pathname)`
+- Refresh from live: `node scripts/refresh-live-seo-meta.mjs`
+
+## Brand names in meta are NOT exempt
+
+The body-copy brand rule (`brand-name-not-a-mismatch.mdc`) does **not** apply to SEO metadata.
+
+If live uses “Arizona Mortgage Brothers”, “AZ Mortgage Brothers”, or “Arizona Home Loans | The Mortgage Brothers” in title/description/OG/Twitter, stage must use that **exact** string. Do **not** rewrite meta brand tokens to “Mortgage Brothers LLC”.
+
+```text
+// ✅ REQUIRED (live → stage meta)
+Live title:  Arizona Mortgage Brothers | Phoenix Home Loan Broker
+Stage title: Arizona Mortgage Brothers | Phoenix Home Loan Broker
+
+// ❌ NEVER (brand rewrite in meta)
+Stage title: Mortgage Brothers LLC | Phoenix Home Loan Broker
+```
+
+## Non-negotiable
+
+- When adding or editing a page, set `export const metadata = getSeoMetadata("/your-slug/")` from the registry — do not invent alternate titles/descriptions.
+- If live meta is missing for a new route, scrape live first and add the entry to `lib/seo-metadata.json` before shipping.
+- `og:site_name` stays the live value: `Arizona Home Loans | The Mortgage Brothers` (`OG_SITE_NAME` in `lib/seo.ts`).
+- Body/UI brand naming may still follow stage branding; **meta tags do not**.

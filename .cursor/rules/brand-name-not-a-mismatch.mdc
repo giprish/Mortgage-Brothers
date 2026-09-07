@@ -16,11 +16,15 @@ These refer to the same brand. Stage may use any of them; live may use another. 
 - AZ Mortgage Brothers
 - AZ Mortgage Brothers LLC
 
+## Exception: SEO metadata is NOT covered by this rule
+
+`<title>`, meta description, Open Graph, and Twitter tags must match live **exactly**, including brand tokens. See `live-seo-metadata-ditto.mdc`. Never rewrite live meta brands to “Mortgage Brothers LLC”.
+
 ## Non-negotiable
 
 - Live → stage content migration: match body copy, headings, FAQs, stats, CTAs, and structure from live.
-- **Except** brand/company naming — stage branding stays as implemented; do not rewrite live’s “AZ Mortgage Brothers” onto stage or flag stage’s “Mortgage Brothers LLC” as wrong.
-- Surrounding sentence text still must match live; only the brand token itself is exempt.
+- **Except** brand/company naming in **visible page body/UI** — stage branding stays as implemented; do not rewrite live’s “AZ Mortgage Brothers” onto stage body copy or flag stage’s “Mortgage Brothers LLC” as wrong.
+- Surrounding sentence text still must match live; only the brand token itself is exempt (body only).
 
 ```text
 // ✅ IGNORE (not a mismatch)

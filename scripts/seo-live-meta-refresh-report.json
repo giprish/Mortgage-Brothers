@@ -1,0 +1,585 @@
+{
+  "scrapedAt": "2026-09-07T05:17:58.587Z",
+  "routeKeys": 261,
+  "liveUrls": 260,
+  "updated": 106,
+  "unchanged": 149,
+  "failures": [
+    {
+      "url": "https://azmortgagebrothers.com/conventional-vs-fha-calculator/",
+      "error": "Error: HTTP 404"
+    },
+    {
+      "url": "https://azmortgagebrothers.com/author/thomas-knoell/",
+      "error": "Error: HTTP 404"
+    },
+    {
+      "url": "https://azmortgagebrothers.com/faq/",
+      "error": "Error: HTTP 404"
+    },
+    {
+      "url": "https://azmortgagebrothers.com/arizona-directory-2/",
+      "error": "Error: HTTP 404"
+    },
+    {
+      "url": "https://azmortgagebrothers.com/arizona-directory/",
+      "error": "Error: HTTP 404"
+    },
+    {
+      "url": "https://azmortgagebrothers.com/service-areas/maricopa-county-az-2/",
+      "error": "Error: HTTP 404"
+    }
+  ],
+  "changedPaths": [
+    {
+      "pathname": "/",
+      "fromTitle": "Mortgage Brothers LLC | Phoenix Home Loan Broker",
+      "toTitle": "Arizona Mortgage Brothers | Phoenix Home Loan Broker"
+    },
+    {
+      "pathname": "/about-us",
+      "fromTitle": "About Us: Mortgage Brothers LLC Story",
+      "toTitle": "About Us: Arizona Mortgage Brothers Story"
+    },
+    {
+      "pathname": "/team",
+      "fromTitle": "Our Team & Careers | Mortgage Brothers LLC",
+      "toTitle": "About Us: Arizona Mortgage Brothers Story"
+    },
+    {
+      "pathname": "/the-broker-advantage",
+      "fromTitle": "Maximize Success with The Broker Advantage",
+      "toTitle": "Maximize Success with The Broker Advantage"
+    },
+    {
+      "pathname": "/blog",
+      "fromTitle": "Mortgage Brothers LLC Blog: Expert Tips & Insights",
+      "toTitle": "Arizona Mortgage Brothers Blog: Expert Tips & Insights"
+    },
+    {
+      "pathname": "/glossary",
+      "fromTitle": "Master Mortgage Glossary: Understand Key Terms",
+      "toTitle": "Master Mortgage Glossary: Understand Key Terms"
+    },
+    {
+      "pathname": "/mortgage-101",
+      "fromTitle": "Mortgage 101: Your Guide to Home Financing",
+      "toTitle": "Mortgage 101: Your Guide to Home Financing"
+    },
+    {
+      "pathname": "/loan-applications",
+      "fromTitle": "Simplify Your Loan Applications Process Today",
+      "toTitle": "Simplify Your Loan Applications Process Today"
+    },
+    {
+      "pathname": "/job-opportunities",
+      "fromTitle": "Mortgage Job Opportunities | Mortgage Brothers LLC Team",
+      "toTitle": "Mortgage Job Opportunities | Arizona Mortgage Brothers Team"
+    },
+    {
+      "pathname": "/loan-officer-assistant",
+      "fromTitle": "Loan Officer Assistant | The Mortgage Brothers Team",
+      "toTitle": "Loan Officer Assistant | The Mortgage Brothers Team"
+    },
+    {
+      "pathname": "/mortgage-broker-loan-officer-originator",
+      "fromTitle": "Mortgage Broker Loan Officer | The Mortgage Brothers Team",
+      "toTitle": "Mortgage Broker Loan Officer | The Mortgage Brothers Team"
+    },
+    {
+      "pathname": "/reverse-mortgage-loan-officer",
+      "fromTitle": "Reverse Mortgage Loan Officer | The Mortgage Brothers Team",
+      "toTitle": "Reverse Mortgage Loan Officer | The Mortgage Brothers Team"
+    },
+    {
+      "pathname": "/mortgage-processor",
+      "fromTitle": "Mortgage Processor | The Mortgage Brothers Team",
+      "toTitle": "Mortgage Processor | The Mortgage Brothers Team"
+    },
+    {
+      "pathname": "/contact-us",
+      "fromTitle": "Contact Mortgage Brothers LLC – Get in Touch",
+      "toTitle": "Contact Arizona Mortgage Brothers – Get in Touch"
+    },
+    {
+      "pathname": "/conventional-home-loans-arizona",
+      "fromTitle": "Conventional Home Loans in Arizona - Easy & Affordable",
+      "toTitle": "Conventional Home Loans in Arizona - Easy & Affordable"
+    },
+    {
+      "pathname": "/conventional-vs-fha-loans-arizona",
+      "fromTitle": "Conventional vs FHA Loans in Arizona - Compare & Choose",
+      "toTitle": "Conventional vs FHA Loans in Arizona - Compare & Choose"
+    },
+    {
+      "pathname": "/fha-home-loans-arizona",
+      "fromTitle": "FHA Home Loans in Arizona - Affordable Homeownership",
+      "toTitle": "FHA Home Loans in Arizona - Affordable Homeownership"
+    },
+    {
+      "pathname": "/fha-streamline-refinance-arizona",
+      "fromTitle": "FHA Streamline Refinance in Arizona - Save on Your Loan",
+      "toTitle": "FHA Streamline Refinance in Arizona - Save on Your Loan"
+    },
+    {
+      "pathname": "/first-time-home-buyer-arizona-guide",
+      "fromTitle": "First-time Home Buyer in Arizona - Your Complete Guide",
+      "toTitle": "First-time Home Buyer in Arizona - Your Complete Guide"
+    },
+    {
+      "pathname": "/how-to-sell-my-house-fast-in-arizona",
+      "fromTitle": "The Complete Arizona Guide to Selling Your Home for Cash (2026) - Mortgage Brothers LLC",
+      "toTitle": "The Complete Arizona Guide to Selling Your Home for Cash (2026) - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/jumbo-loans-arizona",
+      "fromTitle": "Jumbo Loans in Arizona - Finance Your Dream Home",
+      "toTitle": "Jumbo Loans in Arizona - Finance Your Dream Home"
+    },
+    {
+      "pathname": "/private-money-lender-arizona",
+      "fromTitle": "Private Money and Portfolio Loans Arizona",
+      "toTitle": "Private Money and Portfolio Loans Arizona"
+    },
+    {
+      "pathname": "/pillar-post",
+      "fromTitle": "Pillar Post - Mortgage Brothers LLC",
+      "toTitle": "Pillar Post - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/refinancing-arizona",
+      "fromTitle": "Mortgage Refinancing in Arizona - Lower Your Payments",
+      "toTitle": "Mortgage Refinancing in Arizona - Lower Your Payments"
+    },
+    {
+      "pathname": "/reverse-mortgage-home-purchase-arizona",
+      "fromTitle": "Reverse Mortgage for a Home Purchase in Arizona",
+      "toTitle": "Reverse Mortgage for a Home Purchase in Arizona"
+    },
+    {
+      "pathname": "/service-areas/apache-county-az",
+      "fromTitle": "Apache County - Mortgage Brothers LLC",
+      "toTitle": "Apache County - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/apache-county-az/alpine",
+      "fromTitle": "Alpine - Mortgage Brothers LLC",
+      "toTitle": "Alpine - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/apache-county-az/eagar",
+      "fromTitle": "Eagar - Mortgage Brothers LLC",
+      "toTitle": "Eagar - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/apache-county-az/greer",
+      "fromTitle": "Greer - Mortgage Brothers LLC",
+      "toTitle": "Greer - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/apache-county-az/snowflake",
+      "fromTitle": "Snowflake - Mortgage Brothers LLC",
+      "toTitle": "Snowflake - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/cochise-county-az",
+      "fromTitle": "Cochise County - Mortgage Brothers LLC",
+      "toTitle": "Cochise County - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/cochise-county-az/bisbee",
+      "fromTitle": "Bisbee - Mortgage Brothers LLC",
+      "toTitle": "Bisbee - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/cochise-county-az/douglas",
+      "fromTitle": "Douglas - Mortgage Brothers LLC",
+      "toTitle": "Douglas - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/cochise-county-az/sierra-vista",
+      "fromTitle": "Sierra Vista - Mortgage Brothers LLC",
+      "toTitle": "Sierra Vista - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/cochise-county-az/tombstone",
+      "fromTitle": "Tombstone - Mortgage Brothers LLC",
+      "toTitle": "Tombstone - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/coconino-county-az/doney-park",
+      "fromTitle": "Doney Park Mortgages: Get Mortgage Broker in Doney Park Az",
+      "toTitle": "Doney Park Mortgages: Get Mortgage Broker in Doney Park Az"
+    },
+    {
+      "pathname": "/service-areas/coconino-county-az/happy-jack",
+      "fromTitle": "Happy Jack Mortgages: Get Mortgage Brokers in Happy Jack Az",
+      "toTitle": "Happy Jack Mortgages: Get Mortgage Brokers in Happy Jack Az"
+    },
+    {
+      "pathname": "/service-areas/coconino-county-az/sedona",
+      "fromTitle": "Sedona Mortgages: Get Trusted Mortgage Broker in Sedona Az",
+      "toTitle": "Sedona Mortgages: Get Trusted Mortgage Broker in Sedona Az"
+    },
+    {
+      "pathname": "/service-areas/gila-county-az",
+      "fromTitle": "Gila County - Mortgage Brothers LLC",
+      "toTitle": "Gila County - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/gila-county-az/christopher-creek",
+      "fromTitle": "Christopher Creek - Mortgage Brothers LLC",
+      "toTitle": "Christopher Creek - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/gila-county-az/globe",
+      "fromTitle": "Globe - Mortgage Brothers LLC",
+      "toTitle": "Globe - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/gila-county-az/miami",
+      "fromTitle": "Miami - Mortgage Brothers LLC",
+      "toTitle": "Miami - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/gila-county-az/payson",
+      "fromTitle": "Payson - Mortgage Brothers LLC",
+      "toTitle": "Payson - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/gila-county-az/star-valley",
+      "fromTitle": "Star Valley - Mortgage Brothers LLC",
+      "toTitle": "Star Valley - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/gila-county-az/washington-park",
+      "fromTitle": "Washington Park - Mortgage Brothers LLC",
+      "toTitle": "Washington Park - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/graham-county-az",
+      "fromTitle": "Graham County - Mortgage Brothers LLC",
+      "toTitle": "Graham County - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/graham-county-az/pima",
+      "fromTitle": "Pima Mortgage Experts – Your Trusted Home Loan Partners",
+      "toTitle": "Pima Mortgage Experts – Your Trusted Home Loan Partners"
+    },
+    {
+      "pathname": "/service-areas/graham-county-az/thatcher",
+      "fromTitle": "Thatcher - Mortgage Brothers LLC",
+      "toTitle": "Thatcher - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/greenlee-county-az",
+      "fromTitle": "Greenlee County - Mortgage Brothers LLC",
+      "toTitle": "Greenlee County - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/greenlee-county-az/clifton",
+      "fromTitle": "Clifton - Mortgage Brothers LLC",
+      "toTitle": "Clifton - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/greenlee-county-az/duncan",
+      "fromTitle": "Duncan - Mortgage Brothers LLC",
+      "toTitle": "Duncan - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/greenlee-county-az/morenci",
+      "fromTitle": "Morenci - Mortgage Brothers LLC",
+      "toTitle": "Morenci - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/la-paz-county-az",
+      "fromTitle": "La Paz County - Mortgage Brothers LLC",
+      "toTitle": "La Paz County - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/la-paz-county-az/parker",
+      "fromTitle": "Parker - Mortgage Brothers LLC",
+      "toTitle": "Parker - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/la-paz-county-az/quartzsite",
+      "fromTitle": "Quartzsite - Mortgage Brothers LLC",
+      "toTitle": "Quartzsite - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/maricopa-county-az/avondale",
+      "fromTitle": "Avondale Mortgage Experts: Trusted Home Loan Partners",
+      "toTitle": "Avondale Mortgage Experts: Trusted Home Loan Partners"
+    },
+    {
+      "pathname": "/service-areas/maricopa-county-az/rio-verde",
+      "fromTitle": "Rio Verde Mortgage Experts: Your Best Home Loan Partners",
+      "toTitle": "Rio Verde Mortgage Experts: Your Best Home Loan Partners"
+    },
+    {
+      "pathname": "/service-areas/mohave-county-az",
+      "fromTitle": "Mohave County Mortgage Broker - Mortgage Brothers",
+      "toTitle": "Mohave County Mortgage Broker - Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/mohave-county-az/bullhead-city",
+      "fromTitle": "Bullhead City - Mortgage Brothers LLC",
+      "toTitle": "Bullhead City - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/mohave-county-az/chloride",
+      "fromTitle": "Chloride - Mortgage Brothers LLC",
+      "toTitle": "Chloride - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/mohave-county-az/colorado-city",
+      "fromTitle": "Colorado City - Mortgage Brothers LLC",
+      "toTitle": "Colorado City - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/mohave-county-az/fort-mohave",
+      "fromTitle": "Fort Mohave - Mortgage Brothers LLC",
+      "toTitle": "Fort Mohave - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/mohave-county-az/kingman",
+      "fromTitle": "Kingman - Mortgage Brothers LLC",
+      "toTitle": "Kingman - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/mohave-county-az/lake-havasu-city",
+      "fromTitle": "Lake Havasu City - Mortgage Brothers LLC",
+      "toTitle": "Lake Havasu City - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/navajo-county-az",
+      "fromTitle": "Navajo County - Mortgage Brothers LLC",
+      "toTitle": "Navajo County - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/navajo-county-az/holbrook",
+      "fromTitle": "Holbrook - Mortgage Brothers LLC",
+      "toTitle": "Holbrook - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/navajo-county-az/pinetop",
+      "fromTitle": "Pinetop - Mortgage Brothers LLC",
+      "toTitle": "Pinetop - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/navajo-county-az/show-low",
+      "fromTitle": "Show Low - Mortgage Brothers LLC",
+      "toTitle": "Show Low - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/navajo-county-az/taylor",
+      "fromTitle": "Taylor - Mortgage Brothers LLC",
+      "toTitle": "Taylor - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/navajo-county-az/winslow",
+      "fromTitle": "Winslow - Mortgage Brothers LLC",
+      "toTitle": "Winslow - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/pima-county-az",
+      "fromTitle": "Pima County Mortgage Broker - Mortgage Brothers",
+      "toTitle": "Pima County Mortgage Broker - Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/pima-county-az/oro-valley",
+      "fromTitle": "Oro Valley - Mortgage Brothers LLC",
+      "toTitle": "Oro Valley - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/pima-county-az/sahuarita",
+      "fromTitle": "Sahuarita - Mortgage Brothers LLC",
+      "toTitle": "Sahuarita - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/pima-county-az/tucson",
+      "fromTitle": "Tucson - Mortgage Brothers LLC",
+      "toTitle": "Tucson - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/pima-county-az/vail",
+      "fromTitle": "Vail - Mortgage Brothers LLC",
+      "toTitle": "Vail - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/pinal-county-az/apache-junction",
+      "fromTitle": "Apache Junction Mortgage Experts – Local Home Loan Partners",
+      "toTitle": "Apache Junction Mortgage Experts – Local Home Loan Partners"
+    },
+    {
+      "pathname": "/service-areas/pinal-county-az/coolidge",
+      "fromTitle": "Coolidge Mortgage Experts – Local Home Loan Partners",
+      "toTitle": "Coolidge Mortgage Experts – Local Home Loan Partners"
+    },
+    {
+      "pathname": "/service-areas/pinal-county-az/florence",
+      "fromTitle": "Florence Mortgage Experts – Local Home Loan Partners",
+      "toTitle": "Florence Mortgage Experts – Local Home Loan Partners"
+    },
+    {
+      "pathname": "/service-areas/pinal-county-az/queen-creek",
+      "fromTitle": "Queen Creek Mortgage Experts – Local Home Loan Partners",
+      "toTitle": "Queen Creek Mortgage Experts – Local Home Loan Partners"
+    },
+    {
+      "pathname": "/service-areas/santa-cruz-county-az",
+      "fromTitle": "Santa Cruz County Mortgage Broker - Mortgage Brothers LLC",
+      "toTitle": "Santa Cruz County Mortgage Broker - AZ Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/yuma-county-az",
+      "fromTitle": "Yuma County - Mortgage Brothers LLC",
+      "toTitle": "Yuma County - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/yuma-county-az/san-luis",
+      "fromTitle": "San Luis - Mortgage Brothers LLC",
+      "toTitle": "San Luis - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/service-areas/yuma-county-az/yuma",
+      "fromTitle": "Yuma Mortgage Experts: Your Local Home Loans Partners",
+      "toTitle": "Yuma Mortgage Experts: Your Local Home Loans Partners"
+    },
+    {
+      "pathname": "/va-loans-arizona",
+      "fromTitle": "VA Loans in Arizona - Benefits for Veterans",
+      "toTitle": "VA Loans in Arizona - Benefits for Veterans"
+    },
+    {
+      "pathname": "/va-loans-for-first-time-homebuyers-in-arizona-your-path-to-affordable-homeownership",
+      "fromTitle": "VA Loans for First-Time Homebuyers in Arizona",
+      "toTitle": "VA Loans for First-Time Homebuyers in Arizona"
+    },
+    {
+      "pathname": "/videos",
+      "fromTitle": "Videos - Mortgage Brothers LLC",
+      "toTitle": "Videos - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/videos/important-mortgage-home-loan-topics",
+      "fromTitle": "Important Mortgage Home Loan Topics - Mortgage Brothers LLC",
+      "toTitle": "Important Mortgage Home Loan Topics - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/videos/mortgage-loan-products",
+      "fromTitle": "Mortgage Loan Products - Mortgage Brothers LLC",
+      "toTitle": "Mortgage Loan Products - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/videos/mortgage-rates-today",
+      "fromTitle": "Mortgage Rates Today - Mortgage Brothers LLC",
+      "toTitle": "Mortgage Rates Today - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/videos/phoenix-market-and-real-estate-updates",
+      "fromTitle": "Phoenix Market and Real Estate Updates - Mortgage Brothers LLC",
+      "toTitle": "Phoenix Market and Real Estate Updates - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/videos/real-estate-agent-quick-tips",
+      "fromTitle": "Real Estate Agent Quick Tips - Mortgage Brothers LLC",
+      "toTitle": "Real Estate Agent Quick Tips - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/videos/reverse-mortgage",
+      "fromTitle": "Reverse Mortgage - Mortgage Brothers LLC",
+      "toTitle": "Reverse Mortgage - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/videos/video-podcast-for-the-mortgage-brothers-show",
+      "fromTitle": "Video Podcast for The Mortgage Brothers Show - Mortgage Brothers LLC",
+      "toTitle": "Video Podcast for The Mortgage Brothers Show - Arizona Home Loans | The Mortgage Brothers"
+    },
+    {
+      "pathname": "/who-can-and-cannot-be-on-title-when-you-get-a-mortgage",
+      "fromTitle": "A Comprehensive Guide to Mortgage Title Eligibility",
+      "toTitle": "A Comprehensive Guide to Mortgage Title Eligibility"
+    },
+    {
+      "pathname": "/is-the-mortgage-interest-tax-deduction-really-a-big-deal",
+      "fromTitle": "Exploring the Impact of the Mortgage Interest Deduction",
+      "toTitle": "Exploring the Impact of the Mortgage Interest Deduction"
+    },
+    {
+      "pathname": "/arizona-refinance-process",
+      "fromTitle": "Expert Tips for a Smooth Arizona Refinance Process",
+      "toTitle": "Expert Tips for a Smooth Arizona Refinance Process"
+    },
+    {
+      "pathname": "/arizona-mortgage-approval-process",
+      "fromTitle": "Simplify with Arizona Mortgage Approval Process",
+      "toTitle": "Simplify with Arizona Mortgage Approval Process"
+    },
+    {
+      "pathname": "/arizona-mortgage-payments",
+      "fromTitle": "Ultimate Guide: Optimize Your Arizona Mortgage Payments",
+      "toTitle": "Ultimate Guide: Optimize Your Arizona Mortgage Payments"
+    },
+    {
+      "pathname": "/arizona-mortgage-basics",
+      "fromTitle": "Arizona Mortgage Basics: Start Your Journey",
+      "toTitle": "Arizona Mortgage Basics: Start Your Journey"
+    },
+    {
+      "pathname": "/expect-youre-not-first-time-mortgage-shopper",
+      "fromTitle": "Expert Tips for Not-First-Time Mortgage Shoppers",
+      "toTitle": "Expert Tips for Not-First-Time Mortgage Shoppers"
+    },
+    {
+      "pathname": "/is-homeownership-hereditary",
+      "fromTitle": "Exploring Generational Homeownership Trends",
+      "toTitle": "Exploring Generational Homeownership Trends"
+    },
+    {
+      "pathname": "/mortgage-calculator-arizona",
+      "fromTitle": "Easy-to-Use Mortgage Calculator | Mortgage Brothers LLC",
+      "toTitle": "Easy-to-Use Mortgage Calculator | Arizona Mortgage Brothers"
+    },
+    {
+      "pathname": "/mortgage-loan-programs-arizona",
+      "fromTitle": "Unlock 10 Amazing Loan Programs in Arizona Today!",
+      "toTitle": "Unlock 10 Amazing Loan Programs in Arizona Today!"
+    },
+    {
+      "pathname": "/thank-you",
+      "fromTitle": "Thank You for Contacting Mortgage Brothers LLC",
+      "toTitle": "Thank You for Contacting AZ Mortgage Brothers"
+    },
+    {
+      "pathname": "/privacy-policy",
+      "fromTitle": "Privacy Policy at Mortgage Brothers LLC",
+      "toTitle": "Privacy Policy at Arizona Mortgage Brothers"
+    },
+    {
+      "pathname": "/terms-of-use",
+      "fromTitle": "Terms of Use for Mortgage Brothers LLC",
+      "toTitle": "Terms of Use for Arizona Mortgage Brothers"
+    }
+  ],
+  "homepage": {
+    "section": "pages",
+    "sourceUrl": "https://azmortgagebrothers.com/",
+    "title": "Arizona Mortgage Brothers | Phoenix Home Loan Broker",
+    "description": "We live here, we work here, and we know this market better than anyone. Mortgage broker serving all of Arziona — Conventional, FHA, VA, Jumbo & Reverse Mortgage",
+    "openGraph": {
+      "title": "Arizona Mortgage Brothers | Phoenix Home Loan Broker",
+      "description": "We live here, we work here, and we know this market better than anyone. Mortgage broker serving all of Arziona — Conventional, FHA, VA, Jumbo & Reverse Mortgage",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/your-trusted-mortgage-experts.jpg",
+      "url": "https://azmortgagebrothers.com/",
+      "type": "website"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Arizona Mortgage Brothers | Phoenix Home Loan Broker",
+      "description": "We live here, we work here, and we know this market better than anyone. Mortgage broker serving all of Arziona — Conventional, FHA, VA, Jumbo & Reverse Mortgage",
+      "image": "https://azmortgagebrothers.com/wp-content/uploads/2025/01/your-trusted-mortgage-experts.jpg"
+    }
+  },
+  "ogSiteNameSample": null
+}
