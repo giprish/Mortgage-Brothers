@@ -134,32 +134,45 @@ export default function AboutPage() {
         {/* Why Choose Section */}
         <section className="w-full about-section bg-white border-b border-[#e8e0d0]/40">
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-6">
-              <h2 className="text-brand-green-deep text-section-title font-playfair font-normal mb-4">
-                Why Choose Mortgage Brothers LLC?
-              </h2>
-              <p className="text-brand-text-muted text-[15px] lg:text-[16px] leading-[1.7] max-w-3xl mx-auto">
-                At Mortgage Brothers LLC, we&apos;re committed to making your home financing journey smooth and successful. Here&apos;s why we stand out in the Arizona mortgage landscape:
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {whyChooseCards.map((card) => (
-                <div
-                  key={card.title}
-                  className="bg-brand-cream-light rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm flex flex-col items-start"
-                >
-                  <h3 className="text-brand-green-deep text-[16px] font-semibold mb-2">
-                    {card.title}
-                  </h3>
-                  <p className="text-brand-text-muted text-[13px] leading-[1.6]">
-                    {card.desc}
-                  </p>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+              <div>
+                <h2 className="text-brand-green-deep text-section-title font-playfair font-normal mb-3">
+                  Why Choose Mortgage Brothers LLC?
+                </h2>
+                <div className="w-14 h-[3px] bg-brand-green-accent mb-5" aria-hidden />
+                <p className="text-brand-text-muted text-[15px] lg:text-[16px] leading-[1.7] mb-6">
+                  At Mortgage Brothers LLC, we&apos;re committed to making your home financing journey smooth and successful. Here&apos;s why we stand out in the Arizona mortgage landscape:
+                </p>
+                <div className="relative w-full overflow-hidden rounded-2xl shadow-md">
+                  <Image
+                    src="/about-us/arizona-mortgage-brothers-thomas-eddie-knoell.jpg"
+                    alt="Thomas and Eddie Knoell collaborating on mortgage solutions at Mortgage Brothers LLC"
+                    width={800}
+                    height={600}
+                    className="w-full h-auto object-cover"
+                    sizes="(max-width: 1024px) 100vw, 480px"
+                  />
                 </div>
-              ))}
+              </div>
+
+              <div className="flex flex-col gap-6">
+                {whyChooseCards.map((card) => (
+                  <div
+                    key={card.title}
+                    className="bg-brand-cream-light rounded-2xl p-6 border border-[#e8e0d0]/40 shadow-sm flex flex-col items-start"
+                  >
+                    <h3 className="text-brand-green-deep text-[16px] font-semibold mb-2">
+                      {card.title}
+                    </h3>
+                    <p className="text-brand-text-muted text-[13px] leading-[1.6]">
+                      {card.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <div className="text-center mt-6">
+            <div className="text-center mt-8">
               <Link href="/mortgage-loan-programs-arizona/" className="btn-primary inline-flex items-center gap-2">
                 Discover Your Mortgage Options
               </Link>
