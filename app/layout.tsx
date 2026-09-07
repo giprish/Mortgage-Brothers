@@ -34,17 +34,25 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(getConfiguredSiteUrl()),
   ...homeSeoMetadata,
-  robots: {
-    index: false,
-    follow: false,
-    googleBot: {
-      index: false,
-      follow: false,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+  robots: googleTagsEnabled
+    ? {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large" as const,
+        "max-snippet": -1,
+      }
+    : {
+        index: false,
+        follow: false,
+        googleBot: {
+          index: false,
+          follow: false,
+          "max-video-preview": -1,
+          "max-image-preview": "large" as const,
+          "max-snippet": -1,
+        },
+      },
   ...(googleTagsEnabled
     ? {
         verification: {
