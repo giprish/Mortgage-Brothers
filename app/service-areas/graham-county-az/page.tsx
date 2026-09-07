@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
-import { buildFaqPageSchema, buildReviewsSchema, normalizeFaqs } from "@/lib/seo/structured-data";
+import { buildFaqPageSchema, normalizeFaqs } from "@/lib/seo/structured-data";
 import FaqAccordion from "../../component/FaqAccordion";
 
 import React from "react";
@@ -84,9 +84,6 @@ const testimonials = [
 ];
 
 const faqJsonLd = buildFaqPageSchema(normalizeFaqs(countyFaqs));
-const reviewsJsonLd = buildReviewsSchema(
-  testimonials.map((t) => ({ author: t.name, reviewBody: t.quote })),
-);
 
 export default function GrahamCountyPage() {
   return (
@@ -95,7 +92,6 @@ export default function GrahamCountyPage() {
       <JsonLd
         data={[
           ...(faqJsonLd ? [faqJsonLd] : []),
-          ...reviewsJsonLd,
         ]}
       />
       <Navbar />

@@ -8,6 +8,11 @@ import {
 } from "@/lib/seo";
 import liveOrganization from "@/lib/seo/live-organization.json";
 import { HOMEPAGE_VIDEO, LOAN_PROGRAM_VIDEOS } from "@/lib/seo/loan-videos";
+import {
+  CITY_REVIEW_WIDGET,
+  getPageTestimonials,
+  isServiceAreaCityPath,
+} from "@/lib/seo/page-reviews";
 import { getConfiguredSiteUrl } from "@/lib/site-url";
 
 export type JsonLdObject = Record<string, unknown>;
@@ -394,6 +399,24 @@ export function buildGlobalGraph(
     if (pageVideo) graph.push(pageVideo);
   }
 
+  // Visible CountyTestimonials / Reviews carousel → Review JSON-LD
+  // Homepage reviews live on the rich Organization document instead.
+  const pageReviews =
+    normalizePathname(pathname) === "/"
+      ? undefined
+      : getPageTestimonials(toTrailingSlashPath(pathname));
+  if (pageReviews?.length) {
+    for (const review of buildReviewsSchema(pageReviews, siteUrl)) {
+      const { "@context": _ctx, ...rest } = review;
+      graph.push(rest);
+    }
+  }
+
+  // City pages: ProvenExpert-style widget (5★ / 450 reviews + snippets)
+  if (isServiceAreaCityPath(normalizePathname(pathname))) {
+    graph.push(buildCityReviewWidgetSchema(siteUrl));
+  }
+
   return {
     "@context": "https://schema.org",
     "@graph": graph,
@@ -459,11 +482,12 @@ export type TestimonialReview = {
   ratingValue?: string | number;
 };
 
-/** Schema.org Review objects for testimonials shown on a page (no AggregateRating). */
+/** Schema.org Review objects for testimonials shown on a page. */
 export function buildReviewsSchema(
   reviews: TestimonialReview[],
   siteUrl = getConfiguredSiteUrl(),
 ): JsonLdObject[] {
+  const origin = siteUrl.replace(/\/+$/, "");
   return reviews
     .map((review) => ({
       author: review.author?.trim() ?? "",
@@ -485,9 +509,42 @@ export function buildReviewsSchema(
         bestRating: "5",
       },
       itemReviewed: {
-        "@id": organizationId(siteUrl),
+        "@id": organizationId(origin),
       },
     }));
+}
+
+/** AggregateRating + Review snippets for the city-page review widget. */
+export function buildCityReviewWidgetSchema(
+  siteUrl = getConfiguredSiteUrl(),
+): JsonLdObject {
+  const origin = siteUrl.replace(/\/+$/, "");
+  return {
+    "@type": "LocalBusiness",
+    "@id": `${organizationId(origin)}#city-reviews`,
+    name: COMPANY.legalName,
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: CITY_REVIEW_WIDGET.ratingValue,
+      bestRating: CITY_REVIEW_WIDGET.bestRating,
+      worstRating: CITY_REVIEW_WIDGET.worstRating,
+      reviewCount: CITY_REVIEW_WIDGET.reviewCount,
+      ratingCount: CITY_REVIEW_WIDGET.reviewCount,
+    },
+    review: CITY_REVIEW_WIDGET.reviews.map((review) => ({
+      "@type": "Review",
+      author: {
+        "@type": "Person",
+        name: review.author,
+      },
+      reviewBody: review.reviewBody,
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: String(review.ratingValue ?? "5"),
+        bestRating: "5",
+      },
+    })),
+  };
 }
 
 /** Accepts either `{ question, answer }` or FaqAccordion-style `{ q, a: string }`. */

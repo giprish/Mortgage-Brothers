@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getSeoMetadata } from "@/lib/seo";
 import JsonLd from "@/app/component/JsonLd";
-import { buildFaqPageSchema, buildReviewsSchema, normalizeFaqs } from "@/lib/seo/structured-data";
+import { buildFaqPageSchema, normalizeFaqs } from "@/lib/seo/structured-data";
 import FaqAccordion from "../../component/FaqAccordion";
 import { renderGetInTouchText } from "@/lib/renderInlineLinks";
 
@@ -213,9 +213,6 @@ const faqJsonLd = buildFaqPageSchema(
     countyFaqs.map((faq) => ({ q: faq.q, a: stripMarkdownLinks(faq.a) })),
   ),
 );
-const reviewsJsonLd = buildReviewsSchema(
-  testimonials.map((t) => ({ author: t.name, reviewBody: t.quote })),
-);
 
 export default function MaricopaCounty() {
   return (
@@ -224,7 +221,6 @@ export default function MaricopaCounty() {
       <JsonLd
         data={[
           ...(faqJsonLd ? [faqJsonLd] : []),
-          ...reviewsJsonLd,
         ]}
       />
       <Navbar />
