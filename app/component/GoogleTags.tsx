@@ -2,16 +2,27 @@
 
 import Script from "next/script";
 import { isGoogleTagsEnabled } from "@/lib/google-tags-enabled";
+import { useInteractionReady } from "./InteractionGate";
 
-/** GTM + gtag via next/script afterInteractive (does not render <script> into the React tree). */
+/**
+ * Defer GTM + gtag until first user interaction (or a long idle fallback).
+ * Keeps ~500KB of tag JS off the LCP/FCP critical path for Lighthouse + real visits.
+ */
 export default function GoogleTags() {
   if (!isGoogleTagsEnabled()) {
     return null;
   }
 
+  return <GoogleTagsDeferred />;
+}
+
+function GoogleTagsDeferred() {
+  const ready = useInteractionReady(12_000);
+  if (!ready) return null;
+
   return (
     <>
-      <Script id="google-tag-manager" strategy="afterInteractive">
+      <Script id="google-tag-manager" strategy="lazyOnload">
         {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -21,9 +32,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <Script
         id="google_gtagjs-js"
         src="https://www.googletagmanager.com/gtag/js?id=GT-NS9R5SN"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
-      <Script id="google_gtagjs-js-after" strategy="afterInteractive">
+      <Script id="google_gtagjs-js-after" strategy="lazyOnload">
         {`window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}
 gtag("set","linker",{"domains":["azmortgagebrothers.com"]});
 gtag("js", new Date());

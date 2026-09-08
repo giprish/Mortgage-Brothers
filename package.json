@@ -11,7 +11,9 @@
     "validate:sitemap": "node scripts/validate-sitemap.mjs",
     "compare:jsonld": "node scripts/compare-jsonld.mjs",
     "lh:all": "node scripts/lighthouse-all.mjs",
-    "lh:sample": "node scripts/lighthouse-all.mjs"
+    "lh:sample": "node scripts/lighthouse-all.mjs",
+    "unlighthouse:mobile": "unlighthouse --site https://azmortgagebrothers.com --config-file unlighthouse.mobile.config.mjs",
+    "unlighthouse:desktop": "unlighthouse --site https://azmortgagebrothers.com --desktop --config-file unlighthouse.desktop.config.mjs"
   },
   "dependencies": {
     "chart.js": "^4.5.1",

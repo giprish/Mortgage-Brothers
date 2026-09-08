@@ -1,8 +1,8 @@
 import Navbar from "./component/Navbar";
 import Hero from "./component/Hero";
+import BrokersAdvocate from "./component/home/BrokersAdvocate";
 import HomeStatsBar from "./component/home/HomeStatsBar";
 import {
-  DeferredBrokersAdvocate,
   DeferredBrothers,
   DeferredCreditQuizCta,
   DeferredDreamHomeCta,
@@ -27,7 +27,8 @@ export default function Home() {
       <main className="flex-1 flex flex-col">
         <Hero />
         <HomeStatsBar />
-        <DeferredBrokersAdvocate />
+        {/* SSR: was LazyWhenVisible — desktop LCP was this section's copy, delayed by client JS */}
+        <BrokersAdvocate />
         <DeferredBrothers />
         <DeferredRecognition />
         <DeferredHomeCalculator />

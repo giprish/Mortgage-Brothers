@@ -6,7 +6,6 @@ const loadReviews = () => import("../Reviews");
 const loadHomeCalculator = () => import("./HomeCalculator");
 const loadPreApprovedForm = () => import("../PreApprovedForm");
 const loadDreamHomeCta = () => import("./DreamHomeCta");
-const loadBrokersAdvocate = () => import("./BrokersAdvocate");
 const loadBrothers = () => import("../Brothers");
 const loadRecognition = () => import("./Recognition");
 const loadHomeownershipSteps = () => import("./HomeownershipSteps");
@@ -31,10 +30,6 @@ export function DeferredPreApprovedForm() {
 
 export function DeferredDreamHomeCta() {
   return <LazyWhenVisible minHeight={520} load={loadDreamHomeCta} />;
-}
-
-export function DeferredBrokersAdvocate() {
-  return <LazyWhenVisible minHeight={640} load={loadBrokersAdvocate} />;
 }
 
 export function DeferredBrothers() {

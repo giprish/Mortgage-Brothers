@@ -56,3 +56,4 @@ next-env.d.ts
 
 # Local scrape / Playwright / agent temp files (never commit)
 /tmp/
+.unlighthouse/
