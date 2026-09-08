@@ -17,7 +17,8 @@ const playfair = Playfair_Display({
   display: "swap",
   variable: "--font-playfair",
   weight: ["400"],
-  preload: false,
+  // Many page H1s use Playfair as LCP — preload so desktop LH isn't stalled on font discovery.
+  preload: true,
   adjustFontFallback: true,
 });
 
@@ -98,11 +99,6 @@ export default function RootLayout({
       className={`${playfair.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <head>
-        <link rel="preconnect" href="https://form.jotform.com" />
-        <link rel="preconnect" href="https://cdn.jotfor.ms" crossOrigin="anonymous" />
-        <link rel="dns-prefetch" href="https://www.jotform.com" />
-      </head>
       <body className="min-h-full flex flex-col font-sans" suppressHydrationWarning>
         {googleTagsEnabled ? (
           <noscript>

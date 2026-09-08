@@ -135,7 +135,7 @@ export default function SellerConcessionsToBuyersHowMuchPage() {
                 alt="How much seller concessions to buyers affect closing costs and home sales."
                 width={1920}
                 height={1080}
-                loading="lazy"
+                priority
                 sizes="(max-width: 768px) 100vw, 900px"
                 className="w-full h-auto rounded-xl border border-[#e8e0d0]/70 mb-8"
               />

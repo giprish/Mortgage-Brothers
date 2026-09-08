@@ -9,9 +9,10 @@ const PreApprovalProvider = dynamic(() => import("./PreApprovalProvider"), {
 });
 
 /**
- * Mount form modals immediately on the client so Quiz / Pre-Approval can
- * prefetch in the background. First click still opens the matching modal.
- * Hash deep-links (#get-pre-approved) open the modal on load / new tab.
+ * Mount form modals only when needed:
+ * - URL hash deep-link (#get-pre-approved, etc.)
+ * - First click on a form CTA
+ * Avoids pulling PreApproval JS onto every page's critical path (Lighthouse LCP/FCP).
  */
 export default function DeferredPreApproval() {
   const [ready, setReady] = useState(false);
@@ -48,14 +49,14 @@ export default function DeferredPreApproval() {
     };
 
     document.addEventListener("click", onClick, true);
-    // Prefer immediate open when the URL already deep-links to a form.
-    const fromHash = formKindFromHash(window.location.hash);
-    const timeoutId = window.setTimeout(() => arm(fromHash), 0);
 
-    return () => {
-      cleanup();
-      window.clearTimeout(timeoutId);
-    };
+    // Only auto-mount when the URL already deep-links to a form.
+    const fromHash = formKindFromHash(window.location.hash);
+    if (fromHash) {
+      arm(fromHash);
+    }
+
+    return cleanup;
   }, [ready]);
 
   if (!ready) return null;

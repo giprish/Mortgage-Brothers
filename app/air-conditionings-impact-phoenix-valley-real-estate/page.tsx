@@ -142,7 +142,7 @@ export default function AirConditioningPhoenixRealEstatePage() {
                 alt="Energy consumption by end use in Arizona, compared to the U.S. average, focusing on air conditioning, space heating, and cooling equipment."
                 width={1200}
                 height={785}
-                loading="lazy"
+                priority
                 sizes="(max-width: 768px) 100vw, 900px"
                 className="w-full h-auto rounded-xl border border-[#e8e0d0]/70 mb-10"
               />
