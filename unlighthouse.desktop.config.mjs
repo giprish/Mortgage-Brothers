@@ -9,7 +9,13 @@ const urls = existsSync(pathsFile)
       .filter(Boolean)
   : undefined;
 
-/** Interactive Unlighthouse UI — desktop @ http://localhost:5679 */
+/**
+ * Interactive Unlighthouse UI — desktop @ http://localhost:5679
+ *
+ * IMPORTANT: Unlighthouse `throttle: true` applies *mobile* Slow-4G simulation
+ * even when device is desktop, which tanks FCP/LCP vs Lighthouse `--preset=desktop`
+ * / PageSpeed desktop. Use LH desktop throttling instead.
+ */
 export default {
   site: "https://azmortgagebrothers.com",
   ...(urls?.length ? { urls } : {}),
@@ -18,11 +24,24 @@ export default {
   scanner: {
     maxRoutes: false,
     dynamicSampling: false,
-    throttle: true,
+    // false = don't force mobile Slow-4G; lighthouseOptions below set desktop throttle
+    throttle: false,
     device: "desktop",
     crawler: false,
     sitemap: false,
     robotsTxt: false,
+  },
+  lighthouseOptions: {
+    throttlingMethod: "simulate",
+    // Matches Lighthouse --preset=desktop / PageSpeed Insights desktop
+    throttling: {
+      rttMs: 40,
+      throughputKbps: 10 * 1024,
+      cpuSlowdownMultiplier: 1,
+      requestLatencyMs: 0,
+      downloadThroughputKbps: 0,
+      uploadThroughputKbps: 0,
+    },
   },
   server: {
     port: 5679,
